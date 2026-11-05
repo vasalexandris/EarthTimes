@@ -40,3 +40,21 @@ export async function loadStateData(stateId = 'massachusetts') {
     throw error;
   }
 }
+
+export async function loadTimeCapsules() {
+  if (dataCache.has('time-capsules')) {
+    return dataCache.get('time-capsules');
+  }
+  try {
+    const response = await fetch('./data/time-capsules.json');
+    if (!response.ok) {
+      throw new Error(`HTTP error ${response.status} loading data/time-capsules.json`);
+    }
+    const data = await response.json();
+    dataCache.set('time-capsules', data);
+    return data;
+  } catch (error) {
+    console.error('[DataService] Error loading time capsules:', error);
+    return [];
+  }
+}

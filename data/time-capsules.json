@@ -1,0 +1,240 @@
+[
+  {
+    "id": "boston-spot-old-corner",
+    "cityId": "boston",
+    "name": "Γωνία Washington & School St (Ιστορικό Εμπορικό Σημείο)",
+    "englishName": "Corner of Washington & School St",
+    "coords": [42.3578, -71.0592],
+    "address": "283 Washington St, Boston, MA",
+    "chronicles": [
+      {
+        "id": "chronicle-1",
+        "fromYear": 1910,
+        "toYear": 1945,
+        "title": "Παραδοσιακό Αρτοποιείο & Ζαχαροπλαστείο 'Old Corner Sweets'",
+        "category": "business",
+        "authorType": "official",
+        "authorName": "Ιστορικό Αρχείο Βοστώνης (Boston City Archives)",
+        "verified": true,
+        "story": "Στις αρχές του 20ού αιώνα, το σημείο λειτουργούσε ως πολυσύχναστο ζαχαροπλαστείο και καφενείο των εφημεριδοπωλών και των δικηγόρων του κέντρου. Φημιζόταν για τα χειροποίητα μπισκότα κανέλας και τον ζεστό μηλίτη.",
+        "photos": [
+          {
+            "url": "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=800&auto=format&fit=crop&q=80",
+            "caption": "Το εσωτερικό του αρτοποιείου με τους ξύλινους πάγκους και τα γυάλινα βάζα γλυκών (περ. 1928)",
+            "year": 1928,
+            "credit": "Boston Historic Preservation Collection"
+          }
+        ],
+        "memories": [
+          {
+            "author": "Μαίρη Κ.",
+            "year": 1938,
+            "text": "Ο παππούς μου με έπαιρνε κάθε Σάββατο πρωί μετά την αγορά για να πάρουμε ζεστά κουλούρια. Θυμάμαι ακόμα το κουδουνάκι της πόρτας."
+          }
+        ]
+      },
+      {
+        "id": "chronicle-2",
+        "fromYear": 1946,
+        "toYear": 1975,
+        "title": "Κατάστημα Έτοιμων Ενδυμάτων & Υφασμάτων 'Liberty Clothiers'",
+        "category": "business",
+        "authorType": "citizen",
+        "authorName": "Οικογένεια Miller (Πολίτες / Πρώην Ιδιοκτήτες)",
+        "verified": true,
+        "story": "Μεταπολεμικά, το κτίριο ανακαινίστηκε και μετατράπηκε σε ένα από τα πιο γνωστά καταστήματα ανδρικών και γυναικείων ενδυμάτων της εποχής. Έραβε κοστούμια για τους φοιτητές και τους καθηγητές των πανεπιστημίων.",
+        "photos": [
+          {
+            "url": "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&auto=format&fit=crop&q=80",
+            "caption": "Η βιτρίνα του καταστήματος ενδυμάτων με τα μοντέρνα ρούχα της δεκαετίας του 1960",
+            "year": 1964,
+            "credit": "Miller Family Archive"
+          }
+        ],
+        "memories": [
+          {
+            "author": "Τζον Μίλερ",
+            "year": 1968,
+            "text": "Εδώ μεγάλωσα βοηθώντας τον πατέρα μου να τακτοποιεί τα τόπια υφασμάτων μετά το σχολείο. Στις εκπτώσεις του 1968 η ουρά έφτανε μέχρι τη γωνία!"
+          }
+        ]
+      },
+      {
+        "id": "chronicle-3",
+        "fromYear": 1976,
+        "toYear": 2012,
+        "title": "Ανεξάρτητο Βιβλιοπωλείο 'Beacon Bookshop'",
+        "category": "culture",
+        "authorType": "citizen",
+        "authorName": "Λέσχη Φίλων Βιβλίου Βοστώνης",
+        "verified": false,
+        "story": "Ένας θρυλικός χώρος συνάντησης ποιητών, συγγραφέων και πανεπιστημιακών. Στο υπόγειο φιλοξενούνταν σπάνιες πρώτες εκδόσεις και γίνονταν δημόσιες αναγνώσεις ποίησης.",
+        "photos": [
+          {
+            "url": "https://images.unsplash.com/photo-1521587760476-6c12a4b040da?w=800&auto=format&fit=crop&q=80",
+            "caption": "Οι δαιδαλώδεις διάδρομοι του βιβλιοπωλείου γεμάτοι βιβλία μέχρι την οροφή (1995)",
+            "year": 1995,
+            "credit": "Boston Literary Society"
+          }
+        ],
+        "memories": [
+          {
+            "author": "Ελένη Π.",
+            "year": 1999,
+            "text": "Εδώ αγόρασα το πρώτο μου λεξικό όταν έφτασα για σπουδές στη Βοστώνη. Ο ιδιοκτήτης κ. Arthur πάντα κερνούσε καφέ."
+          }
+        ]
+      },
+      {
+        "id": "chronicle-4",
+        "fromYear": 2013,
+        "toYear": 2026,
+        "title": "Σύγχρονο Café & Πολυχώρος Καινοτομίας 'Hub & Roast'",
+        "category": "business",
+        "authorType": "official",
+        "authorName": "Εμπορικό Επιμελητήριο Downtown Boston",
+        "verified": true,
+        "story": "Σήμερα το ιστορικό σημείο διατηρεί τα αυθεντικά τούβλινα τόξα και συνδυάζει specialty καφέ με ανοιχτό χώρο εργασίας για νεοφυείς επιχειρήσεις και ερευνητές τεχνητής νοημοσύνης.",
+        "photos": [
+          {
+            "url": "https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=800&auto=format&fit=crop&q=80",
+            "caption": "Το σύγχρονο café όπου η ιστορική αρχιτεκτονική συναντά το ψηφιακό παρόν",
+            "year": 2025,
+            "credit": "Downtown Boston BID"
+          }
+        ],
+        "memories": [
+          {
+            "author": "Αλέξανδρος Ν.",
+            "year": 2026,
+            "text": "Το αγαπημένο μου σημείο για τηλεργασία. Στον τοίχο διατηρείται μια vintage ταμπέλα από το παλιό αρτοποιείο του 1920!"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "cambridge-spot-kendall",
+    "cityId": "cambridge",
+    "name": "Πλατεία Kendall (Από τη Βιομηχανία Σαπουνιών στην Επανάσταση mRNA)",
+    "englishName": "Kendall Square Tech & Heritage Spot",
+    "coords": [42.3625, -71.0862],
+    "address": "Kendall Square, Cambridge, MA",
+    "chronicles": [
+      {
+        "id": "kendall-1",
+        "fromYear": 1900,
+        "toYear": 1950,
+        "title": "Βιομηχανία Σαπουνοποιίας & Ατμομηχανών Kendall",
+        "category": "business",
+        "authorType": "official",
+        "authorName": "Ιστορική Εταιρεία Cambridge (Cambridge Historical Society)",
+        "verified": true,
+        "story": "Μια βαριά βιομηχανική ζώνη με καμινάδες, εργοστάσια παραγωγής σαπουνιού Lever Brothers και σιδηροδρομικές αποβάθρες κατά μήκος του ποταμού Charles.",
+        "photos": [
+          {
+            "url": "https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=800&auto=format&fit=crop&q=80",
+            "caption": "Βιομηχανικά κτίρια του Kendall Square στις αρχές του 20ού αιώνα",
+            "year": 1932,
+            "credit": "MIT Archives"
+          }
+        ],
+        "memories": [
+          {
+            "author": "Ρόμπερτ Σ.",
+            "year": 1941,
+            "text": "Όλη η περιοχή μύριζε σαπούνι και άνθρακα. Τίποτα δεν προμήνυε τη μετέπειτα τεχνολογική έκρηξη."
+          }
+        ]
+      },
+      {
+        "id": "kendall-2",
+        "fromYear": 1980,
+        "toYear": 2026,
+        "title": "Το πιο Καινοτόμο Τετραγωνικό Μίλι στον Πλανήτη (Biotech Hub)",
+        "category": "landmark",
+        "authorType": "official",
+        "authorName": "Δήμος Cambridge & MIT Innovation Initiative",
+        "verified": true,
+        "story": "Η απόλυτη μεταμόρφωση. Τα παλιά τούβλινα εργοστάσια αντικαταστάθηκαν από εργαστήρια γενετικής, κέντρα βιοτεχνολογίας και ερευνητικά hubs όπου αναπτύχθηκαν τα εμβόλια mRNA.",
+        "photos": [
+          {
+            "url": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&auto=format&fit=crop&q=80",
+            "caption": "Σύγχρονα κτίρια ερευνών βιοτεχνολογίας στο Kendall Square",
+            "year": 2024,
+            "credit": "Kendall Square Association"
+          }
+        ],
+        "memories": [
+          {
+            "author": "Δρ. Μαρία Δ.",
+            "year": 2021,
+            "text": "Εδώ ζήσαμε τις ιστορικές ημέρες της έρευνας για τη βιοϊατρική. Μια γειτονιά που αλλάζει τον κόσμο."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "salem-spot-derby-wharf",
+    "cityId": "salem",
+    "name": "Αποβάθρα Derby Wharf & Παλαιό Τελωνείο",
+    "englishName": "Historic Derby Wharf",
+    "coords": [42.5186, -70.8872],
+    "address": "160 Derby St, Salem, MA",
+    "chronicles": [
+      {
+        "id": "salem-1",
+        "fromYear": 1900,
+        "toYear": 1965,
+        "title": "Αποθήκες Αλιευτικών Σκαφών & Εργαστήρια Καραβόπανων",
+        "category": "business",
+        "authorType": "citizen",
+        "authorName": "Ένωση Αλιέων Βόρειας Ακτής (North Shore Fishermen)",
+        "verified": false,
+        "story": "Μετά το τέλος της εποχής των μεγάλων ιστιοφόρων της Κίνας, η αποβάθρα έγινε ορμητήριο ψαράδων μπακαλιάρου και αστακών με ξύλινες καλύβες και δίχτυα απλωμένα στον ήλιο.",
+        "photos": [
+          {
+            "url": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800&auto=format&fit=crop&q=80",
+            "caption": "Παραδοσιακά ξύλινα αλιευτικά σκάφη στο λιμάνι του Σάλεμ (περ. 1952)",
+            "year": 1952,
+            "credit": "Salem Maritime Archive"
+          }
+        ],
+        "memories": [
+          {
+            "author": "Κώστας Β.",
+            "year": 1958,
+            "text": "Ερχόμασταν με τον θείο μου να πάρουμε φρέσκο ψάρι κατευθείαν από τα καΐκια. Οι ιστορίες των καπεταναίων ήταν μαγικές."
+          }
+        ]
+      },
+      {
+        "id": "salem-2",
+        "fromYear": 1966,
+        "toYear": 2026,
+        "title": "Εθνικός Ιστορικός Τόπος & Μουσείο Ναυτιλίας",
+        "category": "culture",
+        "authorType": "official",
+        "authorName": "National Park Service (ΗΠΑ)",
+        "verified": true,
+        "story": "Αποκατάσταση της αποβάθρας μήκους μισού μιλίου και του ιστορικού φάρου Derby Wharf Light (1871), ως κορυφαίου ζωντανού μνημείου αμερικανικής ναυτικής ιστορίας.",
+        "photos": [
+          {
+            "url": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&auto=format&fit=crop&q=80",
+            "caption": "Η αποβάθρα Derby Wharf και ο ιστορικός φάρος στο ηλιοβασίλεμα",
+            "year": 2023,
+            "credit": "National Park Service"
+          }
+        ],
+        "memories": [
+          {
+            "author": "Νατάσα Λ.",
+            "year": 2022,
+            "text": "Μια μοναδική βόλτα μέσα στον ωκεανό. Νιώθεις σαν να ταξιδεύεις πίσω στον 18ο και 19ο αιώνα."
+          }
+        ]
+      }
+    ]
+  }
+]

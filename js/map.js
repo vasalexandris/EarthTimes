@@ -1,7 +1,7 @@
 /**
  * Map Module
  * Handles Leaflet map initialization, multiple base map layers (Satellite, Streets, Topo, Dark),
- * polygon highlights, markers, and camera animations.
+ * polygon highlights, markers, time capsules, and camera animations.
  */
 
 let map = null;
@@ -10,6 +10,7 @@ let currentBaseLayerKey = 'dark'; // default to cinematic dark
 let statePolygonLayer = null;
 let cityMarkersGroup = null;
 let poiMarkersGroup = null;
+let timeCapsuleMarkersGroup = null;
 
 // Tile Layer Providers Configuration
 export const BASE_LAYERS = {
@@ -90,6 +91,7 @@ export function initMap(containerId, initialCoords = [20.0, 0.0], initialZoom = 
   // Layer groups for markers
   cityMarkersGroup = L.layerGroup().addTo(map);
   poiMarkersGroup = L.layerGroup().addTo(map);
+  timeCapsuleMarkersGroup = L.layerGroup().addTo(map);
 
   // Draw State boundary highlight
   drawStateHighlight(onStateClick);
@@ -108,9 +110,10 @@ export function switchBaseLayer(layerKey) {
   activeBaseLayer = L.tileLayer(config.url, config.options).addTo(map);
   currentBaseLayerKey = layerKey;
 
-  // Ensure city and POI layers remain on top
+  // Ensure marker layers remain on top
   if (cityMarkersGroup) cityMarkersGroup.bringToFront();
   if (poiMarkersGroup) poiMarkersGroup.bringToFront();
+  if (timeCapsuleMarkersGroup) timeCapsuleMarkersGroup.bringToFront();
 
   return currentBaseLayerKey;
 }
@@ -240,6 +243,56 @@ export function renderCityPois(city, currentPoiFilter = 'all', onPoiMoreClick) {
     poiMarker.bindPopup(popupEl, { offset: [0, -10] });
     poiMarkersGroup.addLayer(poiMarker);
   });
+}
+
+/**
+ * Render Time Capsule Markers (Temporal Spots)
+ */
+export function renderTimeCapsulePins(spots, activeYear, onSpotClick) {
+  if (!timeCapsuleMarkersGroup) return;
+  timeCapsuleMarkersGroup.clearLayers();
+
+  if (!spots || !spots.length) return;
+
+  spots.forEach(spot => {
+    // Find active chronicle for this year
+    let activeChronicle = null;
+    if (activeYear === 'all') {
+      activeChronicle = spot.chronicles[spot.chronicles.length - 1];
+    } else {
+      const y = parseInt(activeYear, 10);
+      activeChronicle = spot.chronicles.find(c => c.fromYear <= y && (c.toYear === null || c.toYear >= y));
+    }
+
+    const eraText = activeChronicle 
+      ? (activeChronicle.toYear ? `${activeChronicle.fromYear}-${activeChronicle.toYear}` : `${activeChronicle.fromYear}+`)
+      : 'Ιστορία';
+
+    const customIcon = L.divIcon({
+      className: 'time-capsule-marker-wrapper',
+      html: `
+        <div class="custom-poi-marker marker-pulse cursor-pointer group">
+          <div class="px-2.5 py-1 rounded-full text-xs font-black shadow-2xl border-2 border-amber-300 bg-amber-500 text-slate-950 flex items-center gap-1.5 transition transform group-hover:scale-110">
+            <i class="fa-solid fa-hourglass-start text-[10px]"></i>
+            <span class="text-[10px] font-mono bg-slate-900 text-amber-300 px-1.5 py-0.2 rounded-full">${eraText}</span>
+            <span class="truncate max-w-[110px]">${activeChronicle ? activeChronicle.title : spot.name}</span>
+          </div>
+        </div>
+      `,
+      iconSize: [180, 36],
+      iconAnchor: [90, 18]
+    });
+
+    const marker = L.marker(spot.coords, { icon: customIcon });
+    marker.on('click', () => {
+      if (onSpotClick) onSpotClick(spot.id, activeYear);
+    });
+    timeCapsuleMarkersGroup.addLayer(marker);
+  });
+}
+
+export function clearTimeCapsules() {
+  if (timeCapsuleMarkersGroup) timeCapsuleMarkersGroup.clearLayers();
 }
 
 export function clearPois() {

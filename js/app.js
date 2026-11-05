@@ -1,11 +1,13 @@
 /**
  * App Module (Main Orchestrator)
- * Coordinates Landing Page, World & Regional Data, Leaflet Map, Base Layers, and UI Dossier.
+ * Coordinates Landing Page, World & Regional Data, Leaflet Map, Base Layers,
+ * UI Dossier, and Time Machine (Temporal Slider & Time Capsule Spots).
  */
 
 import { loadWorldData, loadStateData } from './data-service.js';
 import * as MapModule from './map.js';
 import * as UIModule from './ui.js';
+import * as TimeMachine from './time-machine.js';
 
 // Application State
 let worldData = null;
@@ -59,6 +61,35 @@ export function setMapLayer(layerKey) {
   UIModule.updateBaseLayerUI(activeKey);
 }
 
+export function renderCurrentTimeCapsules() {
+  if (currentScope === 'world') {
+    MapModule.clearTimeCapsules();
+    return;
+  }
+
+  const spots = TimeMachine.getFilteredSpots(currentScope === 'city' ? currentCityId : null);
+  const activeYear = TimeMachine.getSelectedYear();
+  MapModule.renderTimeCapsulePins(spots, activeYear, (spotId, year) => {
+    TimeMachine.openSpotTimeCapsule(spotId, year);
+  });
+}
+
+export function onTimeSliderChange(year) {
+  TimeMachine.setSelectedYear(year);
+  renderCurrentTimeCapsules();
+}
+
+export function onTimeDecadeClick(year) {
+  TimeMachine.setSelectedYear(year);
+  renderCurrentTimeCapsules();
+}
+
+export function toggleTimePlayback() {
+  TimeMachine.togglePlayback((year) => {
+    renderCurrentTimeCapsules();
+  });
+}
+
 export function flyToWorld() {
   currentScope = 'world';
   currentCityId = null;
@@ -71,6 +102,7 @@ export function flyToWorld() {
   MapModule.toggleStateHighlight(false);
   MapModule.clearCityPins();
   MapModule.clearPois();
+  MapModule.clearTimeCapsules();
 
   if (worldData) {
     UIModule.renderDossier(worldData.entity, 'world', currentTab);
@@ -92,6 +124,7 @@ export function flyToUSA() {
     UIModule.renderDossier(massachusettsData.state, 'state', currentTab);
   }
   MapModule.clearPois();
+  renderCurrentTimeCapsules();
 }
 
 export function flyToState(stateId = 'massachusetts') {
@@ -110,6 +143,7 @@ export function flyToState(stateId = 'massachusetts') {
   MapModule.renderCityPins(massachusettsData.cities, currentScope, currentCityId, flyToCity);
   MapModule.clearPois();
   UIModule.renderDossier(state, 'state', currentTab);
+  renderCurrentTimeCapsules();
 }
 
 export function flyToCity(cityId) {
@@ -128,7 +162,8 @@ export function flyToCity(cityId) {
   MapModule.toggleStateHighlight(false);
   MapModule.renderCityPins(massachusettsData.cities, currentScope, currentCityId, flyToCity);
   MapModule.renderCityPois(city, currentPoiFilter, switchTab);
-  UIModule.renderDossier(city, 'city', currentTab);
+  UIModule.renderDossier(city, false, currentTab);
+  renderCurrentTimeCapsules();
 }
 
 export function handleJumpChange(value) {
@@ -204,16 +239,31 @@ window.switchTab = switchTab;
 window.togglePoiCategory = togglePoiCategory;
 window.narrateBrief = narrateBrief;
 
+// Time Machine window bindings
+window.onTimeSliderChange = onTimeSliderChange;
+window.onTimeDecadeClick = onTimeDecadeClick;
+window.toggleTimePlayback = toggleTimePlayback;
+window.openSpotTimeCapsule = TimeMachine.openSpotTimeCapsule;
+window.closeSpotTimeCapsule = TimeMachine.closeSpotTimeCapsule;
+window.selectSpotEra = TimeMachine.selectSpotEra;
+window.openAddMemoryForm = TimeMachine.openAddMemoryForm;
+window.closeAddMemoryModal = TimeMachine.closeAddMemoryModal;
+window.openAddEraForm = TimeMachine.openAddEraForm;
+window.closeAddEraModal = TimeMachine.closeAddEraModal;
+window.submitMemory = TimeMachine.submitMemory;
+window.submitNewEra = TimeMachine.submitNewEra;
+
 // App Initializer
 async function init() {
   try {
     // 1. Update Today's Date in UI
     UIModule.updateCurrentDate();
 
-    // 2. Load World and Regional datasets in parallel
+    // 2. Load World, Regional, and Time-Capsule datasets in parallel
     [worldData, massachusettsData] = await Promise.all([
       loadWorldData(),
-      loadStateData('massachusetts')
+      loadStateData('massachusetts'),
+      TimeMachine.initTimeMachine()
     ]);
 
     // 3. Initialize Leaflet Map centered on Earth
@@ -226,7 +276,10 @@ async function init() {
     // 4. Set initial base layer UI state (Dark Voyager default)
     UIModule.updateBaseLayerUI('dark');
 
-    // 5. Initial Dossier display: Planet Earth
+    // 5. Initial Time Slider setup
+    TimeMachine.updateTimeSliderUI();
+
+    // 6. Initial Dossier display: Planet Earth
     flyToWorld();
   } catch (error) {
     console.error('Failed to initialize EarthTimes:', error);

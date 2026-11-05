@@ -263,6 +263,43 @@
           </div>
         </div>
 
+        <!-- ================= TIME SLIDER & TEMPORAL CONTROLLER (FLOATING OVERLAY) ================= -->
+        <div id="timeSliderWidget" class="absolute bottom-16 sm:bottom-6 left-1/2 -translate-x-1/2 z-[400] w-[95%] max-w-2xl bg-slate-950/95 backdrop-blur-md border border-amber-500/40 rounded-2xl p-3 shadow-2xl">
+          <div class="flex items-center justify-between gap-3 mb-2">
+            <div class="flex items-center gap-2">
+              <button id="timePlayBtn" onclick="toggleTimePlayback()" title="Αυτόματη Αναπαραγωγή Εποχών (Play/Pause)" class="h-8 w-8 rounded-lg bg-amber-500 hover:bg-amber-400 text-slate-950 flex items-center justify-center font-black transition shadow">
+                <i class="fa-solid fa-play text-xs"></i>
+              </button>
+              <div>
+                <span class="text-xs font-black text-amber-400 uppercase tracking-wider flex items-center gap-1.5">
+                  <i class="fa-solid fa-hourglass-start text-[11px]"></i>
+                  <span id="currentYearDisplay">Όλες οι Εποχές</span>
+                </span>
+                <span id="activeEraBadge" class="text-[10px] font-semibold text-emerald-400 bg-emerald-950/60 px-2 py-0.5 rounded border border-emerald-700/50">
+                  Συνολική Ιστορική Κάλυψη
+                </span>
+              </div>
+            </div>
+
+            <!-- Decade quick jump buttons -->
+            <div class="hidden sm:flex items-center gap-1">
+              <button onclick="onTimeDecadeClick('all')" data-year="all" class="decade-btn px-2 py-1 rounded bg-amber-500 text-slate-950 font-bold text-xs shadow transition">Όλα</button>
+              <button onclick="onTimeDecadeClick(1920)" data-year="1920" class="decade-btn px-2 py-1 rounded bg-slate-800 text-slate-300 hover:bg-slate-700 text-xs transition">1920</button>
+              <button onclick="onTimeDecadeClick(1950)" data-year="1950" class="decade-btn px-2 py-1 rounded bg-slate-800 text-slate-300 hover:bg-slate-700 text-xs transition">1950</button>
+              <button onclick="onTimeDecadeClick(1975)" data-year="1975" class="decade-btn px-2 py-1 rounded bg-slate-800 text-slate-300 hover:bg-slate-700 text-xs transition">1975</button>
+              <button onclick="onTimeDecadeClick(2000)" data-year="2000" class="decade-btn px-2 py-1 rounded bg-slate-800 text-slate-300 hover:bg-slate-700 text-xs transition">2000</button>
+              <button onclick="onTimeDecadeClick(2026)" data-year="2026" class="decade-btn px-2 py-1 rounded bg-slate-800 text-slate-300 hover:bg-slate-700 text-xs transition">2026</button>
+            </div>
+          </div>
+
+          <!-- Slider Range Input -->
+          <div class="flex items-center gap-3">
+            <span class="text-[10px] font-mono text-slate-400 font-bold">1900</span>
+            <input type="range" id="timeYearRange" min="1900" max="2026" step="1" value="2026" oninput="onTimeSliderChange(this.value)" class="flex-1 h-2 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-amber-500">
+            <span class="text-[10px] font-mono text-amber-400 font-bold">2026</span>
+          </div>
+        </div>
+
         <!-- POI Filter buttons (Active when in City) -->
         <div class="absolute bottom-4 left-4 z-[400] bg-slate-900/95 backdrop-blur-md border border-slate-700/80 rounded-xl p-2 shadow-2xl flex flex-wrap gap-1.5 text-xs max-w-[90%] md:max-w-none">
           <span class="text-[11px] uppercase tracking-wider text-slate-400 px-2 py-1 font-semibold flex items-center gap-1">
@@ -365,6 +402,127 @@
 
       </aside>
     </main>
+  </div>
+
+  <!-- ================= 3. SPOT TIME CAPSULE MODAL ================= -->
+  <div id="timeCapsuleModal" class="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/80 backdrop-blur-md p-4 hidden">
+    <div id="timeCapsuleModalBody" class="w-full max-w-3xl bg-slate-900 border border-amber-500/50 rounded-3xl shadow-2xl overflow-hidden flex flex-col">
+      <!-- Injected dynamically by TimeMachine.renderTimeCapsuleModalContent -->
+    </div>
+  </div>
+
+  <!-- ================= 4. ADD CITIZEN MEMORY MODAL ================= -->
+  <div id="addMemoryModal" class="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/85 backdrop-blur-md p-4 hidden">
+    <div class="w-full max-w-lg bg-slate-900 border border-emerald-500/50 rounded-2xl p-6 shadow-2xl">
+      <div class="flex items-center justify-between mb-4">
+        <h3 class="text-lg font-bold text-white flex items-center gap-2">
+          <i class="fa-solid fa-comment-dots text-emerald-400"></i> Προσθήκη Προσωπικής Ανάμνησης
+        </h3>
+        <button onclick="closeAddMemoryModal()" class="text-slate-400 hover:text-white">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <form id="memoryForm" onsubmit="submitMemory(event)" class="space-y-4">
+        <input type="hidden" id="formSpotId">
+        <input type="hidden" id="formChronicleId">
+
+        <div>
+          <label class="block text-xs font-semibold text-slate-300 mb-1">Το Όνομά σας (ή Ψευδώνυμο)</label>
+          <input type="text" id="memoryAuthor" required placeholder="π.χ. Γιάννης Μ. (Κάτοικος)" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-3 py-2 text-sm text-white focus:ring-2 focus:ring-emerald-500 outline-none">
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-slate-300 mb-1">Έτος Αναφοράς (Περίπου)</label>
+          <input type="number" id="memoryYear" min="1900" max="2026" placeholder="π.χ. 1968" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-3 py-2 text-sm text-white focus:ring-2 focus:ring-emerald-500 outline-none">
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-slate-300 mb-1">Η Ιστορία / Ανάμνησή σας</label>
+          <textarea id="memoryText" rows="3" required placeholder="Περιγράψτε τι θυμάστε από αυτό το σημείο..." class="w-full bg-slate-800 border border-slate-700 rounded-xl px-3 py-2 text-sm text-white focus:ring-2 focus:ring-emerald-500 outline-none"></textarea>
+        </div>
+
+        <div class="flex items-center justify-end gap-2 pt-2">
+          <button type="button" onclick="closeAddMemoryModal()" class="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-750 text-slate-300 text-xs font-semibold transition">Ακύρωση</button>
+          <button type="submit" class="px-5 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold shadow transition flex items-center gap-1.5">
+            <i class="fa-solid fa-check"></i> Καταχώριση
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ================= 5. ADD NEW ERA / CHAPTER MODAL ================= -->
+  <div id="addEraModal" class="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/85 backdrop-blur-md p-4 hidden">
+    <div class="w-full max-w-lg bg-slate-900 border border-sky-500/50 rounded-2xl p-6 shadow-2xl max-h-[90vh] overflow-y-auto">
+      <div class="flex items-center justify-between mb-4">
+        <h3 class="text-lg font-bold text-white flex items-center gap-2">
+          <i class="fa-solid fa-clock-rotate-left text-sky-400"></i> Νέα Χρονική Περίοδος Σημείου
+        </h3>
+        <button onclick="closeAddEraModal()" class="text-slate-400 hover:text-white">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <form id="eraForm" onsubmit="submitNewEra(event)" class="space-y-4">
+        <input type="hidden" id="formNewEraSpotId">
+
+        <div>
+          <label class="block text-xs font-semibold text-slate-300 mb-1">Τίτλος Περιόδου / Επιχείρησης / Χρήσης</label>
+          <input type="text" id="eraTitle" required placeholder="π.χ. Ζαχαροπλαστείο 'Η Δροσιά'" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-3 py-2 text-sm text-white focus:ring-2 focus:ring-sky-500 outline-none">
+        </div>
+
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block text-xs font-semibold text-slate-300 mb-1">Από Έτος</label>
+            <input type="number" id="eraFromYear" min="1800" max="2026" required placeholder="1960" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-3 py-2 text-sm text-white focus:ring-2 focus:ring-sky-500 outline-none">
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-slate-300 mb-1">Έως Έτος (Κενό αν ισχύει σήμερα)</label>
+            <input type="number" id="eraToYear" min="1800" max="2026" placeholder="1965" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-3 py-2 text-sm text-white focus:ring-2 focus:ring-sky-500 outline-none">
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block text-xs font-semibold text-slate-300 mb-1">Τύπος Συνεισφέροντος</label>
+            <select id="eraAuthorType" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-3 py-2 text-sm text-white focus:ring-2 focus:ring-sky-500 outline-none">
+              <option value="citizen">👤 Συλλογική Μνήμη (Πολίτης)</option>
+              <option value="official">🏛️ Επίσημος Φορέας (Δήμος / Μουσείο)</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-slate-300 mb-1">Κατηγορία</label>
+            <select id="eraCategory" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-3 py-2 text-sm text-white focus:ring-2 focus:ring-sky-500 outline-none">
+              <option value="business">Εμπορικό / Κατάστημα</option>
+              <option value="culture">Πολιτισμός / Τέχνες</option>
+              <option value="landmark">Ιστορικό Ορόσημο</option>
+              <option value="residence">Κατοικία</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-slate-300 mb-1">Όνομα Συντάκτη / Φορέα</label>
+          <input type="text" id="eraAuthorName" placeholder="π.χ. Δήμος ή Οικογένεια Παπαδοπούλου" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-3 py-2 text-sm text-white focus:ring-2 focus:ring-sky-500 outline-none">
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-slate-300 mb-1">Ιστορική Αφήγηση / Περιγραφή</label>
+          <textarea id="eraStory" rows="3" required placeholder="Περιγράψτε τι υπήρχε στο σημείο εκείνη την περίοδο..." class="w-full bg-slate-800 border border-slate-700 rounded-xl px-3 py-2 text-sm text-white focus:ring-2 focus:ring-sky-500 outline-none"></textarea>
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-slate-300 mb-1">Σύνδεσμος Φωτογραφίας (URL - Προαιρετικό)</label>
+          <input type="url" id="eraPhotoUrl" placeholder="https://..." class="w-full bg-slate-800 border border-slate-700 rounded-xl px-3 py-2 text-sm text-white focus:ring-2 focus:ring-sky-500 outline-none">
+        </div>
+
+        <div class="flex items-center justify-end gap-2 pt-2">
+          <button type="button" onclick="closeAddEraModal()" class="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-750 text-slate-300 text-xs font-semibold transition">Ακύρωση</button>
+          <button type="submit" class="px-5 py-2 rounded-xl bg-sky-600 hover:bg-sky-500 text-white text-xs font-bold shadow transition flex items-center gap-1.5">
+            <i class="fa-solid fa-plus"></i> Προσθήκη Περιόδου
+          </button>
+        </div>
+      </form>
+    </div>
   </div>
 
   <!-- Modular Application Scripts -->
