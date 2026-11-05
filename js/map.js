@@ -1,12 +1,56 @@
 /**
  * Map Module
- * Handles Leaflet map initialization, layers, polygon highlights, markers, and animations.
+ * Handles Leaflet map initialization, multiple base map layers (Satellite, Streets, Topo, Dark),
+ * polygon highlights, markers, and camera animations.
  */
 
 let map = null;
+let activeBaseLayer = null;
+let currentBaseLayerKey = 'dark'; // default to cinematic dark
 let statePolygonLayer = null;
 let cityMarkersGroup = null;
 let poiMarkersGroup = null;
+
+// Tile Layer Providers Configuration
+export const BASE_LAYERS = {
+  dark: {
+    name: 'Dark Voyager',
+    icon: 'fa-moon',
+    url: 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',
+    options: {
+      maxZoom: 19,
+      subdomains: 'abcd',
+      attribution: '&copy; <a href="https://openstreetmap.org">OSM</a> &copy; <a href="https://carto.com/">CARTO</a>'
+    }
+  },
+  satellite: {
+    name: 'Δορυφορικός',
+    icon: 'fa-satellite',
+    url: 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
+    options: {
+      maxZoom: 19,
+      attribution: 'Tiles &copy; <a href="https://www.esri.com/">Esri</a>, Maxar, Earthstar Geographics'
+    }
+  },
+  osm: {
+    name: 'Πολιτικός / Οδικός',
+    icon: 'fa-map',
+    url: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+    options: {
+      maxZoom: 19,
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }
+  },
+  topo: {
+    name: 'Γεωγραφικός / Τοπογραφικός',
+    icon: 'fa-mountain-sun',
+    url: 'https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png',
+    options: {
+      maxZoom: 17,
+      attribution: 'Map &copy; <a href="https://opentopomap.org">OpenTopoMap</a>'
+    }
+  }
+};
 
 // Generalized polygon vertices for Massachusetts bounding highlight
 const MASSACHUSETTS_POLYGON = [
@@ -25,25 +69,23 @@ const MASSACHUSETTS_POLYGON = [
   [42.6000, -70.6000]
 ];
 
-export function initMap(containerId, initialCoords, initialZoom, onStateClick) {
+export function initMap(containerId, initialCoords = [20.0, 0.0], initialZoom = 2.3, onStateClick) {
   map = L.map(containerId, {
     zoomControl: false,
-    attributionControl: false
+    attributionControl: false,
+    minZoom: 2,
+    maxBounds: [[-85, -180], [85, 180]],
+    worldCopyJump: true
   }).setView(initialCoords, initialZoom);
 
   // Zoom control in bottom-right
   L.control.zoom({ position: 'bottomright' }).addTo(map);
 
-  // High-Quality OpenStreetMap Tile Layer
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    maxZoom: 19,
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-  }).addTo(map);
+  // Set default base tile layer
+  switchBaseLayer(currentBaseLayerKey);
 
   // Compact attribution
-  L.control.attribution({ position: 'bottomright', prefix: false })
-    .addAttribution('&copy; <a href="https://openstreetmap.org" class="text-sky-400">OSM</a> &copy; <a href="https://carto.com/" class="text-sky-400">CARTO</a>')
-    .addTo(map);
+  L.control.attribution({ position: 'bottomright', prefix: false }).addTo(map);
 
   // Layer groups for markers
   cityMarkersGroup = L.layerGroup().addTo(map);
@@ -53,6 +95,28 @@ export function initMap(containerId, initialCoords, initialZoom, onStateClick) {
   drawStateHighlight(onStateClick);
 
   return map;
+}
+
+export function switchBaseLayer(layerKey) {
+  if (!map || !BASE_LAYERS[layerKey]) return;
+
+  if (activeBaseLayer) {
+    map.removeLayer(activeBaseLayer);
+  }
+
+  const config = BASE_LAYERS[layerKey];
+  activeBaseLayer = L.tileLayer(config.url, config.options).addTo(map);
+  currentBaseLayerKey = layerKey;
+
+  // Ensure city and POI layers remain on top
+  if (cityMarkersGroup) cityMarkersGroup.bringToFront();
+  if (poiMarkersGroup) poiMarkersGroup.bringToFront();
+
+  return currentBaseLayerKey;
+}
+
+export function getCurrentBaseLayerKey() {
+  return currentBaseLayerKey;
 }
 
 export function drawStateHighlight(onStateClick) {
@@ -74,9 +138,20 @@ export function drawStateHighlight(onStateClick) {
   }
 }
 
+export function toggleStateHighlight(visible) {
+  if (!statePolygonLayer || !map) return;
+  if (visible) {
+    if (!map.hasLayer(statePolygonLayer)) statePolygonLayer.addTo(map);
+  } else {
+    if (map.hasLayer(statePolygonLayer)) map.removeLayer(statePolygonLayer);
+  }
+}
+
 export function renderCityPins(cities, currentScope, currentCityId, onCityClick) {
   if (!cityMarkersGroup) return;
   cityMarkersGroup.clearLayers();
+
+  if (!cities || currentScope === 'world') return;
 
   cities.forEach(city => {
     const isSelected = (currentScope === 'city' && currentCityId === city.id);
@@ -171,6 +246,10 @@ export function clearPois() {
   if (poiMarkersGroup) poiMarkersGroup.clearLayers();
 }
 
+export function clearCityPins() {
+  if (cityMarkersGroup) cityMarkersGroup.clearLayers();
+}
+
 export function flyToCoords(coords, zoom, duration = 1.5) {
   if (!map) return;
   map.flyTo(coords, zoom, {
@@ -179,10 +258,20 @@ export function flyToCoords(coords, zoom, duration = 1.5) {
   });
 }
 
+export function flyToWorld() {
+  flyToCoords([20.0, 0.0], 2.3, 2.0);
+}
+
 export function flyToUSA() {
   flyToCoords([39.8283, -98.5795], 4.3, 1.8);
 }
 
 export function getMapInstance() {
   return map;
+}
+
+export function invalidateMapSize() {
+  if (map) {
+    setTimeout(() => map.invalidateSize(), 200);
+  }
 }

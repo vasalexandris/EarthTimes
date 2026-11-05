@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fly to the States of the USA - Διαδραστικό Ντοκιμαντέρ</title>
+  <title>EarthTimes - Το Παγκόσμιο Ημερολόγιο & Χρονοκάψουλα της Γης</title>
   
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -43,184 +43,329 @@
   <!-- Custom Styles -->
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="bg-slate-900 text-slate-100 font-sans h-screen flex flex-col overflow-hidden select-none">
+<body class="bg-slate-950 text-slate-100 font-sans h-screen flex flex-col overflow-hidden select-none">
 
-  <!-- ================= TOP NAVIGATION BAR ================= -->
-  <header class="bg-slate-900/90 backdrop-blur-md border-b border-slate-800 px-4 py-2.5 flex items-center justify-between shrink-0 z-20 shadow-md">
-    <div class="flex items-center gap-3">
-      <div class="h-10 w-10 rounded-xl bg-gradient-to-tr from-sky-600 to-indigo-600 flex items-center justify-center text-white shadow-lg shadow-sky-900/40">
-        <i class="fa-solid fa-plane-departure text-base"></i>
-      </div>
-      <div>
-        <div class="flex items-center gap-2">
-          <h1 class="font-bold text-base md:text-lg tracking-tight text-white flex items-center gap-1.5">
-            Fly to the States <span class="text-xs bg-amber-500/20 text-amber-300 border border-amber-500/30 font-semibold px-2 py-0.5 rounded-full">USA Documentary</span>
-          </h1>
+  <!-- ================= 1. LANDING PAGE OVERLAY ================= -->
+  <section id="landingPage" class="fixed inset-0 z-50 overflow-y-auto bg-cosmic flex flex-col justify-between">
+    <!-- Top Nav on Landing -->
+    <header class="px-6 py-5 flex items-center justify-between max-w-7xl mx-auto w-full">
+      <div class="flex items-center gap-3">
+        <div class="h-11 w-11 rounded-2xl bg-gradient-to-tr from-sky-500 via-indigo-500 to-emerald-400 flex items-center justify-center text-white shadow-xl shadow-sky-900/50">
+          <i class="fa-solid fa-earth-americas text-xl animate-pulse"></i>
         </div>
-        <p class="text-xs text-slate-400 hidden sm:block">Διαδραστικός Γεωγραφικός, Ιστορικός & Πολιτισμικός Άτλαντας</p>
-      </div>
-    </div>
-
-    <!-- Quick Location Flight Selector & Breadcrumb -->
-    <div class="flex items-center gap-2 text-xs md:text-sm">
-      <nav id="breadcrumbs" class="flex items-center gap-1 text-slate-400 bg-slate-800/80 px-3 py-1.5 rounded-lg border border-slate-700">
-        <button onclick="flyToUSA()" class="hover:text-sky-400 flex items-center gap-1 transition">
-          <i class="fa-solid fa-earth-americas"></i> ΗΠΑ
-        </button>
-        <span class="text-slate-600">/</span>
-        <button id="bc-state" onclick="flyToState('massachusetts')" class="text-sky-300 font-medium hover:text-sky-200 transition">
-          Μασαχουσέτη
-        </button>
-        <span id="bc-sep" class="text-slate-600 hidden">/</span>
-        <span id="bc-city" class="text-amber-400 font-semibold hidden truncate max-w-[100px] md:max-w-none">Βοστώνη</span>
-      </nav>
-
-      <!-- Quick Tour Jump Menu -->
-      <select id="quickJumpSelect" onchange="handleJumpChange(this.value)" class="bg-slate-800 border border-slate-700 text-slate-200 rounded-lg px-2.5 py-1.5 focus:ring-2 focus:ring-sky-500 outline-none text-xs md:text-sm cursor-pointer">
-        <optgroup label="Επίπεδο Επικράτειας">
-          <option value="usa">🇺🇸 Επισκόπηση ΗΠΑ</option>
-          <option value="state:massachusetts" selected>🏛️ Μασαχουσέτη (Bay State)</option>
-        </optgroup>
-        <optgroup label="Πόλεις Μασαχουσέτης">
-          <option value="city:boston">📍 Βοστώνη (Boston)</option>
-          <option value="city:cambridge">🎓 Κέιμπριτζ (Cambridge)</option>
-          <option value="city:salem">🕯️ Σάλεμ (Salem)</option>
-          <option value="city:plymouth">⚓ Πλύμουθ (Plymouth)</option>
-          <option value="city:worcester">🏭 Γουόρστερ (Worcester)</option>
-        </optgroup>
-      </select>
-    </div>
-  </header>
-
-  <!-- ================= MAIN WORKSPACE (MAP + DOSSIER PANEL) ================= -->
-  <main class="flex-1 flex flex-col lg:flex-row relative overflow-hidden">
-    
-    <!-- MAP CONTAINER -->
-    <div class="flex-1 relative h-1/2 lg:h-full bg-slate-950">
-      <div id="map" class="w-full h-full z-10"></div>
-
-      <!-- MAP FLOATING OVERLAYS -->
-      <!-- Flight Status Indicator -->
-      <div id="flightBadge" class="absolute top-4 left-4 z-[400] bg-slate-900/90 backdrop-blur-md border border-slate-700/80 rounded-xl px-3 py-2 text-xs shadow-xl flex items-center gap-2.5 transition">
-        <span class="relative flex h-2.5 w-2.5">
-          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75"></span>
-          <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-sky-500"></span>
-        </span>
-        <span id="flightStatusText" class="font-medium text-slate-300">Προβολή: Πολιτεία Μασαχουσέτη</span>
-      </div>
-
-      <!-- Layer / Filter controls on Map -->
-      <div class="absolute bottom-4 left-4 z-[400] bg-slate-900/95 backdrop-blur-md border border-slate-700/80 rounded-xl p-2 shadow-2xl flex flex-wrap gap-1.5 text-xs max-w-[90%] md:max-w-none">
-        <span class="text-[11px] uppercase tracking-wider text-slate-400 px-2 py-1 font-semibold flex items-center gap-1">
-          <i class="fa-solid fa-filter"></i> Σημεία:
-        </span>
-        <button onclick="togglePoiCategory('all')" id="filter-all" class="poi-filter-btn px-2.5 py-1 rounded-md bg-sky-600 text-white font-medium hover:bg-sky-500 transition">Όλα</button>
-        <button onclick="togglePoiCategory('history')" id="filter-history" class="poi-filter-btn px-2.5 py-1 rounded-md bg-slate-800 text-slate-300 hover:bg-slate-700 transition">🏛️ Ιστορικά</button>
-        <button onclick="togglePoiCategory('culture')" id="filter-culture" class="poi-filter-btn px-2.5 py-1 rounded-md bg-slate-800 text-slate-300 hover:bg-slate-700 transition">🎭 Πολιτισμός & Πανεπιστήμια</button>
-        <button onclick="togglePoiCategory('nature')" id="filter-nature" class="poi-filter-btn px-2.5 py-1 rounded-md bg-slate-800 text-slate-300 hover:bg-slate-700 transition">🌲 Φύση / Γεωγραφία</button>
-      </div>
-
-      <!-- Map Reset / Fly to State shortcut -->
-      <div class="absolute top-4 right-4 z-[400] flex flex-col gap-2">
-        <button onclick="flyToUSA()" title="Επιστροφή σε ολόκληρες τις ΗΠΑ" class="h-9 w-9 bg-slate-900/90 hover:bg-slate-800 text-slate-200 border border-slate-700 rounded-lg flex items-center justify-center shadow-lg transition">
-          <i class="fa-solid fa-globe text-sm"></i>
-        </button>
-        <button onclick="flyToState('massachusetts')" title="Επαναφορά στην Πολιτεία" class="h-9 w-9 bg-slate-900/90 hover:bg-slate-800 text-sky-400 border border-slate-700 rounded-lg flex items-center justify-center shadow-lg transition">
-          <i class="fa-solid fa-expand text-sm"></i>
-        </button>
-      </div>
-    </div>
-
-    <!-- ================= RIGHT PANEL: INTERACTIVE DOSSIER ================= -->
-    <aside id="dossierPanel" class="w-full lg:w-[480px] xl:w-[540px] h-1/2 lg:h-full bg-slate-900 border-t lg:border-t-0 lg:border-l border-slate-800 flex flex-col z-20 shadow-2xl relative">
-      
-      <!-- Panel Header & Identity Banner -->
-      <div id="panelHeader" class="p-4 sm:p-5 border-b border-slate-800 shrink-0 bg-gradient-to-b from-slate-800/60 to-slate-900/90">
-        <div class="flex items-start justify-between gap-3">
-          <div>
-            <div class="flex items-center gap-2 mb-1">
-              <span id="badgeCategory" class="px-2 py-0.5 rounded text-[11px] font-bold tracking-wide uppercase bg-sky-900/60 text-sky-300 border border-sky-700/50">
-                Πολιτειακός Φάκελος
-              </span>
-              <span id="badgeNickname" class="text-xs text-amber-400/90 italic">
-                "The Bay State"
-              </span>
-            </div>
-            <h2 id="entityTitle" class="text-xl sm:text-2xl font-black tracking-tight text-white flex items-center gap-2">
-              Μασαχουσέτη
-            </h2>
-            <p id="entitySubtitle" class="text-xs sm:text-sm text-slate-400 mt-0.5 font-serif">
-              Commonwealth of Massachusetts • Πρωτεύουσα: Βοστώνη
-            </p>
-          </div>
-
-          <!-- Quick tour navigation buttons (Prev / Next) -->
-          <div class="flex items-center gap-1 shrink-0 bg-slate-800/80 p-1 rounded-xl border border-slate-700">
-            <button onclick="navigateTour(-1)" title="Προηγούμενο στην περιήγηση" class="p-2 hover:bg-slate-700 rounded-lg text-slate-300 hover:text-white transition">
-              <i class="fa-solid fa-chevron-left text-xs"></i>
-            </button>
-            <button onclick="navigateTour(1)" title="Επόμενο στην περιήγηση" class="p-2 hover:bg-slate-700 rounded-lg text-slate-300 hover:text-white transition">
-              <i class="fa-solid fa-chevron-right text-xs"></i>
-            </button>
-          </div>
-        </div>
-
-        <!-- Quick Stat Pills -->
-        <div id="quickStatsRow" class="grid grid-cols-3 gap-2 mt-3 pt-3 border-t border-slate-800/80 text-center">
-          <div class="bg-slate-800/40 border border-slate-700/40 rounded-lg p-1.5">
-            <div class="text-[10px] text-slate-400 uppercase">Πληθυσμός</div>
-            <div id="stat1" class="text-xs sm:text-sm font-semibold text-slate-100">7.0M</div>
-          </div>
-          <div class="bg-slate-800/40 border border-slate-700/40 rounded-lg p-1.5">
-            <div class="text-[10px] text-slate-400 uppercase">Ίδρυση / Ενσωμ.</div>
-            <div id="stat2" class="text-xs sm:text-sm font-semibold text-amber-300">1788 (6η)</div>
-          </div>
-          <div class="bg-slate-800/40 border border-slate-700/40 rounded-lg p-1.5">
-            <div class="text-[10px] text-slate-400 uppercase">Έκταση</div>
-            <div id="stat3" class="text-xs sm:text-sm font-semibold text-sky-300">27,336 km²</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Categories Navigation Tabs -->
-      <div class="flex border-b border-slate-800 shrink-0 bg-slate-900 text-xs sm:text-sm font-medium overflow-x-auto">
-        <button onclick="switchTab('geo')" id="tab-geo" class="tab-btn flex-1 py-2.5 px-3 border-b-2 border-sky-500 text-sky-400 font-semibold flex items-center justify-center gap-1.5 whitespace-nowrap">
-          <i class="fa-solid fa-mountain"></i> Γεωγραφία
-        </button>
-        <button onclick="switchTab('hist')" id="tab-hist" class="tab-btn flex-1 py-2.5 px-3 border-b-2 border-transparent text-slate-400 hover:text-slate-200 flex items-center justify-center gap-1.5 whitespace-nowrap">
-          <i class="fa-solid fa-landmark"></i> Ιστορία
-        </button>
-        <button onclick="switchTab('demo')" id="tab-demo" class="tab-btn flex-1 py-2.5 px-3 border-b-2 border-transparent text-slate-400 hover:text-slate-200 flex items-center justify-center gap-1.5 whitespace-nowrap">
-          <i class="fa-solid fa-users"></i> Κοινωνία
-        </button>
-        <button onclick="switchTab('cult')" id="tab-cult" class="tab-btn flex-1 py-2.5 px-3 border-b-2 border-transparent text-slate-400 hover:text-slate-200 flex items-center justify-center gap-1.5 whitespace-nowrap">
-          <i class="fa-solid fa-palette"></i> Πολιτισμός
-        </button>
-        <button onclick="switchTab('timeline')" id="tab-timeline" class="tab-btn flex-1 py-2.5 px-3 border-b-2 border-transparent text-amber-400 hover:text-amber-300 flex items-center justify-center gap-1.5 whitespace-nowrap">
-          <i class="fa-solid fa-clock-rotate-left"></i> Τότε & Τώρα
-        </button>
-      </div>
-
-      <!-- Tab Content Area (Scrollable) -->
-      <div id="tabContent" class="flex-1 overflow-y-auto p-4 sm:p-5 space-y-4 text-slate-300 text-xs sm:text-sm leading-relaxed">
-        <!-- Injected via JavaScript dynamically -->
-      </div>
-
-      <!-- Bottom Audio / Documentary Quote Footer -->
-      <div class="p-3 border-t border-slate-800 bg-slate-950/80 flex items-center justify-between text-xs text-slate-400 shrink-0">
-        <div class="flex items-center gap-2 truncate">
-          <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
-          <span id="docuQuote" class="truncate italic text-[11px] sm:text-xs text-slate-300">
-            «Το λίκνο της Αμερικανικής Ελευθερίας και η καρδιά της ανώτατης εκπαίδευσης.»
+        <div>
+          <span class="text-xl font-black tracking-tight text-white flex items-center gap-2">
+            Earth<span class="text-sky-400">Times</span>
+            <span class="text-[10px] bg-sky-500/20 text-sky-300 border border-sky-400/30 px-2 py-0.5 rounded-full font-semibold">4D Chronicle</span>
           </span>
+          <p class="text-xs text-slate-400">Παγκόσμιο Ημερολόγιο & Χρονοκάψουλα</p>
         </div>
-        <button onclick="narrateBrief()" title="Ακρόαση σύνοψης (Text-to-speech)" class="p-1.5 bg-slate-800 hover:bg-slate-700 text-sky-400 rounded-lg border border-slate-700 shrink-0 transition">
-          <i id="ttsIcon" class="fa-solid fa-volume-high"></i>
+      </div>
+
+      <!-- Live Date display -->
+      <div class="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-900/80 border border-slate-700/80 text-xs text-slate-300">
+        <span class="h-2 w-2 rounded-full bg-emerald-400 animate-ping"></span>
+        <i class="fa-regular fa-calendar text-sky-400"></i>
+        <span id="landingDateDisplay">Σήμερα</span>
+      </div>
+    </header>
+
+    <!-- Hero Body -->
+    <main class="flex-1 flex flex-col items-center justify-center text-center px-4 py-8 max-w-5xl mx-auto">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-sky-950/70 border border-sky-700/60 text-sky-300 text-xs font-semibold uppercase tracking-wider mb-6 shadow-inner">
+        <i class="fa-solid fa-clock-rotate-left text-amber-400"></i> Ταξίδι στη Γη από το Παρόν στο Παρελθόν
+      </div>
+
+      <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black text-white tracking-tight leading-tight mb-6">
+        Ο Χώρος συναντά τον <span class="bg-gradient-to-r from-sky-400 via-teal-300 to-indigo-400 bg-clip-text text-transparent">Χρόνο</span>
+      </h1>
+
+      <p class="text-base sm:text-lg lg:text-xl text-slate-300 max-w-3xl leading-relaxed mb-10 font-normal">
+        Μια διαδραστική ψηφιακή χρονοκάψουλα όπου κάθε γειτονιά, κτίριο και σημείο στον πλανήτη αφηγείται την ιστορία του μέσα στις δεκαετίες — μέσα από τα μάτια των πολιτών και των ιστορικών φορέων.
+      </p>
+
+      <!-- Action Buttons -->
+      <div class="flex flex-col sm:flex-row items-center gap-4 w-full justify-center mb-14">
+        <button onclick="openExplorer()" class="btn-glow w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-sky-600 via-sky-500 to-indigo-600 text-white font-bold text-base shadow-xl flex items-center justify-center gap-3">
+          <i class="fa-solid fa-compass text-lg"></i>
+          <span>Εξερεύνηση της Γης</span>
+          <i class="fa-solid fa-arrow-right text-xs"></i>
+        </button>
+
+        <button onclick="openExplorer(); flyToState('massachusetts');" class="w-full sm:w-auto px-7 py-4 rounded-xl bg-slate-900/90 hover:bg-slate-800 text-slate-200 border border-slate-700/80 font-semibold text-base transition flex items-center justify-center gap-2.5">
+          <i class="fa-solid fa-landmark text-amber-400"></i>
+          <span>Απευθείας στη Μασαχουσέτη</span>
         </button>
       </div>
 
-    </aside>
-  </main>
+      <!-- Feature Grid / Pillars -->
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-4 w-full text-left">
+        <div class="glass-panel p-5 rounded-2xl border border-slate-800 hover:border-sky-500/40 transition">
+          <div class="h-10 w-10 rounded-xl bg-sky-500/10 text-sky-400 flex items-center justify-center text-lg mb-3">
+            <i class="fa-solid fa-timeline"></i>
+          </div>
+          <h3 class="text-white font-bold text-sm mb-1.5">Χρονικό Layering</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Το ίδιο σημείο αλλάζει πρόσωπο: ένα κατάστημα ήταν ζαχαροπλαστείο το 1960 και μπουτίκ το 1970.
+          </p>
+        </div>
+
+        <div class="glass-panel p-5 rounded-2xl border border-slate-800 hover:border-emerald-500/40 transition">
+          <div class="h-10 w-10 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-lg mb-3">
+            <i class="fa-solid fa-images"></i>
+          </div>
+          <h3 class="text-white font-bold text-sm mb-1.5">Συλλογικές Μνήμες</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Παλιές παιδικές φωτογραφίες, προφορικές ιστορίες και μαρτυρίες πολιτών για κάθε γειτονιά.
+          </p>
+        </div>
+
+        <div class="glass-panel p-5 rounded-2xl border border-slate-800 hover:border-amber-500/40 transition">
+          <div class="h-10 w-10 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center text-lg mb-3">
+            <i class="fa-solid fa-building-columns"></i>
+          </div>
+          <h3 class="text-white font-bold text-sm mb-1.5">Επίσημοι Φορείς</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Δήμοι, μουσεία και αρχειακοί φορείς αναρτούν επίσημα ιστορικά τεκμήρια και μνημεία.
+          </p>
+        </div>
+
+        <div class="glass-panel p-5 rounded-2xl border border-slate-800 hover:border-indigo-500/40 transition">
+          <div class="h-10 w-10 rounded-xl bg-indigo-500/10 text-indigo-400 flex items-center justify-center text-lg mb-3">
+            <i class="fa-solid fa-earth-americas"></i>
+          </div>
+          <h3 class="text-white font-bold text-sm mb-1.5">Παγκόσμιος Άτλαντας</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            195 χώρες, οι μεγαλύτερες πόλεις, γλώσσες, θρησκείες και φυσική γεωγραφία του πλανήτη μας.
+          </p>
+        </div>
+      </div>
+    </main>
+
+    <!-- Landing Footer -->
+    <footer class="px-6 py-4 text-center text-xs text-slate-500 border-t border-slate-900 max-w-7xl mx-auto w-full">
+      EarthTimes &copy; 2026 • Ένα παγκόσμιο ημερολόγιο τόπων και ανθρώπων
+    </footer>
+  </section>
+
+  <!-- ================= 2. MAIN WORKSPACE / EXPLORER APPLICATION ================= -->
+  <div id="explorerApp" class="flex-1 flex flex-col h-full overflow-hidden hidden">
+
+    <!-- Top Navigation Bar -->
+    <header class="bg-slate-900/90 backdrop-blur-md border-b border-slate-800 px-4 py-2.5 flex items-center justify-between shrink-0 z-20 shadow-md">
+      <div class="flex items-center gap-3">
+        <!-- Return to Landing Page Button / Logo -->
+        <button onclick="openLandingPage()" title="Επιστροφή στην Αρχική Σελίδα" class="h-10 w-10 rounded-xl bg-gradient-to-tr from-sky-600 to-indigo-600 flex items-center justify-center text-white shadow-lg shadow-sky-900/40 hover:scale-105 transition">
+          <i class="fa-solid fa-earth-americas text-base"></i>
+        </button>
+        <div>
+          <div class="flex items-center gap-2">
+            <h1 class="font-bold text-base md:text-lg tracking-tight text-white flex items-center gap-1.5 cursor-pointer" onclick="openLandingPage()">
+              Earth<span class="text-sky-400">Times</span> 
+              <span class="text-[10px] bg-amber-500/20 text-amber-300 border border-amber-500/30 font-semibold px-2 py-0.5 rounded-full">4D World</span>
+            </h1>
+          </div>
+          <p class="text-xs text-slate-400 hidden sm:block">Παγκόσμιος Γεωγραφικός, Ιστορικός & Πολιτισμικός Άτλαντας</p>
+        </div>
+      </div>
+
+      <!-- Current Date Center Pill -->
+      <div class="hidden lg:flex items-center gap-2 px-3 py-1 rounded-full bg-slate-800/80 border border-slate-700/80 text-xs text-slate-300">
+        <span class="h-2 w-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        <i class="fa-regular fa-calendar-days text-sky-400"></i>
+        <span id="currentDateDisplay">Σήμερα</span>
+      </div>
+
+      <!-- Breadcrumbs & Jump Selector -->
+      <div class="flex items-center gap-2 text-xs md:text-sm">
+        <nav id="breadcrumbs" class="flex items-center gap-1 text-slate-400 bg-slate-800/80 px-3 py-1.5 rounded-lg border border-slate-700">
+          <button id="bc-world" onclick="flyToWorld()" class="text-emerald-400 font-bold flex items-center gap-1 transition">
+            <i class="fa-solid fa-earth-americas"></i> Γη
+          </button>
+          <span id="bc-state-sep" class="text-slate-600 hidden">/</span>
+          <button id="bc-state" onclick="flyToState('massachusetts')" class="text-sky-300 font-medium hover:text-sky-200 transition hidden">
+            Μασαχουσέτη
+          </button>
+          <span id="bc-city-sep" class="text-slate-600 hidden">/</span>
+          <span id="bc-city" class="text-amber-400 font-semibold hidden truncate max-w-[100px] md:max-w-none">Βοστώνη</span>
+        </nav>
+
+        <!-- Quick Jump Menu -->
+        <select id="quickJumpSelect" onchange="handleJumpChange(this.value)" class="bg-slate-800 border border-slate-700 text-slate-200 rounded-lg px-2.5 py-1.5 focus:ring-2 focus:ring-sky-500 outline-none text-xs md:text-sm cursor-pointer">
+          <optgroup label="Παγκόσμιο Επίπεδο">
+            <option value="world" selected>🌍 Πλανήτης Γη (World Overview)</option>
+          </optgroup>
+          <optgroup label="ΗΠΑ & Πολιτείες">
+            <option value="usa">🇺🇸 Επισκόπηση ΗΠΑ</option>
+            <option value="state:massachusetts">🏛️ Μασαχουσέτη (Bay State)</option>
+          </optgroup>
+          <optgroup label="Πόλεις Μασαχουσέτης">
+            <option value="city:boston">📍 Βοστώνη (Boston)</option>
+            <option value="city:cambridge">🎓 Κέιμπριτζ (Cambridge)</option>
+            <option value="city:salem">🕯️ Σάλεμ (Salem)</option>
+            <option value="city:plymouth">⚓ Πλύμουθ (Plymouth)</option>
+            <option value="city:worcester">🏭 Γουόρστερ (Worcester)</option>
+          </optgroup>
+        </select>
+      </div>
+    </header>
+
+    <!-- Main Workspace (Map + Dossier) -->
+    <main class="flex-1 flex flex-col lg:flex-row relative overflow-hidden">
+      
+      <!-- MAP CONTAINER -->
+      <div class="flex-1 relative h-1/2 lg:h-full bg-slate-950">
+        <div id="map" class="w-full h-full z-10"></div>
+
+        <!-- Flight Status Indicator -->
+        <div id="flightBadge" class="absolute top-4 left-4 z-[400] bg-slate-900/90 backdrop-blur-md border border-slate-700/80 rounded-xl px-3 py-2 text-xs shadow-xl flex items-center gap-2.5 transition">
+          <span class="relative flex h-2.5 w-2.5">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+          </span>
+          <span id="flightStatusText" class="font-medium text-slate-300">Προβολή: Πλανήτης Γη</span>
+        </div>
+
+        <!-- BASE MAP LAYER SWITCHER (Satellite, OSM, Topo, Dark) -->
+        <div class="absolute top-4 right-4 z-[400] flex flex-col gap-2 items-end">
+          <div class="bg-slate-950/90 backdrop-blur-md border border-slate-700/80 rounded-xl p-1.5 shadow-2xl flex items-center gap-1">
+            <button onclick="setMapLayer('dark')" id="layer-btn-dark" title="Νυχτερινός / Κινηματογραφικός (Dark Voyager)" class="layer-switcher-btn px-2.5 py-1.5 rounded-lg text-xs font-semibold bg-sky-600 text-white shadow-md flex items-center gap-1.5 transition">
+              <i class="fa-solid fa-moon"></i>
+              <span class="hidden sm:inline">Dark</span>
+            </button>
+            <button onclick="setMapLayer('satellite')" id="layer-btn-satellite" title="Δορυφορικός Χάρτης (Esri World Imagery)" class="layer-switcher-btn px-2.5 py-1.5 rounded-lg text-xs font-medium text-slate-300 hover:text-white hover:bg-slate-800 bg-slate-900/60 flex items-center gap-1.5 transition border border-slate-700/50">
+              <i class="fa-solid fa-satellite"></i>
+              <span class="hidden sm:inline">Δορυφόρος</span>
+            </button>
+            <button onclick="setMapLayer('osm')" id="layer-btn-osm" title="Πολιτικός / Οδικός (OpenStreetMap)" class="layer-switcher-btn px-2.5 py-1.5 rounded-lg text-xs font-medium text-slate-300 hover:text-white hover:bg-slate-800 bg-slate-900/60 flex items-center gap-1.5 transition border border-slate-700/50">
+              <i class="fa-solid fa-map"></i>
+              <span class="hidden sm:inline">Πολιτικός</span>
+            </button>
+            <button onclick="setMapLayer('topo')" id="layer-btn-topo" title="Γεωγραφικός / Τοπογραφικός (OpenTopoMap)" class="layer-switcher-btn px-2.5 py-1.5 rounded-lg text-xs font-medium text-slate-300 hover:text-white hover:bg-slate-800 bg-slate-900/60 flex items-center gap-1.5 transition border border-slate-700/50">
+              <i class="fa-solid fa-mountain-sun"></i>
+              <span class="hidden sm:inline">Ανάγλυφο</span>
+            </button>
+          </div>
+
+          <!-- Quick Navigation Shortcuts -->
+          <div class="flex items-center gap-1.5">
+            <button onclick="flyToWorld()" title="Επαναφορά σε ολόκληρη τη Γη" class="h-8 px-2.5 bg-slate-900/90 hover:bg-slate-800 text-emerald-400 border border-slate-700 rounded-lg flex items-center gap-1.5 text-xs font-medium shadow-lg transition">
+              <i class="fa-solid fa-earth-americas"></i>
+              <span>Γη</span>
+            </button>
+            <button onclick="flyToState('massachusetts')" title="Μετάβαση στη Μασαχουσέτη" class="h-8 px-2.5 bg-slate-900/90 hover:bg-slate-800 text-sky-400 border border-slate-700 rounded-lg flex items-center gap-1.5 text-xs font-medium shadow-lg transition">
+              <i class="fa-solid fa-landmark"></i>
+              <span>Μασαχουσέτη</span>
+            </button>
+            <button onclick="openLandingPage()" title="Αρχική Σελίδα" class="h-8 w-8 bg-slate-900/90 hover:bg-slate-800 text-slate-300 border border-slate-700 rounded-lg flex items-center justify-center text-xs shadow-lg transition">
+              <i class="fa-solid fa-house"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- POI Filter buttons (Active when in City) -->
+        <div class="absolute bottom-4 left-4 z-[400] bg-slate-900/95 backdrop-blur-md border border-slate-700/80 rounded-xl p-2 shadow-2xl flex flex-wrap gap-1.5 text-xs max-w-[90%] md:max-w-none">
+          <span class="text-[11px] uppercase tracking-wider text-slate-400 px-2 py-1 font-semibold flex items-center gap-1">
+            <i class="fa-solid fa-filter"></i> Σημεία:
+          </span>
+          <button onclick="togglePoiCategory('all')" id="filter-all" class="poi-filter-btn px-2.5 py-1 rounded-md bg-sky-600 text-white font-medium hover:bg-sky-500 transition">Όλα</button>
+          <button onclick="togglePoiCategory('history')" id="filter-history" class="poi-filter-btn px-2.5 py-1 rounded-md bg-slate-800 text-slate-300 hover:bg-slate-700 transition">🏛️ Ιστορικά</button>
+          <button onclick="togglePoiCategory('culture')" id="filter-culture" class="poi-filter-btn px-2.5 py-1 rounded-md bg-slate-800 text-slate-300 hover:bg-slate-700 transition">🎭 Πολιτισμός & Παιδεία</button>
+          <button onclick="togglePoiCategory('nature')" id="filter-nature" class="poi-filter-btn px-2.5 py-1 rounded-md bg-slate-800 text-slate-300 hover:bg-slate-700 transition">🌲 Φύση / Γεωγραφία</button>
+        </div>
+      </div>
+
+      <!-- ================= RIGHT PANEL: INTERACTIVE DOSSIER ================= -->
+      <aside id="dossierPanel" class="w-full lg:w-[480px] xl:w-[540px] h-1/2 lg:h-full bg-slate-900 border-t lg:border-t-0 lg:border-l border-slate-800 flex flex-col z-20 shadow-2xl relative">
+        
+        <!-- Panel Header -->
+        <div id="panelHeader" class="p-4 sm:p-5 border-b border-slate-800 shrink-0 bg-gradient-to-b from-slate-800/60 to-slate-900/90">
+          <div class="flex items-start justify-between gap-3">
+            <div>
+              <div class="flex items-center gap-2 mb-1">
+                <span id="badgeCategory" class="px-2 py-0.5 rounded text-[11px] font-bold tracking-wide uppercase bg-emerald-950/80 text-emerald-300 border border-emerald-600/50">
+                  Παγκόσμιος Φάκελος Γης
+                </span>
+                <span id="badgeNickname" class="text-xs text-amber-400/90 italic">
+                  "The Blue Marble"
+                </span>
+              </div>
+              <h2 id="entityTitle" class="text-xl sm:text-2xl font-black tracking-tight text-white flex items-center gap-2">
+                Γη (Πλανήτης Γη)
+              </h2>
+              <p id="entitySubtitle" class="text-xs sm:text-sm text-slate-400 mt-0.5 font-serif">
+                Planet Earth • 3ος Πλανήτης Ηλιακού Συστήματος
+              </p>
+            </div>
+
+            <!-- Tour Nav Buttons (Prev / Next) -->
+            <div class="flex items-center gap-1 shrink-0 bg-slate-800/80 p-1 rounded-xl border border-slate-700">
+              <button onclick="navigateTour(-1)" title="Προηγούμενο στην περιήγηση" class="p-2 hover:bg-slate-700 rounded-lg text-slate-300 hover:text-white transition">
+                <i class="fa-solid fa-chevron-left text-xs"></i>
+              </button>
+              <button onclick="navigateTour(1)" title="Επόμενο στην περιήγηση" class="p-2 hover:bg-slate-700 rounded-lg text-slate-300 hover:text-white transition">
+                <i class="fa-solid fa-chevron-right text-xs"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Quick Stat Pills -->
+          <div id="quickStatsRow" class="grid grid-cols-3 gap-2 mt-3 pt-3 border-t border-slate-800/80 text-center">
+            <div class="bg-slate-800/40 border border-slate-700/40 rounded-lg p-1.5">
+              <div id="stat1-label" class="text-[10px] text-slate-400 uppercase">Πληθυσμός</div>
+              <div id="stat1" class="text-xs sm:text-sm font-semibold text-slate-100">8.15 Δισ.</div>
+            </div>
+            <div class="bg-slate-800/40 border border-slate-700/40 rounded-lg p-1.5">
+              <div id="stat2-label" class="text-[10px] text-slate-400 uppercase">Κράτη / Ήπειροι</div>
+              <div id="stat2" class="text-xs sm:text-sm font-semibold text-amber-300">195 / 7</div>
+            </div>
+            <div class="bg-slate-800/40 border border-slate-700/40 rounded-lg p-1.5">
+              <div id="stat3-label" class="text-[10px] text-slate-400 uppercase">Επιφάνεια</div>
+              <div id="stat3" class="text-xs sm:text-sm font-semibold text-sky-300">510M km²</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Categories Navigation Tabs -->
+        <div class="flex border-b border-slate-800 shrink-0 bg-slate-900 text-xs sm:text-sm font-medium overflow-x-auto">
+          <button onclick="switchTab('geo')" id="tab-geo" class="tab-btn flex-1 py-2.5 px-3 border-b-2 border-sky-500 text-sky-400 font-semibold flex items-center justify-center gap-1.5 whitespace-nowrap bg-slate-800/30">
+            <i class="fa-solid fa-mountain"></i> Γεωγραφία
+          </button>
+          <button onclick="switchTab('hist')" id="tab-hist" class="tab-btn flex-1 py-2.5 px-3 border-b-2 border-transparent text-slate-400 hover:text-slate-200 flex items-center justify-center gap-1.5 whitespace-nowrap">
+            <i class="fa-solid fa-landmark"></i> Ιστορία
+          </button>
+          <button onclick="switchTab('demo')" id="tab-demo" class="tab-btn flex-1 py-2.5 px-3 border-b-2 border-transparent text-slate-400 hover:text-slate-200 flex items-center justify-center gap-1.5 whitespace-nowrap">
+            <i class="fa-solid fa-users"></i> Κοινωνία
+          </button>
+          <button onclick="switchTab('cult')" id="tab-cult" class="tab-btn flex-1 py-2.5 px-3 border-b-2 border-transparent text-slate-400 hover:text-slate-200 flex items-center justify-center gap-1.5 whitespace-nowrap">
+            <i class="fa-solid fa-palette"></i> Πολιτισμός
+          </button>
+          <button onclick="switchTab('timeline')" id="tab-timeline" class="tab-btn flex-1 py-2.5 px-3 border-b-2 border-transparent text-amber-400 hover:text-amber-300 flex items-center justify-center gap-1.5 whitespace-nowrap">
+            <i class="fa-solid fa-clock-rotate-left"></i> Τότε & Τώρα
+          </button>
+        </div>
+
+        <!-- Tab Content Area (Scrollable) -->
+        <div id="tabContent" class="flex-1 overflow-y-auto p-4 sm:p-5 space-y-4 text-slate-300 text-xs sm:text-sm leading-relaxed">
+          <!-- Injected via JavaScript dynamically -->
+        </div>
+
+        <!-- Bottom Audio / Quote Footer -->
+        <div class="p-3 border-t border-slate-800 bg-slate-950/80 flex items-center justify-between text-xs text-slate-400 shrink-0">
+          <div class="flex items-center gap-2 truncate">
+            <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+            <span id="docuQuote" class="truncate italic text-[11px] sm:text-xs text-slate-300">
+              «Μια μικρή γαλάζια κουκκίδα, το μόνο σπίτι που γνωρίσαμε ποτέ στον απέραντο κοσμικό ωκεανό.»
+            </span>
+          </div>
+          <button onclick="narrateBrief()" title="Ακρόαση σύνοψης (Text-to-speech)" class="p-1.5 bg-slate-800 hover:bg-slate-700 text-sky-400 rounded-lg border border-slate-700 shrink-0 transition">
+            <i id="ttsIcon" class="fa-solid fa-volume-high"></i>
+          </button>
+        </div>
+
+      </aside>
+    </main>
+  </div>
 
   <!-- Modular Application Scripts -->
   <script type="module" src="js/app.js"></script>

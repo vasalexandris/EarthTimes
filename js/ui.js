@@ -1,7 +1,27 @@
 /**
  * UI Module
- * Handles DOM rendering for Dossier, Breadcrumbs, Tabs, Flight Status, Filters, and TTS narration.
+ * Handles DOM rendering for Dossier, Breadcrumbs, Tabs, Flight Status, Filters,
+ * Base Map Layer selector, Date display, and Landing Page visibility.
  */
+
+export function updateCurrentDate() {
+  const now = new Date();
+  const options = {
+    weekday: 'long',
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+  };
+  // Greek locale format
+  const formatted = now.toLocaleDateString('el-GR', options);
+  const capitalized = formatted.charAt(0).toUpperCase() + formatted.slice(1);
+
+  const el1 = document.getElementById('currentDateDisplay');
+  if (el1) el1.innerText = capitalized;
+
+  const el2 = document.getElementById('landingDateDisplay');
+  if (el2) el2.innerText = capitalized;
+}
 
 export function updateStatusBadge(text) {
   const el = document.getElementById('flightStatusText');
@@ -13,30 +33,68 @@ export function updateJumpSelect(val) {
   if (select) select.value = val;
 }
 
-export function updateBreadcrumbs(scope, city) {
+export function updateBreadcrumbs(scope, stateOrCountry, city) {
+  const bcWorld = document.getElementById('bc-world');
+  const bcStateSep = document.getElementById('bc-state-sep');
   const bcState = document.getElementById('bc-state');
-  const bcSep = document.getElementById('bc-sep');
+  const bcCitySep = document.getElementById('bc-city-sep');
   const bcCity = document.getElementById('bc-city');
 
-  if (!bcState || !bcSep || !bcCity) return;
+  if (!bcWorld) return;
 
-  if (scope === 'usa') {
-    bcState.classList.remove('text-sky-300', 'font-medium');
-    bcState.classList.add('text-slate-400');
-    bcSep.classList.add('hidden');
-    bcCity.classList.add('hidden');
+  if (scope === 'world') {
+    bcWorld.className = 'text-emerald-400 font-bold flex items-center gap-1.5';
+    if (bcStateSep) bcStateSep.classList.add('hidden');
+    if (bcState) bcState.classList.add('hidden');
+    if (bcCitySep) bcCitySep.classList.add('hidden');
+    if (bcCity) bcCity.classList.add('hidden');
+  } else if (scope === 'usa') {
+    bcWorld.className = 'text-slate-400 hover:text-emerald-400 flex items-center gap-1.5 transition';
+    if (bcStateSep) bcStateSep.classList.remove('hidden');
+    if (bcState) {
+      bcState.classList.remove('hidden');
+      bcState.innerText = 'ΗΠΑ';
+      bcState.className = 'text-sky-300 font-medium hover:text-sky-200 transition';
+    }
+    if (bcCitySep) bcCitySep.classList.add('hidden');
+    if (bcCity) bcCity.classList.add('hidden');
   } else if (scope === 'state') {
-    bcState.classList.remove('text-slate-400');
-    bcState.classList.add('text-sky-300', 'font-medium');
-    bcSep.classList.add('hidden');
-    bcCity.classList.add('hidden');
+    bcWorld.className = 'text-slate-400 hover:text-emerald-400 flex items-center gap-1.5 transition';
+    if (bcStateSep) bcStateSep.classList.remove('hidden');
+    if (bcState) {
+      bcState.classList.remove('hidden');
+      bcState.innerText = stateOrCountry ? stateOrCountry.name : 'Μασαχουσέτη';
+      bcState.className = 'text-sky-300 font-medium hover:text-sky-200 transition';
+    }
+    if (bcCitySep) bcCitySep.classList.add('hidden');
+    if (bcCity) bcCity.classList.add('hidden');
   } else if (scope === 'city') {
-    bcState.classList.remove('text-sky-300');
-    bcState.classList.add('text-slate-400');
-    bcSep.classList.remove('hidden');
-    bcCity.classList.remove('hidden');
-    bcCity.innerText = city ? city.name : '';
+    bcWorld.className = 'text-slate-400 hover:text-emerald-400 flex items-center gap-1.5 transition';
+    if (bcStateSep) bcStateSep.classList.remove('hidden');
+    if (bcState) {
+      bcState.classList.remove('hidden');
+      bcState.innerText = stateOrCountry ? stateOrCountry.name : 'Μασαχουσέτη';
+      bcState.className = 'text-slate-400 hover:text-sky-300 transition';
+    }
+    if (bcCitySep) bcCitySep.classList.remove('hidden');
+    if (bcCity) {
+      bcCity.classList.remove('hidden');
+      bcCity.innerText = city ? city.name : '';
+    }
   }
+}
+
+export function updateBaseLayerUI(activeKey) {
+  const layerKeys = ['dark', 'satellite', 'osm', 'topo'];
+  layerKeys.forEach(k => {
+    const btn = document.getElementById(`layer-btn-${k}`);
+    if (!btn) return;
+    if (k === activeKey) {
+      btn.className = 'layer-switcher-btn px-2.5 py-1.5 rounded-lg text-xs font-semibold bg-sky-600 text-white shadow-md flex items-center gap-1.5 transition';
+    } else {
+      btn.className = 'layer-switcher-btn px-2.5 py-1.5 rounded-lg text-xs font-medium text-slate-300 hover:text-white hover:bg-slate-800/80 bg-slate-900/60 flex items-center gap-1.5 transition border border-slate-700/50';
+    }
+  });
 }
 
 export function updatePoiFilterButtons(activeCategory) {
@@ -65,15 +123,21 @@ export function updateTabButtons(activeTab) {
   });
 }
 
-export function renderDossier(entity, isState, currentTab) {
+export function renderDossier(entity, entityType = 'state', currentTab = 'geo') {
   if (!entity) return;
 
   const badgeCategory = document.getElementById('badgeCategory');
   if (badgeCategory) {
-    badgeCategory.innerText = isState ? 'Πολιτειακός Φάκελος' : 'Αστικός Φάκελος';
-    badgeCategory.className = isState 
-      ? 'px-2 py-0.5 rounded text-[11px] font-bold tracking-wide uppercase bg-sky-900/60 text-sky-300 border border-sky-700/50'
-      : 'px-2 py-0.5 rounded text-[11px] font-bold tracking-wide uppercase bg-amber-900/60 text-amber-300 border border-amber-700/50';
+    if (entityType === 'world') {
+      badgeCategory.innerText = 'Παγκόσμιος Φάκελος Γης';
+      badgeCategory.className = 'px-2 py-0.5 rounded text-[11px] font-bold tracking-wide uppercase bg-emerald-950/80 text-emerald-300 border border-emerald-600/50';
+    } else if (entityType === 'city') {
+      badgeCategory.innerText = 'Αστικός Φάκελος';
+      badgeCategory.className = 'px-2 py-0.5 rounded text-[11px] font-bold tracking-wide uppercase bg-amber-900/60 text-amber-300 border border-amber-700/50';
+    } else {
+      badgeCategory.innerText = 'Πολιτειακός Φάκελος';
+      badgeCategory.className = 'px-2 py-0.5 rounded text-[11px] font-bold tracking-wide uppercase bg-sky-900/60 text-sky-300 border border-sky-700/50';
+    }
   }
 
   const badgeNickname = document.getElementById('badgeNickname');
@@ -86,17 +150,41 @@ export function renderDossier(entity, isState, currentTab) {
 
   const entitySubtitle = document.getElementById('entitySubtitle');
   if (entitySubtitle) {
-    entitySubtitle.innerText = `${entity.englishName} • ${isState ? 'Πρωτεύουσα: ' + entity.capital : 'Πολιτεία: Μασαχουσέτη'}`;
+    if (entityType === 'world') {
+      entitySubtitle.innerText = `${entity.englishName} • 3ος Πλανήτης Ηλιακού Συστήματος`;
+    } else if (entityType === 'city') {
+      entitySubtitle.innerText = `${entity.englishName} • Πολιτεία: Μασαχουσέτη`;
+    } else {
+      entitySubtitle.innerText = `${entity.englishName} • Πρωτεύουσα: ${entity.capital || 'Βοστώνη'}`;
+    }
   }
 
+  const stat1Label = document.getElementById('stat1-label');
+  const stat2Label = document.getElementById('stat2-label');
+  const stat3Label = document.getElementById('stat3-label');
   const stat1 = document.getElementById('stat1');
-  if (stat1) stat1.innerText = entity.stats?.population || '-';
-
   const stat2 = document.getElementById('stat2');
-  if (stat2) stat2.innerText = entity.stats?.founded || entity.stats?.famousFor || '-';
-
   const stat3 = document.getElementById('stat3');
-  if (stat3) stat3.innerText = entity.stats?.area || entity.stats?.gdp || '-';
+
+  if (entityType === 'world') {
+    if (stat1Label) stat1Label.innerText = 'Πληθυσμός';
+    if (stat1) stat1.innerText = entity.stats?.population || '8.15 Δισ.';
+
+    if (stat2Label) stat2Label.innerText = 'Κράτη / Ήπειροι';
+    if (stat2) stat2.innerText = `${entity.stats?.countries?.split(' ')[0] || '195'} / 7`;
+
+    if (stat3Label) stat3Label.innerText = 'Επιφάνεια';
+    if (stat3) stat3.innerText = entity.stats?.area || '510M km²';
+  } else {
+    if (stat1Label) stat1Label.innerText = 'Πληθυσμός';
+    if (stat1) stat1.innerText = entity.stats?.population || '-';
+
+    if (stat2Label) stat2Label.innerText = entityType === 'city' ? 'Ορόσημο' : 'Ίδρυση / Ενσωμ.';
+    if (stat2) stat2.innerText = entity.stats?.founded || entity.stats?.famousFor || '-';
+
+    if (stat3Label) stat3Label.innerText = 'Έκταση / ΑΕΠ';
+    if (stat3) stat3.innerText = entity.stats?.area || entity.stats?.gdp || '-';
+  }
 
   const docuQuote = document.getElementById('docuQuote');
   if (docuQuote) docuQuote.innerText = entity.quote || '';
@@ -118,7 +206,7 @@ export function renderTabContent(tabId, entity) {
           <div class="flex items-center gap-2 text-sky-400 font-semibold mb-1 text-sm">
             <i class="fa-solid fa-map-location-dot"></i> Γεωγραφικό Ανάγλυφο & Φύση
           </div>
-          <p>${entity.geo.summary}</p>
+          <p class="leading-relaxed">${entity.geo.summary}</p>
         </div>
 
         <h4 class="text-xs uppercase tracking-wider font-bold text-slate-400 mt-4 mb-2 flex items-center gap-1.5">
@@ -139,13 +227,13 @@ export function renderTabContent(tabId, entity) {
       <div class="space-y-3">
         <div class="p-3.5 bg-slate-800/50 rounded-xl border border-slate-700/60 text-slate-200">
           <div class="flex items-center gap-2 text-amber-400 font-semibold mb-1 text-sm">
-            <i class="fa-solid fa-landmark-dome"></i> Ιστορικό Υπόβαθρο
+            <i class="fa-solid fa-landmark-dome"></i> Ιστορικό Υπόβαθρο & Εξέλιξη
           </div>
-          <p>${entity.hist.summary}</p>
+          <p class="leading-relaxed">${entity.hist.summary}</p>
         </div>
 
         <h4 class="text-xs uppercase tracking-wider font-bold text-slate-400 mt-4 mb-2 flex items-center gap-1.5">
-          <i class="fa-solid fa-hourglass-half text-amber-400"></i> Σημαντικοί Σταθμοί
+          <i class="fa-solid fa-hourglass-half text-amber-400"></i> Σημαντικοί Σταθμοί στο Χρόνο
         </h4>
         <div class="relative pl-5 border-l-2 border-slate-700 space-y-4 my-3">
           ${(entity.hist.highlights || []).map(h => `
@@ -164,9 +252,9 @@ export function renderTabContent(tabId, entity) {
       <div class="space-y-3">
         <div class="p-3.5 bg-slate-800/50 rounded-xl border border-slate-700/60 text-slate-200">
           <div class="flex items-center gap-2 text-emerald-400 font-semibold mb-1 text-sm">
-            <i class="fa-solid fa-chart-pie"></i> Κοινωνία, Παιδεία & Οικονομία
+            <i class="fa-solid fa-chart-pie"></i> Κοινωνία, Πληθυσμός & Οικονομία
           </div>
-          <p>${entity.demo.summary}</p>
+          <p class="leading-relaxed">${entity.demo.summary}</p>
         </div>
 
         <div class="space-y-2.5 mt-3">
@@ -184,9 +272,9 @@ export function renderTabContent(tabId, entity) {
       <div class="space-y-3">
         <div class="p-3.5 bg-slate-800/50 rounded-xl border border-slate-700/60 text-slate-200">
           <div class="flex items-center gap-2 text-violet-400 font-semibold mb-1 text-sm">
-            <i class="fa-solid fa-masks-theater"></i> Πολιτισμός, Τέχνες & Αξιοθέατα
+            <i class="fa-solid fa-masks-theater"></i> Πολιτισμός, Γλώσσες & Παραδόσεις
           </div>
-          <p>${entity.cult.summary}</p>
+          <p class="leading-relaxed">${entity.cult.summary}</p>
         </div>
 
         <div class="space-y-2.5 mt-3">
@@ -204,7 +292,7 @@ export function renderTabContent(tabId, entity) {
               <i class="fa-solid fa-map-pin"></i> Σημεία στον Χάρτη
             </div>
             <div class="text-xs text-slate-300">
-              Έχουν τοποθετηθεί ${entity.pois.length} διαδραστικά σημεία στον χάρτη. Κάντε κλικ στα εικονίδια για να δείτε φωτογραφίες και λεπτομέρειες.
+              Έχουν τοποθετηθεί ${entity.pois.length} διαδραστικά σημεία στον χάρτη. Κάντε κλικ στα εικονίδια για να δείτε λεπτομέρειες.
             </div>
           </div>
         ` : ''}
@@ -217,8 +305,8 @@ export function renderTabContent(tabId, entity) {
           <div class="flex items-center gap-2 text-amber-400 font-semibold mb-1 text-sm">
             <i class="fa-solid fa-arrows-split-up-and-left"></i> Η Εξέλιξη στο Χρόνο: Τότε & Τώρα
           </div>
-          <p class="text-xs text-slate-300">
-            Σύγκριση της ιστορικής κληρονομιάς με τη σύγχρονη πραγματικότητα του 21ου αιώνα.
+          <p class="text-xs text-slate-300 leading-relaxed">
+            Σύγκριση της ιστορικής διαδρομής με τη σύγχρονη πραγματικότητα του 21ου αιώνα.
           </p>
         </div>
 
