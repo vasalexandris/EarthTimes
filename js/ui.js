@@ -200,13 +200,6 @@ export function renderDossier(entity, entityType = 'state', currentTab = 'geo') 
     if (stat3) stat3.innerText = entity.stats?.area || entity.stats?.gdp || '-';
   }
 
-    if (stat2Label) stat2Label.innerText = entityType === 'city' ? 'Ορόσημο' : 'Ίδρυση / Ενσωμ.';
-    if (stat2) stat2.innerText = entity.stats?.founded || entity.stats?.famousFor || '-';
-
-    if (stat3Label) stat3Label.innerText = 'Έκταση / ΑΕΠ';
-    if (stat3) stat3.innerText = entity.stats?.area || entity.stats?.gdp || '-';
-  }
-
   const docuQuote = document.getElementById('docuQuote');
   if (docuQuote) docuQuote.innerText = entity.quote || '';
 

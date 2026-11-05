@@ -42,6 +42,23 @@
 
   <!-- Custom Styles -->
   <link rel="stylesheet" href="css/style.css">
+
+  <!-- Immediate Fast-Action Script for Landing Navigation -->
+  <script>
+    function openExplorer() {
+      const landing = document.getElementById('landingPage');
+      const app = document.getElementById('explorerApp');
+      if (landing) landing.classList.add('hidden');
+      if (app) app.classList.remove('hidden');
+      if (window.onExplorerOpened) window.onExplorerOpened();
+    }
+    function openLandingPage() {
+      const landing = document.getElementById('landingPage');
+      const app = document.getElementById('explorerApp');
+      if (app) app.classList.add('hidden');
+      if (landing) landing.classList.remove('hidden');
+    }
+  </script>
 </head>
 <body class="bg-slate-950 text-slate-100 font-sans h-screen flex flex-col overflow-hidden select-none">
 

@@ -283,6 +283,9 @@ export function narrateBrief() {
 // Global Window Bindings for UI & HTML event attributes
 window.openExplorer = openExplorer;
 window.openLandingPage = openLandingPage;
+window.onExplorerOpened = () => {
+  MapModule.invalidateMapSize();
+};
 window.setMapLayer = setMapLayer;
 window.flyToWorld = flyToWorld;
 window.flyToCountry = flyToCountry;
