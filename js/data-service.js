@@ -23,6 +23,25 @@ export async function loadWorldData() {
   }
 }
 
+export async function loadCountryData(countryId = 'greece') {
+  const cacheKey = `country-${countryId}`;
+  if (dataCache.has(cacheKey)) {
+    return dataCache.get(cacheKey);
+  }
+  try {
+    const response = await fetch(`./data/countries/${countryId}.json`);
+    if (!response.ok) {
+      throw new Error(`HTTP error ${response.status} loading data/countries/${countryId}.json`);
+    }
+    const data = await response.json();
+    dataCache.set(cacheKey, data);
+    return data;
+  } catch (error) {
+    console.error(`[DataService] Error loading country data for ${countryId}:`, error);
+    throw error;
+  }
+}
+
 export async function loadStateData(stateId = 'massachusetts') {
   if (dataCache.has(stateId)) {
     return dataCache.get(stateId);

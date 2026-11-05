@@ -81,20 +81,25 @@
       </h1>
 
       <p class="text-base sm:text-lg lg:text-xl text-slate-300 max-w-3xl leading-relaxed mb-10 font-normal">
-        Μια διαδραστική ψηφιακή χρονοκάψουλα όπου κάθε γειτονιά, κτίριο και σημείο στον πλανήτη αφηγείται την ιστορία του μέσα στις δεκαετίες — μέσα από τα μάτια των πολιτών και των ιστορικών φορέων.
+        Μια διαδραστική ψηφιακή χρονοκάψουλα όπου κάθε γειτονιά, κτίριο και σημείο στον πλανήτη αφηγείται την ιστορία του μέσα στις δεκαετίες — από την Κοζάνη και την Αθήνα μέχρι τη Βοστώνη και τη Νέα Υόρκη!
       </p>
 
       <!-- Action Buttons -->
-      <div class="flex flex-col sm:flex-row items-center gap-4 w-full justify-center mb-14">
-        <button onclick="openExplorer()" class="btn-glow w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-sky-600 via-sky-500 to-indigo-600 text-white font-bold text-base shadow-xl flex items-center justify-center gap-3">
-          <i class="fa-solid fa-compass text-lg"></i>
+      <div class="flex flex-col sm:flex-row items-center gap-3 w-full justify-center mb-14">
+        <button onclick="openExplorer()" class="btn-glow w-full sm:w-auto px-7 py-3.5 rounded-xl bg-gradient-to-r from-sky-600 via-sky-500 to-indigo-600 text-white font-bold text-sm sm:text-base shadow-xl flex items-center justify-center gap-2.5">
+          <i class="fa-solid fa-compass text-base"></i>
           <span>Εξερεύνηση της Γης</span>
           <i class="fa-solid fa-arrow-right text-xs"></i>
         </button>
 
-        <button onclick="openExplorer(); flyToState('massachusetts');" class="w-full sm:w-auto px-7 py-4 rounded-xl bg-slate-900/90 hover:bg-slate-800 text-slate-200 border border-slate-700/80 font-semibold text-base transition flex items-center justify-center gap-2.5">
-          <i class="fa-solid fa-landmark text-amber-400"></i>
-          <span>Απευθείας στη Μασαχουσέτη</span>
+        <button onclick="openExplorer(); flyToCity('kozani');" class="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 border border-amber-500/50 font-bold text-sm sm:text-base transition flex items-center justify-center gap-2">
+          <i class="fa-solid fa-star text-amber-400"></i>
+          <span>Απευθείας στην Κοζάνη</span>
+        </button>
+
+        <button onclick="openExplorer(); flyToCountry('greece');" class="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-slate-900/90 hover:bg-slate-800 text-slate-200 border border-slate-700/80 font-semibold text-sm sm:text-base transition flex items-center justify-center gap-2">
+          <i class="fa-solid fa-landmark text-sky-400"></i>
+          <span>Ελλάδα</span>
         </button>
       </div>
 
@@ -106,7 +111,7 @@
           </div>
           <h3 class="text-white font-bold text-sm mb-1.5">Χρονικό Layering</h3>
           <p class="text-xs text-slate-400 leading-relaxed">
-            Το ίδιο σημείο αλλάζει πρόσωπο: ένα κατάστημα ήταν ζαχαροπλαστείο το 1960 και μπουτίκ το 1970.
+            Το ίδιο σημείο αλλάζει πρόσωπο: ένα παλιό χάνι το 1920, ζαχαροπλαστείο το 1960 και σύγχρονο café το 2026.
           </p>
         </div>
 
@@ -136,7 +141,7 @@
           </div>
           <h3 class="text-white font-bold text-sm mb-1.5">Παγκόσμιος Άτλαντας</h3>
           <p class="text-xs text-slate-400 leading-relaxed">
-            195 χώρες, οι μεγαλύτερες πόλεις, γλώσσες, θρησκείες και φυσική γεωγραφία του πλανήτη μας.
+            Ελλάδα, ΗΠΑ και όλες οι χώρες του κόσμου με τις μεγαλύτερες πόλεις και ιστορικά σημεία.
           </p>
         </div>
       </div>
@@ -183,28 +188,39 @@
             <i class="fa-solid fa-earth-americas"></i> Γη
           </button>
           <span id="bc-state-sep" class="text-slate-600 hidden">/</span>
-          <button id="bc-state" onclick="flyToState('massachusetts')" class="text-sky-300 font-medium hover:text-sky-200 transition hidden">
-            Μασαχουσέτη
+          <button id="bc-state" onclick="flyToCountry('greece')" class="text-sky-300 font-medium hover:text-sky-200 transition hidden">
+            Ελλάδα
           </button>
           <span id="bc-city-sep" class="text-slate-600 hidden">/</span>
-          <span id="bc-city" class="text-amber-400 font-semibold hidden truncate max-w-[100px] md:max-w-none">Βοστώνη</span>
+          <span id="bc-city" class="text-amber-400 font-semibold hidden truncate max-w-[120px] md:max-w-none">Κοζάνη</span>
         </nav>
 
-        <!-- Quick Jump Menu -->
-        <select id="quickJumpSelect" onchange="handleJumpChange(this.value)" class="bg-slate-800 border border-slate-700 text-slate-200 rounded-lg px-2.5 py-1.5 focus:ring-2 focus:ring-sky-500 outline-none text-xs md:text-sm cursor-pointer">
-          <optgroup label="Παγκόσμιο Επίπεδο">
+        <!-- Hierarchical Quick Jump Menu -->
+        <select id="quickJumpSelect" onchange="handleJumpChange(this.value)" class="bg-slate-800 border border-slate-700 text-slate-200 rounded-lg px-2.5 py-1.5 focus:ring-2 focus:ring-sky-500 outline-none text-xs md:text-sm cursor-pointer max-w-[170px] sm:max-w-none">
+          <optgroup label="🌍 Παγκόσμιο Επίπεδο">
             <option value="world" selected>🌍 Πλανήτης Γη (World Overview)</option>
           </optgroup>
-          <optgroup label="ΗΠΑ & Πολιτείες">
-            <option value="usa">🇺🇸 Επισκόπηση ΗΠΑ</option>
-            <option value="state:massachusetts">🏛️ Μασαχουσέτη (Bay State)</option>
+          <optgroup label="🇬🇷 Ελλάδα (Πόλεις)">
+            <option value="country:greece">🏛️ Ελλάδα (Εθνική Επισκόπηση)</option>
+            <option value="city:kozani">⭐ Κοζάνη (Πόλη των Γραμμάτων & Κρόκου)</option>
+            <option value="city:athens">📍 Αθήνα (Πρωτεύουσα)</option>
+            <option value="city:thessaloniki">📍 Θεσσαλονίκη (Συμπρωτεύουσα)</option>
+            <option value="city:patras">📍 Πάτρα</option>
+            <option value="city:heraklion">📍 Ηράκλειο</option>
+            <option value="city:larissa">📍 Λάρισα</option>
+            <option value="city:volos">📍 Βόλος</option>
+            <option value="city:ioannina">📍 Ιωάννινα</option>
+            <option value="city:trikala">📍 Τρίκαλα</option>
+            <option value="city:chania">📍 Χανιά</option>
+            <option value="city:chalkida">📍 Χαλκίδα</option>
           </optgroup>
-          <optgroup label="Πόλεις Μασαχουσέτης">
-            <option value="city:boston">📍 Βοστώνη (Boston)</option>
-            <option value="city:cambridge">🎓 Κέιμπριτζ (Cambridge)</option>
-            <option value="city:salem">🕯️ Σάλεμ (Salem)</option>
-            <option value="city:plymouth">⚓ Πλύμουθ (Plymouth)</option>
-            <option value="city:worcester">🏭 Γουόρστερ (Worcester)</option>
+          <optgroup label="🇺🇸 ΗΠΑ (Πόλεις & Πολιτείες)">
+            <option value="country:usa">🏛️ Ηνωμένες Πολιτείες (Επισκόπηση)</option>
+            <option value="city:new-york">📍 Νέα Υόρκη (NYC)</option>
+            <option value="city:los-angeles">📍 Λος Άντζελες (LA)</option>
+            <option value="city:chicago">📍 Σικάγο</option>
+            <option value="city:boston">📍 Βοστώνη</option>
+            <option value="state:massachusetts">🏛️ Πολιτεία Μασαχουσέτη</option>
           </optgroup>
         </select>
       </div>
@@ -253,9 +269,13 @@
               <i class="fa-solid fa-earth-americas"></i>
               <span>Γη</span>
             </button>
-            <button onclick="flyToState('massachusetts')" title="Μετάβαση στη Μασαχουσέτη" class="h-8 px-2.5 bg-slate-900/90 hover:bg-slate-800 text-sky-400 border border-slate-700 rounded-lg flex items-center gap-1.5 text-xs font-medium shadow-lg transition">
+            <button onclick="flyToCountry('greece')" title="Μετάβαση στην Ελλάδα" class="h-8 px-2.5 bg-slate-900/90 hover:bg-slate-800 text-sky-400 border border-slate-700 rounded-lg flex items-center gap-1.5 text-xs font-medium shadow-lg transition">
               <i class="fa-solid fa-landmark"></i>
-              <span>Μασαχουσέτη</span>
+              <span>Ελλάδα</span>
+            </button>
+            <button onclick="flyToCity('kozani')" title="Μετάβαση στην Κοζάνη" class="h-8 px-2.5 bg-amber-950/80 hover:bg-amber-900/80 text-amber-300 border border-amber-600/60 rounded-lg flex items-center gap-1.5 text-xs font-bold shadow-lg transition">
+              <i class="fa-solid fa-star text-[10px]"></i>
+              <span>Κοζάνη</span>
             </button>
             <button onclick="openLandingPage()" title="Αρχική Σελίδα" class="h-8 w-8 bg-slate-900/90 hover:bg-slate-800 text-slate-300 border border-slate-700 rounded-lg flex items-center justify-center text-xs shadow-lg transition">
               <i class="fa-solid fa-house"></i>

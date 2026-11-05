@@ -1,0 +1,225 @@
+{
+  "country": {
+    "id": "usa",
+    "name": "Ηνωμένες Πολιτείες Αμερικής",
+    "englishName": "United States of America (USA)",
+    "nickname": "Η Γη των Ευκαιριών",
+    "type": "country",
+    "capital": "Ουάσινγκτον (Washington, D.C.)",
+    "coords": [37.0902, -95.7129],
+    "zoom": 4.5,
+    "stats": {
+      "population": "335 εκατομμύρια (3η παγκοσμίως)",
+      "founded": "4 Ιουλίου 1776",
+      "area": "9,833,517 km²",
+      "states": "50 πολιτείες + 1 ομοσπονδιακή περιφέρεια",
+      "gdp": "$27 Τρισεκατομμύρια (1η οικονομία)"
+    },
+    "quote": "«E pluribus unum — Από τους πολλούς, ένας.»",
+    "geo": {
+      "summary": "Εκτείνεται από τον Ατλαντικό έως τον Ειρηνικό Ωκεανό, περιλαμβάνοντας από τα Απαλάχια και τα Βραχώδη Όρη μέχρι τις Μεγάλες Πεδιάδες, τα φαράγγια της Αριζόνας, τα υποτροπικά έλη της Φλόριντα και τις παγωμένες εκτάσεις της Αλάσκας.",
+      "highlights": [
+        { "title": "Βραχώδη Όρη (Rocky Mountains)", "desc": "Η κύρια οροσειρά της δυτικής Βόρειας Αμερικής μήκους άνω των 4.800 χλμ." },
+        { "title": "Ποταμός Μισισιπής - Μιζούρι", "desc": "Το μεγαλύτερο ποτάμιο σύστημα της Βόρειας Αμερικής, αρτηρία της ηπείρου." },
+        { "title": "Grand Canyon & Εθνικά Πάρκα", "desc": "Φυσικά θαύματα παγκόσμιας κληρονομιάς (Yellowstone, Yosemite, Grand Canyon)." }
+      ]
+    },
+    "hist": {
+      "summary": "Από τους αυτόχθονες πολιτισμούς και την αποβίβαση των πρώτων αποίκων, στη Διακήρυξη της Ανεξαρτησίας του 1776, τον Εμφύλιο Πόλεμο και την ανάδειξη σε παγκόσμια υπερδύναμη.",
+      "highlights": [
+        { "year": "1776", "event": "Διακήρυξη της Ανεξαρτησίας", "desc": "Υπογραφή στη Φιλαδέλφεια από τους Ιδρυτές Πατέρες." },
+        { "year": "1861 - 1865", "event": "Αμερικανικός Εμφύλιος Πόλεμος", "desc": "Κατάργηση της δουλείας υπό τον Αβραάμ Λίνκολν και διατήρηση της Ένωσης." },
+        { "year": "1969", "event": "Αποστολή Apollo 11", "desc": "Ο πρώτος άνθρωπος στη Σελήνη ('Ένα μικρό βήμα για τον άνθρωπο...')." }
+      ]
+    },
+    "demo": {
+      "summary": "Έθνος μεταναστών με τεράστια πολιτισμική και εθνοτική ποικιλομορφία, κορυφαία πανεπιστήμια και παγκόσμιο πόλο καινοτομίας.",
+      "details": [
+        { "label": "Τεχνολογική & Επιστημονική Ηγεσία", "text": "Silicon Valley, Kendall Square, NASA, κορυφαία ερευνητικά ιδρύματα." }
+      ]
+    },
+    "cult": {
+      "summary": "Παγκόσμια επιρροή στον κινηματογράφο (Hollywood), τη μουσική (Jazz, Blues, Rock, Hip-hop), τη λογοτεχνία και τον αθλητισμό (NBA, NFL, MLB).",
+      "items": [
+        { "title": "Κινηματογράφος & Μουσική", "desc": "Από το Μπρόντγουεϊ και το Χόλιγουντ μέχρι τη τζαζ της Νέας Ορλεάνης." }
+      ]
+    },
+    "pastVsPresent": [
+      { "epoch": "1926", "content": "Η εποχή της Jazz, ο πρώτος υπερατλαντικός τηλέγραφος, η άνθηση της βιομηχανίας αυτοκινήτου στο Ντιτρόιτ." },
+      { "epoch": "2026", "content": "Παγκόσμιος ηγέτης στην τεχνητή νοημοσύνη, την αεροδιαστημική και την ψηφιακή οικονομία." }
+    ]
+  },
+
+  "cities": [
+    {
+      "id": "new-york",
+      "name": "Νέα Υόρκη",
+      "englishName": "New York City",
+      "nickname": "The Big Apple / Η Πόλη που δεν Κοιμάται Ποτέ",
+      "type": "city",
+      "coords": [40.7128, -74.0060],
+      "zoom": 12.8,
+      "stats": { "population": "8.4 εκατομμύρια (20M μητροπολιτική)", "famousFor": "Times Square, Άγαλμα Ελευθερίας, Wall Street" },
+      "quote": "«Η πρωτεύουσα του κόσμου, όπου χιλιάδες όνειρα γεννιούνται ανάμεσα στους ουρανοξύστες.»",
+      "geo": { "summary": "Στις εκβολές του ποταμού Hudson στον Ατλαντικό, αποτελούμενη από 5 δήμους (Manhattan, Brooklyn, Queens, Bronx, Staten Island).", "highlights": [{ "title": "Central Park", "desc": "Το διασημότερο αστικό πάρκο στον κόσμο (3.41 km²)." }] },
+      "hist": { "summary": "Αρχικά New Amsterdam των Ολλανδών το 1624, μετεξελίχθηκε στην παγκόσμια πρωτεύουσα οικονομίας και πολιτισμού.", "highlights": [{ "year": "1886", "event": "Εγκαίνια Αγάλματος Ελευθερίας", "desc": "Δώρο της Γαλλίας προς τιμήν της ανεξαρτησίας." }] },
+      "demo": { "summary": "Πάνω από 800 γλώσσες ομιλούνται στη Νέα Υόρκη, η πιο γλωσσικά ποικιλόμορφη πόλη της Γης.", "details": [{ "label": "Παγκόσμιος Πόλος", "text": "Έδρα των Ηνωμένων Εθνών (ΟΗΕ)." }] },
+      "cult": { "summary": "Broadway, Μουσείο MoMA, Μητροπολιτικό Μουσείο Τέχνης (Met), jazz clubs.", "items": [{ "title": "Broadway", "desc": "Η παγκόσμια σκηνή του θεάτρου και των μιούζικαλ." }] },
+      "pastVsPresent": [{ "epoch": "1920s", "content": "Η εποχή του Μεγάλου Γκάτσμπι και η ανέγερση των πρώτων αρτ ντεκό ουρανοξυστών (Empire State, Chrysler)." }, { "epoch": "2026", "content": "Μια υπερσύγχρονη βιώσιμη μεγαλούπολη με το High Line και το One World Trade Center." }],
+      "pois": [{ "name": "Άγαλμα της Ελευθερίας", "category": "history", "coords": [40.6892, -74.0445], "desc": "Το παγκόσμιο σύμβολο ελευθερίας στο λιμάνι." }]
+    },
+    {
+      "id": "los-angeles",
+      "name": "Λος Άντζελες",
+      "englishName": "Los Angeles",
+      "nickname": "City of Angels / L.A.",
+      "type": "city",
+      "coords": [34.0522, -118.2437],
+      "zoom": 12.5,
+      "stats": { "population": "3.9 εκατομμύρια (13M μητροπολιτική)", "famousFor": "Hollywood, Κινηματογράφος, Παραλίες Ειρηνικού" },
+      "quote": "«Η παγκόσμια πρωτεύουσα του θεάματος, της δημιουργικότητας και της λάμψης.»",
+      "geo": { "summary": "Στη νότια Καλιφόρνια ανάμεσα στον Ειρηνικό Ωκεανό και τα βουνά San Gabriel.", "highlights": [{ "title": "Ακτογραμμή Santa Monica & Venice", "desc": "Οι θρυλικές παραλίες και ο πεζόδρομος των καλλιτεχνών." }] },
+      "hist": { "summary": "Ιδρύθηκε το 1781 από Ισπανούς εποίκους και έγινε παγκόσμιο κέντρο παραγωγής ταινιών από τις αρχές του 20ού αιώνα.", "highlights": [{ "year": "1910s", "event": "Γέννηση του Hollywood", "desc": "Τα πρώτα κινηματογραφικά στούντιο." }] },
+      "demo": { "summary": "Πολυεθνική μεγαλούπολη με ισχυρό ισπανόφωνο και ασιατικό πληθυσμό.", "details": [{ "label": "Ψυχαγωγία", "text": "Εκατοντάδες χιλιάδες καλλιτέχνες και δημιουργοί." }] },
+      "cult": { "summary": "Hollywood Walk of Fame, Beverly Hills, Getty Center, Dolby Theatre (Oscars).", "items": [{ "title": "Hollywood Walk of Fame", "desc": "Τα διάσημα αστέρια των καλλιτεχνών στη λεωφόρο του Χόλιγουντ." }] },
+      "pastVsPresent": [{ "epoch": "1920", "content": "Μια αναπτυσσόμενη πόλη πορτοκαλεώνων και πετρελαιοπηγών που ανακάλυψε τον βωβό κινηματογράφο." }, { "epoch": "2026", "content": "Παγκόσμιο κέντρο ψηφιακού streaming, gaming και διοργανώτρια πόλη των Ολυμπιακών Αγώνων 2028." }],
+      "pois": [{ "name": "Hollywood Sign", "category": "culture", "coords": [34.1341, -118.3215], "desc": "Η εμβληματική πινακίδα του Χόλιγουντ στους λόφους." }]
+    },
+    {
+      "id": "chicago",
+      "name": "Σικάγο",
+      "englishName": "Chicago",
+      "nickname": "The Windy City",
+      "type": "city",
+      "coords": [41.8781, -87.6298],
+      "zoom": 12.8,
+      "stats": { "population": "2.7 εκατομμύρια (9.5M μητροπολιτική)", "famousFor": "Αρχιτεκτονική ουρανοξυστών, Λίμνη Michigan, Blues" },
+      "quote": "«Η γενέτειρα του σύγχρονου ουρανοξύστη και η ψυχή του αμερικανικού βορρά.»",
+      "geo": { "summary": "Στις νοτιοδυτικές όχθες της τεράστιας λίμνης Michigan με το ποτάμι Chicago River να διασχίζει το Loop.", "highlights": [{ "title": "Λίμνη Michigan", "desc": "Μια από τις 5 Μεγάλες Λίμνες της Βόρειας Αμερικής." }] },
+      "hist": { "summary": "Αναγεννήθηκε από τις στάχτες της μετά τη Μεγάλη Πυρκαγιά του 1871, δημιουργώντας τη σύγχρονη αρχιτεκτονική.", "highlights": [{ "year": "1885", "event": "Πρώτος Ουρανοξύστης (Home Insurance Building)", "desc": "Το πρώτο κτίριο με μεταλλικό σκελετό στον κόσμο." }] },
+      "demo": { "summary": "Ισχυρές ιστορικές κοινότητες (Ελληνική - Greektown, Πολωνική, Ιρλανδική, Αφροαμερικανική).", "details": [{ "label": "Greektown Chicago", "text": "Ιστορική ελληνική παροικία που έκανε διάσημο το σαγανάκι." }] },
+      "cult": { "summary": "Chicago Blues, Millennium Park (The Bean), Art Institute of Chicago, Willis Tower.", "items": [{ "title": "Cloud Gate (The Bean)", "desc": "Το διάσημο κάτοπτρο-γλυπτό του Anish Kapoor." }] },
+      "pastVsPresent": [{ "epoch": "1920s", "content": "Η εποχή της ποτοαπαγόρευσης, των jazz clubs και των σιδηροδρομικών αποθηκών." }, { "epoch": "2026", "content": "Μια από τις πιο κομψές αρχιτεκτονικά μεγαλουπόλεις του πλανήτη." }],
+      "pois": [{ "name": "Millennium Park & Cloud Gate", "category": "culture", "coords": [41.8826, -87.6226], "desc": "Το εμβληματικό γλυπτό καθρέφτης στο κέντρο." }]
+    },
+    {
+      "id": "boston",
+      "name": "Βοστώνη",
+      "englishName": "Boston",
+      "nickname": "The Hub of the Universe / Beantown",
+      "type": "city",
+      "coords": [42.3601, -71.0589],
+      "zoom": 13.4,
+      "stats": { "population": "675,000 (4.9M μητροπολιτική)", "famousFor": "Freedom Trail, Harvard & MIT (Greater Boston), Red Sox" },
+      "quote": "«Εκεί όπου η επανάσταση της ελευθερίας συναντά την κορυφή της παγκόσμιας επιστήμης.»",
+      "geo": { "summary": "Στον κόλπο της Βοστώνης στις εκβολές του ποταμού Charles στη Μασαχουσέτη.", "highlights": [{ "title": "Charles River & Boston Harbor", "desc": "Το ιστορικό ποτάμι και το προστατευμένο φυσικό λιμάνι." }] },
+      "hist": { "summary": "Το λίκνο της Αμερικανικής Επανάστασης (Boston Tea Party 1773).", "highlights": [{ "year": "1773", "event": "Boston Tea Party", "desc": "Το έναυσμα του πολέμου της ανεξαρτησίας." }] },
+      "demo": { "summary": "Πάνω από 250.000 φοιτητές και η μεγαλύτερη πυκνότητα βιοτεχνολογίας στον κόσμο.", "details": [{ "label": "Παιδεία", "text": "Harvard, MIT, Tufts, Boston University." }] },
+      "cult": { "summary": "Freedom Trail, Beacon Hill, Boston Symphony Orchestra, Fenway Park (1912).", "items": [{ "title": "Freedom Trail", "desc": "Κόκκινη διαδρομή 4 χλμ. που συνδέει 16 επαναστατικά μνημεία." }] },
+      "pastVsPresent": [{ "epoch": "1775", "content": "Μια αποικιακή χερσόνησος με ξύλινα σπίτια και καμπαναριά συναγερμού." }, { "epoch": "2026", "content": "Παγκόσμια υπερδύναμη βιοϊατρικής, ρομποτικής και τεχνητής νοημοσύνης." }],
+      "pois": [{ "name": "Freedom Trail (Boston Common)", "category": "history", "coords": [42.3550, -71.0656], "desc": "Η αφετηρία του μονοπατιού ελευθερίας." }]
+    },
+    {
+      "id": "houston",
+      "name": "Χιούστον",
+      "englishName": "Houston",
+      "nickname": "Space City",
+      "type": "city",
+      "coords": [29.7604, -95.3698],
+      "zoom": 12.5,
+      "stats": { "population": "2.3 εκατομμύρια (7.3M μητροπολιτική)", "famousFor": "NASA Johnson Space Center, Ενέργεια, Ιατρική" },
+      "quote": "«Houston, Tranquility Base here. The Eagle has landed.»",
+      "geo": { "summary": "Στις ακτές του Κόλπου του Μεξικού στο Τέξας.", "highlights": [{ "title": "Bayou City waterways", "desc": "Δίκτυο καναλιών και πλωτών οδών." }] },
+      "hist": { "summary": "Κέντρο της αμερικανικής διαστημικής αποστολής και της ενεργειακής βιομηχανίας.", "highlights": [{ "year": "1969", "event": "Προσσελήνωση Apollo 11", "desc": "Το κέντρο ελέγχου πτήσεων της NASA." }] },
+      "demo": { "summary": "Η πιο πολυπολιτισμική μητρόπολη του Νότου των ΗΠΑ.", "details": [{ "label": "Texas Medical Center", "text": "Το μεγαλύτερο ιατρικό σύμπλεγμα στον κόσμο." }] },
+      "cult": { "summary": "Space Center Houston, Museum District, rodeos.", "items": [{ "title": "Space Center Houston", "desc": "Εκθέματα διαστημικών σκαφών και πυραύλων Saturn V." }] },
+      "pastVsPresent": [{ "epoch": "1901", "content": "Η ανακάλυψη πετρελαίου Spindletop που άλλαξε την ιστορία του Τέξας." }, { "epoch": "2026", "content": "Παγκόσμιο κέντρο ενεργειακής μετάβασης και διαστημικής εξερεύνησης Άρη." }],
+      "pois": [{ "name": "NASA Johnson Space Center", "category": "culture", "coords": [29.5519, -95.0934], "desc": "Το θρυλικό κέντρο ελέγχου αποστολών της NASA." }]
+    },
+    {
+      "id": "phoenix",
+      "name": "Φοίνιξ",
+      "englishName": "Phoenix",
+      "nickname": "Valley of the Sun",
+      "type": "city",
+      "coords": [33.4484, -112.0740],
+      "zoom": 12.5,
+      "stats": { "population": "1.6 εκατομμύριο", "famousFor": "Έρημος Sonoran, Ηλιοφάνεια, Ημιαγωγοί" },
+      "quote": "«Μια μητρόπολη που αναγεννήθηκε από την έρημο σαν τον μυθικό φοίνικα.»",
+      "geo": { "summary": "Στην καρδιά της ερήμου Sonoran στην Αριζόνα περιτριγυρισμένη από κόκκινα βουνά.", "highlights": [{ "title": "Camelback Mountain", "desc": "Το επιβλητικό βουνό σήμα κατατεθέν της κοιλάδας." }] },
+      "hist": { "summary": "Χτισμένη πάνω στα αρχαία αρδευτικά κανάλια της φυλής Hohokam.", "highlights": [{ "year": "1868", "event": "Ίδρυση σύγχρονου Φοίνιξ", "desc": "Αναγέννηση πάνω στα αρχαία κανάλια." }] },
+      "demo": { "summary": "Μία από τις ταχύτερα αναπτυσσόμενες μεγαλουπόλεις των ΗΠΑ.", "details": [{ "label": "Silicon Desert", "text": "Κέντρο παραγωγής microchips και ημιαγωγών." }] },
+      "cult": { "summary": "Αρχιτεκτονική του Frank Lloyd Wright (Taliesin West), βοτανικοί κήποι κάκτων.", "items": [{ "title": "Desert Botanical Garden", "desc": "Χιλιάδες είδη κάκτων της ερήμου." }] },
+      "pastVsPresent": [{ "epoch": "1912", "content": "Αγροτική κοινότητα εσπεριδοειδών και βάμβακος." }, { "epoch": "2026", "content": "Τεχνολογική μητρόπολη ημιαγωγών και ηλιακής ενέργειας." }],
+      "pois": [{ "name": "Desert Botanical Garden", "category": "nature", "coords": [33.4634, -111.9446], "desc": "Διάσημοι κήποι κάκτων στην έρημο Sonoran." }]
+    },
+    {
+      "id": "philadelphia",
+      "name": "Φιλαδέλφεια",
+      "englishName": "Philadelphia",
+      "nickname": "Philly / The City of Brotherly Love",
+      "type": "city",
+      "coords": [39.9526, -75.1652],
+      "zoom": 12.8,
+      "stats": { "population": "1.6 εκατομμύριο", "famousFor": "Liberty Bell, Independence Hall, Rocky Steps" },
+      "quote": "«Η γενέτειρα της αμερικανικής δημοκρατίας και της ελευθερίας.»",
+      "geo": { "summary": "Στη συμβολή των ποταμών Delaware και Schuylkill στην Πενσυλβάνια.", "highlights": [{ "title": "Fairmount Park", "desc": "Από τα μεγαλύτερα αστικά πάρκα στις ΗΠΑ." }] },
+      "hist": { "summary": "Εδώ συντάχθηκε η Διακήρυξη της Ανεξαρτησίας το 1776 και το Σύνταγμα των ΗΠΑ το 1787.", "highlights": [{ "year": "1776", "event": "Υπογραφή Διακήρυξης Ανεξαρτησίας", "desc": "Στο Independence Hall." }] },
+      "demo": { "summary": "Πρώτη πρωτεύουσα των ΗΠΑ με πλούσια ιατρική και πανεπιστημιακή παράδοση (UPenn).", "details": [{ "label": "Ιστορικό Κέντρο", "text": "Η πιο ιστορική πόλη της Αμερικής." }] },
+      "cult": { "summary": "Liberty Bell, Μουσείο Τέχνης Φιλαδέλφειας (τα περίφημα σκαλιά του Rocky), cheesesteaks.", "items": [{ "title": "Liberty Bell", "desc": "Η ιστορική ραγισμένη καμπάνα της ελευθερίας." }] },
+      "pastVsPresent": [{ "epoch": "1776", "content": "Το πνευματικό κέντρο του Διαφωτισμού και της Επανάστασης υπό τον Βενιαμίν Φραγκλίνο." }, { "epoch": "2026", "content": "Σύγχρονος κόμβος βιοεπιστημών, τέχνης και πολιτιστικής κληρονομιάς." }],
+      "pois": [{ "name": "Independence Hall & Liberty Bell", "category": "history", "coords": [39.9489, -75.1500], "desc": "Ο ναός της αμερικανικής ανεξαρτησίας (UNESCO)." }]
+    },
+    {
+      "id": "san-antonio",
+      "name": "Σαν Αντόνιο",
+      "englishName": "San Antonio",
+      "nickname": "Alamo City",
+      "type": "city",
+      "coords": [29.4241, -98.4936],
+      "zoom": 12.8,
+      "stats": { "population": "1.45 εκατομμύριο", "famousFor": "The Alamo, River Walk, Ισπανο-μεξικανική κληρονομιά" },
+      "quote": "«Remember the Alamo! Η πόλη όπου συναντώνται η άγρια δύση και ο ισπανικός πολιτισμός.»",
+      "geo": { "summary": "Στο νότιο κεντρικό Τέξας με τον ποταμό San Antonio River να διασχίζει το κέντρο.", "highlights": [{ "title": "San Antonio River Walk", "desc": "Μαγευτικός υπόγειος πεζόδρομος κάτω από τα γεφύρια με καφέ και κυπαρίσσια." }] },
+      "hist": { "summary": "Ισπανική ιεραποστολή του 18ου αιώνα, επίκεντρο της θρυλικής μάχης του Alamo το 1836.", "highlights": [{ "year": "1836", "event": "Μάχη του Άλαμο (Battle of the Alamo)", "desc": "Ηρωική αντίσταση των υπερασπιστών του Τέξας." }] },
+      "demo": { "summary": "Πόλη με βαθύτατες ρίζες Tejano (Τεξανο-μεξικανικές) και πλούσια γαστρονομία UNESCO.", "details": [{ "label": "Πολιτισμός Tejano", "text": "Ζωντανές παραδόσεις και μουσική conjunto." }] },
+      "cult": { "summary": "The Alamo (UNESCO), San Antonio Missions, River Walk.", "items": [{ "title": "The Alamo", "desc": "Το ιστορικό φρούριο του 18ου αιώνα." }] },
+      "pastVsPresent": [{ "epoch": "1836", "content": "Μια απομονωμένη πλίνθινη αποστολή στην άγρια μεθόριο του Τέξας." }, { "epoch": "2026", "content": "Κορυφαίος τουριστικός προορισμός και κέντρο κυβερνοασφάλειας." }],
+      "pois": [{ "name": "The Alamo", "category": "history", "coords": [29.4260, -98.4861], "desc": "Το θρυλικό ιστορικό φρούριο του Τέξας." }]
+    },
+    {
+      "id": "san-diego",
+      "name": "Σαν Ντιέγκο",
+      "englishName": "San Diego",
+      "nickname": "America's Finest City",
+      "type": "city",
+      "coords": [32.7157, -117.1611],
+      "zoom": 12.5,
+      "stats": { "population": "1.4 εκατομμύριο", "famousFor": "Balboa Park, Ναυτική Βάση, Κλίμα, Παραλίες" },
+      "quote": "«Η γενέτειρα της Καλιφόρνιας με το καλύτερο κλίμα στις ΗΠΑ.»",
+      "geo": { "summary": "Στα σύνορα με το Μεξικό στον Ειρηνικό Ωκεανό με φυσικό λιμάνι.", "highlights": [{ "title": "La Jolla & Coronado", "desc": "Μαγευτικές ακτές με θαλάσσιους λέοντες και ιστορικά θέρετρα." }] },
+      "hist": { "summary": "Η πρώτη ευρωπαϊκή αποίκιση στην Καλιφόρνια από τον πατέρα Junipero Serra το 1769.", "highlights": [{ "year": "1769", "event": "Ίδρυση Mission San Diego de Alcala", "desc": "Η πρώτη ισπανική ιεραποστολή στην Καλιφόρνια." }] },
+      "demo": { "summary": "Κέντρο ναυτικών δυνάμεων του Ειρηνικού και πρωτοπόρος στις βιοεπιστήμες (Biotech hub).", "details": [{ "label": "Ναυτική Ιστορία", "text": "Έδρα του Στόλου του Ειρηνικού των ΗΠΑ." }] },
+      "cult": { "summary": "Balboa Park (ισπανική αποικιακή αναγέννηση), USS Midway Museum, San Diego Zoo.", "items": [{ "title": "Balboa Park", "desc": "Τεράστιο πολιτιστικό πάρκο με 17 μουσεία και κήπους." }] },
+      "pastVsPresent": [{ "epoch": "1850", "content": "Ένας μικρός μεξικανικός οικισμός που ενσωματώθηκε στις ΗΠΑ." }, { "epoch": "2026", "content": "Παγκόσμια πρωτεύουσα ωκεανογραφίας, βιοτεχνολογίας και ποιότητας ζωής." }],
+      "pois": [{ "name": "Balboa Park", "category": "culture", "coords": [32.7341, -117.1446], "desc": "Το εντυπωσιακό ιστορικό πάρκο μουσείων." }]
+    },
+    {
+      "id": "dallas",
+      "name": "Ντάλας",
+      "englishName": "Dallas",
+      "nickname": "Big D",
+      "type": "city",
+      "coords": [32.7767, -96.7970],
+      "zoom": 12.5,
+      "stats": { "population": "1.3 εκατομμύριο (7.9M μητροπολιτική)", "famousFor": "Dealey Plaza / JFK, Dallas Cowboys, Τηλεπικοινωνίες" },
+      "quote": "«Το εμπορικό και οικονομικό γίγαντα του αμερικανικού νότου.»",
+      "geo": { "summary": "Στις βόρειες πεδιάδες του Τέξας κατά μήκος του ποταμού Trinity.", "highlights": [{ "title": "Dallas Arts District", "desc": "Η μεγαλύτερη συνεχής περιοχή τεχνών στις ΗΠΑ." }] },
+      "hist": { "summary": "Από σιδηροδρομικός κόμβος βάμβακος και πετρελαίου, στο σημείο της τραγικής δολοφονίας του John F. Kennedy το 1963.", "highlights": [{ "year": "1963", "event": "Δολοφονία JFK στο Dealey Plaza", "desc": "Ιστορικό γεγονός που συγκλόνισε τον πλανήτη." }] },
+      "demo": { "summary": "Έδρα δεκάδων πολυεθνικών κολοσσών Fortune 500 και τεχνολογίας (Telecom Corridor).", "details": [{ "label": "Οικονομικό Hub", "text": "Από τα ταχύτερα αναπτυσσόμενα μητροπολιτικά κέντρα." }] },
+      "cult": { "summary": "Sixth Floor Museum, Dallas Museum of Art, Fair Park (Art Deco).", "items": [{ "title": "The Sixth Floor Museum at Dealey Plaza", "desc": "Μουσείο αφιερωμένο στη ζωή και την κληρονομιά του JFK." }] },
+      "pastVsPresent": [{ "epoch": "1930", "content": "Η πρωτεύουσα των πετρελαιάδων του Ανατολικού Τέξας." }, { "epoch": "2026", "content": "Φουτουριστικό χρηματοοικονομικό, αεροπορικό και τεχνολογικό κέντρο." }],
+      "pois": [{ "name": "Dealey Plaza & Sixth Floor Museum", "category": "history", "coords": [32.7798, -96.8085], "desc": "Ο ιστορικός τόπος μνήμης του προέδρου John F. Kennedy." }]
+    }
+  ]
+}

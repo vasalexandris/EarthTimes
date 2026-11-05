@@ -1,41 +1,70 @@
 /**
  * App Module (Main Orchestrator)
- * Coordinates Landing Page, World & Regional Data, Leaflet Map, Base Layers,
- * UI Dossier, and Time Machine (Temporal Slider & Time Capsule Spots).
+ * Coordinates Landing Page, World & Regional Data, Greece (including Kozani!),
+ * USA, Leaflet Map, Base Layers, UI Dossier, and Time Machine.
  */
 
-import { loadWorldData, loadStateData } from './data-service.js';
+import { loadWorldData, loadCountryData, loadStateData } from './data-service.js';
 import * as MapModule from './map.js';
 import * as UIModule from './ui.js';
 import * as TimeMachine from './time-machine.js';
 
 // Application State
 let worldData = null;
+let greeceData = null;
+let usaData = null;
 let massachusettsData = null;
-let currentScope = 'world'; // 'world' | 'usa' | 'state' | 'city'
+
+let currentScope = 'world'; // 'world' | 'country' | 'state' | 'city'
+let currentCountryId = 'greece';
 let currentCityId = null;
 let currentTab = 'geo';
 let currentPoiFilter = 'all';
 
+// Sequential tour items
 const tourSequence = [
   { type: 'world', id: 'earth' },
-  { type: 'state', id: 'massachusetts' },
-  { type: 'city', id: 'boston' },
-  { type: 'city', id: 'cambridge' },
-  { type: 'city', id: 'salem' },
-  { type: 'city', id: 'plymouth' },
-  { type: 'city', id: 'worcester' }
+  { type: 'country', id: 'greece' },
+  { type: 'city', id: 'kozani' },
+  { type: 'city', id: 'athens' },
+  { type: 'city', id: 'thessaloniki' },
+  { type: 'country', id: 'usa' },
+  { type: 'city', id: 'new-york' },
+  { type: 'city', id: 'boston' }
 ];
+
+function getAllCities() {
+  const list = [];
+  if (greeceData && greeceData.cities) list.push(...greeceData.cities);
+  if (usaData && usaData.cities) list.push(...usaData.cities);
+  if (massachusettsData && massachusettsData.cities) {
+    massachusettsData.cities.forEach(mc => {
+      if (!list.some(c => c.id === mc.id)) list.push(mc);
+    });
+  }
+  return list;
+}
+
+function findCityById(cityId) {
+  const cities = getAllCities();
+  return cities.find(c => c.id === cityId);
+}
 
 function getCurrentEntity() {
   if (currentScope === 'world') {
     return worldData ? worldData.entity : null;
   }
-  if (!massachusettsData) return null;
-  if (currentScope === 'city' && currentCityId) {
-    return massachusettsData.cities.find(c => c.id === currentCityId) || massachusettsData.state;
+  if (currentScope === 'country') {
+    if (currentCountryId === 'greece' && greeceData) return greeceData.country;
+    if (currentCountryId === 'usa' && usaData) return usaData.country;
   }
-  return massachusettsData.state;
+  if (currentScope === 'state' && massachusettsData) {
+    return massachusettsData.state;
+  }
+  if (currentScope === 'city' && currentCityId) {
+    return findCityById(currentCityId);
+  }
+  return worldData ? worldData.entity : null;
 }
 
 export function openExplorer() {
@@ -92,6 +121,7 @@ export function toggleTimePlayback() {
 
 export function flyToWorld() {
   currentScope = 'world';
+  currentCountryId = null;
   currentCityId = null;
 
   UIModule.updateStatusBadge("Προβολή: Πλανήτης Γη (World Overview)");
@@ -109,26 +139,30 @@ export function flyToWorld() {
   }
 }
 
-export function flyToUSA() {
-  currentScope = 'usa';
+export function flyToCountry(countryId = 'greece') {
+  currentScope = 'country';
+  currentCountryId = countryId;
   currentCityId = null;
 
-  UIModule.updateStatusBadge("Προβολή: Επικράτεια Ηνωμένων Πολιτειών");
-  UIModule.updateBreadcrumbs('usa');
-  UIModule.updateJumpSelect('usa');
+  const dataset = (countryId === 'greece') ? greeceData : usaData;
+  if (!dataset || !dataset.country) return;
 
-  MapModule.flyToUSA();
-  MapModule.toggleStateHighlight(true);
-  if (massachusettsData) {
-    MapModule.renderCityPins(massachusettsData.cities, currentScope, currentCityId, flyToCity);
-    UIModule.renderDossier(massachusettsData.state, 'state', currentTab);
-  }
+  const country = dataset.country;
+  UIModule.updateStatusBadge(`Πτήση: ${country.name}`);
+  UIModule.updateBreadcrumbs('country', country);
+  UIModule.updateJumpSelect(`country:${country.id}`);
+
+  MapModule.flyToCoords(country.coords, country.zoom, 1.6);
+  MapModule.toggleStateHighlight(false);
+  MapModule.renderCityPins(dataset.cities, currentScope, currentCityId, flyToCity);
   MapModule.clearPois();
+  UIModule.renderDossier(country, 'country', currentTab);
   renderCurrentTimeCapsules();
 }
 
 export function flyToState(stateId = 'massachusetts') {
   currentScope = 'state';
+  currentCountryId = 'usa';
   currentCityId = null;
 
   if (!massachusettsData) return;
@@ -147,30 +181,47 @@ export function flyToState(stateId = 'massachusetts') {
 }
 
 export function flyToCity(cityId) {
-  if (!massachusettsData) return;
-  const city = massachusettsData.cities.find(c => c.id === cityId);
+  const city = findCityById(cityId);
   if (!city) return;
 
   currentScope = 'city';
   currentCityId = cityId;
 
+  // Determine parent country
+  let parent = greeceData ? greeceData.country : null;
+  if (greeceData && greeceData.cities && greeceData.cities.some(c => c.id === cityId)) {
+    currentCountryId = 'greece';
+    parent = greeceData.country;
+  } else if (usaData && usaData.cities && usaData.cities.some(c => c.id === cityId)) {
+    currentCountryId = 'usa';
+    parent = usaData.country;
+  } else if (massachusettsData) {
+    currentCountryId = 'usa';
+    parent = massachusettsData.state;
+  }
+
   UIModule.updateStatusBadge(`Πτήση: ${city.name} (${city.englishName})`);
-  UIModule.updateBreadcrumbs('city', massachusettsData.state, city);
+  UIModule.updateBreadcrumbs('city', parent, city);
   UIModule.updateJumpSelect(`city:${city.id}`);
 
   MapModule.flyToCoords(city.coords, city.zoom, 1.4);
   MapModule.toggleStateHighlight(false);
-  MapModule.renderCityPins(massachusettsData.cities, currentScope, currentCityId, flyToCity);
+
+  const activeCities = (currentCountryId === 'greece') 
+    ? (greeceData ? greeceData.cities : []) 
+    : (usaData ? usaData.cities : (massachusettsData ? massachusettsData.cities : []));
+
+  MapModule.renderCityPins(activeCities, currentScope, currentCityId, flyToCity);
   MapModule.renderCityPois(city, currentPoiFilter, switchTab);
-  UIModule.renderDossier(city, false, currentTab);
+  UIModule.renderDossier(city, 'city', currentTab);
   renderCurrentTimeCapsules();
 }
 
 export function handleJumpChange(value) {
   if (value === 'world') {
     flyToWorld();
-  } else if (value === 'usa') {
-    flyToUSA();
+  } else if (value.startsWith('country:')) {
+    flyToCountry(value.split(':')[1]);
   } else if (value.startsWith('state:')) {
     flyToState(value.split(':')[1]);
   } else if (value.startsWith('city:')) {
@@ -181,6 +232,7 @@ export function handleJumpChange(value) {
 export function navigateTour(direction) {
   let currentIndex = tourSequence.findIndex(item => {
     if (currentScope === 'world' && item.type === 'world') return true;
+    if (currentScope === 'country' && item.type === 'country' && item.id === currentCountryId) return true;
     if (currentScope === 'state' && item.type === 'state') return true;
     if (currentScope === 'city' && item.type === 'city' && item.id === currentCityId) return true;
     return false;
@@ -195,6 +247,8 @@ export function navigateTour(direction) {
   const target = tourSequence[nextIndex];
   if (target.type === 'world') {
     flyToWorld();
+  } else if (target.type === 'country') {
+    flyToCountry(target.id);
   } else if (target.type === 'state') {
     flyToState(target.id);
   } else {
@@ -205,7 +259,6 @@ export function navigateTour(direction) {
 export function switchTab(tabId) {
   currentTab = tabId;
   const entity = getCurrentEntity();
-  const entityType = currentScope === 'world' ? 'world' : (currentScope === 'city' ? 'city' : 'state');
   UIModule.updateTabButtons(currentTab);
   UIModule.renderTabContent(currentTab, entity);
 }
@@ -214,9 +267,11 @@ export function togglePoiCategory(category) {
   currentPoiFilter = category;
   UIModule.updatePoiFilterButtons(category);
 
-  if (currentScope === 'city' && currentCityId && massachusettsData) {
-    const city = massachusettsData.cities.find(c => c.id === currentCityId);
-    MapModule.renderCityPois(city, currentPoiFilter, switchTab);
+  if (currentScope === 'city' && currentCityId) {
+    const city = findCityById(currentCityId);
+    if (city) {
+      MapModule.renderCityPois(city, currentPoiFilter, switchTab);
+    }
   }
 }
 
@@ -230,7 +285,7 @@ window.openExplorer = openExplorer;
 window.openLandingPage = openLandingPage;
 window.setMapLayer = setMapLayer;
 window.flyToWorld = flyToWorld;
-window.flyToUSA = flyToUSA;
+window.flyToCountry = flyToCountry;
 window.flyToState = flyToState;
 window.flyToCity = flyToCity;
 window.handleJumpChange = handleJumpChange;
@@ -259,17 +314,19 @@ async function init() {
     // 1. Update Today's Date in UI
     UIModule.updateCurrentDate();
 
-    // 2. Load World, Regional, and Time-Capsule datasets in parallel
-    [worldData, massachusettsData] = await Promise.all([
+    // 2. Load World, Countries (Greece, USA), and Regional datasets in parallel
+    [worldData, greeceData, usaData, massachusettsData] = await Promise.all([
       loadWorldData(),
+      loadCountryData('greece'),
+      loadCountryData('usa'),
       loadStateData('massachusetts'),
       TimeMachine.initTimeMachine()
     ]);
 
     // 3. Initialize Leaflet Map centered on Earth
     MapModule.initMap('map', worldData.entity.coords, worldData.entity.zoom, () => {
-      if (currentScope !== 'state') {
-        flyToState('massachusetts');
+      if (currentScope === 'world') {
+        flyToCountry('greece');
       }
     });
 

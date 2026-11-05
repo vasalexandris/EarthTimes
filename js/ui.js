@@ -48,22 +48,22 @@ export function updateBreadcrumbs(scope, stateOrCountry, city) {
     if (bcState) bcState.classList.add('hidden');
     if (bcCitySep) bcCitySep.classList.add('hidden');
     if (bcCity) bcCity.classList.add('hidden');
-  } else if (scope === 'usa') {
+  } else if (scope === 'country') {
     bcWorld.className = 'text-slate-400 hover:text-emerald-400 flex items-center gap-1.5 transition';
     if (bcStateSep) bcStateSep.classList.remove('hidden');
     if (bcState) {
       bcState.classList.remove('hidden');
-      bcState.innerText = 'ΗΠΑ';
-      bcState.className = 'text-sky-300 font-medium hover:text-sky-200 transition';
+      bcState.innerText = stateOrCountry ? stateOrCountry.name : 'Χώρα';
+      bcState.className = 'text-sky-300 font-bold hover:text-sky-200 transition';
     }
     if (bcCitySep) bcCitySep.classList.add('hidden');
     if (bcCity) bcCity.classList.add('hidden');
-  } else if (scope === 'state') {
+  } else if (scope === 'state' || scope === 'usa') {
     bcWorld.className = 'text-slate-400 hover:text-emerald-400 flex items-center gap-1.5 transition';
     if (bcStateSep) bcStateSep.classList.remove('hidden');
     if (bcState) {
       bcState.classList.remove('hidden');
-      bcState.innerText = stateOrCountry ? stateOrCountry.name : 'Μασαχουσέτη';
+      bcState.innerText = stateOrCountry ? stateOrCountry.name : 'ΗΠΑ';
       bcState.className = 'text-sky-300 font-medium hover:text-sky-200 transition';
     }
     if (bcCitySep) bcCitySep.classList.add('hidden');
@@ -73,7 +73,7 @@ export function updateBreadcrumbs(scope, stateOrCountry, city) {
     if (bcStateSep) bcStateSep.classList.remove('hidden');
     if (bcState) {
       bcState.classList.remove('hidden');
-      bcState.innerText = stateOrCountry ? stateOrCountry.name : 'Μασαχουσέτη';
+      bcState.innerText = stateOrCountry ? stateOrCountry.name : 'Ελλάδα';
       bcState.className = 'text-slate-400 hover:text-sky-300 transition';
     }
     if (bcCitySep) bcCitySep.classList.remove('hidden');
@@ -131,11 +131,14 @@ export function renderDossier(entity, entityType = 'state', currentTab = 'geo') 
     if (entityType === 'world') {
       badgeCategory.innerText = 'Παγκόσμιος Φάκελος Γης';
       badgeCategory.className = 'px-2 py-0.5 rounded text-[11px] font-bold tracking-wide uppercase bg-emerald-950/80 text-emerald-300 border border-emerald-600/50';
+    } else if (entityType === 'country') {
+      badgeCategory.innerText = 'Εθνικός Φάκελος Χώρας';
+      badgeCategory.className = 'px-2 py-0.5 rounded text-[11px] font-bold tracking-wide uppercase bg-indigo-950/80 text-indigo-300 border border-indigo-600/50';
     } else if (entityType === 'city') {
       badgeCategory.innerText = 'Αστικός Φάκελος';
       badgeCategory.className = 'px-2 py-0.5 rounded text-[11px] font-bold tracking-wide uppercase bg-amber-900/60 text-amber-300 border border-amber-700/50';
     } else {
-      badgeCategory.innerText = 'Πολιτειακός Φάκελος';
+      badgeCategory.innerText = 'Πολιτειακός / Περιφερειακός Φάκελος';
       badgeCategory.className = 'px-2 py-0.5 rounded text-[11px] font-bold tracking-wide uppercase bg-sky-900/60 text-sky-300 border border-sky-700/50';
     }
   }
@@ -152,8 +155,10 @@ export function renderDossier(entity, entityType = 'state', currentTab = 'geo') 
   if (entitySubtitle) {
     if (entityType === 'world') {
       entitySubtitle.innerText = `${entity.englishName} • 3ος Πλανήτης Ηλιακού Συστήματος`;
+    } else if (entityType === 'country') {
+      entitySubtitle.innerText = `${entity.englishName} • Πρωτεύουσα: ${entity.capital || 'Αθήνα'}`;
     } else if (entityType === 'city') {
-      entitySubtitle.innerText = `${entity.englishName} • Πολιτεία: Μασαχουσέτη`;
+      entitySubtitle.innerText = `${entity.englishName}`;
     } else {
       entitySubtitle.innerText = `${entity.englishName} • Πρωτεύουσα: ${entity.capital || 'Βοστώνη'}`;
     }
@@ -175,9 +180,25 @@ export function renderDossier(entity, entityType = 'state', currentTab = 'geo') 
 
     if (stat3Label) stat3Label.innerText = 'Επιφάνεια';
     if (stat3) stat3.innerText = entity.stats?.area || '510M km²';
+  } else if (entityType === 'country') {
+    if (stat1Label) stat1Label.innerText = 'Πληθυσμός';
+    if (stat1) stat1.innerText = entity.stats?.population || '-';
+
+    if (stat2Label) stat2Label.innerText = 'Ίδρυση / Ανεξαρτησία';
+    if (stat2) stat2.innerText = entity.stats?.founded || '-';
+
+    if (stat3Label) stat3Label.innerText = 'Έκταση / ΑΕΠ';
+    if (stat3) stat3.innerText = entity.stats?.area || entity.stats?.gdp || '-';
   } else {
     if (stat1Label) stat1Label.innerText = 'Πληθυσμός';
     if (stat1) stat1.innerText = entity.stats?.population || '-';
+
+    if (stat2Label) stat2Label.innerText = entityType === 'city' ? 'Ορόσημο' : 'Ίδρυση / Ενσωμ.';
+    if (stat2) stat2.innerText = entity.stats?.founded || entity.stats?.famousFor || '-';
+
+    if (stat3Label) stat3Label.innerText = 'Έκταση / ΑΕΠ';
+    if (stat3) stat3.innerText = entity.stats?.area || entity.stats?.gdp || '-';
+  }
 
     if (stat2Label) stat2Label.innerText = entityType === 'city' ? 'Ορόσημο' : 'Ίδρυση / Ενσωμ.';
     if (stat2) stat2.innerText = entity.stats?.founded || entity.stats?.famousFor || '-';
