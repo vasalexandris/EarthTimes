@@ -1,0 +1,1216 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fly to the States of the USA - Διαδραστικό Ντοκιμαντέρ</title>
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#f0f7ff',
+              100: '#e0effe',
+              500: '#0284c7',
+              600: '#0369a1',
+              800: '#075985',
+              900: '#0c4a6e',
+              gold: '#d97706',
+              burgundy: '#881337'
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            serif: ['Georgia', 'Cambria', 'serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Leaflet CSS & JS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: rgba(15, 23, 42, 0.05);
+    }
+    ::-webkit-scrollbar-thumb {
+      background: rgba(100, 116, 139, 0.3);
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: rgba(100, 116, 139, 0.5);
+    }
+
+    /* Custom Leaflet Marker Badges */
+    .custom-poi-marker {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .custom-poi-marker:hover {
+      transform: scale(1.22);
+      z-index: 1000 !important;
+    }
+    .marker-pulse {
+      box-shadow: 0 0 0 0 rgba(2, 132, 199, 0.7);
+      animation: pulse-ring 2s infinite cubic-bezier(0.66, 0, 0, 1);
+    }
+    @keyframes pulse-ring {
+      to {
+        box-shadow: 0 0 0 16px rgba(2, 132, 199, 0);
+      }
+    }
+
+    /* Smooth Leaflet Popup Styling */
+    .leaflet-popup-content-wrapper {
+      border-radius: 1rem;
+      padding: 0;
+      overflow: hidden;
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+    }
+    .leaflet-popup-content {
+      margin: 0;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body class="bg-slate-900 text-slate-100 font-sans h-screen flex flex-col overflow-hidden select-none">
+
+  <!-- ================= TOP NAVIGATION BAR ================= -->
+  <header class="bg-slate-900/90 backdrop-blur-md border-b border-slate-800 px-4 py-2.5 flex items-center justify-between shrink-0 z-20 shadow-md">
+    <div class="flex items-center gap-3">
+      <div class="h-10 w-10 rounded-xl bg-gradient-to-tr from-sky-600 to-indigo-600 flex items-center justify-center text-white shadow-lg shadow-sky-900/40">
+        <i class="fa-solid fa-plane-departure text-base"></i>
+      </div>
+      <div>
+        <div class="flex items-center gap-2">
+          <h1 class="font-bold text-base md:text-lg tracking-tight text-white flex items-center gap-1.5">
+            Fly to the States <span class="text-xs bg-amber-500/20 text-amber-300 border border-amber-500/30 font-semibold px-2 py-0.5 rounded-full">USA Documentary</span>
+          </h1>
+        </div>
+        <p class="text-xs text-slate-400 hidden sm:block">Διαδραστικός Γεωγραφικός, Ιστορικός & Πολιτισμικός Άτλαντας</p>
+      </div>
+    </div>
+
+    <!-- Quick Location Flight Selector & Breadcrumb -->
+    <div class="flex items-center gap-2 text-xs md:text-sm">
+      <nav id="breadcrumbs" class="flex items-center gap-1 text-slate-400 bg-slate-800/80 px-3 py-1.5 rounded-lg border border-slate-700">
+        <button onclick="flyToUSA()" class="hover:text-sky-400 flex items-center gap-1 transition">
+          <i class="fa-solid fa-earth-americas"></i> ΗΠΑ
+        </button>
+        <span class="text-slate-600">/</span>
+        <button id="bc-state" onclick="flyToState('massachusetts')" class="text-sky-300 font-medium hover:text-sky-200 transition">
+          Μασαχουσέτη
+        </button>
+        <span id="bc-sep" class="text-slate-600 hidden">/</span>
+        <span id="bc-city" class="text-amber-400 font-semibold hidden truncate max-w-[100px] md:max-w-none">Βοστώνη</span>
+      </nav>
+
+      <!-- Quick Tour Jump Menu -->
+      <select id="quickJumpSelect" onchange="handleJumpChange(this.value)" class="bg-slate-800 border border-slate-700 text-slate-200 rounded-lg px-2.5 py-1.5 focus:ring-2 focus:ring-sky-500 outline-none text-xs md:text-sm cursor-pointer">
+        <optgroup label="Επίπεδο Επικράτειας">
+          <option value="usa">🇺🇸 Επισκόπηση ΗΠΑ</option>
+          <option value="state:massachusetts" selected>🏛️ Μασαχουσέτη (Bay State)</option>
+        </optgroup>
+        <optgroup label="Πόλεις Μασαχουσέτης">
+          <option value="city:boston">📍 Βοστώνη (Boston)</option>
+          <option value="city:cambridge">🎓 Κέιμπριτζ (Cambridge)</option>
+          <option value="city:salem">🕯️ Σάλεμ (Salem)</option>
+          <option value="city:plymouth">⚓ Πλύμουθ (Plymouth)</option>
+          <option value="city:worcester">🏭 Γουόρστερ (Worcester)</option>
+        </optgroup>
+      </select>
+    </div>
+  </header>
+
+  <!-- ================= MAIN WORKSPACE (MAP + DOSSIER PANEL) ================= -->
+  <main class="flex-1 flex flex-col lg:flex-row relative overflow-hidden">
+    
+    <!-- MAP CONTAINER -->
+    <div class="flex-1 relative h-1/2 lg:h-full bg-slate-950">
+      <div id="map" class="w-full h-full z-10"></div>
+
+      <!-- MAP FLOATING OVERLAYS -->
+      <!-- Flight Status Indicator -->
+      <div id="flightBadge" class="absolute top-4 left-4 z-[400] bg-slate-900/90 backdrop-blur-md border border-slate-700/80 rounded-xl px-3 py-2 text-xs shadow-xl flex items-center gap-2.5 transition">
+        <span class="relative flex h-2.5 w-2.5">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-sky-500"></span>
+        </span>
+        <span id="flightStatusText" class="font-medium text-slate-300">Προβολή: Πολιτεία Μασαχουσέτη</span>
+      </div>
+
+      <!-- Layer / Filter controls on Map -->
+      <div class="absolute bottom-4 left-4 z-[400] bg-slate-900/95 backdrop-blur-md border border-slate-700/80 rounded-xl p-2 shadow-2xl flex flex-wrap gap-1.5 text-xs max-w-[90%] md:max-w-none">
+        <span class="text-[11px] uppercase tracking-wider text-slate-400 px-2 py-1 font-semibold flex items-center gap-1">
+          <i class="fa-solid fa-filter"></i> Σημεία:
+        </span>
+        <button onclick="togglePoiCategory('all')" id="filter-all" class="poi-filter-btn px-2.5 py-1 rounded-md bg-sky-600 text-white font-medium hover:bg-sky-500 transition">Όλα</button>
+        <button onclick="togglePoiCategory('history')" id="filter-history" class="poi-filter-btn px-2.5 py-1 rounded-md bg-slate-800 text-slate-300 hover:bg-slate-700 transition">🏛️ Ιστορικά</button>
+        <button onclick="togglePoiCategory('culture')" id="filter-culture" class="poi-filter-btn px-2.5 py-1 rounded-md bg-slate-800 text-slate-300 hover:bg-slate-700 transition">🎭 Πολιτισμός & Πανεπιστήμια</button>
+        <button onclick="togglePoiCategory('nature')" id="filter-nature" class="poi-filter-btn px-2.5 py-1 rounded-md bg-slate-800 text-slate-300 hover:bg-slate-700 transition">🌲 Φύση / Γεωγραφία</button>
+      </div>
+
+      <!-- Map Reset / Fly to State shortcut -->
+      <div class="absolute top-4 right-4 z-[400] flex flex-col gap-2">
+        <button onclick="flyToUSA()" title="Επιστροφή σε ολόκληρες τις ΗΠΑ" class="h-9 w-9 bg-slate-900/90 hover:bg-slate-800 text-slate-200 border border-slate-700 rounded-lg flex items-center justify-center shadow-lg transition">
+          <i class="fa-solid fa-globe text-sm"></i>
+        </button>
+        <button onclick="flyToState('massachusetts')" title="Επαναφορά στην Πολιτεία" class="h-9 w-9 bg-slate-900/90 hover:bg-slate-800 text-sky-400 border border-slate-700 rounded-lg flex items-center justify-center shadow-lg transition">
+          <i class="fa-solid fa-expand text-sm"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- ================= RIGHT PANEL: INTERACTIVE DOSSIER ================= -->
+    <aside id="dossierPanel" class="w-full lg:w-[480px] xl:w-[540px] h-1/2 lg:h-full bg-slate-900 border-t lg:border-t-0 lg:border-l border-slate-800 flex flex-col z-20 shadow-2xl relative">
+      
+      <!-- Panel Header & Identity Banner -->
+      <div id="panelHeader" class="p-4 sm:p-5 border-b border-slate-800 shrink-0 bg-gradient-to-b from-slate-800/60 to-slate-900/90">
+        <div class="flex items-start justify-between gap-3">
+          <div>
+            <div class="flex items-center gap-2 mb-1">
+              <span id="badgeCategory" class="px-2 py-0.5 rounded text-[11px] font-bold tracking-wide uppercase bg-sky-900/60 text-sky-300 border border-sky-700/50">
+                Πολιτειακός Φάκελος
+              </span>
+              <span id="badgeNickname" class="text-xs text-amber-400/90 italic">
+                "The Bay State"
+              </span>
+            </div>
+            <h2 id="entityTitle" class="text-xl sm:text-2xl font-black tracking-tight text-white flex items-center gap-2">
+              Μασαχουσέτη
+            </h2>
+            <p id="entitySubtitle" class="text-xs sm:text-sm text-slate-400 mt-0.5 font-serif">
+              Commonwealth of Massachusetts • Πρωτεύουσα: Βοστώνη
+            </p>
+          </div>
+
+          <!-- Quick tour navigation buttons (Prev / Next) -->
+          <div class="flex items-center gap-1 shrink-0 bg-slate-800/80 p-1 rounded-xl border border-slate-700">
+            <button onclick="navigateTour(-1)" title="Προηγούμενο στην περιήγηση" class="p-2 hover:bg-slate-700 rounded-lg text-slate-300 hover:text-white transition">
+              <i class="fa-solid fa-chevron-left text-xs"></i>
+            </button>
+            <button onclick="navigateTour(1)" title="Επόμενο στην περιήγηση" class="p-2 hover:bg-slate-700 rounded-lg text-slate-300 hover:text-white transition">
+              <i class="fa-solid fa-chevron-right text-xs"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Quick Stat Pills -->
+        <div id="quickStatsRow" class="grid grid-cols-3 gap-2 mt-3 pt-3 border-t border-slate-800/80 text-center">
+          <div class="bg-slate-800/40 border border-slate-700/40 rounded-lg p-1.5">
+            <div class="text-[10px] text-slate-400 uppercase">Πληθυσμός</div>
+            <div id="stat1" class="text-xs sm:text-sm font-semibold text-slate-100">7.0M</div>
+          </div>
+          <div class="bg-slate-800/40 border border-slate-700/40 rounded-lg p-1.5">
+            <div class="text-[10px] text-slate-400 uppercase">Ίδρυση / Ενσωμ.</div>
+            <div id="stat2" class="text-xs sm:text-sm font-semibold text-amber-300">1788 (6η)</div>
+          </div>
+          <div class="bg-slate-800/40 border border-slate-700/40 rounded-lg p-1.5">
+            <div class="text-[10px] text-slate-400 uppercase">Έκταση</div>
+            <div id="stat3" class="text-xs sm:text-sm font-semibold text-sky-300">27,336 km²</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Categories Navigation Tabs -->
+      <div class="flex border-b border-slate-800 shrink-0 bg-slate-900 text-xs sm:text-sm font-medium overflow-x-auto">
+        <button onclick="switchTab('geo')" id="tab-geo" class="tab-btn flex-1 py-2.5 px-3 border-b-2 border-sky-500 text-sky-400 font-semibold flex items-center justify-center gap-1.5 whitespace-nowrap">
+          <i class="fa-solid fa-mountain"></i> Γεωγραφία
+        </button>
+        <button onclick="switchTab('hist')" id="tab-hist" class="tab-btn flex-1 py-2.5 px-3 border-b-2 border-transparent text-slate-400 hover:text-slate-200 flex items-center justify-center gap-1.5 whitespace-nowrap">
+          <i class="fa-solid fa-landmark"></i> Ιστορία
+        </button>
+        <button onclick="switchTab('demo')" id="tab-demo" class="tab-btn flex-1 py-2.5 px-3 border-b-2 border-transparent text-slate-400 hover:text-slate-200 flex items-center justify-center gap-1.5 whitespace-nowrap">
+          <i class="fa-solid fa-users"></i> Κοινωνία
+        </button>
+        <button onclick="switchTab('cult')" id="tab-cult" class="tab-btn flex-1 py-2.5 px-3 border-b-2 border-transparent text-slate-400 hover:text-slate-200 flex items-center justify-center gap-1.5 whitespace-nowrap">
+          <i class="fa-solid fa-palette"></i> Πολιτισμός
+        </button>
+        <button onclick="switchTab('timeline')" id="tab-timeline" class="tab-btn flex-1 py-2.5 px-3 border-b-2 border-transparent text-amber-400 hover:text-amber-300 flex items-center justify-center gap-1.5 whitespace-nowrap">
+          <i class="fa-solid fa-clock-rotate-left"></i> Τότε & Τώρα
+        </button>
+      </div>
+
+      <!-- Tab Content Area (Scrollable) -->
+      <div id="tabContent" class="flex-1 overflow-y-auto p-4 sm:p-5 space-y-4 text-slate-300 text-xs sm:text-sm leading-relaxed">
+        <!-- Injected via JavaScript dynamically -->
+      </div>
+
+      <!-- Bottom Audio / Documentary Quote Footer -->
+      <div class="p-3 border-t border-slate-800 bg-slate-950/80 flex items-center justify-between text-xs text-slate-400 shrink-0">
+        <div class="flex items-center gap-2 truncate">
+          <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+          <span id="docuQuote" class="truncate italic text-[11px] sm:text-xs text-slate-300">
+            «Το λίκνο της Αμερικανικής Ελευθερίας και η καρδιά της ανώτατης εκπαίδευσης.»
+          </span>
+        </div>
+        <button onclick="narrateBrief()" title="Ακρόαση σύνοψης (Text-to-speech)" class="p-1.5 bg-slate-800 hover:bg-slate-700 text-sky-400 rounded-lg border border-slate-700 shrink-0 transition">
+          <i id="ttsIcon" class="fa-solid fa-volume-high"></i>
+        </button>
+      </div>
+
+    </aside>
+  </main>
+
+  <!-- ================= LOGIC & DATA SCRIPT ================= -->
+  <script>
+    /* ==========================================================
+       DATA MODEL: MASSACHUSETTS STATE & KEY CITIES & POIS
+       Easily scalable to additional states and municipalities!
+       ========================================================== */
+    const appData = {
+      state: {
+        id: "massachusetts",
+        name: "Μασαχουσέτη",
+        englishName: "Commonwealth of Massachusetts",
+        nickname: "The Bay State / Η Πολιτεία του Κόλπου",
+        type: "state",
+        capital: "Βοστώνη",
+        coords: [42.3000, -71.8000],
+        zoom: 8.4,
+        stats: {
+          population: "7.03 εκατομμύρια",
+          founded: "6 Φεβρ. 1788 (6η)",
+          area: "27,336 km²",
+          gdp: "$688 Δισεκατομμύρια"
+        },
+        quote: "«Εκεί όπου η ιστορία της επανάστασης συναντά τα κορυφαία πανεπιστήμια του κόσμου.»",
+        geo: {
+          summary: "Η Μασαχουσέτη βρίσκεται στις βορειοανατολικές ΗΠΑ στην περιοχή της Νέας Αγγλίας. Χαρακτηρίζεται από τεράστια ποικιλία αναγλύφου: από τις οροσειρές Berkshires στα δυτικά, μέχρι την κοιλάδα του ποταμού Κονέκτικατ και τις γραφικές ακτές του Ατλαντικού και το ακρωτήριο Cape Cod.",
+          highlights: [
+            { title: "Όρη Μπέρκσιρ (Berkshires)", desc: "Τμήμα των Αππαλαχίων Ορέων, φημισμένο για τα φθινοπωρινά φυλλώματα, τα μονοπάτια πεζοπορίας και το θέρετρο πολιτισμού Tanglewood." },
+            { title: "Ακρωτήριο Κέιπ Κοντ (Cape Cod)", desc: "Μια μοναδική αμμώδης χερσόνησος με φάρους, προστατευόμενους υγροτόπους, και τα νησιά Martha's Vineyard και Nantucket." },
+            { title: "Ποταμός Τσαρλς (Charles River)", desc: "Ο ιστορικός ποταμός 129 χλμ. που χωρίζει τη Βοστώνη από το Κέιμπριτζ, διάσημος για τις διεθνείς ρεγκάτες κωπηλασίας (Head of the Charles Regatta)." }
+          ]
+        },
+        hist: {
+          summary: "Θεωρείται το λίκνο του αμερικανικού έθνους. Εδώ αποβιβάστηκαν οι πρώτοι «Προσκυνητές» (Pilgrims) με το πλοίο Mayflower το 1620, ενώ έναν αιώνα αργότερα η Μασαχουσέτη έγινε το επίκεντρο του Αμερικανικού Πολέμου της Ανεξαρτησίας.",
+          highlights: [
+            { year: "1620", event: "Άφιξη των Προσκυνητών", desc: "Υπογραφή του Συμφώνου του Mayflower (Mayflower Compact) στο Πλύμουθ, ένας από τους πρώτους καταστατικούς χάρτες αυτοδιάθεσης." },
+            { year: "1773", event: "Η Γιορτή του Τσαγιού (Boston Tea Party)", desc: "Πράξη πολιτικής διαμαρτυρίας κατά της βρετανικής φορολογίας που πυροδότησε την Αμερικανική Επανάσταση." },
+            { year: "1775", event: "Μάχες Λέξινγκτον & Κόνκορντ", desc: "«Η τουφεκιά που ακούστηκε σε ολόκληρο τον κόσμο» (The shot heard 'round the world) σηματοδοτεί την έναρξη του πολέμου." }
+          ]
+        },
+        demo: {
+          summary: "Μία από τις πλέον ανεπτυγμένες και μορφωμένες κοινωνίες του πλανήτη. Πάνω από το 44% των ενηλίκων κατέχει πτυχίο τριτοβάθμιας εκπαίδευσης, το υψηλότερο ποσοστό στις ΗΠΑ.",
+          details: [
+            { label: "Εκπαίδευση & Έρευνα", text: "Φιλοξενεί πάνω από 120 πανεπιστήμια και κολέγια, μεταξύ των οποίων το Harvard, το MIT και το Tufts." },
+            { label: "Οικονομικοί Πυλώνες", text: "Βιοτεχνολογία, τεχνητή νοημοσύνη, φαρμακευτική έρευνα, χρηματοοικονομικές υπηρεσίες και θαλάσσια οικονομία." },
+            { label: "Κοινωνική Πρωτοπορία", text: "Το 2004 έγινε η πρώτη πολιτεία των ΗΠΑ που νομιμοποίησε τον γάμο ομοφύλων και πρωτοστάτησε στην καθολική υγειονομική κάλυψη." }
+          ]
+        },
+        cult: {
+          summary: "Πλούσια παράδοση στη λογοτεχνία (Τρανσεντενταλισμός: Emerson, Thoreau, Hawthorne), σπουδαία μουσεία τέχνης, και ένθερμη αθλητική κουλτούρα.",
+          items: [
+            { title: "Λογοτεχνική Κληρονομιά", desc: "Λίμνη Γουόλντεν (Walden Pond), Οίκος των Επτά Αετωμάτων (Salem) και το κέντρο της αμερικανικής φιλοσοφίας στο Κόνκορντ." },
+            { title: "Αθλητικές Δυναστείες", desc: "Boston Celtics (NBA πρωταθλητές), Boston Red Sox (ιστορικό γήπεδο Fenway Park από το 1912), New England Patriots και Boston Bruins." },
+            { title: "Κλασική Μουσική & Τέχνες", desc: "Συμφωνική Ορχήστρα Βοστώνης (BSO), Μουσείο Καλών Τεχνών (MFA) και το Μουσείο Isabella Stewart Gardner." }
+          ]
+        },
+        pastVsPresent: [
+          {
+            epoch: "17ος - 18ος Αιώνας (Τότε)",
+            content: "Πουριτανικός οικισμός, μικρά λιμάνια φαλαινοθηρίας, εμπόριο ξυλείας, εστία αντιβρετανικής εξέγερσης με ξύλινες ταβέρνες και λιθόστρωτα σοκάκια."
+          },
+          {
+            epoch: "21ος Αιώνας (Σήμερα)",
+            content: "Παγκόσμια υπερδύναμη βιοϊατρικής (Kendall Square - «το πιο καινοτόμο τετραγωνικό μίλι στη Γη»), κέντρο ρομποτικής και υπερυψηλού βιοτικού επιπέδου."
+          }
+        ]
+      },
+
+      // CITIES IN MASSACHUSETTS
+      cities: [
+        {
+          id: "boston",
+          name: "Βοστώνη",
+          englishName: "Boston",
+          nickname: "The Hub of the Universe / Beantown",
+          type: "city",
+          coords: [42.3601, -71.0589],
+          zoom: 13.4,
+          stats: {
+            population: "675,000 (4.9M μητροπολιτική)",
+            founded: "17 Σεπτεμβρίου 1630",
+            area: "232 km²",
+            mayor: "Michelle Wu"
+          },
+          quote: "«Η πόλη όπου ξεκίνησε η επανάσταση της ελευθερίας και σήμερα οδηγεί την επιστήμη.»",
+          geo: {
+            summary: "Χτισμένη στη χερσόνησο Shawmut στο σημείο που ο ποταμός Charles εκβάλλει στο λιμάνι της Βοστώνης. Μεγάλο μέρος της σημερινής πόλης (όπως η κομψή συνοικία Back Bay) δημιουργήθηκε μέσω επιχωματώσεων κατά τον 19ο αιώνα.",
+            highlights: [
+              { title: "Λιμάνι της Βοστώνης (Boston Harbor)", desc: "Φυσικό προστατευμένο λιμάνι με δεκάδες ιστορικά νησάκια (Harbor Islands)." },
+              { title: "Boston Common & Public Garden", desc: "Το παλαιότερο δημόσιο πάρκο στις ΗΠΑ (1634) και οι περίφημες λίμνες με τις βάρκες-κύκνους." },
+              { title: "Emerald Necklace", desc: "Σύστημα 1.100 στρεμμάτων συνδεδεμένων πάρκων σχεδιασμένο από τον πατέρα της αμερικανικής αρχιτεκτονικής τοπίου, Frederick Law Olmsted." }
+            ]
+          },
+          hist: {
+            summary: "Το ιστορικό κέντρο των αποικιακών εξεγέρσεων. Εδώ περπάτησαν ο Σάμιουελ Άνταμς, ο Πωλ Ριβήρ, ο Τζον Άνταμς και ο Βενιαμίν Φραγκλίνος.",
+            highlights: [
+              { year: "1770", event: "Η Σφαγή της Βοστώνης", desc: "Σύγκρουση Βρετανών στρατιωτών και πολιτών στην King Street, ο Crispus Attucks γίνεται ο πρώτος μάρτυρας της επανάστασης." },
+              { year: "1775", event: "Η Νυχτερινή Ιππασία του Paul Revere", desc: "«Έρχονται οι Βρετανοί!» – Το σύνθημα με τα φανάρια από την Παλαιά Βόρεια Εκκλησία (Old North Church)." },
+              { year: "1912", event: "Εγκαίνια του Fenway Park", desc: "Το αρχαιότερο ενεργό γήπεδο μπέιζμπολ των ΗΠΑ και θρυλική έδρα των Red Sox με τον πράσινο τοίχο 'Green Monster'." }
+            ]
+          },
+          demo: {
+            summary: "Νεανική και πολυπολιτισμική, με εκατοντάδες χιλιάδες φοιτητές κατά τους ακαδημαϊκούς μήνες. Υψηλότατο προσδόκιμο ζωής και κορυφαία νοσοκομεία παγκοσμίως (Massachusetts General Hospital).",
+            details: [
+              { label: "Φοιτητικός Πληθυσμός", text: "Πάνω από 250.000 φοιτητές ζουν στη μητροπολιτική περιοχή." },
+              { label: "Ιατρικό & Ερευνητικό Κέντρο", text: "Η περιοχή Longwood Medical Area συγκεντρώνει τη μεγαλύτερη πυκνότητα ιατρικής έρευνας στον κόσμο." }
+            ]
+          },
+          cult: {
+            summary: "Πεζοπορικές ιστορικές διαδρομές, γαστρονομία με θαλασσινά (clam chowder, αστακοί), και κλασική αρχιτεκτονική από κόκκινο τούβλο.",
+            items: [
+              { title: "Freedom Trail (Μονοπάτι Ελευθερίας)", desc: "Μια κόκκινη γραμμή 4 χλμ. ζωγραφισμένη στα πεζοδρόμια που συνδέει 16 κορυφαία ιστορικά μνημεία της επανάστασης." },
+              { title: "Beacon Hill & Acorn Street", desc: "Η πιο φωτογραφημένη γραφική γειτονιά της Αμερικής με φανοστάτες αερίου και βικτωριανά αρχοντικά." },
+              { title: "Faneuil Hall & Quincy Market", desc: "«Το λίκνο της ελευθερίας» όπου γίνονταν οι λαϊκές συνελεύσεις, σήμερα πολυσύχναστη αγορά γεύσεων." }
+            ]
+          },
+          pastVsPresent: [
+            {
+              epoch: "1775: Επαναστατική Βοστώνη",
+              content: "Μια μικρή χερσόνησος με 15.000 κατοίκους, υπό βρετανική πολιορκία, γεμάτη ξύλινες αποβάθρες και καμπαναριά που έδιναν σινιάλα συναγερμού."
+            },
+            {
+              epoch: "Σήμερα: Μητρόπολη Καινοτομίας",
+              content: "Μια φουτουριστική ακτογραμμή (Seaport District) γεμάτη γυάλινους ουρανοξύστες, θερμοκοιτίδες τεχνολογίας και το υποθαλάσσιο τούνελ του Big Dig."
+            }
+          ],
+          pois: [
+            { name: "Freedom Trail (Έναρξη)", category: "history", coords: [42.3550, -71.0656], desc: "Το εμβληματικό μονοπάτι ελευθερίας που ξεκινά από το Boston Common." },
+            { name: "Boston Tea Party Ships & Museum", category: "history", coords: [42.3522, -71.0514], desc: "Διαδραστικό πλωτό μουσείο με πιστά αντίγραφα των πλοίων του 1773." },
+            { name: "Old North Church", category: "history", coords: [42.3664, -71.0544], desc: "Εκεί κρεμάστηκαν τα φανάρια: 'One if by land, two if by sea'." },
+            { name: "Fenway Park", category: "culture", coords: [42.3467, -71.0972], desc: "Το ιστορικό γήπεδο μπέιζμπολ των Boston Red Sox (1912)." },
+            { name: "Isabella Stewart Gardner Museum", category: "culture", coords: [42.3382, -71.0990], desc: "Βενετσιάνικου στυλ παλάτι με ανεκτίμητα έργα τέχνης και η διάσημη ανεξιχνίαστη ληστεία." }
+          ]
+        },
+
+        {
+          id: "cambridge",
+          name: "Κέιμπριτζ",
+          englishName: "Cambridge",
+          nickname: "City of Squares / Silicon Valley of Biotech",
+          type: "city",
+          coords: [42.3736, -71.1097],
+          zoom: 14.1,
+          stats: {
+            population: "118,000",
+            founded: "1630 (αρχικά Newe Town)",
+            area: "18.4 km²",
+            famousFor: "Harvard University & MIT"
+          },
+          quote: "«Η παγκόσμια πρωτεύουσα της διανόησης και της τεχνολογικής επανάστασης.»",
+          geo: {
+            summary: "Ακριβώς απέναντι από τη Βοστώνη στη βόρεια όχθη του ποταμού Charles. Δομείται γύρω από ιστορικές εμπορικές πλατείες (Harvard Square, Central Square, Kendall Square, Inman Square).",
+            highlights: [
+              { title: "Kendall Square", desc: "Θεωρείται το επίκεντρο της παγκόσμιας βιοτεχνολογίας με εκατοντάδες startups και πολυεθνικούς κολοσσούς." },
+              { title: "Όχθες Ποταμού Charles", desc: "Πεζοδρομημένες διαδρομές μήκους χιλιομέτρων με θέα στο skyline της Βοστώνης." }
+            ]
+          },
+          hist: {
+            summary: "Ιδρύθηκε από τους Πουριτανούς το 1630. Το 1636 ιδρύθηκε εδώ το Κολέγιο Χάρβαρντ, το παλαιότερο ανώτατο εκπαιδευτικό ίδρυμα στις Ηνωμένες Πολιτείες.",
+            highlights: [
+              { year: "1636", event: "Ίδρυση του Harvard College", desc: "Προς τιμήν του ευεργέτη John Harvard, με σκοπό την εκπαίδευση κληρικών και ηγετών." },
+              { year: "1775", event: "Στρατηγείο George Washington", desc: "Στο Cambridge Common ο George Washington ανέλαβε επίσημα τη διοίκηση του Ηπειρωτικού Στρατού." },
+              { year: "1916", event: "Μεταφορά του MIT", desc: "Το Τεχνολογικό Ινστιτούτο Μασαχουσέτης μεταφέρει το campus του από τη Βοστώνη στις όχθες του ποταμού Charles." }
+            ]
+          },
+          demo: {
+            summary: "Μια πόλη με εκπληκτική συγκέντρωση κατόχων βραβείων Νόμπελ, ερευνητών και φοιτητών από περισσότερες από 100 χώρες.",
+            details: [
+              { label: "Βραβεία Νόμπελ", text: "Πάνω από 160 κάτοχοι Νόμπελ συνδέονται με το Harvard και το MIT." },
+              { label: "Κοινωνική Σύνθεση", text: "Πολύγλωσση κοινότητα, με υψηλή προστασία του περιβάλλοντος και δίκτυο ποδηλατοδρόμων." }
+            ]
+          },
+          cult: {
+            summary: "Βιβλιοπωλεία, καφέ διανοουμένων, ιστορικά μουσεία και εργαστήρια ρομποτικής αιχμής.",
+            items: [
+              { title: "Harvard Yard", desc: "Η καρδιά του ιστορικού campus με το άγαλμα του John Harvard («Το άγαλμα των τριών ψεμάτων»)." },
+              { title: "MIT Museum", desc: "Εκθέσεις ρομποτικής, ολογραμμάτων, τεχνητής νοημοσύνης και κινητικής τέχνης." },
+              { title: "Harvard Museum of Natural History", desc: "Φημισμένο για τη μοναδική στον κόσμο συλλογή γυάλινων λουλουδιών Blaschka (Glass Flowers)." }
+            ]
+          },
+          pastVsPresent: [
+            {
+              epoch: "17ος Αιώνας",
+              content: "Μικρό αγροτικό χωριό με αυστηρή πουριτανική πειθαρχία γύρω από ένα μικρό ξύλινο κολλέγιο δώδεκα σπουδαστών."
+            },
+            {
+              epoch: "Σήμερα",
+              content: "Επίκεντρο των εμβολίων mRNA, της κβαντικής υπολογιστικής και της παγκόσμιας ακαδημαϊκής αριστείας."
+            }
+          ],
+          pois: [
+            { name: "Harvard Yard", category: "culture", coords: [42.3744, -71.1169], desc: "Το ιστορικό κέντρο του παλαιότερου πανεπιστημίου των ΗΠΑ." },
+            { name: "MIT Great Dome", category: "culture", coords: [42.3598, -71.0921], desc: "Ο εμβληματικός θόλος του Τεχνολογικού Ινστιτούτου Μασαχουσέτης." },
+            { name: "Longfellow House", category: "history", coords: [42.3770, -71.1259], desc: "Στρατηγείο του Washington το 1775 και μετέπειτα οικία του ποιητή Longfellow." }
+          ]
+        },
+
+        {
+          id: "salem",
+          name: "Σάλεμ",
+          englishName: "Salem",
+          nickname: "The Witch City / Πόλη των Μαγισσών",
+          type: "city",
+          coords: [42.5195, -70.8967],
+          zoom: 14.0,
+          stats: {
+            population: "44,500",
+            founded: "1626",
+            area: "47 km²",
+            visitors: "~1 εκατομμύριο τον Οκτώβριο"
+          },
+          quote: "«Μια πόλη ανάμεσα στον ιστορικό σκοταδισμό του 1692 και το χρυσό ναυτικό εμπόριο της Ανατολής.»",
+          geo: {
+            summary: "Παράκτια ιστορική πόλη στη Βόρεια Ακτή (North Shore) της Μασαχουσέτης. Διαθέτει προστατευμένο λιμάνι και καλοδιατηρημένες γειτονιές αρχιτεκτονικής Federal style.",
+            highlights: [
+              { title: "Salem Maritime National Historic Site", desc: "Ο πρώτος Εθνικός Ιστορικός Τόπος που ιδρύθηκε στις ΗΠΑ (1938), αφιερωμένος στο θαλάσσιο εμπόριο." },
+              { title: "Pickering Wharf", desc: "Παλαιά αποβάθρα εμπορίου μπαχαρικών και μεταξιού, σήμερα γραφική μαρίνα με εστιατόρια." }
+            ]
+          },
+          hist: {
+            summary: "Διάσημη παγκοσμίως για τις διαβόητες Δίκες των Μαγισσών του 1692, όπου 19 αθώοι άνθρωποι απαγχονίστηκαν λόγω θρησκευτικής μαζικής υστερίας. Αργότερα, κατά τον 18ο αιώνα, εξελίχθηκε σε ένα από τα πλουσιότερα λιμάνια εμπορίου με την Κίνα και την Ινδία.",
+            highlights: [
+              { year: "1692", event: "Οι Δίκες των Μαγισσών (Salem Witch Trials)", desc: "Μαζική υστερία οδήγησε σε θανατικές καταδίκες, γεγονός που άλλαξε για πάντα το αμερικανικό δικαστικό σύστημα (τεκμήριο αθωότητας)." },
+              { year: "1790-1810", event: "Χρυσή Εποχή Ναυτιλίας", desc: "Οι καπετάνιοι του Σάλεμ άνοιξαν τους εμπορικούς δρόμους προς την Κίνα, φέρνοντας μυθικά πλούτη και εξωτικά μπαχαρικά." },
+              { year: "1851", event: "Το Σπίτι με τα Επτά Αετώματα", desc: "Έκδοση του διάσημου γοτθικού μυθιστορήματος από τον Nathaniel Hawthorne, γέννημα-θρέμμα του Σάλεμ." }
+            ]
+          },
+          demo: {
+            summary: "Σήμερα είναι ένας κοσμοπολίτικος τουριστικός προορισμός, φιλικός προς τις τέχνες, με μεγάλη κοινότητα σύγχρονων Wiccan και καλλιτεχνών.",
+            details: [
+              { label: "Τουρισμός & Halloween", text: "Κάθε Οκτώβριο η πόλη φιλοξενεί το φεστιβάλ 'Haunted Happenings' με εκατοντάδες χιλιάδες επισκέπτες." },
+              { label: "Μουσειακή Δύναμη", text: "Το Μουσείο Peabody Essex (PEM) είναι ένα από τα παλαιότερα συνεχώς λειτουργούντα μουσεία των ΗΠΑ." }
+            ]
+          },
+          cult: {
+            summary: "Γοτθική ατμόσφαιρα, ιστορικά αρχοντικά καπεταναίων, μουσεία μαγείας και εντυπωσιακά έργα ασιατικής τέχνης.",
+            items: [
+              { title: "The Witch House (Οικία Corwin)", desc: "Το μοναδικό κτίριο που σώζεται με άμεση σχέση με τις δίκες του 1692, πρώην κατοικία του δικαστή Jonathan Corwin." },
+              { title: "Peabody Essex Museum (PEM)", desc: "Περιλαμβάνει ένα αυθεντικό κινεζικό αρχοντικό 200 ετών (Yin Yu Tang) που μεταφέρθηκε αυτούσιο από την Κίνα!" },
+              { title: "Salem Witch Trials Memorial", desc: "Συγκινητικό μνημείο αφιερωμένο στα 20 θύματα της υστερίας του 1692." }
+            ]
+          },
+          pastVsPresent: [
+            {
+              epoch: "1692: Υστερία & Φόβος",
+              content: "Μια απομονωμένη, αυστηρή πουριτανική κοινότητα γεμάτη καχυποψία, δεισιδαιμονίες και δίκες φαντασμάτων."
+            },
+            {
+              epoch: "Σήμερα: Παγκόσμια Πρωτεύουσα Μυστηρίου",
+              content: "Μια ανοιχτή, ζωντανή πόλη που τιμά τη μνήμη των θυμάτων, γιορτάζει τη διαφορετικότητα και διαφυλάσσει την αρχιτεκτονική της κληρονομιά."
+            }
+          ],
+          pois: [
+            { name: "The Witch House", category: "history", coords: [42.5218, -70.9016], desc: "Η ιστορική οικία του δικαστή Jonathan Corwin (1692)." },
+            { name: "Salem Witch Trials Memorial", category: "history", coords: [42.5201, -70.8912], desc: "Μνημείο από γρανίτη αφιερωμένο στα θύματα των δικών." },
+            { name: "The House of the Seven Gables", category: "culture", coords: [42.5204, -70.8833], desc: "Το ιστορικό αρχοντικό του 1668 που ενέπνευσε τον Nathaniel Hawthorne." },
+            { name: "Peabody Essex Museum", category: "culture", coords: [42.5215, -70.8926], desc: "Ένα από τα σημαντικότερα μουσεία ασιατικής τέχνης και ναυτιλίας." }
+          ]
+        },
+
+        {
+          id: "plymouth",
+          name: "Πλύμουθ",
+          englishName: "Plymouth",
+          nickname: "America's Hometown / Η Γενέτειρα της Αμερικής",
+          type: "city",
+          coords: [41.9584, -70.6673],
+          zoom: 13.8,
+          stats: {
+            population: "63,000",
+            founded: "21 Δεκεμβρίου 1620",
+            area: "347 km² (ο μεγαλύτερος δήμος σε έκταση)",
+            legacy: "Πρώτη Ημέρα Ευχαριστιών (1621)"
+          },
+          quote: "«Εκεί όπου οι πρώτοι άποικοι συνάντησαν τους αυτόχθονες Wampanoag και έθεσαν τα θεμέλια του νέου κόσμου.»",
+          geo: {
+            summary: "Βρίσκεται στον κόλπο του Πλύμουθ, περίπου 64 χλμ. νότια της Βοστώνης. Διαθέτει τεράστιες εκτάσεις πευκοδασών, λίμνες γλυκού νερού και καλλιέργειες κράνμπερι (cranberry bogs).",
+            highlights: [
+              { title: "Plymouth Harbor", desc: "Ο φυσικός όρμος προστατευμένος από το ακρωτήριο Plymouth Beach όπου αγκυροβόλησε το Mayflower." },
+              { title: "Μυρτιλοχώραφα (Cranberry Bogs)", desc: "Η περιοχή αποτελεί την πρωτεύουσα καλλιέργειας και συγκομιδής κράνμπερι της Νέας Αγγλίας." }
+            ]
+          },
+          hist: {
+            summary: "Ο πρώτος μόνιμος ευρωπαϊκός οικισμός στη Νέα Αγγλία. Οι Προσκυνητές (Pilgrims), διωκόμενοι για τις θρησκευτικές τους πεποιθήσεις από την Αγγλία, αποβιβάστηκαν εδώ τον χειμώνα του 1620.",
+            highlights: [
+              { year: "1620", event: "Αποβίβαση από το Mayflower", desc: "Μετά από 66 ημέρες στον ωκεανό, 102 επιβάτες φτάνουν στην ακτή. Σχεδόν οι μισοί πέθαναν τον πρώτο σκληρό χειμώνα." },
+              { year: "1621", event: "Η Πρώτη Ημέρα των Ευχαριστιών", desc: "Τριήμερο γεύμα συγκομιδής ανάμεσα στους αποίκους και τη φυλή Wampanoag υπό τον ηγέτη Massasoit." },
+              { year: "1889", event: "Εθνικό Μνημείο στους Προγόνους", desc: "Ανέγερση του τεράστιου γρανιτένιου μνημείου National Monument to the Forefathers (25 μέτρα ύψος)." }
+            ]
+          },
+          demo: {
+            summary: "Ιστορική παραθαλάσσια κοινότητα με βαθιά σύνδεση με την παράδοση, τον αγροτουρισμό και την αλιεία.",
+            details: [
+              { label: "Αυτόχθονη Κληρονομιά", text: "Ενεργή παρουσία της φυλής Wampanoag που διατηρεί ζωντανή τη γλώσσα και τις παραδόσεις της." },
+              { label: "Ιστορικός Τουρισμός", text: "Προσελκύει εκατομμύρια μαθητές και ταξιδιώτες για ζωντανή αναπαράσταση της ιστορίας." }
+            ]
+          },
+          cult: {
+            summary: "Ζωντανή ιστορία (living history museum), ναυτικές παραδόσεις και παραθαλάσσια γαστρονομία.",
+            items: [
+              { title: "Plymouth Rock (Ο Βράχος του Πλύμουθ)", desc: "Ο συμβολικός γρανιτένιος βράχος όπου παραδοσιακά αποβιβάστηκαν οι πρώτοι άποικοι." },
+              { title: "Mayflower II", desc: "Πλήρους μεγέθους, πλεύσιμο αντίγραφο του αρχικού ιστιοφόρου του 1620, επισκέψιμο στο λιμάνι." },
+              { title: "Plimoth Patuxet Museums", desc: "Υπαίθριο βιωματικό μουσείο όπου ηθοποιοί αναπαριστούν με αυθεντική προφορά τη ζωή του 17ου αιώνα." }
+            ]
+          },
+          pastVsPresent: [
+            {
+              epoch: "1620: Οικισμός Patuxet / Plymouth",
+              content: "Μια χούφτα ξύλινες καλύβες με αχυροσκεπές, περιτριγυρισμένες από άγνωστα δάση μέσα στον παγωμένο χειμώνα."
+            },
+            {
+              epoch: "Σήμερα: Ιστορικός Φάρος Μνήμης",
+              content: "Ένας σύγχρονος, πανέμορφος παραθαλάσσιος δήμος που εξισορροπεί την ιστορία των αποίκων με τη φωνή των αυτοχθόνων λαών."
+            }
+          ],
+          pois: [
+            { name: "Plymouth Rock", category: "history", coords: [41.9581, -70.6622], desc: "Ο διάσημος βράχος κάτω από το κλασικό περιστύλιο." },
+            { name: "Mayflower II", category: "history", coords: [41.9602, -70.6628], desc: "Το πιστό αντίγραφο του πλοίου των Προσκυνητών." },
+            { name: "National Monument to the Forefathers", category: "history", coords: [41.9599, -70.6756], desc: "Το μεγαλύτερο μονολιθικό γρανιτένιο μνημείο των ΗΠΑ." },
+            { name: "Plimoth Patuxet Living Museum", category: "culture", coords: [41.9255, -70.6272], desc: "Βιωματικό μουσείο αναπαράστασης του χωριού του 1627." }
+          ]
+        },
+
+        {
+          id: "worcester",
+          name: "Γουόρστερ",
+          englishName: "Worcester",
+          nickname: "The Heart of the Commonwealth / Heart City",
+          type: "city",
+          coords: [42.2626, -71.8023],
+          zoom: 13.5,
+          stats: {
+            population: "206,000 (2η μεγαλύτερη πόλη της Μασαχουσέτης)",
+            founded: "1722",
+            area: "99.9 km²",
+            symbol: "Η κόκκινη καρδιά"
+          },
+          quote: "«Η καρδιά της βιομηχανικής επανάστασης που μεταμορφώθηκε σε κέντρο υγείας και ρομποτικής.»",
+          geo: {
+            summary: "Βρίσκεται στην κεντρική Μασαχουσέτη και είναι γνωστή ως «η πόλη των επτά λόφων». Αποτελεί συγκοινωνιακό κόμβο που συνδέει τη Βοστώνη με τα δυτικά της πολιτείας και τη Νέα Υόρκη.",
+            highlights: [
+              { title: "Λίμνη Quinsigamond", desc: "Λίμνη μήκους 6 χιλιομέτρων, παγκοσμίου φήμης κωπηλατικό κέντρο." },
+              { title: "Οι Επτά Λόφοι (Seven Hills)", desc: "Όπως η αρχαία Ρώμη, το Worcester είναι χτισμένο πάνω σε επτά χαρακτηριστικούς λόφους (Airport Hill, Bancroft Hill κ.α.)." }
+            ]
+          },
+          hist: {
+            summary: "Πρωτοστάτησε στην Αμερικανική Βιομηχανική Επανάσταση, με τεράστια εργοστάσια συρμάτων, κλωστοϋφαντουργίας και μηχανημάτων. Εδώ τυπώθηκε και διαβάστηκε για πρώτη φορά δημόσια η Διακήρυξη της Ανεξαρτησίας στη Μασαχουσέτη.",
+            highlights: [
+              { year: "1776", event: "Πρώτη Ανάγνωση της Διακήρυξης", desc: "Ο Isaiah Thomas διαβάζει τη Διακήρυξη της Ανεξαρτησίας μπροστά στο δημαρχείο του Worcester." },
+              { year: "1850", event: "Πρώτο Εθνικό Συνέδριο για τα Δικαιώματα των Γυναικών", desc: "Ιστορική σύνοδος για την ισότητα των δύο φύλων, δεκαετίες πριν την κατοχύρωση της ψήφου." },
+              { year: "1963", event: "Γέννηση του 'Smiley Face'", desc: "Ο γραφίστας Harvey Ball σχεδιάζει στο Worcester το πασίγνωστο κίτρινο χαμογελαστό προσωπάκι (Smiley face)!" }
+            ]
+          },
+          demo: {
+            summary: "Μια ταχέως αναπτυσσόμενη, πολυεθνική πόλη με 9 πανεπιστήμια και κολέγια (συμπεριλαμβανομένου του WPI και του Clark University).",
+            details: [
+              { label: "Βιοϊατρική & Τεχνολογία", text: "Η Ιατρική Σχολή UMass Chan Medical School πρωτοπορεί στην έρευνα RNA (Νόμπελ Craig Mello 2006)." },
+              { label: "Πολυπολιτισμικότητα", text: "Ζωντανές κοινότητες μεταναστών από την Αλβανία, τη Βραζιλία, τη Γκάνα και το Βιετνάμ." }
+            ]
+          },
+          cult: {
+            summary: "Μουσεία τέχνης διεθνούς κύρους, αναγεννημένη γαστρονομική σκηνή στο Canal District και συναυλίες.",
+            items: [
+              { title: "Worcester Art Museum (WAM)", desc: "Σπουδαία συλλογή που περιλαμβάνει αρχαία ρωμαϊκά ψηφιδωτά από την Αντιόχεια και τη μεσαιωνική συλλογή όπλων Higgins Armory." },
+              { title: "Mechanics Hall", desc: "Αίθουσα συναυλιών του 1857 με μία από τις καλύτερες ακουστικές στον πλανήτη." },
+              { title: "Polar Park", desc: "Το υπερσύγχρονο γήπεδο μπέιζμπολ της ομάδας Worcester Red Sox (WooSox)." }
+            ]
+          },
+          pastVsPresent: [
+            {
+              epoch: "19ος Αιώνας: Βιομηχανικός Γίγαντας",
+              content: "Καπνοδόχοι εργοστασίων, υφαντουργεία και παραγωγή συρμάτων που τροφοδότησαν την εξάπλωση του αμερικανικού τηλεγράφου και των σιδηροδρόμων."
+            },
+            {
+              epoch: "Σήμερα: Κέντρο Βιοτεχνολογίας & Νέων Τεχνών",
+              content: "Τα παλιά τούβλινα εργοστάσια έχουν μετατραπεί σε lofts καλλιτεχνών, μικροζυθοποιίες και εργαστήρια ιατρικής έρευνας."
+            }
+          ],
+          pois: [
+            { name: "Worcester Art Museum", category: "culture", coords: [42.2736, -71.8021], desc: "Διάσημο για τα ρωμαϊκά ψηφιδωτά και τη μεσαιωνική συλλογή όπλων." },
+            { name: "Mechanics Hall", category: "culture", coords: [42.2642, -71.8016], desc: "Ένα από τα σπουδαιότερα κτίρια συναυλιών του 19ου αιώνα." },
+            { name: "Polar Park", category: "culture", coords: [42.2575, -71.7997], desc: "Το ολοκαίνουργιο γήπεδο μπέιζμπολ των WooSox στο Canal District." },
+            { name: "EcoTarium", category: "nature", coords: [42.2638, -71.7699], desc: "Μουσείο φυσικών επιστημών με μονοπάτια στη φύση και πλανητάριο." }
+          ]
+        }
+      ]
+    };
+
+    /* ==========================================================
+       APPLICATION STATE & MAP INITIALIZATION
+       ========================================================== */
+    let currentScope = 'state'; // 'usa' | 'state' | 'city'
+    let currentCityId = null;
+    let currentTab = 'geo';
+    let currentPoiFilter = 'all';
+    let map = null;
+    let statePolygonLayer = null;
+    let cityMarkersGroup = null;
+    let poiMarkersGroup = null;
+
+    // Ordered tour sequence for Previous / Next buttons
+    const tourSequence = [
+      { type: 'state', id: 'massachusetts' },
+      { type: 'city', id: 'boston' },
+      { type: 'city', id: 'cambridge' },
+      { type: 'city', id: 'salem' },
+      { type: 'city', id: 'plymouth' },
+      { type: 'city', id: 'worcester' }
+    ];
+
+    window.addEventListener('DOMContentLoaded', () => {
+      initMap();
+      renderDossier();
+    });
+
+    function initMap() {
+      // Create Leaflet map instance
+      map = L.map('map', {
+        zoomControl: false,
+        attributionControl: false
+      }).setView(appData.state.coords, appData.state.zoom);
+
+      // Add zoom control in bottom-right
+      L.control.zoom({ position: 'bottomright' }).addTo(map);
+
+      // Add High-Quality CartoDB Voyager Tile Layer
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+}).addTo(map);
+
+      // Add attribution in compact form
+      L.control.attribution({ position: 'bottomright', prefix: false })
+        .addAttribution('&copy; <a href="https://openstreetmap.org" class="text-sky-400">OSM</a> &copy; <a href="https://carto.com/" class="text-sky-400">CARTO</a>')
+        .addTo(map);
+
+      // Layer groups for markers
+      cityMarkersGroup = L.layerGroup().addTo(map);
+      poiMarkersGroup = L.layerGroup().addTo(map);
+
+      // Plot Massachusetts boundary approximation highlight
+      drawStateHighlight();
+
+      // Plot city markers on map
+      renderCityPins();
+    }
+
+    /* Draw Massachusetts bounding polygon highlight */
+    function drawStateHighlight() {
+      // Generalized polygon vertices for Massachusetts
+      const massachusettsPolygon = [
+        [42.8867, -70.8197],
+        [42.8690, -70.9200],
+        [42.7430, -73.2750],
+        [42.0490, -73.5080],
+        [42.0290, -71.8000],
+        [42.0180, -71.3800],
+        [41.4800, -71.1200],
+        [41.5300, -70.6300],
+        [41.2500, -70.1000],
+        [41.6500, -69.9300],
+        [42.0800, -70.1800],
+        [42.3000, -70.8000],
+        [42.6000, -70.6000]
+      ];
+
+      statePolygonLayer = L.polygon(massachusettsPolygon, {
+        color: '#0284c7',
+        weight: 2.5,
+        opacity: 0.8,
+        fillColor: '#38bdf8',
+        fillOpacity: 0.08,
+        dashArray: '4, 6'
+      }).addTo(map);
+
+      statePolygonLayer.on('click', () => {
+        if (currentScope !== 'state') {
+          flyToState('massachusetts');
+        }
+      });
+    }
+
+    /* Render City Map Pins */
+    function renderCityPins() {
+      cityMarkersGroup.clearLayers();
+
+      appData.cities.forEach(city => {
+        const isSelected = (currentScope === 'city' && currentCityId === city.id);
+
+        const customIcon = L.divIcon({
+          className: 'city-pin-wrapper',
+          html: `
+            <div class="custom-poi-marker cursor-pointer group" onclick="flyToCity('${city.id}')">
+              <div class="px-2.5 py-1 rounded-full text-xs font-bold shadow-lg border flex items-center gap-1.5 transition ${
+                isSelected 
+                  ? 'bg-amber-500 text-slate-950 border-amber-300 ring-4 ring-amber-400/30' 
+                  : 'bg-slate-900/90 text-white border-slate-600 hover:border-sky-400 hover:text-sky-300'
+              }">
+                <i class="fa-solid fa-city text-[10px]"></i>
+                <span>${city.name}</span>
+              </div>
+            </div>
+          `,
+          iconSize: [110, 32],
+          iconAnchor: [55, 16]
+        });
+
+        const marker = L.marker(city.coords, { icon: customIcon });
+        marker.on('click', () => flyToCity(city.id));
+        cityMarkersGroup.addLayer(marker);
+      });
+    }
+
+    /* Render Points of Interest (POIs) when exploring a City */
+    function renderCityPois() {
+      poiMarkersGroup.clearLayers();
+
+      if (currentScope !== 'city') return;
+
+      const city = appData.cities.find(c => c.id === currentCityId);
+      if (!city || !city.pois) return;
+
+      city.pois.forEach((poi, index) => {
+        // Filter check
+        if (currentPoiFilter !== 'all' && poi.category !== currentPoiFilter) {
+          return;
+        }
+
+        let iconClass = 'fa-landmark';
+        let bgClass = 'bg-rose-600 border-rose-300';
+        if (poi.category === 'culture') {
+          iconClass = 'fa-masks-theater';
+          bgClass = 'bg-indigo-600 border-indigo-300';
+        } else if (poi.category === 'nature') {
+          iconClass = 'fa-tree';
+          bgClass = 'bg-emerald-600 border-emerald-300';
+        }
+
+        const poiIcon = L.divIcon({
+          className: 'poi-pin',
+          html: `
+            <div class="custom-poi-marker marker-pulse cursor-pointer">
+              <div class="h-8 w-8 rounded-full ${bgClass} text-white shadow-xl border-2 flex items-center justify-center text-xs">
+                <i class="fa-solid ${iconClass}"></i>
+              </div>
+            </div>
+          `,
+          iconSize: [32, 32],
+          iconAnchor: [16, 16]
+        });
+
+        const poiMarker = L.marker(poi.coords, { icon: poiIcon });
+        
+        const popupContent = `
+          <div class="p-3 text-slate-900 font-sans max-w-xs">
+            <div class="text-[10px] font-bold uppercase tracking-wider text-sky-700 mb-0.5">
+              ${poi.category === 'history' ? 'Ιστορικό Σημείο' : poi.category === 'culture' ? 'Πολιτισμός & Τέχνες' : 'Φυσικό Αξιοθέατο'}
+            </div>
+            <div class="font-bold text-sm text-slate-900 mb-1 leading-tight">${poi.name}</div>
+            <div class="text-xs text-slate-600 mb-2 leading-relaxed">${poi.desc}</div>
+            <div class="flex items-center justify-between text-[11px] pt-1.5 border-t border-slate-200">
+              <span class="text-slate-500 font-serif italic">${city.name}</span>
+              <span class="text-sky-700 font-semibold cursor-pointer hover:underline" onclick="switchTab('cult')">Περισσότερα &rarr;</span>
+            </div>
+          </div>
+        `;
+
+        poiMarker.bindPopup(popupContent, { offset: [0, -10] });
+        poiMarkersGroup.addLayer(poiMarker);
+      });
+    }
+
+    /* ==========================================================
+       FLIGHT & CAMERA CONTROLLER (Leaflet flyTo)
+       ========================================================== */
+    function flyToUSA() {
+      currentScope = 'usa';
+      currentCityId = null;
+
+      updateStatusBadge("Προβολή: Επικράτεια Ηνωμένων Πολιτειών");
+      updateBreadcrumbs();
+      updateJumpSelect('usa');
+
+      map.flyTo([39.8283, -98.5795], 4.3, {
+        duration: 1.8,
+        easeLinearity: 0.25
+      });
+
+      renderCityPins();
+      renderCityPois();
+      renderDossier();
+    }
+
+    function flyToState(stateId = 'massachusetts') {
+      currentScope = 'state';
+      currentCityId = null;
+
+      const state = appData.state;
+      updateStatusBadge(`Πτήση: Πολιτεία ${state.name}`);
+      updateBreadcrumbs();
+      updateJumpSelect(`state:${state.id}`);
+
+      map.flyTo(state.coords, state.zoom, {
+        duration: 1.5,
+        easeLinearity: 0.25
+      });
+
+      renderCityPins();
+      renderCityPois();
+      renderDossier();
+    }
+
+    function flyToCity(cityId) {
+      const city = appData.cities.find(c => c.id === cityId);
+      if (!city) return;
+
+      currentScope = 'city';
+      currentCityId = cityId;
+
+      updateStatusBadge(`Πτήση: ${city.name} (${city.englishName})`);
+      updateBreadcrumbs();
+      updateJumpSelect(`city:${city.id}`);
+
+      map.flyTo(city.coords, city.zoom, {
+        duration: 1.4,
+        easeLinearity: 0.25
+      });
+
+      renderCityPins();
+      renderCityPois();
+      renderDossier();
+    }
+
+    function handleJumpChange(value) {
+      if (value === 'usa') {
+        flyToUSA();
+      } else if (value.startsWith('state:')) {
+        flyToState(value.split(':')[1]);
+      } else if (value.startsWith('city:')) {
+        flyToCity(value.split(':')[1]);
+      }
+    }
+
+    function updateJumpSelect(val) {
+      const select = document.getElementById('quickJumpSelect');
+      if (select) select.value = val;
+    }
+
+    function updateStatusBadge(text) {
+      document.getElementById('flightStatusText').innerText = text;
+    }
+
+    function updateBreadcrumbs() {
+      const bcState = document.getElementById('bc-state');
+      const bcSep = document.getElementById('bc-sep');
+      const bcCity = document.getElementById('bc-city');
+
+      if (currentScope === 'usa') {
+        bcState.classList.remove('text-sky-300', 'font-medium');
+        bcState.classList.add('text-slate-400');
+        bcSep.classList.add('hidden');
+        bcCity.classList.add('hidden');
+      } else if (currentScope === 'state') {
+        bcState.classList.remove('text-slate-400');
+        bcState.classList.add('text-sky-300', 'font-medium');
+        bcSep.classList.add('hidden');
+        bcCity.classList.add('hidden');
+      } else if (currentScope === 'city') {
+        const city = appData.cities.find(c => c.id === currentCityId);
+        bcState.classList.remove('text-sky-300');
+        bcState.classList.add('text-slate-400');
+        bcSep.classList.remove('hidden');
+        bcCity.classList.remove('hidden');
+        bcCity.innerText = city ? city.name : '';
+      }
+    }
+
+    /* Cycle forward or backward in documentary tour */
+    function navigateTour(direction) {
+      let currentIndex = tourSequence.findIndex(item => {
+        if (currentScope === 'state' && item.type === 'state') return true;
+        if (currentScope === 'city' && item.type === 'city' && item.id === currentCityId) return true;
+        return false;
+      });
+
+      if (currentIndex === -1) currentIndex = 0;
+
+      let nextIndex = currentIndex + direction;
+      if (nextIndex < 0) nextIndex = tourSequence.length - 1;
+      if (nextIndex >= tourSequence.length) nextIndex = 0;
+
+      const target = tourSequence[nextIndex];
+      if (target.type === 'state') {
+        flyToState(target.id);
+      } else {
+        flyToCity(target.id);
+      }
+    }
+
+    /* ==========================================================
+       RIGHT DOSSIER PANEL RENDERING
+       ========================================================== */
+    function renderDossier() {
+      const isState = (currentScope === 'state' || currentScope === 'usa');
+      const entity = isState ? appData.state : appData.cities.find(c => c.id === currentCityId);
+
+      if (!entity) return;
+
+      // Update Panel Headers
+      const badgeCategory = document.getElementById('badgeCategory');
+      badgeCategory.innerText = isState ? 'Πολιτειακός Φάκελος' : 'Αστικός Φάκελος';
+      badgeCategory.className = isState 
+        ? 'px-2 py-0.5 rounded text-[11px] font-bold tracking-wide uppercase bg-sky-900/60 text-sky-300 border border-sky-700/50'
+        : 'px-2 py-0.5 rounded text-[11px] font-bold tracking-wide uppercase bg-amber-900/60 text-amber-300 border border-amber-700/50';
+
+      document.getElementById('badgeNickname').innerText = entity.nickname ? `"${entity.nickname}"` : '';
+      document.getElementById('entityTitle').innerText = entity.name;
+      document.getElementById('entitySubtitle').innerText = `${entity.englishName} • ${isState ? 'Πρωτεύουσα: ' + entity.capital : 'Πολιτεία: Μασαχουσέτη'}`;
+
+      // Update Quick Stats
+      document.getElementById('stat1').innerText = entity.stats.population || '-';
+      document.getElementById('stat2').innerText = entity.stats.founded || entity.stats.famousFor || '-';
+      document.getElementById('stat3').innerText = entity.stats.area || entity.stats.gdp || '-';
+
+      // Update Quote
+      document.getElementById('docuQuote').innerText = entity.quote || '';
+
+      // Render Active Tab Content
+      renderTabContent(entity);
+    }
+
+    function switchTab(tabId) {
+      currentTab = tabId;
+
+      // Update Tab Buttons UI
+      const tabs = ['geo', 'hist', 'demo', 'cult', 'timeline'];
+      tabs.forEach(t => {
+        const btn = document.getElementById(`tab-${t}`);
+        if (!btn) return;
+        if (t === tabId) {
+          btn.className = 'tab-btn flex-1 py-2.5 px-3 border-b-2 border-sky-500 text-sky-400 font-semibold flex items-center justify-center gap-1.5 whitespace-nowrap bg-slate-800/30';
+        } else {
+          btn.className = 'tab-btn flex-1 py-2.5 px-3 border-b-2 border-transparent text-slate-400 hover:text-slate-200 flex items-center justify-center gap-1.5 whitespace-nowrap';
+        }
+      });
+
+      const isState = (currentScope === 'state' || currentScope === 'usa');
+      const entity = isState ? appData.state : appData.cities.find(c => c.id === currentCityId);
+      renderTabContent(entity);
+    }
+
+    function renderTabContent(entity) {
+      const container = document.getElementById('tabContent');
+      if (!entity) return;
+
+      let html = '';
+
+      if (currentTab === 'geo') {
+        html = `
+          <div class="space-y-3">
+            <div class="p-3.5 bg-slate-800/50 rounded-xl border border-slate-700/60 text-slate-200">
+              <div class="flex items-center gap-2 text-sky-400 font-semibold mb-1 text-sm">
+                <i class="fa-solid fa-map-location-dot"></i> Γεωγραφικό Ανάγλυφο & Φύση
+              </div>
+              <p>${entity.geo.summary}</p>
+            </div>
+
+            <h4 class="text-xs uppercase tracking-wider font-bold text-slate-400 mt-4 mb-2 flex items-center gap-1.5">
+              <i class="fa-solid fa-compass text-sky-400"></i> Κυριότερα Γεωγραφικά Ορόσημα
+            </h4>
+            <div class="space-y-2.5">
+              ${entity.geo.highlights.map(item => `
+                <div class="p-3 bg-slate-800/30 hover:bg-slate-800/60 transition border border-slate-700/40 rounded-xl">
+                  <div class="font-bold text-slate-100 text-sm mb-0.5 text-sky-300">${item.title}</div>
+                  <div class="text-slate-300 text-xs leading-relaxed">${item.desc}</div>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+        `;
+      } 
+      else if (currentTab === 'hist') {
+        html = `
+          <div class="space-y-3">
+            <div class="p-3.5 bg-slate-800/50 rounded-xl border border-slate-700/60 text-slate-200">
+              <div class="flex items-center gap-2 text-amber-400 font-semibold mb-1 text-sm">
+                <i class="fa-solid fa-landmark-dome"></i> Ιστορικό Υπόβαθρο
+              </div>
+              <p>${entity.hist.summary}</p>
+            </div>
+
+            <h4 class="text-xs uppercase tracking-wider font-bold text-slate-400 mt-4 mb-2 flex items-center gap-1.5">
+              <i class="fa-solid fa-hourglass-half text-amber-400"></i> Σημαντικοί Σταθμοί
+            </h4>
+            <div class="relative pl-5 border-l-2 border-slate-700 space-y-4 my-3">
+              ${entity.hist.highlights.map(h => `
+                <div class="relative group">
+                  <div class="absolute -left-[27px] top-1 w-3.5 h-3.5 rounded-full bg-amber-500 border-2 border-slate-900 group-hover:scale-125 transition"></div>
+                  <div class="text-xs font-black text-amber-400 tracking-wide">${h.year}</div>
+                  <div class="font-bold text-slate-100 text-sm">${h.event}</div>
+                  <div class="text-xs text-slate-300 mt-0.5 leading-relaxed">${h.desc}</div>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+        `;
+      }
+      else if (currentTab === 'demo') {
+        html = `
+          <div class="space-y-3">
+            <div class="p-3.5 bg-slate-800/50 rounded-xl border border-slate-700/60 text-slate-200">
+              <div class="flex items-center gap-2 text-emerald-400 font-semibold mb-1 text-sm">
+                <i class="fa-solid fa-chart-pie"></i> Κοινωνία, Παιδεία & Οικονομία
+              </div>
+              <p>${entity.demo.summary}</p>
+            </div>
+
+            <div class="space-y-2.5 mt-3">
+              ${entity.demo.details.map(d => `
+                <div class="p-3 bg-slate-800/30 border border-slate-700/40 rounded-xl">
+                  <div class="text-[11px] font-bold uppercase tracking-wider text-emerald-400 mb-0.5">${d.label}</div>
+                  <div class="text-xs text-slate-200 leading-relaxed">${d.text}</div>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+        `;
+      }
+      else if (currentTab === 'cult') {
+        html = `
+          <div class="space-y-3">
+            <div class="p-3.5 bg-slate-800/50 rounded-xl border border-slate-700/60 text-slate-200">
+              <div class="flex items-center gap-2 text-violet-400 font-semibold mb-1 text-sm">
+                <i class="fa-solid fa-masks-theater"></i> Πολιτισμός, Τέχνες & Αξιοθέατα
+              </div>
+              <p>${entity.cult.summary}</p>
+            </div>
+
+            <div class="space-y-2.5 mt-3">
+              ${entity.cult.items.map(item => `
+                <div class="p-3 bg-slate-800/30 hover:bg-slate-800/60 transition border border-slate-700/40 rounded-xl">
+                  <div class="font-bold text-slate-100 text-sm mb-0.5 text-violet-300">${item.title}</div>
+                  <div class="text-slate-300 text-xs leading-relaxed">${item.desc}</div>
+                </div>
+              `).join('')}
+            </div>
+
+            ${entity.pois ? `
+              <div class="p-3 bg-sky-950/40 border border-sky-800/50 rounded-xl mt-4">
+                <div class="flex items-center gap-2 text-sky-300 font-bold text-xs mb-1">
+                  <i class="fa-solid fa-map-pin"></i> Σημεία στον Χάρτη
+                </div>
+                <div class="text-xs text-slate-300">
+                  Έχουν τοποθετηθεί ${entity.pois.length} διαδραστικά σημεία στον χάρτη. Κάντε κλικ στα εικονίδια για να δείτε φωτογραφίες και λεπτομέρειες.
+                </div>
+              </div>
+            ` : ''}
+          </div>
+        `;
+      }
+      else if (currentTab === 'timeline') {
+        html = `
+          <div class="space-y-3">
+            <div class="p-3.5 bg-slate-800/50 rounded-xl border border-slate-700/60 text-slate-200">
+              <div class="flex items-center gap-2 text-amber-400 font-semibold mb-1 text-sm">
+                <i class="fa-solid fa-arrows-split-up-and-left"></i> Η Εξέλιξη στο Χρόνο: Τότε & Τώρα
+              </div>
+              <p class="text-xs text-slate-300">
+                Σύγκριση της ιστορικής κληρονομιάς με τη σύγχρονη πραγματικότητα του 21ου αιώνα.
+              </p>
+            </div>
+
+            <div class="grid grid-cols-1 gap-3 mt-3">
+              ${entity.pastVsPresent.map((p, idx) => `
+                <div class="p-3.5 rounded-xl border ${idx === 0 ? 'bg-amber-950/20 border-amber-800/50' : 'bg-sky-950/20 border-sky-800/50'}">
+                  <div class="flex items-center gap-2 font-black text-sm mb-1.5 ${idx === 0 ? 'text-amber-400' : 'text-sky-400'}">
+                    <i class="fa-solid ${idx === 0 ? 'fa-scroll' : 'fa-building-columns'}"></i>
+                    <span>${p.epoch}</span>
+                  </div>
+                  <p class="text-xs text-slate-200 leading-relaxed">${p.content}</p>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+        `;
+      }
+
+      container.innerHTML = html;
+    }
+
+    /* Filter POIs by Category on the map */
+    function togglePoiCategory(category) {
+      currentPoiFilter = category;
+
+      const filterIds = ['all', 'history', 'culture', 'nature'];
+      filterIds.forEach(id => {
+        const btn = document.getElementById(`filter-${id}`);
+        if (!btn) return;
+        if (id === category) {
+          btn.className = 'poi-filter-btn px-2.5 py-1 rounded-md bg-sky-600 text-white font-medium hover:bg-sky-500 transition';
+        } else {
+          btn.className = 'poi-filter-btn px-2.5 py-1 rounded-md bg-slate-800 text-slate-300 hover:bg-slate-700 transition';
+        }
+      });
+
+      renderCityPois();
+    }
+
+    /* Narrative Voice / Text to Speech Simulation */
+    function narrateBrief() {
+      const isState = (currentScope === 'state' || currentScope === 'usa');
+      const entity = isState ? appData.state : appData.cities.find(c => c.id === currentCityId);
+      if (!entity) return;
+
+      const textToRead = `${entity.name}. ${entity.quote} ${entity.geo.summary}`;
+
+      if ('speechSynthesis' in window) {
+        window.speechSynthesis.cancel(); // Stop any previous speech
+        const utterance = new SpeechSynthesisUtterance(textToRead);
+        utterance.lang = 'el-GR';
+        utterance.rate = 1.0;
+
+        const icon = document.getElementById('ttsIcon');
+        icon.className = 'fa-solid fa-spinner fa-spin text-sky-400';
+
+        utterance.onend = () => {
+          icon.className = 'fa-solid fa-volume-high text-sky-400';
+        };
+        utterance.onerror = () => {
+          icon.className = 'fa-solid fa-volume-high text-sky-400';
+        };
+
+        window.speechSynthesis.speak(utterance);
+      } else {
+        // Fallback subtle visual feedback
+        const quoteEl = document.getElementById('docuQuote');
+        quoteEl.classList.add('text-sky-300', 'font-bold');
+        setTimeout(() => {
+          quoteEl.classList.remove('text-sky-300', 'font-bold');
+        }, 3000);
+      }
+    }
+  </script>
+</body>
+</html>
