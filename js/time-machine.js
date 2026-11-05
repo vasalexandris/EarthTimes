@@ -1,7 +1,7 @@
 /**
  * Time Machine Module
  * Manages the Temporal Dimension (Time Slider), Historical Eras, Time Capsule Spots,
- * and Community / Official Story Submissions.
+ * User Authentication / Profiles, Right-Click Map Spot Creation, and Community Stories.
  */
 
 import { loadTimeCapsules } from './data-service.js';
@@ -12,9 +12,73 @@ let isPlaying = false;
 let playInterval = null;
 let activeSpotId = null;
 
+// User Identity & Profile State
+let currentUser = {
+  name: 'Βασίλης Αλεξανδρής',
+  role: 'citizen', // 'citizen' | 'official' | 'guest'
+  title: 'Πιστοποιημένος Κάτοικος Κοζάνης',
+  verified: true
+};
+
 export async function initTimeMachine() {
   timeCapsules = await loadTimeCapsules();
+
+  // Load user profile from localStorage if exists
+  try {
+    const savedUser = localStorage.getItem('earthtimes_user');
+    if (savedUser) {
+      currentUser = JSON.parse(savedUser);
+    }
+  } catch (e) {
+    console.warn('Error reading user profile', e);
+  }
+
+  // Merge any user-created custom spots from localStorage
+  try {
+    const customSpots = localStorage.getItem('earthtimes_custom_spots');
+    if (customSpots) {
+      const parsed = JSON.parse(customSpots);
+      if (Array.isArray(parsed)) {
+        parsed.forEach(p => {
+          if (!timeCapsules.some(s => s.id === p.id)) {
+            timeCapsules.push(p);
+          }
+        });
+      }
+    }
+  } catch (e) {
+    console.warn('Error reading custom spots', e);
+  }
+
+  updateUserBadgeUI();
   return timeCapsules;
+}
+
+export function getCurrentUser() {
+  return currentUser;
+}
+
+export function setCurrentUser(userData) {
+  currentUser = { ...currentUser, ...userData };
+  try {
+    localStorage.setItem('earthtimes_user', JSON.stringify(currentUser));
+  } catch (e) {}
+  updateUserBadgeUI();
+}
+
+export function updateUserBadgeUI() {
+  const nameEl = document.getElementById('userDisplayName');
+  const roleEl = document.getElementById('userRoleBadge');
+  if (nameEl) nameEl.innerText = currentUser.name;
+  if (roleEl) {
+    if (currentUser.role === 'official') {
+      roleEl.innerText = '🏛️ Επίσημος Φορέας';
+      roleEl.className = 'px-2 py-0.5 rounded-full text-[10px] font-bold bg-sky-900/80 text-sky-300 border border-sky-600/50';
+    } else {
+      roleEl.innerText = '👤 Πιστοποιημένος Πολίτης';
+      roleEl.className = 'px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-900/80 text-emerald-300 border border-emerald-600/50';
+    }
+  }
 }
 
 export function getTimeCapsules() {
@@ -172,7 +236,7 @@ export function renderTimeCapsuleModalContent(spot, activeChronicle) {
             </span>
           </div>
           <h2 class="text-2xl font-black text-white tracking-tight">${spot.name}</h2>
-          <p class="text-xs sm:text-sm text-slate-400 mt-0.5 italic font-serif">${spot.englishName}</p>
+          <p class="text-xs sm:text-sm text-slate-400 mt-0.5 italic font-serif">${spot.englishName || ''}</p>
         </div>
         <button onclick="closeSpotTimeCapsule()" class="h-9 w-9 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white flex items-center justify-center transition border border-slate-700">
           <i class="fa-solid fa-xmark text-sm"></i>
@@ -208,7 +272,7 @@ export function renderTimeCapsuleModalContent(spot, activeChronicle) {
       
       <!-- Era Details Card -->
       <div class="p-5 rounded-2xl bg-slate-800/40 border border-slate-700/60 relative overflow-hidden">
-        <div class="flex items-start justify-between gap-4 mb-3">
+        <div class="flex items-start justify-between gap-4 mb-3 flex-wrap">
           <div>
             <div class="flex items-center gap-2 mb-1">
               <span class="text-xs font-black text-amber-400 tracking-wide uppercase">
@@ -216,7 +280,7 @@ export function renderTimeCapsuleModalContent(spot, activeChronicle) {
               </span>
               <span class="text-slate-500">•</span>
               <span class="text-xs text-sky-300 font-medium capitalize">
-                ${activeChronicle.category === 'business' ? 'Εμπορικό Κατάστημα' : activeChronicle.category === 'culture' ? 'Πολιτιστικός Χώρος' : 'Ιστορικό Ορόσημο'}
+                ${activeChronicle.category === 'business' ? 'Εμπορικό / Κατάστημα' : activeChronicle.category === 'culture' ? 'Πολιτιστικός Χώρος' : activeChronicle.category === 'residence' ? 'Κατοικία / Γειτονιά' : 'Ιστορικό Ορόσημο'}
               </span>
             </div>
             <h3 class="text-lg font-bold text-white">${activeChronicle.title}</h3>
@@ -240,10 +304,12 @@ export function renderTimeCapsuleModalContent(spot, activeChronicle) {
 
         <p class="text-slate-200 text-sm leading-relaxed mb-4">${activeChronicle.story}</p>
 
-        <div class="flex items-center gap-2 text-xs text-slate-400 pt-3 border-t border-slate-700/50">
-          <i class="fa-solid fa-feather-pointed text-amber-400"></i>
-          <span>Καταγράφηκε από: <strong class="text-slate-200">${activeChronicle.authorName}</strong></span>
-          ${activeChronicle.verified ? `<span class="text-emerald-400 font-semibold flex items-center gap-1"><i class="fa-solid fa-circle-check text-[10px]"></i> Επαληθευμένο</span>` : ''}
+        <div class="flex items-center justify-between flex-wrap gap-2 text-xs text-slate-400 pt-3 border-t border-slate-700/50">
+          <div class="flex items-center gap-1.5">
+            <i class="fa-solid fa-feather-pointed text-amber-400"></i>
+            <span>Καταγράφηκε από: <strong class="text-slate-200">${activeChronicle.authorName}</strong></span>
+          </div>
+          ${activeChronicle.verified ? `<span class="text-emerald-400 font-semibold flex items-center gap-1"><i class="fa-solid fa-circle-check text-[10px]"></i> Επαληθευμένη Ιστορία</span>` : ''}
         </div>
       </div>
 
@@ -298,14 +364,16 @@ export function renderTimeCapsuleModalContent(spot, activeChronicle) {
         </div>
       </div>
 
-      <!-- Add New Era / Story Button -->
-      <div class="p-4 rounded-2xl bg-gradient-to-r from-sky-950/40 to-indigo-950/40 border border-sky-800/40 flex items-center justify-between flex-wrap gap-3">
-        <div>
-          <div class="text-xs font-bold text-sky-300">Γνωρίζετε άλλη περίοδο για αυτό το σημείο;</div>
-          <div class="text-[11px] text-slate-400">Προσθέστε μια νέα χρονική περίοδο ή επίσημο αρχείο.</div>
-        </div>
-        <button onclick="openAddEraForm('${spot.id}')" class="px-3.5 py-2 rounded-xl bg-sky-600 hover:bg-sky-500 text-white font-bold text-xs shadow-md transition flex items-center gap-1.5">
-          <i class="fa-solid fa-clock-rotate-left"></i> Νέα Χρονική Περίοδος
+      <!-- Actions: Add Era + AI Reconstruction button -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+        <button onclick="openAddEraForm('${spot.id}')" class="p-3.5 rounded-xl bg-slate-800 hover:bg-slate-750 text-white font-bold text-xs border border-slate-700 transition flex items-center justify-center gap-2">
+          <i class="fa-solid fa-clock-rotate-left text-amber-400"></i>
+          <span>Προσθήκη Νέας Χρονικής Περιόδου</span>
+        </button>
+
+        <button onclick="openAiReconstructModal('${spot.id}', '${activeChronicle.id}')" class="p-3.5 rounded-xl bg-gradient-to-r from-indigo-900/60 to-purple-900/60 hover:from-indigo-850 hover:to-purple-850 text-indigo-200 font-bold text-xs border border-indigo-500/40 transition flex items-center justify-center gap-2 shadow-lg">
+          <i class="fa-solid fa-wand-magic-sparkles text-amber-300"></i>
+          <span>✨ AI Ιστορική Αναπαράσταση Εποχής</span>
         </button>
       </div>
 
@@ -325,7 +393,114 @@ export function selectSpotEra(chronicleId) {
 }
 
 /**
- * Community Story Submission
+ * Creating a New Time Capsule Spot directly from the map (Right-Click or Map Click)
+ */
+export function openCreateSpotModal(lat, lng) {
+  const modal = document.getElementById('createSpotModal');
+  if (!modal) return;
+
+  document.getElementById('newSpotLat').value = lat.toFixed(6);
+  document.getElementById('newSpotLng').value = lng.toFixed(6);
+  document.getElementById('newSpotAuthorName').value = currentUser.name;
+  document.getElementById('newSpotAuthorType').value = currentUser.role === 'official' ? 'official' : 'citizen';
+
+  modal.classList.remove('hidden');
+}
+
+export function closeCreateSpotModal() {
+  const modal = document.getElementById('createSpotModal');
+  if (modal) modal.classList.add('hidden');
+}
+
+export function submitNewSpot(event) {
+  event.preventDefault();
+
+  const lat = parseFloat(document.getElementById('newSpotLat').value);
+  const lng = parseFloat(document.getElementById('newSpotLng').value);
+  const name = document.getElementById('newSpotName').value.trim();
+  const address = document.getElementById('newSpotAddress').value.trim();
+  const cityId = document.getElementById('newSpotCityId').value;
+  const fromYear = parseInt(document.getElementById('newSpotFromYear').value, 10);
+  const toYearVal = document.getElementById('newSpotToYear').value.trim();
+  const toYear = toYearVal ? parseInt(toYearVal, 10) : null;
+  const eraTitle = document.getElementById('newSpotEraTitle').value.trim();
+  const category = document.getElementById('newSpotCategory').value;
+  const authorType = document.getElementById('newSpotAuthorType').value;
+  const authorName = document.getElementById('newSpotAuthorName').value.trim() || currentUser.name;
+  const story = document.getElementById('newSpotStory').value.trim();
+  const photoUrl = document.getElementById('newSpotPhotoUrl').value.trim();
+  const memoryText = document.getElementById('newSpotMemoryText').value.trim();
+
+  if (!name || isNaN(lat) || isNaN(lng) || isNaN(fromYear) || !story) {
+    alert('Παρακαλούμε συμπληρώστε όλα τα απαραίτητα πεδία!');
+    return;
+  }
+
+  const newSpot = {
+    id: `custom-spot-${Date.now()}`,
+    cityId: cityId || 'kozani',
+    name,
+    englishName: name,
+    coords: [lat, lng],
+    address: address || name,
+    chronicles: [
+      {
+        id: `chronicle-${Date.now()}`,
+        fromYear,
+        toYear,
+        title: eraTitle || name,
+        category,
+        authorType,
+        authorName,
+        verified: authorType === 'official',
+        story,
+        photos: photoUrl ? [{
+          url: photoUrl,
+          caption: eraTitle || name,
+          year: fromYear,
+          credit: authorName
+        }] : [
+          {
+            url: "https://images.unsplash.com/photo-1513694203232-719a280e022f?w=800&auto=format&fit=crop&q=80",
+            caption: "Ιστορικό στιγμιότυπο σημείου",
+            year: fromYear,
+            credit: authorName
+          }
+        ],
+        memories: memoryText ? [{
+          author: authorName,
+          year: fromYear,
+          text: memoryText
+        }] : []
+      }
+    ]
+  };
+
+  timeCapsules.push(newSpot);
+
+  // Save to localStorage
+  try {
+    const existing = JSON.parse(localStorage.getItem('earthtimes_custom_spots') || '[]');
+    existing.push(newSpot);
+    localStorage.setItem('earthtimes_custom_spots', JSON.stringify(existing));
+  } catch (e) {
+    console.warn('Error saving spot to localStorage', e);
+  }
+
+  closeCreateSpotModal();
+  document.getElementById('createSpotForm').reset();
+
+  // Trigger map refresh callback if available
+  if (window.renderCurrentTimeCapsules) {
+    window.renderCurrentTimeCapsules();
+  }
+
+  // Open the newly created spot immediately!
+  openSpotTimeCapsule(newSpot.id);
+}
+
+/**
+ * Community Story Submission for Existing Spot
  */
 export function openAddMemoryForm(spotId, chronicleId) {
   const modal = document.getElementById('addMemoryModal');
@@ -333,6 +508,7 @@ export function openAddMemoryForm(spotId, chronicleId) {
 
   document.getElementById('formSpotId').value = spotId;
   document.getElementById('formChronicleId').value = chronicleId;
+  document.getElementById('memoryAuthor').value = currentUser.name;
   modal.classList.remove('hidden');
 }
 
@@ -345,6 +521,8 @@ export function openAddEraForm(spotId) {
   const modal = document.getElementById('addEraModal');
   if (!modal) return;
   document.getElementById('formNewEraSpotId').value = spotId;
+  document.getElementById('eraAuthorName').value = currentUser.name;
+  document.getElementById('eraAuthorType').value = currentUser.role === 'official' ? 'official' : 'citizen';
   modal.classList.remove('hidden');
 }
 
@@ -406,7 +584,7 @@ export function submitNewEra(event) {
       title,
       category,
       authorType,
-      authorName: authorName || 'Ανώνυμος Πολίτης',
+      authorName: authorName || currentUser.name,
       verified: authorType === 'official',
       story,
       photos: photoUrl ? [{
@@ -425,4 +603,103 @@ export function submitNewEra(event) {
 
   closeAddEraModal();
   document.getElementById('eraForm').reset();
+}
+
+/**
+ * AI Historical Reconstruction Modal Viewer
+ */
+export function openAiReconstructModal(spotId, chronicleId) {
+  const modal = document.getElementById('aiReconstructModal');
+  if (!modal) return;
+
+  const spot = timeCapsules.find(s => s.id === spotId);
+  if (!spot) return;
+  const chronicle = spot.chronicles.find(c => c.id === chronicleId) || spot.chronicles[0];
+
+  const body = document.getElementById('aiReconstructBody');
+  if (body) {
+    body.innerHTML = `
+      <div class="p-6 space-y-4">
+        <div class="flex items-center justify-between pb-3 border-b border-slate-800">
+          <div class="flex items-center gap-2">
+            <span class="h-8 w-8 rounded-lg bg-gradient-to-tr from-indigo-500 to-purple-500 flex items-center justify-center text-white shadow-lg">
+              <i class="fa-solid fa-wand-magic-sparkles text-sm"></i>
+            </span>
+            <div>
+              <h3 class="text-base font-bold text-white">AI Ιστορική Αναπαράσταση: ${chronicle.title}</h3>
+              <p class="text-xs text-indigo-300">Περίοδος: ${chronicle.fromYear} – ${chronicle.toYear || 'Σήμερα'} • ${spot.name}</p>
+            </div>
+          </div>
+          <button onclick="closeAiReconstructModal()" class="text-slate-400 hover:text-white">
+            <i class="fa-solid fa-xmark text-sm"></i>
+          </button>
+        </div>
+
+        <div class="relative rounded-2xl overflow-hidden border border-indigo-500/30 bg-slate-950 shadow-2xl">
+          <img src="${(chronicle.photos && chronicle.photos[0]) ? chronicle.photos[0].url : 'https://images.unsplash.com/photo-1513694203232-719a280e022f?w=1000&auto=format&fit=crop&q=80'}" class="w-full h-64 object-cover filter contrast-105" />
+          <div class="absolute bottom-0 inset-x-0 p-4 bg-gradient-to-t from-slate-950 via-slate-950/80 to-transparent">
+            <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-indigo-500/30 text-indigo-200 border border-indigo-400/40 mb-1">
+              <i class="fa-solid fa-microchip"></i> AI Synthesis Model v4.2
+            </div>
+            <div class="text-xs text-slate-200 font-medium">Αναπαράσταση αρχιτεκτονικής, φωτισμού και ατμόσφαιρας εποχής</div>
+          </div>
+        </div>
+
+        <div class="p-4 rounded-xl bg-slate-800/40 border border-slate-700/60 text-xs text-slate-300 leading-relaxed space-y-2">
+          <div class="font-bold text-amber-300 flex items-center gap-1.5">
+            <i class="fa-solid fa-scroll"></i> Σύνθεση Ιστορικής Πραγματικότητας:
+          </div>
+          <p>
+            Βάσει των ιστορικών αρχείων της πόλης και των προφορικών μαρτυριών για το έτος <strong>${chronicle.fromYear}</strong>, το σημείο αυτό χαρακτηριζόταν από έντονη κοινωνική ζωή. Η δόμηση της γειτονιάς διατηρούσε τα παραδοσιακά αρχιτεκτονικά στοιχεία, οι δρόμοι ήταν λιθόστρωτοι και οι άνθρωποι συγκεντρώνονταν καθημερινά για να μοιραστούν τα νέα της ημέρας.
+          </p>
+        </div>
+
+        <div class="flex items-center justify-between pt-2">
+          <span class="text-[11px] text-slate-500">Πηγή δεδομένων: Community Knowledge Graph & Public Historical Archives</span>
+          <button onclick="closeAiReconstructModal()" class="px-4 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-xs shadow-md transition">
+            Κλείσιμο
+          </button>
+        </div>
+      </div>
+    `;
+  }
+
+  modal.classList.remove('hidden');
+}
+
+export function closeAiReconstructModal() {
+  const modal = document.getElementById('aiReconstructModal');
+  if (modal) modal.classList.add('hidden');
+}
+
+export function openUserProfileModal() {
+  const modal = document.getElementById('userProfileModal');
+  if (!modal) return;
+  document.getElementById('profileNameInput').value = currentUser.name;
+  document.getElementById('profileRoleSelect').value = currentUser.role;
+  document.getElementById('profileTitleInput').value = currentUser.title;
+  modal.classList.remove('hidden');
+}
+
+export function closeUserProfileModal() {
+  const modal = document.getElementById('userProfileModal');
+  if (modal) modal.classList.add('hidden');
+}
+
+export function saveUserProfile(event) {
+  event.preventDefault();
+  const name = document.getElementById('profileNameInput').value.trim();
+  const role = document.getElementById('profileRoleSelect').value;
+  const title = document.getElementById('profileTitleInput').value.trim();
+
+  if (!name) return;
+
+  setCurrentUser({
+    name,
+    role,
+    title: title || (role === 'official' ? 'Εκπρόσωπος Δήμου / Φορέα' : 'Πιστοποιημένος Δημότης'),
+    verified: true
+  });
+
+  closeUserProfileModal();
 }

@@ -280,6 +280,13 @@ export function narrateBrief() {
   UIModule.narrateBrief(entity);
 }
 
+export function toggleAddSpotMode() {
+  const active = MapModule.setAddSpotMode(!MapModule.isAddSpotMode());
+  if (active) {
+    UIModule.updateStatusBadge("Κάντε κλικ ή δεξί κλικ στο χάρτη για να βάλετε νέα Χρονοκάψουλα!");
+  }
+}
+
 // Global Window Bindings for UI & HTML event attributes
 window.openExplorer = openExplorer;
 window.openLandingPage = openLandingPage;
@@ -297,19 +304,28 @@ window.switchTab = switchTab;
 window.togglePoiCategory = togglePoiCategory;
 window.narrateBrief = narrateBrief;
 
-// Time Machine window bindings
+// Time Machine & Spot Creation window bindings
+window.toggleTimePlayback = toggleTimePlayback;
 window.onTimeSliderChange = onTimeSliderChange;
 window.onTimeDecadeClick = onTimeDecadeClick;
-window.toggleTimePlayback = toggleTimePlayback;
+window.toggleAddSpotMode = toggleAddSpotMode;
 window.openSpotTimeCapsule = TimeMachine.openSpotTimeCapsule;
 window.closeSpotTimeCapsule = TimeMachine.closeSpotTimeCapsule;
 window.selectSpotEra = TimeMachine.selectSpotEra;
+window.openCreateSpotModal = TimeMachine.openCreateSpotModal;
+window.closeCreateSpotModal = TimeMachine.closeCreateSpotModal;
+window.submitNewSpot = TimeMachine.submitNewSpot;
 window.openAddMemoryForm = TimeMachine.openAddMemoryForm;
 window.closeAddMemoryModal = TimeMachine.closeAddMemoryModal;
 window.openAddEraForm = TimeMachine.openAddEraForm;
 window.closeAddEraModal = TimeMachine.closeAddEraModal;
 window.submitMemory = TimeMachine.submitMemory;
 window.submitNewEra = TimeMachine.submitNewEra;
+window.openAiReconstructModal = TimeMachine.openAiReconstructModal;
+window.closeAiReconstructModal = TimeMachine.closeAiReconstructModal;
+window.openUserProfileModal = TimeMachine.openUserProfileModal;
+window.closeUserProfileModal = TimeMachine.closeUserProfileModal;
+window.saveUserProfile = TimeMachine.saveUserProfile;
 
 // App Initializer
 async function init() {
@@ -331,6 +347,11 @@ async function init() {
       if (currentScope === 'world') {
         flyToCountry('greece');
       }
+    });
+
+    // Register Map Click / Right Click Handler to add Time Capsule Spots!
+    MapModule.setOnMapRightClickHandler((lat, lng) => {
+      TimeMachine.openCreateSpotModal(lat, lng);
     });
 
     // 4. Set initial base layer UI state (Dark Voyager default)

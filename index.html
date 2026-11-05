@@ -191,11 +191,19 @@
         </div>
       </div>
 
-      <!-- Current Date Center Pill -->
-      <div class="hidden lg:flex items-center gap-2 px-3 py-1 rounded-full bg-slate-800/80 border border-slate-700/80 text-xs text-slate-300">
-        <span class="h-2 w-2 rounded-full bg-emerald-400 animate-pulse"></span>
-        <i class="fa-regular fa-calendar-days text-sky-400"></i>
-        <span id="currentDateDisplay">Σήμερα</span>
+      <!-- Current Date Center Pill & User Profile -->
+      <div class="hidden lg:flex items-center gap-3">
+        <div class="flex items-center gap-2 px-3 py-1 rounded-full bg-slate-800/80 border border-slate-700/80 text-xs text-slate-300">
+          <span class="h-2 w-2 rounded-full bg-emerald-400 animate-pulse"></span>
+          <i class="fa-regular fa-calendar-days text-sky-400"></i>
+          <span id="currentDateDisplay">Σήμερα</span>
+        </div>
+
+        <button onclick="openUserProfileModal()" title="Διαχείριση Προφίλ & Πιστοποίησης" class="flex items-center gap-2 px-3 py-1 rounded-full bg-slate-800/80 hover:bg-slate-750 border border-slate-700 text-xs text-slate-200 transition">
+          <span class="h-2 w-2 rounded-full bg-emerald-400"></span>
+          <span id="userDisplayName">Βασίλης Αλεξανδρής</span>
+          <span id="userRoleBadge" class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-900/80 text-emerald-300 border border-emerald-600/50">👤 Πιστοποιημένος Πολίτης</span>
+        </button>
       </div>
 
       <!-- Breadcrumbs & Jump Selector -->
@@ -280,8 +288,12 @@
             </button>
           </div>
 
-          <!-- Quick Navigation Shortcuts -->
+          <!-- Quick Navigation Shortcuts & Add Spot -->
           <div class="flex items-center gap-1.5">
+            <button id="toggleAddSpotBtn" onclick="toggleAddSpotMode()" title="Προσθήκη Σημείου (Κάντε κλικ ή δεξί κλικ οπουδήποτε στο χάρτη)" class="h-8 px-2.5 bg-slate-900/90 hover:bg-slate-800 text-amber-400 border border-slate-700 rounded-lg flex items-center gap-1.5 text-xs font-bold shadow-lg transition">
+              <i class="fa-solid fa-location-crosshairs text-amber-400"></i>
+              <span>+ Σημείο</span>
+            </button>
             <button onclick="flyToWorld()" title="Επαναφορά σε ολόκληρη τη Γη" class="h-8 px-2.5 bg-slate-900/90 hover:bg-slate-800 text-emerald-400 border border-slate-700 rounded-lg flex items-center gap-1.5 text-xs font-medium shadow-lg transition">
               <i class="fa-solid fa-earth-americas"></i>
               <span>Γη</span>
@@ -559,6 +571,189 @@
           </button>
         </div>
       </form>
+    </div>
+  </div>
+
+  <!-- ================= 6. CREATE SPOT MODAL (RIGHT-CLICK ON MAP) ================= -->
+  <div id="createSpotModal" class="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/85 backdrop-blur-md p-4 hidden">
+    <div class="w-full max-w-xl bg-slate-900 border border-amber-500/60 rounded-3xl p-6 shadow-2xl max-h-[90vh] overflow-y-auto">
+      <div class="flex items-center justify-between mb-4 pb-3 border-b border-slate-800">
+        <div>
+          <h3 class="text-lg font-bold text-white flex items-center gap-2">
+            <i class="fa-solid fa-location-dot text-amber-400"></i> Δημιουργία Νέας Χρονοκάψουλας
+          </h3>
+          <p class="text-xs text-slate-400">Προσθέστε το δικό σας σημείο, σπίτι ή κατάστημα στο παγκόσμιο χρονικό!</p>
+        </div>
+        <button onclick="closeCreateSpotModal()" class="text-slate-400 hover:text-white">
+          <i class="fa-solid fa-xmark text-lg"></i>
+        </button>
+      </div>
+
+      <form id="createSpotForm" onsubmit="submitNewSpot(event)" class="space-y-4">
+        <!-- Coordinates Row (Auto-filled) -->
+        <div class="grid grid-cols-2 gap-3 p-3 rounded-xl bg-slate-800/40 border border-slate-700/50">
+          <div>
+            <label class="block text-[10px] font-bold uppercase text-slate-400 mb-0.5">Γεωγραφικό Πλάτος (Lat)</label>
+            <input type="text" id="newSpotLat" readonly class="w-full bg-slate-900 border border-slate-700 rounded-lg px-2.5 py-1.5 text-xs text-sky-300 font-mono">
+          </div>
+          <div>
+            <label class="block text-[10px] font-bold uppercase text-slate-400 mb-0.5">Γεωγραφικό Μήκος (Lng)</label>
+            <input type="text" id="newSpotLng" readonly class="w-full bg-slate-900 border border-slate-700 rounded-lg px-2.5 py-1.5 text-xs text-sky-300 font-mono">
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-slate-300 mb-1">Όνομα Σημείου / Τοπωνύμιο *</label>
+          <input type="text" id="newSpotName" required placeholder="π.χ. Το πατρικό σπίτι της γιαγιάς ή Παλιό Παντοπωλείο" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-3 py-2 text-sm text-white focus:ring-2 focus:ring-amber-500 outline-none">
+        </div>
+
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block text-xs font-semibold text-slate-300 mb-1">Οδός / Γειτονιά</label>
+            <input type="text" id="newSpotAddress" placeholder="π.χ. Οδός Βερμίου 12, Κοζάνη" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-3 py-2 text-sm text-white focus:ring-2 focus:ring-amber-500 outline-none">
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-slate-300 mb-1">Πλησιέστερη Πόλη</label>
+            <select id="newSpotCityId" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-3 py-2 text-sm text-white focus:ring-2 focus:ring-amber-500 outline-none">
+              <option value="kozani">Κοζάνη</option>
+              <option value="athens">Αθήνα</option>
+              <option value="thessaloniki">Θεσσαλονίκη</option>
+              <option value="patras">Πάτρα</option>
+              <option value="heraklion">Ηράκλειο</option>
+              <option value="larissa">Λάρισα</option>
+              <option value="volos">Βόλος</option>
+              <option value="ioannina">Ιωάννινα</option>
+              <option value="trikala">Τρίκαλα</option>
+              <option value="chania">Χανιά</option>
+              <option value="chalkida">Χαλκίδα</option>
+              <option value="boston">Βοστώνη</option>
+              <option value="new-york">Νέα Υόρκη</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="pt-2 border-t border-slate-800">
+          <div class="text-xs font-bold text-amber-400 mb-2 flex items-center gap-1.5">
+            <i class="fa-solid fa-clock-rotate-left"></i> Πρώτη Χρονική Περίοδος & Ιστορία:
+          </div>
+
+          <div class="grid grid-cols-2 gap-3 mb-3">
+            <div>
+              <label class="block text-xs font-semibold text-slate-300 mb-1">Από Έτος *</label>
+              <input type="number" id="newSpotFromYear" min="1800" max="2026" required value="1970" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-3 py-2 text-sm text-white focus:ring-2 focus:ring-amber-500 outline-none">
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-slate-300 mb-1">Έως Έτος (Κενό = Σήμερα)</label>
+              <input type="number" id="newSpotToYear" min="1800" max="2026" placeholder="π.χ. 1995" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-3 py-2 text-sm text-white focus:ring-2 focus:ring-amber-500 outline-none">
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label class="block text-xs font-semibold text-slate-300 mb-1">Τίτλος Ιστορίας / Εποχής *</label>
+            <input type="text" id="newSpotEraTitle" required placeholder="π.χ. Το πέτρινο σπίτι με την αυλή και τη ροδιά" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-3 py-2 text-sm text-white focus:ring-2 focus:ring-amber-500 outline-none">
+          </div>
+
+          <div class="grid grid-cols-2 gap-3 mb-3">
+            <div>
+              <label class="block text-xs font-semibold text-slate-300 mb-1">Κατηγορία</label>
+              <select id="newSpotCategory" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-3 py-2 text-sm text-white focus:ring-2 focus:ring-amber-500 outline-none">
+                <option value="residence">Κατοικία / Γειτονιά</option>
+                <option value="business">Εμπορικό Κατάστημα</option>
+                <option value="culture">Πολιτισμός / Τέχνες</option>
+                <option value="landmark">Ιστορικό Ορόσημο</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-slate-300 mb-1">Τύπος Συνεισφέροντος</label>
+              <select id="newSpotAuthorType" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-3 py-2 text-sm text-white focus:ring-2 focus:ring-amber-500 outline-none">
+                <option value="citizen">👤 Συλλογική Μνήμη (Πολίτης)</option>
+                <option value="official">🏛️ Επίσημος Φορέας (Δήμος / Μουσείο)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label class="block text-xs font-semibold text-slate-300 mb-1">Όνομα Συντάκτη / Αφηγητή</label>
+            <input type="text" id="newSpotAuthorName" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-3 py-2 text-sm text-white focus:ring-2 focus:ring-amber-500 outline-none">
+          </div>
+
+          <div class="mb-3">
+            <label class="block text-xs font-semibold text-slate-300 mb-1">Η Ιστορία / Αφήγηση *</label>
+            <textarea id="newSpotStory" rows="3" required placeholder="Περιγράψτε τι υπήρχε εδώ, πώς ήταν το κτίριο ή η γειτονιά εκείνη την εποχή..." class="w-full bg-slate-800 border border-slate-700 rounded-xl px-3 py-2 text-sm text-white focus:ring-2 focus:ring-amber-500 outline-none"></textarea>
+          </div>
+
+          <div class="mb-3">
+            <label class="block text-xs font-semibold text-slate-300 mb-1">Σύνδεσμος Φωτογραφίας (URL - Προαιρετικό)</label>
+            <input type="url" id="newSpotPhotoUrl" placeholder="https://..." class="w-full bg-slate-800 border border-slate-700 rounded-xl px-3 py-2 text-sm text-white focus:ring-2 focus:ring-amber-500 outline-none">
+          </div>
+
+          <div>
+            <label class="block text-xs font-semibold text-slate-300 mb-1">Προσωπική Ανάμνηση (Προαιρετικό)</label>
+            <input type="text" id="newSpotMemoryText" placeholder="π.χ. Θυμάμαι να παίζουμε ποδόσφαιρο στον χωματόδρομο μπροστά..." class="w-full bg-slate-800 border border-slate-700 rounded-xl px-3 py-2 text-sm text-white focus:ring-2 focus:ring-amber-500 outline-none">
+          </div>
+        </div>
+
+        <div class="flex items-center justify-end gap-2 pt-3 border-t border-slate-800">
+          <button type="button" onclick="closeCreateSpotModal()" class="px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-750 text-slate-300 text-xs font-semibold transition">Ακύρωση</button>
+          <button type="submit" class="px-6 py-2.5 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-bold text-xs shadow-xl transition flex items-center gap-2">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>Τοποθέτηση Χρονοκάψουλας</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ================= 7. USER PROFILE & AUTHENTICATION MODAL ================= -->
+  <div id="userProfileModal" class="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/85 backdrop-blur-md p-4 hidden">
+    <div class="w-full max-w-md bg-slate-900 border border-sky-500/50 rounded-2xl p-6 shadow-2xl">
+      <div class="flex items-center justify-between mb-4 pb-3 border-b border-slate-800">
+        <h3 class="text-lg font-bold text-white flex items-center gap-2">
+          <i class="fa-solid fa-id-badge text-sky-400"></i> Προφίλ & Ταυτότητα Συντάκτη
+        </h3>
+        <button onclick="closeUserProfileModal()" class="text-slate-400 hover:text-white">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <form onsubmit="saveUserProfile(event)" class="space-y-4">
+        <div>
+          <label class="block text-xs font-semibold text-slate-300 mb-1">Ονοματεπώνυμο</label>
+          <input type="text" id="profileNameInput" required class="w-full bg-slate-800 border border-slate-700 rounded-xl px-3 py-2 text-sm text-white focus:ring-2 focus:ring-sky-500 outline-none">
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-slate-300 mb-1">Ιδιότητα / Ρόλος</label>
+          <select id="profileRoleSelect" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-3 py-2 text-sm text-white focus:ring-2 focus:ring-sky-500 outline-none">
+            <option value="citizen">👤 Πιστοποιημένος Πολίτης / Κάτοικος</option>
+            <option value="official">🏛️ Επίσημος Εκπρόσωπος Δήμου / Ιστορικού Αρχείου</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-slate-300 mb-1">Τίτλος / Περιγραφή</label>
+          <input type="text" id="profileTitleInput" placeholder="π.χ. Κάτοικος Κοζάνης ή Υπεύθυνος Πολιτισμού" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-3 py-2 text-sm text-white focus:ring-2 focus:ring-sky-500 outline-none">
+        </div>
+
+        <div class="p-3 rounded-xl bg-slate-800/40 border border-slate-700 text-xs text-slate-400">
+          <div class="font-bold text-emerald-400 mb-1 flex items-center gap-1.5">
+            <i class="fa-solid fa-shield-check"></i> Πιστοποίηση Συνεισφορών:
+          </div>
+          Κάθε ιστορία ή φωτογραφία που προσθέτετε υπογράφεται με την ταυτότητα αυτή, διαφυλάσσοντας την αυθεντικότητα του παγκόσμιου ημερολογίου.
+        </div>
+
+        <div class="flex items-center justify-end gap-2 pt-2">
+          <button type="button" onclick="closeUserProfileModal()" class="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-750 text-slate-300 text-xs font-semibold transition">Ακύρωση</button>
+          <button type="submit" class="px-5 py-2 rounded-xl bg-sky-600 hover:bg-sky-500 text-white text-xs font-bold shadow transition">Αποθήκευση</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ================= 8. AI HISTORICAL RECONSTRUCTION MODAL ================= -->
+  <div id="aiReconstructModal" class="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/85 backdrop-blur-md p-4 hidden">
+    <div id="aiReconstructBody" class="w-full max-w-2xl bg-slate-900 border border-indigo-500/50 rounded-3xl shadow-2xl overflow-hidden">
+      <!-- Injected dynamically by TimeMachine.openAiReconstructModal -->
     </div>
   </div>
 

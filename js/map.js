@@ -11,6 +11,8 @@ let statePolygonLayer = null;
 let cityMarkersGroup = null;
 let poiMarkersGroup = null;
 let timeCapsuleMarkersGroup = null;
+let addSpotMode = false;
+let onMapRightClickCallback = null;
 
 // Tile Layer Providers Configuration
 export const BASE_LAYERS = {
@@ -96,7 +98,49 @@ export function initMap(containerId, initialCoords = [20.0, 0.0], initialZoom = 
   // Draw State boundary highlight
   drawStateHighlight(onStateClick);
 
+  // Right-Click on Map creates a new Time Capsule Spot!
+  map.on('contextmenu', (e) => {
+    if (onMapRightClickCallback) {
+      onMapRightClickCallback(e.latlng.lat, e.latlng.lng);
+    }
+  });
+
+  // Normal click creates spot if addSpotMode is active
+  map.on('click', (e) => {
+    if (addSpotMode && onMapRightClickCallback) {
+      onMapRightClickCallback(e.latlng.lat, e.latlng.lng);
+      setAddSpotMode(false);
+    }
+  });
+
   return map;
+}
+
+export function setAddSpotMode(enabled) {
+  addSpotMode = enabled;
+  if (map) {
+    const container = map.getContainer();
+    if (container) {
+      container.style.cursor = addSpotMode ? 'crosshair' : '';
+    }
+  }
+  const btn = document.getElementById('toggleAddSpotBtn');
+  if (btn) {
+    if (addSpotMode) {
+      btn.className = 'h-8 px-2.5 bg-amber-500 text-slate-950 font-bold border border-amber-300 rounded-lg flex items-center gap-1.5 text-xs shadow-lg transition animate-pulse';
+    } else {
+      btn.className = 'h-8 px-2.5 bg-slate-900/90 hover:bg-slate-800 text-amber-400 border border-slate-700 rounded-lg flex items-center gap-1.5 text-xs font-medium shadow-lg transition';
+    }
+  }
+  return addSpotMode;
+}
+
+export function isAddSpotMode() {
+  return addSpotMode;
+}
+
+export function setOnMapRightClickHandler(callback) {
+  onMapRightClickCallback = callback;
 }
 
 export function switchBaseLayer(layerKey) {
