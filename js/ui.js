@@ -123,7 +123,7 @@ export function updateTabButtons(activeTab) {
   });
 }
 
-export function renderDossier(entity, entityType = 'state', currentTab = 'geo') {
+export function renderDossier(entity, entityType = 'state', currentTab = 'geo', activeYear = null, activeSpots = [], isPlaying = false) {
   if (!entity) return;
 
   const badgeCategory = document.getElementById('badgeCategory');
@@ -204,10 +204,152 @@ export function renderDossier(entity, entityType = 'state', currentTab = 'geo') 
   if (docuQuote) docuQuote.innerText = entity.quote || '';
 
   updateTabButtons(currentTab);
-  renderTabContent(currentTab, entity);
+  renderTabContent(currentTab, entity, activeYear, activeSpots, isPlaying);
 }
 
-export function renderTabContent(tabId, entity) {
+export function updateTimelineLiveIndicator(isPlaying) {
+  const dot = document.getElementById('timelineTabDot');
+  if (dot) {
+    if (isPlaying) dot.classList.remove('hidden');
+    else dot.classList.add('hidden');
+  }
+}
+
+export function getHistoricalContextForEra(entity, year) {
+  const y = (year === 'all' || !year) ? 2026 : parseInt(year, 10);
+  const id = entity.id || '';
+
+  if (id === 'kozani') {
+    if (y < 1920) {
+      return {
+        era: '1900 - 1920: Απελευθέρωση & Μακεδονική Αρχοντιά',
+        summary: 'Η Κοζάνη απελευθερώνεται από τον οθωμανικό ζυγό στις 11 Οκτωβρίου 1912 μετά τη μάχη του Σαρανταπόρου. Στην κεντρική πλατεία δεσπόζει το καμπαναριό του Μαμάτσιου (1855) και τα πέτρινα αρχοντικά των εμπόρων κρόκου και γούνας.',
+        keyFacts: [
+          '1912: Είσοδος του Ελληνικού Στρατού και πανηγυρισμοί στην Πλατεία Νίκης',
+          'Παραδοσιακά χάνια και καφενεία αγωγιατών γύρω από τον Άγιο Νικόλαο',
+          'Άνθηση της καλλιέργειας και εξαγωγής του κρόκου Κοζάνης στην Κεντρική Ευρώπη'
+        ]
+      };
+    } else if (y < 1945) {
+      return {
+        era: '1920 - 1945: Μεσοπόλεμος, Γράμματα & Παραδοσιακοί Φανοί',
+        summary: 'Περίοδος πνευματικής άνθησης και διαφύλαξης των τοπικών παραδόσεων. Στο ιστορικό αναγνωστήριο φυλάσσεται η αυθεντική Χάρτα του Ρήγα Φεραίου (1797), ενώ στις ιστορικές γειτονιές (Σκ\'ρκα, Κεραμαριό, Πλατάνια) ανάβουν οι μεγάλοι Φανοί.',
+        keyFacts: [
+          'Ενίσχυση της ιστορικής Κοβενταρείου Δημοτικής Βιβλιοθήκης με χιλιάδες παλαίτυπα',
+          'Ολονύχτια γλέντια γύρω από τους Φανούς με σκωπτικά αποκριάτικα τραγούδια',
+          'Η πόλη διατηρεί τον παραδοσιακό μακεδονικό πολεοδομικό της ιστό'
+        ]
+      };
+    } else if (y < 1970) {
+      return {
+        era: '1945 - 1970: Μεταπολεμική Ανοικοδόμηση & Πρώτα Ενεργειακά Έργα',
+        summary: 'Μεταπολεμική αναγέννηση της Κοζάνης. Η κεντρική πλατεία ασφαλτοστρώνεται, ανοίγουν τα φημισμένα ζαχαροπλαστεία με τα ζεστά κιχιά, και ξεκινά η εκμετάλλευση των λιγνιτικών κοιτασμάτων που θα μετατρέψει την πόλη σε ενεργειακό κέντρο.',
+        keyFacts: [
+          'Έναρξη λειτουργίας των μεγάλων μονάδων παραγωγής ηλεκτρικής ενέργειας της ΔΕΗ',
+          'Τα ζαχαροπλαστεία της Πλατείας Νίκης γίνονται το επίκεντρο της κοινωνικής ζωής',
+          'Καθιέρωση των οργανωμένων αποκριάτικων παρελάσεων και εκδηλώσεων'
+        ]
+      };
+    } else if (y < 1995) {
+      return {
+        era: '1970 - 1995: Ενεργειακή Καρδιά της Ελλάδας & Ανώτατη Εκπαίδευση',
+        summary: 'Η Κοζάνη παράγει πάνω από το 60% της ηλεκτρικής ενέργειας της χώρας. Ιδρύονται ανώτατες σχολές, ενώ η πόλη αναβαθμίζει τις υποδομές της και δημιουργεί το πρώτο δημοτικό δίκτυο τηλεθέρμανσης στην Ελλάδα.',
+        keyFacts: [
+          'Κολοσσιαία βιομηχανική και οικονομική ανάπτυξη του λεκανοπεδίου',
+          'Πρωτοποριακό δίκτυο τηλεθέρμανσης από τα θερμά νερά των σταθμών',
+          'Ο κρόκος Κοζάνης αναγνωρίζεται ως προϊόν Προστατευόμενης Ονομασίας Προέλευσης (ΠΟΠ)'
+        ]
+      };
+    } else {
+      return {
+        era: '1995 - 2026: Σύγχρονη Ευρωπαϊκή Πόλη, Πολιτισμός & Πράσινη Μετάβαση',
+        summary: 'Η νέα Κοζάνη. Πλήρης πεζοδρόμηση του κέντρου, υπερσύγχρονο νέο campus του Πανεπιστημίου Δυτικής Μακεδονίας, εγκαινίαση της νέας βιοκλιματικής Κοβενταρείου Βιβλιοθήκης (2018) και ηγετικός ρόλος στη Δίκαιη Αναπτυξιακή Μετάβαση.',
+        keyFacts: [
+          '2018: Εγκαίνια του νέου εμβληματικού κτιρίου της Κοβενταρείου Βιβλιοθήκης',
+          'Μετάβαση σε καθαρές πηγές ενέργειας (φωτοβολταϊκά, πράσινο υδρογόνο)',
+          'Μοναδικός συνδυασμός σύγχρονης τεχνολογίας και ζωντανής αποκριάτικης παράδοσης'
+        ]
+      };
+    }
+  }
+
+  if (id === 'athens') {
+    if (y < 1920) {
+      return {
+        era: '1900 - 1920: Η Μπελ Επόκ των Αθηνών & τα Παλιά Τραμ',
+        summary: 'Μια κομψή νεοκλασική πρωτεύουσα. Οι πλατείες Ομονοίας και Συντάγματος περιστοιχίζονται από μέγαρα του Τσίλλερ, ιππήλατα και ηλεκτρικά τραμ διασχίζουν την Πανεπιστημίου, και στα καφενεία συγκεντρώνεται η πνευματική ελίτ.',
+        keyFacts: [
+          'Νεοκλασικά ξενοδοχεία («Μπάγκειον», «Μέγας Αλέξανδρος») στην Ομόνοια',
+          'Τα γραφικά ταβερνάκια της Πλάκας κάτω από τη φωτισμένη Ακρόπολη',
+          'Επέκταση του δικτύου ηλεκτρικού σιδηροδρόμου'
+        ]
+      };
+    } else if (y < 1945) {
+      return {
+        era: '1920 - 1945: Μεσοπόλεμος, Προσφυγιά & Σύγχρονες Υποδομές',
+        summary: 'Η Αθήνα υποδέχεται εκατοντάδες χιλιάδες πρόσφυγες από τη Μικρά Ασία δημιουργώντας νέους συνοικισμούς. Το 1930 εγκαινιάζεται ο υπόγειος σταθμός Ομονοίας και το 1932 αποκαλύπτεται το Μνημείο του Αγνώστου Στρατιώτη στη Βουλή.',
+        keyFacts: [
+          '1930: Εγκαίνια του υπόγειου σταθμού Ομονοίας με τις πρώτες κυλιόμενες σκάλες',
+          '1932: Αποκαλυπτήρια Μνημείου Αγνώστου Στρατιώτη στα Παλαιά Ανάκτορα (Βουλή)',
+          'Άνθηση του ρεμπέτικου και των λαϊκών καφενείων σε Μοναστηράκι και Ψυρρή'
+        ]
+      };
+    } else if (y < 1970) {
+      return {
+        era: '1945 - 1970: Μεταπολεμική Ανοικοδόμηση & Χρυσή Εποχή του Κινηματογράφου',
+        summary: 'Η εποχή της αντιπαροχής και της ραγδαίας αστικοποίησης. Το 1960 εγκαινιάζεται το θρυλικό κυκλικό σιντριβάνι της Ομόνοιας με τα νέον φώτα, τα πράσινα τρόλεϊ γεμίζουν τους δρόμους και στην Πλάκα γεννιούνται οι μπουάτ του Νέου Κύματος.',
+        keyFacts: [
+          '1960: Το εμβληματικό σιντριβάνι της Ομόνοιας γίνεται το σύμβολο της μοντέρνας Αθήνας',
+          'Οι μπουάτ της Πλάκας (Χατζιδάκις, Σαββόπουλος, Αρλέτα)',
+          'Εκατοντάδες κινηματογράφοι και θέατρα στην οδό Σταδίου και Πανεπιστημίου'
+        ]
+      };
+    } else if (y < 1995) {
+      return {
+        era: '1970 - 1995: Μεταπολίτευση, Πολιτικός Παλμός & Τουριστική Έκρηξη',
+        summary: 'Η αποκατάσταση της Δημοκρατίας το 1974 φέρνει ογκώδεις πολιτικές συγκεντρώσεις στο Σύνταγμα. Η Αθήνα καθιερώνεται ως κορυφαίος παγκόσμιος τουριστικός προορισμός με την Πλάκα και το Μοναστηράκι να σφύζουν από ζωή.',
+        keyFacts: [
+          '1974: Ιστορικές λαϊκές συγκεντρώσεις για τη Δημοκρατία στην Πλατεία Συντάγματος',
+          'Ανάπτυξη του εμπορικού τριγώνου και του παζαριού στο Μοναστηράκι',
+          'Σχεδιασμός των μεγάλων έργων υποδομής (Μετρό, Αττική Οδός)'
+        ]
+      };
+    } else {
+      return {
+        era: '1995 - 2026: Ολυμπιακή Μητρόπολη, Μετρό, Μουσείο Ακρόπολης & Αναγέννηση',
+        summary: 'Η μεταμόρφωση της σύγχρονης Αθήνας: παράδοση του Μετρό (2000), Ολυμπιακοί Αγώνες 2004, νέο Μουσείο Ακρόπολης (2009), ΚΠΙΣΝ (2016) και η ανάπλαση του μεγάλου υδάτινου σιντριβανιού στην Ομόνοια.',
+        keyFacts: [
+          'Υπερσύγχρονο δίκτυο Μετρό που λειτουργεί και ως υπόγειο μουσείο αρχαιοτήτων',
+          'Μεγάλος αρχαιολογικός περίπατος Διονυσίου Αρεοπαγίτου - Μοναστηράκι - Θησείο',
+          'Αναγέννηση του κέντρου με το νέο οικολογικό σιντριβάνι της Ομονοίας'
+        ]
+      };
+    }
+  }
+
+  // Generic Country / World fallback
+  if (y < 1945) {
+    return {
+      era: `${y}: Αρχές 20ού Αιώνα & Μεσοπόλεμος`,
+      summary: `Ιστορική περίοδος βαθιών ανακατατάξεων, βιομηχανικών αλλαγών και εθνικών οροσήμων στην περιοχή (${entity.name}).`,
+      keyFacts: ['Βιομηχανικός εκσυγχρονισμός και σιδηροδρομικές συνδέσεις', 'Κοινωνικές μεταρρυθμίσεις και αστικοποίηση']
+    };
+  } else if (y < 1980) {
+    return {
+      era: `${y}: Μεταπολεμική Ανάπτυξη & Δεκαετίες '60-'70`,
+      summary: `Ραγδαία οικονομική άνοδος, ανοικοδόμηση και πολιτιστική άνθηση στην περιοχή (${entity.name}).`,
+      keyFacts: ['Εκσυγχρονισμός πόλεων και δικτύων υποδομών', 'Εισαγωγή σύγχρονων τεχνολογιών και μαζικής επικοινωνίας']
+    };
+  } else {
+    return {
+      era: `${y}: Σύγχρονη Εποχή & Ψηφιακός Μετασχηματισμός`,
+      summary: `Παγκοσμιοποίηση, ψηφιακή επανάσταση και βιώσιμη ανάπτυξη στον 21ο αιώνα (${entity.name}).`,
+      keyFacts: ['Ψηφιακές τεχνολογίες και έξυπνες πόλεις', 'Προστασία πολιτιστικής κληρονομιάς και πράσινη ενέργεια']
+    };
+  }
+}
+
+export function renderTabContent(tabId, entity, activeYear = null, activeSpots = [], isPlaying = false) {
   const container = document.getElementById('tabContent');
   if (!container || !entity) return;
 
@@ -313,27 +455,164 @@ export function renderTabContent(tabId, entity) {
       </div>
     `;
   } else if (tabId === 'timeline') {
+    const yr = (activeYear === 'all' || !activeYear) ? 'all' : parseInt(activeYear, 10);
+    const context = getHistoricalContextForEra(entity, yr);
+
+    // Filter spots relevant to current entity
+    const spotsForEntity = (activeSpots || []).filter(spot => {
+      if (entity.id && spot.cityId && spot.cityId !== entity.id) {
+        return false;
+      }
+      return true;
+    });
+
+    // Collect active chronicles & photos for this era
+    const activeChronicleCards = [];
+    const eraPhotos = [];
+
+    spotsForEntity.forEach(spot => {
+      if (!spot.chronicles || !spot.chronicles.length) return;
+      let matched = null;
+      if (yr === 'all') {
+        matched = spot.chronicles[spot.chronicles.length - 1];
+      } else {
+        matched = spot.chronicles.find(c => c.fromYear <= yr && (c.toYear === null || c.toYear >= yr));
+      }
+
+      if (matched) {
+        activeChronicleCards.push({ spot, chronicle: matched });
+        if (matched.photos && matched.photos.length) {
+          matched.photos.forEach(p => eraPhotos.push({ ...p, spotName: spot.name, spotId: spot.id }));
+        }
+      }
+    });
+
     html = `
-      <div class="space-y-3">
-        <div class="p-3.5 bg-slate-800/50 rounded-xl border border-slate-700/60 text-slate-200">
-          <div class="flex items-center gap-2 text-amber-400 font-semibold mb-1 text-sm">
-            <i class="fa-solid fa-arrows-split-up-and-left"></i> Η Εξέλιξη στο Χρόνο: Τότε & Τώρα
+      <div class="space-y-4">
+        <!-- Live Chrono Header -->
+        <div class="p-4 bg-gradient-to-r from-amber-950/40 via-slate-850 to-slate-900 rounded-2xl border border-amber-500/40 shadow-xl">
+          <div class="flex items-center justify-between gap-2 mb-2 flex-wrap">
+            <div class="flex items-center gap-2">
+              <span class="relative flex h-3 w-3">
+                <span class="${isPlaying ? 'animate-ping' : ''} absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-3 w-3 bg-amber-500"></span>
+              </span>
+              <span class="text-xs font-black text-amber-400 uppercase tracking-wider">
+                ${isPlaying ? '▶ Ζωντανή Αναπαραγωγή Εποχών' : '⏳ Χρονολογική Ροή Εποχής'}
+              </span>
+            </div>
+            <div class="flex items-center gap-1.5">
+              <span class="px-2.5 py-0.5 rounded-lg text-xs font-black font-mono bg-amber-500 text-slate-950 shadow">
+                ${yr === 'all' ? '1900 - 2026' : yr}
+              </span>
+            </div>
           </div>
-          <p class="text-xs text-slate-300 leading-relaxed">
-            Σύγκριση της ιστορικής διαδρομής με τη σύγχρονη πραγματικότητα του 21ου αιώνα.
-          </p>
+
+          <h3 class="text-base font-black text-white mb-1.5 flex items-center gap-2">
+            <i class="fa-solid fa-monument text-amber-400"></i> ${context.era}
+          </h3>
+          <p class="text-xs text-slate-300 leading-relaxed">${context.summary}</p>
+
+          <!-- Key facts of era -->
+          <div class="mt-3 pt-3 border-t border-slate-700/60 space-y-1.5">
+            ${context.keyFacts.map(fact => `
+              <div class="flex items-start gap-2 text-xs text-slate-200">
+                <i class="fa-solid fa-check text-emerald-400 mt-0.5 text-[10px]"></i>
+                <span>${fact}</span>
+              </div>
+            `).join('')}
+          </div>
         </div>
 
-        <div class="grid grid-cols-1 gap-3 mt-3">
-          ${(entity.pastVsPresent || []).map((p, idx) => `
-            <div class="p-3.5 rounded-xl border ${idx === 0 ? 'bg-amber-950/20 border-amber-800/50' : 'bg-sky-950/20 border-sky-800/50'}">
-              <div class="flex items-center gap-2 font-black text-sm mb-1.5 ${idx === 0 ? 'text-amber-400' : 'text-sky-400'}">
-                <i class="fa-solid ${idx === 0 ? 'fa-scroll' : 'fa-building-columns'}"></i>
-                <span>${p.epoch}</span>
-              </div>
-              <p class="text-xs text-slate-200 leading-relaxed">${p.content}</p>
+        <!-- Archival Photos of the Era -->
+        ${eraPhotos.length ? `
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <h4 class="text-xs uppercase tracking-wider font-bold text-slate-400 flex items-center gap-1.5">
+                <i class="fa-solid fa-camera-retro text-amber-400"></i> Ιστορικές Φωτογραφίες & Τεκμήρια (${eraPhotos.length})
+              </h4>
             </div>
-          `).join('')}
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+              ${eraPhotos.slice(0, 4).map(photo => `
+                <div class="group relative rounded-xl overflow-hidden border border-slate-700/80 bg-slate-950 shadow cursor-pointer hover:border-amber-400 transition" onclick="openSpotTimeCapsule('${photo.spotId}')">
+                  <img src="${photo.url}" alt="${photo.caption}" class="w-full h-32 object-cover group-hover:scale-105 transition duration-300" loading="lazy">
+                  <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent p-2.5 flex flex-col justify-end">
+                    <span class="text-[10px] font-bold text-amber-300 bg-amber-950/80 px-1.5 py-0.5 rounded w-max border border-amber-600/50 mb-1">
+                      ${photo.year || yr}
+                    </span>
+                    <p class="text-[11px] font-medium text-slate-100 line-clamp-2 leading-tight">${photo.caption}</p>
+                    <span class="text-[9px] text-slate-400 mt-0.5 italic truncate">${photo.credit || photo.spotName}</span>
+                  </div>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+        ` : ''}
+
+        <!-- Active Time Capsules / Spots in this Era -->
+        <div>
+          <div class="flex items-center justify-between mb-2">
+            <h4 class="text-xs uppercase tracking-wider font-bold text-slate-400 flex items-center gap-1.5">
+              <i class="fa-solid fa-hourglass-start text-sky-400"></i> Ενεργές Χρονοκάψουλες στο Χάρτη (${activeChronicleCards.length})
+            </h4>
+          </div>
+
+          <div class="space-y-2.5">
+            ${activeChronicleCards.map(({ spot, chronicle }) => {
+              const isOfficial = chronicle.authorType === 'official';
+              const memory = chronicle.memories && chronicle.memories[0];
+              return `
+                <div class="p-3.5 bg-slate-800/40 hover:bg-slate-800/70 border border-slate-700/60 rounded-xl transition shadow">
+                  <div class="flex items-start justify-between gap-2 mb-1.5">
+                    <div>
+                      <span class="px-2 py-0.5 rounded text-[10px] font-bold ${
+                        isOfficial 
+                          ? 'bg-sky-900/80 text-sky-300 border border-sky-600/50' 
+                          : 'bg-emerald-900/80 text-emerald-300 border border-emerald-600/50'
+                      }">
+                        ${isOfficial ? '🏛️ Επίσημο Αρχείο' : '👤 Μαρτυρία Πολίτη'}
+                      </span>
+                      <h5 class="font-bold text-slate-100 text-sm mt-1">${spot.name}</h5>
+                      <span class="text-[11px] text-amber-400 font-semibold">${chronicle.title}</span>
+                    </div>
+                    <button onclick="openSpotTimeCapsule('${spot.id}', ${yr === 'all' ? chronicle.fromYear : yr})" class="px-2.5 py-1 rounded-lg bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 border border-amber-500/50 text-xs font-bold shrink-0 transition flex items-center gap-1">
+                      <i class="fa-solid fa-eye text-[10px]"></i>
+                      <span>Προβολή</span>
+                    </button>
+                  </div>
+                  <p class="text-xs text-slate-300 leading-relaxed mb-2 line-clamp-3">${chronicle.story}</p>
+                  
+                  ${memory ? `
+                    <div class="p-2.5 rounded-lg bg-slate-900/80 border border-slate-700/40 text-[11px] text-slate-300 italic flex items-start gap-2">
+                      <i class="fa-solid fa-quote-left text-amber-400 text-xs mt-0.5 shrink-0"></i>
+                      <div>
+                        <span>«${memory.text}»</span>
+                        <div class="not-italic text-slate-400 text-[10px] mt-0.5 font-bold">— ${memory.author} (${memory.year})</div>
+                      </div>
+                    </div>
+                  ` : ''}
+                </div>
+              `;
+            }).join('')}
+          </div>
+        </div>
+
+        <!-- Past vs Present Historical Milestones -->
+        <div class="pt-2 border-t border-slate-800">
+          <h4 class="text-xs uppercase tracking-wider font-bold text-slate-400 mb-2.5 flex items-center gap-1.5">
+            <i class="fa-solid fa-arrows-split-up-and-left text-amber-400"></i> Σύγκριση Εποχών: Τότε & Τώρα
+          </h4>
+          <div class="grid grid-cols-1 gap-2.5">
+            ${(entity.pastVsPresent || []).map((p, idx) => `
+              <div class="p-3 rounded-xl border ${idx === 0 ? 'bg-amber-950/20 border-amber-800/50' : 'bg-sky-950/20 border-sky-800/50'}">
+                <div class="flex items-center gap-2 font-black text-xs mb-1 ${idx === 0 ? 'text-amber-400' : 'text-sky-400'}">
+                  <i class="fa-solid ${idx === 0 ? 'fa-scroll' : 'fa-building-columns'}"></i>
+                  <span>${p.epoch}</span>
+                </div>
+                <p class="text-xs text-slate-300 leading-relaxed">${p.content}</p>
+              </div>
+            `).join('')}
+          </div>
         </div>
       </div>
     `;
@@ -341,6 +620,7 @@ export function renderTabContent(tabId, entity) {
 
   container.innerHTML = html;
 }
+
 
 export function narrateBrief(entity) {
   if (!entity) return;

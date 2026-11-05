@@ -106,17 +106,37 @@ export function renderCurrentTimeCapsules() {
 export function onTimeSliderChange(year) {
   TimeMachine.setSelectedYear(year);
   renderCurrentTimeCapsules();
+  if (currentTab === 'timeline') {
+    UIModule.renderTabContent('timeline', getCurrentEntity(), year, TimeMachine.getTimeCapsules(), TimeMachine.isPlaybackRunning());
+  }
 }
 
 export function onTimeDecadeClick(year) {
   TimeMachine.setSelectedYear(year);
   renderCurrentTimeCapsules();
+  if (currentTab === 'timeline') {
+    UIModule.renderTabContent('timeline', getCurrentEntity(), year, TimeMachine.getTimeCapsules(), TimeMachine.isPlaybackRunning());
+  }
 }
 
 export function toggleTimePlayback() {
+  const willPlay = !TimeMachine.isPlaybackRunning();
+  if (willPlay) {
+    // If not already in timeline tab, switch to it automatically so user sees the live flow
+    if (currentTab !== 'timeline') {
+      switchTab('timeline');
+    }
+  }
+
   TimeMachine.togglePlayback((year) => {
     renderCurrentTimeCapsules();
+    if (currentTab === 'timeline') {
+      UIModule.renderTabContent('timeline', getCurrentEntity(), year, TimeMachine.getTimeCapsules(), true);
+    }
+    UIModule.updateTimelineLiveIndicator(true);
   });
+
+  UIModule.updateTimelineLiveIndicator(TimeMachine.isPlaybackRunning());
 }
 
 export function flyToWorld() {
@@ -135,7 +155,14 @@ export function flyToWorld() {
   MapModule.clearTimeCapsules();
 
   if (worldData) {
-    UIModule.renderDossier(worldData.entity, 'world', currentTab);
+    UIModule.renderDossier(
+      worldData.entity, 
+      'world', 
+      currentTab, 
+      TimeMachine.getSelectedYear(), 
+      TimeMachine.getTimeCapsules(), 
+      TimeMachine.isPlaybackRunning()
+    );
   }
 }
 
@@ -156,7 +183,14 @@ export function flyToCountry(countryId = 'greece') {
   MapModule.toggleStateHighlight(false);
   MapModule.renderCityPins(dataset.cities, currentScope, currentCityId, flyToCity);
   MapModule.clearPois();
-  UIModule.renderDossier(country, 'country', currentTab);
+  UIModule.renderDossier(
+    country, 
+    'country', 
+    currentTab, 
+    TimeMachine.getSelectedYear(), 
+    TimeMachine.getTimeCapsules(), 
+    TimeMachine.isPlaybackRunning()
+  );
   renderCurrentTimeCapsules();
 }
 
@@ -176,7 +210,14 @@ export function flyToState(stateId = 'massachusetts') {
   MapModule.toggleStateHighlight(true);
   MapModule.renderCityPins(massachusettsData.cities, currentScope, currentCityId, flyToCity);
   MapModule.clearPois();
-  UIModule.renderDossier(state, 'state', currentTab);
+  UIModule.renderDossier(
+    state, 
+    'state', 
+    currentTab, 
+    TimeMachine.getSelectedYear(), 
+    TimeMachine.getTimeCapsules(), 
+    TimeMachine.isPlaybackRunning()
+  );
   renderCurrentTimeCapsules();
 }
 
@@ -213,7 +254,14 @@ export function flyToCity(cityId) {
 
   MapModule.renderCityPins(activeCities, currentScope, currentCityId, flyToCity);
   MapModule.renderCityPois(city, currentPoiFilter, switchTab);
-  UIModule.renderDossier(city, 'city', currentTab);
+  UIModule.renderDossier(
+    city, 
+    'city', 
+    currentTab, 
+    TimeMachine.getSelectedYear(), 
+    TimeMachine.getTimeCapsules(), 
+    TimeMachine.isPlaybackRunning()
+  );
   renderCurrentTimeCapsules();
 }
 
@@ -260,7 +308,13 @@ export function switchTab(tabId) {
   currentTab = tabId;
   const entity = getCurrentEntity();
   UIModule.updateTabButtons(currentTab);
-  UIModule.renderTabContent(currentTab, entity);
+  UIModule.renderTabContent(
+    currentTab, 
+    entity, 
+    TimeMachine.getSelectedYear(), 
+    TimeMachine.getTimeCapsules(), 
+    TimeMachine.isPlaybackRunning()
+  );
 }
 
 export function togglePoiCategory(category) {

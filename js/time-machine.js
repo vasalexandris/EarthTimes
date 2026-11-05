@@ -119,6 +119,10 @@ export function getActiveChronicleForYear(spot, year) {
   return found || spot.chronicles[spot.chronicles.length - 1];
 }
 
+export function isPlaybackRunning() {
+  return isPlaying;
+}
+
 export function togglePlayback(onYearChange) {
   isPlaying = !isPlaying;
   const playBtn = document.getElementById('timePlayBtn');
