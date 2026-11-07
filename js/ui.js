@@ -1,8 +1,117 @@
 /**
  * UI Module
  * Handles DOM rendering for Dossier, Breadcrumbs, Tabs, Flight Status, Filters,
- * Base Map Layer selector, Date display, and Landing Page visibility.
+ * Base Map Layer selector, Date display, Video Overlay, and Deep Dive views.
  */
+
+import { getCityVideo } from './video-service.js';
+import { getDeepDiveData } from './deep-dive.js';
+
+function escapeStr(str) {
+  if (!str) return '';
+  return String(str)
+    .replace(/\\/g, '\\\\')
+    .replace(/'/g, "\\'")
+    .replace(/"/g, '&quot;')
+    .replace(/\n/g, ' ');
+}
+
+export function openCityVideo(cityId) {
+  const vid = getCityVideo(cityId);
+  const overlay = document.getElementById('mapVideoOverlay');
+  const iframe = document.getElementById('mapVideoIframe');
+  const title = document.getElementById('videoOverlayTitle');
+  const deepDiveOverlay = document.getElementById('mapDeepDiveOverlay');
+
+  if (!overlay || !iframe) return;
+
+  // Close deep dive if open
+  if (deepDiveOverlay) deepDiveOverlay.classList.add('hidden');
+
+  const youtubeId = vid?.youtubeId || '1L7QG7c1b50';
+  const videoTitle = vid?.title || `Περιήγηση: ${cityId}`;
+
+  if (title) title.innerText = videoTitle;
+  iframe.src = `https://www.youtube-nocookie.com/embed/${youtubeId}?autoplay=1&rel=0`;
+  overlay.classList.remove('hidden');
+}
+
+export function closeMapVideoOverlay() {
+  const overlay = document.getElementById('mapVideoOverlay');
+  const iframe = document.getElementById('mapVideoIframe');
+  if (iframe) iframe.src = '';
+  if (overlay) overlay.classList.add('hidden');
+}
+
+export function openDeepDive(keyOrTitle, fallbackSummary = '', contextEntityName = '') {
+  const data = getDeepDiveData(keyOrTitle, fallbackSummary, contextEntityName);
+  const overlay = document.getElementById('mapDeepDiveOverlay');
+  const title = document.getElementById('deepDiveTitle');
+  const badge = document.getElementById('deepDiveBadge');
+  const content = document.getElementById('deepDiveContent');
+
+  if (!overlay || !content) return;
+
+  // Close video overlay if playing
+  closeMapVideoOverlay();
+
+  if (title) title.innerText = data.title;
+  if (badge) badge.innerText = data.badge || data.category;
+
+  let sectionsHtml = '';
+  if (data.sections && data.sections.length) {
+    sectionsHtml = data.sections.map(s => `
+      <div class="bg-slate-900/90 p-5 sm:p-6 rounded-2xl border border-slate-800 shadow-xl">
+        <h4 class="text-base font-bold text-amber-300 mb-2.5 flex items-center gap-2">
+          <i class="fa-solid fa-bookmark text-amber-400 text-xs"></i> ${s.heading}
+        </h4>
+        <div class="text-slate-200 text-sm leading-relaxed">${s.content}</div>
+      </div>
+    `).join('');
+  }
+
+  content.innerHTML = `
+    <!-- Hero Image Banner -->
+    <div class="relative rounded-3xl overflow-hidden border border-slate-700 shadow-2xl h-64 sm:h-80 bg-slate-900">
+      <img src="${data.image}" alt="${data.title}" class="w-full h-full object-cover">
+      <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent flex flex-col justify-end p-6">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/40 text-xs font-bold w-fit mb-2 backdrop-blur-md">
+          <i class="fa-solid fa-landmark"></i> ${data.category} • ${data.epoch}
+        </div>
+        <h2 class="text-2xl sm:text-3xl font-black text-white leading-tight drop-shadow-md">${data.title}</h2>
+        <p class="text-xs text-slate-300 mt-1 italic drop-shadow">${data.caption || ''}</p>
+      </div>
+    </div>
+
+    <!-- Summary Box -->
+    <div class="p-4 sm:p-5 bg-sky-950/40 border border-sky-600/40 rounded-2xl text-sky-200 text-sm leading-relaxed shadow-lg">
+      <div class="font-bold text-sky-300 flex items-center gap-2 mb-1.5 text-base">
+        <i class="fa-solid fa-circle-info text-amber-400"></i> Σύνοψη & Ιστορική Σημασία:
+      </div>
+      <p class="text-slate-200 leading-relaxed">${data.summary}</p>
+    </div>
+
+    <!-- Detailed Sections -->
+    <div class="space-y-4">
+      ${sectionsHtml}
+    </div>
+
+    <!-- Return to Map Button at bottom -->
+    <div class="pt-6 border-t border-slate-800 flex justify-center">
+      <button onclick="closeDeepDiveOverlay()" class="px-7 py-3.5 rounded-xl bg-gradient-to-r from-sky-600 via-sky-500 to-indigo-600 hover:scale-105 text-white font-bold text-sm shadow-xl flex items-center gap-2.5 transition">
+        <i class="fa-solid fa-arrow-left"></i>
+        <span>Επιστροφή στον Χάρτη</span>
+      </button>
+    </div>
+  `;
+
+  overlay.classList.remove('hidden');
+}
+
+export function closeDeepDiveOverlay() {
+  const overlay = document.getElementById('mapDeepDiveOverlay');
+  if (overlay) overlay.classList.add('hidden');
+}
 
 export function updateCurrentDate() {
   const now = new Date();
@@ -202,6 +311,17 @@ export function renderDossier(entity, entityType = 'state', currentTab = 'geo', 
 
   const docuQuote = document.getElementById('docuQuote');
   if (docuQuote) docuQuote.innerText = entity.quote || '';
+
+  // Show/Hide City Video Tour button
+  const cityVideoBtn = document.getElementById('cityVideoBtn');
+  if (cityVideoBtn) {
+    if (entityType === 'city' && entity.id) {
+      cityVideoBtn.classList.remove('hidden');
+      cityVideoBtn.onclick = () => openCityVideo(entity.id);
+    } else {
+      cityVideoBtn.classList.add('hidden');
+    }
+  }
 
   updateTabButtons(currentTab);
   renderTabContent(currentTab, entity, activeYear, activeSpots, isPlaying);
@@ -536,8 +656,13 @@ export function renderTabContent(tabId, entity, activeYear = null, activeSpots =
         </h4>
         <div class="space-y-2.5">
           ${(entity.geo.highlights || []).map(item => `
-            <div class="p-3 bg-slate-800/30 hover:bg-slate-800/60 transition border border-slate-700/40 rounded-xl">
-              <div class="font-bold text-slate-100 text-sm mb-0.5 text-sky-300">${item.title}</div>
+            <div onclick="window.openDeepDive('${escapeStr(item.title)}', '${escapeStr(item.desc)}', '${escapeStr(entity.name)}')" class="p-3 bg-slate-800/30 hover:bg-slate-800/80 hover:border-amber-500/50 transition border border-slate-700/40 rounded-xl cursor-pointer group">
+              <div class="flex items-center justify-between gap-2">
+                <div class="font-bold text-slate-100 text-sm mb-0.5 text-sky-300 group-hover:text-amber-300 transition">${item.title}</div>
+                <span class="text-[10px] text-amber-400 font-semibold opacity-0 group-hover:opacity-100 transition flex items-center gap-1 shrink-0">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i> Ανάλυση
+                </span>
+              </div>
               <div class="text-slate-300 text-xs leading-relaxed">${item.desc}</div>
             </div>
           `).join('')}
@@ -559,10 +684,15 @@ export function renderTabContent(tabId, entity, activeYear = null, activeSpots =
         </h4>
         <div class="relative pl-5 border-l-2 border-slate-700 space-y-4 my-3">
           ${(entity.hist.highlights || []).map(h => `
-            <div class="relative group">
-              <div class="absolute -left-[27px] top-1 w-3.5 h-3.5 rounded-full bg-amber-500 border-2 border-slate-900 group-hover:scale-125 transition"></div>
-              <div class="text-xs font-black text-amber-400 tracking-wide">${h.year}</div>
-              <div class="font-bold text-slate-100 text-sm">${h.event}</div>
+            <div onclick="window.openDeepDive('${escapeStr(h.event)}', '${escapeStr(h.desc)}', '${escapeStr(entity.name)}')" class="relative group cursor-pointer p-2 rounded-xl hover:bg-slate-800/60 transition">
+              <div class="absolute -left-[27px] top-3 w-3.5 h-3.5 rounded-full bg-amber-500 border-2 border-slate-900 group-hover:scale-125 transition"></div>
+              <div class="flex items-center justify-between gap-2">
+                <div class="text-xs font-black text-amber-400 tracking-wide">${h.year}</div>
+                <span class="text-[10px] text-amber-400 opacity-0 group-hover:opacity-100 transition font-semibold flex items-center gap-1">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i> Λεπτομέρειες
+                </span>
+              </div>
+              <div class="font-bold text-slate-100 text-sm group-hover:text-amber-200 transition">${h.event}</div>
               <div class="text-xs text-slate-300 mt-0.5 leading-relaxed">${h.desc}</div>
             </div>
           `).join('')}
@@ -601,8 +731,13 @@ export function renderTabContent(tabId, entity, activeYear = null, activeSpots =
 
         <div class="space-y-2.5 mt-3">
           ${(entity.cult.items || []).map(item => `
-            <div class="p-3 bg-slate-800/30 hover:bg-slate-800/60 transition border border-slate-700/40 rounded-xl">
-              <div class="font-bold text-slate-100 text-sm mb-0.5 text-violet-300">${item.title}</div>
+            <div onclick="window.openDeepDive('${escapeStr(item.title)}', '${escapeStr(item.desc)}', '${escapeStr(entity.name)}')" class="p-3 bg-slate-800/30 hover:bg-slate-800/80 hover:border-amber-500/50 transition border border-slate-700/40 rounded-xl cursor-pointer group">
+              <div class="flex items-center justify-between gap-2">
+                <div class="font-bold text-slate-100 text-sm mb-0.5 text-violet-300 group-hover:text-amber-300 transition">${item.title}</div>
+                <span class="text-[10px] text-amber-400 font-semibold opacity-0 group-hover:opacity-100 transition flex items-center gap-1 shrink-0">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i> Ανάλυση
+                </span>
+              </div>
               <div class="text-slate-300 text-xs leading-relaxed">${item.desc}</div>
             </div>
           `).join('')}

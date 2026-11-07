@@ -45,6 +45,18 @@ const tourSequence = [
   { type: 'city', id: 'barcelona' },
   { type: 'country', id: 'austria' },
   { type: 'city', id: 'vienna' },
+  { type: 'country', id: 'netherlands' },
+  { type: 'city', id: 'amsterdam' },
+  { type: 'country', id: 'czech' },
+  { type: 'city', id: 'prague' },
+  { type: 'country', id: 'belgium' },
+  { type: 'city', id: 'brussels' },
+  { type: 'country', id: 'portugal' },
+  { type: 'city', id: 'lisbon' },
+  { type: 'country', id: 'ireland' },
+  { type: 'city', id: 'dublin' },
+  { type: 'country', id: 'hungary' },
+  { type: 'city', id: 'budapest' },
   { type: 'country', id: 'usa' },
   { type: 'city', id: 'new-york' },
   { type: 'city', id: 'boston' }
@@ -410,6 +422,17 @@ window.switchTab = switchTab;
 window.togglePoiCategory = togglePoiCategory;
 window.narrateBrief = narrateBrief;
 
+// Video & Deep Dive window bindings
+window.openCityVideo = UIModule.openCityVideo;
+window.closeMapVideoOverlay = UIModule.closeMapVideoOverlay;
+window.openDeepDive = UIModule.openDeepDive;
+window.closeDeepDiveOverlay = UIModule.closeDeepDiveOverlay;
+window.openCurrentCityVideo = () => {
+  if (currentCityId) {
+    UIModule.openCityVideo(currentCityId);
+  }
+};
+
 // Time Machine & Spot Creation window bindings
 window.toggleTimePlayback = toggleTimePlayback;
 window.onTimeSliderChange = onTimeSliderChange;
@@ -439,31 +462,36 @@ async function init() {
     // 1. Update Today's Date in UI
     UIModule.updateCurrentDate();
 
-    // 2. Load World, Countries (Greece, USA, France, Italy, UK, Germany, Spain, Austria) in parallel
-    const [wData, grData, usData, frData, itData, ukData, deData, esData, atData, maData] = await Promise.all([
+    // 2. Load World, Massachusetts, and All Countries in parallel
+    const countryKeys = [
+      'greece',
+      'usa',
+      'france',
+      'italy',
+      'uk',
+      'germany',
+      'spain',
+      'austria',
+      'netherlands',
+      'czech',
+      'belgium',
+      'portugal',
+      'ireland',
+      'hungary'
+    ];
+
+    const [wData, maData, _tm, ...loadedCountries] = await Promise.all([
       loadWorldData(),
-      loadCountryData('greece'),
-      loadCountryData('usa'),
-      loadCountryData('france'),
-      loadCountryData('italy'),
-      loadCountryData('uk'),
-      loadCountryData('germany'),
-      loadCountryData('spain'),
-      loadCountryData('austria'),
       loadStateData('massachusetts'),
-      TimeMachine.initTimeMachine()
+      TimeMachine.initTimeMachine(),
+      ...countryKeys.map(k => loadCountryData(k))
     ]);
 
     worldData = wData;
-    countriesMap.set('greece', grData);
-    countriesMap.set('usa', usData);
-    countriesMap.set('france', frData);
-    countriesMap.set('italy', itData);
-    countriesMap.set('uk', ukData);
-    countriesMap.set('germany', deData);
-    countriesMap.set('spain', esData);
-    countriesMap.set('austria', atData);
     massachusettsData = maData;
+    countryKeys.forEach((key, idx) => {
+      countriesMap.set(key, loadedCountries[idx]);
+    });
 
     // 3. Initialize Leaflet Map centered on Earth
     MapModule.initMap('map', worldData.entity.coords, worldData.entity.zoom, () => {

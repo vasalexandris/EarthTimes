@@ -1178,5 +1178,129 @@
         ]
       }
     ]
+  },
+  {
+    "id": "amsterdam-spot-dam",
+    "cityId": "amsterdam",
+    "name": "Πλατεία Dam & Βασιλικό Παλάτι (Koninklijk Paleis)",
+    "englishName": "Dam Square & Royal Palace",
+    "coords": [52.3731, 4.8926],
+    "address": "Dam, 1012 JS Amsterdam",
+    "chronicles": [
+      {
+        "id": "ams-dam-1",
+        "fromYear": 1900,
+        "toYear": 1950,
+        "title": "Η Καρδιά του Εμπορικού Άμστερνταμ & τα Πρώτα Τραμ",
+        "category": "history",
+        "authorType": "official",
+        "authorName": "Stadsarchief Amsterdam",
+        "verified": true,
+        "story": "Στις αρχές του 20ού αιώνα η πλατεία Dam έσφυζε από ζωή, με ιππήλατα και πρώτα ηλεκτρικά τραμ, εμπόρους με καρότσια και πολίτες να συγκεντρώνονται μπροστά από το επιβλητικό πρώην Δημαρχείο και μετέπειτα Βασιλικό Παλάτι.",
+        "photos": [
+          {
+            "url": "https://images.unsplash.com/photo-1512470876302-972faa2aa9a4?w=800&auto=format&fit=crop&q=80",
+            "caption": "Η ιστορική πλατεία Dam του Άμστερνταμ",
+            "year": 1928,
+            "credit": "Amsterdam City Archives"
+          }
+        ],
+        "memories": [
+          {
+            "author": "Jan van der M.",
+            "year": 1939,
+            "text": "Θυμάμαι τις καμπάνες του παλατιού να ηχούν πάνω από τα κανάλια και τα περιστέρια στην πλατεία."
+          }
+        ]
+      },
+      {
+        "id": "ams-dam-2",
+        "fromYear": 1951,
+        "toYear": 2026,
+        "title": "Εθνικό Μνημείο, Κίνημα Ειρήνης & Σύγχρονη Μητρόπολη",
+        "category": "culture",
+        "authorType": "citizen",
+        "authorName": "Ολλανδική Κοινότητα Πολιτισμού",
+        "verified": true,
+        "story": "Το 1956 εγκαινιάστηκε το λευκό πέτρινο Εθνικό Μνημείο για τα θύματα του πολέμου. Στη δεκαετία του '60 και '70 η πλατεία έγινε το παγκόσμιο επίκεντρο του κινήματος ειρήνης και της νεανικής ελευθερίας, ενώ σήμερα είναι το πιο πολυπολιτισμικό σημείο συνάντησης της Ευρώπης.",
+        "photos": [
+          {
+            "url": "https://images.unsplash.com/photo-1534351590666-13e3e96b5017?w=800&auto=format&fit=crop&q=80",
+            "caption": "Σύγχρονη θέα της πλατείας Dam",
+            "year": 2024,
+            "credit": "Amsterdam Tourism"
+          }
+        ],
+        "memories": [
+          {
+            "author": "Sophie K.",
+            "year": 2023,
+            "text": "Μια πλατεία γεμάτη μουσικούς του δρόμου, ποδήλατα και επισκέπτες από όλο τον πλανήτη."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "prague-spot-charles-bridge",
+    "cityId": "prague",
+    "name": "Γέφυρα του Καρόλου & Πύργος Παλιάς Πόλης",
+    "englishName": "Charles Bridge & Old Town Bridge Tower",
+    "coords": [50.0865, 14.4114],
+    "address": "Karlův most, 110 00 Praha 1",
+    "chronicles": [
+      {
+        "id": "prg-bridge-1",
+        "fromYear": 1918,
+        "toYear": 1968,
+        "title": "Η Γέφυρα της Πρώτης Τσεχοσλοβακικής Δημοκρατίας & του Κάφκα",
+        "category": "history",
+        "authorType": "official",
+        "authorName": "Ιστορικό Μουσείο Πράγας",
+        "verified": true,
+        "story": "Στον μεσοπόλεμο, η γέφυρα του Καρόλου ήταν ανοιχτή ακόμα στην κυκλοφορία οχημάτων και τραμ! Ο Φραντς Κάφκα συνήθιζε να περπατά εκεί τα ξημερώματα παρατηρώντας τα μπαρόκ αγάλματα μέσα στην ομίχλη του Μολδάβα.",
+        "photos": [
+          {
+            "url": "https://images.unsplash.com/photo-1541849546-216549ae216d?w=800&auto=format&fit=crop&q=80",
+            "caption": "Η γοτθική γέφυρα του Καρόλου",
+            "year": 1935,
+            "credit": "National Museum Prague"
+          }
+        ],
+        "memories": [
+          {
+            "author": "Pavel N.",
+            "year": 1968,
+            "text": "Την Άνοιξη της Πράγας, νέοι κάθονταν στη γέφυρα παίζοντας κιθάρα και συζητώντας για την ελευθερία."
+          }
+        ]
+      },
+      {
+        "id": "prg-bridge-2",
+        "fromYear": 1969,
+        "toYear": 2026,
+        "title": "Πεζοδρόμηση, Ζωγράφοι & Παγκόσμιο Μνημείο UNESCO",
+        "category": "culture",
+        "authorType": "citizen",
+        "authorName": "Σύλλογος Καλλιτεχνών Γέφυρας Καρόλου",
+        "verified": true,
+        "story": "Η γέφυρα πεζοδρομήθηκε πλήρως και αναστηλώθηκε, αποτελώντας ένα υπαίθριο εργαστήριο ζωγράφων, κουκλοπαικτών και μουσικών τζαζ, με μαγευτική θέα προς το Κάστρο της Πράγας.",
+        "photos": [
+          {
+            "url": "https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?w=800&auto=format&fit=crop&q=80",
+            "caption": "Πανοραμική θέα της Γέφυρας του Καρόλου το ηλιοβασίλεμα",
+            "year": 2025,
+            "credit": "Czech Tourism"
+          }
+        ],
+        "memories": [
+          {
+            "author": "Μάρκος Λ.",
+            "year": 2026,
+            "text": "Το άγγιγμα στο άγαλμα του Αγίου Ιωάννη του Νέπομουκ για καλή τύχη είναι εμπειρία που δεν ξεχνάς ποτέ."
+          }
+        ]
+      }
+    ]
   }
 ]
