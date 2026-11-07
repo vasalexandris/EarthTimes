@@ -790,5 +790,393 @@
         ]
       }
     ]
+  },
+  {
+    "id": "paris-spot-eiffel",
+    "cityId": "paris",
+    "name": "Πύργος του Άιφελ & Πεδίον του Άρεως (Champ de Mars)",
+    "englishName": "Eiffel Tower & Champ de Mars",
+    "coords": [48.8584, 2.2945],
+    "address": "Champ de Mars, 5 Av. Anatole France, 75007 Paris",
+    "chronicles": [
+      {
+        "id": "eiffel-1",
+        "fromYear": 1889,
+        "toYear": 1940,
+        "title": "Παγκόσμια Έκθεση 1889, Καινοτομία & Πρώτες Ραδιοφωνικές Εκπομπές",
+        "category": "landmark",
+        "authorType": "official",
+        "authorName": "Ιστορικό Αρχείο Πόλεως Παρισίων (Archives de Paris)",
+        "verified": true,
+        "story": "Κατασκευασμένος για τα 100 χρόνια της Γαλλικής Επανάστασης από τον Γκυστάβ Άιφελ, ο πύργος των 300 μέτρων προκάλεσε αρχικά σφοδρές αντιδράσεις λογοτεχνών, αλλά σώθηκε χάρη στη χρησιμότητά του ως γιγαντιαία στρατιωτική κεραία τηλεγράφου και ραδιοφώνου.",
+        "photos": [
+          {
+            "url": "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=800&auto=format&fit=crop&q=80",
+            "caption": "Ο Πύργος του Άιφελ υψώνεται πάνω από τον Σηκουάνα και το Champ de Mars",
+            "year": 1925,
+            "credit": "Bibliothèque nationale de France"
+          }
+        ],
+        "memories": [
+          {
+            "author": "Ζαν-Πιερ Λ.",
+            "year": 1937,
+            "text": "Όταν ανέβηκα για πρώτη φορά στον 3ο όροφο το 1937, όλο το Παρίσι απλωνόταν σαν ζωγραφικός πίνακας. Ήταν σαν να πετάς."
+          }
+        ]
+      },
+      {
+        "id": "eiffel-2",
+        "fromYear": 1941,
+        "toYear": 1984,
+        "title": "Απελευθέρωση 1944 & Παγκόσμιο Σύμβολο της Πόλης του Φωτός",
+        "category": "culture",
+        "authorType": "citizen",
+        "authorName": "Ένωση Φίλων Παρισινής Κληρονομιάς",
+        "verified": true,
+        "story": "Στις 25 Αυγούστου 1944, Γάλλοι πυροσβέστες σκαρφάλωσαν στον πύργο για να αναρτήσουν την τρίχρωμη γαλλική σημαία, σηματοδοτώντας την απελευθέρωση του Παρισιού. Τις δεκαετίες του '50 και '60 έγινε το απόλυτο σκηνικό του γαλλικού κινηματογράφου.",
+        "photos": [
+          {
+            "url": "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=800&auto=format&fit=crop&q=80",
+            "caption": "Το Παρίσι της δεκαετίας του '60 με φόντο τον επιβλητικό πύργο",
+            "year": 1965,
+            "credit": "Paris Match Archive"
+          }
+        ],
+        "memories": [
+          {
+            "author": "Μαρί Κ.",
+            "year": 1968,
+            "text": "Καθόμασταν στα γρασίδια του Champ de Mars με μια μπαγκέτα και τυρί. Το να βλέπεις τον πύργο να σουρουπώνει ήταν η καθημερινή μας μαγεία."
+          }
+        ]
+      },
+      {
+        "id": "eiffel-3",
+        "fromYear": 1985,
+        "toYear": 2026,
+        "title": "Χρυσός Φωτισμός, Νέα Χιλιετία & Ολυμπιακό Παρίσι",
+        "category": "landmark",
+        "authorType": "official",
+        "authorName": "Société d'Exploitation de la Tour Eiffel (SETE)",
+        "verified": true,
+        "story": "Το 1985 εγκαινιάστηκε ο χρυσός εσωτερικός φωτισμός με 20.000 λαμπτήρες που αναβοσβήνουν κάθε ώρα, ενώ στους Ολυμπιακούς Αγώνες του 2024 ο πύργος φιλοξένησε τους τεράστιους Ολυμπιακούς Κύκλους και το beach volley στους πρόποδές του.",
+        "photos": [
+          {
+            "url": "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=800&auto=format&fit=crop&q=80",
+            "caption": "Ο σύγχρονος φωταγωγημένος Πύργος του Άιφελ",
+            "year": 2024,
+            "credit": "Ville de Paris"
+          }
+        ],
+        "memories": [
+          {
+            "author": "Λουκάς Σ.",
+            "year": 2025,
+            "text": "Το θέαμα όταν ανάβουν τα φώτα το βράδυ είναι συγκλονιστικό. Ένα αριστούργημα μηχανικής που έγινε σύμβολο αγάπης."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "rome-spot-colosseum",
+    "cityId": "rome",
+    "name": "Κολοσσαίο & Via dei Fori Imperiali",
+    "englishName": "Colosseum & Imperial Fora",
+    "coords": [41.8902, 12.4922],
+    "address": "Piazza del Colosseo, 1, 00184 Roma RM",
+    "chronicles": [
+      {
+        "id": "colosseum-1",
+        "fromYear": 1900,
+        "toYear": 1950,
+        "title": "Αρχαιολογικές Ανασκαφές & Αναστήλωση της Αιώνιας Πόλης",
+        "category": "history",
+        "authorType": "official",
+        "authorName": "Αρχαιολογική Υπηρεσία Ρώμης (Parco Archeologico del Colosseo)",
+        "verified": true,
+        "story": "Στις αρχές του 20ού αιώνα πραγματοποιήθηκαν συστηματικές ανασκαφές στα υπόγεια του αμφιθεάτρου (hypogeum), αποκαλύπτοντας το δαιδαλώδες σύστημα ανελκυστήρων και κλουβιών μονομάχων και θηρίων της ρωμαϊκής εποχής.",
+        "photos": [
+          {
+            "url": "https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=800&auto=format&fit=crop&q=80",
+            "caption": "Το Κολοσσαίο και οι ρωμαϊκές καμάρες των Φλαβίων",
+            "year": 1935,
+            "credit": "Archivio Storico di Roma"
+          }
+        ],
+        "memories": [
+          {
+            "author": "Μάρκο Μ.",
+            "year": 1948,
+            "text": "Παιδιά τρέχαμε γύρω από τις αρχαίες πέτρες πριν περιφραχτεί ο χώρος. Νιώθαμε σαν μονομάχοι στην καρδιά της Ρώμης."
+          }
+        ]
+      },
+      {
+        "id": "colosseum-2",
+        "fromYear": 1951,
+        "toYear": 1990,
+        "title": "Η Χρυσή Εποχή του Κινηματογράφου & «Διακοπές στη Ρώμη»",
+        "category": "culture",
+        "authorType": "citizen",
+        "authorName": "Ένωση Κατοίκων Rione Monti",
+        "verified": true,
+        "story": "Το Κολοσσαίο γίνεται το απόλυτο σκηνικό του παγκόσμιου κινηματογράφου με ταινίες όπως «Διακοπές στη Ρώμη» (1953) με την Audrey Hepburn και τον Gregory Peck πάνω σε μια Vespa, και υπερπαραγωγές της Cinecittà.",
+        "photos": [
+          {
+            "url": "https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=800&auto=format&fit=crop&q=80",
+            "caption": "Η κλασική όψη του Κολοσσαίου στις δεκαετίες της μεταπολεμικής άνθησης",
+            "year": 1968,
+            "credit": "Cinecittà Studios"
+          }
+        ],
+        "memories": [
+          {
+            "author": "Τζούλια Ρ.",
+            "year": 1974,
+            "text": "Όλοι οι νέοι της Ρώμης έδιναν ραντεβού με τις βέσπες δίπλα στην Αψίδα του Κωνσταντίνου για παγωτό τα ζεστά καλοκαιρινά βράδια."
+          }
+        ]
+      },
+      {
+        "id": "colosseum-3",
+        "fromYear": 1991,
+        "toYear": 2026,
+        "title": "Μνημείο UNESCO, Πεζοδρόμηση & Αποκάλυψη των Υπογείων",
+        "category": "landmark",
+        "authorType": "official",
+        "authorName": "Υπουργείο Πολιτισμού Ιταλίας (MiC)",
+        "verified": true,
+        "story": "Η μεγάλη πεζοδρόμηση της Via dei Fori Imperiali και η αποκατάσταση της αρένας επιτρέπουν στους εκατομμύρια επισκέπτες να σταθούν στο ακριβές σημείο όπου στέκονταν οι μονομάχοι 2.000 χρόνια πριν.",
+        "photos": [
+          {
+            "url": "https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=800&auto=format&fit=crop&q=80",
+            "caption": "Το σύγχρονο αναστηλωμένο Κολοσσαίο στο ηλιοβασίλεμα",
+            "year": 2025,
+            "credit": "Parco Archeologico del Colosseo"
+          }
+        ],
+        "memories": [
+          {
+            "author": "Φίλιππος Κ.",
+            "year": 2026,
+            "text": "Η νυχτερινή ξενάγηση στα φωτισμένα υπόγεια του Κολοσσαίου είναι μια από τις πιο συγκλονιστικές εμπειρίες στον κόσμο."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "london-spot-westminster",
+    "cityId": "london",
+    "name": "Big Ben & Γέφυρα Westminster",
+    "englishName": "Big Ben & Westminster Bridge",
+    "coords": [51.5007, -0.1246],
+    "address": "Westminster, London SW1A 0AA",
+    "chronicles": [
+      {
+        "id": "westminster-1",
+        "fromYear": 1910,
+        "toYear": 1945,
+        "title": "Ο Ήχος της Ελευθερίας & Οι Βομβαρδισμοί του Blitz",
+        "category": "history",
+        "authorType": "official",
+        "authorName": "Parliamentary Archives (UK)",
+        "verified": true,
+        "story": "Κατά τη διάρκεια του Blitz στον Β΄ Παγκόσμιο Πόλεμο, παρά τις καταστροφές στη Βουλή των Κοινοτήτων, ο πύργος του ρολογιού άντεξε και οι χτύποι του Big Ben μεταδίδονταν ζωντανά μέσω BBC σε όλη την κατεχόμενη Ευρώπη ως σύμβολο ελπίδας.",
+        "photos": [
+          {
+            "url": "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=800&auto=format&fit=crop&q=80",
+            "caption": "Το Big Ben και η Γέφυρα Westminster πάνω από τον ποταμό Τάμεση",
+            "year": 1942,
+            "credit": "Imperial War Museums"
+          }
+        ],
+        "memories": [
+          {
+            "author": "Edward B.",
+            "year": 1944,
+            "text": "Όταν ακούγαμε τις καμπάνες του Big Ben στο ραδιόφωνο μέσα στα καταφύγια, ξέραμε ότι το Λονδίνο στεκόταν ακόμα όρθιο."
+          }
+        ]
+      },
+      {
+        "id": "westminster-2",
+        "fromYear": 1946,
+        "toYear": 2026,
+        "title": "Παγκόσμιο Ορόσημο, Μεγάλη Αναστήλωση & 21ος Αιώνας",
+        "category": "landmark",
+        "authorType": "official",
+        "authorName": "UK Parliament Heritage",
+        "verified": true,
+        "story": "Μετά από μια ιστορική πενταετή αναστήλωση (2017-2022) όπου αποκαταστάθηκε το αυθεντικό πρωσικό μπλε χρώμα των δεικτών και ο μηχανισμός του 1859, το Big Ben συνεχίζει να ορίζει τον παγκόσμιο χρόνο στην καρδιά της βρετανικής πρωτεύουσας.",
+        "photos": [
+          {
+            "url": "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=800&auto=format&fit=crop&q=80",
+            "caption": "Το αναγεννημένο Big Ben με τους κόκκινους διώροφους λεωφορεία στη γέφυρα",
+            "year": 2025,
+            "credit": "UK Parliament"
+          }
+        ],
+        "memories": [
+          {
+            "author": "Sarah M.",
+            "year": 2026,
+            "text": "Το να περπατάς στη γέφυρα του Westminster την ώρα που χτυπάει μεσημέρι είναι η πεμπτουσία του Λονδίνου."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "berlin-spot-brandenburg",
+    "cityId": "berlin",
+    "name": "Πύλη του Βραδεμβούργου & Pariser Platz",
+    "englishName": "Brandenburg Gate & Pariser Platz",
+    "coords": [52.5163, 13.3777],
+    "address": "Pariser Platz, 10117 Berlin",
+    "chronicles": [
+      {
+        "id": "brandenburg-1",
+        "fromYear": 1920,
+        "toYear": 1960,
+        "title": "Η Pariser Platz του Μεσοπολέμου & οι Πληγές του Πολέμου",
+        "category": "history",
+        "authorType": "official",
+        "authorName": "Landesarchiv Berlin",
+        "verified": true,
+        "story": "Η Pariser Platz ήταν το κομψό κέντρο του Βερολίνου με το ξενοδοχείο Adlon και τις πρεσβείες. Στο τέλος του Β΄ Παγκοσμίου Πολέμου η πύλη υπέστη σοβαρές ζημιές και το Τέθριππο καταστράφηκε σχεδόν ολοσχερώς.",
+        "photos": [
+          {
+            "url": "https://images.unsplash.com/photo-1560969184-10fe8719e047?w=800&auto=format&fit=crop&q=80",
+            "caption": "Η ιστορική Πύλη του Βραδεμβούργου",
+            "year": 1930,
+            "credit": "Bundesarchiv"
+          }
+        ],
+        "memories": [
+          {
+            "author": "Hans W.",
+            "year": 1953,
+            "text": "Περνούσαμε ελεύθερα κάτω από την πύλη πριν υψωθεί το τείχος. Ήταν το σύμβολο της πόλης που ένωνε όλους τους Βερολινέζους."
+          }
+        ]
+      },
+      {
+        "id": "brandenburg-2",
+        "fromYear": 1961,
+        "toYear": 1989,
+        "title": "Η Πύλη στη «Νεκρή Ζώνη» του Τείχους & η Πτώση του 1989",
+        "category": "history",
+        "authorType": "official",
+        "authorName": "Stiftung Berliner Mauer",
+        "verified": true,
+        "story": "Με την ανέγερση του Τείχους το 1961, η Πύλη αποκλείστηκε μέσα στη νεκρή ζώνη, απρόσιτη τόσο από την Ανατολή όσο και από τη Δύση. Εκεί το 1987 ο Reagan είπε: «Mr. Gorbachev, tear down this wall!». Στις 9 Νοεμβρίου 1989 δεκάδες χιλιάδες πολίτες σκαρφάλωσαν στο τείχος μπροστά στην Πύλη γιορτάζοντας την ελευθερία.",
+        "photos": [
+          {
+            "url": "https://images.unsplash.com/photo-1560969184-10fe8719e047?w=800&auto=format&fit=crop&q=80",
+            "caption": "Η ιστορική νύχτα της πτώσης του Τείχους μπροστά στην Πύλη του Βραδεμβούργου (1989)",
+            "year": 1989,
+            "credit": "Deutsches Historisches Museum"
+          }
+        ],
+        "memories": [
+          {
+            "author": "Karin S.",
+            "year": 1989,
+            "text": "Δάκρυα, αγκαλιές με αγνώστους και σαμπάνιες πάνω στο τείχος. Ήταν η πιο ευτυχισμένη νύχτα στη σύγχρονη ιστορία της Ευρώπης."
+          }
+        ]
+      },
+      {
+        "id": "brandenburg-3",
+        "fromYear": 1990,
+        "toYear": 2026,
+        "title": "Το Παγκόσμιο Σύμβολο της Ενωμένης Ευρώπης",
+        "category": "landmark",
+        "authorType": "official",
+        "authorName": "Senatskanzlei Berlin",
+        "verified": true,
+        "story": "Σήμερα η Pariser Platz είναι πλήρως πεζοδρομημένη και αποτελεί το σημείο συνάντησης της παγκόσμιας διπλωματίας και των μεγάλων εορτασμών Πρωτοχρονιάς, συμβολίζοντας την ειρήνη και την υπέρβαση των συνόρων.",
+        "photos": [
+          {
+            "url": "https://images.unsplash.com/photo-1560969184-10fe8719e047?w=800&auto=format&fit=crop&q=80",
+            "caption": "Η σύγχρονη φωταγωγημένη Πύλη του Βραδεμβούργου",
+            "year": 2025,
+            "credit": "Visit Berlin"
+          }
+        ],
+        "memories": [
+          {
+            "author": "Ανδρέας Κ.",
+            "year": 2026,
+            "text": "Το να στέκεσαι εκεί όπου κάποτε χώριζε ο κόσμος και σήμερα περπατούν ελεύθερα χιλιάδες άνθρωποι είναι ένα μάθημα ιστορίας."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "vienna-spot-griechenviertel",
+    "cityId": "vienna",
+    "name": "Ιστορική Ελληνική Συνοικία Βιέννης & Τυπογραφείο Ρήγα Φεραίου",
+    "englishName": "Historic Greek Quarter of Vienna (Griechenviertel)",
+    "coords": [48.2100, 16.3765],
+    "address": "Griechengasse & Fleischmarkt, 1010 Wien",
+    "chronicles": [
+      {
+        "id": "vienna-greek-1",
+        "fromYear": 1780,
+        "toYear": 1830,
+        "title": "Ο Νεοελληνικός Διαφωτισμός, οι Κοζανίτες Έμποροι & η Χάρτα του Ρήγα (1797)",
+        "category": "history",
+        "authorType": "official",
+        "authorName": "Ελληνική Κοινότητα Βιέννης & Κοβεντάρειος Βιβλιοθήκη",
+        "verified": true,
+        "story": "Στην οδό Fleischmarkt και Griechengasse, οι Έλληνες έμποροι από την Κοζάνη, τη Σιάτιστα και τη Μακεδονία δημιούργησαν την ισχυρότερη εμπορική παροικία της αυτοκρατορίας. Εδώ, στο τυπογραφείο των αδελφών Πούλιου, ο Ρήγας Βελεστινλής τύπωσε τη μνημειώδη δωδεκάφυλλη «Χάρτα της Ελλάδος» (1797) και τον επαναστατικό «Θούριο».",
+        "photos": [
+          {
+            "url": "https://images.unsplash.com/photo-1516550893923-42d28e5677af?w=800&auto=format&fit=crop&q=80",
+            "caption": "Η ιστορική αρχιτεκτονική της παλιάς Βιέννης στο Fleischmarkt",
+            "year": 1920,
+            "credit": "Wien Museum"
+          }
+        ],
+        "memories": [
+          {
+            "author": "Νικόλαος Δ. (Ιστορικός Ερευνητής)",
+            "year": 1948,
+            "text": "Η σύνδεση της Κοζάνης με τη Βιέννη είναι συγκινητική. Στην Κοβεντάρειο Βιβλιοθήκη Κοζάνης φυλάσσεται η αυθεντική Χάρτα που τυπώθηκε ακριβώς σε αυτό το σοκάκι."
+          }
+        ]
+      },
+      {
+        "id": "vienna-greek-2",
+        "fromYear": 1831,
+        "toYear": 2026,
+        "title": "Εκκλησία Αγίας Τριάδας, Εθνική Ευεργεσία (Σίνας) & Griechenbeisl",
+        "category": "culture",
+        "authorType": "official",
+        "authorName": "Ιερά Μητρόπολη Αυστρίας & Δήμος Βιέννης",
+        "verified": true,
+        "story": "Ο εθνικός ευεργέτης Γεώργιος Σίνας ανακαίνισε τον ναό της Αγίας Τριάδας σε σχέδια του Θεόφιλου Χάνσεν (αρχιτέκτονα και της Ακαδημίας Αθηνών). Στο παρακείμενο εστιατόριο Griechenbeisl (λειτουργεί από το 1447) σύχναζαν ο Μπετόβεν, ο Μότσαρτ, ο Σούμπερτ και ο Μαρκ Τουέιν.",
+        "photos": [
+          {
+            "url": "https://images.unsplash.com/photo-1516550893923-42d28e5677af?w=800&auto=format&fit=crop&q=80",
+            "caption": "Η καρδιά του ιστορικού κέντρου της Βιέννης",
+            "year": 2024,
+            "credit": "Wien Tourismus"
+          }
+        ],
+        "memories": [
+          {
+            "author": "Ελένη Β.",
+            "year": 2025,
+            "text": "Όταν περπατάς στην Griechengasse και βλέπεις τις ελληνικές επιγραφές στην καρδιά της Βιέννης, νιώθεις υπερηφάνεια για την οικουμενικότητα του πολιτισμού μας."
+          }
+        ]
+      }
+    ]
   }
 ]

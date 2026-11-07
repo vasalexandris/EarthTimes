@@ -11,8 +11,7 @@ import * as TimeMachine from './time-machine.js';
 
 // Application State
 let worldData = null;
-let greeceData = null;
-let usaData = null;
+const countriesMap = new Map(); // Dynamic multi-country registry
 let massachusettsData = null;
 
 let currentScope = 'world'; // 'world' | 'country' | 'state' | 'city'
@@ -28,6 +27,24 @@ const tourSequence = [
   { type: 'city', id: 'kozani' },
   { type: 'city', id: 'athens' },
   { type: 'city', id: 'thessaloniki' },
+  { type: 'country', id: 'france' },
+  { type: 'city', id: 'paris' },
+  { type: 'city', id: 'marseille' },
+  { type: 'country', id: 'italy' },
+  { type: 'city', id: 'rome' },
+  { type: 'city', id: 'florence' },
+  { type: 'city', id: 'venice' },
+  { type: 'country', id: 'uk' },
+  { type: 'city', id: 'london' },
+  { type: 'city', id: 'edinburgh' },
+  { type: 'country', id: 'germany' },
+  { type: 'city', id: 'berlin' },
+  { type: 'city', id: 'munich' },
+  { type: 'country', id: 'spain' },
+  { type: 'city', id: 'madrid' },
+  { type: 'city', id: 'barcelona' },
+  { type: 'country', id: 'austria' },
+  { type: 'city', id: 'vienna' },
   { type: 'country', id: 'usa' },
   { type: 'city', id: 'new-york' },
   { type: 'city', id: 'boston' }
@@ -35,8 +52,11 @@ const tourSequence = [
 
 function getAllCities() {
   const list = [];
-  if (greeceData && greeceData.cities) list.push(...greeceData.cities);
-  if (usaData && usaData.cities) list.push(...usaData.cities);
+  for (const cData of countriesMap.values()) {
+    if (cData && cData.cities) {
+      list.push(...cData.cities);
+    }
+  }
   if (massachusettsData && massachusettsData.cities) {
     massachusettsData.cities.forEach(mc => {
       if (!list.some(c => c.id === mc.id)) list.push(mc);
@@ -55,8 +75,8 @@ function getCurrentEntity() {
     return worldData ? worldData.entity : null;
   }
   if (currentScope === 'country') {
-    if (currentCountryId === 'greece' && greeceData) return greeceData.country;
-    if (currentCountryId === 'usa' && usaData) return usaData.country;
+    const cData = countriesMap.get(currentCountryId);
+    return cData ? cData.country : null;
   }
   if (currentScope === 'state' && massachusettsData) {
     return massachusettsData.state;
@@ -166,12 +186,21 @@ export function flyToWorld() {
   }
 }
 
-export function flyToCountry(countryId = 'greece') {
+export async function flyToCountry(countryId = 'greece') {
   currentScope = 'country';
   currentCountryId = countryId;
   currentCityId = null;
 
-  const dataset = (countryId === 'greece') ? greeceData : usaData;
+  let dataset = countriesMap.get(countryId);
+  if (!dataset) {
+    try {
+      dataset = await loadCountryData(countryId);
+      countriesMap.set(countryId, dataset);
+    } catch (e) {
+      console.warn(`Could not load country ${countryId}`, e);
+    }
+  }
+
   if (!dataset || !dataset.country) return;
 
   const country = dataset.country;
@@ -221,22 +250,46 @@ export function flyToState(stateId = 'massachusetts') {
   renderCurrentTimeCapsules();
 }
 
-export function flyToCity(cityId) {
-  const city = findCityById(cityId);
+export async function flyToCity(cityId) {
+  let city = findCityById(cityId);
+
+  // If not yet loaded, resolve country dynamically
+  if (!city) {
+    const cityToCountry = {
+      'paris': 'france', 'marseille': 'france', 'lyon': 'france',
+      'rome': 'italy', 'florence': 'italy', 'milan': 'italy', 'venice': 'italy',
+      'london': 'uk', 'edinburgh': 'uk',
+      'berlin': 'germany', 'munich': 'germany',
+      'madrid': 'spain', 'barcelona': 'spain',
+      'vienna': 'austria'
+    };
+    const targetCountry = cityToCountry[cityId];
+    if (targetCountry && !countriesMap.has(targetCountry)) {
+      try {
+        const cData = await loadCountryData(targetCountry);
+        countriesMap.set(targetCountry, cData);
+        city = findCityById(cityId);
+      } catch (e) {
+        console.warn(`Error loading country for ${cityId}`, e);
+      }
+    }
+  }
+
   if (!city) return;
 
   currentScope = 'city';
   currentCityId = cityId;
 
   // Determine parent country
-  let parent = greeceData ? greeceData.country : null;
-  if (greeceData && greeceData.cities && greeceData.cities.some(c => c.id === cityId)) {
-    currentCountryId = 'greece';
-    parent = greeceData.country;
-  } else if (usaData && usaData.cities && usaData.cities.some(c => c.id === cityId)) {
-    currentCountryId = 'usa';
-    parent = usaData.country;
-  } else if (massachusettsData) {
+  let parent = null;
+  for (const [cId, cData] of countriesMap.entries()) {
+    if (cData && cData.cities && cData.cities.some(c => c.id === cityId)) {
+      currentCountryId = cId;
+      parent = cData.country;
+      break;
+    }
+  }
+  if (!parent && massachusettsData && massachusettsData.cities.some(c => c.id === cityId)) {
     currentCountryId = 'usa';
     parent = massachusettsData.state;
   }
@@ -248,9 +301,8 @@ export function flyToCity(cityId) {
   MapModule.flyToCoords(city.coords, city.zoom, 1.4);
   MapModule.toggleStateHighlight(false);
 
-  const activeCities = (currentCountryId === 'greece') 
-    ? (greeceData ? greeceData.cities : []) 
-    : (usaData ? usaData.cities : (massachusettsData ? massachusettsData.cities : []));
+  const activeCountryData = countriesMap.get(currentCountryId);
+  const activeCities = activeCountryData ? activeCountryData.cities : (massachusettsData ? massachusettsData.cities : []);
 
   MapModule.renderCityPins(activeCities, currentScope, currentCityId, flyToCity);
   MapModule.renderCityPois(city, currentPoiFilter, switchTab);
@@ -387,14 +439,31 @@ async function init() {
     // 1. Update Today's Date in UI
     UIModule.updateCurrentDate();
 
-    // 2. Load World, Countries (Greece, USA), and Regional datasets in parallel
-    [worldData, greeceData, usaData, massachusettsData] = await Promise.all([
+    // 2. Load World, Countries (Greece, USA, France, Italy, UK, Germany, Spain, Austria) in parallel
+    const [wData, grData, usData, frData, itData, ukData, deData, esData, atData, maData] = await Promise.all([
       loadWorldData(),
       loadCountryData('greece'),
       loadCountryData('usa'),
+      loadCountryData('france'),
+      loadCountryData('italy'),
+      loadCountryData('uk'),
+      loadCountryData('germany'),
+      loadCountryData('spain'),
+      loadCountryData('austria'),
       loadStateData('massachusetts'),
       TimeMachine.initTimeMachine()
     ]);
+
+    worldData = wData;
+    countriesMap.set('greece', grData);
+    countriesMap.set('usa', usData);
+    countriesMap.set('france', frData);
+    countriesMap.set('italy', itData);
+    countriesMap.set('uk', ukData);
+    countriesMap.set('germany', deData);
+    countriesMap.set('spain', esData);
+    countriesMap.set('austria', atData);
+    massachusettsData = maData;
 
     // 3. Initialize Leaflet Map centered on Earth
     MapModule.initMap('map', worldData.entity.coords, worldData.entity.zoom, () => {
