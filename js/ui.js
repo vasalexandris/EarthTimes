@@ -4,8 +4,12 @@
  * Base Map Layer selector, Date display, Video Overlay, and Deep Dive views.
  */
 
-import { getCityVideo } from './video-service.js';
+import { getCityVideo, getAvailableVideoTypes } from './video-service.js';
 import { getDeepDiveData } from './deep-dive.js';
+import { fetchWikiArticle } from './wiki-service.js';
+
+let currentActiveVideoCityId = null;
+let currentActiveVideoType = 'drone';
 
 function escapeStr(str) {
   if (!str) return '';
@@ -16,26 +20,57 @@ function escapeStr(str) {
     .replace(/\n/g, ' ');
 }
 
-export function openCityVideo(cityId) {
-  const vid = getCityVideo(cityId);
+export function openCityVideo(cityId, preferredType = 'drone') {
+  currentActiveVideoCityId = cityId;
+  currentActiveVideoType = preferredType;
+
+  const vid = getCityVideo(cityId, preferredType);
   const overlay = document.getElementById('mapVideoOverlay');
   const iframe = document.getElementById('mapVideoIframe');
   const title = document.getElementById('videoOverlayTitle');
   const deepDiveOverlay = document.getElementById('mapDeepDiveOverlay');
   const directLink = document.getElementById('videoDirectLink');
+  const typeSelector = document.getElementById('videoTypeSelector');
 
   if (!overlay || !iframe) return;
 
   // Close deep dive if open
   if (deepDiveOverlay) deepDiveOverlay.classList.add('hidden');
 
-  const youtubeId = vid?.youtubeId || 'Dgfcdv6D5OI';
-  const videoTitle = vid?.title || `Περιήγηση: ${cityId}`;
+  const youtubeId = vid?.youtubeId || '54nbsW6jYN4';
+  const videoTitle = vid?.title || `Περιήγηση Drone 4K: ${cityId}`;
 
   if (title) title.innerText = videoTitle;
   if (directLink) directLink.href = `https://www.youtube.com/watch?v=${youtubeId}`;
   iframe.src = `https://www.youtube-nocookie.com/embed/${youtubeId}?autoplay=1&rel=0`;
+
+  // Render Drone vs Walking toggle buttons
+  if (typeSelector) {
+    const available = getAvailableVideoTypes(cityId);
+    if (available.length > 1) {
+      typeSelector.innerHTML = `
+        <button onclick="switchCityVideoType('drone')" class="px-2.5 py-1 rounded-lg text-xs font-bold transition flex items-center gap-1.5 ${preferredType === 'drone' ? 'bg-sky-600 text-white shadow-md' : 'bg-slate-800 text-slate-300 hover:text-white border border-slate-700'}">
+          <i class="fa-solid fa-helicopter"></i>
+          <span>Drone 4K</span>
+        </button>
+        <button onclick="switchCityVideoType('walking')" class="px-2.5 py-1 rounded-lg text-xs font-bold transition flex items-center gap-1.5 ${preferredType === 'walking' ? 'bg-sky-600 text-white shadow-md' : 'bg-slate-800 text-slate-300 hover:text-white border border-slate-700'}">
+          <i class="fa-solid fa-person-walking"></i>
+          <span>Walking 4K</span>
+        </button>
+      `;
+      typeSelector.classList.remove('hidden');
+    } else {
+      typeSelector.classList.add('hidden');
+    }
+  }
+
   overlay.classList.remove('hidden');
+}
+
+export function switchCityVideoType(type) {
+  if (currentActiveVideoCityId) {
+    openCityVideo(currentActiveVideoCityId, type);
+  }
 }
 
 export function closeMapVideoOverlay() {
@@ -45,12 +80,13 @@ export function closeMapVideoOverlay() {
   if (overlay) overlay.classList.add('hidden');
 }
 
-export function openDeepDive(keyOrTitle, fallbackSummary = '', contextEntityName = '') {
+export async function openDeepDive(keyOrTitle, fallbackSummary = '', contextEntityName = '') {
   const data = getDeepDiveData(keyOrTitle, fallbackSummary, contextEntityName);
   const overlay = document.getElementById('mapDeepDiveOverlay');
   const title = document.getElementById('deepDiveTitle');
   const badge = document.getElementById('deepDiveBadge');
   const content = document.getElementById('deepDiveContent');
+  const wikiHeaderLink = document.getElementById('deepDiveWikiHeaderLink');
 
   if (!overlay || !content) return;
 
@@ -59,6 +95,7 @@ export function openDeepDive(keyOrTitle, fallbackSummary = '', contextEntityName
 
   if (title) title.innerText = data.title;
   if (badge) badge.innerText = data.badge || data.category;
+  if (wikiHeaderLink) wikiHeaderLink.classList.add('hidden');
 
   let sectionsHtml = '';
   if (data.sections && data.sections.length) {
@@ -72,6 +109,7 @@ export function openDeepDive(keyOrTitle, fallbackSummary = '', contextEntityName
     `).join('');
   }
 
+  // Initial Content with AI Narrative
   content.innerHTML = `
     <!-- Hero Image Banner -->
     <div class="relative rounded-3xl overflow-hidden border border-slate-700 shadow-2xl h-64 sm:h-80 bg-slate-900">
@@ -85,17 +123,50 @@ export function openDeepDive(keyOrTitle, fallbackSummary = '', contextEntityName
       </div>
     </div>
 
-    <!-- Summary Box -->
-    <div class="p-4 sm:p-5 bg-sky-950/40 border border-sky-600/40 rounded-2xl text-sky-200 text-sm leading-relaxed shadow-lg">
-      <div class="font-bold text-sky-300 flex items-center gap-2 mb-1.5 text-base">
-        <i class="fa-solid fa-circle-info text-amber-400"></i> Σύνοψη & Ιστορική Σημασία:
+    <!-- 1. AI Curated Narrative Box -->
+    <div class="p-5 bg-gradient-to-r from-sky-950/60 to-slate-900 border border-sky-600/40 rounded-2xl text-sky-200 text-sm leading-relaxed shadow-xl">
+      <div class="font-bold text-sky-300 flex items-center justify-between mb-2 text-base">
+        <span class="flex items-center gap-2">
+          <i class="fa-solid fa-wand-magic-sparkles text-amber-400"></i> Ανάλυση & Σύνθεση EarthTimes AI:
+        </span>
+        <span class="text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded bg-sky-500/20 text-sky-300 border border-sky-400/30">
+          Curated Knowledge
+        </span>
       </div>
-      <p class="text-slate-200 leading-relaxed">${data.summary}</p>
+      <p class="text-slate-200 leading-relaxed text-sm">${data.summary}</p>
     </div>
 
-    <!-- Detailed Sections -->
+    <!-- 2. Detailed Historical Chapters (AI / Curated) -->
     <div class="space-y-4">
       ${sectionsHtml}
+    </div>
+
+    <!-- 3. Live Wikipedia Encyclopedia Integration Section -->
+    <div id="deepDiveWikiContainer" class="p-5 sm:p-6 bg-slate-900/90 rounded-2xl border border-slate-700/80 shadow-2xl">
+      <div class="flex items-center justify-between gap-2 pb-3 mb-4 border-b border-slate-800">
+        <div class="flex items-center gap-2.5">
+          <div class="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center text-slate-200 text-lg font-serif font-black shadow">
+            W
+          </div>
+          <div>
+            <h4 class="text-sm sm:text-base font-bold text-white flex items-center gap-2">
+              Εγκυκλοπαιδική Τεκμηρίωση Wikipedia
+            </h4>
+            <p id="wikiStatusLabel" class="text-[11px] text-slate-400">Αναζήτηση στην Ελληνική Βικιπαίδεια (με αγγλικό fallback)...</p>
+          </div>
+        </div>
+        <div id="wikiLangBadge" class="hidden text-[10px] font-bold px-2.5 py-0.5 rounded-full bg-emerald-950/80 text-emerald-300 border border-emerald-600/50">
+          EL
+        </div>
+      </div>
+
+      <!-- Wiki Live Card Content -->
+      <div id="wikiArticleBox" class="space-y-3">
+        <div class="flex items-center gap-2 text-xs text-slate-400 py-3">
+          <i class="fa-solid fa-circle-notch fa-spin text-sky-400"></i>
+          <span>Φόρτωση επίσημης εγκυκλοπαιδικής σελίδας...</span>
+        </div>
+      </div>
     </div>
 
     <!-- Return to Map Button at bottom -->
@@ -108,6 +179,69 @@ export function openDeepDive(keyOrTitle, fallbackSummary = '', contextEntityName
   `;
 
   overlay.classList.remove('hidden');
+
+  // Load Wikipedia article asynchronously with Greek priority & English fallback
+  try {
+    const wikiQuery = data.wikiQuery || data.title;
+    const wikiEnQuery = data.wikiEnQuery || '';
+    const article = await fetchWikiArticle(wikiQuery, wikiEnQuery);
+
+    const wikiBox = document.getElementById('wikiArticleBox');
+    const wikiStatus = document.getElementById('wikiStatusLabel');
+    const wikiBadge = document.getElementById('wikiLangBadge');
+
+    if (article && wikiBox) {
+      if (wikiStatus) wikiStatus.innerText = `Πηγή: ${article.langLabel}`;
+      if (wikiBadge) {
+        wikiBadge.innerText = article.lang.toUpperCase();
+        wikiBadge.classList.remove('hidden');
+      }
+      if (wikiHeaderLink) {
+        wikiHeaderLink.href = article.pageUrl;
+        wikiHeaderLink.classList.remove('hidden');
+      }
+
+      wikiBox.innerHTML = `
+        <div class="flex flex-col sm:flex-row gap-4 items-start">
+          ${article.thumbnail ? `
+            <img src="${article.thumbnail}" alt="${article.title}" class="w-full sm:w-36 h-28 object-cover rounded-xl border border-slate-700 shadow shrink-0">
+          ` : ''}
+          <div class="flex-1 space-y-2">
+            <h5 class="text-sm font-bold text-white flex items-center gap-2">
+              <span>${article.title}</span>
+              ${article.description ? `<span class="text-xs text-slate-400 font-normal italic">(${article.description})</span>` : ''}
+            </h5>
+            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+              ${article.extract}
+            </p>
+          </div>
+        </div>
+        <div class="pt-3 border-t border-slate-800/80 flex flex-wrap items-center justify-between gap-3">
+          <span class="text-[11px] text-slate-400 italic">
+            Άμεση πρόσβαση για περαιτέρω διάβασμα:
+          </span>
+          <a href="${article.pageUrl}" target="_blank" rel="noopener noreferrer" class="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 hover:text-white text-sky-400 border border-slate-700 text-xs font-bold transition flex items-center gap-2 shadow">
+            <i class="fa-solid fa-book-open text-amber-400"></i>
+            <span>Ανάγνωση ολόκληρου του άρθρου στη Wikipedia (${article.lang.toUpperCase()})</span>
+            <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+          </a>
+        </div>
+      `;
+    } else if (wikiBox) {
+      if (wikiStatus) wikiStatus.innerText = 'Πρωτότυπη Ανάλυση EarthTimes AI';
+      wikiBox.innerHTML = `
+        <div class="p-3.5 bg-slate-950/60 rounded-xl border border-slate-800 text-xs text-slate-300 flex items-start gap-2.5">
+          <i class="fa-solid fa-feather text-amber-400 text-sm mt-0.5"></i>
+          <div>
+            <p class="font-semibold text-slate-200">Πλήρης Πρωτότυπη Καταγραφή EarthTimes</p>
+            <p class="text-slate-400 mt-0.5">Δεν βρέθηκε αυτοτελές λήμμα στη Wikipedia. Η ανάλυση που διαβάζετε παραπάνω συντέθηκε αποκλειστικά από την AI και το ψηφιακό αρχείο του EarthTimes.</p>
+          </div>
+        </div>
+      `;
+    }
+  } catch (err) {
+    console.warn('[DeepDive] Wikipedia fetch error:', err);
+  }
 }
 
 export function closeDeepDiveOverlay() {

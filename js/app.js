@@ -473,6 +473,7 @@ window.narrateBrief = narrateBrief;
 
 // Video & Deep Dive window bindings
 window.openCityVideo = UIModule.openCityVideo;
+window.switchCityVideoType = UIModule.switchCityVideoType;
 window.closeMapVideoOverlay = UIModule.closeMapVideoOverlay;
 window.openDeepDive = UIModule.openDeepDive;
 window.closeDeepDiveOverlay = UIModule.closeDeepDiveOverlay;
