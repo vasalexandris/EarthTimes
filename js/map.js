@@ -349,10 +349,22 @@ export function clearCityPins() {
 
 export function flyToCoords(coords, zoom, duration = 1.5) {
   if (!map) return;
-  map.flyTo(coords, zoom, {
-    duration,
-    easeLinearity: 0.25
-  });
+  try {
+    const size = map.getSize ? map.getSize() : null;
+    if (!size || size.x === 0 || size.y === 0) {
+      map.setView(coords, zoom);
+      return;
+    }
+    map.flyTo(coords, zoom, {
+      duration,
+      easeLinearity: 0.25
+    });
+  } catch (err) {
+    console.warn('[Map] flyToCoords fallback to setView:', err);
+    try {
+      map.setView(coords, zoom);
+    } catch (e) {}
+  }
 }
 
 export function flyToWorld() {
@@ -369,6 +381,15 @@ export function getMapInstance() {
 
 export function invalidateMapSize() {
   if (map) {
-    setTimeout(() => map.invalidateSize(), 200);
+    try {
+      map.invalidateSize();
+    } catch (e) {
+      console.warn('Map invalidateSize warning:', e);
+    }
+    setTimeout(() => {
+      try {
+        if (map) map.invalidateSize();
+      } catch (e) {}
+    }, 150);
   }
 }

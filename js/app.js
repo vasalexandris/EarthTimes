@@ -107,6 +107,7 @@ export function openExplorer() {
   if (explorerApp) explorerApp.classList.remove('hidden');
 
   MapModule.invalidateMapSize();
+  requestAnimationFrame(() => MapModule.invalidateMapSize());
 }
 
 export function openLandingPage() {
@@ -410,6 +411,7 @@ window.openExplorer = openExplorer;
 window.openLandingPage = openLandingPage;
 window.onExplorerOpened = () => {
   MapModule.invalidateMapSize();
+  requestAnimationFrame(() => MapModule.invalidateMapSize());
 };
 window.setMapLayer = setMapLayer;
 window.flyToWorld = flyToWorld;
@@ -462,7 +464,17 @@ async function init() {
     // 1. Update Today's Date in UI
     UIModule.updateCurrentDate();
 
-    // 2. Load World, Massachusetts, and All Countries in parallel
+    // 2. Load World, Massachusetts, and Time Machine core data
+    const [wData, maData, _tm] = await Promise.all([
+      loadWorldData(),
+      loadStateData('massachusetts'),
+      TimeMachine.initTimeMachine()
+    ]);
+
+    worldData = wData;
+    massachusettsData = maData;
+
+    // 3. Preload countries in background with Promise.allSettled (fully resilient to any individual error)
     const countryKeys = [
       'greece',
       'usa',
@@ -480,20 +492,17 @@ async function init() {
       'hungary'
     ];
 
-    const [wData, maData, _tm, ...loadedCountries] = await Promise.all([
-      loadWorldData(),
-      loadStateData('massachusetts'),
-      TimeMachine.initTimeMachine(),
-      ...countryKeys.map(k => loadCountryData(k))
-    ]);
-
-    worldData = wData;
-    massachusettsData = maData;
+    const settledCountries = await Promise.allSettled(countryKeys.map(k => loadCountryData(k)));
     countryKeys.forEach((key, idx) => {
-      countriesMap.set(key, loadedCountries[idx]);
+      const res = settledCountries[idx];
+      if (res.status === 'fulfilled' && res.value) {
+        countriesMap.set(key, res.value);
+      } else {
+        console.warn(`[Init] Country data for "${key}" will be loaded on demand:`, res.reason);
+      }
     });
 
-    // 3. Initialize Leaflet Map centered on Earth
+    // 4. Initialize Leaflet Map centered on Earth
     MapModule.initMap('map', worldData.entity.coords, worldData.entity.zoom, () => {
       if (currentScope === 'world') {
         flyToCountry('greece');
@@ -505,13 +514,13 @@ async function init() {
       TimeMachine.openCreateSpotModal(lat, lng);
     });
 
-    // 4. Set initial base layer UI state (Dark Voyager default)
+    // 5. Set initial base layer UI state (Dark Voyager default)
     UIModule.updateBaseLayerUI('dark');
 
-    // 5. Initial Time Slider setup
+    // 6. Initial Time Slider setup
     TimeMachine.updateTimeSliderUI();
 
-    // 6. Initial Dossier display: Planet Earth
+    // 7. Initial Dossier display: Planet Earth
     flyToWorld();
   } catch (error) {
     console.error('Failed to initialize EarthTimes:', error);
