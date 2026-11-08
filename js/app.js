@@ -406,6 +406,49 @@ export function toggleAddSpotMode() {
   }
 }
 
+export function toggleMapsDropdown(e) {
+  if (e) e.stopPropagation();
+  const mapsMenu = document.getElementById('mapsDropdownMenu');
+  const spotsMenu = document.getElementById('spotsDropdownMenu');
+  if (spotsMenu) spotsMenu.classList.add('hidden');
+  if (mapsMenu) mapsMenu.classList.toggle('hidden');
+}
+
+export function selectMapLayer(layerKey) {
+  setMapLayer(layerKey);
+  const mapsMenu = document.getElementById('mapsDropdownMenu');
+  if (mapsMenu) mapsMenu.classList.add('hidden');
+}
+
+export function toggleSpotsDropdown(e) {
+  if (e) e.stopPropagation();
+  const spotsMenu = document.getElementById('spotsDropdownMenu');
+  const mapsMenu = document.getElementById('mapsDropdownMenu');
+  if (mapsMenu) mapsMenu.classList.add('hidden');
+  if (spotsMenu) spotsMenu.classList.toggle('hidden');
+}
+
+export function selectPoiCategory(category) {
+  togglePoiCategory(category);
+  const spotsMenu = document.getElementById('spotsDropdownMenu');
+  if (spotsMenu) spotsMenu.classList.add('hidden');
+}
+
+// Close dropdowns on outside click
+document.addEventListener('click', (e) => {
+  const mapsMenu = document.getElementById('mapsDropdownMenu');
+  const spotsMenu = document.getElementById('spotsDropdownMenu');
+  const mapsBtn = document.getElementById('mapsDropdownBtn');
+  const spotsBtn = document.getElementById('spotsDropdownBtn');
+
+  if (mapsMenu && !mapsMenu.contains(e.target) && mapsBtn && !mapsBtn.contains(e.target)) {
+    mapsMenu.classList.add('hidden');
+  }
+  if (spotsMenu && !spotsMenu.contains(e.target) && spotsBtn && !spotsBtn.contains(e.target)) {
+    spotsMenu.classList.add('hidden');
+  }
+});
+
 // Global Window Bindings for UI & HTML event attributes
 window.openExplorer = openExplorer;
 window.openLandingPage = openLandingPage;
@@ -414,6 +457,10 @@ window.onExplorerOpened = () => {
   requestAnimationFrame(() => MapModule.invalidateMapSize());
 };
 window.setMapLayer = setMapLayer;
+window.toggleMapsDropdown = toggleMapsDropdown;
+window.selectMapLayer = selectMapLayer;
+window.toggleSpotsDropdown = toggleSpotsDropdown;
+window.selectPoiCategory = selectPoiCategory;
 window.flyToWorld = flyToWorld;
 window.flyToCountry = flyToCountry;
 window.flyToState = flyToState;

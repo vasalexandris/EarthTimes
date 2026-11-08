@@ -19,11 +19,10 @@ export const BASE_LAYERS = {
   dark: {
     name: 'Dark Voyager',
     icon: 'fa-moon',
-    url: 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',
+    url: 'https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}',
     options: {
-      maxZoom: 19,
-      subdomains: 'abcd',
-      attribution: '&copy; <a href="https://openstreetmap.org">OSM</a> &copy; <a href="https://carto.com/">CARTO</a>'
+      maxZoom: 16,
+      attribution: 'Tiles &copy; <a href="https://www.esri.com/">Esri</a>, HERE, Garmin, &copy; OpenStreetMap'
     }
   },
   satellite: {

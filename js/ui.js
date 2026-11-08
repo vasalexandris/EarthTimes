@@ -22,16 +22,18 @@ export function openCityVideo(cityId) {
   const iframe = document.getElementById('mapVideoIframe');
   const title = document.getElementById('videoOverlayTitle');
   const deepDiveOverlay = document.getElementById('mapDeepDiveOverlay');
+  const directLink = document.getElementById('videoDirectLink');
 
   if (!overlay || !iframe) return;
 
   // Close deep dive if open
   if (deepDiveOverlay) deepDiveOverlay.classList.add('hidden');
 
-  const youtubeId = vid?.youtubeId || '1L7QG7c1b50';
+  const youtubeId = vid?.youtubeId || 'Dgfcdv6D5OI';
   const videoTitle = vid?.title || `Περιήγηση: ${cityId}`;
 
   if (title) title.innerText = videoTitle;
+  if (directLink) directLink.href = `https://www.youtube.com/watch?v=${youtubeId}`;
   iframe.src = `https://www.youtube-nocookie.com/embed/${youtubeId}?autoplay=1&rel=0`;
   overlay.classList.remove('hidden');
 }
@@ -194,29 +196,29 @@ export function updateBreadcrumbs(scope, stateOrCountry, city) {
 }
 
 export function updateBaseLayerUI(activeKey) {
-  const layerKeys = ['dark', 'satellite', 'osm', 'topo'];
-  layerKeys.forEach(k => {
-    const btn = document.getElementById(`layer-btn-${k}`);
-    if (!btn) return;
-    if (k === activeKey) {
-      btn.className = 'layer-switcher-btn px-2.5 py-1.5 rounded-lg text-xs font-semibold bg-sky-600 text-white shadow-md flex items-center gap-1.5 transition';
-    } else {
-      btn.className = 'layer-switcher-btn px-2.5 py-1.5 rounded-lg text-xs font-medium text-slate-300 hover:text-white hover:bg-slate-800/80 bg-slate-900/60 flex items-center gap-1.5 transition border border-slate-700/50';
-    }
-  });
+  const layerNames = {
+    dark: 'Χάρτες (Dark)',
+    satellite: 'Χάρτες (Δορυφόρος)',
+    osm: 'Χάρτες (Πολιτικός)',
+    topo: 'Χάρτες (Ανάγλυφο)'
+  };
+  const activeLabel = document.getElementById('activeMapLayerName');
+  if (activeLabel && layerNames[activeKey]) {
+    activeLabel.innerText = layerNames[activeKey];
+  }
 }
 
 export function updatePoiFilterButtons(activeCategory) {
-  const filterIds = ['all', 'history', 'culture', 'nature'];
-  filterIds.forEach(id => {
-    const btn = document.getElementById(`filter-${id}`);
-    if (!btn) return;
-    if (id === activeCategory) {
-      btn.className = 'poi-filter-btn px-2.5 py-1 rounded-md bg-sky-600 text-white font-medium hover:bg-sky-500 transition';
-    } else {
-      btn.className = 'poi-filter-btn px-2.5 py-1 rounded-md bg-slate-800 text-slate-300 hover:bg-slate-700 transition';
-    }
-  });
+  const filterNames = {
+    all: 'Σημεία (Όλα)',
+    history: 'Σημεία (Ιστορικά)',
+    culture: 'Σημεία (Πολιτισμός)',
+    nature: 'Σημεία (Φύση)'
+  };
+  const activeLabel = document.getElementById('activeSpotsFilterName');
+  if (activeLabel && filterNames[activeCategory]) {
+    activeLabel.innerText = filterNames[activeCategory];
+  }
 }
 
 export function updateTabButtons(activeTab) {

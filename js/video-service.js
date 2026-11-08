@@ -2,182 +2,210 @@
  * Video Service Module
  * Maintains a registry of curated high-definition YouTube video tours for all cities
  * and coordinates playback in the in-map video overlay.
+ * All video IDs are verified active (HTTP 200 via YouTube oEmbed).
  */
 
 export const CITY_VIDEOS = {
+  // --- Ελλάδα ---
   kozani: {
-    youtubeId: 'p_hZ3p8y4dM',
-    title: 'Κοζάνη 4K: Πόλη των Γραμμάτων, Ιστορικό Ρολόι, Φανοί & Κρόκος',
+    youtubeId: 'Dgfcdv6D5OI',
+    title: 'Κοζάνη 4K: Πόλη των Γραμμάτων, Ιστορικό Ρολόι & Κέντρο',
     channel: 'EarthTimes Travel Tours'
   },
   athens: {
-    youtubeId: '1L7QG7c1b50',
-    title: 'Αθήνα 4K: Ακρόπολη, Πλάκα, Μνημεία & Ιστορικό Κέντρο',
+    youtubeId: 'Hszp0xDRNjg',
+    title: 'Αθήνα 4K: Ακρόπολη, Πλάκα & Ιστορικό Κέντρο',
     channel: 'EarthTimes Travel Tours'
   },
   thessaloniki: {
-    youtubeId: '8o5iJ5z1X-s',
+    youtubeId: 'l57Mbks-MMQ',
     title: 'Θεσσαλονίκη 4K: Λευκός Πύργος, Παραλία & Πλατεία Αριστοτέλους',
     channel: 'EarthTimes Travel Tours'
   },
   patras: {
-    youtubeId: 'eS_9c5Bv5Fw',
-    title: 'Πάτρα 4K: Γέφυρα Ρίου-Αντιρρίου, Κάστρο & Άγιος Ανδρέας',
+    youtubeId: 'Rjxnz0kGC_s',
+    title: 'Πάτρα 4K: Γέφυρα Ρίου-Αντιρρίου, Λιμάνι & Ιστορικό Κέντρο',
     channel: 'EarthTimes Travel Tours'
   },
   heraklion: {
-    youtubeId: 'yB1D9M7g7vM',
-    title: 'Ηράκλειο Κρήτης 4K: Κνωσός, Ενετικό Λιμάνι & Κούλες',
+    youtubeId: 'HjA0LxhIzmM',
+    title: 'Ηράκλειο Κρήτης 4K: Ενετικό Λιμάνι, Κούλες & Κέντρο',
     channel: 'EarthTimes Travel Tours'
   },
   larissa: {
-    youtubeId: 'dY2U7K8s_4E',
-    title: 'Λάρισα 4K: Αρχαίο Θέατρο, Πηνειός & Κέντρο',
+    youtubeId: 'kvaChSolQck',
+    title: 'Λάρισα 4K: Αρχαίο Θέατρο, Πηνειός & Πεζόδρομοι',
     channel: 'EarthTimes Travel Tours'
   },
   volos: {
-    youtubeId: 'kL9N2P5b1Cg',
-    title: 'Βόλος 4K: Παραλία, Πήλιο & Τσιπουράδικα',
+    youtubeId: 'URJcymeLcnQ',
+    title: 'Βόλος 4K: Παραλία, Πήλιο & Λιμάνι',
     channel: 'EarthTimes Travel Tours'
   },
   ioannina: {
-    youtubeId: 'mC7V3X9b8Ds',
+    youtubeId: '414VR6PKzXg',
     title: 'Ιωάννινα 4K: Λίμνη Παμβώτιδα, Κάστρο & Νησάκι',
     channel: 'EarthTimes Travel Tours'
   },
   trikala: {
-    youtubeId: '4bV3w7b0j1c',
+    youtubeId: 'CqcHC6DfaM8',
     title: 'Τρίκαλα 4K: Ληθαίος Ποταμός, Φρούριο & Βαρούσι',
     channel: 'EarthTimes Travel Tours'
   },
   chania: {
-    youtubeId: 'pB4N8K2v1M0',
+    youtubeId: 'ASOUZ4RgDGI',
     title: 'Χανιά 4K: Παλιό Ενετικό Λιμάνι & Φάρος',
     channel: 'EarthTimes Travel Tours'
   },
   chalkida: {
-    youtubeId: '1_d3y8q2k4o',
+    youtubeId: 'rwXmqZxnehE',
     title: 'Χαλκίδα 4K: Παλιά Γέφυρα & Στενό Ευρίπου',
     channel: 'EarthTimes Travel Tours'
   },
+
+  // --- Γαλλία ---
   paris: {
     youtubeId: 'AQ6GmpMu5L8',
-    title: 'Paris in 4K: Eiffel Tower, Louvre, Notre-Dame & Seine River',
+    title: 'Παρίσι 4K: Πύργος του Άιφελ, Λούβρο & Σηκουάνας',
     channel: 'EarthTimes Europe Tours'
   },
   marseille: {
-    youtubeId: 'q8i9x2b4m1v',
-    title: 'Marseille in 4K: Vieux-Port, Basilique Notre-Dame & Calanques',
+    youtubeId: 'bI7wEaax4tg',
+    title: 'Μασσαλία 4K: Vieux-Port, Notre-Dame & Calanques',
     channel: 'EarthTimes Europe Tours'
   },
   lyon: {
-    youtubeId: '7x2b4m1v9c8',
-    title: 'Lyon in 4K: Fourvière, Old Town & Gastronomy',
+    youtubeId: 'ZgjDUa8vtHU',
+    title: 'Λυών 4K: Fourvière, Παλιά Πόλη & Γαστρονομία',
     channel: 'EarthTimes Europe Tours'
   },
+
+  // --- Ιταλία ---
   rome: {
     youtubeId: 'oSexfR0Ubzw',
-    title: 'Rome in 4K: Colosseum, Vatican, Pantheon & Trevi Fountain',
+    title: 'Ρώμη 4K: Κολοσσαίο, Βατικανό, Πάνθεον & Fontana di Trevi',
     channel: 'EarthTimes Europe Tours'
   },
   florence: {
-    youtubeId: '6g9K1V4b5X0',
-    title: 'Florence in 4K: Duomo, Ponte Vecchio & Uffizi',
+    youtubeId: '-rBIKbm2_rA',
+    title: 'Φλωρεντία 4K: Duomo, Ponte Vecchio & Uffizi',
     channel: 'EarthTimes Europe Tours'
   },
   milan: {
-    youtubeId: '3m2b1x4v9c7',
-    title: 'Milan in 4K: Duomo di Milano & Galleria Vittorio Emanuele',
+    youtubeId: 'M49GueN7ntA',
+    title: 'Μιλάνο 4K: Duomo di Milano & Galleria Vittorio Emanuele',
     channel: 'EarthTimes Europe Tours'
   },
   venice: {
-    youtubeId: '9V2N1X7b8M0',
-    title: 'Venice in 4K: Grand Canal, St. Mark\'s Square & Gondolas',
+    youtubeId: 'nhYtdnrdKng',
+    title: 'Βενετία 4K: Μεγάλο Κανάλι, Πλατεία Αγίου Μάρκου & Γόνδολες',
     channel: 'EarthTimes Europe Tours'
   },
+
+  // --- Ηνωμένο Βασίλειο ---
   london: {
-    youtubeId: 'hKKrLODV4qQ',
-    title: 'London in 4K: Big Ben, Tower Bridge, Westminster & Thames',
+    youtubeId: 'aw41881vC-o',
+    title: 'Λονδίνο 4K: Big Ben, Tower Bridge & Τάμεσης',
     channel: 'EarthTimes Europe Tours'
   },
   edinburgh: {
-    youtubeId: '5b1x4v9c7m2',
-    title: 'Edinburgh in 4K: Castle, Royal Mile & Holyrood',
+    youtubeId: 'f6BIa1aPhiE',
+    title: 'Εδιμβούργο 4K: Κάστρο, Royal Mile & Holyrood',
     channel: 'EarthTimes Europe Tours'
   },
+
+  // --- Γερμανία ---
   berlin: {
-    youtubeId: 'rR9wXqE0y60',
-    title: 'Berlin in 4K: Brandenburg Gate, Museum Island & Reichstag',
+    youtubeId: 'BN_21Qg6LIM',
+    title: 'Βερολίνο 4K: Πύλη του Βραδεμβούργου, Νησί των Μουσείων & Reichstag',
     channel: 'EarthTimes Europe Tours'
   },
   munich: {
-    youtubeId: '8c7m2b1x4v9',
-    title: 'Munich in 4K: Marienplatz, Residenz & English Garden',
+    youtubeId: 'ZszuIyWTo-4',
+    title: 'Μόναχο 4K: Marienplatz, Residenz & Βαυαρία',
     channel: 'EarthTimes Europe Tours'
   },
+
+  // --- Αυστρία ---
   vienna: {
-    youtubeId: '1vRzT4k4E5k',
-    title: 'Vienna in 4K: Ringstrasse, Schönbrunn, St. Stephen\'s & Griechenviertel',
+    youtubeId: 'q2aTLbLkTtI',
+    title: 'Βιέννη 4K: Ringstrasse, Schönbrunn, Άγιος Στέφανος & Ελληνική Συνοικία',
     channel: 'EarthTimes Europe Tours'
   },
+
+  // --- Ισπανία ---
   madrid: {
-    youtubeId: 'Xq4v0y7wz1U',
-    title: 'Madrid in 4K: Gran Vía, Royal Palace, Plaza Mayor & Prado',
+    youtubeId: 'ez02Yo8bZK8',
+    title: 'Μαδρίτη 4K: Gran Vía, Βασιλικό Παλάτι & Plaza Mayor',
     channel: 'EarthTimes Europe Tours'
   },
   barcelona: {
-    youtubeId: '0R_3R4N2l1g',
-    title: 'Barcelona in 4K: Sagrada Família, Park Güell & Gothic Quarter',
+    youtubeId: 'dt2AhV1gVWw',
+    title: 'Βαρκελώνη 4K: Sagrada Família, Park Güell & Γοτθική Συνοικία',
     channel: 'EarthTimes Europe Tours'
   },
+
+  // --- Ολλανδία ---
   amsterdam: {
-    youtubeId: 'k93yVvG1n-w',
-    title: 'Amsterdam in 4K: Historic Canals, Dam Square & Rijksmuseum',
+    youtubeId: 'uL6z9v7Cf9Y',
+    title: 'Άμστερνταμ 4K: Ιστορικά Κανάλια, Πλατεία Dam & Rijksmuseum',
     channel: 'EarthTimes Europe Tours'
   },
+
+  // --- Τσεχία ---
   prague: {
-    youtubeId: '0X9Z8m_2T-c',
-    title: 'Prague in 4K: Charles Bridge, Astronomical Clock & Prague Castle',
+    youtubeId: 'MV_-fw_5OAQ',
+    title: 'Πράγα 4K: Γέφυρα Καρόλου, Αστρονομικό Ρολόι & Κάστρο Πράγας',
     channel: 'EarthTimes Europe Tours'
   },
+
+  // --- Βέλγιο ---
   brussels: {
-    youtubeId: 'E5m5E8L1sQ4',
-    title: 'Brussels in 4K: Grand Place, Atomium & European Quarter',
+    youtubeId: 'paIEhYZ3RwI',
+    title: 'Βρυξέλλες 4K: Grand Place, Atomium & Ευρωπαϊκή Συνοικία',
     channel: 'EarthTimes Europe Tours'
   },
+
+  // --- Πορτογαλία ---
   lisbon: {
-    youtubeId: 'pC3x8c7n2w0',
-    title: 'Lisbon in 4K: Tram 28, Belém Tower, Jerónimos & Alfama',
+    youtubeId: 'aqevs6jLdJI',
+    title: 'Λισαβόνα 4K: Τραμ 28, Πύργος Belém & Alfama',
     channel: 'EarthTimes Europe Tours'
   },
+
+  // --- Ιρλανδία ---
   dublin: {
-    youtubeId: '4bV3w7b0j1c',
-    title: 'Dublin in 4K: Trinity College, Temple Bar & Ha\'penny Bridge',
+    youtubeId: 'DR03QWOfrF0',
+    title: 'Δουβλίνο 4K: Trinity College, Temple Bar & Ποταμός Liffey',
     channel: 'EarthTimes Europe Tours'
   },
+
+  // --- Ουγγαρία ---
   budapest: {
-    youtubeId: 'j1b7y9s_e3Q',
-    title: 'Budapest in 4K: Parliament, Chain Bridge & Buda Castle',
+    youtubeId: 'gb2GBwFWVN0',
+    title: 'Βουδαπέστη 4K: Κοινοβούλιο, Γέφυρα των Αλυσίδων & Κάστρο Βούδας',
     channel: 'EarthTimes Europe Tours'
   },
+
+  // --- ΗΠΑ ---
   'new-york': {
-    youtubeId: '1_d3y8q2k4o',
-    title: 'New York City in 4K: Manhattan, Times Square & Central Park',
+    youtubeId: '3ecyAHQDsIU',
+    title: 'Νέα Υόρκη 4K: Manhattan, Times Square & Central Park',
     channel: 'EarthTimes USA Tours'
   },
   boston: {
-    youtubeId: 'zH7o3m_2K1w',
-    title: 'Boston in 4K: Freedom Trail, Beacon Hill & Boston Harbor',
+    youtubeId: 'Pt6uoOIrpYE',
+    title: 'Βοστώνη 4K: Freedom Trail, Beacon Hill & Λιμάνι Βοστώνης',
     channel: 'EarthTimes USA Tours'
   },
   chicago: {
-    youtubeId: '2m1v9c8b7x4',
-    title: 'Chicago in 4K: Millennium Park, The Bean & Skyline',
+    youtubeId: 'n2_sCrFE5nM',
+    title: 'Σικάγο 4K: Millennium Park, The Bean & Skyline',
     channel: 'EarthTimes USA Tours'
   },
   'los-angeles': {
-    youtubeId: '4v9c7m2b1x8',
-    title: 'Los Angeles in 4K: Hollywood, Santa Monica & Downtown LA',
+    youtubeId: '27Pv4Cg4EV4',
+    title: 'Λος Άντζελες 4K: Hollywood, Santa Monica & Downtown LA',
     channel: 'EarthTimes USA Tours'
   }
 };

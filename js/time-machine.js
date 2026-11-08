@@ -161,12 +161,12 @@ export function updateTimeSliderUI() {
   }
 
   if (display) {
-    display.innerText = (selectedYear === 'all') ? 'Όλες οι Εποχές' : selectedYear;
+    display.innerText = (selectedYear === 'all') ? 'Όλα' : selectedYear;
   }
 
   if (badge) {
     if (selectedYear === 'all') {
-      badge.innerText = 'Συνολική Ιστορική Κάλυψη';
+      badge.innerText = 'Όλα';
       badge.className = 'text-[11px] font-semibold text-emerald-400 bg-emerald-950/60 px-2 py-0.5 rounded border border-emerald-700/50';
     } else {
       let eraText = '21ος Αιώνας (Σύγχρονη Εποχή)';
