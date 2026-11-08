@@ -518,10 +518,11 @@ async function init() {
     const container = document.getElementById('tabContent');
     if (container) {
       container.innerHTML = `
-        <div class="p-4 bg-rose-950/40 border border-rose-800 rounded-xl text-rose-200 text-sm">
-          <div class="font-bold mb-1"><i class="fa-solid fa-triangle-exclamation"></i> Σφάλμα φόρτωσης δεδομένων</div>
-          <p>Δεν ήταν δυνατή η φόρτωση των αρχείων δεδομένων.</p>
-          <p class="text-xs text-rose-300 mt-2">Βεβαιωθείτε ότι η εφαρμογή εκτελείται μέσω τοπικού διακομιστή (π.χ. Live Server ή <code>npx serve</code>).</p>
+        <div class="p-4 bg-rose-950/60 border border-rose-600 rounded-xl text-rose-200 text-sm shadow-xl">
+          <div class="font-bold text-base mb-1.5 flex items-center gap-2 text-rose-400">
+            <i class="fa-solid fa-triangle-exclamation"></i> Σφάλμα: ${error.name || 'Error'}: ${error.message}
+          </div>
+          <pre class="text-xs text-rose-300 mt-2 font-mono whitespace-pre-wrap bg-slate-950/80 p-3 rounded-lg border border-rose-900/50 overflow-x-auto">${error.stack || String(error)}</pre>
         </div>
       `;
     }
