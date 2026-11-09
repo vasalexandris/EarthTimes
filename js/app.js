@@ -519,23 +519,24 @@ window.closeMapWikiOverlay = UIModule.closeMapWikiOverlay;
 window.toggleWikiReaderLanguage = UIModule.toggleWikiReaderLanguage;
 window.openDeepDiveWikiReader = UIModule.openDeepDiveWikiReader;
 window.translateWikiReaderInPlace = UIModule.translateWikiReaderInPlace;
+window.openMapStreetView = UIModule.openMapStreetView;
+window.closeMapStreetViewOverlay = UIModule.closeMapStreetViewOverlay;
 
-// Google Street View Integration
+// Google Street View Integration (In-Map Overlay)
 export function openCurrentStreetView() {
   const entity = getCurrentEntity();
   let coords = null;
+  let title = '';
   if (entity && entity.coords && Array.isArray(entity.coords)) {
     coords = entity.coords;
+    title = entity.name ? `Street View: ${entity.name}` : '';
   } else if (MapModule.getMapCenter) {
     const center = MapModule.getMapCenter();
     if (center) coords = [center.lat, center.lng];
   }
 
   if (coords && coords.length >= 2) {
-    const lat = coords[0];
-    const lng = coords[1];
-    const streetViewUrl = `https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=${lat},${lng}`;
-    window.open(streetViewUrl, '_blank', 'noopener,noreferrer');
+    UIModule.openMapStreetView(coords[0], coords[1], title);
   }
 }
 window.openCurrentStreetView = openCurrentStreetView;

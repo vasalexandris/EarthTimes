@@ -574,6 +574,34 @@
             <!-- Sandboxed reader frame inside the map container -->
             <iframe id="mapWikiIframe" class="w-full flex-1 border-0 bg-[#0b0f19] hidden" sandbox="allow-same-origin allow-scripts" title="Wikipedia Article Reader"></iframe>
           </div>
+
+          <!-- IN-MAP GOOGLE STREET VIEW OVERLAY (Takes exact map canvas dimensions) -->
+          <div id="mapStreetViewOverlay" class="absolute inset-0 z-30 bg-slate-950 flex flex-col hidden">
+            <div class="bg-slate-900 border-b border-slate-800 px-3 sm:px-4 py-2.5 flex items-center justify-between gap-2 shrink-0 shadow-lg">
+              <div class="flex items-center gap-2 min-w-0">
+                <span class="px-2 py-0.5 rounded bg-amber-500/20 text-amber-400 border border-amber-500/30 text-xs font-bold flex items-center gap-1.5 shrink-0">
+                  <i class="fa-solid fa-street-view"></i> Street View
+                </span>
+                <h3 id="streetViewOverlayTitle" class="text-xs sm:text-sm font-bold text-white truncate max-w-[150px] sm:max-w-xs md:max-w-md">Περιήγηση Δρόμων</h3>
+                <span id="streetViewOverlayCoords" class="hidden md:inline-block px-1.5 py-0.5 rounded text-[10px] font-mono bg-slate-800 text-slate-400 border border-slate-700"></span>
+              </div>
+              <div class="flex items-center gap-2 shrink-0">
+                <a id="streetViewDirectLink" href="#" target="_blank" rel="noopener noreferrer" class="hidden sm:inline-flex px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-amber-300 hover:text-white text-xs font-medium border border-slate-700 transition items-center gap-1.5" title="Άνοιγμα στο Google Maps σε νέα καρτέλα">
+                  <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                  <span>Google Maps ↗</span>
+                </a>
+                <button onclick="closeMapStreetViewOverlay()" class="px-3 py-1 rounded-lg bg-sky-600 hover:bg-sky-500 text-white text-xs font-bold transition flex items-center gap-1.5 shadow">
+                  <i class="fa-solid fa-arrow-left"></i>
+                  <span>✕ Επιστροφή στον Χάρτη</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Sandboxed Street View frame inside the map container -->
+            <div class="flex-1 relative w-full h-full bg-slate-950">
+              <iframe id="mapStreetViewIframe" class="w-full h-full border-0 bg-slate-950" loading="lazy" allowfullscreen referrerpolicy="strict-origin-when-cross-origin" title="Google Street View"></iframe>
+            </div>
+          </div>
         </div>
 
         <!-- SOLID BOTTOM BAR: TIME SLIDER (UNDER THE MAP CANVAS - NO OVERLAPPING!) -->

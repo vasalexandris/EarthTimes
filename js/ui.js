@@ -32,12 +32,14 @@ export function syncMapFloatingControlsVisibility() {
   const videoOverlay = document.getElementById('mapVideoOverlay');
   const deepDiveOverlay = document.getElementById('mapDeepDiveOverlay');
   const wikiOverlay = document.getElementById('mapWikiOverlay');
+  const streetViewOverlay = document.getElementById('mapStreetViewOverlay');
 
   const isVideoOpen = videoOverlay && !videoOverlay.classList.contains('hidden');
   const isDeepDiveOpen = deepDiveOverlay && !deepDiveOverlay.classList.contains('hidden');
   const isWikiOpen = wikiOverlay && !wikiOverlay.classList.contains('hidden');
+  const isStreetViewOpen = streetViewOverlay && !streetViewOverlay.classList.contains('hidden');
 
-  if (isVideoOpen || isDeepDiveOpen || isWikiOpen) {
+  if (isVideoOpen || isDeepDiveOpen || isWikiOpen || isStreetViewOpen) {
     container.classList.add('hidden');
   } else {
     container.classList.remove('hidden');
@@ -54,14 +56,20 @@ export function openCityVideo(cityId, preferredType = 'drone') {
   const title = document.getElementById('videoOverlayTitle');
   const deepDiveOverlay = document.getElementById('mapDeepDiveOverlay');
   const wikiOverlay = document.getElementById('mapWikiOverlay');
+  const streetViewOverlay = document.getElementById('mapStreetViewOverlay');
   const directLink = document.getElementById('videoDirectLink');
   const typeSelector = document.getElementById('videoTypeSelector');
 
   if (!overlay || !iframe) return;
 
-  // Close deep dive and wiki overlay if open
+  // Close other overlays if open
   if (deepDiveOverlay) deepDiveOverlay.classList.add('hidden');
   if (wikiOverlay) wikiOverlay.classList.add('hidden');
+  if (streetViewOverlay) {
+    const svFrame = document.getElementById('mapStreetViewIframe');
+    if (svFrame) svFrame.src = 'about:blank';
+    streetViewOverlay.classList.add('hidden');
+  }
 
   const youtubeId = vid?.youtubeId || '54nbsW6jYN4';
   const videoTitle = vid?.title || `Περιήγηση 4K: ${cityId}`;
@@ -169,8 +177,9 @@ export async function openMapWikiReader(queryOrTitle, lang = 'el', fallbackEnQue
 
   if (!overlay || !iframe) return;
 
-  // Close video overlay if playing
+  // Close video overlay and street view overlay if open
   closeMapVideoOverlay();
+  closeMapStreetViewOverlay();
 
   overlay.classList.remove('hidden');
   syncMapFloatingControlsVisibility();
@@ -262,6 +271,53 @@ export function closeMapWikiOverlay() {
   syncMapFloatingControlsVisibility();
 }
 
+/**
+ * In-Map Embedded Google Street View Overlay
+ * Opens street view / 360 viewer inside the map canvas without external navigation
+ */
+export function openMapStreetView(lat, lng, title = '') {
+  const overlay = document.getElementById('mapStreetViewOverlay');
+  const iframe = document.getElementById('mapStreetViewIframe');
+  const titleEl = document.getElementById('streetViewOverlayTitle');
+  const coordsEl = document.getElementById('streetViewOverlayCoords');
+  const directLink = document.getElementById('streetViewDirectLink');
+
+  if (!overlay || !iframe) return;
+
+  // Close other overlays
+  closeMapVideoOverlay();
+  closeMapWikiOverlay();
+  closeDeepDiveOverlay();
+
+  if (titleEl) {
+    titleEl.innerText = title || 'Περιήγηση Δρόμων (Street View)';
+  }
+  if (coordsEl && lat !== undefined && lng !== undefined) {
+    coordsEl.innerText = `${Number(lat).toFixed(4)}, ${Number(lng).toFixed(4)}`;
+  }
+  if (directLink && lat !== undefined && lng !== undefined) {
+    directLink.href = `https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=${lat},${lng}`;
+  }
+
+  // Google interactive embed centered on query or coords with zoom 17
+  const queryParam = encodeURIComponent(title ? `${title}` : `${lat},${lng}`);
+  iframe.src = `https://www.google.com/maps/embed?origin=mfe&pb=!1m3!2m1!1s${queryParam}!6i17`;
+
+  overlay.classList.remove('hidden');
+  syncMapFloatingControlsVisibility();
+}
+
+export function closeMapStreetViewOverlay() {
+  const overlay = document.getElementById('mapStreetViewOverlay');
+  const iframe = document.getElementById('mapStreetViewIframe');
+  if (iframe) iframe.src = 'about:blank';
+  if (overlay) overlay.classList.add('hidden');
+  syncMapFloatingControlsVisibility();
+  if (window.MapModule && typeof window.MapModule.invalidateMapSize === 'function') {
+    window.MapModule.invalidateMapSize();
+  }
+}
+
 export function openDeepDiveWikiReader() {
   if (activeDeepDiveData) {
     const title = activeDeepDiveData.wikiQuery || activeDeepDiveData.title;
@@ -282,9 +338,10 @@ export async function openDeepDive(keyOrTitle, fallbackSummary = '', contextEnti
 
   if (!overlay || !content) return;
 
-  // Close video overlay and wiki overlay if open
+  // Close video overlay, wiki overlay, and street view overlay if open
   closeMapVideoOverlay();
   closeMapWikiOverlay();
+  closeMapStreetViewOverlay();
 
   if (title) title.innerText = data.title;
   if (badge) badge.innerText = data.badge || data.category;
@@ -1337,7 +1394,11 @@ export function renderTabContent(tabId, entity, activeYear = null, activeSpots =
         </div>
 
         <div class="space-y-2.5 mt-3">
-          ${items.map(item => `
+          ${items.map(item => {
+            const matchedPoi = (entity.pois || []).find(p => p.name === item.title || (item.title && p.name && (item.title.toLowerCase().includes(p.name.toLowerCase()) || p.name.toLowerCase().includes(item.title.toLowerCase()))));
+            const itemCoords = matchedPoi?.coords || entity.coords || [37.9715, 23.7257];
+            const searchPlace = `${item.title}, ${entity.name}`;
+            return `
             <div class="p-3.5 bg-slate-800/30 hover:bg-slate-800/80 hover:border-sky-500/50 transition border border-slate-700/40 rounded-xl">
               <div class="flex items-start justify-between gap-2 mb-1.5">
                 <div>
@@ -1348,18 +1409,23 @@ export function renderTabContent(tabId, entity, activeYear = null, activeSpots =
                 </div>
               </div>
               <p class="text-xs text-slate-300 leading-relaxed mb-3">${item.desc}</p>
-              <div class="flex items-center gap-2 pt-2 border-t border-slate-800/70">
+              <div class="flex flex-wrap items-center gap-2 pt-2 border-t border-slate-800/70">
                 <button onclick="window.openDeepDive('${escapeStr(item.title)}', '${escapeStr(item.desc)}', '${escapeStr(entity.name)}')" class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-amber-300 hover:text-white border border-slate-700 text-[11px] font-bold transition flex items-center gap-1.5 shadow">
                   <i class="fa-solid fa-wand-magic-sparkles text-amber-400"></i>
                   <span>Ανάλυση AI</span>
                 </button>
                 <button onclick="window.openMapWikiReader('${escapeStr(item.wiki || item.title)}', 'el')" class="px-2.5 py-1 rounded-lg bg-sky-950/80 hover:bg-sky-900 text-sky-300 hover:text-white border border-sky-700/50 text-[11px] font-bold transition flex items-center gap-1.5 shadow">
                   <i class="fa-brands fa-wikipedia-w"></i>
-                  <span>Wikipedia στον Χάρτη</span>
+                  <span>Wikipedia</span>
+                </button>
+                <button onclick="window.openMapStreetView(${itemCoords[0]}, ${itemCoords[1]}, '${escapeStr(searchPlace)}')" class="px-2.5 py-1 rounded-lg bg-amber-500/15 hover:bg-amber-500/25 text-amber-300 hover:text-white border border-amber-500/30 text-[11px] font-bold transition flex items-center gap-1.5 shadow" title="Περιήγηση Street View στον Χάρτη">
+                  <i class="fa-solid fa-street-view text-amber-400"></i>
+                  <span>Street View</span>
                 </button>
               </div>
             </div>
-          `).join('')}
+          `;
+          }).join('')}
         </div>
       </div>
     `;

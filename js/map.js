@@ -285,8 +285,10 @@ export function renderCityPois(city, currentPoiFilter = 'all', onPoiMoreClick) {
       </div>
       <div class="font-bold text-sm text-slate-900 mb-1 leading-tight">${poi.name}</div>
       <div class="text-xs text-slate-600 mb-2 leading-relaxed">${poi.desc}</div>
-      <div class="flex items-center justify-between text-[11px] pt-1.5 border-t border-slate-200">
-        <span class="text-slate-500 font-serif italic">${city.name}</span>
+      <div class="flex items-center justify-between gap-2 text-[11px] pt-2 border-t border-slate-200">
+        <button onclick="window.openMapStreetView(${poi.coords[0]}, ${poi.coords[1]}, '${poi.name.replace(/'/g, "\\'")}')" class="px-2 py-1 rounded bg-amber-500/20 hover:bg-amber-500/30 text-amber-900 border border-amber-500/40 text-[11px] font-bold flex items-center gap-1 transition shadow-sm cursor-pointer" title="Περιήγηση Street View στον Χάρτη">
+          <i class="fa-solid fa-street-view text-amber-700"></i> Street View
+        </button>
         <span class="poi-more-link text-sky-700 font-semibold cursor-pointer hover:underline">Περισσότερα &rarr;</span>
       </div>
     `;

@@ -329,39 +329,9 @@ function buildReaderDocument(rawHtml, lang, currentTitle) {
     </script>
   `;
 
-  let englishBanner = '';
-  if (lang === 'en') {
-    englishBanner = `
-      <div id="et-translate-banner" style="background:rgba(14,165,233,0.12);border:1px solid rgba(56,189,248,0.3);border-radius:12px;padding:12px 16px;margin-bottom:24px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;">
-        <div style="display:flex;align-items:center;gap:10px;">
-          <span style="font-size:22px;">🇬🇧</span>
-          <div>
-            <strong style="color:#f8fafc;font-size:13px;display:block;">Αγγλικό Άρθρο Wikipedia (English)</strong>
-            <span style="color:#94a3b8;font-size:12px;">Δεν βρέθηκε αυτούσιο ελληνικό λήμμα. Διαβάστε την αυτόματη μετάφραση με 1 κλικ!</span>
-          </div>
-        </div>
-        <div style="display:flex;align-items:center;gap:8px;">
-          <button id="et-btn-translate-auto" onclick="window.translateInPlace()" style="background:#0284c7;color:#fff;border:none;padding:7px 14px;border-radius:8px;font-size:12px;font-weight:700;cursor:pointer;display:flex;align-items:center;gap:6px;box-shadow:0 2px 8px rgba(2,132,199,0.4);">
-            🌐 Μετάφραση στα Ελληνικά
-          </button>
-          <a href="https://translate.google.com/translate?sl=en&tl=el&u=https://en.wikipedia.org/wiki/${encodeURIComponent(currentTitle)}" target="_blank" rel="noopener noreferrer" style="background:#1e293b;color:#38bdf8;border:1px solid #334155;padding:7px 12px;border-radius:8px;font-size:12px;font-weight:600;text-decoration:none;display:flex;align-items:center;gap:6px;">
-            Google Translate ↗
-          </a>
-        </div>
-      </div>
-    `;
-  }
-
   // Inject inside <head> if present, or prepend
-  let doc = rawHtml;
-  if (englishBanner && doc.includes('<body')) {
-    doc = doc.replace(/<body[^>]*>/i, `$&${englishBanner}`);
-  } else if (englishBanner) {
-    doc = englishBanner + doc;
+  if (rawHtml.includes('<head')) {
+    return rawHtml.replace(/<head[^>]*>/i, `$&${baseTag}${darkStyles}${linkInterceptor}`);
   }
-
-  if (doc.includes('<head')) {
-    return doc.replace(/<head[^>]*>/i, `$&${baseTag}${darkStyles}${linkInterceptor}`);
-  }
-  return `<!DOCTYPE html><html><head>${baseTag}${darkStyles}${linkInterceptor}</head><body>${englishBanner}${doc}</body></html>`;
+  return `<!DOCTYPE html><html><head>${baseTag}${darkStyles}${linkInterceptor}</head><body>${rawHtml}</body></html>`;
 }
