@@ -486,15 +486,19 @@ export function updateBreadcrumbs(scope, stateOrCountry, city) {
 }
 
 export function updateBaseLayerUI(activeKey) {
-  const layerNames = {
-    dark: 'Χάρτες - Dark',
-    satellite: 'Χάρτες - Δορυφόρος',
-    osm: 'Χάρτες - Πολιτικός',
-    topo: 'Χάρτες - Ανάγλυφο'
+  const layerMeta = {
+    dark: { name: 'Χάρτες - Dark', icon: 'fa-moon text-amber-400' },
+    satellite: { name: 'Χάρτες - Δορυφόρος', icon: 'fa-satellite text-emerald-400' },
+    osm: { name: 'Χάρτες - Πολιτικός', icon: 'fa-map text-sky-400' },
+    topo: { name: 'Χάρτες - Ανάγλυφο', icon: 'fa-mountain-sun text-teal-400' }
   };
   const activeLabel = document.getElementById('activeMapLayerName');
-  if (activeLabel && layerNames[activeKey]) {
-    activeLabel.innerText = layerNames[activeKey];
+  if (activeLabel && layerMeta[activeKey]) {
+    activeLabel.innerText = layerMeta[activeKey].name;
+  }
+  const activeIcon = document.getElementById('activeMapLayerIcon');
+  if (activeIcon && layerMeta[activeKey]) {
+    activeIcon.className = `fa-solid ${layerMeta[activeKey].icon}`;
   }
 }
 
@@ -930,6 +934,9 @@ export function getHistoricalContextForEra(entity, year) {
 }
 
 export function getCuratedGuideItems(entity) {
+  if (entity.guide?.items && Array.isArray(entity.guide.items) && entity.guide.items.length > 0) {
+    return entity.guide.items;
+  }
   const id = entity.id || '';
   if (id === 'kozani') {
     return [
@@ -1012,6 +1019,9 @@ export function getCuratedGuideItems(entity) {
 }
 
 export function getCuratedGastroItems(entity) {
+  if (entity.gastro?.items && Array.isArray(entity.gastro.items) && entity.gastro.items.length > 0) {
+    return entity.gastro.items;
+  }
   const id = entity.id || '';
   if (id === 'kozani') {
     return [
@@ -1089,6 +1099,9 @@ export function getCuratedGastroItems(entity) {
 }
 
 export function getCuratedEcoItems(entity) {
+  if (entity.eco?.items && Array.isArray(entity.eco.items) && entity.eco.items.length > 0) {
+    return entity.eco.items;
+  }
   const id = entity.id || '';
   if (id === 'kozani') {
     return [

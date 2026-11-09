@@ -1,0 +1,68 @@
+{
+  "id": "spot_brandenburg_gate",
+  "name": "Πύλη του Βραδεμβούργου & Pariser Platz",
+  "englishName": "Brandenburg Gate & Pariser Platz",
+  "cityId": "berlin",
+  "cityName": "Βερολίνο",
+  "category": "history",
+  "coords": [52.5163, 13.3777],
+  "address": "Pariser Platz, 10117 Berlin, Γερμανία",
+  "author": "Ιστορικό Αρχείο Βερολίνου / EarthTimes",
+  "authorType": "curator",
+  "verified": true,
+  "summary": "Το εμβληματικό νεοκλασικό σύμβολο της γερμανικής ενότητας και της ευρωπαϊκής ιστορίας, μάρτυρας των μεγαλύτερων γεγονότων του 20ού και 21ου αιώνα.",
+  "eras": [
+    {
+      "id": "era-1791",
+      "year": 1791,
+      "yearRange": "1788 - 1791",
+      "title": "Η Κατασκευή της Πύλης της Ειρήνης",
+      "category": "history",
+      "author": "Carl Gotthard Langhans Archive",
+      "authorType": "curator",
+      "verified": true,
+      "content": "Ανεγέρθηκε με εντολή του βασιλιά Φρειδερίκου Γουλιέλμου Β' της Πρωσίας ως πύλη ειρήνης, εμπνευσμένη από τα Προπύλαια της Ακρόπολης των Αθηνών. Στην κορυφή τοποθετήθηκε το περίφημο Τέθριππο (Quadriga) με τη θεά της Νίκης.",
+      "imageUrl": "https://images.unsplash.com/photo-1599946347371-68eb71b16afc?auto=format&fit=crop&w=1200&q=80",
+      "imageCaption": "Το νεοκλασικό μνημείο των Προπυλαίων του Βερολίνου"
+    },
+    {
+      "id": "era-1935",
+      "year": 1935,
+      "yearRange": "1920 - 1945",
+      "title": "Η Pariser Platz του Μεσοπολέμου & οι Πληγές του Πολέμου",
+      "category": "history",
+      "author": "Landesarchiv Berlin",
+      "authorType": "curator",
+      "verified": true,
+      "content": "Η Pariser Platz ήταν το κομψό κέντρο του Βερολίνου με το ιστορικό ξενοδοχείο Adlon και τις πρεσβείες. Στο τέλος του Β' Παγκοσμίου Πολέμου η πύλη υπέστη σοβαρές ζημιές και το Τέθριππο καταστράφηκε σχεδόν ολοσχερώς.",
+      "imageUrl": "https://images.unsplash.com/photo-1560969184-10fe8719e047?auto=format&fit=crop&w=1200&q=80",
+      "imageCaption": "Ιστορικό αρχείο της πλατείας"
+    },
+    {
+      "id": "era-1989",
+      "year": 1989,
+      "yearRange": "1961 - 1989",
+      "title": "Στη Νεκρή Ζώνη του Τείχους & η Πτώση",
+      "category": "culture",
+      "author": "Stiftung Berliner Mauer",
+      "authorType": "curator",
+      "verified": true,
+      "content": "Από το 1961 έως το 1989 η Πύλη βρισκόταν αποκλεισμένη μέσα στη «νεκρή ζώνη» του Τείχους του Βερολίνου. Στις 22 Δεκεμβρίου 1989 άνοιξε πανηγυρικά, αποτελώντας το παγκόσμιο σύμβολο της επανένωσης της Ευρώπης.",
+      "imageUrl": "https://images.unsplash.com/photo-1587330979470-3595ac045ab0?auto=format&fit=crop&w=1200&q=80",
+      "imageCaption": "Η πτώση του Τείχους και η επανένωση"
+    },
+    {
+      "id": "era-2026",
+      "year": 2026,
+      "yearRange": "2000 - 2026",
+      "title": "Παγκόσμιος Φάρος Ειρήνης & Πολιτισμού",
+      "category": "nature",
+      "author": "EarthTimes Editorial",
+      "authorType": "curator",
+      "verified": true,
+      "content": "Σήμερα είναι πλήρως πεζοδρομημένη, κέντρο πολιτιστικών εκδηλώσεων, συναυλιών και δημοκρατικών συγκεντρώσεων που επισκέπτονται εκατομμύρια άνθρωποι από όλο τον πλανήτη κάθε χρόνο.",
+      "imageUrl": "https://images.unsplash.com/photo-1560969184-10fe8719e047?auto=format&fit=crop&w=1200&q=80",
+      "imageCaption": "Η σύγχρονη πεζοδρομημένη Pariser Platz"
+    }
+  ]
+}

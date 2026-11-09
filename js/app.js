@@ -411,9 +411,12 @@ export function toggleMapsDropdown(e) {
 }
 
 export function selectMapLayer(layerKey) {
-  setMapLayer(layerKey);
-  const mapsMenu = document.getElementById('mapsDropdownMenu');
-  if (mapsMenu) mapsMenu.classList.add('hidden');
+  try {
+    setMapLayer(layerKey);
+  } finally {
+    const mapsMenu = document.getElementById('mapsDropdownMenu');
+    if (mapsMenu) mapsMenu.classList.add('hidden');
+  }
 }
 
 export function toggleSpotsDropdown(e) {
@@ -425,9 +428,12 @@ export function toggleSpotsDropdown(e) {
 }
 
 export function selectPoiCategory(category) {
-  togglePoiCategory(category);
-  const spotsMenu = document.getElementById('spotsDropdownMenu');
-  if (spotsMenu) spotsMenu.classList.add('hidden');
+  try {
+    togglePoiCategory(category);
+  } finally {
+    const spotsMenu = document.getElementById('spotsDropdownMenu');
+    if (spotsMenu) spotsMenu.classList.add('hidden');
+  }
 }
 
 // Close dropdowns on outside click

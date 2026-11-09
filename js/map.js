@@ -143,7 +143,7 @@ export function setOnMapRightClickHandler(callback) {
 }
 
 export function switchBaseLayer(layerKey) {
-  if (!map || !BASE_LAYERS[layerKey]) return;
+  if (!map || !BASE_LAYERS[layerKey]) return layerKey;
 
   if (activeBaseLayer) {
     map.removeLayer(activeBaseLayer);
@@ -152,11 +152,6 @@ export function switchBaseLayer(layerKey) {
   const config = BASE_LAYERS[layerKey];
   activeBaseLayer = L.tileLayer(config.url, config.options).addTo(map);
   currentBaseLayerKey = layerKey;
-
-  // Ensure marker layers remain on top
-  if (cityMarkersGroup) cityMarkersGroup.bringToFront();
-  if (poiMarkersGroup) poiMarkersGroup.bringToFront();
-  if (timeCapsuleMarkersGroup) timeCapsuleMarkersGroup.bringToFront();
 
   return currentBaseLayerKey;
 }
