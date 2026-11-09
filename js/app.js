@@ -8,6 +8,7 @@ import { loadWorldData, loadCountryData, loadStateData } from './data-service.js
 import * as MapModule from './map.js';
 import * as UIModule from './ui.js';
 import * as TimeMachine from './time-machine.js';
+import * as NavigatorModule from './navigator.js';
 
 // Application State
 let worldData = null;
@@ -176,6 +177,7 @@ export function flyToWorld() {
   UIModule.updateStatusBadge("Προβολή: Πλανήτης Γη (World Overview)");
   UIModule.updateBreadcrumbs('world');
   UIModule.updateJumpSelect('world');
+  NavigatorModule.updateNavigatorBtnLabel('world');
 
   MapModule.flyToWorld();
   MapModule.toggleStateHighlight(false);
@@ -216,6 +218,7 @@ export async function flyToCountry(countryId = 'greece') {
   UIModule.updateStatusBadge(`Πτήση: ${country.name}`);
   UIModule.updateBreadcrumbs('country', country);
   UIModule.updateJumpSelect(`country:${country.id}`);
+  NavigatorModule.updateNavigatorBtnLabel(`country:${country.id}`, `${country.name}`);
 
   MapModule.flyToCoords(country.coords, country.zoom, 1.6);
   MapModule.toggleStateHighlight(false);
@@ -324,6 +327,7 @@ export async function flyToCity(cityId) {
   UIModule.updateStatusBadge(`Πτήση: ${city.name} (${city.englishName})`);
   UIModule.updateBreadcrumbs('city', parent, city);
   UIModule.updateJumpSelect(`city:${city.id}`);
+  NavigatorModule.updateNavigatorBtnLabel(`city:${city.id}`, `📍 ${city.name}`);
 
   MapModule.flyToCoords(city.coords, city.zoom, 1.4);
   MapModule.toggleStateHighlight(false);
@@ -577,6 +581,9 @@ async function init() {
   try {
     // 1. Update Today's Date in UI
     UIModule.updateCurrentDate();
+
+    // Initialize Hierarchical Continent Navigator
+    NavigatorModule.initContinentNavigator();
 
     // 2. Load World, Massachusetts, and Time Machine core data
     const [wData, maData, _tm] = await Promise.all([

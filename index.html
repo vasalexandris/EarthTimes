@@ -231,8 +231,38 @@
           <span id="bc-city" class="text-amber-400 font-semibold hidden truncate max-w-[120px] md:max-w-none">Κοζάνη</span>
         </nav>
 
-        <!-- Hierarchical Quick Jump Menu -->
-        <select id="quickJumpSelect" onchange="handleJumpChange(this.value)" class="bg-slate-800 border border-slate-700 text-slate-200 rounded-lg px-2.5 py-1.5 focus:ring-2 focus:ring-sky-500 outline-none text-xs md:text-sm cursor-pointer max-w-[170px] sm:max-w-none">
+        <!-- Hierarchical Cascading Navigator (Continents -> Countries -> Cities) -->
+        <div id="continentNavContainer" class="relative">
+          <button id="continentNavBtn" onclick="window.toggleContinentNavDropdown(event)" class="bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 rounded-xl px-3 py-1.5 focus:ring-2 focus:ring-sky-500 outline-none text-xs md:text-sm font-semibold flex items-center gap-2 transition shadow cursor-pointer">
+            <i class="fa-solid fa-earth-americas text-sky-400"></i>
+            <span id="continentNavBtnLabel" class="truncate max-w-[120px] sm:max-w-[180px]">🌍 Ήπειροι & Πόλεις</span>
+            <i class="fa-solid fa-chevron-down text-[10px] text-slate-400 transition-transform duration-200" id="continentNavArrow"></i>
+          </button>
+
+          <!-- Dropdown Mega-Panel -->
+          <div id="continentNavDropdown" class="hidden absolute right-0 top-full mt-2 w-80 sm:w-96 max-h-[75vh] bg-slate-900/95 backdrop-blur-xl border border-slate-700/80 rounded-2xl shadow-2xl z-50 flex flex-col overflow-hidden text-xs">
+            <!-- Search & Quick Navigation Header -->
+            <div class="p-3 border-b border-slate-800 bg-slate-900/90 shrink-0">
+              <div class="relative">
+                <i class="fa-solid fa-magnifying-glass absolute left-3 top-2.5 text-slate-500 text-xs"></i>
+                <input id="continentNavSearch" type="text" placeholder="Αναζήτηση χώρας ή πόλης..." oninput="window.filterContinentNav(this.value)" class="w-full pl-8 pr-3 py-1.5 bg-slate-950 border border-slate-800 rounded-xl text-xs text-white placeholder-slate-500 outline-none focus:border-sky-500 transition">
+              </div>
+              <button onclick="window.selectNavTarget('world', '🌍 Πλανήτης Γη')" class="w-full mt-2 px-3 py-1.5 rounded-xl bg-slate-800/80 hover:bg-slate-800 text-slate-200 hover:text-white flex items-center justify-between transition border border-slate-700/50">
+                <span class="flex items-center gap-2 font-bold"><i class="fa-solid fa-earth-americas text-emerald-400"></i> Πλανήτης Γη (World Overview)</span>
+                <span class="text-[10px] text-slate-400 font-mono">World</span>
+              </button>
+            </div>
+
+            <!-- Instant Search Results (Hidden by default) -->
+            <div id="navSearchResults" class="hidden flex-1 overflow-y-auto p-2 divide-y divide-slate-800/60 custom-scrollbar"></div>
+
+            <!-- Hierarchical Tree (Continents -> Countries -> Cities) -->
+            <div id="navHierarchyTree" class="flex-1 overflow-y-auto p-2 space-y-1.5 custom-scrollbar"></div>
+          </div>
+        </div>
+
+        <!-- Hidden Fallback Quick Jump Select -->
+        <select id="quickJumpSelect" onchange="handleJumpChange(this.value)" class="hidden bg-slate-800 border border-slate-700 text-slate-200 rounded-lg px-2.5 py-1.5 focus:ring-2 focus:ring-sky-500 outline-none text-xs md:text-sm cursor-pointer max-w-[170px] sm:max-w-none">
           <optgroup label="🌍 Παγκόσμιο Επίπεδο">
             <option value="world" selected>🌍 Πλανήτης Γη (World Overview)</option>
           </optgroup>
