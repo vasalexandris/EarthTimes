@@ -299,9 +299,15 @@ export function openMapStreetView(lat, lng, title = '') {
     directLink.href = `https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=${lat},${lng}`;
   }
 
-  // Google interactive embed centered on query or coords with zoom 17
-  const queryParam = encodeURIComponent(title ? `${title}` : `${lat},${lng}`);
-  iframe.src = `https://www.google.com/maps/embed?origin=mfe&pb=!1m3!2m1!1s${queryParam}!6i17`;
+  // If a Google Maps API Key is provided by the user in settings, load the native 360° Street View embed directly
+  const savedApiKey = localStorage.getItem('earthtimes_google_maps_key') || window.EARTH_TIMES_GOOGLE_API_KEY;
+  if (savedApiKey && lat !== undefined && lng !== undefined) {
+    iframe.src = `https://www.google.com/maps/embed/v1/streetview?key=${savedApiKey}&location=${lat},${lng}&heading=210&pitch=10&fov=85`;
+  } else {
+    // Google interactive embed centered on query or coords with zoom 17
+    const queryParam = encodeURIComponent(title ? `${title}` : `${lat},${lng}`);
+    iframe.src = `https://www.google.com/maps/embed?origin=mfe&pb=!1m3!2m1!1s${queryParam}!6i17`;
+  }
 
   overlay.classList.remove('hidden');
   syncMapFloatingControlsVisibility();
