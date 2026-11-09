@@ -15,9 +15,8 @@ let activeSpotId = null;
 // User Identity & Profile State
 let currentUser = {
   name: 'Βασίλης Αλεξανδρής',
-  role: 'citizen', // 'citizen' | 'official' | 'guest'
-  title: 'Πιστοποιημένος Κάτοικος Κοζάνης',
-  verified: true
+  role: 'member',
+  title: 'Κάτοικος Κοζάνης'
 };
 
 export async function initTimeMachine() {
@@ -70,15 +69,7 @@ export function updateUserBadgeUI() {
   const nameEl = document.getElementById('userDisplayName');
   const roleEl = document.getElementById('userRoleBadge');
   if (nameEl) nameEl.innerText = currentUser.name;
-  if (roleEl) {
-    if (currentUser.role === 'official') {
-      roleEl.innerText = '🏛️ Επίσημος Φορέας';
-      roleEl.className = 'px-2 py-0.5 rounded-full text-[10px] font-bold bg-sky-900/80 text-sky-300 border border-sky-600/50';
-    } else {
-      roleEl.innerText = '👤 Πιστοποιημένος Πολίτης';
-      roleEl.className = 'px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-900/80 text-emerald-300 border border-emerald-600/50';
-    }
-  }
+  if (roleEl) roleEl.classList.add('hidden');
 }
 
 export function getTimeCapsules() {
@@ -290,17 +281,17 @@ export function renderTimeCapsuleModalContent(spot, activeChronicle) {
             <h3 class="text-lg font-bold text-white">${activeChronicle.title}</h3>
           </div>
 
-          <!-- Official vs Citizen Badge -->
+          <!-- Archive / Story Badge -->
           <div class="shrink-0">
             ${isOfficial ? `
               <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-bold bg-sky-950/80 text-sky-300 border border-sky-600/50">
-                <i class="fa-solid fa-shield-halved text-sky-400 text-[11px]"></i>
+                <i class="fa-solid fa-landmark text-sky-400 text-[11px]"></i>
                 <span>Επίσημο Αρχείο / Φορέας</span>
               </span>
             ` : `
-              <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-bold bg-emerald-950/80 text-emerald-300 border border-emerald-600/50">
-                <i class="fa-solid fa-user-group text-emerald-400 text-[11px]"></i>
-                <span>Συλλογική Μνήμη Πολίτη</span>
+              <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-bold bg-amber-950/80 text-amber-300 border border-amber-600/50">
+                <i class="fa-solid fa-clock-rotate-left text-amber-400 text-[11px]"></i>
+                <span>Ιστορική Αφήγηση</span>
               </span>
             `}
           </div>
@@ -313,7 +304,7 @@ export function renderTimeCapsuleModalContent(spot, activeChronicle) {
             <i class="fa-solid fa-feather-pointed text-amber-400"></i>
             <span>Καταγράφηκε από: <strong class="text-slate-200">${activeChronicle.authorName}</strong></span>
           </div>
-          ${activeChronicle.verified ? `<span class="text-emerald-400 font-semibold flex items-center gap-1"><i class="fa-solid fa-circle-check text-[10px]"></i> Επαληθευμένη Ιστορία</span>` : ''}
+          <span class="text-sky-400 font-semibold flex items-center gap-1"><i class="fa-solid fa-check text-[10px]"></i> Ιστορικό Αρχείο</span>
         </div>
       </div>
 
@@ -497,6 +488,11 @@ export function submitNewSpot(event) {
   // Trigger map refresh callback if available
   if (window.renderCurrentTimeCapsules) {
     window.renderCurrentTimeCapsules();
+  }
+
+  // Smoothly fly to the newly created spot coordinates
+  if (window.flyToCoordinates) {
+    window.flyToCoordinates(lat, lng, 16);
   }
 
   // Open the newly created spot immediately!

@@ -211,10 +211,9 @@
           <span id="currentDateDisplay">Σήμερα</span>
         </div>
 
-        <button onclick="openUserProfileModal()" title="Διαχείριση Προφίλ & Πιστοποίησης" class="flex items-center gap-2 px-3 py-1 rounded-full bg-slate-800/80 hover:bg-slate-750 border border-slate-700 text-xs text-slate-200 transition">
+        <button onclick="openUserProfileModal()" title="Διαχείριση Προφίλ" class="flex items-center gap-2 px-3 py-1 rounded-full bg-slate-800/80 hover:bg-slate-750 border border-slate-700 text-xs text-slate-200 transition">
           <span class="h-2 w-2 rounded-full bg-emerald-400"></span>
           <span id="userDisplayName">Βασίλης Αλεξανδρής</span>
-          <span id="userRoleBadge" class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-900/80 text-emerald-300 border border-emerald-600/50">👤 Πιστοποιημένος Πολίτης</span>
         </button>
       </div>
 
@@ -332,7 +331,7 @@
             <div class="relative" id="mapsDropdownContainer">
               <button onclick="toggleMapsDropdown(event)" id="mapsDropdownBtn" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-750 text-slate-200 border border-slate-700 font-semibold text-xs flex items-center gap-2 shadow transition">
                 <i class="fa-solid fa-layer-group text-sky-400"></i>
-                <span id="activeMapLayerName">Χάρτες (Dark)</span>
+                <span id="activeMapLayerName">Χάρτες - Dark</span>
                 <i class="fa-solid fa-chevron-down text-[10px] text-slate-400"></i>
               </button>
               <!-- Maps Dropdown Menu -->
@@ -396,7 +395,7 @@
           <div id="map" class="w-full h-full z-10"></div>
 
           <!-- FLOATING "+ Νέο Σημείο" IN TOP-RIGHT CORNER OF MAP -->
-          <div class="absolute top-3 right-3 z-[400]">
+          <div id="addSpotFloatingContainer" class="absolute top-3 right-3 z-20">
             <button id="toggleAddSpotBtn" onclick="toggleAddSpotMode()" title="Προσθήκη Νέου Σημείου (Κάντε κλικ ή δεξί κλικ στο χάρτη)" class="h-9 px-3.5 bg-gradient-to-r from-amber-500 to-amber-400 hover:from-amber-400 hover:to-amber-300 text-slate-950 rounded-xl font-bold text-xs flex items-center gap-2 shadow-xl hover:scale-105 transition border border-amber-300/60">
               <i class="fa-solid fa-plus text-sm"></i>
               <span>Νέο Σημείο</span>
@@ -602,19 +601,28 @@
 
         <!-- Categories Navigation Tabs -->
         <div class="flex border-b border-slate-800 shrink-0 bg-slate-900 text-xs sm:text-sm font-medium overflow-x-auto">
-          <button onclick="switchTab('geo')" id="tab-geo" class="tab-btn flex-1 py-2.5 px-3 border-b-2 border-sky-500 text-sky-400 font-semibold flex items-center justify-center gap-1.5 whitespace-nowrap bg-slate-800/30">
+          <button onclick="switchTab('geo')" id="tab-geo" class="tab-btn py-2.5 px-3 border-b-2 border-sky-500 text-sky-400 font-semibold flex items-center justify-center gap-1.5 whitespace-nowrap bg-slate-800/30">
             <i class="fa-solid fa-mountain"></i> Γεωγραφία
           </button>
-          <button onclick="switchTab('hist')" id="tab-hist" class="tab-btn flex-1 py-2.5 px-3 border-b-2 border-transparent text-slate-400 hover:text-slate-200 flex items-center justify-center gap-1.5 whitespace-nowrap">
+          <button onclick="switchTab('hist')" id="tab-hist" class="tab-btn py-2.5 px-3 border-b-2 border-transparent text-slate-400 hover:text-slate-200 flex items-center justify-center gap-1.5 whitespace-nowrap">
             <i class="fa-solid fa-landmark"></i> Ιστορία
           </button>
-          <button onclick="switchTab('demo')" id="tab-demo" class="tab-btn flex-1 py-2.5 px-3 border-b-2 border-transparent text-slate-400 hover:text-slate-200 flex items-center justify-center gap-1.5 whitespace-nowrap">
-            <i class="fa-solid fa-users"></i> Κοινωνία
-          </button>
-          <button onclick="switchTab('cult')" id="tab-cult" class="tab-btn flex-1 py-2.5 px-3 border-b-2 border-transparent text-slate-400 hover:text-slate-200 flex items-center justify-center gap-1.5 whitespace-nowrap">
+          <button onclick="switchTab('cult')" id="tab-cult" class="tab-btn py-2.5 px-3 border-b-2 border-transparent text-slate-400 hover:text-slate-200 flex items-center justify-center gap-1.5 whitespace-nowrap">
             <i class="fa-solid fa-palette"></i> Πολιτισμός
           </button>
-          <button onclick="switchTab('timeline')" id="tab-timeline" class="tab-btn flex-1 py-2.5 px-3 border-b-2 border-transparent text-amber-400 hover:text-amber-300 flex items-center justify-center gap-1.5 whitespace-nowrap relative">
+          <button onclick="switchTab('guide')" id="tab-guide" class="tab-btn py-2.5 px-3 border-b-2 border-transparent text-slate-400 hover:text-slate-200 flex items-center justify-center gap-1.5 whitespace-nowrap">
+            <i class="fa-solid fa-compass"></i> Αξιοθέατα
+          </button>
+          <button onclick="switchTab('gastro')" id="tab-gastro" class="tab-btn py-2.5 px-3 border-b-2 border-transparent text-slate-400 hover:text-slate-200 flex items-center justify-center gap-1.5 whitespace-nowrap">
+            <i class="fa-solid fa-utensils"></i> Γαστρονομία
+          </button>
+          <button onclick="switchTab('eco')" id="tab-eco" class="tab-btn py-2.5 px-3 border-b-2 border-transparent text-slate-400 hover:text-slate-200 flex items-center justify-center gap-1.5 whitespace-nowrap">
+            <i class="fa-solid fa-lightbulb"></i> Καινοτομία
+          </button>
+          <button onclick="switchTab('demo')" id="tab-demo" class="tab-btn py-2.5 px-3 border-b-2 border-transparent text-slate-400 hover:text-slate-200 flex items-center justify-center gap-1.5 whitespace-nowrap">
+            <i class="fa-solid fa-users"></i> Κοινωνία
+          </button>
+          <button onclick="switchTab('timeline')" id="tab-timeline" class="tab-btn py-2.5 px-3 border-b-2 border-transparent text-amber-400 hover:text-amber-300 flex items-center justify-center gap-1.5 whitespace-nowrap relative">
             <i class="fa-solid fa-clock-rotate-left"></i> 
             <span>Χρονολόγιο</span>
             <span id="timelineTabDot" class="w-2 h-2 rounded-full bg-amber-400 animate-ping absolute top-2 right-2 hidden"></span>
@@ -724,7 +732,7 @@
           <div>
             <label class="block text-xs font-semibold text-slate-300 mb-1">Τύπος Συνεισφέροντος</label>
             <select id="eraAuthorType" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-3 py-2 text-sm text-white focus:ring-2 focus:ring-sky-500 outline-none">
-              <option value="citizen">👤 Συλλογική Μνήμη (Πολίτης)</option>
+              <option value="citizen">👤 Συλλογική Μνήμη (Μέλος Κοινότητας)</option>
               <option value="official">🏛️ Επίσημος Φορέας (Δήμος / Μουσείο)</option>
             </select>
           </div>
@@ -856,7 +864,7 @@
             <div>
               <label class="block text-xs font-semibold text-slate-300 mb-1">Τύπος Συνεισφέροντος</label>
               <select id="newSpotAuthorType" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-3 py-2 text-sm text-white focus:ring-2 focus:ring-amber-500 outline-none">
-                <option value="citizen">👤 Συλλογική Μνήμη (Πολίτης)</option>
+                <option value="citizen">👤 Συλλογική Μνήμη (Μέλος Κοινότητας)</option>
                 <option value="official">🏛️ Επίσημος Φορέας (Δήμος / Μουσείο)</option>
               </select>
             </div>
@@ -915,21 +923,21 @@
         <div>
           <label class="block text-xs font-semibold text-slate-300 mb-1">Ιδιότητα / Ρόλος</label>
           <select id="profileRoleSelect" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-3 py-2 text-sm text-white focus:ring-2 focus:ring-sky-500 outline-none">
-            <option value="citizen">👤 Πιστοποιημένος Πολίτης / Κάτοικος</option>
-            <option value="official">🏛️ Επίσημος Εκπρόσωπος Δήμου / Ιστορικού Αρχείου</option>
+            <option value="citizen">👤 Μέλος Κοινότητας / Κάτοικος</option>
+            <option value="official">🏛️ Εκπρόσωπος Φορέα / Ιστορικού Αρχείου</option>
           </select>
         </div>
 
         <div>
           <label class="block text-xs font-semibold text-slate-300 mb-1">Τίτλος / Περιγραφή</label>
-          <input type="text" id="profileTitleInput" placeholder="π.χ. Κάτοικος Κοζάνης ή Υπεύθυνος Πολιτισμού" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-3 py-2 text-sm text-white focus:ring-2 focus:ring-sky-500 outline-none">
+          <input type="text" id="profileTitleInput" placeholder="π.χ. Κάτοικος Κοζάνης ή Ερευνητής" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-3 py-2 text-sm text-white focus:ring-2 focus:ring-sky-500 outline-none">
         </div>
 
         <div class="p-3 rounded-xl bg-slate-800/40 border border-slate-700 text-xs text-slate-400">
-          <div class="font-bold text-emerald-400 mb-1 flex items-center gap-1.5">
-            <i class="fa-solid fa-shield-check"></i> Πιστοποίηση Συνεισφορών:
+          <div class="font-bold text-sky-400 mb-1 flex items-center gap-1.5">
+            <i class="fa-solid fa-user-check"></i> Ταυτότητα Συντάκτη:
           </div>
-          Κάθε ιστορία ή φωτογραφία που προσθέτετε υπογράφεται με την ταυτότητα αυτή, διαφυλάσσοντας την αυθεντικότητα του παγκόσμιου ημερολογίου.
+          Κάθε ιστορία ή φωτογραφία που προσθέτετε συνοδεύεται από την υπογραφή αυτή, διαφυλάσσοντας την αξιοπιστία του παγκόσμιου αρχείου.
         </div>
 
         <div class="flex items-center justify-end gap-2 pt-2">

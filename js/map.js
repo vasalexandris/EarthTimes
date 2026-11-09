@@ -374,6 +374,10 @@ export function flyToUSA() {
   flyToCoords([39.8283, -98.5795], 4.3, 1.8);
 }
 
+export function flyToCoordinates(lat, lng, zoom = 16) {
+  flyToCoords([lat, lng], zoom, 1.8);
+}
+
 export function getMapInstance() {
   return map;
 }

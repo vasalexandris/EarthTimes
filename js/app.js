@@ -124,12 +124,8 @@ export function setMapLayer(layerKey) {
 }
 
 export function renderCurrentTimeCapsules() {
-  if (currentScope === 'world') {
-    MapModule.clearTimeCapsules();
-    return;
-  }
-
-  const spots = TimeMachine.getFilteredSpots(currentScope === 'city' ? currentCityId : null);
+  // Always render all temporal spots and user-created spots across every map and scope!
+  const spots = TimeMachine.getFilteredSpots(null);
   const activeYear = TimeMachine.getSelectedYear();
   MapModule.renderTimeCapsulePins(spots, activeYear, (spotId, year) => {
     TimeMachine.openSpotTimeCapsule(spotId, year);
@@ -484,6 +480,7 @@ window.navigateTour = navigateTour;
 window.switchTab = switchTab;
 window.togglePoiCategory = togglePoiCategory;
 window.narrateBrief = narrateBrief;
+window.flyToCoordinates = MapModule.flyToCoordinates;
 
 // Video & In-Map Wikipedia window bindings
 window.openCityVideo = UIModule.openCityVideo;

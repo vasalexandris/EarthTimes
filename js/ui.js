@@ -25,6 +25,25 @@ function escapeStr(str) {
     .replace(/\n/g, ' ');
 }
 
+export function syncMapFloatingControlsVisibility() {
+  const container = document.getElementById('addSpotFloatingContainer');
+  if (!container) return;
+
+  const videoOverlay = document.getElementById('mapVideoOverlay');
+  const deepDiveOverlay = document.getElementById('mapDeepDiveOverlay');
+  const wikiOverlay = document.getElementById('mapWikiOverlay');
+
+  const isVideoOpen = videoOverlay && !videoOverlay.classList.contains('hidden');
+  const isDeepDiveOpen = deepDiveOverlay && !deepDiveOverlay.classList.contains('hidden');
+  const isWikiOpen = wikiOverlay && !wikiOverlay.classList.contains('hidden');
+
+  if (isVideoOpen || isDeepDiveOpen || isWikiOpen) {
+    container.classList.add('hidden');
+  } else {
+    container.classList.remove('hidden');
+  }
+}
+
 export function openCityVideo(cityId, preferredType = 'drone') {
   currentActiveVideoCityId = cityId;
   currentActiveVideoType = preferredType;
@@ -72,6 +91,8 @@ export function openCityVideo(cityId, preferredType = 'drone') {
   }
 
   overlay.classList.remove('hidden');
+  syncMapFloatingControlsVisibility();
+  syncMapFloatingControlsVisibility();
 }
 
 export function switchCityVideoType(type) {
@@ -85,6 +106,7 @@ export function closeMapVideoOverlay() {
   const iframe = document.getElementById('mapVideoIframe');
   if (iframe) iframe.src = '';
   if (overlay) overlay.classList.add('hidden');
+  syncMapFloatingControlsVisibility();
 }
 
 export function toggleCityVideoDropdown(event) {
@@ -151,6 +173,8 @@ export async function openMapWikiReader(queryOrTitle, lang = 'el', fallbackEnQue
   closeMapVideoOverlay();
 
   overlay.classList.remove('hidden');
+  syncMapFloatingControlsVisibility();
+  syncMapFloatingControlsVisibility();
   if (loading) loading.classList.remove('hidden');
   iframe.classList.add('hidden');
 
@@ -200,6 +224,7 @@ export function closeMapWikiOverlay() {
   const iframe = document.getElementById('mapWikiIframe');
   if (iframe) iframe.srcdoc = '';
   if (overlay) overlay.classList.add('hidden');
+  syncMapFloatingControlsVisibility();
 }
 
 export function openDeepDiveWikiReader() {
@@ -312,6 +337,7 @@ export async function openDeepDive(keyOrTitle, fallbackSummary = '', contextEnti
   `;
 
   overlay.classList.remove('hidden');
+  syncMapFloatingControlsVisibility();
 
   // Load Wikipedia article asynchronously with Greek priority & English fallback
   try {
@@ -376,6 +402,7 @@ export async function openDeepDive(keyOrTitle, fallbackSummary = '', contextEnti
 export function closeDeepDiveOverlay() {
   const overlay = document.getElementById('mapDeepDiveOverlay');
   if (overlay) overlay.classList.add('hidden');
+  syncMapFloatingControlsVisibility();
 }
 
 export function updateCurrentDate() {
@@ -460,10 +487,10 @@ export function updateBreadcrumbs(scope, stateOrCountry, city) {
 
 export function updateBaseLayerUI(activeKey) {
   const layerNames = {
-    dark: 'Χάρτες (Dark)',
-    satellite: 'Χάρτες (Δορυφόρος)',
-    osm: 'Χάρτες (Πολιτικός)',
-    topo: 'Χάρτες (Ανάγλυφο)'
+    dark: 'Χάρτες - Dark',
+    satellite: 'Χάρτες - Δορυφόρος',
+    osm: 'Χάρτες - Πολιτικός',
+    topo: 'Χάρτες - Ανάγλυφο'
   };
   const activeLabel = document.getElementById('activeMapLayerName');
   if (activeLabel && layerNames[activeKey]) {
@@ -485,14 +512,14 @@ export function updatePoiFilterButtons(activeCategory) {
 }
 
 export function updateTabButtons(activeTab) {
-  const tabs = ['geo', 'hist', 'demo', 'cult', 'timeline'];
+  const tabs = ['geo', 'hist', 'cult', 'guide', 'gastro', 'eco', 'demo', 'timeline'];
   tabs.forEach(t => {
     const btn = document.getElementById(`tab-${t}`);
     if (!btn) return;
     if (t === activeTab) {
-      btn.className = 'tab-btn flex-1 py-2.5 px-3 border-b-2 border-sky-500 text-sky-400 font-semibold flex items-center justify-center gap-1.5 whitespace-nowrap bg-slate-800/30';
+      btn.className = 'tab-btn py-2.5 px-3 border-b-2 border-sky-500 text-sky-400 font-semibold flex items-center justify-center gap-1.5 whitespace-nowrap bg-slate-800/30';
     } else {
-      btn.className = 'tab-btn flex-1 py-2.5 px-3 border-b-2 border-transparent text-slate-400 hover:text-slate-200 flex items-center justify-center gap-1.5 whitespace-nowrap';
+      btn.className = 'tab-btn py-2.5 px-3 border-b-2 border-transparent text-slate-400 hover:text-slate-200 flex items-center justify-center gap-1.5 whitespace-nowrap';
     }
   });
 }
@@ -902,6 +929,235 @@ export function getHistoricalContextForEra(entity, year) {
   }
 }
 
+export function getCuratedGuideItems(entity) {
+  const id = entity.id || '';
+  if (id === 'kozani') {
+    return [
+      {
+        title: 'Ιστορικό Καμπαναριό & Πλατεία Νίκης',
+        cat: 'monument',
+        catLabel: '🏛️ Μνημείο',
+        desc: 'Το σύμβολο της Κοζάνης (Μαμάτσιος), κατασκευασμένο το 1855, δεσπόζει στην κεντρική πλατεία της πόλης.',
+        wiki: 'Κοζάνη'
+      },
+      {
+        title: 'Κοβεντάρειος Δημοτική Βιβλιοθήκη',
+        cat: 'museum',
+        catLabel: '🖼️ Μουσείο',
+        desc: 'Η δεύτερη πλουσιότερη ιστορική βιβλιοθήκη στην Ελλάδα, με σπάνια χειρόγραφα και την πρωτότυπη Χάρτα του Ρήγα Φεραίου (1797).',
+        wiki: 'Κοβεντάρειος_Δημοτική_Βιβλιοθήκη_Κοζάνης'
+      },
+      {
+        title: 'Αρχοντικό Γρηγορίου Λασσάνη',
+        cat: 'monument',
+        catLabel: '🏛️ Μνημείο',
+        desc: 'Επιβλητικό αρχοντικό του 18ου αιώνα, πατρικό σπίτι του Φιλικού και λόγιου Γεωργίου Λασσάνη, σήμερα Δημοτική Χαρτοθήκη.',
+        wiki: 'Γεώργιος_Λασσάνης'
+      },
+      {
+        title: 'Ιστορικό-Λαογραφικό & Φυσικής Ιστορίας Μουσείο',
+        cat: 'museum',
+        catLabel: '🖼️ Μουσείο',
+        desc: 'Εντυπωσιακό πολυθεματικό μουσείο παραδοσιακής μακεδονικής αρχιτεκτονικής, με σπάνιες λαογραφικές συλλογές.',
+        wiki: 'Κοζάνη'
+      },
+      {
+        title: 'Λίμνη Πολυφύτου & Υψηλή Γέφυρα Σερβίων',
+        cat: 'nature',
+        catLabel: '🌿 Φύση',
+        desc: 'Μία από τις μακρύτερες γέφυρες των Βαλκανίων (1.372 μέτρα) πάνω από τον τεχνητό ταμιευτήρα του Αλιάκμονα με εκπληκτική πανοραμική θέα.',
+        wiki: 'Υψηλή_Γέφυρα_Σερβίων'
+      }
+    ];
+  }
+  if (id === 'athens') {
+    return [
+      {
+        title: 'Ακρόπολη Αθηνών & Παρθενώνας',
+        cat: 'monument',
+        catLabel: '🏛️ Μνημείο',
+        desc: 'Το αιώνιο αρχιτεκτονικό σύμβολο της παγκόσμιας δημοκρατίας και του δυτικού πολιτισμού στον Ιερό Βράχο.',
+        wiki: 'Ακρόπολη_Αθηνών'
+      },
+      {
+        title: 'Μουσείο Ακρόπολης',
+        cat: 'museum',
+        catLabel: '🖼️ Μουσείο',
+        desc: 'Από τα κορυφαία μουσεία του κόσμου με υπερσύγχρονη γυάλινη αρχιτεκτονική και άμεση οπτική επαφή με τον Παρθενώνα.',
+        wiki: 'Μουσείο_Ακρόπολης'
+      },
+      {
+        title: 'Πλάκα & Αναφιώτικα',
+        cat: 'nature',
+        catLabel: '🌿 Περίπατος',
+        desc: 'Η ιστορική «συνοικία των θεών» στους πρόποδες της Ακρόπολης με κυκλαδίτικα ασβεστωμένα σπίτια και νεοκλασικά σοκάκια.',
+        wiki: 'Πλάκα'
+      },
+      {
+        title: 'Αρχαία Αγορά & Ναός Ηφαίστου',
+        cat: 'monument',
+        catLabel: '🏛️ Μνημείο',
+        desc: 'Το πολιτικό, εμπορικό και φιλοσοφικό κέντρο της αρχαίας πόλης, όπου δίδαξαν ο Σωκράτης και ο Πλάτων.',
+        wiki: 'Αρχαία_Αγορά_της_Αθήνας'
+      }
+    ];
+  }
+  return (entity.cult?.items || []).map(it => ({
+    title: it.title,
+    cat: 'monument',
+    catLabel: '🏛️ Αξιοθέατο',
+    desc: it.desc,
+    wiki: it.title
+  }));
+}
+
+export function getCuratedGastroItems(entity) {
+  const id = entity.id || '';
+  if (id === 'kozani') {
+    return [
+      {
+        title: 'Κρόκος Κοζάνης (Σαφράν ΠΟΠ)',
+        cat: 'product',
+        catLabel: '🍇 Προϊόν ΠΟΠ',
+        desc: 'Ο «κόκκινος χρυσός» της κοζανίτικης γης, ένα από τα ποιοτικότερα μπαχαρικά παγκοσμίως με σπάνιες αντιοξειδωτικές ιδιότητες.',
+        wiki: 'Κρόκος_Κοζάνης'
+      },
+      {
+        title: 'Κοζανίτικο Κιχί',
+        cat: 'recipe',
+        catLabel: '🥧 Παραδοσιακή Πίτα',
+        desc: 'Η διάσημη στριφτή πίτα σε σπειροειδές σχήμα με τραγανό χειροποίητο φύλλο και πλούσια γέμιση από ντόπια φέτα.',
+        wiki: 'Κιχί'
+      },
+      {
+        title: 'Κοζανίτικα Γιαπράκια',
+        cat: 'recipe',
+        catLabel: '🥧 Εορταστική Γεύση',
+        desc: 'Παραδοσιακοί λαχανοντολμάδες από αρμιά (λάχανο τουρσί) με χοιρινό και μοσχαρίσιο κιμά, κυρίαρχο πιάτο του χειμώνα.',
+        wiki: 'Κοζάνη'
+      },
+      {
+        title: 'Κρασιά & Τσίπουρο Βελβεντού / Σιάτιστας',
+        cat: 'product',
+        catLabel: '🍇 Τοπικός Οίνος',
+        desc: 'Εκλεκτές ποικιλίες (Ξινόμαυρο, Μοσχόμαυρο) και ονομαστά ηλιαστά κρασιά από τους παραδοσιακούς αμπελώνες της περιοχής.',
+        wiki: 'Βελβεντό'
+      },
+      {
+        title: 'Σιροπιαστά & Τουλούμπες Κοζάνης',
+        cat: 'cafe',
+        catLabel: '☕ Ζαχαροπλαστική',
+        desc: 'Μακρά παράδοση στα περίφημα ζαχαροπλαστεία της Πλατείας Νίκης με τραγανές τουλούμπες και κουραμπιέδες.',
+        wiki: 'Κοζάνη'
+      }
+    ];
+  }
+  if (id === 'athens') {
+    return [
+      {
+        title: 'Αυθεντικό Σουβλάκι Μοναστηρακίου',
+        cat: 'recipe',
+        catLabel: '🥧 Κλασική Γεύση',
+        desc: 'Το απόλυτο αθηναϊκό street food με ψητή πίτα, ντομάτα, κρεμμύδι και παραδοσιακό γύρο ή καλαμάκι.',
+        wiki: 'Σουβλάκι'
+      },
+      {
+        title: 'Παραδοσιακές Ταβέρνες της Πλάκας',
+        cat: 'cafe',
+        catLabel: '☕ Εστίαση & Κρασί',
+        desc: 'Ιστορικά κουτούκια και οινομαγειρεία με ρετσίνα Μεσογείων, κεφτεδάκια και ζωντανή κιθάρα.',
+        wiki: 'Πλάκα'
+      },
+      {
+        title: 'Κουλούρι Αθηνών / Θεσσαλονίκης',
+        cat: 'product',
+        catLabel: '🍇 Καθημερινή Συνήθεια',
+        desc: 'Το τραγανό κουλούρι με σουσάμι που πωλείται από τους πρωινούς πλανόδιους πωλητές σε κάθε κεντρική γωνιά.',
+        wiki: 'Κουλούρι_Θεσσαλονίκης'
+      }
+    ];
+  }
+  return [
+    {
+      title: `Παραδοσιακή Κουζίνα & Γεύσεις (${entity.name})`,
+      cat: 'recipe',
+      catLabel: '🥧 Τοπική Κουζίνα',
+      desc: `Αυθεντικές συνταγές, υλικά και γαστρονομικές συνήθειες που διαμόρφωσαν την κουλτούρα της περιοχής.`,
+      wiki: entity.name
+    }
+  ];
+}
+
+export function getCuratedEcoItems(entity) {
+  const id = entity.id || '';
+  if (id === 'kozani') {
+    return [
+      {
+        title: 'Πανεπιστήμιο Δυτικής Μακεδονίας (Νέο Campus)',
+        cat: 'university',
+        catLabel: '🎓 Πανεπιστήμιο',
+        desc: 'Υπερσύγχρονο βιοκλιματικό campus στην περιοχή ΖΕΠ με Πολυτεχνική Σχολή, Σχολή Οικονομικών και ερευνητικά εργαστήρια.',
+        wiki: 'Πανεπιστήμιο_Δυτικής_Μακεδονίας'
+      },
+      {
+        title: 'Δίκαιη Αναπτυξιακή Μετάβαση & Πράσινο Υδρογόνο',
+        cat: 'energy',
+        catLabel: '⚡ Πράσινη Ενέργεια',
+        desc: 'Μετασχηματισμός από λιγνιτικό σε ευρωπαϊκό κόμβο καθαρής ενέργειας, φωτοβολταϊκών πάρκων και τεχνολογιών υδρογόνου.',
+        wiki: 'Κοζάνη'
+      },
+      {
+        title: 'Πρωτοποριακό Δημοτικό Δίκτυο Τηλεθέρμανσης (ΔΕΥΑΚ)',
+        cat: 'energy',
+        catLabel: '⚡ Υποδομές',
+        desc: 'Το πρώτο και μεγαλύτερο σύστημα τηλεθέρμανσης στην Ελλάδα, παρέχοντας οικολογική θέρμανση σε όλη την πόλη.',
+        wiki: 'Κοζάνη'
+      },
+      {
+        title: 'Εξαγωγικός Κλάδος & Αγροδιατροφή',
+        cat: 'business',
+        catLabel: '💼 Επιχειρηματικότητα',
+        desc: 'Παγκόσμιο δίκτυο εξαγωγών Κρόκου, μαρμάρων, ροδάκινων και τοπικών αγροτικών προϊόντων υψηλής προστιθέμενης αξίας.',
+        wiki: 'Κοζάνη'
+      }
+    ];
+  }
+  if (id === 'athens') {
+    return [
+      {
+        title: 'Εθνικό & Καποδιστριακό Πανεπιστήμιο & ΕΜΠ',
+        cat: 'university',
+        catLabel: '🎓 Παιδεία & Έρευνα',
+        desc: 'Κορυφαία ακαδημαϊκά ιδρύματα της χώρας με παγκόσμια διάκριση στη μηχανική, την ιατρική και τις θεωρητικές επιστήμες.',
+        wiki: 'Εθνικό_και_Καποδιστριακό_Πανεπιστήμιο_Αθηνών'
+      },
+      {
+        title: 'Οικοσύστημα Startups & Τεχνολογίας',
+        cat: 'business',
+        catLabel: '💼 Καινοτομία',
+        desc: 'Ραγδαία αναπτυσσόμενος κόμβος τεχνολογίας, θερμοκοιτίδων και διεθνών επενδύσεων στη Νοτιοανατολική Ευρώπη.',
+        wiki: 'Αθήνα'
+      },
+      {
+        title: 'Παγκόσμια Ναυτιλιακή Έδρα',
+        cat: 'business',
+        catLabel: '💼 Ναυτιλία',
+        desc: 'Η μητρόπολη της μεγαλύτερης εμπορικής ναυτιλίας στον πλανήτη με κέντρο διοίκησης το ευρύτερο πολεοδομικό συγκρότημα.',
+        wiki: 'Ελληνική_εμπορική_ναυτιλία'
+      }
+    ];
+  }
+  return [
+    {
+      title: `Οικονομία & Αναπτυξιακή Ταυτότητα (${entity.name})`,
+      cat: 'business',
+      catLabel: '💼 Οικονομία',
+      desc: `Σύγχρονοι παραγωγικοί τομείς, εμπόριο, υποδομές και απασχόληση στην περιοχή.`,
+      wiki: entity.name
+    }
+  ];
+}
+
 export function renderTabContent(tabId, entity, activeYear = null, activeSpots = [], isPlaying = false) {
   const container = document.getElementById('tabContent');
   if (!container || !entity) return;
@@ -1020,6 +1276,120 @@ export function renderTabContent(tabId, entity, activeYear = null, activeSpots =
             </div>
           </div>
         ` : ''}
+      </div>
+    `;
+  } else if (tabId === 'guide') {
+    const items = getCuratedGuideItems(entity);
+    html = `
+      <div class="space-y-3">
+        <div class="p-3.5 bg-slate-800/50 rounded-xl border border-slate-700/60 text-slate-200">
+          <div class="flex items-center gap-2 text-sky-400 font-semibold mb-1 text-sm">
+            <i class="fa-solid fa-compass"></i> Αξιοθέατα & Ταξιδιωτικός Οδηγός
+          </div>
+          <p class="leading-relaxed">Τα κορυφαία ιστορικά μνημεία, τα μουσεία και τα σημεία που αξίζει να ανακαλύψετε στην περιοχή (${entity.name}).</p>
+        </div>
+
+        <div class="space-y-2.5 mt-3">
+          ${items.map(item => `
+            <div class="p-3.5 bg-slate-800/30 hover:bg-slate-800/80 hover:border-sky-500/50 transition border border-slate-700/40 rounded-xl">
+              <div class="flex items-start justify-between gap-2 mb-1.5">
+                <div>
+                  <span class="inline-block px-2 py-0.5 rounded text-[10px] font-bold bg-sky-950/80 text-sky-300 border border-sky-600/40 mb-1">
+                    ${item.catLabel}
+                  </span>
+                  <h5 class="font-bold text-slate-100 text-sm text-sky-200">${item.title}</h5>
+                </div>
+              </div>
+              <p class="text-xs text-slate-300 leading-relaxed mb-3">${item.desc}</p>
+              <div class="flex items-center gap-2 pt-2 border-t border-slate-800/70">
+                <button onclick="window.openDeepDive('${escapeStr(item.title)}', '${escapeStr(item.desc)}', '${escapeStr(entity.name)}')" class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-amber-300 hover:text-white border border-slate-700 text-[11px] font-bold transition flex items-center gap-1.5 shadow">
+                  <i class="fa-solid fa-wand-magic-sparkles text-amber-400"></i>
+                  <span>Ανάλυση AI</span>
+                </button>
+                <button onclick="window.openMapWikiReader('${escapeStr(item.wiki || item.title)}', 'el')" class="px-2.5 py-1 rounded-lg bg-sky-950/80 hover:bg-sky-900 text-sky-300 hover:text-white border border-sky-700/50 text-[11px] font-bold transition flex items-center gap-1.5 shadow">
+                  <i class="fa-brands fa-wikipedia-w"></i>
+                  <span>Wikipedia στον Χάρτη</span>
+                </button>
+              </div>
+            </div>
+          `).join('')}
+        </div>
+      </div>
+    `;
+  } else if (tabId === 'gastro') {
+    const items = getCuratedGastroItems(entity);
+    html = `
+      <div class="space-y-3">
+        <div class="p-3.5 bg-slate-800/50 rounded-xl border border-slate-700/60 text-slate-200">
+          <div class="flex items-center gap-2 text-amber-400 font-semibold mb-1 text-sm">
+            <i class="fa-solid fa-utensils"></i> Γαστρονομία & Τοπικές Γεύσεις
+          </div>
+          <p class="leading-relaxed">Παραδοσιακές συνταγές, προϊόντα με Προστατευόμενη Ονομασία Προέλευσης (ΠΟΠ) και τοπική κουζίνα (${entity.name}).</p>
+        </div>
+
+        <div class="space-y-2.5 mt-3">
+          ${items.map(item => `
+            <div class="p-3.5 bg-slate-800/30 hover:bg-slate-800/80 hover:border-amber-500/50 transition border border-slate-700/40 rounded-xl">
+              <div class="flex items-start justify-between gap-2 mb-1.5">
+                <div>
+                  <span class="inline-block px-2 py-0.5 rounded text-[10px] font-bold bg-amber-950/80 text-amber-300 border border-amber-600/40 mb-1">
+                    ${item.catLabel}
+                  </span>
+                  <h5 class="font-bold text-slate-100 text-sm text-amber-200">${item.title}</h5>
+                </div>
+              </div>
+              <p class="text-xs text-slate-300 leading-relaxed mb-3">${item.desc}</p>
+              <div class="flex items-center gap-2 pt-2 border-t border-slate-800/70">
+                <button onclick="window.openDeepDive('${escapeStr(item.title)}', '${escapeStr(item.desc)}', '${escapeStr(entity.name)}')" class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-amber-300 hover:text-white border border-slate-700 text-[11px] font-bold transition flex items-center gap-1.5 shadow">
+                  <i class="fa-solid fa-wand-magic-sparkles text-amber-400"></i>
+                  <span>Ανάλυση AI</span>
+                </button>
+                <button onclick="window.openMapWikiReader('${escapeStr(item.wiki || item.title)}', 'el')" class="px-2.5 py-1 rounded-lg bg-sky-950/80 hover:bg-sky-900 text-sky-300 hover:text-white border border-sky-700/50 text-[11px] font-bold transition flex items-center gap-1.5 shadow">
+                  <i class="fa-brands fa-wikipedia-w"></i>
+                  <span>Wikipedia στον Χάρτη</span>
+                </button>
+              </div>
+            </div>
+          `).join('')}
+        </div>
+      </div>
+    `;
+  } else if (tabId === 'eco') {
+    const items = getCuratedEcoItems(entity);
+    html = `
+      <div class="space-y-3">
+        <div class="p-3.5 bg-slate-800/50 rounded-xl border border-slate-700/60 text-slate-200">
+          <div class="flex items-center gap-2 text-emerald-400 font-semibold mb-1 text-sm">
+            <i class="fa-solid fa-lightbulb"></i> Καινοτομία, Οικονομία & Παιδεία
+          </div>
+          <p class="leading-relaxed">Πανεπιστημιακή εκπαίδευση, σύγχρονες υποδομές, πράσινη ενέργεια και επιχειρηματικότητα (${entity.name}).</p>
+        </div>
+
+        <div class="space-y-2.5 mt-3">
+          ${items.map(item => `
+            <div class="p-3.5 bg-slate-800/30 hover:bg-slate-800/80 hover:border-emerald-500/50 transition border border-slate-700/40 rounded-xl">
+              <div class="flex items-start justify-between gap-2 mb-1.5">
+                <div>
+                  <span class="inline-block px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-950/80 text-emerald-300 border border-emerald-600/40 mb-1">
+                    ${item.catLabel}
+                  </span>
+                  <h5 class="font-bold text-slate-100 text-sm text-emerald-200">${item.title}</h5>
+                </div>
+              </div>
+              <p class="text-xs text-slate-300 leading-relaxed mb-3">${item.desc}</p>
+              <div class="flex items-center gap-2 pt-2 border-t border-slate-800/70">
+                <button onclick="window.openDeepDive('${escapeStr(item.title)}', '${escapeStr(item.desc)}', '${escapeStr(entity.name)}')" class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-amber-300 hover:text-white border border-slate-700 text-[11px] font-bold transition flex items-center gap-1.5 shadow">
+                  <i class="fa-solid fa-wand-magic-sparkles text-amber-400"></i>
+                  <span>Ανάλυση AI</span>
+                </button>
+                <button onclick="window.openMapWikiReader('${escapeStr(item.wiki || item.title)}', 'el')" class="px-2.5 py-1 rounded-lg bg-sky-950/80 hover:bg-sky-900 text-sky-300 hover:text-white border border-sky-700/50 text-[11px] font-bold transition flex items-center gap-1.5 shadow">
+                  <i class="fa-brands fa-wikipedia-w"></i>
+                  <span>Wikipedia στον Χάρτη</span>
+                </button>
+              </div>
+            </div>
+          `).join('')}
+        </div>
       </div>
     `;
   } else if (tabId === 'timeline') {
