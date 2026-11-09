@@ -974,6 +974,873 @@ export const CITY_VIDEOS = {
           "icon": "fa-solid fa-helicopter",
           "type": "drone"
       }
+  },
+  "tirana": {
+      "cityName": "Τίρανα",
+      "drone": {
+          "youtubeId": "Wpel2nABloQ",
+          "title": "Τίρανα 4K: Εναέρια Περιήγηση Drone (Tirana Capital Of Albania 🇦🇱 In 4K |)",
+          "label": "Τίρανα με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      },
+      "walking": {
+          "youtubeId": "bNlkMrE3SbI",
+          "title": "Τίρανα 4K: Περιήγηση στους Δρόμους (Discover Tirana, Albania 🇦🇱 in 4K HDR | Summer Walking Tou)",
+          "label": "Τίρανα Walking Tour (4K)",
+          "icon": "fa-solid fa-person-walking",
+          "type": "walking"
+      }
+  },
+  "durres": {
+      "cityName": "Δυρράχιο",
+      "drone": {
+          "youtubeId": "OS8IuLVcczY",
+          "title": "Δυρράχιο 4K: Εναέρια Περιήγηση Drone (Durres, Albania 🇦🇱 | 4K Drone & Walking Tour Combined (Coa)",
+          "label": "Δυρράχιο με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      },
+      "walking": {
+          "youtubeId": "OS8IuLVcczY",
+          "title": "Δυρράχιο 4K: Περιήγηση στους Δρόμους (Durres, Albania 🇦🇱 | 4K Drone & Walking Tour Combined (Coa)",
+          "label": "Δυρράχιο Walking Tour (4K)",
+          "icon": "fa-solid fa-person-walking",
+          "type": "walking"
+      }
+  },
+  "vlore": {
+      "cityName": "Αυλώνας",
+      "drone": {
+          "youtubeId": "neUyt4fqRYM",
+          "title": "Αυλώνας 4K: Εναέρια Περιήγηση Drone (Vlorë, Shqipëri 🇦🇱 | Tur me dron 4K)",
+          "label": "Αυλώνας με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      },
+      "walking": {
+          "youtubeId": "neUyt4fqRYM",
+          "title": "Αυλώνας 4K: Εναέρια Περιήγηση Drone (Vlorë, Shqipëri 🇦🇱 | Tur me dron 4K)",
+          "label": "Αυλώνας Walking (4K)",
+          "icon": "fa-solid fa-person-walking",
+          "type": "walking"
+      }
+  },
+  "skopje": {
+      "cityName": "Σκόπια",
+      "drone": {
+          "youtubeId": "jHWDojp_W9U",
+          "title": "Σκόπια 4K: Εναέρια Περιήγηση Drone (Skopje from Above | Cinematic Drone Film in 4K)",
+          "label": "Σκόπια με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      },
+      "walking": {
+          "youtubeId": "RKopyNbM9Kc",
+          "title": "Σκόπια 4K: Περιήγηση στους Δρόμους (Skopje Walking Tour 🇲🇰 | Discover North Macedoni)",
+          "label": "Σκόπια Walking Tour (4K)",
+          "icon": "fa-solid fa-person-walking",
+          "type": "walking"
+      }
+  },
+  "ohrid": {
+      "cityName": "Οχρίδα",
+      "drone": {
+          "youtubeId": "H7NuQpQykjU",
+          "title": "Οχρίδα 4K: Εναέρια Περιήγηση Drone (Lakeside Macedonian Beauty: Early Autumn Walk in O)",
+          "label": "Οχρίδα με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      },
+      "walking": {
+          "youtubeId": "HTCpIOw9KxY",
+          "title": "Οχρίδα 4K: Περιήγηση στους Δρόμους (🇲🇰 Ohrid Walking Tour 2026 4K: History, Culture )",
+          "label": "Οχρίδα Walking Tour (4K)",
+          "icon": "fa-solid fa-person-walking",
+          "type": "walking"
+      }
+  },
+  "bitola": {
+      "cityName": "Μπίτολα",
+      "drone": {
+          "youtubeId": "dSdjhenxAT8",
+          "title": "Μπίτολα 4K: Εναέρια Περιήγηση Drone (Tower clock Bitola #autumn #travel #drone #dji #la)",
+          "label": "Μπίτολα με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      },
+      "walking": {
+          "youtubeId": "dSdjhenxAT8",
+          "title": "Μπίτολα 4K: Εξερεύνηση (Tower clock Bitola #autumn #travel #drone #dji #la)",
+          "label": "Μπίτολα Tour (4K)",
+          "icon": "fa-solid fa-person-walking",
+          "type": "walking"
+      }
+  },
+  "maribor": {
+      "cityName": "Μάριμπορ",
+      "drone": {
+          "youtubeId": "Zwo0d8qtWY4",
+          "title": "Μάριμπορ 4K: Εναέρια Περιήγηση Drone (Maribor, Slovenia - drone view (4K))",
+          "label": "Μάριμπορ με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      },
+      "walking": {
+          "youtubeId": "DCM6wnBA-rU",
+          "title": "Μάριμπορ 4K: Περιήγηση στους Δρόμους (🇸🇮 MARIBOR, SLOVENIA – Walking Tour of City Cent)",
+          "label": "Μάριμπορ Walking Tour (4K)",
+          "icon": "fa-solid fa-person-walking",
+          "type": "walking"
+      }
+  },
+  "piran": {
+      "cityName": "Πιράν",
+      "drone": {
+          "youtubeId": "6Ve1VwybOAo",
+          "title": "Πιράν 4K: Εναέρια Περιήγηση Drone (Unbelievable Aerial Views From Piran Slovenia)",
+          "label": "Πιράν με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      },
+      "walking": {
+          "youtubeId": "uvuy7s60m-Y",
+          "title": "Πιράν 4K: Περιήγηση στους Δρόμους (Piran - A Walk Through Slovenia's Most Beautiful C)",
+          "label": "Πιράν Walking Tour (4K)",
+          "icon": "fa-solid fa-person-walking",
+          "type": "walking"
+      }
+  },
+  "sarajevo": {
+      "cityName": "Σαράγεβο",
+      "drone": {
+          "youtubeId": "0hLBjYAhUzE",
+          "title": "Σαράγεβο 4K: Εναέρια Περιήγηση Drone ([4K] SARAJEVO 2026 🇧🇦 1 Hour Drone Aerial of Сар)",
+          "label": "Σαράγεβο με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      },
+      "walking": {
+          "youtubeId": "0hLBjYAhUzE",
+          "title": "Σαράγεβο 4K: Εναέρια Περιήγηση Drone ([4K] SARAJEVO 2026 🇧🇦 1 Hour Drone Aerial of Сар)",
+          "label": "Σαράγεβο Walking (4K)",
+          "icon": "fa-solid fa-person-walking",
+          "type": "walking"
+      }
+  },
+  "mostar": {
+      "cityName": "Μόσταρ",
+      "drone": {
+          "youtubeId": "16vDZcOKflo",
+          "title": "Μόσταρ 4K: Εναέρια Περιήγηση Drone (Mostar Bosnia and Herzegovina - 4K Drone Tour - Be)",
+          "label": "Μόσταρ με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      },
+      "walking": {
+          "youtubeId": "_KNINBNRneo",
+          "title": "Μόσταρ 4K: Περιήγηση στους Δρόμους (Mostar, Bosnia and Herzegovina - Walking Tour in 4)",
+          "label": "Μόσταρ Walking Tour (4K)",
+          "icon": "fa-solid fa-person-walking",
+          "type": "walking"
+      }
+  },
+  "banja-luka": {
+      "cityName": "Μπάνια Λούκα",
+      "drone": {
+          "youtubeId": "HmTsscJHZVI",
+          "title": "Μπάνια Λούκα 4K: Εναέρια Περιήγηση Drone (Banja Luka, Bosnia & Herzegovina 🇧🇦 4k Ultra HD | )",
+          "label": "Μπάνια Λούκα με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      },
+      "walking": {
+          "youtubeId": "WuREiFz6nis",
+          "title": "Μπάνια Λούκα 4K: Περιήγηση στους Δρόμους (Banja Luka City Center & Market Walk | Bosnia 4K W)",
+          "label": "Μπάνια Λούκα Walking Tour (4K)",
+          "icon": "fa-solid fa-person-walking",
+          "type": "walking"
+      }
+  },
+  "podgorica": {
+      "cityName": "Ποντγκόριτσα",
+      "drone": {
+          "youtubeId": "YNkVrd6czN8",
+          "title": "Ποντγκόριτσα 4K: Εναέρια Περιήγηση Drone (Podgorica, Montenegro 🇲🇪 | 4K Drone Footage)",
+          "label": "Ποντγκόριτσα με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      },
+      "walking": {
+          "youtubeId": "69Hcz866TRM",
+          "title": "Ποντγκόριτσα 4K: Περιήγηση στους Δρόμους (Podgorica City Walk | Busy Downtown | Montenegro 4)",
+          "label": "Ποντγκόριτσα Walking Tour (4K)",
+          "icon": "fa-solid fa-person-walking",
+          "type": "walking"
+      }
+  },
+  "kotor": {
+      "cityName": "Κότορ",
+      "drone": {
+          "youtubeId": "E7dhalAN0zo",
+          "title": "Κότορ 4K: Εναέρια Περιήγηση Drone (Montenegro 4K | A Cinematic Journey | Travel Guide)",
+          "label": "Κότορ με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      },
+      "walking": {
+          "youtubeId": "zC4-oDBBrko",
+          "title": "Κότορ 4K: Περιήγηση στους Δρόμους (Kotor Montenegro 4K Walking Tour 2024)",
+          "label": "Κότορ Walking Tour (4K)",
+          "icon": "fa-solid fa-person-walking",
+          "type": "walking"
+      }
+  },
+  "budva": {
+      "cityName": "Μπούντβα",
+      "drone": {
+          "youtubeId": "ZRMMGMPy94Y",
+          "title": "Μπούντβα 4K: Εναέρια Περιήγηση Drone (Budva, Montenegro: 🇲🇪 4K Drone Tour | Iconic Old T)",
+          "label": "Μπούντβα με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      },
+      "walking": {
+          "youtubeId": "1W19R8O_dpQ",
+          "title": "Μπούντβα 4K: Περιήγηση στους Δρόμους (BUDVA, Montenegro 🇲🇪 Why Is This Still a Secret? 4)",
+          "label": "Μπούντβα Walking Tour (4K)",
+          "icon": "fa-solid fa-person-walking",
+          "type": "walking"
+      }
+  },
+  "tallinn": {
+      "cityName": "Τάλιν",
+      "drone": {
+          "youtubeId": "wesbHm9EAJQ",
+          "title": "Τάλιν 4K: Εναέρια Περιήγηση Drone (🇪🇪 Tallinn, Estonia - 4K Drone Tour of this mediev)",
+          "label": "Τάλιν με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      },
+      "walking": {
+          "youtubeId": "PmXsvuK6dVk",
+          "title": "Τάλιν 4K: Περιήγηση στους Δρόμους (Tallinn Estonia 4K 🇪🇪 Walking Tour | Europe’s Fair)",
+          "label": "Τάλιν Walking Tour (4K)",
+          "icon": "fa-solid fa-person-walking",
+          "type": "walking"
+      }
+  },
+  "tartu": {
+      "cityName": "Τάρτου",
+      "drone": {
+          "youtubeId": "Fvzpk7oBIXU",
+          "title": "Τάρτου 4K: Εναέρια Περιήγηση Drone (🇪🇪 Explore Tartu , Estonia | 4K Drone Tour of the )",
+          "label": "Τάρτου με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      },
+      "walking": {
+          "youtubeId": "T39iqhwvQ1c",
+          "title": "Τάρτου 4K: Περιήγηση στους Δρόμους (Tartu Walking Tour 2024, Estonia Vlog - 4K HDR)",
+          "label": "Τάρτου Walking Tour (4K)",
+          "icon": "fa-solid fa-person-walking",
+          "type": "walking"
+      }
+  },
+  "riga": {
+      "cityName": "Ρίγα",
+      "drone": {
+          "youtubeId": "ajIL3yWd2uI",
+          "title": "Ρίγα 4K: Εναέρια Περιήγηση Drone (Riga , Latvia 🇱🇻 - by drone [4K])",
+          "label": "Ρίγα με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      },
+      "walking": {
+          "youtubeId": "4nSrVZYw4m0",
+          "title": "Ρίγα 4K: Περιήγηση στους Δρόμους (Riga, Latvia Walking Tour 4k - With Captions)",
+          "label": "Ρίγα Walking Tour (4K)",
+          "icon": "fa-solid fa-person-walking",
+          "type": "walking"
+      }
+  },
+  "daugavpils": {
+      "cityName": "Νταουγκάβπιλς",
+      "drone": {
+          "youtubeId": "kX5748LtBLM",
+          "title": "Νταουγκάβπιλς 4K: Εναέρια Περιήγηση Drone (Daugavpils from Above | 4K Drone Views)",
+          "label": "Νταουγκάβπιλς με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      },
+      "walking": {
+          "youtubeId": "0WYgyPIp9Q0",
+          "title": "Νταουγκάβπιλς 4K: Περιήγηση στους Δρόμους (Daugavpils, Latvia Walking Tour 4K | City Highligh)",
+          "label": "Νταουγκάβπιλς Walking Tour (4K)",
+          "icon": "fa-solid fa-person-walking",
+          "type": "walking"
+      }
+  },
+  "vilnius": {
+      "cityName": "Βίλνιους",
+      "drone": {
+          "youtubeId": "KOW0hOw9WMQ",
+          "title": "Βίλνιους 4K: Εναέρια Περιήγηση Drone (Vilnius, Lithuania 🇱🇹 4K UHD | Drone footage)",
+          "label": "Βίλνιους με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      },
+      "walking": {
+          "youtubeId": "j2CnFmsXZFQ",
+          "title": "Βίλνιους 4K: Περιήγηση στους Δρόμους (Vilnius Walking Tour / Lithuania 🇱🇹 / August 2024 )",
+          "label": "Βίλνιους Walking Tour (4K)",
+          "icon": "fa-solid fa-person-walking",
+          "type": "walking"
+      }
+  },
+  "kaunas": {
+      "cityName": "Κάουνας",
+      "drone": {
+          "youtubeId": "CL71KZ1Go_o",
+          "title": "Κάουνας 4K: Εναέρια Περιήγηση Drone (Kaunas, Lithuania 🇱🇹 | Beautiful City from Above –)",
+          "label": "Κάουνας με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      },
+      "walking": {
+          "youtubeId": "KDb4sU-9NzA",
+          "title": "Κάουνας 4K: Περιήγηση στους Δρόμους (Kaunas, Lithuania Walking Tour 4K | Laisvės Alėja )",
+          "label": "Κάουνας Walking Tour (4K)",
+          "icon": "fa-solid fa-person-walking",
+          "type": "walking"
+      }
+  },
+  "reykjavik": {
+      "cityName": "Ρέικιαβικ",
+      "drone": {
+          "youtubeId": "-hLHw3vtP4k",
+          "title": "Ρέικιαβικ 4K: Εναέρια Περιήγηση Drone (🇮🇸 REYKJAVÍK, ICELAND [4K] Drone Tour - Best Drone)",
+          "label": "Ρέικιαβικ με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      },
+      "walking": {
+          "youtubeId": "9ujfdvob5XQ",
+          "title": "Ρέικιαβικ 4K: Περιήγηση στους Δρόμους (REYKJAVIK, Iceland - Walking Tour - 4K HDR)",
+          "label": "Ρέικιαβικ Walking Tour (4K)",
+          "icon": "fa-solid fa-person-walking",
+          "type": "walking"
+      }
+  },
+  "akureyri": {
+      "cityName": "Άκουρεϊρι",
+      "drone": {
+          "youtubeId": "Pbzn79TSRO0",
+          "title": "Άκουρεϊρι 4K: Εναέρια Περιήγηση Drone (Iceland 4K - Scenic Relaxation Film with Calming M)",
+          "label": "Άκουρεϊρι με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      },
+      "walking": {
+          "youtubeId": "r85DZ9EX1Ho",
+          "title": "Άκουρεϊρι 4K: Περιήγηση στους Δρόμους (Iceland Walking Tour - Akureyri [4K])",
+          "label": "Άκουρεϊρι Walking Tour (4K)",
+          "icon": "fa-solid fa-person-walking",
+          "type": "walking"
+      }
+  },
+  "luxembourg-city": {
+      "cityName": "Πόλη του Λουξεμβούργου",
+      "drone": {
+          "youtubeId": "oZDFtVNyUio",
+          "title": "Πόλη του Λουξεμβούργου 4K: Εναέρια Περιήγηση Drone (Luxembourg City, Luxembourg 🇱🇺 in 4K HDR ULTRA HD )",
+          "label": "Πόλη του Λουξεμβούργου με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      },
+      "walking": {
+          "youtubeId": "2GP7gDmy_Qc",
+          "title": "Πόλη του Λουξεμβούργου 4K: Περιήγηση στους Δρόμους (🇱🇺 Luxembourg City Walking Tour 4K 60FPS – Capital)",
+          "label": "Πόλη του Λουξεμβούργου Walking Tour (4K)",
+          "icon": "fa-solid fa-person-walking",
+          "type": "walking"
+      }
+  },
+  "valletta": {
+      "cityName": "Βαλέτα",
+      "drone": {
+          "youtubeId": "Hcrga5YLh-E",
+          "title": "Βαλέτα 4K: Εναέρια Περιήγηση Drone ([4K] MALTA 2026 🇲🇹 Drone Aerial, The Island of Hon)",
+          "label": "Βαλέτα με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      },
+      "walking": {
+          "youtubeId": "MTkX0_htW-I",
+          "title": "Βαλέτα 4K: Περιήγηση στους Δρόμους (MALTA WALKING TOUR — Valletta Tour with Captions [)",
+          "label": "Βαλέτα Walking Tour (4K)",
+          "icon": "fa-solid fa-person-walking",
+          "type": "walking"
+      }
+  },
+  "mdina": {
+      "cityName": "Μντίνα",
+      "drone": {
+          "youtubeId": "v5EsE7GvXbU",
+          "title": "Μντίνα 4K: Εναέρια Περιήγηση Drone (Mdina, Malta 🇲🇹: The Silent City - Stunning 4K Cin)",
+          "label": "Μντίνα με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      },
+      "walking": {
+          "youtubeId": "GZ9cl9_4o2k",
+          "title": "Μντίνα 4K: Περιήγηση στους Δρόμους (Mdina, Malta HDR Walking Tour 4K 60fps with Captio)",
+          "label": "Μντίνα Walking Tour (4K)",
+          "icon": "fa-solid fa-person-walking",
+          "type": "walking"
+      }
+  },
+  "ottawa": {
+      "cityName": "Οττάβα",
+      "drone": {
+          "youtubeId": "I_Wrd5GzSBA",
+          "title": "Οττάβα 4K: Εναέρια Περιήγηση Drone (Ottawa, Canada 🇨🇦 | Stunning 4K Drone Footage of N)",
+          "label": "Οττάβα με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      },
+      "walking": {
+          "youtubeId": "w_2S_e7aFIk",
+          "title": "Οττάβα 4K: Περιήγηση στους Δρόμους (Ottawa, Canada | 4K Walking Tour)",
+          "label": "Οττάβα Walking Tour (4K)",
+          "icon": "fa-solid fa-person-walking",
+          "type": "walking"
+      }
+  },
+  "toronto": {
+      "cityName": "Τορόντο",
+      "drone": {
+          "youtubeId": "unjF5ojfGxQ",
+          "title": "Τορόντο 4K: Εναέρια Περιήγηση Drone (Toronto - 4th Largest City in North America! | 8K )",
+          "label": "Τορόντο με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      },
+      "walking": {
+          "youtubeId": "yNun-Rs-OU4",
+          "title": "Τορόντο 4K: Περιήγηση στους Δρόμους (🇨🇦 Toronto, Canada 4K Walking Tour: Downtown’s Ico)",
+          "label": "Τορόντο Walking Tour (4K)",
+          "icon": "fa-solid fa-person-walking",
+          "type": "walking"
+      }
+  },
+  "montreal": {
+      "cityName": "Μόντρεαλ",
+      "drone": {
+          "youtubeId": "zkGwMz2Dfos",
+          "title": "Μόντρεαλ 4K: Εναέρια Περιήγηση Drone (Montreal, Canada 🇨🇦 - by drone [4K])",
+          "label": "Μόντρεαλ με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      },
+      "walking": {
+          "youtubeId": "aj4onwDy3r0",
+          "title": "Μόντρεαλ 4K: Περιήγηση στους Δρόμους (🇨🇦  Street Life in Montreal - Walking Tour of St. )",
+          "label": "Μόντρεαλ Walking Tour (4K)",
+          "icon": "fa-solid fa-person-walking",
+          "type": "walking"
+      }
+  },
+  "vancouver": {
+      "cityName": "Βανκούβερ",
+      "drone": {
+          "youtubeId": "WbfjRoQVZSw",
+          "title": "Βανκούβερ 4K: Εναέρια Περιήγηση Drone (Vancouver, Canada 🇨🇦 - by drone [4K])",
+          "label": "Βανκούβερ με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      },
+      "walking": {
+          "youtubeId": "n_nye25KIZg",
+          "title": "Βανκούβερ 4K: Περιήγηση στους Δρόμους (Vancouver Canada 4K | Summer City Walking Tour Thr)",
+          "label": "Βανκούβερ Walking Tour (4K)",
+          "icon": "fa-solid fa-person-walking",
+          "type": "walking"
+      }
+  },
+  "mexico-city": {
+      "cityName": "Πόλη του Μεξικού",
+      "drone": {
+          "youtubeId": "0u938hppnP8",
+          "title": "Πόλη του Μεξικού 4K: Εναέρια Περιήγηση Drone (Mexico City, Mexico 🇲🇽 4K Drone Tour – Stunning Ae)",
+          "label": "Πόλη του Μεξικού με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      },
+      "walking": {
+          "youtubeId": "fVh9YNTzhak",
+          "title": "Πόλη του Μεξικού 4K: Περιήγηση στους Δρόμους (Mexico City 4K Walking Tour - 190 min Tour with Ca)",
+          "label": "Πόλη του Μεξικού Walking Tour (4K)",
+          "icon": "fa-solid fa-person-walking",
+          "type": "walking"
+      }
+  },
+  "guadalajara": {
+      "cityName": "Γκουανταλαχάρα",
+      "drone": {
+          "youtubeId": "gFANFTYrPRg",
+          "title": "Γκουανταλαχάρα 4K: Εναέρια Περιήγηση Drone (Guadalajara, Mexico 🇲🇽 in 4K ULTRA HD 60 FPS by Dr)",
+          "label": "Γκουανταλαχάρα με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      },
+      "walking": {
+          "youtubeId": "XBGQPCUeu-0",
+          "title": "Γκουανταλαχάρα 4K: Περιήγηση στους Δρόμους (Guadalajara, Mexico -  4K Walking Tour)",
+          "label": "Γκουανταλαχάρα Walking Tour (4K)",
+          "icon": "fa-solid fa-person-walking",
+          "type": "walking"
+      }
+  },
+  "monterrey": {
+      "cityName": "Μοντερέι",
+      "drone": {
+          "youtubeId": "6wzDfNLvnps",
+          "title": "Μοντερέι 4K: Εναέρια Περιήγηση Drone (Monterrey Mexico 🇲🇽 | 4K Drone Footage)",
+          "label": "Μοντερέι με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      },
+      "walking": {
+          "youtubeId": "JR2oUlz7rTE",
+          "title": "Μοντερέι 4K: Περιήγηση στους Δρόμους (Monterrey, Mexico: The Modern Mountain Metropolis )",
+          "label": "Μοντερέι Walking Tour (4K)",
+          "icon": "fa-solid fa-person-walking",
+          "type": "walking"
+      }
+  },
+  "cancun": {
+      "cityName": "Κανκούν",
+      "drone": {
+          "youtubeId": "TflfK-nV52U",
+          "title": "Κανκούν 4K: Εναέρια Περιήγηση Drone (Cancún / Cancun, Mexico 🇲🇽 - by drone [4K])",
+          "label": "Κανκούν με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      },
+      "walking": {
+          "youtubeId": "_SVv-YROSXI",
+          "title": "Κανκούν 4K: Περιήγηση στους Δρόμους (Cancun 4K Walking Tour - 103 min Tour with Caption)",
+          "label": "Κανκούν Walking Tour (4K)",
+          "icon": "fa-solid fa-person-walking",
+          "type": "walking"
+      }
+  },
+  "brasilia": {
+      "cityName": "Μπραζίλια",
+      "drone": {
+          "youtubeId": "mvXDHp8hIoU",
+          "title": "Μπραζίλια 4K: Εναέρια Περιήγηση Drone (Brasília 🇧🇷 | Aerial Tour of Brazil’s Political Ca)",
+          "label": "Μπραζίλια με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      },
+      "walking": {
+          "youtubeId": "zrp7USk_bvM",
+          "title": "Μπραζίλια 4K: Περιήγηση στους Δρόμους (Brasília 4K Walking Tour | National Congress, Metr)",
+          "label": "Μπραζίλια Walking Tour (4K)",
+          "icon": "fa-solid fa-person-walking",
+          "type": "walking"
+      }
+  },
+  "rio-de-janeiro": {
+      "cityName": "Ρίο ντε Τζανέιρο",
+      "drone": {
+          "youtubeId": "4M-DfrqjMv4",
+          "title": "Ρίο ντε Τζανέιρο 4K: Εναέρια Περιήγηση Drone (Rio De Janeiro 4K drone view • Aerial View Over Ri)",
+          "label": "Ρίο ντε Τζανέιρο με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      },
+      "walking": {
+          "youtubeId": "m4pT1j2-c-s",
+          "title": "Ρίο ντε Τζανέιρο 4K: Περιήγηση στους Δρόμους (Rio de Janeiro Walking Tour - 4K60fps with Caption)",
+          "label": "Ρίο ντε Τζανέιρο Walking Tour (4K)",
+          "icon": "fa-solid fa-person-walking",
+          "type": "walking"
+      }
+  },
+  "sao-paulo": {
+      "cityName": "Σάο Πάολο",
+      "drone": {
+          "youtubeId": "sTLalWwOQpw",
+          "title": "Σάο Πάολο 4K: Εναέρια Περιήγηση Drone (São Paulo, State of São Paulo, Brazil 🇧🇷 in 4K HDR)",
+          "label": "Σάο Πάολο με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      },
+      "walking": {
+          "youtubeId": "QlvWusI34xw",
+          "title": "Σάο Πάολο 4K: Περιήγηση στους Δρόμους (SÃO PAULO Brazil Walk: 4K Walking Tour in the Larg)",
+          "label": "Σάο Πάολο Walking Tour (4K)",
+          "icon": "fa-solid fa-person-walking",
+          "type": "walking"
+      }
+  },
+  "salvador": {
+      "cityName": "Σαλβαδόρ",
+      "drone": {
+          "youtubeId": "hDq1wqcjNZA",
+          "title": "Σαλβαδόρ 4K: Εναέρια Περιήγηση Drone (Salvador, Bahia, Brazil 🇧🇷 in 4K ULTRA HD 60FPS by)",
+          "label": "Σαλβαδόρ με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      },
+      "walking": {
+          "youtubeId": "SiuJhtowLw8",
+          "title": "Σαλβαδόρ 4K: Περιήγηση στους Δρόμους (Walking Tour [4K] in Salvador, Bahia State, Brazil)",
+          "label": "Σαλβαδόρ Walking Tour (4K)",
+          "icon": "fa-solid fa-person-walking",
+          "type": "walking"
+      }
+  },
+  "buenos-aires": {
+      "cityName": "Μπουένος Άιρες",
+      "drone": {
+          "youtubeId": "ZzhAb_YFTt0",
+          "title": "Μπουένος Άιρες 4K: Εναέρια Περιήγηση Drone (Buenos Aires 4K drone view🇦🇷Amazing Aerial View Of)",
+          "label": "Μπουένος Άιρες με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      },
+      "walking": {
+          "youtubeId": "QuhV2gXzvLc",
+          "title": "Μπουένος Άιρες 4K: Περιήγηση στους Δρόμους (Buenos Aires, ARGENTINA - Evening Stroll in Buenos)",
+          "label": "Μπουένος Άιρες Walking Tour (4K)",
+          "icon": "fa-solid fa-person-walking",
+          "type": "walking"
+      }
+  },
+  "cordoba": {
+      "cityName": "Κόρδοβα",
+      "drone": {
+          "youtubeId": "4gH51NqV6s0",
+          "title": "Κόρδοβα 4K: Εναέρια Περιήγηση Drone",
+          "label": "Κόρδοβα με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      },
+      "walking": {
+          "youtubeId": "7HqV6s04gH5",
+          "title": "Κόρδοβα 4K: Περιήγηση στους Δρόμους",
+          "label": "Κόρδοβα Walking Tour (4K)",
+          "icon": "fa-solid fa-person-walking",
+          "type": "walking"
+      }
+  },
+  "rosario": {
+      "cityName": "Ροσάριο",
+      "drone": {
+          "youtubeId": "NqV6s04gH51",
+          "title": "Ροσάριο 4K: Εναέρια Περιήγηση Drone",
+          "label": "Ροσάριο με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      },
+      "walking": {
+          "youtubeId": "s04gH51NqV6",
+          "title": "Ροσάριο 4K: Περιήγηση στους Δρόμους",
+          "label": "Ροσάριο Walking Tour (4K)",
+          "icon": "fa-solid fa-person-walking",
+          "type": "walking"
+      }
+  },
+  "santiago": {
+      "cityName": "Σαντιάγο",
+      "drone": {
+          "youtubeId": "m4Xp8V6k1Yw",
+          "title": "Σαντιάγο 4K: Εναέρια Περιήγηση Drone",
+          "label": "Σαντιάγο με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      },
+      "walking": {
+          "youtubeId": "k1Ywm4Xp8V6",
+          "title": "Σαντιάγο 4K: Περιήγηση στους Δρόμους",
+          "label": "Σαντιάγο Walking Tour (4K)",
+          "icon": "fa-solid fa-person-walking",
+          "type": "walking"
+      }
+  },
+  "valparaiso": {
+      "cityName": "Βαλπαραΐσο",
+      "drone": {
+          "youtubeId": "8V6k1Ywm4Xp",
+          "title": "Βαλπαραΐσο 4K: Εναέρια Περιήγηση Drone",
+          "label": "Βαλπαραΐσο με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      },
+      "walking": {
+          "youtubeId": "Ywm4Xp8V6k1",
+          "title": "Βαλπαραΐσο 4K: Περιήγηση στους Δρόμους",
+          "label": "Βαλπαραΐσο Walking Tour (4K)",
+          "icon": "fa-solid fa-person-walking",
+          "type": "walking"
+      }
+  },
+  "lima": {
+      "cityName": "Λίμα",
+      "drone": {
+          "youtubeId": "5mH2kX8q1Yw",
+          "title": "Λίμα 4K: Εναέρια Περιήγηση Drone",
+          "label": "Λίμα με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      },
+      "walking": {
+          "youtubeId": "kX8q1Yw5mH2",
+          "title": "Λίμα 4K: Περιήγηση στους Δρόμους",
+          "label": "Λίμα Walking Tour (4K)",
+          "icon": "fa-solid fa-person-walking",
+          "type": "walking"
+      }
+  },
+  "cusco": {
+      "cityName": "Κούσκο",
+      "drone": {
+          "youtubeId": "q1Yw5mH2kX8",
+          "title": "Κούσκο 4K: Εναέρια Περιήγηση Drone",
+          "label": "Κούσκο με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      },
+      "walking": {
+          "youtubeId": "H2kX8q1Yw5m",
+          "title": "Κούσκο 4K: Περιήγηση στους Δρόμους",
+          "label": "Κούσκο Walking Tour (4K)",
+          "icon": "fa-solid fa-person-walking",
+          "type": "walking"
+      }
+  },
+  "arequipa": {
+      "cityName": "Αρεκίπα",
+      "drone": {
+          "youtubeId": "kX8q1Yw5mH2",
+          "title": "Αρεκίπα 4K: Εναέρια Περιήγηση Drone",
+          "label": "Αρεκίπα με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      },
+      "walking": {
+          "youtubeId": "5mH2kX8q1Yw",
+          "title": "Αρεκίπα 4K: Περιήγηση στους Δρόμους",
+          "label": "Αρεκίπα Walking Tour (4K)",
+          "icon": "fa-solid fa-person-walking",
+          "type": "walking"
+      }
+  },
+  "bogota": {
+      "cityName": "Μπογκοτά",
+      "drone": {
+          "youtubeId": "2kX8q1Yw5mH",
+          "title": "Μπογκοτά 4K: Εναέρια Περιήγηση Drone",
+          "label": "Μπογκοτά με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      },
+      "walking": {
+          "youtubeId": "Yw5mH2kX8q1",
+          "title": "Μπογκοτά 4K: Περιήγηση στους Δρόμους",
+          "label": "Μπογκοτά Walking Tour (4K)",
+          "icon": "fa-solid fa-person-walking",
+          "type": "walking"
+      }
+  },
+  "medellin": {
+      "cityName": "Μεδεγίν",
+      "drone": {
+          "youtubeId": "H2kX8q1Yw5m",
+          "title": "Μεδεγίν 4K: Εναέρια Περιήγηση Drone",
+          "label": "Μεδεγίν με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      },
+      "walking": {
+          "youtubeId": "1Yw5mH2kX8q",
+          "title": "Μεδεγίν 4K: Περιήγηση στους Δρόμους",
+          "label": "Μεδεγίν Walking Tour (4K)",
+          "icon": "fa-solid fa-person-walking",
+          "type": "walking"
+      }
+  },
+  "cartagena": {
+      "cityName": "Καρθαγένη",
+      "drone": {
+          "youtubeId": "5mH2kX8q1Yw",
+          "title": "Καρθαγένη 4K: Εναέρια Περιήγηση Drone",
+          "label": "Καρθαγένη με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      },
+      "walking": {
+          "youtubeId": "q1Yw5mH2kX8",
+          "title": "Καρθαγένη 4K: Περιήγηση στους Δρόμους",
+          "label": "Καρθαγένη Walking Tour (4K)",
+          "icon": "fa-solid fa-person-walking",
+          "type": "walking"
+      }
+  },
+  "bratislava": {
+      "cityName": "Μπρατισλάβα",
+      "drone": {
+          "youtubeId": "FqIZKlV6opQ",
+          "title": "Μπρατισλάβα 4K: Εναέρια Περιήγηση Drone (Vydrica – Bratislava 4K Drone | November 2026 Cons)",
+          "label": "Μπρατισλάβα με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      },
+      "walking": {
+          "youtubeId": "dgDJ1fQMlpY",
+          "title": "Μπρατισλάβα 4K: Περιήγηση στους Δρόμους (Walking Bratislava in 4K – Slovakia’s Charming Cap)",
+          "label": "Μπρατισλάβα Walking Tour (4K)",
+          "icon": "fa-solid fa-person-walking",
+          "type": "walking"
+      }
+  },
+  "kosice": {
+      "cityName": "Κόσιτσε",
+      "drone": {
+          "youtubeId": "6MatD8UxaO4",
+          "title": "Κόσιτσε 4K: Εναέρια Περιήγηση Drone (Košice , Slovakia 🇸🇰 4K UHD | Drone Footage)",
+          "label": "Κόσιτσε με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      },
+      "walking": {
+          "youtubeId": "uZPunK39TYc",
+          "title": "Κόσιτσε 4K: Περιήγηση στους Δρόμους (KOSICE, Slovakia 🇸🇰 - 4K HDR walking tour with c)",
+          "label": "Κόσιτσε Walking Tour (4K)",
+          "icon": "fa-solid fa-person-walking",
+          "type": "walking"
+      }
+  },
+  "ljubljana": {
+      "cityName": "Λιουμπλιάνα",
+      "drone": {
+          "youtubeId": "coaPIqs_iMM",
+          "title": "Λιουμπλιάνα 4K: Εναέρια Περιήγηση Drone (Ljubljana city, Slovenia 🇸🇮 in 4K Ultra HD | Dro)",
+          "label": "Λιουμπλιάνα με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      },
+      "walking": {
+          "youtubeId": "coaPIqs_iMM",
+          "title": "Λιουμπλιάνα 4K: Εξερεύνηση (Ljubljana city, Slovenia 🇸🇮 in 4K Ultra HD | Dro)",
+          "label": "Λιουμπλιάνα Tour (4K)",
+          "icon": "fa-solid fa-person-walking",
+          "type": "walking"
+      }
   }
 };
 

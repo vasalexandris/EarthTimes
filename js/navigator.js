@@ -267,6 +267,118 @@ export const CONTINENTS_DATA = [
           { id: 'istanbul', name: 'Κωνσταντινούπολη', badge: 'Μητρόπολη' },
           { id: 'izmir', name: 'Σμύρνη' }
         ]
+      },
+      {
+        id: 'albania',
+        name: 'Αλβανία',
+        flag: '🇦🇱',
+        cities: [
+          { id: 'tirana', name: 'Τίρανα', badge: 'Πρωτεύουσα' },
+          { id: 'durres', name: 'Δυρράχιο' },
+          { id: 'vlore', name: 'Αυλώνας' }
+        ]
+      },
+      {
+        id: 'north-macedonia',
+        name: 'Βόρεια Μακεδονία',
+        flag: '🇲🇰',
+        cities: [
+          { id: 'skopje', name: 'Σκόπια', badge: 'Πρωτεύουσα' },
+          { id: 'ohrid', name: 'Οχρίδα' },
+          { id: 'bitola', name: 'Μπίτολα' }
+        ]
+      },
+      {
+        id: 'montenegro',
+        name: 'Μαυροβούνιο',
+        flag: '🇲🇪',
+        cities: [
+          { id: 'podgorica', name: 'Ποντγκόριτσα', badge: 'Πρωτεύουσα' },
+          { id: 'kotor', name: 'Κότορ' },
+          { id: 'budva', name: 'Μπούντβα' }
+        ]
+      },
+      {
+        id: 'bosnia',
+        name: 'Βοσνία & Ερζεγοβίνη',
+        flag: '🇧🇦',
+        cities: [
+          { id: 'sarajevo', name: 'Σαράγεβο', badge: 'Πρωτεύουσα' },
+          { id: 'mostar', name: 'Μόσταρ' },
+          { id: 'banja-luka', name: 'Μπάνια Λούκα' }
+        ]
+      },
+      {
+        id: 'slovenia',
+        name: 'Σλοβενία',
+        flag: '🇸🇮',
+        cities: [
+          { id: 'ljubljana', name: 'Λιουμπλιάνα', badge: 'Πρωτεύουσα' },
+          { id: 'maribor', name: 'Μάριμπορ' },
+          { id: 'piran', name: 'Πιράν' }
+        ]
+      },
+      {
+        id: 'slovakia',
+        name: 'Σλοβακία',
+        flag: '🇸🇰',
+        cities: [
+          { id: 'bratislava', name: 'Μπρατισλάβα', badge: 'Πρωτεύουσα' },
+          { id: 'kosice', name: 'Κόσιτσε' }
+        ]
+      },
+      {
+        id: 'estonia',
+        name: 'Εσθονία',
+        flag: '🇪🇪',
+        cities: [
+          { id: 'tallinn', name: 'Τάλιν', badge: 'Πρωτεύουσα' },
+          { id: 'tartu', name: 'Τάρτου' }
+        ]
+      },
+      {
+        id: 'latvia',
+        name: 'Λετονία',
+        flag: '🇱🇻',
+        cities: [
+          { id: 'riga', name: 'Ρίγα', badge: 'Πρωτεύουσα' },
+          { id: 'daugavpils', name: 'Νταουγκάβπιλς' }
+        ]
+      },
+      {
+        id: 'lithuania',
+        name: 'Λιθουανία',
+        flag: '🇱🇹',
+        cities: [
+          { id: 'vilnius', name: 'Βίλνιους', badge: 'Πρωτεύουσα' },
+          { id: 'kaunas', name: 'Κάουνας' }
+        ]
+      },
+      {
+        id: 'iceland',
+        name: 'Ισλανδία',
+        flag: '🇮🇸',
+        cities: [
+          { id: 'reykjavik', name: 'Ρέικιαβικ', badge: 'Πρωτεύουσα' },
+          { id: 'akureyri', name: 'Άκουρεϊρι' }
+        ]
+      },
+      {
+        id: 'luxembourg',
+        name: 'Λουξεμβούργο',
+        flag: '🇱🇺',
+        cities: [
+          { id: 'luxembourg-city', name: 'Πόλη του Λουξεμβούργου', badge: 'Πρωτεύουσα' }
+        ]
+      },
+      {
+        id: 'malta',
+        name: 'Μάλτα',
+        flag: '🇲🇹',
+        cities: [
+          { id: 'valletta', name: 'Βαλέτα', badge: 'Πρωτεύουσα' },
+          { id: 'mdina', name: 'Μντίνα' }
+        ]
       }
     ]
   },
@@ -310,6 +422,7 @@ export const CONTINENTS_DATA = [
         cities: [
           { id: 'mexico-city', name: 'Πόλη του Μεξικού', badge: 'Πρωτεύουσα' },
           { id: 'guadalajara', name: 'Γκουανταλαχάρα' },
+          { id: 'monterrey', name: 'Μοντερέι' },
           { id: 'cancun', name: 'Κανκούν' }
         ]
       }
@@ -327,7 +440,8 @@ export const CONTINENTS_DATA = [
         cities: [
           { id: 'brasilia', name: 'Μπραζίλια', badge: 'Πρωτεύουσα' },
           { id: 'rio-de-janeiro', name: 'Ρίο ντε Τζανέιρο' },
-          { id: 'sao-paulo', name: 'Σάο Πάολο' }
+          { id: 'sao-paulo', name: 'Σάο Πάολο' },
+          { id: 'salvador', name: 'Σαλβαδόρ' }
         ]
       },
       {
@@ -355,7 +469,8 @@ export const CONTINENTS_DATA = [
         flag: '🇵🇪',
         cities: [
           { id: 'lima', name: 'Λίμα', badge: 'Πρωτεύουσα' },
-          { id: 'cusco', name: 'Κούσκο' }
+          { id: 'cusco', name: 'Κούσκο' },
+          { id: 'arequipa', name: 'Αρεκίπα' }
         ]
       },
       {

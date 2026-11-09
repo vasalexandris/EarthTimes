@@ -291,7 +291,26 @@ export async function flyToCity(cityId) {
       'belgrade': 'serbia', 'novi-sad': 'serbia',
       'zagreb': 'croatia', 'dubrovnik': 'croatia', 'split': 'croatia',
       'nicosia': 'cyprus', 'limassol': 'cyprus', 'paphos': 'cyprus',
-      'ankara': 'turkey', 'istanbul': 'turkey', 'izmir': 'turkey'
+      'ankara': 'turkey', 'istanbul': 'turkey', 'izmir': 'turkey',
+      'tirana': 'albania', 'durres': 'albania', 'vlore': 'albania',
+      'skopje': 'north-macedonia', 'ohrid': 'north-macedonia', 'bitola': 'north-macedonia',
+      'bratislava': 'slovakia', 'kosice': 'slovakia',
+      'ljubljana': 'slovenia', 'maribor': 'slovenia', 'piran': 'slovenia',
+      'sarajevo': 'bosnia', 'mostar': 'bosnia', 'banja-luka': 'bosnia',
+      'podgorica': 'montenegro', 'kotor': 'montenegro', 'budva': 'montenegro',
+      'tallinn': 'estonia', 'tartu': 'estonia',
+      'riga': 'latvia', 'daugavpils': 'latvia',
+      'vilnius': 'lithuania', 'kaunas': 'lithuania',
+      'reykjavik': 'iceland', 'akureyri': 'iceland',
+      'luxembourg-city': 'luxembourg',
+      'valletta': 'malta', 'mdina': 'malta',
+      'ottawa': 'canada', 'toronto': 'canada', 'montreal': 'canada', 'vancouver': 'canada',
+      'mexico-city': 'mexico', 'guadalajara': 'mexico', 'monterrey': 'mexico', 'cancun': 'mexico',
+      'brasilia': 'brazil', 'rio-de-janeiro': 'brazil', 'sao-paulo': 'brazil', 'salvador': 'brazil',
+      'buenos-aires': 'argentina', 'cordoba': 'argentina', 'rosario': 'argentina',
+      'santiago': 'chile', 'valparaiso': 'chile',
+      'lima': 'peru', 'cusco': 'peru', 'arequipa': 'peru',
+      'bogota': 'colombia', 'medellin': 'colombia', 'cartagena': 'colombia'
     };
     const targetCountry = cityToCountry[cityId];
     if (targetCountry && !countriesMap.has(targetCountry)) {
@@ -622,7 +641,26 @@ async function init() {
       'serbia',
       'croatia',
       'cyprus',
-      'turkey'
+      'turkey',
+      'albania',
+      'north-macedonia',
+      'slovakia',
+      'slovenia',
+      'bosnia',
+      'montenegro',
+      'estonia',
+      'latvia',
+      'lithuania',
+      'iceland',
+      'luxembourg',
+      'malta',
+      'canada',
+      'mexico',
+      'brazil',
+      'argentina',
+      'chile',
+      'peru',
+      'colombia'
     ];
 
     const settledCountries = await Promise.allSettled(countryKeys.map(k => loadCountryData(k)));
