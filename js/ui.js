@@ -4,12 +4,17 @@
  * Base Map Layer selector, Date display, Video Overlay, and Deep Dive views.
  */
 
-import { getCityVideo, getAvailableVideoTypes } from './video-service.js';
+import { getCityVideo, getAvailableVideoTypes, getAvailableCityTours, CITY_VIDEOS } from './video-service.js';
 import { getDeepDiveData } from './deep-dive.js';
-import { fetchWikiArticle } from './wiki-service.js';
+import { fetchWikiArticle, fetchWikiArticleHtml, cleanWikiTitle } from './wiki-service.js';
 
 let currentActiveVideoCityId = null;
 let currentActiveVideoType = 'drone';
+
+let currentWikiTitle = '';
+let currentWikiLang = 'el';
+let currentWikiFallbackEn = '';
+let activeDeepDiveData = null;
 
 function escapeStr(str) {
   if (!str) return '';
@@ -29,35 +34,37 @@ export function openCityVideo(cityId, preferredType = 'drone') {
   const iframe = document.getElementById('mapVideoIframe');
   const title = document.getElementById('videoOverlayTitle');
   const deepDiveOverlay = document.getElementById('mapDeepDiveOverlay');
+  const wikiOverlay = document.getElementById('mapWikiOverlay');
   const directLink = document.getElementById('videoDirectLink');
   const typeSelector = document.getElementById('videoTypeSelector');
 
   if (!overlay || !iframe) return;
 
-  // Close deep dive if open
+  // Close deep dive and wiki overlay if open
   if (deepDiveOverlay) deepDiveOverlay.classList.add('hidden');
+  if (wikiOverlay) wikiOverlay.classList.add('hidden');
 
   const youtubeId = vid?.youtubeId || '54nbsW6jYN4';
-  const videoTitle = vid?.title || `Περιήγηση Drone 4K: ${cityId}`;
+  const videoTitle = vid?.title || `Περιήγηση 4K: ${cityId}`;
 
   if (title) title.innerText = videoTitle;
   if (directLink) directLink.href = `https://www.youtube.com/watch?v=${youtubeId}`;
   iframe.src = `https://www.youtube-nocookie.com/embed/${youtubeId}?autoplay=1&rel=0`;
 
-  // Render Drone vs Walking toggle buttons
+  // Render switcher pills for all available tour options (Drone, Walking, Guide)
   if (typeSelector) {
-    const available = getAvailableVideoTypes(cityId);
-    if (available.length > 1) {
-      typeSelector.innerHTML = `
-        <button onclick="switchCityVideoType('drone')" class="px-2.5 py-1 rounded-lg text-xs font-bold transition flex items-center gap-1.5 ${preferredType === 'drone' ? 'bg-sky-600 text-white shadow-md' : 'bg-slate-800 text-slate-300 hover:text-white border border-slate-700'}">
-          <i class="fa-solid fa-helicopter"></i>
-          <span>Drone 4K</span>
-        </button>
-        <button onclick="switchCityVideoType('walking')" class="px-2.5 py-1 rounded-lg text-xs font-bold transition flex items-center gap-1.5 ${preferredType === 'walking' ? 'bg-sky-600 text-white shadow-md' : 'bg-slate-800 text-slate-300 hover:text-white border border-slate-700'}">
-          <i class="fa-solid fa-person-walking"></i>
-          <span>Walking 4K</span>
-        </button>
-      `;
+    const tours = getAvailableCityTours(cityId);
+    if (tours.length > 1) {
+      typeSelector.innerHTML = tours.map(t => {
+        const isActive = preferredType === t.type;
+        const shortLabel = t.type === 'drone' ? 'Drone 4K' : (t.type === 'walking' ? 'Walking 4K' : 'Αξιοθέατα 4K');
+        return `
+          <button onclick="switchCityVideoType('${t.type}')" class="px-2.5 py-1 rounded-lg text-xs font-bold transition flex items-center gap-1.5 ${isActive ? 'bg-sky-600 text-white shadow-md' : 'bg-slate-800 text-slate-300 hover:text-white border border-slate-700'}">
+            <i class="${t.icon}"></i>
+            <span>${shortLabel}</span>
+          </button>
+        `;
+      }).join('');
       typeSelector.classList.remove('hidden');
     } else {
       typeSelector.classList.add('hidden');
@@ -80,22 +87,148 @@ export function closeMapVideoOverlay() {
   if (overlay) overlay.classList.add('hidden');
 }
 
-export async function openDeepDive(keyOrTitle, fallbackSummary = '', contextEntityName = '') {
-  const data = getDeepDiveData(keyOrTitle, fallbackSummary, contextEntityName);
-  const overlay = document.getElementById('mapDeepDiveOverlay');
-  const title = document.getElementById('deepDiveTitle');
-  const badge = document.getElementById('deepDiveBadge');
-  const content = document.getElementById('deepDiveContent');
-  const wikiHeaderLink = document.getElementById('deepDiveWikiHeaderLink');
+export function toggleCityVideoDropdown(event) {
+  if (event) event.stopPropagation();
+  const dropdown = document.getElementById('cityVideoDropdown');
+  if (dropdown) {
+    dropdown.classList.toggle('hidden');
+  }
+}
 
-  if (!overlay || !content) return;
+export function selectCityVideoTour(cityId, type) {
+  const dropdown = document.getElementById('cityVideoDropdown');
+  if (dropdown) dropdown.classList.add('hidden');
+  openCityVideo(cityId, type);
+}
+
+export function renderCityVideoDropdownMenu(cityId) {
+  const dropdown = document.getElementById('cityVideoDropdown');
+  if (!dropdown) return;
+  const tours = getAvailableCityTours(cityId);
+  if (!tours || tours.length === 0) {
+    dropdown.innerHTML = `<div class="p-3 text-slate-400 text-center text-xs">Δεν υπάρχουν διαθέσιμα βίντεο</div>`;
+    return;
+  }
+  dropdown.innerHTML = `
+    <div class="px-3 py-1.5 border-b border-slate-800 text-[10px] font-bold text-amber-400 uppercase tracking-wider flex items-center gap-1.5">
+      <i class="fa-brands fa-youtube text-red-500"></i> Επιλογή Τύπου Περιήγησης
+    </div>
+    <div class="py-1">
+      ${tours.map(t => `
+        <button onclick="selectCityVideoTour('${cityId}', '${t.type}')" class="w-full text-left px-3 py-2 hover:bg-slate-800 hover:text-sky-300 text-slate-200 transition flex items-center gap-2.5 group">
+          <div class="w-7 h-7 rounded-lg bg-slate-800 group-hover:bg-sky-600/20 group-hover:text-sky-300 flex items-center justify-center text-amber-400 shrink-0 border border-slate-700/60">
+            <i class="${t.icon} text-xs"></i>
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="font-bold text-xs truncate group-hover:text-sky-200">${t.label}</div>
+            <div class="text-[10px] text-slate-400 truncate">${t.title}</div>
+          </div>
+        </button>
+      `).join('')}
+    </div>
+  `;
+}
+
+/**
+ * In-Map Embedded Wikipedia Reader
+ * Opens full Wikipedia article inside the map container overlay without external tabs
+ */
+export async function openMapWikiReader(queryOrTitle, lang = 'el', fallbackEnQuery = '') {
+  currentWikiTitle = queryOrTitle;
+  currentWikiLang = lang;
+  currentWikiFallbackEn = fallbackEnQuery;
+
+  const overlay = document.getElementById('mapWikiOverlay');
+  const iframe = document.getElementById('mapWikiIframe');
+  const titleEl = document.getElementById('wikiOverlayTitle');
+  const langBadge = document.getElementById('wikiOverlayLangBadge');
+  const langLabel = document.getElementById('wikiOverlayLangLabel');
+  const loading = document.getElementById('wikiOverlayLoading');
+
+  if (!overlay || !iframe) return;
 
   // Close video overlay if playing
   closeMapVideoOverlay();
 
+  overlay.classList.remove('hidden');
+  if (loading) loading.classList.remove('hidden');
+  iframe.classList.add('hidden');
+
+  if (titleEl) titleEl.innerText = queryOrTitle;
+  if (langBadge) langBadge.innerText = lang.toUpperCase();
+  if (langLabel) langLabel.innerText = lang === 'el' ? 'English' : 'Ελληνικά';
+
+  const res = await fetchWikiArticleHtml(queryOrTitle, lang, fallbackEnQuery);
+
+  if (res && res.docHtml) {
+    currentWikiLang = res.lang;
+    if (titleEl) titleEl.innerText = res.title;
+    if (langBadge) langBadge.innerText = res.lang.toUpperCase();
+    if (langLabel) langLabel.innerText = res.lang === 'el' ? 'English' : 'Ελληνικά';
+
+    iframe.srcdoc = res.docHtml;
+    if (loading) loading.classList.add('hidden');
+    iframe.classList.remove('hidden');
+  } else {
+    // Fallback message inside reader frame
+    iframe.srcdoc = `
+      <div style="background:#0b0f19;color:#cbd5e1;font-family:system-ui,-apple-system,sans-serif;padding:48px 24px;text-align:center;">
+        <div style="width:48px;height:48px;border-radius:12px;background:rgba(239,68,68,0.15);color:#f87171;display:inline-flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:16px;">
+          ✕
+        </div>
+        <h2 style="color:#f8fafc;font-size:18px;margin-bottom:8px;font-weight:700;">Δεν βρέθηκε άρθρο στη Wikipedia</h2>
+        <p style="color:#94a3b8;font-size:13px;max-width:440px;margin:0 auto 20px auto;line-height:1.6;">
+          Δεν κατέστη δυνατή η φόρτωση επίσημου λήμματος για το θέμα "<strong>${escapeStr(queryOrTitle)}</strong>" στη γλώσσα <strong>${lang.toUpperCase()}</strong>.
+        </p>
+        <button onclick="window.parent.postMessage({ type: 'EARTH_TIMES_CLOSE_WIKI' }, '*')" style="background:#0284c7;color:white;border:none;padding:8px 18px;border-radius:8px;font-size:13px;font-weight:bold;cursor:pointer;">
+          Επιστροφή στον Χάρτη
+        </button>
+      </div>
+    `;
+    if (loading) loading.classList.add('hidden');
+    iframe.classList.remove('hidden');
+  }
+}
+
+export function toggleWikiReaderLanguage() {
+  const nextLang = currentWikiLang === 'el' ? 'en' : 'el';
+  openMapWikiReader(currentWikiTitle, nextLang, currentWikiFallbackEn);
+}
+
+export function closeMapWikiOverlay() {
+  const overlay = document.getElementById('mapWikiOverlay');
+  const iframe = document.getElementById('mapWikiIframe');
+  if (iframe) iframe.srcdoc = '';
+  if (overlay) overlay.classList.add('hidden');
+}
+
+export function openDeepDiveWikiReader() {
+  if (activeDeepDiveData) {
+    const title = activeDeepDiveData.wikiQuery || activeDeepDiveData.title;
+    const fallbackEn = activeDeepDiveData.wikiEnQuery || '';
+    openMapWikiReader(title, 'el', fallbackEn);
+  }
+}
+
+export async function openDeepDive(keyOrTitle, fallbackSummary = '', contextEntityName = '') {
+  const data = getDeepDiveData(keyOrTitle, fallbackSummary, contextEntityName);
+  activeDeepDiveData = data;
+
+  const overlay = document.getElementById('mapDeepDiveOverlay');
+  const title = document.getElementById('deepDiveTitle');
+  const badge = document.getElementById('deepDiveBadge');
+  const content = document.getElementById('deepDiveContent');
+  const wikiHeaderBtn = document.getElementById('deepDiveWikiHeaderBtn');
+
+  if (!overlay || !content) return;
+
+  // Close video overlay and wiki overlay if open
+  closeMapVideoOverlay();
+  closeMapWikiOverlay();
+
   if (title) title.innerText = data.title;
   if (badge) badge.innerText = data.badge || data.category;
-  if (wikiHeaderLink) wikiHeaderLink.classList.add('hidden');
+  if (wikiHeaderBtn) wikiHeaderBtn.classList.remove('hidden');
 
   let sectionsHtml = '';
   if (data.sections && data.sections.length) {
@@ -145,8 +278,8 @@ export async function openDeepDive(keyOrTitle, fallbackSummary = '', contextEnti
     <div id="deepDiveWikiContainer" class="p-5 sm:p-6 bg-slate-900/90 rounded-2xl border border-slate-700/80 shadow-2xl">
       <div class="flex items-center justify-between gap-2 pb-3 mb-4 border-b border-slate-800">
         <div class="flex items-center gap-2.5">
-          <div class="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center text-slate-200 text-lg font-serif font-black shadow">
-            W
+          <div class="w-8 h-8 rounded-lg bg-sky-500/20 text-sky-400 border border-sky-500/30 flex items-center justify-center text-sm font-bold shadow">
+            <i class="fa-brands fa-wikipedia-w"></i>
           </div>
           <div>
             <h4 class="text-sm sm:text-base font-bold text-white flex items-center gap-2">
@@ -196,10 +329,6 @@ export async function openDeepDive(keyOrTitle, fallbackSummary = '', contextEnti
         wikiBadge.innerText = article.lang.toUpperCase();
         wikiBadge.classList.remove('hidden');
       }
-      if (wikiHeaderLink) {
-        wikiHeaderLink.href = article.pageUrl;
-        wikiHeaderLink.classList.remove('hidden');
-      }
 
       wikiBox.innerHTML = `
         <div class="flex flex-col sm:flex-row gap-4 items-start">
@@ -220,11 +349,11 @@ export async function openDeepDive(keyOrTitle, fallbackSummary = '', contextEnti
           <span class="text-[11px] text-slate-400 italic">
             Άμεση πρόσβαση για περαιτέρω διάβασμα:
           </span>
-          <a href="${article.pageUrl}" target="_blank" rel="noopener noreferrer" class="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 hover:text-white text-sky-400 border border-slate-700 text-xs font-bold transition flex items-center gap-2 shadow">
-            <i class="fa-solid fa-book-open text-amber-400"></i>
-            <span>Ανάγνωση ολόκληρου του άρθρου στη Wikipedia (${article.lang.toUpperCase()})</span>
-            <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
-          </a>
+          <button onclick="openMapWikiReader('${escapeStr(article.rawTitle || article.title)}', '${article.lang}', '${escapeStr(data.wikiEnQuery || '')}')" class="px-4 py-2 rounded-xl bg-sky-600/20 hover:bg-sky-600/40 text-sky-300 hover:text-white border border-sky-500/40 text-xs font-bold transition flex items-center gap-2 shadow">
+            <i class="fa-brands fa-wikipedia-w text-sky-400"></i>
+            <span>Ανάγνωση ολόκληρου του άρθρου στον Χάρτη (${article.lang.toUpperCase()})</span>
+            <i class="fa-solid fa-arrow-right text-[10px]"></i>
+          </button>
         </div>
       `;
     } else if (wikiBox) {
@@ -448,14 +577,16 @@ export function renderDossier(entity, entityType = 'state', currentTab = 'geo', 
   const docuQuote = document.getElementById('docuQuote');
   if (docuQuote) docuQuote.innerText = entity.quote || '';
 
-  // Show/Hide City Video Tour button
-  const cityVideoBtn = document.getElementById('cityVideoBtn');
-  if (cityVideoBtn) {
-    if (entityType === 'city' && entity.id) {
-      cityVideoBtn.classList.remove('hidden');
-      cityVideoBtn.onclick = () => openCityVideo(entity.id);
+  // Show/Hide City Video Tour dropdown menu
+  const cityVideoContainer = document.getElementById('cityVideoContainer');
+  const cityVideoDropdown = document.getElementById('cityVideoDropdown');
+  if (cityVideoContainer) {
+    if (entityType === 'city' && entity.id && CITY_VIDEOS[entity.id]) {
+      cityVideoContainer.classList.remove('hidden');
+      renderCityVideoDropdownMenu(entity.id);
     } else {
-      cityVideoBtn.classList.add('hidden');
+      cityVideoContainer.classList.add('hidden');
+      if (cityVideoDropdown) cityVideoDropdown.classList.add('hidden');
     }
   }
 

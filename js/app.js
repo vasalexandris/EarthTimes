@@ -440,12 +440,26 @@ document.addEventListener('click', (e) => {
   const spotsMenu = document.getElementById('spotsDropdownMenu');
   const mapsBtn = document.getElementById('mapsDropdownBtn');
   const spotsBtn = document.getElementById('spotsDropdownBtn');
+  const cityVideoContainer = document.getElementById('cityVideoContainer');
+  const cityVideoDropdown = document.getElementById('cityVideoDropdown');
 
   if (mapsMenu && !mapsMenu.contains(e.target) && mapsBtn && !mapsBtn.contains(e.target)) {
     mapsMenu.classList.add('hidden');
   }
   if (spotsMenu && !spotsMenu.contains(e.target) && spotsBtn && !spotsBtn.contains(e.target)) {
     spotsMenu.classList.add('hidden');
+  }
+  if (cityVideoDropdown && !cityVideoDropdown.contains(e.target) && cityVideoContainer && !cityVideoContainer.contains(e.target)) {
+    cityVideoDropdown.classList.add('hidden');
+  }
+});
+
+// In-Map Wikipedia Reader Navigation Listener (Keeps reading in-app)
+window.addEventListener('message', (e) => {
+  if (e.data?.type === 'EARTH_TIMES_WIKI_NAV') {
+    UIModule.openMapWikiReader(e.data.title, e.data.lang || 'el');
+  } else if (e.data?.type === 'EARTH_TIMES_CLOSE_WIKI') {
+    UIModule.closeMapWikiOverlay();
   }
 });
 
@@ -471,10 +485,19 @@ window.switchTab = switchTab;
 window.togglePoiCategory = togglePoiCategory;
 window.narrateBrief = narrateBrief;
 
-// Video & Deep Dive window bindings
+// Video & In-Map Wikipedia window bindings
 window.openCityVideo = UIModule.openCityVideo;
 window.switchCityVideoType = UIModule.switchCityVideoType;
 window.closeMapVideoOverlay = UIModule.closeMapVideoOverlay;
+window.toggleCityVideoDropdown = UIModule.toggleCityVideoDropdown;
+window.selectCityVideoTour = UIModule.selectCityVideoTour;
+window.renderCityVideoDropdownMenu = UIModule.renderCityVideoDropdownMenu;
+
+window.openMapWikiReader = UIModule.openMapWikiReader;
+window.closeMapWikiOverlay = UIModule.closeMapWikiOverlay;
+window.toggleWikiReaderLanguage = UIModule.toggleWikiReaderLanguage;
+window.openDeepDiveWikiReader = UIModule.openDeepDiveWikiReader;
+
 window.openDeepDive = UIModule.openDeepDive;
 window.closeDeepDiveOverlay = UIModule.closeDeepDiveOverlay;
 window.openCurrentCityVideo = () => {

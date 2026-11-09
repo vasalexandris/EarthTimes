@@ -1,16 +1,29 @@
 /**
  * Wikipedia Service Module
- * Handles retrieval of official encyclopedia summaries and direct reading links
+ * Handles retrieval of official encyclopedia summaries and full standalone articles
  * with Greek priority (el.wikipedia.org) and automatic English fallback (en.wikipedia.org).
+ * Powers the embedded In-Map Wikipedia Reader without external tabs.
  */
 
-const wikiCache = new Map();
+const wikiSummaryCache = new Map();
+const wikiHtmlCache = new Map();
 
+/**
+ * Cleans a query/title string from extra dates or parenthetical expressions
+ */
+export function cleanWikiTitle(str) {
+  if (!str) return '';
+  return str.replace(/\(.*?\)/g, '').split('–')[0].split('-')[0].trim();
+}
+
+/**
+ * Fetches Wikipedia article summary (for cards and previews)
+ */
 export async function fetchWikiArticle(queryOrTitle, fallbackEnQuery = '') {
   if (!queryOrTitle) return null;
   const cacheKey = `${queryOrTitle}_${fallbackEnQuery}`;
-  if (wikiCache.has(cacheKey)) {
-    return wikiCache.get(cacheKey);
+  if (wikiSummaryCache.has(cacheKey)) {
+    return wikiSummaryCache.get(cacheKey);
   }
 
   async function fetchFromLang(lang, title) {
@@ -32,12 +45,13 @@ export async function fetchWikiArticle(queryOrTitle, fallbackEnQuery = '') {
             extract: data.extract,
             thumbnail: data.thumbnail?.source || null,
             pageUrl: data.content_urls?.desktop?.page || `https://${lang}.wikipedia.org/wiki/${encodeURIComponent(cleanTitle)}`,
-            description: data.description || ''
+            description: data.description || '',
+            rawTitle: cleanTitle
           };
         }
       }
     } catch (err) {
-      console.warn(`[WikiService] Error fetching ${cleanTitle} in ${lang}:`, err);
+      console.warn(`[WikiService] Error fetching summary for ${cleanTitle} in ${lang}:`, err);
     }
     return null;
   }
@@ -47,8 +61,7 @@ export async function fetchWikiArticle(queryOrTitle, fallbackEnQuery = '') {
 
   // If title has parentheses e.g. "Σχολή Bauhaus (1919)", try stripped
   if (!result && (queryOrTitle.includes('(') || queryOrTitle.includes('–') || queryOrTitle.includes('-'))) {
-    const stripped = queryOrTitle.replace(/\(.*?\)/g, '').split('–')[0].split('-')[0].trim();
-    result = await fetchFromLang('el', stripped);
+    result = await fetchFromLang('el', cleanWikiTitle(queryOrTitle));
   }
 
   // 2. Fallback to English if Greek article doesn't exist
@@ -56,13 +69,203 @@ export async function fetchWikiArticle(queryOrTitle, fallbackEnQuery = '') {
     const enQuery = fallbackEnQuery || queryOrTitle;
     result = await fetchFromLang('en', enQuery);
     if (!result && (enQuery.includes('(') || enQuery.includes('–') || enQuery.includes('-'))) {
-      const strippedEn = enQuery.replace(/\(.*?\)/g, '').split('–')[0].split('-')[0].trim();
-      result = await fetchFromLang('en', strippedEn);
+      result = await fetchFromLang('en', cleanWikiTitle(enQuery));
     }
   }
 
   if (result) {
-    wikiCache.set(cacheKey, result);
+    wikiSummaryCache.set(cacheKey, result);
   }
   return result;
+}
+
+/**
+ * Fetches full article HTML for the in-map embedded reader
+ */
+export async function fetchWikiArticleHtml(queryOrTitle, lang = 'el', fallbackEnQuery = '') {
+  if (!queryOrTitle) return null;
+
+  async function tryFetchHtml(targetLang, title) {
+    if (!title) return null;
+    const cleanTitle = title.replace(/\s+/g, '_').trim();
+    const cacheKey = `${targetLang}_${cleanTitle}`;
+    if (wikiHtmlCache.has(cacheKey)) {
+      return wikiHtmlCache.get(cacheKey);
+    }
+
+    const endpoint = `https://${targetLang}.wikipedia.org/api/rest_v1/page/html/${encodeURIComponent(cleanTitle)}`;
+    try {
+      const res = await fetch(endpoint, {
+        headers: { 'Accept': 'text/html' }
+      });
+      if (res.ok) {
+        const rawHtml = await res.text();
+        if (rawHtml && rawHtml.length > 200) {
+          const processed = buildReaderDocument(rawHtml, targetLang, cleanTitle);
+          const out = {
+            lang: targetLang,
+            langLabel: targetLang === 'el' ? 'Ελληνικά (Βικιπαίδεια)' : 'English (Wikipedia)',
+            title: title.replace(/_/g, ' '),
+            rawTitle: cleanTitle,
+            docHtml: processed
+          };
+          wikiHtmlCache.set(cacheKey, out);
+          return out;
+        }
+      }
+    } catch (e) {
+      console.warn(`[WikiService] Error fetching HTML for ${cleanTitle} in ${targetLang}:`, e);
+    }
+    return null;
+  }
+
+  // 1. Try requested language with exact title
+  let res = await tryFetchHtml(lang, queryOrTitle);
+
+  // If failed and title has parentheses or special symbols, try stripped title
+  if (!res) {
+    const stripped = cleanWikiTitle(queryOrTitle);
+    if (stripped && stripped !== queryOrTitle) {
+      res = await tryFetchHtml(lang, stripped);
+    }
+  }
+
+  // 2. If requested lang was 'el' and failed, fallback to English
+  if (!res && lang === 'el') {
+    const enTitle = fallbackEnQuery || queryOrTitle;
+    res = await tryFetchHtml('en', enTitle);
+    if (!res) {
+      const strippedEn = cleanWikiTitle(enTitle);
+      if (strippedEn && strippedEn !== enTitle) {
+        res = await tryFetchHtml('en', strippedEn);
+      }
+    }
+  }
+
+  return res;
+}
+
+/**
+ * Injects base href, dark mode styling, and link interception script into Wikipedia HTML
+ */
+function buildReaderDocument(rawHtml, lang, currentTitle) {
+  const baseTag = `<base href="https://${lang}.wikipedia.org/">`;
+  const darkStyles = `
+    <style>
+      :root {
+        color-scheme: dark;
+      }
+      body {
+        background-color: #0b0f19 !important;
+        color: #cbd5e1 !important;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
+        font-size: 15px !important;
+        line-height: 1.7 !important;
+        padding: 24px 20px 80px 20px !important;
+        max-width: 960px !important;
+        margin: 0 auto !important;
+        word-wrap: break-word !important;
+      }
+      h1, h2, h3, h4, h5, h6 {
+        color: #f8fafc !important;
+        border-bottom-color: #1e293b !important;
+        font-weight: 700 !important;
+      }
+      h1 { font-size: 26px !important; margin-bottom: 16px !important; }
+      h2 { font-size: 20px !important; margin-top: 28px !important; margin-bottom: 12px !important; border-bottom: 1px solid #1e293b !important; padding-bottom: 6px !important; }
+      h3 { font-size: 17px !important; margin-top: 20px !important; }
+      a {
+        color: #38bdf8 !important;
+        text-decoration: none !important;
+      }
+      a:hover {
+        color: #7dd3fc !important;
+        text-decoration: underline !important;
+      }
+      p {
+        margin-bottom: 14px !important;
+      }
+      table, .infobox, .thumbinner, .toc, .wikitable, .navbox {
+        background-color: #111827 !important;
+        border: 1px solid #1f293d !important;
+        color: #cbd5e1 !important;
+        border-radius: 12px !important;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.4) !important;
+      }
+      th, td {
+        border-color: #1f293d !important;
+        background-color: transparent !important;
+        color: #cbd5e1 !important;
+        padding: 8px 10px !important;
+      }
+      th {
+        background-color: #1e293b !important;
+        color: #f1f5f9 !important;
+      }
+      img {
+        border-radius: 8px !important;
+        background: #1e293b !important;
+      }
+      .mw-editsection, .noprint, #siteSub, #contentSub, .mw-jump-link {
+        display: none !important;
+      }
+      /* Custom Scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #0b0f19;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #334155;
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #475569;
+      }
+    </style>
+  `;
+
+  // Script to intercept in-article link clicks and keep reading inside EarthTimes
+  const linkInterceptor = `
+    <script>
+      document.addEventListener('click', function(e) {
+        var anchor = e.target.closest('a');
+        if (!anchor) return;
+        var href = anchor.getAttribute('href');
+        if (!href) return;
+
+        // In-page hash jumps (#...)
+        if (href.startsWith('#')) {
+          return;
+        }
+
+        // Wikipedia internal article links
+        if (href.startsWith('/wiki/') || href.includes('.wikipedia.org/wiki/')) {
+          e.preventDefault();
+          e.stopPropagation();
+          var parts = href.split('/wiki/');
+          var targetTitle = parts.length > 1 ? decodeURIComponent(parts[1].split('#')[0]) : '';
+          if (targetTitle) {
+            window.parent.postMessage({
+              type: 'EARTH_TIMES_WIKI_NAV',
+              title: targetTitle,
+              lang: '${lang}'
+            }, '*');
+          }
+          return false;
+        }
+
+        // For any external links, do not let them replace parent window
+        e.preventDefault();
+      }, true);
+    </script>
+  `;
+
+  // Inject inside <head> if present, or prepend
+  if (rawHtml.includes('<head')) {
+    return rawHtml.replace(/<head[^>]*>/i, `$&${baseTag}${darkStyles}${linkInterceptor}`);
+  }
+  return `<!DOCTYPE html><html><head>${baseTag}${darkStyles}${linkInterceptor}</head><body>${rawHtml}</body></html>`;
 }
