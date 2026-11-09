@@ -518,6 +518,27 @@ window.openMapWikiReader = UIModule.openMapWikiReader;
 window.closeMapWikiOverlay = UIModule.closeMapWikiOverlay;
 window.toggleWikiReaderLanguage = UIModule.toggleWikiReaderLanguage;
 window.openDeepDiveWikiReader = UIModule.openDeepDiveWikiReader;
+window.translateWikiReaderInPlace = UIModule.translateWikiReaderInPlace;
+
+// Google Street View Integration
+export function openCurrentStreetView() {
+  const entity = getCurrentEntity();
+  let coords = null;
+  if (entity && entity.coords && Array.isArray(entity.coords)) {
+    coords = entity.coords;
+  } else if (MapModule.getMapCenter) {
+    const center = MapModule.getMapCenter();
+    if (center) coords = [center.lat, center.lng];
+  }
+
+  if (coords && coords.length >= 2) {
+    const lat = coords[0];
+    const lng = coords[1];
+    const streetViewUrl = `https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=${lat},${lng}`;
+    window.open(streetViewUrl, '_blank', 'noopener,noreferrer');
+  }
+}
+window.openCurrentStreetView = openCurrentStreetView;
 
 window.openDeepDive = UIModule.openDeepDive;
 window.closeDeepDiveOverlay = UIModule.closeDeepDiveOverlay;

@@ -51,6 +51,24 @@ export const BASE_LAYERS = {
       maxZoom: 17,
       attribution: 'Map &copy; <a href="https://opentopomap.org">OpenTopoMap</a>'
     }
+  },
+  googleRoad: {
+    name: 'Google Maps (Οδικός)',
+    icon: 'fa-diamond-turn-right',
+    url: 'https://mt1.google.com/vt/lyrs=m&x={x}&y={y}&z={z}',
+    options: {
+      maxZoom: 20,
+      attribution: '&copy; Google Maps'
+    }
+  },
+  googleHybrid: {
+    name: 'Google Maps (Δορυφόρος)',
+    icon: 'fa-earth-americas',
+    url: 'https://mt1.google.com/vt/lyrs=y&x={x}&y={y}&z={z}',
+    options: {
+      maxZoom: 20,
+      attribution: '&copy; Google Maps'
+    }
   }
 };
 
@@ -371,6 +389,10 @@ export function flyToUSA() {
 
 export function flyToCoordinates(lat, lng, zoom = 16) {
   flyToCoords([lat, lng], zoom, 1.8);
+}
+
+export function getMapCenter() {
+  return map ? map.getCenter() : null;
 }
 
 export function getMapInstance() {

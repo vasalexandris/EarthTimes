@@ -227,7 +227,7 @@ function buildReaderDocument(rawHtml, lang, currentTitle) {
     </style>
   `;
 
-  // Script to intercept in-article link clicks and keep reading inside EarthTimes
+  // Script to intercept in-article link clicks and handle in-place Greek translation
   const linkInterceptor = `
     <script>
       document.addEventListener('click', function(e) {
@@ -260,12 +260,108 @@ function buildReaderDocument(rawHtml, lang, currentTitle) {
         // For any external links, do not let them replace parent window
         e.preventDefault();
       }, true);
+
+      // --- IN-PLACE GREEK TRANSLATION ENGINE ---
+      var isTranslated = false;
+      var originalTexts = new WeakMap();
+
+      async function translateText(text) {
+        if (!text || text.trim().length < 2) return text;
+        try {
+          var res = await fetch('https://translate.googleapis.com/translate_a/single?client=gtx&sl=en&tl=el&dt=t&q=' + encodeURIComponent(text));
+          if (!res.ok) return text;
+          var json = await res.json();
+          if (json && json[0]) {
+            return json[0].map(function(item) { return item[0]; }).join('');
+          }
+        } catch (err) {
+          console.warn('[WikiTranslator] Error translating snippet:', err);
+        }
+        return text;
+      }
+
+      window.translateInPlace = async function() {
+        var bannerBtn = document.getElementById('et-btn-translate-auto');
+        if (isTranslated) {
+          // Revert to original
+          var elements = document.querySelectorAll('h1, h2, h3, h4, p, li, th, td');
+          elements.forEach(function(el) {
+            if (originalTexts.has(el)) {
+              el.innerText = originalTexts.get(el);
+            }
+          });
+          isTranslated = false;
+          if (bannerBtn) bannerBtn.innerHTML = '🌐 Μετάφραση στα Ελληνικά';
+          window.parent.postMessage({ type: 'EARTH_TIMES_TRANSLATE_STATUS', isTranslated: false }, '*');
+          return;
+        }
+
+        if (bannerBtn) bannerBtn.innerHTML = '<span style="animation:spin 1s linear infinite;display:inline-block;">↻</span> Μετάφραση σε εξέλιξη...';
+        window.parent.postMessage({ type: 'EARTH_TIMES_TRANSLATE_STATUS', isTranslating: true }, '*');
+
+        var elements = Array.from(document.querySelectorAll('h1, h2, h3, h4, p, li'));
+        // Process in sequential chunks
+        for (var i = 0; i < elements.length; i++) {
+          var el = elements[i];
+          var raw = el.innerText ? el.innerText.trim() : '';
+          if (raw.length > 3 && raw.length < 2000) {
+            if (!originalTexts.has(el)) {
+              originalTexts.set(el, el.innerText);
+            }
+            var translated = await translateText(raw);
+            if (translated && translated !== raw) {
+              el.innerText = translated;
+            }
+          }
+        }
+
+        isTranslated = true;
+        if (bannerBtn) bannerBtn.innerHTML = '✓ Μεταφράστηκε (Επαναφορά)';
+        window.parent.postMessage({ type: 'EARTH_TIMES_TRANSLATE_STATUS', isTranslated: true }, '*');
+      };
+
+      // Listen for parent header button clicks
+      window.addEventListener('message', function(e) {
+        if (e.data && e.data.type === 'EARTH_TIMES_TRANSLATE_EL') {
+          window.translateInPlace();
+        }
+      });
     </script>
   `;
 
-  // Inject inside <head> if present, or prepend
-  if (rawHtml.includes('<head')) {
-    return rawHtml.replace(/<head[^>]*>/i, `$&${baseTag}${darkStyles}${linkInterceptor}`);
+  let englishBanner = '';
+  if (lang === 'en') {
+    englishBanner = `
+      <div id="et-translate-banner" style="background:rgba(14,165,233,0.12);border:1px solid rgba(56,189,248,0.3);border-radius:12px;padding:12px 16px;margin-bottom:24px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;">
+        <div style="display:flex;align-items:center;gap:10px;">
+          <span style="font-size:22px;">🇬🇧</span>
+          <div>
+            <strong style="color:#f8fafc;font-size:13px;display:block;">Αγγλικό Άρθρο Wikipedia (English)</strong>
+            <span style="color:#94a3b8;font-size:12px;">Δεν βρέθηκε αυτούσιο ελληνικό λήμμα. Διαβάστε την αυτόματη μετάφραση με 1 κλικ!</span>
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <button id="et-btn-translate-auto" onclick="window.translateInPlace()" style="background:#0284c7;color:#fff;border:none;padding:7px 14px;border-radius:8px;font-size:12px;font-weight:700;cursor:pointer;display:flex;align-items:center;gap:6px;box-shadow:0 2px 8px rgba(2,132,199,0.4);">
+            🌐 Μετάφραση στα Ελληνικά
+          </button>
+          <a href="https://translate.google.com/translate?sl=en&tl=el&u=https://en.wikipedia.org/wiki/${encodeURIComponent(currentTitle)}" target="_blank" rel="noopener noreferrer" style="background:#1e293b;color:#38bdf8;border:1px solid #334155;padding:7px 12px;border-radius:8px;font-size:12px;font-weight:600;text-decoration:none;display:flex;align-items:center;gap:6px;">
+            Google Translate ↗
+          </a>
+        </div>
+      </div>
+    `;
   }
-  return `<!DOCTYPE html><html><head>${baseTag}${darkStyles}${linkInterceptor}</head><body>${rawHtml}</body></html>`;
+
+  // Inject inside <head> if present, or prepend
+  let doc = rawHtml;
+  if (englishBanner && doc.includes('<body')) {
+    doc = doc.replace(/<body[^>]*>/i, `$&${englishBanner}`);
+  } else if (englishBanner) {
+    doc = englishBanner + doc;
+  }
+
+  if (doc.includes('<head')) {
+    return doc.replace(/<head[^>]*>/i, `$&${baseTag}${darkStyles}${linkInterceptor}`);
+  }
+  return `<!DOCTYPE html><html><head>${baseTag}${darkStyles}${linkInterceptor}</head><body>${englishBanner}${doc}</body></html>`;
 }

@@ -184,6 +184,17 @@ export async function openMapWikiReader(queryOrTitle, lang = 'el', fallbackEnQue
 
   const res = await fetchWikiArticleHtml(queryOrTitle, lang, fallbackEnQuery);
 
+  const translateBtn = document.getElementById('wikiTranslateBtn');
+  const translateLabel = document.getElementById('wikiTranslateBtnLabel');
+  if (translateBtn) {
+    if (res && res.lang === 'en') {
+      translateBtn.classList.remove('hidden');
+      if (translateLabel) translateLabel.innerText = 'Μετάφραση στα Ελληνικά';
+    } else {
+      translateBtn.classList.add('hidden');
+    }
+  }
+
   if (res && res.docHtml) {
     currentWikiLang = res.lang;
     if (titleEl) titleEl.innerText = res.title;
@@ -218,6 +229,30 @@ export function toggleWikiReaderLanguage() {
   const nextLang = currentWikiLang === 'el' ? 'en' : 'el';
   openMapWikiReader(currentWikiTitle, nextLang, currentWikiFallbackEn);
 }
+
+export function translateWikiReaderInPlace() {
+  const iframe = document.getElementById('mapWikiIframe');
+  if (iframe && iframe.contentWindow) {
+    iframe.contentWindow.postMessage({ type: 'EARTH_TIMES_TRANSLATE_EL' }, '*');
+  }
+}
+window.translateWikiReaderInPlace = translateWikiReaderInPlace;
+
+// Listen for translation status events from within the wiki iframe
+window.addEventListener('message', (e) => {
+  if (e.data && e.data.type === 'EARTH_TIMES_TRANSLATE_STATUS') {
+    const btnLabel = document.getElementById('wikiTranslateBtnLabel');
+    if (btnLabel) {
+      if (e.data.isTranslating) {
+        btnLabel.innerText = 'Μετάφραση...';
+      } else if (e.data.isTranslated) {
+        btnLabel.innerText = 'Επαναφορά (English)';
+      } else {
+        btnLabel.innerText = 'Μετάφραση στα Ελληνικά';
+      }
+    }
+  }
+});
 
 export function closeMapWikiOverlay() {
   const overlay = document.getElementById('mapWikiOverlay');
@@ -281,20 +316,7 @@ export async function openDeepDive(keyOrTitle, fallbackSummary = '', contextEnti
       </div>
     </div>
 
-    <!-- 1. AI Curated Narrative Box -->
-    <div class="p-5 bg-gradient-to-r from-sky-950/60 to-slate-900 border border-sky-600/40 rounded-2xl text-sky-200 text-sm leading-relaxed shadow-xl">
-      <div class="font-bold text-sky-300 flex items-center justify-between mb-2 text-base">
-        <span class="flex items-center gap-2">
-          <i class="fa-solid fa-wand-magic-sparkles text-amber-400"></i> Ανάλυση & Σύνθεση EarthTimes AI:
-        </span>
-        <span class="text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded bg-sky-500/20 text-sky-300 border border-sky-400/30">
-          Curated Knowledge
-        </span>
-      </div>
-      <p class="text-slate-200 leading-relaxed text-sm">${data.summary}</p>
-    </div>
-
-    <!-- 2. Detailed Historical Chapters (AI / Curated) -->
+    <!-- Detailed Knowledge Chapters -->
     <div class="space-y-4">
       ${sectionsHtml}
     </div>
@@ -490,7 +512,9 @@ export function updateBaseLayerUI(activeKey) {
     dark: { name: 'Χάρτες - Dark', icon: 'fa-moon text-amber-400' },
     satellite: { name: 'Χάρτες - Δορυφόρος', icon: 'fa-satellite text-emerald-400' },
     osm: { name: 'Χάρτες - Πολιτικός', icon: 'fa-map text-sky-400' },
-    topo: { name: 'Χάρτες - Ανάγλυφο', icon: 'fa-mountain-sun text-teal-400' }
+    topo: { name: 'Χάρτες - Ανάγλυφο', icon: 'fa-mountain-sun text-teal-400' },
+    googleRoad: { name: 'Χάρτες - Google Maps', icon: 'fa-diamond-turn-right text-red-400' },
+    googleHybrid: { name: 'Χάρτες - Google Δορυφόρος', icon: 'fa-earth-americas text-emerald-300' }
   };
   const activeLabel = document.getElementById('activeMapLayerName');
   if (activeLabel && layerMeta[activeKey]) {
@@ -618,6 +642,16 @@ export function renderDossier(entity, entityType = 'state', currentTab = 'geo', 
     } else {
       cityVideoContainer.classList.add('hidden');
       if (cityVideoDropdown) cityVideoDropdown.classList.add('hidden');
+    }
+  }
+
+  // Show/Hide City Street View Button
+  const cityStreetViewBtn = document.getElementById('cityStreetViewBtn');
+  if (cityStreetViewBtn) {
+    if (entityType === 'city' && entity.coords) {
+      cityStreetViewBtn.classList.remove('hidden');
+    } else {
+      cityStreetViewBtn.classList.add('hidden');
     }
   }
 
