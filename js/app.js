@@ -267,10 +267,28 @@ export async function flyToCity(cityId) {
     const cityToCountry = {
       'paris': 'france', 'marseille': 'france', 'lyon': 'france',
       'rome': 'italy', 'florence': 'italy', 'milan': 'italy', 'venice': 'italy',
-      'london': 'uk', 'edinburgh': 'uk',
-      'berlin': 'germany', 'munich': 'germany',
-      'madrid': 'spain', 'barcelona': 'spain',
-      'vienna': 'austria'
+      'london': 'uk', 'edinburgh': 'uk', 'manchester': 'uk',
+      'berlin': 'germany', 'munich': 'germany', 'hamburg': 'germany',
+      'madrid': 'spain', 'barcelona': 'spain', 'seville': 'spain',
+      'vienna': 'austria', 'salzburg': 'austria',
+      'amsterdam': 'netherlands', 'rotterdam': 'netherlands',
+      'prague': 'czech', 'brno': 'czech',
+      'brussels': 'belgium', 'bruges': 'belgium',
+      'lisbon': 'portugal', 'porto': 'portugal',
+      'dublin': 'ireland', 'galway': 'ireland',
+      'budapest': 'hungary', 'debrecen': 'hungary',
+      'bern': 'switzerland', 'zurich': 'switzerland', 'geneva': 'switzerland',
+      'warsaw': 'poland', 'krakow': 'poland', 'gdansk': 'poland',
+      'stockholm': 'sweden', 'gothenburg': 'sweden',
+      'oslo': 'norway', 'bergen': 'norway',
+      'copenhagen': 'denmark', 'aarhus': 'denmark',
+      'helsinki': 'finland', 'tampere': 'finland',
+      'bucharest': 'romania', 'cluj-napoca': 'romania', 'brasov': 'romania',
+      'sofia': 'bulgaria', 'plovdiv': 'bulgaria',
+      'belgrade': 'serbia', 'novi-sad': 'serbia',
+      'zagreb': 'croatia', 'dubrovnik': 'croatia', 'split': 'croatia',
+      'nicosia': 'cyprus', 'limassol': 'cyprus', 'paphos': 'cyprus',
+      'ankara': 'turkey', 'istanbul': 'turkey', 'izmir': 'turkey'
     };
     const targetCountry = cityToCountry[cityId];
     if (targetCountry && !countriesMap.has(targetCountry)) {
@@ -563,7 +581,19 @@ async function init() {
       'belgium',
       'portugal',
       'ireland',
-      'hungary'
+      'hungary',
+      'switzerland',
+      'poland',
+      'sweden',
+      'norway',
+      'denmark',
+      'finland',
+      'romania',
+      'bulgaria',
+      'serbia',
+      'croatia',
+      'cyprus',
+      'turkey'
     ];
 
     const settledCountries = await Promise.allSettled(countryKeys.map(k => loadCountryData(k)));

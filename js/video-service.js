@@ -646,6 +646,341 @@ export const CITY_VIDEOS = {
       "icon": "fa-solid fa-person-walking",
       "type": "walking"
     }
+  },
+  "bern": {
+      "cityName": "Βέρνη",
+      "drone": {
+          "youtubeId": "VfsqFrfRIOE",
+          "title": "Βέρνη 4K: Εναέρια Περιήγηση Drone στην Παλιά Πόλη & τον Ποταμό Άαρε",
+          "label": "Βέρνη με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      },
+      "walking": {
+          "youtubeId": "q6CBE5_Wrcs",
+          "title": "Βέρνη 4K: Walking Tour στα Μεσαιωνικά Σοκάκια & το Zytglogge",
+          "label": "Βέρνη Walking Tour (4K)",
+          "icon": "fa-solid fa-person-walking",
+          "type": "walking"
+      },
+      "guide": {
+          "youtubeId": "nVfS_QDnZ8U",
+          "title": "Βέρνη 4K: Ταξιδιωτικός Οδηγός & Κορυφαία Αξιοθέατα",
+          "label": "Οδηγός Αξιοθεάτων Βέρνης",
+          "icon": "fa-solid fa-landmark",
+          "type": "guide"
+      }
+  },
+  "zurich": {
+      "cityName": "Ζυρίχη",
+      "drone": {
+          "youtubeId": "4XceEfga_Fo",
+          "title": "Ζυρίχη 4K: Εναέρια Περιήγηση Drone στη Λίμνη & το Ιστορικό Κέντρο",
+          "label": "Ζυρίχη με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      },
+      "walking": {
+          "youtubeId": "ggalXZvXQY4",
+          "title": "Ζυρίχη 4K: Walking Tour στην Bahnhofstrasse & τον Ποταμό Limmat",
+          "label": "Ζυρίχη Walking Tour (4K)",
+          "icon": "fa-solid fa-person-walking",
+          "type": "walking"
+      },
+      "guide": {
+          "youtubeId": "tGIbwUMBBK8",
+          "title": "Ζυρίχη 4K: Οδηγός Πόλης & Πολιτιστικά Σημεία",
+          "label": "Οδηγός Αξιοθεάτων Ζυρίχης",
+          "icon": "fa-solid fa-landmark",
+          "type": "guide"
+      }
+  },
+  "geneva": {
+      "cityName": "Γενεύη",
+      "drone": {
+          "youtubeId": "J_5BA2Eteaw",
+          "title": "Γενεύη 4K: Εναέρια Περιήγηση Drone στο Jet d'Eau & τη Λίμνη Léman",
+          "label": "Γενεύη με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      },
+      "walking": {
+          "youtubeId": "t2W1i26gD5c",
+          "title": "Γενεύη 4K: Walking Tour στην Παλιά Πόλη & την Προκυμαία",
+          "label": "Γενεύη Walking Tour (4K)",
+          "icon": "fa-solid fa-person-walking",
+          "type": "walking"
+      }
+  },
+  "warsaw": {
+      "cityName": "Βαρσοβία",
+      "drone": {
+          "youtubeId": "QomZ29JqNV4",
+          "title": "Βαρσοβία 4K: Εναέρια Περιήγηση Drone στους Ουρανοξύστες & την Παλιά Πόλη",
+          "label": "Βαρσοβία με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "krakow": {
+      "cityName": "Κρακοβία",
+      "drone": {
+          "youtubeId": "2zgvCX7sfBo",
+          "title": "Κρακοβία 4K: Εναέρια Περιήγηση Drone στο Κάστρο Wawel & την Παλιά Πόλη",
+          "label": "Κρακοβία με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "gdansk": {
+      "cityName": "Γκντανσκ",
+      "drone": {
+          "youtubeId": "Sfb7-Ao_i38",
+          "title": "Γκντανσκ 4K: Εναέρια Περιήγηση Drone στη Βαλτική & τον Ποταμό Motława",
+          "label": "Γκντανσκ με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "stockholm": {
+      "cityName": "Στοκχόλμη",
+      "drone": {
+          "youtubeId": "GLdo5PX_UrI",
+          "title": "Στοκχόλμη 4K: Εναέρια Περιήγηση Drone στα 14 Νησιά & το Gamla Stan",
+          "label": "Στοκχόλμη με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "gothenburg": {
+      "cityName": "Γκέτεμποργκ",
+      "drone": {
+          "youtubeId": "TYXvX01FTkk",
+          "title": "Γκέτεμποργκ 4K: Εναέρια Περιήγηση Drone στο Μεγάλο Λιμάνι & τα Κανάλια",
+          "label": "Γκέτεμποργκ με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "oslo": {
+      "cityName": "Όσλο",
+      "drone": {
+          "youtubeId": "vftoE9fURrQ",
+          "title": "Όσλο 4K: Εναέρια Περιήγηση Drone στο Φιόρδ του Όσλο & την Όπερα",
+          "label": "Όσλο με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "bergen": {
+      "cityName": "Μπέργκεν",
+      "drone": {
+          "youtubeId": "QgjhPsnrFyo",
+          "title": "Μπέργκεν 4K: Εναέρια Περιήγηση Drone στα Νορβηγικά Φιόρδ & το Bryggen",
+          "label": "Μπέργκεν με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "copenhagen": {
+      "cityName": "Κοπεγχάγη",
+      "drone": {
+          "youtubeId": "JaZ1KQNk5ec",
+          "title": "Κοπεγχάγη 4K: Εναέρια Περιήγηση Drone στο Nyhavn & τα Κανάλια",
+          "label": "Κοπεγχάγη με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "aarhus": {
+      "cityName": "Ώρχους",
+      "drone": {
+          "youtubeId": "sFlF_i6M4Qw",
+          "title": "Ώρχους 4K: Εναέρια Περιήγηση Drone στο Ιστορικό Κέντρο & το Λιμάνι",
+          "label": "Ώρχους με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "helsinki": {
+      "cityName": "Ελσίνκι",
+      "drone": {
+          "youtubeId": "1HwbvNZp0zo",
+          "title": "Ελσίνκι 4K: Εναέρια Περιήγηση Drone στο Λιμάνι & τα Νησιά της Βαλτικής",
+          "label": "Ελσίνκι με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "tampere": {
+      "cityName": "Τάμπερε",
+      "drone": {
+          "youtubeId": "gPrc4APKy9I",
+          "title": "Τάμπερε 4K: Εναέρια Περιήγηση Drone στις Λίμνες Näsijärvi & Pyhäjärvi",
+          "label": "Τάμπερε με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "bucharest": {
+      "cityName": "Βουκουρέστι",
+      "drone": {
+          "youtubeId": "jQ0TvEJ0afU",
+          "title": "Βουκουρέστι 4K: Εναέρια Περιήγηση Drone στο Παλάτι του Κοινοβουλίου & τις Λεωφόρους",
+          "label": "Βουκουρέστι με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "cluj-napoca": {
+      "cityName": "Κλουζ-Ναπόκα",
+      "drone": {
+          "youtubeId": "qdYix6BDyP4",
+          "title": "Κλουζ-Ναπόκα 4K: Εναέρια Περιήγηση Drone στην Καρδιά της Τρανσυλβανίας",
+          "label": "Κλουζ-Ναπόκα με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "brasov": {
+      "cityName": "Μπρασόφ",
+      "drone": {
+          "youtubeId": "uMBvZjWY_LY",
+          "title": "Μπρασόφ 4K: Εναέρια Περιήγηση Drone στα Μεσαιωνικά Καρπάθια & τη Μαύρη Εκκλησία",
+          "label": "Μπρασόφ με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "sofia": {
+      "cityName": "Σόφια",
+      "drone": {
+          "youtubeId": "ctpOAWZqtQg",
+          "title": "Σόφια 4K: Εναέρια Περιήγηση Drone στον Καθεδρικό Alexander Nevsky & το Όρος Vitosha",
+          "label": "Σόφια με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "plovdiv": {
+      "cityName": "Φιλιππούπολη",
+      "drone": {
+          "youtubeId": "PHu8wO_yuMM",
+          "title": "Φιλιππούπολη / Πλόβντιβ 4K: Εναέρια Περιήγηση Drone στο Ρωμαϊκό Θέατρο & την Παλιά Πόλη",
+          "label": "Φιλιππούπολη με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "belgrade": {
+      "cityName": "Βελιγράδι",
+      "drone": {
+          "youtubeId": "R3HVHc4M-C4",
+          "title": "Βελιγράδι 4K: Εναέρια Περιήγηση Drone στο Φρούριο Kalemegdan & τη Συμβολή των Ποταμών",
+          "label": "Βελιγράδι με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "novi-sad": {
+      "cityName": "Νόβι Σαντ",
+      "drone": {
+          "youtubeId": "qAgzCv0lLMY",
+          "title": "Νόβι Σαντ 4K: Εναέρια Περιήγηση Drone στο Φρούριο Petrovaradin & τον Δούναβη",
+          "label": "Νόβι Σαντ με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "zagreb": {
+      "cityName": "Ζάγκρεμπ",
+      "drone": {
+          "youtubeId": "oo9kvVklRx0",
+          "title": "Ζάγκρεμπ 4K: Εναέρια Περιήγηση Drone στην Άνω Πόλη (Gornji Grad) & τον Καθεδρικό",
+          "label": "Ζάγκρεμπ με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "dubrovnik": {
+      "cityName": "Ντουμπρόβνικ",
+      "drone": {
+          "youtubeId": "nYNsSTgrog8",
+          "title": "Ντουμπρόβνικ 4K: Εναέρια Περιήγηση Drone στα Μεσαιωνικά Τείχη & την Αδριατική",
+          "label": "Ντουμπρόβνικ με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "split": {
+      "cityName": "Σπλιτ",
+      "drone": {
+          "youtubeId": "dqc-6jK52fA",
+          "title": "Σπλιτ 4K: Εναέρια Περιήγηση Drone στο Παλάτι του Διοκλητιανού & τη Riva",
+          "label": "Σπλιτ με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "nicosia": {
+      "cityName": "Λευκωσία",
+      "drone": {
+          "youtubeId": "pR_LIolekdY",
+          "title": "Λευκωσία 4K: Εναέρια Περιήγηση Drone στα Ενετικά Τείχη & την Παλιά Πόλη",
+          "label": "Λευκωσία με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "limassol": {
+      "cityName": "Λεμεσός",
+      "drone": {
+          "youtubeId": "wjtKvlKtPBE",
+          "title": "Λεμεσός 4K: Εναέρια Περιήγηση Drone στη Μαρίνα & το Παραλιακό Μέτωπο",
+          "label": "Λεμεσός με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "paphos": {
+      "cityName": "Πάφος",
+      "drone": {
+          "youtubeId": "1tC6eMHsFJQ",
+          "title": "Πάφος 4K: Εναέρια Περιήγηση Drone στο Μεσαιωνικό Κάστρο & το Λιμανάκι",
+          "label": "Πάφος με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "ankara": {
+      "cityName": "Άγκυρα",
+      "drone": {
+          "youtubeId": "wwSteTS9j1w",
+          "title": "Άγκυρα 4K: Εναέρια Περιήγηση Drone στο Anıtkabir & το Κάστρο της Άγκυρας",
+          "label": "Άγκυρα με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "istanbul": {
+      "cityName": "Κωνσταντινούπολη",
+      "drone": {
+          "youtubeId": "N0UzSDpCRmY",
+          "title": "Κωνσταντινούπολη 4K: Εναέρια Περιήγηση Drone στην Αγία Σοφία, το Μπλε Τζαμί & τον Βόσπορο",
+          "label": "Κωνσταντινούπολη με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "izmir": {
+      "cityName": "Σμύρνη",
+      "drone": {
+          "youtubeId": "34aJvM3rZoQ",
+          "title": "Σμύρνη 4K: Εναέρια Περιήγηση Drone στο Kordon, τον Πύργο του Ρολογιού & το Αιγαίο",
+          "label": "Σμύρνη με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
   }
 };
 
