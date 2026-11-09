@@ -703,13 +703,6 @@ export const CITY_VIDEOS = {
           "label": "Γενεύη με Drone (4K)",
           "icon": "fa-solid fa-helicopter",
           "type": "drone"
-      },
-      "walking": {
-          "youtubeId": "t2W1i26gD5c",
-          "title": "Γενεύη 4K: Walking Tour στην Παλιά Πόλη & την Προκυμαία",
-          "label": "Γενεύη Walking Tour (4K)",
-          "icon": "fa-solid fa-person-walking",
-          "type": "walking"
       }
   },
   "warsaw": {
