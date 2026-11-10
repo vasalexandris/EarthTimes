@@ -672,6 +672,135 @@ export const CONTINENTS_DATA = [
           { id: 'nouakchott', name: 'Νουακσότ', badge: 'Πρωτεύουσα' },
           { id: 'nouadhibou', name: 'Νουαντίμπου' }
         ]
+      },
+      {
+        id: 'south-africa',
+        name: 'Νότια Αφρική',
+        flag: '🇿🇦',
+        cities: [
+          { id: 'cape-town', name: 'Κέιπ Τάουν', badge: 'Πρωτεύουσα' },
+          { id: 'johannesburg', name: 'Γιοχάνεσμπουργκ', badge: 'Μητρόπολη' },
+          { id: 'pretoria', name: 'Πρετόρια', badge: 'Διοικητική' },
+          { id: 'durban', name: 'Ντέρμπαν' }
+        ]
+      },
+      {
+        id: 'kenya',
+        name: 'Κένυα',
+        flag: '🇰🇪',
+        cities: [
+          { id: 'nairobi', name: 'Ναϊρόμπι', badge: 'Πρωτεύουσα' },
+          { id: 'mombasa', name: 'Μομπάσα', badge: 'Λιμάνι' }
+        ]
+      },
+      {
+        id: 'tanzania',
+        name: 'Τανζανία',
+        flag: '🇹🇿',
+        cities: [
+          { id: 'dodoma', name: 'Ντοντόμα', badge: 'Πρωτεύουσα' },
+          { id: 'dar-es-salaam', name: 'Νταρ ες Σαλάμ', badge: 'Μητρόπολη' },
+          { id: 'zanzibar', name: 'Ζανζιβάρη', badge: 'Νησί' }
+        ]
+      },
+      {
+        id: 'ethiopia',
+        name: 'Αιθιοπία',
+        flag: '🇪🇹',
+        cities: [
+          { id: 'addis-ababa', name: 'Αντίς Αμπέμπα', badge: 'Πρωτεύουσα' },
+          { id: 'lalibela', name: 'Λαλιμπέλα', badge: 'Ιστορικό' }
+        ]
+      },
+      {
+        id: 'madagascar',
+        name: 'Μαδαγασκάρη',
+        flag: '🇲🇬',
+        cities: [
+          { id: 'antananarivo', name: 'Ανταναναρίβο', badge: 'Πρωτεύουσα' },
+          { id: 'toamasina', name: 'Τοαμασίνα' }
+        ]
+      },
+      {
+        id: 'namibia',
+        name: 'Ναμίμπια',
+        flag: '🇳🇦',
+        cities: [
+          { id: 'windhoek', name: 'Βίντχουκ', badge: 'Πρωτεύουσα' },
+          { id: 'swakopmund', name: 'Σουακοπμούντ' }
+        ]
+      },
+      {
+        id: 'botswana',
+        name: 'Μποτσουάνα',
+        flag: '🇧🇼',
+        cities: [
+          { id: 'gaborone', name: 'Γκαμπορόνε', badge: 'Πρωτεύουσα' },
+          { id: 'maun', name: 'Μαούν', badge: 'Σαφάρι' }
+        ]
+      },
+      {
+        id: 'zimbabwe',
+        name: 'Ζιμπάμπουε',
+        flag: '🇿🇼',
+        cities: [
+          { id: 'harare', name: 'Χαράρε', badge: 'Πρωτεύουσα' },
+          { id: 'victoria-falls', name: 'Βικτόρια Φολς', badge: 'Καταρράκτες' }
+        ]
+      },
+      {
+        id: 'rwanda',
+        name: 'Ρουάντα',
+        flag: '🇷🇼',
+        cities: [
+          { id: 'kigali', name: 'Κιγκάλι', badge: 'Πρωτεύουσα' },
+          { id: 'gisenyi', name: 'Γκισένι' }
+        ]
+      },
+      {
+        id: 'uganda',
+        name: 'Ουγκάντα',
+        flag: '🇺🇬',
+        cities: [
+          { id: 'kampala', name: 'Καμπάλα', badge: 'Πρωτεύουσα' },
+          { id: 'entebbe', name: 'Εντέμπε' }
+        ]
+      },
+      {
+        id: 'mauritius',
+        name: 'Μαυρίκιος',
+        flag: '🇲🇺',
+        cities: [
+          { id: 'port-louis', name: 'Πορ Λουί', badge: 'Πρωτεύουσα' },
+          { id: 'grand-baie', name: 'Γκραν Μπε', badge: 'Θέρετρο' }
+        ]
+      },
+      {
+        id: 'dr-congo',
+        name: 'Λαϊκή Δημοκρατία του Κονγκό',
+        flag: '🇨🇩',
+        cities: [
+          { id: 'kinshasa', name: 'Κινσάσα', badge: 'Πρωτεύουσα' },
+          { id: 'goma', name: 'Γκόμα' }
+        ]
+      },
+      {
+        id: 'angola',
+        name: 'Αγκόλα',
+        flag: '🇦🇴',
+        cities: [
+          { id: 'luanda', name: 'Λουάντα', badge: 'Πρωτεύουσα' },
+          { id: 'benguela', name: 'Μπενγκέλα' }
+        ]
+      },
+      {
+        id: 'mozambique',
+        name: 'Μοζαμβίκη',
+        flag: '🇲🇿',
+        cities: [
+          { id: 'maputo', name: 'Μαπούτο', badge: 'Πρωτεύουσα' },
+          { id: 'beira', name: 'Μπέιρα' }
+        ]
       }
     ]
   }

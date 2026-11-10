@@ -372,7 +372,21 @@ export async function flyToCity(cityId) {
       'yamoussoukro': 'ivory-coast', 'abidjan': 'ivory-coast',
       'yaounde': 'cameroon', 'douala': 'cameroon',
       'praia': 'cape-verde', 'mindelo': 'cape-verde',
-      'nouakchott': 'mauritania', 'nouadhibou': 'mauritania'
+      'nouakchott': 'mauritania', 'nouadhibou': 'mauritania',
+      'cape-town': 'south-africa', 'johannesburg': 'south-africa', 'pretoria': 'south-africa', 'durban': 'south-africa',
+      'nairobi': 'kenya', 'mombasa': 'kenya',
+      'dodoma': 'tanzania', 'dar-es-salaam': 'tanzania', 'zanzibar': 'tanzania',
+      'addis-ababa': 'ethiopia', 'lalibela': 'ethiopia',
+      'antananarivo': 'madagascar', 'toamasina': 'madagascar',
+      'windhoek': 'namibia', 'swakopmund': 'namibia',
+      'gaborone': 'botswana', 'maun': 'botswana',
+      'harare': 'zimbabwe', 'victoria-falls': 'zimbabwe',
+      'kigali': 'rwanda', 'gisenyi': 'rwanda',
+      'kampala': 'uganda', 'entebbe': 'uganda',
+      'port-louis': 'mauritius', 'grand-baie': 'mauritius',
+      'kinshasa': 'dr-congo', 'goma': 'dr-congo',
+      'luanda': 'angola', 'benguela': 'angola',
+      'maputo': 'mozambique', 'beira': 'mozambique'
     };
     const targetCountry = cityToCountry[cityId];
     if (targetCountry && !countriesMap.has(targetCountry)) {
