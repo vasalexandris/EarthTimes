@@ -360,7 +360,19 @@ export async function flyToCity(cityId) {
       'asuncion': 'paraguay', 'ciudad-del-este': 'paraguay',
       'montevideo': 'uruguay', 'punta-del-este': 'uruguay',
       'georgetown': 'guyana', 'linden': 'guyana',
-      'paramaribo': 'suriname', 'lelydorp': 'suriname'
+      'paramaribo': 'suriname', 'lelydorp': 'suriname',
+      'cairo': 'egypt', 'alexandria': 'egypt', 'luxor': 'egypt', 'giza': 'egypt',
+      'rabat': 'morocco', 'casablanca': 'morocco', 'marrakesh': 'morocco', 'fes': 'morocco',
+      'tunis': 'tunisia', 'sfax': 'tunisia', 'sousse': 'tunisia',
+      'algiers': 'algeria', 'oran': 'algeria', 'constantine': 'algeria',
+      'tripoli': 'libya', 'benghazi': 'libya',
+      'abuja': 'nigeria', 'lagos': 'nigeria', 'kano': 'nigeria',
+      'accra': 'ghana', 'kumasi': 'ghana',
+      'dakar': 'senegal', 'saint-louis': 'senegal',
+      'yamoussoukro': 'ivory-coast', 'abidjan': 'ivory-coast',
+      'yaounde': 'cameroon', 'douala': 'cameroon',
+      'praia': 'cape-verde', 'mindelo': 'cape-verde',
+      'nouakchott': 'mauritania', 'nouadhibou': 'mauritania'
     };
     const targetCountry = cityToCountry[cityId];
     if (targetCountry && !countriesMap.has(targetCountry)) {

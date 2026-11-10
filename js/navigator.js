@@ -552,6 +552,129 @@ export const CONTINENTS_DATA = [
       }
     ]
   }
+,
+  {
+    id: 'africa',
+    name: 'Αφρική',
+    icon: 'fa-earth-africa',
+    countries: [
+      {
+        id: 'egypt',
+        name: 'Αίγυπτος',
+        flag: '🇪🇬',
+        cities: [
+          { id: 'cairo', name: 'Κάιρο', badge: 'Πρωτεύουσα' },
+          { id: 'alexandria', name: 'Αλεξάνδρεια', badge: 'Μεσόγειος' },
+          { id: 'luxor', name: 'Λούξορ', badge: 'Ιστορικό' },
+          { id: 'giza', name: 'Γκίζα', badge: 'Πυραμίδες' }
+        ]
+      },
+      {
+        id: 'morocco',
+        name: 'Μαρόκο',
+        flag: '🇲🇦',
+        cities: [
+          { id: 'rabat', name: 'Ραμπάτ', badge: 'Πρωτεύουσα' },
+          { id: 'casablanca', name: 'Καζαμπλάνκα', badge: 'Μητρόπολη' },
+          { id: 'marrakesh', name: 'Μαρακές', badge: 'Ιστορικό' },
+          { id: 'fes', name: 'Φες' }
+        ]
+      },
+      {
+        id: 'tunisia',
+        name: 'Τυνησία',
+        flag: '🇹🇳',
+        cities: [
+          { id: 'tunis', name: 'Τύνιδα', badge: 'Πρωτεύουσα' },
+          { id: 'sfax', name: 'Σφαξ' },
+          { id: 'sousse', name: 'Σους' }
+        ]
+      },
+      {
+        id: 'algeria',
+        name: 'Αλγερία',
+        flag: '🇩🇿',
+        cities: [
+          { id: 'algiers', name: 'Αλγέρι', badge: 'Πρωτεύουσα' },
+          { id: 'oran', name: 'Οράν' },
+          { id: 'constantine', name: 'Κωνσταντίνη' }
+        ]
+      },
+      {
+        id: 'libya',
+        name: 'Λιβύη',
+        flag: '🇱🇾',
+        cities: [
+          { id: 'tripoli', name: 'Τρίπολη', badge: 'Πρωτεύουσα' },
+          { id: 'benghazi', name: 'Βεγγάζη' }
+        ]
+      },
+      {
+        id: 'nigeria',
+        name: 'Νιγηρία',
+        flag: '🇳🇬',
+        cities: [
+          { id: 'abuja', name: 'Αμπούτζα', badge: 'Πρωτεύουσα' },
+          { id: 'lagos', name: 'Λάγος', badge: 'Μητρόπολη' },
+          { id: 'kano', name: 'Κάνο' }
+        ]
+      },
+      {
+        id: 'ghana',
+        name: 'Γκάνα',
+        flag: '🇬🇭',
+        cities: [
+          { id: 'accra', name: 'Άκρα', badge: 'Πρωτεύουσα' },
+          { id: 'kumasi', name: 'Κουμάσι' }
+        ]
+      },
+      {
+        id: 'senegal',
+        name: 'Σενεγάλη',
+        flag: '🇸🇳',
+        cities: [
+          { id: 'dakar', name: 'Ντακάρ', badge: 'Πρωτεύουσα' },
+          { id: 'saint-louis', name: 'Σαιν-Λουί' }
+        ]
+      },
+      {
+        id: 'ivory-coast',
+        name: 'Ακτή Ελεφαντοστού',
+        flag: '🇨🇮',
+        cities: [
+          { id: 'yamoussoukro', name: 'Γιαμουσούκρο', badge: 'Πρωτεύουσα' },
+          { id: 'abidjan', name: 'Αμπιτζάν', badge: 'Μητρόπολη' }
+        ]
+      },
+      {
+        id: 'cameroon',
+        name: 'Καμερούν',
+        flag: '🇨🇲',
+        cities: [
+          { id: 'yaounde', name: 'Γιαουντέ', badge: 'Πρωτεύουσα' },
+          { id: 'douala', name: 'Ντουάλα' }
+        ]
+      },
+      {
+        id: 'cape-verde',
+        name: 'Πράσινο Ακρωτήριο',
+        flag: '🇨🇻',
+        cities: [
+          { id: 'praia', name: 'Πράια', badge: 'Πρωτεύουσα' },
+          { id: 'mindelo', name: 'Μιντέλο' }
+        ]
+      },
+      {
+        id: 'mauritania',
+        name: 'Μαυριτανία',
+        flag: '🇲🇷',
+        cities: [
+          { id: 'nouakchott', name: 'Νουακσότ', badge: 'Πρωτεύουσα' },
+          { id: 'nouadhibou', name: 'Νουαντίμπου' }
+        ]
+      }
+    ]
+  }
 ];
 
 let isNavDropdownOpen = false;

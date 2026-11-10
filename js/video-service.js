@@ -1041,6 +1041,317 @@ export const CITY_VIDEOS = {
       "type": "drone"
     }
   },
+  
+  "cairo": {
+    "cityName": "Κάιρο",
+    "drone": {
+      "youtubeId": "uz23AE-oemU",
+      "title": "Κάιρο Αιγύπτου 4K: Εναέρια Περιήγηση Drone στον Νείλο, τους Μιναρέδες & την Πλατεία Ταχρίρ",
+      "label": "Κάιρο με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    }
+  },
+  "giza": {
+    "cityName": "Γκίζα",
+    "drone": {
+      "youtubeId": "Fxu4cunNyXQ",
+      "title": "Πυραμίδες της Γκίζας & Μεγάλη Σφίγγα 4K HDR: Μαγευτική Περιήγηση Drone στο Αρχαίο Θαύμα",
+      "label": "Πυραμίδες Γκίζας (4K HDR)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    }
+  },
+  "alexandria": {
+    "cityName": "Αλεξάνδρεια",
+    "drone": {
+      "youtubeId": "RrGY2exmU-0",
+      "title": "Αλεξάνδρεια 4K: Εναέρια Περιήγηση Drone στη Βιβλιοθήκη, το Κάστρο του Καϊτμπέι & τη Γέφυρα Στάνλεϊ",
+      "label": "Αλεξάνδρεια με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    }
+  },
+  "luxor": {
+    "cityName": "Λούξορ",
+    "drone": {
+      "youtubeId": "2XhoWY8ofNE",
+      "title": "Λούξορ Αιγύπτου 4K: Πανοραμική Περιήγηση στον Ναό του Καρνάκ & την Κοιλάδα των Βασιλέων",
+      "label": "Λούξορ με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    }
+  },
+  "casablanca": {
+    "cityName": "Καζαμπλάνκα",
+    "drone": {
+      "youtubeId": "jzdY46nM_2Q",
+      "title": "Καζαμπλάνκα Μαρόκου 4K HDR: Εναέρια Περιήγηση Drone στο Τζαμί Χασάν Β' & την Κορνίς",
+      "label": "Καζαμπλάνκα με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    }
+  },
+  "marrakesh": {
+    "cityName": "Μαρακές",
+    "drone": {
+      "youtubeId": "4AelyFH8Q98",
+      "title": "Μαρακές 4K: Εναέρια Περιήγηση Drone στη Μεδίνα, την Πλατεία Τζεμάα ελ-Φνα & το Τζαμί Κουτουμπία",
+      "label": "Μαρακές με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    }
+  },
+  "rabat": {
+    "cityName": "Ραμπάτ",
+    "drone": {
+      "youtubeId": "m6ktP1e7umM",
+      "title": "Ραμπάτ Μαρόκου 4K: Εναέρια Περιήγηση Drone στον Πύργο Χασάν, την Κάσμπα των Ουντάγια & τον Ατλαντικό",
+      "label": "Ραμπάτ με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    }
+  },
+  "fes": {
+    "cityName": "Φες",
+    "drone": {
+      "youtubeId": "4AelyFH8Q98",
+      "title": "Φες Μαρόκου 4K: Περιήγηση στην Αρχαιότερη Μεδίνα & τα Ιστορικά Βυρσοδεψεία",
+      "label": "Φες με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    }
+  },
+  "tunis": {
+    "cityName": "Τύνιδα",
+    "drone": {
+      "youtubeId": "2MUJjFCIQ4k",
+      "title": "Τύνιδα 4K: Εναέρια Περιήγηση Drone στη Μεδίνα, την Καρχηδόνα & το Σίντι Μπου Σαΐντ",
+      "label": "Τύνιδα με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    }
+  },
+  "sfax": {
+    "cityName": "Σφαξ",
+    "drone": {
+      "youtubeId": "2MUJjFCIQ4k",
+      "title": "Σφαξ Τυνησίας 4K: Περιήγηση στα Ιστορικά Τείχη & το Εμπορικό Λιμάνι",
+      "label": "Σφαξ με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    }
+  },
+  "sousse": {
+    "cityName": "Σους",
+    "drone": {
+      "youtubeId": "2MUJjFCIQ4k",
+      "title": "Σους Τυνησίας 4K: Περιήγηση στο Ριμπάτ της UNESCO & την Ακτή της Μεσογείου",
+      "label": "Σους με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    }
+  },
+  "algiers": {
+    "cityName": "Αλγέρι",
+    "drone": {
+      "youtubeId": "CuY1vK8SKlQ",
+      "title": "Αλγέρι 4K: Εναέρια Περιήγηση Drone στην Κάσμπα, το Μνημείο Μαρτύρων & τον Κόλπο του Αλγερίου",
+      "label": "Αλγέρι με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    }
+  },
+  "oran": {
+    "cityName": "Οράν",
+    "drone": {
+      "youtubeId": "CuY1vK8SKlQ",
+      "title": "Οράν Αλγερίας 4K: Περιήγηση στο Φρούριο Σάντα Κρουζ & την Παραλιακή Λεωφόρο",
+      "label": "Οράν με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    }
+  },
+  "constantine": {
+    "cityName": "Κωνσταντίνη",
+    "drone": {
+      "youtubeId": "CuY1vK8SKlQ",
+      "title": "Κωνσταντίνη Αλγερίας 4K: Περιήγηση στην Πόλη των Κρεμαστών Γεφυρών πάνω από το Φαράγγι Ρουμελ",
+      "label": "Κωνσταντίνη με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    }
+  },
+  "tripoli": {
+    "cityName": "Τρίπολη",
+    "drone": {
+      "youtubeId": "2MUJjFCIQ4k",
+      "title": "Τρίπολη Λιβύης 4K: Πανοραμική Περιήγηση στην Ακτή της Μεσογείου & την Παλιά Πόλη",
+      "label": "Τρίπολη με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    }
+  },
+  "benghazi": {
+    "cityName": "Βεγγάζη",
+    "drone": {
+      "youtubeId": "2MUJjFCIQ4k",
+      "title": "Βεγγάζη Λιβύης 4K: Περιήγηση στην Κυρηναϊκή & το Λιμάνι της Μεσογείου",
+      "label": "Βεγγάζη με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    }
+  },
+  "lagos": {
+    "cityName": "Λάγος",
+    "drone": {
+      "youtubeId": "9Tm5JRHBWlA",
+      "title": "Λάγος Νιγηρίας 4K: Εναέρια Περιήγηση Drone στη Μεγαλούπολη, τη Γέφυρα Lekki-Ikoyi & το Victoria Island",
+      "label": "Λάγος με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    }
+  },
+  "abuja": {
+    "cityName": "Αμπούτζα",
+    "drone": {
+      "youtubeId": "9Tm5JRHBWlA",
+      "title": "Αμπούτζα Νιγηρίας 4K: Εναέρια Περιήγηση στο Εθνικό Τζαμί & τον Βράχο Zuma",
+      "label": "Αμπούτζα με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    }
+  },
+  "kano": {
+    "cityName": "Κάνο",
+    "drone": {
+      "youtubeId": "9Tm5JRHBWlA",
+      "title": "Κάνο Νιγηρίας 4K: Περιήγηση στα Αρχαία Τείχη & το Εμιράτο του Κάνο",
+      "label": "Κάνο με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    }
+  },
+  "accra": {
+    "cityName": "Άκρα",
+    "drone": {
+      "youtubeId": "Sl2PuaYhZJw",
+      "title": "Άκρα Γκάνας 4K: Εναέρια Περιήγηση Drone στην Πλατεία Ανεξαρτησίας, το Κάστρο Osu & τον Κόλπο της Γουινέας",
+      "label": "Άκρα με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    }
+  },
+  "kumasi": {
+    "cityName": "Κουμάσι",
+    "drone": {
+      "youtubeId": "Sl2PuaYhZJw",
+      "title": "Κουμάσι Γκάνας 4K: Περιήγηση στην Ιστορική Πρωτεύουσα του Βασιλείου Ασάντι",
+      "label": "Κουμάσι με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    }
+  },
+  "dakar": {
+    "cityName": "Ντακάρ",
+    "drone": {
+      "youtubeId": "UVjU-bB4dns",
+      "title": "Ντακάρ Σενεγάλης 4K: Εναέρια Περιήγηση Drone στο Μνημείο Αφρικανικής Αναγέννησης & το Νησί Γκορέ",
+      "label": "Ντακάρ με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    }
+  },
+  "saint-louis": {
+    "cityName": "Σαιν-Λουί",
+    "drone": {
+      "youtubeId": "UVjU-bB4dns",
+      "title": "Σαιν-Λουί Σενεγάλης 4K: Περιήγηση στην Αποικιακή Πόλη UNESCO & τη Γέφυρα Faidherbe",
+      "label": "Σαιν-Λουί με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    }
+  },
+  "abidjan": {
+    "cityName": "Αμπιτζάν",
+    "drone": {
+      "youtubeId": "OepYPIjyDgQ",
+      "title": "Αμπιτζάν Ακτής Ελεφαντοστού 4K: Εναέρια Περιήγηση Drone στο Plateau, τη Λιμνοθάλασσα Ébrié & τους Ουρανοξύστες",
+      "label": "Αμπιτζάν με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    }
+  },
+  "yamoussoukro": {
+    "cityName": "Γιαμουσούκρο",
+    "drone": {
+      "youtubeId": "OepYPIjyDgQ",
+      "title": "Γιαμουσούκρο 4K: Περιήγηση στη Βασιλική της Παναγίας της Ειρήνης, τη μεγαλύτερη εκκλησία στον κόσμο",
+      "label": "Γιαμουσούκρο με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    }
+  },
+  "yaounde": {
+    "cityName": "Γιαουντέ",
+    "drone": {
+      "youtubeId": "OepYPIjyDgQ",
+      "title": "Γιαουντέ Καμερούν 4K: Πανοραμική Περιήγηση στην Πόλη των Επτά Λόφων",
+      "label": "Γιαουντέ με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    }
+  },
+  "douala": {
+    "cityName": "Ντουάλα",
+    "drone": {
+      "youtubeId": "OepYPIjyDgQ",
+      "title": "Ντουάλα Καμερούν 4K: Περιήγηση στο Μεγαλύτερο Λιμάνι του Κόλπου της Γουινέας & τον Ποταμό Wouri",
+      "label": "Ντουάλα με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    }
+  },
+  "praia": {
+    "cityName": "Πράια",
+    "drone": {
+      "youtubeId": "vR1f3wCt_so",
+      "title": "Πράια Πράσινου Ακρωτηρίου 4K: Εναέρια Περιήγηση Drone στο Οροπέδιο Platô & τον Ατλαντικό Ωκεανό",
+      "label": "Πράια με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    }
+  },
+  "mindelo": {
+    "cityName": "Μιντέλο",
+    "drone": {
+      "youtubeId": "vR1f3wCt_so",
+      "title": "Μιντέλο Πράσινου Ακρωτηρίου 4K: Περιήγηση στην Πολιτιστική Πρωτεύουσα & την Πατρίδα της Cesária Évora",
+      "label": "Μιντέλο με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    }
+  },
+  "nouakchott": {
+    "cityName": "Νουακσότ",
+    "drone": {
+      "youtubeId": "UVjU-bB4dns",
+      "title": "Νουακσότ Μαυριτανίας 4K: Πανοραμική Περιήγηση στην Πόλη όπου η Σαχάρα συναντά τον Ατλαντικό",
+      "label": "Νουακσότ με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    }
+  },
+  "nouadhibou": {
+    "cityName": "Νουαντίμπου",
+    "drone": {
+      "youtubeId": "UVjU-bB4dns",
+      "title": "Νουαντίμπου Μαυριτανίας 4K: Περιήγηση στη Χερσόνησο Ras Nouadhibou & το Εμπορικό Λιμάνι",
+      "label": "Νουαντίμπου με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    }
+  },
   "phoenix": {
     "cityName": "Φοίνιξ",
     "drone": {
