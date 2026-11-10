@@ -353,7 +353,14 @@ export async function flyToCity(cityId) {
       'buenos-aires': 'argentina', 'cordoba': 'argentina', 'rosario': 'argentina',
       'santiago': 'chile', 'valparaiso': 'chile',
       'lima': 'peru', 'cusco': 'peru', 'arequipa': 'peru',
-      'bogota': 'colombia', 'medellin': 'colombia', 'cartagena': 'colombia'
+      'bogota': 'colombia', 'medellin': 'colombia', 'cartagena': 'colombia',
+      'caracas': 'venezuela', 'maracaibo': 'venezuela', 'valencia': 'venezuela',
+      'quito': 'ecuador', 'guayaquil': 'ecuador', 'cuenca': 'ecuador',
+      'la-paz': 'bolivia', 'sucre': 'bolivia', 'santa-cruz': 'bolivia',
+      'asuncion': 'paraguay', 'ciudad-del-este': 'paraguay',
+      'montevideo': 'uruguay', 'punta-del-este': 'uruguay',
+      'georgetown': 'guyana', 'linden': 'guyana',
+      'paramaribo': 'suriname', 'lelydorp': 'suriname'
     };
     const targetCountry = cityToCountry[cityId];
     if (targetCountry && !countriesMap.has(targetCountry)) {

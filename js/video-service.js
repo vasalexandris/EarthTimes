@@ -856,6 +856,191 @@ export const CITY_VIDEOS = {
       "type": "drone"
     }
   },
+  
+  "caracas": {
+    "cityName": "Καράκας",
+    "drone": {
+      "youtubeId": "7k8eYG4n_x8",
+      "title": "Καράκας 4K: Εναέρια Περιήγηση Drone στην Πρωτεύουσα της Βενεζουέλας & το Βουνό Ávila",
+      "label": "Καράκας με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "0Aohh8HSuBg",
+      "title": "Καράκας 4K: Περιήγηση στο Ιστορικό Κέντρο & την Plaza Bolívar",
+      "label": "Καράκας Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "maracaibo": {
+    "cityName": "Μαρακαΐμπο",
+    "drone": {
+      "youtubeId": "7k8eYG4n_x8",
+      "title": "Μαρακαΐμπο & Βενεζουέλα 4K: Περιήγηση στη Λίμνη Μαρακαΐμπο & τη Γέφυρα General Rafael Urdaneta",
+      "label": "Βενεζουέλα & Μαρακαΐμπο (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    }
+  },
+  "valencia": {
+    "cityName": "Βαλένθια",
+    "drone": {
+      "youtubeId": "7k8eYG4n_x8",
+      "title": "Βαλένθια Βενεζουέλας 4K: Πανοραμική Περιήγηση στην Βιομηχανική Μητρόπολη",
+      "label": "Βαλένθια με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    }
+  },
+  "quito": {
+    "cityName": "Κίτο",
+    "drone": {
+      "youtubeId": "kSKo-Ge_EvE",
+      "title": "Κίτο Εκουαδόρ 4K: Εναέρια Περιήγηση Drone στο Ιστορικό Κέντρο UNESCO & το El Panecillo",
+      "label": "Κίτο με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    }
+  },
+  "guayaquil": {
+    "cityName": "Γουαγιακίλ",
+    "drone": {
+      "youtubeId": "wzQezDZGPYE",
+      "title": "Γουαγιακίλ 4K: Εναέρια Περιήγηση Drone στο Malecón 2000, το Las Peñas & τον Ποταμό Guayas",
+      "label": "Γουαγιακίλ με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    }
+  },
+  "cuenca": {
+    "cityName": "Κουένκα",
+    "drone": {
+      "youtubeId": "kSKo-Ge_EvE",
+      "title": "Κουένκα Εκουαδόρ 4K: Εναέρια Περιήγηση στην Αποικιακή Πόλη της UNESCO",
+      "label": "Κουένκα με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    }
+  },
+  "la-paz": {
+    "cityName": "Λα Παζ",
+    "drone": {
+      "youtubeId": "BCYutVnHrW0",
+      "title": "Λα Παζ Βολιβίας 4K: Εναέρια Περιήγηση Drone στις Άνδεις, το Mi Teleférico & το Illimani",
+      "label": "Λα Παζ με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    }
+  },
+  "sucre": {
+    "cityName": "Σούκρε",
+    "drone": {
+      "youtubeId": "BCYutVnHrW0",
+      "title": "Σούκρε Βολιβίας 4K: Πανοραμική Περιήγηση στη Λευκή Συνταγματική Πρωτεύουσα",
+      "label": "Σούκρε με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    }
+  },
+  "santa-cruz": {
+    "cityName": "Σάντα Κρουζ",
+    "drone": {
+      "youtubeId": "BCYutVnHrW0",
+      "title": "Σάντα Κρουζ ντε λα Σιέρα 4K: Εναέρια Περιήγηση στη Μεγαλύτερη Μητρόπολη της Βολιβίας",
+      "label": "Σάντα Κρουζ με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    }
+  },
+  "asuncion": {
+    "cityName": "Ασουνσιόν",
+    "drone": {
+      "youtubeId": "FQAkOI7npJI",
+      "title": "Ασουνσιόν Παραγουάης 4K: Εναέρια Περιήγηση Drone στην Costanera & το Palacio de los López",
+      "label": "Ασουνσιόν με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "aXPRBFEMxT8",
+      "title": "Ασουνσιόν 4K HDR: Περιήγηση στο Ιστορικό Κέντρο & την Παλιά Πόλη",
+      "label": "Ασουνσιόν Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "ciudad-del-este": {
+    "cityName": "Σιουδάδ δελ Έστε",
+    "drone": {
+      "youtubeId": "FQAkOI7npJI",
+      "title": "Σιουδάδ δελ Έστε 4K: Περιήγηση στην Εμπορική Πρωτεύουσα & τη Γέφυρα Φιλίας προς τη Βραζιλία",
+      "label": "Σιουδάδ δελ Έστε (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    }
+  },
+  "montevideo": {
+    "cityName": "Μοντεβιδέο",
+    "drone": {
+      "youtubeId": "2LVsoqzSGmE",
+      "title": "Μοντεβιδέο Ουρουγουάης 4K: Εναέρια Περιήγηση Drone στην Rambla, την Ciudad Vieja & την Plaza Independencia",
+      "label": "Μοντεβιδέο με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    }
+  },
+  "punta-del-este": {
+    "cityName": "Πούντα δελ Έστε",
+    "drone": {
+      "youtubeId": "txW0B_G2b2w",
+      "title": "Πούντα δελ Έστε 4K: Εναέρια Περιήγηση Drone στο Διάσημο Θέρετρο & το Γλυπτό La Mano",
+      "label": "Πούντα δελ Έστε (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    }
+  },
+  "georgetown": {
+    "cityName": "Τζορτζτάουν",
+    "drone": {
+      "youtubeId": "tYdBX3X-51k",
+      "title": "Τζορτζτάουν Γουιάνας 4K: Εναέρια Περιήγηση Drone στον Καθεδρικό St. George & τον Ποταμό Demerara",
+      "label": "Τζορτζτάουν με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    }
+  },
+  "linden": {
+    "cityName": "Λίντεν",
+    "drone": {
+      "youtubeId": "tYdBX3X-51k",
+      "title": "Λίντεν Γουιάνας 4K: Περιήγηση στις Όχθες του Demerara & τα Ορυχεία Βωξίτη",
+      "label": "Λίντεν με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    }
+  },
+  "paramaribo": {
+    "cityName": "Παραμαρίμπο",
+    "drone": {
+      "youtubeId": "Vn8G7bMuftU",
+      "title": "Παραμαρίμπο Σουρινάμ 4K: Εναέρια Περιήγηση Drone στην Ξύλινη Αποικιακή Πόλη UNESCO & το Fort Zeelandia",
+      "label": "Παραμαρίμπο με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    }
+  },
+  "lelydorp": {
+    "cityName": "Λέλινορπ",
+    "drone": {
+      "youtubeId": "Vn8G7bMuftU",
+      "title": "Λέλινορπ Σουρινάμ 4K: Περιήγηση στην Αγροτική Καρδιά & το Neotropical Butterfly Park",
+      "label": "Λέλινορπ με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    }
+  },
   "phoenix": {
     "cityName": "Φοίνιξ",
     "drone": {

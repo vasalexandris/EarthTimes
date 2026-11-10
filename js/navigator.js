@@ -483,6 +483,72 @@ export const CONTINENTS_DATA = [
           { id: 'medellin', name: 'Μεδεγίν' },
           { id: 'cartagena', name: 'Καρθαγένη' }
         ]
+      },
+      {
+        id: 'venezuela',
+        name: 'Βενεζουέλα',
+        flag: '🇻🇪',
+        cities: [
+          { id: 'caracas', name: 'Καράκας', badge: 'Πρωτεύουσα' },
+          { id: 'maracaibo', name: 'Μαρακαΐμπο' },
+          { id: 'valencia', name: 'Βαλένθια' }
+        ]
+      },
+      {
+        id: 'ecuador',
+        name: 'Εκουαδόρ',
+        flag: '🇪🇨',
+        cities: [
+          { id: 'quito', name: 'Κίτο', badge: 'Πρωτεύουσα' },
+          { id: 'guayaquil', name: 'Γουαγιακίλ' },
+          { id: 'cuenca', name: 'Κουένκα' }
+        ]
+      },
+      {
+        id: 'bolivia',
+        name: 'Βολιβία',
+        flag: '🇧🇴',
+        cities: [
+          { id: 'la-paz', name: 'Λα Παζ', badge: 'Πρωτεύουσα' },
+          { id: 'sucre', name: 'Σούκρε', badge: 'Συνταγματική' },
+          { id: 'santa-cruz', name: 'Σάντα Κρουζ' }
+        ]
+      },
+      {
+        id: 'paraguay',
+        name: 'Παραγουάη',
+        flag: '🇵🇾',
+        cities: [
+          { id: 'asuncion', name: 'Ασουνσιόν', badge: 'Πρωτεύουσα' },
+          { id: 'ciudad-del-este', name: 'Σιουδάδ δελ Έστε' }
+        ]
+      },
+      {
+        id: 'uruguay',
+        name: 'Ουρουγουάη',
+        flag: '🇺🇾',
+        cities: [
+          { id: 'montevideo', name: 'Μοντεβιδέο', badge: 'Πρωτεύουσα' },
+          { id: 'punta-del-este', name: 'Πούντα δελ Έστε' }
+        ]
+      },
+      {
+        id: 'guyana',
+        name: 'Γουιάνα',
+        flag: '🇬🇾',
+        cities: [
+          { id: 'georgetown', name: 'Τζορτζτάουν', badge: 'Πρωτεύουσα' },
+          { id: 'linden', name: 'Λίντεν' }
+        ]
+      },
+      {
+        id: 'suriname',
+        name: 'Σουρινάμ',
+        flag: '🇸🇷',
+        cities: [
+          { id: 'paramaribo', name: 'Παραμαρίμπο', badge: 'Πρωτεύουσα' },
+          { id: 'lelydorp', name: 'Λέλινορπ' }
+        ]
       }
     ]
   }
