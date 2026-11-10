@@ -1,3 +1,4 @@
+import { CITY_TO_STATE } from './states-data.js';
 /**
  * Video Service Module
  * Registry of verified high-definition YouTube video tours for all cities
@@ -645,6 +646,224 @@ export const CITY_VIDEOS = {
       "label": "Λος Άντζελες Walking Tour (4K)",
       "icon": "fa-solid fa-person-walking",
       "type": "walking"
+    }
+  },
+  "cambridge": {
+    "cityName": "Κέιμπριτζ",
+    "drone": {
+      "youtubeId": "NLdVUWcwJ3Y",
+      "title": "Κέιμπριτζ & Harvard 4K: Εναέρια Περιήγηση Drone στο Πανεπιστήμιο Harvard & τον Ποταμό Charles",
+      "label": "Κέιμπριτζ & Harvard με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "awrBSE_O6Oo",
+      "title": "Κέιμπριτζ & Harvard Yard 4K: Περιήγηση στο Harvard Square & τα Ιστορικά Κολέγια",
+      "label": "Harvard & Cambridge Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "salem": {
+    "cityName": "Σάλεμ",
+    "walking": {
+      "youtubeId": "HYcUlAsrBfg",
+      "title": "Σάλεμ 4K: Ιστορική Περιήγηση στην Πόλη των Μαγισσών & το Essex Street",
+      "label": "Σάλεμ Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    },
+    "drone": {
+      "youtubeId": "HcIPuebIMDk",
+      "title": "Σάλεμ 4K: Περιήγηση στο Ιστορικό Κέντρο & το Λιμάνι",
+      "label": "Σάλεμ Tour (4K)",
+      "icon": "fa-solid fa-landmark",
+      "type": "drone"
+    }
+  },
+  "plymouth": {
+    "cityName": "Πλίμουθ",
+    "walking": {
+      "youtubeId": "xu70Lp10OrI",
+      "title": "Πλίμουθ 4K: Περιήγηση στην Ιστορική Αποικία των Προσκυνητών (Mayflower & Plymouth Rock)",
+      "label": "Πλίμουθ Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    },
+    "drone": {
+      "youtubeId": "xYveL2vRZY8",
+      "title": "Πλίμουθ 4K: Περιήγηση στο Λιμάνι & τον Κυματοθραύστη του Cape Cod Bay",
+      "label": "Πλίμουθ Harbor Tour (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    }
+  },
+  "worcester": {
+    "cityName": "Γούστερ",
+    "walking": {
+      "youtubeId": "c5RdRLItYGo",
+      "title": "Γούστερ 4K: Περιήγηση στο Κέντρο της Πόλης & το Mechanics Hall",
+      "label": "Γούστερ Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "san-francisco": {
+    "cityName": "Σαν Φρανσίσκο",
+    "drone": {
+      "youtubeId": "oLdr80iDFsc",
+      "title": "Σαν Φρανσίσκο 4K: Εναέρια Περιήγηση Drone στη Golden Gate Bridge, το Alcatraz & το Downtown",
+      "label": "Σαν Φρανσίσκο με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    }
+  },
+  "washington-dc": {
+    "cityName": "Ουάσινγκτον (D.C.)",
+    "drone": {
+      "youtubeId": "qdGin1IPgh0",
+      "title": "Ουάσινγκτον 4K: Εναέρια Περιήγηση Drone στο Καπιτώλιο, το Μνημείο Λίνκολν & τον Λευκό Οίκο",
+      "label": "Ουάσινγκτον με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    }
+  },
+  "miami": {
+    "cityName": "Μαϊάμι",
+    "drone": {
+      "youtubeId": "1lasGLVq1zQ",
+      "title": "Μαϊάμι 4K: Εναέρια Περιήγηση Drone στο South Beach, το Ocean Drive & το Brickell",
+      "label": "Μαϊάμι με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "Dmhws_sBEic",
+      "title": "Μαϊάμι Beach 4K: Περιήγηση στο Art Deco District & την Ακτή",
+      "label": "Μαϊάμι Beach Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "seattle": {
+    "cityName": "Σιάτλ",
+    "drone": {
+      "youtubeId": "FnZ9uYWuk-Q",
+      "title": "Σιάτλ 4K: Εναέρια Περιήγηση Drone στο Space Needle, το Pike Place Market & το Elliott Bay",
+      "label": "Σιάτλ με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    }
+  },
+  "las-vegas": {
+    "cityName": "Λας Βέγκας",
+    "drone": {
+      "youtubeId": "Inun9TW-0Fo",
+      "title": "Λας Βέγκας 4K: Εναέρια Περιήγηση Drone στο The Strip, το Bellagio & τη Fremont Street",
+      "label": "Λας Βέγκας με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    }
+  },
+  "san-diego": {
+    "cityName": "Σαν Ντιέγκο",
+    "drone": {
+      "youtubeId": "qg-7LaGf_C8",
+      "title": "Σαν Ντιέγκο 4K: Εναέρια Περιήγηση Drone στο Balboa Park, το Coronado & την Ακτή του Ειρηνικού",
+      "label": "Σαν Ντιέγκο με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    }
+  },
+  "philadelphia": {
+    "cityName": "Φιλαδέλφεια",
+    "drone": {
+      "youtubeId": "hRSYvzEqPaA",
+      "title": "Φιλαδέλφεια 4K: Εναέρια Περιήγηση Drone στο Independence Hall, το Δημαρχείο & το Μουσείο Τέχνης",
+      "label": "Φιλαδέλφεια με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    }
+  },
+  "houston": {
+    "cityName": "Χιούστον",
+    "drone": {
+      "youtubeId": "74LP4dUwPM8",
+      "title": "Χιούστον 4K: Εναέρια Περιήγηση Drone στο Downtown Houston & το Διαστημικό Κέντρο NASA",
+      "label": "Χιούστον με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    }
+  },
+  "dallas": {
+    "cityName": "Ντάλας",
+    "drone": {
+      "youtubeId": "Io-uoxX2Yk8",
+      "title": "Ντάλας 4K: Εναέρια Περιήγηση Drone στο Reunion Tower & τους Ουρανοξύστες του Τέξας",
+      "label": "Ντάλας με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    }
+  },
+  "austin": {
+    "cityName": "Όστιν",
+    "drone": {
+      "youtubeId": "M3dhlboim9E",
+      "title": "Όστιν 4K: Εναέρια Περιήγηση Drone στο Καπιτώλιο του Τέξας & τη Λίμνη Lady Bird",
+      "label": "Όστιν με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    }
+  },
+  "denver": {
+    "cityName": "Ντένβερ",
+    "drone": {
+      "youtubeId": "wbaDXXofyds",
+      "title": "Ντένβερ 4K: Εναέρια Περιήγηση Drone στην Πόλη των Βραχωδών Ορέων (Mile High City)",
+      "label": "Ντένβερ με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    }
+  },
+  "atlanta": {
+    "cityName": "Ατλάντα",
+    "drone": {
+      "youtubeId": "tcfw_vHcA4U",
+      "title": "Ατλάντα 4K: Εναέρια Περιήγηση Drone στο Centennial Olympic Park & το Midtown",
+      "label": "Ατλάντα με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    }
+  },
+  "honolulu": {
+    "cityName": "Χονολουλού",
+    "drone": {
+      "youtubeId": "6XZOgg9WRhI",
+      "title": "Χονολουλού & Χαβάη 4K: Εναέρια Περιήγηση Drone στην Παραλία Waikiki & το Diamond Head",
+      "label": "Χονολουλού με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    }
+  },
+  "new-orleans": {
+    "cityName": "Νέα Ορλεάνη",
+    "drone": {
+      "youtubeId": "A14iV1uVSSg",
+      "title": "Νέα Ορλεάνη 4K: Εναέρια Περιήγηση Drone στο French Quarter, την Bourbon Street & τον Μισισιπή",
+      "label": "Νέα Ορλεάνη με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    }
+  },
+  "phoenix": {
+    "cityName": "Φοίνιξ",
+    "drone": {
+      "youtubeId": "XZXThVCG27A",
+      "title": "Φοίνιξ & Αριζόνα 4K: Εναέρια Περιήγηση Drone στην Κοιλάδα του Ήλιου & την Έρημο Σονόρα",
+      "label": "Φοίνιξ με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
     }
   },
   "bern": {
@@ -1850,20 +2069,45 @@ export const CITY_VIDEOS = {
 export function getCityVideo(cityId, preferredType = 'drone') {
   if (!cityId) return null;
   const entry = CITY_VIDEOS[cityId];
-  if (!entry) return null;
-
-  if (entry[preferredType]) {
-    return entry[preferredType];
+  if (entry) {
+    if (entry[preferredType]) {
+      return entry[preferredType];
+    }
+    return entry.drone || entry.walking || entry.guide || null;
   }
-  return entry.drone || entry.walking || entry.guide || null;
+
+  // Smart fallback for any US state city
+  if (CITY_TO_STATE && CITY_TO_STATE[cityId]) {
+    return {
+      youtubeId: "EAYo7Qals90",
+      title: "Ηνωμένες Πολιτείες Αμερικής 4K: Πανοραμικό Κινηματογραφικό Ταξίδι στις Εμβληματικές Πόλεις των ΗΠΑ",
+      label: "ΗΠΑ 4K Cinematic Tour",
+      icon: "fa-solid fa-helicopter",
+      type: "drone"
+    };
+  }
+
+  return null;
 }
 
 /**
  * Returns all available tour options for a city.
  */
 export function getAvailableCityTours(cityId) {
-  if (!cityId || !CITY_VIDEOS[cityId]) return [];
+  if (!cityId) return [];
   const entry = CITY_VIDEOS[cityId];
+  if (!entry) {
+    if (CITY_TO_STATE && CITY_TO_STATE[cityId]) {
+      return [{
+        type: 'drone',
+        label: 'ΗΠΑ 4K Cinematic Tour',
+        icon: 'fa-solid fa-helicopter',
+        title: 'Ηνωμένες Πολιτείες Αμερικής 4K: Πανοραμικό Κινηματογραφικό Ταξίδι',
+        youtubeId: 'EAYo7Qals90'
+      }];
+    }
+    return [];
+  }
   const tours = [];
 
   if (entry.drone) {

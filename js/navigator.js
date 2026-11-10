@@ -1,3 +1,4 @@
+import { US_STATES, CITY_TO_STATE } from './states-data.js';
 /**
  * Navigator Module
  * Hierarchical Cascading Navigation: Continents -> Countries -> Cities
@@ -490,6 +491,8 @@ export const CONTINENTS_DATA = [
 let isNavDropdownOpen = false;
 let expandedContinents = new Set(['europe']);
 let expandedCountries = new Set(['greece']);
+let expandedStates = new Set(['massachusetts']);
+let showAllStates = false;
 
 export function initContinentNavigator() {
   renderContinentNav();
@@ -574,6 +577,26 @@ export function updateNavigatorBtnLabel(targetValue, targetName = '') {
     return;
   }
 
+  // Lookup in US_STATES
+  if (targetValue.startsWith('state:')) {
+    const sId = targetValue.split(':')[1];
+    const st = US_STATES.find(s => s.id === sId);
+    labelEl.innerText = st ? `🏛️ ${st.name} (ΗΠΑ)` : targetValue;
+    return;
+  }
+  if (targetValue.startsWith('city:')) {
+    const cId = targetValue.split(':')[1];
+    const sId = CITY_TO_STATE[cId];
+    if (sId) {
+      const st = US_STATES.find(s => s.id === sId);
+      if (st) {
+        const c = st.cities.find(ci => ci.id === cId);
+        labelEl.innerText = `📍 ${c ? c.name : cId} (${st.name})`;
+        return;
+      }
+    }
+  }
+
   // Lookup in data
   for (const continent of CONTINENTS_DATA) {
     for (const country of continent.countries) {
@@ -630,6 +653,39 @@ export function filterContinentNav(query) {
             sub: `${country.flag} ${country.name} • ${continent.name}`,
             icon: 'fa-location-dot text-sky-400',
             badge: city.badge
+          });
+        }
+      }
+    }
+  }
+
+  // Check all 51 US States and 121 Cities
+  for (const state of US_STATES) {
+    if (state.name.toLowerCase().includes(q) || 
+        state.englishName.toLowerCase().includes(q) || 
+        state.id.includes(q) || 
+        state.capital.toLowerCase().includes(q)) {
+      matches.push({
+        type: 'state',
+        value: `state:${state.id}`,
+        title: `🏛️ ${state.name} (${state.englishName})`,
+        sub: `Πολιτεία ΗΠΑ • Πρωτεύουσα: ${state.capital}`,
+        icon: 'fa-landmark text-emerald-400',
+        badge: 'Πολιτεία ΗΠΑ'
+      });
+    }
+    for (const city of state.cities) {
+      if (city.name.toLowerCase().includes(q) || 
+          city.englishName.toLowerCase().includes(q) || 
+          city.id.includes(q)) {
+        if (!matches.some(m => m.value === `city:${city.id}`)) {
+          matches.push({
+            type: 'city',
+            value: `city:${city.id}`,
+            title: city.name,
+            sub: `🇺🇸 ${state.name} (${state.englishName}) • Βόρεια Αμερική`,
+            icon: 'fa-location-dot text-sky-400',
+            badge: city.badge || 'ΗΠΑ'
           });
         }
       }
@@ -730,6 +786,54 @@ export function renderContinentNav() {
                           ${city.badge ? `<span class="text-[8px] px-1 rounded bg-slate-800 text-slate-400 border border-slate-700/60 group-hover:border-sky-500/40 group-hover:text-sky-300 shrink-0">${city.badge}</span>` : ''}
                         </button>
                       `).join('')}
+
+                      ${country.id === 'usa' ? `
+                        <!-- Collapsible All US States Section (51 States, 121 Cities) -->
+                        <div class="mt-2 pt-2 border-t border-slate-800/60">
+                          <button onclick="window.toggleAllStatesSection(event)" class="w-full px-2 py-1.5 rounded-lg bg-emerald-950/40 hover:bg-emerald-900/50 border border-emerald-700/40 flex items-center justify-between text-left text-[11px] font-bold text-emerald-300 hover:text-emerald-200 transition group">
+                            <div class="flex items-center gap-1.5">
+                              <i class="fa-solid fa-flag-usa text-emerald-400"></i>
+                              <span>🏛️ 50 Πολιτείες & D.C.</span>
+                              <span class="text-[9px] px-1.5 py-0.2 rounded bg-emerald-900/60 text-emerald-300 font-mono">121 πόλεις</span>
+                            </div>
+                            <i class="fa-solid fa-chevron-down text-[9px] transition-transform duration-200 ${showAllStates ? 'rotate-180 text-emerald-300' : ''}"></i>
+                          </button>
+
+                          ${showAllStates ? `
+                            <div class="mt-1 pl-1 space-y-1 max-h-[350px] overflow-y-auto pr-1 custom-scrollbar">
+                              ${US_STATES.map(state => {
+                                const isStExpanded = expandedStates.has(state.id);
+                                return `
+                                  <div class="rounded border border-slate-800/40 bg-slate-900/40 overflow-hidden">
+                                    <div class="w-full px-2 py-1 hover:bg-slate-800/60 flex items-center justify-between transition text-[11px]">
+                                      <button onclick="window.selectNavTarget('state:${state.id}', '🏛️ ${state.name.replace(/'/g, "\\'")}')" class="flex items-center gap-1.5 text-left min-w-0 flex-1 group">
+                                        <i class="fa-solid fa-landmark text-[9px] text-emerald-400 shrink-0"></i>
+                                        <span class="font-medium text-slate-300 group-hover:text-emerald-300 truncate">${state.name}</span>
+                                        <span class="text-[8px] text-slate-500 font-mono">(${state.cities.length})</span>
+                                      </button>
+                                      ${state.cities.length > 0 ? `
+                                        <button onclick="window.toggleStateSection('${state.id}', event)" class="p-1 text-slate-400 hover:text-white transition" title="Προβολή πόλεων ${state.name}">
+                                          <i class="fa-solid fa-chevron-down text-[8px] transition-transform duration-200 ${isStExpanded ? 'rotate-180 text-emerald-400' : ''}"></i>
+                                        </button>
+                                      ` : ''}
+                                    </div>
+                                    ${isStExpanded && state.cities.length > 0 ? `
+                                      <div class="px-2 py-0.5 bg-slate-950/80 border-t border-slate-800/30 space-y-0.5 pl-4">
+                                        ${state.cities.map(sc => `
+                                          <button onclick="window.selectNavTarget('city:${sc.id}', '📍 ${sc.name.replace(/'/g, "\\'")}')" class="w-full text-left px-1.5 py-0.5 rounded hover:bg-slate-800 text-slate-400 hover:text-sky-300 transition flex items-center justify-between text-[10px] group">
+                                            <span class="truncate">📍 ${sc.name}</span>
+                                            ${sc.badge ? `<span class="text-[7px] px-1 rounded bg-slate-800 text-amber-300 border border-amber-600/30 shrink-0">${sc.badge}</span>` : ''}
+                                          </button>
+                                        `).join('')}
+                                      </div>
+                                    ` : ''}
+                                  </div>
+                                `;
+                              }).join('')}
+                            </div>
+                          ` : ''}
+                        </div>
+                      ` : ''}
                     </div>
                   ` : ''}
                 </div>
@@ -742,6 +846,23 @@ export function renderContinentNav() {
   }).join('');
 }
 
+
+export function toggleStateSection(stateId, event) {
+  if (event) event.stopPropagation();
+  if (expandedStates.has(stateId)) {
+    expandedStates.delete(stateId);
+  } else {
+    expandedStates.add(stateId);
+  }
+  renderContinentNav();
+}
+
+export function toggleAllStatesSection(event) {
+  if (event) event.stopPropagation();
+  showAllStates = !showAllStates;
+  renderContinentNav();
+}
+
 // Global window bindings
 window.toggleContinentNavDropdown = toggleContinentNavDropdown;
 window.closeContinentNavDropdown = closeContinentNavDropdown;
@@ -749,3 +870,6 @@ window.toggleContinentSection = toggleContinentSection;
 window.toggleCountrySection = toggleCountrySection;
 window.selectNavTarget = selectNavTarget;
 window.filterContinentNav = filterContinentNav;
+
+window.toggleStateSection = toggleStateSection;
+window.toggleAllStatesSection = toggleAllStatesSection;

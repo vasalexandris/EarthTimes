@@ -47,9 +47,12 @@ export async function loadStateData(stateId = 'massachusetts') {
     return dataCache.get(stateId);
   }
   try {
-    const response = await fetch(`./data/${stateId}.json`);
+    let response = await fetch(`./data/states/${stateId}.json`);
     if (!response.ok) {
-      throw new Error(`HTTP error ${response.status} loading data/${stateId}.json`);
+      response = await fetch(`./data/${stateId}.json`);
+    }
+    if (!response.ok) {
+      throw new Error(`HTTP error ${response.status} loading state data for ${stateId}`);
     }
     const data = await response.json();
     dataCache.set(stateId, data);

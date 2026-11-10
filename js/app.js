@@ -9,11 +9,14 @@ import * as MapModule from './map.js';
 import * as UIModule from './ui.js';
 import * as TimeMachine from './time-machine.js';
 import * as NavigatorModule from './navigator.js';
+import { US_STATES, CITY_TO_STATE } from './states-data.js';
 
 // Application State
 let worldData = null;
 const countriesMap = new Map(); // Dynamic multi-country registry
+const statesMap = new Map(); // Dynamic multi-state registry (51 states)
 let massachusettsData = null;
+let currentStateId = 'massachusetts';
 
 let currentScope = 'world'; // 'world' | 'country' | 'state' | 'city'
 let currentCountryId = 'greece';
@@ -70,6 +73,13 @@ function getAllCities() {
       list.push(...cData.cities);
     }
   }
+  for (const sData of statesMap.values()) {
+    if (sData && sData.cities) {
+      sData.cities.forEach(sc => {
+        if (!list.some(c => c.id === sc.id)) list.push(sc);
+      });
+    }
+  }
   if (massachusettsData && massachusettsData.cities) {
     massachusettsData.cities.forEach(mc => {
       if (!list.some(c => c.id === mc.id)) list.push(mc);
@@ -91,8 +101,9 @@ function getCurrentEntity() {
     const cData = countriesMap.get(currentCountryId);
     return cData ? cData.country : null;
   }
-  if (currentScope === 'state' && massachusettsData) {
-    return massachusettsData.state;
+  if (currentScope === 'state') {
+    const sData = statesMap.get(currentStateId) || massachusettsData;
+    return sData ? sData.state : null;
   }
   if (currentScope === 'city' && currentCityId) {
     return findCityById(currentCityId);
@@ -235,21 +246,35 @@ export async function flyToCountry(countryId = 'greece') {
   renderCurrentTimeCapsules();
 }
 
-export function flyToState(stateId = 'massachusetts') {
+export async function flyToState(stateId = 'massachusetts') {
   currentScope = 'state';
   currentCountryId = 'usa';
+  currentStateId = stateId;
   currentCityId = null;
 
-  if (!massachusettsData) return;
-  const state = massachusettsData.state;
+  let sData = statesMap.get(stateId);
+  if (!sData) {
+    try {
+      sData = await loadStateData(stateId);
+      statesMap.set(stateId, sData);
+      if (stateId === 'massachusetts') massachusettsData = sData;
+    } catch (err) {
+      console.warn(`[App] Error loading state data for ${stateId}:`, err);
+      if (massachusettsData) sData = massachusettsData;
+    }
+  }
+
+  if (!sData || !sData.state) return;
+  const state = sData.state;
 
   UIModule.updateStatusBadge(`Πτήση: Πολιτεία ${state.name}`);
   UIModule.updateBreadcrumbs('state', state);
   UIModule.updateJumpSelect(`state:${state.id}`);
+  NavigatorModule.updateNavigatorBtnLabel(`state:${state.id}`, `🏛️ ${state.name} (ΗΠΑ)`);
 
   MapModule.flyToCoords(state.coords, state.zoom, 1.5);
   MapModule.toggleStateHighlight(true);
-  MapModule.renderCityPins(massachusettsData.cities, currentScope, currentCityId, flyToCity);
+  MapModule.renderCityPins(sData.cities || [], currentScope, currentCityId, flyToCity);
   MapModule.clearPois();
   UIModule.renderDossier(
     state, 
@@ -265,8 +290,26 @@ export function flyToState(stateId = 'massachusetts') {
 export async function flyToCity(cityId) {
   let city = findCityById(cityId);
 
-  // If not yet loaded, resolve country dynamically
+  // If not yet loaded, resolve state or country dynamically
   if (!city) {
+    // 1. Check if city belongs to a US state
+    const targetState = CITY_TO_STATE && CITY_TO_STATE[cityId];
+    if (targetState) {
+      try {
+        let sData = statesMap.get(targetState);
+        if (!sData) {
+          sData = await loadStateData(targetState);
+          statesMap.set(targetState, sData);
+          if (targetState === 'massachusetts') massachusettsData = sData;
+        }
+        city = findCityById(cityId);
+      } catch (e) {
+        console.warn(`Error loading state ${targetState} for city ${cityId}`, e);
+      }
+    }
+
+    // 2. Check if city belongs to a country
+    if (!city) {
     const cityToCountry = {
       'paris': 'france', 'marseille': 'france', 'lyon': 'france',
       'rome': 'italy', 'florence': 'italy', 'milan': 'italy', 'venice': 'italy',
@@ -322,6 +365,7 @@ export async function flyToCity(cityId) {
         console.warn(`Error loading country for ${cityId}`, e);
       }
     }
+    }
   }
 
   if (!city) return;
@@ -329,18 +373,34 @@ export async function flyToCity(cityId) {
   currentScope = 'city';
   currentCityId = cityId;
 
-  // Determine parent country
+  // Determine parent country or state
   let parent = null;
+  let activeCities = [];
+
   for (const [cId, cData] of countriesMap.entries()) {
     if (cData && cData.cities && cData.cities.some(c => c.id === cityId)) {
       currentCountryId = cId;
       parent = cData.country;
+      activeCities = cData.cities;
       break;
+    }
+  }
+  if (!parent) {
+    for (const [sId, sData] of statesMap.entries()) {
+      if (sData && sData.cities && sData.cities.some(c => c.id === cityId)) {
+        currentCountryId = 'usa';
+        currentStateId = sId;
+        parent = sData.state;
+        activeCities = sData.cities;
+        break;
+      }
     }
   }
   if (!parent && massachusettsData && massachusettsData.cities.some(c => c.id === cityId)) {
     currentCountryId = 'usa';
+    currentStateId = 'massachusetts';
     parent = massachusettsData.state;
+    activeCities = massachusettsData.cities;
   }
 
   UIModule.updateStatusBadge(`Πτήση: ${city.name} (${city.englishName})`);
@@ -350,9 +410,6 @@ export async function flyToCity(cityId) {
 
   MapModule.flyToCoords(city.coords, city.zoom, 1.4);
   MapModule.toggleStateHighlight(false);
-
-  const activeCountryData = countriesMap.get(currentCountryId);
-  const activeCities = activeCountryData ? activeCountryData.cities : (massachusettsData ? massachusettsData.cities : []);
 
   MapModule.renderCityPins(activeCities, currentScope, currentCityId, flyToCity);
   MapModule.renderCityPois(city, currentPoiFilter, switchTab);
@@ -613,6 +670,7 @@ async function init() {
 
     worldData = wData;
     massachusettsData = maData;
+    statesMap.set('massachusetts', maData);
 
     // 3. Preload countries in background with Promise.allSettled (fully resilient to any individual error)
     const countryKeys = [
