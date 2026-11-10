@@ -803,6 +803,30 @@ export const CONTINENTS_DATA = [
         ]
       }
     ]
+  },
+  {
+    id: 'asia',
+    name: 'Ασία',
+    icon: 'fa-earth-asia',
+    countries: [
+      {
+        id: 'china',
+        name: 'Κίνα',
+        flag: '🇨🇳',
+        cities: [
+          { id: 'beijing', name: 'Πεκίνο', badge: 'Πρωτεύουσα' },
+          { id: 'shanghai', name: 'Σανγκάη', badge: 'Μητρόπολη' },
+          { id: 'hong-kong', name: 'Χονγκ Κονγκ', badge: 'Ειδική Περιφέρεια' },
+          { id: 'xian', name: 'Σιάν', badge: 'Πήλινος Στρατός' },
+          { id: 'chengdu', name: 'Τσενγκντού', badge: 'Γιγάντια Πάντα' },
+          { id: 'guangzhou', name: 'Γκουανγκτζόου', badge: 'Καντόνα' },
+          { id: 'hangzhou', name: 'Χανγκτζόου', badge: 'Δυτική Λίμνη' },
+          { id: 'chongqing', name: 'Τσονγκτσίνγκ', badge: 'Γιανγκτσέ' },
+          { id: 'suzhou', name: 'Σουτζόου', badge: 'Κήποι UNESCO' },
+          { id: 'guilin', name: 'Γκουιλίν', badge: 'Καρστικά Τοπία' }
+        ]
+      }
+    ]
   }
 ];
 

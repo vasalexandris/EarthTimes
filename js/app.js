@@ -386,7 +386,9 @@ export async function flyToCity(cityId) {
       'port-louis': 'mauritius', 'grand-baie': 'mauritius',
       'kinshasa': 'dr-congo', 'goma': 'dr-congo',
       'luanda': 'angola', 'benguela': 'angola',
-      'maputo': 'mozambique', 'beira': 'mozambique'
+      'maputo': 'mozambique', 'beira': 'mozambique',
+      'beijing': 'china', 'shanghai': 'china', 'hong-kong': 'china', 'xian': 'china', 'chengdu': 'china',
+      'guangzhou': 'china', 'hangzhou': 'china', 'chongqing': 'china', 'suzhou': 'china', 'guilin': 'china'
     };
     const targetCountry = cityToCountry[cityId];
     if (targetCountry && !countriesMap.has(targetCountry)) {
@@ -751,7 +753,8 @@ async function init() {
       'argentina',
       'chile',
       'peru',
-      'colombia'
+      'colombia',
+      'china'
     ];
 
     const settledCountries = await Promise.allSettled(countryKeys.map(k => loadCountryData(k)));

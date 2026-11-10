@@ -2867,6 +2867,176 @@ export const CITY_VIDEOS = {
           "icon": "fa-solid fa-person-walking",
           "type": "walking"
       }
+  },
+  "beijing": {
+      "cityName": "Πεκίνο",
+      "drone": {
+          "youtubeId": "GJKYLvwsg_0",
+          "title": "Πεκίνο 4K: Εναέρια Πανοραμική Περιήγηση Drone στην Απαγορευμένη Πόλη & τα Μνημεία",
+          "label": "Πεκίνο με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      },
+      "walking": {
+          "youtubeId": "6FwoJXbCjeA",
+          "title": "Πεκίνο 4K: Περιήγηση στα Ιστορικά Χούτονγκ & τον Πεζόδρομο Wangfujing",
+          "label": "Πεκίνο Walking Tour (4K)",
+          "icon": "fa-solid fa-person-walking",
+          "type": "walking"
+      }
+  },
+  "shanghai": {
+      "cityName": "Σανγκάη",
+      "drone": {
+          "youtubeId": "HsRo77K2kEU",
+          "title": "Σανγκάη 4K: Φουτουριστική Εναέρια Περιήγηση Drone στο Lujiazui & τον Πύργο της Σανγκάης",
+          "label": "Σανγκάη με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      },
+      "walking": {
+          "youtubeId": "-es55xUU5rQ",
+          "title": "Σανγκάη 4K HDR: Περιήγηση στον Πεζόδρομο The Bund & την Παραλία του Ποταμού Huangpu",
+          "label": "Σανγκάη Walking Tour (4K)",
+          "icon": "fa-solid fa-person-walking",
+          "type": "walking"
+      }
+  },
+  "hong-kong": {
+      "cityName": "Χονγκ Κονγκ",
+      "drone": {
+          "youtubeId": "Blu_yCEFYvk",
+          "title": "Χονγκ Κονγκ 4K: Εναέρια Περιήγηση Drone στο Victoria Harbour & τους Ουρανοξύστες",
+          "label": "Χονγκ Κονγκ με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      },
+      "walking": {
+          "youtubeId": "0Wmj38hxsBE",
+          "title": "Χονγκ Κονγκ 4K: Εντυπωσιακή Περιήγηση στη Nathan Road, Victoria Harbour & Avenue of Stars",
+          "label": "Χονγκ Κονγκ Walking Tour (4K)",
+          "icon": "fa-solid fa-person-walking",
+          "type": "walking"
+      }
+  },
+  "xian": {
+      "cityName": "Σιάν",
+      "drone": {
+          "youtubeId": "iuZAiIcpo50",
+          "title": "Σιάν 4K: Εναέρια Περιήγηση Drone στα Αρχαία Τείχη, την Παγόδα της Άγριας Χήνας & την Πόλη",
+          "label": "Σιάν με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      },
+      "walking": {
+          "youtubeId": "8WOBikJ9-5Y",
+          "title": "Σιάν 4K HDR: Περιήγηση στην Αρχαία Πρωτεύουσα, τον Πύργο της Καμπάνας & τη Μουσουλμανική Συνοικία",
+          "label": "Σιάν Walking Tour (4K)",
+          "icon": "fa-solid fa-person-walking",
+          "type": "walking"
+      }
+  },
+  "chengdu": {
+      "cityName": "Τσενγκντού",
+      "drone": {
+          "youtubeId": "7STgaVGNSPk",
+          "title": "Τσενγκντού 4K: Εναέρια Περιήγηση Drone στην Πόλη των Γιγάντιων Πάντα & του Σιτσουάν",
+          "label": "Τσενγκντού με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      },
+      "walking": {
+          "youtubeId": "uusYayIPyYg",
+          "title": "Τσενγκντού 4K: Περιήγηση στο Κέντρο της Πόλης, τις Παραδοσιακές Γειτονιές & τα Τσαγερί",
+          "label": "Τσενγκντού Walking Tour (4K)",
+          "icon": "fa-solid fa-person-walking",
+          "type": "walking"
+      }
+  },
+  "guangzhou": {
+      "cityName": "Γκουανγκτζόου",
+      "drone": {
+          "youtubeId": "ged2CKFQHEU",
+          "title": "Γκουανγκτζόου 4K: Εναέρια Περιήγηση Drone στον Πύργο της Καντόνας & τον Ποταμό των Μαργαριταριών",
+          "label": "Γκουανγκτζόου με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      },
+      "walking": {
+          "youtubeId": "B3TIxYj71Ho",
+          "title": "Γκουανγκτζόου 4K: Περιήγηση στο Φουτουριστικό Zhujiang New Town & τους Ιστορικούς Πεζοδρόμους",
+          "label": "Γκουανγκτζόου Walking Tour (4K)",
+          "icon": "fa-solid fa-person-walking",
+          "type": "walking"
+      }
+  },
+  "hangzhou": {
+      "cityName": "Χανγκτζόου",
+      "drone": {
+          "youtubeId": "x98m7c-b_JY",
+          "title": "Χανγκτζόου 4K: Εναέρια Περιήγηση Drone στη Μαγευτική Δυτική Λίμνη & την Πόλη",
+          "label": "Χανγκτζόου με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      },
+      "walking": {
+          "youtubeId": "Ode3voyDm3k",
+          "title": "Χανγκτζόου 4K: Περιήγηση στις Όχθες της Δυτικής Λίμνης & τους Κήπους του Λωτού",
+          "label": "Χανγκτζόου Walking Tour (4K)",
+          "icon": "fa-solid fa-person-walking",
+          "type": "walking"
+      }
+  },
+  "chongqing": {
+      "cityName": "Τσονγκτσίνγκ",
+      "drone": {
+          "youtubeId": "oy3DDIojlaI",
+          "title": "Τσονγκτσίνγκ 4K: Εναέρια Νυχτερινή Περιήγηση Drone στην 8D Cyberpunk Μητρόπολη & τον Ποταμό Γιανγκτσέ",
+          "label": "Τσονγκτσίνγκ με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      },
+      "walking": {
+          "youtubeId": "KPXALe-dCsc",
+          "title": "Τσονγκτσίνγκ 4K: Περιήγηση στους Πολυεπίπεδους Δρόμους, τις Γέφυρες & το Hongyadong",
+          "label": "Τσονγκτσίνγκ Walking Tour (4K)",
+          "icon": "fa-solid fa-person-walking",
+          "type": "walking"
+      }
+  },
+  "suzhou": {
+      "cityName": "Σουτζόου",
+      "drone": {
+          "youtubeId": "NS1YYm-9lfc",
+          "title": "Σουτζόου 4K: Εναέρια Περιήγηση Drone στη «Βενετία της Ανατολής» & τα Ιστορικά Κανάλια",
+          "label": "Σουτζόου με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      },
+      "walking": {
+          "youtubeId": "RcAF7u2pH3I",
+          "title": "Σουτζόου 4K: Περιήγηση στην Ιστορική Συνοικία Pingjiang & τους Κλασικούς Κήπους UNESCO",
+          "label": "Σουτζόου Walking Tour (4K)",
+          "icon": "fa-solid fa-person-walking",
+          "type": "walking"
+      }
+  },
+  "guilin": {
+      "cityName": "Γκουιλίν",
+      "drone": {
+          "youtubeId": "rB4Ir88aDuA",
+          "title": "Γκουιλίν 4K: Εναέρια Περιήγηση Drone στα Επιβλητικά Καρστικά Βουνά & τον Ποταμό Λι",
+          "label": "Γκουιλίν με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      },
+      "walking": {
+          "youtubeId": "qBl1vdCA03A",
+          "title": "Γκουιλίν 4K: Περιήγηση στις Δίδυμες Παγόδες του Ήλιου και της Σελήνης & τις Λίμνες",
+          "label": "Γκουιλίν Walking Tour (4K)",
+          "icon": "fa-solid fa-person-walking",
+          "type": "walking"
+      }
   }
 };
 
