@@ -4,12 +4,12 @@
  * USA, Leaflet Map, Base Layers, UI Dossier, and Time Machine.
  */
 
-import { loadWorldData, loadCountryData, loadStateData } from './data-service.js';
-import * as MapModule from './map.js';
-import * as UIModule from './ui.js';
-import * as TimeMachine from './time-machine.js';
-import * as NavigatorModule from './navigator.js';
-import { US_STATES, CITY_TO_STATE } from './states-data.js';
+import { loadWorldData, loadCountryData, loadStateData } from './data-service.js?v=20261111_de_pl';
+import * as MapModule from './map.js?v=20261111_de_pl';
+import * as UIModule from './ui.js?v=20261111_de_pl';
+import * as TimeMachine from './time-machine.js?v=20261111_de_pl';
+import * as NavigatorModule from './navigator.js?v=20261111_de_pl';
+import { US_STATES, CITY_TO_STATE } from './states-data.js?v=20261111_de_pl';
 
 // Application State
 let worldData = null;
@@ -325,7 +325,7 @@ export async function flyToCity(cityId) {
       'dublin': 'ireland', 'cork': 'ireland', 'galway': 'ireland',
       'budapest': 'hungary', 'debrecen': 'hungary', 'szeged': 'hungary',
       'bern': 'switzerland', 'zurich': 'switzerland', 'geneva': 'switzerland',
-      'warsaw': 'poland', 'krakow': 'poland', 'gdansk': 'poland',
+      'warsaw': 'poland', 'krakow': 'poland', 'gdansk': 'poland', 'wroclaw': 'poland', 'poznan': 'poland', 'lodz': 'poland', 'lublin': 'poland', 'szczecin': 'poland', 'torun': 'poland', 'katowice': 'poland',
       'stockholm': 'sweden', 'gothenburg': 'sweden', 'malmo': 'sweden',
       'oslo': 'norway', 'bergen': 'norway', 'tromso': 'norway',
       'copenhagen': 'denmark', 'aarhus': 'denmark', 'odense': 'denmark',

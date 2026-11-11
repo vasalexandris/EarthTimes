@@ -1,4 +1,4 @@
-import { US_STATES, CITY_TO_STATE } from './states-data.js';
+import { US_STATES, CITY_TO_STATE } from './states-data.js?v=20261111_de_pl';
 /**
  * Navigator Module
  * Hierarchical Cascading Navigation: Continents -> Countries -> Cities
@@ -153,7 +153,14 @@ export const CONTINENTS_DATA = [
         cities: [
           { id: 'warsaw', name: 'Βαρσοβία', badge: 'Πρωτεύουσα' },
           { id: 'krakow', name: 'Κρακοβία' },
-          { id: 'gdansk', name: 'Γκντανσκ' }
+          { id: 'gdansk', name: 'Γκντανσκ' },
+          { id: 'wroclaw', name: 'Βρότσλαβ' },
+          { id: 'poznan', name: 'Πόζναν' },
+          { id: 'lodz', name: 'Λοτζ' },
+          { id: 'lublin', name: 'Λούμπλιν' },
+          { id: 'szczecin', name: 'Στσέτσιν' },
+          { id: 'torun', name: 'Τόρουν' },
+          { id: 'katowice', name: 'Κατοβίτσε' }
         ]
       },
       {

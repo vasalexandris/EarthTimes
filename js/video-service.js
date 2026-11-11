@@ -1,4 +1,4 @@
-import { CITY_TO_STATE } from './states-data.js';
+import { CITY_TO_STATE } from './states-data.js?v=20261111_de_pl';
 /**
  * Video Service Module
  * Registry of verified high-definition YouTube video tours for all cities
@@ -5958,6 +5958,55 @@ export const CITY_VIDEOS = {
     "drone": {
       "youtubeId": "k1CNwupt8W8",
       "title": "Νυρεμβέργη 4K — The Beauty of 🇩🇪 Nuremberg from the Air | 4K Cinematic Drone | Germany"
+    }
+  },
+  "wroclaw": {
+    "cityName": "Βρότσλαβ",
+    "drone": {
+      "youtubeId": "v9Tg6N8Cgsc",
+      "title": "Βρότσλαβ 4K — Wrocław, Poland | 4K Drone Video"
+    }
+  },
+  "poznan": {
+    "cityName": "Πόζναν",
+    "drone": {
+      "youtubeId": "HDlejG5E7wQ",
+      "title": "Πόζναν 4K — Poznań | Polska | Poland | Aerial Video | 4K"
+    }
+  },
+  "lodz": {
+    "cityName": "Λοτζ",
+    "drone": {
+      "youtubeId": "3N2iQiH6LTg",
+      "title": "Λοτζ 4K — Łódź | Lodz | Poland | Polska | Aerial Video | 4K"
+    }
+  },
+  "lublin": {
+    "cityName": "Λούμπλιν",
+    "drone": {
+      "youtubeId": "Ja0vMsZCAlw",
+      "title": "Λούμπλιν 4K — ONE DAY IN LUBLIN (POLAND) | 4K 60FPS | I love this beautiful Old Town"
+    }
+  },
+  "szczecin": {
+    "cityName": "Στσέτσιν",
+    "drone": {
+      "youtubeId": "4WMWJoSFB0c",
+      "title": "Στσέτσιν 4K — Szczecin, Poland | 4K Drone Video"
+    }
+  },
+  "torun": {
+    "cityName": "Τόρουν",
+    "drone": {
+      "youtubeId": "yCPKYCC6aAU",
+      "title": "Τόρουν 4K — 🇵🇱 4K drone video of Torun, Poland."
+    }
+  },
+  "katowice": {
+    "cityName": "Κατοβίτσε",
+    "drone": {
+      "youtubeId": "hBJgsn95b0s",
+      "title": "Κατοβίτσε 4K — Katowice in Motion | Cinematic Drone Film 4K | Part 1"
     }
   }
 };
