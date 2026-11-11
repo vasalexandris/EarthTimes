@@ -306,6 +306,13 @@ export const CITY_VIDEOS = {
       "label": "Ιστορικά Μνημεία Ρώμης",
       "icon": "fa-solid fa-landmark",
       "type": "guide"
+    },
+    "live": {
+          "youtubeId": "EEM7a3mHMR4",
+          "title": "Ρώμη & Βατικανό 24/7: Ζωντανή Μετάδοση από την Πλατεία του Αγίου Πέτρου (Vatican Media)",
+          "label": "Βατικανό Live Cam",
+          "icon": "fa-solid fa-tower-broadcast",
+          "type": "live"
     }
   },
   "florence": {
@@ -357,6 +364,13 @@ export const CITY_VIDEOS = {
       "label": "Βενετία Walking Tour (4K)",
       "icon": "fa-solid fa-person-walking",
       "type": "walking"
+    },
+    "live": {
+          "youtubeId": "a1mcaV3Sf9U",
+          "title": "Βενετία 24/7: Ζωντανή Μετάδοση από το Μεγάλο Κανάλι & την Πλατεία Αγίου Μάρκου",
+          "label": "Βενετία Live Cam",
+          "icon": "fa-solid fa-tower-broadcast",
+          "type": "live"
     }
   },
   "london": {
@@ -374,6 +388,13 @@ export const CITY_VIDEOS = {
       "label": "Λονδίνο Walking Tour (4K)",
       "icon": "fa-solid fa-person-walking",
       "type": "walking"
+    },
+    "live": {
+          "youtubeId": "zMCea32gpmg",
+          "title": "Λονδίνο 24/7: Ζωντανή Μετάδοση από το Abbey Road (EarthCam Live)",
+          "label": "Abbey Road Live Cam",
+          "icon": "fa-solid fa-tower-broadcast",
+          "type": "live"
     }
   },
   "edinburgh": {
@@ -493,6 +514,13 @@ export const CITY_VIDEOS = {
       "label": "Άμστερνταμ Walking Tour (4K)",
       "icon": "fa-solid fa-person-walking",
       "type": "walking"
+    },
+    "live": {
+          "youtubeId": "FHJH2yMe6Hw",
+          "title": "Άμστερνταμ 24/7: Ζωντανή Μετάδοση από τον Κεντρικό Σταθμό & τα Κανάλια",
+          "label": "Άμστερνταμ Live Cam",
+          "icon": "fa-solid fa-tower-broadcast",
+          "type": "live"
     }
   },
   "prague": {
@@ -561,6 +589,13 @@ export const CITY_VIDEOS = {
       "label": "Δουβλίνο Walking Tour (4K)",
       "icon": "fa-solid fa-person-walking",
       "type": "walking"
+    },
+    "live": {
+          "youtubeId": "3nyPER2kzqk",
+          "title": "Δουβλίνο 24/7: Ζωντανή Μετάδοση από το Temple Bar & την Παλιά Πόλη (EarthCam)",
+          "label": "Temple Bar Live Cam",
+          "icon": "fa-solid fa-tower-broadcast",
+          "type": "live"
     }
   },
   "budapest": {
@@ -595,6 +630,13 @@ export const CITY_VIDEOS = {
       "label": "Νέα Υόρκη Walking Tour (4K)",
       "icon": "fa-solid fa-person-walking",
       "type": "walking"
+    },
+    "live": {
+          "youtubeId": "ZxCeWQ3Lcig",
+          "title": "Νέα Υόρκη 24/7: Ζωντανή Μετάδοση από την Times Square North 4K (EarthCam)",
+          "label": "Times Square Live Cam",
+          "icon": "fa-solid fa-tower-broadcast",
+          "type": "live"
     }
   },
   "boston": {
@@ -646,6 +688,13 @@ export const CITY_VIDEOS = {
       "label": "Λος Άντζελες Walking Tour (4K)",
       "icon": "fa-solid fa-person-walking",
       "type": "walking"
+    },
+    "live": {
+          "youtubeId": "EO_1LWqsCNE",
+          "title": "Λος Άντζελες 24/7: Ζωντανή Μετάδοση από τη Venice Beach & την Παραλιακή",
+          "label": "Venice Beach Live Cam",
+          "icon": "fa-solid fa-tower-broadcast",
+          "type": "live"
     }
   },
   "cambridge": {
@@ -744,6 +793,13 @@ export const CITY_VIDEOS = {
       "label": "Μαϊάμι Beach Tour (4K)",
       "icon": "fa-solid fa-person-walking",
       "type": "walking"
+    },
+    "live": {
+          "youtubeId": "GkBMgHwSIV0",
+          "title": "Μαϊάμι 24/7: Ζωντανή Μετάδοση από το MacArthur Causeway & τον Ορίζοντα της Πόλης",
+          "label": "Μαϊάμι Live Cam",
+          "icon": "fa-solid fa-tower-broadcast",
+          "type": "live"
     }
   },
   "seattle": {
@@ -774,6 +830,13 @@ export const CITY_VIDEOS = {
       "label": "Σαν Ντιέγκο με Drone (4K)",
       "icon": "fa-solid fa-helicopter",
       "type": "drone"
+    },
+    "live": {
+          "youtubeId": "edz0ux7JClE",
+          "title": "Σαν Ντιέγκο 24/7: Ζωντανή Μετάδοση από τον Κόλπο και την Ακτή του Σαν Ντιέγκο (4K)",
+          "label": "Σαν Ντιέγκο Live Cam",
+          "icon": "fa-solid fa-tower-broadcast",
+          "type": "live"
     }
   },
   "philadelphia": {
@@ -844,6 +907,13 @@ export const CITY_VIDEOS = {
       "label": "Χονολουλού με Drone (4K)",
       "icon": "fa-solid fa-helicopter",
       "type": "drone"
+    },
+    "live": {
+          "youtubeId": "QzQ-7eiMw1w",
+          "title": "Χαβάη 24/7: Ζωντανή Μετάδοση 4K από τον Ειρηνικό Ωκεανό (Maui Marine Sanctuary)",
+          "label": "Χαβάη Ocean Live Cam",
+          "icon": "fa-solid fa-tower-broadcast",
+          "type": "live"
     }
   },
   "new-orleans": {
@@ -854,6 +924,13 @@ export const CITY_VIDEOS = {
       "label": "Νέα Ορλεάνη με Drone (4K)",
       "icon": "fa-solid fa-helicopter",
       "type": "drone"
+    },
+    "live": {
+          "youtubeId": "xqdukYhcGEU",
+          "title": "Νέα Ορλεάνη 24/7: Ζωντανή Μετάδοση από τη Γαλλική Συνοικία (Bourbon Street EarthCam)",
+          "label": "Bourbon St Live Cam",
+          "icon": "fa-solid fa-tower-broadcast",
+          "type": "live"
     }
   },
   
@@ -1401,6 +1478,13 @@ export const CITY_VIDEOS = {
       "label": "Ναϊρόμπι με Drone (4K)",
       "icon": "fa-solid fa-helicopter",
       "type": "drone"
+    },
+    "live": {
+          "youtubeId": "XsOU8JnEpNM",
+          "title": "Κένυα 24/7: Ζωντανή Μετάδοση Σαβάνας (Africam ol Donyo Lodge)",
+          "label": "Κένυα Safari Live Cam",
+          "icon": "fa-solid fa-tower-broadcast",
+          "type": "live"
     }
   },
   "mombasa": {
@@ -1491,6 +1575,13 @@ export const CITY_VIDEOS = {
       "label": "Βίντχουκ με Drone (4K)",
       "icon": "fa-solid fa-helicopter",
       "type": "drone"
+    },
+    "live": {
+          "youtubeId": "ydYDqZQpim8",
+          "title": "Ναμίμπια 24/7: Ζωντανή Μετάδοση από την Έρημο Ναμίμπ & τη Σαβάνα",
+          "label": "Έρημος Ναμίμπ Live Cam",
+          "icon": "fa-solid fa-tower-broadcast",
+          "type": "live"
     }
   },
   "swakopmund": {
@@ -1501,6 +1592,13 @@ export const CITY_VIDEOS = {
       "label": "Σουακοπμούντ με Drone (4K)",
       "icon": "fa-solid fa-helicopter",
       "type": "drone"
+    },
+    "live": {
+          "youtubeId": "AeMUdOPFcXI",
+          "title": "Ετόσα & Ναμίμπια 24/7: Ζωντανή Μετάδοση Άγριας Ζωής (Okaukuejo Waterhole)",
+          "label": "Άγρια Ζωή Live Cam",
+          "icon": "fa-solid fa-tower-broadcast",
+          "type": "live"
     }
   },
   "gaborone": {
@@ -1719,7 +1817,14 @@ export const CITY_VIDEOS = {
           "label": "Οδηγός Αξιοθεάτων Ζυρίχης",
           "icon": "fa-solid fa-landmark",
           "type": "guide"
-      }
+      },
+    "live": {
+          "youtubeId": "QIt1FaDMnQc",
+          "title": "Ελβετία 24/7: Ζωντανή Μετάδοση από τις Ελβετικές Άλπεις & τη Λουκέρνη",
+          "label": "Ελβετία Live Cam",
+          "icon": "fa-solid fa-tower-broadcast",
+          "type": "live"
+    }
   },
   "geneva": {
       "cityName": "Γενεύη",
@@ -2458,7 +2563,14 @@ export const CITY_VIDEOS = {
           "label": "Τορόντο Walking Tour (4K)",
           "icon": "fa-solid fa-person-walking",
           "type": "walking"
-      }
+      },
+    "live": {
+          "youtubeId": "bbjwotvAvDM",
+          "title": "Τορόντο 24/7: Ζωντανή Μετάδοση 4K από τον Ορίζοντα & τη Λίμνη Οντάριο",
+          "label": "Τορόντο Skyline Live Cam",
+          "icon": "fa-solid fa-tower-broadcast",
+          "type": "live"
+    }
   },
   "montreal": {
       "cityName": "Μόντρεαλ",
@@ -2594,7 +2706,14 @@ export const CITY_VIDEOS = {
           "label": "Ρίο ντε Τζανέιρο Walking Tour (4K)",
           "icon": "fa-solid fa-person-walking",
           "type": "walking"
-      }
+      },
+    "live": {
+          "youtubeId": "wyEi0OPai5g",
+          "title": "Ρίο ντε Τζανέιρο 24/7: Ζωντανή Μετάδοση από την Παραλία Κοπακαμπάνα (Posto 6)",
+          "label": "Κοπακαμπάνα Live Cam",
+          "icon": "fa-solid fa-tower-broadcast",
+          "type": "live"
+    }
   },
   "sao-paulo": {
       "cityName": "Σάο Πάολο",
@@ -2917,7 +3036,14 @@ export const CITY_VIDEOS = {
           "label": "Χονγκ Κονγκ Walking Tour (4K)",
           "icon": "fa-solid fa-person-walking",
           "type": "walking"
-      }
+      },
+    "live": {
+          "youtubeId": "XN-ArdUrqtc",
+          "title": "Χονγκ Κονγκ 24/7: Ζωντανή Μετάδοση από το Λιμάνι Victoria Harbour",
+          "label": "Victoria Harbour Live Cam",
+          "icon": "fa-solid fa-tower-broadcast",
+          "type": "live"
+    }
   },
   "xian": {
       "cityName": "Σιάν",
@@ -3053,7 +3179,14 @@ export const CITY_VIDEOS = {
           "label": "Σύδνεϋ Walking Tour (4K)",
           "icon": "fa-solid fa-person-walking",
           "type": "walking"
-      }
+      },
+    "live": {
+          "youtubeId": "5uZa3-RMFos",
+          "title": "Σύδνεϋ 24/7: Ζωντανή Μετάδοση από το Λιμάνι, την Όπερα & τη Γέφυρα Harbour Bridge",
+          "label": "Σύδνεϋ Live Cam",
+          "icon": "fa-solid fa-tower-broadcast",
+          "type": "live"
+    }
   },
   "melbourne": {
       "cityName": "Μελβούρνη",
@@ -3324,7 +3457,14 @@ export const CITY_VIDEOS = {
           "label": "Τόκιο Walking Tour (4K)",
           "icon": "fa-solid fa-person-walking",
           "type": "walking"
-      }
+      },
+    "live": {
+          "youtubeId": "dfVK7ld38Ys",
+          "title": "Τόκιο 24/7: Ζωντανή Μετάδοση από τη Διάβαση Σιμπούγια (Shibuya Scramble Crossing)",
+          "label": "Σιμπούγια Live Cam",
+          "icon": "fa-solid fa-tower-broadcast",
+          "type": "live"
+    }
   },
   "kyoto": {
       "cityName": "Κιότο",
@@ -3358,7 +3498,14 @@ export const CITY_VIDEOS = {
           "label": "Οσάκα Walking Tour (4K)",
           "icon": "fa-solid fa-person-walking",
           "type": "walking"
-      }
+      },
+    "live": {
+          "youtubeId": "K-ibJs5xuuw",
+          "title": "Οσάκα 24/7: Ζωντανή Μετάδοση από την Περιοχή Ντοτονμπόρι (Dotonbori)",
+          "label": "Ντοτονμπόρι Live Cam",
+          "icon": "fa-solid fa-tower-broadcast",
+          "type": "live"
+    }
   },
   "hiroshima": {
       "cityName": "Χιροσίμα",
@@ -3392,7 +3539,14 @@ export const CITY_VIDEOS = {
           "label": "Σαππόρο Walking Tour (4K)",
           "icon": "fa-solid fa-person-walking",
           "type": "walking"
-      }
+      },
+    "live": {
+          "youtubeId": "wRYonRnKsKw",
+          "title": "Σαππόρο 24/7: Ζωντανή Μετάδοση από τη Διασταύρωση Σουσουκίνο (Susukino)",
+          "label": "Σαππόρο Live Cam",
+          "icon": "fa-solid fa-tower-broadcast",
+          "type": "live"
+    }
   },
   "fukuoka": {
       "cityName": "Φουκουόκα",
@@ -3419,7 +3573,14 @@ export const CITY_VIDEOS = {
           "label": "Σεούλ με Drone (4K)",
           "icon": "fa-solid fa-helicopter",
           "type": "drone"
-      }
+      },
+    "live": {
+          "youtubeId": "vk5BHoDxXf0",
+          "title": "Σεούλ 24/7: Ζωντανή Μετάδοση από τον Ποταμό Χαν & τον Φουτουριστικό Ορίζοντα",
+          "label": "Σεούλ Skyline Live Cam",
+          "icon": "fa-solid fa-tower-broadcast",
+          "type": "live"
+    }
   },
   "busan": {
       "cityName": "Μπουσάν",
@@ -3483,7 +3644,14 @@ export const CITY_VIDEOS = {
           "label": "Ταϊπέι με Drone (4K)",
           "icon": "fa-solid fa-helicopter",
           "type": "drone"
-      }
+      },
+    "live": {
+          "youtubeId": "z_fY1pj1VBw",
+          "title": "Ταϊπέι 24/7: Ζωντανή Μετάδοση από τον Πύργο Taipei 101 & το Όρος Xiangshan",
+          "label": "Taipei 101 Live Cam",
+          "icon": "fa-solid fa-tower-broadcast",
+          "type": "live"
+    }
   },
   "kaohsiung": {
       "cityName": "Καοσιούνγκ",
@@ -3727,7 +3895,7 @@ export function getCityVideo(cityId, preferredType = 'drone') {
     if (entry[preferredType]) {
       return entry[preferredType];
     }
-    return entry.drone || entry.walking || entry.guide || null;
+    return entry.drone || entry.walking || entry.guide || entry.live || null;
   }
 
   // Smart fallback for any US state city
@@ -3791,7 +3959,51 @@ export function getAvailableCityTours(cityId) {
       youtubeId: entry.guide.youtubeId
     });
   }
+  if (entry.live) {
+    tours.push({
+      type: 'live',
+      label: entry.live.label || `${entry.cityName} Live Cam (Ζωντανά)`,
+      icon: 'fa-solid fa-tower-broadcast',
+      title: entry.live.title,
+      youtubeId: entry.live.youtubeId,
+      isLive: true
+    });
+  }
   return tours;
+}
+
+/**
+ * Curated Registry of Landmark / POI Live Cams
+ */
+export const POI_LIVE_CAMS = {
+  "times-square": { youtubeId: "ZxCeWQ3Lcig", title: "Times Square Live 4K (Νέα Υόρκη)" },
+  "shibuya": { youtubeId: "dfVK7ld38Ys", title: "Shibuya Scramble Crossing Live (Τόκιο)" },
+  "san-marco": { youtubeId: "a1mcaV3Sf9U", title: "Πλατεία Αγίου Μάρκου & Κανάλια Live (Βενετία)" },
+  "st-peters": { youtubeId: "EEM7a3mHMR4", title: "Πλατεία Αγίου Πέτρου Live (Βατικανό / Ρώμη)" },
+  "abbey-road": { youtubeId: "zMCea32gpmg", title: "Abbey Road Live (Λονδίνο)" },
+  "copacabana": { youtubeId: "wyEi0OPai5g", title: "Παραλία Κοπακαμπάνα Live (Ρίο ντε Τζανέιρο)" },
+  "sydney-harbour": { youtubeId: "5uZa3-RMFos", title: "Λιμάνι & Όπερα Σύδνεϋ Live (Αυστραλία)" },
+  "venice-beach": { youtubeId: "EO_1LWqsCNE", title: "Venice Beach Live (Λος Άντζελες)" },
+  "niagara-falls": { youtubeId: "qx7gry390YA", title: "Καταρράκτες Νιαγάρα Live" },
+  "temple-bar": { youtubeId: "3nyPER2kzqk", title: "Δουβλίνο & Temple Bar Live" },
+  "bourbon-street": { youtubeId: "xqdukYhcGEU", title: "Bourbon Street Live (Νέα Ορλεάνη)" },
+  "western-wall": { youtubeId: "77akujLn4k8", title: "Δυτικό Τείχος Live (Ιερουσαλήμ)" }
+};
+
+export function findPoiLiveCam(poiName = '') {
+  const n = poiName.toLowerCase();
+  if (n.includes('times square') || n.includes('τάιμς σκουέρ')) return POI_LIVE_CAMS["times-square"];
+  if (n.includes('shibuya') || n.includes('σιμπούγια')) return POI_LIVE_CAMS["shibuya"];
+  if (n.includes('san marco') || n.includes('αγίου μάρκου') || n.includes('grand canal') || n.includes('μεγάλο κανάλι')) return POI_LIVE_CAMS["san-marco"];
+  if (n.includes('st. peter') || n.includes('αγίου πέτρου') || n.includes('βατικαν')) return POI_LIVE_CAMS["st-peters"];
+  if (n.includes('abbey road')) return POI_LIVE_CAMS["abbey-road"];
+  if (n.includes('copacabana') || n.includes('κοπακαμπάνα')) return POI_LIVE_CAMS["copacabana"];
+  if (n.includes('opera') || n.includes('όπερα του σύδνεϋ') || n.includes('harbour bridge')) return POI_LIVE_CAMS["sydney-harbour"];
+  if (n.includes('venice beach')) return POI_LIVE_CAMS["venice-beach"];
+  if (n.includes('niagara') || n.includes('νιαγάρα')) return POI_LIVE_CAMS["niagara-falls"];
+  if (n.includes('temple bar')) return POI_LIVE_CAMS["temple-bar"];
+  if (n.includes('bourbon') || n.includes('γαλλική συνοικία')) return POI_LIVE_CAMS["bourbon-street"];
+  return null;
 }
 
 /**

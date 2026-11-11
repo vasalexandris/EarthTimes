@@ -4,6 +4,8 @@
  * polygon highlights, markers, time capsules, and camera animations.
  */
 
+import { findPoiLiveCam } from './video-service.js';
+
 let map = null;
 let activeBaseLayer = null;
 let currentBaseLayerKey = 'dark'; // default to cinematic dark
@@ -277,6 +279,8 @@ export function renderCityPois(city, currentPoiFilter = 'all', onPoiMoreClick) {
 
     const poiMarker = L.marker(poi.coords, { icon: poiIcon });
 
+    const poiLiveCam = poi.liveCam ? { youtubeId: poi.liveCam, title: poi.name } : findPoiLiveCam(poi.name);
+
     const popupEl = document.createElement('div');
     popupEl.className = 'p-3 text-slate-900 font-sans max-w-xs';
     popupEl.innerHTML = `
@@ -285,10 +289,18 @@ export function renderCityPois(city, currentPoiFilter = 'all', onPoiMoreClick) {
       </div>
       <div class="font-bold text-sm text-slate-900 mb-1 leading-tight">${poi.name}</div>
       <div class="text-xs text-slate-600 mb-2 leading-relaxed">${poi.desc}</div>
-      <div class="flex items-center justify-between gap-2 text-[11px] pt-2 border-t border-slate-200">
-        <button onclick="window.openMapStreetView(${poi.coords[0]}, ${poi.coords[1]}, '${poi.name.replace(/'/g, "\\'")}')" class="px-2 py-1 rounded bg-amber-500/20 hover:bg-amber-500/30 text-amber-900 border border-amber-500/40 text-[11px] font-bold flex items-center gap-1 transition shadow-sm cursor-pointer" title="Περιήγηση Street View στον Χάρτη">
-          <i class="fa-solid fa-street-view text-amber-700"></i> Street View
-        </button>
+      <div class="flex items-center justify-between gap-1.5 text-[11px] pt-2 border-t border-slate-200">
+        <div class="flex items-center gap-1.5">
+          <button onclick="window.openMapStreetView(${poi.coords[0]}, ${poi.coords[1]}, '${poi.name.replace(/'/g, "\\'")}')" class="px-2 py-1 rounded bg-amber-500/20 hover:bg-amber-500/30 text-amber-900 border border-amber-500/40 text-[11px] font-bold flex items-center gap-1 transition shadow-sm cursor-pointer" title="Περιήγηση Street View στον Χάρτη">
+            <i class="fa-solid fa-street-view text-amber-700"></i> Street View
+          </button>
+          ${poiLiveCam ? `
+            <button onclick="window.openLiveCamModal('${poiLiveCam.youtubeId}', '${poi.name.replace(/'/g, "\\'")}')" class="px-2 py-1 rounded bg-red-600 hover:bg-red-500 text-white text-[11px] font-bold flex items-center gap-1 transition shadow-sm cursor-pointer" title="Ζωντανή Μετάδοση (Live Cam)">
+              <span class="relative flex h-1.5 w-1.5"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-200 opacity-75"></span><span class="relative inline-flex rounded-full h-1.5 w-1.5 bg-white"></span></span>
+              <span>Live Cam</span>
+            </button>
+          ` : ''}
+        </div>
         <span class="poi-more-link text-sky-700 font-semibold cursor-pointer hover:underline">Περισσότερα &rarr;</span>
       </div>
     `;

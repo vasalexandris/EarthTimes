@@ -4,7 +4,7 @@
  * Base Map Layer selector, Date display, Video Overlay, and Deep Dive views.
  */
 
-import { getCityVideo, getAvailableVideoTypes, getAvailableCityTours, CITY_VIDEOS } from './video-service.js';
+import { getCityVideo, getAvailableVideoTypes, getAvailableCityTours, CITY_VIDEOS, findPoiLiveCam } from './video-service.js';
 import { getDeepDiveData } from './deep-dive.js';
 import { fetchWikiArticle, fetchWikiArticleHtml, cleanWikiTitle } from './wiki-service.js';
 
@@ -78,16 +78,17 @@ export function openCityVideo(cityId, preferredType = 'drone') {
   if (directLink) directLink.href = `https://www.youtube.com/watch?v=${youtubeId}`;
   iframe.src = `https://www.youtube-nocookie.com/embed/${youtubeId}?autoplay=1&rel=0`;
 
-  // Render switcher pills for all available tour options (Drone, Walking, Guide)
+  // Render switcher pills for all available tour options (Drone, Walking, Guide, Live)
   if (typeSelector) {
     const tours = getAvailableCityTours(cityId);
     if (tours.length > 1) {
       typeSelector.innerHTML = tours.map(t => {
         const isActive = preferredType === t.type;
-        const shortLabel = t.type === 'drone' ? 'Drone 4K' : (t.type === 'walking' ? 'Walking 4K' : 'Αξιοθέατα 4K');
+        const isLive = t.type === 'live';
+        const shortLabel = t.type === 'drone' ? 'Drone 4K' : (t.type === 'walking' ? 'Walking 4K' : (isLive ? 'Live Cam' : 'Αξιοθέατα 4K'));
         return `
-          <button onclick="switchCityVideoType('${t.type}')" class="px-2.5 py-1 rounded-lg text-xs font-bold transition flex items-center gap-1.5 ${isActive ? 'bg-sky-600 text-white shadow-md' : 'bg-slate-800 text-slate-300 hover:text-white border border-slate-700'}">
-            <i class="${t.icon}"></i>
+          <button onclick="switchCityVideoType('${t.type}')" class="px-2.5 py-1 rounded-lg text-xs font-bold transition flex items-center gap-1.5 ${isActive ? (isLive ? 'bg-red-600 text-white shadow-md shadow-red-900/50' : 'bg-sky-600 text-white shadow-md') : (isLive ? 'bg-red-950/70 text-red-300 hover:text-white border border-red-700/60 hover:bg-red-900/80' : 'bg-slate-800 text-slate-300 hover:text-white border border-slate-700')}">
+            ${isLive ? '<span class="relative flex h-2 w-2 mr-0.5"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-red-500"></span></span>' : `<i class="${t.icon}"></i>`}
             <span>${shortLabel}</span>
           </button>
         `;
@@ -114,6 +115,29 @@ export function closeMapVideoOverlay() {
   const iframe = document.getElementById('mapVideoIframe');
   if (iframe) iframe.src = '';
   if (overlay) overlay.classList.add('hidden');
+  syncMapFloatingControlsVisibility();
+}
+
+export function openLiveCamModal(youtubeId, titleText = 'Ζωντανή Μετάδοση') {
+  const overlay = document.getElementById('mapVideoOverlay');
+  const iframe = document.getElementById('mapVideoIframe');
+  const title = document.getElementById('videoOverlayTitle');
+  const directLink = document.getElementById('videoDirectLink');
+  const typeSelector = document.getElementById('videoTypeSelector');
+
+  if (!overlay || !iframe) return;
+
+  closeMapWikiOverlay();
+  closeMapStreetViewOverlay();
+  closeDeepDiveOverlay();
+
+  if (title) title.innerText = `🔴 Live Cam: ${titleText}`;
+  if (directLink) directLink.href = `https://www.youtube.com/watch?v=${youtubeId}`;
+  iframe.src = `https://www.youtube-nocookie.com/embed/${youtubeId}?autoplay=1&rel=0`;
+
+  if (typeSelector) typeSelector.classList.add('hidden');
+
+  overlay.classList.remove('hidden');
   syncMapFloatingControlsVisibility();
 }
 
@@ -144,17 +168,22 @@ export function renderCityVideoDropdownMenu(cityId) {
       <i class="fa-brands fa-youtube text-red-500"></i> Επιλογή Τύπου Περιήγησης
     </div>
     <div class="py-1">
-      ${tours.map(t => `
+      ${tours.map(t => {
+        const isLive = t.type === 'live';
+        return `
         <button onclick="selectCityVideoTour('${cityId}', '${t.type}')" class="w-full text-left px-3 py-2 hover:bg-slate-800 hover:text-sky-300 text-slate-200 transition flex items-center gap-2.5 group">
-          <div class="w-7 h-7 rounded-lg bg-slate-800 group-hover:bg-sky-600/20 group-hover:text-sky-300 flex items-center justify-center text-amber-400 shrink-0 border border-slate-700/60">
-            <i class="${t.icon} text-xs"></i>
+          <div class="w-7 h-7 rounded-lg ${isLive ? 'bg-red-950/80 text-red-400 group-hover:bg-red-600/30 group-hover:text-red-300 border border-red-700/60' : 'bg-slate-800 group-hover:bg-sky-600/20 group-hover:text-sky-300 text-amber-400 border border-slate-700/60'} flex items-center justify-center shrink-0">
+            ${isLive ? '<span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-red-500"></span></span>' : `<i class="${t.icon} text-xs"></i>`}
           </div>
           <div class="min-w-0 flex-1">
-            <div class="font-bold text-xs truncate group-hover:text-sky-200">${t.label}</div>
+            <div class="font-bold text-xs truncate ${isLive ? 'text-red-300 group-hover:text-red-200 flex items-center gap-1.5' : 'group-hover:text-sky-200'}">
+              <span>${t.label}</span>
+              ${isLive ? '<span class="px-1.5 py-0.2 text-[9px] bg-red-600 text-white rounded font-extrabold uppercase tracking-wide">LIVE</span>' : ''}
+            </div>
             <div class="text-[10px] text-slate-400 truncate">${t.title}</div>
           </div>
         </button>
-      `).join('')}
+      `;}).join('')}
     </div>
   `;
 }
@@ -353,6 +382,8 @@ export async function openDeepDive(keyOrTitle, fallbackSummary = '', contextEnti
   if (badge) badge.innerText = data.badge || data.category;
   if (wikiHeaderBtn) wikiHeaderBtn.classList.remove('hidden');
 
+  const poiLive = data.liveCam ? { youtubeId: data.liveCam, title: data.title } : findPoiLiveCam(data.title || keyOrTitle);
+
   let sectionsHtml = '';
   if (data.sections && data.sections.length) {
     sectionsHtml = data.sections.map(s => `
@@ -378,6 +409,31 @@ export async function openDeepDive(keyOrTitle, fallbackSummary = '', contextEnti
         <p class="text-xs text-slate-300 mt-1 italic drop-shadow">${data.caption || ''}</p>
       </div>
     </div>
+
+    ${poiLive ? `
+      <!-- Live Camera Banner Callout -->
+      <div class="p-4 rounded-2xl bg-gradient-to-r from-red-950/80 via-slate-900 to-slate-900 border border-red-600/50 flex flex-wrap items-center justify-between gap-3 shadow-xl">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-red-600/20 text-red-400 border border-red-500/40 flex items-center justify-center text-lg">
+            <span class="relative flex h-3 w-3">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-3 w-3 bg-red-500"></span>
+            </span>
+          </div>
+          <div>
+            <div class="text-xs font-bold text-red-300 uppercase tracking-wider flex items-center gap-1.5">
+              <span>Ζωντανή Μετάδοση 24/7</span>
+              <span class="px-1.5 py-0.2 bg-red-600 text-white text-[9px] font-extrabold rounded">LIVE CAM</span>
+            </div>
+            <div class="text-sm font-bold text-white">${poiLive.title || data.title}</div>
+          </div>
+        </div>
+        <button onclick="window.openLiveCamModal('${poiLive.youtubeId}', '${escapeStr(poiLive.title || data.title)}')" class="px-4 py-2 rounded-xl bg-red-600 hover:bg-red-500 text-white font-bold text-xs flex items-center gap-2 shadow-lg hover:shadow-red-900/50 transition cursor-pointer">
+          <i class="fa-solid fa-play text-xs"></i>
+          <span>Προβολή Live Stream</span>
+        </button>
+      </div>
+    ` : ''}
 
     <!-- Detailed Knowledge Chapters -->
     <div class="space-y-4">

@@ -654,6 +654,7 @@ window.flyToCoordinates = MapModule.flyToCoordinates;
 
 // Video & In-Map Wikipedia window bindings
 window.openCityVideo = UIModule.openCityVideo;
+window.openLiveCamModal = UIModule.openLiveCamModal;
 window.switchCityVideoType = UIModule.switchCityVideoType;
 window.closeMapVideoOverlay = UIModule.closeMapVideoOverlay;
 window.toggleCityVideoDropdown = UIModule.toggleCityVideoDropdown;
