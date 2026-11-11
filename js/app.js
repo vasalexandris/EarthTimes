@@ -444,7 +444,11 @@ export async function flyToCity(cityId) {
       'basseterre': 'saint-kitts-and-nevis',
       'castries': 'saint-lucia',
       'kingstown': 'saint-vincent-and-the-grenadines',
-      'port-of-spain': 'trinidad-and-tobago', 'san-fernando': 'trinidad-and-tobago'
+      'port-of-spain': 'trinidad-and-tobago', 'san-fernando': 'trinidad-and-tobago',
+      'tegucigalpa': 'honduras', 'san-pedro-sula': 'honduras',
+      'kingston': 'jamaica', 'montego-bay': 'jamaica',
+      'managua': 'nicaragua', 'granada-ni': 'nicaragua',
+      'panama-city': 'panama', 'colon': 'panama'
     };
     const targetCountry = cityToCountry[cityId];
     if (targetCountry && !countriesMap.has(targetCountry)) {
@@ -829,7 +833,9 @@ async function init() {
       'costa-rica',
       'dominican-republic',
       'bahamas',
-      'guatemala'
+      'guatemala',
+      'jamaica',
+      'panama'
     ];
 
     const settledCountries = await Promise.allSettled(countryKeys.map(k => loadCountryData(k)));

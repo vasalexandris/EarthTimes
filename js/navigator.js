@@ -643,6 +643,42 @@ export const CONTINENTS_DATA = [
         cities: [
           { id: 'kingstown', name: 'Κίνγκσταουν', badge: 'Πρωτεύουσα' }
         ]
+      },
+      {
+        id: 'honduras',
+        name: 'Ονδούρα',
+        flag: '🇭🇳',
+        cities: [
+          { id: 'tegucigalpa', name: 'Τεγκουσιγκάλπα', badge: 'Πρωτεύουσα' },
+          { id: 'san-pedro-sula', name: 'Σαν Πέδρο Σούλα' }
+        ]
+      },
+      {
+        id: 'jamaica',
+        name: 'Τζαμάικα',
+        flag: '🇯🇲',
+        cities: [
+          { id: 'kingston', name: 'Κίνγκστον', badge: 'Πρωτεύουσα' },
+          { id: 'montego-bay', name: 'Μοντέγκο Μπέι' }
+        ]
+      },
+      {
+        id: 'nicaragua',
+        name: 'Νικαράγουα',
+        flag: '🇳🇮',
+        cities: [
+          { id: 'managua', name: 'Μανάγουα', badge: 'Πρωτεύουσα' },
+          { id: 'granada-ni', name: 'Γρανάδα' }
+        ]
+      },
+      {
+        id: 'panama',
+        name: 'Παναμάς',
+        flag: '🇵🇦',
+        cities: [
+          { id: 'panama-city', name: 'Πόλη του Παναμά', badge: 'Πρωτεύουσα' },
+          { id: 'colon', name: 'Κολόν' }
+        ]
       }
     ]
   },

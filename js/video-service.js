@@ -4309,6 +4309,100 @@ export const CITY_VIDEOS = {
           "icon": "fa-solid fa-helicopter",
           "type": "drone"
       }
+  },
+  "tegucigalpa": {
+      "cityName": "Τεγκουσιγκάλπα",
+      "drone": {
+          "youtubeId": "TD_Hz3cx2tA",
+          "title": "Τεγκουσιγκάλπα 4K: Εναέρια Πανοραμική Περιήγηση Drone",
+          "label": "Τεγκουσιγκάλπα με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "san-pedro-sula": {
+      "cityName": "Σαν Πέδρο Σούλα",
+      "drone": {
+          "youtubeId": "Sw4NYi0YOw8",
+          "title": "Σαν Πέδρο Σούλα 4K: Εναέρια Πανοραμική Περιήγηση Drone",
+          "label": "Σαν Πέδρο Σούλα με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "kingston": {
+      "cityName": "Κίνγκστον",
+      "drone": {
+          "youtubeId": "BKhIwAayZQs",
+          "title": "Κίνγκστον 4K: Εναέρια Πανοραμική Περιήγηση Drone",
+          "label": "Κίνγκστον με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      },
+      "live": {
+          "youtubeId": "dbCVL1ul1QQ",
+          "title": "Κίνγκστον 24/7: Ζωντανή Μετάδοση από το Κέντρο (West Parade)",
+          "label": "Κίνγκστον Live Cam",
+          "icon": "fa-solid fa-tower-broadcast",
+          "type": "live"
+      }
+  },
+  "montego-bay": {
+      "cityName": "Μοντέγκο Μπέι",
+      "drone": {
+          "youtubeId": "gEJaYzWCGlA",
+          "title": "Μοντέγκο Μπέι 4K: Εναέρια Πανοραμική Περιήγηση Drone",
+          "label": "Μοντέγκο Μπέι με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      },
+      "live": {
+          "youtubeId": "ac0v_QwqYfw",
+          "title": "Μοντέγκο Μπέι 24/7: Ζωντανή Μετάδοση από την Πλατεία Sam Sharpe",
+          "label": "Μοντέγκο Μπέι Live Cam",
+          "icon": "fa-solid fa-tower-broadcast",
+          "type": "live"
+      }
+  },
+  "managua": {
+      "cityName": "Μανάγουα",
+      "drone": {
+          "youtubeId": "_j_5HWHmlyY",
+          "title": "Μανάγουα 4K: Εναέρια Πανοραμική Περιήγηση Drone",
+          "label": "Μανάγουα με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "granada-ni": {
+      "cityName": "Γρανάδα",
+      "drone": {
+          "youtubeId": "W2SFwapoGHk",
+          "title": "Γρανάδα Νικαράγουας 4K: Εναέρια Πανοραμική Περιήγηση Drone",
+          "label": "Γρανάδα με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "panama-city": {
+      "cityName": "Πόλη του Παναμά",
+      "drone": {
+          "youtubeId": "PAG4OAQD6Fk",
+          "title": "Πόλη του Παναμά 4K: Εναέρια Πανοραμική Περιήγηση Drone",
+          "label": "Πόλη του Παναμά με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "colon": {
+      "cityName": "Κολόν",
+      "drone": {
+          "youtubeId": "lWuGbIML2Fo",
+          "title": "Κολόν & Διώρυγα Παναμά 4K: Εναέρια Πανοραμική Περιήγηση Drone",
+          "label": "Κολόν με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
   }
 };
 
