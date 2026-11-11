@@ -419,7 +419,32 @@ export async function flyToCity(cityId) {
       'vientiane': 'laos', 'luang-prabang': 'laos',
       'yangon': 'myanmar', 'mandalay': 'myanmar',
       'bandar-seri-begawan': 'brunei',
-      'dili': 'east-timor'
+      'dili': 'east-timor',
+      'andorra-la-vella': 'andorra',
+      'vaduz': 'liechtenstein',
+      'monaco': 'monaco',
+      'vatican-city': 'vatican',
+      'san-marino': 'san-marino',
+      'moscow': 'russia', 'saint-petersburg': 'russia', 'kazan': 'russia',
+      'kyiv': 'ukraine', 'lviv': 'ukraine', 'odesa': 'ukraine',
+      'minsk': 'belarus', 'brest': 'belarus',
+      'chisinau': 'moldova', 'balti': 'moldova',
+      'st-johns': 'antigua-and-barbuda',
+      'nassau': 'bahamas',
+      'bridgetown': 'barbados',
+      'belize-city': 'belize', 'san-ignacio': 'belize',
+      'san-jose': 'costa-rica', 'alajuela': 'costa-rica', 'puerto-limon': 'costa-rica',
+      'havana': 'cuba', 'santiago-de-cuba': 'cuba', 'trinidad': 'cuba',
+      'roseau': 'dominica',
+      'santo-domingo': 'dominican-republic', 'santiago-de-los-caballeros': 'dominican-republic', 'punta-cana': 'dominican-republic',
+      'san-salvador': 'el-salvador', 'santa-ana': 'el-salvador',
+      'st-georges': 'grenada',
+      'guatemala-city': 'guatemala', 'antigua-guatemala': 'guatemala',
+      'port-au-prince': 'haiti', 'cap-haitien': 'haiti',
+      'basseterre': 'saint-kitts-and-nevis',
+      'castries': 'saint-lucia',
+      'kingstown': 'saint-vincent-and-the-grenadines',
+      'port-of-spain': 'trinidad-and-tobago', 'san-fernando': 'trinidad-and-tobago'
     };
     const targetCountry = cityToCountry[cityId];
     if (targetCountry && !countriesMap.has(targetCountry)) {
@@ -797,7 +822,14 @@ async function init() {
       'indonesia',
       'malaysia',
       'singapore',
-      'philippines'
+      'philippines',
+      'russia',
+      'ukraine',
+      'cuba',
+      'costa-rica',
+      'dominican-republic',
+      'bahamas',
+      'guatemala'
     ];
 
     const settledCountries = await Promise.allSettled(countryKeys.map(k => loadCountryData(k)));

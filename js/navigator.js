@@ -380,12 +380,90 @@ export const CONTINENTS_DATA = [
           { id: 'valletta', name: 'Βαλέτα', badge: 'Πρωτεύουσα' },
           { id: 'mdina', name: 'Μντίνα' }
         ]
+      },
+      {
+        id: 'andorra',
+        name: 'Ανδόρα',
+        flag: '🇦🇩',
+        cities: [
+          { id: 'andorra-la-vella', name: 'Ανδόρα λα Βέλια', badge: 'Πρωτεύουσα' }
+        ]
+      },
+      {
+        id: 'liechtenstein',
+        name: 'Λιχτενστάιν',
+        flag: '🇱🇮',
+        cities: [
+          { id: 'vaduz', name: 'Βαντούζ', badge: 'Πρωτεύουσα' }
+        ]
+      },
+      {
+        id: 'monaco',
+        name: 'Μονακό',
+        flag: '🇲🇨',
+        cities: [
+          { id: 'monaco', name: 'Μονακό', badge: 'Πριγκιπάτο' }
+        ]
+      },
+      {
+        id: 'vatican',
+        name: 'Βατικανό',
+        flag: '🇻🇦',
+        cities: [
+          { id: 'vatican-city', name: 'Βατικανό', badge: 'Αγία Έδρα' }
+        ]
+      },
+      {
+        id: 'san-marino',
+        name: 'Σαν Μαρίνο',
+        flag: '🇸🇲',
+        cities: [
+          { id: 'san-marino', name: 'Σαν Μαρίνο', badge: 'Πρωτεύουσα' }
+        ]
+      },
+      {
+        id: 'russia',
+        name: 'Ρωσία',
+        flag: '🇷🇺',
+        cities: [
+          { id: 'moscow', name: 'Μόσχα', badge: 'Πρωτεύουσα' },
+          { id: 'saint-petersburg', name: 'Αγία Πετρούπολη', badge: 'Πολιτιστική Πρωτεύουσα' },
+          { id: 'kazan', name: 'Καζάν', badge: 'Βόλγας' }
+        ]
+      },
+      {
+        id: 'ukraine',
+        name: 'Ουκρανία',
+        flag: '🇺🇦',
+        cities: [
+          { id: 'kyiv', name: 'Κίεβο', badge: 'Πρωτεύουσα' },
+          { id: 'lviv', name: 'Λβιβ', badge: 'Δυτική Κληρονομιά' },
+          { id: 'odesa', name: 'Οδησσός', badge: 'Μαύρη Θάλασσα' }
+        ]
+      },
+      {
+        id: 'belarus',
+        name: 'Λευκορωσία',
+        flag: '🇧🇾',
+        cities: [
+          { id: 'minsk', name: 'Μινσκ', badge: 'Πρωτεύουσα' },
+          { id: 'brest', name: 'Μπρεστ', badge: 'Ιστορικό Φρούριο' }
+        ]
+      },
+      {
+        id: 'moldova',
+        name: 'Μολδαβία',
+        flag: '🇲🇩',
+        cities: [
+          { id: 'chisinau', name: 'Κισινάου', badge: 'Πρωτεύουσα' },
+          { id: 'balti', name: 'Μπάλτι', badge: 'Βόρεια Μολδαβία' }
+        ]
       }
     ]
   },
   {
     id: 'north_america',
-    name: 'Βόρεια Αμερική',
+    name: 'Βόρεια & Κεντρική Αμερική',
     icon: 'fa-earth-americas',
     countries: [
       {
@@ -425,6 +503,145 @@ export const CONTINENTS_DATA = [
           { id: 'guadalajara', name: 'Γκουανταλαχάρα' },
           { id: 'monterrey', name: 'Μοντερέι' },
           { id: 'cancun', name: 'Κανκούν' }
+        ]
+      },
+      {
+        id: 'cuba',
+        name: 'Κούβα',
+        flag: '🇨🇺',
+        cities: [
+          { id: 'havana', name: 'Αβάνα', badge: 'Πρωτεύουσα' },
+          { id: 'santiago-de-cuba', name: 'Σαντιάγο ντε Κούβα', badge: 'Ιστορική' },
+          { id: 'trinidad', name: 'Τρινιδάδ', badge: 'UNESCO' }
+        ]
+      },
+      {
+        id: 'costa-rica',
+        name: 'Κόστα Ρίκα',
+        flag: '🇨🇷',
+        cities: [
+          { id: 'san-jose', name: 'Σαν Χοσέ', badge: 'Πρωτεύουσα' },
+          { id: 'alajuela', name: 'Αλαχουέλα' },
+          { id: 'puerto-limon', name: 'Πουέρτο Λιμόν' }
+        ]
+      },
+      {
+        id: 'dominican-republic',
+        name: 'Δομινικανή Δημοκρατία',
+        flag: '🇩🇴',
+        cities: [
+          { id: 'santo-domingo', name: 'Σάντο Ντομίνγκο', badge: 'Πρωτεύουσα' },
+          { id: 'santiago-de-los-caballeros', name: 'Σαντιάγο ντε λος Καμπαγιέρος' },
+          { id: 'punta-cana', name: 'Πούντα Κάνα', badge: 'Καραϊβική' }
+        ]
+      },
+      {
+        id: 'guatemala',
+        name: 'Γουατεμάλα',
+        flag: '🇬🇹',
+        cities: [
+          { id: 'guatemala-city', name: 'Γουατεμάλα Σίτι', badge: 'Πρωτεύουσα' },
+          { id: 'antigua-guatemala', name: 'Αντίγουα Γουατεμάλα', badge: 'Αποικιακή' }
+        ]
+      },
+      {
+        id: 'bahamas',
+        name: 'Μπαχάμες',
+        flag: '🇧🇸',
+        cities: [
+          { id: 'nassau', name: 'Νασάου', badge: 'Πρωτεύουσα' }
+        ]
+      },
+      {
+        id: 'barbados',
+        name: 'Μπαρμπάντος',
+        flag: '🇧🇧',
+        cities: [
+          { id: 'bridgetown', name: 'Μπρίτζταουν', badge: 'Πρωτεύουσα' }
+        ]
+      },
+      {
+        id: 'belize',
+        name: 'Μπελίζ',
+        flag: '🇧🇿',
+        cities: [
+          { id: 'belize-city', name: 'Μπελίζ Σίτι', badge: 'Λιμάνι' },
+          { id: 'san-ignacio', name: 'Σαν Ιγνάσιο' }
+        ]
+      },
+      {
+        id: 'el-salvador',
+        name: 'Ελ Σαλβαδόρ',
+        flag: '🇸🇻',
+        cities: [
+          { id: 'san-salvador', name: 'Σαν Σαλβαδόρ', badge: 'Πρωτεύουσα' },
+          { id: 'santa-ana', name: 'Σάντα Άνα' }
+        ]
+      },
+      {
+        id: 'haiti',
+        name: 'Αϊτή',
+        flag: '🇭🇹',
+        cities: [
+          { id: 'port-au-prince', name: 'Πορτ-ο-Πρενς', badge: 'Πρωτεύουσα' },
+          { id: 'cap-haitien', name: 'Καπ-Αϊτιέν' }
+        ]
+      },
+      {
+        id: 'trinidad-and-tobago',
+        name: 'Τρινιντάντ και Τομπάγκο',
+        flag: '🇹🇹',
+        cities: [
+          { id: 'port-of-spain', name: 'Πορτ οφ Σπέιν', badge: 'Πρωτεύουσα' },
+          { id: 'san-fernando', name: 'Σαν Φερνάντο' }
+        ]
+      },
+      {
+        id: 'antigua-and-barbuda',
+        name: 'Αντίγκουα και Μπαρμπούντα',
+        flag: '🇦🇬',
+        cities: [
+          { id: 'st-johns', name: 'Σεντ Τζονς', badge: 'Πρωτεύουσα' }
+        ]
+      },
+      {
+        id: 'dominica',
+        name: 'Δομινίκα',
+        flag: '🇩🇲',
+        cities: [
+          { id: 'roseau', name: 'Ροζό', badge: 'Πρωτεύουσα' }
+        ]
+      },
+      {
+        id: 'grenada',
+        name: 'Γρενάδα',
+        flag: '🇬🇩',
+        cities: [
+          { id: 'st-georges', name: 'Σεντ Τζορτζς', badge: 'Πρωτεύουσα' }
+        ]
+      },
+      {
+        id: 'saint-kitts-and-nevis',
+        name: 'Σεντ Κιτς και Νέβις',
+        flag: '🇰🇳',
+        cities: [
+          { id: 'basseterre', name: 'Μπαστέρ', badge: 'Πρωτεύουσα' }
+        ]
+      },
+      {
+        id: 'saint-lucia',
+        name: 'Σεντ Λουσία',
+        flag: '🇱🇨',
+        cities: [
+          { id: 'castries', name: 'Κάστρις', badge: 'Πρωτεύουσα' }
+        ]
+      },
+      {
+        id: 'saint-vincent-and-the-grenadines',
+        name: 'Σεντ Βίνσεντ και Γρεναδίνες',
+        flag: '🇻🇨',
+        cities: [
+          { id: 'kingstown', name: 'Κίνγκσταουν', badge: 'Πρωτεύουσα' }
         ]
       }
     ]
