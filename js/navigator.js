@@ -1225,6 +1225,279 @@ export const CONTINENTS_DATA = [
         cities: [
           { id: 'dili', name: 'Ντίλι', badge: 'Πρωτεύουσα' }
         ]
+      },
+      {
+        id: 'india',
+        name: 'Ινδία',
+        flag: '🇮🇳',
+        cities: [
+          { id: 'new-delhi', name: 'Νέο Δελχί', badge: 'Πρωτεύουσα' },
+          { id: 'mumbai', name: 'Βομβάη', badge: 'Οικονομικό Κέντρο' },
+          { id: 'jaipur', name: 'Τζαϊπούρ', badge: 'Ροζ Πόλη' },
+          { id: 'agra', name: 'Άγκρα', badge: 'Ταζ Μαχάλ' }
+        ]
+      },
+      {
+        id: 'pakistan',
+        name: 'Πακιστάν',
+        flag: '🇵🇰',
+        cities: [
+          { id: 'islamabad', name: 'Ισλαμαμπάντ', badge: 'Πρωτεύουσα' },
+          { id: 'karachi', name: 'Καράτσι' },
+          { id: 'lahore', name: 'Λαχόρη' }
+        ]
+      },
+      {
+        id: 'bangladesh',
+        name: 'Μπαγκλαντές',
+        flag: '🇧🇩',
+        cities: [
+          { id: 'dhaka', name: 'Ντάκα', badge: 'Πρωτεύουσα' },
+          { id: 'chattogram', name: 'Τσιταγκόνγκ' }
+        ]
+      },
+      {
+        id: 'sri-lanka',
+        name: 'Σρι Λάνκα',
+        flag: '🇱🇰',
+        cities: [
+          { id: 'colombo', name: 'Κολόμπο', badge: 'Πρωτεύουσα' },
+          { id: 'kandy', name: 'Κάντι' }
+        ]
+      },
+      {
+        id: 'nepal',
+        name: 'Νεπάλ',
+        flag: '🇳🇵',
+        cities: [
+          { id: 'kathmandu', name: 'Κατμαντού', badge: 'Πρωτεύουσα' },
+          { id: 'pokhara', name: 'Ποκάρα' }
+        ]
+      },
+      {
+        id: 'bhutan',
+        name: 'Μπουτάν',
+        flag: '🇧🇹',
+        cities: [
+          { id: 'thimphu', name: 'Τιμπού', badge: 'Πρωτεύουσα' },
+          { id: 'paro', name: 'Πάρο' }
+        ]
+      },
+      {
+        id: 'maldives',
+        name: 'Μαλδίβες',
+        flag: '🇲🇻',
+        cities: [
+          { id: 'male', name: 'Μαλέ', badge: 'Πρωτεύουσα' }
+        ]
+      },
+      {
+        id: 'afghanistan',
+        name: 'Αφγανιστάν',
+        flag: '🇦🇫',
+        cities: [
+          { id: 'kabul', name: 'Καμπούλ', badge: 'Πρωτεύουσα' },
+          { id: 'herat', name: 'Χεράτ' }
+        ]
+      },
+      {
+        id: 'iran',
+        name: 'Ιράν',
+        flag: '🇮🇷',
+        cities: [
+          { id: 'tehran', name: 'Τεχεράνη', badge: 'Πρωτεύουσα' },
+          { id: 'isfahan', name: 'Ισφαχάν' },
+          { id: 'shiraz', name: 'Σιράζ' }
+        ]
+      },
+      {
+        id: 'iraq',
+        name: 'Ιράκ',
+        flag: '🇮🇶',
+        cities: [
+          { id: 'baghdad', name: 'Βαγδάτη', badge: 'Πρωτεύουσα' },
+          { id: 'erbil', name: 'Ερμπίλ' }
+        ]
+      },
+      {
+        id: 'syria',
+        name: 'Συρία',
+        flag: '🇸🇾',
+        cities: [
+          { id: 'damascus', name: 'Δαμασκός', badge: 'Πρωτεύουσα' },
+          { id: 'aleppo', name: 'Χαλέπι' }
+        ]
+      },
+      {
+        id: 'lebanon',
+        name: 'Λίβανος',
+        flag: '🇱🇧',
+        cities: [
+          { id: 'beirut', name: 'Βηρυτός', badge: 'Πρωτεύουσα' },
+          { id: 'byblos', name: 'Βύβλος' }
+        ]
+      },
+      {
+        id: 'israel',
+        name: 'Ισραήλ',
+        flag: '🇮🇱',
+        cities: [
+          { id: 'jerusalem', name: 'Ιερουσαλήμ', badge: 'Πρωτεύουσα' },
+          { id: 'tel-aviv', name: 'Τελ Αβίβ' }
+        ]
+      },
+      {
+        id: 'palestine',
+        name: 'Παλαιστίνη',
+        flag: '🇵🇸',
+        cities: [
+          { id: 'ramallah', name: 'Ραμάλα', badge: 'Διοικητική Έδρα' },
+          { id: 'bethlehem', name: 'Βηθλεέμ' }
+        ]
+      },
+      {
+        id: 'jordan',
+        name: 'Ιορδανία',
+        flag: '🇯🇴',
+        cities: [
+          { id: 'amman', name: 'Αμμάν', badge: 'Πρωτεύουσα' },
+          { id: 'petra', name: 'Πέτρα', badge: 'UNESCO Θαύμα' }
+        ]
+      },
+      {
+        id: 'saudi-arabia',
+        name: 'Σαουδική Αραβία',
+        flag: '🇸🇦',
+        cities: [
+          { id: 'riyadh', name: 'Ριάντ', badge: 'Πρωτεύουσα' },
+          { id: 'jeddah', name: 'Τζέντα' },
+          { id: 'mecca', name: 'Μέκκα' }
+        ]
+      },
+      {
+        id: 'uae',
+        name: 'ΗΑΕ',
+        flag: '🇦🇪',
+        cities: [
+          { id: 'abu-dhabi', name: 'Άμπου Ντάμπι', badge: 'Πρωτεύουσα' },
+          { id: 'dubai', name: 'Ντουμπάι', badge: 'Μητρόπολη' },
+          { id: 'sharjah', name: 'Σάρτζα' }
+        ]
+      },
+      {
+        id: 'qatar',
+        name: 'Κατάρ',
+        flag: '🇶🇦',
+        cities: [
+          { id: 'doha', name: 'Ντόχα', badge: 'Πρωτεύουσα' }
+        ]
+      },
+      {
+        id: 'kuwait',
+        name: 'Κουβέιτ',
+        flag: '🇰🇼',
+        cities: [
+          { id: 'kuwait-city', name: 'Πόλη του Κουβέιτ', badge: 'Πρωτεύουσα' }
+        ]
+      },
+      {
+        id: 'bahrain',
+        name: 'Μπαχρέιν',
+        flag: '🇧🇭',
+        cities: [
+          { id: 'manama', name: 'Μανάμα', badge: 'Πρωτεύουσα' }
+        ]
+      },
+      {
+        id: 'oman',
+        name: 'Ομάν',
+        flag: '🇴🇲',
+        cities: [
+          { id: 'muscat', name: 'Μουσκάτ', badge: 'Πρωτεύουσα' },
+          { id: 'salalah', name: 'Σαλάλα' }
+        ]
+      },
+      {
+        id: 'yemen',
+        name: 'Υεμένη',
+        flag: '🇾🇪',
+        cities: [
+          { id: 'sanaa', name: 'Σαναά', badge: 'Πρωτεύουσα' },
+          { id: 'aden', name: 'Άντεν' }
+        ]
+      },
+      {
+        id: 'georgia',
+        name: 'Γεωργία',
+        flag: '🇬🇪',
+        cities: [
+          { id: 'tbilisi', name: 'Τιφλίδα', badge: 'Πρωτεύουσα' },
+          { id: 'batumi', name: 'Μπατούμι' }
+        ]
+      },
+      {
+        id: 'armenia',
+        name: 'Αρμενία',
+        flag: '🇦🇲',
+        cities: [
+          { id: 'yerevan', name: 'Ερεβάν', badge: 'Πρωτεύουσα' },
+          { id: 'gyumri', name: 'Γκιουμρί' }
+        ]
+      },
+      {
+        id: 'azerbaijan',
+        name: 'Αζερμπαϊτζάν',
+        flag: '🇦🇿',
+        cities: [
+          { id: 'baku', name: 'Μπακού', badge: 'Πρωτεύουσα' },
+          { id: 'ganja', name: 'Γκαντζά' }
+        ]
+      },
+      {
+        id: 'kazakhstan',
+        name: 'Καζακστάν',
+        flag: '🇰🇿',
+        cities: [
+          { id: 'astana', name: 'Αστανά', badge: 'Πρωτεύουσα' },
+          { id: 'almaty', name: 'Αλμάτι' }
+        ]
+      },
+      {
+        id: 'uzbekistan',
+        name: 'Ουζμπεκιστάν',
+        flag: '🇺🇿',
+        cities: [
+          { id: 'tashkent', name: 'Τασκένδη', badge: 'Πρωτεύουσα' },
+          { id: 'samarkand', name: 'Σαμαρκάνδη', badge: 'Δρόμος Μεταξιού' },
+          { id: 'bukhara', name: 'Μπουχάρα' }
+        ]
+      },
+      {
+        id: 'kyrgyzstan',
+        name: 'Κιργιζία',
+        flag: '🇰🇬',
+        cities: [
+          { id: 'bishkek', name: 'Μπισκέκ', badge: 'Πρωτεύουσα' },
+          { id: 'osh', name: 'Ος' }
+        ]
+      },
+      {
+        id: 'tajikistan',
+        name: 'Τατζικιστάν',
+        flag: '🇹🇯',
+        cities: [
+          { id: 'dushanbe', name: 'Ντουσαμπέ', badge: 'Πρωτεύουσα' },
+          { id: 'khujand', name: 'Χουτζάντ' }
+        ]
+      },
+      {
+        id: 'turkmenistan',
+        name: 'Τουρκμενιστάν',
+        flag: '🇹🇲',
+        cities: [
+          { id: 'ashgabat', name: 'Ασγκαμπάτ', badge: 'Πρωτεύουσα' },
+          { id: 'turkmenabat', name: 'Τουρκμεναμπάτ' }
+        ]
       }
     ]
   },

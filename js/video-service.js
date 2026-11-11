@@ -4403,6 +4403,657 @@ export const CITY_VIDEOS = {
           "icon": "fa-solid fa-helicopter",
           "type": "drone"
       }
+  },
+  "yerevan": {
+      "cityName": "Ερεβάν",
+      "drone": {
+            "youtubeId": "XPsJw2RStOE",
+            "title": "Ερεβάν 4K: Εναέρια Πανοραμική Περιήγηση Drone",
+            "label": "Ερεβάν με Drone (4K)",
+            "icon": "fa-solid fa-helicopter",
+            "type": "drone"
+      }
+  },
+  "gyumri": {
+      "cityName": "Γκιουμρί",
+      "drone": {
+            "youtubeId": "HX9FTD38tSg",
+            "title": "Γκιουμρί 4K: Εναέρια Πανοραμική Περιήγηση Drone",
+            "label": "Γκιουμρί με Drone (4K)",
+            "icon": "fa-solid fa-helicopter",
+            "type": "drone"
+      }
+  },
+  "baku": {
+      "cityName": "Μπακού",
+      "drone": {
+            "youtubeId": "JVpx5e5sRV4",
+            "title": "Μπακού 4K: Εναέρια Πανοραμική Περιήγηση Drone",
+            "label": "Μπακού με Drone (4K)",
+            "icon": "fa-solid fa-helicopter",
+            "type": "drone"
+      }
+  },
+  "ganja": {
+      "cityName": "Γκαντζά",
+      "drone": {
+            "youtubeId": "hHvwZKPjcYE",
+            "title": "Γκαντζά 4K: Εναέρια Πανοραμική Περιήγηση Drone",
+            "label": "Γκαντζά με Drone (4K)",
+            "icon": "fa-solid fa-helicopter",
+            "type": "drone"
+      }
+  },
+  "tbilisi": {
+      "cityName": "Τιφλίδα",
+      "drone": {
+            "youtubeId": "__FiUBt7SB4",
+            "title": "Τιφλίδα 4K: Εναέρια Πανοραμική Περιήγηση Drone",
+            "label": "Τιφλίδα με Drone (4K)",
+            "icon": "fa-solid fa-helicopter",
+            "type": "drone"
+      }
+  },
+  "batumi": {
+      "cityName": "Μπατούμι",
+      "drone": {
+            "youtubeId": "8WNZH72L14Q",
+            "title": "Μπατούμι 4K: Εναέρια Πανοραμική Περιήγηση Drone",
+            "label": "Μπατούμι με Drone (4K)",
+            "icon": "fa-solid fa-helicopter",
+            "type": "drone"
+      }
+  },
+  "astana": {
+      "cityName": "Αστανά",
+      "drone": {
+            "youtubeId": "NHbb37I0iYw",
+            "title": "Αστανά 4K: Εναέρια Πανοραμική Περιήγηση Drone",
+            "label": "Αστανά με Drone (4K)",
+            "icon": "fa-solid fa-helicopter",
+            "type": "drone"
+      }
+  },
+  "almaty": {
+      "cityName": "Αλμάτι",
+      "drone": {
+            "youtubeId": "yOG-m8OQMwU",
+            "title": "Αλμάτι 4K: Εναέρια Πανοραμική Περιήγηση Drone",
+            "label": "Αλμάτι με Drone (4K)",
+            "icon": "fa-solid fa-helicopter",
+            "type": "drone"
+      }
+  },
+  "bishkek": {
+      "cityName": "Μπισκέκ",
+      "drone": {
+            "youtubeId": "Bfd2pt8y560",
+            "title": "Μπισκέκ 4K: Εναέρια Πανοραμική Περιήγηση Drone",
+            "label": "Μπισκέκ με Drone (4K)",
+            "icon": "fa-solid fa-helicopter",
+            "type": "drone"
+      }
+  },
+  "osh": {
+      "cityName": "Ος",
+      "drone": {
+            "youtubeId": "Qp37q2-Gjvw",
+            "title": "Ος 4K: Εναέρια Πανοραμική Περιήγηση Drone",
+            "label": "Ος με Drone (4K)",
+            "icon": "fa-solid fa-helicopter",
+            "type": "drone"
+      }
+  },
+  "dushanbe": {
+      "cityName": "Ντουσαμπέ",
+      "drone": {
+            "youtubeId": "h1Euu_sKt1I",
+            "title": "Ντουσαμπέ 4K: Εναέρια Πανοραμική Περιήγηση Drone",
+            "label": "Ντουσαμπέ με Drone (4K)",
+            "icon": "fa-solid fa-helicopter",
+            "type": "drone"
+      }
+  },
+  "khujand": {
+      "cityName": "Χουτζάντ",
+      "drone": {
+            "youtubeId": "MtXvjVC5X84",
+            "title": "Χουτζάντ 4K: Εναέρια Πανοραμική Περιήγηση Drone",
+            "label": "Χουτζάντ με Drone (4K)",
+            "icon": "fa-solid fa-helicopter",
+            "type": "drone"
+      }
+  },
+  "ashgabat": {
+      "cityName": "Ασγκαμπάτ",
+      "drone": {
+            "youtubeId": "c3bjPv4HIt0",
+            "title": "Ασγκαμπάτ 4K: Εναέρια Πανοραμική Περιήγηση Drone",
+            "label": "Ασγκαμπάτ με Drone (4K)",
+            "icon": "fa-solid fa-helicopter",
+            "type": "drone"
+      }
+  },
+  "turkmenabat": {
+      "cityName": "Τουρκμεναμπάτ",
+      "drone": {
+            "youtubeId": "vsGcIV1xNj8",
+            "title": "Τουρκμεναμπάτ 4K: Εναέρια Πανοραμική Περιήγηση Drone",
+            "label": "Τουρκμεναμπάτ με Drone (4K)",
+            "icon": "fa-solid fa-helicopter",
+            "type": "drone"
+      }
+  },
+  "tashkent": {
+      "cityName": "Τασκένδη",
+      "drone": {
+            "youtubeId": "fz6rXEXk-Wg",
+            "title": "Τασκένδη 4K: Εναέρια Πανοραμική Περιήγηση Drone",
+            "label": "Τασκένδη με Drone (4K)",
+            "icon": "fa-solid fa-helicopter",
+            "type": "drone"
+      }
+  },
+  "samarkand": {
+      "cityName": "Σαμαρκάνδη",
+      "drone": {
+            "youtubeId": "X6h882A89AY",
+            "title": "Σαμαρκάνδη 4K: Εναέρια Πανοραμική Περιήγηση Drone",
+            "label": "Σαμαρκάνδη με Drone (4K)",
+            "icon": "fa-solid fa-helicopter",
+            "type": "drone"
+      }
+  },
+  "bukhara": {
+      "cityName": "Μπουχάρα",
+      "drone": {
+            "youtubeId": "VmDJ7YkwsJQ",
+            "title": "Μπουχάρα 4K: Εναέρια Πανοραμική Περιήγηση Drone",
+            "label": "Μπουχάρα με Drone (4K)",
+            "icon": "fa-solid fa-helicopter",
+            "type": "drone"
+      }
+  },
+  "kabul": {
+      "cityName": "Καμπούλ",
+      "drone": {
+            "youtubeId": "0c3NnNKRDEo",
+            "title": "Καμπούλ 4K: Εναέρια Πανοραμική Περιήγηση Drone",
+            "label": "Καμπούλ με Drone (4K)",
+            "icon": "fa-solid fa-helicopter",
+            "type": "drone"
+      }
+  },
+  "herat": {
+      "cityName": "Χεράτ",
+      "drone": {
+            "youtubeId": "6xyUUGL4fkU",
+            "title": "Χεράτ 4K: Εναέρια Πανοραμική Περιήγηση Drone",
+            "label": "Χεράτ με Drone (4K)",
+            "icon": "fa-solid fa-helicopter",
+            "type": "drone"
+      }
+  },
+  "new-delhi": {
+      "cityName": "Νέο Δελχί",
+      "drone": {
+            "youtubeId": "l-5rGi8_A_4",
+            "title": "Νέο Δελχί 4K: Εναέρια Πανοραμική Περιήγηση Drone",
+            "label": "Νέο Δελχί με Drone (4K)",
+            "icon": "fa-solid fa-helicopter",
+            "type": "drone"
+      }
+  },
+  "mumbai": {
+      "cityName": "Βομβάη",
+      "drone": {
+            "youtubeId": "fFjSkhtvGnM",
+            "title": "Βομβάη 4K: Εναέρια Πανοραμική Περιήγηση Drone",
+            "label": "Βομβάη με Drone (4K)",
+            "icon": "fa-solid fa-helicopter",
+            "type": "drone"
+      }
+  },
+  "jaipur": {
+      "cityName": "Τζαϊπούρ",
+      "drone": {
+            "youtubeId": "GYuAbHKrV0A",
+            "title": "Τζαϊπούρ 4K: Εναέρια Πανοραμική Περιήγηση Drone",
+            "label": "Τζαϊπούρ με Drone (4K)",
+            "icon": "fa-solid fa-helicopter",
+            "type": "drone"
+      }
+  },
+  "agra": {
+      "cityName": "Άγκρα",
+      "drone": {
+            "youtubeId": "0NSq1-Ne26Y",
+            "title": "Άγκρα 4K: Εναέρια Πανοραμική Περιήγηση Drone",
+            "label": "Άγκρα με Drone (4K)",
+            "icon": "fa-solid fa-helicopter",
+            "type": "drone"
+      }
+  },
+  "islamabad": {
+      "cityName": "Ισλαμαμπάντ",
+      "drone": {
+            "youtubeId": "ptqMR21mMB0",
+            "title": "Ισλαμαμπάντ 4K: Εναέρια Πανοραμική Περιήγηση Drone",
+            "label": "Ισλαμαμπάντ με Drone (4K)",
+            "icon": "fa-solid fa-helicopter",
+            "type": "drone"
+      }
+  },
+  "karachi": {
+      "cityName": "Καράτσι",
+      "drone": {
+            "youtubeId": "LvVGFHgRi_Y",
+            "title": "Καράτσι 4K: Εναέρια Πανοραμική Περιήγηση Drone",
+            "label": "Καράτσι με Drone (4K)",
+            "icon": "fa-solid fa-helicopter",
+            "type": "drone"
+      }
+  },
+  "lahore": {
+      "cityName": "Λαχόρη",
+      "drone": {
+            "youtubeId": "CXx5zKmjr80",
+            "title": "Λαχόρη 4K: Εναέρια Πανοραμική Περιήγηση Drone",
+            "label": "Λαχόρη με Drone (4K)",
+            "icon": "fa-solid fa-helicopter",
+            "type": "drone"
+      }
+  },
+  "dhaka": {
+      "cityName": "Ντάκα",
+      "drone": {
+            "youtubeId": "41Pa82bjHR0",
+            "title": "Ντάκα 4K: Εναέρια Πανοραμική Περιήγηση Drone",
+            "label": "Ντάκα με Drone (4K)",
+            "icon": "fa-solid fa-helicopter",
+            "type": "drone"
+      }
+  },
+  "chattogram": {
+      "cityName": "Τσιταγκόνγκ",
+      "drone": {
+            "youtubeId": "fOHRvumSz6M",
+            "title": "Τσιταγκόνγκ 4K: Εναέρια Πανοραμική Περιήγηση Drone",
+            "label": "Τσιταγκόνγκ με Drone (4K)",
+            "icon": "fa-solid fa-helicopter",
+            "type": "drone"
+      }
+  },
+  "thimphu": {
+      "cityName": "Τιμπού",
+      "drone": {
+            "youtubeId": "lH64a1L3TDk",
+            "title": "Τιμπού 4K: Εναέρια Πανοραμική Περιήγηση Drone",
+            "label": "Τιμπού με Drone (4K)",
+            "icon": "fa-solid fa-helicopter",
+            "type": "drone"
+      }
+  },
+  "paro": {
+      "cityName": "Πάρο",
+      "drone": {
+            "youtubeId": "71g28N20wtA",
+            "title": "Πάρο 4K: Εναέρια Πανοραμική Περιήγηση Drone",
+            "label": "Πάρο με Drone (4K)",
+            "icon": "fa-solid fa-helicopter",
+            "type": "drone"
+      }
+  },
+  "male": {
+      "cityName": "Μαλέ",
+      "drone": {
+            "youtubeId": "W4YfDg-dKzk",
+            "title": "Μαλέ 4K: Εναέρια Πανοραμική Περιήγηση Drone",
+            "label": "Μαλέ με Drone (4K)",
+            "icon": "fa-solid fa-helicopter",
+            "type": "drone"
+      },
+      "live": {
+            "youtubeId": "_BMi3usEwi8",
+            "title": "Μαλδίβες 24/7: Ζωντανή Εικόνα Τροπικής Παραλίας & Ωκεανού",
+            "label": "Μαλδίβες Live Cam",
+            "icon": "fa-solid fa-tower-broadcast",
+            "type": "live"
+      }
+  },
+  "kathmandu": {
+      "cityName": "Κατμαντού",
+      "drone": {
+            "youtubeId": "anvQw9GjSqw",
+            "title": "Κατμαντού 4K: Εναέρια Πανοραμική Περιήγηση Drone",
+            "label": "Κατμαντού με Drone (4K)",
+            "icon": "fa-solid fa-helicopter",
+            "type": "drone"
+      }
+  },
+  "pokhara": {
+      "cityName": "Ποκάρα",
+      "drone": {
+            "youtubeId": "w2uhegVKIIU",
+            "title": "Ποκάρα 4K: Εναέρια Πανοραμική Περιήγηση Drone",
+            "label": "Ποκάρα με Drone (4K)",
+            "icon": "fa-solid fa-helicopter",
+            "type": "drone"
+      }
+  },
+  "colombo": {
+      "cityName": "Κολόμπο",
+      "drone": {
+            "youtubeId": "BON08E0L2v4",
+            "title": "Κολόμπο 4K: Εναέρια Πανοραμική Περιήγηση Drone",
+            "label": "Κολόμπο με Drone (4K)",
+            "icon": "fa-solid fa-helicopter",
+            "type": "drone"
+      }
+  },
+  "kandy": {
+      "cityName": "Κάντι",
+      "drone": {
+            "youtubeId": "kelaN2mpOao",
+            "title": "Κάντι 4K: Εναέρια Πανοραμική Περιήγηση Drone",
+            "label": "Κάντι με Drone (4K)",
+            "icon": "fa-solid fa-helicopter",
+            "type": "drone"
+      }
+  },
+  "tehran": {
+      "cityName": "Τεχεράνη",
+      "drone": {
+            "youtubeId": "7DkoPGGdKAA",
+            "title": "Τεχεράνη 4K: Εναέρια Πανοραμική Περιήγηση Drone",
+            "label": "Τεχεράνη με Drone (4K)",
+            "icon": "fa-solid fa-helicopter",
+            "type": "drone"
+      }
+  },
+  "isfahan": {
+      "cityName": "Ισφαχάν",
+      "drone": {
+            "youtubeId": "M0zyMNkAc1s",
+            "title": "Ισφαχάν 4K: Εναέρια Πανοραμική Περιήγηση Drone",
+            "label": "Ισφαχάν με Drone (4K)",
+            "icon": "fa-solid fa-helicopter",
+            "type": "drone"
+      }
+  },
+  "shiraz": {
+      "cityName": "Σιράζ",
+      "drone": {
+            "youtubeId": "fUKoU5PGSr4",
+            "title": "Σιράζ 4K: Εναέρια Πανοραμική Περιήγηση Drone",
+            "label": "Σιράζ με Drone (4K)",
+            "icon": "fa-solid fa-helicopter",
+            "type": "drone"
+      }
+  },
+  "baghdad": {
+      "cityName": "Βαγδάτη",
+      "drone": {
+            "youtubeId": "iDMg880IC0I",
+            "title": "Βαγδάτη 4K: Εναέρια Πανοραμική Περιήγηση Drone",
+            "label": "Βαγδάτη με Drone (4K)",
+            "icon": "fa-solid fa-helicopter",
+            "type": "drone"
+      }
+  },
+  "erbil": {
+      "cityName": "Ερμπίλ",
+      "drone": {
+            "youtubeId": "EjkCjKckajo",
+            "title": "Ερμπίλ 4K: Εναέρια Πανοραμική Περιήγηση Drone",
+            "label": "Ερμπίλ με Drone (4K)",
+            "icon": "fa-solid fa-helicopter",
+            "type": "drone"
+      }
+  },
+  "jerusalem": {
+      "cityName": "Ιερουσαλήμ",
+      "drone": {
+            "youtubeId": "Gq1xDg4n_68",
+            "title": "Ιερουσαλήμ 4K: Εναέρια Πανοραμική Περιήγηση Drone",
+            "label": "Ιερουσαλήμ με Drone (4K)",
+            "icon": "fa-solid fa-helicopter",
+            "type": "drone"
+      },
+      "live": {
+            "youtubeId": "77akujLn4k8",
+            "title": "Ιερουσαλήμ 24/7: Ζωντανή Μετάδοση από το Δυτικό Τείχος",
+            "label": "Δυτικό Τείχος Live Cam",
+            "icon": "fa-solid fa-tower-broadcast",
+            "type": "live"
+      }
+  },
+  "tel-aviv": {
+      "cityName": "Τελ Αβίβ",
+      "drone": {
+            "youtubeId": "pojZc02SnLk",
+            "title": "Τελ Αβίβ 4K: Εναέρια Πανοραμική Περιήγηση Drone",
+            "label": "Τελ Αβίβ με Drone (4K)",
+            "icon": "fa-solid fa-helicopter",
+            "type": "drone"
+      }
+  },
+  "ramallah": {
+      "cityName": "Ραμάλα",
+      "drone": {
+            "youtubeId": "H4b5UtoOzYg",
+            "title": "Ραμάλα 4K: Εναέρια Πανοραμική Περιήγηση Drone",
+            "label": "Ραμάλα με Drone (4K)",
+            "icon": "fa-solid fa-helicopter",
+            "type": "drone"
+      }
+  },
+  "bethlehem": {
+      "cityName": "Βηθλεέμ",
+      "drone": {
+            "youtubeId": "giWZYWi1H6k",
+            "title": "Βηθλεέμ 4K: Εναέρια Πανοραμική Περιήγηση Drone",
+            "label": "Βηθλεέμ με Drone (4K)",
+            "icon": "fa-solid fa-helicopter",
+            "type": "drone"
+      }
+  },
+  "amman": {
+      "cityName": "Αμμάν",
+      "drone": {
+            "youtubeId": "9sAJuAVlNUQ",
+            "title": "Αμμάν 4K: Εναέρια Πανοραμική Περιήγηση Drone",
+            "label": "Αμμάν με Drone (4K)",
+            "icon": "fa-solid fa-helicopter",
+            "type": "drone"
+      }
+  },
+  "petra": {
+      "cityName": "Πέτρα",
+      "drone": {
+            "youtubeId": "k6FsLZTpBek",
+            "title": "Πέτρα 4K: Εναέρια Πανοραμική Περιήγηση Drone",
+            "label": "Πέτρα με Drone (4K)",
+            "icon": "fa-solid fa-helicopter",
+            "type": "drone"
+      }
+  },
+  "beirut": {
+      "cityName": "Βηρυτός",
+      "drone": {
+            "youtubeId": "GkROf3z7fEU",
+            "title": "Βηρυτός 4K: Εναέρια Πανοραμική Περιήγηση Drone",
+            "label": "Βηρυτός με Drone (4K)",
+            "icon": "fa-solid fa-helicopter",
+            "type": "drone"
+      }
+  },
+  "byblos": {
+      "cityName": "Βύβλος",
+      "drone": {
+            "youtubeId": "rA-CvGKi2WI",
+            "title": "Βύβλος 4K: Εναέρια Πανοραμική Περιήγηση Drone",
+            "label": "Βύβλος με Drone (4K)",
+            "icon": "fa-solid fa-helicopter",
+            "type": "drone"
+      }
+  },
+  "damascus": {
+      "cityName": "Δαμασκός",
+      "drone": {
+            "youtubeId": "Ak0NqU7WnsU",
+            "title": "Δαμασκός 4K: Εναέρια Πανοραμική Περιήγηση Drone",
+            "label": "Δαμασκός με Drone (4K)",
+            "icon": "fa-solid fa-helicopter",
+            "type": "drone"
+      }
+  },
+  "aleppo": {
+      "cityName": "Χαλέπι",
+      "drone": {
+            "youtubeId": "vqB7GosYBaM",
+            "title": "Χαλέπι 4K: Εναέρια Πανοραμική Περιήγηση Drone",
+            "label": "Χαλέπι με Drone (4K)",
+            "icon": "fa-solid fa-helicopter",
+            "type": "drone"
+      }
+  },
+  "kuwait-city": {
+      "cityName": "Πόλη του Κουβέιτ",
+      "drone": {
+            "youtubeId": "gYi51iEyf8A",
+            "title": "Πόλη του Κουβέιτ 4K: Εναέρια Πανοραμική Περιήγηση Drone",
+            "label": "Πόλη του Κουβέιτ με Drone (4K)",
+            "icon": "fa-solid fa-helicopter",
+            "type": "drone"
+      }
+  },
+  "manama": {
+      "cityName": "Μανάμα",
+      "drone": {
+            "youtubeId": "ErnpUEo2QCM",
+            "title": "Μανάμα 4K: Εναέρια Πανοραμική Περιήγηση Drone",
+            "label": "Μανάμα με Drone (4K)",
+            "icon": "fa-solid fa-helicopter",
+            "type": "drone"
+      }
+  },
+  "muscat": {
+      "cityName": "Μουσκάτ",
+      "drone": {
+            "youtubeId": "_AaS_gHnaMA",
+            "title": "Μουσκάτ 4K: Εναέρια Πανοραμική Περιήγηση Drone",
+            "label": "Μουσκάτ με Drone (4K)",
+            "icon": "fa-solid fa-helicopter",
+            "type": "drone"
+      }
+  },
+  "salalah": {
+      "cityName": "Σαλάλα",
+      "drone": {
+            "youtubeId": "wwv1AlrHPzY",
+            "title": "Σαλάλα 4K: Εναέρια Πανοραμική Περιήγηση Drone",
+            "label": "Σαλάλα με Drone (4K)",
+            "icon": "fa-solid fa-helicopter",
+            "type": "drone"
+      }
+  },
+  "doha": {
+      "cityName": "Ντόχα",
+      "drone": {
+            "youtubeId": "WsIauFcSTnw",
+            "title": "Ντόχα 4K: Εναέρια Πανοραμική Περιήγηση Drone",
+            "label": "Ντόχα με Drone (4K)",
+            "icon": "fa-solid fa-helicopter",
+            "type": "drone"
+      }
+  },
+  "riyadh": {
+      "cityName": "Ριάντ",
+      "drone": {
+            "youtubeId": "l9bU24Nu-cc",
+            "title": "Ριάντ 4K: Εναέρια Πανοραμική Περιήγηση Drone",
+            "label": "Ριάντ με Drone (4K)",
+            "icon": "fa-solid fa-helicopter",
+            "type": "drone"
+      }
+  },
+  "jeddah": {
+      "cityName": "Τζέντα",
+      "drone": {
+            "youtubeId": "JjLIBAH8wZc",
+            "title": "Τζέντα 4K: Εναέρια Πανοραμική Περιήγηση Drone",
+            "label": "Τζέντα με Drone (4K)",
+            "icon": "fa-solid fa-helicopter",
+            "type": "drone"
+      }
+  },
+  "mecca": {
+      "cityName": "Μέκκα",
+      "drone": {
+            "youtubeId": "DtpOIfvbeRI",
+            "title": "Μέκκα 4K: Εναέρια Πανοραμική Περιήγηση Drone",
+            "label": "Μέκκα με Drone (4K)",
+            "icon": "fa-solid fa-helicopter",
+            "type": "drone"
+      },
+      "live": {
+            "youtubeId": "e2Mj4ch8l94",
+            "title": "Μέκκα 24/7: Ζωντανή Μετάδοση από το Ιερό Τέμενος Al-Masjid al-Haram",
+            "label": "Μέκκα Live Cam",
+            "icon": "fa-solid fa-tower-broadcast",
+            "type": "live"
+      }
+  },
+  "abu-dhabi": {
+      "cityName": "Άμπου Ντάμπι",
+      "drone": {
+            "youtubeId": "_5CSitKheXQ",
+            "title": "Άμπου Ντάμπι 4K: Εναέρια Πανοραμική Περιήγηση Drone",
+            "label": "Άμπου Ντάμπι με Drone (4K)",
+            "icon": "fa-solid fa-helicopter",
+            "type": "drone"
+      }
+  },
+  "dubai": {
+      "cityName": "Ντουμπάι",
+      "drone": {
+            "youtubeId": "IdejM6wCkxA",
+            "title": "Ντουμπάι 4K: Εναέρια Πανοραμική Περιήγηση Drone",
+            "label": "Ντουμπάι με Drone (4K)",
+            "icon": "fa-solid fa-helicopter",
+            "type": "drone"
+      }
+  },
+  "sharjah": {
+      "cityName": "Σάρτζα",
+      "drone": {
+            "youtubeId": "OcbFIzI866s",
+            "title": "Σάρτζα 4K: Εναέρια Πανοραμική Περιήγηση Drone",
+            "label": "Σάρτζα με Drone (4K)",
+            "icon": "fa-solid fa-helicopter",
+            "type": "drone"
+      }
+  },
+  "sanaa": {
+      "cityName": "Σαναά",
+      "drone": {
+            "youtubeId": "mo9sKq5Nu1w",
+            "title": "Σαναά 4K: Εναέρια Πανοραμική Περιήγηση Drone",
+            "label": "Σαναά με Drone (4K)",
+            "icon": "fa-solid fa-helicopter",
+            "type": "drone"
+      }
+  },
+  "aden": {
+      "cityName": "Άντεν",
+      "drone": {
+            "youtubeId": "JpdseCPkdKs",
+            "title": "Άντεν 4K: Εναέρια Πανοραμική Περιήγηση Drone",
+            "label": "Άντεν με Drone (4K)",
+            "icon": "fa-solid fa-helicopter",
+            "type": "drone"
+      }
   }
 };
 
@@ -4508,7 +5159,8 @@ export const POI_LIVE_CAMS = {
   "niagara-falls": { youtubeId: "qx7gry390YA", title: "Καταρράκτες Νιαγάρα Live" },
   "temple-bar": { youtubeId: "3nyPER2kzqk", title: "Δουβλίνο & Temple Bar Live" },
   "bourbon-street": { youtubeId: "xqdukYhcGEU", title: "Bourbon Street Live (Νέα Ορλεάνη)" },
-  "western-wall": { youtubeId: "77akujLn4k8", title: "Δυτικό Τείχος Live (Ιερουσαλήμ)" }
+  "western-wall": { youtubeId: "77akujLn4k8", title: "Δυτικό Τείχος Live (Ιερουσαλήμ)" },
+  "masjid-al-haram": { youtubeId: "e2Mj4ch8l94", title: "Ιερό Τέμενος Al-Masjid al-Haram Live (Μέκκα)" }
 };
 
 export function findPoiLiveCam(poiName = '') {
@@ -4524,6 +5176,8 @@ export function findPoiLiveCam(poiName = '') {
   if (n.includes('niagara') || n.includes('νιαγάρα')) return POI_LIVE_CAMS["niagara-falls"];
   if (n.includes('temple bar')) return POI_LIVE_CAMS["temple-bar"];
   if (n.includes('bourbon') || n.includes('γαλλική συνοικία')) return POI_LIVE_CAMS["bourbon-street"];
+  if (n.includes('western wall') || n.includes('wailing wall') || n.includes('δυτικό τείχος') || n.includes('τείχος των δακρύων')) return POI_LIVE_CAMS["western-wall"];
+  if (n.includes('haram') || n.includes('kaaba') || n.includes('κάαμπα') || n.includes('μέκκα') || n.includes('al-haram')) return POI_LIVE_CAMS["masjid-al-haram"];
   return null;
 }
 

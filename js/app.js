@@ -448,7 +448,37 @@ export async function flyToCity(cityId) {
       'tegucigalpa': 'honduras', 'san-pedro-sula': 'honduras',
       'kingston': 'jamaica', 'montego-bay': 'jamaica',
       'managua': 'nicaragua', 'granada-ni': 'nicaragua',
-      'panama-city': 'panama', 'colon': 'panama'
+      'panama-city': 'panama', 'colon': 'panama',
+      'yerevan': 'armenia', 'gyumri': 'armenia',
+      'baku': 'azerbaijan', 'ganja': 'azerbaijan',
+      'tbilisi': 'georgia', 'batumi': 'georgia',
+      'astana': 'kazakhstan', 'almaty': 'kazakhstan',
+      'bishkek': 'kyrgyzstan', 'osh': 'kyrgyzstan',
+      'dushanbe': 'tajikistan', 'khujand': 'tajikistan',
+      'ashgabat': 'turkmenistan', 'turkmenabat': 'turkmenistan',
+      'tashkent': 'uzbekistan', 'samarkand': 'uzbekistan', 'bukhara': 'uzbekistan',
+      'kabul': 'afghanistan', 'herat': 'afghanistan',
+      'new-delhi': 'india', 'mumbai': 'india', 'jaipur': 'india', 'agra': 'india',
+      'islamabad': 'pakistan', 'karachi': 'pakistan', 'lahore': 'pakistan',
+      'dhaka': 'bangladesh', 'chattogram': 'bangladesh',
+      'thimphu': 'bhutan', 'paro': 'bhutan',
+      'male': 'maldives',
+      'kathmandu': 'nepal', 'pokhara': 'nepal',
+      'colombo': 'sri-lanka', 'kandy': 'sri-lanka',
+      'tehran': 'iran', 'isfahan': 'iran', 'shiraz': 'iran',
+      'baghdad': 'iraq', 'erbil': 'iraq',
+      'jerusalem': 'israel', 'tel-aviv': 'israel',
+      'ramallah': 'palestine', 'bethlehem': 'palestine',
+      'amman': 'jordan', 'petra': 'jordan',
+      'beirut': 'lebanon', 'byblos': 'lebanon',
+      'damascus': 'syria', 'aleppo': 'syria',
+      'kuwait-city': 'kuwait',
+      'manama': 'bahrain',
+      'muscat': 'oman', 'salalah': 'oman',
+      'doha': 'qatar',
+      'riyadh': 'saudi-arabia', 'jeddah': 'saudi-arabia', 'mecca': 'saudi-arabia',
+      'abu-dhabi': 'uae', 'dubai': 'uae', 'sharjah': 'uae',
+      'sanaa': 'yemen', 'aden': 'yemen'
     };
     const targetCountry = cityToCountry[cityId];
     if (targetCountry && !countriesMap.has(targetCountry)) {
@@ -835,7 +865,20 @@ async function init() {
       'bahamas',
       'guatemala',
       'jamaica',
-      'panama'
+      'panama',
+      'india',
+      'uae',
+      'saudi-arabia',
+      'israel',
+      'jordan',
+      'iran',
+      'nepal',
+      'sri-lanka',
+      'georgia',
+      'uzbekistan',
+      'kazakhstan',
+      'qatar',
+      'oman'
     ];
 
     const settledCountries = await Promise.allSettled(countryKeys.map(k => loadCountryData(k)));
