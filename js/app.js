@@ -478,7 +478,35 @@ export async function flyToCity(cityId) {
       'doha': 'qatar',
       'riyadh': 'saudi-arabia', 'jeddah': 'saudi-arabia', 'mecca': 'saudi-arabia',
       'abu-dhabi': 'uae', 'dubai': 'uae', 'sharjah': 'uae',
-      'sanaa': 'yemen', 'aden': 'yemen'
+      'sanaa': 'yemen', 'aden': 'yemen',
+      'porto-novo': 'benin', 'cotonou': 'benin',
+      'ouagadougou': 'burkina-faso', 'bobo-dioulasso': 'burkina-faso',
+      'banjul': 'gambia',
+      'conakry': 'guinea',
+      'bissau': 'guinea-bissau',
+      'monrovia': 'liberia',
+      'bamako': 'mali', 'timbuktu': 'mali',
+      'niamey': 'niger',
+      'freetown': 'sierra-leone',
+      'lome': 'togo',
+      'ndjamena': 'chad',
+      'bangui': 'central-african-republic',
+      'brazzaville': 'congo', 'pointe-noire': 'congo',
+      'malabo': 'equatorial-guinea',
+      'libreville': 'gabon',
+      'sao-tome': 'sao-tome-and-principe',
+      'moroni': 'comoros',
+      'victoria': 'seychelles',
+      'djibouti-city': 'djibouti',
+      'asmara': 'eritrea',
+      'mogadishu': 'somalia', 'hargeisa': 'somalia',
+      'khartoum': 'sudan', 'port-sudan': 'sudan',
+      'juba': 'south-sudan',
+      'gitega': 'burundi', 'bujumbura': 'burundi',
+      'lilongwe': 'malawi', 'blantyre': 'malawi',
+      'lusaka': 'zambia', 'livingstone': 'zambia',
+      'maseru': 'lesotho',
+      'mbabane': 'eswatini'
     };
     const targetCountry = cityToCountry[cityId];
     if (targetCountry && !countriesMap.has(targetCountry)) {
@@ -878,7 +906,13 @@ async function init() {
       'uzbekistan',
       'kazakhstan',
       'qatar',
-      'oman'
+      'oman',
+      'seychelles',
+      'zambia',
+      'gabon',
+      'benin',
+      'mali',
+      'sudan'
     ];
 
     const settledCountries = await Promise.allSettled(countryKeys.map(k => loadCountryData(k)));
