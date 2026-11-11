@@ -388,7 +388,22 @@ export async function flyToCity(cityId) {
       'luanda': 'angola', 'benguela': 'angola',
       'maputo': 'mozambique', 'beira': 'mozambique',
       'beijing': 'china', 'shanghai': 'china', 'hong-kong': 'china', 'xian': 'china', 'chengdu': 'china',
-      'guangzhou': 'china', 'hangzhou': 'china', 'chongqing': 'china', 'suzhou': 'china', 'guilin': 'china'
+      'guangzhou': 'china', 'hangzhou': 'china', 'chongqing': 'china', 'suzhou': 'china', 'guilin': 'china',
+      'sydney': 'australia', 'melbourne': 'australia', 'brisbane': 'australia',
+      'perth': 'australia', 'adelaide': 'australia', 'canberra': 'australia',
+      'auckland': 'new-zealand', 'wellington': 'new-zealand', 'christchurch': 'new-zealand', 'queenstown': 'new-zealand',
+      'port-moresby': 'papua-new-guinea', 'lae': 'papua-new-guinea',
+      'suva': 'fiji', 'nadi': 'fiji',
+      'apia': 'samoa',
+      'port-vila': 'vanuatu',
+      'honiara': 'solomon-islands',
+      'palikir': 'micronesia',
+      'nukualofa': 'tonga',
+      'south-tarawa': 'kiribati',
+      'ngerulmud': 'palau', 'koror': 'palau',
+      'majuro': 'marshall-islands',
+      'yaren': 'nauru',
+      'funafuti': 'tuvalu'
     };
     const targetCountry = cityToCountry[cityId];
     if (targetCountry && !countriesMap.has(targetCountry)) {
@@ -754,7 +769,9 @@ async function init() {
       'chile',
       'peru',
       'colombia',
-      'china'
+      'china',
+      'australia',
+      'new-zealand'
     ];
 
     const settledCountries = await Promise.allSettled(countryKeys.map(k => loadCountryData(k)));

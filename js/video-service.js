@@ -3037,6 +3037,277 @@ export const CITY_VIDEOS = {
           "icon": "fa-solid fa-person-walking",
           "type": "walking"
       }
+  },
+  "sydney": {
+      "cityName": "Σύδνεϋ",
+      "drone": {
+          "youtubeId": "UHGhj5aPX5M",
+          "title": "Σύδνεϋ 4K: Εναέρια Περιήγηση Drone στην Όπερα, το Harbour Bridge & τις Παραλίες",
+          "label": "Σύδνεϋ με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      },
+      "walking": {
+          "youtubeId": "VuZNHjkZisk",
+          "title": "Σύδνεϋ 4K: Περιήγηση στο Κέντρο, το Queen Victoria Building & το Λιμάνι",
+          "label": "Σύδνεϋ Walking Tour (4K)",
+          "icon": "fa-solid fa-person-walking",
+          "type": "walking"
+      }
+  },
+  "melbourne": {
+      "cityName": "Μελβούρνη",
+      "drone": {
+          "youtubeId": "QojXRvYgXxo",
+          "title": "Μελβούρνη 4K: Εναέρια Περιήγηση Drone στη Μητρόπολη της Βικτώρια",
+          "label": "Μελβούρνη με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      },
+      "walking": {
+          "youtubeId": "36PQHec2NhU",
+          "title": "Μελβούρνη 4K: Περιήγηση στα Ιστορικά Σοκάκια, τον Σταθμό Flinders St & την Πόλη",
+          "label": "Μελβούρνη Walking Tour (4K)",
+          "icon": "fa-solid fa-person-walking",
+          "type": "walking"
+      }
+  },
+  "brisbane": {
+      "cityName": "Μπρίσμπεϊν",
+      "drone": {
+          "youtubeId": "FXr_RMch1Yg",
+          "title": "Μπρίσμπεϊν 4K: Εναέρια Περιήγηση Drone στον Ποταμό Brisbane & την Πόλη",
+          "label": "Μπρίσμπεϊν με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "perth": {
+      "cityName": "Περθ",
+      "drone": {
+          "youtubeId": "1ORYDYUTcUI",
+          "title": "Περθ 4K: Εναέρια Περιήγηση Drone στον Ποταμό Swan & τη Δυτική Αυστραλία",
+          "label": "Περθ με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "adelaide": {
+      "cityName": "Αδελαΐδα",
+      "drone": {
+          "youtubeId": "GUwdLoZWIls",
+          "title": "Αδελαΐδα 4K: Εναέρια Περιήγηση Drone στη Νότια Αυστραλία & τα Πάρκα",
+          "label": "Αδελαΐδα με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "canberra": {
+      "cityName": "Καμπέρα",
+      "drone": {
+          "youtubeId": "EZum29CaUpw",
+          "title": "Καμπέρα 4K: Εναέρια Περιήγηση Drone στην Πρωτεύουσα & τη Λίμνη Burley Griffin",
+          "label": "Καμπέρα με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "auckland": {
+      "cityName": "Ώκλαντ",
+      "drone": {
+          "youtubeId": "JhhVPM4Ha08",
+          "title": "Ώκλαντ 4K: Εναέρια Περιήγηση Drone στην «Πόλη των Ιστίων» & τον Πύργο Sky Tower",
+          "label": "Ώκλαντ με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      },
+      "walking": {
+          "youtubeId": "jhxJMzNAGYw",
+          "title": "Ώκλαντ 4K: Περιήγηση στην Queen Street, το Λιμάνι & το Παραλιακό Μέτωπο",
+          "label": "Ώκλαντ Walking Tour (4K)",
+          "icon": "fa-solid fa-person-walking",
+          "type": "walking"
+      }
+  },
+  "wellington": {
+      "cityName": "Ουέλινγκτον",
+      "drone": {
+          "youtubeId": "LB_aN56haNg",
+          "title": "Ουέλινγκτον 4K: Εναέρια Περιήγηση Drone στην Πρωτεύουσα της Νέας Ζηλανδίας",
+          "label": "Ουέλινγκτον με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "christchurch": {
+      "cityName": "Κράιστσερτς",
+      "drone": {
+          "youtubeId": "j5JygtEsBIU",
+          "title": "Κράιστσερτς 4K: Εναέρια Περιήγηση Drone στη «Garden City» του Νοτίου Νησιού",
+          "label": "Κράιστσερτς με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "queenstown": {
+      "cityName": "Κουίνσταουν",
+      "drone": {
+          "youtubeId": "nD32rfle1kY",
+          "title": "Κουίνσταουν 4K: Εναέρια Περιήγηση Drone στις Νότιες Άλπεις & τη Λίμνη Wakatipu",
+          "label": "Κουίνσταουν με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "port-moresby": {
+      "cityName": "Πορτ Μόρεσμπι",
+      "drone": {
+          "youtubeId": "GxHSmP03v6w",
+          "title": "Πορτ Μόρεσμπι 4K: Περιήγηση στην Πρωτεύουσα της Παπούα Νέας Γουινέας",
+          "label": "Πορτ Μόρεσμπι Tour (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "lae": {
+      "cityName": "Λάε",
+      "drone": {
+          "youtubeId": "GxHSmP03v6w",
+          "title": "Λάε 4K: Πανοραμική Περιήγηση στο Βιομηχανικό Λιμάνι & την Ακτή",
+          "label": "Λάε Tour (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "suva": {
+      "cityName": "Σούβα",
+      "drone": {
+          "youtubeId": "kAMkk6ger5c",
+          "title": "Σούβα & Φίτζι 4K: Εναέρια Περιήγηση Drone στον Τροπικό Παράδεισο",
+          "label": "Σούβα με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "nadi": {
+      "cityName": "Νάντι",
+      "drone": {
+          "youtubeId": "kAMkk6ger5c",
+          "title": "Νάντι 4K: Εναέρια Περιήγηση Drone στην Τουριστική Πύλη των Φίτζι",
+          "label": "Νάντι με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "apia": {
+      "cityName": "Άπια",
+      "drone": {
+          "youtubeId": "efhit8oPdho",
+          "title": "Άπια & Σαμόα 4K: Εναέρια Περιήγηση Drone στις Τροπικές Ακτές & τα Ηφαιστειογενή Τοπία",
+          "label": "Άπια με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "port-vila": {
+      "cityName": "Πορτ Βίλα",
+      "drone": {
+          "youtubeId": "CFx6uIPvAOc",
+          "title": "Πορτ Βίλα & Βανουάτου 4K: Εναέρια Περιήγηση Drone στον Κόλπο & τις Παραλίες",
+          "label": "Πορτ Βίλα με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "honiara": {
+      "cityName": "Χονιάρα",
+      "drone": {
+          "youtubeId": "hSnze-n8fd8",
+          "title": "Χονιάρα & Νήσοι Σολομώντα 4K: Εναέρια Περιήγηση Drone στις Παρθένες Ακτές",
+          "label": "Χονιάρα με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "palikir": {
+      "cityName": "Παλικίρ",
+      "drone": {
+          "youtubeId": "2R6ecJdElZI",
+          "title": "Παλικίρ & Μικρονησία 4K: Εναέρια Περιήγηση Drone στους Κοραλλιογενείς Υφάλους",
+          "label": "Παλικίρ με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "nukualofa": {
+      "cityName": "Νουκουαλόφα",
+      "drone": {
+          "youtubeId": "qhzS9VoFvgM",
+          "title": "Νουκουαλόφα & Τόνγκα 4K: Εναέρια Περιήγηση Drone στο Βασίλειο του Ειρηνικού",
+          "label": "Νουκουαλόφα με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "south-tarawa": {
+      "cityName": "Νότια Ταράουα",
+      "drone": {
+          "youtubeId": "yITOdtKMRsU",
+          "title": "Νότια Ταράουα & Κιριμπάτι 4K: Εναέρια Περιήγηση Drone στην Ατόλλη του Ισημερινού",
+          "label": "Ταράουα με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "ngerulmud": {
+      "cityName": "Νγκερουλμούντ",
+      "drone": {
+          "youtubeId": "AeMrCFRa70U",
+          "title": "Νγκερουλμούντ & Παλάου 4K: Εναέρια Περιήγηση Drone στα Rock Islands & το Καπιτώλιο",
+          "label": "Νγκερουλμούντ με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "koror": {
+      "cityName": "Κορόρ",
+      "drone": {
+          "youtubeId": "AeMrCFRa70U",
+          "title": "Κορόρ & Παλάου 4K: Εναέρια Περιήγηση Drone στη Γαλάζια Λιμνοθάλασσα",
+          "label": "Κορόρ με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "majuro": {
+      "cityName": "Ματζούρο",
+      "drone": {
+          "youtubeId": "HlwtQIIS7ww",
+          "title": "Ματζούρο & Νήσοι Μάρσαλ 4K: Εναέρια Περιήγηση Drone στη Στενόμακρη Ατόλλη",
+          "label": "Ματζούρο με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "yaren": {
+      "cityName": "Γιαρέν",
+      "drone": {
+          "youtubeId": "9PgJtSfu778",
+          "title": "Γιαρέν & Ναουρού 4K: Πανοραμική Περιήγηση στη Μικρότερη Δημοκρατία του Κόσμου",
+          "label": "Ναουρού Tour (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "funafuti": {
+      "cityName": "Φουναφούτι",
+      "drone": {
+          "youtubeId": "N7vHYT9-tHY",
+          "title": "Φουναφούτι & Τουβαλού 4K: Εναέρια Περιήγηση Drone στην Ατόλλη της Πολυνησίας",
+          "label": "Φουναφούτι με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
   }
 };
 

@@ -827,6 +827,136 @@ export const CONTINENTS_DATA = [
         ]
       }
     ]
+  },
+  {
+    id: 'oceania',
+    name: 'Ωκεανία',
+    icon: 'fa-earth-oceania',
+    countries: [
+      {
+        id: 'australia',
+        name: 'Αυστραλία',
+        flag: '🇦🇺',
+        cities: [
+          { id: 'sydney', name: 'Σύδνεϋ', badge: 'Μητρόπολη' },
+          { id: 'melbourne', name: 'Μελβούρνη', badge: 'Πολιτισμός' },
+          { id: 'brisbane', name: 'Μπρίσμπεϊν', badge: 'Κουίνσλαντ' },
+          { id: 'perth', name: 'Περθ', badge: 'Δυτική Αυστραλία' },
+          { id: 'adelaide', name: 'Αδελαΐδα', badge: 'Νότια Αυστραλία' },
+          { id: 'canberra', name: 'Καμπέρα', badge: 'Πρωτεύουσα' }
+        ]
+      },
+      {
+        id: 'new-zealand',
+        name: 'Νέα Ζηλανδία',
+        flag: '🇳🇿',
+        cities: [
+          { id: 'auckland', name: 'Ώκλαντ', badge: 'Μητρόπολη' },
+          { id: 'wellington', name: 'Ουέλινγκτον', badge: 'Πρωτεύουσα' },
+          { id: 'christchurch', name: 'Κράιστσερτς', badge: 'Νότιο Νησί' },
+          { id: 'queenstown', name: 'Κουίνσταουν', badge: 'Άλπεις & Λίμνες' }
+        ]
+      },
+      {
+        id: 'papua-new-guinea',
+        name: 'Παπούα Νέα Γουινέα',
+        flag: '🇵🇬',
+        cities: [
+          { id: 'port-moresby', name: 'Πορτ Μόρεσμπι', badge: 'Πρωτεύουσα' },
+          { id: 'lae', name: 'Λάε', badge: 'Λιμάνι' }
+        ]
+      },
+      {
+        id: 'fiji',
+        name: 'Φίτζι',
+        flag: '🇫🇯',
+        cities: [
+          { id: 'suva', name: 'Σούβα', badge: 'Πρωτεύουσα' },
+          { id: 'nadi', name: 'Νάντι', badge: 'Τουρισμός' }
+        ]
+      },
+      {
+        id: 'samoa',
+        name: 'Σαμόα',
+        flag: '🇼🇸',
+        cities: [
+          { id: 'apia', name: 'Άπια', badge: 'Πρωτεύουσα' }
+        ]
+      },
+      {
+        id: 'vanuatu',
+        name: 'Βανουάτου',
+        flag: '🇻🇺',
+        cities: [
+          { id: 'port-vila', name: 'Πορτ Βίλα', badge: 'Πρωτεύουσα' }
+        ]
+      },
+      {
+        id: 'solomon-islands',
+        name: 'Νήσοι Σολομώντα',
+        flag: '🇸🇧',
+        cities: [
+          { id: 'honiara', name: 'Χονιάρα', badge: 'Πρωτεύουσα' }
+        ]
+      },
+      {
+        id: 'micronesia',
+        name: 'Μικρονησία',
+        flag: '🇫🇲',
+        cities: [
+          { id: 'palikir', name: 'Παλικίρ', badge: 'Πρωτεύουσα' }
+        ]
+      },
+      {
+        id: 'tonga',
+        name: 'Τόνγκα',
+        flag: '🇹🇴',
+        cities: [
+          { id: 'nukualofa', name: 'Νουκουαλόφα', badge: 'Πρωτεύουσα' }
+        ]
+      },
+      {
+        id: 'kiribati',
+        name: 'Κιριμπάτι',
+        flag: '🇰🇮',
+        cities: [
+          { id: 'south-tarawa', name: 'Νότια Ταράουα', badge: 'Πρωτεύουσα' }
+        ]
+      },
+      {
+        id: 'palau',
+        name: 'Παλάου',
+        flag: '🇵🇼',
+        cities: [
+          { id: 'ngerulmud', name: 'Νγκερουλμούντ', badge: 'Πρωτεύουσα' },
+          { id: 'koror', name: 'Κορόρ', badge: 'Κέντρο' }
+        ]
+      },
+      {
+        id: 'marshall-islands',
+        name: 'Νήσοι Μάρσαλ',
+        flag: '🇲🇭',
+        cities: [
+          { id: 'majuro', name: 'Ματζούρο', badge: 'Πρωτεύουσα' }
+        ]
+      },
+      {
+        id: 'nauru',
+        name: 'Ναουρού',
+        flag: '🇳🇷',
+        cities: [
+          { id: 'yaren', name: 'Γιαρέν', badge: 'Πρωτεύουσα' }
+        ]
+      },
+      {
+        id: 'tuvalu',
+        name: 'Τουβαλού',
+        flag: '🇹🇻',
+        cities: [
+          { id: 'funafuti', name: 'Φουναφούτι', badge: 'Πρωτεύουσα' }
+        ]
+      }
+    ]
   }
 ];
 
