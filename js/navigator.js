@@ -56,7 +56,14 @@ export const CONTINENTS_DATA = [
         cities: [
           { id: 'berlin', name: 'Βερολίνο', badge: 'Πρωτεύουσα' },
           { id: 'munich', name: 'Μόναχο' },
-          { id: 'hamburg', name: 'Αμβούργο' }
+          { id: 'hamburg', name: 'Αμβούργο' },
+          { id: 'frankfurt', name: 'Φρανκφούρτη' },
+          { id: 'cologne', name: 'Κολωνία' },
+          { id: 'stuttgart', name: 'Στουτγκάρδη' },
+          { id: 'dusseldorf', name: 'Ντίσελντορφ' },
+          { id: 'leipzig', name: 'Λειψία' },
+          { id: 'dresden', name: 'Δρέσδη' },
+          { id: 'nuremberg', name: 'Νυρεμβέργη' }
         ]
       },
       {

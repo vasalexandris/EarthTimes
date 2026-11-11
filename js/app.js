@@ -315,7 +315,7 @@ export async function flyToCity(cityId) {
       'paris': 'france', 'marseille': 'france', 'lyon': 'france',
       'rome': 'italy', 'florence': 'italy', 'milan': 'italy', 'venice': 'italy',
       'london': 'uk', 'edinburgh': 'uk', 'manchester': 'uk',
-      'berlin': 'germany', 'munich': 'germany', 'hamburg': 'germany',
+      'berlin': 'germany', 'munich': 'germany', 'hamburg': 'germany', 'frankfurt': 'germany', 'cologne': 'germany', 'stuttgart': 'germany', 'dusseldorf': 'germany', 'leipzig': 'germany', 'dresden': 'germany', 'nuremberg': 'germany',
       'madrid': 'spain', 'barcelona': 'spain', 'seville': 'spain',
       'vienna': 'austria', 'salzburg': 'austria', 'innsbruck': 'austria',
       'amsterdam': 'netherlands', 'rotterdam': 'netherlands', 'utrecht': 'netherlands',

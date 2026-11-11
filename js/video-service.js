@@ -5895,6 +5895,70 @@ export const CITY_VIDEOS = {
       "icon": "fa-solid fa-helicopter",
       "type": "drone"
     }
+  },
+  "frankfurt": {
+    "cityName": "Φρανκφούρτη",
+    "drone": {
+      "youtubeId": "PQ3USMvf6Z8",
+      "title": "Φρανκφούρτη 4K — Frankfurt, Germany in 4K ULTRA HD HDR 60 FPS Dolby Vision™ Drone Video"
+    },
+    "live": {
+      "youtubeId": "boJCx2dXCko",
+      "label": "Φρανκφούρτη Skyline Live Cam",
+      "title": "Frankfurt am Main | Live 24x7 | Live Camera | Frankfurt"
+    }
+  },
+  "cologne": {
+    "cityName": "Κολωνία",
+    "drone": {
+      "youtubeId": "6eLZfe5945E",
+      "title": "Κολωνία 4K — Cologne / Köln, Germany 🇩🇪 - by drone [4K]"
+    },
+    "live": {
+      "youtubeId": "u3pwYYYeDKE",
+      "label": "Κολωνία & Καθεδρικός Live Cam",
+      "title": "Kölner Dom: Live-Webcam Köln"
+    }
+  },
+  "stuttgart": {
+    "cityName": "Στουτγκάρδη",
+    "drone": {
+      "youtubeId": "cXorznac5Wk",
+      "title": "Στουτγκάρδη 4K — STUTTGART 🇩🇪 Drone Aerial 4K Drohne | Baden-Württemberg Germany Deutschland"
+    }
+  },
+  "dusseldorf": {
+    "cityName": "Ντίσελντορφ",
+    "drone": {
+      "youtubeId": "QakCqMXksYU",
+      "title": "Ντίσελντορφ 4K — Düsseldorf , Germany 🇩🇪 | 4K Drone Footage (With Subtitles)"
+    }
+  },
+  "leipzig": {
+    "cityName": "Λειψία",
+    "drone": {
+      "youtubeId": "FS74CTRfrmE",
+      "title": "Λειψία 4K — Leipzig , Germany 🇩🇪 | 4K Drone Footage (With Subtitles)"
+    }
+  },
+  "dresden": {
+    "cityName": "Δρέσδη",
+    "drone": {
+      "youtubeId": "ffgUoRs4UBo",
+      "title": "Δρέσδη 4K — Dresden , Germany 🇩🇪 | 4K Drone Footage (With Subtitles)"
+    },
+    "live": {
+      "youtubeId": "vTJGeIvg8EY",
+      "label": "Δρέσδη Frauenkirche Live Cam",
+      "title": "Livecam Elbufer Dresden / Live from the river Elbe & Panorama of Dresden"
+    }
+  },
+  "nuremberg": {
+    "cityName": "Νυρεμβέργη",
+    "drone": {
+      "youtubeId": "k1CNwupt8W8",
+      "title": "Νυρεμβέργη 4K — The Beauty of 🇩🇪 Nuremberg from the Air | 4K Cinematic Drone | Germany"
+    }
   }
 };
 
@@ -6012,7 +6076,9 @@ export const POI_LIVE_CAMS = {
   "duomo-firenze": { youtubeId: "qBtMuRnf7BY", title: "Πανόραμα Φλωρεντίας Live (Φλωρεντία)" },
   "hamburg-michel": { youtubeId: "OmyDLXvaus4", title: "Λιμάνι Αμβούργου & Ναός Αγίου Μιχαήλ Live" },
   "sam-sharpe": { youtubeId: "ac0v_QwqYfw", title: "Πλατεία Sam Sharpe Live (Μοντέγκο Μπέι)" },
-  "zambezi-river": { youtubeId: "jH3e5w4BWGA", title: "Ποταμός Ζαμβέζης Safari Live (Ζάμπια)" }
+  "zambezi-river": { youtubeId: "jH3e5w4BWGA", title: "Ποταμός Ζαμβέζης Safari Live (Ζάμπια)" },
+  "main-tower": { youtubeId: "boJCx2dXCko", title: "Φρανκφούρτη Skyline Live 24/7 (Main Tower)" },
+  "dresden-elbufer": { youtubeId: "vTJGeIvg8EY", title: "Δρέσδη Πανόραμα & Έλβας Live Cam" }
 };
 
 export function findPoiLiveCam(poiName = '') {
@@ -6041,6 +6107,8 @@ export function findPoiLiveCam(poiName = '') {
   if (n.includes('speicherstadt') || n.includes('elbphilharmonie') || n.includes('michel') || n.includes('λιμάνι αμβούργου')) return POI_LIVE_CAMS["hamburg-michel"];
   if (n.includes('sam sharpe')) return POI_LIVE_CAMS["sam-sharpe"];
   if (n.includes('zambezi') || n.includes('ζαμβέζ') || n.includes('victoria falls') || n.includes('καταρράκτες βικτόρια')) return POI_LIVE_CAMS["zambezi-river"];
+  if (n.includes('main tower')) return POI_LIVE_CAMS["main-tower"];
+  if (n.includes('brühlsche terrasse')) return POI_LIVE_CAMS["dresden-elbufer"];
   return null;
 }
 
