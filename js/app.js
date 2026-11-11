@@ -403,7 +403,23 @@ export async function flyToCity(cityId) {
       'ngerulmud': 'palau', 'koror': 'palau',
       'majuro': 'marshall-islands',
       'yaren': 'nauru',
-      'funafuti': 'tuvalu'
+      'funafuti': 'tuvalu',
+      'tokyo': 'japan', 'kyoto': 'japan', 'osaka': 'japan', 'hiroshima': 'japan', 'sapporo': 'japan', 'fukuoka': 'japan',
+      'seoul': 'south-korea', 'busan': 'south-korea', 'incheon': 'south-korea',
+      'pyongyang': 'north-korea',
+      'ulaanbaatar': 'mongolia',
+      'taipei': 'taiwan', 'kaohsiung': 'taiwan',
+      'hanoi': 'vietnam', 'ho-chi-minh-city': 'vietnam', 'da-nang': 'vietnam',
+      'bangkok': 'thailand', 'chiang-mai': 'thailand', 'phuket': 'thailand',
+      'jakarta': 'indonesia', 'bali-denpasar': 'indonesia', 'surabaya': 'indonesia',
+      'kuala-lumpur': 'malaysia', 'george-town': 'malaysia',
+      'singapore': 'singapore',
+      'manila': 'philippines', 'cebu-city': 'philippines',
+      'phnom-penh': 'cambodia', 'siem-reap': 'cambodia',
+      'vientiane': 'laos', 'luang-prabang': 'laos',
+      'yangon': 'myanmar', 'mandalay': 'myanmar',
+      'bandar-seri-begawan': 'brunei',
+      'dili': 'east-timor'
     };
     const targetCountry = cityToCountry[cityId];
     if (targetCountry && !countriesMap.has(targetCountry)) {
@@ -771,7 +787,16 @@ async function init() {
       'colombia',
       'china',
       'australia',
-      'new-zealand'
+      'new-zealand',
+      'japan',
+      'south-korea',
+      'taiwan',
+      'vietnam',
+      'thailand',
+      'indonesia',
+      'malaysia',
+      'singapore',
+      'philippines'
     ];
 
     const settledCountries = await Promise.allSettled(countryKeys.map(k => loadCountryData(k)));

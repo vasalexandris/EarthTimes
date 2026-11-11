@@ -825,6 +825,153 @@ export const CONTINENTS_DATA = [
           { id: 'suzhou', name: 'Σουτζόου', badge: 'Κήποι UNESCO' },
           { id: 'guilin', name: 'Γκουιλίν', badge: 'Καρστικά Τοπία' }
         ]
+      },
+      {
+        id: 'japan',
+        name: 'Ιαπωνία',
+        flag: '🇯🇵',
+        cities: [
+          { id: 'tokyo', name: 'Τόκιο', badge: 'Πρωτεύουσα' },
+          { id: 'kyoto', name: 'Κιότο', badge: 'Αρχαία Πρωτεύουσα' },
+          { id: 'osaka', name: 'Οσάκα', badge: 'Γαστρονομία & Εμπόριο' },
+          { id: 'hiroshima', name: 'Χιροσίμα', badge: 'Μνημείο Ειρήνης' },
+          { id: 'sapporo', name: 'Σαππόρο', badge: 'Χοκκάιντο' },
+          { id: 'fukuoka', name: 'Φουκουόκα', badge: 'Πύλη Κιούσου' }
+        ]
+      },
+      {
+        id: 'south-korea',
+        name: 'Νότια Κορέα',
+        flag: '🇰🇷',
+        cities: [
+          { id: 'seoul', name: 'Σεούλ', badge: 'Πρωτεύουσα' },
+          { id: 'busan', name: 'Μπουσάν', badge: 'Μεγάλο Λιμάνι' },
+          { id: 'incheon', name: 'Ίντσον', badge: 'Διεθνής Πύλη' }
+        ]
+      },
+      {
+        id: 'north-korea',
+        name: 'Βόρεια Κορέα',
+        flag: '🇰🇵',
+        cities: [
+          { id: 'pyongyang', name: 'Πιονγιάνγκ', badge: 'Πρωτεύουσα' }
+        ]
+      },
+      {
+        id: 'mongolia',
+        name: 'Μογγολία',
+        flag: '🇲🇳',
+        cities: [
+          { id: 'ulaanbaatar', name: 'Ουλάν Μπατόρ', badge: 'Πρωτεύουσα' }
+        ]
+      },
+      {
+        id: 'taiwan',
+        name: 'Ταϊβάν',
+        flag: '🇹🇼',
+        cities: [
+          { id: 'taipei', name: 'Ταϊπέι', badge: 'Πρωτεύουσα' },
+          { id: 'kaohsiung', name: 'Καοσιούνγκ', badge: 'Νότιο Λιμάνι' }
+        ]
+      },
+      {
+        id: 'vietnam',
+        name: 'Βιετνάμ',
+        flag: '🇻🇳',
+        cities: [
+          { id: 'hanoi', name: 'Ανόι', badge: 'Πρωτεύουσα' },
+          { id: 'ho-chi-minh-city', name: 'Χο Τσι Μινχ', badge: 'Οικονομικό Κέντρο' },
+          { id: 'da-nang', name: 'Ντα Νανγκ', badge: 'Κεντρική Ακτή' }
+        ]
+      },
+      {
+        id: 'thailand',
+        name: 'Ταϊλάνδη',
+        flag: '🇹🇭',
+        cities: [
+          { id: 'bangkok', name: 'Μπανγκόκ', badge: 'Πρωτεύουσα' },
+          { id: 'chiang-mai', name: 'Τσιάνγκ Μάι', badge: 'Βόρειος Πολιτισμός' },
+          { id: 'phuket', name: 'Πουκέτ', badge: 'Ανδαμάν' }
+        ]
+      },
+      {
+        id: 'indonesia',
+        name: 'Ινδονησία',
+        flag: '🇮🇩',
+        cities: [
+          { id: 'jakarta', name: 'Τζακάρτα', badge: 'Πρωτεύουσα' },
+          { id: 'bali-denpasar', name: 'Ντενπασάρ', badge: 'Μπαλί' },
+          { id: 'surabaya', name: 'Σουραμπάγια', badge: 'Ανατολική Ιάβα' }
+        ]
+      },
+      {
+        id: 'malaysia',
+        name: 'Μαλαισία',
+        flag: '🇲🇾',
+        cities: [
+          { id: 'kuala-lumpur', name: 'Κουάλα Λουμπούρ', badge: 'Πρωτεύουσα' },
+          { id: 'george-town', name: 'Τζορτζ Τάουν', badge: 'Πενάνγκ UNESCO' }
+        ]
+      },
+      {
+        id: 'singapore',
+        name: 'Σιγκαπούρη',
+        flag: '🇸🇬',
+        cities: [
+          { id: 'singapore', name: 'Σιγκαπούρη', badge: 'Πόλη-Κράτος' }
+        ]
+      },
+      {
+        id: 'philippines',
+        name: 'Φιλιππίνες',
+        flag: '🇵🇭',
+        cities: [
+          { id: 'manila', name: 'Μανίλα', badge: 'Πρωτεύουσα' },
+          { id: 'cebu-city', name: 'Σεμπού', badge: 'Βασίλισσα Νότου' }
+        ]
+      },
+      {
+        id: 'cambodia',
+        name: 'Καμπότζη',
+        flag: '🇰🇭',
+        cities: [
+          { id: 'phnom-penh', name: 'Πνομ Πενχ', badge: 'Πρωτεύουσα' },
+          { id: 'siem-reap', name: 'Σιέμ Ριπ', badge: 'Άνγκορ Βατ' }
+        ]
+      },
+      {
+        id: 'laos',
+        name: 'Λάος',
+        flag: '🇱🇦',
+        cities: [
+          { id: 'vientiane', name: 'Βιεντιάν', badge: 'Πρωτεύουσα' },
+          { id: 'luang-prabang', name: 'Λουάνγκ Πραμπάνγκ', badge: 'UNESCO Κληρονομιά' }
+        ]
+      },
+      {
+        id: 'myanmar',
+        name: 'Μιανμάρ',
+        flag: '🇲🇲',
+        cities: [
+          { id: 'yangon', name: 'Γιανγκόν', badge: 'Ιστορική Πρωτεύουσα' },
+          { id: 'mandalay', name: 'Μάνταλεϊ', badge: 'Βασιλική Πόλη' }
+        ]
+      },
+      {
+        id: 'brunei',
+        name: 'Μπρουνέι',
+        flag: '🇧🇳',
+        cities: [
+          { id: 'bandar-seri-begawan', name: 'Μπαντάρ Σερί Μπεγκαβάν', badge: 'Πρωτεύουσα' }
+        ]
+      },
+      {
+        id: 'east-timor',
+        name: 'Ανατολικό Τιμόρ',
+        flag: '🇹🇱',
+        cities: [
+          { id: 'dili', name: 'Ντίλι', badge: 'Πρωτεύουσα' }
+        ]
       }
     ]
   },
