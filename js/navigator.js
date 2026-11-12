@@ -1,4 +1,4 @@
-import { US_STATES, CITY_TO_STATE } from './states-data.js?v=20261111_de_pl';
+import { US_STATES, CITY_TO_STATE } from './states-data.js?v=20261112_eu7';
 /**
  * Navigator Module
  * Hierarchical Cascading Navigation: Continents -> Countries -> Cities
@@ -35,7 +35,14 @@ export const CONTINENTS_DATA = [
         cities: [
           { id: 'paris', name: 'Παρίσι', badge: 'Πρωτεύουσα' },
           { id: 'marseille', name: 'Μασσαλία' },
-          { id: 'lyon', name: 'Λυών' }
+          { id: 'lyon', name: 'Λυών' },
+          { id: 'nice', name: 'Νίκαια' },
+          { id: 'bordeaux', name: 'Μπορντό' },
+          { id: 'strasbourg', name: 'Στρασβούργο' },
+          { id: 'toulouse', name: 'Τουλούζη' },
+          { id: 'lille', name: 'Λιλ' },
+          { id: 'nantes', name: 'Νάντη' },
+          { id: 'montpellier', name: 'Μονπελιέ' }
         ]
       },
       {
@@ -46,7 +53,13 @@ export const CONTINENTS_DATA = [
           { id: 'rome', name: 'Ρώμη', badge: 'Πρωτεύουσα' },
           { id: 'florence', name: 'Φλωρεντία' },
           { id: 'milan', name: 'Μιλάνο' },
-          { id: 'venice', name: 'Βενετία' }
+          { id: 'venice', name: 'Βενετία' },
+          { id: 'naples', name: 'Νάπολη' },
+          { id: 'bologna', name: 'Μπολόνια' },
+          { id: 'turin', name: 'Τορίνο' },
+          { id: 'verona', name: 'Βερόνα' },
+          { id: 'palermo', name: 'Παλέρμο' },
+          { id: 'genoa', name: 'Γένοβα' }
         ]
       },
       {
@@ -83,7 +96,14 @@ export const CONTINENTS_DATA = [
         cities: [
           { id: 'madrid', name: 'Μαδρίτη', badge: 'Πρωτεύουσα' },
           { id: 'barcelona', name: 'Βαρκελώνη' },
-          { id: 'seville', name: 'Σεβίλλη' }
+          { id: 'seville', name: 'Σεβίλλη' },
+          { id: 'bilbao', name: 'Μπιλμπάο' },
+          { id: 'malaga', name: 'Μάλαγα' },
+          { id: 'valencia-es', name: 'Βαλένθια' },
+          { id: 'granada-es', name: 'Γρανάδα' },
+          { id: 'toledo-es', name: 'Τολέδο' },
+          { id: 'salamanca', name: 'Σαλαμάνκα' },
+          { id: 'zaragoza', name: 'Σαραγόσα' }
         ]
       },
       {
@@ -170,7 +190,14 @@ export const CONTINENTS_DATA = [
         cities: [
           { id: 'stockholm', name: 'Στοκχόλμη', badge: 'Πρωτεύουσα' },
           { id: 'gothenburg', name: 'Γκέτεμποργκ' },
-          { id: 'malmo', name: 'Μάλμε' }
+          { id: 'malmo', name: 'Μάλμε' },
+          { id: 'uppsala', name: 'Ουψάλα' },
+          { id: 'visby', name: 'Βίσμπι' },
+          { id: 'kiruna', name: 'Κιρούνα' },
+          { id: 'linkoping', name: 'Λινσέπινγκ' },
+          { id: 'orebro', name: 'Ερεμπρού' },
+          { id: 'helsingborg', name: 'Χέλσινγκμποργκ' },
+          { id: 'lund', name: 'Λουντ' }
         ]
       },
       {
@@ -200,7 +227,14 @@ export const CONTINENTS_DATA = [
         cities: [
           { id: 'helsinki', name: 'Ελσίνκι', badge: 'Πρωτεύουσα' },
           { id: 'tampere', name: 'Τάμπερε' },
-          { id: 'turku', name: 'Τούρκου' }
+          { id: 'turku', name: 'Τούρκου' },
+          { id: 'rovaniemi', name: 'Ροβανιέμι' },
+          { id: 'oulu', name: 'Όουλου' },
+          { id: 'jyvaskyla', name: 'Γιουβάσκουλα' },
+          { id: 'kuopio', name: 'Κουόπιο' },
+          { id: 'lahti', name: 'Λάχτι' },
+          { id: 'vaasa', name: 'Βάασα' },
+          { id: 'porvoo', name: 'Πόρβοο' }
         ]
       },
       {
@@ -230,7 +264,13 @@ export const CONTINENTS_DATA = [
         cities: [
           { id: 'bucharest', name: 'Βουκουρέστι', badge: 'Πρωτεύουσα' },
           { id: 'cluj', name: 'Κλουζ-Ναπόκα' },
-          { id: 'timisoara', name: 'Τιμισοάρα' }
+          { id: 'timisoara', name: 'Τιμισοάρα' },
+          { id: 'sibiu', name: 'Σιμπίου' },
+          { id: 'constanta', name: 'Κωνστάντζα' },
+          { id: 'iasi', name: 'Ιάσιο' },
+          { id: 'oradea', name: 'Οράντεα' },
+          { id: 'sighisoara', name: 'Σιγκισοάρα' },
+          { id: 'craiova', name: 'Κραϊόβα' }
         ]
       },
       {
@@ -260,7 +300,14 @@ export const CONTINENTS_DATA = [
         cities: [
           { id: 'zagreb', name: 'Ζάγκρεμπ', badge: 'Πρωτεύουσα' },
           { id: 'split', name: 'Σπλιτ' },
-          { id: 'dubrovnik', name: 'Ντουμπρόβνικ' }
+          { id: 'dubrovnik', name: 'Ντουμπρόβνικ' },
+          { id: 'rijeka', name: 'Ριέκα' },
+          { id: 'zadar', name: 'Ζάνταρ' },
+          { id: 'pula', name: 'Πούλα' },
+          { id: 'osijek', name: 'Όσιγιεκ' },
+          { id: 'varazdin', name: 'Βαραζντίν' },
+          { id: 'sibenik', name: 'Σίμπενικ' },
+          { id: 'rovinj', name: 'Ρόβινι' }
         ]
       },
       {

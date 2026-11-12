@@ -4,12 +4,12 @@
  * USA, Leaflet Map, Base Layers, UI Dossier, and Time Machine.
  */
 
-import { loadWorldData, loadCountryData, loadStateData } from './data-service.js?v=20261111_de_pl';
-import * as MapModule from './map.js?v=20261111_de_pl';
-import * as UIModule from './ui.js?v=20261111_de_pl';
-import * as TimeMachine from './time-machine.js?v=20261111_de_pl';
-import * as NavigatorModule from './navigator.js?v=20261111_de_pl';
-import { US_STATES, CITY_TO_STATE } from './states-data.js?v=20261111_de_pl';
+import { loadWorldData, loadCountryData, loadStateData } from './data-service.js?v=20261112_eu7';
+import * as MapModule from './map.js?v=20261112_eu7';
+import * as UIModule from './ui.js?v=20261112_eu7';
+import * as TimeMachine from './time-machine.js?v=20261112_eu7';
+import * as NavigatorModule from './navigator.js?v=20261112_eu7';
+import { US_STATES, CITY_TO_STATE } from './states-data.js?v=20261112_eu7';
 
 // Application State
 let worldData = null;
@@ -325,6 +325,13 @@ export async function flyToCity(cityId) {
       'dublin': 'ireland', 'cork': 'ireland', 'galway': 'ireland',
       'budapest': 'hungary', 'debrecen': 'hungary', 'szeged': 'hungary',
       'bern': 'switzerland', 'zurich': 'switzerland', 'geneva': 'switzerland',
+            'nice': 'france', 'bordeaux': 'france', 'strasbourg': 'france', 'toulouse': 'france', 'lille': 'france', 'nantes': 'france', 'montpellier': 'france',
+      'naples': 'italy', 'bologna': 'italy', 'turin': 'italy', 'verona': 'italy', 'palermo': 'italy', 'genoa': 'italy',
+      'bilbao': 'spain', 'malaga': 'spain', 'valencia-es': 'spain', 'granada-es': 'spain', 'toledo-es': 'spain', 'salamanca': 'spain', 'zaragoza': 'spain',
+      'uppsala': 'sweden', 'visby': 'sweden', 'kiruna': 'sweden', 'linkoping': 'sweden', 'orebro': 'sweden', 'helsingborg': 'sweden', 'lund': 'sweden',
+      'rijeka': 'croatia', 'zadar': 'croatia', 'pula': 'croatia', 'osijek': 'croatia', 'varazdin': 'croatia', 'sibenik': 'croatia', 'rovinj': 'croatia',
+      'rovaniemi': 'finland', 'oulu': 'finland', 'jyvaskyla': 'finland', 'kuopio': 'finland', 'lahti': 'finland', 'vaasa': 'finland', 'porvoo': 'finland',
+      'sibiu': 'romania', 'constanta': 'romania', 'iasi': 'romania', 'oradea': 'romania', 'sighisoara': 'romania', 'craiova': 'romania',
       'warsaw': 'poland', 'krakow': 'poland', 'gdansk': 'poland', 'wroclaw': 'poland', 'poznan': 'poland', 'lodz': 'poland', 'lublin': 'poland', 'szczecin': 'poland', 'torun': 'poland', 'katowice': 'poland',
       'stockholm': 'sweden', 'gothenburg': 'sweden', 'malmo': 'sweden',
       'oslo': 'norway', 'bergen': 'norway', 'tromso': 'norway',

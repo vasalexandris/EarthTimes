@@ -1,4 +1,4 @@
-import { CITY_TO_STATE } from './states-data.js?v=20261111_de_pl';
+import { CITY_TO_STATE } from './states-data.js?v=20261112_eu7';
 /**
  * Video Service Module
  * Registry of verified high-definition YouTube video tours for all cities
@@ -6007,6 +6007,375 @@ export const CITY_VIDEOS = {
     "drone": {
       "youtubeId": "hBJgsn95b0s",
       "title": "Κατοβίτσε 4K — Katowice in Motion | Cinematic Drone Film 4K | Part 1"
+    }
+  },
+  "nice": {
+    "cityName": "Νίκαια",
+    "drone": {
+      "youtubeId": "CNseTOiosQw",
+      "title": "Νίκαια 4K — Nice French Riviera in 4K ULTRA HD Drone"
+    }
+  },
+  "bordeaux": {
+    "cityName": "Μπορντό",
+    "drone": {
+      "youtubeId": "_DMkPTDGOao",
+      "title": "Μπορντό 4K — Bordeaux, France 🇫🇷 - by drone / Autel Evo Lite+ [6K]"
+    }
+  },
+  "strasbourg": {
+    "cityName": "Στρασβούργο",
+    "drone": {
+      "youtubeId": "BGXZOVDANyg",
+      "title": "Στρασβούργο 4K — Strasbourg, France – The Most Peaceful City in Europe | 4K Drone Cinematic"
+    }
+  },
+  "toulouse": {
+    "cityName": "Τουλούζη",
+    "drone": {
+      "youtubeId": "trismSS0JqI",
+      "title": "Τουλούζη 4K — TOULOUSE in 4K 🇫🇷 Stunning Drone Footage of France’s Pink City"
+    },
+    "live": {
+      "youtubeId": "Reuz0dRsBk0",
+      "label": "Τουλούζη Live Cam",
+      "title": "Webcam Toulouse - Vue sur la Garonne"
+    }
+  },
+  "lille": {
+    "cityName": "Λιλ",
+    "drone": {
+      "youtubeId": "gHEQ1wdQwvc",
+      "title": "Λιλ 4K — LILLE 🇫🇷 France | 4K Drone Cinematography"
+    }
+  },
+  "nantes": {
+    "cityName": "Νάντη",
+    "drone": {
+      "youtubeId": "ZxxokBKABQM",
+      "title": "Νάντη 4K — Nantes vue du ciel, drone 4K par Aurélien Aumond"
+    }
+  },
+  "montpellier": {
+    "cityName": "Μονπελιέ",
+    "drone": {
+      "youtubeId": "2VYB17PbM2k",
+      "title": "Μονπελιέ 4K — Montpellier, France 🇫🇷 | 4K Drone Footage (With Subtitles)"
+    }
+  },
+  "bilbao": {
+    "cityName": "Μπιλμπάο",
+    "drone": {
+      "youtubeId": "9wk_GoCxdJk",
+      "title": "Μπιλμπάο 4K — Bilbao, Spain 🇪🇸 4K HDR Drone | Nervión River, Old Town & City Views"
+    }
+  },
+  "malaga": {
+    "cityName": "Μάλαγα",
+    "drone": {
+      "youtubeId": "lq_uAyvyakw",
+      "title": "Μάλαγα 4K — Malaga 4K - Droneview over Malaga in Spain | Relaxation Music"
+    },
+    "live": {
+      "youtubeId": "4CaHlfpGlAI",
+      "label": "Μάλαγα Live Cam",
+      "title": "LIVE MÁLAGA - Alameda Principal & Calle Marques de Larios - Andalucía - España"
+    }
+  },
+  "valencia-es": {
+    "cityName": "Βαλένθια",
+    "drone": {
+      "youtubeId": "mWTDKXzOyg0",
+      "title": "Βαλένθια 4K — Valencia , Spain 🇪🇸 | 4K Drone Footage (With Subtitles)"
+    },
+    "live": {
+      "youtubeId": "dVAtjVi7bUQ",
+      "label": "Βαλένθια Live Cam",
+      "title": "🍊 WEBCAM EN #DIRECTO  #fallas2026  #LIVE 24h DESDE #VALENCIA #plaza Ayuntamiento Valencia"
+    }
+  },
+  "granada-es": {
+    "cityName": "Γρανάδα",
+    "drone": {
+      "youtubeId": "SYN91C41Fi0",
+      "title": "Γρανάδα 4K — Granada, Spain 🇪🇸 - by drone [4K]"
+    }
+  },
+  "toledo-es": {
+    "cityName": "Τολέδο",
+    "drone": {
+      "youtubeId": "Vwi61wUI-FQ",
+      "title": "Τολέδο 4K — Toledo, Spain 🇪🇸 | 4K Drone Footage"
+    }
+  },
+  "salamanca": {
+    "cityName": "Σαλαμάνκα",
+    "drone": {
+      "youtubeId": "XtcREKRqLpk",
+      "title": "Σαλαμάνκα 4K — Mesmerizing Aerial Views of Salamanca - Spain | Stunning 4K Drone Footage"
+    }
+  },
+  "zaragoza": {
+    "cityName": "Σαραγόσα",
+    "drone": {
+      "youtubeId": "muBCArUO_s4",
+      "title": "Σαραγόσα 4K — Zaragoza, Spain 🇪🇸 4K UHD | Drone Footage"
+    }
+  },
+  "naples": {
+    "cityName": "Νάπολη",
+    "drone": {
+      "youtubeId": "EAF3wvPYGao",
+      "title": "Νάπολη 4K — Naples / Napoli, Italy 🇮🇹 - by drone [4K]"
+    }
+  },
+  "bologna": {
+    "cityName": "Μπολόνια",
+    "drone": {
+      "youtubeId": "uS6KMkjAsGU",
+      "title": "Μπολόνια 4K — BOLOGNA 2024 🇮🇹 Drone Aerial 4K | Emilia-Romagna Italy Italia"
+    }
+  },
+  "turin": {
+    "cityName": "Τορίνο",
+    "drone": {
+      "youtubeId": "5KIl4bpaDBM",
+      "title": "Τορίνο 4K — Turin in 4K"
+    }
+  },
+  "verona": {
+    "cityName": "Βερόνα",
+    "drone": {
+      "youtubeId": "magCEAsMerY",
+      "title": "Βερόνα 4K — Verona, Italy 🇮🇹 | 4K Drone Footage (With Subtitles)"
+    }
+  },
+  "palermo": {
+    "cityName": "Παλέρμο",
+    "drone": {
+      "youtubeId": "KejgB6MKPtg",
+      "title": "Παλέρμο 4K — Palermo, Italy by Drone 🇮🇹 [4K]"
+    },
+    "live": {
+      "youtubeId": "FUhW3r5ROGc",
+      "label": "Παλέρμο Live Cam",
+      "title": "Palermo Live Webcam"
+    }
+  },
+  "genoa": {
+    "cityName": "Γένοβα",
+    "drone": {
+      "youtubeId": "BCIygKlkOgA",
+      "title": "Γένοβα 4K — Genoa, Italy 🇮🇹 - by drone [4K]"
+    },
+    "live": {
+      "youtubeId": "b66MhBy9J3o",
+      "label": "Γένοβα Live Cam",
+      "title": "Genoa Live Cam - Nervi, Sant'Ilario"
+    }
+  },
+  "uppsala": {
+    "cityName": "Ουψάλα",
+    "drone": {
+      "youtubeId": "5bmT5XvkmZo",
+      "title": "Ουψάλα 4K — Uppsala, Sweden in 4K"
+    }
+  },
+  "visby": {
+    "cityName": "Βίσμπι",
+    "drone": {
+      "youtubeId": "ydzCG8fv1B0",
+      "title": "Βίσμπι 4K — GOTLAND VISBY 🇸🇪 Götaland Drone Aerial | Sverige Sweden | Drönare Film #sweden #sverige"
+    }
+  },
+  "kiruna": {
+    "cityName": "Κιρούνα",
+    "drone": {
+      "youtubeId": "VrXrpvBan5A",
+      "title": "Κιρούνα 4K — Summer Stroll in Kiruna New City Center – 2025 | Sweden - 4K"
+    }
+  },
+  "linkoping": {
+    "cityName": "Λινσέπινγκ",
+    "drone": {
+      "youtubeId": "WFn7KAKZ-Wk",
+      "title": "Λινσέπινγκ 4K — Linköping From Above - Linköping DomKyrka - Gamla vattentornet - Sweden - 4K Aerial - June 2024"
+    }
+  },
+  "orebro": {
+    "cityName": "Έρεμπρο",
+    "drone": {
+      "youtubeId": "osrp6s6N0t8",
+      "title": "Έρεμπρο 4K — Örebro Sweden 🇸🇪 | Stunning 4K Drone Footage & Cinematic Aerial Views | LUNITO Finland"
+    }
+  },
+  "helsingborg": {
+    "cityName": "Χέλσινγκμποργκ",
+    "drone": {
+      "youtubeId": "MfSfRsC_OcM",
+      "title": "Χέλσινγκμποργκ 4K — Helsingborg Sweden | 4K Drone Video |"
+    }
+  },
+  "lund": {
+    "cityName": "Λουντ",
+    "drone": {
+      "youtubeId": "iKZ6H3j8srw",
+      "title": "Λουντ 4K — [Drone] Lund, Sweden from above - A Different Perspective -  DJI MAVIC AIR 2 [4K] Footage."
+    },
+    "live": {
+      "youtubeId": "7uVpEs9su3U",
+      "label": "Λουντ Live Cam",
+      "title": "AXIS Q1809-LE 41 MP Bullet Camera Live Streaming 24/7 from Lund, Sweden"
+    }
+  },
+  "rijeka": {
+    "cityName": "Ριέκα",
+    "drone": {
+      "youtubeId": "id2a20-1jlY",
+      "title": "Ριέκα 4K — [4K] RIJEKA 2026 🇭🇷 CROATIA Drone 4K | Hrvatska | 1 Hour Aerial Relaxation Film"
+    }
+  },
+  "zadar": {
+    "cityName": "Ζάνταρ",
+    "drone": {
+      "youtubeId": "lLd5RuOGS64",
+      "title": "Ζάνταρ 4K — ZADAR 🇭🇷 Drone Aerial 4K | Croatia Hrvatska Dalmatia"
+    }
+  },
+  "pula": {
+    "cityName": "Πούλα",
+    "drone": {
+      "youtubeId": "wHvtZw-hTVQ",
+      "title": "Πούλα 4K — Pula, Croatia 🇭🇷 - by drone [4K]"
+    }
+  },
+  "osijek": {
+    "cityName": "Όσιγιεκ",
+    "drone": {
+      "youtubeId": "PuL9B7f1Br4",
+      "title": "Όσιγιεκ 4K — Breathtaking Aerial Tour of Osijek, Croatia | 4K Drone Video"
+    }
+  },
+  "varazdin": {
+    "cityName": "Βαραζντίν",
+    "drone": {
+      "youtubeId": "rMVsHeM7Pzo",
+      "title": "Βαραζντίν 4K — Varaždin Croatia | Stari Grad & Baroque Historic Old Town from Above – Stunning Drone Travel Video"
+    }
+  },
+  "sibenik": {
+    "cityName": "Σίμπενικ",
+    "drone": {
+      "youtubeId": "8__-FwBKkJk",
+      "title": "Σίμπενικ 4K — Sibenik in 4K"
+    }
+  },
+  "rovinj": {
+    "cityName": "Ρόβινι",
+    "drone": {
+      "youtubeId": "UspkUQP5l8c",
+      "title": "Ρόβινι 4K — ROVINJ – Croatia 🇭🇷 [4K video]"
+    }
+  },
+  "rovaniemi": {
+    "cityName": "Ροβανιέμι",
+    "drone": {
+      "youtubeId": "NoeptbkKizc",
+      "title": "Ροβανιέμι 4K — Finnish Lapland by air: Home area in Finland of Santa Claus by drone Rovaniemi Levi Pello Travel"
+    },
+    "live": {
+      "youtubeId": "wT8Zhh9MBEE",
+      "label": "Ροβανιέμι Live Cam",
+      "title": "Apukka Resort Live Cam Rovaniemi, Lapland by Aurora Alert Realtime"
+    }
+  },
+  "oulu": {
+    "cityName": "Όουλου",
+    "drone": {
+      "youtubeId": "5z6kjpc83wY",
+      "title": "Όουλου 4K — Oulu Drone 4K, Finland"
+    },
+    "live": {
+      "youtubeId": "vTzDKYXvlt4",
+      "label": "Όουλου Live Cam",
+      "title": "Railcam Oulu Live Stream"
+    }
+  },
+  "jyvaskyla": {
+    "cityName": "Γιουβάσκουλα",
+    "drone": {
+      "youtubeId": "OoznY3WeihY",
+      "title": "Γιουβάσκουλα 4K — Jyväskylä drone 4K"
+    }
+  },
+  "kuopio": {
+    "cityName": "Κουόπιο",
+    "drone": {
+      "youtubeId": "62isGu1kx_c",
+      "title": "Κουόπιο 4K — Kuopio harbor and new breakwaters 4K Finland from air"
+    }
+  },
+  "lahti": {
+    "cityName": "Λάχτι",
+    "drone": {
+      "youtubeId": "DBlEuXwnn58",
+      "title": "Λάχτι 4K — Lahti ilmasta 2020 - Flying over Finland [4K]"
+    }
+  },
+  "vaasa": {
+    "cityName": "Βάασα",
+    "drone": {
+      "youtubeId": "UAQgi-LFxbQ",
+      "title": "Βάασα 4K — Vaasa, Finland - Cinematic 4k Drone Footage"
+    }
+  },
+  "porvoo": {
+    "cityName": "Πόρβοο",
+    "drone": {
+      "youtubeId": "Dbx4c9qthQ0",
+      "title": "Πόρβοο 4K — Porvoo , Finland in 4K | Stunning Aerial Drone Tour of Finland ’s Historic Gem"
+    }
+  },
+  "sibiu": {
+    "cityName": "Σιμπίου",
+    "drone": {
+      "youtubeId": "g6W3O2xFkRM",
+      "title": "Σιμπίου 4K — 🇷🇴 Sibiu, România – Tur cu drona 4K – Vedere pitorească a orașului istoric"
+    }
+  },
+  "constanta": {
+    "cityName": "Κωνστάντζα",
+    "drone": {
+      "youtubeId": "yQoC68QVckw",
+      "title": "Κωνστάντζα 4K — Dronă Old Town CONSTANTA 4K • Zbor în România 2023 • Констанца, Румунія"
+    }
+  },
+  "iasi": {
+    "cityName": "Ιάσιο",
+    "drone": {
+      "youtubeId": "yBU_QHW5jHA",
+      "title": "Ιάσιο 4K — Iași Romania 4K | Palace of Culture Night Drone Tour 2025"
+    }
+  },
+  "oradea": {
+    "cityName": "Οράντεα",
+    "drone": {
+      "youtubeId": "v-8lljnzYf0",
+      "title": "Οράντεα 4K — 🇷🇴 Magnificent Oradea, Romania – 4K Drone Tour – Art Nouveau Jewel of Transylvania"
+    }
+  },
+  "sighisoara": {
+    "cityName": "Σιγκισοάρα",
+    "drone": {
+      "youtubeId": "aY_4DhU0wXo",
+      "title": "Σιγκισοάρα 4K — Sighisoara, Romania 🇷🇴 in 4K Ultra HD | Drone Video"
+    }
+  },
+  "craiova": {
+    "cityName": "Κραϊόβα",
+    "drone": {
+      "youtubeId": "GysvlZF8BHA",
+      "title": "Κραϊόβα 4K — CRAIOVA, ROMANIA - 3 Minutes of Amazing Drone Footage - DJI Mavic Air 2 - 4K HDR"
     }
   }
 };
