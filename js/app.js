@@ -4,12 +4,12 @@
  * USA, Leaflet Map, Base Layers, UI Dossier, and Time Machine.
  */
 
-import { loadWorldData, loadCountryData, loadStateData } from './data-service.js?v=20261112_eu13';
-import * as MapModule from './map.js?v=20261112_eu13';
-import * as UIModule from './ui.js?v=20261112_eu13';
-import * as TimeMachine from './time-machine.js?v=20261112_eu13';
-import * as NavigatorModule from './navigator.js?v=20261112_eu13';
-import { US_STATES, CITY_TO_STATE } from './states-data.js?v=20261112_eu13';
+import { loadWorldData, loadCountryData, loadStateData } from './data-service.js?v=20261112_eu15';
+import * as MapModule from './map.js?v=20261112_eu15';
+import * as UIModule from './ui.js?v=20261112_eu15';
+import * as TimeMachine from './time-machine.js?v=20261112_eu15';
+import * as NavigatorModule from './navigator.js?v=20261112_eu15';
+import { US_STATES, CITY_TO_STATE } from './states-data.js?v=20261112_eu15';
 
 // Application State
 let worldData = null;
@@ -357,6 +357,12 @@ export async function flyToCity(cityId) {
             'kharkiv': 'ukraine', 'dnipro': 'ukraine', 'zaporizhzhia': 'ukraine', 'ivano-frankivsk': 'ukraine', 'chernivtsi': 'ukraine', 'poltava': 'ukraine', 'vinnytsia': 'ukraine',
       'grodno': 'belarus', 'gomel': 'belarus', 'vitebsk': 'belarus', 'mogilev': 'belarus', 'bobruisk': 'belarus', 'pinsk': 'belarus', 'polotsk': 'belarus', 'baranovichi': 'belarus',
       'orhei': 'moldova', 'soroca': 'moldova', 'tiraspol': 'moldova', 'cahul': 'moldova', 'ungheni': 'moldova', 'comrat': 'moldova', 'bender': 'moldova', 'edinet': 'moldova',
+            'parnu': 'estonia', 'narva': 'estonia', 'kuressaare': 'estonia', 'viljandi': 'estonia', 'rakvere': 'estonia', 'haapsalu': 'estonia', 'otepaa': 'estonia', 'voru': 'estonia',
+      'liepaja': 'latvia', 'jurmala': 'latvia', 'cesis': 'latvia', 'jelgava': 'latvia', 'ventspils': 'latvia', 'sigulda': 'latvia', 'rezekne': 'latvia', 'valmiera': 'latvia',
+      'klaipeda': 'lithuania', 'siauliai': 'lithuania', 'panevezys': 'lithuania', 'trakai': 'lithuania', 'palanga': 'lithuania', 'druskininkai': 'lithuania', 'alytus': 'lithuania', 'marijampole': 'lithuania',
+            'esch-sur-alzette': 'luxembourg', 'differdange': 'luxembourg', 'dudelange': 'luxembourg', 'ettelbruck': 'luxembourg', 'diekirch': 'luxembourg', 'wiltz': 'luxembourg', 'echternach': 'luxembourg', 'remich': 'luxembourg', 'grevenmacher': 'luxembourg',
+      'sliema': 'malta', 'st-julians': 'malta', 'birgu': 'malta', 'victoria-gozo': 'malta', 'mellieha': 'malta', 'marsaxlokk': 'malta', 'qormi': 'malta', 'mosta': 'malta',
+      'novosibirsk': 'russia', 'yekaterinburg': 'russia', 'sochi': 'russia', 'vladivostok': 'russia', 'nizhny-novgorod': 'russia', 'kaliningrad': 'russia', 'samara': 'russia',
       'warsaw': 'poland', 'krakow': 'poland', 'gdansk': 'poland', 'wroclaw': 'poland', 'poznan': 'poland', 'lodz': 'poland', 'lublin': 'poland', 'szczecin': 'poland', 'torun': 'poland', 'katowice': 'poland',
       'stockholm': 'sweden', 'gothenburg': 'sweden', 'malmo': 'sweden',
       'oslo': 'norway', 'bergen': 'norway', 'tromso': 'norway',

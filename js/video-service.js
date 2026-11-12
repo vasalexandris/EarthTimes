@@ -1,4 +1,4 @@
-import { CITY_TO_STATE } from './states-data.js?v=20261112_eu13';
+import { CITY_TO_STATE } from './states-data.js?v=20261112_eu15';
 /**
  * Video Service Module
  * Registry of verified high-definition YouTube video tours for all cities
@@ -7699,6 +7699,352 @@ export const CITY_VIDEOS = {
     "drone": {
       "youtubeId": "qe3nM4lnnfc",
       "title": "Εντινέτς 4K — ORASUL EDINET HYPERLAPS  4K MOLDOVA / ГОРОД ЕДИНЕЦ (ЕДИНЦЫ) ГИПЕРЛАПС 4К МОЛДОВА"
+    }
+  },
+  "parnu": {
+    "cityName": "Πάρνου",
+    "drone": {
+      "youtubeId": "UDyqWYYtKj4",
+      "title": "Πάρνου 4K — 🇪🇪 Pärnu , Estonia in 4K | Stunning Aerial Drone Tour of the Baltic Riviera"
+    }
+  },
+  "narva": {
+    "cityName": "Νάρβα",
+    "drone": {
+      "youtubeId": "HJJmYahgFoA",
+      "title": "Νάρβα 4K — NARVA - HERMANN CASTLE, (ESTONIA) 4K, Drone #estonia #drone #4k #nature #history #castle"
+    }
+  },
+  "kuressaare": {
+    "cityName": "Κουρεσάαρε",
+    "drone": {
+      "youtubeId": "jv5uaf8EeA4",
+      "title": "Κουρεσάαρε 4K — 🇪🇪 Kuressaare Castle, Estonia – 360° VR Aerial Tour – Baltic Coastal Town"
+    }
+  },
+  "viljandi": {
+    "cityName": "Βίλγιαντι",
+    "drone": {
+      "youtubeId": "-2StQHIvUr0",
+      "title": "Βίλγιαντι 4K — ONE DAY IN VILJANDI (ESTONIA) | 4K 60FPS | Look how beautiful this place is!"
+    }
+  },
+  "rakvere": {
+    "cityName": "Ράκβερε",
+    "drone": {
+      "youtubeId": "wnffO8nqXBA",
+      "title": "Ράκβερε 4K — Rakvere Drone"
+    }
+  },
+  "haapsalu": {
+    "cityName": "Χάαπσαλου",
+    "drone": {
+      "youtubeId": "GpdmnG4GUDU",
+      "title": "Χάαπσαλου 4K — ONE DAY IN HAAPSALU (ESTONIA) | 4K 60FPS | This city feels so special"
+    }
+  },
+  "otepaa": {
+    "cityName": "Οτεπάα",
+    "drone": {
+      "youtubeId": "g-VC5O7G0Uk",
+      "title": "Οτεπάα 4K — Otepää. Estonia. Drone 4K."
+    }
+  },
+  "voru": {
+    "cityName": "Βόρου",
+    "drone": {
+      "youtubeId": "nFOImvRmIIQ",
+      "title": "Βόρου 4K — DJI Mavic 3 4K Drone Footage Estonia Võru"
+    }
+  },
+  "liepaja": {
+    "cityName": "Λιεπάγια",
+    "drone": {
+      "youtubeId": "toZgAub1YtM",
+      "title": "Λιεπάγια 4K — Liepaja, Latvia 🇱🇻 4k UHD | Drone footage"
+    }
+  },
+  "jurmala": {
+    "cityName": "Γιούρμαλα",
+    "drone": {
+      "youtubeId": "mZuiHi5k-LI",
+      "title": "Γιούρμαλα 4K — Is This Really Latvia? ❄️ Winter Feels Like Another World | Jūrmala 4K Walk"
+    }
+  },
+  "cesis": {
+    "cityName": "Τσέσις",
+    "drone": {
+      "youtubeId": "V4MWwEw2zvU",
+      "title": "Τσέσις 4K — Cesis, Latvia 🇱🇻 4k UHD | Drone footage"
+    }
+  },
+  "jelgava": {
+    "cityName": "Γιέλγκαβα",
+    "drone": {
+      "youtubeId": "gNvYVFjXl4k",
+      "title": "Γιέλγκαβα 4K — Jelgava, Latvia 🇱🇻 4k UHD | Drone footage"
+    }
+  },
+  "ventspils": {
+    "cityName": "Βέντσπιλς",
+    "drone": {
+      "youtubeId": "QcpGuD4Hhb8",
+      "title": "Βέντσπιλς 4K — Ventspils Latvija - 4K Cinematic drone footage 2023"
+    }
+  },
+  "sigulda": {
+    "cityName": "Σιγκούλντα",
+    "drone": {
+      "youtubeId": "2_t25tJcEAg",
+      "title": "Σιγκούλντα 4K — Latvia, Sigulda. Drone 4K"
+    }
+  },
+  "rezekne": {
+    "cityName": "Ρέζεκνε",
+    "drone": {
+      "youtubeId": "tvaQfIVPAZA",
+      "title": "Ρέζεκνε 4K — Rēzekne Latvija - 4K Drone Cinematic Footage 2022"
+    }
+  },
+  "valmiera": {
+    "cityName": "Βαλμιέρα",
+    "drone": {
+      "youtubeId": "T1zYIhy7yBw",
+      "title": "Βαλμιέρα 4K — Valmiera, LATVIA, DJI Drone Footage 4K"
+    }
+  },
+  "klaipeda": {
+    "cityName": "Κλαϊπέντα",
+    "drone": {
+      "youtubeId": "g86XvgUFVRk",
+      "title": "Κλαϊπέντα 4K — 🇱🇹 Klaipėda , Lithuania in 4K | Epic Drone Tour of the Baltic Port City"
+    },
+    "live": {
+      "youtubeId": "8KhyoyzCvuY",
+      "label": "Κλαϊπέντα Live Cam",
+      "title": "LIETUVA TIESIOGIAI 24/7 🔴 Palanga, Vilnius, Kaunas, Klaipėda | LIVE kameros"
+    }
+  },
+  "siauliai": {
+    "cityName": "Σιαουλιάι",
+    "drone": {
+      "youtubeId": "Ymy0adQybT4",
+      "title": "Σιαουλιάι 4K — Šiauliai, Lithuania's 4th City | Lithuania by drone"
+    }
+  },
+  "panevezys": {
+    "cityName": "Πανεβεζίς",
+    "drone": {
+      "youtubeId": "YKEqI9AYeDw",
+      "title": "Πανεβεζίς 4K — 【4K】Panevezys from Above 🔥 LITHUANIA 2021 🔥 Cinematic Wolf Aerial™ Drone Film"
+    }
+  },
+  "trakai": {
+    "cityName": "Τρακάι",
+    "drone": {
+      "youtubeId": "ZBmz6X-K7io",
+      "title": "Τρακάι 4K — 🇱🇹 Trakai , Lithuania in 4K | Stunning Drone Tour of the Island Castle & Lakes"
+    }
+  },
+  "palanga": {
+    "cityName": "Παλάνγκα",
+    "drone": {
+      "youtubeId": "Lcpsa3v7t08",
+      "title": "Παλάνγκα 4K — Palanga | Lithuania | Drone | Aerial view Summer 2023"
+    },
+    "live": {
+      "youtubeId": "8KhyoyzCvuY",
+      "label": "Παλάνγκα Live Cam",
+      "title": "LIETUVA TIESIOGIAI 24/7 🔴 Palanga, Vilnius, Kaunas, Klaipėda | LIVE kameros"
+    }
+  },
+  "druskininkai": {
+    "cityName": "Ντρούσκινινκαϊ",
+    "drone": {
+      "youtubeId": "jovuowCMIGU",
+      "title": "Ντρούσκινινκαϊ 4K — Drone Cinematic of Druskininkai, Lithuania | 4K Aerial Views"
+    }
+  },
+  "alytus": {
+    "cityName": "Αλίτους",
+    "drone": {
+      "youtubeId": "LYNA3P4HPX0",
+      "title": "Αλίτους 4K — Alytus 4K"
+    }
+  },
+  "marijampole": {
+    "cityName": "Μαριγιάμπολε",
+    "drone": {
+      "youtubeId": "pavSeihVKeU",
+      "title": "Μαριγιάμπολε 4K — @Lithuania#Marijampole#Drone#Dji mini 5 pro#4k#60fps"
+    }
+  },
+  "esch-sur-alzette": {
+    "cityName": "Ες-συρ-Αλζέτ",
+    "drone": {
+      "youtubeId": "mTzhxgFS-y4",
+      "title": "Ες-συρ-Αλζέτ 4K — Scenic Drive Luxembourg: Esch-sur-Alzette to Differdange | Late Summer 4K"
+    }
+  },
+  "differdange": {
+    "cityName": "Ντιφερντάνζ",
+    "drone": {
+      "youtubeId": "mTzhxgFS-y4",
+      "title": "Ντιφερντάνζ 4K — Scenic Drive Luxembourg: Esch-sur-Alzette to Differdange | Late Summer 4K"
+    }
+  },
+  "dudelange": {
+    "cityName": "Ντιντελάνζ",
+    "drone": {
+      "youtubeId": "z467B9MrI2s",
+      "title": "Ντιντελάνζ 4K — Dudelange \"The Southern Forge\" Luxembourg. Outdoor Travel"
+    }
+  },
+  "ettelbruck": {
+    "cityName": "Έτελμπρικ",
+    "drone": {
+      "youtubeId": "_SzOsGCrq3M",
+      "title": "Έτελμπρικ 4K — Town of Ettelbruck, Luxembourg Walking Tour. Outdoor Travel"
+    }
+  },
+  "diekirch": {
+    "cityName": "Ντίκιρχ",
+    "drone": {
+      "youtubeId": "OOUgwQsjiqc",
+      "title": "Ντίκιρχ 4K — Drone Flight over Diekirch/Luxembourg"
+    }
+  },
+  "wiltz": {
+    "cityName": "Βιλτς",
+    "drone": {
+      "youtubeId": "ymTH6_OTOQw",
+      "title": "Βιλτς 4K — This is Wiltz. With the drone over Wiltz.DJI Mavic"
+    }
+  },
+  "echternach": {
+    "cityName": "Έχτερναχ",
+    "drone": {
+      "youtubeId": "iFZVXBZggww",
+      "title": "Έχτερναχ 4K — Echternach (Luxembourg) | DJI Mavic Drone [4K]"
+    }
+  },
+  "remich": {
+    "cityName": "Ρέμιχ",
+    "drone": {
+      "youtubeId": "RUxehRVdXZI",
+      "title": "Ρέμιχ 4K — Remich Luxembourg  By Drone 2023"
+    }
+  },
+  "grevenmacher": {
+    "cityName": "Γκρεβενμάχερ",
+    "drone": {
+      "youtubeId": "ubl_1ZOaJoY",
+      "title": "Γκρεβενμάχερ 4K — DJI Luxembourg Grevenmacher"
+    }
+  },
+  "sliema": {
+    "cityName": "Σλιέμα",
+    "drone": {
+      "youtubeId": "tK570c2HI-I",
+      "title": "Σλιέμα 4K — Sliema, Malta 🇲🇹 4K UHD | Drone Footage"
+    }
+  },
+  "st-julians": {
+    "cityName": "Σεντ Τζούλιανς",
+    "drone": {
+      "youtubeId": "Nuy81xc3jlY",
+      "title": "Σεντ Τζούλιανς 4K — Saint Julian’s Malta | 4K 60FPS Cinematic Drone Shots – Daytime Aerial Views"
+    }
+  },
+  "birgu": {
+    "cityName": "Μπίργκου",
+    "drone": {
+      "youtubeId": "-562cDFCujQ",
+      "title": "Μπίργκου 4K — Il-Birgu Malta- 4K UHD - Virtual Trip"
+    }
+  },
+  "victoria-gozo": {
+    "cityName": "Βικτώρια",
+    "drone": {
+      "youtubeId": "OTMx9Op6f10",
+      "title": "Βικτώρια 4K — Citadel Of Rabat Victoria Gozo Malta 4k drone footage"
+    }
+  },
+  "mellieha": {
+    "cityName": "Μελίχα",
+    "drone": {
+      "youtubeId": "IXVTlljoYaY",
+      "title": "Μελίχα 4K — Mellieha bay, Malta 🇲🇹 4K UHD | Drone Footage"
+    }
+  },
+  "marsaxlokk": {
+    "cityName": "Μαρσασλόκ",
+    "drone": {
+      "youtubeId": "GBuNRKMUAL4",
+      "title": "Μαρσασλόκ 4K — Marsaxlokk ● Malta 🇲🇹 【4K】 Aerial Cinematic Drone"
+    }
+  },
+  "qormi": {
+    "cityName": "Κόρμι",
+    "drone": {
+      "youtubeId": "mut6SVd-Ksk",
+      "title": "Κόρμι 4K — 4K Malta valley road Attard - Qormi"
+    }
+  },
+  "mosta": {
+    "cityName": "Μόστα",
+    "drone": {
+      "youtubeId": "OhbI56Z1kgA",
+      "title": "Μόστα 4K — Valetta Mosta Paola - Malta 4K drone"
+    }
+  },
+  "novosibirsk": {
+    "cityName": "Νοβοσιμπίρσκ",
+    "drone": {
+      "youtubeId": "CjvC-RY1z7o",
+      "title": "Νοβοσιμπίρσκ 4K — Novosibirsk, Russia 🇷🇺 by Drone 4K HDR ULTRA HD 60FPS Dolby Vision™ Drone"
+    }
+  },
+  "yekaterinburg": {
+    "cityName": "Αικατερινούπολη",
+    "drone": {
+      "youtubeId": "I46IZ1QsUdM",
+      "title": "Αικατερινούπολη 4K — Yekaterinburg, Russia 🇷🇺 in 8K HDR ULTRA HD 60 FPS Dolby Vision™ Drone Video"
+    }
+  },
+  "sochi": {
+    "cityName": "Σότσι",
+    "drone": {
+      "youtubeId": "r3EIdFaH3Qs",
+      "title": "Σότσι 4K — Sochi, Russia 🇷🇺 in 8K HDR ULTRA HD 60 FPS Dolby Vision™ Drone Video"
+    }
+  },
+  "vladivostok": {
+    "cityName": "Βλαδιβοστόκ",
+    "drone": {
+      "youtubeId": "a0YlSUwOPik",
+      "title": "Βλαδιβοστόκ 4K — Vladivostok, Russia 🇷🇺 in 8K HDR ULTRA HD 60 FPS Dolby Vision™ Drone Video"
+    }
+  },
+  "nizhny-novgorod": {
+    "cityName": "Νίζνι Νόβγκοροντ",
+    "drone": {
+      "youtubeId": "7PGHA50NLtY",
+      "title": "Νίζνι Νόβγκοροντ 4K — Nizhny Novgorod, Russia 🇷🇺 in 4K HDR ULTRA HD 60 FPS Dolby Vision™ Drone Video"
+    }
+  },
+  "kaliningrad": {
+    "cityName": "Καλίνινγκραντ",
+    "drone": {
+      "youtubeId": "1FpJcYIw2WE",
+      "title": "Καλίνινγκραντ 4K — Kaliningrad, Russia 🇷🇺 in 4K HDR ULTRA HD 60 FPS Dolby Vision™ Drone Video"
+    }
+  },
+  "samara": {
+    "cityName": "Σαμάρα",
+    "drone": {
+      "youtubeId": "HtkXJ1bztC4",
+      "title": "Σαμάρα 4K — Samara, Russia 🇷🇺 in 4K HDR ULTRA HD 60 FPS Dolby Vision™ Drone Video"
     }
   }
 };

@@ -1,4 +1,4 @@
-import { US_STATES, CITY_TO_STATE } from './states-data.js?v=20261112_eu13';
+import { US_STATES, CITY_TO_STATE } from './states-data.js?v=20261112_eu15';
 /**
  * Navigator Module
  * Hierarchical Cascading Navigation: Continents -> Countries -> Cities
@@ -543,7 +543,15 @@ export const CONTINENTS_DATA = [
         flag: '🇪🇪',
         cities: [
           { id: 'tallinn', name: 'Τάλιν', badge: 'Πρωτεύουσα' },
-          { id: 'tartu', name: 'Τάρτου' }
+          { id: 'tartu', name: 'Τάρτου' },
+          { id: 'parnu', name: 'Πάρνου' },
+          { id: 'narva', name: 'Νάρβα' },
+          { id: 'kuressaare', name: 'Κουρεσάαρε' },
+          { id: 'viljandi', name: 'Βίλγιαντι' },
+          { id: 'rakvere', name: 'Ράκβερε' },
+          { id: 'haapsalu', name: 'Χάαπσαλου' },
+          { id: 'otepaa', name: 'Οτεπάα' },
+          { id: 'voru', name: 'Βόρου' }
         ]
       },
       {
@@ -552,7 +560,15 @@ export const CONTINENTS_DATA = [
         flag: '🇱🇻',
         cities: [
           { id: 'riga', name: 'Ρίγα', badge: 'Πρωτεύουσα' },
-          { id: 'daugavpils', name: 'Νταουγκάβπιλς' }
+          { id: 'daugavpils', name: 'Νταουγκάβπιλς' },
+          { id: 'liepaja', name: 'Λιεπάγια' },
+          { id: 'jurmala', name: 'Γιούρμαλα' },
+          { id: 'cesis', name: 'Τσέσις' },
+          { id: 'jelgava', name: 'Γιέλγκαβα' },
+          { id: 'ventspils', name: 'Βέντσπιλς' },
+          { id: 'sigulda', name: 'Σιγκούλντα' },
+          { id: 'rezekne', name: 'Ρέζεκνε' },
+          { id: 'valmiera', name: 'Βαλμιέρα' }
         ]
       },
       {
@@ -561,7 +577,15 @@ export const CONTINENTS_DATA = [
         flag: '🇱🇹',
         cities: [
           { id: 'vilnius', name: 'Βίλνιους', badge: 'Πρωτεύουσα' },
-          { id: 'kaunas', name: 'Κάουνας' }
+          { id: 'kaunas', name: 'Κάουνας' },
+          { id: 'klaipeda', name: 'Κλαϊπέντα' },
+          { id: 'siauliai', name: 'Σιαουλιάι' },
+          { id: 'panevezys', name: 'Πανεβεζίς' },
+          { id: 'trakai', name: 'Τρακάι' },
+          { id: 'palanga', name: 'Παλάνγκα' },
+          { id: 'druskininkai', name: 'Ντρούσκινινκαϊ' },
+          { id: 'alytus', name: 'Αλίτους' },
+          { id: 'marijampole', name: 'Μαριγιάμπολε' }
         ]
       },
       {
@@ -586,7 +610,16 @@ export const CONTINENTS_DATA = [
         name: 'Λουξεμβούργο',
         flag: '🇱🇺',
         cities: [
-          { id: 'luxembourg-city', name: 'Πόλη του Λουξεμβούργου', badge: 'Πρωτεύουσα' }
+          { id: 'luxembourg-city', name: 'Πόλη του Λουξεμβούργου', badge: 'Πρωτεύουσα' },
+          { id: 'esch-sur-alzette', name: 'Ες-συρ-Αλζέτ' },
+          { id: 'differdange', name: 'Ντιφερντάνζ' },
+          { id: 'dudelange', name: 'Ντιντελάνζ' },
+          { id: 'ettelbruck', name: 'Έτελμπρικ' },
+          { id: 'diekirch', name: 'Ντίκιρχ' },
+          { id: 'wiltz', name: 'Βιλτς' },
+          { id: 'echternach', name: 'Έχτερναχ' },
+          { id: 'remich', name: 'Ρέμιχ' },
+          { id: 'grevenmacher', name: 'Γκρεβενμάχερ' }
         ]
       },
       {
@@ -595,7 +628,15 @@ export const CONTINENTS_DATA = [
         flag: '🇲🇹',
         cities: [
           { id: 'valletta', name: 'Βαλέτα', badge: 'Πρωτεύουσα' },
-          { id: 'mdina', name: 'Μντίνα' }
+          { id: 'mdina', name: 'Μντίνα' },
+          { id: 'sliema', name: 'Σλιέμα' },
+          { id: 'st-julians', name: 'Σεντ Τζούλιανς' },
+          { id: 'birgu', name: 'Μπίργκου' },
+          { id: 'victoria-gozo', name: 'Βικτώρια' },
+          { id: 'mellieha', name: 'Μελίχα' },
+          { id: 'marsaxlokk', name: 'Μαρσασλόκ' },
+          { id: 'qormi', name: 'Κόρμι' },
+          { id: 'mosta', name: 'Μόστα' }
         ]
       },
       {
@@ -645,7 +686,14 @@ export const CONTINENTS_DATA = [
         cities: [
           { id: 'moscow', name: 'Μόσχα', badge: 'Πρωτεύουσα' },
           { id: 'saint-petersburg', name: 'Αγία Πετρούπολη', badge: 'Πολιτιστική Πρωτεύουσα' },
-          { id: 'kazan', name: 'Καζάν', badge: 'Βόλγας' }
+          { id: 'kazan', name: 'Καζάν', badge: 'Βόλγας' },
+          { id: 'novosibirsk', name: 'Νοβοσιμπίρσκ' },
+          { id: 'yekaterinburg', name: 'Αικατερινούπολη' },
+          { id: 'sochi', name: 'Σότσι' },
+          { id: 'vladivostok', name: 'Βλαδιβοστόκ' },
+          { id: 'nizhny-novgorod', name: 'Νίζνι Νόβγκοροντ' },
+          { id: 'kaliningrad', name: 'Καλίνινγκραντ' },
+          { id: 'samara', name: 'Σαμάρα' }
         ]
       },
       {

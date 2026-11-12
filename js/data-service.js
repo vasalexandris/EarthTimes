@@ -10,7 +10,7 @@ export async function loadWorldData() {
     return dataCache.get('world');
   }
   try {
-    const response = await fetch('./data/world.json?v=20261112_eu13');
+    const response = await fetch('./data/world.json?v=20261112_eu15');
     if (!response.ok) {
       throw new Error(`HTTP error ${response.status} loading data/world.json`);
     }
@@ -29,7 +29,7 @@ export async function loadCountryData(countryId = 'greece') {
     return dataCache.get(cacheKey);
   }
   try {
-    const response = await fetch(`./data/countries/${countryId}.json?v=20261112_eu13`);
+    const response = await fetch(`./data/countries/${countryId}.json?v=20261112_eu15`);
     if (!response.ok) {
       throw new Error(`HTTP error ${response.status} loading data/countries/${countryId}.json`);
     }
@@ -47,9 +47,9 @@ export async function loadStateData(stateId = 'massachusetts') {
     return dataCache.get(stateId);
   }
   try {
-    let response = await fetch(`./data/states/${stateId}.json?v=20261112_eu13`);
+    let response = await fetch(`./data/states/${stateId}.json?v=20261112_eu15`);
     if (!response.ok) {
-      response = await fetch(`./data/${stateId}.json?v=20261112_eu13`);
+      response = await fetch(`./data/${stateId}.json?v=20261112_eu15`);
     }
     if (!response.ok) {
       throw new Error(`HTTP error ${response.status} loading state data for ${stateId}`);
@@ -68,7 +68,7 @@ export async function loadTimeCapsules() {
     return dataCache.get('time-capsules');
   }
   try {
-    const response = await fetch('./data/time-capsules.json?v=20261112_eu13');
+    const response = await fetch('./data/time-capsules.json?v=20261112_eu15');
     if (!response.ok) {
       throw new Error(`HTTP error ${response.status} loading data/time-capsules.json`);
     }
