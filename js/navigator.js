@@ -1,4 +1,4 @@
-import { US_STATES, CITY_TO_STATE } from './states-data.js?v=20261112_eu9';
+import { US_STATES, CITY_TO_STATE } from './states-data.js?v=20261112_eu10';
 /**
  * Navigator Module
  * Hierarchical Cascading Navigation: Continents -> Countries -> Cities
@@ -357,7 +357,14 @@ export const CONTINENTS_DATA = [
         cities: [
           { id: 'sofia', name: 'Σόφια', badge: 'Πρωτεύουσα' },
           { id: 'plovdiv', name: 'Φιλιππούπολη' },
-          { id: 'varna', name: 'Βάρνα' }
+          { id: 'varna', name: 'Βάρνα' },
+          { id: 'burgas', name: 'Μπουργκάς' },
+          { id: 'veliko-tarnovo', name: 'Βελίκο Τάρνοβο' },
+          { id: 'ruse', name: 'Ρούσε' },
+          { id: 'stara-zagora', name: 'Στάρα Ζαγόρα' },
+          { id: 'blagoevgrad', name: 'Μπλαγκόεβγκραντ' },
+          { id: 'pleven', name: 'Πλέβεν' },
+          { id: 'nesebar', name: 'Νεσέμπαρ' }
         ]
       },
       {
@@ -367,7 +374,14 @@ export const CONTINENTS_DATA = [
         cities: [
           { id: 'belgrade', name: 'Βελιγράδι', badge: 'Πρωτεύουσα' },
           { id: 'novi-sad', name: 'Νόβι Σαντ' },
-          { id: 'nis', name: 'Νις' }
+          { id: 'nis', name: 'Νις' },
+          { id: 'subotica', name: 'Σουμπότιτσα' },
+          { id: 'kragujevac', name: 'Κραγκούγεβατς' },
+          { id: 'zlatibor', name: 'Ζλάτιμπορ' },
+          { id: 'kraljevo', name: 'Κράλιεβο' },
+          { id: 'valjevo', name: 'Βάλιεβο' },
+          { id: 'vranje', name: 'Βράνιε' },
+          { id: 'pancevo', name: 'Πάντσεβο' }
         ]
       },
       {
@@ -394,7 +408,14 @@ export const CONTINENTS_DATA = [
         cities: [
           { id: 'nicosia', name: 'Λευκωσία', badge: 'Πρωτεύουσα' },
           { id: 'limassol', name: 'Λεμεσός' },
-          { id: 'paphos', name: 'Πάφος' }
+          { id: 'paphos', name: 'Πάφος' },
+          { id: 'larnaca', name: 'Λάρνακα' },
+          { id: 'famagusta', name: 'Αμμόχωστος' },
+          { id: 'kyrenia', name: 'Κερύνεια' },
+          { id: 'ayia-napa', name: 'Αγία Νάπα' },
+          { id: 'protaras', name: 'Πρωταράς' },
+          { id: 'polis', name: 'Πόλις Χρυσοχούς' },
+          { id: 'troodos', name: 'Τρόοδος' }
         ]
       },
       {
@@ -404,7 +425,14 @@ export const CONTINENTS_DATA = [
         cities: [
           { id: 'ankara', name: 'Άγκυρα', badge: 'Πρωτεύουσα' },
           { id: 'istanbul', name: 'Κωνσταντινούπολη', badge: 'Μητρόπολη' },
-          { id: 'izmir', name: 'Σμύρνη' }
+          { id: 'izmir', name: 'Σμύρνη' },
+          { id: 'antalya', name: 'Αττάλεια' },
+          { id: 'bursa', name: 'Προύσα' },
+          { id: 'trabzon', name: 'Τραπεζούντα' },
+          { id: 'konya', name: 'Ικόνιο' },
+          { id: 'bodrum', name: 'Αλικαρνασσός' },
+          { id: 'eskisehir', name: 'Εσκισεχίρ' },
+          { id: 'gaziantep', name: 'Γκαζιαντέπ' }
         ]
       },
       {
@@ -434,7 +462,14 @@ export const CONTINENTS_DATA = [
         cities: [
           { id: 'podgorica', name: 'Ποντγκόριτσα', badge: 'Πρωτεύουσα' },
           { id: 'kotor', name: 'Κότορ' },
-          { id: 'budva', name: 'Μπούντβα' }
+          { id: 'budva', name: 'Μπούντβα' },
+          { id: 'cetinje', name: 'Τσετίνιε' },
+          { id: 'herceg-novi', name: 'Χέρτσεγκ Νόβι' },
+          { id: 'ulcinj', name: 'Ούλτσιν' },
+          { id: 'niksic', name: 'Νίκσιτς' },
+          { id: 'zabljak', name: 'Ζάμπλιακ' },
+          { id: 'tivat', name: 'Τίβατ' },
+          { id: 'bar', name: 'Μπαρ' }
         ]
       },
       {
@@ -444,7 +479,14 @@ export const CONTINENTS_DATA = [
         cities: [
           { id: 'sarajevo', name: 'Σαράγεβο', badge: 'Πρωτεύουσα' },
           { id: 'mostar', name: 'Μόσταρ' },
-          { id: 'banja-luka', name: 'Μπάνια Λούκα' }
+          { id: 'banja-luka', name: 'Μπάνια Λούκα' },
+          { id: 'tuzla', name: 'Τούζλα' },
+          { id: 'travnik', name: 'Τράβνικ' },
+          { id: 'bihac', name: 'Μπίχατς' },
+          { id: 'trebinje', name: 'Τρεμπίνιε' },
+          { id: 'zenica', name: 'Ζένιτσα' },
+          { id: 'jajce', name: 'Γιάιτσε' },
+          { id: 'doboj', name: 'Ντόμποϊ' }
         ]
       },
       {

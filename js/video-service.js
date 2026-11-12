@@ -1,4 +1,4 @@
-import { CITY_TO_STATE } from './states-data.js?v=20261112_eu9';
+import { CITY_TO_STATE } from './states-data.js?v=20261112_eu10';
 /**
  * Video Service Module
  * Registry of verified high-definition YouTube video tours for all cities
@@ -6970,6 +6970,305 @@ export const CITY_VIDEOS = {
     "drone": {
       "youtubeId": "SOIm6dUaENc",
       "title": "Μονς 4K — Mons, City in Belgium, Cinematic drone footage of Belgium, Mons Belgium drone tour"
+    }
+  },
+  "antalya": {
+    "cityName": "Αττάλεια",
+    "drone": {
+      "youtubeId": "ejsgLLCtR9E",
+      "title": "Αττάλεια 4K — Antalya, Turkey 🇹🇷 in 4K ULTRA HD 60FPS HDR Video Drone"
+    }
+  },
+  "bursa": {
+    "cityName": "Προύσα",
+    "drone": {
+      "youtubeId": "vhSlhfWTqPA",
+      "title": "Προύσα 4K — Bursa, Turkey 🇹🇷 4k UHD | Drone footage"
+    }
+  },
+  "trabzon": {
+    "cityName": "Τραπεζούντα",
+    "drone": {
+      "youtubeId": "hGk2LxB4d60",
+      "title": "Τραπεζούντα 4K — Trabzon, Turkey ~ Travel Vlog with Relaxing Music [4K]"
+    }
+  },
+  "konya": {
+    "cityName": "Ικόνιο",
+    "drone": {
+      "youtubeId": "dkgl6Nxb-Vc",
+      "title": "Ικόνιο 4K — Konya, Turkey 🇹🇷 4K UHD | Drone Footages"
+    }
+  },
+  "bodrum": {
+    "cityName": "Αλικαρνασσός",
+    "drone": {
+      "youtubeId": "3u3D70rJSPg",
+      "title": "Αλικαρνασσός 4K — Bodrum, Beautiful City in Turkey- 4K Cinematic Drone| World in 4K"
+    }
+  },
+  "eskisehir": {
+    "cityName": "Εσκισεχίρ",
+    "drone": {
+      "youtubeId": "rfr2HraLPUE",
+      "title": "Εσκισεχίρ 4K — Eskişehir - Turkey 4k"
+    }
+  },
+  "gaziantep": {
+    "cityName": "Γκαζιαντέπ",
+    "drone": {
+      "youtubeId": "WZNT4fNZ_y0",
+      "title": "Γκαζιαντέπ 4K — Gaziantep Cinematic  Drone 4K Resolution / Antep - Turkey"
+    }
+  },
+  "tuzla": {
+    "cityName": "Τούζλα",
+    "drone": {
+      "youtubeId": "0rGgtWiYCss",
+      "title": "Τούζλα 4K — TUZLA Golden Hour 4K | Summer Aerial Drone Footage (Bosnia and Herzegovina)"
+    }
+  },
+  "travnik": {
+    "cityName": "Τράβνικ",
+    "drone": {
+      "youtubeId": "VNT8vMCbwsA",
+      "title": "Τράβνικ 4K — Grad Travnik , Dron , Drone , Bosnia and Herzegovina 4K"
+    }
+  },
+  "bihac": {
+    "cityName": "Μπίχατς",
+    "drone": {
+      "youtubeId": "lPrWNjTYpJE",
+      "title": "Μπίχατς 4K — Bihać 77000, Bosnia and Herzegowina DJI Air 2s 4K"
+    }
+  },
+  "trebinje": {
+    "cityName": "Τρεμπίνιε",
+    "drone": {
+      "youtubeId": "EK0ibO_ON1Y",
+      "title": "Τρεμπίνιε 4K — Trebinje (4K Drone Footage) (Bosnia and Herzegovina)"
+    }
+  },
+  "zenica": {
+    "cityName": "Ζένιτσα",
+    "drone": {
+      "youtubeId": "EfNdMqbC1FA",
+      "title": "Ζένιτσα 4K — 【4K】Drone Footage | Zenica - City at the Bosnia River 2019 ..:: Cinematic Aerial Film | Herzegovina"
+    }
+  },
+  "jajce": {
+    "cityName": "Γιάιτσε",
+    "drone": {
+      "youtubeId": "DpuMWoRTo_M",
+      "title": "Γιάιτσε 4K — Jajce, Bosnia and Herzegovina - 4K Aerial Drone Footage | Travel Video"
+    }
+  },
+  "doboj": {
+    "cityName": "Ντόμποϊ",
+    "drone": {
+      "youtubeId": "wxW50CR4yMk",
+      "title": "Ντόμποϊ 4K — DOBOJ IZ VAZDUHA - Pogled koji će vas oduševiti! | 4K DRONE"
+    }
+  },
+  "cetinje": {
+    "cityName": "Τσετίνιε",
+    "drone": {
+      "youtubeId": "_6o8NJg7_JE",
+      "title": "Τσετίνιε 4K — Montenegro: Cetinje - Budva ( M2.3 ) 4K UHD #drone"
+    }
+  },
+  "herceg-novi": {
+    "cityName": "Χέρτσεγκ Νόβι",
+    "drone": {
+      "youtubeId": "tI3hkj2OokA",
+      "title": "Χέρτσεγκ Νόβι 4K — HERCEG NOVI 🇲🇪 Drone Aerial 4K | Херцег Нови Montenegro Crna Gora Црна Гора"
+    }
+  },
+  "ulcinj": {
+    "cityName": "Ούλτσιν",
+    "drone": {
+      "youtubeId": "lpSlmnR4EAk",
+      "title": "Ούλτσιν 4K — Ulcinj, Montenegro 4K Drone Tour | Beautiful Beach | DJI Drone Video"
+    }
+  },
+  "niksic": {
+    "cityName": "Νίκσιτς",
+    "drone": {
+      "youtubeId": "rtSh1gAfvco",
+      "title": "Νίκσιτς 4K — Niksic - by drone [4K]"
+    }
+  },
+  "zabljak": {
+    "cityName": "Ζάμπλιακ",
+    "drone": {
+      "youtubeId": "oh7JQrWB_Hc",
+      "title": "Ζάμπλιακ 4K — Autumn in Durmitor 🍂 | Žabljak, Montenegro 4K"
+    }
+  },
+  "tivat": {
+    "cityName": "Τίβατ",
+    "drone": {
+      "youtubeId": "UqjcIfQWpLA",
+      "title": "Τίβατ 4K — Wonderful Porto Montenegro and Tivat by drone"
+    }
+  },
+  "bar": {
+    "cityName": "Μπαρ",
+    "drone": {
+      "youtubeId": "Clec6--cDyQ",
+      "title": "Μπαρ 4K — Plaža ŠUŠANJ kod Bara snimak dronom u Julu 2025 - ŠUŠANJ Bar Beach [4K Aerial View] MNE Crna Gora"
+    }
+  },
+  "burgas": {
+    "cityName": "Μπουργκάς",
+    "drone": {
+      "youtubeId": "CcKLQ8-Z5JM",
+      "title": "Μπουργκάς 4K — Burgas Bulgaria - Drone 4K Tour - Travel Guide - Best Things to Do - Cinematic Relaxing Video"
+    }
+  },
+  "veliko-tarnovo": {
+    "cityName": "Βελίκο Τάρνοβο",
+    "drone": {
+      "youtubeId": "zTYuTjolFzg",
+      "title": "Βελίκο Τάρνοβο 4K — Veliko Tarnovo, Bulgaria 🇧🇬 4K UHD Drone Footage"
+    }
+  },
+  "ruse": {
+    "cityName": "Ρούσε",
+    "drone": {
+      "youtubeId": "0tsHWs4BBng",
+      "title": "Ρούσε 4K — Flying Over RUSE: Bulgaria's Hidden Danube Gem? ✨ (Cinematic Drone Tour)"
+    }
+  },
+  "stara-zagora": {
+    "cityName": "Στάρα Ζαγόρα",
+    "drone": {
+      "youtubeId": "A4owUgWGX9o",
+      "title": "Στάρα Ζαγόρα 4K — Stara Zagora from Above 🇧🇬 | Stunning 4K Drone Tour"
+    }
+  },
+  "blagoevgrad": {
+    "cityName": "Μπλαγκόεβγκραντ",
+    "drone": {
+      "youtubeId": "N-gOf3J8Uj8",
+      "title": "Μπλαγκόεβγκραντ 4K — Blagoevgrad by drone 4K video / Благоевград с дрон, август 2023 / Blagoevgrad, Bulgaria August 2023"
+    }
+  },
+  "pleven": {
+    "cityName": "Πλέβεν",
+    "drone": {
+      "youtubeId": "PcOOdP4PyY8",
+      "title": "Πλέβεν 4K — Pleven, Bulgaria 2025 from above drone"
+    }
+  },
+  "nesebar": {
+    "cityName": "Νεσέμπαρ",
+    "drone": {
+      "youtubeId": "JBoQTy0jTFI",
+      "title": "Νεσέμπαρ 4K — NESEBAR 4K DRONE • OLD TOWN & AQUAPARK NESSEBAR 2024 BULGARIA • НЕСЕБЪР ДРОН 2024"
+    }
+  },
+  "larnaca": {
+    "cityName": "Λάρνακα",
+    "drone": {
+      "youtubeId": "Ho4cTRx8ITE",
+      "title": "Λάρνακα 4K — Larnaca, Cyprus 🇨🇾 4K UHD | Drone Footage"
+    }
+  },
+  "famagusta": {
+    "cityName": "Αμμόχωστος",
+    "drone": {
+      "youtubeId": "xKqnVZzV5F4",
+      "title": "Αμμόχωστος 4K — Famagusta Walled City: A 4K Tour of Cyprus's Hidden Gem"
+    }
+  },
+  "kyrenia": {
+    "cityName": "Κερύνεια",
+    "drone": {
+      "youtubeId": "NWMPgCdV0xU",
+      "title": "Κερύνεια 4K — Incredibly Beautiful Northern Cyprus - Kyrenia - Drone 4K   2025"
+    }
+  },
+  "ayia-napa": {
+    "cityName": "Αγία Νάπα",
+    "drone": {
+      "youtubeId": "RAL9G1FY8Co",
+      "title": "Αγία Νάπα 4K — Aiya Napa, Cyprus 🇨🇾 II 4K Drone Video"
+    }
+  },
+  "protaras": {
+    "cityName": "Πρωταράς",
+    "drone": {
+      "youtubeId": "-Z8XaHRrDmg",
+      "title": "Πρωταράς 4K — Protaras, Cyprus 🇨🇾 II 4K Drone Video"
+    }
+  },
+  "polis": {
+    "cityName": "Πόλις Χρυσοχούς",
+    "drone": {
+      "youtubeId": "4-nl4v2a1vs",
+      "title": "Πόλις Χρυσοχούς 4K — 🇨🇾 Latchi Beach | Polis Chrysochous(Paphos,Cyprus) | 4K 🚗"
+    }
+  },
+  "troodos": {
+    "cityName": "Τρόοδος",
+    "drone": {
+      "youtubeId": "styrNJgUfh4",
+      "title": "Τρόοδος 4K — CYPRUS TROODOS MOUNTAINS by drone"
+    }
+  },
+  "subotica": {
+    "cityName": "Σουμπότιτσα",
+    "drone": {
+      "youtubeId": "2h72Wd-IIPg",
+      "title": "Σουμπότιτσα 4K — Subotica & Palic in 4k | Serbia 🇷🇸"
+    }
+  },
+  "kragujevac": {
+    "cityName": "Κραγκούγεβατς",
+    "drone": {
+      "youtubeId": "c1uwSWodeKA",
+      "title": "Κραγκούγεβατς 4K — 4K - Kragujevac / Крагујевац"
+    }
+  },
+  "zlatibor": {
+    "cityName": "Ζλάτιμπορ",
+    "drone": {
+      "youtubeId": "dMHnZWYVbKU",
+      "title": "Ζλάτιμπορ 4K — Zlatibor iz drona 🇷🇸 | 4K"
+    },
+    "live": {
+      "youtubeId": "F7xwvGS94ow",
+      "label": "Ζλάτιμπορ Live Cam",
+      "title": "Zlatibor.rs Live kamera novembar 2026. - Kraljev trg, jezero, Zlatibor"
+    }
+  },
+  "kraljevo": {
+    "cityName": "Κράλιεβο",
+    "drone": {
+      "youtubeId": "f1ghFTUDFV4",
+      "title": "Κράλιεβο 4K — Kraljevo, Serbia 🇷🇸 in 4K ULTRA HD | Drone footages"
+    }
+  },
+  "valjevo": {
+    "cityName": "Βάλιεβο",
+    "drone": {
+      "youtubeId": "nVCNILmjLHY",
+      "title": "Βάλιεβο 4K — CITY OF VALJEVO AERIAL DRONE FOOTAGE 4K"
+    }
+  },
+  "vranje": {
+    "cityName": "Βράνιε",
+    "drone": {
+      "youtubeId": "MwmJNdcDIPs",
+      "title": "Βράνιε 4K — VRANJE 🇷🇸 Врање Drone Aerial 4K дрон | Serbia Србија Београд"
+    }
+  },
+  "pancevo": {
+    "cityName": "Πάντσεβο",
+    "drone": {
+      "youtubeId": "7_xkOOQgqHE",
+      "title": "Πάντσεβο 4K — Pancevo in 4k | SERBIA"
     }
   }
 };

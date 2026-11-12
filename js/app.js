@@ -4,12 +4,12 @@
  * USA, Leaflet Map, Base Layers, UI Dossier, and Time Machine.
  */
 
-import { loadWorldData, loadCountryData, loadStateData } from './data-service.js?v=20261112_eu9';
-import * as MapModule from './map.js?v=20261112_eu9';
-import * as UIModule from './ui.js?v=20261112_eu9';
-import * as TimeMachine from './time-machine.js?v=20261112_eu9';
-import * as NavigatorModule from './navigator.js?v=20261112_eu9';
-import { US_STATES, CITY_TO_STATE } from './states-data.js?v=20261112_eu9';
+import { loadWorldData, loadCountryData, loadStateData } from './data-service.js?v=20261112_eu10';
+import * as MapModule from './map.js?v=20261112_eu10';
+import * as UIModule from './ui.js?v=20261112_eu10';
+import * as TimeMachine from './time-machine.js?v=20261112_eu10';
+import * as NavigatorModule from './navigator.js?v=20261112_eu10';
+import { US_STATES, CITY_TO_STATE } from './states-data.js?v=20261112_eu10';
 
 // Application State
 let worldData = null;
@@ -343,6 +343,12 @@ export async function flyToCity(cityId) {
             'liverpool': 'uk', 'glasgow': 'uk', 'bristol': 'uk', 'oxford': 'uk', 'cambridge-uk': 'uk', 'york': 'uk', 'leeds': 'uk',
       'the-hague': 'netherlands', 'eindhoven': 'netherlands', 'groningen': 'netherlands', 'maastricht': 'netherlands', 'delft': 'netherlands', 'haarlem': 'netherlands', 'leiden': 'netherlands',
       'liege': 'belgium', 'namur': 'belgium', 'charleroi': 'belgium', 'leuven': 'belgium', 'mechelen': 'belgium', 'mons': 'belgium',
+            'antalya': 'turkey', 'bursa': 'turkey', 'trabzon': 'turkey', 'konya': 'turkey', 'bodrum': 'turkey', 'eskisehir': 'turkey', 'gaziantep': 'turkey',
+      'tuzla': 'bosnia', 'travnik': 'bosnia', 'bihac': 'bosnia', 'trebinje': 'bosnia', 'zenica': 'bosnia', 'jajce': 'bosnia', 'doboj': 'bosnia',
+      'cetinje': 'montenegro', 'herceg-novi': 'montenegro', 'ulcinj': 'montenegro', 'niksic': 'montenegro', 'zabljak': 'montenegro', 'tivat': 'montenegro', 'bar': 'montenegro',
+      'burgas': 'bulgaria', 'veliko-tarnovo': 'bulgaria', 'ruse': 'bulgaria', 'stara-zagora': 'bulgaria', 'blagoevgrad': 'bulgaria', 'pleven': 'bulgaria', 'nesebar': 'bulgaria',
+      'larnaca': 'cyprus', 'famagusta': 'cyprus', 'kyrenia': 'cyprus', 'ayia-napa': 'cyprus', 'protaras': 'cyprus', 'polis': 'cyprus', 'troodos': 'cyprus',
+      'subotica': 'serbia', 'kragujevac': 'serbia', 'zlatibor': 'serbia', 'kraljevo': 'serbia', 'valjevo': 'serbia', 'vranje': 'serbia', 'pancevo': 'serbia',
       'warsaw': 'poland', 'krakow': 'poland', 'gdansk': 'poland', 'wroclaw': 'poland', 'poznan': 'poland', 'lodz': 'poland', 'lublin': 'poland', 'szczecin': 'poland', 'torun': 'poland', 'katowice': 'poland',
       'stockholm': 'sweden', 'gothenburg': 'sweden', 'malmo': 'sweden',
       'oslo': 'norway', 'bergen': 'norway', 'tromso': 'norway',
