@@ -1,4 +1,4 @@
-import { US_STATES, CITY_TO_STATE } from './states-data.js?v=20261112_eu12';
+import { US_STATES, CITY_TO_STATE } from './states-data.js?v=20261112_eu13';
 /**
  * Navigator Module
  * Hierarchical Cascading Navigation: Continents -> Countries -> Cities
@@ -655,7 +655,14 @@ export const CONTINENTS_DATA = [
         cities: [
           { id: 'kyiv', name: 'Κίεβο', badge: 'Πρωτεύουσα' },
           { id: 'lviv', name: 'Λβιβ', badge: 'Δυτική Κληρονομιά' },
-          { id: 'odesa', name: 'Οδησσός', badge: 'Μαύρη Θάλασσα' }
+          { id: 'odesa', name: 'Οδησσός', badge: 'Μαύρη Θάλασσα' },
+          { id: 'kharkiv', name: 'Χάρκοβο' },
+          { id: 'dnipro', name: 'Ντνίπρο' },
+          { id: 'zaporizhzhia', name: 'Ζαπορίζια' },
+          { id: 'ivano-frankivsk', name: 'Ιβάνο-Φρανκίβσκ' },
+          { id: 'chernivtsi', name: 'Τσερνιβτσί' },
+          { id: 'poltava', name: 'Πολτάβα' },
+          { id: 'vinnytsia', name: 'Βίνιτσα' }
         ]
       },
       {
@@ -664,7 +671,15 @@ export const CONTINENTS_DATA = [
         flag: '🇧🇾',
         cities: [
           { id: 'minsk', name: 'Μινσκ', badge: 'Πρωτεύουσα' },
-          { id: 'brest', name: 'Μπρεστ', badge: 'Ιστορικό Φρούριο' }
+          { id: 'brest', name: 'Μπρεστ', badge: 'Ιστορικό Φρούριο' },
+          { id: 'grodno', name: 'Γκρόντνο' },
+          { id: 'gomel', name: 'Γόμελ' },
+          { id: 'vitebsk', name: 'Βίτεμπσκ' },
+          { id: 'mogilev', name: 'Μογκίλεφ' },
+          { id: 'bobruisk', name: 'Μπομπρούισκ' },
+          { id: 'pinsk', name: 'Πινσκ' },
+          { id: 'polotsk', name: 'Πόλοτσκ' },
+          { id: 'baranovichi', name: 'Μπαρανοβίτσι' }
         ]
       },
       {
@@ -673,7 +688,15 @@ export const CONTINENTS_DATA = [
         flag: '🇲🇩',
         cities: [
           { id: 'chisinau', name: 'Κισινάου', badge: 'Πρωτεύουσα' },
-          { id: 'balti', name: 'Μπάλτι', badge: 'Βόρεια Μολδαβία' }
+          { id: 'balti', name: 'Μπάλτι', badge: 'Βόρεια Μολδαβία' },
+          { id: 'orhei', name: 'Ορχέι' },
+          { id: 'soroca', name: 'Σορόκα' },
+          { id: 'tiraspol', name: 'Τιράσπολ' },
+          { id: 'cahul', name: 'Καχούλ' },
+          { id: 'ungheni', name: 'Ουνγκένι' },
+          { id: 'comrat', name: 'Κομράτ' },
+          { id: 'bender', name: 'Μπεντέρ' },
+          { id: 'edinet', name: 'Εντινέτς' }
         ]
       }
     ]

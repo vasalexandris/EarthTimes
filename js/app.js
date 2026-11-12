@@ -4,12 +4,12 @@
  * USA, Leaflet Map, Base Layers, UI Dossier, and Time Machine.
  */
 
-import { loadWorldData, loadCountryData, loadStateData } from './data-service.js?v=20261112_eu12';
-import * as MapModule from './map.js?v=20261112_eu12';
-import * as UIModule from './ui.js?v=20261112_eu12';
-import * as TimeMachine from './time-machine.js?v=20261112_eu12';
-import * as NavigatorModule from './navigator.js?v=20261112_eu12';
-import { US_STATES, CITY_TO_STATE } from './states-data.js?v=20261112_eu12';
+import { loadWorldData, loadCountryData, loadStateData } from './data-service.js?v=20261112_eu13';
+import * as MapModule from './map.js?v=20261112_eu13';
+import * as UIModule from './ui.js?v=20261112_eu13';
+import * as TimeMachine from './time-machine.js?v=20261112_eu13';
+import * as NavigatorModule from './navigator.js?v=20261112_eu13';
+import { US_STATES, CITY_TO_STATE } from './states-data.js?v=20261112_eu13';
 
 // Application State
 let worldData = null;
@@ -354,6 +354,9 @@ export async function flyToCity(cityId) {
             'bled': 'slovenia', 'kranj': 'slovenia', 'celje': 'slovenia', 'ptuj': 'slovenia', 'koper': 'slovenia', 'novo-mesto': 'slovenia', 'postojna': 'slovenia',
       'presov': 'slovakia', 'zilina': 'slovakia', 'nitra': 'slovakia', 'trnava': 'slovakia', 'banska-bystrica': 'slovakia', 'poprad': 'slovakia', 'trencin': 'slovakia', 'martin': 'slovakia',
       'shkoder': 'albania', 'berat': 'albania', 'gjirokaster': 'albania', 'saranda': 'albania', 'korce': 'albania', 'elbasan': 'albania', 'kruje': 'albania',
+            'kharkiv': 'ukraine', 'dnipro': 'ukraine', 'zaporizhzhia': 'ukraine', 'ivano-frankivsk': 'ukraine', 'chernivtsi': 'ukraine', 'poltava': 'ukraine', 'vinnytsia': 'ukraine',
+      'grodno': 'belarus', 'gomel': 'belarus', 'vitebsk': 'belarus', 'mogilev': 'belarus', 'bobruisk': 'belarus', 'pinsk': 'belarus', 'polotsk': 'belarus', 'baranovichi': 'belarus',
+      'orhei': 'moldova', 'soroca': 'moldova', 'tiraspol': 'moldova', 'cahul': 'moldova', 'ungheni': 'moldova', 'comrat': 'moldova', 'bender': 'moldova', 'edinet': 'moldova',
       'warsaw': 'poland', 'krakow': 'poland', 'gdansk': 'poland', 'wroclaw': 'poland', 'poznan': 'poland', 'lodz': 'poland', 'lublin': 'poland', 'szczecin': 'poland', 'torun': 'poland', 'katowice': 'poland',
       'stockholm': 'sweden', 'gothenburg': 'sweden', 'malmo': 'sweden',
       'oslo': 'norway', 'bergen': 'norway', 'tromso': 'norway',

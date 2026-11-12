@@ -1,4 +1,4 @@
-import { CITY_TO_STATE } from './states-data.js?v=20261112_eu12';
+import { CITY_TO_STATE } from './states-data.js?v=20261112_eu13';
 /**
  * Video Service Module
  * Registry of verified high-definition YouTube video tours for all cities
@@ -7538,6 +7538,167 @@ export const CITY_VIDEOS = {
     "drone": {
       "youtubeId": "54_73Qa6CXc",
       "title": "Κρούγια 4K — KRUJË | ALBANIA | VIDEO BY DRONE | 4K"
+    }
+  },
+  "kharkiv": {
+    "cityName": "Χάρκοβο",
+    "drone": {
+      "youtubeId": "v5iz2OAn7WQ",
+      "title": "Χάρκοβο 4K — Kharkiv, Ukraine 🇺🇦 | 4K Drone Footage"
+    }
+  },
+  "dnipro": {
+    "cityName": "Ντνίπρο",
+    "drone": {
+      "youtubeId": "aaY2cdu16M0",
+      "title": "Ντνίπρο 4K — (2021) 4K Dnipro city Drone Footage Compilation, Bird's Eye view of Dnipro, Chill Background Aerials"
+    }
+  },
+  "zaporizhzhia": {
+    "cityName": "Ζαπορίζια",
+    "drone": {
+      "youtubeId": "VGshKAomfU8",
+      "title": "Ζαπορίζια 4K — Zaporizhzhia Ukraine 4K Drone"
+    }
+  },
+  "ivano-frankivsk": {
+    "cityName": "Ιβάνο-Φρανκίβσκ",
+    "drone": {
+      "youtubeId": "Ap_NxSTtRps",
+      "title": "Ιβάνο-Φρανκίβσκ 4K — Ivano frankivsk, Ukraine 🇺🇦 | 4K Drone Footage"
+    }
+  },
+  "chernivtsi": {
+    "cityName": "Τσερνιβτσί",
+    "drone": {
+      "youtubeId": "C8QGbMOnW7I",
+      "title": "Τσερνιβτσί 4K — Chernivtsi, Ukraine 🇺🇦 | 4K Drone Footage"
+    }
+  },
+  "poltava": {
+    "cityName": "Πολτάβα",
+    "drone": {
+      "youtubeId": "CbnX4obfxFc",
+      "title": "Πολτάβα 4K — 4K Drone Footage - Poltava - Ukraine l A Magical Place"
+    }
+  },
+  "vinnytsia": {
+    "cityName": "Βίνιτσα",
+    "drone": {
+      "youtubeId": "BiESs_lMVwA",
+      "title": "Βίνιτσα 4K — Flying over Vinnytsia, Ukraine (Вінниця, Україна) 4K Drone video"
+    }
+  },
+  "grodno": {
+    "cityName": "Γκρόντνο",
+    "drone": {
+      "youtubeId": "5q2UD0Qo4qM",
+      "title": "Γκρόντνο 4K — Grodno, Belarus 🇧🇾 | 4K Drone Footage"
+    }
+  },
+  "gomel": {
+    "cityName": "Γόμελ",
+    "drone": {
+      "youtubeId": "pvzkx5DS_R4",
+      "title": "Γόμελ 4K — 📷 Gomel Walking Tour 4K - Lenina Square And Relaxing Walk Around The City GoPro"
+    }
+  },
+  "vitebsk": {
+    "cityName": "Βίτεμπσκ",
+    "drone": {
+      "youtubeId": "We7nntKPJqg",
+      "title": "Βίτεμπσκ 4K — Vitebsk, Belarus 🇧🇾 | 4K Drone Footage"
+    }
+  },
+  "mogilev": {
+    "cityName": "Μογκίλεφ",
+    "drone": {
+      "youtubeId": "upaSJWGlS0U",
+      "title": "Μογκίλεφ 4K — Город Могилёв с высоты птичьего полёта Беларусь Видео клип про Могилёв / Mogilev Belarus aerial view"
+    }
+  },
+  "bobruisk": {
+    "cityName": "Μπομπρούισκ",
+    "drone": {
+      "youtubeId": "8HvLhjlgjwM",
+      "title": "Μπομπρούισκ 4K — Tour de Teemu: Bobruisk, Belarus. September 2018 [4K drone video]"
+    }
+  },
+  "pinsk": {
+    "cityName": "Πινσκ",
+    "drone": {
+      "youtubeId": "rL4tneYA2Ag",
+      "title": "Πινσκ 4K — Pinsk, Belarus 🇧🇾 | 4K Drone Footage"
+    }
+  },
+  "polotsk": {
+    "cityName": "Πόλοτσκ",
+    "drone": {
+      "youtubeId": "Smy538eydr4",
+      "title": "Πόλοτσκ 4K — Walking tour of Polotsk Belarus"
+    }
+  },
+  "baranovichi": {
+    "cityName": "Μπαρανοβίτσι",
+    "drone": {
+      "youtubeId": "9aP6ReX0hD0",
+      "title": "Μπαρανοβίτσι 4K — Belarus Baranovichi Drone Footage July 12 2017"
+    }
+  },
+  "orhei": {
+    "cityName": "Ορχέι",
+    "drone": {
+      "youtubeId": "bkBrnXOtXgI",
+      "title": "Ορχέι 4K — Moldova 4K Drone Footage | Chisinau, Old Orhei, Saharna & Scenic Countryside"
+    }
+  },
+  "soroca": {
+    "cityName": "Σορόκα",
+    "drone": {
+      "youtubeId": "vPYODftHDe0",
+      "title": "Σορόκα 4K — 🏰 Soroca Fortress | Moldova in 4K Drone Footage 🇲🇩"
+    }
+  },
+  "tiraspol": {
+    "cityName": "Τιράσπολ",
+    "drone": {
+      "youtubeId": "Rc7sVY5EkJg",
+      "title": "Τιράσπολ 4K — 【4K】Tiraspol from Above - Capital of TRANSNISTRIA 2020 | Moldova | Cinematic Aerial Film"
+    }
+  },
+  "cahul": {
+    "cityName": "Καχούλ",
+    "drone": {
+      "youtubeId": "tr_f5c0Nq1M",
+      "title": "Καχούλ 4K — Cahul, primăvara 2022, filmare cu drona, clip 4K, www.vladtour.md"
+    }
+  },
+  "ungheni": {
+    "cityName": "Ουνγκένι",
+    "drone": {
+      "youtubeId": "RsNY7IUTEIw",
+      "title": "Ουνγκένι 4K — Zagarancea Ungheni Spring 2018 Drone View Full HD"
+    }
+  },
+  "comrat": {
+    "cityName": "Κομράτ",
+    "drone": {
+      "youtubeId": "jWxapF51TVs",
+      "title": "Κομράτ 4K — Gagauzia autonomous region in Moldova | Walking in Comrat | 4K 🇲🇩"
+    }
+  },
+  "bender": {
+    "cityName": "Μπεντέρ",
+    "drone": {
+      "youtubeId": "hdI_HkzbVOs",
+      "title": "Μπεντέρ 4K — Bender, Moldova | 4K city walk | Soviet style canteen | sweltering day | very short trip"
+    }
+  },
+  "edinet": {
+    "cityName": "Εντινέτς",
+    "drone": {
+      "youtubeId": "qe3nM4lnnfc",
+      "title": "Εντινέτς 4K — ORASUL EDINET HYPERLAPS  4K MOLDOVA / ГОРОД ЕДИНЕЦ (ЕДИНЦЫ) ГИПЕРЛАПС 4К МОЛДОВА"
     }
   }
 };
