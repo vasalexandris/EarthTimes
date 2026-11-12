@@ -771,6 +771,1707 @@
           "desc": "Κέντρο μεταφορών και πολυπολιτισμική αγορά της πόλης."
         }
       ]
+    },
+    {
+      "id": "paterson",
+      "name": "Πάτερσον",
+      "englishName": "Paterson",
+      "nickname": "The Silk City / Η Πόλη του Μεταξιού",
+      "type": "city",
+      "coords": [
+        40.9147,
+        -74.1628
+      ],
+      "zoom": 13.0,
+      "stats": {
+        "population": "160.000",
+        "founded": "1792 (ΣΥΜ) · 1851 (πόλη)",
+        "area": "22,5 km²",
+        "elevation": "24 μ."
+      },
+      "quote": "«Στον ποταμό Passaic, ο Μεγάλος Καταρράκτης του Hamilton γέννησε την πρώτη σχεδιασμένη βιομηχανική πόλη της Αμερικής.»",
+      "geo": {
+        "summary": "Χτισμένη στις όχθες του ποταμού Passaic, 20 χλμ. δυτικά του Μανχάταν. Η πόλη ορίζεται από τους Great Falls του Passaic, που πέφτουν από 23 μέτρα στο κέντρο της, και από τους λόφους Garfield και East Side γύρω από την κοιλάδα.",
+        "highlights": [
+          {
+            "title": "Great Falls of the Passaic",
+            "desc": "Ο δεύτερος μεγαλύτερος καταρράκτης στην ανατολική ακτή μετά του Νιαγάρα, 23 μέτρα ύψος, που τροφοδοτούσε ιστορικά τα εργοστάσια μεταξιού."
+          },
+          {
+            "title": "Ποταμός Passaic",
+            "desc": "Ο ποταμός μήκους 130 χλμ. που διασχίζει την πόλη και ιστορικά τροφοδοτούσε υδροηλεκτρικά έργα."
+          },
+          {
+            "title": "Garret Mountain Reservation",
+            "desc": "Πάρκο 2,3 km² στον λόφο Garfield με θέα στο Μανχάταν, το Orange και τη λίμνη Lambert."
+          }
+        ]
+      },
+      "hist": {
+        "summary": "Ιδρύθηκε το 1792 από την Society for Useful Manufactures του Alexander Hamilton ως η πρώτη σχεδιασμένη βιομηχανική πόλη της Αμερικής. Αναπτύχθηκε σε «Πόλη του Μεταξιού» τον 19ο αιώνα, με πάνω από ένα τρίτο του μεταξιού των ΗΠΑ να παράγεται εδώ, και φιλοξένησε ισπανόφωνες, ιταλικές και αραβικές κοινότητες.",
+        "highlights": [
+          {
+            "year": "1792",
+            "event": "Ίδρυση της Society for Useful Manufactures",
+            "desc": "Ο Alexander Hamilton ιδρύει την SUM για να δημιουργήσει βιομηχανική ανεξαρτησία ΗΠΑ, επιλέγοντας τους Great Falls του Passaic για υδροηλεκτρική ενέργεια."
+          },
+          {
+            "year": "1851",
+            "event": "Χάρτη Πόλης",
+            "desc": "Το Paterson ενσωματώνεται ως πόλη και γίνεται η πρωτεύουσα της αμερικανικής βιομηχανίας μεταξιού, με πάνω από 100 μεταξουργεία."
+          },
+          {
+            "year": "1913",
+            "event": "Απεργία του Μεταξιού",
+            "desc": "Η μεγάλη απεργία των 25.000 μεταξουργών της πόλης, που διήρκεσε 22 εβδομάδες και έγινε σύμβολο του εργατικού κινήματος ΗΠΑ."
+          }
+        ]
+      },
+      "demo": {
+        "summary": "Περίπου 160.000 κάτοικοι, η τρίτη μεγαλύτερη πόλη του Νιου Τζέρσεϊ. Μεγάλη κοινότητα από το Περού, τη Δομινικανή Δημοκρατία, το Μπανγκλαντές και την Τουρκία, με τη δεύτερη μεγαλύτερη μουσουλμανική κοινότητα της πολιτείας.",
+        "details": [
+          {
+            "label": "Κοινότητες & Πληθυσμός",
+            "text": "Περίπου 60% ισπανόφωνοι (κυρίως από το Περού, τη Δομινικανή Δημοκρατία και την Κολομβία) και 15% αφροαμερικανοί, με αυξανόμενη κοινότητα από το Μπανγκλαντές και την Τουρκία."
+          },
+          {
+            "label": "Περουβιανή Πρωτεύουσα ΗΠΑ",
+            "text": "Το Paterson θεωρείται «Πρωτεύουσα των Περουβιανών ΗΠΑ» με τη μεγαλύτερη κοινότητα από το Περού εκτός χώρας."
+          },
+          {
+            "label": "Οικονομία & Αναγέννηση",
+            "text": "Μετά τη βιομηχανική παρακμή, η πόλη προσπαθεί να αναγεννηθεί γύρω από το Great Falls National Historical Park και τους πρώην βιομηχανικούς χώρους."
+          }
+        ]
+      },
+      "cult": {
+        "summary": "Πόλη βιομηχανικής κληρονομιάς με το Great Falls National Historical Park, μουσείο μεταξιού και ζωντανή πολυπολιτισμική σκηνή σε γειτονιές Little Lima και Little Palestine.",
+        "items": [
+          {
+            "title": "Great Falls National Historical Park",
+            "desc": "Εθνικό ιστορικό πάρκο γύρω από τον καταρράκτη του Passaic, με μονοπάτια και τα ιστορικά κτίρια της SUM."
+          },
+          {
+            "title": "Paterson Museum",
+            "desc": "Μουσείο με εκθέματα για τη βιομηχανία μεταξιού, το πρώτο υποβρύχιο Holland και τον ατμοκινητήρα Colt."
+          },
+          {
+            "title": "Little Lima & Arab Quarter",
+            "desc": "Η μεγαλύτερη περουβιανή γειτονιά ΗΠΑ και η αραβική γειτονιά Main Street με εστιατόρια, mercados και τζαμιά."
+          }
+        ]
+      },
+      "guide": {
+        "summary": "Το Paterson σε πέντε στάσεις: εθνικό πάρκο Great Falls, μουσείο Paterson, κάστρο Lambert, γειτονιά Little Lima και πάρκο Garret Mountain.",
+        "items": [
+          {
+            "title": "Great Falls National Historical Park",
+            "cat": "history",
+            "catLabel": "🏛️ Ιστορία",
+            "desc": "Εθνικό ιστορικό πάρκο γύρω από τον καταρράκτη του Passaic και τα κτίρια της Society for Useful Manufactures.",
+            "wiki": "Great_Falls_(Passaic_River)"
+          },
+          {
+            "title": "Paterson Museum",
+            "cat": "museum",
+            "catLabel": "🖼️ Μουσείο",
+            "desc": "Μουσείο βιομηχανικής ιστορίας με το υποβρύχιο Holland και εκθέματα μεταξιού.",
+            "wiki": "Paterson_Museum"
+          },
+          {
+            "title": "Lambert Castle",
+            "cat": "history",
+            "catLabel": "🏛️ Ιστορία",
+            "desc": "Βικτωριανό κάστρο του 1893 στον λόφο Garfield, σήμερα μουσείο της ιστορικής εταιρείας Passaic County.",
+            "wiki": "Lambert_Castle"
+          },
+          {
+            "title": "Little Lima",
+            "cat": "culture",
+            "catLabel": "🎨 Πολιτισμός",
+            "desc": "Η μεγαλύτερη περουβιανή γειτονιά ΗΠΑ με εστιατόρια ceviche και mercados στις οδούς Market και Main.",
+            "wiki": "Paterson,_New_Jersey"
+          },
+          {
+            "title": "Garret Mountain Reservation",
+            "cat": "nature",
+            "catLabel": "🌿 Φύση",
+            "desc": "Πάρκο 2,3 km² στον λόφο Garfield με θέα στο Μανχάταν, τη λίμνη Lambert και μονοπάτια.",
+            "wiki": "Garret_Mountain_Reservation"
+          }
+        ]
+      },
+      "gastro": {
+        "summary": "Περουβιανό ceviche, αραβικά shawarma και ιταλοαμερικανικές παραδόσεις από τις πολυάριθμες κοινότητες της πόλης.",
+        "items": [
+          {
+            "title": "Ceviche Mixto",
+            "desc": "Φρέσκο ceviche με ψάρι, γαρίδες και καλαμάρι σε lime και ají amarillo, από την περουβιανή κοινότητα.",
+            "tag": "Περουβιανό"
+          },
+          {
+            "title": "Pollo a la Brasa",
+            "desc": "Πανσέψη ψητό κοτόπουλο με γλυκόξινη σάλτσα ají, κληρονομιά της περουβιανής κουζίνας Little Lima.",
+            "tag": "Περουβιανό"
+          },
+          {
+            "title": "Shawarma & Falafel",
+            "desc": "Αραβικά σάντουιτς από την κοινότητα της Main Street με σπιτικά pita, ταχίνι και πικάντικες σάλτσες.",
+            "tag": "Αραβικό"
+          },
+          {
+            "title": "Italian Hot Dog & πίτσα",
+            "desc": "Ιταλοαμερικανικά σάντουιτς και πίτσα από τις παλαιές ιταλικές γειτονιές της πόλης.",
+            "tag": "Ιταλικό"
+          }
+        ]
+      },
+      "eco": {
+        "summary": "Η πόλη αναζωογονεί τον ποταμό Passaic και μετατρέπει τα παλιά βιομηχανικά κτίρια σε κατοικίες και χώρους τέχνης.",
+        "items": [
+          {
+            "title": "Great Falls National Historical Park",
+            "desc": "Εθνικό πάρκο που προστατεύει τον καταρράκτη και τα ιστορικά βιομηχανικά κτίρια, με μονοπάτια και πάρκα.",
+            "cat": "nature",
+            "catLabel": "🌳 Πάρκα",
+            "wiki": "Great_Falls_(Passaic_River)"
+          },
+          {
+            "title": "Garret Mountain Reservation",
+            "desc": "Πάρκο 2,3 km² στο λόφο με δάση, λίμνη Lambert και μονοπάτια περιήγησης.",
+            "cat": "nature",
+            "catLabel": "🌿 Φύση",
+            "wiki": "Garret_Mountain_Reservation"
+          },
+          {
+            "title": "Passaic River Cleanup & Brownfields",
+            "desc": "Πρόγραμμα καθαρισμού του Passaic και μετατροπής των παλιών βιομηχανικών εδαφών σε κατοικίες.",
+            "cat": "business",
+            "catLabel": "🌱 Ανάπλαση",
+            "wiki": "Passaic_River"
+          }
+        ]
+      },
+      "pastVsPresent": [
+        {
+          "epoch": "Paterson 1926: Πρωτεύουσα του Μεταξιού",
+          "content": "Περίπου 135.000 κάτοικοι, πάνω από 100 μεταξουργεία δουλεύουν μέρα-νύχτα, οι Great Falls τροφοδοτούν υδροηλεκτρικά έργα και η πόλη παράγει ένα τρίτο του μεταξιού ΗΠΑ."
+        },
+        {
+          "epoch": "Paterson 2026: Πολυπολιτισμική Πόλη & Great Falls Park",
+          "content": "160.000 κάτοικοι, μετά τη βιομηχανική παρακμή, οι Great Falls αναγνωρίστηκαν ως εθνικό ιστορικό πάρκο και η πόλη είναι πλέον κέντρο περουβιανών και αραβικών κοινοτήτων."
+        }
+      ],
+      "pois": [
+        {
+          "name": "Great Falls of the Passaic",
+          "category": "history",
+          "coords": [
+            40.9147,
+            -74.1717
+          ],
+          "desc": "Καταρράκτης 23 μέτρων στο κέντρο της πόλης.",
+          "wiki": "Great_Falls_(Passaic_River)"
+        },
+        {
+          "name": "Paterson Museum",
+          "category": "culture",
+          "coords": [
+            40.9156,
+            -74.1717
+          ],
+          "desc": "Μουσείο βιομηχανικής ιστορίας.",
+          "wiki": "Paterson_Museum"
+        },
+        {
+          "name": "Lambert Castle",
+          "category": "history",
+          "coords": [
+            40.9283,
+            -74.1819
+          ],
+          "desc": "Βικτωριανό κάστρο του 1893.",
+          "wiki": "Lambert_Castle"
+        },
+        {
+          "name": "Hinchliffe Stadium",
+          "category": "history",
+          "coords": [
+            40.9197,
+            -74.1675
+          ],
+          "desc": "Ιστορικό γήπεδο Negro League baseball.",
+          "wiki": "Hinchliffe_Stadium"
+        },
+        {
+          "name": "Garret Mountain Reservation",
+          "category": "nature",
+          "coords": [
+            40.9306,
+            -74.1831
+          ],
+          "desc": "Πάρκο στον λόφο Garfield.",
+          "wiki": "Garret_Mountain_Reservation"
+        }
+      ]
+    },
+    {
+      "id": "elizabeth",
+      "name": "Ελίζαμπεθ",
+      "englishName": "Elizabeth",
+      "nickname": "The First Capital / Η Πρώτη Πρωτεύουσα του Νιου Τζέρσεϊ",
+      "type": "city",
+      "coords": [
+        40.6634,
+        -74.2107
+      ],
+      "zoom": 13.0,
+      "stats": {
+        "population": "135.000",
+        "founded": "1664 · 1855 (πόλη)",
+        "area": "35 km²",
+        "elevation": "5 μ."
+      },
+      "quote": "«Στο στόμιο του λιμανιού Newark, η τέταρτη μεγαλύτερη πόλη του Νιου Τζέρσεϊ και η πρώτη ιστορική πρωτεύουσα.»",
+      "geo": {
+        "summary": "Χτισμένη στις δυτικές όχθες του κόλπου Newark και του Arthur Kill, νότια του Newark. Η πόλη ορίζεται από το Port Newark-Elizabeth, το μεγαλύτερο λιμάνι εμπορευματοκιβωτίων της ανατολικής ακτής, και από τον ποταμό Elizabeth.",
+        "highlights": [
+          {
+            "title": "Κόλπος Newark & Arthur Kill",
+            "desc": "Η ακτή που φιλοξενεί το μεγαλύτερο λιμάνι εμπορευματοκιβωτίων της ανατολικής ακτής και χώρους logistics."
+          },
+          {
+            "title": "Ποταμός Elizabeth",
+            "desc": "Ο ποταμός που διασχίζει την πόλη και ιστορικά τροφοδοτούσε μύλους και εργοστάσια."
+          },
+          {
+            "title": "Warinanco Park",
+            "desc": "Πάρκο 1 km² στην κομητεία Union με λίμνη, αθλητικές εγκαταστάσεις και δεντροστοιχίες."
+          }
+        ]
+      },
+      "hist": {
+        "summary": "Ιδρύθηκε το 1664 από Άγγλους αποίκους ως Elizabethtown, ένα από τα πρώτα μόνιμα ευρωπαϊκά οικιστικά κέντρα του Νιου Τζέρσεϊ. Η πόλη ήταν η πρώτη πρωτεύουσα της πολιτείας το 1668 και φιλοξένησε το πρώτο Synod του Πρεσβυτεριαν church στην Αμερική.",
+        "highlights": [
+          {
+            "year": "1664",
+            "event": "Ίδρυση του Elizabethtown",
+            "desc": "Άγγλοι έποικοι από το Λονγκ Άιλαντ ιδρύουν το Elizabethtown, ένα από τα τέσσερα αρχικά settlements της East Jersey."
+          },
+          {
+            "year": "1668",
+            "event": "Πρώτη Πρωτεύουσα Νιου Τζέρσεϊ",
+            "desc": "Η πρώτη συνέλευση (Legislature) της πολιτείας συνέρχεται στο Elizabethtown, που γίνεται η πρώτη πρωτεύουσα."
+          },
+          {
+            "year": "1855",
+            "event": "Χάρτη Πόλης",
+            "desc": "Το Elizabeth ενσωματώνεται ως πόλη και αναπτύσσεται σε βιομηχανικό και λιμενικό κέντρο με Singer Sewing Machine."
+          }
+        ]
+      },
+      "demo": {
+        "summary": "Περίπου 135.000 κάτοικοι, η τέταρτη μεγαλύτερη πόλη του Νιου Τζέρσεϊ. Πλούσιο μωσαϊκό με ισχυρή παρουσία κοινοτήτων από την Κούβα, την Κολομβία, το Πουέρτο Ρίκο και το Ελ Σαλβαδόρ, ενώ το λιμάνι προσφέρει χιλιάδες θέσεις εργασίας.",
+        "details": [
+          {
+            "label": "Κοινότητες & Πληθυσμός",
+            "text": "Περίπου 65% ισπανόφωνοι, με μεγάλες κοινότητες από την Κούβα, την Κολομβία και το Πουέρτο Ρίκο, και 20% αφροαμερικανοί."
+          },
+          {
+            "label": "Λιμάνι Newark-Elizabeth",
+            "text": "Το μεγαλύτερο λιμάνι εμπορευματοκιβωτίων της ανατολικής ακτής απασχολεί πάνω από 200.000 εργαζομένους σε logistics και μεταφορές."
+          },
+          {
+            "label": "Βιομηχανία & Εκπαίδευση",
+            "text": "Bayway Refinery (Philips 66), Kean University και Trinitas Regional Medical Center είναι από τους κύριους εργοδότες."
+          }
+        ]
+      },
+      "cult": {
+        "summary": "Πόλη αποικιακής ιστορίας και λιμενικής κληρονομιάς, με ιστορικά αρχοντικά του 18ου αιώνα και ζωντανή πολυπολιτισμική κουλτούρα.",
+        "items": [
+          {
+            "title": "Boxwood Hall State Historic Site",
+            "desc": "Αποικιακό αρχοντικό του 1750 όπου έζησε ο Elias Boudinot, πρόεδρος του Ηπειρωτικού Κογκρέσου."
+          },
+          {
+            "title": "Belcher-Ogden Mansion",
+            "desc": "Αρχοντικό του 1680 που φιλοξένησε τον κυβερνήτη Jonathan Belcher και την πρώτη ανάπτυξη της East Jersey."
+          },
+          {
+            "title": "Liberty Hall Museum",
+            "desc": "Αρχοντικό του 1760 του κυβερνήτη William Livingston, με έπιπλα δύο αιώνων και κήπους."
+          }
+        ]
+      },
+      "guide": {
+        "summary": "Η Elizabeth σε πέντε στάσεις: Boxwood Hall, Belcher-Ogden, Liberty Hall, Warinanco Park και Kean University.",
+        "items": [
+          {
+            "title": "Boxwood Hall State Historic Site",
+            "cat": "history",
+            "catLabel": "🏛️ Ιστορία",
+            "desc": "Αποικιακό αρχοντικό του 1750 με αυθεντικά έπιπλα και ιστορία του Elias Boudinot.",
+            "wiki": "Boxwood_Hall"
+          },
+          {
+            "title": "Belcher-Ogden Mansion",
+            "cat": "history",
+            "catLabel": "🏛️ Ιστορία",
+            "desc": "Αρχοντικό του 1680, ένα από τα παλαιότερα κτίρια της πολιτείας.",
+            "wiki": "Belcher-Ogden_Mansion"
+          },
+          {
+            "title": "Liberty Hall Museum",
+            "cat": "museum",
+            "catLabel": "🖼️ Μουσείο",
+            "desc": "Αρχοντικό του 1760 με έπιπλα δύο αιώνων και κήπους στο Kean University.",
+            "wiki": "Liberty_Hall_(New_Jersey)"
+          },
+          {
+            "title": "Warinanco Park",
+            "cat": "nature",
+            "catLabel": "🌿 Φύση",
+            "desc": "Πάρκο 1 km² με λίμνη, αθλητικές εγκαταστάσεις και δεντροστοιχίες.",
+            "wiki": "Warinanco_Park"
+          },
+          {
+            "title": "Kean University",
+            "cat": "culture",
+            "catLabel": "🎨 Πολιτισμός",
+            "desc": "Πανεπιστήμιο 16.000 φοιτητών με ιστορικό campus και το Liberty Hall Museum.",
+            "wiki": "Kean_University"
+          }
+        ]
+      },
+      "gastro": {
+        "summary": "Κουβανέζικη, κολομβιανή και πορτορικανική κουζίνα από τις μεγάλες κοινότητες της πόλης, με εστιατόρια στην Elizabeth Avenue.",
+        "items": [
+          {
+            "title": "Cuban Sandwich",
+            "desc": "Σάντουιτς Cubano με ψητό χοιρινό, ζαμπόν, ελβετικό τυρί, τουρσί και μουστάρδα σε cuban bread.",
+            "tag": "Κουβανέζικο"
+          },
+          {
+            "title": "Arepas & Bandeja Paisa",
+            "desc": "Κολομβιανές arepas με τυρί και bandeja paisa με ρύζι, φασόλια, chorizo και αυγό, από τη μεγάλη κολομβιανή κοινότητα.",
+            "tag": "Κολομβιανό"
+          },
+          {
+            "title": "Pastelón & Mofongo",
+            "desc": "Πουέρτο Ρίκο pastelón (γλυκιά plantain lasagna) και mofongo από τις κοινότητες της Elizabeth Avenue.",
+            "tag": "Πουέρτο Ρίκο"
+          },
+          {
+            "title": "Italian-American Δείπνα",
+            "desc": "Ιταλοαμερικανικές family-style trattorie στις ιστορικές ιταλικές γειτονιές της πόλης.",
+            "tag": "Ιταλικό"
+          }
+        ]
+      },
+      "eco": {
+        "summary": "Η πόλη διαχειρίζεται τη βιώσιμη ανάπτυξη του λιμανιού και επενδύει στα πάρκα και τις πράσινες υποδομές.",
+        "items": [
+          {
+            "title": "Warinanco Park",
+            "desc": "Πάρκο 1 km² με λίμνη, αθλητικές εγκαταστάσεις και δεντροστοιχίες σχεδιασμένο από τον Olmsted.",
+            "cat": "nature",
+            "catLabel": "🌳 Πάρκα",
+            "wiki": "Warinanco_Park"
+          },
+          {
+            "title": "Elizabeth River Greenway",
+            "desc": "Διαδρομή κατά μήκος του ποταμού Elizabeth με ποδηλατόδρομους και μονοπάτια.",
+            "cat": "business",
+            "catLabel": "🚲 Κινητικότητα",
+            "wiki": "Elizabeth_River_(New_Jersey)"
+          },
+          {
+            "title": "Clean Ports Initiative",
+            "desc": "Πρόγραμμα ηλεκτροκίνησης φορτηγών και εξηλεκτρισμού του λιμανιού Newark-Elizabeth.",
+            "cat": "business",
+            "catLabel": "⚡ Ενέργεια",
+            "wiki": "Port_Newark-Elizabeth_Marine_Terminal"
+          }
+        ]
+      },
+      "pastVsPresent": [
+        {
+          "epoch": "Elizabeth 1926: Βιομηχανία & Λιμάνι",
+          "content": "Περίπου 95.000 κάτοικοι, το εργοστάσιο Singer Sewing Machine απασχολεί 10.000, τα διυλιστήρια και τα εργοστάσια χαλυβουργίας δουλεύουν πλήρη ρυθμό και το λιμάνι επεκτείνεται."
+        },
+        {
+          "epoch": "Elizabeth 2026: Logistics & Πανεπιστήμιο",
+          "content": "135.000 κάτοικοι, το Port Newark-Elizabeth είναι ο μεγαλύτερος κόμβος logistics ανατολικής ακτής, το Kean University φιλοξενεί 16.000 φοιτητές και η πόλη έχει πλούσια κουβανέζικη και κολομβιανή κοινότητα."
+        }
+      ],
+      "pois": [
+        {
+          "name": "Boxwood Hall",
+          "category": "history",
+          "coords": [
+            40.6634,
+            -74.2133
+          ],
+          "desc": "Αποικιακό αρχοντικό του 1750.",
+          "wiki": "Boxwood_Hall"
+        },
+        {
+          "name": "Belcher-Ogden Mansion",
+          "category": "history",
+          "coords": [
+            40.6657,
+            -74.2117
+          ],
+          "desc": "Αρχοντικό του 1680.",
+          "wiki": "Belcher-Ogden_Mansion"
+        },
+        {
+          "name": "Liberty Hall Museum",
+          "category": "history",
+          "coords": [
+            40.6833,
+            -74.2233
+          ],
+          "desc": "Αρχοντικό του 1760.",
+          "wiki": "Liberty_Hall_(New_Jersey)"
+        },
+        {
+          "name": "Warinanco Park",
+          "category": "nature",
+          "coords": [
+            40.6533,
+            -74.2333
+          ],
+          "desc": "Πάρκο 1 km² με λίμνη.",
+          "wiki": "Warinanco_Park"
+        },
+        {
+          "name": "Kean University",
+          "category": "culture",
+          "coords": [
+            40.6833,
+            -74.2233
+          ],
+          "desc": "Πανεπιστήμιο 16.000 φοιτητών.",
+          "wiki": "Kean_University"
+        }
+      ]
+    },
+    {
+      "id": "atlantic-city",
+      "name": "Ατλάντικ Σίτι",
+      "englishName": "Atlantic City",
+      "nickname": "Vegas East / Η Λασ Βέγκας της Ανατολικής Ακτής",
+      "type": "city",
+      "coords": [
+        39.3643,
+        -74.4229
+      ],
+      "zoom": 13.0,
+      "stats": {
+        "population": "38.000",
+        "founded": "1854 · 1854 (πόλη)",
+        "area": "44 km²",
+        "elevation": "2 μ."
+      },
+      "quote": "«Στο Absecon Island, η πόλη του boardwalk και των καζίνο, σύμβολο της αμερικανικής παραλιακής ψυχαγωγίας.»",
+      "geo": {
+        "summary": "Χτισμένη στο νησί Absecon στην ακτή του Ατλαντικού, 100 χλμ. νότια της Φιλαδέλφειας. Η πόλη ορίζεται από τον διάσημο boardwalk 9 χλμ., τις παραλίες και τις εκβολές του Absecon Inlet.",
+        "highlights": [
+          {
+            "title": "Atlantic City Boardwalk",
+            "desc": "Το πρώτο και μεγαλύτερο boardwalk ΗΠΑ μήκους 9 χλμ., που χτίστηκε το 1870 και αποτελεί σύμβολο της αμερικανικής παραλιακής ψυχαγωγίας."
+          },
+          {
+            "title": "Παραλίες του Absecon Island",
+            "desc": "Δωρεάν δημόσιες παραλίες αμμώδους ακτής κατά μήκος του Ατλαντικού."
+          },
+          {
+            "title": "Absecon Inlet & Wetlands",
+            "desc": "Οι εκβολές και οι υγρότοποι στο βόρειο άκρο του νησιού με βιότοπους πουλιών και ψαριών."
+          }
+        ]
+      },
+      "hist": {
+        "summary": "Ιδρύθηκε το 1854 ως παραλιακό θέρετρο από τον Dr. Jonathan Pitney, με το boardwalk να χτίζεται το 1870. Το 1978 νομιμοποιήθηκαν τα καζίνο, μετατρέποντας την πόλη σε «Vegas East» με κορυφαία ξενοδοχεία και αθλητικά events.",
+        "highlights": [
+          {
+            "year": "1854",
+            "event": "Ίδρυση & Σιδηρόδρομος Camden-Atlantic",
+            "desc": "Ο Dr. Jonathan Pitney και ο Richard B. Osborne ιδρύουν την πόλη και κατασκευάζουν τον σιδηρόδρομο Camden-Atlantic, που φέρνει τους πρώτους τουρίστες."
+          },
+          {
+            "year": "1870",
+            "event": "Κατασκευή του πρώτου Boardwalk",
+            "desc": "Χτίζεται το πρώτο boardwalk μήκους 1,5 χλμ. για να κρατήσει την άμμο μακριά από τα τρένα και τα ξενοδοχεία."
+          },
+          {
+            "year": "1978",
+            "event": "Νομιμοποίηση Καζίνο",
+            "desc": "Το Resorts International ανοίγει το πρώτο καζίνο εκτός Nevada, ξεκινώντας μια νέα εποχή τζόγου στην ανατολική ακτή."
+          }
+        ]
+      },
+      "demo": {
+        "summary": "Περίπου 38.000 κάτοικοι, με μικτή πληθυσμιακή σύνθεση και αυξανόμενη παρουσία κοινοτήτων από την Ισπανία, το Μεξικό και τη Νότια Ασία, με οικονομία προσανατολισμένη στον τουρισμό και τα καζίνο.",
+        "details": [
+          {
+            "label": "Κοινότητες & Πληθυσμός",
+            "text": "Περίπου 40% αφροαμερικανοί και 32% ισπανόφωνοι, με πρόσφατες κοινότητες από το Μεξικό, τη Δομινικανή Δημοκρατία και το Μπανγκλαντές."
+          },
+          {
+            "label": "Καζίνο & Τουρισμός",
+            "text": "Περισσότερα από 9 καζίνο (Borgata, Hard Rock, Tropicana, Caesars, Resorts) προσελκύουν 27 εκατομμύρια επισκέπτες ετησίως."
+          },
+          {
+            "label": "Αθλητισμός & Miss America",
+            "text": "Η πόλη φιλοξενεί τη Miss America Competition από το 1921 και ετήσια φεστιβάλ όπως το Atlantic City Airshow."
+          }
+        ]
+      },
+      "cult": {
+        "summary": "Πόλη παραλιακής ψυχαγωγίας και καζίνο, με εμβληματικό boardwalk, πάρκα διασκέδασης και το Monopoly να φέρει τα ονόματα των οδών της.",
+        "items": [
+          {
+            "title": "Atlantic City Boardwalk",
+            "desc": "Το παλαιότερο και μακρύτερο boardwalk ΗΠΑ μήκους 9 χλμ., με καζίνο, καταστήματα και Atlantic Ocean views."
+          },
+          {
+            "title": "Steel Pier",
+            "desc": "Ιστορικό πάρκο διασκέδασης από το 1898 στο boardwalk, με ferris wheel, carrousel και ζωντανές παραστάσεις."
+          },
+          {
+            "title": "Miss America & Monopoly",
+            "desc": "Η παγκόσμια διαγωνισμός Miss America ξεκίνησε εδώ το 1921 και το παιχνίδι Monopoly βασίζεται σε οδούς του Atlantic City."
+          }
+        ]
+      },
+      "guide": {
+        "summary": "Το Atlantic City σε πέντε στάσεις: boardwalk, Steel Pier, καζίνο Borgata, φάρος Absecon και Pier Shops.",
+        "items": [
+          {
+            "title": "Atlantic City Boardwalk",
+            "cat": "culture",
+            "catLabel": "🎨 Πολιτισμός",
+            "desc": "Το παλαιότερο boardwalk ΗΠΑ μήκους 9 χλμ. με καζίνο, εστιατόρια και ατλαντικές θέες.",
+            "wiki": "Atlantic_City_Boardwalk"
+          },
+          {
+            "title": "Steel Pier",
+            "cat": "culture",
+            "catLabel": "🎨 Πολιτισμός",
+            "desc": "Ιστορικό πάρκο διασκέδασης από το 1898 στο boardwalk με ferris wheel και ζωντανές παραστάσεις.",
+            "wiki": "Steel_Pier_(Atlantic_City)"
+          },
+          {
+            "title": "Borgata Hotel Casino & Spa",
+            "cat": "culture",
+            "catLabel": "🎨 Πολιτισμός",
+            "desc": "Το μεγαλύτερο καζίνο της ανατολικής ακτής με 2.800 δωμάτια, εστιατόρια και νυχτερινή ζωή.",
+            "wiki": "Borgata"
+          },
+          {
+            "title": "Absecon Lighthouse",
+            "cat": "history",
+            "catLabel": "🏛️ Ιστορία",
+            "desc": "Ο ψηλότερος φάρος του Νιου Τζέρσεϊ (53 μ.) του 1857 με 228 σκαλιά και θέα στον ωκεανό.",
+            "wiki": "Absecon_Light"
+          },
+          {
+            "title": "Tanger Outlets The Walk",
+            "cat": "culture",
+            "catLabel": "🎨 Πολιτισμός",
+            "desc": "Μεγάλη αγορά outlets στο κέντρο της πόλης με 100+ καταστήματα και εστιατόρια.",
+            "wiki": "Tanger_Outlets_The_Walk"
+          }
+        ]
+      },
+      "gastro": {
+        "summary": "Θαλασσινά του Ατλαντικού, salt water taffy και διεθνείς κουζίνες από τα καζίνο-εστιατόρια.",
+        "items": [
+          {
+            "title": "Salt Water Taffy",
+            "desc": "Το διάσημο soft taffy σε γεύσεις μέντας, φράουλας και μπανάνας, που δημιουργήθηκε στο Atlantic City το 1883.",
+            "tag": "Γλυκό"
+          },
+          {
+            "title": "Atlantic Clams & Oysters",
+            "desc": "Φρέσκα clams casino και oysters Rockefeller από τα εστιατόρια του boardwalk, κλασικά από το 1911.",
+            "tag": "Θαλασσινά"
+          },
+          {
+            "title": "Italian Cuisine του White House Subs",
+            "desc": "Ιστορικό subs shop από το 1946 στο κέντρο της πόλης με τεράστια σάντουιτς cheesteak και Italian.",
+            "tag": "Τοπικό"
+          },
+          {
+            "title": "Καζίνο Fine Dining",
+            "desc": "Εστιατόρια Michelin-star στα καζίνο Borgata και Hard Rock με signature dishes από διάσημους σεφ.",
+            "tag": "Fine dining"
+          }
+        ]
+      },
+      "eco": {
+        "summary": "Η πόλη επενδύει στην ανθεκτικότητα των ακτών, στη διατήρηση του boardwalk και στην πράσινη ενέργεια στα καζίνο.",
+        "items": [
+          {
+            "title": "Atlantic City Beaches & Dunes",
+            "desc": "Πρόγραμμα αναζωογόνησης αμμωδών ακτών και αμμολόφων για προστασία από τις καταιγίδες.",
+            "cat": "nature",
+            "catLabel": "🌊 Ακτή",
+            "wiki": "Atlantic_City,_New_Jersey"
+          },
+          {
+            "title": "Absecon Inlet Marsh",
+            "desc": "Προστατευόμενος υγρότοπος στο βόρειο άκρο του νησιού με βιότοπους πουλιών.",
+            "cat": "nature",
+            "catLabel": "🌿 Φύση",
+            "wiki": "Absecon_Inlet"
+          },
+          {
+            "title": "Wind Turbines & Green Casinos",
+            "desc": "Μεγάλος αιολικός σταθμός 25 MW στη νήσο και προγράμματα βιώσιμης λειτουργίας στα καζίνο.",
+            "cat": "business",
+            "catLabel": "⚡ Ενέργεια",
+            "wiki": "Wind_power_in_New_Jersey"
+          }
+        ]
+      },
+      "pastVsPresent": [
+        {
+          "epoch": "Atlantic City 1926: Παραλιακό Θέρετρο & Boardwalk",
+          "content": "Περίπου 65.000 κάτοικοι το καλοκαίρι και 12.000 τον χειμώνα, το boardwalk είναι το μεγαλύτερο της Αμερικής, το Steel Pier φιλοξενεί παραστάσεις και η πόλη προσελκύει εκατομμύρια τουρίστες."
+        },
+        {
+          "epoch": "Atlantic City 2026: Καζίνο & Τουρισμός",
+          "content": "38.000 κάτοικοι, μετά την παρακμή του 20ού αιώνα τα καζίνο ξαναζωντάνεψαν την πόλη, με 27 εκατομμύρια επισκέπτες ετησίως και νέο Hard Rock στο ιστορικό Trump Taj Mahal."
+        }
+      ],
+      "pois": [
+        {
+          "name": "Atlantic City Boardwalk",
+          "category": "culture",
+          "coords": [
+            39.3558,
+            -74.4233
+          ],
+          "desc": "Το παλαιότερο boardwalk ΗΠΑ μήκους 9 χλμ.",
+          "wiki": "Atlantic_City_Boardwalk"
+        },
+        {
+          "name": "Steel Pier",
+          "category": "culture",
+          "coords": [
+            39.3583,
+            -74.4183
+          ],
+          "desc": "Ιστορικό πάρκο διασκέδασης.",
+          "wiki": "Steel_Pier_(Atlantic_City)"
+        },
+        {
+          "name": "Absecon Lighthouse",
+          "category": "history",
+          "coords": [
+            39.37,
+            -74.415
+          ],
+          "desc": "Φάρος του 1857 με 228 σκαλιά.",
+          "wiki": "Absecon_Light"
+        },
+        {
+          "name": "Borgata Casino",
+          "category": "culture",
+          "coords": [
+            39.3733,
+            -74.4333
+          ],
+          "desc": "Το μεγαλύτερο καζίνο ανατολικής ακτής.",
+          "wiki": "Borgata"
+        },
+        {
+          "name": "Tanger Outlets The Walk",
+          "category": "culture",
+          "coords": [
+            39.3617,
+            -74.4333
+          ],
+          "desc": "Αγορά outlets στο κέντρο.",
+          "wiki": "Tanger_Outlets_The_Walk"
+        }
+      ]
+    },
+    {
+      "id": "princeton",
+      "name": "Πρίνστον",
+      "englishName": "Princeton",
+      "nickname": "The University Town / Η Πανεπιστημιακή Πόλη",
+      "type": "city",
+      "coords": [
+        40.3573,
+        -74.6672
+      ],
+      "zoom": 13.0,
+      "stats": {
+        "population": "30.000",
+        "founded": "1680 · 1813 (borough)",
+        "area": "4,7 km²",
+        "elevation": "30 μ."
+      },
+      "quote": "«Στον ποταμό Stony, η πόλη του κορυφαίου Ivy League πανεπιστημίου και της Μάχης του Princeton.»",
+      "geo": {
+        "summary": "Χτισμένη στην κοιλάδα Stony Brook ανάμεσα σε δασώδεις λόφους και κοιλάδες. Η πόλη ορίζεται από το campus του Princeton University με γοτθικά κτίρια και τον ποταμό Stony που διασχίζει την περιοχή.",
+        "highlights": [
+          {
+            "title": "Ποταμός Stony & Carnegie Lake",
+            "desc": "Ο ποταμός και η τεχνητή λίμνη Carnegie φιλοξενούν κωπηλασία University και μονοπάτια."
+          },
+          {
+            "title": "Λόφοι & Πάρκα",
+            "desc": "Οι δασώδεις λόφοι και το Institute Woods προσφέρουν μονοπάτια και αλσύλλια."
+          },
+          {
+            "title": "Πανεπιστημιακό Campus",
+            "desc": "Το campus του Princeton University με γοτθικά κτίρια, quadrangle και βοτανικούς κήπους."
+          }
+        ]
+      },
+      "hist": {
+        "summary": "Ιδρύθηκε το 1680 από Quakers και αναπτύχθηκε σε πανεπιστημιακή πόλη χάρη στην ίδρυση του College of New Jersey (αργότερα Princeton University) το 1746. Η πόλη φιλοξένησε τη Μάχη του Princeton το 1777 και ήταν προσωρινή πρωτεύουσα των ΗΠΑ το ίδιο έτος.",
+        "highlights": [
+          {
+            "year": "1746",
+            "event": "Ίδρυση του College of New Jersey",
+            "desc": "Ιδρύεται το College of New Jersey (αργότερα Princeton University), το τέταρτο παλαιότερο πανεπιστήμιο ΗΠΑ."
+          },
+          {
+            "year": "1777",
+            "event": "Μάχη του Princeton",
+            "desc": "Ο Ουάσινγκτον νικά τους Βρετανούς στη Μάχη του Princeton, η οποία αποδεικνύεται σημείο καμπής της Επανάστασης."
+          },
+          {
+            "year": "1930",
+            "event": "Ίδρυση του Institute for Advanced Study",
+            "desc": "Ιδρύεται το Institute for Advanced Study που θα φιλοξενήσει τον Albert Einstein από το 1933 μέχρι τον θάνατό του το 1955."
+          }
+        ]
+      },
+      "demo": {
+        "summary": "Περίπου 30.000 κάτοικοι, η πόλη έχει ένα από τα υψηλότερα μορφωτικά και εισοδηματικά επίπεδα στις ΗΠΑ. Μεγάλη διεθνής κοινότητα λόγω του Princeton University και του Institute for Advanced Study.",
+        "details": [
+          {
+            "label": "Πανεπιστημιακή Κοινότητα",
+            "text": "Περισσότεροι από 8.000 φοιτητές και 1.500 καθηγητές στο Princeton University και το Institute for Advanced Study δίνουν στην πόλη ακαδημαϊκό χαρακτήρα."
+          },
+          {
+            "label": "Διεθνής Διάσταση",
+            "text": "Μεγάλες κοινότητες από την Κίνα, την Ινδία, τη Γαλλία και τη Γερμανία λόγω των διεθνών προγραμμάτων του πανεπιστημίου."
+          },
+          {
+            "label": "Οικονομία & Έρευνα",
+            "text": "Princeton University, Bristol-Myers Squibb, Siemens και το Institute for Advanced Study είναι οι κύριοι εργοδότες."
+          }
+        ]
+      },
+      "cult": {
+        "summary": "Πόλη Ivy League και Ιστορίας, με μουσείο τέχνης παγκόσμιας κλάσης, Nassau Hall και το σπίτι του Albert Einstein.",
+        "items": [
+          {
+            "title": "Princeton University Art Museum",
+            "desc": "Ένα από τα κορυφαία πανεπιστημιακά μουσεία ΗΠΑ με 100.000+ έργα από αρχαιότητα μέχρι σύγχρονη τέχνη."
+          },
+          {
+            "title": "Nassau Hall",
+            "desc": "Το ιστορικό κτίριο του 1756 που φιλοξένησε την ηπειρωτική συνέλευση το 1783 και στέγασε την πρώτη συνταγματική κυβέρνηση."
+          },
+          {
+            "title": "Albert Einstein House",
+            "desc": "Το σπίτι στο 112 Mercer Street όπου έζησε ο Albert Einstein από το 1935 μέχρι τον θάνατό του το 1955."
+          }
+        ]
+      },
+      "guide": {
+        "summary": "Το Princeton σε πέντε στάσεις: Nassau Hall, μουσείο τέχνης, Princeton Battlefield, Cotsen Children's Library και Lake Carnegie.",
+        "items": [
+          {
+            "title": "Nassau Hall",
+            "cat": "history",
+            "catLabel": "🏛️ Ιστορία",
+            "desc": "Ιστορικό κτίριο του 1756, έδρα της ηπειρωτικής κυβέρνησης το 1783, με την αίθουσα Faculty Room.",
+            "wiki": "Nassau_Hall"
+          },
+          {
+            "title": "Princeton University Art Museum",
+            "cat": "museum",
+            "catLabel": "🖼️ Μουσείο",
+            "desc": "Πανεπιστημιακό μουσείο με 100.000+ έργα τέχνης από την αρχαιότητα μέχρι τη σύγχρονη εποχή.",
+            "wiki": "Princeton_University_Art_Museum"
+          },
+          {
+            "title": "Princeton Battlefield State Park",
+            "cat": "history",
+            "catLabel": "🏛️ Ιστορία",
+            "desc": "Πεδίο της Μάχης του Princeton του 1777 με το Clark House και μονοπάτι ιστορίας.",
+            "wiki": "Princeton_Battlefield"
+          },
+          {
+            "title": "Princeton University Chapel",
+            "cat": "monument",
+            "catLabel": "🏛️ Μνημείο",
+            "desc": "Η μεγαλύτερη πανεπιστημιακή εκκλησία στον κόσμο σε γοτθικό στιλ, με 2.000 θέσεις.",
+            "wiki": "Princeton_University_Chapel"
+          },
+          {
+            "title": "Lake Carnegie & Rowing",
+            "cat": "nature",
+            "catLabel": "🌿 Φύση",
+            "desc": "Τεχνητή λίμνη 5 χλμ. που δωρίθηκε από τον Andrew Carnegie για Princeton rowing.",
+            "wiki": "Lake_Carnegie"
+          }
+        ]
+      },
+      "gastro": {
+        "summary": "Fine dining από διάσημους σεφ, Ivy League coffee houses και αγροτικά προϊόντα New Jersey.",
+        "items": [
+          {
+            "title": "Hoagie Sandwich",
+            "desc": "Μεγάλο σάντουιτς Italian hoagie με προσούτο, capicola και provolone από ιστορικά delicatessen.",
+            "tag": "Street food"
+          },
+          {
+            "title": "Princeton Coffee & Bagels",
+            "desc": "Ιστορικά coffee houses όπως ο Small World Coffee και ο Hoagie Haven στο Nassau Street.",
+            "tag": "Καφέ"
+          },
+          {
+            "title": "New Jersey Tomatoes & Sweet Corn",
+            "desc": "Φρέσκα τομάτες και καλαμπόκι από αγροκτήματα του Jersey που σερβίρονται σε farm-to-table.",
+            "tag": "Τοπικό"
+          },
+          {
+            "title": "Witherspoon Grill",
+            "desc": "Fine dining steakhouse με τοπικά κρέατα και ψάρια, στην καρδιά του campus.",
+            "tag": "Fine dining"
+          }
+        ]
+      },
+      "eco": {
+        "summary": "Η πόλη επενδύει στη διατήρηση των δασών Carnegie Lake, στα μονοπάτια και στη βιώσιμη λειτουργία του πανεπιστημίου.",
+        "items": [
+          {
+            "title": "Lake Carnegie & Woods",
+            "desc": "Προστατευόμενη τεχνητή λίμνη και δάση γύρω από αυτή, με βιότοπους πουλιών και ψαριών.",
+            "cat": "nature",
+            "catLabel": "🌿 Φύση",
+            "wiki": "Lake_Carnegie"
+          },
+          {
+            "title": "Institute Woods & Stony Brook",
+            "desc": "Δάσος 240 εκταρίων νότια της πόλης με μονοπάτια και υγροτόπους όπου περπατούσε ο Einstein.",
+            "cat": "nature",
+            "catLabel": "🌳 Πάρκα",
+            "wiki": "Institute_for_Advanced_Study"
+          },
+          {
+            "title": "Princeton Sustainability Plan",
+            "desc": "Πρόγραμμα εξηλεκτρισμού του campus, ηλιακών εγκαταστάσεων και μείωσης εκπομπών του Princeton University.",
+            "cat": "business",
+            "catLabel": "⚡ Ενέργεια",
+            "wiki": "Princeton_University"
+          }
+        ]
+      },
+      "pastVsPresent": [
+        {
+          "epoch": "Princeton 1926: Ivy League Πόλη",
+          "content": "Περίπου 9.000 κάτοικοι, το Princeton University είναι ήδη ένα από τα κορυφαία Ivy League, ο Albert Einstein θα φτάσει το 1933 και η πόλη ζει από την εκπαίδευση."
+        },
+        {
+          "epoch": "Princeton 2026: World Research Hub",
+          "content": "30.000 κάτοικοι, το Princeton University είναι σταθερά στην κορυφή παγκόσμιων rankings, το Institute for Advanced Study συνεχίζει την παράδοση του Einstein και η πόλη είναι από τις πιο εύπορες των ΗΠΑ."
+        }
+      ],
+      "pois": [
+        {
+          "name": "Nassau Hall",
+          "category": "history",
+          "coords": [
+            40.3487,
+            -74.6594
+          ],
+          "desc": "Ιστορικό κτίριο του 1756.",
+          "wiki": "Nassau_Hall"
+        },
+        {
+          "name": "Princeton University Art Museum",
+          "category": "culture",
+          "coords": [
+            40.3483,
+            -74.6594
+          ],
+          "desc": "Πανεπιστημιακό μουσείο 100.000+ έργων.",
+          "wiki": "Princeton_University_Art_Museum"
+        },
+        {
+          "name": "Princeton Battlefield",
+          "category": "history",
+          "coords": [
+            40.3408,
+            -74.6775
+          ],
+          "desc": "Πεδίο μάχης του 1777.",
+          "wiki": "Princeton_Battlefield"
+        },
+        {
+          "name": "Princeton University Chapel",
+          "category": "history",
+          "coords": [
+            40.3483,
+            -74.6617
+          ],
+          "desc": "Μεγάλη γοτθική εκκλησία.",
+          "wiki": "Princeton_University_Chapel"
+        },
+        {
+          "name": "Lake Carnegie",
+          "category": "nature",
+          "coords": [
+            40.3475,
+            -74.6472
+          ],
+          "desc": "Τεχνητή λίμνη 5 χλμ.",
+          "wiki": "Lake_Carnegie"
+        }
+      ]
+    },
+    {
+      "id": "hoboken",
+      "name": "Χομπόκεν",
+      "englishName": "Hoboken",
+      "nickname": "The Mile Square City / Η Πόλη του Τετραγωνικού Μιλίου",
+      "type": "city",
+      "coords": [
+        40.744,
+        -74.0324
+      ],
+      "zoom": 13.2,
+      "stats": {
+        "population": "57.000",
+        "founded": "1849 (πόλη)",
+        "area": "3,4 km²",
+        "elevation": "0–18 μ."
+      },
+      "quote": "«Στην ακτή του Hudson, η γενέτειρα του Φρανκ Σινάτρα και του μπέιζμπολ, με το καλύτερο skyline θέα του Μανχάταν.»",
+      "geo": {
+        "summary": "Χτισμένη στην ανατολική όχθη του ποταμού Hudson, απέναντι από το Μανχάταν, με έκταση μόλις 3,4 km². Η πόλη έχει την υψηλότερη πυκνότητα πληθυσμού στη χώρα και ορίζεται από την προκυμαία Hudson και τον σταθμό Hoboken Terminal.",
+        "highlights": [
+          {
+            "title": "Ποταμός Hudson & Προκυμαία",
+            "desc": "Η προκυμαία 5 χλμ. με πανοραμική θέα στο skyline του Μανχάταν και το λιμάνι."
+          },
+          {
+            "title": "Hoboken Terminal",
+            "desc": "Ιστορικός σιδηροδρομικός σταθμός του 1907 που συνδέει την πόλη με PATH, NJ Transit, ferry και buses."
+          },
+          {
+            "title": "Castle Point & Stevens Campus",
+            "desc": "Ο λόφος Castle Point πάνω από την προκυμαία, με το Stevens Institute of Technology και θέα στο Μανχάταν."
+          }
+        ]
+      },
+      "hist": {
+        "summary": "Ιδρύθηκε ως πόλη το 1849 και φιλοξένησε τον πρώτο αγώνα μπέιζμπολ το 1846 στο Elysian Fields. Είναι η γενέτειρα του Frank Sinatra (1915), του Stevens Institute of Technology και του Hoboken Terminal, του σημαντικότερου commuter station.",
+        "highlights": [
+          {
+            "year": "1846",
+            "event": "Πρώτος Αγώνας Μπέιζμπολ",
+            "desc": "Στο Elysian Fields του Hoboken διεξάγεται ο πρώτος καταγεγραμμένος αγώνας μπέιζμπολ με κανόνες Knickerbocker."
+          },
+          {
+            "year": "1849",
+            "event": "Χάρτη Πόλης",
+            "desc": "Το Hoboken ενσωματώνεται ως πόλη και αναπτύσσεται σε commuter προάστιο της Νέας Υόρκης."
+          },
+          {
+            "year": "1915",
+            "event": "Γέννηση του Frank Sinatra",
+            "desc": "Ο Frank Sinatra γεννιέται στο 415 Monroe Street του Hoboken και θα γίνει ένα από τα μεγαλύτερα σύμβολα της αμερικανικής μουσικής."
+          }
+        ]
+      },
+      "demo": {
+        "summary": "Περίπου 57.000 κάτοικοι, η πιο πυκνοκατοικημένη πόλη των ΗΠΑ με πάνω από 17.000 κατοίκους ανά τετραγωνικό χιλιόμετρο. Η πόλη έχει υψηλό μορφωτικό και εισοδηματικό επίπεδο, με κυρίως λευκό, νεανικό πληθυσμό νέων επαγγελματιών.",
+        "details": [
+          {
+            "label": "Πυκνότητα & Νεολαία",
+            "text": "Περίπου 70% λευκοί με μέση ηλικία 32 ετών, η πόλη προσελκύει χιλιάδες νέους επαγγελματίες που εργάζονται στο Μανχάταν."
+          },
+          {
+            "label": "Στέγαση & Ενοίκια",
+            "text": "Τα ενοίκια είναι από τα υψηλότερα στο Νιου Τζέρσεϊ, με νέες κατοικίες κατά μήκος της προκυμαίας Hudson."
+          },
+          {
+            "label": "Εκπαίδευση & Οικονομία",
+            "text": "Stevens Institute of Technology, John Wiley & Sons και ο τουρισμός είναι οι κύριοι εργοδότες, με L'Oreal USA και Marvel Entertainment."
+          }
+        ]
+      },
+      "cult": {
+        "summary": "Πόλη μουσικής και γαστρονομίας, με το μουσείο Frank Sinatra, τα Carlo's Bake Shop (Cake Boss) και τη ζωντανή nightlife σκηνή.",
+        "items": [
+          {
+            "title": "Frank Sinatra & Ιταλική Κληρονομιά",
+            "desc": "Η γενέτειρα του Frank Sinatra, με ιταλικές γειτονιές, εστιατόρια και μνημεία στην οδό Garden Street."
+          },
+          {
+            "title": "Hoboken Historical Museum",
+            "desc": "Μουσείο για την ιστορία της πόλης: Sinatra, μπέιζμπολ, Stevens Tech και immigration."
+          },
+          {
+            "title": "Carlo's Bake Shop (Cake Boss)",
+            "desc": "Το διάσημο ζαχαροπλαστείο από την τηλεοπτική σειρά Cake Boss, με ουρές κάθε μέρα στην οδό Washington."
+          }
+        ]
+      },
+      "guide": {
+        "summary": "Το Hoboken σε πέντε στάσεις: προκυμαία Hudson, σταθμός Hoboken Terminal, Stevens Institute, Carlo's Bake Shop και Pier A Park.",
+        "items": [
+          {
+            "title": "Hudson River Waterfront Walkway",
+            "cat": "nature",
+            "catLabel": "🌿 Φύση",
+            "desc": "Προκυμαία 5 χλμ. με θέα στο Μανχάταν, που συνδέει Pier A Park, Sinatra Park και 14th Street Park.",
+            "wiki": "Hudson_River_Waterfront_Walkway"
+          },
+          {
+            "title": "Hoboken Terminal",
+            "cat": "history",
+            "catLabel": "🏛️ Ιστορία",
+            "desc": "Ιστορικός σταθμός του 1907 με PATH, NJ Transit και ferry, με ζωηρό εμπόριο και πολλούς commuters.",
+            "wiki": "Hoboken_Terminal"
+          },
+          {
+            "title": "Stevens Institute of Technology",
+            "cat": "culture",
+            "catLabel": "🎨 Πολιτισμός",
+            "desc": "Ιστορικό πανεπιστήμιο του 1870 στον λόφο Castle Point με θέα στο Μανχάταν.",
+            "wiki": "Stevens_Institute_of_Technology"
+          },
+          {
+            "title": "Carlo's Bake Shop",
+            "cat": "culture",
+            "catLabel": "🎨 Πολιτισμός",
+            "desc": "Το διάσημο ζαχαροπλαστείο του Cake Boss στην οδό Washington Street.",
+            "wiki": "Carlo's_Bake_Shop"
+          },
+          {
+            "title": "Pier A Park & Sinatra Park",
+            "cat": "nature",
+            "catLabel": "🌿 Φύση",
+            "desc": "Δημόσια πάρκα στην προκυμαία με χώρους πικνίκ, θέα στο Μανχάταν και συναυλίες.",
+            "wiki": "Pier_A_Park"
+          }
+        ]
+      },
+      "gastro": {
+        "summary": "Ιταλοαμερικανική παράδοση, εμβληματικά bagels και πολλά fine dining restaurants.",
+        "items": [
+          {
+            "title": "Carlo's Bakery Cannoli",
+            "desc": "Σπιτικά cannoli με ricotta και chocolate chips από το διάσημο ζαχαροπλαστείο Cake Boss.",
+            "tag": "Γλυκό"
+          },
+          {
+            "title": "Hoboken Bagels",
+            "desc": "Hand-rolled bagels στα ιστορικά bagel shops της Washington Street, από τις 5 το πρωί.",
+            "tag": "Πρωινό"
+          },
+          {
+            "title": "Italian-American Subs",
+            "desc": "Ιταλικά delicatessen με σάντουιτς prosciutto, sopressata και fresh mozzarella.",
+            "tag": "Ιταλικό"
+          },
+          {
+            "title": "Marty's Burgers & Crumbs",
+            "desc": "Gourmet burgers από ταυτότητες όπως το Marty's, στα υπαίθρια cafes της προκυμαίας.",
+            "tag": "Street food"
+          }
+        ]
+      },
+      "eco": {
+        "summary": "Η πόλη επενδύει στην ανθεκτικότητα της ακτής του Hudson, στις πράσινες στέγες και στη βιώσιμη κινητικότητα.",
+        "items": [
+          {
+            "title": "Hudson River Waterfront Walkway",
+            "desc": "Διαδρομή 5 χλμ. με ποδηλατόδρομο και μονοπάτια που προσφέρουν πρόσβαση στο Hudson.",
+            "cat": "business",
+            "catLabel": "🚲 Κινητικότητα",
+            "wiki": "Hudson_River_Waterfront_Walkway"
+          },
+          {
+            "title": "Resist & Hurricane Sandy Recovery",
+            "desc": "Πρόγραμμα ανθεκτικότητας της ακτής του Hudson έναντι των πλημμυρών μετά τον Sandy του 2012.",
+            "cat": "business",
+            "catLabel": "🌊 Ανθεκτικότητα",
+            "wiki": "Hurricane_Sandy"
+          },
+          {
+            "title": "Green Streets & Bike Lanes",
+            "desc": "Δίκτυο ποδηλατόδρομων και green infrastructure για τη μείωση των όμβριων υδάτων.",
+            "cat": "business",
+            "catLabel": "🌱 Βιωσιμότητα",
+            "wiki": "Hoboken,_New_Jersey"
+          }
+        ]
+      },
+      "pastVsPresent": [
+        {
+          "epoch": "Hoboken 1926: Immigration & Shipping",
+          "content": "Περίπου 60.000 κάτοικοι, η πόλη είναι σημαντικό λιμάνι με ναυπηγεία, μετανάστες από την Ιταλία και την Ιρλανδία, και το σταθμό Hoboken Terminal με χιλιάδες commuters."
+        },
+        {
+          "epoch": "Hoboken 2026: Yuppies & Waterfront",
+          "content": "57.000 κάτοικοι, η πιο πυκνοκατοικημένη πόλη ΗΠΑ, με νέες κατοικίες στην προκυμαία, Stevens Institute και ζωντανή nightlife, γνωστή ως «Mile Square City»."
+        }
+      ],
+      "pois": [
+        {
+          "name": "Hudson River Waterfront Walkway",
+          "category": "nature",
+          "coords": [
+            40.744,
+            -74.0283
+          ],
+          "desc": "Προκυμαία 5 χλμ. με θέα στο Μανχάταν.",
+          "wiki": "Hudson_River_Waterfront_Walkway"
+        },
+        {
+          "name": "Hoboken Terminal",
+          "category": "history",
+          "coords": [
+            40.7372,
+            -74.0303
+          ],
+          "desc": "Ιστορικός σταθμός του 1907.",
+          "wiki": "Hoboken_Terminal"
+        },
+        {
+          "name": "Stevens Institute",
+          "category": "culture",
+          "coords": [
+            40.7453,
+            -74.0244
+          ],
+          "desc": "Ιστορικό πανεπιστήμιο στον λόφο Castle Point.",
+          "wiki": "Stevens_Institute_of_Technology"
+        },
+        {
+          "name": "Carlo's Bake Shop",
+          "category": "culture",
+          "coords": [
+            40.7372,
+            -74.0297
+          ],
+          "desc": "Το διάσημο ζαχαροπλαστείο Cake Boss.",
+          "wiki": "Carlo's_Bake_Shop"
+        },
+        {
+          "name": "Pier A Park",
+          "category": "nature",
+          "coords": [
+            40.7336,
+            -74.0306
+          ],
+          "desc": "Πάρκο στην προκυμαία με θέα Manhattan.",
+          "wiki": "Pier_A_Park"
+        }
+      ]
+    },
+    {
+      "id": "cape-may",
+      "name": "Κέιπ Μέι",
+      "englishName": "Cape May",
+      "nickname": "The Nation's Oldest Seaside Resort / Το Παλαιότερο Παραλιακό Θέρετρο των ΗΠΑ",
+      "type": "city",
+      "coords": [
+        38.9351,
+        -74.906
+      ],
+      "zoom": 12.8,
+      "stats": {
+        "population": "3.400 (χρόνος) · 40.000+ (καλοκαίρι)",
+        "founded": "1685 · 1848 (borough) · 1869 (city)",
+        "area": "7,5 km²",
+        "elevation": "3 μ."
+      },
+      "quote": "«Στο νοτιότερο άκρο του Νιου Τζέρσεϊ, η πόλη των βικτωριανών αρχοντικών και των αποδημητικών πουλιών.»",
+      "geo": {
+        "summary": "Χτισμένη στο νοτιότερο άκρο του Cape May Peninsula, εκεί που ο Delaware Bay συναντά τον Ατλαντικό. Η πόλη φημίζεται για τις βικτωριανές κατοικίες, τις παραλίες και το Cape May Lighthouse.",
+        "highlights": [
+          {
+            "title": "Παραλίες Ατλαντικού",
+            "desc": "Αμμώδεις παραλίες κατά μήκος του Atlantic με.free access και restored boardwalk."
+          },
+          {
+            "title": "Delaware Bay & Cape May Point",
+            "desc": "Ο κόλπος Delaware με ησυχαστικές παραλίες και Cape May Point State Park, παρατηρητήριο αποδημητικών πουλιών."
+          },
+          {
+            "title": "Cape May Lighthouse & Wetlands",
+            "desc": "Ο φάρος του 1859 στο Cape May Point και οι γύρω υγρότοποι με βιότοπους πουλιών."
+          }
+        ]
+      },
+      "hist": {
+        "summary": "Ιδρύθηκε το 1685 από Ολλανδούς και Σουηδούς και αναπτύχθηκε στο παλαιότερο παραλιακό θέρετρο των ΗΠΑ από τις αρχές του 19ου αιώνα. Μεγάλη πυρκαγιά το 1878 κατέστρεψε 30 ακρώρια, αλλά τα rebuilt βικτωριανά αρχοντικά έκαναν την πόλη εθνικό ιστορικό μνημείο.",
+        "highlights": [
+          {
+            "year": "1685",
+            "event": "Ίδρυση του Cape Island",
+            "desc": "Ολλανδοί και Σουηδοί έποικοι ιδρύουν το Cape Island στο νοτιότερο άκρο του Νιου Τζέρσεϊ."
+          },
+          {
+            "year": "1878",
+            "event": "Μεγάλη Πυρκαγιά & Rebuilding",
+            "desc": "Πυρκαγιά καταστρέφει 30 ακρώρια του Cape Island, αλλά η rebuilding σε βικτωριανό στιλ δημιουργεί τη σημερινή εικόνα."
+          },
+          {
+            "year": "1976",
+            "event": "Αναγνώριση ως Εθνικό Ιστορικό Μνημείο",
+            "desc": "Το Cape May αναγνωρίζεται ως εθνικό ιστορικό μνημείο με σχεδόν 600 preserved βικτωριανά κτίρια."
+          }
+        ]
+      },
+      "demo": {
+        "summary": "Περίπου 3.400 κάτοικοι τον χειμώνα και πάνω από 40.000 το καλοκαίρι. Η πόλη είναι ένα από τα πιο δημοφιλή τουριστικά θέρετρα του Jersey Shore και συνδυάζει αποικιακή, βικτωριανή και ναυτική κληρονομιά.",
+        "details": [
+          {
+            "label": "Τουρισμός & Εποχικότητα",
+            "text": "Η πόλη προσελκύει πάνω από 1 εκατομμύριο επισκέπτες ετησίως, με πληθυσμό που decuples το καλοκαίρι."
+          },
+          {
+            "label": "Βικτωριανή Αρχιτεκτονική",
+            "text": "Σχεδόν 600 preserved βικτωριανά κτίρια, περισσότερα από κάθε άλλη πόλη ΗΠΑ, πολλά λειτουργούν ως bed & breakfast."
+          },
+          {
+            "label": "Birdwatching & Φύση",
+            "text": "Η πόλη είναι ένας από τους κορυφαίους προορισμούς birdwatching στη Βόρεια Αμερική, με αποδημητικά πουλιά κάθε άνοιξη και φθινόπωρο."
+          }
+        ]
+      },
+      "cult": {
+        "summary": "Πόλη βικτωριανής αρχιτεκτονικής και παραλιακού τουρισμού, με μουσείο, bed & breakfast και θεατρικό φεστιβάλ.",
+        "items": [
+          {
+            "title": "Βικτωριανά Αρχοντικά",
+            "desc": "Σχεδόν 600 preserved βικτωριανά κτίρια με gingerbread trim, turrets και verandas, πολλά λειτουργούν ως B&B."
+          },
+          {
+            "title": "Cape May Lighthouse",
+            "desc": "Φάρος του 1859 στο Cape May Point State Park με 199 σκαλιά και θέα στον Ατλαντικό και τον Delaware Bay."
+          },
+          {
+            "title": "Cape May Stage & East Lynne Theater",
+            "desc": "Επαγγελματικό θέατρο Equity με παραστάσεις στο ύπαιθρο και ιστορικά κτίρια της πόλης."
+          }
+        ]
+      },
+      "guide": {
+        "summary": "Το Cape May σε πέντε στάσεις: φάρος, Cape May Point State Park, Washington Street Mall, исторически B&B και Sunset Beach.",
+        "items": [
+          {
+            "title": "Cape May Lighthouse",
+            "cat": "history",
+            "catLabel": "🏛️ Ιστορία",
+            "desc": "Φάρος του 1859 στο Cape May Point State Park με 199 σκαλιά και θέα.",
+            "wiki": "Cape_May_Light"
+          },
+          {
+            "title": "Cape May Point State Park",
+            "cat": "nature",
+            "catLabel": "🌿 Φύση",
+            "desc": "Πάρκο με υγροτόπους, παραλίες και μονοπάτια birdwatching στο νοτιότερο άκρο.",
+            "wiki": "Cape_May_Point_State_Park"
+          },
+          {
+            "title": "Washington Street Mall",
+            "cat": "culture",
+            "catLabel": "🎨 Πολιτισμός",
+            "desc": "Πεζόδρομος του κέντρου με boutiques, εστιατόρια και ιστορικά κτίρια.",
+            "wiki": "Washington_Street_Mall"
+          },
+          {
+            "title": "Emlen Physick Estate",
+            "cat": "museum",
+            "catLabel": "🖼️ Μουσείο",
+            "desc": "Βικτωριανό αρχοντικό του 1879 σε στιλ Stick, σήμερα μουσείο με ξεναγήσεις.",
+            "wiki": "Emlen_Physick_Estate"
+          },
+          {
+            "title": "Sunset Beach & Cape May Diamond",
+            "cat": "nature",
+            "catLabel": "🌊 Ακτή",
+            "desc": "Παραλία και αγορά για «Cape May Diamonds», καθαρά κρύσταλλα πουλιών πουλιών από τον Delaware Bay.",
+            "wiki": "Sunset_Beach,_New_Jersey"
+          }
+        ]
+      },
+      "gastro": {
+        "summary": "Θαλασσινά Delaware Bay, salt water taffy και fine dining σε ιστορικά εστιατόρια.",
+        "items": [
+          {
+            "title": "Cape May Salt Water Taffy",
+            "desc": "Το διάσημο soft taffy που παράγεται εδώ από το 1880, με γεύσεις μέντας, φράουλας και καραμέλας.",
+            "tag": "Γλυκό"
+          },
+          {
+            "title": "Delaware Bay Oysters",
+            "desc": "Φρέσκα oysters από τον Delaware Bay, που θεωρούνται από τα καλύτερα ανατολικής ακτής.",
+            "tag": "Θαλασσινά"
+          },
+          {
+            "title": "Cape May Lobster & Clams",
+            "desc": "Φρέσκα lobsters και clams στα εστιατόρια της παραλίας και του κέντρου.",
+            "tag": "Θαλασσινά"
+          },
+          {
+            "title": "Victorian Tea & High Tea",
+            "desc": "Afternoon tea και scones στα βικτωριανά bed & breakfast, με ασημένια service και chinaware.",
+            "tag": "Fine dining"
+          }
+        ]
+      },
+      "eco": {
+        "summary": "Η πόλη προστατεύει τους υγροτόπους Cape May Point και φημίζεται ως διεθνές κέντρο birdwatching.",
+        "items": [
+          {
+            "title": "Cape May Point State Park & Wetlands",
+            "desc": "Πάρκο 96 εκταρίων με υγροτόπους, παραλίες και μονοπάτια birdwatching.",
+            "cat": "nature",
+            "catLabel": "🌿 Φύση",
+            "wiki": "Cape_May_Point_State_Park"
+          },
+          {
+            "title": "Cape May Bird Observatory",
+            "desc": "Διεθνές κέντρο birdwatching για αποδημητικά πουλιά, με εκπαιδευτικά προγράμματα.",
+            "cat": "nature",
+            "catLabel": "🐦 Βιοποικιλότητα",
+            "wiki": "Cape_May_Bird_Observatory"
+          },
+          {
+            "title": "Beach Nourishment & Dune Protection",
+            "desc": "Πρόγραμμα αναζωογόνησης αμμωδών ακτών και αμμολόφων για προστασία από καταιγίδες και ανύψωση στάθμης θάλασσας.",
+            "cat": "business",
+            "catLabel": "🌊 Ανθεκτικότητα",
+            "wiki": "Cape_May,_New_Jersey"
+          }
+        ]
+      },
+      "pastVsPresent": [
+        {
+          "epoch": "Cape May 1926: Παραλιακό Θέρετρο των Πλουσίων",
+          "content": "Περίπου 4.000 κάτοικοι τον χειμώνα και 30.000+ το καλοκαίρι, η πόλη προσελκύει την αριστοκρατία Φιλαδέλφειας και Νέας Υόρκης με βικτωριανά ξενοδοχεία και boardwalk."
+        },
+        {
+          "epoch": "Cape May 2026: Εθνικό Ιστορικό Μνημείο & Birdwatching",
+          "content": "3.400 κάτοικοι, η πόλη είναι εθνικό ιστορικό μνημείο με 600 βικτωριανά κτίρια και ένα από τα κορυφαία διεθνή κέντρα birdwatching, με πάνω από 1 εκατομμύριο επισκέπτες ετησίως."
+        }
+      ],
+      "pois": [
+        {
+          "name": "Cape May Lighthouse",
+          "category": "history",
+          "coords": [
+            38.9323,
+            -74.9606
+          ],
+          "desc": "Φάρος του 1859 με 199 σκαλιά.",
+          "wiki": "Cape_May_Light"
+        },
+        {
+          "name": "Cape May Point State Park",
+          "category": "nature",
+          "coords": [
+            38.9325,
+            -74.9583
+          ],
+          "desc": "Πάρκο με υγροτόπους και birdwatching.",
+          "wiki": "Cape_May_Point_State_Park"
+        },
+        {
+          "name": "Washington Street Mall",
+          "category": "culture",
+          "coords": [
+            38.935,
+            -74.906
+          ],
+          "desc": "Πεζόδρομος του κέντρου.",
+          "wiki": "Washington_Street_Mall"
+        },
+        {
+          "name": "Emlen Physick Estate",
+          "category": "history",
+          "coords": [
+            38.9367,
+            -74.9172
+          ],
+          "desc": "Βικτωριανό αρχοντικό του 1879.",
+          "wiki": "Emlen_Physick_Estate"
+        },
+        {
+          "name": "Sunset Beach",
+          "category": "nature",
+          "coords": [
+            38.9417,
+            -74.9611
+          ],
+          "desc": "Παραλία στο ακρωτήριο.",
+          "wiki": "Sunset_Beach,_New_Jersey"
+        }
+      ]
+    },
+    {
+      "id": "morristown",
+      "name": "Μόρισταουν",
+      "englishName": "Morristown",
+      "nickname": "The Military Capital of the Revolution / Η Στρατιωτική Πρωτεύουσα της Επανάστασης",
+      "type": "city",
+      "coords": [
+        40.7963,
+        -74.4815
+      ],
+      "zoom": 13.0,
+      "stats": {
+        "population": "20.000",
+        "founded": "1715 · 1865 (town)",
+        "area": "7,8 km²",
+        "elevation": "98 μ."
+      },
+      "quote": "«Στην κομητεία Morris, όπου ο Ουάσινγκτον πέρασε δύο χειμώνες και η Επανάσταση έβγαλε τύχη.»",
+      "geo": {
+        "summary": "Χτισμένη στον ποταμό Whippany στην κομητεία Morris, 40 χλμ. δυτικά του Μανχάταν. Η πόλη ορίζεται από τους λόφους Loantaka και Speedwell, με ιστορικό πάρκο Morristown Green στο κέντρο.",
+        "highlights": [
+          {
+            "title": "Ποταμός Whippany",
+            "desc": "Ο ποταμός που διασχίζει την πόλη και ιστορικά τροφοδοτούσε μύλους και εργοστάσια."
+          },
+          {
+            "title": "Λόφοι Loantaka & Bee Mountain",
+            "desc": "Οι λόφοι γύρω από την πόλη προσφέρουν μονοπάτια και αλσύλλια για πεζοπορία."
+          },
+          {
+            "title": "Morristown Green",
+            "desc": "Το ιστορικό κέντρο της πόλης, πάρκο 5 στρεμμάτων που φιλοξένησε δημόσιες συγκεντρώσεις από τον 18ο αιώνα."
+          }
+        ]
+      },
+      "hist": {
+        "summary": "Ιδρύθηκε ως οικισμός το 1715 και οργανώθηκε ως town το 1865. Η πόλη ήταν το στρατηγείο του George Washington σε δύο χειμώνες (1777 και 1779-80) κατά την Αμερικανική Επανάσταση, και φιλοξενεί το Morristown National Historical Park.",
+        "highlights": [
+          {
+            "year": "1777",
+            "event": "Πρώτος Χειμώνας του Ουάσινγκτον",
+            "desc": "Ο Ουάσινγκτον εγκαθιστά το στρατηγείο στο Morristown μετά τη νίκη στο Princeton, για ανάρρωση του στρατού."
+          },
+          {
+            "year": "1779",
+            "event": "Δεύτερος Χειμώνας στο Jockey Hollow",
+            "desc": "Ο Ουάσινγκτον και 10.000 στρατιώτες κατασκηνώνουν στο Jockey Hollow για τον χειρότερο χειμώνα της Επανάστασης."
+          },
+          {
+            "year": "1933",
+            "event": "Ίδρυση του Morristown National Historical Park",
+            "desc": "Ιδρύεται το πρώτο εθνικό ιστορικό πάρκο ΗΠΑ, που προστατεύει το Ford Mansion και το Jockey Hollow."
+          }
+        ]
+      },
+      "demo": {
+        "summary": "Περίπου 20.000 κάτοικοι, η πόλη είναι έδρα της κομητείας Morris. Σημαντική ιταλοαμερικανική και ιρλανδική κληρονομιά, με αυξανόμενη παρουσία ασιατικών και ισπανόφωνων κοινοτήτων.",
+        "details": [
+          {
+            "label": "Κοινότητες & Πληθυσμός",
+            "text": "Περίπου 70% λευκοί και 12% ισπανόφωνοι, με ισχυρή ιταλοαμερικανική και ιρλανδική κληρονομιά."
+          },
+          {
+            "label": "Έδρα Κομητείας & Νοσοκομεία",
+            "text": "Morris County Administration, Morristown Medical Center, Atlantic Health System και College of Saint Elizabeth είναι οι κύριοι εργοδότες."
+          },
+          {
+            "label": "Μεταφορές & Πανεπιστήμιο",
+            "text": "Σταθμός Morristown Line που συνδέει με το Μανχάταν και College of Saint Elizabeth, Drew University και Fairleigh Dickinson."
+          }
+        ]
+      },
+      "cult": {
+        "summary": "Πόλη επαναστατικής ιστορίας και αθηναϊκής ατμόσφαιρας, με μουσείο τέχνης Morris και θέατρο Mayo Performing Arts.",
+        "items": [
+          {
+            "title": "Morristown National Historical Park",
+            "desc": "Το πρώτο εθνικό ιστορικό πάρκο ΗΠΑ, με το Ford Mansion (στρατηγείο Ουάσινγκτον), Jockey Hollow και το μνημείο Fort Nonsense."
+          },
+          {
+            "title": "Morris Museum & Bickford Theatre",
+            "desc": "Μουσείο με συλλογή musical instruments, ιστορικά exhibits και ετήσιο ωδείο Bickford."
+          },
+          {
+            "title": "Mayo Performing Arts Center",
+            "desc": "Ιστορικό θέατρο του 1937, που ανακαινίστηκε σε σύγχρονο performing arts center με 1.300 θέσεις."
+          }
+        ]
+      },
+      "guide": {
+        "summary": "Το Morristown σε πέντε στάσεις: εθνικό πάρκο, Ford Mansion, Jockey Hollow, Morris Museum και The Green.",
+        "items": [
+          {
+            "title": "Morristown National Historical Park",
+            "cat": "history",
+            "catLabel": "🏛️ Ιστορία",
+            "desc": "Το πρώτο εθνικό ιστορικό πάρκο ΗΠΑ, με το Ford Mansion και το Jockey Hollow.",
+            "wiki": "Morristown_National_Historical_Park"
+          },
+          {
+            "title": "Ford Mansion (Washington's Headquarters)",
+            "cat": "history",
+            "catLabel": "🏛️ Ιστορία",
+            "desc": "Γεωργιανό αρχοντικό του 1774 που λειτούργησε ως στρατηγείο του Ουάσινγκτον τον χειμώνα 1779-80.",
+            "wiki": "Ford_Mansion"
+          },
+          {
+            "title": "Jockey Hollow",
+            "cat": "history",
+            "catLabel": "🏛️ Ιστορία",
+            "desc": "Στρατόπεδο 10.000 στρατιωτών του 1779-80 με αναστηλωμένες hut και μονοπάτια.",
+            "wiki": "Jockey_Hollow"
+          },
+          {
+            "title": "Morris Museum",
+            "cat": "museum",
+            "catLabel": "🖼️ Μουσείο",
+            "desc": "Μουσείο με συλλογή μουσικών οργάνων, τέχνης και ιστορίας της κομητείας.",
+            "wiki": "Morris_Museum"
+          },
+          {
+            "title": "Morristown Green",
+            "cat": "culture",
+            "catLabel": "🎨 Πολιτισμός",
+            "desc": "Ιστορικό πάρκο 5 στρεμμάτων στο κέντρο, όπου ο Ουάσινγκτον διάβαζε τη Διακήρυξη της Ανεξαρτησίας.",
+            "wiki": "Morristown_Green"
+          }
+        ]
+      },
+      "gastro": {
+        "summary": "Ιταλοαμερικανικές trattorie, craft beer breweries και farm-to-table restaurants.",
+        "items": [
+          {
+            "title": "Italian-American Pasta",
+            "desc": "Σπιτική pasta, meatballs και cannoli στις οικογενειακές trattorie της Speedwell Avenue.",
+            "tag": "Ιταλικό"
+          },
+          {
+            "title": "New Jersey Tomato Pies",
+            "desc": "Σπιτικές πίτσες tomato pie με σάλτσα ντομάτας πάνω από τυρί, σερβιρισμένες σε τετράγωνα.",
+            "tag": "Τοπικό"
+          },
+          {
+            "title": "Craft Breweries",
+            "desc": "Τοπικές microbreweries όπως οι Morristown Beard Brewing και Man Skirt Brewing με IPAs και stouts.",
+            "tag": "Μπύρα"
+          },
+          {
+            "title": "Farm-to-Table New Jersey",
+            "desc": "Εστιατόρια της οδού South Street με φρέσκα προϊόντα από αγροκτήματα Morris County.",
+            "tag": "Τοπικό"
+          }
+        ]
+      },
+      "eco": {
+        "summary": "Η πόλη προστατεύει το εθνικό ιστορικό πάρκο, επενδύει στη διατήρηση των λόφων Loantaka και στις πράσινες υποδομές.",
+        "items": [
+          {
+            "title": "Morristown National Historical Park",
+            "desc": "Προστασία 6,7 km² δασών και ιστορικών χώρων στο Jockey Hollow και Ford Mansion.",
+            "cat": "nature",
+            "catLabel": "🌳 Πάρκα",
+            "wiki": "Morristown_National_Historical_Park"
+          },
+          {
+            "title": "Loantaka Brook Reservation",
+            "desc": "Πάρκο 3,2 km² με μονοπάτια ποδηλασίας και πεζοπορίας κατά μήκος του Loantaka Brook.",
+            "cat": "nature",
+            "catLabel": "🌿 Φύση",
+            "wiki": "Loantaka_Brook_Reservation"
+          },
+          {
+            "title": "Green Infrastructure & Solar",
+            "desc": "Πρόγραμμα ηλιακών εγκαταστάσεων σε δημόσια κτίρια και πράσινων στεγών στα σχολεία.",
+            "cat": "business",
+            "catLabel": "⚡ Ενέργεια",
+            "wiki": "Morristown,_New_Jersey"
+          }
+        ]
+      },
+      "pastVsPresent": [
+        {
+          "epoch": "Morristown 1926: Στρατηγείο Ουάσινγκτον & Έδρα Κομητείας",
+          "content": "Περίπου 12.000 κάτοικοι, η πόλη είναι έδρα της κομητείας Morris με νοσοκομεία, δικαστήρια και υφαντουργεία, και φημίζεται ως «Στρατιωτική Πρωτεύουσα της Επανάστασης»."
+        },
+        {
+          "epoch": "Morristown 2026: Ιστορικό Πάρκο & Mayo Theater",
+          "content": "20.000 κάτοικοι, το Morristown National Historical Park είναι το πρώτο ιστορικό πάρκο ΗΠΑ, το Mayo Performing Arts Center φιλοξενεί συναυλίες και η πόλη διατηρεί την αθηναϊκή ατμόσφαιρα."
+        }
+      ],
+      "pois": [
+        {
+          "name": "Morristown National Historical Park",
+          "category": "history",
+          "coords": [
+            40.7963,
+            -74.4815
+          ],
+          "desc": "Το πρώτο εθνικό ιστορικό πάρκο ΗΠΑ.",
+          "wiki": "Morristown_National_Historical_Park"
+        },
+        {
+          "name": "Ford Mansion",
+          "category": "history",
+          "coords": [
+            40.7997,
+            -74.4794
+          ],
+          "desc": "Γεωργιανό αρχοντικό του 1774, στρατηγείο Ουάσινγκτον.",
+          "wiki": "Ford_Mansion"
+        },
+        {
+          "name": "Jockey Hollow",
+          "category": "history",
+          "coords": [
+            40.7756,
+            -74.5058
+          ],
+          "desc": "Στρατόπεδο του 1779-80.",
+          "wiki": "Jockey_Hollow"
+        },
+        {
+          "name": "Morris Museum",
+          "category": "culture",
+          "coords": [
+            40.7919,
+            -74.4828
+          ],
+          "desc": "Μουσείο με μουσικά όργανα και τέχνη.",
+          "wiki": "Morris_Museum"
+        },
+        {
+          "name": "Morristown Green",
+          "category": "culture",
+          "coords": [
+            40.7963,
+            -74.4815
+          ],
+          "desc": "Ιστορικό πάρκο στο κέντρο.",
+          "wiki": "Morristown_Green"
+        }
+      ]
     }
   ]
 }

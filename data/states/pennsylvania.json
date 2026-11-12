@@ -6,7 +6,10 @@
     "nickname": "The Keystone State / Η Πολιτεία-Κλειδί",
     "type": "state",
     "capital": "Χάρρισμπεργκ",
-    "coords": [41.0, -77.6],
+    "coords": [
+      41.0,
+      -77.6
+    ],
     "zoom": 7.2,
     "stats": {
       "population": "13,1 εκατομμύρια (2024)",
@@ -104,7 +107,10 @@
       "englishName": "Harrisburg",
       "nickname": "The River Capital / Η Πρωτεύουσα του Ποταμού",
       "type": "city",
-      "coords": [40.2732, -76.8867],
+      "coords": [
+        40.2732,
+        -76.8867
+      ],
       "zoom": 13.2,
       "stats": {
         "population": "50.000",
@@ -277,31 +283,46 @@
         {
           "name": "Καπιτώλιο της Πενσυλβάνια",
           "category": "history",
-          "coords": [40.2645, -76.8837],
+          "coords": [
+            40.2645,
+            -76.8837
+          ],
           "desc": "Εντυπωσιακό κτίριο του 1906 με χρυσό θόλο και πλούσια εσωτερική διακόσμηση."
         },
         {
           "name": "State Museum of Pennsylvania",
           "category": "history",
-          "coords": [40.2657, -76.8853],
+          "coords": [
+            40.2657,
+            -76.8853
+          ],
           "desc": "Μουσείο για την ιστορία, τη φύση και τη βιομηχανία της πολιτείας."
         },
         {
           "name": "National Civil War Museum",
           "category": "history",
-          "coords": [40.2726, -76.8966],
+          "coords": [
+            40.2726,
+            -76.8966
+          ],
           "desc": "Μουσείο αφιερωμένο στον Εμφύλιο Πόλεμο, σε λόφο πάνω από την πόλη."
         },
         {
           "name": "City Island",
           "category": "nature",
-          "coords": [40.2577, -76.8894],
+          "coords": [
+            40.2577,
+            -76.8894
+          ],
           "desc": "Νησί αναψυχής στον ποταμό Susquehanna με πάρκο και γήπεδο μπέιζμπολ."
         },
         {
           "name": "Fort Hunter Mansion",
           "category": "history",
-          "coords": [40.3167, -76.9167],
+          "coords": [
+            40.3167,
+            -76.9167
+          ],
           "desc": "Ιστορικό αρχοντικό του 1814 και αρχαιολογικός χώρος οχυρού του 1756."
         }
       ]
@@ -312,7 +333,10 @@
       "englishName": "Philadelphia",
       "nickname": "The City of Brotherly Love / Η Πόλη της Αδελφικής Αγάπης",
       "type": "city",
-      "coords": [39.9526, -75.1652],
+      "coords": [
+        39.9526,
+        -75.1652
+      ],
       "zoom": 12.7,
       "stats": {
         "population": "1,55 εκατομμύρια (6,2 εκατ. μητροπολιτική)",
@@ -490,31 +514,46 @@
         {
           "name": "Independence Hall",
           "category": "history",
-          "coords": [39.9489, -75.1500],
+          "coords": [
+            39.9489,
+            -75.15
+          ],
           "desc": "Ο χώρος υπογραφής της Διακήρυξης της Ανεξαρτησίας και του Συντάγματος."
         },
         {
           "name": "Liberty Bell",
           "category": "history",
-          "coords": [39.9495, -75.1503],
+          "coords": [
+            39.9495,
+            -75.1503
+          ],
           "desc": "Η ιστορική καμπάνα-σύμβολο της αμερικανικής ελευθερίας."
         },
         {
           "name": "Philadelphia Museum of Art",
           "category": "culture",
-          "coords": [39.9656, -75.1810],
+          "coords": [
+            39.9656,
+            -75.181
+          ],
           "desc": "Μεγάλο μουσείο τέχνης με τα περίφημα σκαλιά του Rocky."
         },
         {
           "name": "Eastern State Penitentiary",
           "category": "history",
-          "coords": [39.9683, -75.1727],
+          "coords": [
+            39.9683,
+            -75.1727
+          ],
           "desc": "Ιστορική φυλακή του 1829, σήμερα μουσείο."
         },
         {
           "name": "Reading Terminal Market",
           "category": "culture",
-          "coords": [39.9530, -75.1592],
+          "coords": [
+            39.953,
+            -75.1592
+          ],
           "desc": "Ιστορική αγορά τροφίμων από το 1893 με δεκάδες πάγκους."
         }
       ]
@@ -525,7 +564,10 @@
       "englishName": "Pittsburgh",
       "nickname": "The Steel City / Η Πόλη του Χάλυβα",
       "type": "city",
-      "coords": [40.4406, -79.9959],
+      "coords": [
+        40.4406,
+        -79.9959
+      ],
       "zoom": 12.9,
       "stats": {
         "population": "303.000 (2,4 εκατ. μητροπολιτική)",
@@ -698,32 +740,1748 @@
         {
           "name": "Duquesne Incline",
           "category": "history",
-          "coords": [40.4392, -80.0176],
+          "coords": [
+            40.4392,
+            -80.0176
+          ],
           "desc": "Ιστορικό τελεφερίκ του 1877 με θέα στο κέντρο και τα τρία ποτάμια."
         },
         {
           "name": "Point State Park",
           "category": "history",
-          "coords": [40.4417, -80.0098],
+          "coords": [
+            40.4417,
+            -80.0098
+          ],
           "desc": "Πάρκο στη συμβολή των ποταμών με το ιστορικό Fort Pitt."
         },
         {
           "name": "Phipps Conservatory",
           "category": "nature",
-          "coords": [40.4394, -79.9477],
+          "coords": [
+            40.4394,
+            -79.9477
+          ],
           "desc": "Βικτωριανό θερμοκήπιο και βοτανικός κήπος με βιώσιμα κτίρια."
         },
         {
           "name": "Carnegie Museum of Natural History",
           "category": "culture",
-          "coords": [40.4434, -79.9507],
+          "coords": [
+            40.4434,
+            -79.9507
+          ],
           "desc": "Μουσείο με διάσημη συλλογή δεινοσαύρων και ορυκτών."
         },
         {
           "name": "PNC Park",
           "category": "culture",
-          "coords": [40.4469, -80.0058],
+          "coords": [
+            40.4469,
+            -80.0058
+          ],
           "desc": "Γήπεδο μπέιζμπολ των Pirates με θέα στο skyline."
+        }
+      ]
+    },
+    {
+      "id": "allentown",
+      "name": "Άλενταουν",
+      "englishName": "Allentown",
+      "nickname": "The Queen City / Η Πόλη-Βασίλισσα του Lehigh Valley",
+      "type": "city",
+      "coords": [
+        40.6023,
+        -75.4714
+      ],
+      "zoom": 12.9,
+      "stats": {
+        "population": "125.000",
+        "founded": "1762 (Northamptontown) · 1867 (πόλη)",
+        "area": "46 km²",
+        "elevation": "115 μ."
+      },
+      "quote": "«Στην καρδιά του Lehigh Valley, η τρίτη μεγαλύτερη πόλη της Πενσυλβάνιας που άλλαξε από τη βιομηχανία στη μόδα και την ιατρική.»",
+      "geo": {
+        "summary": "Χτισμένη στη συμβολή των ρευμάτων Little Lehigh και Jordan, στην κοιλάδα Lehigh ανάμεσα στα Αππαλάχια. Η πόλη απλώνεται σε ήπιους λόφους με δάση και παραποτάμιους χώρους αναψυχής.",
+        "highlights": [
+          {
+            "title": "Ποτάμια Lehigh & Jordan",
+            "desc": "Ο ποταμός Lehigh και ο παραπόταμός του Little Lehigh διασχίζουν την πόλη και προσφέρουν πάρκα και διαδρομές."
+          },
+          {
+            "title": "Λόφοι του Trexler & South Mountain",
+            "desc": "Οι λόφοι γύρω από την πόλη φιλοξενούν φυσικά καταφύγια και θέα στην κοιλάδα Lehigh."
+          },
+          {
+            "title": "Trexler Nature Preserve",
+            "desc": "Προστατευμένη περιοχή 4,4 km² με βίσονες, άλκη και ελάφια, που δημιουργήθηκε από τον στρατηγό Harry Trexler."
+          }
+        ]
+      },
+      "hist": {
+        "summary": "Ιδρύθηκε το 1762 ως Northamptontown από τον William Allen, επικεφαλής δικαστή της Πενσυλβάνιας. Μετονομάστηκε σε Allentown το 1838 και αναπτύχθηκε σε βιομηχανικό κέντρο υφαντικής, μετάξης και brewing. Σημειώθηκε ιστορικά ως το μέρος όπου φυλάχθηκε η Liberty Bell κατά τη βρετανική κατοχή της Φιλαδέλφειας το 1777.",
+        "highlights": [
+          {
+            "year": "1777",
+            "event": "Καταφύγιο της Liberty Bell",
+            "desc": "Κατά τη βρετανική κατοχή της Φιλαδέλφειας, η Liberty Bell μεταφέρεται κρυφά στο Zion Reformed Church του Allentown και κρύβεται κάτω από το πάτωμα."
+          },
+          {
+            "year": "1827",
+            "event": "Κανάλι Lehigh & Άνθρακας",
+            "desc": "Η ολοκλήρωση του καναλιού Lehigh ανοίγει τον δρόμο για τη μεταφορά ανθράκυκλου και μετατρέπει την πόλη σε βιομηχανικό κέντρο."
+          },
+          {
+            "year": "1867",
+            "event": "Χάρτη Πόλης",
+            "desc": "Το Allentown ενσωματώνεται επίσημα ως πόλη και αναπτύσσεται με εργοστάσια υφαντικής, υποδημάτων και brewing."
+          }
+        ]
+      },
+      "demo": {
+        "summary": "Περίπου 125.000 κάτοικοι, η τρίτη μεγαλύτερη πόλη της Πενσυλβάνιας. Πλούσιο μωσαϊκό με ισχυρή παρουσία γερμανικής, Pennsylvania Dutch και ισπανόφωνης κοινότητας, ιδιαίτερα από το Πουέρτο Ρίκο και τη Δομινικανή Δημοκρατία.",
+        "details": [
+          {
+            "label": "Κοινότητες & Πληθυσμός",
+            "text": "Περίπου 53% λευκοί και 14% ισπανόφωνοι, με μεγάλη κοινότητα από το Πουέρτο Ρίκο και σημαντική παρουσία Pennsylvania Dutch στις αγροτικές ενδοχώρα."
+          },
+          {
+            "label": "Ιατρική & Εκπαίδευση",
+            "text": "Lehigh Valley Health Network, Muhlenberg College, Cedar Crest College και DeSales University απασχολούν χιλιάδες."
+          },
+          {
+            "label": "Logistics & Amazon",
+            "text": "Η στρατηγική θέση στο σταυροδρόμι I-78 και I-476 έχει κάνει το Lehigh Valley κέντρο logistics, με μεγάλους σταθμούς Amazon, FedEx και Walmart."
+          }
+        ]
+      },
+      "cult": {
+        "summary": "Πόλη μουσικής και πολιτιστικής κληρονομιάς, με την Allentown Band (παλαιότερη συμφωνική μπάντα ΗΠΑ) και το μουσείο τέχνης Allentown.",
+        "items": [
+          {
+            "title": "Allentown Art Museum",
+            "desc": "Μουσείο με συλλογή 19.000 έργων από την Αναγέννηση μέχρι τη σύγχρονη αμερικανική τέχνη και το αρχοντικό Frank Lloyd Wright."
+          },
+          {
+            "title": "Miller Symphony Hall",
+            "desc": "Ιστορική αίθουσα του 1899 που φιλοξενεί την Allentown Symphony Orchestra και την παλαιότερη αστική μπάντα ΗΠΑ (Allentown Band, 1828)."
+          },
+          {
+            "title": "Liberty Bell Shrine Museum",
+            "desc": "Μουσείο στο Zion Reformed Church όπου κρύφθηκε η Liberty Bell το 1777-1778 κατά τη βρετανική κατοχή."
+          }
+        ]
+      },
+      "guide": {
+        "summary": "Το Allentown σε πέντε στάσεις: μουσείο τέχνης, ιερό Liberty Bell, πάρκο Trexler, πάρκο διασκέδασης Dorney και αγορά Hamilton.",
+        "items": [
+          {
+            "title": "Allentown Art Museum",
+            "cat": "museum",
+            "catLabel": "🖼️ Μουσείο",
+            "desc": "Μουσείο με 19.000 έργα τέχνης και ανακατασκευή αρχοντικού Frank Lloyd Wright.",
+            "wiki": "Allentown_Art_Museum"
+          },
+          {
+            "title": "Liberty Bell Museum",
+            "cat": "history",
+            "catLabel": "🏛️ Ιστορία",
+            "desc": "Μουσείο στο Zion Reformed Church για τη διαμονή της Liberty Bell το 1777-1778.",
+            "wiki": "Liberty_Bell_Museum"
+          },
+          {
+            "title": "Trexler Nature Preserve",
+            "cat": "nature",
+            "catLabel": "🌿 Φύση",
+            "desc": "Προστατευμένη περιοχή 4,4 km² με βίσονες, άλκη και μονοπάτια πεζοπορίας.",
+            "wiki": "Trexler_Nature_Preserve"
+          },
+          {
+            "title": "Dorney Park & Wildwater Kingdom",
+            "cat": "culture",
+            "catLabel": "🎨 Πολιτισμός",
+            "desc": "Ιστορικό πάρκο διασκέδασης από το 1884 με τρενάκια, νερόδρομους και ζωντανό ενυδρείο.",
+            "wiki": "Dorney_Park_%26_Wildwater_Kingdom"
+          },
+          {
+            "title": "PPL Center & Hamilton Street",
+            "cat": "culture",
+            "catLabel": "🎨 Πολιτισμός",
+            "desc": "Σύγχρονη αρένα και πεζόδρομος του κέντρου με εστιατόρια και καταστήματα.",
+            "wiki": "PPL_Center"
+          }
+        ]
+      },
+      "gastro": {
+        "summary": "Pennsylvania Dutch κληρονομιά με shoofly pie, scrapple και ζύμες, μαζί με αυθεντικά πιάτα της κοινότητας του Πουέρτο Ρίκο.",
+        "items": [
+          {
+            "title": "Shoofly Pie",
+            "desc": "Γλυκό πίτα με σιρόπι μελάσσης και ψίχουλα γάλακτος, κλασικό Pennsylvania Dutch γλυκό της περιοχής.",
+            "tag": "Γλυκό"
+          },
+          {
+            "title": "Scrapple",
+            "desc": "Μελάσσιο λουκάνικο από χοιρινό αλεσμένο καρδιά, ήπαρ και καλαμπόκι, που σερβίρεται σε φέτες τηγανητές.",
+            "tag": "Πρωινό"
+          },
+          {
+            "title": "Pennsylvania Dutch Apple Butter",
+            "desc": "Παχύρρευστο βούτυρο μήλου από Pennsylvania Dutch, σερβιρισμένο σε φρέσκο ψωμί ή τηγανίτες.",
+            "tag": "Παραδοσιακό"
+          },
+          {
+            "title": "Mofongo & Arroz con Gandules",
+            "desc": "Αυθεντικά πιάτα του Πουέρτο Ρίκο από τη μεγάλη κοινότητα της πόλης, σε εστιατόρια του κέντρου.",
+            "tag": "Λατινικό"
+          }
+        ]
+      },
+      "eco": {
+        "summary": "Η πόλη επενδύει στις παραποτάμιες διαδρομές, στα φυσικά καταφύγια και στην ανάπλαση του βιομηχανικού κέντρου.",
+        "items": [
+          {
+            "title": "Trexler Nature Preserve",
+            "desc": "Προστατευόμενη περιοχή με βίσονες, άλκη και δάση, που δημιουργήθηκε από τον Harry Trexler.",
+            "cat": "nature",
+            "catLabel": "🌳 Πάρκα",
+            "wiki": "Trexler_Nature_Preserve"
+          },
+          {
+            "title": "Lehigh River Waterfront",
+            "desc": "Ανάπλαση των όχθων του ποταμού Lehigh με ποδηλατόδρομους και χώρους αναψυχής.",
+            "cat": "business",
+            "catLabel": "🚲 Κινητικότητα",
+            "wiki": "Lehigh_River"
+          },
+          {
+            "title": "Καθαρή Ενέργεια & Solar Farms",
+            "desc": "Μεγάλα ηλιακά πάρκα στα παλιά βιομηχανικά εδάφη της κοιλάδας Lehigh.",
+            "cat": "business",
+            "catLabel": "⚡ Ενέργεια",
+            "wiki": "Solar_power_in_Pennsylvania"
+          }
+        ]
+      },
+      "pastVsPresent": [
+        {
+          "epoch": "Allentown 1926: Βιομηχανία Υφαντικής & Μπύρας",
+          "content": "Περίπου 75.000 κάτοικοι, εργοστάσια υφαντικής Atlas, μετάξης Adam Schaeffer και ζυθοποιεία υπάρχουν σε κάθε γειτονιά, και η πόλη ζει από τον άνθρακα και τη βιομηχανία του Lehigh Valley."
+        },
+        {
+          "epoch": "Allentown 2026: Logistics, Ιατρική & Πανεπιστήμια",
+          "content": "125.000 κάτοικοι, η παρακμή της βιομηχανίας αντικαταστάθηκε από την ιατρική, την εκπαίδευση και τη logistics, με μεγάλα ηλιακά πάρκα και αναπλασμένο κέντρο."
+        }
+      ],
+      "pois": [
+        {
+          "name": "Allentown Art Museum",
+          "category": "culture",
+          "coords": [
+            40.6024,
+            -75.4709
+          ],
+          "desc": "Μουσείο τέχνης με 19.000 έργα.",
+          "wiki": "Allentown_Art_Museum"
+        },
+        {
+          "name": "Liberty Bell Museum",
+          "category": "history",
+          "coords": [
+            40.6016,
+            -75.4679
+          ],
+          "desc": "Ιστορικός χώρος καταφύγιου της Liberty Bell.",
+          "wiki": "Liberty_Bell_Museum"
+        },
+        {
+          "name": "Trexler Nature Preserve",
+          "category": "nature",
+          "coords": [
+            40.6497,
+            -75.6131
+          ],
+          "desc": "Φυσικό καταφύγιο με βίσονες και άλκη.",
+          "wiki": "Trexler_Nature_Preserve"
+        },
+        {
+          "name": "Dorney Park",
+          "category": "culture",
+          "coords": [
+            40.5786,
+            -75.5366
+          ],
+          "desc": "Ιστορικό πάρκο διασκέδασης από το 1884.",
+          "wiki": "Dorney_Park_%26_Wildwater_Kingdom"
+        },
+        {
+          "name": "PPL Center",
+          "category": "culture",
+          "coords": [
+            40.6022,
+            -75.4737
+          ],
+          "desc": "Αρένα του κέντρου της πόλης.",
+          "wiki": "PPL_Center"
+        }
+      ]
+    },
+    {
+      "id": "erie",
+      "name": "Ήρι",
+      "englishName": "Erie",
+      "nickname": "The Flagship City / Η Πόλη-Ναυαρχίδα",
+      "type": "city",
+      "coords": [
+        42.1292,
+        -80.0851
+      ],
+      "zoom": 12.9,
+      "stats": {
+        "population": "94.000",
+        "founded": "1795 · 1851 (πόλη)",
+        "area": "50 km²",
+        "elevation": "222 μ."
+      },
+      "quote": "«Στην ακτή της Μεγάλης Λίμνης Ήρι, η πόλη-ναυαρχίδα της Πενσυλβάνιας και το λιμάνι της μάχης του Lake Erie.»",
+      "geo": {
+        "summary": "Χτισμένη στη νότια ακτή της λίμνης Ήρι, στη βορειοδυτική γωνία της Πενσυλβάνιας. Η πόλη ορίζεται από τη χερσόνησο Presque Isle που σχηματίζει τον κόλπο Presque Isle και προσφέρει παραλίες και βιότοπους.",
+        "highlights": [
+          {
+            "title": "Λίμνη Ήρι",
+            "desc": "Η τέταρτη μεγαλύτερη από τις Μεγάλες Λίμνες, με ακτή 11 χλμ. μέσα στην πόλη και λιμάνι στη βόρεια Πενσυλβάνια."
+          },
+          {
+            "title": "Presque Isle State Park",
+            "desc": "Χερσόνησος 13 χλμ. μέσα στη λίμνη, με παραλίες, μονοπάτια και βιότοπους πουλιών και νυφών."
+          },
+          {
+            "title": "Λιμάνι του Erie",
+            "desc": "Ένα από τα μεγαλύτερα λιμάνια της Μεγάλης Λίμνης, με τερματικούς σταθμούς bulk και εμπορευματοκιβωτίων."
+          }
+        ]
+      },
+      "hist": {
+        "summary": "Ιδρύθηκε το 1795 και οργανώθηκε ως πόλη το 1851. Αποτελούσε ιστορικό στρατηγικό λιμάνι στον πόλεμο του 1812, όταν ο Oliver Hazard Perry ναυπηγεί την αμερικανική ναυαρχίδα Niagara και νικά τους Βρετανούς στη Μάχη της Λίμνης Ήρι.",
+        "highlights": [
+          {
+            "year": "1795",
+            "event": "Ίδρυση του Erie",
+            "desc": "Ο Andrew Ellicott σχεδιάζει την πόλη στο λιμάνι της λίμνης Ήρι, που γίνεται σταθμός για τον βορειοδυτικό εποικισμό."
+          },
+          {
+            "year": "1813",
+            "event": "Μάχη της Λίμνης Ήρι",
+            "desc": "Ο Oliver Hazard Perry ναυπηγεί τη ναυαρχίδα Niagara στο Erie και νικά τον βρετανικό στόλο: «Don't give up the ship»."
+          },
+          {
+            "year": "1851",
+            "event": "Χάρτη Πόλης",
+            "desc": "Το Erie ενσωματώνεται ως πόλη και αναπτύσσεται σε βιομηχανικό και σιδηροδρομικό κέντρο για άνθρακα, σίδερο και ψάρι."
+          }
+        ]
+      },
+      "demo": {
+        "summary": "Περίπου 94.000 κάτοικοι, η πέμπτη μεγαλύτερη πόλη της Πενσυλβάνιας. Ισχυρή παρουσία γερμανικής, ιρλανδικής και ιταλικής καταγωγής, με πρόσφατη αύξηση κοινοτήτων από τη Βοσνία, τη Σομαλία και το Ιράκ.",
+        "details": [
+          {
+            "label": "Πληθυσμός & Κοινότητες",
+            "text": "Περίπου 75% λευκοί και 17% αφροαμερικανοί, με αυξανόμενες κοινότητες προσφύγων από τη Βοσνία, το Ιράκ και τη Σομαλία που αναζωογονούν την πόλη."
+          },
+          {
+            "label": "Ιατρική & Εκπαίδευση",
+            "text": "Erie Insurance, UPMC Hamot, LECOM Health και τα Gannon & Mercyhurst Universities αποτελούν τους κύριους εργοδότες."
+          },
+          {
+            "label": "Λιμάνι & Logistics",
+            "text": "Το λιμάνι του Erie, η GE Transportation (πρώην Locomotive Works) και το σιδηροδρομικό δίκτυο καθιστούν την πόλη κόμβο μεταφορών."
+          }
+        ]
+      },
+      "cult": {
+        "summary": "Πόλη ναυτικής κληρονομιάς και πολιτιστικής αναγέννησης, με μουσείο τέχνης, θαλάσσιο μουσείο και αναστηλωμένη ναυαρχίδα Niagara.",
+        "items": [
+          {
+            "title": "Erie Maritime Museum & US Brig Niagara",
+            "desc": "Θαλάσσιο μουσείο με την αναστηλωμένη ναυαρχίδα Niagara που συμμετείχε στη μάχη του 1813, σήμερα σε ενεργό εκπαιδευτικό servício."
+          },
+          {
+            "title": "Erie Art Museum",
+            "desc": "Μουσείο σε ιστορικά κτίρια του 1839 με αμερικανική τέχνη, κεραμική και ετήσια φεστιβάλ jazz."
+          },
+          {
+            "title": "Waldameer Park & Water World",
+            "desc": "Ιστορικό πάρκο διασκέδασης από το 1896, ένα από τα παλαιότερα των ΗΠΑ, με τρενάκια και νερόδρομους."
+          }
+        ]
+      },
+      "guide": {
+        "summary": "Το Erie σε πέντε στάσεις: χερσόνησος Presque Isle, φάρος, ναυαρχίδα Niagara, μουσείο τέχνης και πάρκο Waldameer.",
+        "items": [
+          {
+            "title": "Presque Isle State Park",
+            "cat": "nature",
+            "catLabel": "🌿 Φύση",
+            "desc": "Χερσόνησος 13 χλμ. με παραλίες, μονοπάτια και βιότοπους πουλιών και νυφών.",
+            "wiki": "Presque_Isle_State_Park"
+          },
+          {
+            "title": "Presque Isle Lighthouse",
+            "cat": "history",
+            "catLabel": "🏛️ Ιστορία",
+            "desc": "Φάρος του 1872 στη χερσόνησο Presque Isle με μουσείο και θέα στη λίμνη.",
+            "wiki": "Presque_Isle_Light"
+          },
+          {
+            "title": "Erie Maritime Museum & Niagara",
+            "cat": "museum",
+            "catLabel": "🖼️ Μουσείο",
+            "desc": "Θαλάσσιο μουσείο με την αναστηλωμένη ναυαρχίδα Niagara του 1813.",
+            "wiki": "Erie_Maritime_Museum"
+          },
+          {
+            "title": "Erie Art Museum",
+            "cat": "museum",
+            "catLabel": "🖼️ Μουσείο",
+            "desc": "Μουσείο σε ιστορικά κτίρια του 1839 με αμερικανική τέχνη και κεραμική.",
+            "wiki": "Erie_Art_Museum"
+          },
+          {
+            "title": "Waldameer Park",
+            "cat": "culture",
+            "catLabel": "🎨 Πολιτισμός",
+            "desc": "Ιστορικό πάρκο διασκέδασης από το 1896 με τρενάκια και νερόδρομους.",
+            "wiki": "Waldameer_Park"
+          }
+        ]
+      },
+      "gastro": {
+        "summary": "Lake fish, Pennsylvania Dutch και γερμανικές επιρροές με τοπικές μπύρες και Smyers hot dogs.",
+        "items": [
+          {
+            "title": "Lake Erie Yellow Perch",
+            "desc": "Τηγανητό yellow perch της λίμνης, σερβιρισμένο με λεμόνι και tartar sauce, σε fish fries και εστιατόρια της ακτής.",
+            "tag": "Τοπικό"
+          },
+          {
+            "title": "Smyers Hot Dogs",
+            "desc": "Ιστορικά hot dogs με σπιτική σάλτσα από το Smyers Flagship Hot Dogs, θεσμός της πόλης από το 1918.",
+            "tag": "Street food"
+          },
+          {
+            "title": "Pennsylvania Dutch Pepper Cabbage",
+            "desc": "Γλυκόξινο λάχανο με πιπεριές και ξύδι, συνοδευτικό της Pennsylvania Dutch κληρονομιάς της περιοχής.",
+            "tag": "Παραδοσιακό"
+          },
+          {
+            "title": "Craft Beer Lumberyard",
+            "desc": "Τοπικές microbreweries με εμπνευσμένες από τη λίμνη και τα δάση μπύρες, στο κέντρο και στη χερσόνησο.",
+            "tag": "Μπύρα"
+          }
+        ]
+      },
+      "eco": {
+        "summary": "Η πόλη προστατεύει τη χερσόνησο Presque Isle, διαχειρίζεται το λιμάνι και επενδύει στη βιώσιμη ανάπτυξη της ακτής.",
+        "items": [
+          {
+            "title": "Presque Isle State Park",
+            "desc": "Εθνικό φυσικό μνημείο που προστατεύει 13 χλμ. ακτής, παραλίες και βιότοπους πάνω από 320 ειδών πουλιών.",
+            "cat": "nature",
+            "catLabel": "🌳 Πάρκα",
+            "wiki": "Presque_Isle_State_Park"
+          },
+          {
+            "title": "Bayfront & Intermodal Transportation",
+            "desc": "Ανάπλαση της ακτής του κόλπου με ποδηλατόδρομους, πάρκα και διαδρομή Bayfront Bikeway.",
+            "cat": "business",
+            "catLabel": "🚲 Κινημότητα",
+            "wiki": "Bayfront_Parkway"
+          },
+          {
+            "title": "Lake Erie Wind Farm",
+            "desc": "Πρόγραμμα ανεμογεννητριών στη λίμνη Ήρι που θα παράγει καθαρή ενέργεια για την περιοχή.",
+            "cat": "business",
+            "catLabel": "⚡ Ενέργεια",
+            "wiki": "Wind_power_in_Pennsylvania"
+          }
+        ]
+      },
+      "pastVsPresent": [
+        {
+          "epoch": "Ήρι 1926: Λιμάνι & Βιομηχανία",
+          "content": "Περίπου 120.000 κάτοικοι, το λιμάνι και τα locomotive works της General Electric απασχολούν χιλιάδες, και η πόλη είναι από τα μεγαλύτερα βιομηχανικά κέντρα της βόρειας Πενσυλβάνιας."
+        },
+        {
+          "epoch": "Ήρι 2026: Λίμνη & Πανεπιστήμια",
+          "content": "94.000 κάτοικοι, η βιομηχανία παρακμάζει αλλά το Erie Insurance, τα πανεπιστήμια και η τουριστική ανάπτυξη της χερσονήσου Presque Isle προσδίδουν νέα ζωή στην πόλη."
+        }
+      ],
+      "pois": [
+        {
+          "name": "Presque Isle State Park",
+          "category": "nature",
+          "coords": [
+            42.1553,
+            -80.1168
+          ],
+          "desc": "Χερσόνησος 13 χλμ. με παραλίες.",
+          "wiki": "Presque_Isle_State_Park"
+        },
+        {
+          "name": "Presque Isle Lighthouse",
+          "category": "history",
+          "coords": [
+            42.1642,
+            -80.1029
+          ],
+          "desc": "Φάρος του 1872 στη χερσόνησο.",
+          "wiki": "Presque_Isle_Light"
+        },
+        {
+          "name": "Erie Maritime Museum",
+          "category": "culture",
+          "coords": [
+            42.1378,
+            -80.0905
+          ],
+          "desc": "Θαλάσσιο μουσείο με τη ναυαρχίδα Niagara.",
+          "wiki": "Erie_Maritime_Museum"
+        },
+        {
+          "name": "Erie Art Museum",
+          "category": "culture",
+          "coords": [
+            42.1292,
+            -80.0851
+          ],
+          "desc": "Μουσείο τέχνης σε ιστορικά κτίρια.",
+          "wiki": "Erie_Art_Museum"
+        },
+        {
+          "name": "Waldameer Park",
+          "category": "culture",
+          "coords": [
+            42.1111,
+            -80.1158
+          ],
+          "desc": "Ιστορικό πάρκο διασκέδασης.",
+          "wiki": "Waldameer_Park"
+        }
+      ]
+    },
+    {
+      "id": "reading",
+      "name": "Ρέντινγκ",
+      "englishName": "Reading",
+      "nickname": "The Pretzel City / Η Πόλη των Πρέτζελ",
+      "type": "city",
+      "coords": [
+        40.3356,
+        -75.9268
+      ],
+      "zoom": 13.0,
+      "stats": {
+        "population": "95.000",
+        "founded": "1748 · 1847 (πόλη)",
+        "area": "26 km²",
+        "elevation": "105 μ."
+      },
+      "quote": "«Στην κοιλάδα Schuylkill, η πόλη της Παγόδας, του σιδήρου και του παιχνιδιού Monopoly.»",
+      "geo": {
+        "summary": "Χτισμένη στη συμβολή του ποταμού Schuylkill και του παραπόταμου Tulpehocken, στην κοιλάδα Berks ανάμεσα στα Αππαλάχια. Η πόλη περιβάλλεται από τους λόφους Mount Penn και Neversink, με την εμβληματική Παγόδα να δεσπόζει πάνω από την πόλη.",
+        "highlights": [
+          {
+            "title": "Ποταμός Schuylkill & Tulpehocken",
+            "desc": "Οι δύο ποταμοί ενώνονται στο κέντρο της πόλης, με μονοπάτια και ιστορικά κανάλια."
+          },
+          {
+            "title": "Mount Penn & Παγόδα",
+            "desc": "Ο λόφος πάνω από την πόλη φιλοξενεί την ιστορική Παγόδα του 1908 και τον πύργο fire observation."
+          },
+          {
+            "title": "Nolde Forest & Antietam Lake",
+            "desc": "Προστατευόμενα δάση και λίμνη νότια της πόλης, με μονοπάτια πεζοπορίας και πηγές."
+          }
+        ]
+      },
+      "hist": {
+        "summary": "Ιδρύθηκε το 1748 από τους γιους του William Penn και οργανώθηκε ως πόλη το 1847. Αναπτύχθηκε σε μεγάλο σιδηροδρομικό και βιομηχανικό κέντρο με σιδηροδρόμους Reading Railroad, σιδηρουργεία και cigar factories. Η πόλη φημίζεται επίσης ως η «Πόλη των Πρέτζελ» λόγω της γερμανικής κληρονομιάς.",
+        "highlights": [
+          {
+            "year": "1748",
+            "event": "Ίδρυση του Reading",
+            "desc": "Ο Thomas και ο Richard Penn ιδρύουν την πόλη που ονομάζεται από το αγγλικό Reading, με αμερικανικό πλέγμα και αγορά."
+          },
+          {
+            "year": "1837",
+            "event": "Reading Railroad",
+            "desc": "Η ίδρυση της Reading Railroad, μια από τις πρώτες σιδηροδρομικές εταιρείες που μετέφεραν άνθρακα από τα ορυχεία στο λιμάνι, και αργότερα σύμβολο του Monopoly."
+          },
+          {
+            "year": "1908",
+            "event": "Ανοιγμα της Pagoda",
+            "desc": "Η εμβληματική ιαπωνική Pagoda χτίζεται στο Mount Penn ως πολυτελής ξενοδοχείο, σήμερα σύμβολο της πόλης."
+          }
+        ]
+      },
+      "demo": {
+        "summary": "Περίπου 95.000 κάτοικοι, με τη μεγαλύτερη κοινότητα ισπανόφωνων του Πουέρτο Ρίκο ανά πόλη στις ΗΠΑ. Πλούσια γερμανική Pennsylvania Dutch κληρονομιά, με σημαντική παρουσία ισπανόφωνων κοινοτήτων που αναζωογονούν την πόλη.",
+        "details": [
+          {
+            "label": "Κοινότητες & Πληθυσμός",
+            "text": "Περίπου 65% ισπανόφωνοι, κυρίως από το Πουέρτο Ρίκο, και 14% αφροαμερικανοί, με ισχυρή Pennsylvania Dutch ενδοχώρα."
+          },
+          {
+            "label": "Βιομηχανία & Logistics",
+            "text": "Μεγάλοι σταθμοί logistics (Boscov's, Penske Truck Leasing), Tower Health System και τοπικές microbreweries αποτελούν τους κύριους εργοδότες."
+          },
+          {
+            "label": "Κοινωνικές Προκλήσεις",
+            "text": "Η πόλη έχει ένα από τα υψηλότερα ποσοστά φτώχειας στην Πενσυλβάνια, με ενεργά προγράμματα αστικής αναγέννησης."
+          }
+        ]
+      },
+      "cult": {
+        "summary": "Πόλη του Pennsylvania Dutch και της κληρονομιάς του Reading Railroad, με μουσείο τέχνης, γοτθική αρχιτεκτονική και γιορτές πρέτζελ.",
+        "items": [
+          {
+            "title": "Reading Public Museum",
+            "desc": "Μουσείο με συλλογή τέχνης, αρχαιοτήτων και πλανητάριο, που ιδρύθηκε το 1907 από τον δρ. Levi Mengel."
+          },
+          {
+            "title": "Pagoda του Mount Penn",
+            "desc": "Ιαπωνικό κτίριο του 1908 με θέα σε όλη την πόλη, σήμερα πολιτιστικό κέντρο και εμβληματικό σύμβολο."
+          },
+          {
+            "title": "GoggleWorks Center for the Arts",
+            "desc": "Κέντρο τεχνών σε ανακαινισμένο εργοστάσιο γυαλιών με studios, γκαλερί και εργαστήρια."
+          }
+        ]
+      },
+      "guide": {
+        "summary": "Το Reading σε πέντε στάσεις: Pagoda, μουσείο, GoggleWorks, αγορά Farmer's Market και historic Penn Street.",
+        "items": [
+          {
+            "title": "Reading Pagoda",
+            "cat": "monument",
+            "catLabel": "🏛️ Μνημείο",
+            "desc": "Ιαπωνικό κτίριο του 1908 στο Mount Penn, εμβληματικό σύμβολο της πόλης με θέα.",
+            "wiki": "Reading_Pagoda"
+          },
+          {
+            "title": "Reading Public Museum",
+            "cat": "museum",
+            "catLabel": "🖼️ Μουσείο",
+            "desc": "Μουσείο τέχνης, αρχαιοτήτων, επιστήμης και πλανητάριο.",
+            "wiki": "Reading_Public_Museum"
+          },
+          {
+            "title": "GoggleWorks Center for the Arts",
+            "cat": "culture",
+            "catLabel": "🎨 Πολιτισμός",
+            "desc": "Κέντρο τεχνών σε ανακαινισμένο εργοστάσιο γυαλιών με studios και γκαλερί.",
+            "wiki": "GoggleWorks_Center_for_the_Arts"
+          },
+          {
+            "title": "Reading Terminal Market (Reading Farmers Market)",
+            "cat": "culture",
+            "catLabel": "🎨 Πολιτισμός",
+            "desc": "Ιστορική αγορά του 1872 με Pennsylvania Dutch προϊόντα, πρέτζελ και παστά κρέατα.",
+            "wiki": "Reading_Terminal_Market"
+          },
+          {
+            "title": "Mid-Atlantic Air Museum",
+            "cat": "museum",
+            "catLabel": "🖼️ Μουσείο",
+            "desc": "Αεροπορικό μουσείο με κλασικά αεροσκάφη και ετήσιο WW2 weekend airshow.",
+            "wiki": "Mid-Atlantic_Air_Museum"
+          }
+        ]
+      },
+      "gastro": {
+        "summary": "Pennsylvania Dutch comfort food με πρέτζελ, scrapple και shoofly pie, ενώ η ισπανόφωνη κοινότητα προσθέτει κουζίνας του Πουέρτο Ρίκο.",
+        "items": [
+          {
+            "title": "Reading Pretzels",
+            "desc": "Μαλακά σπιτικά pretzels που παράγονται από το 1800, με το Reading να θεωρείται «Πόλη των Πρέτζελ» λόγω των γερμανικών αρτοποιών.",
+            "tag": "Τοπικό"
+          },
+          {
+            "title": "Pennsylvania Dutch Chicken Pot Pie",
+            "desc": "Παχύρρευστο στιφάδο κοτόπουλου με χοντρά ζυμαρικά (όχι πίτα) από την Pennsylvania Dutch παράδοση.",
+            "tag": "Παραδοσιακό"
+          },
+          {
+            "title": "Birria & Tacos del Πουέρτο Ρίκο",
+            "desc": "Αυθεντικά πιάτα από τη μεγάλη κοινότητα του Πουέρτο Ρίκο, με mofongo, alcapurrias και arroz con gandules.",
+            "tag": "Λατινικό"
+          },
+          {
+            "title": "Tom Sturgis Pretzels",
+            "desc": "Η παλαιότερη εταιρεία pretzel των ΗΠΑ, που ιδρύθηκε στο Reading το 1861 και λειτουργεί μέχρι σήμερα.",
+            "tag": "Σνακ"
+          }
+        ]
+      },
+      "eco": {
+        "summary": "Η πόλη επενδύει στην ανάπλαση των όχθων του Schuylkill και στο Nolde Forest, με προγράμματα αστικής γεωργίας.",
+        "items": [
+          {
+            "title": "Nolde Forest Environmental Education Center",
+            "desc": "Προστατευμένο δάσος 2,7 km² με μονοπάτια και προγράμματα περιβαλλοντικής εκπαίδευσης.",
+            "cat": "nature",
+            "catLabel": "🌿 Φύση",
+            "wiki": "Nolde_Forest_Environmental_Education_Center"
+          },
+          {
+            "title": "Schuylkill River Trail",
+            "desc": "Διαδρομή κατά μήκος του ποταμού που θα συνδέσει το Reading με το Pottsville και τη Φιλαδέλφεια.",
+            "cat": "business",
+            "catLabel": "🚲 Κινητικότητα",
+            "wiki": "Schuylkill_River_Trail"
+          },
+          {
+            "title": "Reading Hospital Solar Array",
+            "desc": "Ένα από τα μεγαλύτερα ηλιακά πάρκα σε νοσοκομείο της Πενσυλβάνιας, που τροφοδοτεί το Tower Health.",
+            "cat": "business",
+            "catLabel": "⚡ Ενέργεια",
+            "wiki": "Solar_power_in_Pennsylvania"
+          }
+        ]
+      },
+      "pastVsPresent": [
+        {
+          "epoch": "Reading 1926: Reading Railroad & Σίδερο",
+          "content": "Περίπου 115.000 κάτοικοι, η Reading Railroad είναι από τις μεγαλύτερες σιδηροδρομικές εταιρείες, τα σιδηρουργεία και τα cigar factories δουλεύουν πλήρη ρυθμό και η πόλη ζει από τον άνθρακα και τη βιομηχανία."
+        },
+        {
+          "epoch": "Reading 2026: Μουσεία & Κοινότητες Πουέρτο Ρίκο",
+          "content": "95.000 κάτοικοι, η σιδηροδρομική και βιομηχανική παρακμή αντικαταστάθηκε από τα μουσεία, το GoggleWorks και τη ζωντανή κοινότητα του Πουέρτο Ρίκο."
+        }
+      ],
+      "pois": [
+        {
+          "name": "Reading Pagoda",
+          "category": "history",
+          "coords": [
+            40.3386,
+            -75.8953
+          ],
+          "desc": "Ιαπωνικό κτίριο του 1908 στο Mount Penn.",
+          "wiki": "Reading_Pagoda"
+        },
+        {
+          "name": "Reading Public Museum",
+          "category": "culture",
+          "coords": [
+            40.3437,
+            -75.9378
+          ],
+          "desc": "Μουσείο τέχνης και πλανητάριο.",
+          "wiki": "Reading_Public_Museum"
+        },
+        {
+          "name": "GoggleWorks Center for the Arts",
+          "category": "culture",
+          "coords": [
+            40.3372,
+            -75.9208
+          ],
+          "desc": "Κέντρο τεχνών σε ανακαινισμένο εργοστάσιο.",
+          "wiki": "GoggleWorks_Center_for_the_Arts"
+        },
+        {
+          "name": "Mid-Atlantic Air Museum",
+          "category": "culture",
+          "coords": [
+            40.3786,
+            -75.9641
+          ],
+          "desc": "Αεροπορικό μουσείο στο αεροδρόμιο Reading.",
+          "wiki": "Mid-Atlantic_Air_Museum"
+        },
+        {
+          "name": "FirstEnergy Stadium",
+          "category": "culture",
+          "coords": [
+            40.3711,
+            -75.9269
+          ],
+          "desc": "Γήπεδο μπέιζμπολ των Reading Fightin Phils.",
+          "wiki": "FirstEnergy_Stadium"
+        }
+      ]
+    },
+    {
+      "id": "scranton",
+      "name": "Σκράντον",
+      "englishName": "Scranton",
+      "nickname": "The Electric City / Η Ηλεκτρική Πόλη",
+      "type": "city",
+      "coords": [
+        41.409,
+        -75.6624
+      ],
+      "zoom": 13.0,
+      "stats": {
+        "population": "76.000",
+        "founded": "1840 (Slocum Hollow) · 1866 (πόλη)",
+        "area": "66 km²",
+        "elevation": "227 μ."
+      },
+      "quote": "«Στην καρδιά του ανθρακωρυχείου, η πόλη που φώτισε πρώτη τους δρόμους της Αμερικής με ηλεκτρικό τραμ.»",
+      "geo": {
+        "summary": "Χτισμένη στην κοιλάδα Lackawanna ανάμεσα στα Αππαλάχια της βορειοανατολικής Πενσυλβάνιας. Η πόλη διαρρέεται από τον ποταμό Lackawanna και περιβάλλεται από λόφους με παλιά ανθρακωρυχεία.",
+        "highlights": [
+          {
+            "title": "Κοιλάδα Lackawanna",
+            "desc": "Η κοιλάδα που υδροδοτεί την πόλη και ιστορικά φιλοξενούσε τα μεγαλύτερα ανθρακωρυχεία anthracite της Αμερικής."
+          },
+          {
+            "title": "Λόφοι Montage & Moosic",
+            "desc": "Οι γύρω λόφοι προσφέρουν χειμερινά σπορ, μονοπάτια και θέα στην πόλη."
+          },
+          {
+            "title": "Lackawanna River Heritage Trail",
+            "desc": "Διαδρομή 110 χλμ. κατά μήκος του ποταμού Lackawanna που συνδέει Scranton με το προάστιο Carbondale."
+          }
+        ]
+      },
+      "hist": {
+        "summary": "Ιδρύθηκε το 1840 ως Slocum Hollow και οργανώθηκε ως πόλη το 1866, πήρε το όνομά της από τον Scranton οικογένεια. Αναπτύχθηκε σε κέντρο anthracite άνθρακα, σιδήρου και ηλεκτρισμού — το 1886 έγινε η πρώτη πόλη ΗΠΑ με ηλεκτρικό δίκτυο tram.",
+        "highlights": [
+          {
+            "year": "1840",
+            "event": "Slocum Hollow & Iron Furnaces",
+            "desc": "Ο οικισμός ιδρύεται γύρω από τους iron furnaces της Scranton family που παράγανε σιδηροδρομικές ράγες."
+          },
+          {
+            "year": "1866",
+            "event": "Χάρτη Πόλης",
+            "desc": "Το Scranton ενσωματώνεται ως πόλη και γίνεται η «Στοά του Ανθράκα» της Αμερικής."
+          },
+          {
+            "year": "1886",
+            "event": "Πρώτο Ηλεκτρικό Tram",
+            "desc": "Το Scranton γίνεται η πρώτη πόλη ΗΠΑ με ηλεκτρικό δίκτυο tram, κερδίζοντας το παρατσούκλι «The Electric City»."
+          }
+        ]
+      },
+      "demo": {
+        "summary": "Περίπου 76.000 κάτοικοι, η έκτη μεγαλύτερη πόλη της Πενσυλβάνιας. Ισχυρή κληρονομιά ανατολικοευρωπαίων μεταναστών — Πολωνών, Λιθουανών, Ιταλών και Ουκρανών — με πρόσφατη αύξηση κοινοτήτων από το Μεξικό και τη Δομινικανή Δημοκρατία.",
+        "details": [
+          {
+            "label": "Κοινότητες & Πληθυσμός",
+            "text": "Περίπου 70% λευκοί, 8% ισπανόφωνοι και 6% αφροαμερικανοί, με ισχυρή πολωνική, λιθουανική και ιταλική κληρονομιά."
+          },
+          {
+            "label": "Εκπαίδευση & Υγεία",
+            "text": "Geisinger Commonwealth School of Medicine, University of Scranton, Scranton Commonwealth Medical College και Moses Taylor Hospital είναι οι βασικοί εργοδότες."
+          },
+          {
+            "label": "Το The Office & Τηλεόραση",
+            "text": "Η τηλεοπτική σειρά The Office (2005-2013) διαδραματίζεται στο Scranton και προσελκύει τουρισμό — εκατονμμύρια επισκέπτες ζητούν landmarks από τη σειρά."
+          }
+        ]
+      },
+      "cult": {
+        "summary": "Πόλη ανθρακωρύχων και ηλεκτρισμού, με μουσείο της βιομηχανικής κληρονομιάς και ζωντανή σκηνή μοναστηριών και ιταλοαμερικανικής κουλτούρας.",
+        "items": [
+          {
+            "title": "Steamtown National Historic Site",
+            "desc": "Εθνικό ιστορικό χώρο με συλλογή ατμοκίνητων αμαξών και locomotives, που τιμά την αμερικανική ατμομηχανή κληρονομιά."
+          },
+          {
+            "title": "Lackawanna Coal Mine Tour",
+            "desc": "Κατάβαση σε αναστηλωμένο ανθρακωρυχείο anthracite του 1903, με ξεναγήσεις από παλιούς ανθρακωρύχους."
+          },
+          {
+            "title": "Electric City Trolley Museum",
+            "desc": "Μουσείο για το πρώτο ηλεκτρικό tram ΗΠΑ, με διαδρομή trolley στο ιστορικό κτίριο του σταθμού."
+          }
+        ]
+      },
+      "guide": {
+        "summary": "Το Scranton σε πέντε στάσεις: εθνικό Steamtown, ανθρακωρυχείο Lackawanna, μουσείο Trolley, Everett Artworks και Nay Aug Park.",
+        "items": [
+          {
+            "title": "Steamtown National Historic Site",
+            "cat": "history",
+            "catLabel": "🏛️ Ιστορία",
+            "desc": "Εθνικό ιστορικό χώρο με ατμοκίνητα locomotives, ξενάγηση σε εργοστάσιο επισκευών και βόλτες με ατμομηχανή.",
+            "wiki": "Steamtown_National_Historic_Site"
+          },
+          {
+            "title": "Lackawanna Coal Mine Tour",
+            "cat": "history",
+            "catLabel": "🏛️ Ιστορία",
+            "desc": "Κατάβαση σε ανθρακωρυχείο anthracite του 1903, 90 μέτρα κάτω από τη γη.",
+            "wiki": "Lackawanna_Coal_Mine_Tour"
+          },
+          {
+            "title": "Electric City Trolley Museum",
+            "cat": "museum",
+            "catLabel": "🖼️ Μουσείο",
+            "desc": "Μουσείο για το πρώτο ηλεκτρικό tram ΗΠΑ και διαδρομή trolley στο historic trail.",
+            "wiki": "Electric_City_Trolley_Museum"
+          },
+          {
+            "title": "Everhart Museum",
+            "cat": "museum",
+            "catLabel": "🖼️ Μουσείο",
+            "desc": "Μουσείο στο Nay Aug Park με συλλογή φυσικής ιστορίας, τέχνης και ανθρωπολογίας.",
+            "wiki": "Everhart_Museum"
+          },
+          {
+            "title": "Nay Aug Park",
+            "cat": "nature",
+            "catLabel": "🌿 Φύση",
+            "desc": "Ιστορικό πάρκο του 1893 με παιδική χαρά, δεντρόσπιτο και καταρράκτη Roaring Brook.",
+            "wiki": "Nay_Aug_Park"
+          }
+        ]
+      },
+      "gastro": {
+        "summary": "Πολωνικά pierogi, ιταλικά σάντουιτς και Pennsylvania Dutch κληρονομιά με τοπικό comfort food.",
+        "items": [
+          {
+            "title": "Πολωνικά Pierogi",
+            "desc": "Ζυμαράκια με πατάτα, τυρί ή λάχανο, σερβιρισμένα με λιωμένο βούτυρο και κρεμμύδι — κληρονομιά πολωνικής κοινότητας.",
+            "tag": "Παραδοσιακό"
+          },
+          {
+            "title": "Old Forge Pizza",
+            "desc": "Λεπτή διπλή κρούστα με μπλε-λευκό τυρί, από το κοντινό Old Forge που θεωρείται «Πόλη της Πίτσας».",
+            "tag": "Τοπικό"
+          },
+          {
+            "title": "Cigar-smoked Haluski",
+            "desc": "Σύκαλα μακαρόνια με λάχανο και κρεμμύδι, comfort food των σλαβικών κοινοτήτων της περιοχής.",
+            "tag": "Παραδοσιακό"
+          },
+          {
+            "title": "Paczki",
+            "desc": "Πολωνικά doughnuts με γέμιση μαρμελάδας ή κρέμα, που τρώγονται στο Fat Tuesday από την πολωνική κοινότητα.",
+            "tag": "Γλυκό"
+          }
+        ]
+      },
+      "eco": {
+        "summary": "Η πόλη επενδύει στη βιώσιμη μετατροπή των παλιών ανθρακωρυχείων, στη διαδρομή του Lackawanna και στην καθαρή ενέργεια.",
+        "items": [
+          {
+            "title": "Lackawanna River Heritage Trail",
+            "desc": "Διαδρομή 110 χλμ. κατά μήκος του Lackawanna για ποδήλατο και πεζοπορία, που συνδέει τις κοινότητες της κοιλάδας.",
+            "cat": "business",
+            "catLabel": "🚲 Κινητικότητα",
+            "wiki": "Lackawanna_River_Heritage_Trail"
+          },
+          {
+            "title": "Nay Aug Park & Treehouse",
+            "desc": "Ιστορικό πάρκο με δεντρόσπιτο 9 μέτρων και καταρράκτη Roaring Brook που προσφέρει φυσικό βιότοπο.",
+            "cat": "nature",
+            "catLabel": "🌳 Πάρκα",
+            "wiki": "Nay_Aug_Park"
+          },
+          {
+            "title": "Reclamation of Anthracite Lands",
+            "desc": "Προγράμματα αποκατάστασης των παλιών anthracite εδαφών σε πάρκα και βιομηχανικούς χώρους.",
+            "cat": "business",
+            "catLabel": "🌱 Ανάπλαση",
+            "wiki": "Anthracite"
+          }
+        ]
+      },
+      "pastVsPresent": [
+        {
+          "epoch": "Scranton 1926: Anthracite Capital",
+          "content": "Περίπου 140.000 κάτοικοι, τα ανθρακωρυχεία anthracite της Lackawanna Valley δουλεύουν πλήρη ρυθμό, τα iron furnaces παράγουν ράγες και η πόλη είναι από τις πλουσιότερες της βορειοανατολικής Πενσυλβάνιας."
+        },
+        {
+          "epoch": "Scranton 2026: The Office & Ιατρική",
+          "content": "76.000 κάτοικοι, η παρακμή του άνθρακα αντικαταστάθηκε από την ιατρική, την εκπαίδευση και τον τουρισμό του The Office, με αναπλασμένα ανθρακωρυχεία σε μουσεία."
+        }
+      ],
+      "pois": [
+        {
+          "name": "Steamtown National Historic Site",
+          "category": "history",
+          "coords": [
+            41.4083,
+            -75.6608
+          ],
+          "desc": "Εθνικό μουσείο ατμοκίνητων locomotives.",
+          "wiki": "Steamtown_National_Historic_Site"
+        },
+        {
+          "name": "Lackawanna Coal Mine",
+          "category": "history",
+          "coords": [
+            41.4122,
+            -75.6497
+          ],
+          "desc": "Ανθρακωρυχείο anthracite του 1903.",
+          "wiki": "Lackawanna_Coal_Mine_Tour"
+        },
+        {
+          "name": "Electric City Trolley Museum",
+          "category": "culture",
+          "coords": [
+            41.4078,
+            -75.6613
+          ],
+          "desc": "Μουσείο για το πρώτο ηλεκτρικό tram.",
+          "wiki": "Electric_City_Trolley_Museum"
+        },
+        {
+          "name": "Nay Aug Park",
+          "category": "nature",
+          "coords": [
+            41.4097,
+            -75.6472
+          ],
+          "desc": "Ιστορικό πάρκο με δεντρόσπιτο και καταρράκτη.",
+          "wiki": "Nay_Aug_Park"
+        },
+        {
+          "name": "Everhart Museum",
+          "category": "culture",
+          "coords": [
+            41.4097,
+            -75.6472
+          ],
+          "desc": "Μουσείο φυσικής ιστορίας και τέχνης.",
+          "wiki": "Everhart_Museum"
+        }
+      ]
+    },
+    {
+      "id": "bethlehem-pa",
+      "name": "Βηθλεέμ",
+      "englishName": "Bethlehem",
+      "nickname": "The Christmas City / Η Πόλη των Χριστουγέννων",
+      "type": "city",
+      "coords": [
+        40.6259,
+        -75.3705
+      ],
+      "zoom": 13.0,
+      "stats": {
+        "population": "75.000",
+        "founded": "1741 (Μοραβοί) · 1917 (πόλη)",
+        "area": "50 km²",
+        "elevation": "110 μ."
+      },
+      "quote": "«Στον ποταμό Lehigh, από τη μοραβική κοινότητα των Μοραβών στη βιομηχανική αυτοκρατορία Bethlehem Steel.»",
+      "geo": {
+        "summary": "Χτισμένη στη βόρεια όχθη του ποταμού Lehigh, στην κοιλάδα Lehigh ανάμεσα στο Allentown και το Easton. Η πόλη ορίζεται από το βιομηχανικό σύμπλεγμα SteelStacks και το ιστορικό κέντρο της Moravian κοινότητας.",
+        "highlights": [
+          {
+            "title": "Ποταμός Lehigh & Canal",
+            "desc": "Ο ποταμός και το ιστορικό κανάλι Lehigh διασχίζουν την πόλη και προσφέρουν διαδρομές και πάρκα."
+          },
+          {
+            "title": "SteelStacks & Blast Furnaces",
+            "desc": "Οι πέντε ιστορικές καμίνες Bethlehem Steel που διατηρούνται ως πολιτιστικό πάρκο ArtsQuest."
+          },
+          {
+            "title": "Sand Island & towpath",
+            "desc": "Ιστορικό νησί ανάμεσα στο κανάλι και τον ποταμό, με πάρκο και μονοπάτι πεζοπορίας."
+          }
+        ]
+      },
+      "hist": {
+        "summary": "Ιδρύθηκε το 1741 από μοραβούς ιεραπόστολους (Moravians) που ονόμασαν την πόλη Βηθλεέμ τα Χριστούγεννα του ίδιου έτους. Το 1860 η Bethlehem Steel ξεκίνησε την παραγωγή χάλυβα και έγινε η δεύτερη μεγαλύτερη χαλυβουργός ΗΠΑ και κορυφαία ναυπηγική δύναμη. Το 2024 η Moravian Bethlehem αναγνωρίστηκε ως Μνημείο Παγκόσμιας Κληρονομιάς UNESCO.",
+        "highlights": [
+          {
+            "year": "1741",
+            "event": "Ίδρυση από Moravians",
+            "desc": "Ο Count Nikolaus von Zinzendorf ιδρύει τη μοραβική κοινότητα που ονομάζεται Βηθλεέμ τα Χριστούγεννα, με κοινοτικό σύστημα διαβίωσης."
+          },
+          {
+            "year": "1857",
+            "event": "Γέννηση της Bethlehem Steel",
+            "desc": "Ιδρύεται η Saucona Iron Company που γίνεται Bethlehem Steel, η δεύτερη μεγαλύτερη χαλυβουργός ΗΠΑ και ναυπηγός δύο Παγκόσμιων Πολέμων."
+          },
+          {
+            "year": "2024",
+            "event": "UNESCO World Heritage",
+            "desc": "Η ιστορική Moravian Bethlehem αναγνωρίζεται ως Μνημείο Παγκόσμιας Κληρονομίας UNESCO, μέρος του transnational Moravian Church Settlements."
+          }
+        ]
+      },
+      "demo": {
+        "summary": "Περίπου 75.000 κάτοικους, με ισχυρή μοραβική, γερμανική και ισπανόφωνη κοινότητα. Η πόλη διατηρεί διπλή ταυτότητα — ιστορική Moravian και βιομηχανική Bethlehem Steel.",
+        "details": [
+          {
+            "label": "Πληθυσμός & Κοινότητες",
+            "text": "Περίπου 65% λευκοί και 28% ισπανόφωνοι, με ισχυρή παρουσία από το Πουέρτο Ρίκο και τη Δομινικανή Δημοκρατία."
+          },
+          {
+            "label": "Πανεπιστήμια & Υγεία",
+            "text": "Lehigh University, Moravian University και St. Luke's University Health Network είναι οι κύριοι εργοδότες."
+          },
+          {
+            "label": "Πολιτισμός & Καζίνο",
+            "text": "Μετά το κλείσιμο της Bethlehem Steel, το Sands Casino (τώρα Wind Creek) και το SteelStacks ArtsQuest αναζωογονούν την πόλη."
+          }
+        ]
+      },
+      "cult": {
+        "summary": "Πόλη Moravian κληρονομιάς και βιομηχανικής ιστορίας, με το μεγαλύτερο ελεύθερο μουσικό φεστιβάλ Musikfest και το εμβληματικό SteelStacks.",
+        "items": [
+          {
+            "title": "Historic Moravian Bethlehem",
+            "desc": "Ιστορική περιοχή 14 εκταρίων με 20 κτίρια του 18ου αιώνα, που αποτελούν το νεότερο Μνημείο Παγκόσμιας Κληρονομιάς UNESCO στις ΗΠΑ."
+          },
+          {
+            "title": "SteelStacks & ArtsQuest",
+            "desc": "Πολιτιστικό campus στις καμίνες της Bethlehem Steel με μουσική, κινηματογράφο και φεστιβάλ όλο τον χρόνο."
+          },
+          {
+            "title": "Musikfest",
+            "desc": "Το μεγαλύτερο ελεύθερο μουσικό φεστιβάλ ΗΠΑ με περισσότερους από 1 εκατομμύριο επισκέπτες κάθε Αύγουστο."
+          }
+        ]
+      },
+      "guide": {
+        "summary": "Η Βηθλεέμ σε πέντε στάσεις: SteelStacks, Moravian Gemeinhaus, Sand Island, 카지νο Wind Creek και Christkindlmarkt.",
+        "items": [
+          {
+            "title": "SteelStacks",
+            "cat": "monument",
+            "catLabel": "🏛️ Μνημείο",
+            "desc": "Οι ιστορικές καμίνες Bethlehem Steel που σήμερα αποτελούν πολιτιστικό campus ArtsQuest.",
+            "wiki": "SteelStacks"
+          },
+          {
+            "title": "Historic Moravian Bethlehem",
+            "cat": "history",
+            "catLabel": "🏛️ Ιστορία",
+            "desc": "Μνημείο Παγκόσμιας Κληρονομιάς UNESCO με κτίρια του 1741 και το Gemeinhaus (παλαιότερο κτίριο της πόλης).",
+            "wiki": "Historic_Moravian_Bethlehem"
+          },
+          {
+            "title": "Sand Island & D&L Trail",
+            "cat": "nature",
+            "catLabel": "🌿 Φύση",
+            "desc": "Ιστορικό νησί ανάμεσα στο κανάλι και τον Lehigh με πάρκο και μονοπάτι Delaware & Lehigh.",
+            "wiki": "Sand_Island_(Bethlehem,_Pennsylvania)"
+          },
+          {
+            "title": "Wind Creek Bethlehem",
+            "cat": "culture",
+            "catLabel": "🎨 Πολιτισμός",
+            "desc": "Καζίνο και ξενοδοχείο στο χώρο της πρώην Bethlehem Steel, που προσφέρει νυχτερινή ζωή.",
+            "wiki": "Wind_Creek_Bethlehem"
+          },
+          {
+            "title": "Christkindlmarkt",
+            "cat": "culture",
+            "catLabel": "🎨 Πολιτισμός",
+            "desc": "Ετήσια γερμανική αγορά Χριστουγέννων που καθιστά τη Βηθλεέμ «Πόλη των Χριστουγέννων».",
+            "wiki": "Christkindlmarkt_Bethlehem"
+          }
+        ]
+      },
+      "gastro": {
+        "summary": "Moravian και Pennsylvania Dutch comfort food με Bethlehem Steel brewing κληρονομιά και ισπανόφωνες κουζίνες.",
+        "items": [
+          {
+            "title": "Moravian Sugar Cake",
+            "desc": "Ζύμη με κανέλα, μέλι και σταφίδες, παραδοσιακό γλυκό των Moravians που ζυμώνεται και ψήνεται σε στάδια.",
+            "tag": "Γλυκό"
+          },
+          {
+            "title": "Bethlehem Steel Brew",
+            "desc": "Craft μπύρες από microbreweries στο SteelStacks και South Side, που τιμούν τη βιομηχανική κληρονομιά.",
+            "tag": "Μπύρα"
+          },
+          {
+            "title": "Pierogies & Polish Sausage",
+            "desc": "Πολωνικά ζυμαράκια και λουκάνικο kielbasa από την ανατολικοευρωπαϊκή κοινότητα του South Side.",
+            "tag": "Παραδοσιακό"
+          },
+          {
+            "title": "Mofongo Boricua",
+            "desc": "Αυθεντικά πιάτα του Πουέρτο Ρίκο από τη μεγάλη ισπανόφωνη κοινότητα του South Side.",
+            "tag": "Λατινικό"
+          }
+        ]
+      },
+      "eco": {
+        "summary": "Η πόλη μετατρέπει το βιομηχανικό σύμπλεγμα Bethlehem Steel σε πράσινο πολιτιστικό campus και επενδύει στις παραποτάμιες διαδρομές.",
+        "items": [
+          {
+            "title": "SteelStacks Brownfield Redevelopment",
+            "desc": "Μετατροπή 9 εκταρίων παλιών χαλυβουργείων σε πολιτιστικό campus με πάρκα, θεατρικές σκηνές και ψηφιακό πεζόδρομο.",
+            "cat": "business",
+            "catLabel": "🌱 Ανάπλαση",
+            "wiki": "SteelStacks"
+          },
+          {
+            "title": "Delaware & Lehigh Trail",
+            "desc": "Διαδρομή 256 χλμ. από τις ανθρακωρυχεία μέχρι τη Φιλαδέλφεια που περνά από την πόλη.",
+            "cat": "business",
+            "catLabel": "🚲 Κινητικότητα",
+            "wiki": "Delaware_and_Lehigh_Trail"
+          },
+          {
+            "title": "Πράσινες Στέγες & Solar Campus",
+            "desc": "Lehigh University και Moravian University επενδύουν σε πράσινες στέγες και ηλιακά συστήματα.",
+            "cat": "business",
+            "catLabel": "⚡ Ενέργεια",
+            "wiki": "Lehigh_University"
+          }
+        ]
+      },
+      "pastVsPresent": [
+        {
+          "epoch": "Bethlehem 1926: Bethlehem Steel & Ναυπηγείο",
+          "content": "Περίπου 50.000 κάτοικοι, η Bethlehem Steel παράγει χάλυβα για δύο παγκόσμια πολέμους και νάρκη για τα πολεμικά πλοία, οι καμίνες λειτουργούν μέρα-νύχτα και η πόλη είναι από τις πλουσιότερες της περιοχής."
+        },
+        {
+          "epoch": "Bethlehem 2026: UNESCO & ArtsQuest",
+          "content": "75.000 κάτοικοι, η Bethlehem Steel έκλεισε το 1995 αλλά το SteelStacks και το Musikfest αναζωογονούν την πόλη, και η Moravian Bethlehem αναγνωρίστηκε UNESCO Μνημείο Παγκόσμιας Κληρονομίας."
+        }
+      ],
+      "pois": [
+        {
+          "name": "SteelStacks",
+          "category": "history",
+          "coords": [
+            40.6156,
+            -75.3692
+          ],
+          "desc": "Οι ιστορικές καμίνες Bethlehem Steel.",
+          "wiki": "SteelStacks"
+        },
+        {
+          "name": "Historic Moravian Bethlehem",
+          "category": "history",
+          "coords": [
+            40.6264,
+            -75.3783
+          ],
+          "desc": "Μνημείο UNESCO με κτίρια του 1741.",
+          "wiki": "Historic_Moravian_Bethlehem"
+        },
+        {
+          "name": "Sand Island",
+          "category": "nature",
+          "coords": [
+            40.6241,
+            -75.3783
+          ],
+          "desc": "Ιστορικό νησί με πάρκο και μονοπάτι.",
+          "wiki": "Sand_Island_(Bethlehem,_Pennsylvania)"
+        },
+        {
+          "name": "Wind Creek Casino",
+          "category": "culture",
+          "coords": [
+            40.6156,
+            -75.3692
+          ],
+          "desc": "Καζίνο στο χώρο της Bethlehem Steel.",
+          "wiki": "Wind_Creek_Bethlehem"
+        },
+        {
+          "name": "Lehigh University",
+          "category": "culture",
+          "coords": [
+            40.6015,
+            -75.376
+          ],
+          "desc": "Σύγχρονο campus στο South Mountain.",
+          "wiki": "Lehigh_University"
+        }
+      ]
+    },
+    {
+      "id": "lancaster",
+      "name": "Λάνκαστερ",
+      "englishName": "Lancaster",
+      "nickname": "The Red Rose City / Η Πόλη της Κόκκινης Τριανταφυλλιάς",
+      "type": "city",
+      "coords": [
+        40.0379,
+        -76.3055
+      ],
+      "zoom": 13.0,
+      "stats": {
+        "population": "58.000",
+        "founded": "1730 · 1818 (πόλη)",
+        "area": "19 km²",
+        "elevation": "112 μ."
+      },
+      "quote": "«Στην καρδιά της Χώρας των Άμις, η παλαιότερη ενδοχώρα πόλη της Αμερικής με την πιο παλιά αγορά και θέατρο.»",
+      "geo": {
+        "summary": "Χτισμένη στην εύφορη κοιλάδα Lancaster ανάμεσα στον ποταμό Conestoga και τους λόφους Susquehanna. Η πόλη περιβάλλεται από αγροκτήματα και αμαξάκια των Άμις, που αποτελούν την πιο αναγνωρίσιμη ενδοχώρα της πολιτείας.",
+        "highlights": [
+          {
+            "title": "Ποταμός Conestoga",
+            "desc": "Ο ποταμός που διασχίζει την πόλη και ιστορικά τροφοδοτούσε μύλους και εργοστάσια."
+          },
+          {
+            "title": "Λόφοι & Αγροκτήματα",
+            "desc": "Οι κυλιόμενοι λόφοι γύρω από την πόλη φιλοξενούν τις φάρμες των Άμις και τα αμαξάκια τους."
+          },
+          {
+            "title": "Central Park & County Park",
+            "desc": "Σύστημα πάρκων με μονοπάτια και χώρους αναψυχής σε κάθε γειτονιά."
+          }
+        ]
+      },
+      "hist": {
+        "summary": "Ιδρύθηκε το 1730 ως Hickory Town και μετονομάστηκε σε Lancaster το 1734 από την αγγλική πόλη Lancashire (κόκκινη τριανταφυλλιά). Η πόλη ήταν πρωτεύουσα της Πενσυλβάνιας από το 1799 μέχρι το 1812 και πρωτεύουσα των ΗΠΑ για μια ημέρα (Σεπτέμβριος 1777) κατά τη φυγή του Κογκρέσου.",
+        "highlights": [
+          {
+            "year": "1730",
+            "event": "Ίδρυση του Lancaster",
+            "desc": "Ο οικισμός Hickory Town ιδρύεται και μετονομάζεται σε Lancaster τέσσερα χρόνια αργότερα, από την κόκκινη τριανταφυλλιά του Lancashire."
+          },
+          {
+            "year": "1777",
+            "event": "Μια Ημέρα Πρωτεύουσα ΗΠΑ",
+            "desc": "Κατά τη φυγή του Κογκρέσου από τη Φιλαδέλφεια, το Lancaster γίνεται για μια ημέρα η πρωτεύουσα των Ηνωμένων Πολιτειών."
+          },
+          {
+            "year": "1889",
+            "event": "Ιδρυση της Lancaster Central Market",
+            "desc": "Η παλαιότερη συνεχώς λειτουργούσα αγροτική αγορά των ΗΠΑ, που λειτουργεί από το 1730 στο κέντρο της πόλης, σε νεο-ρωμανικό κτίριο του 1889."
+          }
+        ]
+      },
+      "demo": {
+        "summary": "Περίπου 58.000 κάτοικοι, με τη μεγαλύτερη κοινότητα Πουέρτο Ρίκο ανά πόλη στις ΗΠΑ μετά το Reading. Σημαντική Pennsylvania Dutch κληρονομιά και αυξανόμενη παρουσία κοινοτήτων από το Νεπάλ, τη Σομαλία και την Κούβα.",
+        "details": [
+          {
+            "label": "Κοινότητες & Πληθυσμός",
+            "text": "Περίπου 60% λευκοί και 40% ισπανόφωνοι, με μεγάλη κοινότητα από το Πουέρτο Ρίκο και ισχυρή Pennsylvania Dutch και Άμις ενδοχώρα."
+          },
+          {
+            "label": "Άμις & Αγροτική Παράδοση",
+            "text": "Η κομητεία Lancaster φιλοξενεί τη μεγαλύτερη κοινότητα Άμις στις ΗΠΑ, με 35.000+ μέλη και τουρισμό 8 εκατομμυρίων επισκεπτών ετησίως."
+          },
+          {
+            "label": "Υγεία & Τουρισμός",
+            "text": "Penn Medicine Lancaster General Health, Franklin & Marshall College και ο τουρισμός των Άμις αποτελούν τους κύριους εργοδότες."
+          }
+        ]
+      },
+      "cult": {
+        "summary": "Πόλη Pennsylvania Dutch και Άμις, με παλαιότερο θέατρο και αγορά, πλούσια ιστορία και γαστρονομική σκηνή farm-to-table.",
+        "items": [
+          {
+            "title": "Lancaster Central Market",
+            "desc": "Η παλαιότερη συνεχώς λειτουργούσα αγροτική αγορά ΗΠΑ, σε κτίριο του 1889, με προϊόντα των Άμις και Pennsylvania Dutch."
+          },
+          {
+            "title": "Fulton Theatre",
+            "desc": "Το παλαιότερο συνεχώς λειτουργούσα θέατρο ΗΠΑ (1852), που φέρει το όνομα του εφευρέτη Robert Fulton."
+          },
+          {
+            "title": "Demuth Museum & Lancaster Arts",
+            "desc": "Μουσείο του μοντερνιστή Charles Demuth (1883-1935) και τοπική σκηνή 100+ galleries και studios."
+          }
+        ]
+      },
+      "guide": {
+        "summary": "Το Lancaster σε πέντε στάσεις: αγορά Central Market, θέατρο Fulton, μουσείο Demuth, Wheatland και οικόσημο Άμις.",
+        "items": [
+          {
+            "title": "Lancaster Central Market",
+            "cat": "culture",
+            "catLabel": "🎨 Πολιτισμός",
+            "desc": "Η παλαιότερη συνεχώς λειτουργούσα αγορά ΗΠΑ με πάγκους Pennsylvania Dutch και Άμις.",
+            "wiki": "Lancaster_Central_Market"
+          },
+          {
+            "title": "Fulton Theatre",
+            "cat": "culture",
+            "catLabel": "🎨 Πολιτισμός",
+            "desc": "Το παλαιότερο συνεχώς λειτουργούσα θέατρο ΗΠΑ από το 1852.",
+            "wiki": "Fulton_Theatre"
+          },
+          {
+            "title": "Demuth Museum",
+            "cat": "museum",
+            "catLabel": "🖼️ Μουσείο",
+            "desc": "Μουσείο του precisionist ζωγράφου Charles Demuth σε ιστορικό κτίριο.",
+            "wiki": "Demuth_Museum"
+          },
+          {
+            "title": "Wheatland (James Buchanan's Home)",
+            "cat": "history",
+            "catLabel": "🏛️ Ιστορία",
+            "desc": "Αρχοντικό του 15ου προέδρου James Buchanan, με ξεναγήσεις για την προ-εμφύλια περίοδο.",
+            "wiki": "Wheatland_(Lancaster,_Pennsylvania)"
+          },
+          {
+            "title": "Amish Country & Aaron & Jessica's Buggy Rides",
+            "cat": "culture",
+            "catLabel": "🎨 Πολιτισμός",
+            "desc": "Περιήγηση με αμαξάκι στα αγροκτήματα των Άμις και Pennsylvania Dutch.",
+            "wiki": "Amish"
+          }
+        ]
+      },
+      "gastro": {
+        "summary": "Pennsylvania Dutch κληρονομιά με shoofly pie, scrapple, chicken corn soup και τοπικά παστά της κοινότητας των Άμις.",
+        "items": [
+          {
+            "title": "Shoofly Pie",
+            "desc": "Πίτα με μελάσση και ψίχουλα γάλακτος, κλασικό Pennsylvania Dutch γλυκό της περιοχής.",
+            "tag": "Γλυκό"
+          },
+          {
+            "title": "Scrapple",
+            "desc": "Μελάσσιο λουκάνικο από χοιρινό αλεσμένο καρδιά, ήπαρ και καλαμπόκι, που σερβίρεται σε φέτες τηγανητές.",
+            "tag": "Πρωινό"
+          },
+          {
+            "title": "Chicken Corn Soup",
+            "desc": "Ζωμός κοτόπουλου και καλαμποκιού με ριβένια noodles, comfort food των Pennsylvania Dutch.",
+            "tag": "Παραδοσιακό"
+          },
+          {
+            "title": "Whoopie Pie",
+            "desc": "Δύο μαλακά μπισκότα σοκολάτας με κρέμα μαρέγκας ανάμεσά τους, που δημιουργήθηκε στην Pennsylvania Dutch κοινότητα.",
+            "tag": "Γλυκό"
+          }
+        ]
+      },
+      "eco": {
+        "summary": "Η πόλη επενδύει στη διατήρηση των αγροτικών εδαφών των Άμις, στις πράσινες υποδομές και στη βιώσιμη γεωργία.",
+        "items": [
+          {
+            "title": "Lancaster County Conservancy",
+            "desc": "Προστασία 12.000+ στρεμμάτων δασών και αγροτικών εδαφών από την αστική επέκταση.",
+            "cat": "nature",
+            "catLabel": "🌳 Πάρκα",
+            "wiki": "Lancaster_Conservancy"
+          },
+          {
+            "title": "Green Infrastructure Plan",
+            "desc": "Πρόγραμμα κήπων βροχής, πράσινων στεγών και διαπερατών πεζοδρομίων για τη μείωση των πλημμυρών.",
+            "cat": "business",
+            "catLabel": "💧 Διαχείριση Υδάτων",
+            "wiki": "Lancaster,_Pennsylvania"
+          },
+          {
+            "title": "Amish Farming Practices",
+            "desc": "Οι βιώσιμες γεωργικές πρακτικές των Άμις χωρίς μηχανήματα και χημικά αποτελούν πρότυπο περιβαλλοντικής διαχείρισης.",
+            "cat": "business",
+            "catLabel": "🌱 Βιωσιμότητα",
+            "wiki": "Amish"
+          }
+        ]
+      },
+      "pastVsPresent": [
+        {
+          "epoch": "Lancaster 1926: Αγροτικό Κέντρο & Cigar Factories",
+          "content": "Περίπου 60.000 κάτοικοι, η πόλη είναι κέντρο της γεωργίας Pennsylvania Dutch με cigar factories, σιδηροδρόμους και ζυθοποιεία να δουλεύουν γύρω από την Central Market."
+        },
+        {
+          "epoch": "Lancaster 2026: Άμις Tourism & Arts",
+          "content": "58.000 κάτοικοι, ο τουρισμός των Άμις και το Franklin & Marshall College κινητοποιούν την οικονομία, με τη Central Market να παραμένει κέντρο της κοινότητας."
+        }
+      ],
+      "pois": [
+        {
+          "name": "Lancaster Central Market",
+          "category": "culture",
+          "coords": [
+            40.0379,
+            -76.3055
+          ],
+          "desc": "Η παλαιότερη αγορά ΗΠΑ.",
+          "wiki": "Lancaster_Central_Market"
+        },
+        {
+          "name": "Fulton Theatre",
+          "category": "culture",
+          "coords": [
+            40.0376,
+            -76.3064
+          ],
+          "desc": "Το παλαιότερο θέατρο ΗΠΑ.",
+          "wiki": "Fulton_Theatre"
+        },
+        {
+          "name": "Demuth Museum",
+          "category": "culture",
+          "coords": [
+            40.0381,
+            -76.3028
+          ],
+          "desc": "Μουσείο του Charles Demuth.",
+          "wiki": "Demuth_Museum"
+        },
+        {
+          "name": "Wheatland",
+          "category": "history",
+          "coords": [
+            40.0461,
+            -76.3317
+          ],
+          "desc": "Αρχοντικό του προέδρου Buchanan.",
+          "wiki": "Wheatland_(Lancaster,_Pennsylvania)"
+        },
+        {
+          "name": "Franklin & Marshall College",
+          "category": "culture",
+          "coords": [
+            40.0479,
+            -76.315
+          ],
+          "desc": "Πανεπιστήμιο του 1787.",
+          "wiki": "Franklin_%26_Marshall_College"
+        }
+      ]
+    },
+    {
+      "id": "state-college",
+      "name": "Στέιτ Κόλετζ",
+      "englishName": "State College",
+      "nickname": "Happy Valley / Η Ευτυχής Κοιλάδα",
+      "type": "city",
+      "coords": [
+        40.7934,
+        -77.86
+      ],
+      "zoom": 13.0,
+      "stats": {
+        "population": "48.000",
+        "founded": "1855 (Farmers' High School) · 1896 (borough)",
+        "area": "12 km²",
+        "elevation": "350 μ."
+      },
+      "quote": "«Στην καρδιά της κοιλάδας Nittany, η φοιτητική πόλη του Penn State και του θρυλικού Beaver Stadium.»",
+      "geo": {
+        "summary": "Χτισμένη στην κοιλάδα Nittany ανάμεσα στο Mount Nittany και τα Αππαλάχια της κεντρικής Πενσυλβάνιας. Η πόλη είναι περικυκλωμένη από δάση και λόφους, που προσδίδουν την «Ευφαδή Κοιλάδα» την ησυχία της.",
+        "highlights": [
+          {
+            "title": "Mount Nittany",
+            "desc": "Ο εμβληματικός λόφος 520 μέτρων πάνω από την πόλη, με μονοπάτια και θέα σε όλο το Happy Valley."
+          },
+          {
+            "title": "Κοιλάδα Nittany",
+            "desc": "Η εύφορη κοιλάδα που ορίζει την πόλη και φιλοξενεί το Penn State University."
+          },
+          {
+            "title": "Rothrock State Forest",
+            "desc": "Προστατευμένο δάσος 320 km² νότια της πόλης, με μονοπάτια, ποτάμια και χειμερινά σπορ."
+          }
+        ]
+      },
+      "hist": {
+        "summary": "Ιδρύθηκε το 1855 γύρω από το Farmers' High School of Pennsylvania, που έγινε Penn State University. Η πόλη οργανώθηκε ως borough το 1896 και αναπτύχθηκε σε φοιτητικό κέντρο και ερευνητικό hub της κεντρικής Πενσυλβάνιας.",
+        "highlights": [
+          {
+            "year": "1855",
+            "event": "Ίδρυση του Farmers' High School",
+            "desc": "Ιδρύεται το Farmers' High School of Pennsylvania που γίνεται Penn State University, ένα από τα κορυφαία δημόσια πανεπιστήμια ΗΠΑ."
+          },
+          {
+            "year": "1896",
+            "event": "Borough Incorporation",
+            "desc": "Το State College ενσωματώνεται ως borough γύρω από το πανεπιστήμιο και αναπτύσσεται σε φοιτητικό κέντρο."
+          },
+          {
+            "year": "1960",
+            "event": "Beaver Stadium",
+            "desc": "Χτίζεται το Beaver Stadium που σήμερα χωρά 106.572 θεατές, το δεύτερο μεγαλύτερο γήπεδο του κόσμου."
+          }
+        ]
+      },
+      "demo": {
+        "summary": "Περίπου 48.000 κάτοικοι, από τους οποίους περισσότεροι από 46.000 είναι φοιτητές του Penn State University. Η πόλη έχει ένα από τα υψηλότερα μορφωτικά επίπεδα της χώρας και φοιτητική ατμόσφαιρα όλο τον χρόνο.",
+        "details": [
+          {
+            "label": "Φοιτητική Πόλη",
+            "text": "Περισσότεροι από 46.000 φοιτητές στο Penn State University δίνουν στην πόλη νεανικό και διεθνή χαρακτήρα."
+          },
+          {
+            "label": "Πανεπιστήμιο & Έρευνα",
+            "text": "Penn State University, το Applied Research Laboratory και το Penn State Hershey Medical Center είναι οι κύριοι εργοδότες."
+          },
+          {
+            "label": "Φουτμπολ & Penn State Pride",
+            "text": "Οι Penn State Nittany Lions έχουν μια από τις πιο παθιασμένες φουτμπολ φιλοζωίες ΗΠΑ, με 100.000+ θεατές κάθε εντός έδρας αγώνα."
+          }
+        ]
+      },
+      "cult": {
+        "summary": "Πόλη αυστηρά πανεπιστημιακή, με μουσεία τέχνης, ερευνητικά κέντρα και θρυλικό φουτμπολ Penn State Pride.",
+        "items": [
+          {
+            "title": "Palmer Museum of Art",
+            "desc": "Μουσείο του Penn State με 10.000+ έργα από αρχαία στην αμερικανική σύγχρονη τέχνη."
+          },
+          {
+            "title": "Beaver Stadium & Penn State Football",
+            "desc": "Το δεύτερο μεγαλύτερο γήπεδο του κόσμου με 106.572 θέσεις, έδρα των Nittany Lions και σύμβολο Happy Valley pride."
+          },
+          {
+            "title": "Central Pennsylvania Festival of the Arts",
+            "desc": "Ετήσιο καλοκαιρινό φεστιβάλ με 100.000+ επισκέπτες, booths καλλιτεχνών και street food."
+          }
+        ]
+      },
+      "guide": {
+        "summary": "Το State College σε πέντε στάσεις: γήπεδο Beaver, Mount Nittany, μουσείο Palmer, Arboretum και creamery.",
+        "items": [
+          {
+            "title": "Beaver Stadium",
+            "cat": "culture",
+            "catLabel": "🎨 Πολιτισμός",
+            "desc": "Το δεύτερο μεγαλύτερο γήπεδο του κόσμου με 106.572 θέσεις, έδρα των Penn State Nittany Lions.",
+            "wiki": "Beaver_Stadium"
+          },
+          {
+            "title": "Mount Nittany Trail",
+            "cat": "nature",
+            "catLabel": "🌿 Φύση",
+            "desc": "Μονοπάτι 12 χλμ. στην κορυφή του Mount Nittany με θέα σε όλο το Happy Valley.",
+            "wiki": "Mount_Nittany"
+          },
+          {
+            "title": "Palmer Museum of Art",
+            "cat": "museum",
+            "catLabel": "🖼️ Μουσείο",
+            "desc": "Μουσείο του Penn State με 10.000+ έργα τέχνης.",
+            "wiki": "Palmer_Museum_of_Art"
+          },
+          {
+            "title": "The Arboretum at Penn State",
+            "cat": "nature",
+            "catLabel": "🌿 Φύση",
+            "desc": "Βοτανικός κήπος 150 στρεμμάτων με δέντρα, λουλούδια και παιδική χαρά.",
+            "wiki": "The_Arboretum_at_Penn_State"
+          },
+          {
+            "title": "Penn State Berkey Creamery",
+            "cat": "culture",
+            "catLabel": "🎨 Πολιτισμός",
+            "desc": "Η μεγαλύτερη πανεπιστημιακή creamery ΗΠΑ με 150+ γεύσεις παγωτού από το 1865.",
+            "wiki": "Berkey_Creamery"
+          }
+        ]
+      },
+      "gastro": {
+        "summary": "Φοιτητικά comfort food, το θρυλικό παγωτό του Berkey Creamery και grill party από τα Pennsylvania Dutch.",
+        "items": [
+          {
+            "title": "Penn State Ice Cream",
+            "desc": "Παγωτό από το Berkey Creamery που παράγεται στο πανεπιστήμιο από το 1865, με πάνω από 150 γεύσεις.",
+            "tag": "Γλυκό"
+          },
+          {
+            "title": "Grilled Sticky Wings",
+            "desc": "Τηγανητά φτερούγες με πικάντικη σάλτσα από θρυλικά bars του State College, όπως το Allen Street Grill.",
+            "tag": "Τοπικό"
+          },
+          {
+            "title": "Pennsylvania Dutch Pot Pie",
+            "desc": "Παχύς ζωμός με κοτόπουλο και χοντρά ζυμαρικά — comfort food της Pennsylvania Dutch ενδοχώρας.",
+            "tag": "Παραδοσιακό"
+          },
+          {
+            "title": "Paw Pad Thai & College Town Pho",
+            "desc": "Ασιατική street food κουζίνα που εξυπηρετεί τους χιλιάδες διεθνείς φοιτητές του Penn State.",
+            "tag": "Ασιατικό"
+          }
+        ]
+      },
+      "eco": {
+        "summary": "Το State College είναι από τις πιο πράσινες φοιτητικές πόλεις ΗΠΑ, με climate action plan, ποδηλατόδρομους και προστασία του Mount Nittany.",
+        "items": [
+          {
+            "title": "Mount Nittany Conservancy",
+            "desc": "Προστασία 3,2 km² του Mount Nittany με μονοπάτια και φυσικό καταφύγιο.",
+            "cat": "nature",
+            "catLabel": "🌿 Φύση",
+            "wiki": "Mount_Nittany_Conservancy"
+          },
+          {
+            "title": "Rothrock State Forest",
+            "desc": "Προστατευμένο δάσος 320 km² με μονοπάτια mountain biking και χειμερινά σπορ.",
+            "cat": "nature",
+            "catLabel": "🌳 Πάρκα",
+            "wiki": "Rothrock_State_Forest"
+          },
+          {
+            "title": "Penn State Climate Action",
+            "desc": "Πρόγραμμα εξηλεκτρισμού του campus, ηλιακών εγκαταστάσεων και μείωσης εκπομπών του Penn State University.",
+            "cat": "business",
+            "catLabel": "⚡ Ενέργεια",
+            "wiki": "Penn_State_University"
+          }
+        ]
+      },
+      "pastVsPresent": [
+        {
+          "epoch": "State College 1926: Πανεπιστήμιο & Γεωργία",
+          "content": "Περίπου 5.000 κάτοικοι και 2.000 φοιτητές, το Farmers' High School έχει γίνει Penn State College, η πόλη ζει από τη γεωργία και την εκπαίδευση και το football παίζεται σε μικρό γήπεδο."
+        },
+        {
+          "epoch": "State College 2026: Big Ten Football & Research",
+          "content": "48.000 κάτοικοι και 46.000 φοιτητές, το Beaver Stadium είναι το δεύτερο μεγαλύτερο γήπεδο του κόσμου, το Penn State είναι κορυφαίο ερευνητικό πανεπιστήμιο και το Happy Valley είναι από τα πιο πράσινα college towns ΗΠΑ."
+        }
+      ],
+      "pois": [
+        {
+          "name": "Beaver Stadium",
+          "category": "culture",
+          "coords": [
+            40.8064,
+            -77.8511
+          ],
+          "desc": "Το δεύτερο μεγαλύτερο γήπεδο του κόσμου.",
+          "wiki": "Beaver_Stadium"
+        },
+        {
+          "name": "Mount Nittany",
+          "category": "nature",
+          "coords": [
+            40.7836,
+            -77.7869
+          ],
+          "desc": "Εμβληματικός λόφος με μονοπάτια.",
+          "wiki": "Mount_Nittany"
+        },
+        {
+          "name": "Palmer Museum of Art",
+          "category": "culture",
+          "coords": [
+            40.7986,
+            -77.8647
+          ],
+          "desc": "Μουσείο τέχνης του Penn State.",
+          "wiki": "Palmer_Museum_of_Art"
+        },
+        {
+          "name": "The Arboretum at Penn State",
+          "category": "nature",
+          "coords": [
+            40.8036,
+            -77.8675
+          ],
+          "desc": "Βοτανικός κήπος 150 στρεμμάτων.",
+          "wiki": "The_Arboretum_at_Penn_State"
+        },
+        {
+          "name": "Berkey Creamery",
+          "category": "culture",
+          "coords": [
+            40.7939,
+            -77.865
+          ],
+          "desc": "Η μεγαλύτερη πανεπιστημιακή creamery ΗΠΑ.",
+          "wiki": "Berkey_Creamery"
         }
       ]
     }

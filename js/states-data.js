@@ -1,6 +1,6 @@
 /**
  * US States & Cities Index Metadata
- * Contains all 50 US States + Washington D.C. and 121 mapped cities
+ * Contains all 50 US States + Washington D.C. and 154 mapped cities
  * Used by NavigatorModule, App orchestration, and live search.
  */
 
@@ -473,6 +473,41 @@ export const US_STATES = [
         "id": "stamford",
         "name": "Στάμφορντ",
         "englishName": "Stamford"
+      },
+      {
+        "id": "bridgeport",
+        "name": "Μπρίτζπορτ",
+        "englishName": "Bridgeport"
+      },
+      {
+        "id": "waterbury",
+        "name": "Γουότερμπερι",
+        "englishName": "Waterbury"
+      },
+      {
+        "id": "norwalk",
+        "name": "Νόργουοκ",
+        "englishName": "Norwalk"
+      },
+      {
+        "id": "danbury",
+        "name": "Ντάνμπερι",
+        "englishName": "Danbury"
+      },
+      {
+        "id": "greenwich",
+        "name": "Γκρίνουιτς",
+        "englishName": "Greenwich"
+      },
+      {
+        "id": "mystic",
+        "name": "Μίστικ",
+        "englishName": "Mystic"
+      },
+      {
+        "id": "new-london",
+        "name": "Νιου Λόντον",
+        "englishName": "New London"
       }
     ]
   },
@@ -536,6 +571,31 @@ export const US_STATES = [
         "id": "worcester",
         "name": "Γουόρστερ",
         "englishName": "Worcester"
+      },
+      {
+        "id": "lowell",
+        "name": "Λόουελ",
+        "englishName": "Lowell"
+      },
+      {
+        "id": "new-bedford",
+        "name": "Νιου Μπέντφορντ",
+        "englishName": "New Bedford"
+      },
+      {
+        "id": "springfield-ma",
+        "name": "Σπρίνγκφιλντ",
+        "englishName": "Springfield"
+      },
+      {
+        "id": "quincy",
+        "name": "Κουίνσι",
+        "englishName": "Quincy"
+      },
+      {
+        "id": "gloucester",
+        "name": "Γκλόστερ",
+        "englishName": "Gloucester"
       }
     ]
   },
@@ -748,6 +808,41 @@ export const US_STATES = [
         "id": "buffalo",
         "name": "Μπάφαλο",
         "englishName": "Buffalo"
+      },
+      {
+        "id": "rochester",
+        "name": "Ρότσεστερ",
+        "englishName": "Rochester"
+      },
+      {
+        "id": "syracuse",
+        "name": "Σίρακιους",
+        "englishName": "Syracuse"
+      },
+      {
+        "id": "yonkers",
+        "name": "Γιόνκερς",
+        "englishName": "Yonkers"
+      },
+      {
+        "id": "ithaca",
+        "name": "Ιθάκη",
+        "englishName": "Ithaca"
+      },
+      {
+        "id": "saratoga-springs",
+        "name": "Σαρατόγκα Σπρινγκς",
+        "englishName": "Saratoga Springs"
+      },
+      {
+        "id": "niagara-falls-ny",
+        "name": "Καταρράκτες Νιαγάρα",
+        "englishName": "Niagara Falls"
+      },
+      {
+        "id": "binghamton",
+        "name": "Μπίνγκχαμπτον",
+        "englishName": "Binghamton"
       }
     ]
   },
@@ -854,6 +949,41 @@ export const US_STATES = [
         "id": "jersey-city",
         "name": "Τζέρσεϊ Σίτι",
         "englishName": "Jersey City"
+      },
+      {
+        "id": "paterson",
+        "name": "Πάτερσον",
+        "englishName": "Paterson"
+      },
+      {
+        "id": "elizabeth",
+        "name": "Ελίζαμπεθ",
+        "englishName": "Elizabeth"
+      },
+      {
+        "id": "atlantic-city",
+        "name": "Ατλάντικ Σίτι",
+        "englishName": "Atlantic City"
+      },
+      {
+        "id": "princeton",
+        "name": "Πρίνστον",
+        "englishName": "Princeton"
+      },
+      {
+        "id": "hoboken",
+        "name": "Χομπόκεν",
+        "englishName": "Hoboken"
+      },
+      {
+        "id": "cape-may",
+        "name": "Κέιπ Μέι",
+        "englishName": "Cape May"
+      },
+      {
+        "id": "morristown",
+        "name": "Μόρισταουν",
+        "englishName": "Morristown"
       }
     ]
   },
@@ -1128,6 +1258,41 @@ export const US_STATES = [
         "id": "pittsburgh",
         "name": "Πίτσμπεργκ",
         "englishName": "Pittsburgh"
+      },
+      {
+        "id": "allentown",
+        "name": "Άλενταουν",
+        "englishName": "Allentown"
+      },
+      {
+        "id": "erie",
+        "name": "Ήρι",
+        "englishName": "Erie"
+      },
+      {
+        "id": "reading",
+        "name": "Ρέντινγκ",
+        "englishName": "Reading"
+      },
+      {
+        "id": "scranton",
+        "name": "Σκράντον",
+        "englishName": "Scranton"
+      },
+      {
+        "id": "bethlehem-pa",
+        "name": "Βηθλεέμ",
+        "englishName": "Bethlehem"
+      },
+      {
+        "id": "lancaster",
+        "name": "Λάνκαστερ",
+        "englishName": "Lancaster"
+      },
+      {
+        "id": "state-college",
+        "name": "Στέιτ Κόλετζ",
+        "englishName": "State College"
       }
     ]
   },
@@ -1327,6 +1492,9 @@ export const US_STATES = [
 ];
 
 export const CITY_TO_STATE = {
+  "boise": "idaho",
+  "des-moines": "iowa",
+  "cedar-rapids": "iowa",
   "montgomery": "alabama",
   "birmingham": "alabama",
   "juneau": "alaska",
@@ -1336,116 +1504,146 @@ export const CITY_TO_STATE = {
   "tucson": "arizona",
   "scottsdale": "arizona",
   "little-rock": "arkansas",
+  "montpelier": "vermont",
+  "burlington": "vermont",
+  "richmond": "virginia",
+  "virginia-beach": "virginia",
+  "raleigh": "north-carolina",
+  "charlotte": "north-carolina",
+  "bismarck": "north-dakota",
+  "fargo": "north-dakota",
+  "salt-lake-city": "utah",
+  "provo": "utah",
+  "charleston-wv": "west-virginia",
+  "springfield": "illinois",
+  "chicago": "illinois",
+  "indianapolis": "indiana",
+  "fort-wayne": "indiana",
   "sacramento": "california",
   "los-angeles": "california",
   "san-francisco": "california",
   "san-diego": "california",
+  "topeka": "kansas",
+  "wichita": "kansas",
+  "frankfort": "kentucky",
+  "louisville": "kentucky",
   "denver": "colorado",
   "colorado-springs": "colorado",
   "aspen": "colorado",
   "hartford": "connecticut",
   "new-haven": "connecticut",
   "stamford": "connecticut",
-  "dover": "delaware",
-  "wilmington": "delaware",
-  "tallahassee": "florida",
-  "miami": "florida",
-  "orlando": "florida",
-  "tampa": "florida",
-  "atlanta": "georgia",
-  "savannah": "georgia",
-  "honolulu": "hawaii",
-  "hilo": "hawaii",
-  "boise": "idaho",
-  "springfield": "illinois",
-  "chicago": "illinois",
-  "indianapolis": "indiana",
-  "fort-wayne": "indiana",
-  "des-moines": "iowa",
-  "cedar-rapids": "iowa",
-  "topeka": "kansas",
-  "wichita": "kansas",
-  "frankfort": "kentucky",
-  "louisville": "kentucky",
+  "bridgeport": "connecticut",
+  "waterbury": "connecticut",
+  "norwalk": "connecticut",
+  "danbury": "connecticut",
+  "greenwich": "connecticut",
+  "mystic": "connecticut",
+  "new-london": "connecticut",
   "baton-rouge": "louisiana",
   "new-orleans": "louisiana",
-  "augusta": "maine",
-  "portland-me": "maine",
-  "annapolis": "maryland",
-  "baltimore": "maryland",
   "boston": "massachusetts",
   "cambridge": "massachusetts",
   "salem": "massachusetts",
   "plymouth": "massachusetts",
   "worcester": "massachusetts",
-  "lansing": "michigan",
-  "detroit": "michigan",
-  "ann-arbor": "michigan",
-  "saint-paul": "minnesota",
-  "minneapolis": "minnesota",
-  "jackson": "mississippi",
-  "biloxi": "mississippi",
+  "lowell": "massachusetts",
+  "new-bedford": "massachusetts",
+  "springfield-ma": "massachusetts",
+  "quincy": "massachusetts",
+  "gloucester": "massachusetts",
+  "augusta": "maine",
+  "portland-me": "maine",
+  "annapolis": "maryland",
+  "baltimore": "maryland",
   "jefferson-city": "missouri",
   "kansas-city": "missouri",
   "st-louis": "missouri",
+  "saint-paul": "minnesota",
+  "minneapolis": "minnesota",
+  "lansing": "michigan",
+  "detroit": "michigan",
+  "ann-arbor": "michigan",
+  "jackson": "mississippi",
+  "biloxi": "mississippi",
   "helena": "montana",
   "billings": "montana",
   "bozeman": "montana",
-  "lincoln": "nebraska",
-  "omaha": "nebraska",
-  "carson-city": "nevada",
-  "las-vegas": "nevada",
-  "reno": "nevada",
-  "concord": "new-hampshire",
-  "manchester-nh": "new-hampshire",
-  "trenton": "new-jersey",
-  "newark": "new-jersey",
-  "jersey-city": "new-jersey",
-  "santa-fe": "new-mexico",
-  "albuquerque": "new-mexico",
   "albany": "new-york",
   "new-york": "new-york",
   "buffalo": "new-york",
-  "raleigh": "north-carolina",
-  "charlotte": "north-carolina",
-  "bismarck": "north-dakota",
-  "fargo": "north-dakota",
-  "columbus": "ohio",
-  "cleveland": "ohio",
-  "cincinnati": "ohio",
+  "rochester": "new-york",
+  "syracuse": "new-york",
+  "yonkers": "new-york",
+  "ithaca": "new-york",
+  "saratoga-springs": "new-york",
+  "niagara-falls-ny": "new-york",
+  "binghamton": "new-york",
+  "carson-city": "nevada",
+  "las-vegas": "nevada",
+  "reno": "nevada",
+  "lincoln": "nebraska",
+  "omaha": "nebraska",
+  "santa-fe": "new-mexico",
+  "albuquerque": "new-mexico",
+  "trenton": "new-jersey",
+  "newark": "new-jersey",
+  "jersey-city": "new-jersey",
+  "paterson": "new-jersey",
+  "elizabeth": "new-jersey",
+  "atlantic-city": "new-jersey",
+  "princeton": "new-jersey",
+  "hoboken": "new-jersey",
+  "cape-may": "new-jersey",
+  "morristown": "new-jersey",
+  "concord": "new-hampshire",
+  "manchester-nh": "new-hampshire",
+  "columbia": "south-carolina",
+  "charleston-sc": "south-carolina",
+  "pierre": "south-dakota",
+  "sioux-falls": "south-dakota",
+  "dover": "delaware",
+  "wilmington": "delaware",
   "oklahoma-city": "oklahoma",
   "tulsa": "oklahoma",
   "salem-or": "oregon",
   "portland-or": "oregon",
   "eugene": "oregon",
+  "cheyenne": "wyoming",
+  "jackson-wy": "wyoming",
+  "washington-dc": "washington-dc",
+  "madison": "wisconsin",
+  "milwaukee": "wisconsin",
+  "columbus": "ohio",
+  "cleveland": "ohio",
+  "cincinnati": "ohio",
   "harrisburg": "pennsylvania",
   "philadelphia": "pennsylvania",
   "pittsburgh": "pennsylvania",
+  "allentown": "pennsylvania",
+  "erie": "pennsylvania",
+  "reading": "pennsylvania",
+  "scranton": "pennsylvania",
+  "bethlehem-pa": "pennsylvania",
+  "lancaster": "pennsylvania",
+  "state-college": "pennsylvania",
+  "olympia": "washington-state",
+  "seattle": "washington-state",
+  "spokane": "washington-state",
   "providence": "rhode-island",
   "newport": "rhode-island",
-  "columbia": "south-carolina",
-  "charleston-sc": "south-carolina",
-  "pierre": "south-dakota",
-  "sioux-falls": "south-dakota",
   "nashville": "tennessee",
   "memphis": "tennessee",
   "austin": "texas",
   "houston": "texas",
   "dallas": "texas",
   "san-antonio": "texas",
-  "salt-lake-city": "utah",
-  "provo": "utah",
-  "montpelier": "vermont",
-  "burlington": "vermont",
-  "richmond": "virginia",
-  "virginia-beach": "virginia",
-  "washington-dc": "washington-dc",
-  "olympia": "washington-state",
-  "seattle": "washington-state",
-  "spokane": "washington-state",
-  "charleston-wv": "west-virginia",
-  "madison": "wisconsin",
-  "milwaukee": "wisconsin",
-  "cheyenne": "wyoming",
-  "jackson-wy": "wyoming"
+  "atlanta": "georgia",
+  "savannah": "georgia",
+  "tallahassee": "florida",
+  "miami": "florida",
+  "orlando": "florida",
+  "tampa": "florida",
+  "honolulu": "hawaii",
+  "hilo": "hawaii"
 };

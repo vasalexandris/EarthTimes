@@ -1,4 +1,4 @@
-import { CITY_TO_STATE } from './states-data.js?v=20261112_eu15';
+import { CITY_TO_STATE } from './states-data.js?v=20261112_us1';
 /**
  * Video Service Module
  * Registry of verified high-definition YouTube video tours for all cities
@@ -14,8 +14,11 @@ export const CITY_VIDEOS = {
   "brasov": {
     "cityName": "Μπρασόφ",
     "drone": {
-      "youtubeId": "wQ6QeVsUYeY",
-      "title": "Μπρασόφ 4K — Brasov, Romania 🇷🇴 in 4K Ultra HD | Drone Video"
+      "youtubeId": "uMBvZjWY_LY",
+      "title": "Μπρασόφ 4K: Εναέρια Περιήγηση Drone στα Μεσαιωνικά Καρπάθια & τη Μαύρη Εκκλησία",
+      "label": "Μπρασόφ με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
     }
   },
   "kozani": {
@@ -2064,16 +2067,6 @@ export const CITY_VIDEOS = {
       "youtubeId": "qdYix6BDyP4",
       "title": "Κλουζ-Ναπόκα 4K: Εναέρια Περιήγηση Drone στην Καρδιά της Τρανσυλβανίας",
       "label": "Κλουζ-Ναπόκα με Drone (4K)",
-      "icon": "fa-solid fa-helicopter",
-      "type": "drone"
-    }
-  },
-  "brasov": {
-    "cityName": "Μπρασόφ",
-    "drone": {
-      "youtubeId": "uMBvZjWY_LY",
-      "title": "Μπρασόφ 4K: Εναέρια Περιήγηση Drone στα Μεσαιωνικά Καρπάθια & τη Μαύρη Εκκλησία",
-      "label": "Μπρασόφ με Drone (4K)",
       "icon": "fa-solid fa-helicopter",
       "type": "drone"
     }
@@ -8052,6 +8045,287 @@ export const CITY_VIDEOS = {
     "drone": {
       "youtubeId": "HtkXJ1bztC4",
       "title": "Σαμάρα 4K — Samara, Russia 🇷🇺 in 4K HDR ULTRA HD 60 FPS Dolby Vision™ Drone Video"
+    }
+  },
+  "bridgeport": {
+    "cityName": "Μπρίτζπορτ",
+    "drone": {
+      "youtubeId": "-Vzf7jfeEsQ",
+      "title": "Μπρίτζπορτ 4K — Bridgeport, Connecticut - [4K] Drone Tour"
+    }
+  },
+  "waterbury": {
+    "cityName": "Γουότερμπερι",
+    "drone": {
+      "youtubeId": "MOIRUpoO6Go",
+      "title": "Γουότερμπερι 4K — drone footage of waterbury ct"
+    }
+  },
+  "norwalk": {
+    "cityName": "Νόργουοκ",
+    "drone": {
+      "youtubeId": "T8wLWCUCrfE",
+      "title": "Νόργουοκ 4K — Norwalk CT in 4K"
+    },
+    "live": {
+      "youtubeId": "Dv2XxhsWqWY",
+      "label": "Νόργουοκ Live Cam",
+      "title": "SoNo Tower in South Norwalk, Connecticut, USA (Fixed View – East)"
+    }
+  },
+  "danbury": {
+    "cityName": "Ντάνμπερι",
+    "drone": {
+      "youtubeId": "HyVA17siJ5g",
+      "title": "Ντάνμπερι 4K — Driving Danbury Connecticut 4K"
+    }
+  },
+  "greenwich": {
+    "cityName": "Γκρίνουιτς",
+    "drone": {
+      "youtubeId": "0zP0o34p9fo",
+      "title": "Γκρίνουιτς 4K — Greenwich, Connecticut - [4K] Drone Tour"
+    }
+  },
+  "mystic": {
+    "cityName": "Μίστικ",
+    "drone": {
+      "youtubeId": "oQkXtE0w_Eo",
+      "title": "Μίστικ 4K — Mystic, Connecticut - [4K] Drone Tour"
+    }
+  },
+  "new-london": {
+    "cityName": "Νιου Λόντον",
+    "drone": {
+      "youtubeId": "fgJMZW5MrKY",
+      "title": "Νιου Λόντον 4K — New London, Connecticut (4K) ~ EB Drone"
+    },
+    "live": {
+      "youtubeId": "dKI_sYiiY7Y",
+      "label": "Νιου Λόντον Live Cam",
+      "title": "LIVE New London, CT Railcam | Railside Live"
+    }
+  },
+  "lowell": {
+    "cityName": "Λόουελ",
+    "drone": {
+      "youtubeId": "GGW8Q3b45xY",
+      "title": "Λόουελ 4K — Lowell, Massachusetts 🇺🇸 in 4K ULTRA HD HDR | Drone & Aerial Footage"
+    }
+  },
+  "new-bedford": {
+    "cityName": "Νιου Μπέντφορντ",
+    "drone": {
+      "youtubeId": "uimrJBYbowE",
+      "title": "Νιου Μπέντφορντ 4K — New Bedford, Massachusetts - [4K] Drone Tour"
+    }
+  },
+  "springfield-ma": {
+    "cityName": "Σπρίνγκφιλντ",
+    "drone": {
+      "youtubeId": "R6RqtRMIZvo",
+      "title": "Σπρίνγκφιλντ 4K — Springfield, Massachusetts - [4K] Drone Tour"
+    },
+    "live": {
+      "youtubeId": "8U0M_mionOs",
+      "label": "Σπρίνγκφιλντ Live Cam",
+      "title": "Springfield, Massachusetts, USA | LIVE Train Camera (PTZ)"
+    }
+  },
+  "quincy": {
+    "cityName": "Κουίνσι",
+    "drone": {
+      "youtubeId": "tVtZMlt0Iiw",
+      "title": "Κουίνσι 4K — Quincy Massachusetts 4K  /  The City of Presidents  (DJI Mavic Air 3S Drone Footage) Boston Shots!!"
+    }
+  },
+  "gloucester": {
+    "cityName": "Γκλόστερ",
+    "drone": {
+      "youtubeId": "q3Ium2KibHQ",
+      "title": "Γκλόστερ 4K — 4K Gloucester - MA - DJI Mini 2 in 4k"
+    },
+    "live": {
+      "youtubeId": "_j1qgdMnifk",
+      "label": "Γκλόστερ Live Cam",
+      "title": "Gloucester, Massachusetts US - Annisquam Yacht Club"
+    }
+  },
+  "paterson": {
+    "cityName": "Πάτερσον",
+    "drone": {
+      "youtubeId": "rRgvk2RzlZg",
+      "title": "Πάτερσον 4K — Paterson NJ by Drone - Paterson New Jersey City Drone view - Drone Shots"
+    }
+  },
+  "elizabeth": {
+    "cityName": "Ελίζαμπεθ",
+    "drone": {
+      "youtubeId": "cuP0zBjza10",
+      "title": "Ελίζαμπεθ 4K — Drone Shots of Elizabeth, NJ"
+    }
+  },
+  "atlantic-city": {
+    "cityName": "Ατλάντικ Σίτι",
+    "drone": {
+      "youtubeId": "Z1eC1AUukQE",
+      "title": "Ατλάντικ Σίτι 4K — Atlantic City, New Jersey | 4K Drone Footage"
+    },
+    "live": {
+      "youtubeId": "2WmTS_bBwyM",
+      "label": "Ατλάντικ Σίτι Live Cam",
+      "title": "Atlantic City Live Cams - 24/7 Boardwalk, Marina & Lighthouse Views"
+    }
+  },
+  "princeton": {
+    "cityName": "Πρίνστον",
+    "drone": {
+      "youtubeId": "9-mtnGyw8Zg",
+      "title": "Πρίνστον 4K — Princeton, New Jersey - [4K] Drone Tour"
+    }
+  },
+  "hoboken": {
+    "cityName": "Χομπόκεν",
+    "drone": {
+      "youtubeId": "0cM66um9q0g",
+      "title": "Χομπόκεν 4K — Flying over Hoboken, NJ [4K UHD]"
+    }
+  },
+  "cape-may": {
+    "cityName": "Κέιπ Μέι",
+    "drone": {
+      "youtubeId": "he6_qMIM3wY",
+      "title": "Κέιπ Μέι 4K — Cape May, New Jersey (Drone Footage in 4K)"
+    },
+    "live": {
+      "youtubeId": "gV2Lj_a-IoQ",
+      "label": "Κέιπ Μέι Live Cam",
+      "title": "Cape May Cove Live Cam with views of the Cove Beach, Cape May Light House and Great Sunsets"
+    }
+  },
+  "morristown": {
+    "cityName": "Μόρισταουν",
+    "drone": {
+      "youtubeId": "Sqr8MK-jfwU",
+      "title": "Μόρισταουν 4K — Morristown Aerial Majesty: Captivating Drone Fly-Through Video"
+    }
+  },
+  "rochester": {
+    "cityName": "Ρότσεστερ",
+    "drone": {
+      "youtubeId": "BmU9gKudg-A",
+      "title": "Ρότσεστερ 4K — Rochester, New York - [4K] Drone Tour"
+    }
+  },
+  "syracuse": {
+    "cityName": "Σίρακιους",
+    "drone": {
+      "youtubeId": "TLPEjwZBnHo",
+      "title": "Σίρακιους 4K — Syracuse, New York - [4K] Drone Tour"
+    }
+  },
+  "yonkers": {
+    "cityName": "Γιόνκερς",
+    "drone": {
+      "youtubeId": "hVCmIOQvN28",
+      "title": "Γιόνκερς 4K — Yonkers, New York - [4K] Drone Tour"
+    }
+  },
+  "ithaca": {
+    "cityName": "Ιθάκη",
+    "drone": {
+      "youtubeId": "qhXHGJzPnPA",
+      "title": "Ιθάκη 4K — Ithaca, New York - [4K] Drone Tour"
+    },
+    "live": {
+      "youtubeId": "VuaBJpMLkRc",
+      "label": "Ιθάκη Live Cam",
+      "title": "Ithaca College Dillingham Webcam"
+    }
+  },
+  "saratoga-springs": {
+    "cityName": "Σαρατόγκα Σπρινγκς",
+    "drone": {
+      "youtubeId": "xHAgr3GD1ZU",
+      "title": "Σαρατόγκα Σπρινγκς 4K — Saratoga Springs, New York - [4K] Drone Tour"
+    }
+  },
+  "niagara-falls-ny": {
+    "cityName": "Καταρράκτες Νιαγάρα",
+    "drone": {
+      "youtubeId": "phJRqNNj-eg",
+      "title": "Καταρράκτες Νιαγάρα 4K — 🔥 4K Drone | Niagara Falls Travel Time Lapse: Frozen & Aerial | New York, USA & Ontario, Canada"
+    },
+    "live": {
+      "youtubeId": "qx7gry390YA",
+      "label": "Καταρράκτες Νιαγάρα Live Cam",
+      "title": "EarthCam Live:  Niagara Falls"
+    }
+  },
+  "binghamton": {
+    "cityName": "Μπίνγκχαμπτον",
+    "drone": {
+      "youtubeId": "OZyDM755I60",
+      "title": "Μπίνγκχαμπτον 4K — Binghamton, New York - [4K] Drone Tour"
+    }
+  },
+  "allentown": {
+    "cityName": "Άλενταουν",
+    "drone": {
+      "youtubeId": "xXKgR8cuLBk",
+      "title": "Άλενταουν 4K — Allentown, Pennsylvania - [4K] Drone Tour"
+    }
+  },
+  "erie": {
+    "cityName": "Ήρι",
+    "drone": {
+      "youtubeId": "nRiZWQ9BuCY",
+      "title": "Ήρι 4K — Erie, Pennsylvania - [4K] Drone Tour"
+    }
+  },
+  "reading": {
+    "cityName": "Ρέντινγκ",
+    "drone": {
+      "youtubeId": "m2Vr1NDeSyc",
+      "title": "Ρέντινγκ 4K — Reading, Pennsylvania - [4K] Drone Tour"
+    },
+    "live": {
+      "youtubeId": "6k3ZZDQTmWY",
+      "label": "Ρέντινγκ Live Cam",
+      "title": "LIVESTREAM - Reading Outer Station"
+    }
+  },
+  "scranton": {
+    "cityName": "Σκράντον",
+    "drone": {
+      "youtubeId": "xcWj68_ET2Y",
+      "title": "Σκράντον 4K — Scranton, Pennsylvania - [4K] Drone Tour"
+    }
+  },
+  "bethlehem-pa": {
+    "cityName": "Βηθλεέμ",
+    "drone": {
+      "youtubeId": "T1voS9vyqP0",
+      "title": "Βηθλεέμ 4K — Driving Through Downtown Bethlehem, Pennsylvania - [4K Tour]"
+    }
+  },
+  "lancaster": {
+    "cityName": "Λάνκαστερ",
+    "drone": {
+      "youtubeId": "wZ-6Hkimyyc",
+      "title": "Λάνκαστερ 4K — Lancaster, Pennsylvania - [4K] Drone Tour"
+    }
+  },
+  "state-college": {
+    "cityName": "Στέιτ Κόλετζ",
+    "drone": {
+      "youtubeId": "5-XzsAkM1eo",
+      "title": "Στέιτ Κόλετζ 4K — State College, Pennsylvania - [4K] Drone Tour"
+    },
+    "live": {
+      "youtubeId": "kGB1z-KVcy0",
+      "label": "Στέιτ Κόλετζ Live Cam",
+      "title": "Beaver Ave and Allen St - State College, PA"
     }
   }
 };
