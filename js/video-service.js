@@ -1,4 +1,4 @@
-import { CITY_TO_STATE } from './states-data.js?v=20261112_us1';
+import { CITY_TO_STATE } from './states-data.js?v=20261112_us2';
 /**
  * Video Service Module
  * Registry of verified high-definition YouTube video tours for all cities
@@ -8326,6 +8326,332 @@ export const CITY_VIDEOS = {
       "youtubeId": "kGB1z-KVcy0",
       "label": "Στέιτ Κόλετζ Live Cam",
       "title": "Beaver Ave and Allen St - State College, PA"
+    }
+  },
+  "jacksonville": {
+    "cityName": "Τζάκσονβιλ",
+    "drone": {
+      "youtubeId": "jab1oWfSO8Q",
+      "title": "Τζάκσονβιλ 4K — Jacksonville, Florida | 4K Drone Footage"
+    },
+    "live": {
+      "youtubeId": "bZ4uxyLqV-E",
+      "label": "Τζάκσονβιλ Live Cam",
+      "title": "Live Cam From The Best Western In Jacksonville Beach, Fl."
+    }
+  },
+  "st-petersburg-fl": {
+    "cityName": "Σεντ Πίτερσμπεργκ",
+    "drone": {
+      "youtubeId": "vNhakK77yc8",
+      "title": "Σεντ Πίτερσμπεργκ 4K — St. Petersburg, Florida - [4K] Drone Tour"
+    }
+  },
+  "fort-lauderdale": {
+    "cityName": "Φορτ Λόντερντεϊλ",
+    "drone": {
+      "youtubeId": "k1tiSi4LkiE",
+      "title": "Φορτ Λόντερντεϊλ 4K — Fort Lauderdale, Florida, USA 🇺🇸 | 4K Drone Footage"
+    },
+    "live": {
+      "youtubeId": "bM0GplM_vPY",
+      "label": "Φορτ Λόντερντεϊλ Live Cam",
+      "title": "🌴 LAS OLAS LIVE 🔴 Fort Lauderdale Patio Cam | Elbo Room A1A"
+    }
+  },
+  "key-west": {
+    "cityName": "Κι Γουέστ",
+    "drone": {
+      "youtubeId": "O3wM9shKGSU",
+      "title": "Κι Γουέστ 4K — Key West, Florida 🇺🇸 in 4K Video by Drone - Key West Beaches United States"
+    },
+    "live": {
+      "youtubeId": "H_kswlYZN5o",
+      "label": "Κι Γουέστ Live Cam",
+      "title": "🔴Duval Street - Key West, Florida - Live Cam"
+    }
+  },
+  "st-augustine": {
+    "cityName": "Σεντ Ογκουστίν",
+    "drone": {
+      "youtubeId": "mFAX4Rr8VEo",
+      "title": "Σεντ Ογκουστίν 4K — Spectacular St. Augustine Florida Aerial Adventure | Experience the Ancient City by Drone"
+    },
+    "live": {
+      "youtubeId": "0lox0s8zNcU",
+      "label": "Σεντ Ογκουστίν Live Cam",
+      "title": "Bridge of Lions LIVE - 24/7 - St. Augustine, Florida"
+    }
+  },
+  "naples-fl": {
+    "cityName": "Νέιπλς",
+    "drone": {
+      "youtubeId": "kvBBpIHcXQI",
+      "title": "Νέιπλς 4K — Beautiful Naples, Florida | 4K drone footage"
+    }
+  },
+  "augusta-ga": {
+    "cityName": "Ογκάστα",
+    "drone": {
+      "youtubeId": "-VBf3y9fbkA",
+      "title": "Ογκάστα 4K — Augusta Georgia 4K  / Home of the Masters  (DJI Mavic Air 3S Drone Footage) 2nd Largest City in GA!!"
+    }
+  },
+  "macon": {
+    "cityName": "Μέικον",
+    "drone": {
+      "youtubeId": "YVrgos1sK1A",
+      "title": "Μέικον 4K — Macon, Georgia - [4K] Drone Tour"
+    }
+  },
+  "athens-ga": {
+    "cityName": "Άθενς",
+    "drone": {
+      "youtubeId": "5jyopjQLWjA",
+      "title": "Άθενς 4K — Athens, Georgia - [4K] Drone Tour"
+    }
+  },
+  "columbus-ga": {
+    "cityName": "Κολόμπους",
+    "drone": {
+      "youtubeId": "mvjhk1mv9F0",
+      "title": "Κολόμπους 4K — COLUMBUS GA | Town Reel | 4K Cinematic Drone Video"
+    }
+  },
+  "roswell-ga": {
+    "cityName": "Ρόσγουελ",
+    "drone": {
+      "youtubeId": "QHoErdZfvp4",
+      "title": "Ρόσγουελ 4K — Roswell Georgia | 4K Virtual Tour of Downtown Roswell"
+    }
+  },
+  "brunswick-ga": {
+    "cityName": "Μπράνσγουικ",
+    "drone": {
+      "youtubeId": "QwPq2cYdl0s",
+      "title": "Μπράνσγουικ 4K — Brunswick Georgia | Golden Isles | Drone | 4K"
+    }
+  },
+  "alpharetta": {
+    "cityName": "Αλφαρέτα",
+    "drone": {
+      "youtubeId": "W8iqkIG81o4",
+      "title": "Αλφαρέτα 4K — Alpharetta GA 4K (DJI Mavic Air 2 Drone Footage) 13th Largest City in Georgia / Atlanta Suburb!!"
+    }
+  },
+  "marietta-ga": {
+    "cityName": "Μαριέτα",
+    "drone": {
+      "youtubeId": "qEc0Z4aZhSs",
+      "title": "Μαριέτα 4K — Drive and Fly in 4k-Marietta, GA  Chill/ Travel / Acoustic/ Happy/ Uplifting /Relax"
+    }
+  },
+  "durham": {
+    "cityName": "Ντέραμ",
+    "drone": {
+      "youtubeId": "GnGZyPjOKSg",
+      "title": "Ντέραμ 4K — 4K Drone Footage of Durham, NC | Cinematic Aerial Tour of Bull City"
+    }
+  },
+  "greensboro": {
+    "cityName": "Γκρίνσμπορο",
+    "drone": {
+      "youtubeId": "JMAn4Xrn_ag",
+      "title": "Γκρίνσμπορο 4K — Greensboro, NC, USA 🇺🇸 4k ULTRA HD Drone Footage"
+    }
+  },
+  "winston-salem": {
+    "cityName": "Γουίνστον-Σέιλεμ",
+    "drone": {
+      "youtubeId": "pufg4DyvlIk",
+      "title": "Γουίνστον-Σέιλεμ 4K — Winston-Salem, North Carolina - [4K] Drone Tour"
+    }
+  },
+  "asheville": {
+    "cityName": "Άσβιλ",
+    "drone": {
+      "youtubeId": "S0r5zsc_RZ0",
+      "title": "Άσβιλ 4K — Asheville, North Carolina - [4K] Drone Tour"
+    }
+  },
+  "wilmington-nc": {
+    "cityName": "Γουίλμινγκτον",
+    "drone": {
+      "youtubeId": "KTcaJAmSuX4",
+      "title": "Γουίλμινγκτον 4K — Explore Wilmington, NC in HYPERLAPSE | Drone | 4k UHD"
+    },
+    "live": {
+      "youtubeId": "qUfyZ66eRHI",
+      "label": "Γουίλμινγκτον Live Cam",
+      "title": "🌆 Riverfront Wilmington Riverwalk Live Cam"
+    }
+  },
+  "fayetteville-nc": {
+    "cityName": "Φαγιέτβιλ",
+    "drone": {
+      "youtubeId": "Q5o9upfz0Yk",
+      "title": "Φαγιέτβιλ 4K — 4K Driving in Fayetteville, North Carolina"
+    }
+  },
+  "cary": {
+    "cityName": "Κάρι",
+    "drone": {
+      "youtubeId": "_floDd7VmkY",
+      "title": "Κάρι 4K — Downtown Cary NC | 4K 60FPS Stock Footage"
+    },
+    "live": {
+      "youtubeId": "YVXZk3-kzcI",
+      "label": "Κάρι Live Cam",
+      "title": "Live View — Downtown Cary Park"
+    }
+  },
+  "boone-nc": {
+    "cityName": "Μπουν",
+    "drone": {
+      "youtubeId": "B8jfmeJcidM",
+      "title": "Μπουν 4K — Boone, North Carolina - [4K] Drone Tour"
+    }
+  },
+  "greenville-sc": {
+    "cityName": "Γκρίνβιλ",
+    "drone": {
+      "youtubeId": "1BHPA7mB9MI",
+      "title": "Γκρίνβιλ 4K — Greenville, South Carolina 4K UHD | Drone Footage"
+    },
+    "live": {
+      "youtubeId": "9GVOuE6mDJY",
+      "label": "Γκρίνβιλ Live Cam",
+      "title": "Live Greenville SC Main Street Webcam"
+    }
+  },
+  "myrtle-beach": {
+    "cityName": "Μερτλ Μπιτς",
+    "drone": {
+      "youtubeId": "cM_r7YTb9Zk",
+      "title": "Μερτλ Μπιτς 4K — Myrtle Beach, South Carolina | 4K drone footage"
+    },
+    "live": {
+      "youtubeId": "UKtfCDXhCq0",
+      "label": "Μερτλ Μπιτς Live Cam",
+      "title": "Myrtle Beach Boardwalk Cam"
+    }
+  },
+  "spartanburg": {
+    "cityName": "Σπάρτανμπεργκ",
+    "drone": {
+      "youtubeId": "Q1tS7LjBKtY",
+      "title": "Σπάρτανμπεργκ 4K — Spartanburg, South Carolina - [4K] Drone Tour"
+    },
+    "live": {
+      "youtubeId": "xJMJegqnl8Y",
+      "label": "Σπάρτανμπεργκ Live Cam",
+      "title": "Spartanburg, South Carolina, USA | LIVE Train Camera (Fixed View – North)"
+    }
+  },
+  "hilton-head": {
+    "cityName": "Χίλτον Χεντ",
+    "drone": {
+      "youtubeId": "NxE13TDHwFs",
+      "title": "Χίλτον Χεντ 4K — Sonesta Hilton Head Hotel Drone Tour - Hilton Head Island, South Carolina"
+    },
+    "live": {
+      "youtubeId": "qDyYRTtXlds",
+      "label": "Χίλτον Χεντ Live Cam",
+      "title": "Live from the 18th Green at Robert Trent Jones Golf Course | Hilton Head Island, SC"
+    }
+  },
+  "rock-hill": {
+    "cityName": "Ροκ Χιλ",
+    "drone": {
+      "youtubeId": "hSlms6GUH0k",
+      "title": "Ροκ Χιλ 4K — Rock Hill SC 4K / South Carolina's 5th Largest City (DJI Mavic Air 2 Drone Footage)  Gateway to SC!!"
+    }
+  },
+  "mount-pleasant": {
+    "cityName": "Μάουντ Πλέζαντ",
+    "drone": {
+      "youtubeId": "sD_KK7uuN5s",
+      "title": "Μάουντ Πλέζαντ 4K — Road Tour from Charleston to Mount Pleasant, South Carolina in 4K - Charleston SC Suburbs"
+    }
+  },
+  "florence-sc": {
+    "cityName": "Φλόρενς",
+    "drone": {
+      "youtubeId": "si607bT67lE",
+      "title": "Φλόρενς 4K — Florence - South Carolina - 4K Downtown Drive"
+    }
+  },
+  "beaufort-sc": {
+    "cityName": "Μπιούφορτ",
+    "drone": {
+      "youtubeId": "wR92E8b_DD8",
+      "title": "Μπιούφορτ 4K — Beaufort, South Carolina from a drone in 4K!"
+    }
+  },
+  "norfolk": {
+    "cityName": "Νόρφολκ",
+    "drone": {
+      "youtubeId": "a5BnNV99hLQ",
+      "title": "Νόρφολκ 4K — Norfolk, Virginia - [4K] Drone Tour"
+    }
+  },
+  "alexandria-va": {
+    "cityName": "Αλεξάνδρεια",
+    "drone": {
+      "youtubeId": "r89mPlCaApU",
+      "title": "Αλεξάνδρεια 4K — 【4K】WALK ALEXANDRIA Virginia VA USA 4k video Travel vlog HDR"
+    }
+  },
+  "charlottesville": {
+    "cityName": "Σάρλοτσβιλ",
+    "drone": {
+      "youtubeId": "N97U_OCv6FE",
+      "title": "Σάρλοτσβιλ 4K — Charlottesville, Virginia - [4K] Drone Tour"
+    }
+  },
+  "williamsburg": {
+    "cityName": "Γουίλιαμσμπεργκ",
+    "drone": {
+      "youtubeId": "eRqXEvLnt9M",
+      "title": "Γουίλιαμσμπεργκ 4K — Williamsburg, Virginia - [4K] Drone Tour"
+    }
+  },
+  "roanoke": {
+    "cityName": "Ροανόκ",
+    "drone": {
+      "youtubeId": "QskXuHEm5A4",
+      "title": "Ροανόκ 4K — Flying Over Roanoke, Virginia - [4K] Drone Footage"
+    },
+    "live": {
+      "youtubeId": "UhP0rMfgjJ8",
+      "label": "Ροανόκ Live Cam",
+      "title": "Roanoke, Virginia, USA | LIVE Train Camera (PTZ)"
+    }
+  },
+  "chesapeake": {
+    "cityName": "Τσέζαπικ",
+    "drone": {
+      "youtubeId": "ko-cMbqPDGY",
+      "title": "Τσέζαπικ 4K — Chesapeake, Virginia from above | Cinematic Drone Footage of Chesapeake "
+    },
+    "live": {
+      "youtubeId": "M9pA4F7J1Go",
+      "label": "Τσέζαπικ Live Cam",
+      "title": "LIVE Osprey Nest - Chesapeake Conservancy | explore.org"
+    }
+  },
+  "newport-news": {
+    "cityName": "Νιούπορτ Νιουζ",
+    "drone": {
+      "youtubeId": "zWZTgq5_gTE",
+      "title": "Νιούπορτ Νιουζ 4K — Newport News, Virginia - [4K] Drone Tour"
+    }
+  },
+  "lynchburg": {
+    "cityName": "Λίντσμπεργκ",
+    "drone": {
+      "youtubeId": "440USlyCTP0",
+      "title": "Λίντσμπεργκ 4K — Lynchburg, Virginia - [4K] Drone Tour"
     }
   }
 };

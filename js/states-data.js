@@ -1,6 +1,6 @@
 /**
  * US States & Cities Index Metadata
- * Contains all 50 US States + Washington D.C. and 154 mapped cities
+ * Contains all 50 US States + Washington D.C. and 192 mapped cities
  * Used by NavigatorModule, App orchestration, and live search.
  */
 
@@ -194,6 +194,46 @@ export const US_STATES = [
         "id": "virginia-beach",
         "name": "Βιρτζίνια Μπιτς",
         "englishName": "Virginia Beach"
+      },
+      {
+        "id": "norfolk",
+        "name": "Νόρφολκ",
+        "englishName": "Norfolk"
+      },
+      {
+        "id": "alexandria-va",
+        "name": "Αλεξάνδρεια",
+        "englishName": "Alexandria"
+      },
+      {
+        "id": "charlottesville",
+        "name": "Σάρλοτσβιλ",
+        "englishName": "Charlottesville"
+      },
+      {
+        "id": "williamsburg",
+        "name": "Γουίλιαμσμπεργκ",
+        "englishName": "Williamsburg"
+      },
+      {
+        "id": "roanoke",
+        "name": "Ροανόκ",
+        "englishName": "Roanoke"
+      },
+      {
+        "id": "chesapeake",
+        "name": "Τσέζαπικ",
+        "englishName": "Chesapeake"
+      },
+      {
+        "id": "newport-news",
+        "name": "Νιούπορτ Νιουζ",
+        "englishName": "Newport News"
+      },
+      {
+        "id": "lynchburg",
+        "name": "Λίντσμπεργκ",
+        "englishName": "Lynchburg"
       }
     ]
   },
@@ -218,6 +258,46 @@ export const US_STATES = [
         "id": "charlotte",
         "name": "Σάρλοτ",
         "englishName": "Charlotte"
+      },
+      {
+        "id": "durham",
+        "name": "Ντέραμ",
+        "englishName": "Durham"
+      },
+      {
+        "id": "greensboro",
+        "name": "Γκρίνσμπορο",
+        "englishName": "Greensboro"
+      },
+      {
+        "id": "winston-salem",
+        "name": "Γουίνστον-Σέιλεμ",
+        "englishName": "Winston-Salem"
+      },
+      {
+        "id": "asheville",
+        "name": "Άσβιλ",
+        "englishName": "Asheville"
+      },
+      {
+        "id": "wilmington-nc",
+        "name": "Γουίλμινγκτον",
+        "englishName": "Wilmington"
+      },
+      {
+        "id": "fayetteville-nc",
+        "name": "Φαγιέτβιλ",
+        "englishName": "Fayetteville"
+      },
+      {
+        "id": "cary",
+        "name": "Κάρι",
+        "englishName": "Cary"
+      },
+      {
+        "id": "boone-nc",
+        "name": "Μπουν",
+        "englishName": "Boone"
       }
     ]
   },
@@ -1032,6 +1112,46 @@ export const US_STATES = [
         "id": "charleston-sc",
         "name": "Τσάρλεστον",
         "englishName": "Charleston"
+      },
+      {
+        "id": "greenville-sc",
+        "name": "Γκρίνβιλ",
+        "englishName": "Greenville"
+      },
+      {
+        "id": "myrtle-beach",
+        "name": "Μερτλ Μπιτς",
+        "englishName": "Myrtle Beach"
+      },
+      {
+        "id": "spartanburg",
+        "name": "Σπάρτανμπεργκ",
+        "englishName": "Spartanburg"
+      },
+      {
+        "id": "hilton-head",
+        "name": "Χίλτον Χεντ",
+        "englishName": "Hilton Head Island"
+      },
+      {
+        "id": "rock-hill",
+        "name": "Ροκ Χιλ",
+        "englishName": "Rock Hill"
+      },
+      {
+        "id": "mount-pleasant",
+        "name": "Μάουντ Πλέζαντ",
+        "englishName": "Mount Pleasant"
+      },
+      {
+        "id": "florence-sc",
+        "name": "Φλόρενς",
+        "englishName": "Florence"
+      },
+      {
+        "id": "beaufort-sc",
+        "name": "Μπιούφορτ",
+        "englishName": "Beaufort"
       }
     ]
   },
@@ -1428,6 +1548,46 @@ export const US_STATES = [
         "id": "savannah",
         "name": "Σαβάνα",
         "englishName": "Savannah"
+      },
+      {
+        "id": "augusta-ga",
+        "name": "Ογκάστα",
+        "englishName": "Augusta"
+      },
+      {
+        "id": "macon",
+        "name": "Μέικον",
+        "englishName": "Macon"
+      },
+      {
+        "id": "athens-ga",
+        "name": "Άθενς",
+        "englishName": "Athens"
+      },
+      {
+        "id": "columbus-ga",
+        "name": "Κολόμπους",
+        "englishName": "Columbus"
+      },
+      {
+        "id": "roswell-ga",
+        "name": "Ρόσγουελ",
+        "englishName": "Roswell"
+      },
+      {
+        "id": "brunswick-ga",
+        "name": "Μπράνσγουικ",
+        "englishName": "Brunswick"
+      },
+      {
+        "id": "alpharetta",
+        "name": "Αλφαρέτα",
+        "englishName": "Alpharetta"
+      },
+      {
+        "id": "marietta-ga",
+        "name": "Μαριέτα",
+        "englishName": "Marietta"
       }
     ]
   },
@@ -1462,6 +1622,36 @@ export const US_STATES = [
         "id": "tampa",
         "name": "Τάμπα",
         "englishName": "Tampa"
+      },
+      {
+        "id": "jacksonville",
+        "name": "Τζάκσονβιλ",
+        "englishName": "Jacksonville"
+      },
+      {
+        "id": "st-petersburg-fl",
+        "name": "Σεντ Πίτερσμπεργκ",
+        "englishName": "St. Petersburg"
+      },
+      {
+        "id": "fort-lauderdale",
+        "name": "Φορτ Λόντερντεϊλ",
+        "englishName": "Fort Lauderdale"
+      },
+      {
+        "id": "key-west",
+        "name": "Κι Γουέστ",
+        "englishName": "Key West"
+      },
+      {
+        "id": "st-augustine",
+        "name": "Σεντ Ογκουστίν",
+        "englishName": "St. Augustine"
+      },
+      {
+        "id": "naples-fl",
+        "name": "Νέιπλς",
+        "englishName": "Naples"
       }
     ]
   },
@@ -1508,8 +1698,24 @@ export const CITY_TO_STATE = {
   "burlington": "vermont",
   "richmond": "virginia",
   "virginia-beach": "virginia",
+  "norfolk": "virginia",
+  "alexandria-va": "virginia",
+  "charlottesville": "virginia",
+  "williamsburg": "virginia",
+  "roanoke": "virginia",
+  "chesapeake": "virginia",
+  "newport-news": "virginia",
+  "lynchburg": "virginia",
   "raleigh": "north-carolina",
   "charlotte": "north-carolina",
+  "durham": "north-carolina",
+  "greensboro": "north-carolina",
+  "winston-salem": "north-carolina",
+  "asheville": "north-carolina",
+  "wilmington-nc": "north-carolina",
+  "fayetteville-nc": "north-carolina",
+  "cary": "north-carolina",
+  "boone-nc": "north-carolina",
   "bismarck": "north-dakota",
   "fargo": "north-dakota",
   "salt-lake-city": "utah",
@@ -1600,6 +1806,14 @@ export const CITY_TO_STATE = {
   "manchester-nh": "new-hampshire",
   "columbia": "south-carolina",
   "charleston-sc": "south-carolina",
+  "greenville-sc": "south-carolina",
+  "myrtle-beach": "south-carolina",
+  "spartanburg": "south-carolina",
+  "hilton-head": "south-carolina",
+  "rock-hill": "south-carolina",
+  "mount-pleasant": "south-carolina",
+  "florence-sc": "south-carolina",
+  "beaufort-sc": "south-carolina",
   "pierre": "south-dakota",
   "sioux-falls": "south-dakota",
   "dover": "delaware",
@@ -1640,10 +1854,24 @@ export const CITY_TO_STATE = {
   "san-antonio": "texas",
   "atlanta": "georgia",
   "savannah": "georgia",
+  "augusta-ga": "georgia",
+  "macon": "georgia",
+  "athens-ga": "georgia",
+  "columbus-ga": "georgia",
+  "roswell-ga": "georgia",
+  "brunswick-ga": "georgia",
+  "alpharetta": "georgia",
+  "marietta-ga": "georgia",
   "tallahassee": "florida",
   "miami": "florida",
   "orlando": "florida",
   "tampa": "florida",
+  "jacksonville": "florida",
+  "st-petersburg-fl": "florida",
+  "fort-lauderdale": "florida",
+  "key-west": "florida",
+  "st-augustine": "florida",
+  "naples-fl": "florida",
   "honolulu": "hawaii",
   "hilo": "hawaii"
 };
