@@ -1,4 +1,4 @@
-import { US_STATES, CITY_TO_STATE } from './states-data.js?v=20261112_eu7';
+import { US_STATES, CITY_TO_STATE } from './states-data.js?v=20261112_eu8';
 /**
  * Navigator Module
  * Hierarchical Cascading Navigation: Continents -> Countries -> Cities
@@ -113,7 +113,14 @@ export const CONTINENTS_DATA = [
         cities: [
           { id: 'vienna', name: 'Βιέννη', badge: 'Πρωτεύουσα' },
           { id: 'salzburg', name: 'Σάλτσμπουργκ' },
-          { id: 'innsbruck', name: 'Ίνσμπρουκ' }
+          { id: 'innsbruck', name: 'Ίνσμπρουκ' },
+          { id: 'graz', name: 'Γκρατς' },
+          { id: 'linz', name: 'Λιντς' },
+          { id: 'klagenfurt', name: 'Κλάγκενφουρτ' },
+          { id: 'villach', name: 'Φίλαχ' },
+          { id: 'st-polten', name: 'Ζανκτ Πέλτεν' },
+          { id: 'bregenz', name: 'Μπρέγκεντς' },
+          { id: 'krems', name: 'Κρεμς' }
         ]
       },
       {
@@ -123,7 +130,14 @@ export const CONTINENTS_DATA = [
         cities: [
           { id: 'bern', name: 'Βέρνη', badge: 'Πρωτεύουσα' },
           { id: 'zurich', name: 'Ζυρίχη' },
-          { id: 'geneva', name: 'Γενεύη' }
+          { id: 'geneva', name: 'Γενεύη' },
+          { id: 'basel', name: 'Βασιλεία' },
+          { id: 'lausanne', name: 'Λωζάννη' },
+          { id: 'lucerne', name: 'Λουκέρνη' },
+          { id: 'lugano', name: 'Λουγκάνο' },
+          { id: 'winterthur', name: 'Βίντερτουρ' },
+          { id: 'st-gallen', name: 'Σεντ Γκάλεν' },
+          { id: 'interlaken', name: 'Ιντερλάκεν' }
         ]
       },
       {
@@ -153,7 +167,14 @@ export const CONTINENTS_DATA = [
         cities: [
           { id: 'lisbon', name: 'Λισαβόνα', badge: 'Πρωτεύουσα' },
           { id: 'porto', name: 'Πόρτο' },
-          { id: 'braga', name: 'Μπράγκα' }
+          { id: 'braga', name: 'Μπράγκα' },
+          { id: 'coimbra', name: 'Κοΐμπρα' },
+          { id: 'faro', name: 'Φάρο' },
+          { id: 'funchal', name: 'Φουντσάλ' },
+          { id: 'aveiro', name: 'Αβέιρο' },
+          { id: 'evora', name: 'Έβορα' },
+          { id: 'guimaraes', name: 'Γκιμαράες' },
+          { id: 'setubal', name: 'Σετούμπαλ' }
         ]
       },
       {
@@ -163,7 +184,14 @@ export const CONTINENTS_DATA = [
         cities: [
           { id: 'prague', name: 'Πράγα', badge: 'Πρωτεύουσα' },
           { id: 'brno', name: 'Μπρνο' },
-          { id: 'ostrava', name: 'Οστράβα' }
+          { id: 'ostrava', name: 'Οστράβα' },
+          { id: 'plzen', name: 'Πίλζεν' },
+          { id: 'cesky-krumlov', name: 'Τσέσκι Κρούμλοβ' },
+          { id: 'olomouc', name: 'Όλομοουτς' },
+          { id: 'liberec', name: 'Λίμπερετς' },
+          { id: 'karlovy-vary', name: 'Κάρλοβι Βάρι' },
+          { id: 'ceske-budejovice', name: 'Τσέσκε Μπουντεγιόβιτσε' },
+          { id: 'pardubice', name: 'Παρντούμπιτσε' }
         ]
       },
       {
@@ -207,7 +235,14 @@ export const CONTINENTS_DATA = [
         cities: [
           { id: 'oslo', name: 'Όσλο', badge: 'Πρωτεύουσα' },
           { id: 'bergen', name: 'Μπέργκεν' },
-          { id: 'tromso', name: 'Τρόμσο' }
+          { id: 'tromso', name: 'Τρόμσο' },
+          { id: 'trondheim', name: 'Τρόντχαϊμ' },
+          { id: 'stavanger', name: 'Σταβάνγκερ' },
+          { id: 'alesund', name: 'Όλεσουντ' },
+          { id: 'kristiansand', name: 'Κρίστιανσαντ' },
+          { id: 'drammen', name: 'Ντράμεν' },
+          { id: 'bodo', name: 'Μπόντε' },
+          { id: 'lillehammer', name: 'Λιλεχάμερ' }
         ]
       },
       {
@@ -217,7 +252,14 @@ export const CONTINENTS_DATA = [
         cities: [
           { id: 'copenhagen', name: 'Κοπεγχάγη', badge: 'Πρωτεύουσα' },
           { id: 'aarhus', name: 'Ώρχους' },
-          { id: 'odense', name: 'Όντενσε' }
+          { id: 'odense', name: 'Όντενσε' },
+          { id: 'aalborg', name: 'Όλμποργκ' },
+          { id: 'roskilde', name: 'Ροσκίλντε' },
+          { id: 'esbjerg', name: 'Έσμπιεργκ' },
+          { id: 'kolding', name: 'Κόλντινγκ' },
+          { id: 'skagen', name: 'Σκάγκεν' },
+          { id: 'helsingor', name: 'Χέλσινγκορ' },
+          { id: 'vejle', name: 'Βάιλε' }
         ]
       },
       {
@@ -244,7 +286,14 @@ export const CONTINENTS_DATA = [
         cities: [
           { id: 'dublin', name: 'Δουβλίνο', badge: 'Πρωτεύουσα' },
           { id: 'cork', name: 'Κορκ' },
-          { id: 'galway', name: 'Γκάλγουεϊ' }
+          { id: 'galway', name: 'Γκάλγουεϊ' },
+          { id: 'limerick', name: 'Λίμερικ' },
+          { id: 'kilkenny', name: 'Κιλκένι' },
+          { id: 'waterford', name: 'Γουότερφορντ' },
+          { id: 'sligo', name: 'Σλάιγκο' },
+          { id: 'killarney', name: 'Κιλάρνεϊ' },
+          { id: 'drogheda', name: 'Ντρόχεντα' },
+          { id: 'wexford', name: 'Γουέξφορντ' }
         ]
       },
       {
@@ -254,7 +303,14 @@ export const CONTINENTS_DATA = [
         cities: [
           { id: 'budapest', name: 'Βουδαπέστη', badge: 'Πρωτεύουσα' },
           { id: 'debrecen', name: 'Ντέμπρετσεν' },
-          { id: 'szeged', name: 'Σέγκεντ' }
+          { id: 'szeged', name: 'Σέγκεντ' },
+          { id: 'pecs', name: 'Πετς' },
+          { id: 'gyor', name: 'Γκιόρ' },
+          { id: 'eger', name: 'Έγκερ' },
+          { id: 'miskolc', name: 'Μίσκολτς' },
+          { id: 'nyiregyhaza', name: 'Νιρεγκιχάζα' },
+          { id: 'szekesfehervar', name: 'Σεκεσφεχερβάρ' },
+          { id: 'sopron', name: 'Σόπρον' }
         ]
       },
       {

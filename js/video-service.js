@@ -1,4 +1,4 @@
-import { CITY_TO_STATE } from './states-data.js?v=20261112_eu7';
+import { CITY_TO_STATE } from './states-data.js?v=20261112_eu8';
 /**
  * Video Service Module
  * Registry of verified high-definition YouTube video tours for all cities
@@ -6376,6 +6376,443 @@ export const CITY_VIDEOS = {
     "drone": {
       "youtubeId": "GysvlZF8BHA",
       "title": "Κραϊόβα 4K — CRAIOVA, ROMANIA - 3 Minutes of Amazing Drone Footage - DJI Mavic Air 2 - 4K HDR"
+    }
+  },
+  "trondheim": {
+    "cityName": "Τρόντχαϊμ",
+    "drone": {
+      "youtubeId": "R00T3I_0otU",
+      "title": "Τρόντχαϊμ 4K — Trondheim, Norway - City Tour & Drone, 4k"
+    },
+    "live": {
+      "youtubeId": "6zmxTEHckfI",
+      "label": "Τρόντχαϊμ Live Cam",
+      "title": "Pirbadet, Trondheim"
+    }
+  },
+  "stavanger": {
+    "cityName": "Σταβάνγκερ",
+    "drone": {
+      "youtubeId": "67UV_TgtOnU",
+      "title": "Σταβάνγκερ 4K — Stavanger, Norway 🇳🇴 in 4K ULTRA HD | Drone Footage"
+    },
+    "live": {
+      "youtubeId": "RA6Jm7sv_F4",
+      "label": "Σταβάνγκερ Live Cam",
+      "title": "Stavanger Tjuvholmen - Live"
+    }
+  },
+  "alesund": {
+    "cityName": "Όλεσουντ",
+    "drone": {
+      "youtubeId": "wWQOvTx7yp8",
+      "title": "Όλεσουντ 4K — Ålesund, Norway 🇳🇴 in 4K ULTRA HD | Drone Footage"
+    }
+  },
+  "kristiansand": {
+    "cityName": "Κρίστιανσαντ",
+    "drone": {
+      "youtubeId": "lo1ByUZ4bew",
+      "title": "Κρίστιανσαντ 4K — kristiansand, Norway 🇳🇴 in 4K ULTRA HD | Drone Footage"
+    }
+  },
+  "drammen": {
+    "cityName": "Ντράμεν",
+    "drone": {
+      "youtubeId": "bvqsEzoi1kM",
+      "title": "Ντράμεν 4K — Drammen in Sommer 2021.Norway /Drone/ 4K"
+    },
+    "live": {
+      "youtubeId": "6LiukKeHyBc",
+      "label": "Ντράμεν Live Cam",
+      "title": "Drammen Skimore LIVE"
+    }
+  },
+  "bodo": {
+    "cityName": "Μπόντε",
+    "drone": {
+      "youtubeId": "GYYGLs905t4",
+      "title": "Μπόντε 4K — Amazing Arctic Norwegian Beach Nature Drone 4K Video: Hovdsundet, Bodø, Norway"
+    },
+    "live": {
+      "youtubeId": "04jMCyigPQM",
+      "label": "Μπόντε Live Cam",
+      "title": "Bodø Havn - Sjøgata 1 - Live"
+    }
+  },
+  "lillehammer": {
+    "cityName": "Λιλεχάμερ",
+    "drone": {
+      "youtubeId": "nYDv8JHDXnY",
+      "title": "Λιλεχάμερ 4K — Lillehammer, Norway - City Tour & Drone, 4k"
+    }
+  },
+  "aalborg": {
+    "cityName": "Όλμποργκ",
+    "drone": {
+      "youtubeId": "f6sbVcfXgD4",
+      "title": "Όλμποργκ 4K — Denmark 4K - Explore The Mesmerizing Aalborg Drone Film With Relaxing Music"
+    }
+  },
+  "roskilde": {
+    "cityName": "Ροσκίλντε",
+    "drone": {
+      "youtubeId": "5cj_o-N2kZA",
+      "title": "Ροσκίλντε 4K — Roskilde From Above - 4K Aerial Drone - Roskilde Cathedral - Roskilde Festival - Fjord - Denmark"
+    }
+  },
+  "esbjerg": {
+    "cityName": "Έσμπιεργκ",
+    "drone": {
+      "youtubeId": "5Mr0V0-x6NE",
+      "title": "Έσμπιεργκ 4K — Esbjerg, Denmark 🇩🇰 | 4K Drone Footage"
+    }
+  },
+  "kolding": {
+    "cityName": "Κόλντινγκ",
+    "drone": {
+      "youtubeId": "japbX952iV0",
+      "title": "Κόλντινγκ 4K — Kolding Like You've Never Seen It Before (Drone 4K)"
+    }
+  },
+  "skagen": {
+    "cityName": "Σκάγκεν",
+    "drone": {
+      "youtubeId": "fGw9Rhbz2tA",
+      "title": "Σκάγκεν 4K — SKAGEN, Denmark - where the Baltic meets the North Sea (drone, 4K)"
+    }
+  },
+  "helsingor": {
+    "cityName": "Χέλσινγκορ",
+    "drone": {
+      "youtubeId": "kWVt45tHDKQ",
+      "title": "Χέλσινγκορ 4K — Drone 4K @ Helsingor, Denmark 🇩🇰 "
+    }
+  },
+  "vejle": {
+    "cityName": "Βάιλε",
+    "drone": {
+      "youtubeId": "wPqdHUaw8pg",
+      "title": "Βάιλε 4K — 3 minutes from VEJLE... (4K) Cinematic drone footage #vejle #denmark #drone #4k"
+    }
+  },
+  "plzen": {
+    "cityName": "Πίλζεν",
+    "drone": {
+      "youtubeId": "lvMwpDADgFE",
+      "title": "Πίλζεν 4K — Česká republika 4K | Objevte Prahu a Plzeň jako nikdy předtím"
+    }
+  },
+  "cesky-krumlov": {
+    "cityName": "Τσέσκι Κρούμλοβ",
+    "drone": {
+      "youtubeId": "KzUonT4NHY0",
+      "title": "Τσέσκι Κρούμλοβ 4K — ČESKÝ KRUMLOV by drone (CZECHIA) | 4K | A wonderful UNESCO World Heritage Site!"
+    }
+  },
+  "olomouc": {
+    "cityName": "Όλομοουτς",
+    "drone": {
+      "youtubeId": "auIdcPra8aM",
+      "title": "Όλομοουτς 4K — OLOMOUC, Czechia 🇨🇿 by DRONE"
+    }
+  },
+  "liberec": {
+    "cityName": "Λίμπερετς",
+    "drone": {
+      "youtubeId": "YAzQ3Gic3_w",
+      "title": "Λίμπερετς 4K — Walking tour of Liberec - Exploring the north of the Czech Republic 🇨🇿 4k HDR ASMR"
+    }
+  },
+  "karlovy-vary": {
+    "cityName": "Κάρλοβι Βάρι",
+    "drone": {
+      "youtubeId": "nteD7RfuBlc",
+      "title": "Κάρλοβι Βάρι 4K — 4K The Grand Spa of Karlovy Vary - Czech Republic  🇨🇿"
+    }
+  },
+  "ceske-budejovice": {
+    "cityName": "Τσέσκε Μπουντεγιόβιτσε",
+    "drone": {
+      "youtubeId": "TPKkMxATbGY",
+      "title": "Τσέσκε Μπουντεγιόβιτσε 4K — You must visit and walk around this city! České Budějovice 🇨🇿 Czech Republic 4K HDR ASMR"
+    }
+  },
+  "pardubice": {
+    "cityName": "Παρντούμπιτσε",
+    "drone": {
+      "youtubeId": "NqYJHrRdQUM",
+      "title": "Παρντούμπιτσε 4K — Walking in Pardubice : The Most Interesting City | Czech Republic 4k HDR ASMR"
+    }
+  },
+  "pecs": {
+    "cityName": "Πετς",
+    "drone": {
+      "youtubeId": "5mMKJxwPExk",
+      "title": "Πετς 4K — Pécs, Hungary - 4K Stock Footage | Travel Video"
+    }
+  },
+  "gyor": {
+    "cityName": "Γκιόρ",
+    "drone": {
+      "youtubeId": "r2bjRIzRAvo",
+      "title": "Γκιόρ 4K — Győr, Hungary 🇭🇺 | A Beautiful Summer Evening Walk in 4K"
+    }
+  },
+  "eger": {
+    "cityName": "Έγκερ",
+    "drone": {
+      "youtubeId": "IPqSy3FVGX8",
+      "title": "Έγκερ 4K — Eger, Heves, Hungary - 4K DJI Air2S Drone footage"
+    }
+  },
+  "miskolc": {
+    "cityName": "Μίσκολτς",
+    "drone": {
+      "youtubeId": "CNYjWsYARvc",
+      "title": "Μίσκολτς 4K — Miskolc City, HUNGARY 2017 - 4K"
+    }
+  },
+  "nyiregyhaza": {
+    "cityName": "Νιρεγκιχάζα",
+    "drone": {
+      "youtubeId": "Mi6Uxjcr_9w",
+      "title": "Νιρεγκιχάζα 4K — Nyíregyháza 2025. 4K"
+    }
+  },
+  "szekesfehervar": {
+    "cityName": "Σεκεσφεχερβάρ",
+    "drone": {
+      "youtubeId": "n344iK3Nvx0",
+      "title": "Σεκεσφεχερβάρ 4K — Székesfehérvár Hungary from Above 4K/UHD"
+    }
+  },
+  "sopron": {
+    "cityName": "Σόπρον",
+    "drone": {
+      "youtubeId": "TryrjbggkcU",
+      "title": "Σόπρον 4K — SOPRON - A hűség városa - Drone video 4K Film -"
+    }
+  },
+  "limerick": {
+    "cityName": "Λίμερικ",
+    "drone": {
+      "youtubeId": "Oeu38Znu5Ok",
+      "title": "Λίμερικ 4K — Limerick City, 🇮🇪 Ireland - 4k Drone view"
+    }
+  },
+  "kilkenny": {
+    "cityName": "Κιλκένι",
+    "drone": {
+      "youtubeId": "jg2OI0pIKRk",
+      "title": "Κιλκένι 4K — Kilkenny Ireland Tour - 4K Drone Travel Guide Shows Hidden Gems of Historic Irish Town!"
+    }
+  },
+  "waterford": {
+    "cityName": "Γουότερφορντ",
+    "drone": {
+      "youtubeId": "8IzdLm5LLq0",
+      "title": "Γουότερφορντ 4K — Waterford Ireland - See Waterford City in 7 Minutes - 4K Drone Guide Tour Vlog - TOP 15 Things to Do"
+    }
+  },
+  "sligo": {
+    "cityName": "Σλάιγκο",
+    "drone": {
+      "youtubeId": "FQChT5NTYK0",
+      "title": "Σλάιγκο 4K — Sligo Ireland | Places to Visit | 4K Drone Footage | DJI Mini 2 | Cinematic"
+    }
+  },
+  "killarney": {
+    "cityName": "Κιλάρνεϊ",
+    "drone": {
+      "youtubeId": "wtDwyDaPWe4",
+      "title": "Κιλάρνεϊ 4K — Killarney Ireland - 4K Drone Tour Guide - See Killarney Town in 7 Minutes - Top 10 Things To Do"
+    }
+  },
+  "drogheda": {
+    "cityName": "Ντρόχεντα",
+    "drone": {
+      "youtubeId": "qpgRQi2uyZ8",
+      "title": "Ντρόχεντα 4K — Cinematic Drone Video 4K Drogheda Ireland"
+    }
+  },
+  "wexford": {
+    "cityName": "Γουέξφορντ",
+    "drone": {
+      "youtubeId": "7VKKu28_6bE",
+      "title": "Γουέξφορντ 4K — Wexford Town Ireland 🇮🇪 4K Drone Tour - TOP 25 Things to Do - Travel Guide"
+    }
+  },
+  "basel": {
+    "cityName": "Βασιλεία",
+    "drone": {
+      "youtubeId": "bRJxEIEn22g",
+      "title": "Βασιλεία 4K — Basel - Switzerland 🇨🇭 - by drone [4K]"
+    },
+    "live": {
+      "youtubeId": "jtLh8BdmHUU",
+      "label": "Βασιλεία Live Cam",
+      "title": "Hotel East West Basel"
+    }
+  },
+  "lausanne": {
+    "cityName": "Λωζάννη",
+    "drone": {
+      "youtubeId": "-RNrm9jiU0E",
+      "title": "Λωζάννη 4K — Lausanne, Switzerland 🇨🇭 in 4K ULTRA HD | Top Places To Travel | Video by Drone"
+    },
+    "live": {
+      "youtubeId": "y3sMI1HtZfE",
+      "label": "Λωζάννη Live Cam",
+      "title": "Lausanne, pont Bessières"
+    }
+  },
+  "lucerne": {
+    "cityName": "Λουκέρνη",
+    "drone": {
+      "youtubeId": "TP_JBLEo--k",
+      "title": "Λουκέρνη 4K — Lucerne ( Luzern ) , Switzerland 🇨🇭| 4K Drone Footage"
+    },
+    "live": {
+      "youtubeId": "QIt1FaDMnQc",
+      "label": "Λουκέρνη Live Cam",
+      "title": "Luzern live - Lucerne live"
+    }
+  },
+  "lugano": {
+    "cityName": "Λουγκάνο",
+    "drone": {
+      "youtubeId": "2iDf3DELQL8",
+      "title": "Λουγκάνο 4K — Lugano 🇨🇭 Switzerland at its best! 4K Travel Video"
+    },
+    "live": {
+      "youtubeId": "KrbuEUxaDcc",
+      "label": "Λουγκάνο Live Cam",
+      "title": "View from Casa Labhardt to Lake Lugano and San Salvatore"
+    }
+  },
+  "winterthur": {
+    "cityName": "Βίντερτουρ",
+    "drone": {
+      "youtubeId": "w4o-3gq552o",
+      "title": "Βίντερτουρ 4K — Winterthur, Switzerland by Drone 🇨🇭 [4K]"
+    }
+  },
+  "st-gallen": {
+    "cityName": "Σεντ Γκάλεν",
+    "drone": {
+      "youtubeId": "HAkwWauQN2k",
+      "title": "Σεντ Γκάλεν 4K — 🇨🇭 St. Gallen,Switzerland, Schweiz, Suisse - Full HD Relaxing Drone"
+    }
+  },
+  "interlaken": {
+    "cityName": "Ιντερλάκεν",
+    "drone": {
+      "youtubeId": "yakDPu7gr6Q",
+      "title": "Ιντερλάκεν 4K — Interlaken 4K Drone Nature Film - Calming Piano Music - Beautiful Nature"
+    }
+  },
+  "graz": {
+    "cityName": "Γκρατς",
+    "drone": {
+      "youtubeId": "9Gp6qjQaQ2M",
+      "title": "Γκρατς 4K — Graz, Austria 🇦🇹 | Stunning Aerial Drone Views | Atemberaubende Drohnenaufnahmen"
+    }
+  },
+  "linz": {
+    "cityName": "Λιντς",
+    "drone": {
+      "youtubeId": "mH477nz9eNs",
+      "title": "Λιντς 4K — DRONE TOUR OF LINZ, AUSTRIA IN 4K"
+    }
+  },
+  "klagenfurt": {
+    "cityName": "Κλάγκενφουρτ",
+    "drone": {
+      "youtubeId": "ZQsPuvK0bCc",
+      "title": "Κλάγκενφουρτ 4K — Klagenfurt am Wörthersee aus der Drohne 🇦🇹 Österreich | Kärnten | Drohne | 4K"
+    }
+  },
+  "villach": {
+    "cityName": "Φίλαχ",
+    "drone": {
+      "youtubeId": "9DQ40SVfUwY",
+      "title": "Φίλαχ 4K — VILLACH 🇦🇹 Drone Aerial 4K | Österreich Kärnten Drohne Austria"
+    }
+  },
+  "st-polten": {
+    "cityName": "Ζανκτ Πέλτεν",
+    "drone": {
+      "youtubeId": "ELzb78FhcpQ",
+      "title": "Ζανκτ Πέλτεν 4K — St. Pölten, Austria 🇦🇹 4K Walking Tour | City Center & Austrian Life | POV"
+    }
+  },
+  "bregenz": {
+    "cityName": "Μπρέγκεντς",
+    "drone": {
+      "youtubeId": "Ke-zAeDA_iM",
+      "title": "Μπρέγκεντς 4K — Bregenz, Vorarlber, Austria [4K] Drone View"
+    }
+  },
+  "krems": {
+    "cityName": "Κρεμς",
+    "drone": {
+      "youtubeId": "mriK7AgFqrQ",
+      "title": "Κρεμς 4K — Krems an der Donau - WACHAU - AUSTRIA - 4K Walk Street  City Tour"
+    }
+  },
+  "coimbra": {
+    "cityName": "Κοΐμπρα",
+    "drone": {
+      "youtubeId": "O0yApsfBilg",
+      "title": "Κοΐμπρα 4K — Coimbra, portugal 🇵🇹 | 4K Drone Footage"
+    }
+  },
+  "faro": {
+    "cityName": "Φάρο",
+    "drone": {
+      "youtubeId": "CULto16sYNw",
+      "title": "Φάρο 4K — Faro, Portugal 4K HDR Drone (🎵POP, SOUL, ROCK, TRAP fusion)"
+    }
+  },
+  "funchal": {
+    "cityName": "Φουντσάλ",
+    "drone": {
+      "youtubeId": "VrAjf_VwO3w",
+      "title": "Φουντσάλ 4K — Funchal, Madeira 🇵🇹 | Breathtaking 4K Aerial Drone Views 🚁"
+    },
+    "live": {
+      "youtubeId": "SVzFVByub-c",
+      "label": "Φουντσάλ Live Cam",
+      "title": "🔴 LIVE: Funchal Marina Webcam 1 Madeira Island | Madeira-Web"
+    }
+  },
+  "aveiro": {
+    "cityName": "Αβέιρο",
+    "drone": {
+      "youtubeId": "vlYzt0jWz2k",
+      "title": "Αβέιρο 4K — AVEIRO, PORTUGAL 🇵🇹 4K Drone Aerial | Região de Aveiro"
+    }
+  },
+  "evora": {
+    "cityName": "Έβορα",
+    "drone": {
+      "youtubeId": "MaoaY4R4P6s",
+      "title": "Έβορα 4K — Évora, Portugal - 4K Aerial Drone Footage | Travel Video"
+    }
+  },
+  "guimaraes": {
+    "cityName": "Γκιμαράες",
+    "drone": {
+      "youtubeId": "cpSJxOsL9FM",
+      "title": "Γκιμαράες 4K — Guimarães 🇵🇹 Drone Aerial 4K | Guimaraes Braga Portugal"
+    }
+  },
+  "setubal": {
+    "cityName": "Σετούμπαλ",
+    "drone": {
+      "youtubeId": "5yiPsRPm554",
+      "title": "Σετούμπαλ 4K — Setúbal, Portugal - 4K Aerial Drone Footage | Travel Video"
     }
   }
 };

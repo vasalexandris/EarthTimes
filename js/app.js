@@ -4,12 +4,12 @@
  * USA, Leaflet Map, Base Layers, UI Dossier, and Time Machine.
  */
 
-import { loadWorldData, loadCountryData, loadStateData } from './data-service.js?v=20261112_eu7';
-import * as MapModule from './map.js?v=20261112_eu7';
-import * as UIModule from './ui.js?v=20261112_eu7';
-import * as TimeMachine from './time-machine.js?v=20261112_eu7';
-import * as NavigatorModule from './navigator.js?v=20261112_eu7';
-import { US_STATES, CITY_TO_STATE } from './states-data.js?v=20261112_eu7';
+import { loadWorldData, loadCountryData, loadStateData } from './data-service.js?v=20261112_eu8';
+import * as MapModule from './map.js?v=20261112_eu8';
+import * as UIModule from './ui.js?v=20261112_eu8';
+import * as TimeMachine from './time-machine.js?v=20261112_eu8';
+import * as NavigatorModule from './navigator.js?v=20261112_eu8';
+import { US_STATES, CITY_TO_STATE } from './states-data.js?v=20261112_eu8';
 
 // Application State
 let worldData = null;
@@ -332,6 +332,14 @@ export async function flyToCity(cityId) {
       'rijeka': 'croatia', 'zadar': 'croatia', 'pula': 'croatia', 'osijek': 'croatia', 'varazdin': 'croatia', 'sibenik': 'croatia', 'rovinj': 'croatia',
       'rovaniemi': 'finland', 'oulu': 'finland', 'jyvaskyla': 'finland', 'kuopio': 'finland', 'lahti': 'finland', 'vaasa': 'finland', 'porvoo': 'finland',
       'sibiu': 'romania', 'constanta': 'romania', 'iasi': 'romania', 'oradea': 'romania', 'sighisoara': 'romania', 'craiova': 'romania',
+            'trondheim': 'norway', 'stavanger': 'norway', 'alesund': 'norway', 'kristiansand': 'norway', 'drammen': 'norway', 'bodo': 'norway', 'lillehammer': 'norway',
+      'aalborg': 'denmark', 'roskilde': 'denmark', 'esbjerg': 'denmark', 'kolding': 'denmark', 'skagen': 'denmark', 'helsingor': 'denmark', 'vejle': 'denmark',
+      'plzen': 'czech', 'cesky-krumlov': 'czech', 'olomouc': 'czech', 'liberec': 'czech', 'karlovy-vary': 'czech', 'ceske-budejovice': 'czech', 'pardubice': 'czech',
+      'pecs': 'hungary', 'gyor': 'hungary', 'eger': 'hungary', 'miskolc': 'hungary', 'nyiregyhaza': 'hungary', 'szekesfehervar': 'hungary', 'sopron': 'hungary',
+      'limerick': 'ireland', 'kilkenny': 'ireland', 'waterford': 'ireland', 'sligo': 'ireland', 'killarney': 'ireland', 'drogheda': 'ireland', 'wexford': 'ireland',
+      'basel': 'switzerland', 'lausanne': 'switzerland', 'lucerne': 'switzerland', 'lugano': 'switzerland', 'winterthur': 'switzerland', 'st-gallen': 'switzerland', 'interlaken': 'switzerland',
+      'graz': 'austria', 'linz': 'austria', 'klagenfurt': 'austria', 'villach': 'austria', 'st-polten': 'austria', 'bregenz': 'austria', 'krems': 'austria',
+      'coimbra': 'portugal', 'faro': 'portugal', 'funchal': 'portugal', 'aveiro': 'portugal', 'evora': 'portugal', 'guimaraes': 'portugal', 'setubal': 'portugal',
       'warsaw': 'poland', 'krakow': 'poland', 'gdansk': 'poland', 'wroclaw': 'poland', 'poznan': 'poland', 'lodz': 'poland', 'lublin': 'poland', 'szczecin': 'poland', 'torun': 'poland', 'katowice': 'poland',
       'stockholm': 'sweden', 'gothenburg': 'sweden', 'malmo': 'sweden',
       'oslo': 'norway', 'bergen': 'norway', 'tromso': 'norway',
