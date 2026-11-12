@@ -1,4 +1,4 @@
-import { CITY_TO_STATE } from './states-data.js?v=20261112_eu11';
+import { CITY_TO_STATE } from './states-data.js?v=20261112_eu12';
 /**
  * Video Service Module
  * Registry of verified high-definition YouTube video tours for all cities
@@ -7374,6 +7374,170 @@ export const CITY_VIDEOS = {
     "drone": {
       "youtubeId": "Ot02klfq-M4",
       "title": "Χεπν 4K — Hofn Iceland - 4K"
+    }
+  },
+  "bled": {
+    "cityName": "Μπλεντ",
+    "drone": {
+      "youtubeId": "mCm6yXvhzj4",
+      "title": "Μπλεντ 4K — Lake Bled, Slovenia 4k Drone"
+    }
+  },
+  "kranj": {
+    "cityName": "Κραν",
+    "drone": {
+      "youtubeId": "PSWunVynDrc",
+      "title": "Κραν 4K — KRANJ, SLOVENIA BY DRONE (4K) | كرانج، سلوفينيا"
+    }
+  },
+  "celje": {
+    "cityName": "Τσέλιε",
+    "drone": {
+      "youtubeId": "Q5W-1Pu1e2w",
+      "title": "Τσέλιε 4K — Celje, Slovenia – Where Time Slows and Life Feels Lighter (4K)"
+    }
+  },
+  "ptuj": {
+    "cityName": "Πτούι",
+    "drone": {
+      "youtubeId": "p8S8totnfmc",
+      "title": "Πτούι 4K — PTUJ | Slovenia by Drone in 4K - DJI Mavic Air 2"
+    }
+  },
+  "koper": {
+    "cityName": "Κόπερ",
+    "drone": {
+      "youtubeId": "cnYpCsNfQcY",
+      "title": "Κόπερ 4K — KOPER 🇸🇮 4K Drone | Capodistria SLOVENIA"
+    },
+    "live": {
+      "youtubeId": "-mPxgvZ0nHU",
+      "label": "Κόπερ Live Cam",
+      "title": "Koper Live Cam – Tito Square Bell Tower 3 · Slovenia 24/7"
+    }
+  },
+  "novo-mesto": {
+    "cityName": "Νόβο Μέστο",
+    "drone": {
+      "youtubeId": "7N-MGuIj25w",
+      "title": "Νόβο Μέστο 4K — Novo mesto, Slovenia - 4K Drone Video"
+    }
+  },
+  "postojna": {
+    "cityName": "Ποστόινα",
+    "drone": {
+      "youtubeId": "VLdJ5E5J80s",
+      "title": "Ποστόινα 4K — 🇸🇮 Beautiful Lake Bled, Ljubljana, and Postojna in Slovenia - Aerial Drone Tour 4k - Travel Europe"
+    }
+  },
+  "presov": {
+    "cityName": "Πρέσοβ",
+    "drone": {
+      "youtubeId": "Lm2MxKshraM",
+      "title": "Πρέσοβ 4K — Walking in Prešov Slovakia 🇸🇰 | Námestie Legionárov street | 4K City Walk"
+    }
+  },
+  "zilina": {
+    "cityName": "Ζίλινα",
+    "drone": {
+      "youtubeId": "9pOZY9vFOsw",
+      "title": "Ζίλινα 4K — ZILINA, Slovakia 🇸🇰- 4K 60fps (UHD)"
+    }
+  },
+  "nitra": {
+    "cityName": "Νίτρα",
+    "drone": {
+      "youtubeId": "UI0YQhLGO-Q",
+      "title": "Νίτρα 4K — This is Nitra Slovakia | Drone Footage"
+    }
+  },
+  "trnava": {
+    "cityName": "Τρνάβα",
+    "drone": {
+      "youtubeId": "q99_SQABHl4",
+      "title": "Τρνάβα 4K — Traditional Fair in Trnava | 4K Drone Hi2SKY"
+    },
+    "live": {
+      "youtubeId": "5Li5DaNk-00",
+      "label": "Τρνάβα Live Cam",
+      "title": "Mesto Trnava - Univerzitné námestie"
+    }
+  },
+  "banska-bystrica": {
+    "cityName": "Μπάνσκα Μπίστριτσα",
+    "drone": {
+      "youtubeId": "PiFA2lmEU5A",
+      "title": "Μπάνσκα Μπίστριτσα 4K — Banská Bystrica , Slovakia 🇸🇰 4K UHD | Drone Footage"
+    }
+  },
+  "poprad": {
+    "cityName": "Πόπραντ",
+    "drone": {
+      "youtubeId": "9nFgjeh80mI",
+      "title": "Πόπραντ 4K — Poprad in 4K"
+    }
+  },
+  "trencin": {
+    "cityName": "Τρέντσιν",
+    "drone": {
+      "youtubeId": "3UGNrtysWgE",
+      "title": "Τρέντσιν 4K — Timeless Trencin | Winter Castles of Slovakia from Drone "
+    }
+  },
+  "martin": {
+    "cityName": "Μάρτιν",
+    "drone": {
+      "youtubeId": "Miuz1jbNMyA",
+      "title": "Μάρτιν 4K — Mesto Martin, Slovakia"
+    }
+  },
+  "shkoder": {
+    "cityName": "Σκόδρα",
+    "drone": {
+      "youtubeId": "5fU8hH3n0OE",
+      "title": "Σκόδρα 4K — Shkodër 🇦🇱 Shkodra Drone Aerial 4K | Albania Shqipëria #shkodra"
+    }
+  },
+  "berat": {
+    "cityName": "Μπεράτ",
+    "drone": {
+      "youtubeId": "d7USv_UcJlY",
+      "title": "Μπεράτ 4K — Berat, Albania, 4K, Cinematic Drone Footage"
+    }
+  },
+  "gjirokaster": {
+    "cityName": "Αργυρόκαστρο",
+    "drone": {
+      "youtubeId": "VLKC42JrrzY",
+      "title": "Αργυρόκαστρο 4K — Gjirokaster, Albania, Cinematic 4K Drone Footage"
+    }
+  },
+  "saranda": {
+    "cityName": "Άγιοι Σαράντα",
+    "drone": {
+      "youtubeId": "OsS8WwzNYHs",
+      "title": "Άγιοι Σαράντα 4K — Sarandë, Albania 🇦🇱 | 4K Drone & Walking Tour – City Center, Promenade & Landmarks"
+    }
+  },
+  "korce": {
+    "cityName": "Κορυτσά",
+    "drone": {
+      "youtubeId": "69u9IsSACTg",
+      "title": "Κορυτσά 4K — Korçë, Albania 🇦🇱 | The Hidden Gem of the Balkans (4K Drone Film)"
+    }
+  },
+  "elbasan": {
+    "cityName": "Ελμπασάν",
+    "drone": {
+      "youtubeId": "fKvgGFGRgjQ",
+      "title": "Ελμπασάν 4K — Elbasan  Albania I Stunning 4k Drone footage"
+    }
+  },
+  "kruje": {
+    "cityName": "Κρούγια",
+    "drone": {
+      "youtubeId": "54_73Qa6CXc",
+      "title": "Κρούγια 4K — KRUJË | ALBANIA | VIDEO BY DRONE | 4K"
     }
   }
 };

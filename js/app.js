@@ -4,12 +4,12 @@
  * USA, Leaflet Map, Base Layers, UI Dossier, and Time Machine.
  */
 
-import { loadWorldData, loadCountryData, loadStateData } from './data-service.js?v=20261112_eu11';
-import * as MapModule from './map.js?v=20261112_eu11';
-import * as UIModule from './ui.js?v=20261112_eu11';
-import * as TimeMachine from './time-machine.js?v=20261112_eu11';
-import * as NavigatorModule from './navigator.js?v=20261112_eu11';
-import { US_STATES, CITY_TO_STATE } from './states-data.js?v=20261112_eu11';
+import { loadWorldData, loadCountryData, loadStateData } from './data-service.js?v=20261112_eu12';
+import * as MapModule from './map.js?v=20261112_eu12';
+import * as UIModule from './ui.js?v=20261112_eu12';
+import * as TimeMachine from './time-machine.js?v=20261112_eu12';
+import * as NavigatorModule from './navigator.js?v=20261112_eu12';
+import { US_STATES, CITY_TO_STATE } from './states-data.js?v=20261112_eu12';
 
 // Application State
 let worldData = null;
@@ -351,6 +351,9 @@ export async function flyToCity(cityId) {
       'subotica': 'serbia', 'kragujevac': 'serbia', 'zlatibor': 'serbia', 'kraljevo': 'serbia', 'valjevo': 'serbia', 'vranje': 'serbia', 'pancevo': 'serbia',
             'tetovo': 'north-macedonia', 'prilep': 'north-macedonia', 'kumanovo': 'north-macedonia', 'strumica': 'north-macedonia', 'veles': 'north-macedonia', 'stip': 'north-macedonia', 'krusevo': 'north-macedonia',
       'husavik': 'iceland', 'vik': 'iceland', 'keflavik': 'iceland', 'isafjordur': 'iceland', 'egilsstadir': 'iceland', 'selfoss': 'iceland', 'borgarnes': 'iceland', 'hofn': 'iceland',
+            'bled': 'slovenia', 'kranj': 'slovenia', 'celje': 'slovenia', 'ptuj': 'slovenia', 'koper': 'slovenia', 'novo-mesto': 'slovenia', 'postojna': 'slovenia',
+      'presov': 'slovakia', 'zilina': 'slovakia', 'nitra': 'slovakia', 'trnava': 'slovakia', 'banska-bystrica': 'slovakia', 'poprad': 'slovakia', 'trencin': 'slovakia', 'martin': 'slovakia',
+      'shkoder': 'albania', 'berat': 'albania', 'gjirokaster': 'albania', 'saranda': 'albania', 'korce': 'albania', 'elbasan': 'albania', 'kruje': 'albania',
       'warsaw': 'poland', 'krakow': 'poland', 'gdansk': 'poland', 'wroclaw': 'poland', 'poznan': 'poland', 'lodz': 'poland', 'lublin': 'poland', 'szczecin': 'poland', 'torun': 'poland', 'katowice': 'poland',
       'stockholm': 'sweden', 'gothenburg': 'sweden', 'malmo': 'sweden',
       'oslo': 'norway', 'bergen': 'norway', 'tromso': 'norway',

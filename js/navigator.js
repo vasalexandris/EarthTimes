@@ -1,4 +1,4 @@
-import { US_STATES, CITY_TO_STATE } from './states-data.js?v=20261112_eu11';
+import { US_STATES, CITY_TO_STATE } from './states-data.js?v=20261112_eu12';
 /**
  * Navigator Module
  * Hierarchical Cascading Navigation: Continents -> Countries -> Cities
@@ -442,7 +442,14 @@ export const CONTINENTS_DATA = [
         cities: [
           { id: 'tirana', name: 'Τίρανα', badge: 'Πρωτεύουσα' },
           { id: 'durres', name: 'Δυρράχιο' },
-          { id: 'vlore', name: 'Αυλώνας' }
+          { id: 'vlore', name: 'Αυλώνας' },
+          { id: 'shkoder', name: 'Σκόδρα' },
+          { id: 'berat', name: 'Μπεράτ' },
+          { id: 'gjirokaster', name: 'Αργυρόκαστρο' },
+          { id: 'saranda', name: 'Άγιοι Σαράντα' },
+          { id: 'korce', name: 'Κορυτσά' },
+          { id: 'elbasan', name: 'Ελμπασάν' },
+          { id: 'kruje', name: 'Κρούγια' }
         ]
       },
       {
@@ -503,7 +510,14 @@ export const CONTINENTS_DATA = [
         cities: [
           { id: 'ljubljana', name: 'Λιουμπλιάνα', badge: 'Πρωτεύουσα' },
           { id: 'maribor', name: 'Μάριμπορ' },
-          { id: 'piran', name: 'Πιράν' }
+          { id: 'piran', name: 'Πιράν' },
+          { id: 'bled', name: 'Μπλεντ' },
+          { id: 'kranj', name: 'Κραν' },
+          { id: 'celje', name: 'Τσέλιε' },
+          { id: 'ptuj', name: 'Πτούι' },
+          { id: 'koper', name: 'Κόπερ' },
+          { id: 'novo-mesto', name: 'Νόβο Μέστο' },
+          { id: 'postojna', name: 'Ποστόινα' }
         ]
       },
       {
@@ -512,7 +526,15 @@ export const CONTINENTS_DATA = [
         flag: '🇸🇰',
         cities: [
           { id: 'bratislava', name: 'Μπρατισλάβα', badge: 'Πρωτεύουσα' },
-          { id: 'kosice', name: 'Κόσιτσε' }
+          { id: 'kosice', name: 'Κόσιτσε' },
+          { id: 'presov', name: 'Πρέσοβ' },
+          { id: 'zilina', name: 'Ζίλινα' },
+          { id: 'nitra', name: 'Νίτρα' },
+          { id: 'trnava', name: 'Τρνάβα' },
+          { id: 'banska-bystrica', name: 'Μπάνσκα Μπίστριτσα' },
+          { id: 'poprad', name: 'Πόπραντ' },
+          { id: 'trencin', name: 'Τρέντσιν' },
+          { id: 'martin', name: 'Μάρτιν' }
         ]
       },
       {
