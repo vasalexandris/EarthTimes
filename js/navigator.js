@@ -340,6 +340,7 @@ export const CONTINENTS_DATA = [
         flag: '🇷🇴',
         cities: [
           { id: 'bucharest', name: 'Βουκουρέστι', badge: 'Πρωτεύουσα' },
+          { id: 'brasov', name: 'Μπρασόφ' },
           { id: 'cluj', name: 'Κλουζ-Ναπόκα' },
           { id: 'timisoara', name: 'Τιμισοάρα' },
           { id: 'sibiu', name: 'Σιμπίου' },

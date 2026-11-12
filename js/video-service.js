@@ -11,6 +11,13 @@ import { CITY_TO_STATE } from './states-data.js?v=20261112_eu15';
  */
 
 export const CITY_VIDEOS = {
+  "brasov": {
+    "cityName": "Μπρασόφ",
+    "drone": {
+      "youtubeId": "wQ6QeVsUYeY",
+      "title": "Μπρασόφ 4K — Brasov, Romania 🇷🇴 in 4K Ultra HD | Drone Video"
+    }
+  },
   "kozani": {
     "cityName": "Κοζάνη",
     "drone": {
