@@ -1,4 +1,4 @@
-import { US_STATES, CITY_TO_STATE } from './states-data.js?v=20261112_eu8';
+import { US_STATES, CITY_TO_STATE } from './states-data.js?v=20261112_eu9';
 /**
  * Navigator Module
  * Hierarchical Cascading Navigation: Continents -> Countries -> Cities
@@ -86,7 +86,14 @@ export const CONTINENTS_DATA = [
         cities: [
           { id: 'london', name: 'Λονδίνο', badge: 'Πρωτεύουσα' },
           { id: 'edinburgh', name: 'Εδιμβούργο' },
-          { id: 'manchester', name: 'Μάντσεστερ' }
+          { id: 'manchester', name: 'Μάντσεστερ' },
+          { id: 'liverpool', name: 'Λίβερπουλ' },
+          { id: 'glasgow', name: 'Γλασκώβη' },
+          { id: 'bristol', name: 'Μπρίστολ' },
+          { id: 'oxford', name: 'Οξφόρδη' },
+          { id: 'cambridge-uk', name: 'Κέιμπριτζ' },
+          { id: 'york', name: 'Γιορκ' },
+          { id: 'leeds', name: 'Λιντς' }
         ]
       },
       {
@@ -147,7 +154,14 @@ export const CONTINENTS_DATA = [
         cities: [
           { id: 'amsterdam', name: 'Άμστερνταμ', badge: 'Πρωτεύουσα' },
           { id: 'rotterdam', name: 'Ρότερνταμ' },
-          { id: 'utrecht', name: 'Ουτρέχτη' }
+          { id: 'utrecht', name: 'Ουτρέχτη' },
+          { id: 'the-hague', name: 'Χάγη' },
+          { id: 'eindhoven', name: 'Αϊντχόβεν' },
+          { id: 'groningen', name: 'Χρόνινγκεν' },
+          { id: 'maastricht', name: 'Μάαστριχτ' },
+          { id: 'delft', name: 'Ντελφτ' },
+          { id: 'haarlem', name: 'Χάρλεμ' },
+          { id: 'leiden', name: 'Λάιντεν' }
         ]
       },
       {
@@ -157,7 +171,14 @@ export const CONTINENTS_DATA = [
         cities: [
           { id: 'brussels', name: 'Βρυξέλλες', badge: 'Πρωτεύουσα' },
           { id: 'antwerp', name: 'Αμβέρσα' },
-          { id: 'ghent', name: 'Γάνδη' }
+          { id: 'ghent', name: 'Γάνδη' },
+          { id: 'bruges', name: 'Μπριζ' },
+          { id: 'liege', name: 'Λιέγη' },
+          { id: 'namur', name: 'Ναμύρ' },
+          { id: 'charleroi', name: 'Σαρλερουά' },
+          { id: 'leuven', name: 'Λέουβεν' },
+          { id: 'mechelen', name: 'Μέχελεν' },
+          { id: 'mons', name: 'Μονς' }
         ]
       },
       {

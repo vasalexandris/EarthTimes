@@ -1,4 +1,4 @@
-import { CITY_TO_STATE } from './states-data.js?v=20261112_eu8';
+import { CITY_TO_STATE } from './states-data.js?v=20261112_eu9';
 /**
  * Video Service Module
  * Registry of verified high-definition YouTube video tours for all cities
@@ -6813,6 +6813,163 @@ export const CITY_VIDEOS = {
     "drone": {
       "youtubeId": "5yiPsRPm554",
       "title": "Σετούμπαλ 4K — Setúbal, Portugal - 4K Aerial Drone Footage | Travel Video"
+    }
+  },
+  "liverpool": {
+    "cityName": "Λίβερπουλ",
+    "drone": {
+      "youtubeId": "rCYy1_TOiaE",
+      "title": "Λίβερπουλ 4K — LIVERPOOL 🇬🇧 Drone Aerial 4K Merseyside England United Kingdom UK"
+    }
+  },
+  "glasgow": {
+    "cityName": "Γλασκώβη",
+    "drone": {
+      "youtubeId": "op8WH5wn18k",
+      "title": "Γλασκώβη 4K — Glasgow, Scotland in 4K HDR ULTRA HD 60 FPS Dolby Vision™ Drone Video"
+    }
+  },
+  "bristol": {
+    "cityName": "Μπρίστολ",
+    "drone": {
+      "youtubeId": "m5fY815iJDw",
+      "title": "Μπρίστολ 4K — BRISTOL 🇬🇧 4K Drone Aerial | United Kingdom England"
+    }
+  },
+  "oxford": {
+    "cityName": "Οξφόρδη",
+    "drone": {
+      "youtubeId": "sao63znb0Tw",
+      "title": "Οξφόρδη 4K — OXFORD 4K Drone 🇬🇧 | England UNITED KINGDOM"
+    },
+    "live": {
+      "youtubeId": "h8glPXsnezU",
+      "label": "Οξφόρδη Live Cam",
+      "title": "Oxford Martin School Webcam - Broad Street, Oxford"
+    }
+  },
+  "cambridge-uk": {
+    "cityName": "Κέιμπριτζ",
+    "drone": {
+      "youtubeId": "Pj9k5nvznR4",
+      "title": "Κέιμπριτζ 4K — CAMBRIDGE 🇬🇧 UK | 4K Drone Cinematography"
+    }
+  },
+  "york": {
+    "cityName": "Γιορκ",
+    "drone": {
+      "youtubeId": "qVIHCfd9WeA",
+      "title": "Γιορκ 4K — York, England 🇬🇧 | 4K Drone Footage"
+    }
+  },
+  "leeds": {
+    "cityName": "Λιντς",
+    "drone": {
+      "youtubeId": "O7E4uMWvm6I",
+      "title": "Λιντς 4K — Leeds City Centre Drone Tour 4K | June 2026 Cinematic Aerial Views"
+    }
+  },
+  "the-hague": {
+    "cityName": "Χάγη",
+    "drone": {
+      "youtubeId": "tRn4PSJ0b6Q",
+      "title": "Χάγη 4K — The Hague , Netherlands 🇱🇺- by drone [4K]"
+    }
+  },
+  "eindhoven": {
+    "cityName": "Αϊντχόβεν",
+    "drone": {
+      "youtubeId": "dza7Q1lKhtw",
+      "title": "Αϊντχόβεν 4K — Eindhoven 🇳🇱 Drone Aerial 4K | Holland Netherlands Nederland"
+    }
+  },
+  "groningen": {
+    "cityName": "Χρόνινγκεν",
+    "drone": {
+      "youtubeId": "u_KinrPTEq0",
+      "title": "Χρόνινγκεν 4K — 4K Drone Film - Groningen, Netherlands | Cinematic Aerial Footage & Relaxing Music"
+    },
+    "live": {
+      "youtubeId": "ZjfFGJlkjmE",
+      "label": "Χρόνινγκεν Live Cam",
+      "title": "Webcam Grote Markt - Groningen"
+    }
+  },
+  "maastricht": {
+    "cityName": "Μάαστριχτ",
+    "drone": {
+      "youtubeId": "p15b7wHAMrM",
+      "title": "Μάαστριχτ 4K — Maastricht 🇳🇱 Drone Video | 4K UHD"
+    }
+  },
+  "delft": {
+    "cityName": "Ντελφτ",
+    "drone": {
+      "youtubeId": "sA7pV7_u8tk",
+      "title": "Ντελφτ 4K — Delft 🇳🇱 Drone Video | 4K UHD"
+    }
+  },
+  "haarlem": {
+    "cityName": "Χάρλεμ",
+    "drone": {
+      "youtubeId": "v51LYxQtSks",
+      "title": "Χάρλεμ 4K — HAARLEM 🇳🇱 Drone Aerial 4K | North Holland Netherlands Nederland"
+    }
+  },
+  "leiden": {
+    "cityName": "Λάιντεν",
+    "drone": {
+      "youtubeId": "zLUs0vOz2N0",
+      "title": "Λάιντεν 4K — LEIDEN 🇳🇱 2023 Drone 4K Aerial | Holland"
+    }
+  },
+  "bruges": {
+    "cityName": "Μπριζ",
+    "drone": {
+      "youtubeId": "E7pt2Zwg79g",
+      "title": "Μπριζ 4K — Bruges in 4K"
+    }
+  },
+  "liege": {
+    "cityName": "Λιέγη",
+    "drone": {
+      "youtubeId": "2VhiShPMK3w",
+      "title": "Λιέγη 4K — Liège 🇧🇪 Luik Drone Aerial 4K | Belgique België Belgium"
+    }
+  },
+  "namur": {
+    "cityName": "Ναμύρ",
+    "drone": {
+      "youtubeId": "1x64i-tvK2Y",
+      "title": "Ναμύρ 4K — NAMUR NAMEN Drone 4K 🇧🇪 | BELGIUM Belgie Belgique Ultra HD"
+    }
+  },
+  "charleroi": {
+    "cityName": "Σαρλερουά",
+    "drone": {
+      "youtubeId": "jURc27jI2Jw",
+      "title": "Σαρλερουά 4K — CHARLEROI DRONE 4K UNSEEN CREATIVE AERIAL FOOTAGE BELGIUM BELGIQUE🇧🇪The city of Charleroi"
+    }
+  },
+  "leuven": {
+    "cityName": "Λέουβεν",
+    "drone": {
+      "youtubeId": "fK6O06e_Ias",
+      "title": "Λέουβεν 4K — LEUVEN 🇧🇪 Louvain Drone Aerial 4K 2025 | Belgium België Belgique Vlaanderen"
+    }
+  },
+  "mechelen": {
+    "cityName": "Μέχελεν",
+    "drone": {
+      "youtubeId": "Of2RUEKBg1E",
+      "title": "Μέχελεν 4K — Mechelen ● Belgium 🇧🇪 【4K】 Aerial Cinematic Drone"
+    }
+  },
+  "mons": {
+    "cityName": "Μονς",
+    "drone": {
+      "youtubeId": "SOIm6dUaENc",
+      "title": "Μονς 4K — Mons, City in Belgium, Cinematic drone footage of Belgium, Mons Belgium drone tour"
     }
   }
 };
