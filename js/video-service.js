@@ -1,4 +1,4 @@
-import { CITY_TO_STATE } from './states-data.js?v=20261112_eu10';
+import { CITY_TO_STATE } from './states-data.js?v=20261112_eu11';
 /**
  * Video Service Module
  * Registry of verified high-definition YouTube video tours for all cities
@@ -7269,6 +7269,111 @@ export const CITY_VIDEOS = {
     "drone": {
       "youtubeId": "7_xkOOQgqHE",
       "title": "Πάντσεβο 4K — Pancevo in 4k | SERBIA"
+    }
+  },
+  "tetovo": {
+    "cityName": "Τέτοβο",
+    "drone": {
+      "youtubeId": "XPpce12fHwM",
+      "title": "Τέτοβο 4K — Tetovo 4K POV Drive | Scenic City Tour in North Macedonia"
+    }
+  },
+  "prilep": {
+    "cityName": "Πρίλεπ",
+    "drone": {
+      "youtubeId": "kzgrlnekHGk",
+      "title": "Πρίλεπ 4K — PRILEP BY DRONE - MOGILA,CARSIJA,SAAT KULA. #pucidrone"
+    }
+  },
+  "kumanovo": {
+    "cityName": "Κουμάνοβο",
+    "drone": {
+      "youtubeId": "pQARScVQSGA",
+      "title": "Κουμάνοβο 4K — KUMANOVO 🇲🇰 Куманово Drone Aerial 4K | Kumanovë NORTH MACEDONIA Македонија Скопје"
+    }
+  },
+  "strumica": {
+    "cityName": "Στρούμιτσα",
+    "drone": {
+      "youtubeId": "vlD2Z-1ZySo",
+      "title": "Στρούμιτσα 4K — Strumica from Above – Stunning Drone Views of North Macedonia’s Hidden Gem"
+    }
+  },
+  "veles": {
+    "cityName": "Βέλες",
+    "drone": {
+      "youtubeId": "5vvmdZzKjq0",
+      "title": "Βέλες 4K — VELES, MACEDONIA 🇲🇰 -WALK TOUR 4K"
+    }
+  },
+  "stip": {
+    "cityName": "Στιπ",
+    "drone": {
+      "youtubeId": "gatPbvxsYdA",
+      "title": "Στιπ 4K — 🇲🇰“Flying Over Štip, North Macedonia | Aerial View from a Plane”"
+    }
+  },
+  "krusevo": {
+    "cityName": "Κρούσεβο",
+    "drone": {
+      "youtubeId": "v3SeqN9kgXo",
+      "title": "Κρούσεβο 4K — [4K] NOROVO [NEROVA] , Kruševo  [North Macedonia] By drone 6min"
+    }
+  },
+  "husavik": {
+    "cityName": "Χούσαβικ",
+    "drone": {
+      "youtubeId": "yfK9UngN3uY",
+      "title": "Χούσαβικ 4K — Húsavík - Iceland 2023 Drone (4k)"
+    }
+  },
+  "vik": {
+    "cityName": "Βικ",
+    "drone": {
+      "youtubeId": "p_EC5FfXqCI",
+      "title": "Βικ 4K — Reynisfjara & Vik, Iceland - 4K Nature Sceneries"
+    }
+  },
+  "keflavik": {
+    "cityName": "Κέφλαβικ",
+    "drone": {
+      "youtubeId": "irrxvBywdPw",
+      "title": "Κέφλαβικ 4K — Keflavik From Above | A Summer Drone Tour of Gateway to Iceland | 4K Drone footage"
+    }
+  },
+  "isafjordur": {
+    "cityName": "Ίσαφιορδουρ",
+    "drone": {
+      "youtubeId": "oRICKn-rY1g",
+      "title": "Ίσαφιορδουρ 4K — Westfjords Scenic Drive 4K | Road to Dynjandi Waterfalls and Ísafjörður, Iceland"
+    }
+  },
+  "egilsstadir": {
+    "cityName": "Έγκιλσταντιρ",
+    "drone": {
+      "youtubeId": "8IRgqxK6syM",
+      "title": "Έγκιλσταντιρ 4K — Driving Through Iceland's Eastern Fjords | Djúpivogur to Egilsstaðir, Iceland"
+    }
+  },
+  "selfoss": {
+    "cityName": "Σέλφος",
+    "drone": {
+      "youtubeId": "1WFvTngyvug",
+      "title": "Σέλφος 4K — Selfoss, Iceland. As seen from drone. 4K / 50 fps"
+    }
+  },
+  "borgarnes": {
+    "cityName": "Μποργκαρνές",
+    "drone": {
+      "youtubeId": "eKLM2MCJx5o",
+      "title": "Μποργκαρνές 4K — Borgarnes - Walking in Iceland [4K]"
+    }
+  },
+  "hofn": {
+    "cityName": "Χεπν",
+    "drone": {
+      "youtubeId": "Ot02klfq-M4",
+      "title": "Χεπν 4K — Hofn Iceland - 4K"
     }
   }
 };

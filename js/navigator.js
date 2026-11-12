@@ -1,4 +1,4 @@
-import { US_STATES, CITY_TO_STATE } from './states-data.js?v=20261112_eu10';
+import { US_STATES, CITY_TO_STATE } from './states-data.js?v=20261112_eu11';
 /**
  * Navigator Module
  * Hierarchical Cascading Navigation: Continents -> Countries -> Cities
@@ -452,7 +452,14 @@ export const CONTINENTS_DATA = [
         cities: [
           { id: 'skopje', name: 'Σκόπια', badge: 'Πρωτεύουσα' },
           { id: 'ohrid', name: 'Οχρίδα' },
-          { id: 'bitola', name: 'Μπίτολα' }
+          { id: 'bitola', name: 'Μπίτολα' },
+          { id: 'tetovo', name: 'Τέτοβο' },
+          { id: 'prilep', name: 'Πρίλεπ' },
+          { id: 'kumanovo', name: 'Κουμάνοβο' },
+          { id: 'strumica', name: 'Στρούμιτσα' },
+          { id: 'veles', name: 'Βέλες' },
+          { id: 'stip', name: 'Στιπ' },
+          { id: 'krusevo', name: 'Κρούσεβο' }
         ]
       },
       {
@@ -541,7 +548,15 @@ export const CONTINENTS_DATA = [
         flag: '🇮🇸',
         cities: [
           { id: 'reykjavik', name: 'Ρέικιαβικ', badge: 'Πρωτεύουσα' },
-          { id: 'akureyri', name: 'Άκουρεϊρι' }
+          { id: 'akureyri', name: 'Άκουρεϊρι' },
+          { id: 'husavik', name: 'Χούσαβικ' },
+          { id: 'vik', name: 'Βικ' },
+          { id: 'keflavik', name: 'Κέφλαβικ' },
+          { id: 'isafjordur', name: 'Ίσαφιορδουρ' },
+          { id: 'egilsstadir', name: 'Έγκιλσταντιρ' },
+          { id: 'selfoss', name: 'Σέλφος' },
+          { id: 'borgarnes', name: 'Μποργκαρνές' },
+          { id: 'hofn', name: 'Χεπν' }
         ]
       },
       {

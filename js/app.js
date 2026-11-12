@@ -4,12 +4,12 @@
  * USA, Leaflet Map, Base Layers, UI Dossier, and Time Machine.
  */
 
-import { loadWorldData, loadCountryData, loadStateData } from './data-service.js?v=20261112_eu10';
-import * as MapModule from './map.js?v=20261112_eu10';
-import * as UIModule from './ui.js?v=20261112_eu10';
-import * as TimeMachine from './time-machine.js?v=20261112_eu10';
-import * as NavigatorModule from './navigator.js?v=20261112_eu10';
-import { US_STATES, CITY_TO_STATE } from './states-data.js?v=20261112_eu10';
+import { loadWorldData, loadCountryData, loadStateData } from './data-service.js?v=20261112_eu11';
+import * as MapModule from './map.js?v=20261112_eu11';
+import * as UIModule from './ui.js?v=20261112_eu11';
+import * as TimeMachine from './time-machine.js?v=20261112_eu11';
+import * as NavigatorModule from './navigator.js?v=20261112_eu11';
+import { US_STATES, CITY_TO_STATE } from './states-data.js?v=20261112_eu11';
 
 // Application State
 let worldData = null;
@@ -349,6 +349,8 @@ export async function flyToCity(cityId) {
       'burgas': 'bulgaria', 'veliko-tarnovo': 'bulgaria', 'ruse': 'bulgaria', 'stara-zagora': 'bulgaria', 'blagoevgrad': 'bulgaria', 'pleven': 'bulgaria', 'nesebar': 'bulgaria',
       'larnaca': 'cyprus', 'famagusta': 'cyprus', 'kyrenia': 'cyprus', 'ayia-napa': 'cyprus', 'protaras': 'cyprus', 'polis': 'cyprus', 'troodos': 'cyprus',
       'subotica': 'serbia', 'kragujevac': 'serbia', 'zlatibor': 'serbia', 'kraljevo': 'serbia', 'valjevo': 'serbia', 'vranje': 'serbia', 'pancevo': 'serbia',
+            'tetovo': 'north-macedonia', 'prilep': 'north-macedonia', 'kumanovo': 'north-macedonia', 'strumica': 'north-macedonia', 'veles': 'north-macedonia', 'stip': 'north-macedonia', 'krusevo': 'north-macedonia',
+      'husavik': 'iceland', 'vik': 'iceland', 'keflavik': 'iceland', 'isafjordur': 'iceland', 'egilsstadir': 'iceland', 'selfoss': 'iceland', 'borgarnes': 'iceland', 'hofn': 'iceland',
       'warsaw': 'poland', 'krakow': 'poland', 'gdansk': 'poland', 'wroclaw': 'poland', 'poznan': 'poland', 'lodz': 'poland', 'lublin': 'poland', 'szczecin': 'poland', 'torun': 'poland', 'katowice': 'poland',
       'stockholm': 'sweden', 'gothenburg': 'sweden', 'malmo': 'sweden',
       'oslo': 'norway', 'bergen': 'norway', 'tromso': 'norway',
