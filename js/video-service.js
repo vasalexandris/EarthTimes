@@ -1,4 +1,4 @@
-import { CITY_TO_STATE } from './states-data.js?v=20261112_us2';
+import { CITY_TO_STATE } from './states-data.js?v=20261113_us3';
 /**
  * Video Service Module
  * Registry of verified high-definition YouTube video tours for all cities
@@ -8652,6 +8652,336 @@ export const CITY_VIDEOS = {
     "drone": {
       "youtubeId": "440USlyCTP0",
       "title": "Λίντσμπεργκ 4K — Lynchburg, Virginia - [4K] Drone Tour"
+    }
+  },
+  "newark-de": {
+    "cityName": "Νιούαρκ",
+    "drone": {
+      "youtubeId": "aLIDahClYLM",
+      "title": "Νιούαρκ 4K — Newark, DE | 4K Drone Video"
+    }
+  },
+  "rehoboth-beach": {
+    "cityName": "Ρεχόμποθ Μπιτς",
+    "drone": {
+      "youtubeId": "Wn2hXie-XwQ",
+      "title": "Ρεχόμποθ Μπιτς 4K — Rehoboth Beach, Delaware 4K Drone Flight"
+    },
+    "live": {
+      "youtubeId": "lq15dNFXISw",
+      "label": "Ρεχόμποθ Μπιτς Live Cam",
+      "title": "Rehoboth Boardwalk Plaza Hotel Cam"
+    }
+  },
+  "lewes": {
+    "cityName": "Λιούις",
+    "drone": {
+      "youtubeId": "9TH_CEhtGYg",
+      "title": "Λιούις 4K — The Town Of Lewes, Delaware in 4K"
+    },
+    "live": {
+      "youtubeId": "tXVF9ssb55w",
+      "label": "Λιούις Live Cam",
+      "title": "Tunnell & Raysor Camera at the Lewes Yacht Club"
+    }
+  },
+  "middletown-de": {
+    "cityName": "Μίντλταουν",
+    "drone": {
+      "youtubeId": "DBlgUaTNcok",
+      "title": "Μίντλταουν 4K — Aerial Drone Tour - Middletown, DE - by New Horizon Drone Photography"
+    }
+  },
+  "milford-de": {
+    "cityName": "Μίλφορντ",
+    "drone": {
+      "youtubeId": "lfCRpAkgfpk",
+      "title": "Μίλφορντ 4K — Welcome to Milford, DE: Drone Videography"
+    }
+  },
+  "seaford-de": {
+    "cityName": "Σίφορντ",
+    "drone": {
+      "youtubeId": "Lwrw-3c8Xfg",
+      "title": "Σίφορντ 4K — Life is Beautiful at Seaford, Delaware - Music: I Think She Like Me - Rick Ross - Drone Video Clips"
+    }
+  },
+  "georgetown-de": {
+    "cityName": "Τζόρτζταουν",
+    "drone": {
+      "youtubeId": "qW-9AcCOtoQ",
+      "title": "Τζόρτζταουν 4K — Georgetown - Delaware - 4K Downtown Drive"
+    }
+  },
+  "smyrna-de": {
+    "cityName": "Σμύρνα",
+    "drone": {
+      "youtubeId": "z5y2HY26_8k",
+      "title": "Σμύρνα 4K — Drone Flight Around Farms of Smyrna Delaware"
+    }
+  },
+  "bangor": {
+    "cityName": "Μπάνγκορ",
+    "drone": {
+      "youtubeId": "iFeXKw8HKjE",
+      "title": "Μπάνγκορ 4K — Bangor, Maine - [4K] Drone Tour"
+    }
+  },
+  "bar-harbor": {
+    "cityName": "Μπαρ Χάρμπορ",
+    "drone": {
+      "youtubeId": "5gWMlWzjKmU",
+      "title": "Μπαρ Χάρμπορ 4K — MAINE 4K - Portland, Bar Harbor, Acadia - New England Aerial Drone Travel Tour"
+    },
+    "live": {
+      "youtubeId": "Qoe4x5Z7P08",
+      "label": "Μπαρ Χάρμπορ Live Cam",
+      "title": "Bar Harbor, Maine - West View - Bar Harbor Inn"
+    }
+  },
+  "lewiston": {
+    "cityName": "Λιούιστον",
+    "drone": {
+      "youtubeId": "3OOTn920Rhs",
+      "title": "Λιούιστον 4K — 🚗 Lewiston, Maine  🌟4K Drive"
+    }
+  },
+  "kennebunkport": {
+    "cityName": "Κένεμπανκπορτ",
+    "drone": {
+      "youtubeId": "43srK-YMcZM",
+      "title": "Κένεμπανκπορτ 4K — [4K] Kennebunkport Scenic Walk - [Kennebunkport, Maine] - 4k Walking Tour with Binaural 🎧"
+    }
+  },
+  "rockland-me": {
+    "cityName": "Ρόκλαντ",
+    "drone": {
+      "youtubeId": "c8kzJtfOIAI",
+      "title": "Ρόκλαντ 4K — The Lighthouse That Stood Against Time | Rockland, Maine 4K"
+    }
+  },
+  "camden-me": {
+    "cityName": "Κάμντεν",
+    "drone": {
+      "youtubeId": "pQktoiibBVk",
+      "title": "Κάμντεν 4K — Camden, Maine Walking Tour [4K]"
+    }
+  },
+  "bath-me": {
+    "cityName": "Μπαθ",
+    "drone": {
+      "youtubeId": "EnDo8xXnVZ0",
+      "title": "Μπαθ 4K — Bath, Maine, USA Sunset 4K HDR Drone"
+    }
+  },
+  "brunswick-me": {
+    "cityName": "Μπράνσγουικ",
+    "drone": {
+      "youtubeId": "JgrvZV5g5Ys",
+      "title": "Μπράνσγουικ 4K — Portland & Brunswick, Maine | Incredible Aerial Drone Travel City Adventure Experience"
+    }
+  },
+  "frederick": {
+    "cityName": "Φρέντερικ",
+    "drone": {
+      "youtubeId": "0qrbj_ZVJP0",
+      "title": "Φρέντερικ 4K — Frederick, Maryland, USA 🏞️ | A Captivating 4K Drone Journey"
+    }
+  },
+  "rockville": {
+    "cityName": "Ρόκβιλ",
+    "drone": {
+      "youtubeId": "rRLOBbT2f20",
+      "title": "Ρόκβιλ 4K — Rockville Maryland 2025 Drone Footage 4K"
+    }
+  },
+  "gaithersburg": {
+    "cityName": "Γκέιθερσμπεργκ",
+    "drone": {
+      "youtubeId": "la7PvFXzf4s",
+      "title": "Γκέιθερσμπεργκ 4K — 4K DJI Mini 3 Drone Flight in Gaithersburg, Maryland"
+    }
+  },
+  "ocean-city-md": {
+    "cityName": "Όσιαν Σίτι",
+    "drone": {
+      "youtubeId": "SquEn9CvW-s",
+      "title": "Όσιαν Σίτι 4K — Ocean City, Maryland | 4k Drone Scenes"
+    },
+    "live": {
+      "youtubeId": "zGima24vRHM",
+      "label": "Όσιαν Σίτι Live Cam",
+      "title": "Econolodge OCEAN FRONT LIVE BEACH CAM OCMD"
+    }
+  },
+  "silver-spring": {
+    "cityName": "Σίλβερ Σπρινγκ",
+    "drone": {
+      "youtubeId": "YeJN0lFHBLI",
+      "title": "Σίλβερ Σπρινγκ 4K — Silver Spring, Maryland | Full Tour (4K)"
+    }
+  },
+  "bethesda": {
+    "cityName": "Μπεθέσντα",
+    "drone": {
+      "youtubeId": "K2HMM7YR36s",
+      "title": "Μπεθέσντα 4K — Bethesda Aerial Tour"
+    }
+  },
+  "salisbury-md": {
+    "cityName": "Σόλσμπερι",
+    "drone": {
+      "youtubeId": "1E0bPgivyPI",
+      "title": "Σόλσμπερι 4K — Salisbury, Maryland Drone Footage"
+    },
+    "live": {
+      "youtubeId": "lfEj-ab7rgM",
+      "label": "Σόλσμπερι Live Cam",
+      "title": "Spicer Bros. Camera At Salisbury University"
+    }
+  },
+  "cumberland-md": {
+    "cityName": "Κάμπερλαντ",
+    "drone": {
+      "youtubeId": "5IbJpXxQ33g",
+      "title": "Κάμπερλαντ 4K — Cumberland, Maryland 4K Drone Footage"
+    },
+    "live": {
+      "youtubeId": "LqPsNV_b-uc",
+      "label": "Κάμπερλαντ Live Cam",
+      "title": "Cumberland, Maryland, USA | LIVE Train Camera (PTZ — Downtown) Feat. Western Maryland Scenic 1309!"
+    }
+  },
+  "nashua": {
+    "cityName": "Νάσουα",
+    "drone": {
+      "youtubeId": "shozQOPNxG4",
+      "title": "Νάσουα 4K — Hudson, New Hampshire: An Aerial Glimpse, with Nashua in the Distance"
+    }
+  },
+  "portsmouth-nh": {
+    "cityName": "Πόρτσμουθ",
+    "drone": {
+      "youtubeId": "S7yNuprj_WI",
+      "title": "Πόρτσμουθ 4K — PORTSMOUTH, NEW HAMPSHIRE Drone Video"
+    },
+    "live": {
+      "youtubeId": "BEG9zonwEQ4",
+      "label": "Πόρτσμουθ Live Cam",
+      "title": "Tugboats and Shipping on the Piscataqua River, Portsmouth, New Hampshire LIVE"
+    }
+  },
+  "dover-nh": {
+    "cityName": "Ντόβερ",
+    "drone": {
+      "youtubeId": "jnohthKivN0",
+      "title": "Ντόβερ 4K — Dover New Hampshire 4K Drone Aerial"
+    }
+  },
+  "keene": {
+    "cityName": "Κιν",
+    "drone": {
+      "youtubeId": "vyk5lFr1iY0",
+      "title": "Κιν 4K — Downtown Keene New Hampshire Drone Footage At Dusk - Timelapse"
+    }
+  },
+  "laconia": {
+    "cityName": "Λακόνια",
+    "drone": {
+      "youtubeId": "SsSYfAawkxo",
+      "title": "Λακόνια 4K — Laconia & Meredith - New Hampshire DJI Mini 2 in 4k"
+    }
+  },
+  "hanover-nh": {
+    "cityName": "Ανόβερο",
+    "drone": {
+      "youtubeId": "pb7u4EZww6U",
+      "title": "Ανόβερο 4K — Hanover, New Hampshire - [4K] Drone Tour"
+    },
+    "live": {
+      "youtubeId": "vnIMx_ONGu4",
+      "label": "Ανόβερο Live Cam",
+      "title": "Dartmouth College Hanover Inn Webcam"
+    }
+  },
+  "salem-nh": {
+    "cityName": "Σέιλεμ",
+    "drone": {
+      "youtubeId": "A-VzSzwEZvE",
+      "title": "Σέιλεμ 4K — Salem New Hampshire - Driving Tour [4K]"
+    }
+  },
+  "rochester-nh": {
+    "cityName": "Ρότσεστερ",
+    "drone": {
+      "youtubeId": "-A0o0Tnzq14",
+      "title": "Ρότσεστερ 4K — Rochester NH"
+    }
+  },
+  "warwick": {
+    "cityName": "Γουόρικ",
+    "drone": {
+      "youtubeId": "EQCrppptNG8",
+      "title": "Γουόρικ 4K — Captivating Aerial Adventure: Vessel on Providence River in Warwick, RI DJI Drone - Rhode Island"
+    }
+  },
+  "cranston": {
+    "cityName": "Κράνστον",
+    "drone": {
+      "youtubeId": "qKGG9g4nq9I",
+      "title": "Κράνστον 4K — Blizzard of 2026 drone shots, Edgewood, Cranston, Rhode Island"
+    }
+  },
+  "pawtucket": {
+    "cityName": "Ποτάκετ",
+    "drone": {
+      "youtubeId": "V2onMxE0UFc",
+      "title": "Ποτάκετ 4K — Pawtucket RI in 4k"
+    }
+  },
+  "narragansett": {
+    "cityName": "Ναραγάνσετ",
+    "drone": {
+      "youtubeId": "jDDhMhzSBk0",
+      "title": "Ναραγάνσετ 4K — Narragansett, Rhode Island (4K Drone Footage)"
+    }
+  },
+  "westerly": {
+    "cityName": "Γουέστερλι",
+    "drone": {
+      "youtubeId": "fGcjFLFEBWY",
+      "title": "Γουέστερλι 4K — Westerly From Above In 4K"
+    },
+    "live": {
+      "youtubeId": "c9XTpzuSNo0",
+      "label": "Γουέστερλι Live Cam",
+      "title": "Downtown Westerly, RI Live Stream"
+    }
+  },
+  "bristol-ri": {
+    "cityName": "Μπρίστολ",
+    "drone": {
+      "youtubeId": "rHWHRXZPMVw",
+      "title": "Μπρίστολ 4K — 4k drone footage colt state park bristol rhode island"
+    }
+  },
+  "woonsocket": {
+    "cityName": "Γουνσόκετ",
+    "drone": {
+      "youtubeId": "IOuHv4esEUI",
+      "title": "Γουνσόκετ 4K — Woonsocket RI:  A Drone's Eye View"
+    }
+  },
+  "south-kingstown": {
+    "cityName": "Σάουθ Κίνγκσταουν",
+    "drone": {
+      "youtubeId": "COv7e25WSgg",
+      "title": "Σάουθ Κίνγκσταουν 4K — South Kingstown Township RI in 4K"
+    },
+    "live": {
+      "youtubeId": "9uAn-VdurrE",
+      "label": "Σάουθ Κίνγκσταουν Live Cam",
+      "title": "150MPH Trains at Davisville, Rhode Island, USA | LIVE Train Camera (Fixed View — South)"
     }
   }
 };

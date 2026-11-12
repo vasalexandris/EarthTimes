@@ -1,6 +1,6 @@
 /**
  * US States & Cities Index Metadata
- * Contains all 50 US States + Washington D.C. and 192 mapped cities
+ * Contains all 50 US States + Washington D.C. and 232 mapped cities
  * Used by NavigatorModule, App orchestration, and live search.
  */
 
@@ -700,6 +700,46 @@ export const US_STATES = [
         "id": "portland-me",
         "name": "Πόρτλαντ",
         "englishName": "Portland"
+      },
+      {
+        "id": "bangor",
+        "name": "Μπάνγκορ",
+        "englishName": "Bangor"
+      },
+      {
+        "id": "bar-harbor",
+        "name": "Μπαρ Χάρμπορ",
+        "englishName": "Bar Harbor"
+      },
+      {
+        "id": "lewiston",
+        "name": "Λιούιστον",
+        "englishName": "Lewiston"
+      },
+      {
+        "id": "kennebunkport",
+        "name": "Κένεμπανκπορτ",
+        "englishName": "Kennebunkport"
+      },
+      {
+        "id": "rockland-me",
+        "name": "Ρόκλαντ",
+        "englishName": "Rockland"
+      },
+      {
+        "id": "camden-me",
+        "name": "Κάμντεν",
+        "englishName": "Camden"
+      },
+      {
+        "id": "bath-me",
+        "name": "Μπαθ",
+        "englishName": "Bath"
+      },
+      {
+        "id": "brunswick-me",
+        "name": "Μπράνσγουικ",
+        "englishName": "Brunswick"
       }
     ]
   },
@@ -724,6 +764,46 @@ export const US_STATES = [
         "id": "baltimore",
         "name": "Βαλτιμόρη",
         "englishName": "Baltimore"
+      },
+      {
+        "id": "frederick",
+        "name": "Φρέντερικ",
+        "englishName": "Frederick"
+      },
+      {
+        "id": "rockville",
+        "name": "Ρόκβιλ",
+        "englishName": "Rockville"
+      },
+      {
+        "id": "gaithersburg",
+        "name": "Γκέιθερσμπεργκ",
+        "englishName": "Gaithersburg"
+      },
+      {
+        "id": "ocean-city-md",
+        "name": "Όσιαν Σίτι",
+        "englishName": "Ocean City"
+      },
+      {
+        "id": "silver-spring",
+        "name": "Σίλβερ Σπρινγκ",
+        "englishName": "Silver Spring"
+      },
+      {
+        "id": "bethesda",
+        "name": "Μπεθέσντα",
+        "englishName": "Bethesda"
+      },
+      {
+        "id": "salisbury-md",
+        "name": "Σόλσμπερι",
+        "englishName": "Salisbury"
+      },
+      {
+        "id": "cumberland-md",
+        "name": "Κάμπερλαντ",
+        "englishName": "Cumberland"
       }
     ]
   },
@@ -1088,6 +1168,46 @@ export const US_STATES = [
         "id": "manchester-nh",
         "name": "Μάντσεστερ",
         "englishName": "Manchester"
+      },
+      {
+        "id": "nashua",
+        "name": "Νάσουα",
+        "englishName": "Nashua"
+      },
+      {
+        "id": "portsmouth-nh",
+        "name": "Πόρτσμουθ",
+        "englishName": "Portsmouth"
+      },
+      {
+        "id": "dover-nh",
+        "name": "Ντόβερ",
+        "englishName": "Dover"
+      },
+      {
+        "id": "keene",
+        "name": "Κιν",
+        "englishName": "Keene"
+      },
+      {
+        "id": "laconia",
+        "name": "Λακόνια",
+        "englishName": "Laconia"
+      },
+      {
+        "id": "hanover-nh",
+        "name": "Ανόβερο",
+        "englishName": "Hanover"
+      },
+      {
+        "id": "salem-nh",
+        "name": "Σέιλεμ",
+        "englishName": "Salem"
+      },
+      {
+        "id": "rochester-nh",
+        "name": "Ρότσεστερ",
+        "englishName": "Rochester"
       }
     ]
   },
@@ -1200,6 +1320,46 @@ export const US_STATES = [
         "id": "wilmington",
         "name": "Γουίλμινγκτον",
         "englishName": "Wilmington"
+      },
+      {
+        "id": "newark-de",
+        "name": "Νιούαρκ",
+        "englishName": "Newark"
+      },
+      {
+        "id": "rehoboth-beach",
+        "name": "Ρεχόμποθ Μπιτς",
+        "englishName": "Rehoboth Beach"
+      },
+      {
+        "id": "lewes",
+        "name": "Λιούις",
+        "englishName": "Lewes"
+      },
+      {
+        "id": "middletown-de",
+        "name": "Μίντλταουν",
+        "englishName": "Middletown"
+      },
+      {
+        "id": "milford-de",
+        "name": "Μίλφορντ",
+        "englishName": "Milford"
+      },
+      {
+        "id": "seaford-de",
+        "name": "Σίφορντ",
+        "englishName": "Seaford"
+      },
+      {
+        "id": "georgetown-de",
+        "name": "Τζόρτζταουν",
+        "englishName": "Georgetown"
+      },
+      {
+        "id": "smyrna-de",
+        "name": "Σμύρνα",
+        "englishName": "Smyrna"
       }
     ]
   },
@@ -1466,6 +1626,46 @@ export const US_STATES = [
         "id": "newport",
         "name": "Νιούπορτ",
         "englishName": "Newport"
+      },
+      {
+        "id": "warwick",
+        "name": "Γουόρικ",
+        "englishName": "Warwick"
+      },
+      {
+        "id": "cranston",
+        "name": "Κράνστον",
+        "englishName": "Cranston"
+      },
+      {
+        "id": "pawtucket",
+        "name": "Ποτάκετ",
+        "englishName": "Pawtucket"
+      },
+      {
+        "id": "narragansett",
+        "name": "Ναραγάνσετ",
+        "englishName": "Narragansett"
+      },
+      {
+        "id": "westerly",
+        "name": "Γουέστερλι",
+        "englishName": "Westerly"
+      },
+      {
+        "id": "bristol-ri",
+        "name": "Μπρίστολ",
+        "englishName": "Bristol"
+      },
+      {
+        "id": "woonsocket",
+        "name": "Γουνσόκετ",
+        "englishName": "Woonsocket"
+      },
+      {
+        "id": "south-kingstown",
+        "name": "Σάουθ Κίνγκσταουν",
+        "englishName": "South Kingstown"
       }
     ]
   },
@@ -1760,8 +1960,24 @@ export const CITY_TO_STATE = {
   "gloucester": "massachusetts",
   "augusta": "maine",
   "portland-me": "maine",
+  "bangor": "maine",
+  "bar-harbor": "maine",
+  "lewiston": "maine",
+  "kennebunkport": "maine",
+  "rockland-me": "maine",
+  "camden-me": "maine",
+  "bath-me": "maine",
+  "brunswick-me": "maine",
   "annapolis": "maryland",
   "baltimore": "maryland",
+  "frederick": "maryland",
+  "rockville": "maryland",
+  "gaithersburg": "maryland",
+  "ocean-city-md": "maryland",
+  "silver-spring": "maryland",
+  "bethesda": "maryland",
+  "salisbury-md": "maryland",
+  "cumberland-md": "maryland",
   "jefferson-city": "missouri",
   "kansas-city": "missouri",
   "st-louis": "missouri",
@@ -1804,6 +2020,14 @@ export const CITY_TO_STATE = {
   "morristown": "new-jersey",
   "concord": "new-hampshire",
   "manchester-nh": "new-hampshire",
+  "nashua": "new-hampshire",
+  "portsmouth-nh": "new-hampshire",
+  "dover-nh": "new-hampshire",
+  "keene": "new-hampshire",
+  "laconia": "new-hampshire",
+  "hanover-nh": "new-hampshire",
+  "salem-nh": "new-hampshire",
+  "rochester-nh": "new-hampshire",
   "columbia": "south-carolina",
   "charleston-sc": "south-carolina",
   "greenville-sc": "south-carolina",
@@ -1818,6 +2042,14 @@ export const CITY_TO_STATE = {
   "sioux-falls": "south-dakota",
   "dover": "delaware",
   "wilmington": "delaware",
+  "newark-de": "delaware",
+  "rehoboth-beach": "delaware",
+  "lewes": "delaware",
+  "middletown-de": "delaware",
+  "milford-de": "delaware",
+  "seaford-de": "delaware",
+  "georgetown-de": "delaware",
+  "smyrna-de": "delaware",
   "oklahoma-city": "oklahoma",
   "tulsa": "oklahoma",
   "salem-or": "oregon",
@@ -1846,6 +2078,14 @@ export const CITY_TO_STATE = {
   "spokane": "washington-state",
   "providence": "rhode-island",
   "newport": "rhode-island",
+  "warwick": "rhode-island",
+  "cranston": "rhode-island",
+  "pawtucket": "rhode-island",
+  "narragansett": "rhode-island",
+  "westerly": "rhode-island",
+  "bristol-ri": "rhode-island",
+  "woonsocket": "rhode-island",
+  "south-kingstown": "rhode-island",
   "nashville": "tennessee",
   "memphis": "tennessee",
   "austin": "texas",

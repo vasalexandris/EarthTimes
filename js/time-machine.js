@@ -4,7 +4,7 @@
  * User Authentication / Profiles, Right-Click Map Spot Creation, and Community Stories.
  */
 
-import { loadTimeCapsules } from './data-service.js?v=20261112_us2';
+import { loadTimeCapsules } from './data-service.js?v=20261113_us3';
 
 let timeCapsules = [];
 let selectedYear = 'all'; // 'all' or number like 1965
