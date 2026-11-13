@@ -4,12 +4,13 @@
  * Base Map Layer selector, Date display, Video Overlay, and Deep Dive views.
  */
 
-import { getCityVideo, getAvailableVideoTypes, getAvailableCityTours, CITY_VIDEOS, findPoiLiveCam } from './video-service.js?v=20261113_us3';
-import { getDeepDiveData } from './deep-dive.js?v=20261113_us3';
-import { fetchWikiArticle, fetchWikiArticleHtml, cleanWikiTitle } from './wiki-service.js?v=20261113_us3';
+import { getCityVideo, getAvailableVideoTypes, getAvailableCityTours, CITY_VIDEOS, findPoiLiveCam } from './video-service.js?v=20261113_fix1';
+import { getDeepDiveData } from './deep-dive.js?v=20261113_fix1';
+import { fetchWikiArticle, fetchWikiArticleHtml, cleanWikiTitle } from './wiki-service.js?v=20261113_fix1';
 
 let currentActiveVideoCityId = null;
 let currentActiveVideoType = 'drone';
+let isNarrating = false;
 
 let currentWikiTitle = '';
 let currentWikiLang = 'el';
@@ -46,10 +47,25 @@ export function syncMapFloatingControlsVisibility() {
   }
 }
 
-export function openCityVideo(cityId, preferredType = 'drone') {
-  currentActiveVideoCityId = cityId;
-  currentActiveVideoType = preferredType;
+export function isMapVideoOverlayOpen() {
+  const overlay = document.getElementById('mapVideoOverlay');
+  return !!(overlay && !overlay.classList.contains('hidden'));
+}
 
+export function isMapWikiOverlayOpen() {
+  const overlay = document.getElementById('mapWikiOverlay');
+  return !!(overlay && !overlay.classList.contains('hidden'));
+}
+
+export function getCurrentActiveVideoType() {
+  return currentActiveVideoType || 'drone';
+}
+
+export function getCurrentActiveVideoCityId() {
+  return currentActiveVideoCityId;
+}
+
+export function openCityVideo(cityId, preferredType = 'drone') {
   const vid = getCityVideo(cityId, preferredType);
   const overlay = document.getElementById('mapVideoOverlay');
   const iframe = document.getElementById('mapVideoIframe');
@@ -62,9 +78,21 @@ export function openCityVideo(cityId, preferredType = 'drone') {
 
   if (!overlay || !iframe) return;
 
-  // Close other overlays if open
+  if (!vid) {
+    closeMapVideoOverlay();
+    return;
+  }
+
+  currentActiveVideoCityId = cityId;
+  currentActiveVideoType = vid.type || preferredType;
+
+  // Close other map overlays if open
   if (deepDiveOverlay) deepDiveOverlay.classList.add('hidden');
-  if (wikiOverlay) wikiOverlay.classList.add('hidden');
+  if (wikiOverlay) {
+    const wikiFrame = document.getElementById('mapWikiIframe');
+    if (wikiFrame) wikiFrame.srcdoc = '';
+    wikiOverlay.classList.add('hidden');
+  }
   if (streetViewOverlay) {
     const svFrame = document.getElementById('mapStreetViewIframe');
     if (svFrame) svFrame.src = 'about:blank';
@@ -83,7 +111,7 @@ export function openCityVideo(cityId, preferredType = 'drone') {
     const tours = getAvailableCityTours(cityId);
     if (tours.length > 1) {
       typeSelector.innerHTML = tours.map(t => {
-        const isActive = preferredType === t.type;
+        const isActive = currentActiveVideoType === t.type;
         const isLive = t.type === 'live';
         const shortLabel = t.type === 'drone' ? 'Drone 4K' : (t.type === 'walking' ? 'Walking 4K' : (isLive ? 'Live Cam' : 'Αξιοθέατα 4K'));
         return `
@@ -101,7 +129,6 @@ export function openCityVideo(cityId, preferredType = 'drone') {
 
   overlay.classList.remove('hidden');
   syncMapFloatingControlsVisibility();
-  syncMapFloatingControlsVisibility();
 }
 
 export function switchCityVideoType(type) {
@@ -115,6 +142,7 @@ export function closeMapVideoOverlay() {
   const iframe = document.getElementById('mapVideoIframe');
   if (iframe) iframe.src = '';
   if (overlay) overlay.classList.add('hidden');
+  currentActiveVideoCityId = null;
   syncMapFloatingControlsVisibility();
 }
 
@@ -1735,29 +1763,29 @@ export function renderTabContent(tabId, entity, activeYear = null, activeSpots =
 }
 
 
-export function narrateBrief(entity) {
-  if (!entity) return;
-
-  const textToRead = `${entity.name}. ${entity.quote || ''} ${entity.geo?.summary || ''}`;
-
+export function stopNarrate() {
   if ('speechSynthesis' in window) {
-    window.speechSynthesis.cancel();
-    const utterance = new SpeechSynthesisUtterance(textToRead);
-    utterance.lang = 'el-GR';
-    utterance.rate = 1.0;
+    try {
+      window.speechSynthesis.cancel();
+    } catch (e) {
+      console.warn('SpeechSynthesis cancel error', e);
+    }
+  }
+  isNarrating = false;
+  const icon = document.getElementById('ttsIcon');
+  if (icon) {
+    icon.className = 'fa-solid fa-volume-high text-xs text-sky-400';
+  }
+  const btn = document.getElementById('ttsBtn') || (icon && icon.closest('button'));
+  if (btn) {
+    btn.setAttribute('title', 'Ακρόαση σύνοψης (Text-to-speech)');
+    btn.classList.remove('bg-rose-950/80', 'text-rose-400', 'border-rose-700/60');
+    btn.classList.add('bg-slate-800', 'text-sky-400', 'border-slate-700');
+  }
+}
 
-    const icon = document.getElementById('ttsIcon');
-    if (icon) icon.className = 'fa-solid fa-spinner fa-spin text-sky-400';
-
-    const restoreIcon = () => {
-      if (icon) icon.className = 'fa-solid fa-volume-high text-sky-400';
-    };
-
-    utterance.onend = restoreIcon;
-    utterance.onerror = restoreIcon;
-
-    window.speechSynthesis.speak(utterance);
-  } else {
+export function narrateBrief(entity) {
+  if (!('speechSynthesis' in window)) {
     const quoteEl = document.getElementById('docuQuote');
     if (quoteEl) {
       quoteEl.classList.add('text-sky-300', 'font-bold');
@@ -1765,5 +1793,49 @@ export function narrateBrief(entity) {
         quoteEl.classList.remove('text-sky-300', 'font-bold');
       }, 3000);
     }
+    return;
+  }
+
+  // Toggle STOP if already speaking or narrating
+  if (isNarrating || window.speechSynthesis.speaking || window.speechSynthesis.pending) {
+    stopNarrate();
+    return;
+  }
+
+  if (!entity) return;
+
+  const textToRead = `${entity.name}. ${entity.quote || ''} ${entity.geo?.summary || ''}`.trim();
+  if (!textToRead) return;
+
+  try {
+    window.speechSynthesis.cancel();
+
+    const utterance = new SpeechSynthesisUtterance(textToRead);
+    utterance.lang = 'el-GR';
+    utterance.rate = 1.0;
+
+    isNarrating = true;
+    const icon = document.getElementById('ttsIcon');
+    if (icon) {
+      icon.className = 'fa-solid fa-stop text-xs text-rose-400 animate-pulse';
+    }
+    const btn = document.getElementById('ttsBtn') || (icon && icon.closest('button'));
+    if (btn) {
+      btn.setAttribute('title', 'Διακοπή ακρόασης (Κλικ για παύση)');
+      btn.classList.remove('bg-slate-800', 'text-sky-400', 'border-slate-700');
+      btn.classList.add('bg-rose-950/80', 'text-rose-400', 'border-rose-700/60');
+    }
+
+    const resetAfterPlayback = () => {
+      stopNarrate();
+    };
+
+    utterance.onend = resetAfterPlayback;
+    utterance.onerror = resetAfterPlayback;
+
+    window.speechSynthesis.speak(utterance);
+  } catch (err) {
+    console.warn('SpeechSynthesis error:', err);
+    stopNarrate();
   }
 }

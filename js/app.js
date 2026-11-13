@@ -4,12 +4,12 @@
  * USA, Leaflet Map, Base Layers, UI Dossier, and Time Machine.
  */
 
-import { loadWorldData, loadCountryData, loadStateData } from './data-service.js?v=20261113_us3';
-import * as MapModule from './map.js?v=20261113_us3';
-import * as UIModule from './ui.js?v=20261113_us3';
-import * as TimeMachine from './time-machine.js?v=20261113_us3';
-import * as NavigatorModule from './navigator.js?v=20261113_us3';
-import { US_STATES, CITY_TO_STATE } from './states-data.js?v=20261113_us3';
+import { loadWorldData, loadCountryData, loadStateData } from './data-service.js?v=20261113_fix1';
+import * as MapModule from './map.js?v=20261113_fix1';
+import * as UIModule from './ui.js?v=20261113_fix1';
+import * as TimeMachine from './time-machine.js?v=20261113_fix1';
+import * as NavigatorModule from './navigator.js?v=20261113_fix1';
+import { US_STATES, CITY_TO_STATE } from './states-data.js?v=20261113_fix1';
 
 // Application State
 let worldData = null;
@@ -181,6 +181,12 @@ export function toggleTimePlayback() {
 }
 
 export function flyToWorld() {
+  UIModule.stopNarrate();
+  UIModule.closeMapVideoOverlay();
+  UIModule.closeMapWikiOverlay();
+  UIModule.closeMapStreetViewOverlay();
+  UIModule.closeDeepDiveOverlay();
+
   currentScope = 'world';
   currentCountryId = null;
   currentCityId = null;
@@ -209,6 +215,11 @@ export function flyToWorld() {
 }
 
 export async function flyToCountry(countryId = 'greece') {
+  UIModule.stopNarrate();
+  UIModule.closeMapVideoOverlay();
+  UIModule.closeMapStreetViewOverlay();
+  UIModule.closeDeepDiveOverlay();
+
   currentScope = 'country';
   currentCountryId = countryId;
   currentCityId = null;
@@ -244,9 +255,18 @@ export async function flyToCountry(countryId = 'greece') {
     TimeMachine.isPlaybackRunning()
   );
   renderCurrentTimeCapsules();
+
+  if (UIModule.isMapWikiOverlayOpen()) {
+    UIModule.openMapWikiReader(country.name, 'el', country.englishName);
+  }
 }
 
 export async function flyToState(stateId = 'massachusetts') {
+  UIModule.stopNarrate();
+  UIModule.closeMapVideoOverlay();
+  UIModule.closeMapStreetViewOverlay();
+  UIModule.closeDeepDiveOverlay();
+
   currentScope = 'state';
   currentCountryId = 'usa';
   currentStateId = stateId;
@@ -285,6 +305,10 @@ export async function flyToState(stateId = 'massachusetts') {
     TimeMachine.isPlaybackRunning()
   );
   renderCurrentTimeCapsules();
+
+  if (UIModule.isMapWikiOverlayOpen()) {
+    UIModule.openMapWikiReader(state.name, 'el', state.englishName);
+  }
 }
 
 export async function flyToCity(cityId) {
@@ -614,6 +638,20 @@ export async function flyToCity(cityId) {
     TimeMachine.isPlaybackRunning()
   );
   renderCurrentTimeCapsules();
+
+  // Stop any active TTS audio from previous city/scope
+  UIModule.stopNarrate();
+
+  // If video overlay is active, seamlessly switch video tour to the new city
+  if (UIModule.isMapVideoOverlayOpen()) {
+    UIModule.openCityVideo(city.id, UIModule.getCurrentActiveVideoType());
+  } else if (UIModule.isMapWikiOverlayOpen()) {
+    // If wiki overlay reader is active, update to new city's Wikipedia article
+    UIModule.openMapWikiReader(city.name, 'el', city.englishName);
+  } else {
+    UIModule.closeMapStreetViewOverlay();
+    UIModule.closeDeepDiveOverlay();
+  }
 }
 
 export function handleJumpChange(value) {
@@ -776,6 +814,9 @@ window.navigateTour = navigateTour;
 window.switchTab = switchTab;
 window.togglePoiCategory = togglePoiCategory;
 window.narrateBrief = narrateBrief;
+window.stopNarrate = UIModule.stopNarrate;
+window.isMapVideoOverlayOpen = UIModule.isMapVideoOverlayOpen;
+window.isMapWikiOverlayOpen = UIModule.isMapWikiOverlayOpen;
 window.flyToCoordinates = MapModule.flyToCoordinates;
 
 // Video & In-Map Wikipedia window bindings
