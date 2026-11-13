@@ -1,4 +1,4 @@
-import { CITY_TO_STATE } from './states-data.js?v=20261113_us4';
+import { CITY_TO_STATE } from './states-data.js?v=20261113_us5';
 /**
  * Video Service Module
  * Registry of verified high-definition YouTube video tours for all cities
@@ -9506,6 +9506,516 @@ export const CITY_VIDEOS = {
       "label": "Κολόμπους Live Cam",
       "title": "Ohio River, Jeffersonville, IN | StreamTime LIVE"
     }
+  },
+  "jefferson-city": {
+      "drone": {
+          "youtubeId": "spEdJbcL-7M",
+          "title": "Τζέφερσον Σίτι 4K — Jefferson City Missouri State Capitol 4K Drone"
+      }
+  },
+  "kansas-city": {
+      "drone": {
+          "youtubeId": "R9207Qa1sos",
+          "title": "Κάνσας Σίτι 4K — Kansas City - USA 🇺🇸 - by drone [4K]"
+      },
+      "live": {
+          "youtubeId": "9fzUjSTK5F8",
+          "label": "Κάνσας Σίτι Live Cam",
+          "title": "EarthCam Live:  Kansas City Cam (Kansas City, MO)"
+      }
+  },
+  "st-louis": {
+      "drone": {
+          "youtubeId": "oODK_JYhd_I",
+          "title": "Σαιντ Λούις 4K — Saint Louis, Missouri - USA 🇺🇸 - by drone [4K]"
+      },
+      "live": {
+          "youtubeId": "OHRc7YRmuTk",
+          "label": "Σαιντ Λούις Live Cam",
+          "title": "🔴 LIVE Trains Railcam | St Louis, Missouri (West Cam)"
+      }
+  },
+  "springfield-mo": {
+      "drone": {
+          "youtubeId": "oCjIs6po21c",
+          "title": "Σπρίνγκφιλντ 4K — Drone Springfield, Missouri"
+      },
+      "live": {
+          "youtubeId": "qJ0ADUNfEhM",
+          "label": "Σπρίνγκφιλντ Live Cam",
+          "title": "Springfield CID Live Railcam (Static) - Springfield, MO #steelhighway"
+      }
+  },
+  "columbia-mo": {
+      "drone": {
+          "youtubeId": "PXF_wlCsEuQ",
+          "title": "Κολούμπια 4K — Drone Views of Columbia Missouri | University of Missouri & Missouri River from the Sky"
+      }
+  },
+  "branson": {
+      "drone": {
+          "youtubeId": "n0qcaqS_zNg",
+          "title": "Μπράνσον 4K — 4K - Stunning Branson MO Drone Video"
+      },
+      "live": {
+          "youtubeId": "lAhAHOFOqys",
+          "label": "Μπράνσον Live Cam",
+          "title": "Table Rock Lake Livestream"
+      }
+  },
+  "st-joseph": {
+      "drone": {
+          "youtubeId": "FcdQuoeEPMg",
+          "title": "Σεντ Τζόζεφ 4K — Driving Through Historic St. Joseph, Missouri 🇺🇸 | 4K City Driving Tour"
+      }
+  },
+  "st-charles": {
+      "drone": {
+          "youtubeId": "rZF0dcQ7Zp8",
+          "title": "Σεντ Τσαρλς 4K — Saint Charles Missouri 4K  / Suburb of St. Louis (DJI Mavic Air 2 Drone Footage) 9th largest City MO"
+      }
+  },
+  "joplin": {
+      "drone": {
+          "youtubeId": "RCcGkhIwing",
+          "title": "Τζόπλιν 4K — Joplin - Missouri - 4K Downtown Drive"
+      }
+  },
+  "hannibal": {
+      "drone": {
+          "youtubeId": "vqblcEsWyB8",
+          "title": "Χάνιμπαλ 4K — Hannibal Missouri | What We Didn't Expect to Find Free!"
+      }
+  },
+  "little-rock": {
+      "drone": {
+          "youtubeId": "V5-BMkaniGs",
+          "title": "Λιτλ Ροκ 4K — Little Rock Arkansas Aerial Drone Footage | Stunning 4K City & River Views"
+      }
+  },
+  "fayetteville-ar": {
+      "drone": {
+          "youtubeId": "TX8MXfazq3U",
+          "title": "Φαγιέτβιλ 4K — Razorback Stadium | Cinematic Drone Footage | Fayetteville, Arkansas 4K"
+      }
+  },
+  "fort-smith": {
+      "drone": {
+          "youtubeId": "2j_tJxicTBM",
+          "title": "Φορτ Σμιθ 4K — Downtown Fort Smith Arkansas - High Quality  Drone Video - DJI Mini II"
+      }
+  },
+  "hot-springs": {
+      "drone": {
+          "youtubeId": "y0VGlLh0t0M",
+          "title": "Χοτ Σπρινγκς 4K — VISIT HOT SPRINGS, AR(DRONE TOUR)"
+      },
+      "live": {
+          "youtubeId": "n0dXgNnK8Vg",
+          "label": "Χοτ Σπρινγκς Live Cam",
+          "title": "Jasper, AR - Live Weather Camera - Sponsored by Reynolds Media - Internet Services"
+      }
+  },
+  "bentonville": {
+      "drone": {
+          "youtubeId": "flGA_vJDEC8",
+          "title": "Μπέντονβιλ 4K — Cinematic Drone Views of Bentonville & Northwest Arkansas"
+      },
+      "live": {
+          "youtubeId": "_BuZRtXQlbs",
+          "label": "Μπέντονβιλ Live Cam",
+          "title": "Live: Town Square, Bentonville, AR"
+      }
+  },
+  "springdale": {
+      "drone": {
+          "youtubeId": "lTMK6b6TpyU",
+          "title": "Σπρίνγκντεϊλ 4K — Tour of Springdale-Springdale, AR"
+      }
+  },
+  "jonesboro": {
+      "drone": {
+          "youtubeId": "APj_Qy02ekI",
+          "title": "Τζόουνσμπορο 4K — Driving Around Downtown Jonesboro, Arkansas and Arkansas State University in 4k Video"
+      }
+  },
+  "rogers": {
+      "drone": {
+          "youtubeId": "k-SDSvoJFSE",
+          "title": "Ρότζερς 4K — Tour of Rogers, Arkansas-Bentonville, AR"
+      }
+  },
+  "eureka-springs": {
+      "drone": {
+          "youtubeId": "Pv8rtJidkyQ",
+          "title": "Γιουρίκα Σπρινγκς 4K — Eureka Springs Arkansas 4K Walking Tour | Christ of the Ozarks, Crescent Hotel & Downtown"
+      },
+      "live": {
+          "youtubeId": "KAaYQ6YEqBA",
+          "label": "Γιουρίκα Σπρινγκς Live Cam",
+          "title": "Downtown Eureka Springs Live Camera"
+      }
+  },
+  "conway-ar": {
+      "drone": {
+          "youtubeId": "HuPw9VkMG48",
+          "title": "Κόνγουεϊ 4K — Conway - Arkansas - 4K Downtown Drive"
+      }
+  },
+  "des-moines": {
+      "drone": {
+          "youtubeId": "kNdO-7KDGvA",
+          "title": "Ντε Μόιν 4K — Des Moines Iowa - 4K Drone Tour - TOP 10 Travel Guide"
+      },
+      "live": {
+          "youtubeId": "7E3stUZjEX8",
+          "label": "Ντε Μόιν Live Cam",
+          "title": "City of Stuart, Iowa Live Railcam - Stuart,  IA #steelhighway"
+      }
+  },
+  "cedar-rapids": {
+      "drone": {
+          "youtubeId": "J1h-c3KIn6A",
+          "title": "Σένταρ Ράπιντς 4K — Cedar Rapids, Iowa | 4K drone footage"
+      }
+  },
+  "davenport": {
+      "drone": {
+          "youtubeId": "UDfQRjdMziU",
+          "title": "Ντάβενπορτ 4K — Davenport, IA - 4K Aerial Tour"
+      }
+  },
+  "sioux-city": {
+      "drone": {
+          "youtubeId": "giE48dJV2oI",
+          "title": "Σιού Σίτι 4K — Downtown Sioux City, IA - 4K Aerial Tour"
+      }
+  },
+  "iowa-city": {
+      "drone": {
+          "youtubeId": "ki2XV_rDHPg",
+          "title": "Άιοβα Σίτι 4K — Iowa City and The University of Iowa | 4K drone footage"
+      }
+  },
+  "waterloo-ia": {
+      "drone": {
+          "youtubeId": "zfs631ZzYvE",
+          "title": "Γουότερλου 4K — Downtown Riverfront Waterloo, IA (4K Drone)"
+      }
+  },
+  "ames": {
+      "drone": {
+          "youtubeId": "1wb63eN8jqs",
+          "title": "Έιμς 4K — Ames, Iowa - 4K Aerial Tour"
+      }
+  },
+  "dubuque": {
+      "drone": {
+          "youtubeId": "qnOpt-0Q2_Q",
+          "title": "Ντουμπιούκ 4K — Downtown Dubuque from Above A Cinematic 4K Drone"
+      },
+      "live": {
+          "youtubeId": "Qorj8fJt_lM",
+          "label": "Ντουμπιούκ Live Cam",
+          "title": "Dubuque County - Falcon Camera Ledge View"
+      }
+  },
+  "council-bluffs": {
+      "drone": {
+          "youtubeId": "Jxterndz5rw",
+          "title": "Κάουνσιλ Μπλαφς 4K — Council Bluffs - Iowa - 4K Downtown Drive"
+      },
+      "live": {
+          "youtubeId": "qsrevo5Vdkw",
+          "label": "Κάουνσιλ Μπλαφς Live Cam",
+          "title": "EarthCam Live:  Council Bluffs, Iowa"
+      }
+  },
+  "burlington-ia": {
+      "drone": {
+          "youtubeId": "7NeS1hrO7K4",
+          "title": "Μπέρλινγκτον 4K — Driving Around Stunning Downtown Burlington, IA in 4k Video"
+      },
+      "live": {
+          "youtubeId": "L_xBQqGzNzY",
+          "label": "Μπέρλινγκτον Live Cam",
+          "title": "Burlington, Iowa, USA | LIVE Train Camera (PTZ)"
+      }
+  },
+  "saint-paul": {
+      "drone": {
+          "youtubeId": "XFnlIUqFjSA",
+          "title": "Σαιντ Πολ 4K — Minneapolis From Above 🌆 | Stunning 4K Drone Views of the Twin Cities"
+      },
+      "live": {
+          "youtubeId": "u5dt2mHDuxQ",
+          "label": "Σαιντ Πολ Live Cam",
+          "title": "St. Paul, Minnesota, USA | LIVE Train Camera (Fixed View – East)"
+      }
+  },
+  "minneapolis": {
+      "drone": {
+          "youtubeId": "HpAebfyq_JI",
+          "title": "Μινεάπολη 4K — Minneapolis, Minnesota | 4K Drone Video"
+      },
+      "live": {
+          "youtubeId": "NL3DQm0B5wM",
+          "label": "Μινεάπολη Live Cam",
+          "title": "LIVE NEWS: FOX LOCAL Minnesota 24/7 Live Stream"
+      }
+  },
+  "duluth": {
+      "drone": {
+          "youtubeId": "1cWaYDGAO9M",
+          "title": "Ντουλούθ 4K — First time Duluth, Minnesota by drone | Stunning 4K Aerial Views of Lake Superior & the North Shore"
+      },
+      "live": {
+          "youtubeId": "HPS48TMmNag",
+          "label": "Ντουλούθ Live Cam",
+          "title": "Duluth Canal Cam"
+      }
+  },
+  "rochester-mn": {
+      "drone": {
+          "youtubeId": "MgCT_R-4Mbo",
+          "title": "Ρότσεστερ 4K — Downtown Rochester, Minnesota from Above | Summer 2025 Aerial Cinematics | 4K Drone"
+      },
+      "live": {
+          "youtubeId": "elcw1nP1AWE",
+          "label": "Ρότσεστερ Live Cam",
+          "title": "Rochester, MN - Live Skycam"
+      }
+  },
+  "bloomington-mn": {
+      "drone": {
+          "youtubeId": "BbLwvOfN5Ao",
+          "title": "Μπλούμινγκτον 4K — Bloomington, Minnesota - 4K Drone Footage"
+      },
+      "live": {
+          "youtubeId": "h1oeDxnOebM",
+          "label": "Μπλούμινγκτον Live Cam",
+          "title": "LIVE Snow Cam @ Hyland Hills - Bloomington, Minnesota"
+      }
+  },
+  "st-cloud": {
+      "drone": {
+          "youtubeId": "0jFNMGpys-I",
+          "title": "Σεντ Κλάουντ 4K — Aerial Views of Saint Cloud, Minnesota | Scenic City & Mississippi River from Above"
+      },
+      "live": {
+          "youtubeId": "iAUH8Cy5kVQ",
+          "label": "Σεντ Κλάουντ Live Cam",
+          "title": "St. Cloud, MN, USA | Train Cam LIVE NOW | BNSF Staples Sub |  MP 73.11"
+      }
+  },
+  "mankato": {
+      "drone": {
+          "youtubeId": "p9WMu46Nhwk",
+          "title": "Μανκάτο 4K — Mankato, Minnesota | Cinematic Drone Fly Through 2023"
+      }
+  },
+  "moorhead": {
+      "drone": {
+          "youtubeId": "EmSRfX2_3gs",
+          "title": "Μούρχεντ 4K — Moorhead MN Minnesota Drone Video Aerial Footage Hjemkomst Center Hopperstad Stave Church Red River"
+      },
+      "live": {
+          "youtubeId": "A1PoDybhDQs",
+          "label": "Μούρχεντ Live Cam",
+          "title": "Fargo/Moorhead, USA | W Train Cam LIVE | BNSF KO Sub | Moorhead, MN Junction | ‪@NTR-SHR‬ | MP 5.8"
+      }
+  },
+  "winona": {
+      "drone": {
+          "youtubeId": "u3s7yJOHPOE",
+          "title": "Γουινόνα 4K — Winona Winter 2023"
+      }
+  },
+  "bemidji": {
+      "drone": {
+          "youtubeId": "mJAQ3W3EkRA",
+          "title": "Μπεμίτζι 4K — Bemidji MN from the Sky"
+      },
+      "live": {
+          "youtubeId": "1keU6WOoDbw",
+          "label": "Μπεμίτζι Live Cam",
+          "title": "Lakeland PBS Bemidji Towercam"
+      }
+  },
+  "frankfort": {
+      "drone": {
+          "youtubeId": "J2X02TgMup0",
+          "title": "Φράνκφορτ 4K — Frankfort Kentucky From Above | Cinematic 4K Drone"
+      }
+  },
+  "louisville": {
+      "drone": {
+          "youtubeId": "fQ38-ybST4c",
+          "title": "Λούισβιλ 4K — Stunning 4K Drone Footage of Louisville, Kentucky | A Breathtaking Aerial Journey"
+      },
+      "live": {
+          "youtubeId": "MqzQdTHCTOg",
+          "label": "Λούισβιλ Live Cam",
+          "title": "Ohio River & Louisville Skyline Live Cam"
+      }
+  },
+  "lexington": {
+      "drone": {
+          "youtubeId": "k11NWSy_xs8",
+          "title": "Λέξινγκτον 4K — Lexington, Kentucky | 4K drone footage"
+      },
+      "live": {
+          "youtubeId": "zKD1KFMcydQ",
+          "label": "Λέξινγκτον Live Cam",
+          "title": "Lexington, KY Live Weather Cam | Chevy Chase | FOX 56 News"
+      }
+  },
+  "bowling-green": {
+      "drone": {
+          "youtubeId": "dKGYf1hz8VM",
+          "title": "Μπόουλινγκ Γκριν 4K — Downtown Bowling Green, KY | Summer Evening 2023 - 4K drone footage by Josh Huddy"
+      }
+  },
+  "owensboro": {
+      "drone": {
+          "youtubeId": "vgvY4K45kJM",
+          "title": "Όουενσμπορο 4K — Owensboro Ky. English Park drone. Mavic Mini."
+      }
+  },
+  "covington": {
+      "drone": {
+          "youtubeId": "DTWTjfd9MSY",
+          "title": "Κόβινγκτον 4K — Covington, Kentucky and Cincinnati, Ohio | 4K Aerial Drone View"
+      },
+      "live": {
+          "youtubeId": "Kfnq9KUBQng",
+          "label": "Κόβινγκτον Live Cam",
+          "title": "Covington, Kentucky, USA | LIVE Train Camera (Fixed View – North)"
+      }
+  },
+  "paducah": {
+      "drone": {
+          "youtubeId": "fuuinuwkacM",
+          "title": "Παντούκα 4K — DRONE VIDEO OF PADUCAH KY"
+      },
+      "live": {
+          "youtubeId": "EhzUOPnztjY",
+          "label": "Παντούκα Live Cam",
+          "title": "Paducah Ky Wildlife Camera"
+      }
+  },
+  "richmond-ky": {
+      "drone": {
+          "youtubeId": "_rxXtKHGzd0",
+          "title": "Ρίτσμοντ 4K — Richmond, KY (Rt. 25 South) POV Drive in 4K"
+      },
+      "live": {
+          "youtubeId": "h_B-v4IdKNo",
+          "label": "Ρίτσμοντ Live Cam",
+          "title": "Richmond, Kentucky Tourism Live Stream of downtown Richmond"
+      }
+  },
+  "florence-ky": {
+      "drone": {
+          "youtubeId": "-_bH4Ook9fc",
+          "title": "Φλόρενς 4K — 🌄 Scenic Drone Tour of Florence, Kentucky | Aerial Views in 4K | NatureIn4K"
+      }
+  },
+  "hopkinsville": {
+      "drone": {
+          "youtubeId": "HIeSytnCxh4",
+          "title": "Χόπκινσβιλ 4K — Drone view of Hopkinsville, KY"
+      },
+      "live": {
+          "youtubeId": "qbAMePGp0ks",
+          "label": "Χόπκινσβιλ Live Cam",
+          "title": "WKDZ Studio Cam"
+      }
+  },
+  "nashville": {
+      "drone": {
+          "youtubeId": "Q4YP3jfGFgs",
+          "title": "Νάσβιλ 4K — Nashville, USA - 4K Drone Video Tour (Ultra HD) 🇺🇸"
+      },
+      "live": {
+          "youtubeId": "ICva1RPK6Do",
+          "label": "Νάσβιλ Live Cam",
+          "title": "🔴 LIVE: Nashville Live Cam • Lower Broadway (With Sound)"
+      }
+  },
+  "memphis": {
+      "drone": {
+          "youtubeId": "B64JPTpZnxc",
+          "title": "Μέμφις 4K — Memphis (Tennessee, USA) Drone View | 4K Ultra HD"
+      }
+  },
+  "knoxville": {
+      "drone": {
+          "youtubeId": "QuNi-zN-CbA",
+          "title": "Νόξβιλ 4K — Flying Over Knoxville, Tennessee - [4K] Drone Footage"
+      },
+      "live": {
+          "youtubeId": "6tq8S2pp8PQ",
+          "label": "Νόξβιλ Live Cam",
+          "title": "EarthCam Live: Pigeon River Cam (Hartford, TN)"
+      }
+  },
+  "chattanooga": {
+      "drone": {
+          "youtubeId": "VKRPUhTQP_o",
+          "title": "Τσατανούγκα 4K — Chattanooga, Tennessee | 4K drone footage"
+      }
+  },
+  "clarksville": {
+      "drone": {
+          "youtubeId": "KDpBg__IIsY",
+          "title": "Κλάρκσβιλ 4K — Clarksville TN From Above | Cinematic 4K Drone Showreel | TitanFin Systems"
+      }
+  },
+  "murfreesboro": {
+      "drone": {
+          "youtubeId": "mlZuExDflBY",
+          "title": "Μερφρίσμπορο 4K — Murfreesboro Tennessee 4K Drone Video"
+      },
+      "live": {
+          "youtubeId": "J6Il2fbKOFE",
+          "label": "Μερφρίσμπορο Live Cam",
+          "title": "Murfreesboro, TN Sky Cam LIVE 24/7 | Friday, Nov 13, 2026"
+      }
+  },
+  "gatlinburg": {
+      "drone": {
+          "youtubeId": "JhP4vZ9dlMM",
+          "title": "Γκάτλινμπεργκ 4K — Gatlinburg, Tennessee Aerial Drone 4K"
+      },
+      "live": {
+          "youtubeId": "EVK9iNnARh8",
+          "label": "Γκάτλινμπεργκ Live Cam",
+          "title": "Gatlinburg Skypark Live"
+      }
+  },
+  "franklin-tn": {
+      "drone": {
+          "youtubeId": "Mb4Aec8IrgI",
+          "title": "Φράνκλιν 4K — FRANKLIN, TENNESSEE - [4k] by drone"
+      }
+  },
+  "jackson-tn": {
+      "drone": {
+          "youtubeId": "UMi2Hv09yWs",
+          "title": "Τζάκσον 4K — Epic Drone Tour of Muse Park Jackson, TN 4K Footage"
+      }
+  },
+  "johnson-city": {
+      "drone": {
+          "youtubeId": "rt58eOkIvPc",
+          "title": "Τζόνσον Σίτι 4K — Johnson City Tennessee 4K  / Tennessee's 8th Largest City  (DJI Mavic Air 2S Drone Footage)"
+      },
+      "live": {
+          "youtubeId": "PmXKd2Z_TVA",
+          "label": "Τζόνσον Σίτι Live Cam",
+          "title": "Historic Town of Jonesborough, TN | East Main Street Live Cam"
+      }
   }
 };
 

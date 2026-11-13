@@ -323,6 +323,2004 @@
           "desc": "Αγορά και κέντρο ψυχαγωγίας δίπλα στο ποτάμι."
         }
       ]
+    },
+    {
+      "id": "fayetteville-ar",
+      "name": "Φαγιέτβιλ",
+      "englishName": "Fayetteville",
+      "nickname": "The Hill / Η Πόλη των Ozarks",
+      "type": "city",
+      "coords": [
+        36.0822,
+        -94.1719
+      ],
+      "zoom": 13.0,
+      "stats": {
+        "population": "101.000",
+        "founded": "1828",
+        "area": "142 km²",
+        "elevation": "410 μ."
+      },
+      "quote": "«Στους λόφους των Ozarks, όπου το πανεπιστήμιο συναντά τη ζωντανή Dickson Street.»",
+      "geo": {
+        "summary": "Η Φαγιέτβιλ βρίσκεται στους πρόποδες των Ozarks στο βορειοδυτικό Αρκάνσας, ανάμεσα σε δασωμένους λόφους.",
+        "highlights": [
+          {
+            "title": "Ozarks",
+            "desc": "Δασωμένοι λόφοι, ρέματα και ασβεστολιθικοί σχηματισμοί περιβάλλουν την πόλη."
+          },
+          {
+            "title": "University of Arkansas",
+            "desc": "Η πανεπιστημιούπολη καταλαμβάνει σημαντικό τμήμα της πόλης και αποτελεί βασικό τοπόσημο."
+          },
+          {
+            "title": "Dickson Street",
+            "desc": "Ο κεντρικός δρόμος συνδέει πανεπιστήμιο, εστιατόρια, μουσική και νυχτερινή ζωή."
+          }
+        ]
+      },
+      "hist": {
+        "summary": "Η πόλη αναπτύχθηκε από μικρό οικισμό σε πανεπιστημιακό και εμπορικό κέντρο των Ozarks.",
+        "highlights": [
+          {
+            "year": "1828",
+            "event": "Ίδρυση",
+            "desc": "Ιδρύθηκε ως έδρα της κομητείας Washington."
+          },
+          {
+            "year": "1871",
+            "event": "University of Arkansas",
+            "desc": "Το Arkansas Industrial University άνοιξε τις πύλες του, εξελισσόμενο στο σημερινό πανεπιστήμιο."
+          },
+          {
+            "year": "20ός αιώνας",
+            "event": "Πανεπιστημιακή ανάπτυξη",
+            "desc": "Η ανάπτυξη του πανεπιστημίου και των υπηρεσιών μετέτρεψε την πόλη σε περιφερειακό κέντρο."
+          }
+        ]
+      },
+      "demo": {
+        "summary": "Η οικονομία στηρίζεται στο University of Arkansas, στην τεχνολογία, στις υπηρεσίες και στην αναπτυσσόμενη μητροπολιτική περιοχή του βορειοδυτικού Αρκάνσας.",
+        "details": [
+          {
+            "label": "Πανεπιστήμιο",
+            "text": "Το University of Arkansas είναι βασικός εργοδότης και ερευνητικός πυλώνας."
+          },
+          {
+            "label": "Τεχνολογία",
+            "text": "Η πόλη συμμετέχει στο ταχέως αναπτυσσόμενο επιχειρηματικό οικοσύστημα του βορειοδυτικού Αρκάνσας."
+          },
+          {
+            "label": "Τουρισμός",
+            "text": "Τα Ozarks, τα μονοπάτια και η Dickson Street προσελκύουν επισκέπτες και φοιτητές."
+          }
+        ]
+      },
+      "cult": {
+        "summary": "Η πανεπιστημιακή ζωή, η μουσική και οι υπαίθριες δραστηριότητες χαρακτηρίζουν τη Φαγιέτβιλ.",
+        "items": [
+          {
+            "title": "Dickson Street",
+            "desc": "Μπαρ, εστιατόρια, συναυλίες και καταστήματα αποτελούν τον ζωντανό πυρήνα της πόλης."
+          },
+          {
+            "title": "Arkansas Razorbacks",
+            "desc": "Ο αθλητισμός του πανεπιστημίου είναι σημαντικό μέρος της τοπικής ταυτότητας."
+          },
+          {
+            "title": "Ozark culture",
+            "desc": "Φεστιβάλ, τέχνες και υπαίθρια ζωή συνδέουν την πόλη με την παράδοση των Ozarks."
+          }
+        ]
+      },
+      "guide": {
+        "summary": "Οδηγός στη Φαγιέτβιλ και στους λόφους των Ozarks.",
+        "items": [
+          {
+            "title": "University of Arkansas",
+            "cat": "culture",
+            "catLabel": "🎓 Πανεπιστήμιο",
+            "desc": "Η μεγάλη πανεπιστημιούπολη και έδρα των Arkansas Razorbacks.",
+            "wiki": "University_of_Arkansas"
+          },
+          {
+            "title": "Botanical Garden of the Ozarks",
+            "cat": "nature",
+            "catLabel": "🌿 Κήποι",
+            "desc": "Βοτανικός κήπος με θεματικές συλλογές και φυσικά μονοπάτια.",
+            "wiki": "Botanical_Garden_of_the_Ozarks"
+          },
+          {
+            "title": "Fayetteville Downtown Square",
+            "cat": "culture",
+            "catLabel": "🏙️ Κέντρο",
+            "desc": "Ιστορική πλατεία με καταστήματα, εστιατόρια και εκδηλώσεις.",
+            "wiki": "Fayetteville,_Arkansas"
+          },
+          {
+            "title": "Kessler Mountain",
+            "cat": "nature",
+            "catLabel": "🌳 Φύση",
+            "desc": "Λόφος και φυσική περιοχή με μονοπάτια κοντά στην πόλη.",
+            "wiki": "Kessler_Mountain"
+          }
+        ]
+      },
+      "gastro": {
+        "summary": "Η κουζίνα συνδυάζει νότιες γεύσεις, barbecue και προϊόντα των Ozarks.",
+        "items": [
+          {
+            "title": "Arkansas Fried Catfish",
+            "desc": "Τηγανητό γατόψαρο με καλαμποκένια κρούστα και συνοδευτικά.",
+            "tag": "Παραδοσιακό"
+          },
+          {
+            "title": "Pulled Pork BBQ",
+            "desc": "Καπνιστό χοιρινό, χαρακτηριστικό του νότιου barbecue.",
+            "tag": "Barbecue"
+          },
+          {
+            "title": "Fried Pickles",
+            "desc": "Τηγανητές πίκλες με τραγανή κρούστα.",
+            "tag": "Τοπικό"
+          },
+          {
+            "title": "Possum Pie",
+            "desc": "Γλυκό με κρέμα τυριού, σοκολάτα και σαντιγί.",
+            "tag": "Γλυκό"
+          }
+        ]
+      },
+      "eco": {
+        "summary": "Η Φαγιέτβιλ επενδύει σε πάρκα, ποδηλασία και προστασία των φυσικών περιοχών των Ozarks.",
+        "items": [
+          {
+            "title": "Razorback Regional Greenway",
+            "desc": "Περιφερειακός ποδηλατικός διάδρομος που συνδέει πόλεις του βορειοδυτικού Αρκάνσας.",
+            "cat": "business",
+            "catLabel": "🚲 Κινητικότητα",
+            "wiki": "Razorback_Regional_Greenway"
+          },
+          {
+            "title": "Botanical Garden",
+            "desc": "Κήπος και φυσικός χώρος με έμφαση στη βιοποικιλότητα.",
+            "cat": "nature",
+            "catLabel": "🌿 Βιοποικιλότητα",
+            "wiki": "Botanical_Garden_of_the_Ozarks"
+          },
+          {
+            "title": "Ozark Trails",
+            "desc": "Δίκτυα μονοπατιών προστατεύουν δάση και ενθαρρύνουν ήπια αναψυχή.",
+            "cat": "nature",
+            "catLabel": "🥾 Μονοπάτια",
+            "wiki": "Ozarks"
+          }
+        ]
+      },
+      "pastVsPresent": [
+        {
+          "epoch": "Φαγιέτβιλ 1926: Μικρή πόλη & Γεωργία",
+          "content": "Το πανεπιστήμιο και η αγροτική οικονομία κυριαρχούσαν, ενώ η πόλη παρέμενε μικρή και περιφερειακή."
+        },
+        {
+          "epoch": "Φαγιέτβιλ 2026: Πανεπιστήμιο & Ozarks",
+          "content": "Η πόλη είναι ταχέως αναπτυσσόμενο κέντρο εκπαίδευσης, τεχνολογίας, αθλητισμού και υπαίθριου τουρισμού."
+        }
+      ],
+      "pois": [
+        {
+          "name": "University of Arkansas",
+          "category": "culture",
+          "coords": [
+            36.0687,
+            -94.1748
+          ],
+          "desc": "Κεντρική πανεπιστημιούπολη."
+        },
+        {
+          "name": "Botanical Garden of the Ozarks",
+          "category": "nature",
+          "coords": [
+            36.139,
+            -94.1762
+          ],
+          "desc": "Βοτανικός κήπος."
+        },
+        {
+          "name": "Downtown Square",
+          "category": "culture",
+          "coords": [
+            36.0626,
+            -94.1574
+          ],
+          "desc": "Ιστορική πλατεία."
+        },
+        {
+          "name": "Kessler Mountain",
+          "category": "nature",
+          "coords": [
+            36.0315,
+            -94.232
+          ],
+          "desc": "Λόφος και μονοπάτια."
+        }
+      ]
+    },
+    {
+      "id": "fort-smith",
+      "name": "Φορτ Σμιθ",
+      "englishName": "Fort Smith",
+      "nickname": "Hell on the Border / Η Πύλη των Συνόρων",
+      "type": "city",
+      "coords": [
+        35.3859,
+        -94.3985
+      ],
+      "zoom": 13.0,
+      "stats": {
+        "population": "90.000",
+        "founded": "1817",
+        "area": "166 km²",
+        "elevation": "143 μ."
+      },
+      "quote": "«Εκεί όπου το παλιό φρούριο συναντά την ιστορία της Άγριας Δύσης.»",
+      "geo": {
+        "summary": "Το Φορτ Σμιθ βρίσκεται στον ποταμό Arkansas στα σύνορα Αρκάνσας και Οκλαχόμα.",
+        "highlights": [
+          {
+            "title": "Arkansas River",
+            "desc": "Ο ποταμός λειτουργεί ως βασικός φυσικός άξονας της πόλης."
+          },
+          {
+            "title": "Σύνορα",
+            "desc": "Η θέση στην άκρη της τότε αμερικανικής επικράτειας έκανε την πόλη στρατηγικό φυλάκιο."
+          },
+          {
+            "title": "Boston Mountains",
+            "desc": "Οι λόφοι βόρεια της πόλης σηματοδοτούν την είσοδο στα Ozarks."
+          }
+        ]
+      },
+      "hist": {
+        "summary": "Το Fort Smith ιδρύθηκε ως στρατιωτικό φυλάκιο και έγινε κέντρο δικαιοσύνης και εμπορίου των δυτικών συνόρων.",
+        "highlights": [
+          {
+            "year": "1817",
+            "event": "Πρώτο Fort Smith",
+            "desc": "Ιδρύθηκε στρατιωτικό φυλάκιο στον Arkansas River."
+          },
+          {
+            "year": "1875",
+            "event": "Δικαστήριο Judge Parker",
+            "desc": "Το ομοσπονδιακό δικαστήριο έγινε σύμβολο της δικαιοσύνης στα σύνορα."
+          },
+          {
+            "year": "1960",
+            "event": "National Historic Site",
+            "desc": "Η ιστορική περιοχή προστατεύτηκε ως εθνικός ιστορικός τόπος."
+          }
+        ]
+      },
+      "demo": {
+        "summary": "Η πόλη στηρίζεται στη μεταποίηση, στα logistics, στην υγεία και στις υπηρεσίες.",
+        "details": [
+          {
+            "label": "Βιομηχανία",
+            "text": "Μεταποίηση και παραγωγή εξοπλισμού αποτελούν σημαντικούς κλάδους."
+          },
+          {
+            "label": "Logistics",
+            "text": "Η θέση στον Arkansas River και σε οδικούς άξονες στηρίζει τις μεταφορές."
+          },
+          {
+            "label": "Υγεία",
+            "text": "Νοσοκομεία και υπηρεσίες υγείας εξυπηρετούν την κοιλάδα του ποταμού."
+          }
+        ]
+      },
+      "cult": {
+        "summary": "Η ιστορία των συνόρων και η μουσική κληρονομιά του Arkansas River είναι κεντρικά στοιχεία της πόλης.",
+        "items": [
+          {
+            "title": "Fort Smith National Historic Site",
+            "desc": "Το φρούριο, το δικαστήριο και η φυλακή αφηγούνται την ιστορία της Άγριας Δύσης."
+          },
+          {
+            "title": "Judge Isaac Parker",
+            "desc": "Ο Judge Parker έγινε εμβληματική μορφή της ομοσπονδιακής δικαιοσύνης."
+          },
+          {
+            "title": "Ρίζες του blues",
+            "desc": "Η πόλη συνδέεται με τις μουσικές παραδόσεις του δυτικού Αρκάνσας."
+          }
+        ]
+      },
+      "guide": {
+        "summary": "Οδηγός στο ιστορικό Fort Smith.",
+        "items": [
+          {
+            "title": "Fort Smith National Historic Site",
+            "cat": "history",
+            "catLabel": "🏛️ Ιστορία",
+            "desc": "Εθνικός ιστορικός χώρος με τα κατάλοιπα του φρουρίου και του δικαστηρίου.",
+            "wiki": "Fort_Smith_National_Historic_Site"
+          },
+          {
+            "title": "Fort Smith Museum of History",
+            "cat": "museum",
+            "catLabel": "🖼️ Μουσείο",
+            "desc": "Μουσείο για την ιστορία της πόλης και των συνόρων.",
+            "wiki": "Fort_Smith_Museum_of_History"
+          },
+          {
+            "title": "Miss Laura's Social Club",
+            "cat": "history",
+            "catLabel": "🏛️ Ιστορία",
+            "desc": "Ιστορικό κτίριο που αφηγείται μια λιγότερο γνωστή πλευρά της συνοριακής πόλης.",
+            "wiki": "Miss_Laura's_Social_Club"
+          },
+          {
+            "title": "Fort Smith Regional Art Museum",
+            "cat": "museum",
+            "catLabel": "🎨 Τέχνη",
+            "desc": "Μουσείο τέχνης με περιφερειακές και αμερικανικές εκθέσεις.",
+            "wiki": "Fort_Smith_Regional_Art_Museum"
+          }
+        ]
+      },
+      "gastro": {
+        "summary": "Νότια κουζίνα με barbecue και γατόψαρο.",
+        "items": [
+          {
+            "title": "Arkansas Fried Catfish",
+            "desc": "Τηγανητό γατόψαρο με καλαμποκένια κρούστα.",
+            "tag": "Παραδοσιακό"
+          },
+          {
+            "title": "Pulled Pork BBQ",
+            "desc": "Καπνιστό χοιρινό με νότια σάλτσα.",
+            "tag": "Barbecue"
+          },
+          {
+            "title": "Hushpuppies",
+            "desc": "Τηγανητές μπουκιές καλαμποκιού που συνοδεύουν ψάρια.",
+            "tag": "Συνοδευτικό"
+          },
+          {
+            "title": "Possum Pie",
+            "desc": "Πίτα με σοκολάτα, κρέμα και σαντιγί.",
+            "tag": "Γλυκό"
+          }
+        ]
+      },
+      "eco": {
+        "summary": "Η πόλη αναδεικνύει τον Arkansas River και τα πάρκα της ως φυσικό κεφάλαιο.",
+        "items": [
+          {
+            "title": "Arkansas River Trail",
+            "desc": "Παραποτάμια διαδρομή για περπάτημα και ποδήλατο.",
+            "cat": "business",
+            "catLabel": "🚲 Κινητικότητα",
+            "wiki": "Arkansas_River_Trail"
+          },
+          {
+            "title": "Ben Geren Regional Park",
+            "desc": "Μεγάλος χώρος πρασίνου με λίμνες και μονοπάτια.",
+            "cat": "nature",
+            "catLabel": "🌳 Πάρκα",
+            "wiki": "Ben_Geren_Regional_Park"
+          },
+          {
+            "title": "Parks & Riverfront",
+            "desc": "Πάρκα και όχθες λειτουργούν ως φυσικές ζώνες αναψυχής και προστασίας.",
+            "cat": "nature",
+            "catLabel": "💧 Ποτάμι",
+            "wiki": "Fort_Smith,_Arkansas"
+          }
+        ]
+      },
+      "pastVsPresent": [
+        {
+          "epoch": "Φορτ Σμιθ 1926: Σιδηρόδρομος & Σύνορα",
+          "content": "Η πόλη είχε ήδη εξελιχθεί από συνοριακό φυλάκιο σε εμπορικό και βιομηχανικό κέντρο."
+        },
+        {
+          "epoch": "Φορτ Σμιθ 2026: Ιστορία & Logistics",
+          "content": "Η πόλη διατηρεί την ιστορική της ταυτότητα ενώ λειτουργεί ως κέντρο μεταποίησης, υγείας και μεταφορών."
+        }
+      ],
+      "pois": [
+        {
+          "name": "National Historic Site",
+          "category": "history",
+          "coords": [
+            35.3861,
+            -94.4245
+          ],
+          "desc": "Ιστορικό φρούριο και δικαστήριο."
+        },
+        {
+          "name": "Museum of History",
+          "category": "culture",
+          "coords": [
+            35.3855,
+            -94.42
+          ],
+          "desc": "Μουσείο τοπικής ιστορίας."
+        },
+        {
+          "name": "Miss Laura's",
+          "category": "history",
+          "coords": [
+            35.385,
+            -94.4187
+          ],
+          "desc": "Ιστορικό κτίριο."
+        },
+        {
+          "name": "Ben Geren Park",
+          "category": "nature",
+          "coords": [
+            35.3308,
+            -94.3255
+          ],
+          "desc": "Μεγάλο περιφερειακό πάρκο."
+        }
+      ]
+    },
+    {
+      "id": "hot-springs",
+      "name": "Χοτ Σπρινγκς",
+      "englishName": "Hot Springs",
+      "nickname": "Valley of the Vapors / Κοιλάδα των Ατμών",
+      "type": "city",
+      "coords": [
+        34.5037,
+        -93.0552
+      ],
+      "zoom": 13.0,
+      "stats": {
+        "population": "38.000",
+        "founded": "1807",
+        "area": "96 km²",
+        "elevation": "182 μ."
+      },
+      "quote": "«Θερμές πηγές, Bathhouse Row και βουνά σε μια πόλη που έγινε εθνικό πάρκο.»",
+      "geo": {
+        "summary": "Η πόλη βρίσκεται μέσα στα Ouachita Mountains γύρω από φυσικές θερμές πηγές.",
+        "highlights": [
+          {
+            "title": "Θερμές πηγές",
+            "desc": "Οι φυσικές πηγές αποτελούν το γεωθερμικό επίκεντρο της πόλης."
+          },
+          {
+            "title": "Ouachita Mountains",
+            "desc": "Δασωμένοι λόφοι περιβάλλουν την κοιλάδα."
+          },
+          {
+            "title": "Lake Hamilton",
+            "desc": "Μεγάλη τεχνητή λίμνη προσφέρει αναψυχή και τουρισμό."
+          }
+        ]
+      },
+      "hist": {
+        "summary": "Η ιστορία της πόλης είναι άρρηκτα δεμένη με τις θερμές πηγές και την εξέλιξή τους σε εθνικό πάρκο.",
+        "highlights": [
+          {
+            "year": "1832",
+            "event": "Hot Springs Reservation",
+            "desc": "Η περιοχή προστατεύτηκε από την ομοσπονδιακή κυβέρνηση για τις πηγές."
+          },
+          {
+            "year": "1890",
+            "event": "Bathhouse Row",
+            "desc": "Η λεωφόρος των λουτρών εξελίχθηκε σε αρχιτεκτονικό σύμβολο της πόλης."
+          },
+          {
+            "year": "1921",
+            "event": "Hot Springs National Park",
+            "desc": "Η προστατευόμενη περιοχή απέκτησε καθεστώς εθνικού πάρκου."
+          }
+        ]
+      },
+      "demo": {
+        "summary": "Η οικονομία βασίζεται στον τουρισμό, την υγεία, την αναψυχή και τις υπηρεσίες.",
+        "details": [
+          {
+            "label": "Τουρισμός",
+            "text": "Τα λουτρά και το εθνικό πάρκο είναι ο βασικός πόλος επισκεπτών."
+          },
+          {
+            "label": "Αναψυχή",
+            "text": "Οι λίμνες και τα βουνά στηρίζουν υπαίθριες δραστηριότητες."
+          },
+          {
+            "label": "Υγεία & υπηρεσίες",
+            "text": "Ξενοδοχεία, εστίαση και υπηρεσίες ευεξίας έχουν σημαντικό ρόλο."
+          }
+        ]
+      },
+      "cult": {
+        "summary": "Η πόλη συνδυάζει λουτρική παράδοση, βικτωριανή αρχιτεκτονική και μουσική.",
+        "items": [
+          {
+            "title": "Bathhouse Row",
+            "desc": "Ιστορικά λουτρά του 19ου και 20ού αιώνα διατηρούν τη λουτρική κληρονομιά."
+          },
+          {
+            "title": "Garvan Woodland Gardens",
+            "desc": "Κήποι και γλυπτά μέσα σε δασωμένο τοπίο."
+          },
+          {
+            "title": "Oaklawn Racing",
+            "desc": "Ιστορική ιπποδρομιακή παράδοση που συνδέεται με την κοινωνική ζωή της πόλης."
+          }
+        ]
+      },
+      "guide": {
+        "summary": "Οδηγός στο Hot Springs και στις θερμές πηγές.",
+        "items": [
+          {
+            "title": "Hot Springs National Park",
+            "cat": "nature",
+            "catLabel": "♨️ Εθνικό Πάρκο",
+            "desc": "Εθνικό πάρκο με θερμές πηγές, μονοπάτια και ιστορικά λουτρά.",
+            "wiki": "Hot_Springs_National_Park"
+          },
+          {
+            "title": "Bathhouse Row",
+            "cat": "history",
+            "catLabel": "🏛️ Ιστορία",
+            "desc": "Σειρά ιστορικών λουτρών με χαρακτηριστική αρχιτεκτονική.",
+            "wiki": "Bathhouse_Row"
+          },
+          {
+            "title": "Garvan Woodland Gardens",
+            "cat": "nature",
+            "catLabel": "🌿 Κήποι",
+            "desc": "Βοτανικοί κήποι δίπλα στη λίμνη Hamilton.",
+            "wiki": "Garvan_Woodland_Gardens"
+          },
+          {
+            "title": "Gangster Museum of America",
+            "cat": "museum",
+            "catLabel": "🖼️ Μουσείο",
+            "desc": "Μουσείο για τη σχέση της πόλης με το οργανωμένο έγκλημα και τον τζόγο.",
+            "wiki": "Gangster_Museum_of_America"
+          }
+        ]
+      },
+      "gastro": {
+        "summary": "Η κουζίνα είναι νότια με barbecue, γατόψαρο και γλυκά.",
+        "items": [
+          {
+            "title": "Arkansas Fried Catfish",
+            "desc": "Τηγανητό γατόψαρο με κρούστα καλαμποκιού.",
+            "tag": "Παραδοσιακό"
+          },
+          {
+            "title": "Southern BBQ",
+            "desc": "Καπνιστό χοιρινό με σάλτσα και συνοδευτικά.",
+            "tag": "Barbecue"
+          },
+          {
+            "title": "Hushpuppies",
+            "desc": "Τηγανητές μπουκιές καλαμποκιού.",
+            "tag": "Συνοδευτικό"
+          },
+          {
+            "title": "Possum Pie",
+            "desc": "Πίτα με σοκολάτα και κρέμα.",
+            "tag": "Γλυκό"
+          }
+        ]
+      },
+      "eco": {
+        "summary": "Η προστασία των θερμών πηγών, των δασών και των λιμνών είναι κεντρική.",
+        "items": [
+          {
+            "title": "Hot Springs National Park",
+            "desc": "Προστατεύει πηγές, δάση και οικοσυστήματα γύρω από την πόλη.",
+            "cat": "nature",
+            "catLabel": "♨️ Προστασία",
+            "wiki": "Hot_Springs_National_Park"
+          },
+          {
+            "title": "Lake Hamilton",
+            "desc": "Υδάτινος πόρος με έμφαση στην αναψυχή και την ποιότητα νερού.",
+            "cat": "nature",
+            "catLabel": "💧 Νερό",
+            "wiki": "Lake_Hamilton_(Arkansas)"
+          },
+          {
+            "title": "Ouachita Trails",
+            "desc": "Μονοπάτια προστατεύουν δάση και ενθαρρύνουν ήπιο τουρισμό.",
+            "cat": "nature",
+            "catLabel": "🥾 Μονοπάτια",
+            "wiki": "Ouachita_National_Forest"
+          }
+        ]
+      },
+      "pastVsPresent": [
+        {
+          "epoch": "Hot Springs 1926: Λουτρά & Τουρισμός",
+          "content": "Τα λουτρά και τα ξενοδοχεία έκαναν την πόλη διάσημο προορισμό υγείας και αναψυχής."
+        },
+        {
+          "epoch": "Hot Springs 2026: Εθνικό Πάρκο & Ευεξία",
+          "content": "Το εθνικό πάρκο, τα ιστορικά λουτρά και οι λίμνες στηρίζουν μια οικονομία τουρισμού και υπαίθριας αναψυχής."
+        }
+      ],
+      "pois": [
+        {
+          "name": "Bathhouse Row",
+          "category": "history",
+          "coords": [
+            34.5165,
+            -93.053
+          ],
+          "desc": "Ιστορικά λουτρά."
+        },
+        {
+          "name": "Fordyce Bathhouse",
+          "category": "museum",
+          "coords": [
+            34.5169,
+            -93.055
+          ],
+          "desc": "Κέντρο επισκεπτών και μουσείο."
+        },
+        {
+          "name": "Garvan Gardens",
+          "category": "nature",
+          "coords": [
+            34.4345,
+            -93.0608
+          ],
+          "desc": "Βοτανικοί κήποι."
+        },
+        {
+          "name": "Lake Hamilton",
+          "category": "nature",
+          "coords": [
+            34.4264,
+            -93.08
+          ],
+          "desc": "Μεγάλη λίμνη."
+        }
+      ]
+    },
+    {
+      "id": "bentonville",
+      "name": "Μπέντονβιλ",
+      "englishName": "Bentonville",
+      "nickname": "Birthplace of Walmart / Γενέτειρα της Walmart",
+      "type": "city",
+      "coords": [
+        36.3729,
+        -94.2088
+      ],
+      "zoom": 13.0,
+      "stats": {
+        "population": "61.000",
+        "founded": "1837",
+        "area": "87 km²",
+        "elevation": "396 μ."
+      },
+      "quote": "«Από μια μικρή πλατεία των Ozarks σε παγκόσμιο κέντρο λιανεμπορίου και τέχνης.»",
+      "geo": {
+        "summary": "Το Bentonville βρίσκεται στους λόφους των Ozarks και αποτελεί οικονομικό πυρήνα του βορειοδυτικού Αρκάνσας.",
+        "highlights": [
+          {
+            "title": "Ozarks",
+            "desc": "Λόφοι και δάση περιβάλλουν την πόλη."
+          },
+          {
+            "title": "Downtown Square",
+            "desc": "Η ιστορική πλατεία παραμένει κέντρο της αστικής ζωής."
+          },
+          {
+            "title": "Crystal Bridges",
+            "desc": "Το μουσείο τέχνης δημιούργησε νέο πολιτιστικό τοπόσημο μέσα στο δάσος."
+          }
+        ]
+      },
+      "hist": {
+        "summary": "Η πόλη έγινε παγκοσμίως γνωστή μετά την ίδρυση της Walmart από τον Sam Walton.",
+        "highlights": [
+          {
+            "year": "1837",
+            "event": "Ίδρυση",
+            "desc": "Η πόλη οργανώθηκε γύρω από εμπορικό οικισμό."
+          },
+          {
+            "year": "1950",
+            "event": "Walton's 5&10",
+            "desc": "Ο Sam Walton ανέπτυξε το κατάστημα που αποτέλεσε πρόδρομο της Walmart."
+          },
+          {
+            "year": "2011",
+            "event": "Crystal Bridges",
+            "desc": "Άνοιξε το μεγάλο μουσείο αμερικανικής τέχνης."
+          }
+        ]
+      },
+      "demo": {
+        "summary": "Η οικονομία είναι παγκόσμιος κόμβος λιανεμπορίου, εφοδιαστικής, τεχνολογίας και τουρισμού.",
+        "details": [
+          {
+            "label": "Walmart",
+            "text": "Η παγκόσμια έδρα της εταιρείας βρίσκεται στην πόλη."
+          },
+          {
+            "label": "Εφοδιαστική",
+            "text": "Η περιοχή φιλοξενεί προμηθευτές και επιχειρήσεις που εξυπηρετούν το δίκτυο λιανεμπορίου."
+          },
+          {
+            "label": "Τέχνη & τουρισμός",
+            "text": "Το Crystal Bridges και τα μονοπάτια ποδηλασίας έχουν αυξήσει την τουριστική οικονομία."
+          }
+        ]
+      },
+      "cult": {
+        "summary": "Η πόλη συνδυάζει την κληρονομιά της Walmart με τέχνη, ποδηλασία και Ozark culture.",
+        "items": [
+          {
+            "title": "Crystal Bridges",
+            "desc": "Μουσείο αμερικανικής τέχνης διεθνούς εμβέλειας."
+          },
+          {
+            "title": "The Momentary",
+            "desc": "Χώρος σύγχρονης τέχνης και πολιτισμού."
+          },
+          {
+            "title": "Downtown Square",
+            "desc": "Ιστορική πλατεία με καταστήματα, εστιατόρια και εκδηλώσεις."
+          }
+        ]
+      },
+      "guide": {
+        "summary": "Οδηγός στο Bentonville.",
+        "items": [
+          {
+            "title": "Crystal Bridges Museum",
+            "cat": "museum",
+            "catLabel": "🖼️ Μουσείο",
+            "desc": "Μουσείο αμερικανικής τέχνης σε εντυπωσιακό φυσικό τοπίο.",
+            "wiki": "Crystal_Bridges_Museum_of_American_Art"
+          },
+          {
+            "title": "The Momentary",
+            "cat": "culture",
+            "catLabel": "🎨 Σύγχρονη τέχνη",
+            "desc": "Χώρος σύγχρονης τέχνης, μουσικής και γαστρονομίας.",
+            "wiki": "The_Momentary"
+          },
+          {
+            "title": "Walmart Museum",
+            "cat": "museum",
+            "catLabel": "🛒 Ιστορία",
+            "desc": "Μουσείο για την ιστορία της Walmart και του Sam Walton.",
+            "wiki": "Walmart_Museum"
+          },
+          {
+            "title": "Slaughter Pen Mountain Bike Park",
+            "cat": "nature",
+            "catLabel": "🚵 Ποδηλασία",
+            "desc": "Δίκτυο μονοπατιών ορεινής ποδηλασίας.",
+            "wiki": "Slaughter_Pen_Trail"
+          }
+        ]
+      },
+      "gastro": {
+        "summary": "Η γαστρονομία είναι σύγχρονη, με νότιες επιρροές και barbecue.",
+        "items": [
+          {
+            "title": "Arkansas BBQ",
+            "desc": "Καπνιστό χοιρινό ή brisket με νότιες σάλτσες.",
+            "tag": "Barbecue"
+          },
+          {
+            "title": "Fried Catfish",
+            "desc": "Τηγανητό γατόψαρο με hushpuppies.",
+            "tag": "Παραδοσιακό"
+          },
+          {
+            "title": "Biscuits & Gravy",
+            "desc": "Μπισκότα βουτύρου με πλούσια σάλτσα λουκάνικου.",
+            "tag": "Πρωινό"
+          },
+          {
+            "title": "Possum Pie",
+            "desc": "Κλασικό γλυκό του Αρκάνσας.",
+            "tag": "Γλυκό"
+          }
+        ]
+      },
+      "eco": {
+        "summary": "Το Bentonville επενδύει σε ποδηλατικές υποδομές, πάρκα και διατήρηση δασών.",
+        "items": [
+          {
+            "title": "Slaughter Pen",
+            "desc": "Πολλά χιλιόμετρα μονοπατιών ορεινής ποδηλασίας προστατεύουν και αναδεικνύουν το φυσικό ανάγλυφο.",
+            "cat": "business",
+            "catLabel": "🚵 Ποδηλασία",
+            "wiki": "Slaughter_Pen_Trail"
+          },
+          {
+            "title": "Crystal Bridges Trails",
+            "desc": "Δίκτυο μονοπατιών μέσα σε δάσος γύρω από το μουσείο.",
+            "cat": "nature",
+            "catLabel": "🌳 Δάση",
+            "wiki": "Crystal_Bridges_Museum_of_American_Art"
+          },
+          {
+            "title": "Razorback Greenway",
+            "desc": "Περιφερειακός ποδηλατικός άξονας συνδέει το Bentonville με γειτονικές πόλεις.",
+            "cat": "business",
+            "catLabel": "🚲 Κινητικότητα",
+            "wiki": "Razorback_Regional_Greenway"
+          }
+        ]
+      },
+      "pastVsPresent": [
+        {
+          "epoch": "Bentonville 1926: Μικρή εμπορική πόλη",
+          "content": "Η οικονομία ήταν αγροτική και το κέντρο εξυπηρετούσε τις κοινότητες των Ozarks."
+        },
+        {
+          "epoch": "Bentonville 2026: Walmart & Τέχνη",
+          "content": "Η παγκόσμια εταιρική παρουσία και το Crystal Bridges έχουν μετατρέψει την πόλη σε διεθνή προορισμό."
+        }
+      ],
+      "pois": [
+        {
+          "name": "Crystal Bridges",
+          "category": "culture",
+          "coords": [
+            36.3813,
+            -94.2027
+          ],
+          "desc": "Μουσείο αμερικανικής τέχνης."
+        },
+        {
+          "name": "Walmart Museum",
+          "category": "culture",
+          "coords": [
+            36.3723,
+            -94.2086
+          ],
+          "desc": "Ιστορία της Walmart."
+        },
+        {
+          "name": "The Momentary",
+          "category": "culture",
+          "coords": [
+            36.3781,
+            -94.2043
+          ],
+          "desc": "Χώρος σύγχρονης τέχνης."
+        },
+        {
+          "name": "Slaughter Pen",
+          "category": "nature",
+          "coords": [
+            36.3925,
+            -94.1918
+          ],
+          "desc": "Πάρκο ορεινής ποδηλασίας."
+        }
+      ]
+    },
+    {
+      "id": "springdale",
+      "name": "Σπρίνγκντεϊλ",
+      "englishName": "Springdale",
+      "nickname": "The Chicken City / Η Πόλη των Πουλερικών",
+      "type": "city",
+      "coords": [
+        36.1867,
+        -94.1288
+      ],
+      "zoom": 13.0,
+      "stats": {
+        "population": "88.000",
+        "founded": "1878",
+        "area": "110 km²",
+        "elevation": "403 μ."
+      },
+      "quote": "«Η βιομηχανία τροφίμων των Ozarks, με τη Tyson Foods στο επίκεντρο.»",
+      "geo": {
+        "summary": "Το Springdale βρίσκεται στην καρδιά του βορειοδυτικού Αρκάνσας, σε κοιλάδα ανάμεσα στους Ozarks.",
+        "highlights": [
+          {
+            "title": "Ozark Valley",
+            "desc": "Η πόλη απλώνεται σε εύφορη κοιλάδα με λόφους γύρω της."
+          },
+          {
+            "title": "Shiloh Museum",
+            "desc": "Η τοπική ιστορία των Ozarks παρουσιάζεται σε ιστορικά κτίρια και εκθέσεις."
+          },
+          {
+            "title": "A&M Railroad",
+            "desc": "Η σιδηροδρομική γραμμή παραμένει σημαντικός μεταφορικός άξονας."
+          }
+        ]
+      },
+      "hist": {
+        "summary": "Η ανάπτυξη της πόλης συνδέθηκε με τη γεωργία, τον σιδηρόδρομο και την εκρηκτική ανάπτυξη της Tyson Foods.",
+        "highlights": [
+          {
+            "year": "1878",
+            "event": "Ενσωμάτωση",
+            "desc": "Η πόλη αναπτύχθηκε γύρω από σιδηροδρομικές συνδέσεις."
+          },
+          {
+            "year": "1935",
+            "event": "Tyson",
+            "desc": "Ο John W. Tyson ξεκίνησε την επιχείρηση που εξελίχθηκε σε παγκόσμιο όμιλο τροφίμων."
+          },
+          {
+            "year": "20ός αιώνας",
+            "event": "Πουλερικά",
+            "desc": "Η πτηνοτροφία μεταμόρφωσε την οικονομία του βορειοδυτικού Αρκάνσας."
+          }
+        ]
+      },
+      "demo": {
+        "summary": "Η Tyson Foods, η αγροδιατροφή, η εκπαίδευση και τα logistics κυριαρχούν στην οικονομία.",
+        "details": [
+          {
+            "label": "Tyson Foods",
+            "text": "Η εταιρεία έχει σημαντικές δραστηριότητες και ιστορική βάση στην πόλη."
+          },
+          {
+            "label": "Αγροδιατροφή",
+            "text": "Πτηνοτροφία, επεξεργασία τροφίμων και εφοδιαστική σχηματίζουν ισχυρό οικοσύστημα."
+          },
+          {
+            "label": "Περιφερειακή ανάπτυξη",
+            "text": "Η πόλη αποτελεί τμήμα της ταχέως αναπτυσσόμενης περιοχής Northwest Arkansas."
+          }
+        ]
+      },
+      "cult": {
+        "summary": "Η πολιτιστική ζωή συνδυάζει ιστορία των Ozarks, αγροδιατροφική παράδοση και πολυπολιτισμικότητα.",
+        "items": [
+          {
+            "title": "Shiloh Museum",
+            "desc": "Μουσείο για την ιστορία του βορειοδυτικού Αρκάνσας."
+          },
+          {
+            "title": "A&M Railroad",
+            "desc": "Η σιδηροδρομική κληρονομιά είναι μέρος της τοπικής ταυτότητας."
+          },
+          {
+            "title": "Food culture",
+            "desc": "Η πτηνοτροφία και οι κοινότητες εργαζομένων έχουν διαμορφώσει πολυπολιτισμική γαστρονομία."
+          }
+        ]
+      },
+      "guide": {
+        "summary": "Οδηγός στο Springdale.",
+        "items": [
+          {
+            "title": "Shiloh Museum of Ozark History",
+            "cat": "museum",
+            "catLabel": "🖼️ Μουσείο",
+            "desc": "Μουσείο τοπικής ιστορίας με ιστορικά κτίρια και εκθέματα.",
+            "wiki": "Shiloh_Museum_of_Ozark_History"
+          },
+          {
+            "title": "Botanical Garden of the Ozarks",
+            "cat": "nature",
+            "catLabel": "🌿 Κήποι",
+            "desc": "Κοντινός βοτανικός κήπος με φυτικές συλλογές.",
+            "wiki": "Botanical_Garden_of_the_Ozarks"
+          },
+          {
+            "title": "A&M Railroad",
+            "cat": "history",
+            "catLabel": "🚂 Σιδηρόδρομος",
+            "desc": "Ιστορική σιδηροδρομική γραμμή που συνδέει την περιοχή.",
+            "wiki": "Arkansas_and_Missouri_Railroad"
+          },
+          {
+            "title": "Lake Fayetteville",
+            "cat": "nature",
+            "catLabel": "🌊 Λίμνη",
+            "desc": "Λίμνη και πάρκο για ποδήλατο, ψάρεμα και αναψυχή.",
+            "wiki": "Lake_Fayetteville"
+          }
+        ]
+      },
+      "gastro": {
+        "summary": "Η κουζίνα έχει νότιες, μεξικανικές και ασιατικές επιρροές.",
+        "items": [
+          {
+            "title": "Arkansas Fried Chicken",
+            "desc": "Τηγανητό κοτόπουλο με τραγανή κρούστα.",
+            "tag": "Τοπικό"
+          },
+          {
+            "title": "Fried Catfish",
+            "desc": "Τηγανητό γατόψαρο με hushpuppies.",
+            "tag": "Παραδοσιακό"
+          },
+          {
+            "title": "Pulled Pork BBQ",
+            "desc": "Καπνιστό χοιρινό με σάλτσα.",
+            "tag": "Barbecue"
+          },
+          {
+            "title": "Biscuits & Gravy",
+            "desc": "Κλασικό νότιο πρωινό.",
+            "tag": "Πρωινό"
+          }
+        ]
+      },
+      "eco": {
+        "summary": "Η περιοχή επενδύει σε ποδηλασία, πάρκα και προστασία νερού.",
+        "items": [
+          {
+            "title": "Razorback Greenway",
+            "desc": "Περιφερειακός ποδηλατικός άξονας περνά από το Springdale.",
+            "cat": "business",
+            "catLabel": "🚲 Κινητικότητα",
+            "wiki": "Razorback_Regional_Greenway"
+          },
+          {
+            "title": "Lake Fayetteville",
+            "desc": "Λίμνη και πάρκο παρέχουν φυσικό χώρο αναψυχής και προστασίας νερού.",
+            "cat": "nature",
+            "catLabel": "💧 Νερό",
+            "wiki": "Lake_Fayetteville"
+          },
+          {
+            "title": "Ozark Greenways",
+            "desc": "Δίκτυα μονοπατιών συνδέουν γειτονιές με φυσικές περιοχές.",
+            "cat": "business",
+            "catLabel": "🌳 Πράσινοι διάδρομοι",
+            "wiki": "Ozark_Greenways"
+          }
+        ]
+      },
+      "pastVsPresent": [
+        {
+          "epoch": "Springdale 1926: Σιδηρόδρομος & Γεωργία",
+          "content": "Ο σιδηρόδρομος και οι φάρμες των Ozarks τροφοδοτούσαν μια μικρή περιφερειακή αγορά."
+        },
+        {
+          "epoch": "Springdale 2026: Tyson & Μητρόπολη",
+          "content": "Η αγροδιατροφή, τα logistics και η γειτνίαση με Fayetteville και Bentonville δημιούργησαν ταχέως αναπτυσσόμενη πόλη."
+        }
+      ],
+      "pois": [
+        {
+          "name": "Shiloh Museum",
+          "category": "culture",
+          "coords": [
+            36.1778,
+            -94.1287
+          ],
+          "desc": "Μουσείο ιστορίας Ozarks."
+        },
+        {
+          "name": "Lake Fayetteville",
+          "category": "nature",
+          "coords": [
+            36.1372,
+            -94.145
+          ],
+          "desc": "Λίμνη και πάρκο."
+        },
+        {
+          "name": "A&M Railroad",
+          "category": "history",
+          "coords": [
+            36.1905,
+            -94.119
+          ],
+          "desc": "Σιδηροδρομική γραμμή."
+        },
+        {
+          "name": "Razorback Greenway",
+          "category": "nature",
+          "coords": [
+            36.185,
+            -94.15
+          ],
+          "desc": "Ποδηλατική διαδρομή."
+        }
+      ]
+    },
+    {
+      "id": "jonesboro",
+      "name": "Τζόουνσμπορο",
+      "englishName": "Jonesboro",
+      "nickname": "City of Churches / Πόλη των Εκκλησιών",
+      "type": "city",
+      "coords": [
+        35.8423,
+        -90.7043
+      ],
+      "zoom": 13.0,
+      "stats": {
+        "population": "82.000",
+        "founded": "1859",
+        "area": "207 km²",
+        "elevation": "79 μ."
+      },
+      "quote": "«Στην κορυφογραμμή Crowley's Ridge, όπου η εκπαίδευση συναντά το Δέλτα.»",
+      "geo": {
+        "summary": "Το Jonesboro βρίσκεται πάνω στην Crowley's Ridge, μια στενή υπερυψωμένη λωρίδα ανάμεσα στις πεδιάδες του Δέλτα.",
+        "highlights": [
+          {
+            "title": "Crowley's Ridge",
+            "desc": "Ιδιαίτερος γεωλογικός σχηματισμός που υψώνεται πάνω από το επίπεδο Δέλτα."
+          },
+          {
+            "title": "Δέλτα",
+            "desc": "Η πόλη αποτελεί πύλη προς τις γεωργικές πεδιάδες του ανατολικού Αρκάνσας."
+          },
+          {
+            "title": "Craighead Forest",
+            "desc": "Μεγάλη δασική περιοχή προσφέρει αναψυχή και φυσικό καταφύγιο."
+          }
+        ]
+      },
+      "hist": {
+        "summary": "Το Jonesboro αναπτύχθηκε ως αγροτικό και εκπαιδευτικό κέντρο της βορειοανατολικής πολιτείας.",
+        "highlights": [
+          {
+            "year": "1859",
+            "event": "Ίδρυση",
+            "desc": "Η πόλη ιδρύθηκε ως έδρα της Craighead County."
+          },
+          {
+            "year": "1909",
+            "event": "Arkansas State",
+            "desc": "Ιδρύθηκε το εκπαιδευτικό ίδρυμα που εξελίχθηκε στο Arkansas State University."
+          },
+          {
+            "year": "20ός αιώνας",
+            "event": "Αγροτική ανάπτυξη",
+            "desc": "Η βαμβακοκαλλιέργεια, η σόγια και η μεταποίηση ενίσχυσαν την περιοχή."
+          }
+        ]
+      },
+      "demo": {
+        "summary": "Το Arkansas State University, η υγεία, η αγροδιατροφή και το λιανεμπόριο αποτελούν βασικούς κλάδους.",
+        "details": [
+          {
+            "label": "Arkansas State University",
+            "text": "Το πανεπιστήμιο είναι βασικός εργοδότης και πολιτιστικός θεσμός."
+          },
+          {
+            "label": "Αγροδιατροφή",
+            "text": "Σόγια, ρύζι, βαμβάκι και άλλες καλλιέργειες στηρίζουν την οικονομία."
+          },
+          {
+            "label": "Υγεία",
+            "text": "Νοσοκομεία και ιατρικές υπηρεσίες εξυπηρετούν μεγάλη περιφέρεια."
+          }
+        ]
+      },
+      "cult": {
+        "summary": "Η πόλη συνδυάζει πανεπιστημιακή ζωή με τη λαϊκή κουλτούρα του Δέλτα.",
+        "items": [
+          {
+            "title": "Arkansas State",
+            "desc": "Αθλητισμός, μουσική και εκδηλώσεις δίνουν νεανική ενέργεια."
+          },
+          {
+            "title": "Crowley's Ridge",
+            "desc": "Η φυσική γεωγραφία αποτελεί βασικό στοιχείο της ταυτότητας."
+          },
+          {
+            "title": "Μουσεία",
+            "desc": "Τοπικές συλλογές διατηρούν την αγροτική και πολιτιστική ιστορία."
+          }
+        ]
+      },
+      "guide": {
+        "summary": "Οδηγός στο Jonesboro.",
+        "items": [
+          {
+            "title": "Arkansas State University",
+            "cat": "culture",
+            "catLabel": "🎓 Πανεπιστήμιο",
+            "desc": "Πανεπιστήμιο με μουσείο, γήπεδα και πολιτιστικές εκδηλώσεις.",
+            "wiki": "Arkansas_State_University"
+          },
+          {
+            "title": "ASU Museum",
+            "cat": "museum",
+            "catLabel": "🖼️ Μουσείο",
+            "desc": "Μουσείο φυσικής και πολιτιστικής ιστορίας του Αρκάνσας.",
+            "wiki": "Arkansas_State_University_Museum"
+          },
+          {
+            "title": "Craighead Forest Park",
+            "cat": "nature",
+            "catLabel": "🌳 Φύση",
+            "desc": "Δασικό πάρκο με λίμνες και μονοπάτια.",
+            "wiki": "Craighead_Forest_Park"
+          },
+          {
+            "title": "Lake Frierson State Park",
+            "cat": "nature",
+            "catLabel": "🌊 Λίμνη",
+            "desc": "Πάρκο με λίμνη, ψάρεμα και υπαίθρια αναψυχή.",
+            "wiki": "Lake_Frierson_State_Park"
+          }
+        ]
+      },
+      "gastro": {
+        "summary": "Η κουζίνα είναι νότια με barbecue και γατόψαρο.",
+        "items": [
+          {
+            "title": "Arkansas Fried Catfish",
+            "desc": "Τηγανητό γατόψαρο με καλαμποκένια κρούστα.",
+            "tag": "Παραδοσιακό"
+          },
+          {
+            "title": "Delta BBQ",
+            "desc": "Καπνιστό χοιρινό και ribs με νότια σάλτσα.",
+            "tag": "Barbecue"
+          },
+          {
+            "title": "Hushpuppies",
+            "desc": "Τηγανητές μπουκιές καλαμποκιού.",
+            "tag": "Συνοδευτικό"
+          },
+          {
+            "title": "Possum Pie",
+            "desc": "Πίτα σοκολάτας και κρέμας.",
+            "tag": "Γλυκό"
+          }
+        ]
+      },
+      "eco": {
+        "summary": "Η πόλη προστατεύει δάση, λίμνες και την ιδιαίτερη γεωμορφολογία της Crowley's Ridge.",
+        "items": [
+          {
+            "title": "Craighead Forest Park",
+            "desc": "Διατηρεί δασικά οικοσυστήματα και χώρους αναψυχής.",
+            "cat": "nature",
+            "catLabel": "🌳 Δάσος",
+            "wiki": "Craighead_Forest_Park"
+          },
+          {
+            "title": "Lake Frierson",
+            "desc": "Λίμνη και φυσική περιοχή για αναψυχή και άγρια ζωή.",
+            "cat": "nature",
+            "catLabel": "💧 Νερό",
+            "wiki": "Lake_Frierson_State_Park"
+          },
+          {
+            "title": "Crowley's Ridge",
+            "desc": "Ο γεωλογικός σχηματισμός διατηρεί δασικά και λιβαδικά οικοσυστήματα.",
+            "cat": "nature",
+            "catLabel": "🌄 Γεωλογία",
+            "wiki": "Crowley's_Ridge"
+          }
+        ]
+      },
+      "pastVsPresent": [
+        {
+          "epoch": "Jonesboro 1926: Βαμβάκι & Σιδηρόδρομος",
+          "content": "Η πόλη εξυπηρετούσε τις φάρμες του Δέλτα και αναπτυσσόταν γύρω από τις σιδηροδρομικές συνδέσεις."
+        },
+        {
+          "epoch": "Jonesboro 2026: Πανεπιστήμιο & Αγροδιατροφή",
+          "content": "Το Arkansas State και η σύγχρονη αγροδιατροφή συνδυάζονται με την περιφερειακή υγεία και το εμπόριο."
+        }
+      ],
+      "pois": [
+        {
+          "name": "ASU Museum",
+          "category": "culture",
+          "coords": [
+            35.8419,
+            -90.6759
+          ],
+          "desc": "Μουσείο του Arkansas State."
+        },
+        {
+          "name": "Craighead Forest Park",
+          "category": "nature",
+          "coords": [
+            35.7938,
+            -90.693
+          ],
+          "desc": "Δασικό πάρκο."
+        },
+        {
+          "name": "Lake Frierson",
+          "category": "nature",
+          "coords": [
+            35.8998,
+            -90.7142
+          ],
+          "desc": "Λίμνη και πάρκο."
+        },
+        {
+          "name": "ASU Stadium",
+          "category": "culture",
+          "coords": [
+            35.8507,
+            -90.6665
+          ],
+          "desc": "Στάδιο του πανεπιστημίου."
+        }
+      ]
+    },
+    {
+      "id": "rogers",
+      "name": "Ρότζερς",
+      "englishName": "Rogers",
+      "nickname": "Birthplace of Daisy / Η γενέτειρα του Daisy",
+      "type": "city",
+      "coords": [
+        36.332,
+        -94.1185
+      ],
+      "zoom": 13.0,
+      "stats": {
+        "population": "75.000",
+        "founded": "1881",
+        "area": "134 km²",
+        "elevation": "397 μ."
+      },
+      "quote": "«Ένα ιστορικό κέντρο του 1881 ανάμεσα στους Ozarks και τη λίμνη Beaver.»",
+      "geo": {
+        "summary": "Το Rogers βρίσκεται στους Ozarks του βορειοδυτικού Αρκάνσας, κοντά στη λίμνη Beaver.",
+        "highlights": [
+          {
+            "title": "Beaver Lake",
+            "desc": "Μεγάλη λίμνη ανατολικά της πόλης προσφέρει νερό, αναψυχή και φυσικούς βιότοπους."
+          },
+          {
+            "title": "Ozarks",
+            "desc": "Δασωμένοι λόφοι περιβάλλουν την πόλη."
+          },
+          {
+            "title": "Historic Downtown",
+            "desc": "Η αρχιτεκτονική του 19ου αιώνα διατηρεί την εμπορική ιστορία."
+          }
+        ]
+      },
+      "hist": {
+        "summary": "Το Rogers ιδρύθηκε με την έλευση του σιδηροδρόμου και εξελίχθηκε σε εμπορικό κέντρο.",
+        "highlights": [
+          {
+            "year": "1881",
+            "event": "Ίδρυση",
+            "desc": "Η πόλη οργανώθηκε γύρω από τον σιδηρόδρομο St. Louis–San Francisco."
+          },
+          {
+            "year": "1892",
+            "event": "Daisy Air Rifle",
+            "desc": "Η εταιρεία Daisy ανέπτυξε την παραγωγή αεροβόλων που συνδέθηκε με την πόλη."
+          },
+          {
+            "year": "20ός αιώνας",
+            "event": "Οικονομική ανάπτυξη",
+            "desc": "Εμπόριο, βιομηχανία και η ανάπτυξη της Northwest Arkansas άλλαξαν την πόλη."
+          }
+        ]
+      },
+      "demo": {
+        "summary": "Η οικονομία συνδέεται με λιανεμπόριο, υπηρεσίες, τουρισμό και την ευρύτερη επιχειρηματική περιοχή.",
+        "details": [
+          {
+            "label": "Εμπόριο",
+            "text": "Η πόλη αποτελεί σημαντικό εμπορικό κέντρο της περιοχής."
+          },
+          {
+            "label": "Υπηρεσίες",
+            "text": "Υγεία, εστίαση και επαγγελματικές υπηρεσίες έχουν αυξηθεί μαζί με τον πληθυσμό."
+          },
+          {
+            "label": "Τουρισμός",
+            "text": "Η λίμνη Beaver και τα Ozarks ενισχύουν την τουριστική οικονομία."
+          }
+        ]
+      },
+      "cult": {
+        "summary": "Η πόλη διατηρεί το ιστορικό της κέντρο και τη σύνδεση με τη Daisy.",
+        "items": [
+          {
+            "title": "Daisy Airgun Museum",
+            "desc": "Μουσείο αφιερωμένο στην ιστορία των αεροβόλων Daisy."
+          },
+          {
+            "title": "Historic Downtown",
+            "desc": "Ιστορικά κτίρια και τοπικά καταστήματα."
+          },
+          {
+            "title": "Lake Beaver",
+            "desc": "Ψάρεμα, βαρκάδα και υπαίθρια αναψυχή."
+          }
+        ]
+      },
+      "guide": {
+        "summary": "Οδηγός στο Rogers.",
+        "items": [
+          {
+            "title": "Daisy Airgun Museum",
+            "cat": "museum",
+            "catLabel": "🖼️ Μουσείο",
+            "desc": "Μουσείο για την ιστορία της Daisy και των αεροβόλων.",
+            "wiki": "Daisy_Airgun_Museum"
+          },
+          {
+            "title": "Hobbs State Park",
+            "cat": "nature",
+            "catLabel": "🌿 Φύση",
+            "desc": "Μεγάλο πολιτειακό πάρκο στις όχθες της Beaver Lake.",
+            "wiki": "Hobbs_State_Park"
+          },
+          {
+            "title": "Rogers Historical Museum",
+            "cat": "museum",
+            "catLabel": "🏛️ Μουσείο",
+            "desc": "Μουσείο για την ιστορία της πόλης.",
+            "wiki": "Rogers_Historical_Museum"
+          },
+          {
+            "title": "Pea Ridge National Military Park",
+            "cat": "history",
+            "catLabel": "⚔️ Ιστορία",
+            "desc": "Εθνικό στρατιωτικό πάρκο της περιοχής του Εμφυλίου.",
+            "wiki": "Pea_Ridge_National_Military_Park"
+          }
+        ]
+      },
+      "gastro": {
+        "summary": "Νότια κουζίνα και γεύσεις Ozarks.",
+        "items": [
+          {
+            "title": "Fried Catfish",
+            "desc": "Τηγανητό γατόψαρο με hushpuppies.",
+            "tag": "Παραδοσιακό"
+          },
+          {
+            "title": "Pulled Pork BBQ",
+            "desc": "Καπνιστό χοιρινό με σάλτσα.",
+            "tag": "Barbecue"
+          },
+          {
+            "title": "Fried Chicken",
+            "desc": "Τραγανό τηγανητό κοτόπουλο.",
+            "tag": "Νότιο"
+          },
+          {
+            "title": "Possum Pie",
+            "desc": "Κρεμώδες γλυκό με σοκολάτα.",
+            "tag": "Γλυκό"
+          }
+        ]
+      },
+      "eco": {
+        "summary": "Η περιοχή προστατεύει τη Beaver Lake, τα δάση και τα μονοπάτια των Ozarks.",
+        "items": [
+          {
+            "title": "Hobbs State Park",
+            "desc": "Προστατεύει μεγάλη έκταση δασών και ακτών της Beaver Lake.",
+            "cat": "nature",
+            "catLabel": "🌳 Δάσος",
+            "wiki": "Hobbs_State_Park"
+          },
+          {
+            "title": "Razorback Greenway",
+            "desc": "Ποδηλατική σύνδεση της πόλης με το ευρύτερο δίκτυο Northwest Arkansas.",
+            "cat": "business",
+            "catLabel": "🚲 Κινητικότητα",
+            "wiki": "Razorback_Regional_Greenway"
+          },
+          {
+            "title": "Beaver Lake",
+            "desc": "Δράσεις διαχείρισης νερού και προστασίας ακτών στηρίζουν το οικοσύστημα.",
+            "cat": "nature",
+            "catLabel": "💧 Λίμνη",
+            "wiki": "Beaver_Lake"
+          }
+        ]
+      },
+      "pastVsPresent": [
+        {
+          "epoch": "Rogers 1926: Σιδηρόδρομος & Εμπόριο",
+          "content": "Το ιστορικό κέντρο εξυπηρετούσε τις φάρμες και τις μικρές βιομηχανίες των Ozarks."
+        },
+        {
+          "epoch": "Rogers 2026: Λίμνη & Ανάπτυξη",
+          "content": "Η πόλη εντάσσεται στην ταχέως αναπτυσσόμενη Northwest Arkansas και αξιοποιεί τη Beaver Lake και τον τουρισμό."
+        }
+      ],
+      "pois": [
+        {
+          "name": "Daisy Museum",
+          "category": "culture",
+          "coords": [
+            36.3276,
+            -94.1184
+          ],
+          "desc": "Μουσείο Daisy."
+        },
+        {
+          "name": "Rogers Historical Museum",
+          "category": "culture",
+          "coords": [
+            36.3326,
+            -94.1186
+          ],
+          "desc": "Ιστορικό μουσείο."
+        },
+        {
+          "name": "Beaver Lake",
+          "category": "nature",
+          "coords": [
+            36.286,
+            -93.953
+          ],
+          "desc": "Μεγάλη λίμνη."
+        },
+        {
+          "name": "Hobbs State Park",
+          "category": "nature",
+          "coords": [
+            36.284,
+            -93.854
+          ],
+          "desc": "Πολιτειακό πάρκο."
+        }
+      ]
+    },
+    {
+      "id": "eureka-springs",
+      "name": "Γιουρίκα Σπρινγκς",
+      "englishName": "Eureka Springs",
+      "nickname": "Little Switzerland of the Ozarks / Η Μικρή Ελβετία των Ozarks",
+      "type": "city",
+      "coords": [
+        36.4012,
+        -93.7379
+      ],
+      "zoom": 13.0,
+      "stats": {
+        "population": "2.200",
+        "founded": "1879",
+        "area": "19 km²",
+        "elevation": "411 μ."
+      },
+      "quote": "«Μια βικτωριανή πόλη που κρέμεται από τους λόφους και τις πηγές των Ozarks.»",
+      "geo": {
+        "summary": "Η Eureka Springs είναι χτισμένη σε απότομες πλαγιές και κοιλάδες των Ozarks.",
+        "highlights": [
+          {
+            "title": "Πηγές",
+            "desc": "Φυσικές πηγές διαμόρφωσαν την αρχική ανάπτυξη της πόλης."
+          },
+          {
+            "title": "Βικτωριανή αρχιτεκτονική",
+            "desc": "Οι δρόμοι ακολουθούν τις πλαγιές και περιβάλλονται από ιστορικά κτίρια."
+          },
+          {
+            "title": "Ozarks",
+            "desc": "Δάση και βράχοι δημιουργούν έντονο φυσικό ανάγλυφο."
+          }
+        ]
+      },
+      "hist": {
+        "summary": "Η πόλη αναπτύχθηκε ως θέρετρο θεραπευτικών πηγών και διατήρησε μεγάλο μέρος της βικτωριανής αρχιτεκτονικής.",
+        "highlights": [
+          {
+            "year": "1879",
+            "event": "Ίδρυση",
+            "desc": "Η πόλη ιδρύθηκε μέσα στην έκρηξη του τουρισμού των πηγών."
+          },
+          {
+            "year": "1886",
+            "event": "Μεγάλη ανάπτυξη",
+            "desc": "Ξενοδοχεία και επισκέπτες μετέτρεψαν την Eureka Springs σε διάσημο θέρετρο."
+          },
+          {
+            "year": "1970",
+            "event": "Ιστορική προστασία",
+            "desc": "Ολόκληρη η πόλη αναγνωρίστηκε ως σημαντική ιστορική περιοχή."
+          }
+        ]
+      },
+      "demo": {
+        "summary": "Η οικονομία εξαρτάται κυρίως από τουρισμό, φιλοξενία, τέχνες και εστίαση.",
+        "details": [
+          {
+            "label": "Τουρισμός",
+            "text": "Οι ιστορικοί δρόμοι και οι πηγές προσελκύουν επισκέπτες όλο τον χρόνο."
+          },
+          {
+            "label": "Τέχνες",
+            "text": "Γκαλερί, χειροτεχνίες και μουσικές εκδηλώσεις αποτελούν βασικό τμήμα της οικονομίας."
+          },
+          {
+            "label": "Φιλοξενία",
+            "text": "Ξενοδοχεία και μικροί ξενώνες διατηρούν την παράδοση του θέρετρου."
+          }
+        ]
+      },
+      "cult": {
+        "summary": "Η πόλη είναι γνωστή για τη βικτωριανή αρχιτεκτονική, τις γκαλερί και την Thorncrown Chapel.",
+        "items": [
+          {
+            "title": "Thorncrown Chapel",
+            "desc": "Ξύλινο παρεκκλήσι μέσα στο δάσος, γνωστό για τη σύγχρονη αρχιτεκτονική του."
+          },
+          {
+            "title": "Victorian Downtown",
+            "desc": "Ιστορικά κτίρια σε απότομους δρόμους δημιουργούν μοναδικό αστικό τοπίο."
+          },
+          {
+            "title": "Arts community",
+            "desc": "Γκαλερί και καλλιτέχνες δίνουν στην πόλη έντονο δημιουργικό χαρακτήρα."
+          }
+        ]
+      },
+      "guide": {
+        "summary": "Οδηγός στην Eureka Springs.",
+        "items": [
+          {
+            "title": "Thorncrown Chapel",
+            "cat": "culture",
+            "catLabel": "⛪ Αρχιτεκτονική",
+            "desc": "Εμβληματικό γυάλινο παρεκκλήσι μέσα στο δάσος των Ozarks.",
+            "wiki": "Thorncrown_Chapel"
+          },
+          {
+            "title": "Historic Downtown",
+            "cat": "history",
+            "catLabel": "🏛️ Ιστορία",
+            "desc": "Βικτωριανή συνοικία με ιστορικά ξενοδοχεία και καταστήματα.",
+            "wiki": "Eureka_Springs_Historic_District"
+          },
+          {
+            "title": "Blue Spring Heritage Center",
+            "cat": "nature",
+            "catLabel": "💧 Πηγή",
+            "desc": "Φυσική πηγή και ιστορικός χώρος κοντά στην πόλη.",
+            "wiki": "Blue_Spring_Heritage_Center"
+          },
+          {
+            "title": "Christ of the Ozarks",
+            "cat": "culture",
+            "catLabel": "🗿 Τοπόσημο",
+            "desc": "Μνημειακό άγαλμα πάνω από την πόλη.",
+            "wiki": "Christ_of_the_Ozarks"
+          }
+        ]
+      },
+      "gastro": {
+        "summary": "Νότιες γεύσεις και τοπικά γλυκά.",
+        "items": [
+          {
+            "title": "Arkansas Fried Catfish",
+            "desc": "Τηγανητό γατόψαρο με καλαμπόκι και hushpuppies.",
+            "tag": "Παραδοσιακό"
+          },
+          {
+            "title": "Ozark BBQ",
+            "desc": "Καπνιστό χοιρινό ή ribs με σάλτσα.",
+            "tag": "Barbecue"
+          },
+          {
+            "title": "Fried Chicken",
+            "desc": "Τηγανητό κοτόπουλο με τραγανή κρούστα.",
+            "tag": "Νότιο"
+          },
+          {
+            "title": "Possum Pie",
+            "desc": "Πίτα σοκολάτας, κρέμας και σαντιγί.",
+            "tag": "Γλυκό"
+          }
+        ]
+      },
+      "eco": {
+        "summary": "Η προστασία των δασών, των πηγών και του ιστορικού τοπίου είναι κρίσιμη.",
+        "items": [
+          {
+            "title": "Thorncrown Trails",
+            "desc": "Μονοπάτια μέσα στα δάση των Ozarks ενισχύουν ήπιο τουρισμό.",
+            "cat": "nature",
+            "catLabel": "🥾 Μονοπάτια",
+            "wiki": "Thorncrown_Chapel"
+          },
+          {
+            "title": "Blue Spring",
+            "desc": "Προστατευμένη φυσική πηγή και υγροτοπικός βιότοπος.",
+            "cat": "nature",
+            "catLabel": "💧 Πηγή",
+            "wiki": "Blue_Spring_Heritage_Center"
+          },
+          {
+            "title": "Historic District",
+            "desc": "Η διατήρηση των ιστορικών κτιρίων μειώνει την ανάγκη νέας αστικής επέκτασης.",
+            "cat": "nature",
+            "catLabel": "🏛️ Κληρονομιά",
+            "wiki": "Eureka_Springs_Historic_District"
+          }
+        ]
+      },
+      "pastVsPresent": [
+        {
+          "epoch": "Eureka Springs 1926: Λουτρά & Βικτωριανή Πόλη",
+          "content": "Ξενοδοχεία, λουτρά και σιδηρόδρομοι έφερναν επισκέπτες που αναζητούσαν τις πηγές."
+        },
+        {
+          "epoch": "Eureka Springs 2026: Ιστορία & Τουρισμός",
+          "content": "Η πόλη βασίζεται στη διατήρηση της αρχιτεκτονικής, στις τέχνες και στον φυσικό πλούτο των Ozarks."
+        }
+      ],
+      "pois": [
+        {
+          "name": "Thorncrown Chapel",
+          "category": "culture",
+          "coords": [
+            36.3944,
+            -93.8084
+          ],
+          "desc": "Εμβληματικό παρεκκλήσι."
+        },
+        {
+          "name": "Christ of the Ozarks",
+          "category": "culture",
+          "coords": [
+            36.4081,
+            -93.7432
+          ],
+          "desc": "Μνημειακό άγαλμα."
+        },
+        {
+          "name": "Historic Downtown",
+          "category": "history",
+          "coords": [
+            36.401,
+            -93.7375
+          ],
+          "desc": "Βικτωριανό κέντρο."
+        },
+        {
+          "name": "Blue Spring",
+          "category": "nature",
+          "coords": [
+            36.2557,
+            -93.5454
+          ],
+          "desc": "Φυσική πηγή."
+        }
+      ]
+    },
+    {
+      "id": "conway-ar",
+      "name": "Κόνγουεϊ",
+      "englishName": "Conway",
+      "nickname": "City of Colleges / Η Πόλη των Κολεγίων",
+      "type": "city",
+      "coords": [
+        35.0887,
+        -92.4421
+      ],
+      "zoom": 13.0,
+      "stats": {
+        "population": "69.000",
+        "founded": "1872",
+        "area": "125 km²",
+        "elevation": "93 μ."
+      },
+      "quote": "«Μια πανεπιστημιακή πόλη ανάμεσα στον ποταμό Arkansas και τους λόφους.»",
+      "geo": {
+        "summary": "Το Conway βρίσκεται στην κοιλάδα του Arkansas River, βόρεια του Little Rock, σε περιοχή όπου η πεδιάδα συναντά τους λόφους.",
+        "highlights": [
+          {
+            "title": "Arkansas River",
+            "desc": "Ο ποταμός βρίσκεται νότια της πόλης και επηρεάζει το τοπίο και την ιστορία της."
+          },
+          {
+            "title": "Cadron Creek",
+            "desc": "Τα ρέματα και οι φυσικοί διάδρομοι δημιουργούν πράσινες ζώνες."
+          },
+          {
+            "title": "Ozark foothills",
+            "desc": "Οι βόρειοι λόφοι σηματοδοτούν τη μετάβαση προς πιο δασωμένο ανάγλυφο."
+          }
+        ]
+      },
+      "hist": {
+        "summary": "Το Conway αναπτύχθηκε από σιδηροδρομικό οικισμό σε σημαντικό εκπαιδευτικό κέντρο.",
+        "highlights": [
+          {
+            "year": "1872",
+            "event": "Ίδρυση",
+            "desc": "Η πόλη ιδρύθηκε με την επέκταση του σιδηροδρόμου προς το εσωτερικό του Αρκάνσας."
+          },
+          {
+            "year": "1890",
+            "event": "Central College",
+            "desc": "Η εκπαιδευτική παράδοση άρχισε να αποκτά κεντρικό ρόλο."
+          },
+          {
+            "year": "20ός αιώνας",
+            "event": "City of Colleges",
+            "desc": "Το Hendrix College, το University of Central Arkansas και άλλα ιδρύματα καθιέρωσαν τον χαρακτήρα της πόλης."
+          }
+        ]
+      },
+      "demo": {
+        "summary": "Η εκπαίδευση, η τεχνολογία, η υγεία και οι υπηρεσίες κυριαρχούν στην οικονομία.",
+        "details": [
+          {
+            "label": "University of Central Arkansas",
+            "text": "Μεγάλο δημόσιο πανεπιστήμιο και βασικός εργοδότης."
+          },
+          {
+            "label": "Hendrix College",
+            "text": "Ιδιωτικό φιλελεύθερο κολέγιο με ισχυρή ακαδημαϊκή παρουσία."
+          },
+          {
+            "label": "Τεχνολογία",
+            "text": "Η πόλη προσελκύει εταιρείες τεχνολογίας και υπηρεσιών λόγω της θέσης κοντά στο Little Rock."
+          }
+        ]
+      },
+      "cult": {
+        "summary": "Η πανεπιστημιακή κουλτούρα, οι τέχνες και η ιστορία των εποίκων συνυπάρχουν.",
+        "items": [
+          {
+            "title": "City of Colleges",
+            "desc": "Τρία σημαντικά ιδρύματα δίνουν στην πόλη έντονη φοιτητική ζωή."
+          },
+          {
+            "title": "Faulkner County",
+            "desc": "Τοπικά μουσεία και αρχεία διατηρούν την ιστορία της περιοχής."
+          },
+          {
+            "title": "Μουσική & τέχνες",
+            "desc": "Συναυλίες, θέατρο και φοιτητικές παραγωγές αποτελούν σημαντικό τμήμα της ζωής."
+          }
+        ]
+      },
+      "guide": {
+        "summary": "Οδηγός στο Conway και στα κολέγιά του.",
+        "items": [
+          {
+            "title": "University of Central Arkansas",
+            "cat": "culture",
+            "catLabel": "🎓 Πανεπιστήμιο",
+            "desc": "Μεγάλη πανεπιστημιούπολη με μουσεία, θέατρα και αθλητικές εγκαταστάσεις.",
+            "wiki": "University_of_Central_Arkansas"
+          },
+          {
+            "title": "Hendrix College",
+            "cat": "culture",
+            "catLabel": "🎓 Κολέγιο",
+            "desc": "Ιστορικό φιλελεύθερο κολέγιο με όμορφη πανεπιστημιούπολη.",
+            "wiki": "Hendrix_College"
+          },
+          {
+            "title": "Cadron Settlement Park",
+            "cat": "history",
+            "catLabel": "🏛️ Ιστορία",
+            "desc": "Ιστορικός χώρος πρώιμου οικισμού δίπλα στον ποταμό Arkansas.",
+            "wiki": "Cadron_Settlement_Park"
+          },
+          {
+            "title": "Lake Conway",
+            "cat": "nature",
+            "catLabel": "🌊 Λίμνη",
+            "desc": "Μεγάλη τεχνητή λίμνη για ψάρεμα και υπαίθρια αναψυχή.",
+            "wiki": "Lake_Conway"
+          }
+        ]
+      },
+      "gastro": {
+        "summary": "Νότια κουζίνα με barbecue, γατόψαρο και γλυκά.",
+        "items": [
+          {
+            "title": "Arkansas Fried Catfish",
+            "desc": "Τηγανητό γατόψαρο με hushpuppies.",
+            "tag": "Παραδοσιακό"
+          },
+          {
+            "title": "Pulled Pork BBQ",
+            "desc": "Καπνιστό χοιρινό με σάλτσα.",
+            "tag": "Barbecue"
+          },
+          {
+            "title": "Fried Green Tomatoes",
+            "desc": "Τηγανητές πράσινες ντομάτες με τραγανή κρούστα.",
+            "tag": "Νότιο"
+          },
+          {
+            "title": "Possum Pie",
+            "desc": "Κλασική πίτα σοκολάτας και κρέμας.",
+            "tag": "Γλυκό"
+          }
+        ]
+      },
+      "eco": {
+        "summary": "Το Conway προστατεύει λίμνες, υγροτόπους και πράσινους διαδρόμους γύρω από την πόλη.",
+        "items": [
+          {
+            "title": "Lake Conway",
+            "desc": "Μεγάλη λίμνη που στηρίζει ψάρεμα, υδρόβια ζωή και αναψυχή.",
+            "cat": "nature",
+            "catLabel": "💧 Λίμνη",
+            "wiki": "Lake_Conway"
+          },
+          {
+            "title": "Cadron Settlement Park",
+            "desc": "Πράσινος χώρος δίπλα στον ποταμό και ιστορικό τοπίο.",
+            "cat": "nature",
+            "catLabel": "🌳 Πάρκο",
+            "wiki": "Cadron_Settlement_Park"
+          },
+          {
+            "title": "Conway Greenways",
+            "desc": "Διαδρομές πεζών και ποδηλάτων συνδέουν πάρκα και γειτονιές.",
+            "cat": "business",
+            "catLabel": "🚲 Κινητικότητα",
+            "wiki": "Conway,_Arkansas"
+          }
+        ]
+      },
+      "pastVsPresent": [
+        {
+          "epoch": "Conway 1926: Σιδηρόδρομος & Κολέγια",
+          "content": "Η πόλη παρέμενε περιφερειακό κέντρο με γεωργία, σιδηρόδρομο και αναπτυσσόμενα εκπαιδευτικά ιδρύματα."
+        },
+        {
+          "epoch": "Conway 2026: City of Colleges",
+          "content": "Τα πανεπιστήμια, η τεχνολογία και η εγγύτητα στο Little Rock έχουν δημιουργήσει μια σύγχρονη και ταχέως αναπτυσσόμενη πόλη."
+        }
+      ],
+      "pois": [
+        {
+          "name": "UCA",
+          "category": "culture",
+          "coords": [
+            35.0754,
+            -92.4594
+          ],
+          "desc": "Πανεπιστήμιο Central Arkansas."
+        },
+        {
+          "name": "Hendrix College",
+          "category": "culture",
+          "coords": [
+            35.098,
+            -92.4435
+          ],
+          "desc": "Ιστορικό κολέγιο."
+        },
+        {
+          "name": "Cadron Settlement",
+          "category": "history",
+          "coords": [
+            35.1908,
+            -92.445
+          ],
+          "desc": "Ιστορικός οικισμός."
+        },
+        {
+          "name": "Lake Conway",
+          "category": "nature",
+          "coords": [
+            35.1735,
+            -92.4
+          ],
+          "desc": "Μεγάλη λίμνη."
+        }
+      ]
     }
   ]
 }

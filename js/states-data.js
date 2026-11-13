@@ -38,13 +38,52 @@ export const US_STATES = [
       {
         "id": "des-moines",
         "name": "Ντε Μόιν",
-        "englishName": "Des Moines",
-        "badge": "Πρωτεύουσα"
+        "englishName": "Des Moines"
       },
       {
         "id": "cedar-rapids",
         "name": "Σένταρ Ράπιντς",
         "englishName": "Cedar Rapids"
+      },
+      {
+        "id": "davenport",
+        "name": "Ντάβενπορτ",
+        "englishName": "Davenport"
+      },
+      {
+        "id": "sioux-city",
+        "name": "Σιού Σίτι",
+        "englishName": "Sioux City"
+      },
+      {
+        "id": "iowa-city",
+        "name": "Άιοβα Σίτι",
+        "englishName": "Iowa City"
+      },
+      {
+        "id": "waterloo-ia",
+        "name": "Γουότερλου",
+        "englishName": "Waterloo"
+      },
+      {
+        "id": "ames",
+        "name": "Έιμς",
+        "englishName": "Ames"
+      },
+      {
+        "id": "dubuque",
+        "name": "Ντουμπιούκ",
+        "englishName": "Dubuque"
+      },
+      {
+        "id": "council-bluffs",
+        "name": "Κάουνσιλ Μπλαφς",
+        "englishName": "Council Bluffs"
+      },
+      {
+        "id": "burlington-ia",
+        "name": "Μπέρλινγκτον",
+        "englishName": "Burlington"
       }
     ]
   },
@@ -144,8 +183,52 @@ export const US_STATES = [
       {
         "id": "little-rock",
         "name": "Λιτλ Ροκ",
-        "englishName": "Little Rock",
-        "badge": "Πρωτεύουσα"
+        "englishName": "Little Rock"
+      },
+      {
+        "id": "fayetteville-ar",
+        "name": "Φαγιέτβιλ",
+        "englishName": "Fayetteville"
+      },
+      {
+        "id": "fort-smith",
+        "name": "Φορτ Σμιθ",
+        "englishName": "Fort Smith"
+      },
+      {
+        "id": "hot-springs",
+        "name": "Χοτ Σπρινγκς",
+        "englishName": "Hot Springs"
+      },
+      {
+        "id": "bentonville",
+        "name": "Μπέντονβιλ",
+        "englishName": "Bentonville"
+      },
+      {
+        "id": "springdale",
+        "name": "Σπρίνγκντεϊλ",
+        "englishName": "Springdale"
+      },
+      {
+        "id": "jonesboro",
+        "name": "Τζόουνσμπορο",
+        "englishName": "Jonesboro"
+      },
+      {
+        "id": "rogers",
+        "name": "Ρότζερς",
+        "englishName": "Rogers"
+      },
+      {
+        "id": "eureka-springs",
+        "name": "Γιουρίκα Σπρινγκς",
+        "englishName": "Eureka Springs"
+      },
+      {
+        "id": "conway-ar",
+        "name": "Κόνγουεϊ",
+        "englishName": "Conway"
       }
     ]
   },
@@ -586,13 +669,52 @@ export const US_STATES = [
       {
         "id": "frankfort",
         "name": "Φράνκφορτ",
-        "englishName": "Frankfort",
-        "badge": "Πρωτεύουσα"
+        "englishName": "Frankfort"
       },
       {
         "id": "louisville",
         "name": "Λούισβιλ",
         "englishName": "Louisville"
+      },
+      {
+        "id": "lexington",
+        "name": "Λέξινγκτον",
+        "englishName": "Lexington"
+      },
+      {
+        "id": "bowling-green",
+        "name": "Μπόουλινγκ Γκριν",
+        "englishName": "Bowling Green"
+      },
+      {
+        "id": "owensboro",
+        "name": "Όουενσμπορο",
+        "englishName": "Owensboro"
+      },
+      {
+        "id": "covington",
+        "name": "Κόβινγκτον",
+        "englishName": "Covington"
+      },
+      {
+        "id": "paducah",
+        "name": "Παντούκα",
+        "englishName": "Paducah"
+      },
+      {
+        "id": "richmond-ky",
+        "name": "Ρίτσμοντ",
+        "englishName": "Richmond"
+      },
+      {
+        "id": "florence-ky",
+        "name": "Φλόρενς",
+        "englishName": "Florence"
+      },
+      {
+        "id": "hopkinsville",
+        "name": "Χόπκινσβιλ",
+        "englishName": "Hopkinsville"
       }
     ]
   },
@@ -919,8 +1041,7 @@ export const US_STATES = [
       {
         "id": "jefferson-city",
         "name": "Τζέφερσον Σίτι",
-        "englishName": "Jefferson City",
-        "badge": "Πρωτεύουσα"
+        "englishName": "Jefferson City"
       },
       {
         "id": "kansas-city",
@@ -931,6 +1052,41 @@ export const US_STATES = [
         "id": "st-louis",
         "name": "Σαιντ Λούις",
         "englishName": "St. Louis"
+      },
+      {
+        "id": "springfield-mo",
+        "name": "Σπρίνγκφιλντ",
+        "englishName": "Springfield"
+      },
+      {
+        "id": "columbia-mo",
+        "name": "Κολούμπια",
+        "englishName": "Columbia"
+      },
+      {
+        "id": "branson",
+        "name": "Μπράνσον",
+        "englishName": "Branson"
+      },
+      {
+        "id": "st-joseph",
+        "name": "Σεντ Τζόζεφ",
+        "englishName": "St. Joseph"
+      },
+      {
+        "id": "st-charles",
+        "name": "Σεντ Τσαρλς",
+        "englishName": "St. Charles"
+      },
+      {
+        "id": "joplin",
+        "name": "Τζόπλιν",
+        "englishName": "Joplin"
+      },
+      {
+        "id": "hannibal",
+        "name": "Χάνιμπαλ",
+        "englishName": "Hannibal"
       }
     ]
   },
@@ -948,13 +1104,52 @@ export const US_STATES = [
       {
         "id": "saint-paul",
         "name": "Σαιντ Πολ",
-        "englishName": "Saint Paul",
-        "badge": "Πρωτεύουσα"
+        "englishName": "Saint Paul"
       },
       {
         "id": "minneapolis",
         "name": "Μινεάπολη",
         "englishName": "Minneapolis"
+      },
+      {
+        "id": "duluth",
+        "name": "Ντουλούθ",
+        "englishName": "Duluth"
+      },
+      {
+        "id": "rochester-mn",
+        "name": "Ρότσεστερ",
+        "englishName": "Rochester"
+      },
+      {
+        "id": "bloomington-mn",
+        "name": "Μπλούμινγκτον",
+        "englishName": "Bloomington"
+      },
+      {
+        "id": "st-cloud",
+        "name": "Σεντ Κλάουντ",
+        "englishName": "St. Cloud"
+      },
+      {
+        "id": "mankato",
+        "name": "Μανκάτο",
+        "englishName": "Mankato"
+      },
+      {
+        "id": "moorhead",
+        "name": "Μούρχεντ",
+        "englishName": "Moorhead"
+      },
+      {
+        "id": "winona",
+        "name": "Γουινόνα",
+        "englishName": "Winona"
+      },
+      {
+        "id": "bemidji",
+        "name": "Μπεμίτζι",
+        "englishName": "Bemidji"
       }
     ]
   },
@@ -1925,6 +2120,46 @@ export const US_STATES = [
         "id": "memphis",
         "name": "Μέμφις",
         "englishName": "Memphis"
+      },
+      {
+        "id": "knoxville",
+        "name": "Νόξβιλ",
+        "englishName": "Knoxville"
+      },
+      {
+        "id": "chattanooga",
+        "name": "Τσατανούγκα",
+        "englishName": "Chattanooga"
+      },
+      {
+        "id": "clarksville",
+        "name": "Κλάρκσβιλ",
+        "englishName": "Clarksville"
+      },
+      {
+        "id": "murfreesboro",
+        "name": "Μερφρίσμπορο",
+        "englishName": "Murfreesboro"
+      },
+      {
+        "id": "gatlinburg",
+        "name": "Γκάτλινμπεργκ",
+        "englishName": "Gatlinburg"
+      },
+      {
+        "id": "franklin-tn",
+        "name": "Φράνκλιν",
+        "englishName": "Franklin"
+      },
+      {
+        "id": "jackson-tn",
+        "name": "Τζάκσον",
+        "englishName": "Jackson"
+      },
+      {
+        "id": "johnson-city",
+        "name": "Τζόνσον Σίτι",
+        "englishName": "Johnson City"
       }
     ]
   },
@@ -2117,6 +2352,46 @@ export const US_STATES = [
 ];
 
 export const CITY_TO_STATE = {
+  "hopkinsville": "kentucky",
+  "florence-ky": "kentucky",
+  "richmond-ky": "kentucky",
+  "paducah": "kentucky",
+  "covington": "kentucky",
+  "owensboro": "kentucky",
+  "bowling-green": "kentucky",
+  "lexington": "kentucky",
+  "bemidji": "minnesota",
+  "winona": "minnesota",
+  "moorhead": "minnesota",
+  "mankato": "minnesota",
+  "st-cloud": "minnesota",
+  "bloomington-mn": "minnesota",
+  "rochester-mn": "minnesota",
+  "duluth": "minnesota",
+  "burlington-ia": "iowa",
+  "council-bluffs": "iowa",
+  "dubuque": "iowa",
+  "ames": "iowa",
+  "waterloo-ia": "iowa",
+  "iowa-city": "iowa",
+  "sioux-city": "iowa",
+  "davenport": "iowa",
+  "conway-ar": "arkansas",
+  "eureka-springs": "arkansas",
+  "rogers": "arkansas",
+  "jonesboro": "arkansas",
+  "springdale": "arkansas",
+  "bentonville": "arkansas",
+  "hot-springs": "arkansas",
+  "fort-smith": "arkansas",
+  "fayetteville-ar": "arkansas",
+  "hannibal": "missouri",
+  "joplin": "missouri",
+  "st-charles": "missouri",
+  "st-joseph": "missouri",
+  "branson": "missouri",
+  "columbia-mo": "missouri",
+  "springfield-mo": "missouri",
   "columbus-in": "indiana",
   "terre-haute": "indiana",
   "gary": "indiana",
@@ -2361,6 +2636,14 @@ export const CITY_TO_STATE = {
   "south-kingstown": "rhode-island",
   "nashville": "tennessee",
   "memphis": "tennessee",
+  "knoxville": "tennessee",
+  "chattanooga": "tennessee",
+  "clarksville": "tennessee",
+  "murfreesboro": "tennessee",
+  "gatlinburg": "tennessee",
+  "franklin-tn": "tennessee",
+  "jackson-tn": "tennessee",
+  "johnson-city": "tennessee",
   "austin": "texas",
   "houston": "texas",
   "dallas": "texas",
