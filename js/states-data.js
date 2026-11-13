@@ -1,6 +1,6 @@
 /**
  * US States & Cities Index Metadata
- * Contains all 50 US States + Washington D.C. and 232 mapped cities
+ * Contains all 50 US States + Washington D.C. and 240 mapped cities
  * Used by NavigatorModule, App orchestration, and live search.
  */
 
@@ -383,12 +383,61 @@ export const US_STATES = [
         "id": "springfield",
         "name": "Σπρίνγκφιλντ",
         "englishName": "Springfield",
-        "badge": "Πρωτεύουσα"
+        "badge": "Πρωτεύουσα του Ιλινόι"
       },
       {
         "id": "chicago",
         "name": "Σικάγο",
-        "englishName": "Chicago"
+        "englishName": "Chicago",
+        "badge": "Μητρόπολη των ΗΠΑ"
+      },
+      {
+        "id": "rockford",
+        "name": "Ρόκφορντ",
+        "englishName": "Rockford",
+        "badge": "Η Πόλη των Μηχανών & των Κήπων"
+      },
+      {
+        "id": "peoria",
+        "name": "Πεόρια",
+        "englishName": "Peoria",
+        "badge": "Η Πύλη του Ιλινόι Ρίβερ"
+      },
+      {
+        "id": "naperville",
+        "name": "Νέιπερβιλ",
+        "englishName": "Naperville",
+        "badge": "Πρότυπο Προάστιο"
+      },
+      {
+        "id": "champaign",
+        "name": "Σαμπέιν",
+        "englishName": "Champaign",
+        "badge": "Πανεπιστημιακή Δίδυμη Πόλη"
+      },
+      {
+        "id": "evanston",
+        "name": "Έβανστον",
+        "englishName": "Evanston",
+        "badge": "Παραλιακό Πανεπιστήμιο"
+      },
+      {
+        "id": "galena",
+        "name": "Γκαλίνα",
+        "englishName": "Galena",
+        "badge": "Ζωντανό Ιστορικό Μνημείο"
+      },
+      {
+        "id": "bloomington-il",
+        "name": "Μπλούμινγκτον",
+        "englishName": "Bloomington",
+        "badge": "Η Δίδυμη Πόλη με το Normal"
+      },
+      {
+        "id": "joliet",
+        "name": "Τζόλιετ",
+        "englishName": "Joliet",
+        "badge": "Η Πόλη της Πέτρας και του Χάλυβα"
       }
     ]
   },
@@ -407,12 +456,61 @@ export const US_STATES = [
         "id": "indianapolis",
         "name": "Ιντιανάπολις",
         "englishName": "Indianapolis",
-        "badge": "Πρωτεύουσα"
+        "badge": "Πρωτεύουσα της Ιντιάνα"
       },
       {
         "id": "fort-wayne",
         "name": "Φορτ Γουέιν",
-        "englishName": "Fort Wayne"
+        "englishName": "Fort Wayne",
+        "badge": "Η Πόλη των Τριών Ποταμών"
+      },
+      {
+        "id": "bloomington-in",
+        "name": "Μπλούμινγκτον",
+        "englishName": "Bloomington",
+        "badge": "Η Κολεγιακή Πόλη της Ιντιάνα"
+      },
+      {
+        "id": "south-bend",
+        "name": "Σάουθ Μπεντ",
+        "englishName": "South Bend",
+        "badge": "Η Πόλη του Ατσαλιού"
+      },
+      {
+        "id": "evansville",
+        "name": "Έβανσβιλ",
+        "englishName": "Evansville",
+        "badge": "Η Πύλη του Οχάιο"
+      },
+      {
+        "id": "west-lafayette",
+        "name": "Γουέστ Λαφαγιέτ",
+        "englishName": "West Lafayette",
+        "badge": "Η Επιστημονική Πρωτεύουσα"
+      },
+      {
+        "id": "carmel",
+        "name": "Κάρμελ",
+        "englishName": "Carmel",
+        "badge": "Η Πρωτεύουσα των Κυκλικών Κόμβων"
+      },
+      {
+        "id": "gary",
+        "name": "Γκάρι",
+        "englishName": "Gary",
+        "badge": "Η Πόλη του Χάλυβα"
+      },
+      {
+        "id": "terre-haute",
+        "name": "Τερ Χοτ",
+        "englishName": "Terre Haute",
+        "badge": "Το Σταυροδρόμι της Αμερικής"
+      },
+      {
+        "id": "columbus-in",
+        "name": "Κολόμπους",
+        "englishName": "Columbus",
+        "badge": "Η Αθήνα της Πεδιάδας"
       }
     ]
   },
@@ -880,12 +978,56 @@ export const US_STATES = [
       {
         "id": "detroit",
         "name": "Ντιτρόιτ",
-        "englishName": "Detroit"
+        "englishName": "Detroit",
+        "badge": "Motor City"
       },
       {
         "id": "ann-arbor",
         "name": "Αν Άρμπορ",
-        "englishName": "Ann Arbor"
+        "englishName": "Ann Arbor",
+        "badge": "Tree Town"
+      },
+      {
+        "id": "grand-rapids",
+        "name": "Γκραντ Ράπιντς",
+        "englishName": "Grand Rapids",
+        "badge": "Πόλη των Επίπλων"
+      },
+      {
+        "id": "flint",
+        "name": "Φλιντ",
+        "englishName": "Flint",
+        "badge": "Πόλη του Βαγονιού"
+      },
+      {
+        "id": "traverse-city",
+        "name": "Τράβερς Σίτι",
+        "englishName": "Traverse City",
+        "badge": "Πρωτεύουσα των Κερασιών"
+      },
+      {
+        "id": "kalamazoo",
+        "name": "Καλαμαζού",
+        "englishName": "Kalamazoo",
+        "badge": "Πόλη της Μπύρας & της Μουσικής"
+      },
+      {
+        "id": "marquette",
+        "name": "Μαρκέτ",
+        "englishName": "Marquette",
+        "badge": "Βασίλισσα της Άνω Χερσονήσου"
+      },
+      {
+        "id": "mackinac-island",
+        "name": "Νήσος Μάκινακ",
+        "englishName": "Mackinac Island",
+        "badge": "Νησί χωρίς Αυτοκίνητα"
+      },
+      {
+        "id": "saginaw",
+        "name": "Σάγκινο",
+        "englishName": "Saginaw",
+        "badge": "Πόλη του Ποταμού Saginaw"
       }
     ]
   },
@@ -1474,12 +1616,61 @@ export const US_STATES = [
         "id": "madison",
         "name": "Μάντισον",
         "englishName": "Madison",
-        "badge": "Πρωτεύουσα"
+        "badge": "Πρωτεύουσα των Λιμνών"
       },
       {
         "id": "milwaukee",
         "name": "Μιλγουόκι",
-        "englishName": "Milwaukee"
+        "englishName": "Milwaukee",
+        "badge": "Πόλη της Μπύρας"
+      },
+      {
+        "id": "green-bay",
+        "name": "Γκριν Μπέι",
+        "englishName": "Green Bay",
+        "badge": "Κοιτίδα των Πάκερς"
+      },
+      {
+        "id": "kenosha",
+        "name": "Κενόσα",
+        "englishName": "Kenosha",
+        "badge": "Μουσειακή Πόλη των Λιμνών"
+      },
+      {
+        "id": "racine",
+        "name": "Ρασίν",
+        "englishName": "Racine",
+        "badge": "Πόλη του Ράιτ και της Κρίνγκελ"
+      },
+      {
+        "id": "appleton",
+        "name": "Άπλετον",
+        "englishName": "Appleton",
+        "badge": "Λίκνο του Υδροηλεκτρισμού"
+      },
+      {
+        "id": "eau-claire",
+        "name": "Ο Κλερ",
+        "englishName": "Eau Claire",
+        "badge": "Πόλη της Συμβολής"
+      },
+      {
+        "id": "oshkosh",
+        "name": "Όσκος",
+        "englishName": "Oshkosh",
+        "badge": "Παγκόσμια Πρωτεύουσα της Αεροπορίας"
+      },
+      {
+        "id": "la-crosse",
+        "name": "Λα Κρος",
+        "englishName": "La Crosse",
+        "badge": "Πύλη του Άνω Μισισιπή"
+      },
+      {
+        "id": "sheboygan",
+        "name": "Σεμπόιγκαν",
+        "englishName": "Sheboygan",
+        "badge": "Μαλίμπου των Μεσοδυτικών"
       }
     ]
   },
@@ -1503,12 +1694,56 @@ export const US_STATES = [
       {
         "id": "cleveland",
         "name": "Κλίβελαντ",
-        "englishName": "Cleveland"
+        "englishName": "Cleveland",
+        "badge": "Πόλη της Λίμνης"
       },
       {
         "id": "cincinnati",
         "name": "Σινσινάτι",
-        "englishName": "Cincinnati"
+        "englishName": "Cincinnati",
+        "badge": "Η Πόλη-Βασίλισσα"
+      },
+      {
+        "id": "dayton",
+        "name": "Ντέιτον",
+        "englishName": "Dayton",
+        "badge": "Λίκνο της Αεροπορίας"
+      },
+      {
+        "id": "toledo",
+        "name": "Τολέδο",
+        "englishName": "Toledo",
+        "badge": "Πόλη του Γυαλιού"
+      },
+      {
+        "id": "akron",
+        "name": "Άκρον",
+        "englishName": "Akron",
+        "badge": "Πρωτεύουσα των Ελαστικών"
+      },
+      {
+        "id": "canton",
+        "name": "Κάντον",
+        "englishName": "Canton",
+        "badge": "Πόλη του Pro Football"
+      },
+      {
+        "id": "youngstown",
+        "name": "Γιανγκστάουν",
+        "englishName": "Youngstown",
+        "badge": "Πόλη του Χάλυβα"
+      },
+      {
+        "id": "sandusky",
+        "name": "Σαντάσκι",
+        "englishName": "Sandusky",
+        "badge": "Πόλη του Cedar Point"
+      },
+      {
+        "id": "athens-oh",
+        "name": "Άθενς",
+        "englishName": "Athens",
+        "badge": "Πανεπιστημιακή Πόλη"
       }
     ]
   },
@@ -1882,6 +2117,36 @@ export const US_STATES = [
 ];
 
 export const CITY_TO_STATE = {
+  "columbus-in": "indiana",
+  "terre-haute": "indiana",
+  "gary": "indiana",
+  "carmel": "indiana",
+  "west-lafayette": "indiana",
+  "evansville": "indiana",
+  "south-bend": "indiana",
+  "bloomington-in": "indiana",
+  "joliet": "illinois",
+  "bloomington-il": "illinois",
+  "galena": "illinois",
+  "evanston": "illinois",
+  "champaign": "illinois",
+  "naperville": "illinois",
+  "peoria": "illinois",
+  "rockford": "illinois",
+  "saginaw": "michigan",
+  "mackinac-island": "michigan",
+  "marquette": "michigan",
+  "kalamazoo": "michigan",
+  "traverse-city": "michigan",
+  "flint": "michigan",
+  "grand-rapids": "michigan",
+  "athens-oh": "ohio",
+  "sandusky": "ohio",
+  "youngstown": "ohio",
+  "canton": "ohio",
+  "akron": "ohio",
+  "toledo": "ohio",
+  "dayton": "ohio",
   "boise": "idaho",
   "des-moines": "iowa",
   "cedar-rapids": "iowa",
@@ -2060,6 +2325,14 @@ export const CITY_TO_STATE = {
   "washington-dc": "washington-dc",
   "madison": "wisconsin",
   "milwaukee": "wisconsin",
+  "green-bay": "wisconsin",
+  "kenosha": "wisconsin",
+  "racine": "wisconsin",
+  "appleton": "wisconsin",
+  "eau-claire": "wisconsin",
+  "oshkosh": "wisconsin",
+  "la-crosse": "wisconsin",
+  "sheboygan": "wisconsin",
   "columbus": "ohio",
   "cleveland": "ohio",
   "cincinnati": "ohio",

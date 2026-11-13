@@ -1,4 +1,4 @@
-import { CITY_TO_STATE } from './states-data.js?v=20261113_fix1';
+import { CITY_TO_STATE } from './states-data.js?v=20261113_us4';
 /**
  * Video Service Module
  * Registry of verified high-definition YouTube video tours for all cities
@@ -8982,6 +8982,529 @@ export const CITY_VIDEOS = {
       "youtubeId": "9uAn-VdurrE",
       "label": "Σάουθ Κίνγκσταουν Live Cam",
       "title": "150MPH Trains at Davisville, Rhode Island, USA | LIVE Train Camera (Fixed View — South)"
+    }
+  },
+  "madison": {
+    "cityName": "Μάντισον",
+    "drone": {
+      "youtubeId": "6fnzcTGYj_k",
+      "title": "Μάντισον 4K — Madison,  Wisconsin Capitol | 4K drone footage"
+    }
+  },
+  "milwaukee": {
+    "cityName": "Μιλγουόκι",
+    "drone": {
+      "youtubeId": "IAqb9TE-Zp8",
+      "title": "Μιλγουόκι 4K — Milwaukee Summer in 8K | Wisconsin by Drone | Cinematic Aerial Tour"
+    },
+    "live": {
+      "youtubeId": "MT5Og9gOKuM",
+      "label": "Μιλγουόκι Live Cam",
+      "title": "EarthCam Live:  Milwaukee, WI"
+    }
+  },
+  "green-bay": {
+    "cityName": "Γκριν Μπέι",
+    "drone": {
+      "youtubeId": "m-uLC2Fwewk",
+      "title": "Γκριν Μπέι 4K — Green Bay, Wisconsin | 4K Drone Footage"
+    },
+    "live": {
+      "youtubeId": "pT7lsBZ-M7w",
+      "label": "Γκριν Μπέι Live Cam",
+      "title": "The Depot Restaurant LIVE Railcam - Green Bay, WI"
+    }
+  },
+  "kenosha": {
+    "cityName": "Κενόσα",
+    "drone": {
+      "youtubeId": "eJpSa5g8508",
+      "title": "Κενόσα 4K — Kenosha, Wisconsin: 4K Drive + Drone"
+    },
+    "live": {
+      "youtubeId": "Y_TbL7GShcY",
+      "label": "Κενόσα Live Cam",
+      "title": "Live American Family Field web cam | FOX6 News Milwaukee"
+    }
+  },
+  "racine": {
+    "cityName": "Ρασίν",
+    "drone": {
+      "youtubeId": "swejoVC41fs",
+      "title": "Ρασίν 4K — Road Tour of Racine, Wisconsin in 4K - View of Lake Michigan"
+    }
+  },
+  "appleton": {
+    "cityName": "Άπλετον",
+    "drone": {
+      "youtubeId": "Ac59MpJmxTg",
+      "title": "Άπλετον 4K — 2025 Appleton WI Drone Stock Footage (4K) | Royalty-Free Aerial Video & Photos for Licensing"
+    },
+    "live": {
+      "youtubeId": "iQi954fCovc",
+      "label": "Άπλετον Live Cam",
+      "title": "Appleton, Wisconsin live weather cam"
+    }
+  },
+  "eau-claire": {
+    "cityName": "Ο Κλερ",
+    "drone": {
+      "youtubeId": "7DbsaPPetB0",
+      "title": "Ο Κλερ 4K — Wisconsin Downtowns: Eau Claire"
+    },
+    "live": {
+      "youtubeId": "Y_TbL7GShcY",
+      "label": "Ο Κλερ Live Cam",
+      "title": "Live American Family Field web cam | FOX6 News Milwaukee"
+    }
+  },
+  "oshkosh": {
+    "cityName": "Όσκος",
+    "drone": {
+      "youtubeId": "MHGhtm3n-88",
+      "title": "Όσκος 4K — Road Tour of Oshkosh, Wisconsin in 4K - Downtown Oshkosh WI"
+    },
+    "live": {
+      "youtubeId": "oSR43WQ3qMY",
+      "label": "Όσκος Live Cam",
+      "title": "🔴 LIVE: EAA AirVenture Oshkosh 2026 Thursday — All Cameras + ADS-B Tracking + ATC Feed"
+    }
+  },
+  "la-crosse": {
+    "cityName": "Λα Κρος",
+    "drone": {
+      "youtubeId": "CPa9O2mYVtA",
+      "title": "Λα Κρος 4K — 4K Aerial Cinema Reel A 2016 La Crosse, WI"
+    }
+  },
+  "sheboygan": {
+    "cityName": "Σεμπόιγκαν",
+    "drone": {
+      "youtubeId": "4XuPsAGJd8Q",
+      "title": "Σεμπόιγκαν 4K — sheboygan wisconsin cinematic drone 4k"
+    },
+    "live": {
+      "youtubeId": "13j5iZkMpbE",
+      "label": "Σεμπόιγκαν Live Cam",
+      "title": "Visit Sheboygan Live Beach Camera"
+    }
+  },
+  "columbus": {
+    "cityName": "Κολόμπους",
+    "drone": {
+      "youtubeId": "hAeu044o6yw",
+      "title": "Κολόμπους 4K — Columbus, Ohio | 4K Drone Footage"
+    },
+    "live": {
+      "youtubeId": "iHqqkh_Lths",
+      "label": "Κολόμπους Live Cam",
+      "title": "EarthCam Live:  Terminal Tower Cam (Cleveland, OH)"
+    }
+  },
+  "cleveland": {
+    "cityName": "Κλίβελαντ",
+    "drone": {
+      "youtubeId": "_vcvsSAiqi0",
+      "title": "Κλίβελαντ 4K — Cleveland, Ohio - USA 🇺🇸 - by drone [4K]"
+    },
+    "live": {
+      "youtubeId": "iHqqkh_Lths",
+      "label": "Κλίβελαντ Live Cam",
+      "title": "EarthCam Live:  Terminal Tower Cam (Cleveland, OH)"
+    }
+  },
+  "cincinnati": {
+    "cityName": "Σινσινάτι",
+    "drone": {
+      "youtubeId": "G8EUiH00BrU",
+      "title": "Σινσινάτι 4K — Cincinnati, Ohio | 4K Drone Footage"
+    },
+    "live": {
+      "youtubeId": "i70LOfyh1M4",
+      "label": "Σινσινάτι Live Cam",
+      "title": "Cincinnati Skyline LIVE | Ohio River, Brent Spence Bridge, from Covington, Kentucky"
+    }
+  },
+  "dayton": {
+    "cityName": "Ντέιτον",
+    "drone": {
+      "youtubeId": "f1ZJRInLvyU",
+      "title": "Ντέιτον 4K — Dayton, Ohio | 4K Drone Video"
+    },
+    "live": {
+      "youtubeId": "vF4ZdG-_6FE",
+      "label": "Ντέιτον Live Cam",
+      "title": "Glendale, Ohio, USA | LIVE Train Camera (Fixed View – North)"
+    }
+  },
+  "toledo": {
+    "cityName": "Τολέδο",
+    "drone": {
+      "youtubeId": "6JIAKuawcUw",
+      "title": "Τολέδο 4K — Toledo, Ohio | 4K Drone Video"
+    },
+    "live": {
+      "youtubeId": "vF4ZdG-_6FE",
+      "label": "Τολέδο Live Cam",
+      "title": "Glendale, Ohio, USA | LIVE Train Camera (Fixed View – North)"
+    }
+  },
+  "akron": {
+    "cityName": "Άκρον",
+    "drone": {
+      "youtubeId": "cdxSXuHdXyo",
+      "title": "Άκρον 4K — Driving Though Akron, Ohio in the Fall: Historic Landmarks with Beautiful Foliage in 4K"
+    }
+  },
+  "canton": {
+    "cityName": "Κάντον",
+    "drone": {
+      "youtubeId": "OHVPQTayXvA",
+      "title": "Κάντον 4K — Driving Through Downtown Canton, Ohio - [4K Tour]"
+    }
+  },
+  "youngstown": {
+    "cityName": "Γιανγκστάουν",
+    "drone": {
+      "youtubeId": "jNf_45dkOEI",
+      "title": "Γιανγκστάουν 4K — Aerial Drone Shots of Downtown Youngstown, Ohio - May 19, 2026"
+    }
+  },
+  "sandusky": {
+    "cityName": "Σαντάσκι",
+    "drone": {
+      "youtubeId": "Oan37E4sK8o",
+      "title": "Σαντάσκι 4K — Sandusky Drone Tour"
+    }
+  },
+  "athens-oh": {
+    "cityName": "Άθενς",
+    "drone": {
+      "youtubeId": "KfFbDtNXoRU",
+      "title": "Άθενς 4K — Athens Ohio featuring Ohio University on April 22, 2026 drone view in 4K"
+    },
+    "live": {
+      "youtubeId": "gIw1wBIfQJ8",
+      "label": "Άθενς Live Cam",
+      "title": "Ohio Campus Webcam"
+    }
+  },
+  "lansing": {
+    "cityName": "Λάνσινγκ",
+    "drone": {
+      "youtubeId": "DrVHEvjhJ5s",
+      "title": "Λάνσινγκ 4K — Lansing - the capital city of Michigan | 4K drone footage"
+    },
+    "live": {
+      "youtubeId": "1H0iTzv2jiQ",
+      "label": "Λάνσινγκ Live Cam",
+      "title": "4 Corners Camera Downtown"
+    }
+  },
+  "detroit": {
+    "cityName": "Ντιτρόιτ",
+    "drone": {
+      "youtubeId": "r8jjjy9GiPE",
+      "title": "Ντιτρόιτ 4K — Detroit, Michigan } 4K drone footage"
+    },
+    "live": {
+      "youtubeId": "1H0iTzv2jiQ",
+      "label": "Ντιτρόιτ Live Cam",
+      "title": "4 Corners Camera Downtown"
+    }
+  },
+  "ann-arbor": {
+    "cityName": "Αν Άρμπορ",
+    "drone": {
+      "youtubeId": "-IriyDygocY",
+      "title": "Αν Άρμπορ 4K — Ann Arbor Michigan 4K Drone Footage | Aerial Views of University District & Downtown Ann Arbor"
+    },
+    "live": {
+      "youtubeId": "1H0iTzv2jiQ",
+      "label": "Αν Άρμπορ Live Cam",
+      "title": "4 Corners Camera Downtown"
+    }
+  },
+  "grand-rapids": {
+    "cityName": "Γκραντ Ράπιντς",
+    "drone": {
+      "youtubeId": "nFgliOWTZHQ",
+      "title": "Γκραντ Ράπιντς 4K — Grand Rapids, Michigan | 4K drone video"
+    },
+    "live": {
+      "youtubeId": "1H0iTzv2jiQ",
+      "label": "Γκραντ Ράπιντς Live Cam",
+      "title": "4 Corners Camera Downtown"
+    }
+  },
+  "flint": {
+    "cityName": "Φλιντ",
+    "drone": {
+      "youtubeId": "ztoDqRirUmU",
+      "title": "Φλιντ 4K — Driving Around Flint, Michigan in 4k Video"
+    },
+    "live": {
+      "youtubeId": "yWIHgMW2yVQ",
+      "label": "Φλιντ Live Cam",
+      "title": "BridgeCam by CharlevoixCam"
+    }
+  },
+  "traverse-city": {
+    "cityName": "Τράβερς Σίτι",
+    "drone": {
+      "youtubeId": "PdaXEg-cuGQ",
+      "title": "Τράβερς Σίτι 4K — Traverse City Michigan Aerial Tour | Part I | 2023"
+    },
+    "live": {
+      "youtubeId": "8-V9uEqFLwE",
+      "label": "Τράβερς Σίτι Live Cam",
+      "title": "LIVE | Traverse City, MI | Downtown Camera |"
+    }
+  },
+  "kalamazoo": {
+    "cityName": "Καλαμαζού",
+    "drone": {
+      "youtubeId": "ZzXEn5SXlJY",
+      "title": "Καλαμαζού 4K — Kalamazoo Michigan Drone Video"
+    },
+    "live": {
+      "youtubeId": "1H0iTzv2jiQ",
+      "label": "Καλαμαζού Live Cam",
+      "title": "4 Corners Camera Downtown"
+    }
+  },
+  "marquette": {
+    "cityName": "Μαρκέτ",
+    "drone": {
+      "youtubeId": "5Hc6t2cj1zo",
+      "title": "Μαρκέτ 4K — Marquette Michigan | Presque Isle Park & Lake Superior Drone Tour (4K)"
+    },
+    "live": {
+      "youtubeId": "QF5p9Xdrjls",
+      "label": "Μαρκέτ Live Cam",
+      "title": "🔴LIVE - Lake Effect Snow Hammers the UP of Michigan!  - Live Weather Channel"
+    }
+  },
+  "mackinac-island": {
+    "cityName": "Νήσος Μάκινακ",
+    "drone": {
+      "youtubeId": "JrBAuOfFzyY",
+      "title": "Νήσος Μάκινακ 4K — Mackinac Island | 4K Drone Footage"
+    },
+    "live": {
+      "youtubeId": "Mf_qId_7mlM",
+      "label": "Νήσος Μάκινακ Live Cam",
+      "title": "🔴LIVE🔴 Mackinac Bridge Camera from the Riviera Motel in Mackinaw City"
+    }
+  },
+  "saginaw": {
+    "cityName": "Σάγκινο",
+    "drone": {
+      "youtubeId": "UEqN1F471hQ",
+      "title": "Σάγκινο 4K — HD Drone Footage of Saginaw, MI (Extended)"
+    },
+    "live": {
+      "youtubeId": "zWohYnhiBpg",
+      "label": "Σάγκινο Live Cam",
+      "title": "Saginaw River Cam"
+    }
+  },
+  "springfield": {
+    "cityName": "Σπρίνγκφιλντ",
+    "drone": {
+      "youtubeId": "0Hpk9Yi54Ns",
+      "title": "Σπρίνγκφιλντ 4K — Springfield Illinois 4K /Main Attractions /Home of Abraham Lincoln! (DJI Mavic Air 2 Drone Footage)"
+    },
+    "live": {
+      "youtubeId": "a__yfG4PnxY",
+      "label": "Σπρίνγκφιλντ Live Cam",
+      "title": "Quincy, Illinois, USA | LIVE Train Camera (Fixed View – East)"
+    }
+  },
+  "rockford": {
+    "cityName": "Ρόκφορντ",
+    "drone": {
+      "youtubeId": "4UYYrjrxjSA",
+      "title": "Ρόκφορντ 4K — Rockford, Illinois Aerial Tour by Drone"
+    },
+    "live": {
+      "youtubeId": "LhNpn9L5ndM",
+      "label": "Ρόκφορντ Live Cam",
+      "title": "Rochelle, Illinois, USA | LIVE Train Camera (PTZ)"
+    }
+  },
+  "peoria": {
+    "cityName": "Πεόρια",
+    "drone": {
+      "youtubeId": "PfOFM9LxOrs",
+      "title": "Πεόρια 4K — Peoria, Illinois | 4K Drone Video"
+    }
+  },
+  "naperville": {
+    "cityName": "Νέιπερβιλ",
+    "drone": {
+      "youtubeId": "1MYLisxdvzY",
+      "title": "Νέιπερβιλ 4K — Naperville Illinois Aerial Drone Footage | Stunning 4K Views of Downtown & Riverwalk"
+    }
+  },
+  "champaign": {
+    "cityName": "Σαμπέιν",
+    "drone": {
+      "youtubeId": "_ewsldSNj5Y",
+      "title": "Σαμπέιν 4K — Snowy Champaign Urbana North End, I-74 4k Aerial Drone Footage"
+    },
+    "live": {
+      "youtubeId": "4PMMSI_p7BE",
+      "label": "Σαμπέιν Live Cam",
+      "title": "Morrow Plots Cam"
+    }
+  },
+  "evanston": {
+    "cityName": "Έβανστον",
+    "drone": {
+      "youtubeId": "9udnPeePguA",
+      "title": "Έβανστον 4K — Evanston Illinois Aerial Drone Footage | Lake Michigan & Northwestern Views in 4K"
+    },
+    "live": {
+      "youtubeId": "ChOlBrSVFNc",
+      "label": "Έβανστον Live Cam",
+      "title": "City of Evanston, IL Live Stream"
+    }
+  },
+  "galena": {
+    "cityName": "Γκαλίνα",
+    "drone": {
+      "youtubeId": "Y0ZdZugIVgY",
+      "title": "Γκαλίνα 4K — Galena, Illinois - Summer 2023 [Drone Footage 4K]"
+    }
+  },
+  "bloomington-il": {
+    "cityName": "Μπλούμινγκτον",
+    "drone": {
+      "youtubeId": "8mw2bTXZ-bc",
+      "title": "Μπλούμινγκτον 4K — A glimpse of Bloomington- Normal through a drone. #bloomingtonnormal #lifemultiplied #illinois"
+    },
+    "live": {
+      "youtubeId": "On1MRt0NqFs",
+      "label": "Μπλούμινγκτον Live Cam",
+      "title": "Galesburg, Illinois, USA | LIVE Train Camera (PTZ)"
+    }
+  },
+  "joliet": {
+    "cityName": "Τζόλιετ",
+    "drone": {
+      "youtubeId": "TKTUE0ne4Vs",
+      "title": "Τζόλιετ 4K — Joliet, Town in Illinois, USA 🇺🇸 | Joliet Illinois Drone Footage, Joliet Illinois Drone tour"
+    }
+  },
+  "indianapolis": {
+    "cityName": "Ιντιανάπολις",
+    "drone": {
+      "youtubeId": "KXk4L_TDXf4",
+      "title": "Ιντιανάπολις 4K — Indianapolis, Indiana 2025 - 4K Drone Footage 🚁 | Relaxing Aerial Tour |"
+    },
+    "live": {
+      "youtubeId": "G8iIhudKPsQ",
+      "label": "Ιντιανάπολις Live Cam",
+      "title": "Muncie, Indiana, USA | LIVE Train Camera (Fixed View – East)"
+    }
+  },
+  "fort-wayne": {
+    "cityName": "Φορτ Γουέιν",
+    "drone": {
+      "youtubeId": "-efwv82joXk",
+      "title": "Φορτ Γουέιν 4K — Soothing Drone Flight Relaxing vibes Over Fort Wayne, Indiana calming video [4k] + Ambient Music"
+    },
+    "live": {
+      "youtubeId": "MgjCjKHgT4Q",
+      "label": "Φορτ Γουέιν Live Cam",
+      "title": "Webcam shows rainbow over downtown Fort Wayne"
+    }
+  },
+  "bloomington-in": {
+    "cityName": "Μπλούμινγκτον",
+    "drone": {
+      "youtubeId": "hW2xKY-aKdc",
+      "title": "Μπλούμινγκτον 4K — Bloomington Indiana Drone Tour 4K"
+    },
+    "live": {
+      "youtubeId": "caO25rPhMOg",
+      "label": "Μπλούμινγκτον Live Cam",
+      "title": "Goose Pond Fish & Wildlife Area Visitor's Center Camera"
+    }
+  },
+  "south-bend": {
+    "cityName": "Σάουθ Μπεντ",
+    "drone": {
+      "youtubeId": "cyYAFpfq4wo",
+      "title": "Σάουθ Μπεντ 4K — South Bend, Indiana Drone Footage | Mavic 2 & DJI FPV"
+    },
+    "live": {
+      "youtubeId": "BDb_sSL-K5k",
+      "label": "Σάουθ Μπεντ Live Cam",
+      "title": "Chesterton, Indiana, USA | LIVE Train Camera (Fixed View – East)"
+    }
+  },
+  "evansville": {
+    "cityName": "Έβανσβιλ",
+    "drone": {
+      "youtubeId": "Nn32uEH-cb8",
+      "title": "Έβανσβιλ 4K — Evansville Indiana 4k drone video cityscape 60 fps"
+    },
+    "live": {
+      "youtubeId": "MqzQdTHCTOg",
+      "label": "Έβανσβιλ Live Cam",
+      "title": "Ohio River, Jeffersonville, IN | StreamTime LIVE"
+    }
+  },
+  "west-lafayette": {
+    "cityName": "Γουέστ Λαφαγιέτ",
+    "drone": {
+      "youtubeId": "1dGtPOsEznQ",
+      "title": "Γουέστ Λαφαγιέτ 4K — Take a drone tour of Purdue"
+    },
+    "live": {
+      "youtubeId": "IAC4KczQuQY",
+      "label": "Γουέστ Λαφαγιέτ Live Cam",
+      "title": "Lafayette, Indiana, USA | LIVE Train Camera (PTZ)"
+    }
+  },
+  "carmel": {
+    "cityName": "Κάρμελ",
+    "drone": {
+      "youtubeId": "NnVq8OTYKB0",
+      "title": "Κάρμελ 4K — 2022 Best Carmel, Indiana 4K Aerial Drone Stock Footage by Scholer Aerial"
+    },
+    "live": {
+      "youtubeId": "N8PQapyC8ac",
+      "label": "Κάρμελ Live Cam",
+      "title": "Berwyn BNSF Racetrack Live Railcam at O'Brien the Cleaners - Berwyn, IL #steelhighway"
+    }
+  },
+  "gary": {
+    "cityName": "Γκάρι",
+    "drone": {
+      "youtubeId": "pOe1oN92ZSU",
+      "title": "Γκάρι 4K — Gary, Indiana - Potential New Home of Chicago Bears & Michael Jacksons House | 4K Drone Video"
+    }
+  },
+  "terre-haute": {
+    "cityName": "Τερ Χοτ",
+    "drone": {
+      "youtubeId": "Q5as69QwxlY",
+      "title": "Τερ Χοτ 4K — Terre Haute, Indiana from Above | A City Between Its Past and What Comes Next"
+    }
+  },
+  "columbus-in": {
+    "cityName": "Κολόμπους",
+    "drone": {
+      "youtubeId": "oN1bz2ZFZlI",
+      "title": "Κολόμπους 4K — 🚁 Columbus, Indiana, USA | Stunning 4K Drone Views | Aerial Cinematic Tour"
+    },
+    "live": {
+      "youtubeId": "MqzQdTHCTOg",
+      "label": "Κολόμπους Live Cam",
+      "title": "Ohio River, Jeffersonville, IN | StreamTime LIVE"
     }
   }
 };
