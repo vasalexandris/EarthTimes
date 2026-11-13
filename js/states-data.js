@@ -108,6 +108,46 @@ export const US_STATES = [
         "id": "birmingham",
         "name": "Μπέρμιγχαμ",
         "englishName": "Birmingham"
+      },
+      {
+        "id": "huntsville",
+        "name": "Χάντσβιλ",
+        "englishName": "Huntsville"
+      },
+      {
+        "id": "mobile",
+        "name": "Μομπίλ",
+        "englishName": "Mobile"
+      },
+      {
+        "id": "tuscaloosa",
+        "name": "Τουσκαλούσα",
+        "englishName": "Tuscaloosa"
+      },
+      {
+        "id": "auburn",
+        "name": "Όμπερν",
+        "englishName": "Auburn"
+      },
+      {
+        "id": "florence-al",
+        "name": "Φλόρενς",
+        "englishName": "Florence"
+      },
+      {
+        "id": "dothan",
+        "name": "Ντόθαν",
+        "englishName": "Dothan"
+      },
+      {
+        "id": "gulf-shores",
+        "name": "Γκαλφ Σορς",
+        "englishName": "Gulf Shores"
+      },
+      {
+        "id": "selma",
+        "name": "Σέλμα",
+        "englishName": "Selma"
       }
     ]
   },
@@ -832,6 +872,46 @@ export const US_STATES = [
         "id": "new-orleans",
         "name": "Νέα Ορλεάνη",
         "englishName": "New Orleans"
+      },
+      {
+        "id": "shreveport",
+        "name": "Σρίβπορτ",
+        "englishName": "Shreveport"
+      },
+      {
+        "id": "lafayette",
+        "name": "Λαφαγιέτ",
+        "englishName": "Lafayette"
+      },
+      {
+        "id": "lake-charles",
+        "name": "Λέικ Τσαρλς",
+        "englishName": "Lake Charles"
+      },
+      {
+        "id": "alexandria-la",
+        "name": "Αλεξάνδρεια",
+        "englishName": "Alexandria"
+      },
+      {
+        "id": "monroe-la",
+        "name": "Μονρόε",
+        "englishName": "Monroe"
+      },
+      {
+        "id": "houma",
+        "name": "Χούμα",
+        "englishName": "Houma"
+      },
+      {
+        "id": "new-iberia",
+        "name": "Νιου Αϊμπίρια",
+        "englishName": "New Iberia"
+      },
+      {
+        "id": "natchitoches",
+        "name": "Νάκιτος",
+        "englishName": "Natchitoches"
       }
     ]
   },
@@ -1247,6 +1327,46 @@ export const US_STATES = [
         "id": "biloxi",
         "name": "Μπιλόξι",
         "englishName": "Biloxi"
+      },
+      {
+        "id": "gulfport",
+        "name": "Γκάλφπορτ",
+        "englishName": "Gulfport"
+      },
+      {
+        "id": "oxford-ms",
+        "name": "Όξφορντ",
+        "englishName": "Oxford"
+      },
+      {
+        "id": "tupelo",
+        "name": "Τούπελο",
+        "englishName": "Tupelo"
+      },
+      {
+        "id": "hattiesburg",
+        "name": "Χάτισμπεργκ",
+        "englishName": "Hattiesburg"
+      },
+      {
+        "id": "vicksburg",
+        "name": "Βίκσμπεργκ",
+        "englishName": "Vicksburg"
+      },
+      {
+        "id": "natchez",
+        "name": "Νάτσεζ",
+        "englishName": "Natchez"
+      },
+      {
+        "id": "meridian",
+        "name": "Μεριντιάν",
+        "englishName": "Meridian"
+      },
+      {
+        "id": "southaven",
+        "name": "Σάουθαβεν",
+        "englishName": "Southaven"
       }
     ]
   },
@@ -2427,6 +2547,14 @@ export const CITY_TO_STATE = {
   "cedar-rapids": "iowa",
   "montgomery": "alabama",
   "birmingham": "alabama",
+  "huntsville": "alabama",
+  "mobile": "alabama",
+  "tuscaloosa": "alabama",
+  "auburn": "alabama",
+  "florence-al": "alabama",
+  "dothan": "alabama",
+  "gulf-shores": "alabama",
+  "selma": "alabama",
   "juneau": "alaska",
   "anchorage": "alaska",
   "fairbanks": "alaska",
@@ -2488,6 +2616,14 @@ export const CITY_TO_STATE = {
   "new-london": "connecticut",
   "baton-rouge": "louisiana",
   "new-orleans": "louisiana",
+  "shreveport": "louisiana",
+  "lafayette": "louisiana",
+  "lake-charles": "louisiana",
+  "alexandria-la": "louisiana",
+  "monroe-la": "louisiana",
+  "houma": "louisiana",
+  "new-iberia": "louisiana",
+  "natchitoches": "louisiana",
   "boston": "massachusetts",
   "cambridge": "massachusetts",
   "salem": "massachusetts",
@@ -2528,6 +2664,14 @@ export const CITY_TO_STATE = {
   "ann-arbor": "michigan",
   "jackson": "mississippi",
   "biloxi": "mississippi",
+  "gulfport": "mississippi",
+  "oxford-ms": "mississippi",
+  "tupelo": "mississippi",
+  "hattiesburg": "mississippi",
+  "vicksburg": "mississippi",
+  "natchez": "mississippi",
+  "meridian": "mississippi",
+  "southaven": "mississippi",
   "helena": "montana",
   "billings": "montana",
   "bozeman": "montana",

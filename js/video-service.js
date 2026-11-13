@@ -1,4 +1,4 @@
-import { CITY_TO_STATE } from './states-data.js?v=20261113_us5';
+import { CITY_TO_STATE } from './states-data.js?v=20261114_us1';
 /**
  * Video Service Module
  * Registry of verified high-definition YouTube video tours for all cities
@@ -10015,6 +10015,220 @@ export const CITY_VIDEOS = {
           "youtubeId": "PmXKd2Z_TVA",
           "label": "Τζόνσον Σίτι Live Cam",
           "title": "Historic Town of Jonesborough, TN | East Main Street Live Cam"
+      }
+  },
+  "baton-rouge": {
+      "drone": {
+          "youtubeId": "5qGzPj6f9MU",
+          "title": "Μπατόν Ρουζ 4K — Baton Rouge Louisiana 4K | Cinematic Drone Footage of the Mississippi River"
+      }
+  },
+  "shreveport": {
+      "drone": {
+          "youtubeId": "r2OoZ8lD60I",
+          "title": "Σρίβπορτ 4K — Downtown Shreveport 4k Aerial Drone Stock Footage"
+      }
+  },
+  "lafayette": {
+      "drone": {
+          "youtubeId": "unKMq2nX39k",
+          "title": "Λαφαγιέτ 4K — Lafayette, Louisiana [4K] Aerial Drone Footage"
+      }
+  },
+  "lake-charles": {
+      "drone": {
+          "youtubeId": "Ly3iIEczdpI",
+          "title": "Λέικ Τσαρλς 4K — Drone Lake Charles, Louisiana | Lake Charles"
+      }
+  },
+  "alexandria-la": {
+      "drone": {
+          "youtubeId": "Wr-CdFBczf0",
+          "title": "Αλεξάνδρεια 4K — Drone Alexandria, Louisiana | Red River"
+      }
+  },
+  "monroe-la": {
+      "drone": {
+          "youtubeId": "FRKR_b00hQQ",
+          "title": "Μονρόε 4K — Driving Downtown Monroe, Louisiana | 4K ASMR | Sunset Vibes"
+      }
+  },
+  "houma": {
+      "drone": {
+          "youtubeId": "ZyTh0C5cSCQ",
+          "title": "Χούμα 4K — Potensic ATOM unedited 4k Footage of a fair in Houma Louisiana."
+      }
+  },
+  "new-iberia": {
+      "drone": {
+          "youtubeId": "Fr7DS__DM40",
+          "title": "Νιου Αϊμπίρια 4K — Drone views of City Park & Historic New Iberia LA"
+      }
+  },
+  "natchitoches": {
+      "drone": {
+          "youtubeId": "B0nys1FhBm4",
+          "title": "Νάκιτος 4K — Falling in Love with Natchitoches, Louisiana 💛 | Small-Town Southern Charm"
+      }
+  },
+  "jackson": {
+      "drone": {
+          "youtubeId": "yFcePj8mLVY",
+          "title": "Τζάκσον 4K — Jackson, Mississippi - [4K] Drone Tour"
+      }
+  },
+  "biloxi": {
+      "drone": {
+          "youtubeId": "P8m5gTP5cYk",
+          "title": "Μπιλόξι 4K — Biloxi, Mississippi Aerial Drone Footage & Gulf Coast"
+      }
+  },
+  "gulfport": {
+      "drone": {
+          "youtubeId": "1MoDDvuERXw",
+          "title": "Γκάλφπορτ 4K — Mississippi Coast Drone Video Tour: Gulfport & Harbor"
+      }
+  },
+  "oxford-ms": {
+      "drone": {
+          "youtubeId": "GPnTslGO0aI",
+          "title": "Όξφορντ 4K — Welcome to Oxford, MS! #dji #mavic3pro #oxford #drone #fly #drive #olemiss"
+      }
+  },
+  "tupelo": {
+      "drone": {
+          "youtubeId": "4DDiBWpi8ZM",
+          "title": "Τούπελο 4K — Drone Footage Over Tupelo, Mississippi"
+      },
+      "live": {
+          "youtubeId": "XJM9_uSJRIw",
+          "label": "Τούπελο Live Cam",
+          "title": "Mississippi LIVE Weather Network"
+      }
+  },
+  "hattiesburg": {
+      "drone": {
+          "youtubeId": "LD8dz9ZI5FQ",
+          "title": "Χάτισμπεργκ 4K — Aerial View - Hattiesburg, MS"
+      }
+  },
+  "vicksburg": {
+      "drone": {
+          "youtubeId": "VHXVElAlJM0",
+          "title": "Βίκσμπεργκ 4K — Vicksburg  Mississippi by Drone"
+      }
+  },
+  "natchez": {
+      "drone": {
+          "youtubeId": "KfM3XxqDAaQ",
+          "title": "Νάτσεζ 4K — Natchez, Mississippi | A Historical Tour Thru Time | Cinematic Aerial Travel Film 4K"
+      }
+  },
+  "meridian": {
+      "drone": {
+          "youtubeId": "BZ5vGeDcf80",
+          "title": "Μεριντιάν 4K — Drone Meridian, Mississippi"
+      }
+  },
+  "southaven": {
+      "drone": {
+          "youtubeId": "sBJ6nu-uTMc",
+          "title": "Σάουθαβεν 4K — Mississippi From Above 🌅 | Stunning 4K Aerial Drone Footage of the Magnolia State"
+      }
+  },
+  "montgomery": {
+      "drone": {
+          "youtubeId": "1ykRfjY03gs",
+          "title": "Μοντγκόμερι 4K — Montgomery, Alabama, USA 🇺🇸 | 4K Drone Footage"
+      },
+      "live": {
+          "youtubeId": "oEDz7tqaf_k",
+          "label": "Μοντγκόμερι Live Cam",
+          "title": "🔴 LIVE: Alabama Weather Webcams & SkyCams Across AL"
+      }
+  },
+  "birmingham": {
+      "drone": {
+          "youtubeId": "Gy2pe01lHj8",
+          "title": "Μπέρμιγχαμ 4K — Birmingham Alabama 4K Drone Footage | Downtown Skyline, Vulcan Park & Railroad Park Aerial Views"
+      },
+      "live": {
+          "youtubeId": "KUM6HBnv_fw",
+          "label": "Μπέρμιγχαμ Live Cam",
+          "title": "Birmingham, Alabama Live Railcam (CSX/NS Diamond)"
+      }
+  },
+  "huntsville": {
+      "drone": {
+          "youtubeId": "743YZCE75Yk",
+          "title": "Χάντσβιλ 4K — Huntsville Alabama from Above 🚁 | Beautiful 4K Drone Views"
+      },
+      "live": {
+          "youtubeId": "oEDz7tqaf_k",
+          "label": "Χάντσβιλ Live Cam",
+          "title": "🔴 LIVE: Alabama Weather Webcams & SkyCams Across AL"
+      }
+  },
+  "mobile": {
+      "drone": {
+          "youtubeId": "uaQSKJvQ7GY",
+          "title": "Μομπίλ 4K — Mobile Alabama 4K Drone Footage | Downtown Skyline, USS Alabama & Gulf Coast Aerial Views"
+      },
+      "live": {
+          "youtubeId": "mNlMCr5eeXs",
+          "label": "Μομπίλ Live Cam",
+          "title": "Downtown Mobile, AL Live Cam from Dauphin's"
+      }
+  },
+  "tuscaloosa": {
+      "drone": {
+          "youtubeId": "rRPZYG0odj4",
+          "title": "Τουσκαλούσα 4K — Tuscaloosa Alabama 4K Drone Footage 🏈 | University of Alabama, Downtown & Riverwalk Aerial Views"
+      },
+      "live": {
+          "youtubeId": "oEDz7tqaf_k",
+          "label": "Τουσκαλούσα Live Cam",
+          "title": "🔴 LIVE: Alabama Weather Webcams & SkyCams Across AL"
+      }
+  },
+  "auburn": {
+      "drone": {
+          "youtubeId": "-iy4hf9alq8",
+          "title": "Όμπερν 4K — Auburn Alabama 4K Drone Footage  | Auburn University, Jordan-Hare Stadium & Downtown Aerial Views"
+      },
+      "live": {
+          "youtubeId": "5WN2PJ_Qxjs",
+          "label": "Όμπερν Live Cam",
+          "title": "City of Auburn Toomer's Corner Webcam"
+      }
+  },
+  "florence-al": {
+      "drone": {
+          "youtubeId": "W-L_bB_LRVQ",
+          "title": "Φλόρενς 4K — Wilson Dam & Tennessee River Aerial Tour | Florence, AL"
+      }
+  },
+  "dothan": {
+      "drone": {
+          "youtubeId": "DxXiKe2LBE8",
+          "title": "Ντόθαν 4K — Dothan, Alabama by Drone"
+      }
+  },
+  "gulf-shores": {
+      "drone": {
+          "youtubeId": "J1LkPAX1Jps",
+          "title": "Γκαλφ Σορς 4K — Cotton Bayou Beach Drone Tour | Orange Beach, Alabama's Beaches 4K Aerial Views"
+      },
+      "live": {
+          "youtubeId": "3Rp_9FUKH4I",
+          "label": "Γκαλφ Σορς Live Cam",
+          "title": "Alabama Gulf Coast Beach Live Cam"
+      }
+  },
+  "selma": {
+      "drone": {
+          "youtubeId": "7D6wttCZkro",
+          "title": "Σέλμα 4K — Alabama Road Trippin' : Selma - The Queen City of the Blackbelt in 4K"
       }
   }
 };

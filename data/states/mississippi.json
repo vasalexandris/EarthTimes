@@ -550,6 +550,1910 @@
           "desc": "Σύγχρονη κεραμική τέχνη σε κτίρια του Frank Gehry."
         }
       ]
+    },
+    {
+      "id": "gulfport",
+      "name": "Γκάλφπορτ",
+      "englishName": "Gulfport",
+      "nickname": "The Gateway to the Gulf Coast",
+      "type": "city",
+      "coords": [
+        30.3674,
+        -89.0928
+      ],
+      "zoom": 12.7,
+      "stats": {
+        "population": "72.000 (420.000 μητροπολιτική)",
+        "founded": "1898",
+        "area": "166 km²",
+        "elevation": "9 μ."
+      },
+      "quote": "«Η πόλη-πύλη της ακτής του Μισισίπι, όπου το δεύτερο μεγαλύτερο λιμάνι της πολιτείας συναντά παραλίες, καζίνο και το πάρκο Jones.»",
+      "geo": {
+        "summary": "Χτισμένη σε παράκτια λωρίδα ανάμεσα στον Mississippi Sound και την ενδοχώρα, η Γκάλφπορτ αποτελεί το κέντρο της ακτής της πολιτείας. Η πόλη διαθέτει φυσικό λιμάνι, παραλίες 40 km και το πάρκο Jones στη λίμνη Bernard.",
+        "highlights": [
+          {
+            "title": "Λιμάνι Γκάλφπορτ",
+            "desc": "Το δεύτερο μεγαλύτερο λιμάνι του Μισισίπι και ένα από τα σημαντικότερα του Κόλπου, που διακινεί containers, φορτία LNG και στρατιωτικό υλικό."
+          },
+          {
+            "title": "Mississippi Sound",
+            "desc": "Ο προστατευμένος κόλπος με ήρεμα νερά που προσφέρει ψάρεμα, ιστιοπλοΐα και αλιεία γαρίδας-στρείδι."
+          },
+          {
+            "title": "Λίμνη Bernard & Jones Park",
+            "desc": "Μια τεχνητή λίμνη στο κέντρο της πόλης με μονοπάτια, marina και εκδηλώσεις στο μεγάλο Jones Park."
+          }
+        ]
+      },
+      "hist": {
+        "summary": "Ιδρύθηκε το 1898 από τον William H. Hardy και τον.Toolkit Tucker ως τερματικός σταθμός του σιδηροδρόμου Gulf & Ship Island. Η πόλη αναπτύχθηκε ως λιμάνι και θερέτρο, καταστράφηκε από τον τυφώνα Camille (1969) και τον Katrina (2005) και ξαναχτίστηκε με νέες υποδομές και καζίνο.",
+        "highlights": [
+          {
+            "year": "1898",
+            "event": "Ίδρυση & Σιδηρόδρομος",
+            "desc": "Ο σιδηρόδρομος Gulf & Ship Island φτάνει στον κόλπο και η πόλη σχεδιάζεται ως τερματικός σταθμός και λιμάνι."
+          },
+          {
+            "year": "1969",
+            "event": "Τυφώνας Camille",
+            "desc": "Ο Camille χτυπά την ακτή με ανέμους 300 km/h, καταστρέφοντας το μεγαλύτερο μέρος της πόλης· ένας κάτοικος θυμάται το «σημάδι Camille» στα κτίρια."
+          },
+          {
+            "year": "2005",
+            "event": "Τυφώνας Katrina",
+            "desc": "Ο Katrina καταστρέφει το 80% των κτιρίων και βυθίζει το λιμάνι· η πόλη ξαναχτίστηκε με νέους κανονισμούς και αυξημένα αναχώματα."
+          }
+        ]
+      },
+      "demo": {
+        "summary": "Δεύτερη μεγαλύτερη πόλη του Μισισίπι με 72.000 κατοίκους και μητρόπολη 420.000. Η πόλη είναι κοινωνικά ποικιλόμορφη, με ισχυρή αλιευτική και στρατιωτική κοινότητα, καθώς και αυξανόμενη κοινότητα Λατινοαμερικανών.",
+        "details": [
+          {
+            "label": "Λιμάνι & Ναυτική Βάση",
+            "text": "Το λιμάνι Gulfport και η ναυτική βάση Construction Battalion Center (Seabees) είναι οι μεγαλύτεροι εργοδότες."
+          },
+          {
+            "label": "Καζίνο & Τουρισμός",
+            "text": "Τα καζίνο Island View, Beau Rivage (γειτονικό Biloxi) και Treasure Bay προσελκύουν εκατομμύρια επισκέπτες ετησίως."
+          },
+          {
+            "label": "Αλιεία & Κοινότητες",
+            "text": "Ισχυρή κοινότητα βιετναμέζων και κροατών αλιέων που διατηρούν την παράδοση γαρίδας και στρειδιών."
+          }
+        ]
+      },
+      "cult": {
+        "summary": "Η Γκάλφπορτ είναι «η πύλη του Κόλπου»: Mardi Gras, θαλάσσια φεστιβάλ, ναυτική κληρονομιά και το Lynn Meadows Discovery Center για παιδιά.",
+        "items": [
+          {
+            "title": "Mardi Gras της Ακτής",
+            "desc": "Παρελάσεις με άρματα και mystic societies που μοιράζουν χάντρες από τη δεκαετία του 1908."
+          },
+          {
+            "title": "Lynn Meadows Discovery Center",
+            "desc": "Το μεγαλύτερο παιδικό μουσείο του Μισισίπι, σε ιστορικό κτίριο του 1915, με διαδραστικά εκθέματα."
+          },
+          {
+            "title": "Γλυπτική κληρονομιά",
+            "desc": "Η πόλη φιλοξενεί διάφορα outdoor γλυπτά στο Jones Park και στη Lizana Square, που ανανεώθηκαν μετά τον Katrina."
+          }
+        ]
+      },
+      "guide": {
+        "summary": "Πέντε στάσεις για να ανακαλύψεις τη Γκάλφπορτ: από το πάρκο Jones και τη χειμαρίδα παραλία μέχρι το παιδικό μουσείο και το λιμάνι.",
+        "items": [
+          {
+            "title": "Jones Park",
+            "cat": "nature",
+            "catLabel": "🌳 Πάρκα",
+            "desc": "Πάρκο 300 στρεμμάτων στη λίμνη Bernard με marina, amphitheater και μονοπάτια.",
+            "wiki": "Jones_Park_(Gulfport)"
+          },
+          {
+            "title": "Lynn Meadows Discovery Center",
+            "cat": "museum",
+            "catLabel": "🖼️ Μουσείο",
+            "desc": "Παιδικό μουσείο σε ιστορικό σιδηροδρομικό σταθμό του 1915, με διαδραστικά εκθέματα.",
+            "wiki": "Lynn_Meadows_Discovery_Center"
+          },
+          {
+            "title": "Ship Island Excursions",
+            "cat": "nature",
+            "catLabel": "🌊 Θάλασσα",
+            "desc": "Φέρι από τη μαρίνα Gulport για το Ship Island με παρθένα παραλίες και Fort Massachusetts.",
+            "wiki": "Ship_Island_(Mississippi)"
+          },
+          {
+            "title": "Mississippi Coast Model Railroad Museum",
+            "cat": "museum",
+            "catLabel": "🖼️ Μουσείο",
+            "desc": "Μουσείο μοντελισμού σιδηροδρόμων με 80+ layouts σε ιστορικό κτίριο.",
+            "wiki": "Mississippi_Coast_Model_Railroad_Museum"
+          },
+          {
+            "title": "Gulfport Harbor",
+            "cat": "history",
+            "catLabel": "🏛️ Ιστορία",
+            "desc": "Η ιστορική προκυμαία με μαρίνα, εστιατόρια και θέα στα πλοία του λιμανιού.",
+            "wiki": "Port_of_Gulfport"
+          }
+        ]
+      },
+      "gastro": {
+        "summary": "Η κουζίνα της Γκάλφπορτ είναι θαλασσινή του Κόλπου με νοτιοδυτικές επιρροές: γαρίδες, στρείδια, gumbo και po’ boys.",
+        "items": [
+          {
+            "title": "Γαρίδες του Μισισιπή Sound",
+            "desc": "Φρέσκες γαρίδες βρασμένες με μπαχαρικά ή τηγανητές, σερβιρισμένες με cocktail sauce.",
+            "tag": "Θαλασσινά"
+          },
+          {
+            "title": "Po’ Boy",
+            "desc": "Σάντουιτς με γαρίδες, στρείδια ή roast beef, σερβιρισμένο «dressed» με μαρούλι και σάλτσα.",
+            "tag": "Street food"
+          },
+          {
+            "title": "Seafood Gumbo",
+            "desc": "Πηχτή σούπα roux με okra, αντούιγ, γαρίδες και καβούρια από τον Κόλπο.",
+            "tag": "Κρεολικό"
+          },
+          {
+            "title": "Bread Pudding",
+            "desc": "Πουτίγκα μπαγιάτικου ψωμιού με σταφίδες και σάλτσα bourbon, κλασικό επιδόρπιο των παραλιακών εστιατορίων.",
+            "tag": "Γλυκό"
+          }
+        ]
+      },
+      "eco": {
+        "summary": "Η Γκάλφπορτ επενδύει στην αναγέννηση των υγροτόπων και στην προστασία των ακτών μετά τους τυφώνες Camille και Katrina.",
+        "items": [
+          {
+            "title": "Σύστημα Πράσινων Μονοπατιών",
+            "desc": "Δίκτυο 25+ km ποδηλατικών μονοπατιών που συνδέουν Jones Park με το Biloxi.",
+            "cat": "business",
+            "catLabel": "🚲 Κινητικότητα",
+            "wiki": "Gulfport,_Mississippi"
+          },
+          {
+            "title": "Αποκατάσταση Υφάλων Στρειδιών",
+            "desc": "Τεχνητοί ύφαλοι από ανακυκλωμένα κελύφη που μειώνουν την ενέργεια των κυμάτων και στηρίζουν την αλιεία.",
+            "cat": "business",
+            "catLabel": "🌊 Θάλασσα",
+            "wiki": "Oyster_reef_restoration"
+          },
+          {
+            "title": "Biloxi Marsh Lands",
+            "desc": "Προστατευόμενοι υγρότοποι μεταξύ Γκάλφπορτ και Biloxi που προστατεύουν από πλημμύρες.",
+            "cat": "nature",
+            "catLabel": "🌿 Υγρότοποι",
+            "wiki": "Mississippi_Sound"
+          }
+        ]
+      },
+      "pastVsPresent": [
+        {
+          "epoch": "Γκάλφπορτ 1926: Λιμάνι και Ξυλεία",
+          "content": "Μια πόλη 7.000 κατοίκων με λιμάνι που εξάγει ξυλεία πεύκου και βαμβάκι, με σιδηρόδρομο και μικρές αλιευτικές βάρκες."
+        },
+        {
+          "epoch": "Γκάλφπορτ 2026: Καζίνο & Λιμάνι LNG",
+          "content": "Πόλη 72.000 κατοίκων με το δεύτερο μεγαλύτερο λιμάνι της πολιτείας, καζίνο και 6+ εκατομμύρια επισκέπτες ετησίως."
+        }
+      ],
+      "pois": [
+        {
+          "name": "Jones Park",
+          "category": "nature",
+          "coords": [
+            30.3923,
+            -89.0943
+          ],
+          "desc": "Πάρκο 300 στρεμμάτων στη λίμνη Bernard."
+        },
+        {
+          "name": "Lynn Meadows Discovery Center",
+          "category": "museum",
+          "coords": [
+            30.3852,
+            -89.0926
+          ],
+          "desc": "Παιδικό μουσείο."
+        },
+        {
+          "name": "Gulfport Harbor",
+          "category": "history",
+          "coords": [
+            30.3657,
+            -89.0939
+          ],
+          "desc": "Ιστορική προκυμαία και μαρίνα."
+        },
+        {
+          "name": "Island View Casino",
+          "category": "culture",
+          "coords": [
+            30.3708,
+            -89.1153
+          ],
+          "desc": "Καζίνο και ξενοδοχείο στην παραλία."
+        },
+        {
+          "name": "Mississippi Coast Model Railroad Museum",
+          "category": "museum",
+          "coords": [
+            30.3865,
+            -89.1056
+          ],
+          "desc": "Μουσείο μοντελισμού σιδηροδρόμων."
+        }
+      ]
+    },
+    {
+      "id": "oxford-ms",
+      "name": "Όξφορντ",
+      "englishName": "Oxford",
+      "nickname": "The Cultural Mecca of the South / Η Αθήνα του Νότου",
+      "type": "city",
+      "coords": [
+        34.3668,
+        -89.5195
+      ],
+      "zoom": 13.0,
+      "stats": {
+        "population": "27.000 (60.000 μητροπολιτική)",
+        "founded": "1837",
+        "area": "26 km²",
+        "elevation": "146 μ."
+      },
+      "quote": "«Η πόλη του William Faulkner και του University of Mississippi, που παραμένει λογοτεχνική πρωτεύουσα του αμερικανικού Νότου.»",
+      "geo": {
+        "summary": "Χτισμένη σε λόφους της βόρειας κεντρικής Αλαμπάμα-Μισισιπή, στην καρδιά του λοφώδους «North Mississippi Hill Country». Η πόλη περιβάλλεται από δάση βελανιδιάς, πεύκου και λιβάδια, με μικρές ρεματιές.",
+        "highlights": [
+          {
+            "title": "Λόφοι North Mississippi",
+            "desc": "Οι χαμηλοί λόφοι της βόρειας πολιτείας, με δάση και ρεματιές που θυμίζουν τους Απαλάχιους."
+          },
+          {
+            "title": "Ποταμός Tallahatchie",
+            "desc": "Ρέει βόρεια της πόλης και είναι διάσημος από το τραγούδι «Ode to Billie Joe» του Bobbie Gentry."
+          },
+          {
+            "title": "Καμπ του University of Mississippi",
+            "desc": "Η πανεπιστημιούπολη σε λόφο, με βελανιδιές αιώνων και το ιστορικό Circle."
+          }
+        ]
+      },
+      "hist": {
+        "summary": "Ιδρύθηκε το 1837 και ονομάσθηκε από το βρετανικό Όξφορντ με την ελπίδα να γίνει κέντρο εκπαίδευσης. Το 1848 ιδρύθηκε το University of Mississippi. Ο William Faulkner έζησε εδώ από το 1930 μέχρι τον θάνατό του το 1962. Η πόλη έγινε θέατρο των φυλετικών εντάσεων το 1962 με την εγγραφή του James Meredith.",
+        "highlights": [
+          {
+            "year": "1848",
+            "event": "Ίδρυση University of Mississippi",
+            "desc": "Το Ole Miss ανοίγει ως πρώτο πανεπιστήμιο της πολιτείας, που σχεδιάσθηκε από τον ίδιο αρχιτέκτονα με το Yale."
+          },
+          {
+            "year": "1930",
+            "event": "Faulkner settles στο Rowan Oak",
+            "desc": "Ο William Faulkner αγοράζει το Rowan Oak, όπου θα γράψει «The Sound and the Fury», «Absalom, Absalom!» και θα κερδίσει το Nobel το 1949."
+          },
+          {
+            "year": "1962",
+            "event": "Ο James Meredith εγγράφεται στο Ole Miss",
+            "desc": "Ο πρώτος μαύρος φοιτητής εγγράφεται στο πανεπιστήμιο, που προκάλεσε ταραχές και η αντιπαράθεση JFK-Ross Barnett."
+          }
+        ]
+      },
+      "demo": {
+        "summary": "Πανεπιστημιακή πόλη 27.000 κατοίκων με 24.000+ φοιτητές. Η πόλη έχει υψηλό ποσοστό πτυχίων και είναι ένα από τα πιο μορφωμένα κέντρα της πολιτείας, με ισχυρή αφροαμερικανική κοινότητα (~25%).",
+        "details": [
+          {
+            "label": "Εκπαίδευση",
+            "text": "Το University of Mississippi (Ole Miss) με 24.000 φοιτητές είναι ο κυρίαρχος εργοδότης και η κινητήριος δύναμη της πόλης."
+          },
+          {
+            "label": "Λογοτεχνία & Τουρισμός",
+            "text": "Το Rowan Oak, το Yoknapatawpha Festival και οι εκδόσεις Square Books προσελκύουν λογοτεχνικό τουρισμό."
+          },
+          {
+            "label": "Ιατρική & Έρευνα",
+            "text": "Το University of Mississippi Medical Center (κοντά στο Jackson) και οι ερευνητικές κλινικές είναι ζωτικής σημασίας."
+          }
+        ]
+      },
+      "cult": {
+        "summary": "Το Όξφορντ είναι η «Αθήνα του Νότου» και η «πολιτιστική Μέκκα»: λογοτεχνία, μουσική και Southern Charm. Φιλοξενεί το ετήσιο Oxford Conference for the Book.",
+        "items": [
+          {
+            "title": "Rowan Oak",
+            "desc": "Η οικία του William Faulkner από το 1930, που σήμερα είναι μουσείο με αυθεντικά έπιπλα και τα χειρόγραφα του Faulkner."
+          },
+          {
+            "title": "Square Books",
+            "desc": "Ένα από τα κορυφαία ανεξάρτητα βιβλιοπωλεία των ΗΠΑ, στην ιστορική πλατεία της πόλης, με ενεργή παρουσία συγγραφέων."
+          },
+          {
+            "title": "Double Decker Festival",
+            "desc": "Ετήσιο φεστιβάλ μουσικής και τέχνης σε διώροφο λεωφορείο (Oxford Double Decker) κάθε Άνοιξη."
+          }
+        ]
+      },
+      "guide": {
+        "summary": "Πέντε στάσεις για να ζήσεις το Όξφορντ: από το Rowan Oak και το πανεπιστήμιο μέχρι την ιστορική πλατεία και το μουσείο.",
+        "items": [
+          {
+            "title": "Rowan Oak",
+            "cat": "history",
+            "catLabel": "🏛️ Ιστορία",
+            "desc": "Η κατοικία-μουσείο του William Faulkner με τον κήπο, την ξύλινη γράφουσα και τις σημειώσεις του.",
+            "wiki": "Rowan_Oak"
+          },
+          {
+            "title": "University of Mississippi Campus",
+            "cat": "culture",
+            "catLabel": "🎨 Πολιτισμός",
+            "desc": "Η ιστορική πανεπιστημιούπολη με το Circle, το Lyceum και το Confederate Monument.",
+            "wiki": "University_of_Mississippi"
+          },
+          {
+            "title": "Historic Square",
+            "cat": "culture",
+            "catLabel": "🎨 Πολιτισμός",
+            "desc": "Η πλατεία με Square Books, ιστορικά κτίρια, εστιατόρια και καφενεία της «Southern Living».",
+            "wiki": "Oxford,_Mississippi"
+          },
+          {
+            "title": "Vaught-Hemingway Stadium",
+            "cat": "history",
+            "catLabel": "🏛️ Ιστορία",
+            "desc": "Γήπεδο 65.000+ θεατών του Ole Miss Rebels, που σταμάτα την πόλη κάθε Σάββατο φθινοπώρου.",
+            "wiki": "Vaught%E2%80%93Hemingway_Stadium"
+          },
+          {
+            "title": "University Museum",
+            "cat": "museum",
+            "catLabel": "🖼️ Μουσείο",
+            "desc": "Συλλογή ελληνικών και ρωμαϊκών antiquities, southern folk art και Thornton Doswell.Collections.",
+            "wiki": "University_of_Mississippi_Museum"
+          }
+        ]
+      },
+      "gastro": {
+        "summary": "Η κουζίνα του Όξφορντ είναι «νέα νότια» με επιρροές από τους εταιρικούς σεφ που ελκύονται από το πανεπιστήμιο και τη λογοτεχνική φήμη.",
+        "items": [
+          {
+            "title": "Southern Fried Chicken",
+            "desc": "Κοτόπουλο με κρούστα μπαχαρικών, σερβιρισμένο με biscuits, gravy και τηγανητές πράσινες ντομάτες.",
+            "tag": "Κλασικό"
+          },
+          {
+            "title": "Country Ham",
+            "desc": "Καπνιστό χοιρινό ham της Virginia που σερβίρεται σε μπισκότα ως breakfast sandwich.",
+            "tag": "Πρωινό"
+          },
+          {
+            "title": "Pimiento Cheese",
+            "desc": "Κρέμα από τυρί cheddar, pimiento και μπαχαρικά, που σερβίρεται με κράκερ ή σε sandwich.",
+            "tag": "Καθιερωμένο"
+          },
+          {
+            "title": "Mint Julep",
+            "desc": "Ποτό από bourbon, μέντα και crushed ice, που είναι το επίσημο drink του Ole Miss και του Kentucky Derby.",
+            "tag": "Ποτό"
+          }
+        ]
+      },
+      "eco": {
+        "summary": "Το Όξφορντ έχει βραβευτεί ως «Tree City USA» για περισσότερα από 20 χρόνια, με δασοπονικά προγράμματα και μονοπάτια.",
+        "items": [
+          {
+            "title": "Tree City USA",
+            "desc": "Πρόγραμμα δεντροφύτευσης της πόλης με πάνω από 30 χρόνια συμμετοχής στο εθνικό δίκτυο.",
+            "cat": "business",
+            "catLabel": "🌱 Πράσινη Πόλη",
+            "wiki": "Tree_City_USA"
+          },
+          {
+            "title": "Lamar Park & Avent Park",
+            "desc": "Δίκτυο αστικών πάρκων με μονοπάτια, παιδικές χαρές και αθλητικές εγκαταστάσεις.",
+            "cat": "nature",
+            "catLabel": "🌳 Πάρκα",
+            "wiki": "Oxford,_Mississippi"
+          },
+          {
+            "title": "Bailey's Woods Trail",
+            "desc": "Μονοπάτι 4 km που συνδέει το Rowan Oak με το University Museum μέσα από δάσος βελανιδιάς.",
+            "cat": "nature",
+            "catLabel": "🌿 Φύση",
+            "wiki": "Bailey%27s_Woods_Trail"
+          }
+        ]
+      },
+      "pastVsPresent": [
+        {
+          "epoch": "Όξφορντ 1926: Πανεπιστήμιο και Φυτειές",
+          "content": "Μια μικρή πανεπιστημιακή πόλη 2.500 κατοίκων με Ole Miss 700 φοιτητών και βαμβακοφυτείες γύρω, που δεν έχει ακόμη ακούσει για τον Faulkner."
+        },
+        {
+          "epoch": "Όξφορντ 2026: Λογοτεχνικό Κέντρο",
+          "content": "Πόλη 27.000 κατοίκων με 24.000 φοιτητές, Square Books και Rowan Oak που προσελκύουν λογοτεχνικό τουρισμό, και αναγνωρίζεται ως «πολιτιστική Μέκκα» του Νότου."
+        }
+      ],
+      "pois": [
+        {
+          "name": "Rowan Oak",
+          "category": "history",
+          "coords": [
+            34.3635,
+            -89.521
+          ],
+          "desc": "Η κατοικία του William Faulkner."
+        },
+        {
+          "name": "University of Mississippi Lyceum",
+          "category": "history",
+          "coords": [
+            34.3653,
+            -89.526
+          ],
+          "desc": "Το ιστορικό κτίριο του 1848."
+        },
+        {
+          "name": "Historic Square",
+          "category": "culture",
+          "coords": [
+            34.3675,
+            -89.5195
+          ],
+          "desc": "Η ιστορική πλατεία με Square Books."
+        },
+        {
+          "name": "Vaught-Hemingway Stadium",
+          "category": "history",
+          "coords": [
+            34.3575,
+            -89.524
+          ],
+          "desc": "Γήπεδο 65.000+ θέσεων."
+        },
+        {
+          "name": "University Museum",
+          "category": "museum",
+          "coords": [
+            34.3647,
+            -89.529
+          ],
+          "desc": "Συλλογή antiquities και southern art."
+        }
+      ]
+    },
+    {
+      "id": "tupelo",
+      "name": "Τούπελο",
+      "englishName": "Tupelo",
+      "nickname": "The Birthplace of Elvis Presley / All-America City",
+      "type": "city",
+      "coords": [
+        34.2576,
+        -88.7034
+      ],
+      "zoom": 12.8,
+      "stats": {
+        "population": "38.000 (140.000 μητροπολιτική)",
+        "founded": "1870",
+        "area": "166 km²",
+        "elevation": "106 μ."
+      },
+      "quote": "«Η γενέτειρα του Elvis Presley και το κέντρο του βόρειου Μισισίπι, όπου η μουσική κληρονομιά συναντά τη βιομηχανία και το Natchez Trace.»",
+      "geo": {
+        "summary": "Χτισμένη στο βορειοανατολικό Μισισίπι, στο λοφώδες «Black Prairie» με πλούσια λιβάδια και δάση βελανιδιάς. Η πόλη διαρρέεται από τον ποταμό Tombigbee και βρίσκεται κοντά στο ιστορικό μονοπάτι Natchez Trace.",
+        "highlights": [
+          {
+            "title": "Black Prairie",
+            "desc": "Εύφορη περιοχή με μαύρη ασβεστολιθική γη, που ευδοκιμεί σε βοσκή και γεωργία, ενδημική του βόρειου Μισισίπι."
+          },
+          {
+            "title": "Natchez Trace Parkway",
+            "desc": "Ιστορικό μονοπάτι 700 km που περνά από την πόλη, προστατευόμενο εθνικό πάρκο με δάση και μνημεία."
+          },
+          {
+            "title": "Ποταμός Tombigbee",
+            "desc": "Πλωτός ποταμός ανατολικά της πόλης που συνδέει το Τούπελο με τον Κόλπο του Μεξικού."
+          }
+        ]
+      },
+      "hist": {
+        "summary": "Ιδρύθηκε το 1870 ως σιδηροδρομικός σταθμός με το όνομα «Gumpond» και μετονομάσθηκε σε Tupelo το 1877 από τη μάχη του Εμφυλίου στο Tupelo (1864). Στις 5 Ιανουαρίου 1935 γεννήθηκε εδώ ο Elvis Aaron Presley. Το 1936 ένας σάικλον κατέστρεψε την πόλη, που ξαναχτίστηκε με σύγχρονο σχεδιασμό.",
+        "highlights": [
+          {
+            "year": "1864",
+            "event": "Μάχη του Tupelo",
+            "desc": "Στρατεύματα της Ένωσης υπό τον Andrew J. Smith νικούν τον Nathan Bedford Forrest, ασφαλίζοντας τις γραμμές εφοδιασμού του Sherman."
+          },
+          {
+            "year": "1935",
+            "event": "Γέννηση του Elvis",
+            "desc": "Στις 8 Ιανουαρίου 1935 γεννιέται ο Elvis Aaron Presley σε ένα διώροφο σπίτι στην East Tupelo."
+          },
+          {
+            "year": "1936",
+            "event": "Σάικλον του Tupelo",
+            "desc": "Σάικλον έντασης F5 καταστρέφει την πόλη, σκοτώνοντας 216 κατοίκους· η αναβίωση φέρνει μοντέρνο urban planning."
+          }
+        ]
+      },
+      "demo": {
+        "summary": "Πόλη 38.000 κατοίκων και μητρόπολη 140.000, που είναι το κέντρο του βόρειου Μισισίπι. Σημαντική βιομηχανία με Toyota, Cooper Tire και μεγάλη κοινότητα Αφροαμερικανών (~40%).",
+        "details": [
+          {
+            "label": "Βιομηχανία Toyota",
+            "text": "Το εργοστάσιο Toyota Motor Manufacturing Mississippi στη Blue Springs κατασκευάζει Corolla από το 2011 και απασχολεί 2.000+."
+          },
+          {
+            "label": "Ιατρικό Κέντρο",
+            "text": "Το North Mississippi Medical Center (NMMC) είναι ο μεγαλύτερος εργοδότης, με 7.000+ εργαζομένους."
+          },
+          {
+            "label": "Τουρισμός Elvis",
+            "text": "Το Elvis Presley Birthplace προσελκύει 100.000+ επισκέπτες ετησίως που έρχονται για να δουν τη γενέτειρα του King."
+          }
+        ]
+      },
+      "cult": {
+        "summary": "Το Τούπελο είναι η «Γενέτειρα του King» με μουσική κληρονομιά, γλυπτά Elvis σε όλη την πόλη και ζωντανή σκηνή country/gospel.",
+        "items": [
+          {
+            "title": "Elvis Presley Birthplace",
+            "desc": "Το διώροφο σπίτι-μουσείο όπου γεννήθηκε ο Elvis, με εκκλησία, μουσείο και ανδριάντα του 9χρονου Elvis."
+          },
+          {
+            "title": "Elvis Festival",
+            "desc": "Ετήσιο φεστιβάλ κάθε Ιούνιο με Elvis tribute artists,lookup-alike διαγωνισμούς και συναυλίες."
+          },
+          {
+            "title": "Tupelo Automobile Museum",
+            "desc": "Μουσείο με 150+ αυτοκίνητα από το 1886 μέχρι σήμερα, ένα από τα μεγαλύτερα στη Νοτιοανατολική Αμερική."
+          }
+        ]
+      },
+      "guide": {
+        "summary": "Πέντε στάσεις για να ανακαλύψεις το Τούπελο: από τη γενέτειρα του Elvis και το μουσείο αυτοκινήτων μέχρι το Natchez Trace και το μουσείο φυσικής ιστορίας.",
+        "items": [
+          {
+            "title": "Elvis Presley Birthplace",
+            "cat": "history",
+            "catLabel": "🏛️ Ιστορία",
+            "desc": "Το διώροφο σπίτι όπου γεννήθηκε ο Elvis, με την εκκλησία Assembly of God και το μουσείο.",
+            "wiki": "Elvis_Presley_Birthplace"
+          },
+          {
+            "title": "Tupelo Automobile Museum",
+            "cat": "museum",
+            "catLabel": "🖼️ Μουσείο",
+            "desc": "Συλλογή 150+ αυτοκινήτων από το 1886 μέχρι το 2000, που κ closing του 2019.",
+            "wiki": "Tupelo_Automobile_Museum"
+          },
+          {
+            "title": "Natchez Trace Parkway Visitor Center",
+            "cat": "nature",
+            "catLabel": "🌿 Φύση",
+            "desc": "Κέντρο επισκεπτών του εθνικού πάρκου Natchez Trace, που περνά από την πόλη.",
+            "wiki": "Natchez_Trace_Parkway"
+          },
+          {
+            "title": "Tupelo National Battlefield",
+            "cat": "history",
+            "catLabel": "🏛️ Ιστορία",
+            "desc": "Εθνικό πεδίο μάχης του Εμφυλίου Πολέμου του 1864.",
+            "wiki": "Tupelo_National_Battlefield"
+          },
+          {
+            "title": "Oren Dunn City Museum",
+            "cat": "museum",
+            "catLabel": "🖼️ Μουσείο",
+            "desc": "Μουσείο ιστορίας της πόλης, με εκθέματα από τον σάικλον του 1936 και τους Choctaw.",
+            "wiki": "Oren_Dunn_City_Museum"
+          }
+        ]
+      },
+      "gastro": {
+        "summary": "Η κουζίνα του Τούπελο είναι soul food του βόρειου Μισισίπι, με catfish από τον Tombigbee, barbecue και γλυκά persimmon.",
+        "items": [
+          {
+            "title": "Fried Catfish",
+            "desc": "Γατόψαρο από τον Tombigbee σε κρούστα καλαμποκιού, με hush puppies και coleslaw.",
+            "tag": "Ποταμίσιο"
+          },
+          {
+            "title": "Sweet Potato Pie",
+            "desc": "Γλυκό με πουρέ γλυκοπατάτας, κανέλα και μπαχαρικά, σερβιρισμένο στους family gatherings.",
+            "tag": "Soul Food"
+          },
+          {
+            "title": "BBQ Pork",
+            "desc": "Καπνιστό χοιρινό σε Hickory, που inhed της Black Prairie έχει μακρά παράδοση.",
+            "tag": "Τοπικό BBQ"
+          },
+          {
+            "title": "Persimmon Pudding",
+            "desc": "Πουτίγκα από persimmon της Black Prairie με κανέλα, κλασικό γλυκό του φθινοπώρου.",
+            "tag": "Εποχικό"
+          }
+        ]
+      },
+      "eco": {
+        "summary": "Το Τούπελο διατηρεί πράσινες διαδρομές και προστατεύει το Natchez Trace, με προγράμματα βιώσιμης βιομηχανίας.",
+        "items": [
+          {
+            "title": "Natchez Trace Parkway",
+            "desc": "Εθνικό πάρκο 700 km που προστατεύεται από την ομοσπονδιακή κυβέρνηση, με δάση και μνημεία.",
+            "cat": "nature",
+            "catLabel": "🌿 Φύση",
+            "wiki": "Natchez_Trace_Parkway"
+          },
+          {
+            "title": "Tupelo Trails",
+            "desc": "Δίκτυο 35+ km ποδηλατικών μονοπατιών που συνδέουν πάρκα, γειτονιές και το Natchez Trace.",
+            "cat": "business",
+            "catLabel": "🚲 Κινηπότητα",
+            "wiki": "Tupelo,_Mississippi"
+          },
+          {
+            "title": "Ballard Park",
+            "desc": "Πάρκο 200 στρεμμάτων με λίμνες, μονοπάτια και εξοπλισμό για άθληση.",
+            "cat": "nature",
+            "catLabel": "🌳 Πάρκα",
+            "wiki": "Ballard_Park_(Tupelo)"
+          }
+        ]
+      },
+      "pastVsPresent": [
+        {
+          "epoch": "Τούπελο 1926: Σιδηρόδρομος και Βαμβάκι",
+          "content": "Μια πόλη 6.000 κατοίκων με σιδηρόδρομο και βαμβακοχώραφα, που δεν έχει ακόμη ακούσει για τον Elvis."
+        },
+        {
+          "epoch": "Τούπελο 2026: Birthplace of The King",
+          "content": "Πόλη 38.000 κατοίκων με Toyota, 100.000+ επισκέπτες στο Elvis Birthplace και το Natchez Trace Parkway που περνά από την πόλη."
+        }
+      ],
+      "pois": [
+        {
+          "name": "Elvis Presley Birthplace",
+          "category": "history",
+          "coords": [
+            34.2622,
+            -88.6981
+          ],
+          "desc": "Η γενέτειρα του Elvis."
+        },
+        {
+          "name": "Tupelo National Battlefield",
+          "category": "history",
+          "coords": [
+            34.2514,
+            -88.7163
+          ],
+          "desc": "Πεδίο μάχης του Εμφυλίου."
+        },
+        {
+          "name": "Natchez Trace Parkway Visitor Center",
+          "category": "nature",
+          "coords": [
+            34.2511,
+            -88.6892
+          ],
+          "desc": "Κέντρο επισκεπτών του εθνικού πάρκου."
+        },
+        {
+          "name": "Ballard Park",
+          "category": "nature",
+          "coords": [
+            34.2464,
+            -88.7185
+          ],
+          "desc": "Πάρκο 200 στρεμμάτων."
+        },
+        {
+          "name": "Tupelo Buffalo Park",
+          "category": "nature",
+          "coords": [
+            34.2107,
+            -88.6495
+          ],
+          "desc": "Πάρκο με βουβάλια και εξωτικά ζώα."
+        }
+      ]
+    },
+    {
+      "id": "hattiesburg",
+      "name": "Χάτισμπεργκ",
+      "englishName": "Hattiesburg",
+      "nickname": "The Hub City / Η Πόλη του Κόμβου",
+      "type": "city",
+      "coords": [
+        31.3271,
+        -89.2903
+      ],
+      "zoom": 12.8,
+      "stats": {
+        "population": "48.000 (150.000 μητροπολιτική)",
+        "founded": "1882",
+        "area": "141 km²",
+        "elevation": "53 μ."
+      },
+      "quote": "«Η «Πόλη του Κόμβου», που ενώνει σιδηρόδρομους, στρατό και πανεπιστήμιο στο κέντρο του Μισισίπι.»",
+      "geo": {
+        "summary": "Χτισμένη στο νότιο κεντρικό Μισισίπι, στο σταυροδρόμι πολλών σιδηροδρόμων και αυτοκινητόδρομων που συνδέουν το Jackson με τον Κόλπο και τη Νέα Ορλεάνη με το Memphis. Η πόλη διαρρέεται από τους ποταμούs Leaf και Bouie.",
+        "highlights": [
+          {
+            "title": "Ποταμός Leaf",
+            "desc": "Πλωτός ποταμός που περνά μέσα από την πόλη και προσφέρει καγιάκ, canoeing και ψάρεμα."
+          },
+          {
+            "title": "Longleaf Trace",
+            "desc": "Μονοπάτι 70 km για περπάτημα και ποδήλατο που ακολουθεί παλιά σιδηροδρομική γραμμή."
+          },
+          {
+            "title": "Πεδιάδες Pine Belt",
+            "desc": "Η περιοχή dominated από longleaf pines, που έδωσε το όνομα «Pine Belt» και που είναι ένα από τα πιο χαρακτηριστικά οικοσυστήματα του νότιου Μισισίπι."
+          }
+        ]
+      },
+      "hist": {
+        "summary": "Ιδρύθηκε το 1882 από τον Καναδό Captain William H. Hardy στο σταυροδρόμι δύο σιδηροδρόμων και ονομάσθηκε από τη σύζυγό του Hattie. Η πόλη γνώρισε άνθιση ως κόμβος εφοδιασμού ξυλείας και βαμβακιού. Στον Πρώτο Παγκόσμιο Πόλεμο δημιουργήθηκε η βάση Camp Shelby, που παραμένει μέχρι σήμερα.",
+        "highlights": [
+          {
+            "year": "1882",
+            "event": "Ίδρυση",
+            "desc": "Ο William H. Hardy ιδρύει τον οικισμό στο σταυροδρόμι New Orleans & Northeastern και Mississippi Central Railroad."
+          },
+          {
+            "year": "1912",
+            "event": "Ίδρυση University of Southern Mississippi",
+            "desc": "Ιδρύεται ως Mississippi Normal College, που το 1962 θα γίνει University of Southern Mississippi (USM)."
+          },
+          {
+            "year": "1917",
+            "event": "Ίδρυση Camp Shelby",
+            "desc": "Η στρατιωτική βάση δημιουργείται για εκπαίδευση του Πρώτου Παγκοσμίου Πολέμου και παραμένει ως η μεγαλύτερη βάση εθνοφρουράς των ΗΠΑ."
+          }
+        ]
+      },
+      "demo": {
+        "summary": "Πόλη 48.000 κατοίκων και μητρόπολη 150.000, που είναι το κέντρο του Pine Belt. Σημαντική κοινότητα αφροαμερικανών (~50%), με πανεπιστήμιο, στρατό και νοσοκομεία ως κύριους εργοδότες.",
+        "details": [
+          {
+            "label": "Πανεπιστήμιο & Ιατρική",
+            "text": "Το University of Southern Mississippi με 14.000 φοιτητές και το Forrest General Hospital είναι οι κυρίαρχοι εργοδότες."
+          },
+          {
+            "label": "Στρατός & Βιομηχανία",
+            "text": "Η βάση Camp Shelby εκπαιδεύει 100.000+ στρατιώτες ετησίως και οι εταιρείες Kohler και Sunshine έχουν εργοστάσια."
+          },
+          {
+            "label": "Πυρηνική Οικονομία",
+            "text": "Το ηλεκτρικό εργοστάσιο Grand Gulf (κοντά) και η βιομηχανία pewterlystal είναι σημαντικοί εργοδότες."
+          }
+        ]
+      },
+      "cult": {
+        "summary": "Το Χάτισμπεργκ είναι το «Hub» του Pine Belt με μουσεία, μουσική σκηνή και πανεπιστημιακή ζωή. Φιλοξενεί το African American Military History Museum.",
+        "items": [
+          {
+            "title": "Hattiesburg Zoo",
+            "desc": "Zωολογικός κήπος 100+ ειδών στο Kamper Park, ένας από τους δημοφιλέστερους της πολιτείας."
+          },
+          {
+            "title": "African American Military History Museum",
+            "desc": "Μουσείο στο ιστορικό USO Club του 1942 για έγχρωμους στρατιώτες, με εκθέματα από τον Εμφύλιο μέχρι το Vietnam."
+          },
+          {
+            "title": "Longleaf Trace",
+            "desc": "Μονοπάτι 70 km που ακολουθεί παλιά σιδηροδρομική γραμμή, ένα από τα κορυφαία ποδηλατικά μονοπάτια του Νότου."
+          }
+        ]
+      },
+      "guide": {
+        "summary": "Πέντε στάσεις για να ανακαλύψεις το Χάτισμπεργκ: από το πανεπιστήμιο και το zoo μέχρι το στρατιωτικό μουσείο και το Longleaf Trace.",
+        "items": [
+          {
+            "title": "University of Southern Mississippi",
+            "cat": "culture",
+            "catLabel": "🎨 Πολιτισμός",
+            "desc": "Πανεπιστημιακή καμπ με το McCain Library, το Museum of Art και το The Spirit of USM.",
+            "wiki": "University_of_Southern_Mississippi"
+          },
+          {
+            "title": "Hattiesburg Zoo",
+            "cat": "nature",
+            "catLabel": "🌳 Πάρκα",
+            "desc": "Zωολογικός κήπος 100+ ειδών στο Kamper Park με εκπαιδευτικά προγράμματα.",
+            "wiki": "Hattiesburg_Zoo"
+          },
+          {
+            "title": "African American Military History Museum",
+            "cat": "museum",
+            "catLabel": "🖼️ Μουσείο",
+            "desc": "Μουσείο στο ιστορικό USO Club του 1942 για έγχρωμους στρατιώτες.",
+            "wiki": "African_American_Military_History_Museum"
+          },
+          {
+            "title": "Longleaf Trace Trailhead",
+            "cat": "nature",
+            "catLabel": "🚲 Κινητικότητα",
+            "desc": "Το σημείο εκκίνησης του ποδηλατικού μονοπατιού 70 km.",
+            "wiki": "Longleaf_Trace"
+          },
+          {
+            "title": "Mississippi Armed Forces Museum",
+            "cat": "museum",
+            "catLabel": "🖼️ Μουσείο",
+            "desc": "Μουσείο στο Camp Shelby με εκθέματα από τον Πρώτο Παγκόσμιο Πόλεμο μέχρι σήμερα.",
+            "wiki": "Mississippi_Armed_Forces_Museum"
+          }
+        ]
+      },
+      "gastro": {
+        "summary": "Η κουζίνα του Χάτισμπεργκ είναι soul food και Pine Belt BBQ, με catfish, κοτόπουλο και cornbread, με αξιοσημείωτη κοινότητα βιετναμέζικων εστιατορίων.",
+        "items": [
+          {
+            "title": "Fried Catfish",
+            "desc": "Γατόψαρο από τους ποταμούs της περιοχής σε κρούστα καλαμποκιού, με hush puppies.",
+            "tag": "Ποταμίσιο"
+          },
+          {
+            "title": "Pine Belt BBQ",
+            "desc": "Καπνιστό χοιρινό σε Hickory της τοπικής παράδοσης, με πικάντικη σάλτσα μουστάρδας.",
+            "tag": "Τοπικό BBQ"
+          },
+          {
+            "title": "Phở βιετναμέζικο",
+            "desc": "Η κοινότητα βιετναμέζων ψαράδων και μεταναστών έχει φέρει αυθεντικά εστιατόρια phở.",
+            "tag": "Διεθνές"
+          },
+          {
+            "title": "Banana Pudding",
+            "desc": "Κλασικό νότιο γλυκό με μπισκότο, κρέμα βανίλιας και μπανάνες.",
+            "tag": "Γλυκό"
+          }
+        ]
+      },
+      "eco": {
+        "summary": "Το Χάτισμπεργκ επενδύει στο Longleaf Trace, στην αποκατάσταση longleaf pine και σε βιώσιμες υποδομές.",
+        "items": [
+          {
+            "title": "Longleaf Trace",
+            "desc": "Μονοπάτι 70 km που συνδέει την πόλη με το Prentiss, στο παλιό σιδηροδρομικό δικτυο.",
+            "cat": "business",
+            "catLabel": "🚲 Κινητικότητα",
+            "wiki": "Longleaf_Trace"
+          },
+          {
+            "title": "Longleaf Pine Restoration",
+            "desc": "Προγράμματα αποκατάστασης των longleaf pine forests που είναι ενδημικά της περιοχής.",
+            "cat": "nature",
+            "catLabel": "🌿 Φύση",
+            "wiki": "Longleaf_pine"
+          },
+          {
+            "title": "Leaf River Protection",
+            "desc": "Προγράμματα προστασίας ποιότητας του ποταμού Leaf που περνά από την πόλη.",
+            "cat": "nature",
+            "catLabel": "💧 Νερό",
+            "wiki": "Leaf_River_(Mississippi)"
+          }
+        ]
+      },
+      "pastVsPresent": [
+        {
+          "epoch": "Χάτισμπεργκ 1926: Σιδηρόδρομος και Ξυλεία",
+          "content": "Πόλη 12.000 κατοίκων με σιδηροδρομικό κόμβο, πριστήρια ξυλείας και το Mississippi Normal College μόλις 200 φοιτητών."
+        },
+        {
+          "epoch": "Χάτισμπεργκ 2026: Hub City & University",
+          "content": "Πόλη 48.000 κατοίκων με USM 14.000 φοιτητές, Camp Shelby και Longleaf Trace 70 km, ένα από τα κέντρα του Pine Belt."
+        }
+      ],
+      "pois": [
+        {
+          "name": "University of Southern Mississippi",
+          "category": "culture",
+          "coords": [
+            31.3273,
+            -89.3282
+          ],
+          "desc": "Πανεπιστημιακή καμπ."
+        },
+        {
+          "name": "Hattiesburg Zoo",
+          "category": "nature",
+          "coords": [
+            31.341,
+            -89.316
+          ],
+          "desc": "Ζωολογικός κήπος στο Kamper Park."
+        },
+        {
+          "name": "African American Military History Museum",
+          "category": "museum",
+          "coords": [
+            31.328,
+            -89.2945
+          ],
+          "desc": "Ιστορικό USO Club του 1942."
+        },
+        {
+          "name": "Longleaf Trace Trailhead",
+          "category": "nature",
+          "coords": [
+            31.342,
+            -89.323
+          ],
+          "desc": "Σημείο εκκίνησης του μονοπατιού 70 km."
+        },
+        {
+          "name": "Camp Shelby",
+          "category": "history",
+          "coords": [
+            31.347,
+            -89.246
+          ],
+          "desc": "Η μεγαλύτερη βάση εθνοφρουράς των ΗΠΑ."
+        }
+      ]
+    },
+    {
+      "id": "vicksburg",
+      "name": "Βίκσμπεργκ",
+      "englishName": "Vicksburg",
+      "nickname": "The Gibraltar of the Confederacy / The Red Carpet City",
+      "type": "city",
+      "coords": [
+        32.3525,
+        -90.8775
+      ],
+      "zoom": 12.7,
+      "stats": {
+        "population": "22.000 (45.000 μητροπολιτική)",
+        "founded": "1811",
+        "area": "98 km²",
+        "elevation": "82 μ."
+      },
+      "quote": "«Η «Γιβραλτάρ της Συνομοσπονδίας», όπου ο Μισισιπής σμίλεψε την ιστορία του Εμφυλίου και η γέφυρα Vicksburg ενώνει δύο πολιτείες.»",
+      "geo": {
+        "summary": "Χτισμένη σε ψηλούς λόφους στην ανατολική όχθη του ποταμού Μισισιπή, κοντά στα σύνορα με τη Λουιζιάνα. Η πόλη έχει στρατηγική θέση πάνω από τον ποταμό, που την έκανε «Γιβραλτάρ» στον Εμφύλιο. Δίπλα βρίσκεται η δεύτερη μεγαλύτερη διάβαση του Μισισιπή, η γέφυρα Vicksburg.",
+        "highlights": [
+          {
+            "title": "Ποταμός Μισισιπής",
+            "desc": "Ο μεγάλος ποταμός που προσφέρει φορτηγίδες, κρουαζιερόπλοια και αλιεία, με τη γέφυρα I-20 να συνδέει το Βίκσμπεργκ με τη Λουιζιάνα."
+          },
+          {
+            "title": "Λόφοι Loess",
+            "desc": "Οι χαρακτηριστικοί λόφοι loess (από ανεμοφερθείσα λάσπη) που έδωσαν στην πόλη τη στρατηγική θέα στον ποταμό."
+          },
+          {
+            "title": "Δέλτα Yazoo",
+            "desc": "Η πεδιάδα βόρεια της πόλης, ανάμεσα στους ποταμούs Μισισιπή και Yazoo, που είναι η καρδιά του Δέλτα του Μισισιπή."
+          }
+        ]
+      },
+      "hist": {
+        "summary": "Ιδρύθηκε το 1811 από τον Newitt Vick και ονομάσθηκε από αυτόν. Η πόλη έγινε κρίσιμο στρατηγικό σημείο στον Εμφύλιο, καθώς ήλεγχε τον Μισισιπή. Η πολιορκία του Βίκσμπεργκ (Μάιος-Ιούλιος 1863) από τον Grant ήταν σημείο καμπής του πολέμου. Η πόλη έπεσε στις 4 Ιουλίου 1863, ημέρα που δεν γιόρταζε για 80 χρόνια.",
+        "highlights": [
+          {
+            "year": "1811",
+            "event": "Ίδρυση",
+            "desc": "Ο Newitt Vick ιδρύει τον οικισμό σε ψηλούς λόφους πάνω από τον Μισισιπή."
+          },
+          {
+            "year": "1863",
+            "event": "Πολιορκία του Βίκσμπεργκ",
+            "desc": "Στρατεύματα του Grant πολιορκούν την πόλη 47 ημέρες· η παράδοση στις 4 Ιουλίου έδωσε στην Ένωση τον έλεγχο του Μισισιπή."
+          },
+          {
+            "year": "1953",
+            "event": "Καταστροφή του Vicksburg Tornado",
+            "desc": "Σάικλον F5 έπληξε την πόλη στις 5 Δεκεμβρίου 1953, σκοτώνοντας 38 κατοίκους και καταστρέφοντας το κέντρο."
+          }
+        ]
+      },
+      "demo": {
+        "summary": "Πόλη 22.000 κατοίκων και μητρόπολη 45.000, με πλειοψηφία αφροαμερικανών (~70%). Η οικονομία στηρίζεται στο τουρισμό μνήμης, το λιμάνι και τα καζίνο.",
+        "details": [
+          {
+            "label": "Λιμάνι & Εμπόριο",
+            "text": "Το λιμάνι Vicksburg και το Port of Vicksburg είναι κρίσιμα για τη διακίνηση γεωργικών προϊόντων."
+          },
+          {
+            "label": "Καζίνο & Τουρισμός",
+            "text": "Τα καζίνο Riverstage, WaterView και Ameristar (Baton Rouge) και το Εθνικό Στρατιωτικό Πάρκο προσελκύουν τουρίστες."
+          },
+          {
+            "label": "Ιατρική & Στρατός",
+            "text": "Το Merit Health River Region και το Σώμα Μηχανικών του Στρατού έχουν παρουσία στην πόλη."
+          }
+        ]
+      },
+      "cult": {
+        "summary": "Το Βίκσμπεργκ είναι «η πόλη του Μισισιπή και του Εμφυλίου», με μουσεία, στρατιωτικό πάρκο και blues από το γειτονικό Δέλτα.",
+        "items": [
+          {
+            "title": "Vicksburg National Military Park",
+            "desc": "Εθνικό πάρκο που διατηρεί το πεδίο της πολιορκίας του 1863, με 1.400 μνημεία και το πλοίο USS Cairo."
+          },
+          {
+            "title": "Old Courthouse Museum",
+            "desc": "Ιστορικό δικαστήριο του 1858 που επιβίωσε της πολιορκίας και σήμερα είναι μουσείο με 25.000 αντικείμενα."
+          },
+          {
+            "title": "Biedenharn Coca-Cola Museum",
+            "desc": "Μουσείο στο κτίριο όπου first bottled η Coca-Cola το 1894 από τον Joseph Biedenharn."
+          }
+        ]
+      },
+      "guide": {
+        "summary": "Πέντε στάσεις για να ζήσεις το Βίκσμπεργκ: από το στρατιωτικό πάρκο και το μουσείο Coca-Cola μέχρι το παλιό δικαστήριο και το ποτάμι.",
+        "items": [
+          {
+            "title": "Vicksburg National Military Park",
+            "cat": "history",
+            "catLabel": "🏛️ Ιστορία",
+            "desc": "Εθνικό πάρκο 7.000 στρεμμάτων με 1.400 μνημεία, το πλοίο USS Cairo και το cemetery.",
+            "wiki": "Vicksburg_National_Military_Park"
+          },
+          {
+            "title": "USS Cairo Gunboat",
+            "cat": "history",
+            "catLabel": "🏛️ Ιστορία",
+            "desc": "Αυθεντικό πλοίο της Ένωσης του 1862 που βυθίστηκε και ανασύρθηκε, σήμερα μουσείο.",
+            "wiki": "USS_Cairo"
+          },
+          {
+            "title": "Old Courthouse Museum",
+            "cat": "museum",
+            "catLabel": "🖼️ Μουσείο",
+            "desc": "Ιστορικό δικαστήριο του 1858 με συλλογή από τον Εμφύλιο και την ιστορία της πόλης.",
+            "wiki": "Old_Warren_County_Courthouse"
+          },
+          {
+            "title": "Biedenharn Coca-Cola Museum",
+            "cat": "museum",
+            "catLabel": "🖼️ Μουσείο",
+            "desc": "Μουσείο στο κτίριο όπου first bottled η Coca-Cola το 1894.",
+            "wiki": "Biedenharn_Coca-Cola_Museum"
+          },
+          {
+            "title": "Vicksburg Bridge",
+            "cat": "history",
+            "catLabel": "🏛️ Ιστορία",
+            "desc": "Ιστορική γέφυρα του 1930 που συνδέει το Μισισίπι με τη Λουιζιάνα πάνω από τον Μισισιπή.",
+            "wiki": "Vicksburg_Bridge"
+          }
+        ]
+      },
+      "gastro": {
+        "summary": "Η κουζίνα του Βίκσμπεργκ είναι soul food του Δέλτα με catfish, BBQ και γλυκά persimmon, με επιρροές από τη Λουιζιάνα.",
+        "items": [
+          {
+            "title": "Delta Hot Tamales",
+            "desc": "Καλαμποκένιο ζυμάρι με κρέας και μπαχαρικά, τυλιγμένο σε φύλλα καλαμποκιού, επηρεασμένο από μεξικάνικους εργάτες.",
+            "tag": "Δέλτα κλασικό"
+          },
+          {
+            "title": "Fried Catfish",
+            "desc": "Γατόψαρο από τον Μισισιπή σε κρούστα καλαμποκιού, με hush puppies.",
+            "tag": "Ποταμίσιο"
+          },
+          {
+            "title": "Pecan Pie",
+            "desc": "Γλυκό με πεκάν και σιρόπι καραμέλας, που ευδοκιμεί στην περιοχή.",
+            "tag": "Γλυκό"
+          },
+          {
+            "title": "Mississippi Mud Pie",
+            "desc": "Γλυκό σοκολάτας με cookie crust και αφράτη κρέμα, που θυμίζει τη «λάσπη» του Μισισιπή.",
+            "tag": "Γλυκό"
+          }
+        ]
+      },
+      "eco": {
+        "summary": "Το Βίκσμπεργκ προστατεύει τον Μισισιπή και τους λόφους loess, με έμφαση στη διατήρηση του στρατιωτικού πάρκου.",
+        "items": [
+          {
+            "title": "Vicksburg National Military Park",
+            "desc": "Προστατευόμενη έκταση 7.000 στρεμμάτων με δάση και memorials.",
+            "cat": "nature",
+            "catLabel": "🌳 Πάρκα",
+            "wiki": "Vicksburg_National_Military_Park"
+          },
+          {
+            "title": "Loess Soil Conservation",
+            "desc": "Προγράμματα προστασίας των χαρακτηριστικών λόφων loess που είναι εύκολα διαβρώσιμοι.",
+            "cat": "nature",
+            "catLabel": "🌿 Φύση",
+            "wiki": "Loess"
+          },
+          {
+            "title": "Mississippi River Levee",
+            "desc": "Το σύστημα αναχωμάτων που προστατεύει την πόλη από πλημμύρες του Μισισιπή.",
+            "cat": "business",
+            "catLabel": "💧 Νερό",
+            "wiki": "Levee"
+          }
+        ]
+      },
+      "pastVsPresent": [
+        {
+          "epoch": "Βίκσμπεργκ 1926: Ποτάμι και Σιδηρόδρομος",
+          "content": "Πόλη 12.000 κατοίκων με λιμάνι, σιδηρόδρομο και φορτηγίδες βαμβακιού στον Μισισιπή."
+        },
+        {
+          "epoch": "Βίκσμπεργκ 2026: Εθνικό Μνημείο & Καζίνο",
+          "content": "Πόλη 22.000 κατοίκων με το στρατιωτικό πάρκο, καζίνο και γέφυρα I-20, που προσελκύει 1+ εκατομμύρια επισκέπτες ετησίως."
+        }
+      ],
+      "pois": [
+        {
+          "name": "Vicksburg National Military Park Visitor Center",
+          "category": "history",
+          "coords": [
+            32.3473,
+            -90.8389
+          ],
+          "desc": "Κέντρο επισκεπτών του εθνικού πάρκου."
+        },
+        {
+          "name": "USS Cairo Gunboat",
+          "category": "history",
+          "coords": [
+            32.3467,
+            -90.8478
+          ],
+          "desc": "Αυθεντικό πλοίο του 1862."
+        },
+        {
+          "name": "Old Courthouse Museum",
+          "category": "museum",
+          "coords": [
+            32.3525,
+            -90.8775
+          ],
+          "desc": "Ιστορικό δικαστήριο του 1858."
+        },
+        {
+          "name": "Biedenharn Coca-Cola Museum",
+          "category": "museum",
+          "coords": [
+            32.3517,
+            -90.8808
+          ],
+          "desc": "Μουσείο Coca-Cola."
+        },
+        {
+          "name": "Vicksburg Bridge",
+          "category": "history",
+          "coords": [
+            32.3356,
+            -90.9056
+          ],
+          "desc": "Ιστορική γέφυρα πάνω από τον Μισισιπή."
+        }
+      ]
+    },
+    {
+      "id": "natchez",
+      "name": "Νάτσεζ",
+      "englishName": "Natchez",
+      "nickname": "The Bluff City / Πόλη των Antebellum Αρχοντικών",
+      "type": "city",
+      "coords": [
+        31.5604,
+        -91.4032
+      ],
+      "zoom": 12.8,
+      "stats": {
+        "population": "14.000 (35.000 μητροπολιτική)",
+        "founded": "1716",
+        "area": "48 km²",
+        "elevation": "60 μ."
+      },
+      "quote": "«Η παλαιότερη ευρωπαϊκή εγκατάσταση του Μισισιπή, με antebellum αρχοντικά πάνω από τον ποταμό και το μονοπάτι Natchez Trace.»",
+      "geo": {
+        "summary": "Χτισμένη σε ψηλό γκρεμό (bluff) πάνω από την ανατολική όχθη του ποταμού Μισισιπή, στο νοτιοδυτικό άκρο της πολιτείας. Η πόλη έχει στρατηγική θέα στον ποταμό και βρίσκεται στο νότιο άκρο του ιστορικού Natchez Trace Parkway.",
+        "highlights": [
+          {
+            "title": "Natchez Bluff",
+            "desc": "Ο ψηλός γκρεμός πάνω από τον Μισισιπή που προσφέρει πανοραμική θέα και είναι το φυσικό ορόσημο της πόλης."
+          },
+          {
+            "title": "Ποταμός Μισισιπής",
+            "desc": "Ο μεγάλος ποταμός που διαρρέει την πόλη, με φορτηγίδες, κρουαζιερόπλοια και casino boats."
+          },
+          {
+            "title": "Natchez Trace Parkway",
+            "desc": "Το νότιο άκρο του ιστορικού μονοπατιού 700 km που ξεκινά από το Νάτσεζ και καταλήγει στο Nashville."
+          }
+        ]
+      },
+      "hist": {
+        "summary": "Ιδρύθηκε το 1716 από τον Γάλλο Jean-Baptiste Le Moyne de Bienville ως Fort Rosalie, στο έδαφος των ιθαγενών Natchez. Μετά την εξέγερση των Natchez το 1729, οι Γάλλοι κατέσφαξαν τους ιθαγενείς. Η πόλη πέρασε στους Βρετανούς (1763), Ισπανούς (1779) και στις ΗΠΑ (1798). Το 1803 έγινε πρωτεύουσα του Mississippi Territory.",
+        "highlights": [
+          {
+            "year": "1716",
+            "event": "Γαλλικό Fort Rosalie",
+            "desc": "Ο Bienville κτίζει το οχυρό στο έδαφος των Natchez, που είναι η αρχή της μόνιμης ευρωπαϊκής εγκατάστασης."
+          },
+          {
+            "year": "1729",
+            "event": "Εξέγερση των Natchez",
+            "desc": "Οι Natchez επιτίθενται στο οχυρό και σκοτώνουν 200 αποίκους· οι Γάλλοι ανταποκρίνονται με σφαγή και πώληση σε δουλεία."
+          },
+          {
+            "year": "1803",
+            "event": "Πρωτεύουσα Mississippi Territory",
+            "desc": "Το Νάτσεζ γίνεται η πρώτη πρωτεύουσα του Mississippi Territory, πριν μεταφερθεί στο Washington και αργότερα στο Jackson."
+          }
+        ]
+      },
+      "demo": {
+        "summary": "Πόλη 14.000 κατοίκων με πλειοψηφία αφροαμερικανών (~60%). Η οικονομία στηρίζεται στον τουρισμό των antebellum αρχοντικών, το λιμάνι και το Natchez Trace.",
+        "details": [
+          {
+            "label": "Τουρισμός Antebellum",
+            "text": "Πάνω από 600 antebellum αρχοντικά επισκέπτονται ετησίως από 1+ εκατομμύρια τουρίστες, κατά τη Spring Pilgrimage."
+          },
+          {
+            "label": "Λιμάνι & Βιομηχανία",
+            "text": "Το λιμάνι Natchez-Adams County διακινεί γεωργικά προϊόντα και ξυλεία, με εργοστάσιο Natchez Inc."
+          },
+          {
+            "label": "Ιατρική & Κυβέρνηση",
+            "text": "Το Merit Health Natchez και η πολιτειακή διοίκηση είναι από τους μεγαλύτερους εργοδότες."
+          }
+        ]
+      },
+      "cult": {
+        "summary": "Το Νάτσεζ είναι η «Πόλη των Antebellum Αρχοντικών» με Spring Pilgrimage, Natchez Trace heritage και την ιστορική «Under-the-Hill» παραποτάμια συνοικία.",
+        "items": [
+          {
+            "title": "Spring Pilgrimage",
+            "desc": "Ετήσιο φεστιβάλ κάθε Μάρτιο-Απρίλιο που ανοίγει 25+ antebellum αρχοντικά στους επισκέπτες με costume tours."
+          },
+          {
+            "title": "Natchez Under-the-Hill",
+            "desc": "Η ιστορική παραποτάμια συνοικία κάτω από τον bluff, που ήταν haunt pirates, τζογαδόρων και riverboat men."
+          },
+          {
+            "title": "Natchez Trace Parkway",
+            "desc": "Το νότιο άκρο του ιστορικού μονοπατιού 700 km που συνδέει το Νάτσεζ με το Nashville."
+          }
+        ]
+      },
+      "guide": {
+        "summary": "Πέντε στάσεις για να ανακαλύψεις το Νάτσεζ: από τα antebellum αρχοντικά και το Natchez Trace μέχρι την Under-the-Hill και το μουσείο.",
+        "items": [
+          {
+            "title": "Longwood",
+            "cat": "history",
+            "catLabel": "🏛️ Ιστορία",
+            "desc": "Το μεγαλύτερο octagonal antebellum αρχοντικό των ΗΠΑ, που δεν ολοκληρώθηκε ποτέ λόγω του Εμφυλίου.",
+            "wiki": "Longwood_(Natchez,_Mississippi)"
+          },
+          {
+            "title": "Stanton Hall",
+            "cat": "history",
+            "catLabel": "🏛️ Ιστορία",
+            "desc": "Πολυτελές antebellum αρχοντικό του 1858 σε Greek Revival ρυθμό, που είναι από τα ωραιότερα της πόλης.",
+            "wiki": "Stanton_Hall"
+          },
+          {
+            "title": "Natchez Trace Parkway Visitor Center",
+            "cat": "nature",
+            "catLabel": "🌿 Φύση",
+            "desc": "Το νότιο άκρο του ιστορικού μονοπατιού 700 km, με κέντρο επισκεπτών και exhibits.",
+            "wiki": "Natchez_Trace_Parkway"
+          },
+          {
+            "title": "Natchez Under-the-Hill",
+            "cat": "culture",
+            "catLabel": "🎨 Πολιτισμός",
+            "desc": "Η ιστορική παραποτάμια συνοικία με καφέ, εστιατόρια και casino.",
+            "wiki": "Natchez_Under-the-Hill"
+          },
+          {
+            "title": "Grand Village of the Natchez Indians",
+            "cat": "history",
+            "catLabel": "🏛️ Ιστορία",
+            "desc": "Αναστυλωμένος οικισμός των Natchez με τρεις burial mounds και μουσείο.",
+            "wiki": "Grand_Village_of_the_Natchez_Indians"
+          }
+        ]
+      },
+      "gastro": {
+        "summary": "Η κουζίνα του Νάτσεζ είναι κρεολική και southern, με catfish, gumbo, fried green tomatoes και γλυκά pecan.",
+        "items": [
+          {
+            "title": "Fried Catfish",
+            "desc": "Γατόψαρο από τον Μισισιπή σε κρούστα καλαμποκιού, με hush puppies.",
+            "tag": "Ποταμίσιο"
+          },
+          {
+            "title": "Fried Green Tomatoes",
+            "desc": "Άγουρες ντομάτες σε κουρκούτι καλαμποκιού, με remoulade sauce.",
+            "tag": "Κλασικό του Νότου"
+          },
+          {
+            "title": "Seafood Gumbo",
+            "desc": "Πηχτή σούπα roux με okra, αντούιγ και θαλασσινά από τον Κόλπο.",
+            "tag": "Κρεολικό"
+          },
+          {
+            "title": "Pecan Pie",
+            "desc": "Γλυκό με πεκάν της περιοχής και σιρόπι καραμέλας, κλασικό πιάτο της Spring Pilgrimage.",
+            "tag": "Γλυκό"
+          }
+        ]
+      },
+      "eco": {
+        "summary": "Το Νάτσεζ προστατεύει τον Μισισιπή και το Natchez Trace, με έμφαση στη διατήρηση των antebellum gardens.",
+        "items": [
+          {
+            "title": "Natchez Trace Parkway",
+            "desc": "Εθνικό πάρκο 700 km που ξεκινά από το Νάτσεζ και προστατεύεται από την ομοσπονδιακή κυβέρνηση.",
+            "cat": "nature",
+            "catLabel": "🌿 Φύση",
+            "wiki": "Natchez_Trace_Parkway"
+          },
+          {
+            "title": "Antebellum Gardens Conservation",
+            "desc": "Οι κήποι των ιστορικών αρχοντικών διατηρούνται με παλαιές ποικιλίες camelias και azaleas.",
+            "cat": "nature",
+            "catLabel": "🌳 Πάρκα",
+            "wiki": "Natchez,_Mississippi"
+          },
+          {
+            "title": "Mississippi River Levee",
+            "desc": "Το σύστημα αναχωμάτων που προστατεύει την πόλη από πλημμύρες του Μισισιπή.",
+            "cat": "business",
+            "catLabel": "💧 Νερό",
+            "wiki": "Levee"
+          }
+        ]
+      },
+      "pastVsPresent": [
+        {
+          "epoch": "Νάτσεζ 1926: Cotton Kingdom & Pilgrimage",
+          "content": "Πόλη 12.000 κατοίκων με antebellum αρχοντικά που σταδιακά μετατρέπονται σε τουριστικά κέντρα."
+        },
+        {
+          "epoch": "Νάτσεζ 2026: Antebellum Tourism",
+          "content": "Πόλη 14.000 κατοίκων με 1+ εκατομμύρια επισκέπτες ετησίως, Spring Pilgrimage και Natchez Trace Parkway."
+        }
+      ],
+      "pois": [
+        {
+          "name": "Longwood",
+          "category": "history",
+          "coords": [
+            31.5544,
+            -91.3916
+          ],
+          "desc": "Το octagonal antebellum αρχοντικό."
+        },
+        {
+          "name": "Stanton Hall",
+          "category": "history",
+          "coords": [
+            31.5604,
+            -91.4032
+          ],
+          "desc": "Antebellum αρχοντικό του 1858."
+        },
+        {
+          "name": "Natchez Under-the-Hill",
+          "category": "culture",
+          "coords": [
+            31.56,
+            -91.418
+          ],
+          "desc": "Ιστορική παραποτάμια συνοικία."
+        },
+        {
+          "name": "Grand Village of the Natchez Indians",
+          "category": "history",
+          "coords": [
+            31.539,
+            -91.388
+          ],
+          "desc": "Ιστορικός οικισμός με burial mounds."
+        },
+        {
+          "name": "Natchez Trace Parkway Visitor Center",
+          "category": "nature",
+          "coords": [
+            31.554,
+            -91.409
+          ],
+          "desc": "Νότιο άκρο του ιστορικού μονοπατιού."
+        }
+      ]
+    },
+    {
+      "id": "meridian",
+      "name": "Μεριντιάν",
+      "englishName": "Meridian",
+      "nickname": "The Queen City / The Bold New City",
+      "type": "city",
+      "coords": [
+        32.3643,
+        -88.7037
+      ],
+      "zoom": 12.7,
+      "stats": {
+        "population": "35.000 (90.000 μητροπολιτική)",
+        "founded": "1860",
+        "area": "107 km²",
+        "elevation": "84 μ."
+      },
+      "quote": "«Η «Πόλη-Βασίλισσα» του ανατολικού Μισισίπι, όπου τα blues και η κληρονομιά του σιδηροδρόμου συναντούν το MAX και το Dentzel Carousel.»",
+      "geo": {
+        "summary": "Χτισμένη στο ανατολικό κεντρικό Μισισιπή, κοντά στα σύνορα με την Αλαμπάμα. Η πόλη είναι κόμβος σιδηροδρόμων και αυτοκινητόδρομων, διαρρέεται από τους παραποτάμιους Highland Creek και Pearl.",
+        "highlights": [
+          {
+            "title": "Ποταμός Tombigbee",
+            "desc": "Πλωτός ποταμός στα δυτικά της πόλης που συνδέει με τον Κόλπο του Μεξικού."
+          },
+          {
+            "title": "Λόφοι Eastern Mississippi",
+            "desc": "Οι χαμηλοί λόφοι της ανατολικής πολιτείας με δάση πεύκου και λιβάδια."
+          },
+          {
+            "title": "Okatibbee Lake",
+            "desc": "Τεχνητή λίμνη βόρεια της πόλης που προσφέρει κολύμπι, ψάρεμα και campsite."
+          }
+        ]
+      },
+      "hist": {
+        "summary": "Ιδρύθηκε το 1860 στο σταυροδρόμι των σιδηροδρόμων Mobile & Ohio και Southern Railway και αναπτύχθηκε ως κρίσιμο κέντρο μεταφοράς. Ο στρατηγός Sherman κατέστρεψε την πόλη τον Φεβρουάριο 1864, αλλά ξαναχτίστηκε. Τον 20ό αιώνα η πόλη έγινε κέντρο των blues και της ομοσπονδιακής δημοτικής υποδομής.",
+        "highlights": [
+          {
+            "year": "1860",
+            "event": "Ίδρυση",
+            "desc": "Ιδρύεται στο σταυροδρόμι δύο σιδηροδρόμων και ονομάσθηκε από τον εμπορο Richard McLemore."
+          },
+          {
+            "year": "1864",
+            "event": "Καταστροφή Sherman",
+            "desc": "Στρατεύματα του Sherman καίντ την πόλη και τις σιδηροδρομικές εγκαταστάσεις κατά την «March to the Sea»."
+          },
+          {
+            "year": "1909",
+            "event": "Dentzel Carousel",
+            "desc": "Εγκαθίσταται το ιστορικό Dentzel Carousel στο Highland Park, που σήμερα είναι Εθνικό Ιστορικό Μνημείο."
+          }
+        ]
+      },
+      "demo": {
+        "summary": "Πόλη 35.000 κατοίκων και μητρόπολη 90.000, με πλειοψηφία αφροαμερικανών (~62%). Η οικονομία στηρίζεται στο NAS Meridian, το/naval air station και το Riley Hospital.",
+        "details": [
+          {
+            "label": "Στρατός & Ναυτική Αεροπορία",
+            "text": "Το NAS Meridian εκπαιδεύει πιλότους της Πολεμικής Ναυτικής Αεροπορίας και είναι ο μεγαλύτερος εργοδότης."
+          },
+          {
+            "label": "Ιατρική & Παιδεία",
+            "text": "Το Anderson Hospital και το Mississippi State University-Meridian είναι σημαντικοί εργοδότες."
+          },
+          {
+            "label": "Πολιτισμική Οικονομία",
+            "text": "Το MAX (Mississippi Arts & Entertainment Experience) και το Dentzel Carousel προσελκύουν επισκέπτες."
+          }
+        ]
+      },
+      "cult": {
+        "summary": "Το Μεριντιάν είναι η «Πόλη-Βασίλισσα» με blues κληρονομιά, το MAX Museum και το Dentzel Carousel που είναι Εθνικό Ιστορικό Μνημείο.",
+        "items": [
+          {
+            "title": "MAX Arts & Entertainment Experience",
+            "desc": "Σύγχρονο μουσείο του 2018 που παρουσιάζει καλλιτέχνες του Μισισίπι: Elvis, B.B. King, Oprah, Faulkner."
+          },
+          {
+            "title": "Dentzel Carousel",
+            "desc": "Ιστορικό carousel του 1909 με αυθεντικά ζωγραφισμένα ζώα, που λειτουργεί από τον Μάιο μέχρι τον Σεπτέμβριο."
+          },
+          {
+            "title": "Blues Heritage",
+            "desc": "Η πόλη φιλοξενεί ετήσιο αποθεώτρι tribute στην κληρονομιά των blues με συναυλίες σε ιστορικά κτίρια."
+          }
+        ]
+      },
+      "guide": {
+        "summary": "Πέντε στάσεις για να ανακαλύψεις το Μεριντιάν: από το MAX και το carousel μέχρι το Highland Park και το τρένο.",
+        "items": [
+          {
+            "title": "MAX Arts & Entertainment Experience",
+            "cat": "museum",
+            "catLabel": "🖼️ Μουσείο",
+            "desc": "Σύγχρονο μουσείο του 2018 με διαδραστικά εκθέματα για καλλιτέχνες του Μισισίπι.",
+            "wiki": "The_MAX"
+          },
+          {
+            "title": "Dentzel Carousel & Highland Park",
+            "cat": "history",
+            "catLabel": "🏛️ Ιστορία",
+            "desc": "Εθνικό Ιστορικό Μνημείο με carousel του 1909 και ιστορικό παιδικό μουσείο.",
+            "wiki": "Dentzel_Carousel"
+          },
+          {
+            "title": "Meridian Railroad Museum",
+            "cat": "museum",
+            "catLabel": "🖼️ Μουσείο",
+            "desc": "Μουσείο στο ιστορικό Depot του 1906, με εκθέματα σιδηροδρόμων και πολιτικής ιστορίας.",
+            "wiki": "Meridian,_Mississippi"
+          },
+          {
+            "title": "Mississippi Industrial Heritage Museum",
+            "cat": "museum",
+            "catLabel": "🖼️ Μουσείο",
+            "desc": "Μουσείο στο historic Soule Steam Feed Works, που παρουσιάζει τη βιομηχανική κληρονομιά.",
+            "wiki": "Soule_Steam_Feed_Works"
+          },
+          {
+            "title": "Bonita Lakes Park",
+            "cat": "nature",
+            "catLabel": "🌳 Πάρκα",
+            "desc": "Πάρκο 3.500 στρεμμάτων με λίμνες, μονοπάτια και αθλητικές εγκαταστάσεις.",
+            "wiki": "Bonita_Lakes"
+          }
+        ]
+      },
+      "gastro": {
+        "summary": "Η κουζίνα του Μεριντιάν είναι soul food του ανατολικού Μισισιπή με catfish, BBQ και Mississippi Mud Pie.",
+        "items": [
+          {
+            "title": "Fried Catfish",
+            "desc": "Γατόψαρο από τους ποταμούs της περιοχής σε κρούστα καλαμποκιού, με hush puppies.",
+            "tag": "Ποταμίσιο"
+          },
+          {
+            "title": "Pulled Pork BBQ",
+            "desc": "Καπνιστό χοιρινό σε Hickory, με τοπική σάλτσα ξιδιού.",
+            "tag": "Τοπικό BBQ"
+          },
+          {
+            "title": "Mississippi Mud Pie",
+            "desc": "Γλυκό σοκολάτας με cookie crust και αφράτη κρέμα, που θυμίζει τη «λάσπη» του Μισισιπή.",
+            "tag": "Γλυκό"
+          },
+          {
+            "title": "Sweet Potato Pie",
+            "desc": "Γλυκό με πουρέ γλυκοπατάτας, κανέλα και μπαχαρικά.",
+            "tag": "Soul Food"
+          }
+        ]
+      },
+      "eco": {
+        "summary": "Το Μεριντιάν προστατεύει τα Bonita Lakes και Okatibbee Lake, με δασοπονικά προγράμματα.",
+        "items": [
+          {
+            "title": "Bonita Lakes Park",
+            "desc": "Πάρκο 3.500 στρεμμάτων με δύο λίμνες, μονοπάτια 30 km και wildlife habitat.",
+            "cat": "nature",
+            "catLabel": "🌳 Πάρκα",
+            "wiki": "Bonita_Lakes"
+          },
+          {
+            "title": "Okatibbee Lake",
+            "desc": "Τεχνητή λίμνη που διαχειρίζεται το Σώμα Μηχανικών και προσφέρει νερό, κολύμπι και άθληση.",
+            "cat": "nature",
+            "catLabel": "💧 Νερό",
+            "wiki": "Okatibbee_Lake"
+          },
+          {
+            "title": "Tree City USA Meridian",
+            "desc": "Η πόλη συμμετέχει στο πρόγραμμα Tree City USA με ετήσια δεντροφύτευση.",
+            "cat": "business",
+            "catLabel": "🌱 Πράσινη Πόλη",
+            "wiki": "Tree_City_USA"
+          }
+        ]
+      },
+      "pastVsPresent": [
+        {
+          "epoch": "Μεριντιάν 1926: Σιδηρόδρομος και Ξυλεία",
+          "content": "Πόλη 30.000 κατοίκων με σιδηροδρομικό κόμβο, πριστήρια και ατμόπλοια· η μεγαλύτερη πόλη της ανατολικής πολιτείας."
+        },
+        {
+          "epoch": "Μεριντιάν 2026: MAX & NAS",
+          "content": "Πόλη 35.000 κατοίκων με NAS Meridian, MAX Museum και Dentzel Carousel, που προσελκύουν επισκέπτες σε όλο το ανατολικό Μισισίπι."
+        }
+      ],
+      "pois": [
+        {
+          "name": "MAX Arts & Entertainment Experience",
+          "category": "museum",
+          "coords": [
+            32.3643,
+            -88.7037
+          ],
+          "desc": "Μουσείο καλλιτεχνών του Μισισίπι."
+        },
+        {
+          "name": "Dentzel Carousel",
+          "category": "history",
+          "coords": [
+            32.3717,
+            -88.6892
+          ],
+          "desc": "Ιστορικό carousel του 1909."
+        },
+        {
+          "name": "Meridian Railroad Museum",
+          "category": "museum",
+          "coords": [
+            32.3643,
+            -88.7037
+          ],
+          "desc": "Μουσείο στο ιστορικό Depot."
+        },
+        {
+          "name": "Bonita Lakes Park",
+          "category": "nature",
+          "coords": [
+            32.3417,
+            -88.725
+          ],
+          "desc": "Πάρκο 3.500 στρεμμάτων."
+        },
+        {
+          "name": "Okatibbee Lake",
+          "category": "nature",
+          "coords": [
+            32.526,
+            -88.784
+          ],
+          "desc": "Τεχνητή λίμνη βόρεια της πόλης."
+        }
+      ]
+    },
+    {
+      "id": "southaven",
+      "name": "Σάουθαβεν",
+      "englishName": "Southaven",
+      "nickname": "The Top of Mississippi / The Front Porch of the South",
+      "type": "city",
+      "coords": [
+        34.9886,
+        -90.0126
+      ],
+      "zoom": 12.8,
+      "stats": {
+        "population": "56.000 (590.000 μητροπολιτική Memphis)",
+        "founded": "1980",
+        "area": "106 km²",
+        "elevation": "108 μ."
+      },
+      "quote": "«Η «Πόλη-Πόρτα του Μισισίπι», το βόρειο προάστιο του Memphis που αναπτύχθηκε σε μια από τις ταχύτερα αναπτυσσόμενες πόλεις της πολιτείας.»",
+      "geo": {
+        "summary": "Χτισμένη στο βορειοδυτικό άκρο του Μισισίπι, στα σύνορα με την Tennessee, η Σάουθαβεν αποτελεί το βόρειο προάστιο του Memphis. Η πόλη βρίσκεται στην πεδιάδα του ποταμού Μισισιπή, κοντά στο Δέλτα.",
+        "highlights": [
+          {
+            "title": "Πεδιάδα του Μισισιπή",
+            "desc": "Η επίπεδη, γόνιμη πεδιάδα που εκτείνεται ως τον ποταμό στα δυτικά, με λοφώδη εδάφη."
+          },
+          {
+            "title": "Μητροπολιτική περιοχή Memphis",
+            "desc": "Η πόλη αποτελεί το βόρειο προάστιο του Memphis, με οποίο μοιράζεται εργατικό δυναμικό, αεροδρόμιο και κουλτούρα."
+          },
+          {
+            "title": "Κοντά στο Δέλτα",
+            "desc": "Λίγες ώρες δυτικά βρίσκεται το Δέλτα του Μισισιπή, λίκνο του blues."
+          }
+        ]
+      },
+      "hist": {
+        "summary": "Η πόλη ενσωματώθηκε μόλις το 1980, αλλά η περιοχή κατοικείται από τον 19ο αιώνα. Η ανάπτυξη ήρθε με την κατασκευή της I-55 και του FedEx (1973) στο Memphis. Η Σάουθαβεν αναπτύχθηκε ως το κύριο βόρειο προάστιο του Memphis.",
+        "highlights": [
+          {
+            "year": "1973",
+            "event": "Ίδρυση FedEx στο Memphis",
+            "desc": "Η FedEx μεταφέρει την έδρα της στο Memphis, που βοηθά την ανάπτυξη των βόρειων προαστίων."
+          },
+          {
+            "year": "1980",
+            "event": "Ενσωμάτωση",
+            "desc": "Η Σάουθαβεν γίνεται επίσημα πόλη με 5.000 κατοίκους, που αυξήθηκαν στα 56.000 μέσα σε 40 χρόνια."
+          },
+          {
+            "year": "2000",
+            "event": "Τρίτη μεγαλύτερη πόλη",
+            "desc": "Η Σάουθαβεν ξεπερνά το 25.000 και γίνεται η τρίτη μεγαλύτερη πόλη του Μισισιπή."
+          }
+        ]
+      },
+      "demo": {
+        "summary": "Η Σάουθαβεν είναι η τρίτη μεγαλύτερη πόλη του Μισισιπή με 56.000 κατοίκους. Πλειοψηφία λευκών (~70%), με αυξανόμενη αφροαμερικανική και ισπανόφωνη κοινότητα. Η πόλη είναι ένα από τα πιο εύπορα προάστια της πολιτείας.",
+        "details": [
+          {
+            "label": "Λιανική & Commerce",
+            "text": "Tanger Outlets, Southaven Towne Center και πολλά εμπορικά κέντρα και super-markets αποτελούν το κορυφαίο εμπορικό κέντρο του βόρειου Μισισιπή."
+          },
+          {
+            "label": "FedEx & Διοίκηση",
+            "text": "Πολλοί εργαζόμενοι στο FedEx και στη διοίκηση του Memphis ζουν στη Σάουθαβεν."
+          },
+          {
+            "label": "Υγεία & Στρατός",
+            "text": "Baptist Memorial Hospital-DeSoto και εκπαιδευτικό κέντρο Arlington είναι σημαντικοί εργοδότες."
+          }
+        ]
+      },
+      "cult": {
+        "summary": "Η Σάουθαβεν είναι η «Πόρτα του Νότου» με arenas, parks και επιρροές από τη μουσική και αθλητική σκηνή του γειτονικού Memphis.",
+        "items": [
+          {
+            "title": "Landers Center",
+            "desc": "Arena 11.000+ θέσεων που φιλοξενεί concerts, αθλητικές εκδηλώσεις και συλλογές κλασικών αυτοκινήτων."
+          },
+          {
+            "title": "Snowden House",
+            "desc": "Ιστορικό antebellum σπίτι του 1850 που διατηρείται από την πολιτειακή ιστορική εταιρεία."
+          },
+          {
+            "title": "BankPlus Amphitheater",
+            "desc": "Υπαίθριο θέατρο στο Landers Center που φιλοξενεί καλοκαιρινές συναυλίες country και rock."
+          }
+        ]
+      },
+      "guide": {
+        "summary": "Πέντε στάσεις για να ανακαλύψεις τη Σάουθαβεν: από το Landers Center και το Snowden House μέχρι τα πάρκα και τα outlets.",
+        "items": [
+          {
+            "title": "Landers Center",
+            "cat": "culture",
+            "catLabel": "🎨 Πολιτισμός",
+            "desc": "Arena 11.000+ θέσεων για concerts, αθλητικές εκδηλώσεις και εκθέσεις.",
+            "wiki": "Landers_Center"
+          },
+          {
+            "title": "Tanger Outlets Southaven",
+            "cat": "business",
+            "catLabel": "🛍️ Αγορές",
+            "desc": "Μεγάλο outlet mall με 70+ καταστήματα designer.",
+            "wiki": "Tanger_Outlets"
+          },
+          {
+            "title": "Snowden House",
+            "cat": "history",
+            "catLabel": "🏛️ Ιστορία",
+            "desc": "Ιστορικό antebellum σπίτι του 1850, ένα από τα λίγα της περιοχής.",
+            "wiki": "Snowden_House"
+          },
+          {
+            "title": "Central Park",
+            "cat": "nature",
+            "catLabel": "🌳 Πάρκα",
+            "desc": "Πάρκο 100+ στρεμμάτων με αθλητικά γήπεδα, πισίνες και παιδικές χαρές.",
+            "wiki": "Southaven,_Mississippi"
+          },
+          {
+            "title": "BankPlus Amphitheater",
+            "cat": "culture",
+            "catLabel": "🎨 Πολιτισμός",
+            "desc": "Υπαίθριο θέατρο που φιλοξενεί καλοκαιρινές συναυλίες.",
+            "wiki": "BankPlus_Amphitheater"
+          }
+        ]
+      },
+      "gastro": {
+        "summary": "Η κουζίνα της Σάουθαβεν είναι «Memphis BBQ και soul food», με καπνιστά ribs και catfish, με επιρροές από τη γειτονική Tennessee.",
+        "items": [
+          {
+            "title": "Memphis-style BBQ Ribs",
+            "desc": "Χοιρινές πλευρές σε καπνό Hickory με ξηρό rub μπαχαρικών, σερβιρισμένες με sweet slaw.",
+            "tag": "Τοπικό BBQ"
+          },
+          {
+            "title": "Pulled Pork Sandwich",
+            "desc": "Καπνιστό χοιρινό σε μπουκί ψωμιού με sweet sauce και slaw.",
+            "tag": "Κλασικό"
+          },
+          {
+            "title": "Fried Catfish",
+            "desc": "Γατόψαρο από τον Μισισιπή σε κρούστα καλαμποκιού, με hush puppies.",
+            "tag": "Ποταμίσιο"
+          },
+          {
+            "title": "Banana Pudding",
+            "desc": "Κλασικό νότιο γλυκό με μπισκότο, κρέμα βανίλιας και μπανάνες.",
+            "tag": "Γλυκό"
+          }
+        ]
+      },
+      "eco": {
+        "summary": "Η Σάουθαβεν επενδύει σε πάρκα, μονοπάτια και βιώσιμες υποδομές ως «Tree City USA».",
+        "items": [
+          {
+            "title": "Σύστημα Πάρκων & Μονοπατιών",
+            "desc": "Δίκτυο 17 πάρκων με μονοπάτια ποδηλασίας και περπάτησης.",
+            "cat": "business",
+            "catLabel": "🚲 Κινητικότητα",
+            "wiki": "Southaven,_Mississippi"
+          },
+          {
+            "title": "Tree City USA",
+            "desc": "Η πόλη συμμετέχει στο πρόγραμμα Tree City USA με ετήσια δεντροφύτευση.",
+            "cat": "business",
+            "catLabel": "🌱 Πράσινη Πόλη",
+            "wiki": "Tree_City_USA"
+          },
+          {
+            "title": "Snowden Lake Conservation",
+            "desc": "Προστασία της λίμνης Snowden και των γύρω υγροτόπων.",
+            "cat": "nature",
+            "catLabel": "💧 Νερό",
+            "wiki": "DeSoto_County,_Mississippi"
+          }
+        ]
+      },
+      "pastVsPresent": [
+        {
+          "epoch": "Σάουθαβεν 1926: Αγροτική Περιοχή",
+          "content": "Μια μικρή κοινότητα 500 κατοίκων με αγροκτήματα και cotton fields, που δεν έχει ακόμη αστικό χαρακτήρα."
+        },
+        {
+          "epoch": "Σάουθαβεν 2026: Top of Mississippi",
+          "content": "Η τρίτη μεγαλύτερη πόλη του Μισισιπή με 56.000 κατοίκους, προάστιο του Memphis με Landers Center και Tanger Outlets."
+        }
+      ],
+      "pois": [
+        {
+          "name": "Landers Center",
+          "category": "culture",
+          "coords": [
+            34.9886,
+            -90.0126
+          ],
+          "desc": "Arena 11.000+ θέσεων."
+        },
+        {
+          "name": "Tanger Outlets Southaven",
+          "category": "business",
+          "coords": [
+            34.9843,
+            -90.02
+          ],
+          "desc": "Outlet mall 70+ καταστημάτων."
+        },
+        {
+          "name": "Snowden House",
+          "category": "history",
+          "coords": [
+            34.9945,
+            -90.021
+          ],
+          "desc": "Ιστορικό antebellum σπίτι του 1850."
+        },
+        {
+          "name": "Central Park Southaven",
+          "category": "nature",
+          "coords": [
+            34.9817,
+            -89.999
+          ],
+          "desc": "Πάρκο 100+ στρεμμάτων."
+        },
+        {
+          "name": "BankPlus Amphitheater",
+          "category": "culture",
+          "coords": [
+            34.9886,
+            -90.0126
+          ],
+          "desc": "Υπαίθριο θέατρο για συναυλίες."
+        }
+      ]
     }
   ]
 }

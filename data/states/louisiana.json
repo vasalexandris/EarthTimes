@@ -396,7 +396,8 @@
           },
           {
             "title": "Mardi Gras και Krewes",
-            "desc": "Οι παρελάσεις ξεκινούν εβδομάδες πριν την Αποκριά, με άρματα, μάσκες, χάντρες και τις αυτοσχέδιες «Indian tribes» των μαύρων γειτονιών."          },
+            "desc": "Οι παρελάσεις ξεκινούν εβδομάδες πριν την Αποκριά, με άρματα, μάσκες, χάντρες και τις αυτοσχέδιες «Indian tribes» των μαύρων γειτονιών."
+          },
           {
             "title": "Κρεολική Κουζίνα",
             "desc": "Gumbo, jambalaya, beignets και po' boys: μια κουζίνα που γεννήθηκε από τη συνάντηση γαλλικών, αφρικανικών, ισπανικών και ιθαγενών παραδόσεων."
@@ -542,6 +543,1910 @@
             -90.132
           ],
           "desc": "Ζωολογικός κήπος μέσα σε πάρκο 340 στρεμμάτων κατά μήκος του Μισισιπή."
+        }
+      ]
+    },
+    {
+      "id": "shreveport",
+      "name": "Σρίβπορτ",
+      "englishName": "Shreveport",
+      "nickname": "The Port City / Ratchet City",
+      "type": "city",
+      "coords": [
+        32.5252,
+        -93.7502
+      ],
+      "zoom": 12.5,
+      "stats": {
+        "population": "187.000 (390.000 μητροπολιτική)",
+        "founded": "1836",
+        "area": "316 km²",
+        "elevation": "43 μ."
+      },
+      "quote": "«Η πόλη του Red River και του Boardwalk, που ενώνει τη Λουιζιάνα με το Texas και αποτελεί το τρίτο κέντρο τζόγου της πολιτείας.»",
+      "geo": {
+        "summary": "Χτισμένη στις όχθες του ποταμού Red River, στη βορειοδυτική Λουιζιάνα, κοντά στα σύνορα με το Texas και το Arkansas. Η πόλη βρίσκεται στο σταυροδρόμι της Deep South με το Southwest και διαθέτει λιμάνι στον Red River που συνδέεται με τον Μισισιπή.",
+        "highlights": [
+          {
+            "title": "Ποταμός Red River",
+            "desc": "Πλωτός ποταμός που διαρρέει την πόλη και συνδέεται με τον Μισισιπή μέσω φραγμάτων και καναλιών, με φορτηγίδες και κρουαζιερόπλοια."
+          },
+          {
+            "title": "Cross Lake",
+            "desc": "Τεχνητή λίμνη 3.500 στρεμμάτων στα δυτικά της πόλης, που τροφοδοτεί με νερό και προσφέρει κολύμπι και ψάρεμα."
+          },
+          {
+            "title": "Piney Woods",
+            "desc": "Η περιοχή δάσους πεύκου που περιβάλλει την πόλη στα νότια και δυτικά, με κυνήγι και ψάρεμα."
+          }
+        ]
+      },
+      "hist": {
+        "summary": "Ιδρύθηκε το 1836 από την Shreve Town Company, που έκανε πλωτό τον Red River με εκσκαφή του «Great Raft», ενός τεράστιου φράγματος κούρτων που εμπόδιζε ναυσιπλοΐα. Η πόλη έγινε πρωτεύουσα της Συνομοσπονδίας το 1863 μετά την πτώση του Baton Rouge. Τον 20ό αιώνα αναδείχθηκε σε κέντρο πετρελαίου και καζίνο.",
+        "highlights": [
+          {
+            "year": "1836",
+            "event": "Ίδρυση & Great Raft",
+            "desc": "Ο Captain Henry Miller Shreve καθαρίζει το Great Raft και ιδρύει την πόλη που πήρε το όνομά του."
+          },
+          {
+            "year": "1863",
+            "event": "Πρωτεύουσα της Συνομοσπονδίας",
+            "desc": "Μετά την πτώση του Baton Rouge και του Μπατόν Ρουζ, το Σρίβπορτ γίνεται η τελευταία πρωτεύουσα της Συνομοσπονδίας μέχρι την παράδοση του 1865."
+          },
+          {
+            "year": "1994",
+            "event": "Riverboat Casinos",
+            "desc": "Νόμος της πολιτείας επιτρέπει καζίνο σε ποτάμια, που μετατρέπει το Σρίβπορτ σε κέντρο τζόγου και τουρισμού."
+          }
+        ]
+      },
+      "demo": {
+        "summary": "Τρίτη μεγαλύτερη πόλη της Λουιζιάνα με 187.000 κατοίκους και μητρόπολη 390.000. Σημαντική αφροαμερικανική κοινότητα (~55%), με ισχυρή πετρελαϊκή, ιατρική και στρατιωτική παρουσία.",
+        "details": [
+          {
+            "label": "Καζίνο & Τουρισμός",
+            "text": "Σαμπόκ καζίνο (Horseshoe, Bally’s, Margaritaville, Boomtown) και Louisiana Boardwalk προσελκύουν 5+ εκατομμύρια επισκέπτες."
+          },
+          {
+            "label": "Ιατρική & Παιδεία",
+            "text": "Το Ochsner LSU Health και το LSU Health Shreveport είναι από τους μεγαλύτερους εργοδότες και εκπαιδευτικά κέντρα."
+          },
+          {
+            "label": "Barksdale Air Force Base",
+            "text": "Η βάση του Πολεμικού Αεροπορίας φιλοξενεί Global Strike Command και B-52 bombers, με 8.000+ προσωπικό."
+          }
+        ]
+      },
+      "cult": {
+        "summary": "Το Σρίβπορτ είναι «Η Πόλη του Boardwalk» με καζίνο, συναυλίες και μουσική κληρονομιά από το εξαιρετικό νέο μουσείοMediaType.",
+        "items": [
+          {
+            "title": "Louisiana Boardwalk",
+            "desc": "Outlet mall 500+ καταστημάτων στην όχθη του Red River στο Bossier City, που προσελκύει 10+ εκατομμύρια επισκέπτες."
+          },
+          {
+            "title": "Shreveport Aquarium",
+            "desc": "Ενυδρείο με σαρκούρες, jellyfish και interactive displays στο κέντρο της πόλης."
+          },
+          {
+            "title": "Mardi Gras του Red River",
+            "desc": "Παρελάσεις Mystic Krewes κάθε Φεβρουάριο, που είναι οι μεγαλύτερες της βόρειας Λουιζιάνα."
+          }
+        ]
+      },
+      "guide": {
+        "summary": "Πέντε στάσεις για να ανακαλύψεις το Σρίβπορτ: από το ενυδρείο και το Boardwalk μέχρι το μουσείο τέχνης και τη βάση Barksdale.",
+        "items": [
+          {
+            "title": "Shreveport Aquarium",
+            "cat": "museum",
+            "catLabel": "🖼️ Μουσείο",
+            "desc": "Ενυδρείο με σαρκούρες, jellyfish και interactive exhibits στο κέντρο.",
+            "wiki": "Shreveport_Aquarium"
+          },
+          {
+            "title": "Louisiana Boardwalk",
+            "cat": "business",
+            "catLabel": "🛍️ Αγορές",
+            "desc": "Outlet mall 500+ καταστημάτων στο Bossier City με θέα στον Red River.",
+            "wiki": "Louisiana_Boardwalk"
+          },
+          {
+            "title": "R.W. Norton Art Gallery",
+            "cat": "museum",
+            "catLabel": "🖼️ Μουσείο",
+            "desc": "Συλλογή ευρωπαϊκής και αμερικανικής τέχνης σε πάρκο 100 στρεμμάτων με azaleas.",
+            "wiki": "R.W._Norton_Art_Gallery"
+          },
+          {
+            "title": "Sci-Port Discovery Center",
+            "cat": "museum",
+            "catLabel": "🖼️ Μουσείο",
+            "desc": "Παιδικό μουσείο επιστημών με ενυδρείο, planetarium και interactive exhibits.",
+            "wiki": "Sci-Port_Discovery_Center"
+          },
+          {
+            "title": "Barksdale Global Power Museum",
+            "cat": "history",
+            "catLabel": "🏛️ Ιστορία",
+            "desc": "Μουσείο της Πολεμικής Αεροπορίας με ιστορικά B-52 και πυρηνικά εκθέματα.",
+            "wiki": "Barksdale_Air_Force_Base"
+          }
+        ]
+      },
+      "gastro": {
+        "summary": "Η κουζίνα του Σρίβπορτ συνδυάζει κατζούν, κρεολική και Tex-Mex επιρροές, με gumbo, tamales και πικάντικα BBQ.",
+        "items": [
+          {
+            "title": "Crawfish Boil",
+            "desc": "Καραβίδες βρασμένες με μπαχαρικά, πατάτες και καλαμπόκι, σερβιρισμένες σε μεγάλες ποσότητες σε υπαίθριους χώρους.",
+            "tag": "Κατζούν κλασικό"
+          },
+          {
+            "title": "Natchitoches Meat Pie",
+            "desc": "Τηγανητή πίτα με κιμά, μπαχαρικά και κρεμμύδια, σερβιρισμένη με πικάντικη σάλτσα.",
+            "tag": "Τοπικό delicacy"
+          },
+          {
+            "title": "Delta Tamales",
+            "desc": "Καλαμποκένιο ζυμάρι με κρέας και μπαχαρικά, τυλιγμένο σε φύλλα καλαμποκιού, με μεξικάνικες ρίζες.",
+            "tag": "Παραδοσιακό"
+          },
+          {
+            "title": "Pralines",
+            "desc": "Γλυκά από πεκάν και καραμέλα ζάχαρης, κλασικό γλυκό της Λουιζιάνα.",
+            "tag": "Γλυκό"
+          }
+        ]
+      },
+      "eco": {
+        "summary": "Το Σρίβπορτ προστατεύει τον Red River και τα δάση πεύκου, με προγράμματα revitalization του κέντρου και πράσινες υποδομές.",
+        "items": [
+          {
+            "title": "Red River National Wildlife Refuge",
+            "desc": "Προστατευόμενος υγρότοπος 25 km από την πόλη που προστατεύει migratory birds και αλιγάτορες.",
+            "cat": "nature",
+            "catLabel": "🌿 Υγρότοι",
+            "wiki": "Red_River_National_Wildlife_Refuge"
+          },
+          {
+            "title": "Walter B. Jacobs Memorial Nature Park",
+            "desc": "Πάρκο 650 στρεμμάτων με δάσος πεύκου, μονοπάτια και εκπαιδευτικά προγράμματα.",
+            "cat": "nature",
+            "catLabel": "🌳 Πάρκα",
+            "wiki": "Walter_B._Jacobs_Memorial_Nature_Park"
+          },
+          {
+            "title": "Red River Revitalization",
+            "desc": "Προγράμματα καθαρισμού και ανάπλασης του Red River για να γίνει πλωτός και επισκέψιμος.",
+            "cat": "business",
+            "catLabel": "💧 Νερό",
+            "wiki": "Red_River_(Mississippi_River)"
+          }
+        ]
+      },
+      "pastVsPresent": [
+        {
+          "epoch": "Σρίβπορτ 1926: Πετρέλαιο και Βαμβάκι",
+          "content": "Πόλη 50.000 κατοίκων με πετρέλαιο από το Caddo Field, βαμβάκι και σιδηρόδρομο, που μόλις έχει ανακαλύψει τον Lucas Gusher."
+        },
+        {
+          "epoch": "Σρίβπορτ 2026: Boardwalk & B-52",
+          "content": "Πόλη 187.000 κατοίκων με Barksdale B-52, καζίνο και Louisiana Boardwalk, που προσελκύει 5+ εκατομμύρια επισκέπτες ετησίως."
+        }
+      ],
+      "pois": [
+        {
+          "name": "Shreveport Aquarium",
+          "category": "museum",
+          "coords": [
+            32.514,
+            -93.7497
+          ],
+          "desc": "Ενυδρείο στο κέντρο."
+        },
+        {
+          "name": "Louisiana Boardwalk",
+          "category": "business",
+          "coords": [
+            32.53,
+            -93.733
+          ],
+          "desc": "Outlet mall στο Bossier City."
+        },
+        {
+          "name": "R.W. Norton Art Gallery",
+          "category": "museum",
+          "coords": [
+            32.5267,
+            -93.775
+          ],
+          "desc": "Συλλογή τέχνης και azalea gardens."
+        },
+        {
+          "name": "Sci-Port Discovery Center",
+          "category": "museum",
+          "coords": [
+            32.5105,
+            -93.752
+          ],
+          "desc": "Παιδικό μουσείο επιστημών."
+        },
+        {
+          "name": "Barksdale AFB",
+          "category": "history",
+          "coords": [
+            32.5014,
+            -93.6628
+          ],
+          "desc": "Βάση B-52 bombers."
+        }
+      ]
+    },
+    {
+      "id": "lafayette",
+      "name": "Λαφαγιέτ",
+      "englishName": "Lafayette",
+      "nickname": "The Heart of Cajun Country / The Hub City of Acadiana",
+      "type": "city",
+      "coords": [
+        30.2241,
+        -92.0198
+      ],
+      "zoom": 12.7,
+      "stats": {
+        "population": "121.000 (270.000 μητροπολιτική)",
+        "founded": "1821",
+        "area": "140 km²",
+        "elevation": "11 μ."
+      },
+      "quote": "«Η «Καρδιά της χώρας των Cajun», όπου η μουσική zydeco, το ακορντεόν και η κουζίνα Cajun αποτελούν τρόπο ζωής.»",
+      "geo": {
+        "summary": "Χτισμένη στην πεδιάδα Acadiana της νότιας κεντρικής Λουιζιάνα, ανάμεσα στον ποταμό Vermilion και τους υγροτόπους Atchafalaya. Η πόλη είναι το κέντρο της περιοχής Cajun Country και το φυσικό κέντρο της κουλτούρας Acadian.",
+        "highlights": [
+          {
+            "title": "Ποταμός Vermilion",
+            "desc": "Πλωτός ποταμός που διαρρέει την πόλη και προσφέρει καγιάκ, canoeing και παραδοσιακό boating."
+          },
+          {
+            "title": "Atchafalaya Basin",
+            "desc": "Ο μεγαλύτερος ελώδης βάλτος των ΗΠΑ δυτικά της πόλης, με κυπαρίσσια και αλιγάτορες."
+          },
+          {
+            "title": "Acadiana Plains",
+            "desc": "Επίπεδη, γόνιμη πεδιάδα με prairie και καλαμπόκι, που είναι η καρδιά της Cajun Country."
+          }
+        ]
+      },
+      "hist": {
+        "summary": "Ιδρύθηκε το 1821 ως «Vermilionville» από Jean Mouton και μετονομάσθηκε το 1884 σε Lafayette προς τιμήν του Γάλλου ήρωα του Επαναστάτη Lafayette. Η πόλη είναι το κέντρο της Acadiana, της περιοχής που εποικίστηκε από τους Acadians που εκδιώχθηκαν από τον Καναδά το 1755.",
+        "highlights": [
+          {
+            "year": "1755",
+            "event": "Le Grand Dérangement",
+            "desc": "Οι Βρετανοί εκδιώχνουν τους Γαλλόφωνους Acadians από την Nova Scotia, που καταλήγουν στη νότια Λουιζιάνα."
+          },
+          {
+            "year": "1821",
+            "event": "Ίδρυση Vermilionville",
+            "desc": "Ο Jean Mouton δωρίζει γη για την κατασκευή εκκλησίας, που γίνεται ο πυρήνας της πόλης."
+          },
+          {
+            "year": "1974",
+            "event": "Festival Acadiens",
+            "desc": "Ξεκινά το ετήσιο Festival Acadiens et Créoles που γιορτάζει την Acadian κληρονομιά με μουσική και φαγητό."
+          }
+        ]
+      },
+      "demo": {
+        "summary": "Τέταρτη μεγαλύτερη πόλη της Λουιζιάνα με 121.000 κατοίκους και μητρόπολη 270.000. Σημαντική αφροαμερικανική (~40%) και γαλλόφωνη Cajun κοινότητα, με ισχυρή πανεπιστημιακή και ιατρική οικονομία.",
+        "details": [
+          {
+            "label": "Πανεπιστήμιο & Ιατρική",
+            "text": "Το University of Louisiana at Lafayette (ULL) με 19.000 φοιτητές και το Ochsner University Hospital είναι οι κύριοι εργοδότες."
+          },
+          {
+            "label": "Ενέργεια & Τεχνολογία",
+            "text": "Η εταιρεία πετρελαίου Stone Energy, CGI και άλλες εταιρείες oilfield services είναι σημαντικοί εργοδότες."
+          },
+          {
+            "label": "Cajun Tourism",
+            "text": "Vermilionville, Acadian Cultural Center και Festival Acadiens προσελκύουν 1+ εκατομμύρια επισκέπτες."
+          }
+        ]
+      },
+      "cult": {
+        "summary": "Το Λαφαγιέτ είναι η «Καρδιά της Cajun Country» με μουσική zydeco, ακορντεόν, Cajun French και ζωντανή κουλτούρα Acadian.",
+        "items": [
+          {
+            "title": "Vermilionville",
+            "desc": "Living history museum που παρουσιάζει την Acadian, Native και Creole κουλτούρα του 18ου-19ου αιώνα με αναστυλωμένα σπίτια."
+          },
+          {
+            "title": "Acadian Cultural Center",
+            "desc": "Μουσείο του Εθνικού Πάρκου που παρουσιάζει την ιστορία των Acadians και Cajun κληρονομιά."
+          },
+          {
+            "title": "Festival International de Louisiane",
+            "desc": "Το μεγαλύτερο γαλλόφωνο μουσικό φεστιβάλ των ΗΠΑ κάθε Απρίλιο με καλλιτέχνες από 40+ χώρες."
+          }
+        ]
+      },
+      "guide": {
+        "summary": "Πέντε στάσεις για να ανακαλύψεις το Λαφαγιέτ: από το Vermilionville και το μουσείο Acadian μέχρι το φεστιβάλ και το πανεπιστήμιο.",
+        "items": [
+          {
+            "title": "Vermilionville Living History Museum",
+            "cat": "museum",
+            "catLabel": "🖼️ Μουσείο",
+            "desc": "Αναστυλωμένος οικισμός 18ου αιώνα με Cajun, Creole και Native American κτήρια.",
+            "wiki": "Vermilionville_(museum)"
+          },
+          {
+            "title": "Acadian Cultural Center",
+            "cat": "museum",
+            "catLabel": "🖼️ Μουσείο",
+            "desc": "Μουσείο του Εθνικού Πάρκου για την ιστορία των Acadians και Cajun κληρονομιά.",
+            "wiki": "Acadian_Cultural_Center"
+          },
+          {
+            "title": "University of Louisiana at Lafayette",
+            "cat": "culture",
+            "catLabel": "🎨 Πολιτισμός",
+            "desc": "Πανεπιστημιακή καμπ με Cypress Lake και το Ragin’ Cajuns athletics.",
+            "wiki": "University_of_Louisiana_at_Lafayette"
+          },
+          {
+            "title": "Alexandre Mouton House Museum",
+            "cat": "history",
+            "catLabel": "🏛️ Ιστορία",
+            "desc": "Ιστορικό σπίτι του πρώτου κυβερνήτη της Λουιζιάνα από την Acadiana, με antebellum έπιπλα.",
+            "wiki": "Alexandre_Mouton_House"
+          },
+          {
+            "title": "Children’s Museum of Acadiana",
+            "cat": "museum",
+            "catLabel": "🖼️ Μουσείο",
+            "desc": "Παιδικό μουσείο με διαδραστικά εκθέματα στο κέντρο της πόλης.",
+            "wiki": "Children%27s_Museum_of_Acadiana"
+          }
+        ]
+      },
+      "gastro": {
+        "summary": "Η κουζίνα του Λαφαγιέτ είναι η αυθεντική Cajun Country: gumbo, jambalaya, boudin και crawfish boil, με αυθεντικές γαλλικές-αφρικανικές ρίζες.",
+        "items": [
+          {
+            "title": "Crawfish Étouffée",
+            "desc": "Καραβίδες σε βούτυρο και κρεμώδη σάλτσα, σερβιρισμένες πάνω σε ρύζι — το πιάτο-σύμβολο της Acadiana.",
+            "tag": "Cajun κλασικό"
+          },
+          {
+            "title": "Boudin",
+            "desc": "Λουκάνικο από ρύζι, χοιρινό, συκώτι και μπαχαρικά, που είναι street food της Cajun Country.",
+            "tag": "Street food"
+          },
+          {
+            "title": "Seafood Gumbo",
+            "desc": "Πηχτή σούπα roux με okra, αντούιγ, γαρίδες και καβούρια, σερβιρισμένη πάνω σε ρύζι.",
+            "tag": "Cajun κλασικό"
+          },
+          {
+            "title": "Beignets",
+            "desc": "Ζεστά τηγανητά ζυμαράκια πασπαλισμένα με ζάχαρη άχνη, σερβιρισμένα με café au lait.",
+            "tag": "Γλυκό"
+          }
+        ]
+      },
+      "eco": {
+        "summary": "Το Λαφαγιέτ προστατεύει τους υγροτόπους Atchafalaya και τον Vermilion, με προγράμματα βιώσιμης ανάπτυξης και ζωντανής κουλτούρας.",
+        "items": [
+          {
+            "title": "Atchafalaya Basin Protection",
+            "desc": "Ο μεγαλύτερος βάλτος των ΗΠΑ προστατεύεται από ομοσπονδιακά και πολιτειακά προγράμματα.",
+            "cat": "nature",
+            "catLabel": "🌿 Υγρότοποι",
+            "wiki": "Atchafalaya_Basin"
+          },
+          {
+            "title": "Vermilion River Conservancy",
+            "desc": "Προγράμματα καθαρισμού και προστασίας του ποταμού Vermilion που διαρρέει την πόλη.",
+            "cat": "business",
+            "catLabel": "💧 Νερό",
+            "wiki": "Vermilion_River_(Louisiana)"
+          },
+          {
+            "title": "Acadiana Park & Nature Station",
+            "desc": "Φυσικό καταφύγιο 200 στρεμμάτων με μονοπάτια και εκπαιδευτικά προγράμματα.",
+            "cat": "nature",
+            "catLabel": "🌳 Πάρκα",
+            "wiki": "Acadiana_Park"
+          }
+        ]
+      },
+      "pastVsPresent": [
+        {
+          "epoch": "Λαφαγιέτ 1926: Αγροτική Ακαδιάνα",
+          "content": "Πόλη 15.000 κατοίκων με αγροτική οικονομία, γαλλόφωνη Cajun κοινότητα και Southwestern Louisiana Institute 200 φοιτητών."
+        },
+        {
+          "epoch": "Λαφαγιέτ 2026: Hub City of Acadiana",
+          "content": "Πόλη 121.000 κατοίκων με πανεπιστήμιο 19.000 φοιτητών, Festival International και Vermilionville που προσελκύουν εκατομμύρια επισκέπτες."
+        }
+      ],
+      "pois": [
+        {
+          "name": "Vermilionville Living History Museum",
+          "category": "museum",
+          "coords": [
+            30.21,
+            -92.052
+          ],
+          "desc": "Αναστυλωμένος Cajun οικισμός."
+        },
+        {
+          "name": "Acadian Cultural Center",
+          "category": "museum",
+          "coords": [
+            30.214,
+            -91.996
+          ],
+          "desc": "Μουσείο Cajun κληρονομιάς."
+        },
+        {
+          "name": "University of Louisiana at Lafayette",
+          "category": "culture",
+          "coords": [
+            30.217,
+            -92.02
+          ],
+          "desc": "Πανεπιστημιακή καμπ."
+        },
+        {
+          "name": "Alexandre Mouton House",
+          "category": "history",
+          "coords": [
+            30.225,
+            -92.02
+          ],
+          "desc": "Ιστορικό σπίτι-μουσείο."
+        },
+        {
+          "name": "Acadiana Park Nature Station",
+          "category": "nature",
+          "coords": [
+            30.247,
+            -92.046
+          ],
+          "desc": "Φυσικό καταφύγιο 200 στρεμμάτων."
+        }
+      ]
+    },
+    {
+      "id": "lake-charles",
+      "name": "Λέικ Τσαρλς",
+      "englishName": "Lake Charles",
+      "nickname": "The Capital of Paradise / Lake City",
+      "type": "city",
+      "coords": [
+        30.2264,
+        -93.2043
+      ],
+      "zoom": 12.6,
+      "stats": {
+        "population": "78.000 (210.000 μητροπολιτική)",
+        "founded": "1867",
+        "area": "108 km²",
+        "elevation": "5 μ."
+      },
+      "quote": "«Η πόλη της λίμνης Charles και των καζίνο, όπου η κρεολική κληρονομιά συναντά την πετροχημική βιομηχανία και το Creole Nature Trail.»",
+      "geo": {
+        "summary": "Χτισμένη στις όχθες της λίμνης Charles, της λιμνοθάλασσας Calcasieu και του ποταμού Calcasieu, στη νοτιοδυτική Λουιζιάνα. Η πόλη βρίσκεται κοντά στον Κόλπο του Μεξικού και είναι η πύλη του Creole Nature Trail All-American Road.",
+        "highlights": [
+          {
+            "title": "Λίμνη Charles",
+            "desc": "Υφάλμυρη λιμνοθάλασσα 5.300 στρεμμάτων στο κέντρο της πόλης, που προσφέρει κολύμπι και ψάρεμα."
+          },
+          {
+            "title": "Ποταμός Calcasieu",
+            "desc": "Πλωτός ποταμός που συνδέει την πόλη με τον Κόλπο, με φορτηγίδες και λιμάνι."
+          },
+          {
+            "title": "Creole Nature Trail",
+            "desc": "All-American Road 290 km που συνδέει την πόλη με τα ακρογιάλια, βάλτους και παραλίες της νοτιοδυτικής Λουιζιάνα."
+          }
+        ]
+      },
+      "hist": {
+        "summary": "Ιδρύθηκε το 1867 από τον Charles Sallier και ονομάσθηκε από τη λίμνη Charles. Η πόλη αναπτύχθηκε ως λιμάνι ξυλείας και ρυζιού, αργότερα ως κέντρο πετροχημικής βιομηχανίας. Ο τυφώνας Audrey (1957) σκότωσε 500+ κατοίκους και ο Laura (2020) κατέστρεψε μεγάλο μέρος της πόλης.",
+        "highlights": [
+          {
+            "year": "1867",
+            "event": "Ίδρυση",
+            "desc": "Ο Charles Sallier ιδρύει τον οικισμό στις όχθες της λίμνης Charles."
+          },
+          {
+            "year": "1957",
+            "event": "Τυφώνας Audrey",
+            "desc": "Ο Audrey χτυπά με ανέμους 200 km/h και σκοτώσει 500+ κατοίκους, ο πιο θανατηφόρος τυφώνας της δεκαετίας."
+          },
+          {
+            "year": "2020",
+            "event": "Τυφώνας Laura",
+            "desc": "Ο Laura χτυπά με ανέμους 240 km/h και καταστρέφει το 80% των κτιρίων· η πόλη ξαναχτίστηκε με νέους κανονισμούς."
+          }
+        ]
+      },
+      "demo": {
+        "summary": "Πόλη 78.000 κατοίκων και μητρόπολη 210.000, με σημαντική κρεολική και Cajun κοινότητα (~45% αφροαμερικανοί). Η οικονομία στηρίζεται στα καζίνο, τη πετροχημεία και το λιμάνι.",
+        "details": [
+          {
+            "label": "Καζίνο & Τουρισμός",
+            "text": "Τρία καζίνο (L’Auberge, Golden Nugget, Horseshoe) προσελκύουν 4+ εκατομμύρια επισκέπτες ετησίως."
+          },
+          {
+            "label": "Πετροχημικός Διάδρομος",
+            "text": "Citgo, Phillips 66, Westlake Chemical και άλλα διυλιστήρια είναι από τους μεγαλύτερους εργοδότες."
+          },
+          {
+            "label": "Λιμάνι & Ενέργεια",
+            "text": "Το Port of Lake Charles είναι το 12ο μεγαλύτερο λιμάνι των ΗΠΑ και ένα κέντρο LNG exports."
+          }
+        ]
+      },
+      "cult": {
+        "summary": "Το Λέικ Τσαρλς είναι «Capital of Paradise» με καζίνο, μουσική zydeco, Mardi Gras Museum και τους Charley Hunter Family Bluebirds.",
+        "items": [
+          {
+            "title": "Mardi Gras Museum",
+            "desc": "Το μεγαλύτερο μουσείο Mardi Gras του κόσμου με 1.500+ costumes σε ιστορικό κτίριο του 1910."
+          },
+          {
+            "title": "Charley Hunter Family & Zydeco",
+            "desc": "Η πόλη είναι λίκνο της zydeco μουσικής με Charley Hunter, Clifton Chenier και ετήσια φεστιβάλ."
+          },
+          {
+            "title": "Contraband Days",
+            "desc": "Ετήσιο φεστιβάλ Jean Lafitte κάθε Μάιο με pirate theme, καρναβάλι και συναυλίες zydeco."
+          }
+        ]
+      },
+      "guide": {
+        "summary": "Πέντε στάσεις για να ανακαλύψεις το Λέικ Τσαρλς: από το Mardi Gras Museum και τα καζίνο μέχρι το Creole Nature Trail και το Children’s Museum.",
+        "items": [
+          {
+            "title": "Mardi Gras Museum of Imperial Calcasieu",
+            "cat": "museum",
+            "catLabel": "🖼️ Μουσείο",
+            "desc": "Το μεγαλύτερο μουσείο Mardi Gras με costumes, floats και ιστορία των krewes.",
+            "wiki": "Mardi_Gras_Museum_of_Imperial_Calcasieu"
+          },
+          {
+            "title": "Creole Nature Trail Adventure Point",
+            "cat": "nature",
+            "catLabel": "🌿 Φύση",
+            "desc": "Κέντρο επισκεπτών για το All-American Road που συνδέει την πόλη με ακρογιάλια και βάλτους.",
+            "wiki": "Creole_Nature_Trail"
+          },
+          {
+            "title": "Port of Lake Charles",
+            "cat": "history",
+            "catLabel": "🏛️ Ιστορία",
+            "desc": "Το 12ο μεγαλύτερο λιμάνι των ΗΠΑ, με διυλιστήρια και τερματικό LNG.",
+            "wiki": "Port_of_Lake_Charles"
+          },
+          {
+            "title": "Children’s Museum of Southwest Louisiana",
+            "cat": "museum",
+            "catLabel": "🖼️ Μουσείο",
+            "desc": "Παιδικό μουσείο στο κέντρο της πόλης με διαδραστικά εκθέματα.",
+            "wiki": "Lake_Charles,_Louisiana"
+          },
+          {
+            "title": "Millennium Park",
+            "cat": "nature",
+            "catLabel": "🌳 Πάρκα",
+            "desc": "Πάρκο με παιδικές χαρές και μονοπάτια κοντά στη λίμνη Charles.",
+            "wiki": "Millennium_Park_(Lake_Charles)"
+          }
+        ]
+      },
+      "gastro": {
+        "summary": "Η κουζίνα του Λέικ Τσαρλς είναι Cajun-Creole με θαλασσινά του Κόλπου, καραβίδες και boudin, με ισχυρή επιρροή από το zydeco.",
+        "items": [
+          {
+            "title": "Crawfish Boil",
+            "desc": "Καραβίδες βρασμένες με μπαχαρικά, πατάτες και καλαμπόκι, σερβιρισμένες σε υπαίθριους χώρους.",
+            "tag": "Cajun κλασικό"
+          },
+          {
+            "title": "Seafood Gumbo",
+            "desc": "Πηχτή σούπα roux με okra, αντούιγ και θαλασσινά από τον Κόλπο.",
+            "tag": "Κρεολικό"
+          },
+          {
+            "title": "Boudin Balls",
+            "desc": "Τηγανητές μπάλες από boudin (λουκάνικο ρυζιού και χοιρινού), street food της περιοχής.",
+            "tag": "Street food"
+          },
+          {
+            "title": "Bread Pudding",
+            "desc": "Πουτίγκα μπαγιάτικου ψωμιού με σταφίδες και σάλτσα bourbon, σερβιρισμένη στα καζίνο.",
+            "tag": "Γλυκό"
+          }
+        ]
+      },
+      "eco": {
+        "summary": "Το Λέικ Τσαρλς προστατεύει τους υγροτόπους Sabine και το Creole Nature Trail, με προγράμματα αποκατάστασης μετά τους τυφώνες.",
+        "items": [
+          {
+            "title": "Creole Nature Trail",
+            "desc": "All-American Road 290 km που προστατεύει βάλτους, παραλίες και wildlife.",
+            "cat": "nature",
+            "catLabel": "🌿 Φύση",
+            "wiki": "Creole_Nature_Trail"
+          },
+          {
+            "title": "Sabine National Wildlife Refuge",
+            "desc": "Προστατευόμενος υγρότοπος 5.000+ στρεμμάτων με migratory birds και αλιγάτορες.",
+            "cat": "nature",
+            "catLabel": "🌳 Πάρκα",
+            "wiki": "Sabine_National_Wildlife_Refuge"
+          },
+          {
+            "title": "Lake Charles Restoration",
+            "desc": "Προγράμματα καθαρισμού της λίμνης Charles μετά τον τυφώνα Laura και αποκατάστασης του οικοσυστήματος.",
+            "cat": "business",
+            "catLabel": "💧 Νερό",
+            "wiki": "Lake_Charles_(Louisiana)"
+          }
+        ]
+      },
+      "pastVsPresent": [
+        {
+          "epoch": "Λέικ Τσαρλς 1926: Ξυλεία και Ρύζι",
+          "content": "Πόλη 15.000 κατοίκων με λιμάνι ξυλείας, ρυζιού και πετρελαίου από το Spindletop."
+        },
+        {
+          "epoch": "Λέικ Τσαρλς 2026: Καζίνο & Πετροχημεία",
+          "content": "Πόλη 78.000 κατοίκων με 3 καζίνο, 4+ εκατομμύρια επισκέπτες και 12ο μεγαλύτερο λιμάνι των ΗΠΑ, που ξαναχτίζεται μετά τον τυφώνα Laura."
+        }
+      ],
+      "pois": [
+        {
+          "name": "Mardi Gras Museum",
+          "category": "museum",
+          "coords": [
+            30.2245,
+            -93.2183
+          ],
+          "desc": "Το μεγαλύτερο μουσείο Mardi Gras."
+        },
+        {
+          "name": "Creole Nature Trail Adventure Point",
+          "category": "nature",
+          "coords": [
+            30.2264,
+            -93.2043
+          ],
+          "desc": "Κέντρο επισκεπτών."
+        },
+        {
+          "name": "Port of Lake Charles",
+          "category": "history",
+          "coords": [
+            30.215,
+            -93.205
+          ],
+          "desc": "Το 12ο μεγαλύτερο λιμάνι των ΗΠΑ."
+        },
+        {
+          "name": "L’Auberge Casino Resort",
+          "category": "culture",
+          "coords": [
+            30.221,
+            -93.227
+          ],
+          "desc": "Καζίνο και ξενοδοχείο."
+        },
+        {
+          "name": "Millennium Park",
+          "category": "nature",
+          "coords": [
+            30.231,
+            -93.215
+          ],
+          "desc": "Πάρκο με παιδικές χαρές."
+        }
+      ]
+    },
+    {
+      "id": "alexandria-la",
+      "name": "Αλεξάνδρεια",
+      "englishName": "Alexandria",
+      "nickname": "The Heart of Louisiana / The Central City",
+      "type": "city",
+      "coords": [
+        31.3113,
+        -92.4451
+      ],
+      "zoom": 12.7,
+      "stats": {
+        "population": "47.000 (153.000 μητροπολιτική)",
+        "founded": "1818",
+        "area": "107 km²",
+        "elevation": "23 μ."
+      },
+      "quote": "«Η «Καρδιά της Λουιζιάνα», στο κέντρο της πολιτείας, όπου ο Red River συναντά το Kisatchie National Forest και η βιομηχανία την ιστορία.»",
+      "geo": {
+        "summary": "Χτισμένη στις όχθες του ποταμού Red River, στο γεωγραφικό κέντρο της Λουιζιάνα. Η πόλη βρίσκεται στο όριο μεταξύ των παράκτιων υγροτόπων του νότου και των δασικών λόφων του βορρά, με το Kisatchie National Forest στα βόρεια.",
+        "highlights": [
+          {
+            "title": "Ποταμός Red River",
+            "desc": "Πλωτός ποταμός που διαρρέει την πόλη και συνδέεται με τον Μισισιπή, με φορτηγίδες και ποταμίσιο εμπόριο."
+          },
+          {
+            "title": "Kisatchie National Forest",
+            "desc": "Το μόνο εθνικό δάσος της Λουιζιάνα, βόρεια της πόλης με 600.000+ στρέμματα longleaf pines."
+          },
+          {
+            "title": "Λεκάνη Cotile Lake",
+            "desc": "Τεχνητή λίμνη 3.000 στρεμμάτων στα δυτικά της πόλης, που προσφέρει κολύμπι, ψάρεμα και camping."
+          }
+        ]
+      },
+      "hist": {
+        "summary": "Ιδρύθηκε το 1818 από τον Alexander Fulton και ονομάσθηκε από την κόρη του. Η πόλη έγινε σημαντικό κέντρο εμπορίου βαμβακιού και σιδηροδρόμων. Κατά τον Εμφύλιο καταλήφθηκε από την Ένωση το 1863 και το 1864, όταν ο στρατηγός Nathaniel Banks κατέστρεψε μεγάλο μέρος της πόλης κατά την υποχώρηση Red River Campaign.",
+        "highlights": [
+          {
+            "year": "1818",
+            "event": "Ίδρυση",
+            "desc": "Ο Alexander Fulton ιδρύει τον οικισμό στις όχθες του Red River ως κέντρο εμπορίου βαμβακιού."
+          },
+          {
+            "year": "1864",
+            "event": "Red River Campaign",
+            "desc": "Στρατεύματα της Ένωσης υπό τον Banks υποχωρούν και καίντ την πόλη κατά την εκστρατεία Red River."
+          },
+          {
+            "year": "1941",
+            "event": "Camp Livingston & Camp Beauregard",
+            "desc": "Στρατόπεδα εκπαίδευσης του Β' Παγκοσμίου Πολέμου δημιουργούνται γύρω από την πόλη, που φιλοξενεί 200.000+ στρατιώτες."
+          }
+        ]
+      },
+      "demo": {
+        "summary": "Πόλη 47.000 κατοίκων και μητρόπολη 153.000, με σημαντική αφροαμερικανική κοινότητα (~55%). Η οικονομία στηρίζεται στην υγεία, την παιδεία και τη βιομηχανία.",
+        "details": [
+          {
+            "label": "Υγεία & Παιδεία",
+            "text": "Rapides Regional Medical Center, Christus St. Frances Cabrini Hospital και Louisiana College είναι οι κύριοι εργοδότες."
+          },
+          {
+            "label": "Βιομηχανία",
+            "text": "Plum Creek Timber, Cleco Corporation και άλλες βιομηχανίες ξυλείας και ενέργειας."
+          },
+          {
+            "label": "England Airpark",
+            "text": "Η πρώην βάση England AFB είναι σήμερα industrial park με αεροδρόμιο, που προσελκύει εταιρείες."
+          }
+        ]
+      },
+      "cult": {
+        "summary": "Η Αλεξάνδρεια είναι η «Καρδιά της Λουιζιάνα», με μουσεία, δασική κληρονομιά και μια ζωντανή κεντρική πλατεία.",
+        "items": [
+          {
+            "title": "Alexandria Museum of Art",
+            "desc": "Σύγχρονο μουσείο τέχνης στις όχθες του Red River με συλλογή Louisana και South American artists."
+          },
+          {
+            "title": "Kent Plantation House",
+            "desc": "Ανεστυρωμένο antebellum αρχοντικό του 1796 που είναι το παλαιότερο σπίτι της κεντρικής Λουιζιάνα."
+          },
+          {
+            "title": "Louisiana History Museum",
+            "desc": "Μουσείο σε ιστορικό library του 1907 με εκθέματα από την colonial και pioneer περίοδο."
+          }
+        ]
+      },
+      "guide": {
+        "summary": "Πέντε στάσεις για να ανακαλύψεις την Αλεξάνδρεια: από το μουσείο τέχνης και το Kent House μέχρι το Kisatchie Forest και το zoo.",
+        "items": [
+          {
+            "title": "Alexandria Museum of Art",
+            "cat": "museum",
+            "catLabel": "🖼️ Μουσείο",
+            "desc": "Σύγχρονο μουσείο τέχνης με συλλογή Louisana και South American.",
+            "wiki": "Alexandria_Museum_of_Art"
+          },
+          {
+            "title": "Kent Plantation House",
+            "cat": "history",
+            "catLabel": "🏛️ Ιστορία",
+            "desc": "Antebellum αρχοντικό του 1796, το παλαιότερο της κεντρικής Λουιζιάνα.",
+            "wiki": "Kent_Plantation_House"
+          },
+          {
+            "title": "Kisatchie National Forest",
+            "cat": "nature",
+            "catLabel": "🌿 Φύση",
+            "desc": "Το μόνο εθνικό δάσος της Λουιζιάνα με 600.000+ στρέμματα longleaf pines.",
+            "wiki": "Kisatchie_National_Forest"
+          },
+          {
+            "title": "Louisiana History Museum",
+            "cat": "museum",
+            "catLabel": "🖼️ Μουσείο",
+            "desc": "Μουσείο σε ιστορικό library του 1907 με colonial εκθέματα.",
+            "wiki": "Louisiana_History_Museum"
+          },
+          {
+            "title": "Alexandria Zoo",
+            "cat": "nature",
+            "catLabel": "🌳 Πάρκα",
+            "desc": "Zωολογικός κήπος 500+ ζώων στο κέντρο της πόλης.",
+            "wiki": "Alexandria_Zoo"
+          }
+        ]
+      },
+      "gastro": {
+        "summary": "Η κουζίνα της Αλεξάνδρειας είναι Cajun-southern με catfish, gumbo και Cajun boudin, με επιρροές από το Kisatchie.",
+        "items": [
+          {
+            "title": "Crawfish Étouffée",
+            "desc": "Καραβίδες σε βούτυρο και κρεμώδη σάλτσα, σερβιρισμένες πάνω σε ρύζι.",
+            "tag": "Cajun κλασικό"
+          },
+          {
+            "title": "Fried Catfish",
+            "desc": "Γατόψαρο από τον Red River σε κρούστα καλαμποκιού, με hush puppies.",
+            "tag": "Ποταμίσιο"
+          },
+          {
+            "title": "Boudin",
+            "desc": "Λουκάνικο από ρύζι, χοιρινό και μπαχαρικά, street food της Cajun Country.",
+            "tag": "Street food"
+          },
+          {
+            "title": "Pecan Pie",
+            "desc": "Γλυκό με πεκάν και σιρόπι καραμέλας, σερβιρισμένο σε family dinners.",
+            "tag": "Γλυκό"
+          }
+        ]
+      },
+      "eco": {
+        "summary": "Η Αλεξάνδρεια προστατεύει το Kisatchie National Forest και τον Red River, με προγράμματα βιώσιμης δασοπονίας.",
+        "items": [
+          {
+            "title": "Kisatchie National Forest",
+            "desc": "Το μόνο εθνικό δάσος της Λουιζιάνα με 600.000+ στρέμματα longleaf pines.",
+            "cat": "nature",
+            "catLabel": "🌿 Φύση",
+            "wiki": "Kisatchie_National_Forest"
+          },
+          {
+            "title": "Red River Restoration",
+            "desc": "Προγράμματα καθαρισμού του ποταμού και προστασίας των παραποτάμιων υγροτόπων.",
+            "cat": "business",
+            "catLabel": "💧 Νερό",
+            "wiki": "Red_River_(Mississippi_River)"
+          },
+          {
+            "title": "Cotile Lake Recreation Area",
+            "desc": "Προστατευόμενη περιοχή 3.000 στρεμμάτων με λίμνη, μονοπάτια και camping.",
+            "cat": "nature",
+            "catLabel": "🌳 Πάρκα",
+            "wiki": "Cotile_Lake"
+          }
+        ]
+      },
+      "pastVsPresent": [
+        {
+          "epoch": "Αλεξάνδρεια 1926: Βαμβάκι και Ξυλεία",
+          "content": "Πόλη 20.000 κατοίκων με λιμάνι βαμβακιού και ξυλείας στον Red River, με σιδηρόδρομο και αγροτική ενδοχώρα."
+        },
+        {
+          "epoch": "Αλεξάνδρεια 2026: Heart of Louisiana",
+          "content": "Πόλη 47.000 κατοίκων με υγεία, παιδεία και England Airpark, που είναι το κέντρο της κεντρικής Λουιζιάνα."
+        }
+      ],
+      "pois": [
+        {
+          "name": "Alexandria Museum of Art",
+          "category": "museum",
+          "coords": [
+            31.3098,
+            -92.451
+          ],
+          "desc": "Σύγχρονο μουσείο τέχνης."
+        },
+        {
+          "name": "Kent Plantation House",
+          "category": "history",
+          "coords": [
+            31.3,
+            -92.478
+          ],
+          "desc": "Antebellum αρχοντικό του 1796."
+        },
+        {
+          "name": "Kisatchie National Forest HQ",
+          "category": "nature",
+          "coords": [
+            31.328,
+            -92.451
+          ],
+          "desc": "Έδρα του εθνικού δάσους."
+        },
+        {
+          "name": "Louisiana History Museum",
+          "category": "museum",
+          "coords": [
+            31.3113,
+            -92.4451
+          ],
+          "desc": "Μουσείο colonial ιστορίας."
+        },
+        {
+          "name": "Alexandria Zoo",
+          "category": "nature",
+          "coords": [
+            31.302,
+            -92.428
+          ],
+          "desc": "Ζωολογικός κήπος 500+ ζώων."
+        }
+      ]
+    },
+    {
+      "id": "monroe-la",
+      "name": "Μονρόε",
+      "englishName": "Monroe",
+      "nickname": "The Birthplace of Delta Air Lines",
+      "type": "city",
+      "coords": [
+        32.5093,
+        -92.1193
+      ],
+      "zoom": 12.5,
+      "stats": {
+        "population": "47.000 (180.000 μητροπολιτική)",
+        "founded": "1780",
+        "area": "84 km²",
+        "elevation": "24 μ."
+      },
+      "quote": "«Η γενέτειρα της Delta Air Lines, όπου ο ποταμός Ouachita συναντά την τέχνη και τη Biedenharn κληρονομιά.»",
+      "geo": {
+        "summary": "Χτισμένη στις δυτικές όχθες του ποταμού Ouachita, στη βορειοανατολική Λουιζιάνα, κοντά στα σύνορα με το Arkansas. Η πόλη είναι χτισμένη σε ψηλές όχθες που την προστατεύουν από πλημμύρες και βρίσκεται σε μια περιοχή με πλούσια δάση πεύκου και υγροτόπους.",
+        "highlights": [
+          {
+            "title": "Ποταμός Ouachita",
+            "desc": "Πλωτός ποταμός που διαρρέει την πόλη και προσφέρει καγιάκ, canoeing και αλιεία."
+          },
+          {
+            "title": "Λόφοι Bastrop",
+            "desc": "Οι χαμηλοί λόφοι βόρεια της πόλης, με δάση πεύκου που είναι μοναδικά στη βορειοανατολική Λουιζιάνα."
+          },
+          {
+            "title": "Black Bayou Lake National Wildlife Refuge",
+            "desc": "Προστατευόμενος υγρότοπος 2.000+ στρεμμάτων στα βόρεια της πόλης με alligators και migratory birds."
+          }
+        ]
+      },
+      "hist": {
+        "summary": "Ιδρύθηκε το 1780 ως «Fort Miro» από Γάλλους και μετονομάσθηκε το 1819 σε Monroe προς τιμήν του αμερικανού προέδρου James Monroe. Το 1925 ιδρύθηκε εδώ η Huff Daland Dusters, που το 1928 μετονομάσθηκε σε Delta Air Service, ξεκινώντας τη μεγαλύτερη αεροπορική εταιρεία του κόσμου.",
+        "highlights": [
+          {
+            "year": "1780",
+            "event": "Γαλλικό Fort Miro",
+            "desc": "Γάλλοι άποικοι κτίζουν Fort Miro στις όχθες του Ouachita, που είναι η αρχή της πόλης."
+          },
+          {
+            "year": "1819",
+            "event": "Μετονομασία σε Monroe",
+            "desc": "Η πόλη μετονομάσθηκε προς τιμήν του προέδρου James Monroe, που υποστήριξε την αγορά της Λουιζιάνα."
+          },
+          {
+            "year": "1925",
+            "event": "Ίδρυση Delta Air Lines",
+            "desc": "Η Huff Daland Dusters ιδρύεται ως εταιρεία crop dusting, που το 1928 μετονομάσθηκε σε Delta Air Service."
+          }
+        ]
+      },
+      "demo": {
+        "summary": "Όγδοη μεγαλύτερη πόλη της Λουιζιάνα με 47.000 κατοίκους και μητρόπολη 180.000. Σημαντική αφροαμερικανική κοινότητα (~65%), με ισχυρή ιατρική και βιομηχανική οικονομία.",
+        "details": [
+          {
+            "label": "Ιατρική & Παιδεία",
+            "text": "St. Francis Medical Center, Ochsner LSU Health και University of Louisiana Monroe (ULM) είναι οι κύριοι εργοδότες."
+          },
+          {
+            "label": "Βιομηχανία",
+            "text": "CenturyLink (Lumen), Gardner Denver Thomas και άλλες εταιρείες manufacturing."
+          },
+          {
+            "label": "Γεωργία & Ξυλεία",
+            "text": "Γεωργία βαμβακιού, σόγιας και ξυλείας πεύκου είναι σημαντικοί τομείς της ενδοχώρας."
+          }
+        ]
+      },
+      "cult": {
+        "summary": "Το Μονρόε είναι η γενέτειρα της Delta Air Lines, με μουσεία, τέχνη και τη Biedenharn κληρονομιά.",
+        "items": [
+          {
+            "title": "Biedenharn Museum & Gardens",
+            "desc": "Ιστορικό σπίτι της οικογένειας Biedenharn (που first bottled Coca-Cola) με κήπους, βιβλιοθήκη Bible και μουσείο."
+          },
+          {
+            "title": "Masur Museum of Art",
+            "desc": "Μουσείο τέχνης σε ιστορικό antebellum αρχοντικό του 1914 με σύγχρονη αμερικανική συλλογή."
+          },
+          {
+            "title": "Northeast Louisiana Delta Heritage Museum",
+            "desc": "Μουσείο που παρουσιάζει την κληρονομιά των delta, με το αεροσκάφος Huff Daland Dusters."
+          }
+        ]
+      },
+      "guide": {
+        "summary": "Πέντε στάσεις για να ανακαλύψεις το Μονρόε: από το Biedenharn Museum και το Masur μέχρι το wildlife refuge και το πανεπιστήμιο.",
+        "items": [
+          {
+            "title": "Biedenharn Museum & Gardens",
+            "cat": "museum",
+            "catLabel": "🖼️ Μουσείο",
+            "desc": "Ιστορικό σπίτι με κήπους και μουσείο Bible, με πρώτες Coca-Cola exhibits.",
+            "wiki": "Biedenharn_Museum_and_Gardens"
+          },
+          {
+            "title": "Masur Museum of Art",
+            "cat": "museum",
+            "catLabel": "🖼️ Μουσείο",
+            "desc": "Σύγχρονη αμερικανική συλλογή σε ιστορικό αρχοντικό.",
+            "wiki": "Masur_Museum_of_Art"
+          },
+          {
+            "title": "Black Bayou Lake National Wildlife Refuge",
+            "cat": "nature",
+            "catLabel": "🌿 Φύση",
+            "desc": "Προστατευόμενος υγρότοπος 2.000+ στρεμμάτων με alligators και migratory birds.",
+            "wiki": "Black_Bayou_Lake_National_Wildlife_Refuge"
+          },
+          {
+            "title": "University of Louisiana Monroe",
+            "cat": "culture",
+            "catLabel": "🎨 Πολιτισμός",
+            "desc": "Πανεπιστημιακή καμπ 9.000 φοιτητών με athletics και cultural events.",
+            "wiki": "University_of_Louisiana_at_Monroe"
+          },
+          {
+            "title": "Northeast Louisiana Delta Heritage Museum",
+            "cat": "museum",
+            "catLabel": "🖼️ Μουσείο",
+            "desc": "Μουσείο που παρουσιάζει την κληρονομιά των delta και της Delta Air Lines.",
+            "wiki": "Northeast_Louisiana_Delta_Heritage_Museum"
+          }
+        ]
+      },
+      "gastro": {
+        "summary": "Η κουζίνα του Μονρόε είναι southern-Cajun με catfish από τον Ouachita, fried chicken και Cajun gumbo.",
+        "items": [
+          {
+            "title": "Fried Catfish",
+            "desc": "Γατόψαρο από τον Ouachita σε κρούστα καλαμποκιού, με hush puppies.",
+            "tag": "Ποταμίσιο"
+          },
+          {
+            "title": "Southern Fried Chicken",
+            "desc": "Κοτόπουλο με κρούστα μπαχαρικών, σερβιρισμένο με biscuits και gravy.",
+            "tag": "Soul Food"
+          },
+          {
+            "title": "Seafood Gumbo",
+            "desc": "Πηχτή σούπα roux με okra, αντούιγ και θαλασσινά από τον Κόλπο.",
+            "tag": "Cajun κλασικό"
+          },
+          {
+            "title": "Pecan Pie",
+            "desc": "Γλυκό με πεκάν και σιρόπι καραμέλας, κλασικό γλυκό της Λουιζιάνα.",
+            "tag": "Γλυκό"
+          }
+        ]
+      },
+      "eco": {
+        "summary": "Το Μονρόε προστατεύει τον ποταμό Ouachita και τους υγροτόπους, με προγράμματα δεντροφύτευσης και βιώσιμης δασοπονίας.",
+        "items": [
+          {
+            "title": "Black Bayou Lake NWR",
+            "desc": "Προστατευόμενος υγρότοπος 2.000+ στρεμμάτων στα βόρεια της πόλης.",
+            "cat": "nature",
+            "catLabel": "🌿 Φύση",
+            "wiki": "Black_Bayou_Lake_National_Wildlife_Refuge"
+          },
+          {
+            "title": "Ouachita River Heritage Trail",
+            "desc": "Παραποτάμιο μονοπάτι 10 km που συνδέει την πόλη με το Biedenharn.",
+            "cat": "business",
+            "catLabel": "🚲 Κινητικότητα",
+            "wiki": "Layne_Beyond_Monroe"
+          },
+          {
+            "title": "Kiroli Park",
+            "desc": "Πάρκο 600 στρεμμάτων με δάσος, λίμνες και μονοπάτια στο κέντρο της πόλης.",
+            "cat": "nature",
+            "catLabel": "🌳 Πάρκα",
+            "wiki": "Kiroli_Park"
+          }
+        ]
+      },
+      "pastVsPresent": [
+        {
+          "epoch": "Μονρόε 1926: Βαμβάκι και Delta Dusters",
+          "content": "Πόλη 20.000 κατοίκων με βαμβάκι, ξυλεία και τη νέα εταιρεία Huff Daland Dusters που μόλις ξεκινά crop dusting."
+        },
+        {
+          "epoch": "Μονρόε 2026: Birthplace of Delta",
+          "content": "Πόλη 47.000 κατοίκων με ULM 9.000 φοιτητές, Biedenharn Museum και Masur Museum, που γιορτάζει την κληρονομιά της Delta Air Lines."
+        }
+      ],
+      "pois": [
+        {
+          "name": "Biedenharn Museum & Gardens",
+          "category": "museum",
+          "coords": [
+            32.51,
+            -92.108
+          ],
+          "desc": "Ιστορικό σπίτι-μουσείο."
+        },
+        {
+          "name": "Masur Museum of Art",
+          "category": "museum",
+          "coords": [
+            32.5093,
+            -92.1193
+          ],
+          "desc": "Σύγχρονη τέχνη."
+        },
+        {
+          "name": "Black Bayou Lake NWR",
+          "category": "nature",
+          "coords": [
+            32.548,
+            -92.088
+          ],
+          "desc": "Προστατευόμενος υγρότοπος."
+        },
+        {
+          "name": "University of Louisiana Monroe",
+          "category": "culture",
+          "coords": [
+            32.527,
+            -92.073
+          ],
+          "desc": "Πανεπιστημιακή καμπ."
+        },
+        {
+          "name": "Kiroli Park",
+          "category": "nature",
+          "coords": [
+            32.536,
+            -92.142
+          ],
+          "desc": "Πάρκο 600 στρεμμάτων."
+        }
+      ]
+    },
+    {
+      "id": "houma",
+      "name": "Χούμα",
+      "englishName": "Houma",
+      "nickname": "The Venice of America / Η Βενετία του Νότου",
+      "type": "city",
+      "coords": [
+        29.5958,
+        -90.7195
+      ],
+      "zoom": 12.7,
+      "stats": {
+        "population": "33.000 (210.000 μητροπολιική Terrebonne)",
+        "founded": "1834",
+        "area": "37 km²",
+        "elevation": "2 μ."
+      },
+      "quote": "«Η «Βενετία του Νότου», με εκτεταμένα bayous και περιηγήσεις σε βάλτους με αλιγάτορες, στην καρδιά του Cajun Country.»",
+      "geo": {
+        "summary": "Χτισμένη στο δίκτυο bayous της νότιας Λουιζιάνα, στην καρδιά του Terrebonne Parish. Η πόλη βρίσκεται σε interconnected κανάλια και bayous, που θυμίζουν τη Βενετία, και είναι η πύλη για τα coastal marshes και τον Κόλπο.",
+        "highlights": [
+          {
+            "title": "Bayou Terrebonne",
+            "desc": "Το κανάλι που διαρρέει την πόλη και προσφέρει boat tours, fishing και καγιάκ."
+          },
+          {
+            "title": "Cajun Bayou & Coastal Marshes",
+            "desc": "Ατελείωτοι βάλτοι με κυπαρίσσια, αλιγάτορες και migratory birds που είναι η καρδιά της Cajun Country."
+          },
+          {
+            "title": "Gulf of Mexico",
+            "desc": "Ο Κόλπος είναι 50 km νότια και προσφέρει αλιεία γαρίδας, στρειδιών και off-shore oil."
+          }
+        ]
+      },
+      "hist": {
+        "summary": "Ιδρύθηκε το 1834 από τον Henry Schuyler Thibodaux και ονομάσθηκε από τους ιθαγενείς Houma. Η πόλη αναπτύχθηκε ως κέντρο αλιείας γαρίδας, στρειδιών και πετρελαίου. Ο τυφώνας Katrina (2005) και ο Gustav (2008) προκάλεσαν μεγάλες καταστροφές.",
+        "highlights": [
+          {
+            "year": "1834",
+            "event": "Ίδρυση",
+            "desc": "Ο Henry Schuyler Thibodaux ιδρύει τον οικισμό στο bayou Terrebonne."
+          },
+          {
+            "year": "1935",
+            "event": "Discovery of Oil",
+            "desc": "Ανακάλυψη πετρελαίου στον Κόλπο δημιουργεί offshore industry που τροφοδοτεί την τοπική οικονομία."
+          },
+          {
+            "year": "2005",
+            "event": "Τυφώνας Katrina",
+            "desc": "Η Katrina και ο Rita (2005) πλημμυρίζουν την πόλη και καταστρέφουν το 60% των σπιτιών· αναβίωση με νέους κανονισμούς."
+          }
+        ]
+      },
+      "demo": {
+        "summary": "Πόλη 33.000 κατοίκων και μητρόπολη 210.000, με σημαντική αφροαμερικανική κοινότητα (~25%) και γαλλόφωνη Cajun/ιστορική ιθαγενή Houma κοινότητα (~15%). Η οικονομία στηρίζεται στην αλιεία, offshore πετρέλαιο και τουρισμό bayou.",
+        "details": [
+          {
+            "label": "Αλιεία & Παλαιο kayaks",
+            "text": "Οι αλιείς γαρίδας, στρειδιών και καραβίδας αποτελούν μεγάλο μέρος της οικονομίας, με ένα από τα μεγαλύτερα στόλο στις ΗΠΑ."
+          },
+          {
+            "label": "Offshore Oil",
+            "text": "Λιμάνι equipamento και υπηρεσίες για offshore oil rigs στον Κόλπο, με εταιρείες Halliburton και Schlumberger."
+          },
+          {
+            "label": "Bayou Tourism",
+            "text": "Καθημερινές boat tours στα bayous με airboats, που προσελκύουν εκατοντάδες χιλιάδες επισκέπτες."
+          }
+        ]
+      },
+      "cult": {
+        "summary": "Το Χούμα είναι η «Βενετία του Νότου» με bayou tours, Cajun κουλτούρα, zydeco μουσική και κληρονομιά Houma Indians.",
+        "items": [
+          {
+            "title": "Bayou Tours & Airboats",
+            "desc": "Καθημερινές boat tours στα bayous με αλιγάτορες, blue crabs και migratory birds, από εταιρείες Annie Miller’s."
+          },
+          {
+            "title": "Southdown Plantation House",
+            "desc": "Ιστορικό antebellum αρχοντικό του 1859 με συλλογή εποχής ζαχαροκαλλιέργειας και Terrebonne Museum."
+          },
+          {
+            "title": "Cajun Culture & Houma Heritage",
+            "desc": "Οι Houma Indians και Cajun families διατηρούν τη γαλλική γλώσσα, zydeco μουσική και παραδόσεις για πάνω από 200 χρόνια."
+          }
+        ]
+      },
+      "guide": {
+        "summary": "Πέντε στάσεις για να ανακαλύψεις το Χούμα: από τα bayou tours και το Southdown Plantation μέχρι το wildlife museum και το planetarium.",
+        "items": [
+          {
+            "title": "Bayou Tours",
+            "cat": "nature",
+            "catLabel": "🌿 Φύση",
+            "desc": "Καθημερινές boat tours στα bayous με airboats, που αναζητούν αλιγάτορες και migratory birds.",
+            "wiki": "Houma,_Louisiana"
+          },
+          {
+            "title": "Southdown Plantation & Terrebonne Museum",
+            "cat": "history",
+            "catLabel": "🏛️ Ιστορία",
+            "desc": "Antebellum αρχοντικό του 1859 με συλλογή ζαχαροκαλλιέργειας και Terrebonne ιστορίας.",
+            "wiki": "Southdown_Plantation_House"
+          },
+          {
+            "title": "Bayou Terrebonne Waterlife Museum",
+            "cat": "museum",
+            "catLabel": "🖼️ Μουσείο",
+            "desc": "Μουσείο για τη θαλάσσια ζωή και αλιευτική κληρονομιά του Terrebonne Parish.",
+            "wiki": "Bayou_Terrebonne_Waterlife_Museum"
+          },
+          {
+            "title": "Terrebonne Planetarium & Science Center",
+            "cat": "museum",
+            "catLabel": "🖼️ Μουσείο",
+            "desc": "Planetarium στο κέντρο της πόλης με διαδραστικά εκθέματα.",
+            "wiki": "Houma,_Louisiana"
+          },
+          {
+            "title": " Mandalay National Wildlife Refuge",
+            "cat": "nature",
+            "catLabel": "🌳 Πάρκα",
+            "desc": "Προστατευόμενος υγρότοπος 18 km² με migratory birds και αλιγάτορες.",
+            "wiki": "Mandalay_National_Wildlife_Refuge"
+          }
+        ]
+      },
+      "gastro": {
+        "summary": "Η κουζίνα του Χούμα είναι Cajun-thαλασσινά bayou, με γαρίδες, καβούρια, crawfish και gumbo από τους αλιείς της περιοχής.",
+        "items": [
+          {
+            "title": "Crawfish Boil",
+            "desc": "Καραβίδες βρασμένες με μπαχαρικά, πατάτες και καλαμπόκι, σερβιρισμένες σε family gatherings.",
+            "tag": "Cajun κλασικό"
+          },
+          {
+            "title": "Crab Boil",
+            "desc": "Blue crabs βρασμένα με πικάντικα μπαχαρικά και corn, πιάτο που προέρχεται από τους τοπικούς αλιείς.",
+            "tag": "Θαλασσινά"
+          },
+          {
+            "title": "Seafood Gumbo",
+            "desc": "Πηχτή σούπα roux με γαρίδες, καβούρια και καραβίδες από τον Κόλπο, πάνω σε ρύζι.",
+            "tag": "Cajun κλασικό"
+          },
+          {
+            "title": "Po’ Boy",
+            "desc": "Σάντουιτς με γαρίδες, στρείδια ή roast beef, που είναι street food του Νότου.",
+            "tag": "Street food"
+          }
+        ]
+      },
+      "eco": {
+        "summary": "Το Χούμα προστατεύει τους coastal marshes και bayous, που είναι ζωτικής σημασίας για την προστασία από τυφώνες.",
+        "items": [
+          {
+            "title": "Mandalay National Wildlife Refuge",
+            "desc": "Προστατευόμενος υγρότοπος 18 km² που είναι καταφύγιο migratory birds.",
+            "cat": "nature",
+            "catLabel": "🌿 Φύση",
+            "wiki": "Mandalay_National_Wildlife_Refuge"
+          },
+          {
+            "title": "Coastal Wetlands Restoration",
+            "desc": "Προγράμματα αποκατάστασης coastal marshes που προστατεύουν από τυφώνες και erosion.",
+            "cat": "business",
+            "catLabel": "🌊 Θάλασσα",
+            "wiki": "Coastal_restoration_in_Louisiana"
+          },
+          {
+            "title": "Bayou Terrebonne Preservation",
+            "desc": "Προγράμματα καθαρισμού και προστασίας του bayou που διαρρέει την πόλη.",
+            "cat": "nature",
+            "catLabel": "💧 Νερό",
+            "wiki": "Bayou_Terrebonne"
+          }
+        ]
+      },
+      "pastVsPresent": [
+        {
+          "epoch": "Χούμα 1926: Bayous και Αλιεία",
+          "content": "Πόλη 7.000 κατοίκων με αλιείς γαρίδας, στρειδιών και καραβίδας στα bayous, και ζάχαρη από τα plantations."
+        },
+        {
+          "epoch": "Χούμα 2026: Venice of America",
+          "content": "Πόλη 33.000 κατοίκων που προσελκύει εκατοντάδες χιλιάδες επισκέπτες στα bayou tours, offshore oil industry και Cajun cultural tourism."
+        }
+      ],
+      "pois": [
+        {
+          "name": "Southdown Plantation House",
+          "category": "history",
+          "coords": [
+            29.58,
+            -90.715
+          ],
+          "desc": "Antebellum αρχοντικό του 1859."
+        },
+        {
+          "name": "Bayou Terrebonne Waterlife Museum",
+          "category": "museum",
+          "coords": [
+            29.5958,
+            -90.7195
+          ],
+          "desc": "Μουσείο θαλάσσιας ζωής."
+        },
+        {
+          "name": "Mandalay National Wildlife Refuge",
+          "category": "nature",
+          "coords": [
+            29.536,
+            -90.8
+          ],
+          "desc": "Προστατευόμενος υγρότοπος."
+        },
+        {
+          "name": "Downtown Marina",
+          "category": "history",
+          "coords": [
+            29.601,
+            -90.72
+          ],
+          "desc": "Λιμάνι για fishing charters."
+        },
+        {
+          "name": "Annie Miller’s Bayou Tours",
+          "category": "culture",
+          "coords": [
+            29.588,
+            -90.712
+          ],
+          "desc": "Airboat tours στα bayous."
+        }
+      ]
+    },
+    {
+      "id": "new-iberia",
+      "name": "Νιου Αϊμπίρια",
+      "englishName": "New Iberia",
+      "nickname": "The Queen City of the Teche",
+      "type": "city",
+      "coords": [
+        29.99,
+        -91.8188
+      ],
+      "zoom": 12.8,
+      "stats": {
+        "population": "28.000 (75.000 μητροπολιική)",
+        "founded": "1779",
+        "area": "32 km²",
+        "elevation": "6 μ."
+      },
+      "quote": "«Η πόλη του ποταμού Teche και του Tabasco, όπου η Cajun κληρονομιά συναντά το Avery Island και τα antebellum αρχοντικά.»",
+      "geo": {
+        "summary": "Χτισμένη στις όχθες του historic Bayou Teche, στο κέντρο της Cajun Country. Η πόλη βρίσκεται κοντά στο Avery Island, που είναι η έδρα του Tabasco sauce, και περιβάλλεται από ζαχαροβαμβακοχώραφα και bald cypress swamps.",
+        "highlights": [
+          {
+            "title": "Bayou Teche",
+            "desc": "Ιστορικό κανάλι που διαρρέει την πόλη και είναι ένα από τα πιο γραφικά bayous της Λουιζιάνα."
+          },
+          {
+            "title": "Avery Island",
+            "desc": "Το νησί 8 km νότια της πόλης που είναι η έδρα του Tabasco sauce και Jungle Gardens."
+          },
+          {
+            "title": "Atchafalaya Basin",
+            "desc": "Ο μεγαλύτερος ελώδης βάλτος των ΗΠΑ στα δυτικά, με κυπαρίσσια και αλιγάτορες."
+          }
+        ]
+      },
+      "hist": {
+        "summary": "Ιδρύθηκε το 1779 από Γάλλους και Σπανούς ως «Nueva Iberia» και ονομάσθηκε από την ισπανική Iberia. Η πόλη αναπτύχθηκε ως κέντρο ζαχαροκαλλιέργειας και εμπορίου στον Bayou Teche. Το 1868 ο Edmund McIlhenny ξεκίνησε την παραγωγή Tabasco sauce στο Avery Island.",
+        "highlights": [
+          {
+            "year": "1779",
+            "event": "Ίδρυση",
+            "desc": "Γάλλοι και Σπανοί άποικοι ιδρύουν τη Nueva Iberia στις όχθες του Bayou Teche."
+          },
+          {
+            "year": "1868",
+            "event": "Tabasco Sauce",
+            "desc": "Ο Edmund McIlhenny ξεκινά την παραγωγή Tabasco sauce στο Avery Island, που γίνεται διεθνές brand."
+          },
+          {
+            "year": "1885",
+            "event": "Shadows-on-the-Teche",
+            "desc": "Ολοκληρώνεται το antebellum αρχοντικό Shadows-on-the-Teche, που σήμερα είναι Εθνικό Ιστορικό Μνημείο."
+          }
+        ]
+      },
+      "demo": {
+        "summary": "Πόλη 28.000 κατοίκων και μητρόπολη 75.000, με σημαντική αφροαμερικανική κοινότητα (~50%) και γαλλόφωνη Cajun κοινότητα. Η οικονομία στηρίζεται στο Tabasco, τη γεωργία και τον τουρισμό.",
+        "details": [
+          {
+            "label": "Tabasco & Avery Island",
+            "text": "Η McIlhenny Company employs 200+ workers και προσελκύει 100.000+ επισκέπτες στο Avery Island."
+          },
+          {
+            "label": "Γεωργία & Παλαιο kayaks",
+            "text": "Ζάχαρη, ρύζι και crawfish farms είναι κύριοι τομείς της ενδοχώρας."
+          },
+          {
+            "label": "Cajun Tourism",
+            "text": "Shadows-on-the-Teche, Avery Island και Bayou Teche boat tours προσελκύουν ετησίως 200.000+ επισκέπτες."
+          }
+        ]
+      },
+      "cult": {
+        "summary": "Η Νιου Αϊμπίρια είναι η «Πόλη-Βασίλισσα του Teche» με Cajun κληρονομιά, Tabasco και antebellum αρχοντικά.",
+        "items": [
+          {
+            "title": "Shadows-on-the-Teche",
+            "desc": "Antebellum αρχοντικό του 1834 που είναι Εθνικό Ιστορικό Μνημείο και παρουσιάζει τη ζωή 4 γενιών πριν και μετά τον Εμφύλιο."
+          },
+          {
+            "title": "Tabasco Factory Tours",
+            "desc": "Επισκέψιμη εγκατάσταση στο Avery Island με το μουσείο, το bottling plant και το Country Store."
+          },
+          {
+            "title": "Bayou Teche Museum",
+            "desc": "Μουσείο στο ιστορικό κέντρο που παρουσιάζει την ιστορία του Bayou Teche και Cajun κληρονομιά."
+          }
+        ]
+      },
+      "guide": {
+        "summary": "Πέντε στάσεις για να ανακαλύψεις τη Νιου Αϊμπίρια: από το Avery Island και το Tabasco μέχρι το Shadows-on-the-Teche και το Jungle Gardens.",
+        "items": [
+          {
+            "title": "Avery Island & Tabasco Factory",
+            "cat": "history",
+            "catLabel": "🏛️ Ιστορία",
+            "desc": "Το νησί που φιλοξενεί την Tabasco factory, με museum, bottling plant και Country Store.",
+            "wiki": "Avery_Island"
+          },
+          {
+            "title": "Jungle Gardens",
+            "cat": "nature",
+            "catLabel": "🌳 Πάρκα",
+            "desc": "Κήποι 170 στρεμμάτων στο Avery Island με camelias, azaleas και snowy egrets.",
+            "wiki": "Jungle_Gardens_(Avery_Island)"
+          },
+          {
+            "title": "Shadows-on-the-Teche",
+            "cat": "history",
+            "catLabel": "🏛️ Ιστορία",
+            "desc": "Antebellum αρχοντικό του 1834 που είναι Εθνικό Ιστορικό Μνημείο.",
+            "wiki": "Shadows-on-the-Teche"
+          },
+          {
+            "title": "Bayou Teche Museum",
+            "cat": "museum",
+            "catLabel": "🖼️ Μουσείο",
+            "desc": "Μουσείο για την ιστορία του Bayou Teche και Cajun κληρονομιά.",
+            "wiki": "Bayou_Teche_Museum"
+          },
+          {
+            "title": "Rip Van Winkle Gardens",
+            "cat": "nature",
+            "catLabel": "🌳 Πάρκα",
+            "desc": "Κήποι 25 στρεμμάτων στο ιστορικό Jefferson Island με peacocks και azaleas.",
+            "wiki": "Rip_Van_Winkle_Gardens"
+          }
+        ]
+      },
+      "gastro": {
+        "summary": "Η κουζίνα της Νιου Αϊμπίρια είναι Cajun-Creole με Tabasco σε κάθε πιάτο, crawfish, gumbo και boudin.",
+        "items": [
+          {
+            "title": "Crawfish Étouffée",
+            "desc": "Καραβίδες σε βούτυρο και κρεμώδη σάλτσα, σερβιρισμένες πάνω σε ρύζι με Tabasco.",
+            "tag": "Cajun κλασικό"
+          },
+          {
+            "title": "Boudin",
+            "desc": "Λουκάνικο από ρύζι, χοιρινό και μπαχαρικά, που είναι street food της Cajun Country.",
+            "tag": "Street food"
+          },
+          {
+            "title": "Seafood Gumbo",
+            "desc": "Πηχτή σούπα roux με γαρίδες, καβούρια και crawfish από τον Κόλπο, πάνω σε ρύζι.",
+            "tag": "Cajun κλασικό"
+          },
+          {
+            "title": "Tabasco-infused dishes",
+            "desc": "Πιάτα που χρησιμοποιούν Tabasco pepper sauce από το Avery Island, που είναι διεθνώς αναγνωρισμένο.",
+            "tag": "Τοπικό delicacy"
+          }
+        ]
+      },
+      "eco": {
+        "summary": "Η Νιου Αϊμπίρια προστατεύει τον Bayou Teche και τους Atchafalaya υγροτόπους, με προγράμματα βιώσιμης γεωργίας.",
+        "items": [
+          {
+            "title": "Bayou Teche Paddle Trail",
+            "desc": "Μονοπάτι καγιάκ 210 km κατά μήκος του Bayou Teche που είναι National Water Trail.",
+            "cat": "business",
+            "catLabel": "🚲 Κινητικότητα",
+            "wiki": "Bayou_Teche"
+          },
+          {
+            "title": "Atchafalaya Basin Protection",
+            "desc": "Ο μεγαλύτερος βάλτος των ΗΠΑ δυτικά της πόλης, που προστατεύεται από ομοσπονδιακά προγράμματα.",
+            "cat": "nature",
+            "catLabel": "🌿 Υγρότοποι",
+            "wiki": "Atchafalaya_Basin"
+          },
+          {
+            "title": "Jungle Gardens Conservation",
+            "desc": "Κήποι 170 στρεμμάτων στο Avery Island που προστατεύουν snowy egrets και rare plants.",
+            "cat": "nature",
+            "catLabel": "🌳 Πάρκα",
+            "wiki": "Jungle_Gardens_(Avery_Island)"
+          }
+        ]
+      },
+      "pastVsPresent": [
+        {
+          "epoch": "Νιου Αϊμπίρια 1926: Ζάχαρη και Bayou Teche",
+          "content": "Πόλη 7.000 κατοίκων με ζαχαροβαμβακοχώραφα, καραβικα φορτία και Bayou Teche που μεταφέρει εμπορία."
+        },
+        {
+          "epoch": "Νιου Αϊμπίρια 2026: Tabasco & Cajun Heritage",
+          "content": "Πόλη 28.000 κατοίκων που προσελκύει 200.000+ επισκέπτες στο Avery Island και Shadows-on-the-Teche, με Tabasco να είναι διεθνές brand."
+        }
+      ],
+      "pois": [
+        {
+          "name": "Avery Island Tabasco Factory",
+          "category": "history",
+          "coords": [
+            29.895,
+            -91.852
+          ],
+          "desc": "Το εργοστάσιο Tabasco και το Country Store."
+        },
+        {
+          "name": "Jungle Gardens",
+          "category": "nature",
+          "coords": [
+            29.893,
+            -91.842
+          ],
+          "desc": "Κήποι 170 στρεμμάτων στο Avery Island."
+        },
+        {
+          "name": "Shadows-on-the-Teche",
+          "category": "history",
+          "coords": [
+            29.99,
+            -91.8188
+          ],
+          "desc": "Antebellum αρχοντικό του 1834."
+        },
+        {
+          "name": "Bayou Teche Museum",
+          "category": "museum",
+          "coords": [
+            29.991,
+            -91.819
+          ],
+          "desc": "Μουσείο Cajun κληρονομιάς."
+        },
+        {
+          "name": "Rip Van Winkle Gardens",
+          "category": "nature",
+          "coords": [
+            30.015,
+            -91.886
+          ],
+          "desc": "Κήποι στο Jefferson Island."
+        }
+      ]
+    },
+    {
+      "id": "natchitoches",
+      "name": "Νάκιτος",
+      "englishName": "Natchitoches",
+      "nickname": "The City of Lights / The Bicentennial City",
+      "type": "city",
+      "coords": [
+        31.749,
+        -93.0862
+      ],
+      "zoom": 12.7,
+      "stats": {
+        "population": "18.000 (38.000 μητροπολιική)",
+        "founded": "1714",
+        "area": "70 km²",
+        "elevation": "36 μ."
+      },
+      "quote": "«Η παλαιότερη ευρωπαϊκή εγκατάσταση στη Λουιζιάνα του 1714, με το ιστορικό Cane River, τα meat pies και τα Φώτα των Χριστουγέννων.»",
+      "geo": {
+        "summary": "Χτισμένη στις όχθες του Cane River (παλαιού ποταμού Red River), στο κεντρικό-βόρειο τμήμα της Λουιζιάνα. Η πόλη βρίσκεται σε μια περιοχή με λόφους, δάση πεύκου και Historic Plantation Country.",
+        "highlights": [
+          {
+            "title": "Cane River",
+            "desc": "Πλωτός ποταμός που διαρρέει την πόλη και είναι παρακλάδι του Red River, με historic plantations στις όχθες."
+          },
+          {
+            "title": "Kisatchie National Forest",
+            "desc": "Το μόνο εθνικό δάσος της Λουιζιάνα στα νότια, με 600.000+ στρέμματα longleaf pines."
+          },
+          {
+            "title": "Cane River National Heritage Area",
+            "desc": "Προστατευόμενη περιοχή 180 km κατά μήκος του ποταμού με plantations, Creole κληρονομιά και historic sites."
+          }
+        ]
+      },
+      "hist": {
+        "summary": "Ιδρύθηκε το 1714 από τον Γάλλο Louis Juchereau de St. Denis και είναι η παλαιότερη μόνιμη ευρωπαϊκή εγκατάσταση στη Λουιζιάνα, 4 χρόνια πριν τη Νέα Ορλεάνη. Η πόλη έγινε σημαντικό κέντρο εμπορίου με τους ισπανούς στο Texas και κέντρο Creole κουλτούρας.",
+        "highlights": [
+          {
+            "year": "1714",
+            "event": "Ίδρυση",
+            "desc": "Ο Louis Juchereau de St. Denis ιδρύει το Fort St. Jean Baptiste, η παλαιότερη μόνιμη ευρωπαϊκή εγκατάσταση στη Λουιζιάνα."
+          },
+          {
+            "year": "1803",
+            "event": "Louisiana Purchase",
+            "desc": "Με τη Συμφωνία της Λουιζιάνα, η πόλη περνά στις ΗΠΑ μετά από γαλλική και ισπανική κυριαρχία."
+          },
+          {
+            "year": "1927",
+            "event": "Christmas Festival of Lights",
+            "desc": "Ξεκινά το ετήσιο Natchitoches Christmas Festival με 300.000+ φώτα κατά μήκος του Cane River."
+          }
+        ]
+      },
+      "demo": {
+        "summary": "Πόλη 18.000 κατοίκων και μητρόπολη 38.000, με σημαντική κρεολική κοινότητα (Cane River Creoles) και ισχυρή πανεπιστημιακή παρουσία. Η οικονομία στηρίζεται στον τουρισμό και το Northwestern State University.",
+        "details": [
+          {
+            "label": "Πανεπιστήμιο",
+            "text": "Το Northwestern State University (NSU) με 11.000 φοιτητές είναι ο κύριος εργοδότης."
+          },
+          {
+            "label": "Tourism & Festivals",
+            "text": "Christmas Festival, meat pies και Cane River plantations προσελκύουν 500.000+ επισκέπτες ετησίως."
+          },
+          {
+            "label": "Πολιτειακή Διοίκηση",
+            "text": "Η πολιτειακή φυλακή και η διοίκηση Cane River National Heritage Area είναι σημαντικοί εργοδότες."
+          }
+        ]
+      },
+      "cult": {
+        "summary": "Η Νάκιτος είναι «Η Πόλη των Φώτων» με ιστορική French Quarter, Cane River plantations και το διάσημο Christmas Festival.",
+        "items": [
+          {
+            "title": "Christmas Festival of Lights",
+            "desc": "Ετήσιο φεστιβάλ από τον Νοέμβριο μέχρι τον Ιανουάριο με 300.000+ φώτα κατά μήκος του Cane River."
+          },
+          {
+            "title": "Cane River Creole National Historical Park",
+            "desc": "Εθνικό πάρκο με τα plantations Oakland και Magnolia, που παρουσιάζουν τη ζωή Creole 200 ετών."
+          },
+          {
+            "title": "Steel Magnolias",
+            "desc": "Η πόλη είναι γνώριμη ως location του film «Steel Magnolias» (1989) με τη Sally Field και Shirley MacLaine."
+          }
+        ]
+      },
+      "guide": {
+        "summary": "Πέντε στάσεις για να ανακαλύψεις τη Νάκιτο: από το historic district και το Cane River park μέχρι τα plantations και το πανεπιστήμιο.",
+        "items": [
+          {
+            "title": "Natchitoches Historic District",
+            "cat": "history",
+            "catLabel": "🏛️ Ιστορία",
+            "desc": "33-block ιστορικό κέντρο με French colonial και Creole κτήρια, shops και restaurants.",
+            "wiki": "Natchitoches_Historic_District"
+          },
+          {
+            "title": "Cane River Creole National Historical Park",
+            "cat": "history",
+            "catLabel": "🏛️ Ιστορία",
+            "desc": "Εθνικό πάρκο με τα plantations Oakland και Magnolia.",
+            "wiki": "Cane_River_Creole_National_Historical_Park"
+          },
+          {
+            "title": "Old Louisiana State Capitol",
+            "cat": "history",
+            "catLabel": "🏛️ Ιστορία",
+            "desc": "Παλιό capitol της Λουιζιάνα που βρίσκεται στη Νάκιτο, σήμερα μουσείο.",
+            "wiki": "Old_Louisiana_State_Capitol"
+          },
+          {
+            "title": "Northwestern State University",
+            "cat": "culture",
+            "catLabel": "🎨 Πολιτισμός",
+            "desc": "Πανεπιστημιακή καμπ με historic Lotus Λουιζιάνα architecture.",
+            "wiki": "Northwestern_State_University"
+          },
+          {
+            "title": "Cane River Lakefront",
+            "cat": "nature",
+            "catLabel": "🌳 Πάρκα",
+            "desc": "Παραποτάμια προκυμαία 2 km με shops, restaurants και 300.000+ Christmas lights.",
+            "wiki": "Cane_River_(Louisiana)"
+          }
+        ]
+      },
+      "gastro": {
+        "summary": "Η κουζίνα της Νάκιτος είναι Creole-Cajun με meat pies, boudin και gumbo, με ισχυρή επιρροή από French and Spanish cuisine.",
+        "items": [
+          {
+            "title": "Natchitoches Meat Pie",
+            "desc": "Τηγανητή πίτα με κιμά, κρεμμύδια και μπαχαρικά, που είναι το επίσημο delicacy της πόλης.",
+            "tag": "Τοπικό delicacy"
+          },
+          {
+            "title": "Crawfish Étouffée",
+            "desc": "Καραβίδες σε βούτυρο και κρεμώδη σάλτσα, σερβιρισμένες πάνω σε ρύζι.",
+            "tag": "Cajun κλασικό"
+          },
+          {
+            "title": "Boudin",
+            "desc": "Λουκάνικο από ρύζι, χοιρινό και μπαχαρικά, που είναι street food της Cajun Country.",
+            "tag": "Street food"
+          },
+          {
+            "title": "Pralines",
+            "desc": "Γλυκά από πεκάν και καραμέλα ζάχαρης, που είναι το κλασικό γλυκό της Λουιζιάνα.",
+            "tag": "Γλυκό"
+          }
+        ]
+      },
+      "eco": {
+        "summary": "Η Νάκιτος προστατεύει τον Cane River και το Kisatchie Forest, με προγράμματα διατήρησης των Creole plantations.",
+        "items": [
+          {
+            "title": "Cane River National Heritage Area",
+            "desc": "Προστατευόμενη περιοχή 180 km κατά μήκος του Cane River με plantations και Creole κληρονομιά.",
+            "cat": "nature",
+            "catLabel": "🌿 Φύση",
+            "wiki": "Cane_River_National_Heritage_Area"
+          },
+          {
+            "title": "Kisatchie National Forest",
+            "desc": "Το μόνο εθνικό δάσος της Λουιζιάνα στα νότια, με 600.000+ στρέμματα longleaf pines.",
+            "cat": "nature",
+            "catLabel": "🌳 Πάρκα",
+            "wiki": "Kisatchie_National_Forest"
+          },
+          {
+            "title": "Cane River Lakefront Restoration",
+            "desc": "Προγράμματα καθαρισμού και προστασίας του Cane River Lake που διαρρέει την πόλη.",
+            "cat": "business",
+            "catLabel": "💧 Νερό",
+            "wiki": "Cane_River_(Louisiana)"
+          }
+        ]
+      },
+      "pastVsPresent": [
+        {
+          "epoch": "Νάκιτος 1926: Cane River και Πανεπιστήμιο",
+          "content": "Πόλη 7.000 κατοίκων με Cane River, Louisiana State Normal School 1.000 φοιτητών και το Christmas Festival μόλις ξεκινά."
+        },
+        {
+          "epoch": "Νάκιτος 2026: City of Lights",
+          "content": "Πόλη 18.000 κατοίκων που προσελκύει 500.000+ επισκέπτες στο Christmas Festival, με NSU 11.000 φοιτητών και Cane River plantations."
+        }
+      ],
+      "pois": [
+        {
+          "name": "Natchitoches Historic District",
+          "category": "history",
+          "coords": [
+            31.749,
+            -93.0862
+          ],
+          "desc": "33-block ιστορικό κέντρο."
+        },
+        {
+          "name": "Cane River Creole NHP - Oakland",
+          "category": "history",
+          "coords": [
+            31.698,
+            -93.088
+          ],
+          "desc": "Oakland Plantation."
+        },
+        {
+          "name": "Old Louisiana State Capitol",
+          "category": "history",
+          "coords": [
+            31.756,
+            -93.085
+          ],
+          "desc": "Παλιό capitol."
+        },
+        {
+          "name": "Northwestern State University",
+          "category": "culture",
+          "coords": [
+            31.742,
+            -93.097
+          ],
+          "desc": "Πανεπιστημιακή καμπ."
+        },
+        {
+          "name": "Cane River Lakefront",
+          "category": "nature",
+          "coords": [
+            31.7495,
+            -93.0868
+          ],
+          "desc": "Παραποτάμια προκυμαία."
         }
       ]
     }
