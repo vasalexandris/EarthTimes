@@ -4,12 +4,13 @@
  * USA, Leaflet Map, Base Layers, UI Dossier, and Time Machine.
  */
 
-import { loadWorldData, loadCountryData, loadStateData } from './data-service.js?v=20261114_world10';
-import * as MapModule from './map.js?v=20261114_world10';
-import * as UIModule from './ui.js?v=20261114_world10';
-import * as TimeMachine from './time-machine.js?v=20261114_world10';
-import * as NavigatorModule from './navigator.js?v=20261114_world10';
-import { US_STATES, CITY_TO_STATE } from './states-data.js?v=20261114_world10';
+import { loadWorldData, loadCountryData, loadStateData } from './data-service.js?v=20261114_world11';
+import * as MapModule from './map.js?v=20261114_world11';
+import * as UIModule from './ui.js?v=20261114_world11';
+import * as TimeMachine from './time-machine.js?v=20261114_world11';
+import * as NavigatorModule from './navigator.js?v=20261114_world11';
+import * as GlobeModule from './globe-view.js?v=20261114_world11';
+import { US_STATES, CITY_TO_STATE } from './states-data.js?v=20261114_world11';
 
 // Application State
 let worldData = null;
@@ -197,6 +198,7 @@ export function flyToWorld() {
   NavigatorModule.updateNavigatorBtnLabel('world');
 
   MapModule.flyToWorld();
+  GlobeModule.resetGlobeView();
   MapModule.toggleStateHighlight(false);
   MapModule.clearCityPins();
   MapModule.clearPois();
@@ -243,6 +245,8 @@ export async function flyToCountry(countryId = 'greece') {
   NavigatorModule.updateNavigatorBtnLabel(`country:${country.id}`, `${country.name}`);
 
   MapModule.flyToCoords(country.coords, country.zoom, 1.6);
+  GlobeModule.flyToGlobeCoords(country.coords[0], country.coords[1], 1.5);
+  if (dataset.cities) GlobeModule.setGlobeCities(dataset.cities);
   MapModule.toggleStateHighlight(false);
   MapModule.renderCityPins(dataset.cities, currentScope, currentCityId, flyToCity);
   MapModule.clearPois();
@@ -293,6 +297,8 @@ export async function flyToState(stateId = 'massachusetts') {
   NavigatorModule.updateNavigatorBtnLabel(`state:${state.id}`, `🏛️ ${state.name} (ΗΠΑ)`);
 
   MapModule.flyToCoords(state.coords, state.zoom, 1.5);
+  GlobeModule.flyToGlobeCoords(state.coords[0], state.coords[1], 1.2);
+  if (sData.cities) GlobeModule.setGlobeCities(sData.cities);
   MapModule.toggleStateHighlight(true);
   MapModule.renderCityPins(sData.cities || [], currentScope, currentCityId, flyToCity);
   MapModule.clearPois();
@@ -702,6 +708,7 @@ export async function flyToCity(cityId) {
   NavigatorModule.updateNavigatorBtnLabel(`city:${city.id}`, `📍 ${city.name}`);
 
   MapModule.flyToCoords(city.coords, city.zoom, 1.4);
+  GlobeModule.flyToGlobeCoords(city.coords[0], city.coords[1], 0.6);
   MapModule.toggleStateHighlight(false);
 
   MapModule.renderCityPins(activeCities, currentScope, currentCityId, flyToCity);

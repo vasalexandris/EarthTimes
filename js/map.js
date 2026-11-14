@@ -4,8 +4,8 @@
  * polygon highlights, markers, time capsules, and camera animations.
  */
 
-import { findPoiLiveCam } from './video-service.js?v=20261114_world10';
-import { initDayNight } from './solar-terminator.js?v=20261114_world10';
+import { findPoiLiveCam } from './video-service.js?v=20261114_world11';
+import { initDayNight } from './solar-terminator.js?v=20261114_world11';
 
 let map = null;
 let activeBaseLayer = null;
@@ -443,4 +443,8 @@ export function invalidateMapSize() {
       } catch (e) {}
     }, 150);
   }
+}
+
+if (typeof window !== 'undefined') {
+  window.invalidateMapSize = invalidateMapSize;
 }
