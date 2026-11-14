@@ -436,6 +436,10 @@
                   <i class="fa-solid fa-moon text-amber-400"></i>
                   <span>Dark (Νυχτερινός)</span>
                 </button>
+                <button onclick="selectMapLayer('nasaNight')" class="w-full text-left px-3 py-2 text-xs text-slate-200 hover:bg-sky-600 hover:text-white flex items-center gap-2.5 transition">
+                  <i class="fa-solid fa-city text-yellow-300"></i>
+                  <span>NASA Νύχτα (Φώτα Πόλεων)</span>
+                </button>
                 <button onclick="selectMapLayer('satellite')" class="w-full text-left px-3 py-2 text-xs text-slate-200 hover:bg-sky-600 hover:text-white flex items-center gap-2.5 transition">
                   <i class="fa-solid fa-satellite text-emerald-400"></i>
                   <span>Δορυφόρος</span>
@@ -492,6 +496,12 @@
               <i class="fa-solid fa-street-view text-amber-400"></i>
               <span class="hidden sm:inline">Street View</span>
             </button>
+
+            <!-- Quick Action: Day / Night Terminator -->
+            <button id="toggleDayNightBtn" onclick="window.toggleDayNight()" class="px-3 py-1.5 rounded-lg bg-amber-500/20 text-amber-300 border border-amber-500/40 font-semibold text-xs flex items-center gap-1.5 shadow transition cursor-pointer" title="Εναλλαγή Ημέρας & Νύχτας στον Χάρτη">
+              <i class="fa-solid fa-circle-half-stroke text-amber-400"></i>
+              <span class="hidden sm:inline">Μέρα & Νύχτα</span>
+            </button>
           </div>
 
           <div class="text-[11px] text-slate-500 font-mono hidden sm:block">
@@ -503,6 +513,17 @@
         <div id="mapCanvasContainer" class="flex-1 relative overflow-hidden">
           <!-- Leaflet Map -->
           <div id="map" class="w-full h-full z-10"></div>
+
+          <!-- FLOATING DAY & NIGHT SIMULATION / REAL-TIME STATUS WIDGET -->
+          <div id="dayNightFloatingWidget" class="absolute bottom-4 left-4 z-20 flex flex-wrap items-center gap-2 p-1.5 sm:p-2 rounded-xl bg-slate-900/90 backdrop-blur-md border border-slate-700/80 shadow-2xl text-xs">
+            <div id="dayNightInfoText" class="px-2 text-slate-200 font-medium">☀️ Ζενίθ: Υπολογισμός...</div>
+            <button id="dayNightSimBtn" onclick="window.toggleSimulation()" class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 border border-slate-700 text-amber-300 font-bold transition flex items-center gap-1 cursor-pointer">
+              <i class="fa-solid fa-play text-amber-400"></i> <span class="hidden sm:inline">Προσομοίωση</span> 24h
+            </button>
+            <button onclick="window.resetToLive()" class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 border border-slate-700 text-sky-300 font-bold transition flex items-center gap-1 cursor-pointer" title="Επιστροφή στην πραγματική ώρα">
+              <i class="fa-solid fa-clock-rotate-left"></i> Τώρα
+            </button>
+          </div>
 
           <!-- FLOATING "+ Νέο Σημείο" IN TOP-RIGHT CORNER OF MAP -->
           <div id="addSpotFloatingContainer" class="absolute top-3 right-3 z-20">
@@ -1104,6 +1125,6 @@
   </div>
 
   <!-- Modular Application Scripts -->
-  <script type="module" src="js/app.js?v=20261114_world9"></script>
+  <script type="module" src="js/app.js?v=20261114_world10"></script>
 </body>
 </html>

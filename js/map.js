@@ -4,7 +4,8 @@
  * polygon highlights, markers, time capsules, and camera animations.
  */
 
-import { findPoiLiveCam } from './video-service.js?v=20261114_world9';
+import { findPoiLiveCam } from './video-service.js?v=20261114_world10';
+import { initDayNight } from './solar-terminator.js?v=20261114_world10';
 
 let map = null;
 let activeBaseLayer = null;
@@ -71,6 +72,15 @@ export const BASE_LAYERS = {
       maxZoom: 20,
       attribution: '&copy; Google Maps'
     }
+  },
+  nasaNight: {
+    name: 'NASA Νύχτα (Φώτα Πόλεων)',
+    icon: 'fa-city',
+    url: 'https://gibs.earthdata.nasa.gov/wmts/epsg3857/best/VIIRS_CityLights_2012/default/2012-01-01/GoogleMapsCompatible_Level8/{z}/{y}/{x}.jpg',
+    options: {
+      maxZoom: 8,
+      attribution: 'Imagery &copy; NASA Earth Observatory / NOAA'
+    }
   }
 };
 
@@ -116,6 +126,13 @@ export function initMap(containerId, initialCoords = [20.0, 0.0], initialZoom = 
 
   // Draw State boundary highlight
   drawStateHighlight(onStateClick);
+
+  // Initialize Real-Time Day and Night Terminator & Sun/Moon tracking
+  try {
+    initDayNight(map);
+  } catch (err) {
+    console.warn('[Map] initDayNight failed:', err);
+  }
 
   // Right-Click on Map creates a new Time Capsule Spot!
   map.on('contextmenu', (e) => {

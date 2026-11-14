@@ -4,9 +4,9 @@
  * Base Map Layer selector, Date display, Video Overlay, and Deep Dive views.
  */
 
-import { getCityVideo, getAvailableVideoTypes, getAvailableCityTours, CITY_VIDEOS, findPoiLiveCam } from './video-service.js?v=20261114_world9';
-import { getDeepDiveData } from './deep-dive.js?v=20261114_world9';
-import { fetchWikiArticle, fetchWikiArticleHtml, cleanWikiTitle } from './wiki-service.js?v=20261114_world9';
+import { getCityVideo, getAvailableVideoTypes, getAvailableCityTours, CITY_VIDEOS, findPoiLiveCam } from './video-service.js?v=20261114_world10';
+import { getDeepDiveData } from './deep-dive.js?v=20261114_world10';
+import { fetchWikiArticle, fetchWikiArticleHtml, cleanWikiTitle } from './wiki-service.js?v=20261114_world10';
 
 let currentActiveVideoCityId = null;
 let currentActiveVideoType = 'drone';
@@ -661,7 +661,8 @@ export function updateBaseLayerUI(activeKey) {
     osm: { name: 'Χάρτες - Πολιτικός', icon: 'fa-map text-sky-400' },
     topo: { name: 'Χάρτες - Ανάγλυφο', icon: 'fa-mountain-sun text-teal-400' },
     googleRoad: { name: 'Χάρτες - Google Maps', icon: 'fa-diamond-turn-right text-red-400' },
-    googleHybrid: { name: 'Χάρτες - Google Δορυφόρος', icon: 'fa-earth-americas text-emerald-300' }
+    googleHybrid: { name: 'Χάρτες - Google Δορυφόρος', icon: 'fa-earth-americas text-emerald-300' },
+    nasaNight: { name: 'Χάρτες - NASA Νύχτα', icon: 'fa-city text-yellow-300' }
   };
   const activeLabel = document.getElementById('activeMapLayerName');
   if (activeLabel && layerMeta[activeKey]) {
