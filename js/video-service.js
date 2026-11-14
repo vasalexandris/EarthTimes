@@ -1,4 +1,4 @@
-import { CITY_TO_STATE } from './states-data.js?v=20261114_us3';
+import { CITY_TO_STATE } from './states-data.js?v=20261114_us4';
 /**
  * Video Service Module
  * Registry of verified high-definition YouTube video tours for all cities
@@ -10608,6 +10608,229 @@ export const CITY_VIDEOS = {
       "drone": {
           "youtubeId": "HhYetVm8JZ0",
           "title": "Σαν Αντόνιο 4K — San Antonio, Texas from Above | Stunning 4K Drone Tour"
+      }
+  },
+  "colorado-springs": {
+      "drone": {
+          "youtubeId": "KOOkEckdTeE",
+          "title": "Κολοράντο Σπρινγκς 4K — Colorado Springs, Colorado | 4K drone footage"
+      },
+      "live": {
+          "youtubeId": "75K1IfdF2MM",
+          "label": "Κολοράντο Σπρινγκς Live Cam",
+          "title": "Pikes Peak & Colorado Springs Live Cam"
+      }
+  },
+  "aspen": {
+      "drone": {
+          "youtubeId": "97h7qF7n1_c",
+          "title": "Άσπεν 4K — ASPEN, COLORADO - The Most Exclusive Ski Resort In The World | 4K Drone Video"
+      }
+  },
+  "boulder": {
+      "drone": {
+          "youtubeId": "BNu12FJ1nY0",
+          "title": "Μπόουλντερ 4K — Boulder, Colorado | Drone Footage 4K"
+      },
+      "live": {
+          "youtubeId": "yImwm-Wc8NA",
+          "label": "Μπόουλντερ Live Cam",
+          "title": "Boulder, Colorado Live Camera"
+      }
+  },
+  "fort-collins": {
+      "drone": {
+          "youtubeId": "q6e2cDZrVbQ",
+          "title": "Φορτ Κόλινς 4K — Fort Collins, Colorado | Drone Video at Sunset"
+      },
+      "live": {
+          "youtubeId": "LObvUcMIqOM",
+          "label": "Φορτ Κόλινς Live Cam",
+          "title": "Fort Collins, CO | BNSF Railcam"
+      }
+  },
+  "aurora-co": {
+      "drone": {
+          "youtubeId": "Vdo6XQvjWVs",
+          "title": "Ορόρα 4K — Aurora Colorado SkyLine 4K Ultra HD"
+      }
+  },
+  "pueblo": {
+      "drone": {
+          "youtubeId": "j7mCFzhzh9E",
+          "title": "Πουέμπλο 4K — Pueblo, CO | 4K Drone Footage 2024"
+      }
+  },
+  "grand-junction": {
+      "drone": {
+          "youtubeId": "CCw2TV_WFAs",
+          "title": "Γκραντ Τζάνκσιον 4K — 🛸GRAND JUNCTION, COLORADO DRONE TOUR 🛸 [DJI 4K]"
+      }
+  },
+  "vail": {
+      "drone": {
+          "youtubeId": "l9YiQFGFmHE",
+          "title": "Βέιλ 4K — Vail, Colorado - 4K drone tour"
+      }
+  },
+  "durango": {
+      "drone": {
+          "youtubeId": "kkiyvVrLBkA",
+          "title": "Ντουράνγκο 4K — 4K Drone Footage Of Lion's Den In Durango, CO"
+      }
+  },
+  "tucson": {
+      "drone": {
+          "youtubeId": "2rNJzzCRKXs",
+          "title": "Τουσόν 4K — Tucson, Arizona | 4K Drone Video"
+      },
+      "live": {
+          "youtubeId": "q5BQRwSh41Q",
+          "label": "Τουσόν Live Cam",
+          "title": "Tucson, Arizona, USA | LIVE Train Cam"
+      }
+  },
+  "scottsdale": {
+      "drone": {
+          "youtubeId": "7aZ8rg-0YCo",
+          "title": "Σκοτσντέιλ 4K — Scottsdale Drone Tour (4K)"
+      }
+  },
+  "mesa": {
+      "drone": {
+          "youtubeId": "xOdXW9Livsw",
+          "title": "Μέσα 4K — 4K Mesa Arizona Aerial View and Sunset - DJI Phantom 3 Professional"
+      }
+  },
+  "chandler": {
+      "drone": {
+          "youtubeId": "wiMgV6zh5MU",
+          "title": "Τσάντλερ 4K — Stunning Aerial Views of Chandler, AZ | 4K Drone Footage"
+      }
+  },
+  "glendale-az": {
+      "drone": {
+          "youtubeId": "hP5JlRBqXxI",
+          "title": "Γκλέντεϊλ 4K — 4K Drone Highlight - Glendale Arizona Real Estate - Desert Lane"
+      }
+  },
+  "flagstaff": {
+      "drone": {
+          "youtubeId": "D5goRJoVyYE",
+          "title": "Φλάγκσταφ 4K — Aerial View of Flagstaff Arizona"
+      },
+      "live": {
+          "youtubeId": "7xdHH9KMSVk",
+          "label": "Φλάγκσταφ Live Cam",
+          "title": "Flagstaff, Arizona, USA | LIVE Train Cam"
+      }
+  },
+  "sedona": {
+      "drone": {
+          "youtubeId": "NZA0DtQr0HU",
+          "title": "Σεντόνα 4K — SEDONA, ARIZONA 4K DRONE FOOTAGE (ULTRA HD) - USA BEAUTIFUL DESERT LANDSCAPES"
+      },
+      "live": {
+          "youtubeId": "ro9AMAW4DUc",
+          "label": "Σεντόνα Live Cam",
+          "title": "Sedona Red Rocks & Chapel Live Cam"
+      }
+  },
+  "yuma": {
+      "drone": {
+          "youtubeId": "yrKh6sNcdTs",
+          "title": "Γιούμα 4K — Downtown Yuma, Arizona - Glamis Dunes | 4K Drone Video"
+      }
+  },
+  "prescott": {
+      "drone": {
+          "youtubeId": "RVK54vPZUos",
+          "title": "Πρέσκοτ 4K — 4K Drone Tour • Prescott National Forest & SR-89A Scenic Drive (22-Min Cinematic"
+      },
+      "live": {
+          "youtubeId": "UkuAQKKw0B4",
+          "label": "Πρέσκοτ Live Cam",
+          "title": "Prescott, Arizona Downtown Live Cam"
+      }
+  },
+  "santa-fe": {
+      "drone": {
+          "youtubeId": "UN9b_J4Zqa0",
+          "title": "Σάντα Φε 4K — Stunning Drone Footage: Santa Fe & Albuquerque, New Mexico Aerial Views"
+      },
+      "live": {
+          "youtubeId": "R168_-P5PQw",
+          "label": "Σάντα Φε Live Cam",
+          "title": "Santa Fe, NM | NMRX Railcam"
+      }
+  },
+  "albuquerque": {
+      "drone": {
+          "youtubeId": "yqb6DiS5byU",
+          "title": "Αλμπουκέρκη 4K — Albuquerque, New Mexico by Drone 🇺🇸 [4K]"
+      }
+  },
+  "las-cruces": {
+      "drone": {
+          "youtubeId": "vu_MbQ-nUlA",
+          "title": "Λας Κρούσες 4K — Las Cruces, New Mexico 🇺🇸 city drone video in 4k (ULTRA HD)"
+      }
+  },
+  "rio-rancho": {
+      "drone": {
+          "youtubeId": "t_K5g6loOCI",
+          "title": "Ρίο Ράντσο 4K — 4K flight above Rio Rancho"
+      }
+  },
+  "roswell": {
+      "drone": {
+          "youtubeId": "txsD9AXo80Y",
+          "title": "Ρόσγουελ 4K — UFO Capital of the World: Roswell New Mexico Full City Tour | POV 4K60 Dolby Surround"
+      },
+      "live": {
+          "youtubeId": "kLoFxVhRWtQ",
+          "label": "Ρόσγουελ Live Cam",
+          "title": "EarthCam Live: Roswell, New Mexico"
+      }
+  },
+  "farmington-nm": {
+      "drone": {
+          "youtubeId": "htHttxDBOKk",
+          "title": "Φάρμινγκτον 4K — Drone Farmington, New Mexico | Drone & Drive"
+      }
+  },
+  "taos": {
+      "drone": {
+          "youtubeId": "Pdb4iKrozMk",
+          "title": "Τάος 4K — Taos NM by drone"
+      }
+  },
+  "carlsbad-nm": {
+      "drone": {
+          "youtubeId": "tLp4x0HBuGE",
+          "title": "Κάρλσμπαντ 4K — Carlsbad, NM Drone Video"
+      },
+      "live": {
+          "youtubeId": "BwiIsjXt3KI",
+          "label": "Κάρλσμπαντ Live Cam",
+          "title": "Carlsbad Caverns Bat Flight Live Cam"
+      }
+  },
+  "gallup": {
+      "drone": {
+          "youtubeId": "hd1-IVZ6c9k",
+          "title": "Γκάλοπ 4K — Gallup, New Mexico by Drone 🇺🇸 [4K]"
+      },
+      "live": {
+          "youtubeId": "hatt7HlQGu0",
+          "label": "Γκάλοπ Live Cam",
+          "title": "Gallup, NM | BNSF Railcam"
+      }
+  },
+  "alamogordo": {
+      "drone": {
+          "youtubeId": "1eSl6orusUY",
+          "title": "Αλαμογκόρντο 4K — Alamogordo, New Mexico | 4K Sunset Drone Footage"
       }
   }
 };

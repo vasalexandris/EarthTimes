@@ -206,6 +206,41 @@ export const US_STATES = [
         "id": "scottsdale",
         "name": "Σκοτσντέιλ",
         "englishName": "Scottsdale"
+      },
+      {
+        "id": "mesa",
+        "name": "Μέσα",
+        "englishName": "Mesa"
+      },
+      {
+        "id": "chandler",
+        "name": "Τσάντλερ",
+        "englishName": "Chandler"
+      },
+      {
+        "id": "glendale-az",
+        "name": "Γκλέντεϊλ",
+        "englishName": "Glendale"
+      },
+      {
+        "id": "flagstaff",
+        "name": "Φλάγκσταφ",
+        "englishName": "Flagstaff"
+      },
+      {
+        "id": "sedona",
+        "name": "Σεντόνα",
+        "englishName": "Sedona"
+      },
+      {
+        "id": "yuma",
+        "name": "Γιούμα",
+        "englishName": "Yuma"
+      },
+      {
+        "id": "prescott",
+        "name": "Πρέσκοτ",
+        "englishName": "Prescott"
       }
     ]
   },
@@ -854,6 +889,41 @@ export const US_STATES = [
         "id": "aspen",
         "name": "Άσπεν",
         "englishName": "Aspen"
+      },
+      {
+        "id": "boulder",
+        "name": "Μπόουλντερ",
+        "englishName": "Boulder"
+      },
+      {
+        "id": "fort-collins",
+        "name": "Φορτ Κόλινς",
+        "englishName": "Fort Collins"
+      },
+      {
+        "id": "aurora-co",
+        "name": "Ορόρα",
+        "englishName": "Aurora"
+      },
+      {
+        "id": "pueblo",
+        "name": "Πουέμπλο",
+        "englishName": "Pueblo"
+      },
+      {
+        "id": "grand-junction",
+        "name": "Γκραντ Τζάνκσιον",
+        "englishName": "Grand Junction"
+      },
+      {
+        "id": "vail",
+        "name": "Βέιλ",
+        "englishName": "Vail"
+      },
+      {
+        "id": "durango",
+        "name": "Ντουράνγκο",
+        "englishName": "Durango"
       }
     ]
   },
@@ -1647,6 +1717,46 @@ export const US_STATES = [
         "id": "albuquerque",
         "name": "Αλμπουκέρκη",
         "englishName": "Albuquerque"
+      },
+      {
+        "id": "las-cruces",
+        "name": "Λας Κρούσες",
+        "englishName": "Las Cruces"
+      },
+      {
+        "id": "rio-rancho",
+        "name": "Ρίο Ράντσο",
+        "englishName": "Rio Rancho"
+      },
+      {
+        "id": "roswell",
+        "name": "Ρόσγουελ",
+        "englishName": "Roswell"
+      },
+      {
+        "id": "farmington-nm",
+        "name": "Φάρμινγκτον",
+        "englishName": "Farmington"
+      },
+      {
+        "id": "taos",
+        "name": "Τάος",
+        "englishName": "Taos"
+      },
+      {
+        "id": "carlsbad-nm",
+        "name": "Κάρλσμπαντ",
+        "englishName": "Carlsbad"
+      },
+      {
+        "id": "gallup",
+        "name": "Γκάλοπ",
+        "englishName": "Gallup"
+      },
+      {
+        "id": "alamogordo",
+        "name": "Αλαμογκόρντο",
+        "englishName": "Alamogordo"
       }
     ]
   },
@@ -2741,6 +2851,13 @@ export const CITY_TO_STATE = {
   "phoenix": "arizona",
   "tucson": "arizona",
   "scottsdale": "arizona",
+  "mesa": "arizona",
+  "chandler": "arizona",
+  "glendale-az": "arizona",
+  "flagstaff": "arizona",
+  "sedona": "arizona",
+  "yuma": "arizona",
+  "prescott": "arizona",
   "little-rock": "arkansas",
   "montpelier": "vermont",
   "burlington": "vermont",
@@ -2798,6 +2915,13 @@ export const CITY_TO_STATE = {
   "denver": "colorado",
   "colorado-springs": "colorado",
   "aspen": "colorado",
+  "boulder": "colorado",
+  "fort-collins": "colorado",
+  "aurora-co": "colorado",
+  "pueblo": "colorado",
+  "grand-junction": "colorado",
+  "vail": "colorado",
+  "durango": "colorado",
   "hartford": "connecticut",
   "new-haven": "connecticut",
   "stamford": "connecticut",
@@ -2894,6 +3018,14 @@ export const CITY_TO_STATE = {
   "columbus-ne": "nebraska",
   "santa-fe": "new-mexico",
   "albuquerque": "new-mexico",
+  "las-cruces": "new-mexico",
+  "rio-rancho": "new-mexico",
+  "roswell": "new-mexico",
+  "farmington-nm": "new-mexico",
+  "taos": "new-mexico",
+  "carlsbad-nm": "new-mexico",
+  "gallup": "new-mexico",
+  "alamogordo": "new-mexico",
   "trenton": "new-jersey",
   "newark": "new-jersey",
   "jersey-city": "new-jersey",
