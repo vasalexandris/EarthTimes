@@ -4,12 +4,12 @@
  * USA, Leaflet Map, Base Layers, UI Dossier, and Time Machine.
  */
 
-import { loadWorldData, loadCountryData, loadStateData } from './data-service.js?v=20261114_world3';
-import * as MapModule from './map.js?v=20261114_world3';
-import * as UIModule from './ui.js?v=20261114_world3';
-import * as TimeMachine from './time-machine.js?v=20261114_world3';
-import * as NavigatorModule from './navigator.js?v=20261114_world3';
-import { US_STATES, CITY_TO_STATE } from './states-data.js?v=20261114_world3';
+import { loadWorldData, loadCountryData, loadStateData } from './data-service.js?v=20261114_world4';
+import * as MapModule from './map.js?v=20261114_world4';
+import * as UIModule from './ui.js?v=20261114_world4';
+import * as TimeMachine from './time-machine.js?v=20261114_world4';
+import * as NavigatorModule from './navigator.js?v=20261114_world4';
+import { US_STATES, CITY_TO_STATE } from './states-data.js?v=20261114_world4';
 
 // Application State
 let worldData = null;
@@ -495,12 +495,12 @@ export async function flyToCity(cityId) {
       'st-johns': 'antigua-and-barbuda',
       'nassau': 'bahamas',
       'bridgetown': 'barbados',
-      'belize-city': 'belize', 'san-ignacio': 'belize',
+      'belize-city': 'belize', 'san-ignacio': 'belize', 'belmopan': 'belize', 'san-pedro': 'belize', 'caye-caulker': 'belize', 'placencia': 'belize', 'orange-walk': 'belize', 'corozal': 'belize', 'dangriga': 'belize', 'punta-gorda': 'belize',
       'san-jose': 'costa-rica', 'alajuela': 'costa-rica', 'puerto-limon': 'costa-rica', 'heredia': 'costa-rica', 'cartago': 'costa-rica', 'puntarenas': 'costa-rica', 'liberia': 'costa-rica', 'la-fortuna': 'costa-rica', 'monteverde': 'costa-rica', 'quepos': 'costa-rica',
       'havana': 'cuba', 'santiago-de-cuba': 'cuba', 'trinidad': 'cuba', 'camaguey': 'cuba', 'cienfuegos': 'cuba', 'santa-clara': 'cuba', 'varadero': 'cuba', 'holguin': 'cuba', 'vinales': 'cuba', 'baracoa': 'cuba',
       'roseau': 'dominica',
       'santo-domingo': 'dominican-republic', 'santiago-de-los-caballeros': 'dominican-republic', 'punta-cana': 'dominican-republic', 'puerto-plata': 'dominican-republic', 'la-romana': 'dominican-republic', 'las-terrenas': 'dominican-republic', 'samana': 'dominican-republic', 'barahona': 'dominican-republic', 'san-pedro-de-macoris': 'dominican-republic', 'jarabacoa': 'dominican-republic',
-      'san-salvador': 'el-salvador', 'santa-ana': 'el-salvador',
+      'san-salvador': 'el-salvador', 'santa-ana': 'el-salvador', 'san-miguel-sv': 'el-salvador', 'sonsonate': 'el-salvador', 'santa-tecla': 'el-salvador', 'ahuachapan': 'el-salvador', 'suchitoto': 'el-salvador', 'la-libertad': 'el-salvador', 'usulutan': 'el-salvador', 'chalatenango': 'el-salvador',
       'st-georges': 'grenada',
       'guatemala-city': 'guatemala', 'antigua-guatemala': 'guatemala', 'quetzaltenango': 'guatemala', 'flores-gt': 'guatemala', 'panajachel': 'guatemala', 'chichicastenango': 'guatemala', 'coban': 'guatemala', 'puerto-barrios': 'guatemala', 'livingston': 'guatemala', 'escuintla': 'guatemala',
       'port-au-prince': 'haiti', 'cap-haitien': 'haiti',

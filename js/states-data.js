@@ -222,6 +222,41 @@ export const US_STATES = [
         "id": "fairbanks",
         "name": "Φέρμπανκς",
         "englishName": "Fairbanks"
+      },
+      {
+        "id": "sitka",
+        "name": "Σίτκα",
+        "englishName": "Sitka"
+      },
+      {
+        "id": "ketchikan",
+        "name": "Κέτσικαν",
+        "englishName": "Ketchikan"
+      },
+      {
+        "id": "wasilla",
+        "name": "Γουασίλα",
+        "englishName": "Wasilla"
+      },
+      {
+        "id": "kenai",
+        "name": "Κενάι",
+        "englishName": "Kenai"
+      },
+      {
+        "id": "kodiak",
+        "name": "Κόντιακ",
+        "englishName": "Kodiak"
+      },
+      {
+        "id": "skagway",
+        "name": "Σκάγκγουεϊ",
+        "englishName": "Skagway"
+      },
+      {
+        "id": "homer",
+        "name": "Χόμερ",
+        "englishName": "Homer"
       }
     ]
   },
@@ -373,6 +408,46 @@ export const US_STATES = [
         "id": "burlington",
         "name": "Μπέρλινγκτον",
         "englishName": "Burlington"
+      },
+      {
+        "id": "south-burlington",
+        "name": "Σάουθ Μπέρλινγκτον",
+        "englishName": "South Burlington"
+      },
+      {
+        "id": "rutland",
+        "name": "Ράτλαντ",
+        "englishName": "Rutland"
+      },
+      {
+        "id": "barre",
+        "name": "Μπάρε",
+        "englishName": "Barre"
+      },
+      {
+        "id": "st-albans-vt",
+        "name": "Σεντ Όλμπανς",
+        "englishName": "St. Albans"
+      },
+      {
+        "id": "winooski",
+        "name": "Γουινούσκι",
+        "englishName": "Winooski"
+      },
+      {
+        "id": "brattleboro",
+        "name": "Μπράτλμπορο",
+        "englishName": "Brattleboro"
+      },
+      {
+        "id": "bennington",
+        "name": "Μπένινγκτον",
+        "englishName": "Bennington"
+      },
+      {
+        "id": "stowe",
+        "name": "Στόου",
+        "englishName": "Stowe"
       }
     ]
   },
@@ -525,6 +600,46 @@ export const US_STATES = [
         "id": "fargo",
         "name": "Φάργκο",
         "englishName": "Fargo"
+      },
+      {
+        "id": "grand-forks",
+        "name": "Γκραντ Φορκς",
+        "englishName": "Grand Forks"
+      },
+      {
+        "id": "minot",
+        "name": "Μάινοτ",
+        "englishName": "Minot"
+      },
+      {
+        "id": "west-fargo",
+        "name": "Γουέστ Φάργκο",
+        "englishName": "West Fargo"
+      },
+      {
+        "id": "williston-nd",
+        "name": "Γουίλιστον",
+        "englishName": "Williston"
+      },
+      {
+        "id": "dickinson-nd",
+        "name": "Ντίκινσον",
+        "englishName": "Dickinson"
+      },
+      {
+        "id": "mandan",
+        "name": "Μαντάν",
+        "englishName": "Mandan"
+      },
+      {
+        "id": "jamestown-nd",
+        "name": "Τζέιμσταουν",
+        "englishName": "Jamestown"
+      },
+      {
+        "id": "wahpeton",
+        "name": "Γουαπετόν",
+        "englishName": "Wahpeton"
       }
     ]
   },
@@ -608,6 +723,51 @@ export const US_STATES = [
         "name": "Τσάρλεστον",
         "englishName": "Charleston",
         "badge": "Πρωτεύουσα"
+      },
+      {
+        "id": "huntington-wv",
+        "name": "Χάντινγκτον",
+        "englishName": "Huntington"
+      },
+      {
+        "id": "morgantown-wv",
+        "name": "Μόργκανταουν",
+        "englishName": "Morgantown"
+      },
+      {
+        "id": "parkersburg",
+        "name": "Πάρκερσμπεργκ",
+        "englishName": "Parkersburg"
+      },
+      {
+        "id": "wheeling",
+        "name": "Γουίλινγκ",
+        "englishName": "Wheeling"
+      },
+      {
+        "id": "martinsburg",
+        "name": "Μάρτινσμπεργκ",
+        "englishName": "Martinsburg"
+      },
+      {
+        "id": "fairmont-wv",
+        "name": "Φέρμοντ",
+        "englishName": "Fairmont"
+      },
+      {
+        "id": "beckley",
+        "name": "Μπέκλεϊ",
+        "englishName": "Beckley"
+      },
+      {
+        "id": "clarksburg-wv",
+        "name": "Κλάρκσμπεργκ",
+        "englishName": "Clarksburg"
+      },
+      {
+        "id": "harpers-ferry",
+        "name": "Χάρπερς Φέρι",
+        "englishName": "Harpers Ferry"
       }
     ]
   },
@@ -2128,6 +2288,46 @@ export const US_STATES = [
         "id": "sioux-falls",
         "name": "Σιου Φολς",
         "englishName": "Sioux Falls"
+      },
+      {
+        "id": "rapid-city",
+        "name": "Ράπιντ Σίτι",
+        "englishName": "Rapid City"
+      },
+      {
+        "id": "aberdeen-sd",
+        "name": "Άμπερντιν",
+        "englishName": "Aberdeen"
+      },
+      {
+        "id": "brookings",
+        "name": "Μπρούκινγκς",
+        "englishName": "Brookings"
+      },
+      {
+        "id": "watertown-sd",
+        "name": "Γουότερταουν",
+        "englishName": "Watertown"
+      },
+      {
+        "id": "mitchell-sd",
+        "name": "Μίτσελ",
+        "englishName": "Mitchell"
+      },
+      {
+        "id": "deadwood",
+        "name": "Ντέντγουντ",
+        "englishName": "Deadwood"
+      },
+      {
+        "id": "spearfish",
+        "name": "Σπίαρφις",
+        "englishName": "Spearfish"
+      },
+      {
+        "id": "sturgis",
+        "name": "Στέρτζις",
+        "englishName": "Sturgis"
       }
     ]
   },
@@ -3021,6 +3221,46 @@ export const US_STATES = [
         "id": "hilo",
         "name": "Χίλο",
         "englishName": "Hilo"
+      },
+      {
+        "id": "kailua-kona",
+        "name": "Καϊλούα-Κόνα",
+        "englishName": "Kailua-Kona"
+      },
+      {
+        "id": "kahului",
+        "name": "Καχουλούι",
+        "englishName": "Kahului"
+      },
+      {
+        "id": "lahaina",
+        "name": "Λαχάινα",
+        "englishName": "Lahaina"
+      },
+      {
+        "id": "lihue",
+        "name": "Λιχούε",
+        "englishName": "Lihue"
+      },
+      {
+        "id": "kailua-oahu",
+        "name": "Καϊλούα Οάχου",
+        "englishName": "Kailua, Oahu"
+      },
+      {
+        "id": "waipahu",
+        "name": "Γουαϊπάχου",
+        "englishName": "Waipahu"
+      },
+      {
+        "id": "kihei",
+        "name": "Κιχέι",
+        "englishName": "Kihei"
+      },
+      {
+        "id": "kapolei",
+        "name": "Καπολέι",
+        "englishName": "Kapolei"
       }
     ]
   }
@@ -3479,5 +3719,53 @@ export const CITY_TO_STATE = {
   "sheridan-wy": "wyoming",
   "gillette": "wyoming",
   "evanston-wy": "wyoming",
-  "lander": "wyoming"
+  "lander": "wyoming",
+  "sitka": "alaska",
+  "ketchikan": "alaska",
+  "wasilla": "alaska",
+  "kenai": "alaska",
+  "kodiak": "alaska",
+  "skagway": "alaska",
+  "homer": "alaska",
+  "south-burlington": "vermont",
+  "rutland": "vermont",
+  "barre": "vermont",
+  "st-albans-vt": "vermont",
+  "winooski": "vermont",
+  "brattleboro": "vermont",
+  "bennington": "vermont",
+  "stowe": "vermont",
+  "grand-forks": "north-dakota",
+  "minot": "north-dakota",
+  "west-fargo": "north-dakota",
+  "williston-nd": "north-dakota",
+  "dickinson-nd": "north-dakota",
+  "mandan": "north-dakota",
+  "jamestown-nd": "north-dakota",
+  "wahpeton": "north-dakota",
+  "huntington-wv": "west-virginia",
+  "morgantown-wv": "west-virginia",
+  "parkersburg": "west-virginia",
+  "wheeling": "west-virginia",
+  "martinsburg": "west-virginia",
+  "fairmont-wv": "west-virginia",
+  "beckley": "west-virginia",
+  "clarksburg-wv": "west-virginia",
+  "harpers-ferry": "west-virginia",
+  "rapid-city": "south-dakota",
+  "aberdeen-sd": "south-dakota",
+  "brookings": "south-dakota",
+  "watertown-sd": "south-dakota",
+  "mitchell-sd": "south-dakota",
+  "deadwood": "south-dakota",
+  "spearfish": "south-dakota",
+  "sturgis": "south-dakota",
+  "kailua-kona": "hawaii",
+  "kahului": "hawaii",
+  "lahaina": "hawaii",
+  "lihue": "hawaii",
+  "kailua-oahu": "hawaii",
+  "waipahu": "hawaii",
+  "kihei": "hawaii",
+  "kapolei": "hawaii"
 };

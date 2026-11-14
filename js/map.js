@@ -4,7 +4,7 @@
  * polygon highlights, markers, time capsules, and camera animations.
  */
 
-import { findPoiLiveCam } from './video-service.js?v=20261114_world3';
+import { findPoiLiveCam } from './video-service.js?v=20261114_world4';
 
 let map = null;
 let activeBaseLayer = null;

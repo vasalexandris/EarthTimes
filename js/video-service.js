@@ -1,4 +1,4 @@
-import { CITY_TO_STATE } from './states-data.js?v=20261114_world3';
+import { CITY_TO_STATE } from './states-data.js?v=20261114_world4';
 /**
  * Video Service Module
  * Registry of verified high-definition YouTube video tours for all cities
@@ -12099,6 +12099,1282 @@ export const CITY_VIDEOS = {
     }
   }
   }
+  "bismarck": {
+    "cityName": "Μπίσμαρκ",
+    "drone": {
+      "youtubeId": "m9DlJlJ2gzY",
+      "title": "Bismarck - North Dakota - 4K Downtown Drive",
+      "label": "Μπίσμαρκ με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "rxZQ2pvtjzs",
+      "title": "Driving Downtown Bismarck, ND 4K",
+      "label": "Περιήγηση στο Μπίσμαρκ (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "fargo": {
+    "cityName": "Φάργκο",
+    "drone": {
+      "youtubeId": "QI4EIkNEfgA",
+      "title": "Fargo North Dakota Tour - 4K Drone Travel Guide Video - TOP 10",
+      "label": "Φάργκο με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "gCSA8ZzcbxA",
+      "title": "Fargo Virtual Tour | Fargo Drone",
+      "label": "Περιήγηση στο Φάργκο (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "grand-forks": {
+    "cityName": "Γκραντ Φορκς",
+    "drone": {
+      "youtubeId": "gIBwO3EBOmo",
+      "title": "Grand Forks In Season- 4k Cinematic Drone Video in Grand Forks, North Dakota!",
+      "label": "Γκραντ Φορκς με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "QI4EIkNEfgA",
+      "title": "Fargo North Dakota Tour - 4K Drone Travel Guide Video - TOP 10",
+      "label": "Περιήγηση στο Γκραντ Φορκς (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "minot": {
+    "cityName": "Μάινοτ",
+    "drone": {
+      "youtubeId": "QI4EIkNEfgA",
+      "title": "Fargo North Dakota Tour - 4K Drone Travel Guide Video - TOP 10",
+      "label": "Μάινοτ με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "ZJHOxLJFK58",
+      "title": "North Dakota from Above 🇺🇸 | Stunning 4K Aerial Drone Footage of the Peace Garden State",
+      "label": "Περιήγηση στο Μάινοτ (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "west-fargo": {
+    "cityName": "Γουέστ Φάργκο",
+    "drone": {
+      "youtubeId": "QI4EIkNEfgA",
+      "title": "Fargo North Dakota Tour - 4K Drone Travel Guide Video - TOP 10",
+      "label": "Γουέστ Φάργκο με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "ZJHOxLJFK58",
+      "title": "North Dakota from Above 🇺🇸 | Stunning 4K Aerial Drone Footage of the Peace Garden State",
+      "label": "Περιήγηση στο Γουέστ Φάργκο (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "williston-nd": {
+    "cityName": "Γουίλιστον",
+    "drone": {
+      "youtubeId": "IBq6XnzmboU",
+      "title": "Touring North Dakota (4K) - Williston, Williams County",
+      "label": "Γουίλιστον με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "uS-UzK-rTww",
+      "title": "Williston - North Dakota - 4K Downtown Drive",
+      "label": "Περιήγηση στο Γουίλιστον (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "dickinson-nd": {
+    "cityName": "Ντίκινσον",
+    "drone": {
+      "youtubeId": "QI4EIkNEfgA",
+      "title": "Fargo North Dakota Tour - 4K Drone Travel Guide Video - TOP 10",
+      "label": "Ντίκινσον με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "5HXHNxCml_U",
+      "title": "Dickinson - North Dakota - 4K Downtown Drive",
+      "label": "Περιήγηση στο Ντίκινσον (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "mandan": {
+    "cityName": "Μαντάν",
+    "drone": {
+      "youtubeId": "IeNjsQEErY8",
+      "title": "Mandan - North Dakota - 4K Downtown Drive",
+      "label": "Μαντάν με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "LN4SKL9bYFU",
+      "title": "North Dakota Autumn 4K HDR 🍂 Golden Forests, Rolling Hills & Peaceful Nature",
+      "label": "Περιήγηση στο Μαντάν (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "jamestown-nd": {
+    "cityName": "Τζέιμσταουν",
+    "drone": {
+      "youtubeId": "Ne7ORZSK36k",
+      "title": "Jamestown, North Dakota – World's Largest Buffalo, Museum, and Frontier Village",
+      "label": "Τζέιμσταουν με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "KE83FlYV4vQ",
+      "title": "The World's Largest Buffalo - in Jamestown, North Dakota",
+      "label": "Περιήγηση στο Τζέιμσταουν (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "wahpeton": {
+    "cityName": "Γουαπετόν",
+    "drone": {
+      "youtubeId": "ZJHOxLJFK58",
+      "title": "North Dakota from Above 🇺🇸 | Stunning 4K Aerial Drone Footage of the Peace Garden State",
+      "label": "Γουαπετόν με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "hxkjne47L00",
+      "title": "Wahpeton, North Dakota, USA",
+      "label": "Περιήγηση στο Γουαπετόν (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "pierre": {
+    "cityName": "Πιερ",
+    "drone": {
+      "youtubeId": "hhqNkcqBbD8",
+      "title": "Pierre, SD - 4K Aerial Tour",
+      "label": "Πιερ με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "sjC363B7MeQ",
+      "title": "South Dakota State Capital - Quick Tour",
+      "label": "Περιήγηση στο Πιερ (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "sioux-falls": {
+    "cityName": "Σιου Φολς",
+    "drone": {
+      "youtubeId": "iQEFSI7lZY4",
+      "title": "Sioux Falls, SD -  4K Aerial Tour",
+      "label": "Σιου Φολς με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "WsyTQurCGE4",
+      "title": "Sioux Falls, South Dakota | 4K Drone Footage",
+      "label": "Περιήγηση στο Σιου Φολς (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "rapid-city": {
+    "cityName": "Ράπιντ Σίτι",
+    "drone": {
+      "youtubeId": "9e_YwhosPuY",
+      "title": "Rapid City, SD - 4K Aerial Tour",
+      "label": "Ράπιντ Σίτι με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "oviI3-Cq0-k",
+      "title": "Rapid City, South Dakota 2025",
+      "label": "Περιήγηση στο Ράπιντ Σίτι (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "aberdeen-sd": {
+    "cityName": "Άμπερντιν",
+    "drone": {
+      "youtubeId": "hhqNkcqBbD8",
+      "title": "Pierre, SD - 4K Aerial Tour",
+      "label": "Άμπερντιν με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "H0VsOxXdK8A",
+      "title": "Aberdeen - South Dakota - 4K Downtown Drive",
+      "label": "Περιήγηση στο Άμπερντιν (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "brookings": {
+    "cityName": "Μπρούκινγκς",
+    "drone": {
+      "youtubeId": "rhkmUXohWrs",
+      "title": "Welcome to South Dakota State University - 4K Aerial Tour",
+      "label": "Μπρούκινγκς με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "DW0VAwGDTJA",
+      "title": "Greetings from Brookings, South Dakota | 4K FPV",
+      "label": "Περιήγηση στο Μπρούκινγκς (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "watertown-sd": {
+    "cityName": "Γουότερταουν",
+    "drone": {
+      "youtubeId": "xWO2og5QvL8",
+      "title": "Lake Kampeska - Watertown, SD",
+      "label": "Γουότερταουν με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "TZ0JzmqxQQw",
+      "title": "Watertown, South Dakota - An American Landscape",
+      "label": "Περιήγηση στο Γουότερταουν (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "mitchell-sd": {
+    "cityName": "Μίτσελ",
+    "drone": {
+      "youtubeId": "YLSSiDkSCR0",
+      "title": "Corn Palace, Mitchell, SD - 4K Aerial Tour",
+      "label": "Μίτσελ με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "RxO6GzGH5LI",
+      "title": "4K Drone Footage - The Corn Palace - Mitchell, South Dakota",
+      "label": "Περιήγηση στο Μίτσελ (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "deadwood": {
+    "cityName": "Ντέντγουντ",
+    "drone": {
+      "youtubeId": "T5gJjq3UNvA",
+      "title": "Flying Deadwood, South Dakota Drone 4K",
+      "label": "Ντέντγουντ με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "pwyOhHWgrWo",
+      "title": "BLACK HILLS National Forest 8K South Dakota (Visually Stunning 3min Tour)",
+      "label": "Περιήγηση στο Ντέντγουντ (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "spearfish": {
+    "cityName": "Σπίαρφις",
+    "drone": {
+      "youtubeId": "1tiYI75Wpq0",
+      "title": "4K Drone Footage - Spearfish Canyon - Black Hills South Dakota - Savoy - Spring Creek",
+      "label": "Σπίαρφις με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "GL-X_Y8f9E4",
+      "title": "Spearfish Canyon, SD 4K",
+      "label": "Περιήγηση στο Σπίαρφις (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "sturgis": {
+    "cityName": "Στέρτζις",
+    "drone": {
+      "youtubeId": "GPtQIYpP5uM",
+      "title": "Sturgis 2024 | Inside the Epic 84th Annual Motorcycle Rally!",
+      "label": "Στέρτζις με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "WZ6NcF5z-rI",
+      "title": "Best Places to Ride Motorcycles for the 2025 Sturgis Motorcycle Rally!",
+      "label": "Περιήγηση στο Στέρτζις (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "charleston-wv": {
+    "cityName": "Τσάρλεστον",
+    "drone": {
+      "youtubeId": "0Uv1NArH8K4",
+      "title": "CHARLESTON drone view in 4K | WEST VIRGINIA | Cinematic Edit",
+      "label": "Τσάρλεστον με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "oyGfez_rBKg",
+      "title": "Sultan + Shepard - Assassin /  Charleston West Virginia State Capitol / John Amos / 4K / DJI AIR2S",
+      "label": "Περιήγηση στο Τσάρλεστον (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "huntington-wv": {
+    "cityName": "Χάντινγκτον",
+    "drone": {
+      "youtubeId": "qktEkueujd8",
+      "title": "Marshall Like You've Never Seen It Before | Drone Fly Through of Campus",
+      "label": "Χάντινγκτον με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "Tsf5MphHSWA",
+      "title": "Campus Tour | Marshall University",
+      "label": "Περιήγηση στο Χάντινγκτον (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "morgantown-wv": {
+    "cityName": "Μόργκανταουν",
+    "drone": {
+      "youtubeId": "SuMTCDLI5ho",
+      "title": "4K Drone Video Over Morgantown, West Virginia",
+      "label": "Μόργκανταουν με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "SySmzlLaKM0",
+      "title": "Winter Wonderland: WVU from Above. Morgantown WV 1/6/2025",
+      "label": "Περιήγηση στο Μόργκανταουν (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "parkersburg": {
+    "cityName": "Πάρκερσμπεργκ",
+    "drone": {
+      "youtubeId": "hF1bX45Vtwg",
+      "title": "Blennerhassett Island - Aerial Drone Video - West Virginia",
+      "label": "Πάρκερσμπεργκ με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "gi_sjPv_5Xk",
+      "title": "Blennerhassett Island: West Virginia's Hidden Gem | Parkersburg WV",
+      "label": "Περιήγηση στο Πάρκερσμπεργκ (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "wheeling": {
+    "cityName": "Γουίλινγκ",
+    "drone": {
+      "youtubeId": "d38oPLBbv7Y",
+      "title": "Wheeling, West Virginia - [4K] Drone Tour",
+      "label": "Γουίλινγκ με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "SACWjXxnt4w",
+      "title": "Wheeling Suspension Bridge, West Virginia - October 2026",
+      "label": "Περιήγηση στο Γουίλινγκ (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "martinsburg": {
+    "cityName": "Μάρτινσμπεργκ",
+    "drone": {
+      "youtubeId": "45_NTEl0wjw",
+      "title": "Drone Martinsburg, West Virginia",
+      "label": "Μάρτινσμπεργκ με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "11H9IPyc5gE",
+      "title": "Martinsburg, City in West Virginia, USA 🇺🇸 | Martinsburg West Virginia, Martinsburg WV USA",
+      "label": "Περιήγηση στο Μάρτινσμπεργκ (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "fairmont-wv": {
+    "cityName": "Φέρμοντ",
+    "drone": {
+      "youtubeId": "49dpxqujIus",
+      "title": "Fairmont, Town in West Virginia, USA 🇺🇸 | Fairmont West Virginia, Fairmont Wv Drone Footage",
+      "label": "Φέρμοντ με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "n_NWzgtsP-A",
+      "title": "Drone Morgantown, West Virginia | West Virginia University | Monongahela River",
+      "label": "Περιήγηση στο Φέρμοντ (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "beckley": {
+    "cityName": "Μπέκλεϊ",
+    "drone": {
+      "youtubeId": "wd9NE_6PsBQ",
+      "title": "Beckley  West Virginia 4K  / Gateway to Southern West Virginia  (DJI Mavic Air 2S Drone Footage)",
+      "label": "Μπέκλεϊ με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "awY6pPmUDCY",
+      "title": "Beckley Exhibition Coal Mine Tour - West Virgnia",
+      "label": "Περιήγηση στο Μπέκλεϊ (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "clarksburg-wv": {
+    "cityName": "Κλάρκσμπεργκ",
+    "drone": {
+      "youtubeId": "LzDaJBgWf_M",
+      "title": "Clarksburg WV USA, drone footage of Clarksburg Wv, Cinematic drone footage of West Virginia",
+      "label": "Κλάρκσμπεργκ με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "l8h0Mo2G3rE",
+      "title": "West Virginia 4K Drone Footage | Appalachian Mountains, New River Gorge & Scenic Aerial Views",
+      "label": "Περιήγηση στο Κλάρκσμπεργκ (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "harpers-ferry": {
+    "cityName": "Χάρπερς Φέρι",
+    "drone": {
+      "youtubeId": "V2oV_2uRSdw",
+      "title": "Harpers Ferry Aerial Tour Summer 2023 4K REUPLOAD",
+      "label": "Χάρπερς Φέρι με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "2BoSpW3K9DQ",
+      "title": "Flying Over Harpers Ferry, West Virginia - [4K] Drone Footage",
+      "label": "Περιήγηση στο Χάρπερς Φέρι (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "montpelier": {
+    "cityName": "Μονπελιέ",
+    "drone": {
+      "youtubeId": "a3SuqUsWR-0",
+      "title": "Montpelier, Vermont, USA 🇺🇸 4K | Drone Footage",
+      "label": "Μονπελιέ με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "wgN4XUpPZAI",
+      "title": "Vermont Walks - The Vermont State House in Montpelier, VT ・ 4K",
+      "label": "Περιήγηση στο Μονπελιέ (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "burlington": {
+    "cityName": "Μπέρλινγκτον",
+    "drone": {
+      "youtubeId": "vU_WSLybpGM",
+      "title": "Lake Champlain From Above | Burlington, VT Drone View | 4K | Full HD",
+      "label": "Μπέρλινγκτον με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "m91lkKNCfvo",
+      "title": "Burlington Vermont Drone Footage 4K | Lake Champlain Winter Aerial",
+      "label": "Περιήγηση στο Μπέρλινγκτον (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "south-burlington": {
+    "cityName": "Σάουθ Μπέρλινγκτον",
+    "drone": {
+      "youtubeId": "iPHyzezIsDI",
+      "title": "Burlington, Vermont, USA 🇺🇸 4K | Drone Footage",
+      "label": "Σάουθ Μπέρλινγκτον με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "5RLgfhLjbyw",
+      "title": "Peaceful Summer Afternoon in South Burlington, Vermont [8K]",
+      "label": "Περιήγηση στο Σάουθ Μπέρλινγκτον (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "rutland": {
+    "cityName": "Ράτλαντ",
+    "drone": {
+      "youtubeId": "fgAj1NcD1Kg",
+      "title": "Rutland, VT - Aerial Tour (4K)",
+      "label": "Ράτλαντ με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "jmoHOHJv5dY",
+      "title": "Vermont Downtown: Rutland",
+      "label": "Περιήγηση στο Ράτλαντ (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "barre": {
+    "cityName": "Μπάρε",
+    "drone": {
+      "youtubeId": "UCfjO9MQUUw",
+      "title": "ROCK OF AGES Granite Quarry - Barre, Vermont - Drone Video",
+      "label": "Μπάρε με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "NoZ6rMjFvMg",
+      "title": "Rock of Ages Stone Quarry Tour",
+      "label": "Περιήγηση στο Μπάρε (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "st-albans-vt": {
+    "cityName": "Σεντ Όλμπανς",
+    "drone": {
+      "youtubeId": "vU_WSLybpGM",
+      "title": "Lake Champlain From Above | Burlington, VT Drone View | 4K | Full HD",
+      "label": "Σεντ Όλμπανς με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "BDTXP6uuuec",
+      "title": "Drone video: See fall foliage in St. Albans, Vermont",
+      "label": "Περιήγηση στο Σεντ Όλμπανς (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "winooski": {
+    "cityName": "Γουινούσκι",
+    "drone": {
+      "youtubeId": "8BBJ29jweCw",
+      "title": "Winooski River Aerial | BTV Drones",
+      "label": "Γουινούσκι με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "f1DWt_9gbvI",
+      "title": "4k Winooski Burlington Vermont USA",
+      "label": "Περιήγηση στο Γουινούσκι (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "brattleboro": {
+    "cityName": "Μπράτλμπορο",
+    "drone": {
+      "youtubeId": "eCOdEFZikf0",
+      "title": "Brattleboro, Vermont - [4K] Drone Tour",
+      "label": "Μπράτλμπορο με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "cY6A2RC936Y",
+      "title": "Brattleboro, Vermont, USA 🇺🇸 4K | Drone Footage",
+      "label": "Περιήγηση στο Μπράτλμπορο (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "bennington": {
+    "cityName": "Μπένινγκτον",
+    "drone": {
+      "youtubeId": "iPHyzezIsDI",
+      "title": "Burlington, Vermont, USA 🇺🇸 4K | Drone Footage",
+      "label": "Μπένινγκτον με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "Fg4gI3UnOzw",
+      "title": "Bennington Battle Monument (Filmed 10-11-19) 1889 Bennington Vermont DJI Mavic 2 Pro 4k Bing Err",
+      "label": "Περιήγηση στο Μπένινγκτον (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "stowe": {
+    "cityName": "Στόου",
+    "drone": {
+      "youtubeId": "AiLbu0scm5g",
+      "title": "Mt Mansfield, Stowe, Vermont Aerial Video",
+      "label": "Στόου με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "P-hlx5QMyFM",
+      "title": "Stowe, Vermont, USA 🇺🇸 4K | Drone Footage",
+      "label": "Περιήγηση στο Στόου (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "juneau": {
+    "cityName": "Τζούνο",
+    "drone": {
+      "youtubeId": "tW2956syo5o",
+      "title": "Drone Aerial Tour of Gastineau Channel, outside Juneau Alaska",
+      "label": "Τζούνο με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "85ohXwtcJko",
+      "title": "Juneau - A drone film over Juneau, Alaska",
+      "label": "Περιήγηση στο Τζούνο (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "anchorage": {
+    "cityName": "Άνκορατζ",
+    "drone": {
+      "youtubeId": "V8XpBfJ6aG0",
+      "title": "Anchorage Virtual Tour | Anchorage Drone",
+      "label": "Άνκορατζ με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "4UCpDgJMbUo",
+      "title": "Anchorage, Alaska, USA 🇺🇸 in 4k ULTRA HD HDR (60 FPS) - Flying over Anchorage",
+      "label": "Περιήγηση στο Άνκορατζ (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "fairbanks": {
+    "cityName": "Φέρμπανκς",
+    "drone": {
+      "youtubeId": "3nui0zUscRw",
+      "title": "4K Epic Drone 🏔️ Fairbanks Alaska Cinematic 🎵Downtown, Chena River, Northern Lights, Sled Dog Ride",
+      "label": "Φέρμπανκς με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "yOapj1dTxL0",
+      "title": "360-degree Float Trip on Chena River in Fairbanks, Alaska",
+      "label": "Περιήγηση στο Φέρμπανκς (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "sitka": {
+    "cityName": "Σίτκα",
+    "drone": {
+      "youtubeId": "zRJc_UJ4ZO0",
+      "title": "Sitka, Alaska Cruise Terminal Drone Footage | Stunning Arrival Views",
+      "label": "Σίτκα με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "07NRKRI9_0k",
+      "title": "Sitka, Alaska - 2022 Drone Stock Footage by Daniel Schuster - Licensed Part 107 Pilot",
+      "label": "Περιήγηση στο Σίτκα (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "ketchikan": {
+    "cityName": "Κέτσικαν",
+    "drone": {
+      "youtubeId": "864__wN49fA",
+      "title": "Ketchikan Drone Tour 4K | Waterfront, Mountains & Harbor from Above",
+      "label": "Κέτσικαν με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "eJQHxhCNWpI",
+      "title": "Ketchikan Alaska Port Day Complete 4k 1st Person Walking Tour  Creek Street Sights",
+      "label": "Περιήγηση στο Κέτσικαν (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "wasilla": {
+    "cityName": "Γουασίλα",
+    "drone": {
+      "youtubeId": "IkCDo9n6SOE",
+      "title": "Incredible Matanuska Glacier Valley, Alaska | Drone Aerial Nature Travel Experience | Fall Foliage",
+      "label": "Γουασίλα με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "q4omo4w-m90",
+      "title": "High above Wasilla, Alaska",
+      "label": "Περιήγηση στο Γουασίλα (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "kenai": {
+    "cityName": "Κενάι",
+    "drone": {
+      "youtubeId": "i6ENuDQzdmE",
+      "title": "Beautiful Kenai River - 4K Drone Footage",
+      "label": "Κενάι με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "BfAuHDT2RK4",
+      "title": "Alaska Fishing Trip | 4K drone | GoPro | Kenai River",
+      "label": "Περιήγηση στο Κενάι (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "kodiak": {
+    "cityName": "Κόντιακ",
+    "drone": {
+      "youtubeId": "kO4_Cz28Hhw",
+      "title": "Kodiak Alaska 4K Drone Footage",
+      "label": "Κόντιακ με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "Z95JeeXlE6k",
+      "title": "This is Kodiak (Alaska Nature and Wildlife 4K Cinematic Video)",
+      "label": "Περιήγηση στο Κόντιακ (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "skagway": {
+    "cityName": "Σκάγκγουεϊ",
+    "drone": {
+      "youtubeId": "pu_Tyz1rAhU",
+      "title": "White Pass Scenic Railway Excursion Guide | Skagway, Alaska 4K",
+      "label": "Σκάγκγουεϊ με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "0O8sYN5FtV4",
+      "title": "ALASKA CRUISE: White Pass Summit Rail & Bus Excursion (Skagway)",
+      "label": "Περιήγηση στο Σκάγκγουεϊ (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "homer": {
+    "cityName": "Χόμερ",
+    "drone": {
+      "youtubeId": "04b70cPUGBo",
+      "title": "Homer Spit, Alaska | Drone Aerial Nature Travel Experience",
+      "label": "Χόμερ με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "JHdmqZjnBf4",
+      "title": "Homer, Alaska |  Homer Overlook point | Homer Spit | 4k Drone Video | July 2021",
+      "label": "Περιήγηση στο Χόμερ (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "hilo": {
+    "cityName": "Χίλο",
+    "drone": {
+      "youtubeId": "mkluCA12g0c",
+      "title": "Hamakua Coast Day Trip, Big Island Hawaii. Umauma Falls, Laupahoehoe Point, 4K Drone Footage.",
+      "label": "Χίλο με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "qBSgGlM-RpM",
+      "title": "Aerial Tour of the Big Island of Hawaii in 4K video 2023",
+      "label": "Περιήγηση στο Χίλο (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "kailua-kona": {
+    "cityName": "Καϊλούα-Κόνα",
+    "drone": {
+      "youtubeId": "P_4fc9AvL54",
+      "title": "[4K UHD] Big Island, HAWAII🇺🇸 Ambient Drone Film + Ambient Meditation Music",
+      "label": "Καϊλούα-Κόνα με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "EtNxRhg6Vr8",
+      "title": "🇺🇸 Kailua-Kona, Big Island, Hawaii - Scenic, Relaxing Drone 4K UHD",
+      "label": "Περιήγηση στο Καϊλούα-Κόνα (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "kahului": {
+    "cityName": "Καχουλούι",
+    "drone": {
+      "youtubeId": "zwP7tv3YUu4",
+      "title": "Maui Hawaii Relaxation Film With Drone [Aerial View]",
+      "label": "Καχουλούι με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "YPVLrSjKlh8",
+      "title": "Best of Maui 4K | Aerial Drone Film | Daniel Sullivan Photography",
+      "label": "Περιήγηση στο Καχουλούι (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "lahaina": {
+    "cityName": "Λαχάινα",
+    "drone": {
+      "youtubeId": "YPVLrSjKlh8",
+      "title": "Best of Maui 4K | Aerial Drone Film | Daniel Sullivan Photography",
+      "label": "Λαχάινα με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "g2fUDU0cIj8",
+      "title": "Drone Video: Front Street and Lahaina Harbor  - September  2026 -  4K",
+      "label": "Περιήγηση στο Λαχάινα (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "lihue": {
+    "cityName": "Λιχούε",
+    "drone": {
+      "youtubeId": "PhwN4zujnL4",
+      "title": "🇺🇸 Hawaii Kauai Travel Guide | Hanalei Valley, Princeville & Kilauea Lighthouse 4K Drone Tour",
+      "label": "Λιχούε με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "g-C7uGi6VuQ",
+      "title": "Lihue and Kalapaki Beach from Helicopter. Kauai, Hawaii",
+      "label": "Περιήγηση στο Λιχούε (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "kailua-oahu": {
+    "cityName": "Καϊλούα Οάχου",
+    "drone": {
+      "youtubeId": "WmP15mviSj0",
+      "title": "Lanikai Beach - Everything You Need to Know 2025 [4K Drone]",
+      "label": "Καϊλούα Οάχου με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "TluIW9omyKA",
+      "title": "Lanikai Beach & Mokes // Drone 4K",
+      "label": "Περιήγηση στο Καϊλούα Οάχου (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "waipahu": {
+    "cityName": "Γουαϊπάχου",
+    "drone": {
+      "youtubeId": "ecLprd_qjb0",
+      "title": "Stunning Relaxation 4K Drone Tour of Oahu, Hawaii's Scenic Beaches and Landscapes 2023!",
+      "label": "Γουαϊπάχου με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "cM0QyhYrhxw",
+      "title": "Oahu, Hawaii 🇺🇸 | A Cinematic 4K Drone Journey",
+      "label": "Περιήγηση στο Γουαϊπάχου (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "kihei": {
+    "cityName": "Κιχέι",
+    "drone": {
+      "youtubeId": "henWGOROa1o",
+      "title": "4K Drone Tour of Beaches on Maui | Kihei",
+      "label": "Κιχέι με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "iP9hO-Xxj50",
+      "title": "Exploring Kihei Maui in 2026: Best Beaches, Restaurants, Shopping & Molokini Crater Snorkeling 4K",
+      "label": "Περιήγηση στο Κιχέι (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "kapolei": {
+    "cityName": "Καπολέι",
+    "drone": {
+      "youtubeId": "wB0ghNgj-aM",
+      "title": "Hawaii From Above: Oʻahu Drone Tour | Ko Olina, Lanikai Beach & Mokulua Islands",
+      "label": "Καπολέι με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "uOR8znUTNdk",
+      "title": "Hawaii 4K Drone | Discover Island Paradise",
+      "label": "Περιήγηση στο Καπολέι (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "belmopan": {
+    "cityName": "Μπελμοπάν",
+    "drone": {
+      "youtubeId": "LIhvvXrn7fA",
+      "title": "BELIZE CITY, BELIZE 4K HDR Drone | Stunning Aerial Tour of the Caribbean Coast & City Views",
+      "label": "Μπελμοπάν με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "3vWSskMG0uA",
+      "title": "Belize 4K By Drone 2024 - Belize City , Belmopan City",
+      "label": "Περιήγηση στο Μπελμοπάν (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "san-pedro": {
+    "cityName": "Σαν Πέδρο",
+    "drone": {
+      "youtubeId": "GONQZ0w4PW4",
+      "title": "Aerial Tour of San Pedro, Belize including Boca Del Rio Area - True 4K Drone Footage 2016",
+      "label": "Σαν Πέδρο με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "lEDq_1efphg",
+      "title": "You have to see San Pedro, Belize from Above! - DJI Mavic Pro 4k",
+      "label": "Περιήγηση στο Σαν Πέδρο (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "caye-caulker": {
+    "cityName": "Κέι Κόλκερ",
+    "drone": {
+      "youtubeId": "UcjF7ZBFj2E",
+      "title": "“Caye Caulker from Above: 4K Drone Footage of a Caribbean Gem”",
+      "label": "Κέι Κόλκερ με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "OCYMdrEUalM",
+      "title": "Cinematic Aerial of The Split, Caye Caulker, Belize!",
+      "label": "Περιήγηση στο Κέι Κόλκερ (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "placencia": {
+    "cityName": "Πλασένσια",
+    "drone": {
+      "youtubeId": "wu0CpqKn03Y",
+      "title": "The REAL Placencia, Belize: What To Do, See & Eat! (Travel Guide) 4K",
+      "label": "Πλασένσια με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "hVqRBH1BA3A",
+      "title": "The Beautiful Beaches of Placencia Village in Southern Belize",
+      "label": "Περιήγηση στο Πλασένσια (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "orange-walk": {
+    "cityName": "Όραντζ Γουόκ",
+    "drone": {
+      "youtubeId": "OHymvsEKqo8",
+      "title": "Orange Walk Town Belize 360 VR Tour",
+      "label": "Όραντζ Γουόκ με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "Uq5M6fYLu78",
+      "title": "ASMR Orange Walk Town Belize",
+      "label": "Περιήγηση στο Όραντζ Γουόκ (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "corozal": {
+    "cityName": "Κοροζάλ",
+    "drone": {
+      "youtubeId": "E7m_4g3hgNY",
+      "title": "COROZAL BELIZE | You Won’t Believe What This Town Looks Like From Above!",
+      "label": "Κοροζάλ με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "cpdwQfHl-GM",
+      "title": "Corozal, Belize- Drone footage",
+      "label": "Περιήγηση στο Κοροζάλ (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "dangriga": {
+    "cityName": "Ντανγκρίγκα",
+    "drone": {
+      "youtubeId": "QlaO89k9d7U",
+      "title": "Dangriga Town, the Culture Capital of Belize | Shot on @DJI Mini 4K",
+      "label": "Ντανγκρίγκα με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "_uWgs4i8dmU",
+      "title": "The Majestic Dangriga Town, Stann Creek District in 4K",
+      "label": "Περιήγηση στο Ντανγκρίγκα (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "punta-gorda": {
+    "cityName": "Πούντα Γκόρντα",
+    "drone": {
+      "youtubeId": "91p1klXS7ao",
+      "title": "Punta Gorda Town Belize 4K Sony a6400",
+      "label": "Πούντα Γκόρντα με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "iIHQ9_w5K5c",
+      "title": "Punta Gorda Belize - Highlights - DJI Air 3 - 4K",
+      "label": "Περιήγηση στο Πούντα Γκόρντα (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "san-miguel-sv": {
+    "cityName": "Σαν Μιγκέλ",
+    "drone": {
+      "youtubeId": "HLzpzQfPWs4",
+      "title": "San Salvador, El Salvador 4K HDR Drone Tour: Historic Center, Monuments & Skyline",
+      "label": "Σαν Μιγκέλ με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "T-xsJlvy2Ts",
+      "title": "AVENIDA ROOSEVELT desde lo Alto! 🏙️ | San Miguel El Salvador en 4K",
+      "label": "Περιήγηση στο Σαν Μιγκέλ (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "sonsonate": {
+    "cityName": "Σονσονάτε",
+    "drone": {
+      "youtubeId": "Q8mzpBYVtYk",
+      "title": "Nahuizalco Sonsonate El Salvador-4K DRONE #travel #explore #drone #elsalvador",
+      "label": "Σονσονάτε με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "vGA7FGLeGD0",
+      "title": "Sonsonate El Salvador 4K",
+      "label": "Περιήγηση στο Σονσονάτε (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "santa-tecla": {
+    "cityName": "Σάντα Τέκλα",
+    "drone": {
+      "youtubeId": "dmobkZI_hbI",
+      "title": "Santa Tecla El Salvador - 4K Drone",
+      "label": "Σάντα Τέκλα με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "Y6SXCfjlC-g",
+      "title": "Paseo El Carmen COMPLETO 🇸🇻 | Santa Tecla de Inicio a Fin | POV 4K",
+      "label": "Περιήγηση στο Σάντα Τέκλα (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "ahuachapan": {
+    "cityName": "Αουατσαπάν",
+    "drone": {
+      "youtubeId": "RjFTx6PwJpk",
+      "title": "Ruta de las Flores, El Salvador (4K)",
+      "label": "Αουατσαπάν με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "ZmwkP6kGWZg",
+      "title": "Exploring El Salvador’s Famous Ruta de las Flores | AHUACHAPÁN | 4K 60fps Walking Tour",
+      "label": "Περιήγηση στο Αουατσαπάν (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "suchitoto": {
+    "cityName": "Σουτσιτότο",
+    "drone": {
+      "youtubeId": "yfIGXQgwm74",
+      "title": "DRONE / Suchitoto, Cuscatlán, El Salvador ( 4K )",
+      "label": "Σουτσιτότο με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "PAngmxukCxk",
+      "title": "EL SALVADOR SUCHITOTO Drone 4K",
+      "label": "Περιήγηση στο Σουτσιτότο (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "la-libertad": {
+    "cityName": "Λα Λιμπερτάδ",
+    "drone": {
+      "youtubeId": "IzdkiuJzkAs",
+      "title": "Surf Tour in El Salvador - drone tour in La Libertad",
+      "label": "Λα Λιμπερτάδ με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "UdGjQtqsS1w",
+      "title": "Surf City - La Libertad, El Salvador 4K",
+      "label": "Περιήγηση στο Λα Λιμπερτάδ (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "usulutan": {
+    "cityName": "Ουσουλουτάν",
+    "drone": {
+      "youtubeId": "HEGiGBuZECk",
+      "title": "Bahia de Jiquilisco Usulutan en Drone El salvador [ YOUTUBERO ]",
+      "label": "Ουσουλουτάν με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "rzHK6rM-rFY",
+      "title": "Bahía de Jiquilisco tomas impresionantes desde el Drone | MediaBeats SV 2018",
+      "label": "Περιήγηση στο Ουσουλουτάν (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "chalatenango": {
+    "cityName": "Τσαλατενάνγκο",
+    "drone": {
+      "youtubeId": "JOC4JmDaje8",
+      "title": "Chalatenango El Salvador Drone",
+      "label": "Τσαλατενάνγκο με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "l1hKfD7gsWc",
+      "title": "Cinematic drone footage | Canton San Jose | Chalatenango El Salvador",
+      "label": "Περιήγηση στο Τσαλατενάνγκο (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+
 };
 
 /**

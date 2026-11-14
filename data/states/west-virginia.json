@@ -323,6 +323,2148 @@
           "desc": "Ιστορική στεγασμένη αγορά με τοπικά προϊόντα και εστιατόρια."
         }
       ]
+    },
+    {
+      "id": "huntington-wv",
+      "name": "Χάντινγκτον",
+      "englishName": "Huntington",
+      "nickname": "The River City / Η Πόλη του Ποταμού",
+      "type": "city",
+      "coords": [
+        38.4192,
+        -82.4452
+      ],
+      "zoom": 12.9,
+      "stats": {
+        "population": "46.000 (290.000 μητροπολιτική)",
+        "founded": "1871",
+        "area": "47,8 km²",
+        "elevation": "169 μ."
+      },
+      "quote": "«Η δεύτερη μεγαλύτερη πόλη της πολιτείας στον ποταμό Ohio, με το Marshall University και βαριά βιομηχανική κληρονομιά.»",
+      "geo": {
+        "summary": "Χτισμένη στη νοτιοδυτική Δυτική Βιρτζίνια, στις όχθες του ποταμού Ohio, στα σύνορα με το Οχάιο και το Κεντάκι. Η πόλη βρίσκεται σε κυματιστή κοιλάδα, με λόφους που κατεβαίνουν προς τον ποταμό.",
+        "highlights": [
+          {
+            "title": "Ποταμός Ohio",
+            "desc": "Ο μεγάλος ποταμός που ορίζει τα δυτικά σύνορα της πολιτείας, με προκυμαία, πάρκα και ιστορική σημασία."
+          },
+          {
+            "title": "Κοιλάδα & Λόφοι",
+            "desc": "Κυματιστοί λόφους και κοιλάδες που προσφέρουν θέα στον ποταμό και τη γύρω χώρα."
+          },
+          {
+            "title": "Πύλη προς Μεσο-Δύση",
+            "desc": "Στρατηγική θέση στον Interstate 64, που συνδέει τα Αππαλάχια με τη μεσο-δυτική αγορά."
+          }
+        ]
+      },
+      "hist": {
+        "summary": "Ιδρύθηκε το 1871 από τον Collis P. Huntington, ιδιοκτήτη του σιδηροδρόμου Chesapeake & Ohio, ως δυτικό τερματικό της γραμμής. Η πόλη ονομάστηκε προς τιμήν του και αναπτύχθηκε ως βιομηχανικό και σιδηροδρομικό κέντρο.",
+        "highlights": [
+          {
+            "year": "1871",
+            "event": "Ίδρυση και σιδηρόδρομος",
+            "desc": "Ο Collis P. Huntington δημιουργεί τον σταθμό του C&O και την πόλη γύρω από αυτόν."
+          },
+          {
+            "year": "1837",
+            "event": "Ίδρυση Marshall University",
+            "desc": "Ιδρύεται ως Marshall Academy, που γίνεται πανεπιστήμιο και κέντρο εκπαίδευσης."
+          },
+          {
+            "year": "1970",
+            "event": "Αεροπορική τραγωδία Marshall",
+            "desc": "Αεροσκάφος που μετέφερε την ομάδα ποδοσφαίρου του Marshall συντρίβεται, σκοτώνοντας 75· η πόλη μνημονεύει και ξαναχτίζει."
+          }
+        ]
+      },
+      "demo": {
+        "summary": "Περίπου 46.000 κάτοικοι, η δεύτερη μεγαλύτερη πόλη της πολιτείας και κέντρο μητροπολιτικής περιοχής 290.000. Η οικονομία στηρίζεται στην υγεία, την εκπαίδευση, τη μεταφορά και τον τουρισμό.",
+        "details": [
+          {
+            "label": "Marshall University",
+            "text": "Το πανεπιστήμιο με 13.000 φοιτητές είναι ο μεγαλύτερος εργοδότης, με αθλητισμό και έρευνα."
+          },
+          {
+            "label": "Υγεία & Logistics",
+            "text": "Το Cabell Huntington Hospital και το λιμάνι Port of Huntington-Tristate στηρίζουν την οικονομία."
+          },
+          {
+            "label": "Πολιτιστική Σκηνή",
+            "text": "Μουσεία, θέατρα και το Pullman Square δίνουν ζωντάνια στο κέντρο της πόλης."
+          }
+        ]
+      },
+      "cult": {
+        "summary": "Το Χάντινγκτον έχει έντονη πανεπιστημιακή και βιομηχανική κουλτούρα, με το Marshall University, το Heritage Farm και το Museum of Radio and Technology.",
+        "items": [
+          {
+            "title": "Marshall University & Joan C. Edwards Stadium",
+            "desc": "Το πανεπιστήμιο του 1837 με αθλητικούς Thundering Herd και το στάδιο των 38.000 θέσεων."
+          },
+          {
+            "title": "Heritage Farm Museum & Village",
+            "desc": "Υπαίθριο μουσείο με ιστορικά κτίρια και εκθέματα για την αππαλαχική κληρονομιά."
+          },
+          {
+            "title": "Museum of Radio and Technology",
+            "desc": "Μοναδικό μουσείο με ραδιόφωνα, τηλεοράσεις και τεχνολογία του 20ού αιώνα."
+          }
+        ]
+      },
+      "guide": {
+        "summary": "Από το πανεπιστήμιο και το Heritage Farm μέχρι το Ritter Park και το κέντρο Pullman Square.",
+        "items": [
+          {
+            "title": "Marshall University Campus",
+            "cat": "education",
+            "catLabel": "📚 Εκπαίδευση",
+            "desc": "Πανεπιστημιακή πόλη με ιστορικά κτίρια και το Memorial Fountain.",
+            "wiki": "Marshall_University"
+          },
+          {
+            "title": "Heritage Farm Museum & Village",
+            "cat": "museum",
+            "catLabel": "🖼️ Μουσείο",
+            "desc": "Υπαίθριο μουσείο με κτίρια και εκθέματα της αππαλαχικής ζωής.",
+            "wiki": "Heritage_Farm_Museum_%26_Village"
+          },
+          {
+            "title": "Ritter Park",
+            "cat": "nature",
+            "catLabel": "🌳 Πάρκα",
+            "desc": "Πάρκο 90 στρεμμάτων με μονοπάτια, τένις και παιδικές χαρές.",
+            "wiki": "Ritter_Park"
+          },
+          {
+            "title": "Pullman Square",
+            "cat": "culture",
+            "catLabel": "🎨 Πολιτισμός",
+            "desc": "Το ανακαινισμένο κέντρο με εστιατόρια, καταστήματα και κινηματογράφο.",
+            "wiki": "Pullman_Square"
+          },
+          {
+            "title": "Cambell-Staats Bridge & Ohio River",
+            "cat": "nature",
+            "catLabel": "💧 Υδάτινο Οικοσύστημα",
+            "desc": "Προκυμαία και γέφυρα πάνω από τον Ohio River.",
+            "wiki": "Ohio_River"
+          }
+        ]
+      },
+      "gastro": {
+        "summary": "Η κουζίνα του Χάντινγκτον αντικατοπτρίζει την αππαλαχική και μεσο-δυτική κληρονομιά, με πιπεριά roll, χοιρινό και γλυκά.",
+        "items": [
+          {
+            "title": "Pepperoni Roll",
+            "desc": "Μαλακό ψωμί με ρολάκια πικάντικου σαλαμιού μέσα, εφεύρεση των ανθρακωρύχων της Δυτικής Βιρτζίνιας.",
+            "tag": "Τοπικό"
+          },
+          {
+            "title": "Biscuits & Sausage Gravy",
+            "desc": "Ζεστά μπισκότα βουτύρου με παχιά σάλτσα λουκάνικου, κλασικό πρωινό των βουνών.",
+            "tag": "Παραδοσιακό"
+          },
+          {
+            "title": "Hot Dog με Chili",
+            "desc": "Λουκάνικο σε ψωμί με σάλτσα κιμά και μουστάρδα, κλασικό του Χάντινγκτον.",
+            "tag": "Κλασικό"
+          },
+          {
+            "title": "Ramps",
+            "desc": "Άγρια κρεμμυδάκια της άνοιξης, σοταρισμένα με μπέικον και πατάτες.",
+            "tag": "Εποχικό"
+          }
+        ]
+      },
+      "eco": {
+        "summary": "Το Χάντινγκτον προστατεύει τον ποταμό Ohio και επενδύει στην αποκατάσταση παλιών βιομηχανικών χώρων.",
+        "items": [
+          {
+            "title": "Ποταμός Ohio & Προκυμαία",
+            "desc": "Προστασία του ποταμού και των παρόχθιων οικοσυστημάτων, με ανάπτυξη προκυμαίας.",
+            "cat": "nature",
+            "catLabel": "💧 Υδάτινο Οικοσύστημα",
+            "wiki": "Ohio_River"
+          },
+          {
+            "title": "Ritter Park & Πράσινες Λεκάνες",
+            "desc": "Διατήρηση του πάρκου και ανάπτυξη λεκανών συγκράτησης.",
+            "cat": "nature",
+            "catLabel": "🌳 Πάρκα",
+            "wiki": "Ritter_Park"
+          },
+          {
+            "title": "Αποκατάσταση Βιομηχανικών Χώρων",
+            "desc": "Προγράμματα επαναφοράς βλάστησης σε παλιές βιομηχανικές εκτάσεις.",
+            "cat": "business",
+            "catLabel": "♻️ Αποκατάσταση",
+            "wiki": "Brownfield_land"
+          }
+        ]
+      },
+      "pastVsPresent": [
+        {
+          "epoch": "Χάντινγκτον 1926: Σιδηροδρομικός Κόμβος",
+          "content": "Περίπου 50.000 κάτοικοι. Σταθμός C&O, λιμάνι στον Ohio, βιομηχανίες χάλυβα και το Marshall College."
+        },
+        {
+          "epoch": "Χάντινγκτον 2026: Πανεπιστήμιο & Υγεία",
+          "content": "46.000 κάτοικοι, Marshall University με 13.000 φοιτητές, νοσοκομεία και ανακαινισμένο κέντρο."
+        }
+      ],
+      "pois": [
+        {
+          "name": "Marshall University Campus",
+          "category": "education",
+          "coords": [
+            38.419,
+            -82.423
+          ],
+          "desc": "Πανεπιστήμιο του 1837."
+        },
+        {
+          "name": "Heritage Farm Museum",
+          "category": "museum",
+          "coords": [
+            38.42,
+            -82.45
+          ],
+          "desc": "Υπαίθριο μουσείο."
+        },
+        {
+          "name": "Ritter Park",
+          "category": "nature",
+          "coords": [
+            38.412,
+            -82.437
+          ],
+          "desc": "Πάρκο 90 στρεμμάτων."
+        },
+        {
+          "name": "Pullman Square",
+          "category": "culture",
+          "coords": [
+            38.421,
+            -82.444
+          ],
+          "desc": "Κέντρο αναψυχής."
+        },
+        {
+          "name": "Ohio River Front",
+          "category": "nature",
+          "coords": [
+            38.4195,
+            -82.45
+          ],
+          "desc": "Προκυμαία του Ohio."
+        }
+      ]
+    },
+    {
+      "id": "morgantown-wv",
+      "name": "Μόργκανταουν",
+      "englishName": "Morgantown",
+      "nickname": "Home of the Mountaineers / Η Έδρα των Mountaineers",
+      "type": "city",
+      "coords": [
+        39.6296,
+        -79.956
+      ],
+      "zoom": 13.0,
+      "stats": {
+        "population": "30.000 (140.000 μητροπολιτική)",
+        "founded": "1772",
+        "area": "26,6 km²",
+        "elevation": "268 μ."
+      },
+      "quote": "«Το West Virginia University και το πρωτοποριακό PRT transit, η πόλη των Mountaineers στον Monongahela.»",
+      "geo": {
+        "summary": "Χτισμένη στο βόρειο άκρο της Δυτικής Βιρτζίνια, στον ποταμό Monongahela. Η πόλη βρίσκεται σε κυματιστή κοιλάδα με λόφους, δάση και αγροκτήματα.",
+        "highlights": [
+          {
+            "title": "Ποταμός Monongahela",
+            "desc": "Ο ποταμός που ρέει ανατολικά της πόλης, με υγροτόπους και μονοπάτια."
+          },
+          {
+            "title": "Λόφοι & Πανεπιστήμιο",
+            "desc": "Κυματιστοί λόφοι που φιλοξενούν το WVU και τις φοιτητικές συνοικίες."
+          },
+          {
+            "title": "Cheat Lake",
+            "desc": "Τεχνητή λίμνη νοτιοανατολικά της πόλης, με ψάρεμα και αναψυχή."
+          }
+        ]
+      },
+      "hist": {
+        "summary": "Ιδρύθηκε το 1772 από τον Zackquill Morgan, στην κοιλάδα του Monongahela. Η πόλη αναπτύχθηκε με τη γεωργία, τον άνθρακα και το 1867 με το West Virginia University.",
+        "highlights": [
+          {
+            "year": "1772",
+            "event": "Ίδρυση του οικισμού",
+            "desc": "Ο Zackquill Morgan δημιουργεί οικισμό στον Monongahela, που ονομάζεται Morgantown."
+          },
+          {
+            "year": "1867",
+            "event": "Ίδρυση του WVU",
+            "desc": "Ιδρύεται το West Virginia Agricultural College που γίνεται το μεγαλύτερο πανεπιστήμιο της πολιτείας."
+          },
+          {
+            "year": "1975",
+            "event": "PRT Transit",
+            "desc": "Λειτουργεί το Personal Rapid Transit, ένα πρωτοποριακό σύστημα αυτοματοποιημένων οχημάτων που συνδέει το campus."
+          }
+        ]
+      },
+      "demo": {
+        "summary": "Περίπου 30.000 κάτοικοι (140.000 μητροπολιτική), η τρίτη μεγαλύτερη πόλη της πολιτείας και έδρα του WVU. Η οικονομία στηρίζεται στην εκπαίδευση, στην υγεία και στην έρευνα.",
+        "details": [
+          {
+            "label": "West Virginia University",
+            "text": "Το μεγαλύτερο πανεπιστήμιο της πολιτείας με 28.000 φοιτητές, αθλητισμό και έρευνα."
+          },
+          {
+            "label": "Υγεία & Έρευνα",
+            "text": "Το WVU Medicine και τα ερευνητικά κέντρα Energy Institute και Biomedical."
+          },
+          {
+            "label": "Cheat Lake & Φύση",
+            "text": "Η τεχνητή λίμνη προσελκύει κατοίκους και τουρισμό για αναψυχή."
+          }
+        ]
+      },
+      "cult": {
+        "summary": "Το Μόργκανταουν έχει έντονη πανεπιστημιακή και αθλητική κουλτούρα, με τους Mountaineers και τις εκδηλώσεις στο campus.",
+        "items": [
+          {
+            "title": "Mountaineer Field & Coliseum",
+            "desc": "Στάδια για τους Mountaineers, με ποδόσφαιρο 60.000 θέσεων και μπάσκετ."
+          },
+          {
+            "title": "Creative Arts Center",
+            "desc": "Κέντρο τεχνών με θέατρο, συναυλίες και εκθέσεις."
+          },
+          {
+            "title": "WVU Art Museum & Royce J. and Caroline B. Watts Museum",
+            "desc": "Μουσεία τέχνης και ιστορίας της περιοχής."
+          }
+        ]
+      },
+      "guide": {
+        "summary": "Από το campus και το Mountaineer Field μέχρι το Creative Arts Center και το Cheat Lake.",
+        "items": [
+          {
+            "title": "West Virginia University Campus",
+            "cat": "education",
+            "catLabel": "📚 Εκπαίδευση",
+            "desc": "Η μεγαλύτερη πανεπιστημιακή πόλη της πολιτείας.",
+            "wiki": "West_Virginia_University"
+          },
+          {
+            "title": "Mountaineer Field at Milan Puskar Stadium",
+            "cat": "sport",
+            "catLabel": "🏅 Αθλητισμός",
+            "desc": "Στάδιο 60.000 θέσεων για τους Mountaineers.",
+            "wiki": "Mountaineer_Field_at_Milan_Puskar_Stadium"
+          },
+          {
+            "title": "Creative Arts Center",
+            "cat": "culture",
+            "catLabel": "🎨 Πολιτισμός",
+            "desc": "Κέντρο τεχνών με θέατρο και συναυλίες.",
+            "wiki": "Creative_Arts_Center_(Morgantown)"
+          },
+          {
+            "title": "Core Arboretum",
+            "cat": "nature",
+            "catLabel": "🌳 Πάρκα",
+            "desc": "Δάσος 37 στρεμμάτων με μονοπάτια και βελανιδιές.",
+            "wiki": "Core_Arboretum"
+          },
+          {
+            "title": "Cheat Lake",
+            "cat": "nature",
+            "catLabel": "💧 Υδάτινο Οικοσύστημα",
+            "desc": "Τεχνητή λίμνη με ψάρεμα και βαρκάδα.",
+            "wiki": "Cheat_Lake"
+          }
+        ]
+      },
+      "gastro": {
+        "summary": "Η κουζίνα του Μόργκανταουν αντικατοπτρίζει την αππαλαχική κληρονομιά, με pepperoni roll και χοιρινό.",
+        "items": [
+          {
+            "title": "Pepperoni Roll",
+            "desc": "Μαλακό ψωμί με ρολάκια πικάντικου σαλαμιού μέσα, εφεύρεση των ανθρακωρύχων.",
+            "tag": "Τοπικό"
+          },
+          {
+            "title": "Biscuits & Sausage Gravy",
+            "desc": "Ζεστά μπισκότα με παχιά σάλτσα λουκάνικου, κλασικό πρωινό.",
+            "tag": "Παραδοσιακό"
+          },
+          {
+            "title": "Ramps",
+            "desc": "Άγρια κρεμμυδάκια της άνοιξης, σοταρισμένα με μπέικον και πατάτες.",
+            "tag": "Εποχικό"
+          },
+          {
+            "title": "Pizza & Μπύρα",
+            "desc": "Σύγχρονες microbreweries και pizza bars στο κέντρο.",
+            "tag": "Σύγχρονο"
+          }
+        ]
+      },
+      "eco": {
+        "summary": "Το Μόργκανταουν προστατεύει τον Monongahela και επενδύει στο PRT transit και την έρευνα ενέργειας.",
+        "items": [
+          {
+            "title": "Monongahela River & Μονοπάτια",
+            "desc": "Διάδρομος κατά μήκος του ποταμού με υγροτόπους και μονοπάτια.",
+            "cat": "nature",
+            "catLabel": "💧 Υδάτινο Οικοσύστημα",
+            "wiki": "Monongahela_River"
+          },
+          {
+            "title": "PRT Transit",
+            "desc": "Το Personal Rapid Transit μεταφέρει φοιτητές χωρίς εκπομπές, από το 1975.",
+            "cat": "business",
+            "catLabel": "⚡ Ενέργεια",
+            "wiki": "Morgantown_Personal_Rapid_Transit"
+          },
+          {
+            "title": "WVU Energy Institute",
+            "desc": "Ερευνητικό κέντρο για καθαρή ενέργεια, άνθρακα και φυσικό αέριο.",
+            "cat": "business",
+            "catLabel": "🌱 Βιωσιμότητα",
+            "wiki": "West_Virginia_University"
+          }
+        ]
+      },
+      "pastVsPresent": [
+        {
+          "epoch": "Μόργκανταουν 1926: Ανθρακωρυχείο & Πανεπιστήμιο",
+          "content": "Περίπου 12.000 κάτοικοι. Ανθρακωρυχεία, γεωργία, σιδηρόδρομος και το WVU με εκατοντάδες φοιτητές."
+        },
+        {
+          "epoch": "Μόργκανταουν 2026: Πανεπιστήμιο & PRT",
+          "content": "30.000 κάτοικοι, 28.000 φοιτητές, PRT transit, έρευνα ενέργειας και Cheat Lake αναψυχής."
+        }
+      ],
+      "pois": [
+        {
+          "name": "WVU Campus",
+          "category": "education",
+          "coords": [
+            39.634,
+            -79.956
+          ],
+          "desc": "Το μεγαλύτερο πανεπιστήμιο."
+        },
+        {
+          "name": "Mountaineer Field",
+          "category": "sport",
+          "coords": [
+            39.645,
+            -79.954
+          ],
+          "desc": "Στάδιο 60.000."
+        },
+        {
+          "name": "Creative Arts Center",
+          "category": "culture",
+          "coords": [
+            39.65,
+            -79.975
+          ],
+          "desc": "Κέντρο τεχνών."
+        },
+        {
+          "name": "Core Arboretum",
+          "category": "nature",
+          "coords": [
+            39.64,
+            -79.967
+          ],
+          "desc": "Δάσος και μονοπάτια."
+        },
+        {
+          "name": "Cheat Lake",
+          "category": "nature",
+          "coords": [
+            39.63,
+            -79.88
+          ],
+          "desc": "Τεχνητή λίμνη."
+        }
+      ]
+    },
+    {
+      "id": "parkersburg",
+      "name": "Πάρκερσμπεργκ",
+      "englishName": "Parkersburg",
+      "nickname": "The Gateway to the Ohio / Η Πύλη προς το Ohio",
+      "type": "city",
+      "coords": [
+        39.2657,
+        -81.5615
+      ],
+      "zoom": 13.0,
+      "stats": {
+        "population": "29.000",
+        "founded": "1785",
+        "area": "31,2 km²",
+        "elevation": "187 μ."
+      },
+      "quote": "«Στη συμβολή των ποταμών Ohio και Little Kanawha, με το ιστορικό Blennerhassett Island και την κληρονομιά του Aaron Burr.»",
+      "geo": {
+        "summary": "Χτισμένη στο βορειοδυτικό άκρο της Δυτικής Βιρτζίνια, στη συμβολή των ποταμών Ohio και Little Kanawha. Η πόλη βρίσκεται σε κυματιστή κοιλάδα με λόφους και δάση, απέναντι από το Belpre του Οχάιο.",
+        "highlights": [
+          {
+            "title": "Ποταμός Ohio",
+            "desc": "Ο μεγάλος ποταμός που ορίζει τα βορειοδυτικά σύνορα της πολιτείας, με προκυμαία και ιστορία."
+          },
+          {
+            "title": "Little Kanawha River",
+            "desc": "Ο παραπόταμος που ενώνεται με τον Ohio στην πόλη, δημιουργώντας φυσικό λιμάνι."
+          },
+          {
+            "title": "Blennerhassett Island",
+            "desc": "Ιστορικό νησί στον Ohio, με ανακατασκευασμένο αρχοντικό του 18ου αιώνα."
+          }
+        ]
+      },
+      "hist": {
+        "summary": "Ιδρύθηκε το 1785 και ονομάστηκε προς τιμήν του Alexander Parker, επώνυμου της περιοχής. Η πόλη αναπτύχθηκε με το εμπόριο στον Ohio και την ιστορία του Aaron Burr και του Harman Blennerhassett.",
+        "highlights": [
+          {
+            "year": "1785",
+            "event": "Ίδρυση του οικισμού",
+            "desc": "Οι πρώτοι έποικοι δημιουργούν οικισμό στη συμβολή των δύο ποταμών."
+          },
+          {
+            "year": "1806",
+            "event": "Aaron Burr Conspiracy",
+            "desc": "Ο Aaron Burr επισκέπτεται το Blennerhassett Island και σχεδιάζει ανταρσία· η υπόθεση σκανδαλίζει τη χώρα."
+          },
+          {
+            "year": "1973",
+            "event": "Blennerhassett Island Historical State Park",
+            "desc": "Το νησί γίνεται πολιτειακό πάρκο, με ανακατασκευή του αρχοντικού του 1798."
+          }
+        ]
+      },
+      "demo": {
+        "summary": "Περίπου 29.000 κάτοικοι, η τρίτη μεγαλύτερη πόλη της πολιτείας και κέντρο της κομητείας Wood. Η οικονομία στηρίζεται στη χημική βιομηχανία, την υγεία και τον τουρισμό.",
+        "details": [
+          {
+            "label": "Χημική Βιομηχανία",
+            "text": "Η DuPont και άλλες εταιρείες έχουν εργοστάσια στην ευρύτερη περιοχή, με εκατοντάδες εργαζομένους."
+          },
+          {
+            "label": "Υγεία & Εκπαίδευση",
+            "text": "Το Camden Clark Medical Center και το West Virginia University at Parkersburg."
+          },
+          {
+            "label": "Τουρισμός & Ιστορία",
+            "text": "Το Blennerhassett Island, το Oil & Gas Museum και το ιστορικό κέντρο."
+          }
+        ]
+      },
+      "cult": {
+        "summary": "Το Πάρκερσμπεργκ έχει πλούσια ιστορική και βιομηχανική κουλτούρα, με μουσεία και το Blennerhassett Island.",
+        "items": [
+          {
+            "title": "Blennerhassett Island Historical State Park",
+            "desc": "Ιστορικό νησί στον Ohio με ανακατασκευασμένο αρχοντικό του 1798 και μουσείο."
+          },
+          {
+            "title": "Oil & Gas Museum",
+            "desc": "Μουσείο για την πετρελαϊκή και φυσικού αερίου βιομηχανία της περιοχής, από το 1860."
+          },
+          {
+            "title": "Smoot Theatre",
+            "desc": "Ιστορικό θέατρο του 1928 που ανακαινίστηκε και φιλοξενεί συναυλίες και παραστάσεις."
+          }
+        ]
+      },
+      "guide": {
+        "summary": "Από το Blennerhassett Island και το Oil & Gas Museum μέχρι το Point Park και το Smoot Theatre.",
+        "items": [
+          {
+            "title": "Blennerhassett Island Historical State Park",
+            "cat": "history",
+            "catLabel": "🏛️ Ιστορία",
+            "desc": "Ιστορικό νησί με ανακατασκευασμένο αρχοντικό του 1798 και μουσείο.",
+            "wiki": "Blennerhassett_Island"
+          },
+          {
+            "title": "Oil & Gas Museum",
+            "cat": "museum",
+            "catLabel": "🖼️ Μουσείο",
+            "desc": "Μουσείο για την πετρελαϊκή βιομηχανία της περιοχής.",
+            "wiki": "Oil_and_Gas_Museum"
+          },
+          {
+            "title": "Point Park & Μνημείο",
+            "cat": "history",
+            "catLabel": "🏛️ Ιστορία",
+            "desc": "Πάρκο στη συμβολή των δύο ποταμών με μνημείο βετεράνων.",
+            "wiki": "Parkersburg,_West_Virginia"
+          },
+          {
+            "title": "Smoot Theatre",
+            "cat": "culture",
+            "catLabel": "🎨 Πολιτισμός",
+            "desc": "Ιστορικό θέατρο του 1928 με συναυλίες.",
+            "wiki": "Smoot_Theatre"
+          },
+          {
+            "title": "West Virginia University at Parkersburg",
+            "cat": "education",
+            "catLabel": "📚 Εκπαίδευση",
+            "desc": "Πανεπιστημιακό κέντρο της περιοχής.",
+            "wiki": "West_Virginia_University_at_Parkersburg"
+          }
+        ]
+      },
+      "gastro": {
+        "summary": "Η κουζίνα του Πάρκερσμπεργκ αντικατοπτρίζει την αππαλαχική και μεσο-δυτική κληρονομιά.",
+        "items": [
+          {
+            "title": "Pepperoni Roll",
+            "desc": "Μαλακό ψωμί με ρολάκια πικάντικου σαλαμιού μέσα, εφεύρεση των ανθρακωρύχων.",
+            "tag": "Τοπικό"
+          },
+          {
+            "title": "Hot Dog με Chili",
+            "desc": "Λουκάνικο σε ψωμί με σάλτσα κιμά και μουστάρδα, κλασικό της περιοχής.",
+            "tag": "Κλασικό"
+          },
+          {
+            "title": "Biscuits & Sausage Gravy",
+            "desc": "Ζεστά μπισκότα με σάλτσα λουκάνικου, κλασικό πρωινό.",
+            "tag": "Παραδοσιακό"
+          },
+          {
+            "title": "Ψάρι του Ohio",
+            "desc": "Φρέσκο ψάρι από τον Ohio River, τηγανητό ή ψητό, σερβιρισμένο με πατάτες.",
+            "tag": "Ψάρι"
+          }
+        ]
+      },
+      "eco": {
+        "summary": "Το Πάρκερσμπεργκ προστατεύει τον Ohio River και το Blennerhassett Island, διαχειρίζεται τη βιομηχανική κληρονομιά.",
+        "items": [
+          {
+            "title": "Blennerhassett Island & Οικοσύστημα",
+            "desc": "Προστασία του νησιού και των οικοσυστημάτων του ποταμού Ohio.",
+            "cat": "nature",
+            "catLabel": "💧 Υδάτινο Οικοσύστημα",
+            "wiki": "Blennerhassett_Island"
+          },
+          {
+            "title": "Ohio River & Ποιότητα Νερού",
+            "desc": "Προγράμματα παρακολούθησης και βελτίωσης της ποιότητας του ποταμού.",
+            "cat": "nature",
+            "catLabel": "💧 Υδάτινο Οικοσύστημα",
+            "wiki": "Ohio_River"
+          },
+          {
+            "title": "Brownfield Restoration",
+            "desc": "Αποκατάσταση παλιών βιομηχανικών χώρων σε πάρκα και νέες χρήσεις.",
+            "cat": "business",
+            "catLabel": "♻️ Αποκατάσταση",
+            "wiki": "Brownfield_land"
+          }
+        ]
+      },
+      "pastVsPresent": [
+        {
+          "epoch": "Πάρκερσμπεργκ 1926: Ποτάμιο Λιμάνι",
+          "content": "Περίπου 20.000 κάτοικοι. Ποτάμιο λιμάνι, σιδηρόδρομος, βιομηχανίες και εμπόριο στον Ohio."
+        },
+        {
+          "epoch": "Πάρκερσμπεργκ 2026: Ιστορικός Τουρισμός & Χημικά",
+          "content": "29.000 κάτοικοι, χημική βιομηχανία, νοσοκομεία και το Blennerhassett Island ως κύριο αξιοθέατο."
+        }
+      ],
+      "pois": [
+        {
+          "name": "Blennerhassett Island",
+          "category": "history",
+          "coords": [
+            39.245,
+            -81.565
+          ],
+          "desc": "Ιστορικό νησί στον Ohio."
+        },
+        {
+          "name": "Oil & Gas Museum",
+          "category": "museum",
+          "coords": [
+            39.266,
+            -81.5615
+          ],
+          "desc": "Μουσείο πετρελαίου."
+        },
+        {
+          "name": "Point Park",
+          "category": "history",
+          "coords": [
+            39.266,
+            -81.56
+          ],
+          "desc": "Πάρκο στη συμβολή των ποταμών."
+        },
+        {
+          "name": "Smoot Theatre",
+          "category": "culture",
+          "coords": [
+            39.268,
+            -81.561
+          ],
+          "desc": "Ιστορικό θέατρο."
+        },
+        {
+          "name": "WVU Parkersburg",
+          "category": "education",
+          "coords": [
+            39.262,
+            -81.565
+          ],
+          "desc": "Πανεπιστημιακό κέντρο."
+        }
+      ]
+    },
+    {
+      "id": "wheeling",
+      "name": "Γουίλινγκ",
+      "englishName": "Wheeling",
+      "nickname": "The Friendly City / Η Φιλική Πόλη",
+      "type": "city",
+      "coords": [
+        40.063,
+        -80.72
+      ],
+      "zoom": 13.0,
+      "stats": {
+        "population": "27.000",
+        "founded": "1769",
+        "area": "41,5 km²",
+        "elevation": "198 μ."
+      },
+      "quote": "«Η πρώτη πρωτεύουσα της Δυτικής Βιρτζίνιας και η γέφυρα του 1849, σύμβολο της ιστορίας των Αππαλαχίων.»",
+      "geo": {
+        "summary": "Χτισμένη στο βόρειο άκρο της Δυτικής Βιρτζίνιας, στις όχθες του ποταμού Ohio, στα σύνορα με το Οχάιο. Η πόλη βρίσκεται σε κυματιστή κοιλάδα με λόφους και δάση, και φιλοξενεί την ιστορική Wheeling Suspension Bridge.",
+        "highlights": [
+          {
+            "title": "Ποταμός Ohio",
+            "desc": "Ο μεγάλος ποταμός που ορίζει τα σύνορα με το Οχάιο, με προκυμαία και γέφυρες."
+          },
+          {
+            "title": "Wheeling Island",
+            "desc": "Το μεγαλύτερο κατοικημένο νησί στον ποταμό Ohio, με κατοικίες και καζίνο."
+          },
+          {
+            "title": "Λόφοι & Centre Market",
+            "desc": "Δασωμένοι λόφοι και το ιστορικό Centre Market, ένα από τα παλαιότερα δημόσια κτίρια."
+          }
+        ]
+      },
+      "hist": {
+        "summary": "Ιδρύθηκε το 1769 και ήταν η πρώτη πρωτεύουσα της Δυτικής Βιρτζίνιας το 1863. Η Wheeling Suspension Bridge του 1849 ήταν η μεγαλύτερη κρεμαστή γέφυρα του κόσμου και σημείο αναφοράς της μηχανικής.",
+        "highlights": [
+          {
+            "year": "1769",
+            "event": "Ίδρυση του οικισμού",
+            "desc": "Οι πρώτοι έποικοι δημιουργούν οικισμό στον Ohio, στη διαδρομή του National Road."
+          },
+          {
+            "year": "1849",
+            "event": "Wheeling Suspension Bridge",
+            "desc": "Ολοκληρώνεται η κρεματή γέφυρα, η μεγαλύτερη του κόσμου τότε, που συνδέει την πόλη με το Wheeling Island."
+          },
+          {
+            "year": "1863",
+            "event": "Πρώτη πρωτεύουσα της Δυτικής Βιρτζίνιας",
+            "desc": "Με την ένταξη της πολιτείας στην Ένωση, το Γουίλινγκ γίνεται η πρώτη πρωτεύουσα."
+          }
+        ]
+      },
+      "demo": {
+        "summary": "Περίπου 27.000 κάτοικοι, η τέταρτη μεγαλύτερη πόλη της πολιτείας. Η οικονομία στηρίζεται στον τουρισμό, την υγεία και την εκπαίδευση.",
+        "details": [
+          {
+            "label": "Ιστορικός Τουρισμός",
+            "text": "Το Independence Hall, το Centre Market και η Suspension Bridge προσελκύουν επισκέπτες."
+          },
+          {
+            "label": "Υγεία & Εκπαίδευση",
+            "text": "Το Wheeling Hospital και το Wheeling University στηρίζουν την κοινωνία."
+          },
+          {
+            "label": "Καζίνο & Ψυχαγωγία",
+            "text": "Το Wheeling Island Hotel-Casino-Racetrack είναι από τους μεγαλύτερους εργοδότες."
+          }
+        ]
+      },
+      "cult": {
+        "summary": "Το Γουίλινγκ έχει πλούσια ιστορική κουλτούρα, με το Independence Hall, το Oglebay Institute και το Capitol Theatre.",
+        "items": [
+          {
+            "title": "West Virginia Independence Hall",
+            "desc": "Η πρώτη πρωτεύουσα της πολιτείας, όπου υπογράφηκε η ένταξη στην Ένωση το 1863."
+          },
+          {
+            "title": "Oglebay Institute & Mansion Museum",
+            "desc": "Ιστορικό αρχοντικό του 1846 με μουσείο και κέντρο τεχνών."
+          },
+          {
+            "title": "Capitol Theatre",
+            "desc": "Ιστορικό θέατρο του 1928 με συναυλίες και παραστάσεις."
+          }
+        ]
+      },
+      "guide": {
+        "summary": "Από το Independence Hall και τη γέφυρα του 1849 μέχρι το Oglebay Park και το Centre Market.",
+        "items": [
+          {
+            "title": "Wheeling Suspension Bridge",
+            "cat": "history",
+            "catLabel": "🏛️ Ιστορία",
+            "desc": "Η κρεματή γέφυρα του 1849, η μεγαλύτερη του κόσμου τότε, εμβληματική για την πόλη.",
+            "wiki": "Wheeling_Suspension_Bridge"
+          },
+          {
+            "title": "West Virginia Independence Hall",
+            "cat": "history",
+            "catLabel": "🏛️ Ιστορία",
+            "desc": "Η πρώτη πρωτεύουσα της πολιτείας, μουσείο National Historic Landmark.",
+            "wiki": "West_Virginia_Independence_Hall"
+          },
+          {
+            "title": "Oglebay Park & Mansion",
+            "cat": "museum",
+            "catLabel": "🖼️ Μουσείο",
+            "desc": "Πάρκο 1.650 στρεμμάτων με αρχοντικό του 1846 και zoo.",
+            "wiki": "Oglebay_Park"
+          },
+          {
+            "title": "Centre Market",
+            "cat": "culture",
+            "catLabel": "🎨 Πολιτισμός",
+            "desc": "Ιστορική αγορά του 1853 με εστιατόρια και καταστήματα.",
+            "wiki": "Centre_Market"
+          },
+          {
+            "title": "Good Zoo & Oglebay",
+            "cat": "nature",
+            "catLabel": "🌿 Φύση",
+            "desc": "Ζωολογικός κήπος και πάρκο αναψυχής στο Oglebay.",
+            "wiki": "Good_Zoo"
+          }
+        ]
+      },
+      "gastro": {
+        "summary": "Η κουζίνα του Γουίλινγκ αντικατοπτρίζει την αππαλαχική και μεσο-δυτική κληρονομιά, με pepperoni roll και χοιρινό.",
+        "items": [
+          {
+            "title": "Pepperoni Roll",
+            "desc": "Μαλακό ψωμί με ρολάκια πικάντικου σαλαμιού μέσα, εφεύρεση των ανθρακωρύχων.",
+            "tag": "Τοπικό"
+          },
+          {
+            "title": "Biscuits & Sausage Gravy",
+            "desc": "Ζεστά μπισκότα με σάλτσα λουκάνικου, κλασικό πρωινό.",
+            "tag": "Παραδοσιακό"
+          },
+          {
+            "title": "Hot Dog με Chili",
+            "desc": "Λουκάνικο σε ψωμί με σάλτσα κιμά, κλασικό της πόλης.",
+            "tag": "Κλασικό"
+          },
+          {
+            "title": "Fish Sandwich",
+            "desc": "Σάντουιτς με τηγανητό ψάρι από τον Ohio River, δημοφιλές στα pubs.",
+            "tag": "Ψάρι"
+          }
+        ]
+      },
+      "eco": {
+        "summary": "Το Γουίλινγκ προστατεύει τον Ohio River και επενδύει στην αποκατάσταση ιστορικών χώρων.",
+        "items": [
+          {
+            "title": "Ohio River & Προκυμαία",
+            "desc": "Προστασία του ποταμού και ανάπτυξη προκυμαίας και μονοπατιών.",
+            "cat": "nature",
+            "catLabel": "💧 Υδάτινο Οικοσύστημα",
+            "wiki": "Ohio_River"
+          },
+          {
+            "title": "Oglebay Park & Φύση",
+            "desc": "Διατήρηση του μεγάλου πάρκου και των δασών.",
+            "cat": "nature",
+            "catLabel": "🌳 Πάρκα",
+            "wiki": "Oglebay_Park"
+          },
+          {
+            "title": "Wheeling Heritage Restoration",
+            "desc": "Αποκατάσταση ιστορικών κτιρίων και brownfields σε νέες χρήσεις.",
+            "cat": "business",
+            "catLabel": "♻️ Αποκατάσταση",
+            "wiki": "Wheeling_Heritage"
+          }
+        ]
+      },
+      "pastVsPresent": [
+        {
+          "epoch": "Γουίλινγκ 1926: Βιομηχανική Πόλη",
+          "content": "Περίπου 50.000 κάτοικοι. Χαλυβουργεία, καπνοβιομηχανίες, σιδηρόδρομος και η πρώτη πρωτεύουσα."
+        },
+        {
+          "epoch": "Γουίλινγκ 2026: Ιστορικός Τουρισμός",
+          "content": "27.000 κάτοικοι, μουσεία, θέατρο, καζίνο και η γέφυρα του 1849 ως σύμβολο."
+        }
+      ],
+      "pois": [
+        {
+          "name": "Wheeling Suspension Bridge",
+          "category": "history",
+          "coords": [
+            40.07,
+            -80.722
+          ],
+          "desc": "Κρεματή γέφυρα του 1849."
+        },
+        {
+          "name": "Independence Hall",
+          "category": "history",
+          "coords": [
+            40.06,
+            -80.722
+          ],
+          "desc": "Πρώτη πρωτεύουσα."
+        },
+        {
+          "name": "Oglebay Park",
+          "category": "museum",
+          "coords": [
+            40.07,
+            -80.68
+          ],
+          "desc": "Πάρκο με αρχοντικό."
+        },
+        {
+          "name": "Centre Market",
+          "category": "culture",
+          "coords": [
+            40.065,
+            -80.721
+          ],
+          "desc": "Ιστορική αγορά."
+        },
+        {
+          "name": "Wheeling Island Casino",
+          "category": "culture",
+          "coords": [
+            40.07,
+            -80.73
+          ],
+          "desc": "Καζίνο και ιππόδρομος."
+        }
+      ]
+    },
+    {
+      "id": "martinsburg",
+      "name": "Μάρτινσμπεργκ",
+      "englishName": "Martinsburg",
+      "nickname": "The Gateway to the Shenandoah / Η Πύλη της κοιλάδας Shenandoah",
+      "type": "city",
+      "coords": [
+        39.556,
+        -77.964
+      ],
+      "zoom": 13.0,
+      "stats": {
+        "population": "18.000",
+        "founded": "1778",
+        "area": "18,4 km²",
+        "elevation": "124 μ."
+      },
+      "quote": "«Η Πύλη της κοιλάδας Shenandoah και ιστορικός κόμβος B&O Railroad, με απο lithοθήκη κληρονομιά.»",
+      "geo": {
+        "summary": "Χτισμένη στο ανατολικό άκρο της Δυτικής Βιρτζίνιας, στην κοιλάδα Shenandoah, κοντά στα σύνορα με τη Βιρτζίνια και το Μέριλαντ. Η πόλη βρίσκεται σε κυματιστή πεδιάδα με αγροκτήματα και λόφους.",
+        "highlights": [
+          {
+            "title": "Κοιλάδα Shenandoah",
+            "desc": "Η εύφορη κοιλάδα ανάμεσα στα Blue Ridge και τα Appalachian Mountains, με αγροκτήματα και αμπελώνες."
+          },
+          {
+            "title": "Ποταμός Potomac",
+            "desc": "Ο ποταμός στα βόρεια της πόλης, που ορίζει τα σύνορα με το Μέριλαντ."
+          },
+          {
+            "title": "Πύλη προς Δύση",
+            "desc": "Θέση στον Interstate 81 που συνδέει την περιοχή με τις βορειοανατολικές πόλεις."
+          }
+        ]
+      },
+      "hist": {
+        "summary": "Ιδρύθηκε το 1778 και ονομάστηκε προς τιμήν του Colonel Thomas Bryan Martin. Η πόλη αναπτύχθηκε με το σιδηρόδρομο B&O και έγινε στρατηγικό κέντρο κατά τον Εμφύλιο.",
+        "highlights": [
+          {
+            "year": "1778",
+            "event": "Ίδρυση του οικισμού",
+            "desc": "Ο Colonel Thomas Bryan Martin δημιουργεί οικισμό στην κοιλάδα Shenandoah."
+          },
+          {
+            "year": "1842",
+            "event": "Σιδηρόδρομος B&O",
+            "desc": "Η πόλη γίνεται κόμβος του σιδηροδρόμου Baltimore & Ohio, που συνδέει τις ακτές με τη Δύση."
+          },
+          {
+            "year": "1861-1865",
+            "event": "Μάχες του Εμφυλίου",
+            "desc": "Η πόλη αλλάζει χέρια δεκάδες φορές κατά τον Εμφύλιο, με στρατηγική θέση στον σιδηρόδρομο."
+          }
+        ]
+      },
+      "demo": {
+        "summary": "Περίπου 18.000 κάτοικοι, η μεγαλύτερη πόλη της ανατολικής Δυτικής Βιρτζίνιας και κέντρο της κομητείας Berkeley. Η οικονομία στηρίζεται στη logistics, την υγεία και στον τουρισμό.",
+        "details": [
+          {
+            "label": "Logistics & Διανομές",
+            "text": "Η θέση κοντά στον Interstate 81 προσελκύει κέντρα διανομής και τροφοδοσίας."
+          },
+          {
+            "label": "Υγεία & Κυβέρνηση",
+            "text": "Το VA Medical Center και τα ομοσπονδιακά κτίρια στηρίζουν την οικονομία."
+          },
+          {
+            "label": "Ιστορικός Τουρισμός",
+            "text": "Το B&O Railroad Station, το θέατρο Apollo και τα ιστορικά σπίτια προσελκύουν επισκέπτες."
+          }
+        ]
+      },
+      "cult": {
+        "summary": "Το Μάρτινσμπεργκ έχει πλούσια ιστορική κουλτούρα με το B&O Railroad, το Apollo Theatre και την κληρονομιά του Εμφυλίου.",
+        "items": [
+          {
+            "title": "B&O Railroad Station & Roundhouse",
+            "desc": "Ιστορικός σταθμός του 1842 και roundhouse, σήμερα μουσείο και εκθεσιακός χώρος."
+          },
+          {
+            "title": "Apollo Civic Theatre",
+            "desc": "Ιστορικό θέατρο του 1913 με παραστάσεις και πολιτιστικές εκδηλώσεις."
+          },
+          {
+            "title": "Historic Baldwin House & Adam Stephen House",
+            "desc": "Ιστορικά σπίτια του 18ου αιώνα, με έπιπλα και εκθέματα."
+          }
+        ]
+      },
+      "guide": {
+        "summary": "Από το B&O Railroad Station και το θέατρο Apollo μέχρι το Adam Stephen House και το κέντρο.",
+        "items": [
+          {
+            "title": "B&O Railroad Station & Roundhouse",
+            "cat": "history",
+            "catLabel": "🏛️ Ιστορία",
+            "desc": "Ιστορικός σταθμός του 1842 και roundhouse.",
+            "wiki": "Baltimore_and_Ohio_Railroad"
+          },
+          {
+            "title": "Apollo Civic Theatre",
+            "cat": "culture",
+            "catLabel": "🎨 Πολιτισμός",
+            "desc": "Ιστορικό θέατρο του 1913.",
+            "wiki": "Apollo_Civic_Theatre"
+          },
+          {
+            "title": "Adam Stephen House & Triple Brick Museum",
+            "cat": "museum",
+            "catLabel": "🖼️ Μουσείο",
+            "desc": "Ιστορικά σπίτια του 18ου αιώνα.",
+            "wiki": "Adam_Stephen_House"
+          },
+          {
+            "title": "Berkeley County Historical Society",
+            "cat": "history",
+            "catLabel": "🏛️ Ιστορία",
+            "desc": "Ιστορική εταιρεία με αρχείο και εκθέματα.",
+            "wiki": "Martinsburg,_West_Virginia"
+          },
+          {
+            "title": "Martinsburg-Berkeley County Public Library",
+            "cat": "culture",
+            "catLabel": "🎨 Πολιτισμός",
+            "desc": "Ιστορική βιβλιοθήκη με αρχιτεκτονική του 19ου αιώνα.",
+            "wiki": "Martinsburg,_West_Virginia"
+          }
+        ]
+      },
+      "gastro": {
+        "summary": "Η κουζίνα του Μάρτινσμπεργκ αντικατοπτρίζει την αππαλαχική και νότια κληρονομιά.",
+        "items": [
+          {
+            "title": "Pepperoni Roll",
+            "desc": "Μαλακό ψωμί με ρολάκια πικάντικου σαλαμιού μέσα, εφεύρεση των ανθρακωρύχων.",
+            "tag": "Τοπικό"
+          },
+          {
+            "title": "Biscuits & Sausage Gravy",
+            "desc": "Ζεστά μπισκότα με σάλτσα λουκάνικου, κλασικό πρωινό.",
+            "tag": "Παραδοσιακό"
+          },
+          {
+            "title": "Apple Butter & Pies",
+            "desc": "Βούτυρο μήλου και πίτες από τα οπωροφόρα της κοιλάδας Shenandoah.",
+            "tag": "Γλυκό"
+          },
+          {
+            "title": "Hot Dog με Chili",
+            "desc": "Λουκάνικο σε ψωμί με σάλτσα κιμά, κλασικό της πόλης.",
+            "tag": "Κλασικό"
+          }
+        ]
+      },
+      "eco": {
+        "summary": "Το Μάρτινσμπεργκ προστατεύει τον Potomac και προωθεί την ανακύκλωση και την αειφή γεωργία.",
+        "items": [
+          {
+            "title": "Ποταμός Potomac & Μονοπάτια",
+            "desc": "Προστασία του ποταμού και των παρόχθιων οικοσυστημάτων.",
+            "cat": "nature",
+            "catLabel": "💧 Υδάτινο Οικοσύστημα",
+            "wiki": "Potomac_River"
+          },
+          {
+            "title": "Κοιλάδα Shenandoah & Γεωργία",
+            "desc": "Προγράμματα αειφόρου γεωργίας και προστασίας του εδάφους.",
+            "cat": "business",
+            "catLabel": "🌱 Βιωσιμότητα",
+            "wiki": "Shenandoah_Valley"
+          },
+          {
+            "title": "Berkeley County Recycling",
+            "desc": "Προγράμματα ανακύκλωσης και διαχείρισης αποβλήτων.",
+            "cat": "business",
+            "catLabel": "♻️ Ανακύκλωση",
+            "wiki": "Martinsburg,_West_Virginia"
+          }
+        ]
+      },
+      "pastVsPresent": [
+        {
+          "epoch": "Μάρτινσμπεργκ 1926: Σιδηροδρομικός Κόμβος",
+          "content": "Περίπου 10.000 κάτοικοι. Σταθμός B&O, βιομηχανίες υφασμάτων, αγροκτήματα και ο σιδηρόδρομος."
+        },
+        {
+          "epoch": "Μάρτινσμπεργκ 2026: Logistics & Ιστορία",
+          "content": "18.000 κάτοικοι, κέντρα διανομής, νοσοκομεία και ένα ανακαινισμένο ιστορικό κέντρο με το θέατρο Apollo."
+        }
+      ],
+      "pois": [
+        {
+          "name": "B&O Railroad Station",
+          "category": "history",
+          "coords": [
+            39.556,
+            -77.963
+          ],
+          "desc": "Ιστορικός σταθμός."
+        },
+        {
+          "name": "Apollo Civic Theatre",
+          "category": "culture",
+          "coords": [
+            39.556,
+            -77.9645
+          ],
+          "desc": "Ιστορικό θέατρο."
+        },
+        {
+          "name": "Adam Stephen House",
+          "category": "museum",
+          "coords": [
+            39.558,
+            -77.964
+          ],
+          "desc": "Σπίτι του 18ου αιώνα."
+        },
+        {
+          "name": "Berkeley County Museum",
+          "category": "history",
+          "coords": [
+            39.559,
+            -77.967
+          ],
+          "desc": "Μουσείο κομητείας."
+        },
+        {
+          "name": "Martinsburg Public Library",
+          "category": "culture",
+          "coords": [
+            39.554,
+            -77.965
+          ],
+          "desc": "Ιστορική βιβλιοθήκη."
+        }
+      ]
+    },
+    {
+      "id": "fairmont-wv",
+      "name": "Φέρμοντ",
+      "englishName": "Fairmont",
+      "nickname": "The Friendly City / Η Φιλική Πόλη",
+      "type": "city",
+      "coords": [
+        39.4849,
+        -80.142
+      ],
+      "zoom": 13.0,
+      "stats": {
+        "population": "18.000",
+        "founded": "1820",
+        "area": "23,3 km²",
+        "elevation": "294 μ."
+      },
+      "quote": "«Η γενέτειρα του Pepperoni Roll στον ποταμό Monongahela, με παλάτι και την κληρονομιά του anthracite.»",
+      "geo": {
+        "summary": "Χτισμένη στο βόρειο κέντρο της Δυτικής Βιρτζίνιας, στον ποταμό Monongahela, στη συμβολή με τον Tygart Valley River. Η πόλη βρίσκεται σε κυματιστή κοιλάδα με λόφους και δάση.",
+        "highlights": [
+          {
+            "title": "Ποταμός Monongahela",
+            "desc": "Ο ποταμός που σχηματίζεται στην πόλη από τη συμβολή του West Fork και του Tygart Valley."
+          },
+          {
+            "title": "Λόφοι & Ανθρακωρυχεία",
+            "desc": "Δασωμένοι λόφοι με παλιά ανθρακωρυχεία και κοιλάδες."
+          },
+          {
+            "title": "Πύλη προς Βόρεια",
+            "desc": "Θέση στον Interstate 79 που συνδέει την πόλη με το Μόργκανταουν και το Πίτσμπουργκ."
+          }
+        ]
+      },
+      "hist": {
+        "summary": "Ιδρύθηκε το 1820 ως Middletown και μετονομάστηκε σε Fairmont το 1843. Η πόλη αναπτύχθηκε με τον άνθρακα και το σιδηρόδρομο, και θεωρείται γενέτειρα του Pepperoni Roll.",
+        "highlights": [
+          {
+            "year": "1820",
+            "event": "Ίδρυση ως Middletown",
+            "desc": "Οι πρώτοι έποικοι δημιουργούν οικισμό στη συμβολή των ποταμών."
+          },
+          {
+            "year": "1927",
+            "event": "Εφεύρεση του Pepperoni Roll",
+            "desc": "Ο Giuseppe «Joseph» Argiro εφευρίσκει το Pepperoni Roll για τους ανθρακωρύχους της περιοχής."
+          },
+          {
+            "year": "1974",
+            "event": "Ίδρυση του Fairmont State University",
+            "desc": "Ιδρύεται το κρατικό πανεπιστήμιο που γίνεται κέντρο εκπαίδευσης."
+          }
+        ]
+      },
+      "demo": {
+        "summary": "Περίπου 18.000 κάτοικοι, η έδρα της κομητείας Marion. Η οικονομία στηρίζεται στην εκπαίδευση, την υγεία και την τεχνολογία.",
+        "details": [
+          {
+            "label": "Εκπαίδευση & Έρευνα",
+            "text": "Το Fairmont State University και το I-79 Technology Park με εταιρείεςυψηλής τεχνολογίας."
+          },
+          {
+            "label": "Υγεία & Logistics",
+            "text": "Το Fairmont Regional Hospital και η θέση στον Interstate 79."
+          },
+          {
+            "label": "Ιστορία & Pepperoni Roll",
+            "text": "Η κληρονομιά του Pepperoni Roll και τα ανθρακωρυχεία της περιοχής."
+          }
+        ]
+      },
+      "cult": {
+        "summary": "Το Φέρμοντ γιορτάζει την κληρονομιά του Pepperoni Roll και του anthracite, με το φεστιβάλ και το μουσείο.",
+        "items": [
+          {
+            "title": "Pepperoni Roll Festival",
+            "desc": "Ετήσιο φεστιβάλ που γιορτάζει την εφεύρεση του Pepperoni Roll στην πόλη."
+          },
+          {
+            "title": "Marion County Historical Society & Museum",
+            "desc": "Μουσείο ιστορίας της κομητείας με εκθέματα για ανθρακωρύχους."
+          },
+          {
+            "title": "Fairmont State University",
+            "desc": "Πανεπιστήμιο με 4.000 φοιτητές και αθλητικούς Fighting Falcons."
+          }
+        ]
+      },
+      "guide": {
+        "summary": "Από το πανεπιστήμιο και το μουσείο μέχρι το 12th Street Pool και το Prickett's Fort.",
+        "items": [
+          {
+            "title": "Fairmont State University",
+            "cat": "education",
+            "catLabel": "📚 Εκπαίδευση",
+            "desc": "Κρατικό πανεπιστήμιο με 4.000 φοιτητές.",
+            "wiki": "Fairmont_State_University"
+          },
+          {
+            "title": "Prickett's Fort State Park",
+            "cat": "history",
+            "catLabel": "🏛️ Ιστορία",
+            "desc": "Ανακατασκευή φρουρίου του 1774 με αναπαραστάσεις.",
+            "wiki": "Prickett%27s_Fort_State_Park"
+          },
+          {
+            "title": "Marion County Historical Society",
+            "cat": "museum",
+            "catLabel": "🖼️ Μουσείο",
+            "desc": "Μουσείο ιστορίας της κομητείας.",
+            "wiki": "Marion_County_Historical_Society"
+          },
+          {
+            "title": "12th Street Pool & Palatine Park",
+            "cat": "culture",
+            "catLabel": "🎨 Πολιτισμός",
+            "desc": "Ιστορικό κολυμβητήριο και πάρκο στον ποταμό.",
+            "wiki": "Fairmont,_West_Virginia"
+          },
+          {
+            "title": "I-79 Technology Park",
+            "cat": "business",
+            "catLabel": "💼 Επιχειρήσεις",
+            "desc": "Τεχνολογικό πάρκο με εταιρείεςυψηλής τεχνολογίας.",
+            "wiki": "I-79_Technology_Park"
+          }
+        ]
+      },
+      "gastro": {
+        "summary": "Η κουζίνα του Φέρμοντ είναι η κληρονομιά του Pepperoni Roll και της αππαλαχικής κουζίνας.",
+        "items": [
+          {
+            "title": "Pepperoni Roll",
+            "desc": "Μαλακό ψωμί με ρολάκια πικάντικου σαλαμιού μέσα — η πόλη είναι η γενέτειρα αυτού του σνακ.",
+            "tag": "Τοπικό"
+          },
+          {
+            "title": "Biscuits & Sausage Gravy",
+            "desc": "Ζεστά μπισκότα με σάλτσα λουκάνικου, κλασικό πρωινό.",
+            "tag": "Παραδοσιακό"
+          },
+          {
+            "title": "Hot Dog με Chili",
+            "desc": "Λουκάνικο σε ψωμί με σάλτσα κιμά, κλασικό της πόλης.",
+            "tag": "Κλασικό"
+          },
+          {
+            "title": "Ramps",
+            "desc": "Άγρια κρεμμυδάκια της άνοιξης, σοταρισμένα με μπέικον.",
+            "tag": "Εποχικό"
+          }
+        ]
+      },
+      "eco": {
+        "summary": "Το Φέρμοντ προστατεύει τον Monongahela και επενδύει στην αποκατάσταση ορυχείων και στην τεχνολογία.",
+        "items": [
+          {
+            "title": "Monongahela River & Μονοπάτια",
+            "desc": "Προστασία του ποταμού και των παρόχθιων οικοσυστημάτων.",
+            "cat": "nature",
+            "catLabel": "💧 Υδάτινο Οικοσύστημα",
+            "wiki": "Monongahela_River"
+          },
+          {
+            "title": "Mine Reclamation",
+            "desc": "Προγράμματα αποκατάστασης παλιών ανθρακωρυχείων.",
+            "cat": "business",
+            "catLabel": "♻️ Αποκατάσταση",
+            "wiki": "Surface_Mining_Control_and_Reclamation_Act"
+          },
+          {
+            "title": "I-79 Technology & Clean Energy",
+            "desc": "Εταιρείες τεχνολογίας και καθαρής ενέργειας στο technology park.",
+            "cat": "business",
+            "catLabel": "⚡ Ενέργεια",
+            "wiki": "I-79_Technology_Park"
+          }
+        ]
+      },
+      "pastVsPresent": [
+        {
+          "epoch": "Φέρμοντ 1926: Ανθρακωρυχείο & Σίδερο",
+          "content": "Περίπου 20.000 κάτοικοι. Ανθρακωρυχεία, χαλυβουργία, σιδηρόδρομος και η εφεύρεση του Pepperoni Roll."
+        },
+        {
+          "epoch": "Φέρμοντ 2026: Πανεπιστήμιο & Τεχνολογία",
+          "content": "18.000 κάτοικοι, πανεπιστήμιο, technology park, νοσοκομεία και η κληρονομιά του Pepperoni Roll."
+        }
+      ],
+      "pois": [
+        {
+          "name": "Fairmont State University",
+          "category": "education",
+          "coords": [
+            39.482,
+            -80.145
+          ],
+          "desc": "Πανεπιστήμιο."
+        },
+        {
+          "name": "Prickett's Fort State Park",
+          "category": "history",
+          "coords": [
+            39.48,
+            -80.11
+          ],
+          "desc": "Ανακατασκευή φρουρίου."
+        },
+        {
+          "name": "Marion County Historical Museum",
+          "category": "museum",
+          "coords": [
+            39.485,
+            -80.142
+          ],
+          "desc": "Μουσείο κομητείας."
+        },
+        {
+          "name": "12th Street Pool",
+          "category": "culture",
+          "coords": [
+            39.485,
+            -80.137
+          ],
+          "desc": "Ιστορικό κολυμβητήριο."
+        },
+        {
+          "name": "I-79 Technology Park",
+          "category": "business",
+          "coords": [
+            39.455,
+            -80.175
+          ],
+          "desc": "Τεχνολογικό πάρκο."
+        }
+      ]
+    },
+    {
+      "id": "beckley",
+      "name": "Μπέκλεϊ",
+      "englishName": "Beckley",
+      "nickname": "The City of Champions / Η Πόλη των Πρωταθλητών",
+      "type": "city",
+      "coords": [
+        37.778,
+        -81.188
+      ],
+      "zoom": 13.0,
+      "stats": {
+        "population": "16.000",
+        "founded": "1838",
+        "area": "24,3 km²",
+        "elevation": "738 μ."
+      },
+      "quote": "«Η Πύλη του New River Gorge National Park, με το Exhibition Coal Mine και την κληρονομιά των anthracite.»",
+      "geo": {
+        "summary": "Χτισμένη στο νότιο κέντρο της Δυτικής Βιρτζίνιας, στο οροπέδιο Allegheny, κοντά στο New River Gorge. Η πόλη βρίσκεται σε υψόμετρο 738 μέτρων και περιβάλλεται από δασωμένους λόφους.",
+        "highlights": [
+          {
+            "title": "New River Gorge",
+            "desc": "Το βαθύ φαράγγι με τον αρχαιότερο ποταμό της Βόρειας Αμερικής, εθνικό πάρκο από το 2020."
+          },
+          {
+            "title": "Οροπέδιο Allegheny",
+            "desc": "Δασωμένο οροπέδιο με λόφους, ρέματα και ανθρακωρυχεία."
+          },
+          {
+            "title": "Πύλη προς Νότο",
+            "desc": "Θέση στους Interstate 77 και 64 που συνδέουν την πόλη με τον νότο και τον ανατολικό sehκό."
+          }
+        ]
+      },
+      "hist": {
+        "summary": "Ιδρύθηκε το 1838 και ονομάστηκε προς τιμήν του John James Beckley, πρώτου clerk της Βουλής των Αντιπροσώπων. Η πόλη αναπτύχθηκε με τον άνθρακα και έγινε κέντρο της νότιας πολιτείας.",
+        "highlights": [
+          {
+            "year": "1838",
+            "event": "Ίδρυση του οικισμού",
+            "desc": "Η πόλη ιδρύεται ως έδρα της κομητείας Raleigh."
+          },
+          {
+            "year": "1890s",
+            "event": "Άνθρακας & Σιδηρόδρομος",
+            "desc": "Η ανάπτυξη των ανθρακωρυχείων και ο σιδηρόδρομος κάνουν το Μπέκλεϊ κέντρο εξόρυξης."
+          },
+          {
+            "year": "2020",
+            "event": "New River Gorge National Park",
+            "desc": "Το φαράγγι γίνεται ο reciente εθνικός πάρκο των ΗΠΑ, προσελκύοντας τουρισμό στην πόλη."
+          }
+        ]
+      },
+      "demo": {
+        "summary": "Περίπου 16.000 κάτοικοι, η μεγαλύτερη πόλη της νότιας Δυτικής Βιρτζίνιας. Η οικονομία μεταβαίνει από τον άνθρακα στον τουρισμό και την υγεία.",
+        "details": [
+          {
+            "label": "Τουρισμός & New River Gorge",
+            "text": "Το εθνικό πάρκο, το Exhibition Coal Mine και το Tamarack προσελκύουν εκατοντάδες χιλιάδες."
+          },
+          {
+            "label": "Υγεία & Κυβέρνηση",
+            "text": "Το Raleigh General Hospital και η έδρα της κομητείας."
+          },
+          {
+            "label": "Κληρονομιά του Άνθρακα",
+            "text": "Παλιά ανθρακωρυχεία μετατρέπονται σε μουσεία και τουριστικά αξιοθέατα."
+          }
+        ]
+      },
+      "cult": {
+        "summary": "Το Μπέκλεϊ γιορτάζει την κληρονομιά του anthracite και της φύσης, με το Coal Mine και το Tamarack.",
+        "items": [
+          {
+            "title": "Beckley Exhibition Coal Mine",
+            "desc": "Ανακατασκευασμένο ανθρακωρύχείο που προσφέρει υπόγειες περιηγήσεις και μουσείο."
+          },
+          {
+            "title": "Tamarack: The Best of West Virginia",
+            "desc": "Κέντρο με χειροτεχνήματα, τέχνη και γαστρονομία από όλη την πολιτεία."
+          },
+          {
+            "title": "Youth Museum of Southern West Virginia",
+            "desc": "Μουσείο για παιδιά με διαδραστικά εκθέματα."
+          }
+        ]
+      },
+      "guide": {
+        "summary": "Από το Coal Mine και το Tamarack μέχρι το New River Gorge και το Grandview Park.",
+        "items": [
+          {
+            "title": "Beckley Exhibition Coal Mine",
+            "cat": "museum",
+            "catLabel": "🖼️ Μουσείο",
+            "desc": "Ανθρακωρύχείο-μουσείο με υπόγειες περιηγήσεις.",
+            "wiki": "Beckley_Exhibition_Coal_Mine"
+          },
+          {
+            "title": "Tamarack: The Best of West Virginia",
+            "cat": "culture",
+            "catLabel": "🎨 Πολιτισμός",
+            "desc": "Κέντρο για τέχνη και γαστρονομία της πολιτείας.",
+            "wiki": "Tamarack_(West_Virginia)"
+          },
+          {
+            "title": "New River Gorge National Park",
+            "cat": "nature",
+            "catLabel": "🌿 Φύση",
+            "desc": "Το νεότερο εθνικό πάρκο, με ράφτινγκ, αναρρίχηση και πεζοπορία.",
+            "wiki": "New_River_Gorge_National_Park_and_Preserve"
+          },
+          {
+            "title": "Grandview Park",
+            "cat": "nature",
+            "catLabel": "🌳 Πάρκα",
+            "desc": "Πάρκο με θέα στο New River Gorge και θεατρικές παραστάσεις.",
+            "wiki": "Grandview_State_Park"
+          },
+          {
+            "title": "Youth Museum of Southern WV",
+            "cat": "museum",
+            "catLabel": "🖼️ Μουσείο",
+            "desc": "Μουσείο για παιδιά με διαδραστικά εκθέματα.",
+            "wiki": "Youth_Museum_of_Southern_West_Virginia"
+          }
+        ]
+      },
+      "gastro": {
+        "summary": "Η κουζίνα του Μπέκλεϊ αντικατοπτρίζει την αππαλαχική κληρονομιά, με pepperoni roll και ramps.",
+        "items": [
+          {
+            "title": "Pepperoni Roll",
+            "desc": "Μαλακό ψωμί με ρολάκια πικάντικου σαλαμιού μέσα, εφεύρεση των ανθρακωρύχων.",
+            "tag": "Τοπικό"
+          },
+          {
+            "title": "Biscuits & Sausage Gravy",
+            "desc": "Ζεστά μπισκότα με σάλτσα λουκάνικου, κλασικό πρωινό.",
+            "tag": "Παραδοσιακό"
+          },
+          {
+            "title": "Ramps",
+            "desc": "Άγρια κρεμμυδάκια της άνοιξης, σοταρισμένα με μπέικον και πατάτες.",
+            "tag": "Εποχικό"
+          },
+          {
+            "title": "Soup Beans & Cornbread",
+            "desc": "Φασολάδα με μπέικον και καλαμποκέψιμο, κλασικό των ανθρακωρύχων.",
+            "tag": "Παραδοσιακό"
+          }
+        ]
+      },
+      "eco": {
+        "summary": "Το Μπέκλεϊ είναι η κύρια πύλη του New River Gorge National Park και επενδύει στον ήπιο τουρισμό.",
+        "items": [
+          {
+            "title": "New River Gorge National Park",
+            "desc": "Προστασία του φαραγγιού, του αρχαιότερου ποταμού και των δασών.",
+            "cat": "nature",
+            "catLabel": "🌲 Δάση",
+            "wiki": "New_River_Gorge_National_Park_and_Preserve"
+          },
+          {
+            "title": "Mine Reclamation & Coal Heritage",
+            "desc": "Αποκατάσταση παλιών ορυχείων και διατήρηση της κληρονομιάς.",
+            "cat": "business",
+            "catLabel": "♻️ Αποκατάσταση",
+            "wiki": "Surface_Mining_Control_and_Reclamation_Act"
+          },
+          {
+            "title": "Tamarack & Βιώσιμη Τέχνη",
+            "desc": "Προώθηση τοπικών προϊόντων και βιώσιμης ανάπτυξης.",
+            "cat": "business",
+            "catLabel": "🌱 Βιωσιμότητα",
+            "wiki": "Tamarack_(West_Virginia)"
+          }
+        ]
+      },
+      "pastVsPresent": [
+        {
+          "epoch": "Μπέκλεϊ 1926: Πόλη του Άνθρακα",
+          "content": "Περίπου 5.000 κάτοικοι. Ανθρακωρυχεία, σιδηρόδρομος, εταιρικές πόλεις και οι πρώτες οργανώσεις ανθρακωρύχων."
+        },
+        {
+          "epoch": "Μπέκλεϊ 2026: Εθνικό Πάρκο & Τουρισμός",
+          "content": "16.000 κάτοικοι, το New River Gorge National Park, το Coal Mine Museum και το Tamarack."
+        }
+      ],
+      "pois": [
+        {
+          "name": "Beckley Exhibition Coal Mine",
+          "category": "museum",
+          "coords": [
+            37.781,
+            -81.195
+          ],
+          "desc": "Μουσείο ανθρακωρυχείου."
+        },
+        {
+          "name": "Tamarack",
+          "category": "culture",
+          "coords": [
+            37.915,
+            -81.071
+          ],
+          "desc": "Κέντρο τέχνης."
+        },
+        {
+          "name": "New River Gorge Bridge",
+          "category": "history",
+          "coords": [
+            38.072,
+            -81.083
+          ],
+          "desc": "Η εμβληματική γέφυρα."
+        },
+        {
+          "name": "Grandview Park",
+          "category": "nature",
+          "coords": [
+            37.86,
+            -81.11
+          ],
+          "desc": "Πάρκο με θέα."
+        },
+        {
+          "name": "Youth Museum",
+          "category": "museum",
+          "coords": [
+            37.781,
+            -81.197
+          ],
+          "desc": "Μουσείο για παιδιά."
+        }
+      ]
+    },
+    {
+      "id": "clarksburg-wv",
+      "name": "Κλάρκσμπεργκ",
+      "englishName": "Clarksburg",
+      "nickname": "The Historic City / Η Ιστορική Πόλη",
+      "type": "city",
+      "coords": [
+        39.28,
+        -80.34
+      ],
+      "zoom": 13.0,
+      "stats": {
+        "population": "16.000",
+        "founded": "1785",
+        "area": "25,5 km²",
+        "elevation": "309 μ."
+      },
+      "quote": "«Ιστορικό κέντρο και πλούσια ιταλοαμερικανική κληρονομιά, με τη γιορτή του πολύτιμου Stonewall Jackson.»",
+      "geo": {
+        "summary": "Χτισμένη στο βόρειο κέντρο της Δυτικής Βιρτζίνιας, στον ποταμό West Fork. Η πόλη βρίσκεται σε κυματιστή κοιλάδα με λόφους και δάση, στην καρδιά της ιστορικής περιοχής anthracite.",
+        "highlights": [
+          {
+            "title": "Ποταμός West Fork",
+            "desc": "Ο ποταμός που διασχίζει την πόλη, παραπόταμος του Monongahela."
+          },
+          {
+            "title": "Λόφοι & Ανθρακωρυχεία",
+            "desc": "Δασωμένοι λόφοι με ιστορικά ανθρακωρυχεία και κοιλάδες."
+          },
+          {
+            "title": "Ιστορική Πύλη",
+            "desc": "Θέση στον Interstate 79 και κοντά στο I-68, που συνδέουν την πόλη με τον Βορρά."
+          }
+        ]
+      },
+      "hist": {
+        "summary": "Ιδρύθηκε το 1785 και ονομάστηκε προς τιμήν του στρατηγού George Rogers Clark. Η πόλη είναι γενέτειρα του Stonewall Jackson και φιλοξένησε μεγάλη ιταλοαμερικανική κοινότητα από τα τέλη του 19ου αιώνα.",
+        "highlights": [
+          {
+            "year": "1785",
+            "event": "Ίδρυση του οικισμού",
+            "desc": "Οι πρώτοι έποικοι δημιουργούν οικισμό στον West Fork River."
+          },
+          {
+            "year": "1824",
+            "event": "Γέννηση Stonewall Jackson",
+            "desc": "Γεννιέται ο μελλοντικός στρατηγός των Συνομοσπονδιακών Thomas Jonathan «Stonewall» Jackson."
+          },
+          {
+            "year": "1890s",
+            "event": "Ιταλοαμερικανική Μετανάστευση",
+            "desc": "Χιλιάδες Ιταλοί μετανάστες έρχονται για τα ανθρακωρυχεία, αφήνοντας ισχυρή κληρονομιά."
+          }
+        ]
+      },
+      "demo": {
+        "summary": "Περίπου 16.000 κάτοικοι, η έδρα της κομητείας Harrison. Η οικονομία στηρίζεται στην υγεία, την κυβέρνηση και στον τουρισμό της ιταλικής κληρονομιάς.",
+        "details": [
+          {
+            "label": "Υγεία & Κυβέρνηση",
+            "text": "Το United Hospital Center και τα ομοσπονδιακά κτίρια στηρίζουν την οικονομία."
+          },
+          {
+            "label": "Ιταλοαμερικανική Κληρονομιά",
+            "text": "Πατέστα ιταλικών εστιατορίων, φεστιβάλ και η Ένωση Ιταλοαμερικανών."
+          },
+          {
+            "label": "Ιστορικός Τουρισμός",
+            "text": "Το Stonewall Jackson Museum και το ιστορικό κέντρο προσελκύουν επισκέπτες."
+          }
+        ]
+      },
+      "cult": {
+        "summary": "Το Κλάρκσμπεργκ έχει πλούσια ιστορική και ιταλοαμερικανική κουλτούρα, με φεστιβάλ και μουσεία.",
+        "items": [
+          {
+            "title": "West Virginia Italian Heritage Festival",
+            "desc": "Ετήσιο φεστιβάλ που γιορτάζει την ιταλοαμερικανική κληρονομιά της πόλης."
+          },
+          {
+            "title": "Stonewall Jackson & Governors' Museum",
+            "desc": "Ιστορικά μουσεία αφιερωμένα στον Stonewall Jackson και τους κυβερνήτες."
+          },
+          {
+            "title": "Waldomore Mansion",
+            "desc": "Ιστορικό αρχοντικό του 1842 που στεγάζει τη βιβλιοθήκη και το αρχείο."
+          }
+        ]
+      },
+      "guide": {
+        "summary": "Από το φεστιβάλ και το μουσείο Stonewall Jackson μέχρι το Waldomore και το Clarksburg Historic District.",
+        "items": [
+          {
+            "title": "Clarksburg Historic District",
+            "cat": "history",
+            "catLabel": "🏛️ Ιστορία",
+            "desc": "Ιστορικό κέντρο με κτίρια του 19ου αιώνα.",
+            "wiki": "Clarksburg_Historic_District"
+          },
+          {
+            "title": "Waldomore Mansion",
+            "cat": "museum",
+            "catLabel": "🖼️ Μουσείο",
+            "desc": "Ιστορικό αρχοντικό του 1842 με βιβλιοθήκη.",
+            "wiki": "Waldomore"
+          },
+          {
+            "title": "Italian Heritage Festival Grounds",
+            "cat": "culture",
+            "catLabel": "🎨 Πολιτισμός",
+            "desc": "Έδρα του ετήσιου ιταλικού φεστιβάλ.",
+            "wiki": "West_Virginia_Italian_Heritage_Festival"
+          },
+          {
+            "title": "Stonewall Jackson House (Birthplace)",
+            "cat": "history",
+            "catLabel": "🏛️ Ιστορία",
+            "desc": "Το σπίτι όπου γεννήθηκε ο Stonewall Jackson.",
+            "wiki": "Stonewall_Jackson"
+          },
+          {
+            "title": "United Hospital Center & VT Industrial Park",
+            "cat": "business",
+            "catLabel": "💼 Επιχειρήσεις",
+            "desc": "Σύγχρονο νοσοκομείο και τεχνολογικό πάρκο.",
+            "wiki": "United_Hospital_Center"
+          }
+        ]
+      },
+      "gastro": {
+        "summary": "Η κουζίνα του Κλάρκσμπεργκ συνδυάζει την ιταλοαμερικανική κληρονομιά με την αππαλαχική.",
+        "items": [
+          {
+            "title": "Pepperoni Roll",
+            "desc": "Μαλακό ψωμί με ρολάκια πικάντικου σαλαμιού μέσα, εφεύρεση των ανθρακωρύχων της περιοχής.",
+            "tag": "Τοπικό"
+          },
+          {
+            "title": "Italian Pasta & Πίτσα",
+            "desc": "Παραδοσιακή ιταλική κουζίνα από τις οικογένειες των μεταναστών.",
+            "tag": "Ιταλικό"
+          },
+          {
+            "title": "Biscuits & Sausage Gravy",
+            "desc": "Ζεστά μπισκότα με σάλτσα λουκάνικου, κλασικό πρωινό.",
+            "tag": "Παραδοσιακό"
+          },
+          {
+            "title": "Hot Dog με Chili",
+            "desc": "Λουκάνικο σε ψωμί με σάλτσα κιμά, κλασικό της πόλης.",
+            "tag": "Κλασικό"
+          }
+        ]
+      },
+      "eco": {
+        "summary": "Το Κλάρκσμπεργκ προστατεύει τον West Fork και επενδύει στην αποκατάσταση ορυχείων.",
+        "items": [
+          {
+            "title": "West Fork River & Μονοπάτια",
+            "desc": "Προστασία του ποταμού και των παρόχθιων οικοσυστημάτων.",
+            "cat": "nature",
+            "catLabel": "💧 Υδάτινο Οικοσύστημα",
+            "wiki": "West_Fork_River"
+          },
+          {
+            "title": "Mine Reclamation",
+            "desc": "Προγράμματα αποκατάστασης παλιών ανθρακωρυχείων.",
+            "cat": "business",
+            "catLabel": "♻️ Αποκατάσταση",
+            "wiki": "Surface_Mining_Control_and_Reclamation_Act"
+          },
+          {
+            "title": "VT Industrial Park & Clean Energy",
+            "desc": "Σύγχρονο τεχνολογικό πάρκο με έμφαση σε καθαρή ενέργεια.",
+            "cat": "business",
+            "catLabel": "⚡ Ενέργεια",
+            "wiki": "Clarksburg,_West_Virginia"
+          }
+        ]
+      },
+      "pastVsPresent": [
+        {
+          "epoch": "Κλάρκσμπεργκ 1926: Ανθρακωρυχείο & Ιταλοί",
+          "content": "Περίπου 28.000 κάτοικοι. Ανθρακωρυχεία, σιδηρόδρομος, ιταλοαμερικανικές κοινότητες και η εταιρική ζωή των ανθρακωρύχων."
+        },
+        {
+          "epoch": "Κλάρκσμπεργκ 2026: Ιστορική Πόλη & Υγεία",
+          "content": "16.000 κάτοικοι, νοσοκομεία, τεχνολογικό πάρκο και το ιταλικό φεστιβάλ ως κύρια πολιτιστική εκδήλωση."
+        }
+      ],
+      "pois": [
+        {
+          "name": "Clarksburg Historic District",
+          "category": "history",
+          "coords": [
+            39.28,
+            -80.34
+          ],
+          "desc": "Ιστορικό κέντρο."
+        },
+        {
+          "name": "Waldomore Mansion",
+          "category": "museum",
+          "coords": [
+            39.276,
+            -80.342
+          ],
+          "desc": "Ιστορικό αρχοντικό."
+        },
+        {
+          "name": "Italian Heritage Festival",
+          "category": "culture",
+          "coords": [
+            39.28,
+            -80.338
+          ],
+          "desc": "Φεστιβάλ ιταλικής κληρονομιάς."
+        },
+        {
+          "name": "Stonewall Jackson Birthplace",
+          "category": "history",
+          "coords": [
+            39.281,
+            -80.342
+          ],
+          "desc": "Σπίτι-γενέτειρα."
+        },
+        {
+          "name": "United Hospital Center",
+          "category": "business",
+          "coords": [
+            39.27,
+            -80.33
+          ],
+          "desc": "Σύγχρονο νοσοκομείο."
+        }
+      ]
+    },
+    {
+      "id": "harpers-ferry",
+      "name": "Χάρπερς Φέρι",
+      "englishName": "Harpers Ferry",
+      "nickname": "The Historic Confluence / Η Ιστορική Συμβολή",
+      "type": "city",
+      "coords": [
+        39.325,
+        -77.735
+      ],
+      "zoom": 13.5,
+      "stats": {
+        "population": "280",
+        "founded": "1733",
+        "area": "1,6 km²",
+        "elevation": "146 μ."
+      },
+      "quote": "«Το ιστορικό Εθνικό Πάρκο με την Επιδρομή του John Brown, στα σύνορα τριών πολιτειών και στον Appalachian Trail.»",
+      "geo": {
+        "summary": "Χτισμένη στο ανατολικό άκρο της Δυτικής Βιρτζίνιας, στη συμβολή των ποταμών Potomac και Shenandoah, στα σύνορα τριών πολιτειών (WV, VA, MD). Η πόλη είναι μέσα στο Harpers Ferry National Historical Park.",
+        "highlights": [
+          {
+            "title": "Συμβολή Potomac & Shenandoah",
+            "desc": "Τα δύο μεγάλα ποτάμια ενώνονται στην πόλη, δημιουργώντας ένα από τα πιο εμβληματικά υδάτινα σταυροδρόμια."
+          },
+          {
+            "title": "Maryland Heights & Loudoun Heights",
+            "desc": "Δασωμένοι λόφοι πάνω από την πόλη, με μονοπάτια και θέα στην κοιλάδα."
+          },
+          {
+            "title": "Appalachian Trail",
+            "desc": "Η πόλη βρίσκεται στη διαδρομή του Appalachian Trail, που διασχίζει τα Αππαλάχια από τη Γεωργία στο Maine."
+          }
+        ]
+      },
+      "hist": {
+        "summary": "Ιδρύθηκε το 1733 και ονομάστηκε προς τιμήν του Robert Harper, που έφτιαξε φέρι το 1761. Η πόλη είναι ιστορική για την επιδρομή του John Brown το 1859, που έπιασε το οπλοστάσιο και σηματοδότησε τον Εμφύλιο.",
+        "highlights": [
+          {
+            "year": "1761",
+            "event": "Φέρι του Robert Harper",
+            "desc": "Ο Robert Harper αποκτά τη γη και δημιουργεί φέρι στον Potomac."
+          },
+          {
+            "year": "1859",
+            "event": "Επιδρομή του John Brown",
+            "desc": "Ο κατάργητης της δουλείας John Brown καταλαμβάνει το οπλοστάσιο, ελπίζοντας σε εξέγερση δούλων."
+          },
+          {
+            "year": "1944",
+            "event": "Εθνικό Ιστορικό Πάρκο",
+            "desc": "Ιδρύεται το Harpers Ferry National Historical Park, που διατηρεί την πόλη και τη φύση."
+          }
+        ]
+      },
+      "demo": {
+        "summary": "Περίπου 280 κάτοικοι, η μικρότερη πόλη της λίστας και η μόνη μέσα σε εθνικό πάρκο. Η οικονομία στηρίζεται εξ ολοκλήρου στον τουρισμό και τη διατήρηση.",
+        "details": [
+          {
+            "label": "Τουρισμός & Ιστορία",
+            "text": "Εκατοντάδες χιλιάδες επισκέπτες έρχονται για το εθνικό πάρκο και τα μουσεία."
+          },
+          {
+            "label": "National Historical Park",
+            "text": "Η πόλη και οι λόφοι γύρω προστατεύονται ως εθνικό ιστορικό μνημείο."
+          },
+          {
+            "label": "Appalachian Trail & Φύση",
+            "text": "Η πόλη είναι ένα από τα σημεία του Appalachian Trail, με πεζοπόρους από όλη τη χώρα."
+          }
+        ]
+      },
+      "cult": {
+        "summary": "Το Χάρπερς Φέρι είναι σύμβολο της κατάργησης της δουλείας και της ιστορίας των Αππαλαχίων.",
+        "items": [
+          {
+            "title": "John Brown's Fort & Museum",
+            "desc": "Το κτίριο όπου κλείστηκε ο John Brown το 1859, σήμερα μνημείο και μουσείο."
+          },
+          {
+            "title": "Harpers Ferry National Historical Park",
+            "desc": "Το εθνικό πάρκο με αναστηλωμένα κτίρια, μουσεία και μονοπάτια."
+          },
+          {
+            "title": "Appalachian Trail Conservancy",
+            "desc": "Η έδρα του οργανισμού που διατηρεί το Appalachian Trail βρίσκεται στην πόλη."
+          }
+        ]
+      },
+      "guide": {
+        "summary": "Από το John Brown's Fort και το εθνικό πάρκο μέχρι τους λόφους και το Appalachian Trail.",
+        "items": [
+          {
+            "title": "John Brown's Fort",
+            "cat": "history",
+            "catLabel": "🏛️ Ιστορία",
+            "desc": "Το κτίριο-μνημείο της επιδρομής του 1859.",
+            "wiki": "John_Brown%27s_Fort"
+          },
+          {
+            "title": "Harpers Ferry National Historical Park",
+            "cat": "history",
+            "catLabel": "🏛️ Ιστορία",
+            "desc": "Το εθνικό ιστορικό πάρκο με μουσεία και κτίρια.",
+            "wiki": "Harpers_Ferry_National_Historical_Park"
+          },
+          {
+            "title": "Maryland Heights Trail",
+            "cat": "nature",
+            "catLabel": "🌿 Φύση",
+            "desc": "Μονοπάτι στον λόφο με πανοραμική θέα στην πόλη.",
+            "wiki": "Maryland_Heights"
+          },
+          {
+            "title": "Appalachian Trail & Conservancy HQ",
+            "cat": "nature",
+            "catLabel": "🌳 Πάρκα",
+            "desc": "Έδρα του AT Conservancy και τμήμα του μονοπατιού.",
+            "wiki": "Appalachian_Trail"
+          },
+          {
+            "title": "Jefferson Rock",
+            "cat": "nature",
+            "catLabel": "🌳 Πάρκα",
+            "desc": "Βράχος με θέα που εμπνεύσε τον Thomas Jefferson.",
+            "wiki": "Jefferson_Rock"
+          }
+        ]
+      },
+      "gastro": {
+        "summary": "Η κουζίνα του Χάρπερς Φέρι αντικατοπτρίζει την αππαλαχική και ιστορική κληρονομιά, με κρέας και ψάρι.",
+        "items": [
+          {
+            "title": "Pepperoni Roll",
+            "desc": "Μαλακό ψωμί με ρολάκια πικάντικου σαλαμιού μέσα, εφεύρεση των ανθρακωρύχων.",
+            "tag": "Τοπικό"
+          },
+          {
+            "title": "Biscuits & Sausage Gravy",
+            "desc": "Ζεστά μπισκότα με σάλτσα λουκάνικου, κλασικό πρωινό.",
+            "tag": "Παραδοσιακό"
+          },
+          {
+            "title": "Trout του Potomac",
+            "desc": "Φρέσκο ψάρι από τον ποταμό, τηγανητό ή καπνιστό, δημοφιλές στα τοπικά pubs.",
+            "tag": "Ψάρι"
+          },
+          {
+            "title": "Apple Butter & Pies",
+            "desc": "Βούτυρο μήλου και πίτες από τα οπωροφόρα της κοιλάδας Shenandoah.",
+            "tag": "Γλυκό"
+          }
+        ]
+      },
+      "eco": {
+        "summary": "Το Χάρπερς Φέρι προστατεύει τη συμβολή των δύο ποταμών και τους λόφους του εθνικού πάρκου.",
+        "items": [
+          {
+            "title": "Potomac & Shenandoah Confluence",
+            "desc": "Προστασία των δύο ποταμών και των οικοσυστημάτων τους.",
+            "cat": "nature",
+            "catLabel": "💧 Υδάτινο Οικοσύστημα",
+            "wiki": "Harpers_Ferry_National_Historical_Park"
+          },
+          {
+            "title": "Maryland Heights & Δάση",
+            "desc": "Προστασία των δασών και των βράχων γύρω από την πόλη.",
+            "cat": "nature",
+            "catLabel": "🌲 Δάση",
+            "wiki": "Maryland_Heights"
+          },
+          {
+            "title": "Appalachian Trail & Conservancy",
+            "desc": "Διατήρηση του μονοπατιού και των οικοσυστημάτων κατά μήκος των Αππαλαχίων.",
+            "cat": "business",
+            "catLabel": "🌱 Βιωσιμότητα",
+            "wiki": "Appalachian_Trail"
+          }
+        ]
+      },
+      "pastVsPresent": [
+        {
+          "epoch": "Χάρπερς Φέρι 1926: Εγκαταλειμμένη Πόλη",
+          "content": "Περίπου 800 κάτοικοι. Το οπλοστάσιο εγκαταλείφθηκε, οι πλημμύρες κατέστρεφαν κτίρια και η πόλη ζει από τον σιδηρόδρομο."
+        },
+        {
+          "epoch": "Χάρπερς Φέρι 2026: Εθνικό Πάρκο",
+          "content": "280 κάτοικοι, εκατοντάδες χιλιάδες επισκέπτες, το Εθνικό Ιστορικό Πάρκο και το Appalachian Trail Conservancy."
+        }
+      ],
+      "pois": [
+        {
+          "name": "John Brown's Fort",
+          "category": "history",
+          "coords": [
+            39.325,
+            -77.729
+          ],
+          "desc": "Μνημείο της επιδρομής."
+        },
+        {
+          "name": "Harpers Ferry National Historical Park",
+          "category": "history",
+          "coords": [
+            39.325,
+            -77.735
+          ],
+          "desc": "Εθνικό ιστορικό πάρκο."
+        },
+        {
+          "name": "Maryland Heights Trail",
+          "category": "nature",
+          "coords": [
+            39.336,
+            -77.73
+          ],
+          "desc": "Μονοπάτι με θέα."
+        },
+        {
+          "name": "Appalachian Trail HQ",
+          "category": "nature",
+          "coords": [
+            39.326,
+            -77.731
+          ],
+          "desc": "Έδρα Conservancy."
+        },
+        {
+          "name": "Jefferson Rock",
+          "category": "nature",
+          "coords": [
+            39.324,
+            -77.732
+          ],
+          "desc": "Ιστορικός βράχος με θέα."
+        }
+      ]
     }
   ]
 }

@@ -1,4 +1,4 @@
-import { US_STATES, CITY_TO_STATE } from './states-data.js?v=20261114_world3';
+import { US_STATES, CITY_TO_STATE } from './states-data.js?v=20261114_world4';
 /**
  * Navigator Module
  * Hierarchical Cascading Navigation: Continents -> Countries -> Cities
@@ -895,8 +895,16 @@ export const CONTINENTS_DATA = [
         name: 'Μπελίζ',
         flag: '🇧🇿',
         cities: [
-          { id: 'belize-city', name: 'Μπελίζ Σίτι', badge: 'Λιμάνι' },
-          { id: 'san-ignacio', name: 'Σαν Ιγνάσιο' }
+          { id: 'belize-city', name: 'Μπελίζ Σίτι', badge: 'Ιστορική' },
+          { id: 'san-ignacio', name: 'Σαν Ιγνάσιο' },
+          { id: 'belmopan', name: 'Μπελμοπάν', badge: 'Πρωτεύουσα' },
+          { id: 'san-pedro', name: 'Σαν Πέδρο' },
+          { id: 'caye-caulker', name: 'Κέι Κόλκερ' },
+          { id: 'placencia', name: 'Πλασένσια' },
+          { id: 'orange-walk', name: 'Όραντζ Γουόκ' },
+          { id: 'corozal', name: 'Κοροζάλ' },
+          { id: 'dangriga', name: 'Ντανγκρίγκα' },
+          { id: 'punta-gorda', name: 'Πούντα Γκόρντα' }
         ]
       },
       {
@@ -905,7 +913,15 @@ export const CONTINENTS_DATA = [
         flag: '🇸🇻',
         cities: [
           { id: 'san-salvador', name: 'Σαν Σαλβαδόρ', badge: 'Πρωτεύουσα' },
-          { id: 'santa-ana', name: 'Σάντα Άνα' }
+          { id: 'santa-ana', name: 'Σάντα Άνα' },
+          { id: 'san-miguel-sv', name: 'Σαν Μιγκέλ' },
+          { id: 'sonsonate', name: 'Σονσονάτε' },
+          { id: 'santa-tecla', name: 'Σάντα Τέκλα' },
+          { id: 'ahuachapan', name: 'Αουατσαπάν' },
+          { id: 'suchitoto', name: 'Σουτσιτότο' },
+          { id: 'la-libertad', name: 'Λα Λιμπερτάδ' },
+          { id: 'usulutan', name: 'Ουσουλουτάν' },
+          { id: 'chalatenango', name: 'Τσαλατενάνγκο' }
         ]
       },
       {
