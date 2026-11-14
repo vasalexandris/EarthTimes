@@ -1,4 +1,4 @@
-import { US_STATES, CITY_TO_STATE } from './states-data.js?v=20261114_world5';
+import { US_STATES, CITY_TO_STATE } from './states-data.js?v=20261114_world6';
 /**
  * Navigator Module
  * Hierarchical Cascading Navigation: Continents -> Countries -> Cities
@@ -879,7 +879,16 @@ export const CONTINENTS_DATA = [
         name: 'Μπαχάμες',
         flag: '🇧🇸',
         cities: [
-          { id: 'nassau', name: 'Νασάου', badge: 'Πρωτεύουσα' }
+          { id: 'nassau', name: 'Νασάου', badge: 'Η Πόλη των Πειρατών' },
+          { id: 'freeport-bs', name: 'Φρίπορτ', badge: 'Η Μαγική Πόλη' },
+          { id: 'lucaya', name: 'Λουκάγια', badge: 'Το Ριβιέρα των Μπαχαμών' },
+          { id: 'west-end-bs', name: 'Γουέστ Εντ', badge: 'Η Ιστορική Πρωτεύουσα' },
+          { id: 'marsh-harbour', name: 'Μαρς Χάρμπορ', badge: 'Η Πρωτεύουσα των Άμπακο' },
+          { id: 'george-town-bs', name: 'Τζορτζ Τάουν', badge: 'Το Κόσμημα των Εξούμα' },
+          { id: 'dunmore-town', name: 'Ντάνμορ Τάουν', badge: 'Το Νησί με τη Ροζ Άμμο' },
+          { id: 'alice-town', name: 'Άλις Τάουν', badge: 'Η Πύλη του Μπίμινι' },
+          { id: 'matthew-town', name: 'Μάθιου Τάουν', badge: 'Η Πόλη του Αλατιού & των Φλαμίνγκο' },
+          { id: 'rock-sound', name: 'Ροκ Σάουντ', badge: 'Η Πόλη της Ωκεάνιας Τρύπας' }
         ]
       },
       {
@@ -887,7 +896,16 @@ export const CONTINENTS_DATA = [
         name: 'Μπαρμπάντος',
         flag: '🇧🇧',
         cities: [
-          { id: 'bridgetown', name: 'Μπρίτζταουν', badge: 'Πρωτεύουσα' }
+          { id: 'bridgetown', name: 'Μπρίτζταουν', badge: 'Η Πρωτεύουσα — Μνημείο UNESCO' },
+          { id: 'speightstown', name: 'Σπέιτσταουν', badge: 'Το Μικρό Μπρίστολ' },
+          { id: 'holetown', name: 'Χόουλταουν', badge: 'Η Πρώτη Αποβίβαση — Χρυσή Ακτή' },
+          { id: 'oistins', name: 'Όιστινς', badge: 'Το Λιμάνι των Ψαράδων & η Χάρτα του 1652' },
+          { id: 'bathsheba', name: 'Μπαθσίμπα', badge: 'Η Άγρια Ανατολική Ακτή — Soup Bowl' },
+          { id: 'st-lawrence-gap', name: 'Σεντ Λόρενς Γκαπ', badge: 'Ο Παλμός του Νότου' },
+          { id: 'warrens', name: 'Γουόρενς', badge: 'Το Νέο Εμπορικό Κέντρο' },
+          { id: 'the-crane', name: 'Δε Κρέιν', badge: 'Η Ροζ Άμμος του 1887' },
+          { id: 'six-cross-roads', name: 'Σιξ Κρος Ρόουντς', badge: 'Ο Κόμβος του Σεντ Φίλιπ' },
+          { id: 'chalky-mount', name: 'Τσάλκι Μάουντ', badge: 'Το Χωριό των Αγγειοπλαστών' }
         ]
       },
       {
@@ -929,8 +947,16 @@ export const CONTINENTS_DATA = [
         name: 'Αϊτή',
         flag: '🇭🇹',
         cities: [
-          { id: 'port-au-prince', name: 'Πορτ-ο-Πρενς', badge: 'Πρωτεύουσα' },
-          { id: 'cap-haitien', name: 'Καπ-Αϊτιέν' }
+          { id: 'port-au-prince', name: 'Πορτ-ο-Πρενς', badge: 'Η Πόλη του Κόλπου' },
+          { id: 'cap-haitien', name: 'Καπ-Αϊτιέν', badge: 'Η Πόλη των Φρουρίων' },
+          { id: 'gonaives', name: 'Γκοναΐβ', badge: 'Η Πόλη της Ανεξαρτησίας' },
+          { id: 'les-cayes', name: 'Λε Καγιέ', badge: 'Η Πόλη της Φιλοξενίας' },
+          { id: 'jacmel', name: 'Ζακμέλ', badge: 'Η Πολιτιστική Πρωτεύουσα' },
+          { id: 'saint-marc', name: 'Σαιν-Μαρκ', badge: 'Η Πύλη της Κοιλάδας' },
+          { id: 'petion-ville', name: 'Πεσιόν-Βιλ', badge: 'Το Μπαλκόνι της Πρωτεύουσας' },
+          { id: 'port-de-paix', name: 'Πορ-ντε-Παι', badge: 'Το Λιμάνι της Ειρήνης' },
+          { id: 'jeremie', name: 'Ζερεμί', badge: 'Η Πόλη των Ποιητών' },
+          { id: 'carrefour-ht', name: 'Καρφούρ', badge: 'Ο Σταυροδρόμι του Νότου' }
         ]
       },
       {
@@ -938,8 +964,16 @@ export const CONTINENTS_DATA = [
         name: 'Τρινιντάντ και Τομπάγκο',
         flag: '🇹🇹',
         cities: [
-          { id: 'port-of-spain', name: 'Πορτ οφ Σπέιν', badge: 'Πρωτεύουσα' },
-          { id: 'san-fernando', name: 'Σαν Φερνάντο' }
+          { id: 'port-of-spain', name: 'Πορτ οφ Σπέιν', badge: 'Η Πρωτεύουσα του Καρναβαλιού' },
+          { id: 'san-fernando', name: 'Σαν Φερνάντο', badge: 'Η Βιομηχανική Πόλη' },
+          { id: 'chaguanas', name: 'Τσαγκουάνας', badge: 'Η Πόλη των Παζαριών' },
+          { id: 'arima', name: 'Αρίμα', badge: 'Η Βασιλική Πόλη των Αμερινδιάνων' },
+          { id: 'point-fortin', name: 'Πόιντ Φορτίν', badge: 'Η Ενεργειακή Πρωτεύουσα' },
+          { id: 'scarborough-tt', name: 'Σκάρμπρο', badge: 'Η Πρωτεύουσα του Τομπάγκο' },
+          { id: 'crown-point', name: 'Κράουν Πόιντ', badge: 'Η Τουριστική Πύλη του Τομπάγκο' },
+          { id: 'couva', name: 'Κούβα', badge: 'Η Καρδιά της Ζάχαρης & του Αθλητισμού' },
+          { id: 'diego-martin', name: 'Ντιέγκο Μάρτιν', badge: 'Η Πράσινη Κοιλάδα' },
+          { id: 'marabella', name: 'Μαραμπέλα', badge: 'Η Πόλη που δεν Κοιμάται Ποτέ' }
         ]
       },
       {
@@ -1070,10 +1104,16 @@ export const CONTINENTS_DATA = [
         name: 'Βραζιλία',
         flag: '🇧🇷',
         cities: [
-          { id: 'brasilia', name: 'Μπραζίλια', badge: 'Πρωτεύουσα' },
+          { id: 'brasilia', name: 'Μπραζίλια' },
           { id: 'rio-de-janeiro', name: 'Ρίο ντε Τζανέιρο' },
           { id: 'sao-paulo', name: 'Σάο Πάολο' },
-          { id: 'salvador', name: 'Σαλβαδόρ' }
+          { id: 'salvador', name: 'Σαλβαδόρ' },
+          { id: 'belo-horizonte', name: 'Μπέλο Οριζόντε' },
+          { id: 'curitiba', name: 'Κουριτίμπα' },
+          { id: 'fortaleza', name: 'Φορταλέζα' },
+          { id: 'recife', name: 'Ρεσίφε' },
+          { id: 'porto-alegre', name: 'Πόρτο Αλέγκρε' },
+          { id: 'manaus', name: 'Μανάους' }
         ]
       },
       {
@@ -1081,9 +1121,16 @@ export const CONTINENTS_DATA = [
         name: 'Αργεντινή',
         flag: '🇦🇷',
         cities: [
-          { id: 'buenos-aires', name: 'Μπουένος Άιρες', badge: 'Πρωτεύουσα' },
+          { id: 'buenos-aires', name: 'Μπουένος Άιρες' },
           { id: 'cordoba', name: 'Κόρδοβα' },
-          { id: 'rosario', name: 'Ροσάριο' }
+          { id: 'rosario', name: 'Ροσάριο' },
+          { id: 'mendoza', name: 'Μεντόζα' },
+          { id: 'la-plata', name: 'Λα Πλάτα' },
+          { id: 'san-miguel-de-tucuman', name: 'Σαν Μιγκέλ δε Τουκουμάν' },
+          { id: 'mar-del-plata', name: 'Μαρ ντελ Πλάτα' },
+          { id: 'salta', name: 'Σάλτα' },
+          { id: 'santa-fe-ar', name: 'Σάντα Φε' },
+          { id: 'san-juan-ar', name: 'Σαν Χουάν' }
         ]
       },
       {
@@ -1110,9 +1157,16 @@ export const CONTINENTS_DATA = [
         name: 'Κολομβία',
         flag: '🇨🇴',
         cities: [
-          { id: 'bogota', name: 'Μπογκοτά', badge: 'Πρωτεύουσα' },
+          { id: 'bogota', name: 'Μπογκοτά' },
           { id: 'medellin', name: 'Μεδεγίν' },
-          { id: 'cartagena', name: 'Καρθαγένη' }
+          { id: 'cartagena', name: 'Καρθαγένη' },
+          { id: 'cali', name: 'Κάλι' },
+          { id: 'barranquilla', name: 'Μπαρανκίγια' },
+          { id: 'bucaramanga', name: 'Μπουκαραμάνγκα' },
+          { id: 'pereira', name: 'Περέιρα' },
+          { id: 'santa-marta', name: 'Σάντα Μάρτα' },
+          { id: 'cucuta', name: 'Κούκουτα' },
+          { id: 'manizales', name: 'Μανισάλες' }
         ]
       },
       {

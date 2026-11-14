@@ -4,12 +4,12 @@
  * USA, Leaflet Map, Base Layers, UI Dossier, and Time Machine.
  */
 
-import { loadWorldData, loadCountryData, loadStateData } from './data-service.js?v=20261114_world5';
-import * as MapModule from './map.js?v=20261114_world5';
-import * as UIModule from './ui.js?v=20261114_world5';
-import * as TimeMachine from './time-machine.js?v=20261114_world5';
-import * as NavigatorModule from './navigator.js?v=20261114_world5';
-import { US_STATES, CITY_TO_STATE } from './states-data.js?v=20261114_world5';
+import { loadWorldData, loadCountryData, loadStateData } from './data-service.js?v=20261114_world6';
+import * as MapModule from './map.js?v=20261114_world6';
+import * as UIModule from './ui.js?v=20261114_world6';
+import * as TimeMachine from './time-machine.js?v=20261114_world6';
+import * as NavigatorModule from './navigator.js?v=20261114_world6';
+import { US_STATES, CITY_TO_STATE } from './states-data.js?v=20261114_world6';
 
 // Application State
 let worldData = null;
@@ -334,8 +334,7 @@ export async function flyToCity(cityId) {
 
     // 2. Check if city belongs to a country
     if (!city) {
-    const cityToCountry = {
-      'kozani': 'greece', 'athens': 'greece', 'thessaloniki': 'greece', 'patras': 'greece', 'heraklion': 'greece', 'larissa': 'greece', 'volos': 'greece', 'ioannina': 'greece', 'trikala': 'greece', 'chania': 'greece', 'chalkida': 'greece',
+    const cityToCountry = {      'kozani': 'greece', 'athens': 'greece', 'thessaloniki': 'greece', 'patras': 'greece', 'heraklion': 'greece', 'larissa': 'greece', 'volos': 'greece', 'ioannina': 'greece', 'trikala': 'greece', 'chania': 'greece', 'chalkida': 'greece',
       'paris': 'france', 'marseille': 'france', 'lyon': 'france',
       'rome': 'italy', 'florence': 'italy', 'milan': 'italy', 'venice': 'italy',
       'london': 'uk', 'edinburgh': 'uk', 'manchester': 'uk',
@@ -412,11 +411,8 @@ export async function flyToCity(cityId) {
       'valletta': 'malta', 'mdina': 'malta',
       'ottawa': 'canada', 'toronto': 'canada', 'montreal': 'canada', 'vancouver': 'canada', 'calgary': 'canada', 'edmonton': 'canada', 'quebec-city': 'canada', 'winnipeg': 'canada', 'halifax': 'canada', 'victoria-bc': 'canada',
       'mexico-city': 'mexico', 'guadalajara': 'mexico', 'monterrey': 'mexico', 'cancun': 'mexico', 'puebla': 'mexico', 'tijuana': 'mexico', 'merida': 'mexico', 'oaxaca': 'mexico', 'queretaro': 'mexico', 'san-miguel-de-allende': 'mexico',
-      'brasilia': 'brazil', 'rio-de-janeiro': 'brazil', 'sao-paulo': 'brazil', 'salvador': 'brazil',
-      'buenos-aires': 'argentina', 'cordoba': 'argentina', 'rosario': 'argentina',
       'santiago': 'chile', 'valparaiso': 'chile',
       'lima': 'peru', 'cusco': 'peru', 'arequipa': 'peru',
-      'bogota': 'colombia', 'medellin': 'colombia', 'cartagena': 'colombia',
       'caracas': 'venezuela', 'maracaibo': 'venezuela', 'valencia': 'venezuela',
       'quito': 'ecuador', 'guayaquil': 'ecuador', 'cuenca': 'ecuador',
       'la-paz': 'bolivia', 'sucre': 'bolivia', 'santa-cruz': 'bolivia',
@@ -493,8 +489,6 @@ export async function flyToCity(cityId) {
       'minsk': 'belarus', 'brest': 'belarus',
       'chisinau': 'moldova', 'balti': 'moldova',
       'st-johns': 'antigua-and-barbuda',
-      'nassau': 'bahamas',
-      'bridgetown': 'barbados',
       'belize-city': 'belize', 'san-ignacio': 'belize', 'belmopan': 'belize', 'san-pedro': 'belize', 'caye-caulker': 'belize', 'placencia': 'belize', 'orange-walk': 'belize', 'corozal': 'belize', 'dangriga': 'belize', 'punta-gorda': 'belize',
       'san-jose': 'costa-rica', 'alajuela': 'costa-rica', 'puerto-limon': 'costa-rica', 'heredia': 'costa-rica', 'cartago': 'costa-rica', 'puntarenas': 'costa-rica', 'liberia': 'costa-rica', 'la-fortuna': 'costa-rica', 'monteverde': 'costa-rica', 'quepos': 'costa-rica',
       'havana': 'cuba', 'santiago-de-cuba': 'cuba', 'trinidad': 'cuba', 'camaguey': 'cuba', 'cienfuegos': 'cuba', 'santa-clara': 'cuba', 'varadero': 'cuba', 'holguin': 'cuba', 'vinales': 'cuba', 'baracoa': 'cuba',
@@ -503,11 +497,9 @@ export async function flyToCity(cityId) {
       'san-salvador': 'el-salvador', 'santa-ana': 'el-salvador', 'san-miguel-sv': 'el-salvador', 'sonsonate': 'el-salvador', 'santa-tecla': 'el-salvador', 'ahuachapan': 'el-salvador', 'suchitoto': 'el-salvador', 'la-libertad': 'el-salvador', 'usulutan': 'el-salvador', 'chalatenango': 'el-salvador',
       'st-georges': 'grenada',
       'guatemala-city': 'guatemala', 'antigua-guatemala': 'guatemala', 'quetzaltenango': 'guatemala', 'flores-gt': 'guatemala', 'panajachel': 'guatemala', 'chichicastenango': 'guatemala', 'coban': 'guatemala', 'puerto-barrios': 'guatemala', 'livingston': 'guatemala', 'escuintla': 'guatemala',
-      'port-au-prince': 'haiti', 'cap-haitien': 'haiti',
       'basseterre': 'saint-kitts-and-nevis',
       'castries': 'saint-lucia',
       'kingstown': 'saint-vincent-and-the-grenadines',
-      'port-of-spain': 'trinidad-and-tobago', 'san-fernando': 'trinidad-and-tobago',
       'tegucigalpa': 'honduras', 'san-pedro-sula': 'honduras', 'roatan': 'honduras', 'copan-ruinas': 'honduras', 'la-ceiba': 'honduras', 'comayagua': 'honduras', 'utila': 'honduras', 'choluteca': 'honduras', 'santa-rosa-de-copan': 'honduras', 'trujillo-hn': 'honduras',
       'kingston': 'jamaica', 'montego-bay': 'jamaica', 'ocho-rios': 'jamaica', 'negril': 'jamaica', 'port-antonio': 'jamaica', 'falmouth': 'jamaica', 'spanish-town': 'jamaica', 'mandeville': 'jamaica', 'black-river': 'jamaica', 'port-royal': 'jamaica',
       'managua': 'nicaragua', 'granada-ni': 'nicaragua', 'leon-ni': 'nicaragua', 'san-juan-del-sur': 'nicaragua', 'matagalpa': 'nicaragua', 'esteli': 'nicaragua', 'moyogalpa': 'nicaragua', 'masaya': 'nicaragua', 'san-carlos-ni': 'nicaragua', 'bluefields': 'nicaragua',
@@ -569,8 +561,23 @@ export async function flyToCity(cityId) {
       'lilongwe': 'malawi', 'blantyre': 'malawi',
       'lusaka': 'zambia', 'livingstone': 'zambia',
       'maseru': 'lesotho',
-      'mbabane': 'eswatini'
-    };
+      'mbabane': 'eswatini',
+
+      // argentina
+      'buenos-aires': 'argentina', 'cordoba': 'argentina', 'rosario': 'argentina', 'mendoza': 'argentina', 'la-plata': 'argentina', 'san-miguel-de-tucuman': 'argentina', 'mar-del-plata': 'argentina', 'salta': 'argentina', 'santa-fe-ar': 'argentina', 'san-juan-ar': 'argentina',
+      // brazil
+      'brasilia': 'brazil', 'rio-de-janeiro': 'brazil', 'sao-paulo': 'brazil', 'salvador': 'brazil', 'belo-horizonte': 'brazil', 'curitiba': 'brazil', 'fortaleza': 'brazil', 'recife': 'brazil', 'porto-alegre': 'brazil', 'manaus': 'brazil',
+      // colombia
+      'bogota': 'colombia', 'medellin': 'colombia', 'cartagena': 'colombia', 'cali': 'colombia', 'barranquilla': 'colombia', 'bucaramanga': 'colombia', 'pereira': 'colombia', 'santa-marta': 'colombia', 'cucuta': 'colombia', 'manizales': 'colombia',
+      // haiti
+      'port-au-prince': 'haiti', 'cap-haitien': 'haiti', 'gonaives': 'haiti', 'les-cayes': 'haiti', 'jacmel': 'haiti', 'saint-marc': 'haiti', 'petion-ville': 'haiti', 'port-de-paix': 'haiti', 'jeremie': 'haiti', 'carrefour-ht': 'haiti',
+      // bahamas
+      'nassau': 'bahamas', 'freeport-bs': 'bahamas', 'lucaya': 'bahamas', 'west-end-bs': 'bahamas', 'marsh-harbour': 'bahamas', 'george-town-bs': 'bahamas', 'dunmore-town': 'bahamas', 'alice-town': 'bahamas', 'matthew-town': 'bahamas', 'rock-sound': 'bahamas',
+      // trinidad-and-tobago
+      'port-of-spain': 'trinidad-and-tobago', 'san-fernando': 'trinidad-and-tobago', 'chaguanas': 'trinidad-and-tobago', 'arima': 'trinidad-and-tobago', 'point-fortin': 'trinidad-and-tobago', 'scarborough-tt': 'trinidad-and-tobago', 'crown-point': 'trinidad-and-tobago', 'couva': 'trinidad-and-tobago', 'diego-martin': 'trinidad-and-tobago', 'marabella': 'trinidad-and-tobago',
+      // barbados
+      'bridgetown': 'barbados', 'speightstown': 'barbados', 'holetown': 'barbados', 'oistins': 'barbados', 'bathsheba': 'barbados', 'st-lawrence-gap': 'barbados', 'warrens': 'barbados', 'the-crane': 'barbados', 'six-cross-roads': 'barbados', 'chalky-mount': 'barbados'
+  };
     const targetCountry = cityToCountry[cityId];
     if (targetCountry && !countriesMap.has(targetCountry)) {
       try {

@@ -1,4 +1,4 @@
-import { CITY_TO_STATE } from './states-data.js?v=20261114_world5';
+import { CITY_TO_STATE } from './states-data.js?v=20261114_world6';
 /**
  * Video Service Module
  * Registry of verified high-definition YouTube video tours for all cities
@@ -13369,6 +13369,925 @@ export const CITY_VIDEOS = {
       "youtubeId": "l1hKfD7gsWc",
       "title": "Cinematic drone footage | Canton San Jose | Chalatenango El Salvador",
       "label": "Περιήγηση στο Τσαλατενάνγκο (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+
+  "mendoza": {
+    "cityName": "Μεντόζα",
+    "drone": {
+      "youtubeId": "BDZtDJpIsiw",
+      "title": "Mendoza, Argentina - 4K Drone Travel Video",
+      "label": "Μεντόζα με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "nLsdVK2-h1Q",
+      "title": "Mendoza, Argentina in 4K",
+      "label": "Περιήγηση στο Μεντόζα (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "la-plata": {
+    "cityName": "Λα Πλάτα",
+    "drone": {
+      "youtubeId": "9CH8NjbeCo4",
+      "title": "The best aerial views of Mar del Plata (Argentina) in 4K!",
+      "label": "Λα Πλάτα με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "UKp7UlGgsPI",
+      "title": "【4K】La Mejor vista de LA PLATA 2025 - Buenos Aires | Walking Tour Argentina",
+      "label": "Περιήγηση στο Λα Πλάτα (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "san-miguel-de-tucuman": {
+    "cityName": "Σαν Μιγκέλ δε Τουκουμάν",
+    "drone": {
+      "youtubeId": "Hfkn-XsyHqg",
+      "title": "Ciudad Sagrada de los Quilmes- Tucumán - Dron - Turismo Argentina #drone #travel #tucuman #mountains",
+      "label": "Σαν Μιγκέλ δε Τουκουμάν με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "SCdkYMKcC2E",
+      "title": "San Miguel de Tucumán - Casa de Gobierno - Iglesias - Dron - Convento San Francisco",
+      "label": "Περιήγηση στο Σαν Μιγκέλ δε Τουκουμάν (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "mar-del-plata": {
+    "cityName": "Μαρ ντελ Πλάτα",
+    "drone": {
+      "youtubeId": "9CH8NjbeCo4",
+      "title": "The best aerial views of Mar del Plata (Argentina) in 4K!",
+      "label": "Μαρ ντελ Πλάτα με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "ZPgEznC333Q",
+      "title": "🇦🇷 Mar Del Plata Beach A Peaceful Day",
+      "label": "Περιήγηση στο Μαρ ντελ Πλάτα (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "salta": {
+    "cityName": "Σάλτα",
+    "drone": {
+      "youtubeId": "9xBDGZCeohI",
+      "title": "Explore 10 Wonders📍SALTA, Argentina 🇦🇷 | Epic Drone Travel Guide",
+      "label": "Σάλτα με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "-ybsuOjrZug",
+      "title": "Quebrada de las Conchas - Cafayate 🇦🇷 #cafayate #salta #drone #argentina #4k",
+      "label": "Περιήγηση στο Σάλτα (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "santa-fe-ar": {
+    "cityName": "Σάντα Φε",
+    "drone": {
+      "youtubeId": "_gJyOnBlWyc",
+      "title": "【4K】🇦🇷 Santa Fe from Above 🔥 ARGENTINA 2022 🔥 Cinematic Wolf Aerial™ Drone Film",
+      "label": "Σάντα Φε με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "Exr_Mfx2o1s",
+      "title": "Santa Fe Capital - Argentina by Drone Santa Fe",
+      "label": "Περιήγηση στο Σάντα Φε (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "san-juan-ar": {
+    "cityName": "Σαν Χουάν",
+    "drone": {
+      "youtubeId": "n4gXJbucpOA",
+      "title": "SAN JUAN 4K 🇦🇷 | Caminata bajo el Sol Cuyano.",
+      "label": "Σαν Χουάν με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "60ZvcwiiLEQ",
+      "title": "San Juan Argentina 🇦🇷 The city is so busy!",
+      "label": "Περιήγηση στο Σαν Χουάν (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "belo-horizonte": {
+    "cityName": "Μπέλο Οριζόντε",
+    "drone": {
+      "youtubeId": "T9q10nGN0-c",
+      "title": "Belo Horizonte, Brazil 🇧🇷 in 4K 60FPS ULTRA HD Video by Drone",
+      "label": "Μπέλο Οριζόντε με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "WaB4AWvFsg0",
+      "title": "Belo Horizonte, Minas Gerais, Brasil 4K HDR Drone",
+      "label": "Περιήγηση στο Μπέλο Οριζόντε (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "curitiba": {
+    "cityName": "Κουριτίμπα",
+    "drone": {
+      "youtubeId": "zIKR53jravc",
+      "title": "\"Discovering the Beauty of Curitiba: A Stunning Drone Compilation",
+      "label": "Κουριτίμπα με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "bEdESzY4FBI",
+      "title": "Curitiba is the most developed city in Brazil #brasil #curitiba #travel #braziltourism #capybara",
+      "label": "Περιήγηση στο Κουριτίμπα (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "fortaleza": {
+    "cityName": "Φορταλέζα",
+    "drone": {
+      "youtubeId": "-jLXO0fd2Tk",
+      "title": "Fortaleza, Brazil 🇧🇷 in 4K ULTRA HD 60FPS Video by Drone",
+      "label": "Φορταλέζα με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "iPgH6MKcNjQ",
+      "title": "Fortaleza, Brazil 🇧🇷 | 4K Drone Footage",
+      "label": "Περιήγηση στο Φορταλέζα (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "recife": {
+    "cityName": "Ρεσίφε",
+    "drone": {
+      "youtubeId": "HJBuHhKBNlg",
+      "title": "Recife, Brazil 🇧🇷 in 4K 60FPS ULTRA HD Video by Drone",
+      "label": "Ρεσίφε με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "ZSsrMqqLGNw",
+      "title": "Recife, Brazil 🇧🇷 | 4K Drone Footage",
+      "label": "Περιήγηση στο Ρεσίφε (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "porto-alegre": {
+    "cityName": "Πόρτο Αλέγκρε",
+    "drone": {
+      "youtubeId": "yW4CG_ZXsuU",
+      "title": "Porto Alegre, Brazil 🇧🇷 | 4K Drone Footage",
+      "label": "Πόρτο Αλέγκρε με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "Z1GdgwmSNoo",
+      "title": "Porto Alegre, Brazil 🇧🇷 in 4K Video by Drone ULTRA HD - Flying over Porto Alegre, Brazil",
+      "label": "Περιήγηση στο Πόρτο Αλέγκρε (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "manaus": {
+    "cityName": "Μανάους",
+    "drone": {
+      "youtubeId": "pqqszTITsew",
+      "title": "Manaus, Brazil 🇧🇷 | 4K Drone Footage",
+      "label": "Μανάους με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "yY1V4tP7xmg",
+      "title": "Manaus, Brazil 🇧🇷 - by Drone 4K Video Ultra HD [HDR]",
+      "label": "Περιήγηση στο Μανάους (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "cali": {
+    "cityName": "Κάλι",
+    "drone": {
+      "youtubeId": "BamIljS3reI",
+      "title": "Cali Colombia 🇨🇴 4k ULTRA HD | Drone Footage",
+      "label": "Κάλι με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "x4yddeGPypc",
+      "title": "Cali, Colombia 4k Drone",
+      "label": "Περιήγηση στο Κάλι (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "barranquilla": {
+    "cityName": "Μπαρανκίγια",
+    "drone": {
+      "youtubeId": "y6UBTnmA7vY",
+      "title": "Barranquilla, Colombia 🇨🇴 in 4K Video by Drone",
+      "label": "Μπαρανκίγια με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "LHzPi9wU8Lk",
+      "title": "Barranquilla,Colombia IN 4K UHD | Drone footages",
+      "label": "Περιήγηση στο Μπαρανκίγια (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "bucaramanga": {
+    "cityName": "Μπουκαραμάνγκα",
+    "drone": {
+      "youtubeId": "1wZvAt3FTzg",
+      "title": "Bucaramanga desde el aire 🇨🇴 | Drone 4K",
+      "label": "Μπουκαραμάνγκα με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "bkVuVQG1hjU",
+      "title": "Bucaramanga, Santander – Colombia 🇨🇴 | Recorrido en dron y a pie en 4K – Principales atracciones",
+      "label": "Περιήγηση στο Μπουκαραμάνγκα (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "pereira": {
+    "cityName": "Περέιρα",
+    "drone": {
+      "youtubeId": "8XyFDAqpMOw",
+      "title": "Pereira, Colombia (4K)",
+      "label": "Περέιρα με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "zzmwIMJoarw",
+      "title": "Travel paradise, Pereira, Colombia #travel #traveldestinations #canon #travelideas #colombia",
+      "label": "Περιήγηση στο Περέιρα (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "santa-marta": {
+    "cityName": "Σάντα Μάρτα",
+    "drone": {
+      "youtubeId": "ah2sEnBofio",
+      "title": "Playa El Rodadero - Santa Marta, Colombia - 4K Drone Video [ RESERVA DEL MAR ]",
+      "label": "Σάντα Μάρτα με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "SkshPBf1agE",
+      "title": "Santa Marta, Colombia - 4K Stock Footage | Travel Video",
+      "label": "Περιήγηση στο Σάντα Μάρτα (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "cucuta": {
+    "cityName": "Κούκουτα",
+    "drone": {
+      "youtubeId": "vDRcs_d8lhM",
+      "title": "Beautiful morning 🌄 in Cucuta Colombia 🇨🇴 #travel #flightlife #colombia #Cucuta",
+      "label": "Κούκουτα με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "JAikUybhIS8",
+      "title": "Puerto Rico, Cúcuta Goes Wild! The Most Fun River Festival in Colombia 🇨🇴",
+      "label": "Περιήγηση στο Κούκουτα (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "manizales": {
+    "cityName": "Μανισάλες",
+    "drone": {
+      "youtubeId": "0oEiGbtHmf8",
+      "title": "MANIZALES, EL LUGAR MÁS MÁGICO Y BONITO DE COLOMBIA - MAVIC AIR 2S",
+      "label": "Μανισάλες με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "i1Mq21AEOts",
+      "title": "MANIZALES, EL LUGAR MÁS MÁGICO Y BONITO DE COLOMBIA - MAVIC AIR 2S",
+      "label": "Περιήγηση στο Μανισάλες (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "gonaives": {
+    "cityName": "Γκοναΐβ",
+    "drone": {
+      "youtubeId": "VPsibOMaNYQ",
+      "title": "Gonaives Haiti is becoming a brand new city",
+      "label": "Γκοναΐβ με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "YkR62O-pXk0",
+      "title": "Villes Gonaives Haiti 🇭🇹",
+      "label": "Περιήγηση στο Γκοναΐβ (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "les-cayes": {
+    "cityName": "Λε Καγιέ",
+    "drone": {
+      "youtubeId": "AI2oFyR3NAM",
+      "title": "La Tourtrelle beach in Les Cayes is such a vibe at night. Can’t wait to go back. #haiti",
+      "label": "Λε Καγιέ με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "Uz343cy2Sh8",
+      "title": "Come Shopping With Me in Les Cayes! #travel #haiti",
+      "label": "Περιήγηση στο Λε Καγιέ (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "jacmel": {
+    "cityName": "Ζακμέλ",
+    "drone": {
+      "youtubeId": "XywuxMPxVIY",
+      "title": "See the beauty of #haiti from the drone! 😍 #haitiantiktok509 #haitiennetiktok🇭🇹🇭🇹🇭🇹🇭🇹😍😍😍😍 #haitiktok",
+      "label": "Ζακμέλ με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "PuK9LZZbxLE",
+      "title": "Haiti 🇭🇹 Jacmel",
+      "label": "Περιήγηση στο Ζακμέλ (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "saint-marc": {
+    "cityName": "Σαιν-Μαρκ",
+    "drone": {
+      "youtubeId": "nF7wY-JEYWc",
+      "title": "Saint Marc Hayti ⬛️🟥 #hayti #tourismindustry #everyone #travelandtourism #drone",
+      "label": "Σαιν-Μαρκ με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "XywuxMPxVIY",
+      "title": "See the beauty of #haiti from the drone! 😍 #haitiantiktok509 #haitiennetiktok🇭🇹🇭🇹🇭🇹🇭🇹😍😍😍😍 #haitiktok",
+      "label": "Περιήγηση στο Σαιν-Μαρκ (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "petion-ville": {
+    "cityName": "Πεσιόν-Βιλ",
+    "drone": {
+      "youtubeId": "pLg10fc6mJ0",
+      "title": "Petion-Ville 4k drone #culturaladventure #travel #sportsstar #drone  #dji #explorenature #nature",
+      "label": "Πεσιόν-Βιλ με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "7509HXT2je8",
+      "title": "Real streets of Haiti in 4K-Petionville",
+      "label": "Περιήγηση στο Πεσιόν-Βιλ (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "port-de-paix": {
+    "cityName": "Πορ-ντε-Παι",
+    "drone": {
+      "youtubeId": "RwmOdL5yrUU",
+      "title": "A very peaceful city in Haiti | Port-de-paix #drone #haiti #travel",
+      "label": "Πορ-ντε-Παι με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "uRpdiWvmg7w",
+      "title": "Port-de-paix, Haiti as You've never seen it",
+      "label": "Περιήγηση στο Πορ-ντε-Παι (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "jeremie": {
+    "cityName": "Ζερεμί",
+    "drone": {
+      "youtubeId": "kBbpe0ERYUc",
+      "title": "Haiti/4K Drone Footage",
+      "label": "Ζερεμί με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "vlJRdq49K48",
+      "title": "Haiti you need to see | I finally made it Jérémie",
+      "label": "Περιήγηση στο Ζερεμί (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "carrefour-ht": {
+    "cityName": "Καρφούρ",
+    "drone": {
+      "youtubeId": "4v5QKxUUEDk",
+      "title": "Drone footage (Port au Prince)",
+      "label": "Καρφούρ με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "G1RWYa9jsVQ",
+      "title": "Cruising through Carrefour, Haiti on the way to the Orphanage “Timoun yo se Espwa Ayiti” Nov 14-2018",
+      "label": "Περιήγηση στο Καρφούρ (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "freeport-bs": {
+    "cityName": "Φρίπορτ",
+    "drone": {
+      "youtubeId": "iafzzPkCibY",
+      "title": "2023 Best Freeport, Bahamas 4K Drone Stock Footage AerialClicks Photography",
+      "label": "Φρίπορτ με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "5gK7jSPzEaQ",
+      "title": "🇧🇸 Freeport Bahamas From 400 Feet",
+      "label": "Περιήγηση στο Φρίπορτ (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "lucaya": {
+    "cityName": "Λουκάγια",
+    "drone": {
+      "youtubeId": "0VAfzZvTxpo",
+      "title": "Port Lucaya Bahamas Island",
+      "label": "Λουκάγια με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "yQnGXlVaRws",
+      "title": "Exploring Freeport: Open-Top Tour & Port Lucaya Adventure!  | Part 1",
+      "label": "Περιήγηση στο Λουκάγια (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "west-end-bs": {
+    "cityName": "Γουέστ Εντ",
+    "drone": {
+      "youtubeId": "-YM1Dfszu6k",
+      "title": "Grand Bahama, Bahamas   Casuarina Bridge | 4k Drone Flyover Short",
+      "label": "Γουέστ Εντ με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "NAXdf3xrs8I",
+      "title": "West End, Grand Bahama Tour - HG Christie Real Estate",
+      "label": "Περιήγηση στο Γουέστ Εντ (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "marsh-harbour": {
+    "cityName": "Μαρς Χάρμπορ",
+    "drone": {
+      "youtubeId": "dcLRbLL2GcU",
+      "title": "Marsh Harbour, Bahamas Adventure: Marina, Snorkeling, Conch Inn & Swimming with Turtles!",
+      "label": "Μαρς Χάρμπορ με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "Z0vcP_dne5c",
+      "title": "📍Marsh Harbor, The Abaco Islands",
+      "label": "Περιήγηση στο Μαρς Χάρμπορ (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "george-town-bs": {
+    "cityName": "Τζορτζ Τάουν",
+    "drone": {
+      "youtubeId": "ncmV7jAiU_M",
+      "title": "4K Drone Footage | George Town, Exuma Bahamas",
+      "label": "Τζορτζ Τάουν με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "ZgfnL1Lz9Fs",
+      "title": "Georgetown #exuma #travel #bahamas #nature #music #beach #ofw",
+      "label": "Περιήγηση στο Τζορτζ Τάουν (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "dunmore-town": {
+    "cityName": "Ντάνμορ Τάουν",
+    "drone": {
+      "youtubeId": "YCfcg9gzCYc",
+      "title": "Beautiful Drone Footage of The Bahamas (4K)",
+      "label": "Ντάνμορ Τάουν με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "U8Rtj5fr_6E",
+      "title": "Harbour Island Bahamas - 4K - Screen Saver - Mavic Air 2",
+      "label": "Περιήγηση στο Ντάνμορ Τάουν (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "alice-town": {
+    "cityName": "Άλις Τάουν",
+    "drone": {
+      "youtubeId": "yJRf5YiNSRs",
+      "title": "Bimini Bahamas Cruise Port From Above | Drone Tour 4K",
+      "label": "Άλις Τάουν με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "WOWhFM7IiwE",
+      "title": "Exuma - Bahamas by Drone 4K Video Ultra HD HDR  #exuma #caribbeanislands",
+      "label": "Περιήγηση στο Άλις Τάουν (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "matthew-town": {
+    "cityName": "Μάθιου Τάουν",
+    "drone": {
+      "youtubeId": "soQezC4p-gk",
+      "title": "Massive Waves And Gale Force Winds Slam Into Michigan City Lighthouse 4K Drone Footage",
+      "label": "Μάθιου Τάουν με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "BcpdUmxDF4Y",
+      "title": "Matthew Town Great Inagua Bahamas!",
+      "label": "Περιήγηση στο Μάθιου Τάουν (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "rock-sound": {
+    "cityName": "Ροκ Σάουντ",
+    "drone": {
+      "youtubeId": "BtPqB0szTXk",
+      "title": "BAHAMAS NATURE in 4K UHD Drone Film + Relaxing Piano Music for Stress Relief, Sleep, Spa, Yoga, Cafe",
+      "label": "Ροκ Σάουντ με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "Qi33xhAFzPQ",
+      "title": "Bahamas 4K Drone Footage | Cruise Ships, Palm Beaches & Pure Escape",
+      "label": "Περιήγηση στο Ροκ Σάουντ (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "chaguanas": {
+    "cityName": "Τσαγκουάνας",
+    "drone": {
+      "youtubeId": "6YbSwRvgqJQ",
+      "title": "Chaguanas - Trinidad and Tobago",
+      "label": "Τσαγκουάνας με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "15hM2VjEuNo",
+      "title": "Top 5 Spots to Visit in Chaguanas (Trinidad And Tobago)",
+      "label": "Περιήγηση στο Τσαγκουάνας (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "arima": {
+    "cityName": "Αρίμα",
+    "drone": {
+      "youtubeId": "0ehi8h_-bcg",
+      "title": "Aerial Drone Footage at the heart of Arima, Trinidad &Tobago [4K] 🇹🇹",
+      "label": "Αρίμα με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "mLPuqdMfvG4",
+      "title": "Arima, Trinidad & Tobago",
+      "label": "Περιήγηση στο Αρίμα (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "point-fortin": {
+    "cityName": "Πόιντ Φορτίν",
+    "drone": {
+      "youtubeId": "BpwyPxKuQEA",
+      "title": "Trinidad and Tobago - Part VIII",
+      "label": "Πόιντ Φορτίν με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "LSmyxz8-Kd4",
+      "title": "Top 5 Spots to Visit in Point Fortin (Trinidad And Tobago)",
+      "label": "Περιήγηση στο Πόιντ Φορτίν (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "scarborough-tt": {
+    "cityName": "Σκάρμπρο",
+    "drone": {
+      "youtubeId": "kk9WgY4jdME",
+      "title": "Caribbean Sea Tobago #tobago #4k #drone #tobagolove #caribbeanislands",
+      "label": "Σκάρμπρο με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "irIPNrGUjDo",
+      "title": "Fort King George - Scarborough, Tobago",
+      "label": "Περιήγηση στο Σκάρμπρο (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "crown-point": {
+    "cityName": "Κράουν Πόιντ",
+    "drone": {
+      "youtubeId": "GSSEM0KzSa4",
+      "title": "Did you know this about the Crown Point Beach Hotel in Tobago? 🎥 Maverick Flight Studio",
+      "label": "Κράουν Πόιντ με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "3HnfIHVNFJo",
+      "title": "Crown Point Beach Resort Tobago.",
+      "label": "Περιήγηση στο Κράουν Πόιντ (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "couva": {
+    "cityName": "Κούβα",
+    "drone": {
+      "youtubeId": "oVJs59lG3s8",
+      "title": "Along the north coast of Trinidad near Fort Abercromby at sunset! #sunset #sunsets #drone #djiair2s",
+      "label": "Κούβα με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "GQch45EWBqc",
+      "title": "DJI Mavic Pro Test Flight Trinidad",
+      "label": "Περιήγηση στο Κούβα (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "diego-martin": {
+    "cityName": "Ντιέγκο Μάρτιν",
+    "drone": {
+      "youtubeId": "2JK1hZe6Rmg",
+      "title": "House for Sale - Dillon Street Diego Martin TT$1 Mil",
+      "label": "Ντιέγκο Μάρτιν με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "nkAi5nhVBco",
+      "title": "Trinidad Diego Martin Morne Coco /Pitty Valley",
+      "label": "Περιήγηση στο Ντιέγκο Μάρτιν (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "marabella": {
+    "cityName": "Μαραμπέλα",
+    "drone": {
+      "youtubeId": "-jP-NGYn3kc",
+      "title": "Stunning Drone Views in Trinidad & Tobago",
+      "label": "Μαραμπέλα με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "3srgSXQcIM4",
+      "title": "Mona’s Roti in Marabella Trinidad 🇹🇹 is one of the best Roti in South . #fyp",
+      "label": "Περιήγηση στο Μαραμπέλα (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "speightstown": {
+    "cityName": "Σπέιτσταουν",
+    "drone": {
+      "youtubeId": "ejnpYr4VEUw",
+      "title": "Beach Relaxation in Barbados 🇧🇧 #travel #drone #naturedrone #dronenature4k #beach #barbadosin4k",
+      "label": "Σπέιτσταουν με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "wYT8IfRZUTU",
+      "title": "FREE 4K Drone Footage: Barbados Crystal Waters 🌊🇧🇧 | DJI Neo 2",
+      "label": "Περιήγηση στο Σπέιτσταουν (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "holetown": {
+    "cityName": "Χόουλταουν",
+    "drone": {
+      "youtubeId": "ejnpYr4VEUw",
+      "title": "Beach Relaxation in Barbados 🇧🇧 #travel #drone #naturedrone #dronenature4k #beach #barbadosin4k",
+      "label": "Χόουλταουν με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "wYT8IfRZUTU",
+      "title": "FREE 4K Drone Footage: Barbados Crystal Waters 🌊🇧🇧 | DJI Neo 2",
+      "label": "Περιήγηση στο Χόουλταουν (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "oistins": {
+    "cityName": "Όιστινς",
+    "drone": {
+      "youtubeId": "GVq9L6KsVHE",
+      "title": "Barbados 4K Drone Island Tour",
+      "label": "Όιστινς με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "svXVe4-ZmYk",
+      "title": "Barbados 4k island country - Travel Film - Barbados travel 4k  eastern Caribbean island",
+      "label": "Περιήγηση στο Όιστινς (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "bathsheba": {
+    "cityName": "Μπαθσίμπα",
+    "drone": {
+      "youtubeId": "6WrEzJtuhn8",
+      "title": "Bathsheba Beach Barbados Saint Joseph #bathsheba #barbados #beach",
+      "label": "Μπαθσίμπα με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "69F480HcZ2I",
+      "title": "Bathsheba Barbados is NOT what you expect 😂",
+      "label": "Περιήγηση στο Μπαθσίμπα (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "st-lawrence-gap": {
+    "cityName": "Σεντ Λόρενς Γκαπ",
+    "drone": {
+      "youtubeId": "HCMHWUSa4lY",
+      "title": "St Lawrence Gap on the South Coast of Barbados",
+      "label": "Σεντ Λόρενς Γκαπ με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "Nrry7G4G5NU",
+      "title": "Welcome to St. Lawrence Gap 🇧🇧 Barbados’ Ultimate Party Street ⭐",
+      "label": "Περιήγηση στο Σεντ Λόρενς Γκαπ (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "warrens": {
+    "cityName": "Γουόρενς",
+    "drone": {
+      "youtubeId": "o7nN88BNMpU",
+      "title": "On the Beach In a beautiful island, Barbados 🇧🇧 🤩🤩 #nature #travel #dronenature4k",
+      "label": "Γουόρενς με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "HeaEP_ms3Mo",
+      "title": "Scenes From Barbados | Calm Caribbean Aerials",
+      "label": "Περιήγηση στο Γουόρενς (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "the-crane": {
+    "cityName": "Δε Κρέιν",
+    "drone": {
+      "youtubeId": "tlA9LDdmEuU",
+      "title": "Full Tour of one bedroom suite at the The Crane Resort in Barbados",
+      "label": "Δε Κρέιν με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "Z192e_Ve8VQ",
+      "title": "The Crane Hotel Barbados walk through and review",
+      "label": "Περιήγηση στο Δε Κρέιν (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "six-cross-roads": {
+    "cityName": "Σιξ Κρος Ρόουντς",
+    "drone": {
+      "youtubeId": "pvA3Wmq9A5s",
+      "title": "The Incredible Island of Barbados (4K Drone Footage)",
+      "label": "Σιξ Κρος Ρόουντς με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "yg3hoBsAd4w",
+      "title": "A Walk Around Six Roads In St. Philip Barbados 🇧🇧 ",
+      "label": "Περιήγηση στο Σιξ Κρος Ρόουντς (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "chalky-mount": {
+    "cityName": "Τσάλκι Μάουντ",
+    "drone": {
+      "youtubeId": "oI4wIVYL-TA",
+      "title": "DON'T Visit Barbados Without Knowing THIS! 🇧🇧😂",
+      "label": "Τσάλκι Μάουντ με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "TbvGH9yUus0",
+      "title": "BARBADOS# BRIDGETOWN🏙🏙 city river 🏞🏞🐢🐢🐢#adventure #like 🦈🐬🌊👍👍",
+      "label": "Περιήγηση στο Τσάλκι Μάουντ (4K)",
       "icon": "fa-solid fa-person-walking",
       "type": "walking"
     }
