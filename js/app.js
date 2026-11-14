@@ -4,12 +4,12 @@
  * USA, Leaflet Map, Base Layers, UI Dossier, and Time Machine.
  */
 
-import { loadWorldData, loadCountryData, loadStateData } from './data-service.js?v=20261114_us1';
-import * as MapModule from './map.js?v=20261114_us1';
-import * as UIModule from './ui.js?v=20261114_us1';
-import * as TimeMachine from './time-machine.js?v=20261114_us1';
-import * as NavigatorModule from './navigator.js?v=20261114_us1';
-import { US_STATES, CITY_TO_STATE } from './states-data.js?v=20261114_us1';
+import { loadWorldData, loadCountryData, loadStateData } from './data-service.js?v=20261114_us2';
+import * as MapModule from './map.js?v=20261114_us2';
+import * as UIModule from './ui.js?v=20261114_us2';
+import * as TimeMachine from './time-machine.js?v=20261114_us2';
+import * as NavigatorModule from './navigator.js?v=20261114_us2';
+import { US_STATES, CITY_TO_STATE } from './states-data.js?v=20261114_us2';
 
 // Application State
 let worldData = null;
@@ -410,7 +410,7 @@ export async function flyToCity(cityId) {
       'reykjavik': 'iceland', 'akureyri': 'iceland',
       'luxembourg-city': 'luxembourg',
       'valletta': 'malta', 'mdina': 'malta',
-      'ottawa': 'canada', 'toronto': 'canada', 'montreal': 'canada', 'vancouver': 'canada',
+      'ottawa': 'canada', 'toronto': 'canada', 'montreal': 'canada', 'vancouver': 'canada', 'calgary': 'canada', 'edmonton': 'canada', 'quebec-city': 'canada', 'winnipeg': 'canada', 'halifax': 'canada', 'victoria-bc': 'canada',
       'mexico-city': 'mexico', 'guadalajara': 'mexico', 'monterrey': 'mexico', 'cancun': 'mexico',
       'brasilia': 'brazil', 'rio-de-janeiro': 'brazil', 'sao-paulo': 'brazil', 'salvador': 'brazil',
       'buenos-aires': 'argentina', 'cordoba': 'argentina', 'rosario': 'argentina',

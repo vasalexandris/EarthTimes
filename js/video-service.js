@@ -1,4 +1,4 @@
-import { CITY_TO_STATE } from './states-data.js?v=20261114_us1';
+import { CITY_TO_STATE } from './states-data.js?v=20261114_us2';
 /**
  * Video Service Module
  * Registry of verified high-definition YouTube video tours for all cities
@@ -10229,6 +10229,282 @@ export const CITY_VIDEOS = {
       "drone": {
           "youtubeId": "7D6wttCZkro",
           "title": "Σέλμα 4K — Alabama Road Trippin' : Selma - The Queen City of the Blackbelt in 4K"
+      }
+  },
+  "calgary": {
+      "drone": {
+          "youtubeId": "e3UyFOJ5d3M",
+          "title": "Κάλγκαρι 4K — Calgary, Alberta, Canada in 4K ULTRA HD 60FPS by Drone"
+      },
+      "live": {
+          "youtubeId": "MwcqP3ta6RI",
+          "label": "Κάλγκαρι Live Cam",
+          "title": "Calgary, Alberta Live Camera"
+      }
+  },
+  "edmonton": {
+      "drone": {
+          "youtubeId": "A2USZxv7iQw",
+          "title": "Έντμοντον 4K — Edmonton drone footage winter 2026 🇨🇦 4K 60fps"
+      }
+  },
+  "quebec-city": {
+      "drone": {
+          "youtubeId": "b0skYkjbZto",
+          "title": "Κεμπέκ 4K — Quebec city, Québec, Canada 🇨🇦 in 4K ULTRA HD 60FPS Video by Drone"
+      }
+  },
+  "winnipeg": {
+      "drone": {
+          "youtubeId": "Z6tDLK9o6b8",
+          "title": "Γουίνιπεγκ 4K — Winnipeg City // 4K // Manitoba // Canada"
+      }
+  },
+  "halifax": {
+      "drone": {
+          "youtubeId": "7nDNwzhVYkQ",
+          "title": "Χάλιφαξ 4K — Soaring High Above Halifax || Aerial Drone Tour"
+      }
+  },
+  "victoria-bc": {
+      "drone": {
+          "youtubeId": "BxmZyZcKueY",
+          "title": "Βικτώρια 4K — Victoria BC | Best 4k Drone Footage | SkyScope"
+      },
+      "live": {
+          "youtubeId": "D9Exf_o17oQ",
+          "label": "Βικτώρια Live Cam",
+          "title": "Victoria Harbour Live Cam 24/7"
+      }
+  },
+  "topeka": {
+      "drone": {
+          "youtubeId": "aMEbjPMWxek",
+          "title": "Τοπίκα 4K — Topeka Tour by Drone [4K]"
+      }
+  },
+  "wichita": {
+      "drone": {
+          "youtubeId": "VdxwAODHOUI",
+          "title": "Ουιτσίτα 4K — WICHITA 🇺🇸 Drone Aerial 4K | Kansas KS United States of America USA"
+      },
+      "live": {
+          "youtubeId": "iN7u2jKbDm0",
+          "label": "Ουιτσίτα Live Cam",
+          "title": "Wichita, Kansas, USA | LIVE Train Cam"
+      }
+  },
+  "overland-park": {
+      "drone": {
+          "youtubeId": "S_QMKU2zzSo",
+          "title": "Όβερλαντ Παρκ 4K — Overland Park, Kansas 4K | Drone & Street Tour of America’s Happiest Suburb"
+      }
+  },
+  "kansas-city-ks": {
+      "drone": {
+          "youtubeId": "R9207Qa1sos",
+          "title": "Κάνσας Σίτι 4K — Kansas City - USA 🇺🇸 - by drone [4K]"
+      },
+      "live": {
+          "youtubeId": "9fzUjSTK5F8",
+          "label": "Κάνσας Σίτι Live Cam",
+          "title": "EarthCam Live: Kansas City Cam"
+      }
+  },
+  "olathe": {
+      "drone": {
+          "youtubeId": "fs4lECs1Nxc",
+          "title": "Ολέιθ 4K — 4K Aerial Footage of Olathe Kansas / Kansas City Suburb Area"
+      }
+  },
+  "lawrence-ks": {
+      "drone": {
+          "youtubeId": "ul0WhweRARU",
+          "title": "Λόρενς 4K — Lawrence Kansas Mass Street 4K Drone Tour"
+      }
+  },
+  "manhattan-ks": {
+      "drone": {
+          "youtubeId": "foYOAgdhCzU",
+          "title": "Μανχάταν 4K — Drone Manhattan, Kansas"
+      }
+  },
+  "salina": {
+      "drone": {
+          "youtubeId": "vsUA8-kelIk",
+          "title": "Σαλίνα 4K — Drone Salina, Kansas"
+      }
+  },
+  "dodge-city": {
+      "drone": {
+          "youtubeId": "XLks7gSRE5Q",
+          "title": "Ντοτζ Σίτι 4K — Dodge City - Kansas - 4K Downtown Drive"
+      }
+  },
+  "hutchinson": {
+      "drone": {
+          "youtubeId": "l-U5auYnQP8",
+          "title": "Χάτσινσον 4K — Aerial Deep Dive into Hutchinson, KS  - Cinematic Vehicle Tracking"
+      }
+  },
+  "lincoln": {
+      "drone": {
+          "youtubeId": "Qtq8SpOMzts",
+          "title": "Λίνκολν 4K — Lincoln - the capital city of Nebraska |  4K drone video"
+      },
+      "live": {
+          "youtubeId": "DhoVf4-0Zt4",
+          "label": "Λίνκολν Live Cam",
+          "title": "Lincoln, Nebraska, USA | LIVE Train Cam"
+      }
+  },
+  "omaha": {
+      "drone": {
+          "youtubeId": "erJXB9Ga6_w",
+          "title": "Όμαχα 4K — Omaha, Nebraska | 4K Drone Footage"
+      },
+      "live": {
+          "youtubeId": "qsrevo5Vdkw",
+          "label": "Όμαχα Live Cam",
+          "title": "EarthCam Live: Omaha / Council Bluffs"
+      }
+  },
+  "bellevue-ne": {
+      "drone": {
+          "youtubeId": "t8IXTYGNnKc",
+          "title": "Μπέλβιου 4K — Bellevue Ne Drone Footage"
+      }
+  },
+  "grand-island": {
+      "drone": {
+          "youtubeId": "PVYRxOgkK6Y",
+          "title": "Γκραντ Άιλαντ 4K — Grand Island, Nebraska Town Reel in 4K"
+      },
+      "live": {
+          "youtubeId": "4qMslMOlZE4",
+          "label": "Γκραντ Άιλαντ Live Cam",
+          "title": "Grand Island, NE Live Cam"
+      }
+  },
+  "kearney": {
+      "drone": {
+          "youtubeId": "N1PAARtIqN0",
+          "title": "Κάρνεϊ 4K — The Kearney Archway | Aerial View of Nebraska History"
+      },
+      "live": {
+          "youtubeId": "23tmCNeFh7A",
+          "label": "Κάρνεϊ Live Cam",
+          "title": "Kearney, Nebraska, USA | LIVE Train Cam"
+      }
+  },
+  "fremont-ne": {
+      "drone": {
+          "youtubeId": "WWkpTPJloXc",
+          "title": "Φρίμοντ 4K — Fremont, Nebraska Drone View"
+      }
+  },
+  "norfolk-ne": {
+      "drone": {
+          "youtubeId": "OL0KEDAbDPI",
+          "title": "Νόρφολκ 4K — Norfolk, Nebraska hometown 4k video"
+      }
+  },
+  "north-platte": {
+      "drone": {
+          "youtubeId": "jeAUDzf1g7M",
+          "title": "Νορθ Πλατ 4K — North Platte 4K 🇺🇸 | Cinematic Drone Footage Over Nebraska"
+      },
+      "live": {
+          "youtubeId": "laKzBnfVIsQ",
+          "label": "Νορθ Πλατ Live Cam",
+          "title": "North Platte Golden Spike Tower Live Cam"
+      }
+  },
+  "scottsbluff": {
+      "drone": {
+          "youtubeId": "oLjaZbcDp4Q",
+          "title": "Σκοτσμπλάφ 4K — Scotts Bluff National Monument Summit Road | Nebraska 4K Scenic Drive"
+      }
+  },
+  "columbus-ne": {
+      "drone": {
+          "youtubeId": "gK6jGRwWHsE",
+          "title": "Κολόμπους 4K — Aerial view Columbus Nebraska USA"
+      }
+  },
+  "oklahoma-city": {
+      "drone": {
+          "youtubeId": "PAACP8YIpv4",
+          "title": "Οκλαχόμα Σίτι 4K — Drone Oklahoma City"
+      },
+      "live": {
+          "youtubeId": "jdUc9qYuFHw",
+          "label": "Οκλαχόμα Σίτι Live Cam",
+          "title": "Oklahoma City, OK | LIVE PTZ Railcam"
+      }
+  },
+  "tulsa": {
+      "drone": {
+          "youtubeId": "p07ZuJl1Dko",
+          "title": "Τάλσα 4K — Tulsa Oklahoma Drone Tour in 4K | Downtown & Arkansas River Aerial Views"
+      },
+      "live": {
+          "youtubeId": "8Tn07jXzkmc",
+          "label": "Τάλσα Live Cam",
+          "title": "Tulsa Skyline Live Cam"
+      }
+  },
+  "norman": {
+      "drone": {
+          "youtubeId": "stK-ogvxSnE",
+          "title": "Νόρμαν 4K — Norman Oklahoma - Drone Flyover"
+      }
+  },
+  "broken-arrow": {
+      "drone": {
+          "youtubeId": "vWl4udGhxFc",
+          "title": "Μπρόουκεν Άροου 4K — Broken Arrow, OK Reel: 4K Drone Footage 2024"
+      }
+  },
+  "edmond": {
+      "drone": {
+          "youtubeId": "kNJ-MoMV5IE",
+          "title": "Έντμοντ 4K — 4k Drone Capture Of Hilton Gardens Edmond, Oklahoma."
+      }
+  },
+  "lawton": {
+      "drone": {
+          "youtubeId": "K9-l2Xo4MPg",
+          "title": "Λότον 4K — Lake Lawtonka Lawton Oklahoma Mt Scott Drone Camera Aerial Footage 4K Flying Video DJI Mini 2 (p2)"
+      }
+  },
+  "moore": {
+      "drone": {
+          "youtubeId": "LMtwjEAhBR0",
+          "title": "Μουρ 4K — Oklahoma from Above 🇺🇸 | Stunning 4K Aerial Drone Footage of the Sooner State"
+      }
+  },
+  "stillwater": {
+      "drone": {
+          "youtubeId": "mvpkvi9t8j0",
+          "title": "Στιλγουότερ 4K — City of Stillwater"
+      },
+      "live": {
+          "youtubeId": "CUyXnxFW-Kw",
+          "label": "Στιλγουότερ Live Cam",
+          "title": "Stillwater, OK Live Weather Cam"
+      }
+  },
+  "muskogee": {
+      "drone": {
+          "youtubeId": "3-wm52ov2GE",
+          "title": "Μασκόγκι 4K — Muskogee, Oklahoma - Drone video - DJI MAVIC 3 CLASSIC"
+      }
+  },
+  "bartlesville": {
+      "drone": {
+          "youtubeId": "jJpK-mavW1c",
+          "title": "Μπάρτλσβιλ 4K — Aerial View of Downtown Bartlesville, OK"
       }
   }
 };

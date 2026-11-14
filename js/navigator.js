@@ -1,4 +1,4 @@
-import { US_STATES, CITY_TO_STATE } from './states-data.js?v=20261114_us1';
+import { US_STATES, CITY_TO_STATE } from './states-data.js?v=20261114_us2';
 /**
  * Navigator Module
  * Hierarchical Cascading Navigation: Continents -> Countries -> Cities
@@ -780,7 +780,13 @@ export const CONTINENTS_DATA = [
           { id: 'ottawa', name: 'Οττάβα', badge: 'Πρωτεύουσα' },
           { id: 'toronto', name: 'Τορόντο' },
           { id: 'montreal', name: 'Μόντρεαλ' },
-          { id: 'vancouver', name: 'Βανκούβερ' }
+          { id: 'vancouver', name: 'Βανκούβερ' },
+          { id: 'calgary', name: 'Κάλγκαρι' },
+          { id: 'edmonton', name: 'Έντμοντον' },
+          { id: 'quebec-city', name: 'Κεμπέκ' },
+          { id: 'winnipeg', name: 'Γουίνιπεγκ' },
+          { id: 'halifax', name: 'Χάλιφαξ' },
+          { id: 'victoria-bc', name: 'Βικτώρια' }
         ]
       },
       {

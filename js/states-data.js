@@ -692,6 +692,46 @@ export const US_STATES = [
         "id": "wichita",
         "name": "Ουιτσίτα",
         "englishName": "Wichita"
+      },
+      {
+        "id": "overland-park",
+        "name": "Όβερλαντ Παρκ",
+        "englishName": "Overland Park"
+      },
+      {
+        "id": "kansas-city-ks",
+        "name": "Κάνσας Σίτι",
+        "englishName": "Kansas City"
+      },
+      {
+        "id": "olathe",
+        "name": "Ολέιθ",
+        "englishName": "Olathe"
+      },
+      {
+        "id": "lawrence-ks",
+        "name": "Λόρενς",
+        "englishName": "Lawrence"
+      },
+      {
+        "id": "manhattan-ks",
+        "name": "Μανχάταν",
+        "englishName": "Manhattan"
+      },
+      {
+        "id": "salina",
+        "name": "Σαλίνα",
+        "englishName": "Salina"
+      },
+      {
+        "id": "dodge-city",
+        "name": "Ντοτζ Σίτι",
+        "englishName": "Dodge City"
+      },
+      {
+        "id": "hutchinson",
+        "name": "Χάτσινσον",
+        "englishName": "Hutchinson"
       }
     ]
   },
@@ -1513,6 +1553,46 @@ export const US_STATES = [
         "id": "omaha",
         "name": "Όμαχα",
         "englishName": "Omaha"
+      },
+      {
+        "id": "bellevue-ne",
+        "name": "Μπέλβιου",
+        "englishName": "Bellevue"
+      },
+      {
+        "id": "grand-island",
+        "name": "Γκραντ Άιλαντ",
+        "englishName": "Grand Island"
+      },
+      {
+        "id": "kearney",
+        "name": "Κάρνεϊ",
+        "englishName": "Kearney"
+      },
+      {
+        "id": "fremont-ne",
+        "name": "Φρίμοντ",
+        "englishName": "Fremont"
+      },
+      {
+        "id": "norfolk-ne",
+        "name": "Νόρφολκ",
+        "englishName": "Norfolk"
+      },
+      {
+        "id": "north-platte",
+        "name": "Νορθ Πλατ",
+        "englishName": "North Platte"
+      },
+      {
+        "id": "scottsbluff",
+        "name": "Σκοτσμπλάφ",
+        "englishName": "Scottsbluff"
+      },
+      {
+        "id": "columbus-ne",
+        "name": "Κολόμπους",
+        "englishName": "Columbus"
       }
     ]
   },
@@ -1841,6 +1921,46 @@ export const US_STATES = [
         "id": "tulsa",
         "name": "Τάλσα",
         "englishName": "Tulsa"
+      },
+      {
+        "id": "norman",
+        "name": "Νόρμαν",
+        "englishName": "Norman"
+      },
+      {
+        "id": "broken-arrow",
+        "name": "Μπρόουκεν Άροου",
+        "englishName": "Broken Arrow"
+      },
+      {
+        "id": "edmond",
+        "name": "Έντμοντ",
+        "englishName": "Edmond"
+      },
+      {
+        "id": "lawton",
+        "name": "Λότον",
+        "englishName": "Lawton"
+      },
+      {
+        "id": "moore",
+        "name": "Μουρ",
+        "englishName": "Moore"
+      },
+      {
+        "id": "stillwater",
+        "name": "Στιλγουότερ",
+        "englishName": "Stillwater"
+      },
+      {
+        "id": "muskogee",
+        "name": "Μασκόγκι",
+        "englishName": "Muskogee"
+      },
+      {
+        "id": "bartlesville",
+        "name": "Μπάρτλσβιλ",
+        "englishName": "Bartlesville"
       }
     ]
   },
@@ -2599,6 +2719,14 @@ export const CITY_TO_STATE = {
   "san-diego": "california",
   "topeka": "kansas",
   "wichita": "kansas",
+  "overland-park": "kansas",
+  "kansas-city-ks": "kansas",
+  "olathe": "kansas",
+  "lawrence-ks": "kansas",
+  "manhattan-ks": "kansas",
+  "salina": "kansas",
+  "dodge-city": "kansas",
+  "hutchinson": "kansas",
   "frankfort": "kentucky",
   "louisville": "kentucky",
   "denver": "colorado",
@@ -2690,6 +2818,14 @@ export const CITY_TO_STATE = {
   "reno": "nevada",
   "lincoln": "nebraska",
   "omaha": "nebraska",
+  "bellevue-ne": "nebraska",
+  "grand-island": "nebraska",
+  "kearney": "nebraska",
+  "fremont-ne": "nebraska",
+  "norfolk-ne": "nebraska",
+  "north-platte": "nebraska",
+  "scottsbluff": "nebraska",
+  "columbus-ne": "nebraska",
   "santa-fe": "new-mexico",
   "albuquerque": "new-mexico",
   "trenton": "new-jersey",
@@ -2736,6 +2872,14 @@ export const CITY_TO_STATE = {
   "smyrna-de": "delaware",
   "oklahoma-city": "oklahoma",
   "tulsa": "oklahoma",
+  "norman": "oklahoma",
+  "broken-arrow": "oklahoma",
+  "edmond": "oklahoma",
+  "lawton": "oklahoma",
+  "moore": "oklahoma",
+  "stillwater": "oklahoma",
+  "muskogee": "oklahoma",
+  "bartlesville": "oklahoma",
   "salem-or": "oregon",
   "portland-or": "oregon",
   "eugene": "oregon",
