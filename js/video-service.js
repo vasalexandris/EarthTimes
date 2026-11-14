@@ -1,4 +1,4 @@
-import { CITY_TO_STATE } from './states-data.js?v=20261114_world6';
+import { CITY_TO_STATE } from './states-data.js?v=20261114_world7';
 /**
  * Video Service Module
  * Registry of verified high-definition YouTube video tours for all cities
@@ -14288,6 +14288,898 @@ export const CITY_VIDEOS = {
       "youtubeId": "TbvGH9yUus0",
       "title": "BARBADOS# BRIDGETOWN🏙🏙 city river 🏞🏞🐢🐢🐢#adventure #like 🦈🐬🌊👍👍",
       "label": "Περιήγηση στο Τσάλκι Μάουντ (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+
+  "cochabamba": {
+    "cityName": "Κοτσαμπάμπα",
+    "drone": {
+      "youtubeId": "c74W5xU-DyM",
+      "title": "Cochabamba parte 1, tomas de dron 4k, Bolivia",
+      "label": "Κοτσαμπάμπα με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "FeN4nkYQ4b8",
+      "title": "CAMINANDO - WALKING TOUR - #72: COCHABAMBA - Bolivia.",
+      "label": "Περιήγηση στο Κοτσαμπάμπα (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "potosi": {
+    "cityName": "Ποτοσί",
+    "drone": {
+      "youtubeId": "ahbuOAtslmE",
+      "title": "Potosí, Bolivia 4k Drone",
+      "label": "Ποτοσί με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "x_s9e-SsTOc",
+      "title": "Calle Padilla. Potosi, Bolivia",
+      "label": "Περιήγηση στο Ποτοσί (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "oruro": {
+    "cityName": "Ορούρο",
+    "drone": {
+      "youtubeId": "0A3Aq-5hp8A",
+      "title": "Oruro (Bolivia) 4K",
+      "label": "Ορούρο με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "Kz4odqc9KFc",
+      "title": "🇧🇴 La Paz, Bolivia 4K Walking Tour | Exploring the World’s Highest Capital City",
+      "label": "Περιήγηση στο Ορούρο (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "tarija": {
+    "cityName": "Ταρίχα",
+    "drone": {
+      "youtubeId": "1HB-w4a0uJ8",
+      "title": "UYUNI SALT FLATS, BOLIVIA | DRONE AERIAL VIEWS | WORLD’S LARGEST MIRROR & OTHERWORLDLY LANDSCAPES",
+      "label": "Ταρίχα με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "8feTQsqhig0",
+      "title": "🇧🇴 | Plaza Principal Jueves Santo | Walking Tour | Tarija - Bolivia | 4K",
+      "label": "Περιήγηση στο Ταρίχα (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "trinidad-bo": {
+    "cityName": "Τρινιντάντ",
+    "drone": {
+      "youtubeId": "NfxjbW0K3tc",
+      "title": "Flying Over Lake Titicaca, Bolivia | 4K Drone Footage",
+      "label": "Τρινιντάντ με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "Kz4odqc9KFc",
+      "title": "🇧🇴 La Paz, Bolivia 4K Walking Tour | Exploring the World’s Highest Capital City",
+      "label": "Περιήγηση στο Τρινιντάντ (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "uyuni": {
+    "cityName": "Ουγιούνι",
+    "drone": {
+      "youtubeId": "1HB-w4a0uJ8",
+      "title": "UYUNI SALT FLATS, BOLIVIA | DRONE AERIAL VIEWS | WORLD’S LARGEST MIRROR & OTHERWORLDLY LANDSCAPES",
+      "label": "Ουγιούνι με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "eZESLwDtyyw",
+      "title": "Uyuni. Bolivia. 4K Walk",
+      "label": "Περιήγηση στο Ουγιούνι (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "copacabana-bo": {
+    "cityName": "Κοπακαμπάνα",
+    "drone": {
+      "youtubeId": "H5MbaghB3sc",
+      "title": "🇧🇴 Copacabana, Bolivia | Stunning Aerial Views of Lake Titicaca - Drone 4K",
+      "label": "Κοπακαμπάνα με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "BiaFegkMFtI",
+      "title": "COPACABANA − BOLIVIA(2022) 4K",
+      "label": "Περιήγηση στο Κοπακαμπάνα (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "vina-del-mar": {
+    "cityName": "Βίνια δελ Μαρ",
+    "drone": {
+      "youtubeId": "F8nJhueam98",
+      "title": "Viña del Mar, Chile 🇨🇱 - by drone [4K]",
+      "label": "Βίνια δελ Μαρ με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "vOs83KFES2U",
+      "title": "Paseo Costero de Viña del Mar 🇨🇱 (4K) | Chile Walking Tour",
+      "label": "Περιήγηση στο Βίνια δελ Μαρ (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "antofagasta": {
+    "cityName": "Αντοφαγάστα",
+    "drone": {
+      "youtubeId": "vmjtdDD1kds",
+      "title": "Parque Las Almejas, Antofagasta 4K Vistas Aéreas , Música Chill para Relajarse y Trabajar (30 Min)",
+      "label": "Αντοφαγάστα με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "MbVPRzHtzzs",
+      "title": "Chile Walk 4K I Antofagasta",
+      "label": "Περιήγηση στο Αντοφαγάστα (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "la-serena": {
+    "cityName": "Λα Σερένα",
+    "drone": {
+      "youtubeId": "C-1xlqmYNo4",
+      "title": "Vista aérea de LA SERENA (DRONE 4K) ¡Una ciudad perfecta para turistas! #travel #dronefootage #chile",
+      "label": "Λα Σερένα με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "OlfKeE2khoQ",
+      "title": "La Serena, Chile: Kokoro No Niwa Japanese Garden, Koi, Black Swans and a Waterfall | 4K Walk",
+      "label": "Περιήγηση στο Λα Σερένα (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "concepcion": {
+    "cityName": "Κονσεπσιόν",
+    "drone": {
+      "youtubeId": "cYhwjLD5i4M",
+      "title": "Concepción desde un dron (4K cinematic footage)",
+      "label": "Κονσεπσιόν με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "fXrymO_2FZQ",
+      "title": "🇨🇱 Street Walk Concepción - Chile - 4K",
+      "label": "Περιήγηση στο Κονσεπσιόν (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "puerto-montt": {
+    "cityName": "Πουέρτο Μοντ",
+    "drone": {
+      "youtubeId": "X8yYyhvz-Rc",
+      "title": "Puerto Montt, CHILE 🇨🇱 4k ULTRA HD | Drone footage",
+      "label": "Πουέρτο Μοντ με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "77pOpKDlDsw",
+      "title": "Chile Walk 4K I Puerto Montt",
+      "label": "Περιήγηση στο Πουέρτο Μοντ (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "punta-arenas": {
+    "cityName": "Πούντα Αρένας",
+    "drone": {
+      "youtubeId": "XpQakzNBOB0",
+      "title": "PUNTA ARENAS desde el aire | PATAGONIA CHILENA",
+      "label": "Πούντα Αρένας με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "pp68ZWbDMGM",
+      "title": "Punta Arenas,Chile: Immersive 4K Walk | City Exploration in 60fps HDR\"",
+      "label": "Περιήγηση στο Πούντα Αρένας (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "iquique": {
+    "cityName": "Ικίκε",
+    "drone": {
+      "youtubeId": "XuEy8FDzWEI",
+      "title": "Iquique, Chile (4K)",
+      "label": "Ικίκε με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "an4-8KqWjOE",
+      "title": "🇨🇱Exploring Iquique - Chile's jewel of the north - 4K walking - Slow TV",
+      "label": "Περιήγηση στο Ικίκε (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "temuco": {
+    "cityName": "Τεμούκο",
+    "drone": {
+      "youtubeId": "bDEDPRos3M4",
+      "title": "Temuco 2024 - Conoces La Ciudad Mas Bella Del Sur de Chile ? Video 4k HDR  Vista Aérea Drone Temuco",
+      "label": "Τεμούκο με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "aXTHOz-B4bs",
+      "title": "Caminando por Temuco Vol.2 [4K] (Av Alemania - Prieto Norte - Balmaceda)| Walking Tour Temuco 2 [4k]",
+      "label": "Περιήγηση στο Τεμούκο (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "ambato": {
+    "cityName": "Αμπάτο",
+    "drone": {
+      "youtubeId": "Q3zwMjhHHWc",
+      "title": "Ambato, Ecuador (4K)",
+      "label": "Αμπάτο με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "1ttRqlgi3N8",
+      "title": "🇪🇨【4K 60fps】WALK - AMBATO ~ walking Tour - Ecuador",
+      "label": "Περιήγηση στο Αμπάτο (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "manta": {
+    "cityName": "Μάντα",
+    "drone": {
+      "youtubeId": "rwI1DL37Pyo",
+      "title": "MANTA ECUADOR - DRONE 4K",
+      "label": "Μάντα με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "AsnfAaDp5Fw",
+      "title": "Zona exclusiva Manta / Walk Tour 4K HDR 2023 🇪🇨",
+      "label": "Περιήγηση στο Μάντα (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "loja": {
+    "cityName": "Λόχα",
+    "drone": {
+      "youtubeId": "51qsPu2F-x0",
+      "title": "Loja - Ecuador 4k Vista Drone",
+      "label": "Λόχα με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "A5IsQiTbadw",
+      "title": "Loja, Ecuador’s Longest Running City Walking Tour",
+      "label": "Περιήγηση στο Λόχα (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "machala": {
+    "cityName": "Ματσάλα",
+    "drone": {
+      "youtubeId": "x-puz5z30X4",
+      "title": "Tomas Aéreas Machala-Ecuador",
+      "label": "Ματσάλα με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "UN5_oc3HQDg",
+      "title": "🇪🇨【4K 60fps】WALK - MACHALA ~ walking Tour - Ecuador",
+      "label": "Περιήγηση στο Ματσάλα (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "riobamba": {
+    "cityName": "Ριομπάμπα",
+    "drone": {
+      "youtubeId": "iNIggqNe2mo",
+      "title": "\"Flying Over Riobamba EC – A View You'll Never Forget! 🚀\" | Cinematic Video in 4k |",
+      "label": "Ριομπάμπα με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "FTBI14UqyAg",
+      "title": "Riobamba, Ecuador, May 2026 | Silent first-person city walk | #riobamba #4k",
+      "label": "Περιήγηση στο Ριομπάμπα (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "ibarra": {
+    "cityName": "Ιμπάρρα",
+    "drone": {
+      "youtubeId": "QjxneHYPfm0",
+      "title": "Ibarra, Ecuador 🇪🇨 | Stunning 4K Drone Footage",
+      "label": "Ιμπάρρα με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "TwkHlnJz6jw",
+      "title": "Ibarra, Ecuador, June 2025 | Silent city walk | #ibarra #4k",
+      "label": "Περιήγηση στο Ιμπάρρα (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "puerto-ayora": {
+    "cityName": "Πουέρτο Αγιόρα",
+    "drone": {
+      "youtubeId": "aqmlgGvpCEs",
+      "title": "Flying Through the Streets of Quito! 🇪🇨 | Incredible Ecuador 4K Drone Video",
+      "label": "Πουέρτο Αγιόρα με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "lllA2dlGpLQ",
+      "title": "Puerto Ayora, Ecuador - Sept 24, 2025 [4K/50fps] (75 minutes)",
+      "label": "Περιήγηση στο Πουέρτο Αγιόρα (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "encarnacion": {
+    "cityName": "Ενκαρνασιόν",
+    "drone": {
+      "youtubeId": "R9kfyUhEF-o",
+      "title": "Encarnación, Paraguay (4K)",
+      "label": "Ενκαρνασιόν με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "pSgf70dLexQ",
+      "title": "Paraguay Encarnacion city: Walking tour downtown streets",
+      "label": "Περιήγηση στο Ενκαρνασιόν (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    },
+    "live": {
+      "youtubeId": "a9WvB6XwX4M",
+      "title": "Encarnación Costanera & Río Paraná Live Cam",
+      "label": "Ενκαρνασιόν Live Cam",
+      "icon": "fa-solid fa-tower-broadcast",
+      "type": "live"
+    }
+  },
+  "luque": {
+    "cityName": "Λούκε",
+    "drone": {
+      "youtubeId": "yFKLN_T2m-I",
+      "title": "Assunção - Paraguai 4K Drone video. Palácio de Lopez #asuncion #paraguay #drone #dji #travel",
+      "label": "Λούκε με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "SShpQdatO24",
+      "title": "Paraguay   Walk in Luque and covered market - 4K HDR",
+      "label": "Περιήγηση στο Λούκε (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "san-lorenzo-py": {
+    "cityName": "Σαν Λορένσο",
+    "drone": {
+      "youtubeId": "yFKLN_T2m-I",
+      "title": "Assunção - Paraguai 4K Drone video. Palácio de Lopez #asuncion #paraguay #drone #dji #travel",
+      "label": "Σαν Λορένσο με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "uRyiVsE-zfI",
+      "title": "Paraguay, San Lorenzo, Street view #paraguay #sanlorenzo #asunción",
+      "label": "Περιήγηση στο Σαν Λορένσο (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "villarrica": {
+    "cityName": "Βιγιαρρίκα",
+    "drone": {
+      "youtubeId": "JRAFakwwaVk",
+      "title": "Villarrica desde un drone (4K cinematic footage, 2024)",
+      "label": "Βιγιαρρίκα με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "CdT3W1r580k",
+      "title": "🇵🇾【4K 60fps】WALK - VILLARRICA ~ walking Tour - Paraguay",
+      "label": "Περιήγηση στο Βιγιαρρίκα (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "concepcion-py": {
+    "cityName": "Κονσεπσιόν",
+    "drone": {
+      "youtubeId": "kB6QL47NtQc",
+      "title": "vista aérea de #Concepción #Paraguay",
+      "label": "Κονσεπσιόν με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "qLcbuHsZjhA",
+      "title": "Walking tour of Concepcion paraguay",
+      "label": "Περιήγηση στο Κονσεπσιόν (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "pedro-juan-caballero": {
+    "cityName": "Πέδρο Χουάν Καμπαγιέρο",
+    "drone": {
+      "youtubeId": "k5sQpe0c-hE",
+      "title": "Paraguay 4K UHD | Stunning Aerial Views of Natural Beauty & Serenity | Cinematic Drone Footage",
+      "label": "Πέδρο Χουάν Καμπαγιέρο με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "ht76WpKwoRs",
+      "title": "Top 5 Spots to Visit in Pedro Juan Caballero (Paraguay)",
+      "label": "Περιήγηση στο Πέδρο Χουάν Καμπαγιέρο (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "coronel-oviedo": {
+    "cityName": "Κορονέλ Οβιέδο",
+    "drone": {
+      "youtubeId": "tg4uceO29xQ",
+      "title": "ciudad de...Cnel Oviedo Paraguay",
+      "label": "Κορονέλ Οβιέδο με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "a0h-dI-TxTU",
+      "title": "🇵🇾【4K 60fps】WALK - CORONEL OVIEDO ~ walking Tour - Paraguay",
+      "label": "Περιήγηση στο Κορονέλ Οβιέδο (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "capiata": {
+    "cityName": "Καπιατά",
+    "drone": {
+      "youtubeId": "k5sQpe0c-hE",
+      "title": "Paraguay 4K UHD | Stunning Aerial Views of Natural Beauty & Serenity | Cinematic Drone Footage",
+      "label": "Καπιατά με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "mSaN-k2Y2v8",
+      "title": "Walking Tour in Barrio Loma San Jerónimo, Asunción, Paraguay | 4K Walk Travel Vlog",
+      "label": "Περιήγηση στο Καπιατά (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "trujillo-pe": {
+    "cityName": "Τρουχίγιο",
+    "drone": {
+      "youtubeId": "Kuz2DTJpXnE",
+      "title": "TRUJILLO | Panoramicas | Distrito de Trujillo - Parte I | 2026.",
+      "label": "Τρουχίγιο με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "HbAlhI9ijI8",
+      "title": "🇵🇪【4K 60fps】WALK - TRUJILLO  ~ walking Tour - Peru",
+      "label": "Περιήγηση στο Τρουχίγιο (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "chiclayo": {
+    "cityName": "Τσικλάγιο",
+    "drone": {
+      "youtubeId": "RahE-Tvd_0I",
+      "title": "CHICLAYO CIUDAD DE LA AMISTAD VISTAS CON DRONE 4K  😎😍🌞",
+      "label": "Τσικλάγιο με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "PPD2ioKOxBo",
+      "title": "Chiclayo Peru walking tour exploring north Peru city walk",
+      "label": "Περιήγηση στο Τσικλάγιο (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "iquitos": {
+    "cityName": "Ικίτος",
+    "drone": {
+      "youtubeId": "qtMeEjC63Zc",
+      "title": "Iquitos, Peru 🇵🇪 4K ULTRA HD | Drone Footage",
+      "label": "Ικίτος με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "UPkyCZBlDsk",
+      "title": "🇵🇪 IQUITOS PERU | Walking Tour 4K in the Peruvian Amazon",
+      "label": "Περιήγηση στο Ικίτος (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "piura": {
+    "cityName": "Πιούρα",
+    "drone": {
+      "youtubeId": "Qiddr4O59js",
+      "title": "🌆 Panorámicas de Piura 2025 | by Trujillopolis",
+      "label": "Πιούρα με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "AQO56mM2KK0",
+      "title": "PIURA  PERÚ 4K | Plaza de Armas Piura, Peru | Piura Peru 4K",
+      "label": "Περιήγηση στο Πιούρα (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "huancayo": {
+    "cityName": "Ουανκάγιο",
+    "drone": {
+      "youtubeId": "eNZNnSTNy9g",
+      "title": "#huancayo #huancayoperu #perú #drone",
+      "label": "Ουανκάγιο με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "pmeHftZbdqo",
+      "title": "🇵🇪【4K 60fps】WALK - HUANCAYO ~ walking Tour - Peru",
+      "label": "Περιήγηση στο Ουανκάγιο (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "puno": {
+    "cityName": "Πούνο",
+    "drone": {
+      "youtubeId": "_ERODpDkDgU",
+      "title": "Puno, Perú (4K)",
+      "label": "Πούνο με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "dxOOevG61cc",
+      "title": "Puno Walking Tour | Peru | 4K POV",
+      "label": "Περιήγηση στο Πούνο (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "tacna": {
+    "cityName": "Τάκνα",
+    "drone": {
+      "youtubeId": "mSuDXzDmgvk",
+      "title": "Tacna (PERÚ) - Vista aérea (DRONE 4K) ¡Sus lugares para recorrer!",
+      "label": "Τάκνα με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "sfIlzwrymlk",
+      "title": "Tacna, Perú | 4K Walking Tour",
+      "label": "Περιήγηση στο Τάκνα (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "colonia-del-sacramento": {
+    "cityName": "Κολόνια δελ Σακραμέντο",
+    "drone": {
+      "youtubeId": "kxNTZdcnpl8",
+      "title": "Colonia del Sacramento Uruguay | Stunning Beach Views by Drone in 4K 🇺🇾",
+      "label": "Κολόνια δελ Σακραμέντο με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "xVpSH3pzWLM",
+      "title": "Colonia del Sacramento Uruguay Walking Tour — Historic Old Town and Waterfront",
+      "label": "Περιήγηση στο Κολόνια δελ Σακραμέντο (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "salto": {
+    "cityName": "Σάλτο",
+    "drone": {
+      "youtubeId": "ulHBYXVqX-c",
+      "title": "Unique Uruguay 4K: Stunning Drone Views with Soothing Music",
+      "label": "Σάλτο με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "ebosGfUnd70",
+      "title": "[4K] CIUDAD DE SALTO #DRIVING tour VIRTUAL 2023 [donde nació HORACIO QUIROGA y LUIS SUÁREZ] URUGUAY",
+      "label": "Περιήγηση στο Σάλτο (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "paysandu": {
+    "cityName": "Παϊσαντού",
+    "drone": {
+      "youtubeId": "ulHBYXVqX-c",
+      "title": "Unique Uruguay 4K: Stunning Drone Views with Soothing Music",
+      "label": "Παϊσαντού με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "kgC5N1B2Mi0",
+      "title": "𝐌𝐎𝐍𝐓𝐄𝐕𝐈𝐃𝐄𝐎, 𝐔𝐑𝐔𝐆𝐔𝐀𝐘 🇺🇸 𝟒𝐊 𝐖𝐀𝐋𝐊, Travel channel !",
+      "label": "Περιήγηση στο Παϊσαντού (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "maldonado": {
+    "cityName": "Μαλδονάδο",
+    "drone": {
+      "youtubeId": "Ae_ccYpfB6M",
+      "title": "Maldonado desde un drone 🇺🇾 (4K aerial footage, 2024)",
+      "label": "Μαλδονάδο με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "8DMnwkaWoEM",
+      "title": "4K DRIVE Punta Negra - Punta Colorada [Maldonado] URUGUAY",
+      "label": "Περιήγηση στο Μαλδονάδο (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "rivera": {
+    "cityName": "Ριβέρα",
+    "drone": {
+      "youtubeId": "OCUB_SyOEv8",
+      "title": "I Flew My Drone Over Montevideo and Colonia, Uruguay, and This Is What I Saw (4K)",
+      "label": "Ριβέρα με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "HVdftBCa6JU",
+      "title": "【4K】WALK  Rivera URUGUAY 4k video UY Travel vlog",
+      "label": "Περιήγηση στο Ριβέρα (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "tacuarembo": {
+    "cityName": "Τακουαρεμπό",
+    "drone": {
+      "youtubeId": "VsLTfmtWwMw",
+      "title": "Cerro Batoví, Tacuarembó Uruguay (4k)  (drone,aereo,aerial)",
+      "label": "Τακουαρεμπό με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "OE1pBOvjvPA",
+      "title": "【4K】WALK  TACUAREMBO Uruguay 4k video UY Travel vlog",
+      "label": "Περιήγηση στο Τακουαρεμπό (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "rocha": {
+    "cityName": "Ρότσα",
+    "drone": {
+      "youtubeId": "FlJLA-mcWvs",
+      "title": "Rocha y sus paisajes -Uruguay / Drone Punta del Este",
+      "label": "Ρότσα με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "8qMkyxd_qWY",
+      "title": "【4K】WALK ROCHA Uruguay 4k video UY Travel vlog walking tour",
+      "label": "Περιήγηση στο Ρότσα (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "mercedes-uy": {
+    "cityName": "Μερσέδες",
+    "drone": {
+      "youtubeId": "OCUB_SyOEv8",
+      "title": "I Flew My Drone Over Montevideo and Colonia, Uruguay, and This Is What I Saw (4K)",
+      "label": "Μερσέδες με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "kgC5N1B2Mi0",
+      "title": "𝐌𝐎𝐍𝐓𝐄𝐕𝐈𝐃𝐄𝐎, 𝐔𝐑𝐔𝐆𝐔𝐀𝐘 🇺🇸 𝟒𝐊 𝐖𝐀𝐋𝐊, Travel channel !",
+      "label": "Περιήγηση στο Μερσέδες (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "barquisimeto": {
+    "cityName": "Μπαρκισιμέτο",
+    "drone": {
+      "youtubeId": "azB3HjEph-c",
+      "title": "EL MEJOR VÍDEO de Barquisimeto, Venezuela 🇻🇪 DRONE [2K]",
+      "label": "Μπαρκισιμέτο με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "FNyW2ZFuKCc",
+      "title": "🇻🇪 VENEZUELA, Barquisimeto 4K 2024  #walkingtour #barquisimeto #venezuela #estadolara",
+      "label": "Περιήγηση στο Μπαρκισιμέτο (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "maracay": {
+    "cityName": "Μαρακάι",
+    "drone": {
+      "youtubeId": "kL26oYqOUuQ",
+      "title": "Así luce Maracay desde el cielo | Drone Cinemático 4K",
+      "label": "Μαρακάι με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "8Jyyvsqj-Pc",
+      "title": "🇻🇪 Blend VENEZUELA: Walking in PALO NEGRO I ARAGUA 4K",
+      "label": "Περιήγηση στο Μαρακάι (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "ciudad-guayana": {
+    "cityName": "Σιουδάδ Γουαγιάνα",
+    "drone": {
+      "youtubeId": "MvaJxs0RfI0",
+      "title": "Walking Tour Ciudad Guayana Venezuela in 4k |  Orinokia Mall Center",
+      "label": "Σιουδάδ Γουαγιάνα με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "qfeOcsAJtFg",
+      "title": "Ciudad Guayana Venezuela Walking Tour in 4K",
+      "label": "Περιήγηση στο Σιουδάδ Γουαγιάνα (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "merida-ve": {
+    "cityName": "Μέριντα",
+    "drone": {
+      "youtubeId": "j9xuSalhDmE",
+      "title": "Merida, Venezuela, Drone 4K",
+      "label": "Μέριντα με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "3uDU5fJMnnY",
+      "title": "🇻🇪 Discovering VENEZUELA: Walking in MERIDA City Center  I MERIDA 4K",
+      "label": "Περιήγηση στο Μέριντα (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "san-cristobal-ve": {
+    "cityName": "Σαν Κριστόμπαλ",
+    "drone": {
+      "youtubeId": "oVwW_4yQoBA",
+      "title": "🇻🇪 | SAN CRISTÓBAL: Driving Tour por la capital del Táchira. | VENEZUELA | 4K | 2025.",
+      "label": "Σαν Κριστόμπαλ με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "2XCoqt4LFWg",
+      "title": "San Cristóbal: La Ciudad que Enamora, un Recorrido en Coche. | DRIVING | VENEZUELA 🇻🇪 | 4K | 2025.",
+      "label": "Περιήγηση στο Σαν Κριστόμπαλ (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "puerto-la-cruz": {
+    "cityName": "Πουέρτο Λα Κρουζ",
+    "drone": {
+      "youtubeId": "06ZrejSIn_8",
+      "title": "PROJECT VENEZUELA | Un viaje en drone por todos los estados | 4K",
+      "label": "Πουέρτο Λα Κρουζ με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "_N-554vxS98",
+      "title": "🇻🇪 | Puerto La Cruz: Recorriendo el Paseo Colón. | DRIVING TOUR | VENEZUELA | 4K.",
+      "label": "Περιήγηση στο Πουέρτο Λα Κρουζ (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "cumana": {
+    "cityName": "Κουμανά",
+    "drone": {
+      "youtubeId": "UUbq_sMzHGA",
+      "title": "cumaná. 4k.",
+      "label": "Κουμανά με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "DwbV7fZF4Iw",
+      "title": "🇻🇪 Ancient VENEZUELA, Walking in CUMANA I SUCRE 4K",
+      "label": "Περιήγηση στο Κουμανά (4K)",
       "icon": "fa-solid fa-person-walking",
       "type": "walking"
     }

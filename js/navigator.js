@@ -1,4 +1,4 @@
-import { US_STATES, CITY_TO_STATE } from './states-data.js?v=20261114_world6';
+import { US_STATES, CITY_TO_STATE } from './states-data.js?v=20261114_world7';
 /**
  * Navigator Module
  * Hierarchical Cascading Navigation: Continents -> Countries -> Cities
@@ -1138,8 +1138,17 @@ export const CONTINENTS_DATA = [
         name: 'Χιλή',
         flag: '🇨🇱',
         cities: [
-          { id: 'santiago', name: 'Σαντιάγο', badge: 'Πρωτεύουσα' },
-          { id: 'valparaiso', name: 'Βαλπαραΐσο' }
+          { id: 'santiago', name: 'Σαντιάγο', badge: 'Η Πόλη στις Παρυφές των Άνδεων' },
+          { id: 'valparaiso', name: 'Βαλπαραΐσο', badge: 'Το Κοσμοπολίτικο Λιμάνι των Λόφων' },
+          { id: 'vina-del-mar', name: 'Βίνια δελ Μαρ', badge: 'Η Πόλη-Κήπος' },
+          { id: 'antofagasta', name: 'Αντοφαγάστα', badge: 'Το Μαργαριτάρι του Βορρά' },
+          { id: 'la-serena', name: 'Λα Σερένα', badge: 'Η Πόλη των Καμπαναριών' },
+          { id: 'concepcion', name: 'Κονσεπσιόν', badge: 'Η Πόλη των Πανεπιστημίων' },
+          { id: 'puerto-montt', name: 'Πουέρτο Μοντ', badge: 'Η Πύλη της Παταγονίας' },
+          { id: 'punta-arenas', name: 'Πούντα Αρένας', badge: 'Η Πόλη του Πορθμού' },
+          { id: 'iquique', name: 'Ικίκε', badge: 'Η Πόλη του Χρυσού και του Σέρφινγκ' },
+          { id: 'temuco', name: 'Τεμούκο', badge: 'Η Καρδιά της Araucanía' }
+        
         ]
       },
       {
@@ -1147,9 +1156,17 @@ export const CONTINENTS_DATA = [
         name: 'Περού',
         flag: '🇵🇪',
         cities: [
-          { id: 'lima', name: 'Λίμα', badge: 'Πρωτεύουσα' },
-          { id: 'cusco', name: 'Κούσκο' },
-          { id: 'arequipa', name: 'Αρεκίπα' }
+          { id: 'lima', name: 'Λίμα', badge: 'Η Πόλη των Βασιλέων' },
+          { id: 'cusco', name: 'Κούσκο', badge: 'Ο Ομφαλός του Κόσμου' },
+          { id: 'arequipa', name: 'Αρεκίπα', badge: 'Η Λευκή Πόλη' },
+          { id: 'trujillo-pe', name: 'Τρουχίγιο', badge: 'Η Πόλη της Αιώνιας Άνοιξης' },
+          { id: 'chiclayo', name: 'Τσικλάγιο', badge: 'Η Πόλη της Φιλίας' },
+          { id: 'iquitos', name: 'Ικίτος', badge: 'Η Πρωτεύουσα του Αμαζονίου' },
+          { id: 'piura', name: 'Πιούρα', badge: 'Η Πόλη της Κατσάκα & του Tondero' },
+          { id: 'huancayo', name: 'Ουανκάγιο', badge: 'Η Καρδιά της Κοιλάδας Mantaro' },
+          { id: 'puno', name: 'Πούνο', badge: 'Η Πόλη της Λίμνης Titicaca' },
+          { id: 'tacna', name: 'Τάκνα', badge: 'Η Ηρωική Πόλη' }
+        
         ]
       },
       {
@@ -1174,9 +1191,17 @@ export const CONTINENTS_DATA = [
         name: 'Βενεζουέλα',
         flag: '🇻🇪',
         cities: [
-          { id: 'caracas', name: 'Καράκας', badge: 'Πρωτεύουσα' },
-          { id: 'maracaibo', name: 'Μαρακαΐμπο' },
-          { id: 'valencia', name: 'Βαλένθια' }
+          { id: 'caracas', name: 'Καράκας', badge: 'Η Πόλη της Αιώνιας Άνοιξης' },
+          { id: 'maracaibo', name: 'Μαρακαΐμπο', badge: 'Η Αγαπημένη Γη του Ήλιου' },
+          { id: 'valencia', name: 'Βαλένθια', badge: 'Η Πρωτεύουσα της Βιομηχανίας' },
+          { id: 'barquisimeto', name: 'Μπαρκισιμέτο', badge: 'Η Μουσική Πρωτεύουσα' },
+          { id: 'maracay', name: 'Μαρακάι', badge: 'Η Πόλη των Κήπων' },
+          { id: 'ciudad-guayana', name: 'Σιουδάδ Γουαγιάνα', badge: 'Ορινόκο & Καταρράκτες Καρονί' },
+          { id: 'merida-ve', name: 'Μέριντα', badge: 'Οι Άνδεις & το ψηλότερο τελεφερίκ' },
+          { id: 'san-cristobal-ve', name: 'Σαν Κριστόμπαλ', badge: 'Η πόλη της ευγένειας' },
+          { id: 'puerto-la-cruz', name: 'Πουέρτο Λα Κρουζ', badge: 'Καραϊβική & Εθνικό Πάρκο Μοτσιμά' },
+          { id: 'cumana', name: 'Κουμανά', badge: 'Η πρώτη ισπανική αποικιακή πόλη της ηπείρου' }
+        
         ]
       },
       {
@@ -1184,9 +1209,17 @@ export const CONTINENTS_DATA = [
         name: 'Εκουαδόρ',
         flag: '🇪🇨',
         cities: [
-          { id: 'quito', name: 'Κίτο', badge: 'Πρωτεύουσα' },
-          { id: 'guayaquil', name: 'Γουαγιακίλ' },
-          { id: 'cuenca', name: 'Κουένκα' }
+          { id: 'quito', name: 'Κίτο', badge: 'Το Φως της Αμερικής' },
+          { id: 'guayaquil', name: 'Γουαγιακίλ', badge: 'Το Μαργαριτάρι του Πασίφικο' },
+          { id: 'cuenca', name: 'Κουένκα', badge: 'Η Αθήνα του Εκουαδόρ' },
+          { id: 'ambato', name: 'Αμπάτο', badge: 'Η Πόλη των Λουλουδιών & των Φρούτων' },
+          { id: 'manta', name: 'Μάντα', badge: 'Η Πύλη του Ειρηνικού' },
+          { id: 'loja', name: 'Λόχα', badge: 'Η Πρωτεύουσα της Μουσικής' },
+          { id: 'machala', name: 'Ματσάλα', badge: 'Η Πρωτεύουσα της Μπανάνας' },
+          { id: 'riobamba', name: 'Ριομπάμπα', badge: 'Η Πόλη των Βουνών' },
+          { id: 'ibarra', name: 'Ιμπάρρα', badge: 'Η Λευκή Πόλη του Βορρά' },
+          { id: 'puerto-ayora', name: 'Πουέρτο Αγιόρα', badge: 'Η Πύλη των Γκαλαπάγκος' }
+        
         ]
       },
       {
@@ -1194,9 +1227,17 @@ export const CONTINENTS_DATA = [
         name: 'Βολιβία',
         flag: '🇧🇴',
         cities: [
-          { id: 'la-paz', name: 'Λα Παζ', badge: 'Πρωτεύουσα' },
-          { id: 'sucre', name: 'Σούκρε', badge: 'Συνταγματική' },
-          { id: 'santa-cruz', name: 'Σάντα Κρουζ' }
+          { id: 'la-paz', name: 'Λα Παζ', badge: 'Διοικητική Πρωτεύουσα' },
+          { id: 'sucre', name: 'Σούκρε', badge: 'Συνταγματική Πρωτεύουσα' },
+          { id: 'santa-cruz', name: 'Σάντα Κρουζ ντε λα Σιέρα', badge: 'Οικονομική Πρωτεύουσα' },
+          { id: 'cochabamba', name: 'Κοτσαμπάμπα', badge: 'Γαστρονομική Πρωτεύουσα' },
+          { id: 'potosi', name: 'Ποτοσί', badge: 'Μνημείο UNESCO' },
+          { id: 'oruro', name: 'Ορούρο', badge: 'Καρναβάλι UNESCO' },
+          { id: 'tarija', name: 'Ταρίχα', badge: 'Κοιλάδα του Κρασιού' },
+          { id: 'trinidad-bo', name: 'Τρινιντάντ', badge: 'Πεδιάδα Beni' },
+          { id: 'uyuni', name: 'Ουγιούνι', badge: 'Salar de Uyuni' },
+          { id: 'copacabana-bo', name: 'Κοπακαμπάνα', badge: 'Λίμνη Τιτικάκα' }
+        
         ]
       },
       {
@@ -1204,8 +1245,17 @@ export const CONTINENTS_DATA = [
         name: 'Παραγουάη',
         flag: '🇵🇾',
         cities: [
-          { id: 'asuncion', name: 'Ασουνσιόν', badge: 'Πρωτεύουσα' },
-          { id: 'ciudad-del-este', name: 'Σιουδάδ δελ Έστε' }
+          { id: 'asuncion', name: 'Ασουνσιόν', badge: 'Η Μητέρα των Πόλεων' },
+          { id: 'ciudad-del-este', name: 'Σιουδάδ δελ Έστε', badge: 'Η Πύλη της Τριεθνούς & του Φράγματος Ιταϊπού' },
+          { id: 'encarnacion', name: 'Ενκαρνασιόν', badge: 'Το Μαργαριτάρι του Νότου' },
+          { id: 'luque', name: 'Λούκε', badge: 'Η Πόλη της Μουσικής & της Χρυσοχοΐας' },
+          { id: 'san-lorenzo-py', name: 'Σαν Λορένσο', badge: 'Η Πανεπιστημιούπολη' },
+          { id: 'villarrica', name: 'Βιγιαρρίκα', badge: 'Η Πόλη του Πνεύματος και των Τεχνών' },
+          { id: 'concepcion-py', name: 'Κονσεπσιόν', badge: 'Το Μεγάλο Βόρειο Λιμάνι' },
+          { id: 'pedro-juan-caballero', name: 'Πέδρο Χουάν Καμπαγιέρο', badge: 'Η Πύλη του Αμαμπάι' },
+          { id: 'coronel-oviedo', name: 'Κορονέλ Οβιέδο', badge: 'Η Πόλη των Δέντρων' },
+          { id: 'capiata', name: 'Καπιατά', badge: 'Η Πόλη των Μύθων και των Φραγκισκανών' }
+        
         ]
       },
       {
@@ -1213,8 +1263,17 @@ export const CONTINENTS_DATA = [
         name: 'Ουρουγουάη',
         flag: '🇺🇾',
         cities: [
-          { id: 'montevideo', name: 'Μοντεβιδέο', badge: 'Πρωτεύουσα' },
-          { id: 'punta-del-este', name: 'Πούντα δελ Έστε' }
+          { id: 'montevideo', name: 'Μοντεβιδέο', badge: 'Η Πόλη της Rambla & του Τάνγκο' },
+          { id: 'punta-del-este', name: 'Πούντα δελ Έστε', badge: 'Η Σαν Τροπέ της Νότιας Αμερικής' },
+          { id: 'colonia-del-sacramento', name: 'Κολόνια δελ Σακραμέντο', badge: 'Ιστορικό Κόσμημα UNESCO' },
+          { id: 'salto', name: 'Σάλτο', badge: 'Θερμά Λουτρά & Ποταμός Ουρουγουάης' },
+          { id: 'paysandu', name: 'Παϊσαντού', badge: 'Ιστορική Ηρωική Πόλη' },
+          { id: 'maldonado', name: 'Μαλδονάδο', badge: 'Αποικιακή Πρωτεύουσα της Ριβιέρας' },
+          { id: 'rivera', name: 'Ριβέρα', badge: 'Διεθνής Πόλη στα Σύνορα με Βραζιλία' },
+          { id: 'tacuarembo', name: 'Τακουαρεμπό', badge: 'Η Πατρίδα των Γκαούτσο' },
+          { id: 'rocha', name: 'Ρότσα', badge: 'Πύλη για τις Άγριες Παραλίες του Ατλαντικού' },
+          { id: 'mercedes-uy', name: 'Μερσέδες', badge: 'Η Πόλη των Τεχνών & του Ρίο Νέγρο' }
+        
         ]
       },
       {
