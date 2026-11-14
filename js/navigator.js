@@ -1,4 +1,4 @@
-import { US_STATES, CITY_TO_STATE } from './states-data.js?v=20261114_world8';
+import { US_STATES, CITY_TO_STATE } from './states-data.js?v=20261114_world9';
 /**
  * Navigator Module
  * Hierarchical Cascading Navigation: Continents -> Countries -> Cities
@@ -1282,7 +1282,16 @@ export const CONTINENTS_DATA = [
         flag: '🇬🇾',
         cities: [
           { id: 'georgetown', name: 'Τζορτζτάουν', badge: 'Πρωτεύουσα' },
-          { id: 'linden', name: 'Λίντεν' }
+          { id: 'linden', name: 'Λίντεν', badge: 'Βωξίτης & Μεταλλευτική' },
+          { id: 'new-amsterdam-gy', name: 'Νιου Άμστερνταμ', badge: 'Ποτάμιο Λιμάνι' },
+          { id: 'bartica', name: 'Μπαρτίκα', badge: 'Πύλη του Εσσεκουίμπο' },
+          { id: 'anna-regina', name: 'Άννα Ρετζίνα', badge: 'Ακτή Εσσεκουίμπο' },
+          { id: 'lethem', name: 'Λέθεμ', badge: 'Σύνορα με Βραζιλία' },
+          { id: 'corriverton', name: 'Κορίβερτον', badge: 'Σύνορα με Σουρινάμ' },
+          { id: 'rose-hall', name: 'Ρόουζ Χολ', badge: 'Φυτείες Ζάχαρης' },
+          { id: 'mahdia', name: 'Μάντια', badge: 'Ορυχεία Χρυσού' },
+          { id: 'parika', name: 'Παρίκα', badge: 'Ποτάμιο Λιμάνι' }
+        
         ]
       },
       {
@@ -1290,8 +1299,17 @@ export const CONTINENTS_DATA = [
         name: 'Σουρινάμ',
         flag: '🇸🇷',
         cities: [
-          { id: 'paramaribo', name: 'Παραμαρίμπο', badge: 'Πρωτεύουσα' },
-          { id: 'lelydorp', name: 'Λέλινορπ' }
+          { id: 'paramaribo', name: 'Παραμαρίμπο', badge: 'Πρωτεύουσα & ΟΥΝΕΣΚΟ' },
+          { id: 'lelydorp', name: 'Λέλινορπ', badge: 'Προάστιο & Γεωργία' },
+          { id: 'nieuw-nickerie', name: 'Νιου Νικέρι', badge: 'Σύνορα με Γουιάνα' },
+          { id: 'moengo', name: 'Μούνγκο', badge: 'Βωξίτης & Μαρούν' },
+          { id: 'albina', name: 'Αλμπίνα', badge: 'Σύνορα με Γαλλική Γουιάνα' },
+          { id: 'paranam', name: 'Παρανάμ', badge: 'Βιομηχανία Αλουμινίου' },
+          { id: 'totness', name: 'Τότνες', badge: 'Αποικιακή Ξύλινη Αρχιτεκτονική' },
+          { id: 'groningen-sr', name: 'Χρόνινγκεν', badge: 'Ιστορικός Οικισμός' },
+          { id: 'onverwacht', name: 'Ονφερβάχτ', badge: 'Ιστορικός Σιδηρόδρομος' },
+          { id: 'wageningen-sr', name: 'Βαχενίνγκεν', badge: 'Ποτάμιο Λιμάνι & Γεωργία' }
+        
         ]
       }
     ]

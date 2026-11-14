@@ -4,9 +4,9 @@
  * Base Map Layer selector, Date display, Video Overlay, and Deep Dive views.
  */
 
-import { getCityVideo, getAvailableVideoTypes, getAvailableCityTours, CITY_VIDEOS, findPoiLiveCam } from './video-service.js?v=20261114_world8';
-import { getDeepDiveData } from './deep-dive.js?v=20261114_world8';
-import { fetchWikiArticle, fetchWikiArticleHtml, cleanWikiTitle } from './wiki-service.js?v=20261114_world8';
+import { getCityVideo, getAvailableVideoTypes, getAvailableCityTours, CITY_VIDEOS, findPoiLiveCam } from './video-service.js?v=20261114_world9';
+import { getDeepDiveData } from './deep-dive.js?v=20261114_world9';
+import { fetchWikiArticle, fetchWikiArticleHtml, cleanWikiTitle } from './wiki-service.js?v=20261114_world9';
 
 let currentActiveVideoCityId = null;
 let currentActiveVideoType = 'drone';
@@ -1118,6 +1118,24 @@ export function getCuratedGuideItems(entity) {
   if (entity.guide?.items && Array.isArray(entity.guide.items) && entity.guide.items.length > 0) {
     return entity.guide.items;
   }
+  if (Array.isArray(entity.guide) && entity.guide.length > 0) {
+    return entity.guide.map(g => ({
+      title: g.name || g.title || '',
+      cat: g.cat || 'monument',
+      catLabel: g.catLabel || `🏛️ ${g.type || 'Αξιοθέατο'}`,
+      desc: `${g.description || ''} ${g.highlight || ''}`.trim() || g.desc || '',
+      wiki: g.wiki || g.name || g.title || ''
+    }));
+  }
+  if (entity.pois && Array.isArray(entity.pois) && entity.pois.length > 0) {
+    return entity.pois.map(p => ({
+      title: p.name || '',
+      cat: p.category || 'sight',
+      catLabel: '🏛️ Αξιοθέατο',
+      desc: p.desc || p.description || '',
+      wiki: p.wiki || p.name || ''
+    }));
+  }
   const id = entity.id || '';
   if (id === 'kozani') {
     return [
@@ -1203,6 +1221,31 @@ export function getCuratedGastroItems(entity) {
   if (entity.gastro?.items && Array.isArray(entity.gastro.items) && entity.gastro.items.length > 0) {
     return entity.gastro.items;
   }
+  if (entity.gastro?.specialties && Array.isArray(entity.gastro.specialties) && entity.gastro.specialties.length > 0) {
+    return entity.gastro.specialties.map(s => ({
+      title: s.name || s.title || '',
+      cat: 'recipe',
+      catLabel: `🍽️ ${s.type || 'Γαστρονομία'}`,
+      tag: 'Παραδοσιακό',
+      desc: s.description || s.desc || '',
+      wiki: s.name || ''
+    }));
+  }
+  if (entity.cuisine && Array.isArray(entity.cuisine) && entity.cuisine.length > 0) {
+    return entity.cuisine.map(c => typeof c === 'object' ? {
+      title: c.title || c.name || '',
+      cat: 'recipe',
+      catLabel: '🍽️ Παραδοσιακό Πιάτο',
+      tag: 'Τοπική Κουζίνα',
+      desc: c.desc || c.description || ''
+    } : {
+      title: String(c),
+      cat: 'recipe',
+      catLabel: '🍽️ Πιάτο',
+      tag: 'Τοπική Κουζίνα',
+      desc: String(c)
+    });
+  }
   const id = entity.id || '';
   if (id === 'kozani') {
     return [
@@ -1283,6 +1326,14 @@ export function getCuratedEcoItems(entity) {
   if (entity.eco?.items && Array.isArray(entity.eco.items) && entity.eco.items.length > 0) {
     return entity.eco.items;
   }
+  if (entity.eco?.greenSpaces) {
+    return [{
+      title: 'Πράσινοι Χώροι & Περιβάλλον',
+      cat: 'nature',
+      catLabel: '🌿 Φύση',
+      desc: entity.eco.greenSpaces
+    }];
+  }
   const id = entity.id || '';
   if (id === 'kozani') {
     return [
@@ -1359,105 +1410,132 @@ export function renderTabContent(tabId, entity, activeYear = null, activeSpots =
   let html = '';
 
   if (tabId === 'geo') {
+    const summary = entity.geo?.summary || entity.geo?.description || entity.geo?.overview || entity.brief || '';
+    const rawHighlights = entity.geo?.highlights || (Array.isArray(entity.highlights) ? entity.highlights.map(h => typeof h === 'object' ? { title: h.title || 'Ορόσημο', desc: h.desc || '' } : { title: String(h), desc: '' }) : []);
+    const highlights = rawHighlights.map(item => ({
+      title: item.title || item.name || 'Ορόσημο',
+      desc: item.desc || item.description || ''
+    }));
     html = `
       <div class="space-y-3">
         <div class="p-3.5 bg-slate-800/50 rounded-xl border border-slate-700/60 text-slate-200">
           <div class="flex items-center gap-2 text-sky-400 font-semibold mb-1 text-sm">
             <i class="fa-solid fa-map-location-dot"></i> Γεωγραφικό Ανάγλυφο & Φύση
           </div>
-          <p class="leading-relaxed">${entity.geo.summary}</p>
+          <p class="leading-relaxed">${summary || 'Δεν υπάρχουν διαθέσιμες πληροφορίες.'}</p>
         </div>
 
-        <h4 class="text-xs uppercase tracking-wider font-bold text-slate-400 mt-4 mb-2 flex items-center gap-1.5">
-          <i class="fa-solid fa-compass text-sky-400"></i> Κυριότερα Γεωγραφικά Ορόσημα
-        </h4>
-        <div class="space-y-2.5">
-          ${(entity.geo.highlights || []).map(item => `
-            <div onclick="window.openDeepDive('${escapeStr(item.title)}', '${escapeStr(item.desc)}', '${escapeStr(entity.name)}')" class="p-3 bg-slate-800/30 hover:bg-slate-800/80 hover:border-amber-500/50 transition border border-slate-700/40 rounded-xl cursor-pointer group">
-              <div class="flex items-center justify-between gap-2">
-                <div class="font-bold text-slate-100 text-sm mb-0.5 text-sky-300 group-hover:text-amber-300 transition">${item.title}</div>
-                <span class="text-[10px] text-amber-400 font-semibold opacity-0 group-hover:opacity-100 transition flex items-center gap-1 shrink-0">
-                  <i class="fa-solid fa-arrow-up-right-from-square"></i> Ανάλυση
-                </span>
+        ${highlights.length ? `
+          <h4 class="text-xs uppercase tracking-wider font-bold text-slate-400 mt-4 mb-2 flex items-center gap-1.5">
+            <i class="fa-solid fa-compass text-sky-400"></i> Κυριότερα Γεωγραφικά Ορόσημα
+          </h4>
+          <div class="space-y-2.5">
+            ${highlights.map(item => `
+              <div onclick="window.openDeepDive('${escapeStr(item.title)}', '${escapeStr(item.desc)}', '${escapeStr(entity.name)}')" class="p-3 bg-slate-800/30 hover:bg-slate-800/80 hover:border-amber-500/50 transition border border-slate-700/40 rounded-xl cursor-pointer group">
+                <div class="flex items-center justify-between gap-2">
+                  <div class="font-bold text-slate-100 text-sm mb-0.5 text-sky-300 group-hover:text-amber-300 transition">${item.title}</div>
+                  <span class="text-[10px] text-amber-400 font-semibold opacity-0 group-hover:opacity-100 transition flex items-center gap-1 shrink-0">
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i> Ανάλυση
+                  </span>
+                </div>
+                <div class="text-slate-300 text-xs leading-relaxed">${item.desc}</div>
               </div>
-              <div class="text-slate-300 text-xs leading-relaxed">${item.desc}</div>
-            </div>
-          `).join('')}
-        </div>
+            `).join('')}
+          </div>
+        ` : ''}
       </div>
     `;
   } else if (tabId === 'hist') {
+    const summary = entity.hist?.summary || entity.hist?.overview || entity.hist?.description || (typeof entity.history === 'string' ? entity.history : '') || '';
+    const rawHighlights = entity.hist?.highlights || entity.hist?.keyEvents || (Array.isArray(entity.history) ? entity.history : []);
+    const highlights = rawHighlights.map(h => ({
+      year: String(h.year || ''),
+      event: h.event || h.title || '',
+      desc: h.desc || h.description || ''
+    }));
     html = `
       <div class="space-y-3">
         <div class="p-3.5 bg-slate-800/50 rounded-xl border border-slate-700/60 text-slate-200">
           <div class="flex items-center gap-2 text-amber-400 font-semibold mb-1 text-sm">
             <i class="fa-solid fa-landmark-dome"></i> Ιστορικό Υπόβαθρο & Εξέλιξη
           </div>
-          <p class="leading-relaxed">${entity.hist.summary}</p>
+          <p class="leading-relaxed">${summary || 'Δεν υπάρχουν διαθέσιμες πληροφορίες.'}</p>
         </div>
 
-        <h4 class="text-xs uppercase tracking-wider font-bold text-slate-400 mt-4 mb-2 flex items-center gap-1.5">
-          <i class="fa-solid fa-hourglass-half text-amber-400"></i> Σημαντικοί Σταθμοί στο Χρόνο
-        </h4>
-        <div class="relative pl-5 border-l-2 border-slate-700 space-y-4 my-3">
-          ${(entity.hist.highlights || []).map(h => `
-            <div onclick="window.openDeepDive('${escapeStr(h.event)}', '${escapeStr(h.desc)}', '${escapeStr(entity.name)}')" class="relative group cursor-pointer p-2 rounded-xl hover:bg-slate-800/60 transition">
-              <div class="absolute -left-[27px] top-3 w-3.5 h-3.5 rounded-full bg-amber-500 border-2 border-slate-900 group-hover:scale-125 transition"></div>
-              <div class="flex items-center justify-between gap-2">
-                <div class="text-xs font-black text-amber-400 tracking-wide">${h.year}</div>
-                <span class="text-[10px] text-amber-400 opacity-0 group-hover:opacity-100 transition font-semibold flex items-center gap-1">
-                  <i class="fa-solid fa-arrow-up-right-from-square"></i> Λεπτομέρειες
-                </span>
+        ${highlights.length ? `
+          <h4 class="text-xs uppercase tracking-wider font-bold text-slate-400 mt-4 mb-2 flex items-center gap-1.5">
+            <i class="fa-solid fa-hourglass-half text-amber-400"></i> Σημαντικοί Σταθμοί στο Χρόνο
+          </h4>
+          <div class="relative pl-5 border-l-2 border-slate-700 space-y-4 my-3">
+            ${highlights.map(h => `
+              <div onclick="window.openDeepDive('${escapeStr(h.event)}', '${escapeStr(h.desc)}', '${escapeStr(entity.name)}')" class="relative group cursor-pointer p-2 rounded-xl hover:bg-slate-800/60 transition">
+                <div class="absolute -left-[27px] top-3 w-3.5 h-3.5 rounded-full bg-amber-500 border-2 border-slate-900 group-hover:scale-125 transition"></div>
+                <div class="flex items-center justify-between gap-2">
+                  <div class="text-xs font-black text-amber-400 tracking-wide">${h.year}</div>
+                  <span class="text-[10px] text-amber-400 opacity-0 group-hover:opacity-100 transition font-semibold flex items-center gap-1">
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i> Λεπτομέρειες
+                  </span>
+                </div>
+                <div class="font-bold text-slate-100 text-sm group-hover:text-amber-200 transition">${h.event}</div>
+                <div class="text-xs text-slate-300 mt-0.5 leading-relaxed">${h.desc}</div>
               </div>
-              <div class="font-bold text-slate-100 text-sm group-hover:text-amber-200 transition">${h.event}</div>
-              <div class="text-xs text-slate-300 mt-0.5 leading-relaxed">${h.desc}</div>
-            </div>
-          `).join('')}
-        </div>
+            `).join('')}
+          </div>
+        ` : ''}
       </div>
     `;
   } else if (tabId === 'demo') {
+    const summary = entity.demo?.summary || entity.demo?.overview || (entity.population ? `Πληθυσμός: ${entity.population}` : '');
+    const rawDetails = entity.demo?.details || (Array.isArray(entity.fastFacts) ? entity.fastFacts.map(f => typeof f === 'object' ? { label: f.label || 'Στοιχείο', text: f.value || f.text || '' } : { label: 'Στοιχείο', text: String(f) }) : []);
+    const details = rawDetails.map(d => ({ label: d.label || 'Στοιχείο', text: d.text || '' }));
     html = `
       <div class="space-y-3">
         <div class="p-3.5 bg-slate-800/50 rounded-xl border border-slate-700/60 text-slate-200">
           <div class="flex items-center gap-2 text-emerald-400 font-semibold mb-1 text-sm">
             <i class="fa-solid fa-chart-pie"></i> Κοινωνία, Πληθυσμός & Οικονομία
           </div>
-          <p class="leading-relaxed">${entity.demo.summary}</p>
+          <p class="leading-relaxed">${summary || 'Δεν υπάρχουν διαθέσιμες πληροφορίες.'}</p>
         </div>
 
-        <div class="space-y-2.5 mt-3">
-          ${(entity.demo.details || []).map(d => `
-            <div class="p-3 bg-slate-800/30 border border-slate-700/40 rounded-xl">
-              <div class="text-[11px] font-bold uppercase tracking-wider text-emerald-400 mb-0.5">${d.label}</div>
-              <div class="text-xs text-slate-200 leading-relaxed">${d.text}</div>
-            </div>
-          `).join('')}
-        </div>
+        ${details.length ? `
+          <div class="space-y-2.5 mt-3">
+            ${details.map(d => `
+              <div class="p-3 bg-slate-800/30 border border-slate-700/40 rounded-xl">
+                <div class="text-[11px] font-bold uppercase tracking-wider text-emerald-400 mb-0.5">${d.label}</div>
+                <div class="text-xs text-slate-200 leading-relaxed">${d.text}</div>
+              </div>
+            `).join('')}
+          </div>
+        ` : ''}
       </div>
     `;
   } else if (tabId === 'cult') {
+    const summary = entity.cult?.summary || entity.cult?.overview || (typeof entity.culture === 'string' ? entity.culture : '') || '';
+    const items = entity.cult?.items || [];
     html = `
       <div class="space-y-3">
         <div class="p-3.5 bg-slate-800/50 rounded-xl border border-slate-700/60 text-slate-200">
           <div class="flex items-center gap-2 text-violet-400 font-semibold mb-1 text-sm">
             <i class="fa-solid fa-masks-theater"></i> Πολιτισμός, Γλώσσες & Παραδόσεις
           </div>
-          <p class="leading-relaxed">${entity.cult.summary}</p>
+          <p class="leading-relaxed">${summary || 'Δεν υπάρχουν διαθέσιμες πληροφορίες.'}</p>
         </div>
 
-        <div class="space-y-2.5 mt-3">
-          ${(entity.cult.items || []).map(item => `
-            <div onclick="window.openDeepDive('${escapeStr(item.title)}', '${escapeStr(item.desc)}', '${escapeStr(entity.name)}')" class="p-3 bg-slate-800/30 hover:bg-slate-800/80 hover:border-amber-500/50 transition border border-slate-700/40 rounded-xl cursor-pointer group">
-              <div class="flex items-center justify-between gap-2">
-                <div class="font-bold text-slate-100 text-sm mb-0.5 text-violet-300 group-hover:text-amber-300 transition">${item.title}</div>
-                <span class="text-[10px] text-amber-400 font-semibold opacity-0 group-hover:opacity-100 transition flex items-center gap-1 shrink-0">
-                  <i class="fa-solid fa-arrow-up-right-from-square"></i> Ανάλυση
-                </span>
+        ${items.length ? `
+          <div class="space-y-2.5 mt-3">
+            ${items.map(item => `
+              <div onclick="window.openDeepDive('${escapeStr(item.title)}', '${escapeStr(item.desc)}', '${escapeStr(entity.name)}')" class="p-3 bg-slate-800/30 hover:bg-slate-800/80 hover:border-amber-500/50 transition border border-slate-700/40 rounded-xl cursor-pointer group">
+                <div class="flex items-center justify-between gap-2">
+                  <div class="font-bold text-slate-100 text-sm mb-0.5 text-violet-300 group-hover:text-amber-300 transition">${item.title}</div>
+                  <span class="text-[10px] text-amber-400 font-semibold opacity-0 group-hover:opacity-100 transition flex items-center gap-1 shrink-0">
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i> Ανάλυση
+                  </span>
+                </div>
+                <div class="text-slate-300 text-xs leading-relaxed">${item.desc}</div>
               </div>
-              <div class="text-slate-300 text-xs leading-relaxed">${item.desc}</div>
-            </div>
-          `).join('')}
+            `).join('')}
+          </div>
+        ` : ''}
         </div>
 
         ${entity.pois ? `

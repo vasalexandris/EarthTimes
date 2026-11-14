@@ -1,4 +1,4 @@
-import { CITY_TO_STATE } from './states-data.js?v=20261114_world8';
+import { CITY_TO_STATE } from './states-data.js?v=20261114_world9';
 /**
  * Video Service Module
  * Registry of verified high-definition YouTube video tours for all cities
@@ -15180,6 +15180,258 @@ export const CITY_VIDEOS = {
       "youtubeId": "DwbV7fZF4Iw",
       "title": "🇻🇪 Ancient VENEZUELA, Walking in CUMANA I SUCRE 4K",
       "label": "Περιήγηση στο Κουμανά (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+
+  "new-amsterdam-gy": {
+    "cityName": "Νιου Άμστερνταμ",
+    "drone": {
+      "youtubeId": "bCJKANp7UCo",
+      "title": "US$161 Million Hospital Campus, New Amsterdam Guyana",
+      "label": "Νιου Άμστερνταμ με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "mX9n79I8iYs",
+      "title": "TOUR OF NEW AMSTERDAM BERBICE",
+      "label": "Περιήγηση στο Νιου Άμστερνταμ (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "bartica": {
+    "cityName": "Μπαρτίκα",
+    "drone": {
+      "youtubeId": "0g4cYB8ibT4",
+      "title": "From Georgetown to Bartica | Guyana’s Road–River Transition",
+      "label": "Μπαρτίκα με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "fwqA2dV5L8k",
+      "title": "S2 E21 | Bartica Street Tour | Part 1 of 4 | Walk with me in Bartica",
+      "label": "Περιήγηση στο Μπαρτίκα (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "anna-regina": {
+    "cityName": "Άννα Ρετζίνα",
+    "drone": {
+      "youtubeId": "L5qI34NXxvk",
+      "title": "Scenic 4K Drive - Parika 2 Essequibo Coast Anna Regina",
+      "label": "Άννα Ρετζίνα με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    }
+  },
+  "lethem": {
+    "cityName": "Λέθεμ",
+    "drone": {
+      "youtubeId": "Dscj_uyCFWA",
+      "title": "Beautiful Guyana Rupununi Savannah Drone video",
+      "label": "Λέθεμ με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "8HDvfbR9gGQ",
+      "title": "details of lethem, guyana | travel archive #running #guyana",
+      "label": "Περιήγηση στο Λέθεμ (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "corriverton": {
+    "cityName": "Κορίβερτον",
+    "drone": {
+      "youtubeId": "aSJ71CfHZxQ",
+      "title": "Corriverton",
+      "label": "Κορίβερτον με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "juSzeULn0dk",
+      "title": "Driving through Berbice, slowly. #BerbicePeace #guyana #driving",
+      "label": "Περιήγηση στο Κορίβερτον (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "rose-hall": {
+    "cityName": "Ρόουζ Χολ",
+    "drone": {
+      "youtubeId": "bi8KhpjX2SI",
+      "title": "Rose Hall, Canje",
+      "label": "Ρόουζ Χολ με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "niywpDwqvk0",
+      "title": "😲 My First Visit to Rose Hall Market in Berbice, Guyana | Amazing Deals & Surprises!",
+      "label": "Περιήγηση στο Ρόουζ Χολ (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "mahdia": {
+    "cityName": "Μάντια",
+    "drone": {
+      "youtubeId": "V9rY6LbBCyA",
+      "title": "Vlog 02 - Mahdia, Guyana",
+      "label": "Μάντια με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "cGUHmjrTx5s",
+      "title": "Mahdia Guyana 🇬🇾",
+      "label": "Περιήγηση στο Μάντια (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "parika": {
+    "cityName": "Παρίκα",
+    "drone": {
+      "youtubeId": "L5qI34NXxvk",
+      "title": "Scenic 4K Drive - Parika 2 Essequibo Coast Anna Regina",
+      "label": "Παρίκα με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "I9DdVgYnYrM",
+      "title": "Flavours, Ferries & Folks of Parika | @TrisMustList Parika Walking tour in Guyana 🇬🇾",
+      "label": "Περιήγηση στο Παρίκα (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "nieuw-nickerie": {
+    "cityName": "Νιου Νικέρι",
+    "drone": {
+      "youtubeId": "NrlOh0mBgM4",
+      "title": "De Prachtige Zeedijk van Nickerie, Suriname 🇸🇷 | 4K Drone-beelden",
+      "label": "Νιου Νικέρι με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "3Nmv6yK9P0s",
+      "title": "Before You Visit Nieuw Nickerie, Suriname — Watch This! | Nieuw Nickerie Unlocked",
+      "label": "Περιήγηση στο Νιου Νικέρι (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "moengo": {
+    "cityName": "Μούνγκο",
+    "drone": {
+      "youtubeId": "Vn8G7bMuftU",
+      "title": "PARAMARIBO, SURINAME 🇸🇷 4K Cinematic Drone Tour",
+      "label": "Μούνγκο με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "4hrSFeQSRMk",
+      "title": "Flying in Wonoredjo/ Moengo in Marowijne Suriname.",
+      "label": "Περιήγηση στο Μούνγκο (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "albina": {
+    "cityName": "Αλμπίνα",
+    "drone": {
+      "youtubeId": "fNRa8jBCK2w",
+      "title": "Suriname from above; Albina ",
+      "label": "Αλμπίνα με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "EWXZRgCXTqs",
+      "title": "Marowijne  #suriname     #visitsuriname",
+      "label": "Περιήγηση στο Αλμπίνα (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "paranam": {
+    "cityName": "Παρανάμ",
+    "drone": {
+      "youtubeId": "re75fD8RrRg",
+      "title": "Rainforest of South America: Suriname - 4K Drone Video",
+      "label": "Παρανάμ με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "60d4v7tjr_w",
+      "title": "【4K 60fps】🇸🇷 VIRTUAL WALKING TOUR: 🚶 «Paramaribo - Suriname 2026» 🎧 ORIGINAL SOUNDS 🚫NO COMMENT ASMR",
+      "label": "Περιήγηση στο Παρανάμ (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "totness": {
+    "cityName": "Τότνες",
+    "drone": {
+      "youtubeId": "_X06n1fyxAA",
+      "title": "TOTNESS AIRSTRIP in Coronie, Suriname 🇸🇷 | 4K Drone-beelden |",
+      "label": "Τότνες με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    }
+  },
+  "groningen-sr": {
+    "cityName": "Χρόνινγκεν",
+    "drone": {
+      "youtubeId": "iq-AvKwooWM",
+      "title": "GRONINGEN| District Saramacca| SURINAME|DJI MINI 2 |4K",
+      "label": "Χρόνινγκεν με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "fnW1baFPXLo",
+      "title": "GRONINGEN| District Saramacca in Suriname| 8.2.2026",
+      "label": "Περιήγηση στο Χρόνινγκεν (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "onverwacht": {
+    "cityName": "Ονφερβάχτ",
+    "drone": {
+      "youtubeId": "60d4v7tjr_w",
+      "title": "【4K 60fps】🇸🇷 VIRTUAL WALKING TOUR: 🚶 «Paramaribo - Suriname 2026» 🎧 ORIGINAL SOUNDS 🚫NO COMMENT ASMR",
+      "label": "Ονφερβάχτ με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    }
+  },
+  "wageningen-sr": {
+    "cityName": "Βαχενίνγκεν",
+    "drone": {
+      "youtubeId": "NrlOh0mBgM4",
+      "title": "De Prachtige Zeedijk van Nickerie, Suriname 🇸🇷 | 4K Drone-beelden",
+      "label": "Βαχενίνγκεν με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "YlVQjPMJCSs",
+      "title": "Wageningen Drone Video - Suriname june 2019",
+      "label": "Περιήγηση στο Βαχενίνγκεν (4K)",
       "icon": "fa-solid fa-person-walking",
       "type": "walking"
     }

@@ -4,12 +4,12 @@
  * USA, Leaflet Map, Base Layers, UI Dossier, and Time Machine.
  */
 
-import { loadWorldData, loadCountryData, loadStateData } from './data-service.js?v=20261114_world8';
-import * as MapModule from './map.js?v=20261114_world8';
-import * as UIModule from './ui.js?v=20261114_world8';
-import * as TimeMachine from './time-machine.js?v=20261114_world8';
-import * as NavigatorModule from './navigator.js?v=20261114_world8';
-import { US_STATES, CITY_TO_STATE } from './states-data.js?v=20261114_world8';
+import { loadWorldData, loadCountryData, loadStateData } from './data-service.js?v=20261114_world9';
+import * as MapModule from './map.js?v=20261114_world9';
+import * as UIModule from './ui.js?v=20261114_world9';
+import * as TimeMachine from './time-machine.js?v=20261114_world9';
+import * as NavigatorModule from './navigator.js?v=20261114_world9';
+import { US_STATES, CITY_TO_STATE } from './states-data.js?v=20261114_world9';
 
 // Application State
 let worldData = null;
@@ -630,6 +630,23 @@ export async function flyToCity(cityId) {
   'san-cristobal-ve': 'venezuela',
   'puerto-la-cruz': 'venezuela',
   'cumana': 'venezuela',
+
+  'new-amsterdam-gy': 'guyana',
+  'bartica': 'guyana',
+  'anna-regina': 'guyana',
+  'lethem': 'guyana',
+  'corriverton': 'guyana',
+  'rose-hall': 'guyana',
+  'mahdia': 'guyana',
+  'parika': 'guyana',
+  'nieuw-nickerie': 'suriname',
+  'moengo': 'suriname',
+  'albina': 'suriname',
+  'paranam': 'suriname',
+  'totness': 'suriname',
+  'groningen-sr': 'suriname',
+  'onverwacht': 'suriname',
+  'wageningen-sr': 'suriname',
 };
     const targetCountry = cityToCountry[cityId];
     if (targetCountry && !countriesMap.has(targetCountry)) {
