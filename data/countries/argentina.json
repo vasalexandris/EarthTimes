@@ -108,7 +108,9 @@
         "density": "15.300 κάτοικοι/km²",
         "elevation": "25 μ.",
         "founded": "1536 / 1580",
-        "timezone": "America/Argentina/Buenos_Aires"
+        "timezone": "America/Argentina/Buenos_Aires",
+        "famousFor": "Plaza de Mayo",
+        "landmark": "Plaza de Mayo"
       },
       "quote": {
         "text": "«Στο Μπουένος Άιρες, το τάνγκο χορεύεται στους δρόμους και η νύχτα δεν τελειώνει ποτέ.»",
@@ -442,7 +444,9 @@
         -34.6037,
         -58.3816
       ],
-      "zoom": 12.5
+      "zoom": 12.5,
+      "population": "3,1 εκατ. (15,6 εκατ. μητροπολιτική)",
+      "landmark": "Plaza de Mayo"
     },
     {
       "id": "cordoba",
@@ -458,7 +462,9 @@
         "density": "2.800 κάτοικοι/km²",
         "elevation": "390 μ.",
         "founded": "1573",
-        "timezone": "America/Argentina/Cordoba"
+        "timezone": "America/Argentina/Cordoba",
+        "famousFor": "Manzana Jesuítica",
+        "landmark": "Manzana Jesuítica"
       },
       "quote": {
         "text": "«Η Κόρδοβα είναι μια πόλη που συνδυάζει την αποικιακή αρχοντιά με τα βουνά και τα πανεπιστήμια.»",
@@ -792,7 +798,9 @@
         -31.4201,
         -64.1888
       ],
-      "zoom": 12.5
+      "zoom": 12.5,
+      "population": "1,6 εκατ. (1,8 εκατ. μητροπολιτική)",
+      "landmark": "Manzana Jesuítica"
     },
     {
       "id": "rosario",
@@ -808,7 +816,9 @@
         "density": "7.800 κάτοικοι/km²",
         "elevation": "25 μ.",
         "founded": "1793",
-        "timezone": "America/Argentina/Cordoba"
+        "timezone": "America/Argentina/Cordoba",
+        "famousFor": "Monumento a la Bandera",
+        "landmark": "Monumento a la Bandera"
       },
       "quote": {
         "text": "«Το Ροσάριο γεννήθηκε στις όχθες του Παρανά και μεγάλωσε με σιτηρά, ποδήλατο και μνήμη.»",
@@ -1142,7 +1152,9 @@
         -32.9442,
         -60.6505
       ],
-      "zoom": 12.5
+      "zoom": 12.5,
+      "population": "1,4 εκατ. (1,7 εκατ. μητροπολιτική)",
+      "landmark": "Monumento a la Bandera"
     },
     {
       "id": "mendoza",
@@ -1158,7 +1170,9 @@
         "density": "2.000 κάτοικοι/km²",
         "elevation": "746 μ.",
         "founded": "1561",
-        "timezone": "America/Argentina/Mendoza"
+        "timezone": "America/Argentina/Mendoza",
+        "famousFor": "Plaza Independencia",
+        "landmark": "Plaza Independencia"
       },
       "quote": {
         "text": "«Η Μεντόζα καλλιεργεί τον ήλιο σε κάθε σταφύλι και πίνει τις Άνδεις σε κάθε ποτήρι κρασί.»",
@@ -1492,7 +1506,9 @@
         -32.8895,
         -68.8458
       ],
-      "zoom": 12.5
+      "zoom": 12.5,
+      "population": "115 χιλ. (1 εκ. μητροπολιτική)",
+      "landmark": "Plaza Independencia"
     },
     {
       "id": "la-plata",
@@ -1508,7 +1524,9 @@
         "density": "21.000 κάτοικοι/km²",
         "elevation": "9 μ.",
         "founded": "1882",
-        "timezone": "America/Argentina/Buenos_Aires"
+        "timezone": "America/Argentina/Buenos_Aires",
+        "famousFor": "Catedral de La Plata",
+        "landmark": "Catedral de La Plata"
       },
       "quote": {
         "text": "«Η Λα Πλάτα σχεδιάστηκε από τον λογισμό, αλλά ζει από την καρδιά των φοιτητών της.»",
@@ -1866,7 +1884,9 @@
         -34.9215,
         -57.9545
       ],
-      "zoom": 12.5
+      "zoom": 12.5,
+      "population": "574 χιλ. (890 χιλ. μητροπολιτική)",
+      "landmark": "Catedral de La Plata"
     },
     {
       "id": "san-miguel-de-tucuman",
@@ -1882,7 +1902,9 @@
         "density": "6.500 κάτοικοι/km²",
         "elevation": "431 μ.",
         "founded": "1565",
-        "timezone": "America/Argentina/Tucuman"
+        "timezone": "America/Argentina/Tucuman",
+        "famousFor": "Casa Histórica de la Independencia",
+        "landmark": "Casa Histórica de la Independencia"
       },
       "quote": {
         "text": "«Εδώ, στην Τουκουμάν, η Αργεντινή είπε την πρώτη της λέξη ελευθερίας.»",
@@ -2216,7 +2238,9 @@
         -26.8083,
         -65.2176
       ],
-      "zoom": 12.5
+      "zoom": 12.5,
+      "population": "590 χιλ. (800 χιλ. μητροπολιτική)",
+      "landmark": "Casa Histórica de la Independencia"
     },
     {
       "id": "mar-del-plata",
@@ -2232,7 +2256,9 @@
         "density": "7.800 κάτοικοι/km²",
         "elevation": "5 μ.",
         "founded": "1874",
-        "timezone": "America/Argentina/Buenos_Aires"
+        "timezone": "America/Argentina/Buenos_Aires",
+        "famousFor": "Playa Bristol",
+        "landmark": "Playa Bristol"
       },
       "quote": {
         "text": "«Στο Μαρ ντελ Πλάτα, η θάλασσα είναι ο εργοδότης και ο ήλιος ο επισκέπτης.»",
@@ -2566,7 +2592,9 @@
         -38.0023,
         -57.5575
       ],
-      "zoom": 12.5
+      "zoom": 12.5,
+      "population": "620 χιλ. (εκ. θερινός πληθυσμός)",
+      "landmark": "Playa Bristol"
     },
     {
       "id": "salta",
@@ -2582,7 +2610,9 @@
         "density": "8.900 κάτοικοι/km²",
         "elevation": "1.152 μ.",
         "founded": "1582",
-        "timezone": "America/Argentina/Salta"
+        "timezone": "America/Argentina/Salta",
+        "famousFor": "Cerro San Bernardo",
+        "landmark": "Cerro San Bernardo"
       },
       "quote": {
         "text": "«Η Σάλτα είναι η πόλη όπου οι Άνδεις συναντούν την αποικιακή αρχοντιά και ο χρόνος μοιάζει να σταματά.»",
@@ -2916,7 +2946,9 @@
         -24.7821,
         -65.4232
       ],
-      "zoom": 12.5
+      "zoom": 12.5,
+      "population": "535 χιλ. (μητροπολιτική)",
+      "landmark": "Cerro San Bernardo"
     },
     {
       "id": "santa-fe-ar",
@@ -2932,7 +2964,9 @@
         "density": "3.200 κάτοικοι/km²",
         "elevation": "16 μ.",
         "founded": "1573",
-        "timezone": "America/Argentina/Cordoba"
+        "timezone": "America/Argentina/Cordoba",
+        "famousFor": "Puente Colgante",
+        "landmark": "Puente Colgante"
       },
       "quote": {
         "text": "«Εδώ, στη Σάντα Φε, γεννήθηκε το Σύνταγμα και σφυρηλατήθηκαν οι νόμοι της Αργεντινής.»",
@@ -3266,7 +3300,9 @@
         -31.6107,
         -60.6973
       ],
-      "zoom": 12.5
+      "zoom": 12.5,
+      "population": "415 χιλ. (530 χιλ. μητροπολιτική)",
+      "landmark": "Puente Colgante"
     },
     {
       "id": "san-juan-ar",
@@ -3282,7 +3318,9 @@
         "density": "3.900 κάτοικοι/km²",
         "elevation": "650 μ.",
         "founded": "1562",
-        "timezone": "America/Argentina/San_Juan"
+        "timezone": "America/Argentina/San_Juan",
+        "famousFor": "Casa Natal de Sarmiento",
+        "landmark": "Casa Natal de Sarmiento"
       },
       "quote": {
         "text": "«Στη Σαν Χουάν, ο ήλιος φωτίζει τα αμπέλια και η μνήμη του Sarmiento δασκάλεψε τη χώρα.»",
@@ -3616,7 +3654,9 @@
         -31.5375,
         -68.5364
       ],
-      "zoom": 12.5
+      "zoom": 12.5,
+      "population": "470 χιλ. (μητροπολιτική)",
+      "landmark": "Casa Natal de Sarmiento"
     }
   ]
 }

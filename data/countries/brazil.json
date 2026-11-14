@@ -108,7 +108,9 @@
         "density": "540 κάτοικοι/km²",
         "elevation": "1.172 μ.",
         "founded": "1960",
-        "timezone": "America/Sao_Paulo"
+        "timezone": "America/Sao_Paulo",
+        "famousFor": "Καθεδρικός της Μπραζίλια",
+        "landmark": "Καθεδρικός της Μπραζίλια"
       },
       "quote": {
         "text": "«Η Μπραζίλια σχεδιάστηκε για να κοιτάζει το μέλλον, με γραμμές που πετούν.»",
@@ -442,7 +444,9 @@
         -15.7939,
         -47.8828
       ],
-      "zoom": 12.5
+      "zoom": 12.5,
+      "population": "3,1 εκ. (4,7 εκ. μητροπολιτική)",
+      "landmark": "Καθεδρικός της Μπραζίλια"
     },
     {
       "id": "rio-de-janeiro",
@@ -458,7 +462,9 @@
         "density": "5.600 κάτοικοι/km²",
         "elevation": "0-1.021 μ.",
         "founded": "1565",
-        "timezone": "America/Sao_Paulo"
+        "timezone": "America/Sao_Paulo",
+        "famousFor": "Χριστός Λυτρωτής",
+        "landmark": "Χριστός Λυτρωτής"
       },
       "quote": {
         "text": "«Ο Θεός δημιούργησε τον κόσμο σε έξι ημέρες και την έβδομη έφτιαξε το Ρίο.»",
@@ -792,7 +798,9 @@
         -22.9068,
         -43.1729
       ],
-      "zoom": 12.5
+      "zoom": 12.5,
+      "population": "6,7 εκ. (13 εκ. μητροπολιτική)",
+      "landmark": "Χριστός Λυτρωτής"
     },
     {
       "id": "sao-paulo",
@@ -808,7 +816,9 @@
         "density": "8.100 κάτοικοι/km²",
         "elevation": "760 μ.",
         "founded": "1554",
-        "timezone": "America/Sao_Paulo"
+        "timezone": "America/Sao_Paulo",
+        "famousFor": "Ibirapuera Park",
+        "landmark": "Ibirapuera Park"
       },
       "quote": {
         "text": "«Το Σάο Πάολο δεν σταματά ποτέ· είναι μια πόλη που δουλεύει, δημιουργεί και ονειρεύεται.»",
@@ -1142,7 +1152,9 @@
         -23.5505,
         -46.6333
       ],
-      "zoom": 12.5
+      "zoom": 12.5,
+      "population": "12,3 εκ. (22 εκ. μητροπολιτική)",
+      "landmark": "Ibirapuera Park"
     },
     {
       "id": "salvador",
@@ -1158,7 +1170,9 @@
         "density": "4.200 κάτοικοι/km²",
         "elevation": "8 μ.",
         "founded": "1549",
-        "timezone": "America/Bahia"
+        "timezone": "America/Bahia",
+        "famousFor": "Pelourinho",
+        "landmark": "Pelourinho"
       },
       "quote": {
         "text": "«Στο Σαλβαδόρ, οι τύμπανοι της Αφρικής χτυπούν στην καρδιά της Βραζιλίας.»",
@@ -1492,7 +1506,9 @@
         -12.9777,
         -38.5016
       ],
-      "zoom": 12.5
+      "zoom": 12.5,
+      "population": "2,9 εκ. (3,9 εκ. μητροπολιτική)",
+      "landmark": "Pelourinho"
     },
     {
       "id": "belo-horizonte",
@@ -1508,7 +1524,9 @@
         "density": "7.300 κάτοικοι/km²",
         "elevation": "852 μ.",
         "founded": "1897",
-        "timezone": "America/Sao_Paulo"
+        "timezone": "America/Sao_Paulo",
+        "famousFor": "Praça da Liberdade",
+        "landmark": "Praça da Liberdade"
       },
       "quote": {
         "text": "«Στο Μπέλο Οριζόντε, κάθε γωνιά κρύβει μια μπύρα, ένα τραγούδι και μια ιστορία από τη Minas.»",
@@ -1842,7 +1860,9 @@
         -19.9167,
         -43.9345
       ],
-      "zoom": 12.5
+      "zoom": 12.5,
+      "population": "2,5 εκ. (6 εκ. μητροπολιτική)",
+      "landmark": "Praça da Liberdade"
     },
     {
       "id": "curitiba",
@@ -1858,7 +1878,9 @@
         "density": "4.400 κάτοικοι/km²",
         "elevation": "934 μ.",
         "founded": "1693",
-        "timezone": "America/Sao_Paulo"
+        "timezone": "America/Sao_Paulo",
+        "famousFor": "Jardim Botânico de Curitiba",
+        "landmark": "Jardim Botânico de Curitiba"
       },
       "quote": {
         "text": "«Η Κουριτίμπα είναι η πόλη που δίδαξε στον κόσμο πώς ο σχεδιασμός μπορεί να αλλάξει ζωές.»",
@@ -2192,7 +2214,9 @@
         -25.4284,
         -49.2733
       ],
-      "zoom": 12.5
+      "zoom": 12.5,
+      "population": "1,9 εκ. (3,5 εκ. μητροπολιτική)",
+      "landmark": "Jardim Botânico de Curitiba"
     },
     {
       "id": "fortaleza",
@@ -2208,7 +2232,9 @@
         "density": "8.600 κάτοικοι/km²",
         "elevation": "16 μ.",
         "founded": "1726",
-        "timezone": "America/Fortaleza"
+        "timezone": "America/Fortaleza",
+        "famousFor": "Praia do Futuro",
+        "landmark": "Praia do Futuro"
       },
       "quote": {
         "text": "«Στη Φορταλέζα, ο ήλιος, η θάλασσα και η μουσική συναντώνται σε ένα τροπικό πανόραμα.»",
@@ -2542,7 +2568,9 @@
         -3.7172,
         -38.5433
       ],
-      "zoom": 12.5
+      "zoom": 12.5,
+      "population": "2,7 εκ. (4 εκ. μητροπολιτική)",
+      "landmark": "Praia do Futuro"
     },
     {
       "id": "recife",
@@ -2558,7 +2586,9 @@
         "density": "7.200 κάτοικοι/km²",
         "elevation": "4 μ.",
         "founded": "1537",
-        "timezone": "America/Recife"
+        "timezone": "America/Recife",
+        "famousFor": "Marco Zero",
+        "landmark": "Marco Zero"
       },
       "quote": {
         "text": "«Το Ρεσίφε είναι η Βενετία της Βραζιλίας, με γέφυρες, ύφαλοι και ρυθμό frevo.»",
@@ -2892,7 +2922,9 @@
         -8.0476,
         -34.877
       ],
-      "zoom": 12.5
+      "zoom": 12.5,
+      "population": "1,6 εκ. (4 εκ. μητροπολιτική)",
+      "landmark": "Marco Zero"
     },
     {
       "id": "porto-alegre",
@@ -2908,7 +2940,9 @@
         "density": "2.900 κάτοικοι/km²",
         "elevation": "10 μ.",
         "founded": "1772",
-        "timezone": "America/Sao_Paulo"
+        "timezone": "America/Sao_Paulo",
+        "famousFor": "Mercado Público de Porto Alegre",
+        "landmark": "Mercado Público de Porto Alegre"
       },
       "quote": {
         "text": "«Στο Πόρτο Αλέγκρε, η γη των γκάτσο συναντά την πολιτισμένη ευρωπαϊκή κληρονομιά.»",
@@ -3242,7 +3276,9 @@
         -30.0346,
         -51.2177
       ],
-      "zoom": 12.5
+      "zoom": 12.5,
+      "population": "1,5 εκ. (4,4 εκ. μητροπολιτική)",
+      "landmark": "Mercado Público de Porto Alegre"
     },
     {
       "id": "manaus",
@@ -3258,7 +3294,9 @@
         "density": "170 κάτοικοι/km²",
         "elevation": "92 μ.",
         "founded": "1669",
-        "timezone": "America/Manaus"
+        "timezone": "America/Manaus",
+        "famousFor": "Teatro Amazonas",
+        "landmark": "Teatro Amazonas"
       },
       "quote": {
         "text": "«Στο Μανάους, η καρδιά του Αμαζονίου χτυπά στο θέατρο όπερας της.»",
@@ -3592,7 +3630,9 @@
         -3.119,
         -60.0217
       ],
-      "zoom": 12.5
+      "zoom": 12.5,
+      "population": "2,2 εκ. (2,5 εκ. μητροπολιτική)",
+      "landmark": "Teatro Amazonas"
     }
   ]
 }

@@ -4,9 +4,9 @@
  * Base Map Layer selector, Date display, Video Overlay, and Deep Dive views.
  */
 
-import { getCityVideo, getAvailableVideoTypes, getAvailableCityTours, CITY_VIDEOS, findPoiLiveCam } from './video-service.js?v=20261114_world13';
-import { getDeepDiveData } from './deep-dive.js?v=20261114_world13';
-import { fetchWikiArticle, fetchWikiArticleHtml, cleanWikiTitle } from './wiki-service.js?v=20261114_world13';
+import { getCityVideo, getAvailableVideoTypes, getAvailableCityTours, CITY_VIDEOS, findPoiLiveCam } from './video-service.js?v=20261114_world14';
+import { getDeepDiveData } from './deep-dive.js?v=20261114_world14';
+import { fetchWikiArticle, fetchWikiArticleHtml, cleanWikiTitle } from './wiki-service.js?v=20261114_world14';
 
 let currentActiveVideoCityId = null;
 let currentActiveVideoType = 'drone';
@@ -768,13 +768,13 @@ export function renderDossier(entity, entityType = 'state', currentTab = 'geo', 
     if (stat3) stat3.innerText = entity.stats?.area || entity.stats?.gdp || '-';
   } else {
     if (stat1Label) stat1Label.innerText = 'Πληθυσμός';
-    if (stat1) stat1.innerText = entity.stats?.population || '-';
+    if (stat1) stat1.innerText = entity.stats?.population || entity.population || '-';
 
     if (stat2Label) stat2Label.innerText = entityType === 'city' ? 'Ορόσημο' : 'Ίδρυση / Ενσωμ.';
-    if (stat2) stat2.innerText = entity.stats?.founded || entity.stats?.famousFor || '-';
+    if (stat2) stat2.innerText = entity.landmark || entity.stats?.landmark || entity.stats?.famousFor || entity.badge || entity.stats?.founded || '-';
 
-    if (stat3Label) stat3Label.innerText = 'Έκταση / ΑΕΠ';
-    if (stat3) stat3.innerText = entity.stats?.area || entity.stats?.gdp || '-';
+    if (stat3Label) stat3Label.innerText = entity.stats?.elevation ? 'Υψόμετρο / Έκταση' : 'Έκταση / ΑΕΠ';
+    if (stat3) stat3.innerText = entity.stats?.elevation || entity.stats?.area || entity.stats?.gdp || '-';
   }
 
   const docuQuote = document.getElementById('docuQuote');

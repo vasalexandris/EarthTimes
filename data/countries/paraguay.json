@@ -153,7 +153,9 @@
         "population": "520,000 (2.3 εκατ. μητροπολιτική)",
         "founded": "1537",
         "area": "117 km²",
-        "elevation": "43 μ."
+        "elevation": "43 μ.",
+        "famousFor": "Palacio de los López",
+        "landmark": "Palacio de los López"
       },
       "quote": "«Η Ασουνσιόν είναι μια πόλη που κοιτάει το ποτάμι της και θυμάται ότι από εδώ ξεκίνησε η ιστορία μιας ολόκληρης περιοχής.»",
       "geo": {
@@ -413,7 +415,9 @@
           "description": "Βοτανικός κήπος και ζωολογικός κήπος μέσα σε φυσικό δάσος.",
           "wiki": "Botanical_Garden_and_Zoo_of_Asunción"
         }
-      ]
+      ],
+      "population": "520,000 (2.3 εκατ. μητροπολιτική)",
+      "landmark": "Palacio de los López"
     },
     {
       "id": "ciudad-del-este",
@@ -434,7 +438,9 @@
         "population": "300,000 (500,000 μητροπολιτική)",
         "founded": "1957",
         "area": "104 km²",
-        "elevation": "185 μ."
+        "elevation": "185 μ.",
+        "famousFor": "Saltos del Monday",
+        "landmark": "Saltos del Monday"
       },
       "quote": "«Η Σιουδάδ δελ Έστε είναι μια πόλη που χτυπάει στην καρδιά τριών χωρών, με αγορές, ποτάμια και την αδιάκοπη κίνηση των συνόρων.»",
       "geo": {
@@ -664,7 +670,9 @@
           "description": "Η διεθνής γέφυρα που συνδέει την πόλη με τη βραζιλιάνικη Foz do Iguaçu.",
           "wiki": "Friendship_Bridge_(Brazil–Paraguay)"
         }
-      ]
+      ],
+      "population": "300,000 (500,000 μητροπολιτική)",
+      "landmark": "Saltos del Monday"
     },
     {
       "id": "encarnacion",
@@ -685,7 +693,9 @@
         "population": "106,842 (περίπου 200,000 μητροπολιτική)",
         "founded": "1615",
         "area": "274 km²",
-        "elevation": "91 μ."
+        "elevation": "91 μ.",
+        "famousFor": "Playa San José",
+        "landmark": "Playa San José"
       },
       "quote": "«Η Ενκαρνασιόν γεννήθηκε στις όχθες του Παρανά και σήμερα είναι η παραλία και το καρναβάλι όλης της Παραγουάης.»",
       "geo": {
@@ -915,7 +925,9 @@
           "description": "Παραποτάμιος περίπατος με πάρκα και θέα στον Παρανά.",
           "wiki": "Encarnación,_Paraguay"
         }
-      ]
+      ],
+      "population": "106,842 (περίπου 200,000 μητροπολιτική)",
+      "landmark": "Playa San José"
     },
     {
       "id": "luque",
@@ -936,7 +948,9 @@
         "population": "259,705",
         "founded": "1635 / 1750",
         "area": "153 km²",
-        "elevation": "120 μ."
+        "elevation": "120 μ.",
+        "famousFor": "CONMEBOL Headquarters",
+        "landmark": "CONMEBOL Headquarters"
       },
       "quote": "«Στο Λούκε γεννιούνται άρπες, κοσμήματα φιλιγκράνα και το ποδόσφαιρο της Νότιας Αμερικής.»",
       "geo": {
@@ -1166,7 +1180,9 @@
           "description": "Το κύριο διεθνές αεροδρόμιο της Παραγουάης.",
           "wiki": "Silvio_Pettirossi_International_Airport"
         }
-      ]
+      ],
+      "population": "259,705",
+      "landmark": "CONMEBOL Headquarters"
     },
     {
       "id": "san-lorenzo-py",
@@ -1187,7 +1203,9 @@
         "population": "225,395",
         "founded": "1775",
         "area": "56 km²",
-        "elevation": "126 μ."
+        "elevation": "126 μ.",
+        "famousFor": "Catedral de San Lorenzo",
+        "landmark": "Catedral de San Lorenzo"
       },
       "quote": "«Το Σαν Λορένσο είναι η πόλη όπου χτυπάει η καρδιά της γνώσης της Παραγουάης.»",
       "geo": {
@@ -1417,7 +1435,9 @@
           "description": "Κεντρικός πεζόδρομος με πολιτιστική ζωή.",
           "wiki": "San_Lorenzo,_Paraguay"
         }
-      ]
+      ],
+      "population": "225,395",
+      "landmark": "Catedral de San Lorenzo"
     },
     {
       "id": "villarrica",
@@ -1438,7 +1458,9 @@
         "population": "περίπου 70,000",
         "founded": "1570",
         "area": "247 km²",
-        "elevation": "180 μ."
+        "elevation": "180 μ.",
+        "famousFor": "Parque Manuel Ortiz Guerrero",
+        "landmark": "Parque Manuel Ortiz Guerrero"
       },
       "quote": "«Η Βιγιαρρίκα είναι η πόλη που περπάτησε επτά φορές μέχρι να βρει το σπίτι της στους πρόποδες του Υμπιτιρουσού.»",
       "geo": {
@@ -1668,7 +1690,9 @@
           "description": "Το εθνικό πανεπιστήμιο της πόλης.",
           "wiki": "Villarrica,_Paraguay"
         }
-      ]
+      ],
+      "population": "περίπου 70,000",
+      "landmark": "Parque Manuel Ortiz Guerrero"
     },
     {
       "id": "concepcion-py",
@@ -1689,7 +1713,9 @@
         "population": "73,360",
         "founded": "1773",
         "area": "1,092 km²",
-        "elevation": "44 μ."
+        "elevation": "44 μ.",
+        "famousFor": "Puerto de Concepción",
+        "landmark": "Puerto de Concepción"
       },
       "quote": "«Η Κονσεπσιόν είναι η πύλη του βορρά και το λιμάνι που ένωνε την Παραγουάη με τον κόσμο.»",
       "geo": {
@@ -1919,7 +1945,9 @@
           "description": "Παραποτάμιος περίπατος.",
           "wiki": "Concepción,_Paraguay"
         }
-      ]
+      ],
+      "population": "73,360",
+      "landmark": "Puerto de Concepción"
     },
     {
       "id": "pedro-juan-caballero",
@@ -1940,7 +1968,9 @@
         "population": "127,437",
         "founded": "1899",
         "area": "περίπου 200 km²",
-        "elevation": "650 μ."
+        "elevation": "650 μ.",
+        "famousFor": "Parque Nacional Cerro Corá",
+        "landmark": "Parque Nacional Cerro Corá"
       },
       "quote": "«Στο Πέδρο Χουάν Καμπαγιέρο τελείωσε ένας πόλεμος και ξεκίνησε μια νέα συνοριακή ζωή.»",
       "geo": {
@@ -2170,7 +2200,9 @@
           "description": "Σύγχρονο εμπορικό κέντρο της πόλης.",
           "wiki": "Pedro_Juan_Caballero,_Paraguay"
         }
-      ]
+      ],
+      "population": "127,437",
+      "landmark": "Parque Nacional Cerro Corá"
     },
     {
       "id": "coronel-oviedo",
@@ -2191,7 +2223,9 @@
         "population": "περίπου 120,000",
         "founded": "1758",
         "area": "περίπου 150 km²",
-        "elevation": "160 μ."
+        "elevation": "160 μ.",
+        "famousFor": "Iglesia de la Virgen del Rosario",
+        "landmark": "Iglesia de la Virgen del Rosario"
       },
       "quote": "«Το Κορονέλ Οβιέδο είναι η καρδιά της καρδιάς της Αμερικής, σταυροδρόμι όλων των δρόμων της Παραγουάης.»",
       "geo": {
@@ -2421,7 +2455,9 @@
           "description": "Η λαϊκή αγορά της πόλης.",
           "wiki": "Coronel_Oviedo"
         }
-      ]
+      ],
+      "population": "περίπου 120,000",
+      "landmark": "Iglesia de la Virgen del Rosario"
     },
     {
       "id": "capiata",
@@ -2442,7 +2478,9 @@
         "population": "236,999",
         "founded": "1640",
         "area": "88 km²",
-        "elevation": "124 μ."
+        "elevation": "124 μ.",
+        "famousFor": "Museo Mitológico Ramón Elías",
+        "landmark": "Museo Mitológico Ramón Elías"
       },
       "quote": "«Στην Καπιατά ζουν ακόμη οι μύθοι των Γκουαρανί και οι φραγκισκανές καμπάνες του 17ου αιώνα.»",
       "geo": {
@@ -2672,7 +2710,9 @@
           "description": "Κεντρική πλατεία της πόλης.",
           "wiki": "Capiatá"
         }
-      ]
+      ],
+      "population": "236,999",
+      "landmark": "Museo Mitológico Ramón Elías"
     }
   ]
 }

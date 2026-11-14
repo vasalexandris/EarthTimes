@@ -157,7 +157,9 @@
         "population": "2.9 εκατ. (5 εκατ. μητροπολιτική)",
         "founded": "1567 (Diego de Losada)",
         "area": "433 km²",
-        "elevation": "900 μ."
+        "elevation": "900 μ.",
+        "famousFor": "Κοιλάδα & Άβιλα",
+        "landmark": "Κοιλάδα & Άβιλα"
       },
       "brief": "Χτισμένο σε μια στενή κοιλάδα στα 900 μέτρα, το Καράκας περικλείεται από το Waraira Repano (El Ávila) στα βόρεια και χαμηλούς λόφους στα νότια, με τον ποταμό Guaire να το διασχίζει. Είναι η πρωτεύουσα και μεγαλύτερη πόλη της Βενεζουέλας, γνωστή για το ήπιο κλίμα της, την πυκνή αστική ζωή και την πολιτιστική της κληρονομιά.",
       "history": "Ιδρυμένο το 1567 ως Santiago de León de Caracas από τον Diego de Losada, το Καράκας έγινε γρήγορα κέντρο της αποικιακής διοίκησης της επαρχίας Βενεζουέλα. Η πόλη αποτέλεσε λίκνο της ανεξαρτησίας, καθώς στις 5 Ιουλίου 1811 το Κογκρέσο της κήρυξε την αποχώρηση από την Ισπανία, πρώτη στη Νότια Αμερική.\n\nΤον 19ο αιώνα, παρά τις πολιτικές αναταραχές και τους εμφύλιους πολέμους, η πόλη διατήρησε την πολιτική της υπεροχή. Το 1928, φοιτητικές διαδηλώσεις κατά της δικτατορίας Gómez σηματοδότησαν τη γέννηση της σύγχρονης πολιτικής σκέψης στη χώρα.\n\nΜε την πετρελαϊκή έκρηξη του 20ού αιώνα, το Καράκας μετατράπηκε σε μια μοντέρνα μητρόπολη με ουρανοξύστες, πανεπιστήμια και πολιτιστικά ιδρύματα παγκόσμιας κλάσης, όπως η Ciudad Universitaria που αναγνωρίστηκε ως Μνημείο Παγκόσμιας Κληρονομιάς UNESCO.",
@@ -407,7 +409,23 @@
       },
       "hist": {
         "summary": "Ιδρυμένο το 1567 ως Santiago de León de Caracas από τον Diego de Losada, το Καράκας έγινε γρήγορα κέντρο της αποικιακής διοίκησης της επαρχίας Βενεζουέλα. Η πόλη αποτέλεσε λίκνο της ανεξαρτησίας, καθώς στις 5 Ιουλίου 1811 το Κογκρέσο της κήρυξε την αποχώρηση από την Ισπανία, πρώτη στη Νότια Αμερική.\n\nΤον 19ο αιώνα, παρά τις πολιτικές αναταραχές και τους εμφύλιους πολέμους, η πόλη διατήρησε την πολιτική της υπεροχή. Το 1928, φοιτητικές διαδηλώσεις κατά της δικτατορίας Gómez σηματοδότησαν τη γέννηση της σύγχρονης πολιτικής σκέψης στη χώρα.\n\nΜε την πετρελαϊκή έκρηξη του 20ού αιώνα, το Καράκας μετατράπηκε σε μια μοντέρνα μητρόπολη με ουρανοξύστες, πανεπιστήμια και πολιτιστικά ιδρύματα παγκόσμιας κλάσης, όπως η Ciudad Universitaria που αναγνωρίστηκε ως Μνημείο Παγκόσμιας Κληρονομιάς UNESCO.",
-        "highlights": []
+        "highlights": [
+          {
+            "year": "1567",
+            "event": "Ίδρυση & Πρώιμη Αποικιακή Εποχή",
+            "desc": "Οι πρώτες εγκαταστάσεις και η θεμελίωση της πόλης κατά το έτος 1567."
+          },
+          {
+            "year": "1811",
+            "event": "Ανεξαρτησία & Ανάπτυξη",
+            "desc": "Ιστορική καμπή και οικονομική άνθηση της περιοχής γύρω στο 1811."
+          },
+          {
+            "year": "1928",
+            "event": "Σύγχρονη Εποχή",
+            "desc": "Αστικός εκσυγχρονισμός και ένταξη στα μεγάλα περιφερειακά δίκτυα."
+          }
+        ]
       },
       "demo": {
         "summary": "Πληθυσμός και κοινωνική διάρθρωση: 2.9 εκατ. (5 εκατ. μητροπολιτική)",
@@ -432,8 +450,22 @@
       },
       "cult": {
         "summary": "Πόλη μουσείων, θεάτρων και πανεπιστημιούπολης UNESCO, με μια καλλιτεχνική σκηνή που συνδυάζει μοντερνισμό, λαϊκή τέχνη και καραϊβικό ρυθμό. Η Ciudad Universitaria του Carlos Raúl Villanueva, με έργα Calder και Léger, είναι μνημείο παγκόσμιας κληρονομιάς. Τα μουσεία Σύγχρονης Τέχνης και Bellas Artes, καθώς και το Θέατρο Teresa Carreño, φιλοξενούν διεθνείς συλλογές και παραστάσεις. Οι areperas της γειτονιάς και ο δυνατός καφές guayoyo αποτελούν το καθημερινό τελετουργικό της πόλης.",
-        "items": []
-      }
+        "items": [
+          {
+            "title": "Plaza Bolívar",
+            "desc": "Η κεντρική πλατεία της πόλης, με το άγαλμα του Μπολίβαρ και τον Καθεδρικό."
+          },
+          {
+            "title": "Καθεδρικός του Καράκας",
+            "desc": "Ο αποικιακός καθεδρικός, δίπλα στην κεντρική πλατεία."
+          },
+          {
+            "title": "Πάνθεον του Έθνους",
+            "desc": "Ο εθνικός ναός όπου αναπαύεται ο Σιμόν Μπολίβαρ."
+          }
+        ]
+      },
+      "landmark": "Κοιλάδα & Άβιλα"
     },
     {
       "id": "maracaibo",
@@ -458,7 +490,9 @@
         "population": "2.2 εκατ. (2.5 εκατ. μητροπολιτική)",
         "founded": "1529 (πρώτη) / 1574 (μόνιμη)",
         "area": "1,393 km²",
-        "elevation": "6 μ."
+        "elevation": "6 μ.",
+        "famousFor": "Λίμνη & Στενό",
+        "landmark": "Λίμνη & Στενό"
       },
       "brief": "Χτισμένο στη δυτική όχθη του στενού που ενώνει τη λίμνη Μαρακαΐμπο με την Καραϊβική, το Μαρακαΐμπο είναι η πιο ζεστή μεγάλη πόλη της χώρας, με μέση θερμοκρασία γύρω στους 29 βαθμούς. Είναι το πετρελαϊκό κέντρο της Βενεζουέλας και μια πόλη με ισχυρή ταυτότητα γύρω από τη λίμνη.",
       "history": "Η περιοχή κατοικήθηκε από ιθαγενείς Wayuu πριν από την άφιξη των Ισπανών. Το 1529 έγινε η πρώτη απόπειρα ίδρυσης από τον Ambrosio Alfinger, αλλά η μόνιμη εγκατάσταση ολοκληρώθηκε το 1574 από τον Diego de Artieda Chirino, ο οποίος ίδρυσε τη Nueva Zamora de la Laguna de Maracaibo.\n\nΤο Μαρακαΐμπο διαδραμάτισε κρίσιμο ρόλο στην ανεξαρτησία της Βενεζουέλας. Η Ναυμαχία της Λίμνης το 1823, όπου οι πατριώτες νίκησαν τους Ισπανούς, σφράγισε την τελική αποχώρηση της αποικιοκρατίας από τη Νότια Αμερική.\n\nΤον 20ό αιώνα, η ανακάλυψη πετρελαίου στη λίμνη (Zumaque-1 το 1914) μετέτρεψε την πόλη σε βιομηχανικό κόμβο, προσελκύοντας μετανάστες και εταιρείες από όλο τον κόσμο, δημιουργώντας μια μοντέρνα μητρόπολη με έντονη τοπική ταυτότητα.",
@@ -676,7 +710,23 @@
       },
       "hist": {
         "summary": "Η περιοχή κατοικήθηκε από ιθαγενείς Wayuu πριν από την άφιξη των Ισπανών. Το 1529 έγινε η πρώτη απόπειρα ίδρυσης από τον Ambrosio Alfinger, αλλά η μόνιμη εγκατάσταση ολοκληρώθηκε το 1574 από τον Diego de Artieda Chirino, ο οποίος ίδρυσε τη Nueva Zamora de la Laguna de Maracaibo.\n\nΤο Μαρακαΐμπο διαδραμάτισε κρίσιμο ρόλο στην ανεξαρτησία της Βενεζουέλας. Η Ναυμαχία της Λίμνης το 1823, όπου οι πατριώτες νίκησαν τους Ισπανούς, σφράγισε την τελική αποχώρηση της αποικιοκρατίας από τη Νότια Αμερική.\n\nΤον 20ό αιώνα, η ανακάλυψη πετρελαίου στη λίμνη (Zumaque-1 το 1914) μετέτρεψε την πόλη σε βιομηχανικό κόμβο, προσελκύοντας μετανάστες και εταιρείες από όλο τον κόσμο, δημιουργώντας μια μοντέρνα μητρόπολη με έντονη τοπική ταυτότητα.",
-        "highlights": []
+        "highlights": [
+          {
+            "year": "1529",
+            "event": "Ίδρυση & Πρώιμη Αποικιακή Εποχή",
+            "desc": "Οι πρώτες εγκαταστάσεις και η θεμελίωση της πόλης κατά το έτος 1529."
+          },
+          {
+            "year": "1823",
+            "event": "Ανεξαρτησία & Ανάπτυξη",
+            "desc": "Ιστορική καμπή και οικονομική άνθηση της περιοχής γύρω στο 1823."
+          },
+          {
+            "year": "1914",
+            "event": "Σύγχρονη Εποχή",
+            "desc": "Αστικός εκσυγχρονισμός και ένταξη στα μεγάλα περιφερειακά δίκτυα."
+          }
+        ]
       },
       "demo": {
         "summary": "Πληθυσμός και κοινωνική διάρθρωση: 2.2 εκατ. (2.5 εκατ. μητροπολιτική)",
@@ -701,8 +751,22 @@
       },
       "cult": {
         "summary": "Πολιτισμός της Καραϊβικής με αφρικανικές και ιθαγενείς ρίζες: gaita, παλάφιτα, μπέιζμπολ και η λατρεία της Παναγίας της Chiquinquirá. Στις 18 Νοεμβρίου η πόλη γιορτάζει την Παναγία της Chiquinquirá με λιτανείες, μουσική και φαγητό στους δρόμους. Η gaita zuliana, το τοπικό μουσικό είδος με ντραμς και χορωδία, είναι σύμβολο των Χριστουγέννων σε όλη τη Βενεζουέλα. Το Θέατρο Baralt του 1883 αποτελεί κόσμημα της πόλης και σκηνή για μουσική και θέατρο.",
-        "items": []
-      }
+        "items": [
+          {
+            "title": "Βασιλική της Chiquinquirá",
+            "desc": "Ο ναός της πολιούχου της πόλης, κέντρο του εορτασμού του Νοεμβρίου."
+          },
+          {
+            "title": "Θέατρο Baralt",
+            "desc": "Το ιστορικό θέατρο του 1883 στην καρδιά του κέντρου."
+          },
+          {
+            "title": "Γέφυρα Rafael Urdaneta",
+            "desc": "Η μεγάλη γέφυρα πάνω από το στενό της λίμνης."
+          }
+        ]
+      },
+      "landmark": "Λίμνη & Στενό"
     },
     {
       "id": "valencia",
@@ -727,7 +791,9 @@
         "population": "1.5 εκατ. (2 εκατ. μητροπολιτική)",
         "founded": "1555",
         "area": "1,578 km²",
-        "elevation": "520 μ."
+        "elevation": "520 μ.",
+        "famousFor": "Λεκάνη της Βαλένθια",
+        "landmark": "Λεκάνη της Βαλένθια"
       },
       "brief": "Στην κοιλάδα του ποταμού Cabriales και στα δυτικά της λίμνης Valencia, η πόλη βρίσκεται στα 520 μέτρα, με ήπιο κλίμα και εύφορη πεδιάδα γύρω της. Είναι η τρίτη μεγαλύτερη πόλη της Βενεζουέλας και ο κύριος βιομηχανικός κόμβος της χώρας.",
       "history": "Ιδρύθηκε το 1555 από τον Alonso Díaz Moreno ως Nueva Valencia del Rey, καθιστώντας την μία από τις παλαιότερες ευρωπαϊκές εγκαταστάσεις στη Νότια Αμερική. Η πόλη έπαιξε σημαντικό ρόλο στους πολέμους της ανεξαρτησίας, με τη μάχη της Μπαρμπούλα το 1813 να αποτελεί σημείο καμπής.\n\nΤον 20ό αιώνα, η Βαλένθια μετατράπηκε σε βιομηχανικό κέντρο, ιδιαίτερα μετά τη δεκαετία του 1960, με την εγκατάσταση αυτοκινητοβιομηχανιών και μεγάλων εργοστασίων. Η μετανάστευση από την Ευρώπη και άλλες περιοχές της Βενεζουέλας οδήγησε σε ραγδαία αστική επέκταση.\n\nΣήμερα, η πόλη αντιμετωπίζει προκλήσεις όπως η ρύπανση της λίμνης Valencia και η ανάγκη για εκσυγχρονισμό των υποδομών, διατηρώντας όμως τη σημασία της ως οικονομικός πυλώνας της κεντρικής Βενεζουέλας.",
@@ -945,7 +1011,23 @@
       },
       "hist": {
         "summary": "Ιδρύθηκε το 1555 από τον Alonso Díaz Moreno ως Nueva Valencia del Rey, καθιστώντας την μία από τις παλαιότερες ευρωπαϊκές εγκαταστάσεις στη Νότια Αμερική. Η πόλη έπαιξε σημαντικό ρόλο στους πολέμους της ανεξαρτησίας, με τη μάχη της Μπαρμπούλα το 1813 να αποτελεί σημείο καμπής.\n\nΤον 20ό αιώνα, η Βαλένθια μετατράπηκε σε βιομηχανικό κέντρο, ιδιαίτερα μετά τη δεκαετία του 1960, με την εγκατάσταση αυτοκινητοβιομηχανιών και μεγάλων εργοστασίων. Η μετανάστευση από την Ευρώπη και άλλες περιοχές της Βενεζουέλας οδήγησε σε ραγδαία αστική επέκταση.\n\nΣήμερα, η πόλη αντιμετωπίζει προκλήσεις όπως η ρύπανση της λίμνης Valencia και η ανάγκη για εκσυγχρονισμό των υποδομών, διατηρώντας όμως τη σημασία της ως οικονομικός πυλώνας της κεντρικής Βενεζουέλας.",
-        "highlights": []
+        "highlights": [
+          {
+            "year": "1555",
+            "event": "Ίδρυση & Πρώιμη Αποικιακή Εποχή",
+            "desc": "Οι πρώτες εγκαταστάσεις και η θεμελίωση της πόλης κατά το έτος 1555."
+          },
+          {
+            "year": "1813",
+            "event": "Ανεξαρτησία & Ανάπτυξη",
+            "desc": "Ιστορική καμπή και οικονομική άνθηση της περιοχής γύρω στο 1813."
+          },
+          {
+            "year": "1960",
+            "event": "Σύγχρονη Εποχή",
+            "desc": "Αστικός εκσυγχρονισμός και ένταξη στα μεγάλα περιφερειακά δίκτυα."
+          }
+        ]
       },
       "demo": {
         "summary": "Πληθυσμός και κοινωνική διάρθρωση: 1.5 εκατ. (2 εκατ. μητροπολιτική)",
@@ -970,8 +1052,22 @@
       },
       "cult": {
         "summary": "Πόλη με αποικιακό κέντρο, μουσεία και πανεπιστήμια, που συνδυάζει τη βιομηχανική της ταυτότητα με μια σταθερή καλλιτεχνική παράδοση. Ο Καθεδρικός της Βαλένθια του 18ου αιώνα στην κεντρική πλατεία με νεοκλασική πρόσοψη είναι ένα αρχιτεκτονικό κόσμημα. Το Ateneo de Valencia λειτουργεί ως πολιτιστικό κέντρο με εκθέσεις, θέατρο και βιβλιοθήκη. Η περιοχή τιμά τους ήρωες της ανεξαρτησίας με μνημεία, παρελάσεις και τοπικές γιορτές, διατηρώντας ζωντανή την παράδοση της Καραμπόμπο.",
-        "items": []
-      }
+        "items": [
+          {
+            "title": "Καθεδρικός της Βαλένθια",
+            "desc": "Ο νεοκλασικός καθεδρικός στην κεντρική πλατεία."
+          },
+          {
+            "title": "Plaza Bolívar",
+            "desc": "Η κεντρική πλατεία με το άγαλμα του Μπολίβαρ."
+          },
+          {
+            "title": "Λίμνη Valencia",
+            "desc": "Η δυτική όχθη της λίμνης Tacarigua, με ψαροχώρια και υγροτόπους."
+          }
+        ]
+      },
+      "landmark": "Λεκάνη της Βαλένθια"
     },
     {
       "id": "barquisimeto",
@@ -996,7 +1092,9 @@
         "population": "1.1 εκατ. (1.5 εκατ. μητροπολιτική)",
         "founded": "1552",
         "area": "1,200 km²",
-        "elevation": "650 μ."
+        "elevation": "650 μ.",
+        "famousFor": "Φεστιβάλ Divina Pastora",
+        "landmark": "Φεστιβάλ Divina Pastora"
       },
       "brief": "Χτισμένη σε μια εύφορη κοιλάδα στο δυτικό τμήμα της χώρας, η Μπαρκισιμέτο είναι γνωστή ως «Η Μουσική Πρωτεύουσα» λόγω της έντονης παράδοσης σε χορωδίες, μουσικά σχολεία και φεστιβάλ. Είναι το εμπορικό κέντρο της περιοχής Lara.",
       "history": "Ιδρύθηκε το 1552 από τον Juan de Villegas, αρχικά ως Nueva Segovia de Barquisimeto. Η πόλη αποτέλεσε σημαντικό κέντρο αγροτικής παραγωγής και εμπορίου κατά την αποικιακή εποχή, εξυπηρετώντας τις περιοχές των Άνδεων και της Καραϊβικής.\n\nΤον 19ο και 20ό αιώνα, η Μπαρκισιμέτο αναδείχθηκε ως κέντρο μουσικής παιδείας και πολιτισμού. Η ίδρυση του Ωδείου και η παράδοση των χορωδιών της έδωσαν τον τίτλο «Μουσική Πρωτεύουσα». Επίσης, ήταν σημαντικός κόμβος για την ανάπτυξη της βιομηχανίας τροφίμων και υφασμάτων.\n\nΣήμερα, η πόλη συνεχίζει να αναπτύσσεται ως εκπαιδευτικό και εμπορικό κέντρο, διατηρώντας την πολιτιστική της ταυτότητα μέσω φεστιβάλ, μουσικών εκδηλώσεων και ενός ζωντανού αστικού ιστού.",
@@ -1193,7 +1291,23 @@
       },
       "hist": {
         "summary": "Ιδρύθηκε το 1552 από τον Juan de Villegas, αρχικά ως Nueva Segovia de Barquisimeto. Η πόλη αποτέλεσε σημαντικό κέντρο αγροτικής παραγωγής και εμπορίου κατά την αποικιακή εποχή, εξυπηρετώντας τις περιοχές των Άνδεων και της Καραϊβικής.\n\nΤον 19ο και 20ό αιώνα, η Μπαρκισιμέτο αναδείχθηκε ως κέντρο μουσικής παιδείας και πολιτισμού. Η ίδρυση του Ωδείου και η παράδοση των χορωδιών της έδωσαν τον τίτλο «Μουσική Πρωτεύουσα». Επίσης, ήταν σημαντικός κόμβος για την ανάπτυξη της βιομηχανίας τροφίμων και υφασμάτων.\n\nΣήμερα, η πόλη συνεχίζει να αναπτύσσεται ως εκπαιδευτικό και εμπορικό κέντρο, διατηρώντας την πολιτιστική της ταυτότητα μέσω φεστιβάλ, μουσικών εκδηλώσεων και ενός ζωντανού αστικού ιστού.",
-        "highlights": []
+        "highlights": [
+          {
+            "year": "16ος - 18ος αι.",
+            "event": "Αποικιακή Περίοδος",
+            "desc": "Ίδρυση και οργάνωση του ιστορικού πυρήνα της πόλης."
+          },
+          {
+            "year": "19ος αι.",
+            "event": "Αγώνας Ανεξαρτησίας",
+            "desc": "Συμμετοχή στους εθνικούς αγώνες για την ελευθερία και διοικητική αναβάθμιση."
+          },
+          {
+            "year": "20ός αι. - Σήμερα",
+            "event": "Σύγχρονος Μετασχηματισμός",
+            "desc": "Ραγδαία πληθυσμιακή αύξηση και ανάδειξη σε εμπορικό και πολιτιστικό κέντρο."
+          }
+        ]
       },
       "demo": {
         "summary": "Πληθυσμός και κοινωνική διάρθρωση: 1.1 εκατ. (1.5 εκατ. μητροπολιτική)",
@@ -1218,8 +1332,22 @@
       },
       "cult": {
         "summary": "Η Μπαρκισιμέτο φημίζεται για την παράδοση στη μουσική, ιδιαίτερα στις χορωδίες και τα φεστιβάλ. Το Φεστιβάλ της Divina Pastora κάθε Ιανουάριο είναι ένα από τα μεγαλύτερα θρησκευτικά προσκυνήματα στη χώρα, με εκατοντάδες χιλιάδες πιστών να περπατούν στους δρόμους. Η πόλη διαθέτει πολλά μουσεία, θέατρα και πολιτιστικά κέντρα, ενώ η γαστρονομία της βασίζεται σε τοπικά προϊόντα όπως το τυρί και το κακάο.",
-        "items": []
-      }
+        "items": [
+          {
+            "title": "Καθεδρικός της Ανάληψης",
+            "desc": "Ο μοντέρνος καθεδρικός με τη χαρακτηριστική σπειροειδή αρχιτεκτονική."
+          },
+          {
+            "title": "Iglesia de la Divina Pastora",
+            "desc": "Ο ναός που φιλοξενεί την εικόνα της πολιούχου, κέντρο του Ιανουαρίου φεστιβάλ."
+          },
+          {
+            "title": "Plaza Bolívar",
+            "desc": "Η κεντρική πλατεία με το άγαλμα του Μπολίβαρ και τα ιστορικά κτίρια."
+          }
+        ]
+      },
+      "landmark": "Φεστιβάλ Divina Pastora"
     },
     {
       "id": "maracay",
@@ -1244,7 +1372,9 @@
         "population": "800.000 (1.2 εκατ. μητροπολιτική)",
         "founded": "1701",
         "area": "550 km²",
-        "elevation": "450 μ."
+        "elevation": "450 μ.",
+        "famousFor": "Gómez Era Architecture",
+        "landmark": "Gómez Era Architecture"
       },
       "brief": "Γνωστή ως «Η Πόλη των Κήπων» due to its extensive green spaces and parks, Maracay is the capital of Aragua state. It was significantly developed during the dictatorship of Juan Vicente Gómez, who transformed it into a modern city with wide avenues and gardens.",
       "history": "Ιδρύθηκε το 1701 ως αποικιακή πόλη, αλλά παρέμεινε σχετικά μικρή μέχρι τις αρχές του 20ού αιώνα. Η μοίρα της άλλαξε όταν ο δικτάτορας Juan Vicente Gómez chose Maracay as his personal residence and administrative center in the 1910s.\n\nUnder Gómez's rule, Maracay underwent a radical transformation. He commissioned European-style architecture, built grand palaces like the Miraflores Palace (now a museum), established military academies, and created extensive parks and gardens, earning it the nickname \"City of Gardens\".\n\nAfter Gómez's death in 1935, the city continued to grow as an industrial and educational hub for central Venezuela, maintaining its lush greenery and historical architectural legacy.",
@@ -1420,7 +1550,23 @@
       },
       "hist": {
         "summary": "Ιδρύθηκε το 1701 ως αποικιακή πόλη, αλλά παρέμεινε σχετικά μικρή μέχρι τις αρχές του 20ού αιώνα. Η μοίρα της άλλαξε όταν ο δικτάτορας Juan Vicente Gómez chose Maracay as his personal residence and administrative center in the 1910s.\n\nUnder Gómez's rule, Maracay underwent a radical transformation. He commissioned European-style architecture, built grand palaces like the Miraflores Palace (now a museum), established military academies, and created extensive parks and gardens, earning it the nickname \"City of Gardens\".\n\nAfter Gómez's death in 1935, the city continued to grow as an industrial and educational hub for central Venezuela, maintaining its lush greenery and historical architectural legacy.",
-        "highlights": []
+        "highlights": [
+          {
+            "year": "16ος - 18ος αι.",
+            "event": "Αποικιακή Περίοδος",
+            "desc": "Ίδρυση και οργάνωση του ιστορικού πυρήνα της πόλης."
+          },
+          {
+            "year": "19ος αι.",
+            "event": "Αγώνας Ανεξαρτησίας",
+            "desc": "Συμμετοχή στους εθνικούς αγώνες για την ελευθερία και διοικητική αναβάθμιση."
+          },
+          {
+            "year": "20ός αι. - Σήμερα",
+            "event": "Σύγχρονος Μετασχηματισμός",
+            "desc": "Ραγδαία πληθυσμιακή αύξηση και ανάδειξη σε εμπορικό και πολιτιστικό κέντρο."
+          }
+        ]
       },
       "demo": {
         "summary": "Πληθυσμός και κοινωνική διάρθρωση: 800.000 (1.2 εκατ. μητροπολιτική)",
@@ -1445,8 +1591,22 @@
       },
       "cult": {
         "summary": "Maracay boasts a rich cultural scene influenced by its history as a seat of power. The city hosts several museums, including the Museum of Anthropology and the Military Museum. Its parks, such as Parque de las Aves and Balneario de Ocumare, are popular gathering spots. The local cuisine features traditional Venezuelan dishes with fresh ingredients from the nearby coast and valleys.",
-        "items": []
-      }
+        "items": [
+          {
+            "title": "Palacio de Miraflores (Maracay)",
+            "desc": "The former presidential palace of Gómez, now a museum."
+          },
+          {
+            "title": "Instituto Zoológico y Botánico",
+            "desc": "Historic zoo and botanical garden founded by Gómez."
+          },
+          {
+            "title": "Plaza Bolívar",
+            "desc": "Central square with historic colonial buildings."
+          }
+        ]
+      },
+      "landmark": "Gómez Era Architecture"
     },
     {
       "id": "ciudad-guayana",
@@ -1471,7 +1631,9 @@
         "population": "750.000",
         "founded": "1961",
         "area": "4,000 km²",
-        "elevation": "100 μ."
+        "elevation": "100 μ.",
+        "famousFor": "Orinoco River",
+        "landmark": "Orinoco River"
       },
       "brief": "A planned industrial city located on the banks of the Orinoco River, Ciudad Guayana is the gateway to the Gran Sabana and the stunning waterfalls of Canaima National Park. It serves as a major center for steel and aluminum production.",
       "history": "Founded in 1961 as part of a government plan to develop the southern region of Venezuela, Ciudad Guayana combined two older settlements: San Carlos del Orinoco and Puerto Ordaz.\n\nThe city grew rapidly due to the establishment of large-scale hydroelectric projects (like the Guri Dam) and heavy industries (CVG - Corporación Venezolana de Guayana). It became a magnet for workers from across Venezuela and abroad.\n\nToday, it remains the economic engine of the Guayana region, balancing industrial might with its proximity to some of the most pristine natural areas in South America, including the route to Angel Falls.",
@@ -1647,7 +1809,23 @@
       },
       "hist": {
         "summary": "Founded in 1961 as part of a government plan to develop the southern region of Venezuela, Ciudad Guayana combined two older settlements: San Carlos del Orinoco and Puerto Ordaz.\n\nThe city grew rapidly due to the establishment of large-scale hydroelectric projects (like the Guri Dam) and heavy industries (CVG - Corporación Venezolana de Guayana). It became a magnet for workers from across Venezuela and abroad.\n\nToday, it remains the economic engine of the Guayana region, balancing industrial might with its proximity to some of the most pristine natural areas in South America, including the route to Angel Falls.",
-        "highlights": []
+        "highlights": [
+          {
+            "year": "16ος - 18ος αι.",
+            "event": "Αποικιακή Περίοδος",
+            "desc": "Ίδρυση και οργάνωση του ιστορικού πυρήνα της πόλης."
+          },
+          {
+            "year": "19ος αι.",
+            "event": "Αγώνας Ανεξαρτησίας",
+            "desc": "Συμμετοχή στους εθνικούς αγώνες για την ελευθερία και διοικητική αναβάθμιση."
+          },
+          {
+            "year": "20ός αι. - Σήμερα",
+            "event": "Σύγχρονος Μετασχηματισμός",
+            "desc": "Ραγδαία πληθυσμιακή αύξηση και ανάδειξη σε εμπορικό και πολιτιστικό κέντρο."
+          }
+        ]
       },
       "demo": {
         "summary": "Πληθυσμός και κοινωνική διάρθρωση: 750.000",
@@ -1672,8 +1850,22 @@
       },
       "cult": {
         "summary": "The culture of Ciudad Guayana is a mix of indigenous Pemon traditions, Afro-Venezuelan influences, and migrant communities drawn by industry. It is known for its vibrant street life, markets selling tropical fruits, and access to adventure tourism. The annual festivals often highlight the connection between the river and the jungle.",
-        "items": []
-      }
+        "items": [
+          {
+            "title": "Castillo de la Barra",
+            "desc": "Historic fort guarding the Orinoco river."
+          },
+          {
+            "title": "Plaza Bolívar",
+            "desc": "Central square in Puerto Ordaz sector."
+          },
+          {
+            "title": "Botanical Garden",
+            "desc": "Preserves native flora of the Guayana region."
+          }
+        ]
+      },
+      "landmark": "Orinoco River"
     },
     {
       "id": "merida-ve",
@@ -1698,7 +1890,9 @@
         "population": "250.000 (400.000 μητροπολιτική)",
         "founded": "1558",
         "area": "110 km²",
-        "elevation": "1,600 μ."
+        "elevation": "1,600 μ.",
+        "famousFor": "Teleférico",
+        "landmark": "Teleférico"
       },
       "brief": "Nestled in the high Andes mountains, Mérida is a university town known for its cool climate, colonial architecture, and the Teleférico de Mérida, once the highest and longest cable car system in the world. It is a hub for hiking and nature lovers.",
       "history": "Founded in 1558 by Juan Rodríguez Suárez, originally as Santiago de las Montañas de Mérida. The city played a significant role in the independence wars, being one of the first to declare autonomy.\n\nIn the 20th century, Mérida transformed into a major educational center with the founding of the University of the Andes (ULA). The construction of the cable car system in the late 1950s revolutionized tourism and access to the high páramo ecosystem.\n\nDespite challenges like landslides and infrastructure issues, Mérida remains a beloved destination for its scenic beauty, pleasant weather, and cultural vibrancy.",
@@ -1874,7 +2068,23 @@
       },
       "hist": {
         "summary": "Founded in 1558 by Juan Rodríguez Suárez, originally as Santiago de las Montañas de Mérida. The city played a significant role in the independence wars, being one of the first to declare autonomy.\n\nIn the 20th century, Mérida transformed into a major educational center with the founding of the University of the Andes (ULA). The construction of the cable car system in the late 1950s revolutionized tourism and access to the high páramo ecosystem.\n\nDespite challenges like landslides and infrastructure issues, Mérida remains a beloved destination for its scenic beauty, pleasant weather, and cultural vibrancy.",
-        "highlights": []
+        "highlights": [
+          {
+            "year": "16ος - 18ος αι.",
+            "event": "Αποικιακή Περίοδος",
+            "desc": "Ίδρυση και οργάνωση του ιστορικού πυρήνα της πόλης."
+          },
+          {
+            "year": "19ος αι.",
+            "event": "Αγώνας Ανεξαρτησίας",
+            "desc": "Συμμετοχή στους εθνικούς αγώνες για την ελευθερία και διοικητική αναβάθμιση."
+          },
+          {
+            "year": "20ός αι. - Σήμερα",
+            "event": "Σύγχρονος Μετασχηματισμός",
+            "desc": "Ραγδαία πληθυσμιακή αύξηση και ανάδειξη σε εμπορικό και πολιτιστικό κέντρο."
+          }
+        ]
       },
       "demo": {
         "summary": "Πληθυσμός και κοινωνική διάρθρωση: 250.000 (400.000 μητροπολιτική)",
@@ -1899,8 +2109,22 @@
       },
       "cult": {
         "summary": "Mérida has a strong student population which infuses the city with energy, cafes, bookstores, and nightlife. The local culture blends Andean traditions with academic life. Festivals like the Festival de Música Andina celebrate folk music. The gastronomy focuses on hearty Andean dishes suited for the cold weather.",
-        "items": []
-      }
+        "items": [
+          {
+            "title": "Teleférico de Mérida",
+            "desc": "Base station of the famous cable car system."
+          },
+          {
+            "title": "Plaza Bolívar",
+            "desc": "Central square surrounded by cathedral and government buildings."
+          },
+          {
+            "title": "Catedral de Mérida",
+            "desc": "Neo-Gothic cathedral, largest in Venezuela."
+          }
+        ]
+      },
+      "landmark": "Teleférico"
     },
     {
       "id": "san-cristobal-ve",
@@ -1925,7 +2149,9 @@
         "population": "200.000 (400.000 μητροπολιτική)",
         "founded": "1561",
         "area": "100 km²",
-        "elevation": "820 μ."
+        "elevation": "820 μ.",
+        "famousFor": "Colonial Center",
+        "landmark": "Colonial Center"
       },
       "brief": "Located in the Táchira state near the Colombian border, San Cristóbal is known for its friendly inhabitants, hence the nickname \"City of Kindness.\" It features a well-preserved colonial center and is surrounded by coffee plantations and mountains.",
       "history": "Founded in 1561 by Juan de Maldonado, the city was initially called San Cristóbal de la Nueva Pamplona. It moved to its current location in the Torbes valley.\n\nDuring the independence era, it was a stronghold for royalists before switching sides. In the 20th century, it became a commercial hub linking Venezuela and Colombia, benefiting from cross-border trade.\n\nThe city has maintained a distinct identity, less influenced by oil wealth than other parts of Venezuela, focusing instead on agriculture, commerce, and education.",
@@ -2101,7 +2327,23 @@
       },
       "hist": {
         "summary": "Founded in 1561 by Juan de Maldonado, the city was initially called San Cristóbal de la Nueva Pamplona. It moved to its current location in the Torbes valley.\n\nDuring the independence era, it was a stronghold for royalists before switching sides. In the 20th century, it became a commercial hub linking Venezuela and Colombia, benefiting from cross-border trade.\n\nThe city has maintained a distinct identity, less influenced by oil wealth than other parts of Venezuela, focusing instead on agriculture, commerce, and education.",
-        "highlights": []
+        "highlights": [
+          {
+            "year": "16ος - 18ος αι.",
+            "event": "Αποικιακή Περίοδος",
+            "desc": "Ίδρυση και οργάνωση του ιστορικού πυρήνα της πόλης."
+          },
+          {
+            "year": "19ος αι.",
+            "event": "Αγώνας Ανεξαρτησίας",
+            "desc": "Συμμετοχή στους εθνικούς αγώνες για την ελευθερία και διοικητική αναβάθμιση."
+          },
+          {
+            "year": "20ός αι. - Σήμερα",
+            "event": "Σύγχρονος Μετασχηματισμός",
+            "desc": "Ραγδαία πληθυσμιακή αύξηση και ανάδειξη σε εμπορικό και πολιτιστικό κέντρο."
+          }
+        ]
       },
       "demo": {
         "summary": "Πληθυσμός και κοινωνική διάρθρωση: 200.000 (400.000 μητροπολιτική)",
@@ -2126,8 +2368,22 @@
       },
       "cult": {
         "summary": "San Cristóbal is culturally closer to the Andean-Colombian tradition than the Caribbean. The people are known for their hospitality. The city hosts fairs and festivals celebrating coffee and flowers. The architecture is predominantly colonial with white walls and red tile roofs.",
-        "items": []
-      }
+        "items": [
+          {
+            "title": "Catedral de San Cristóbal",
+            "desc": "Historic cathedral in the main plaza."
+          },
+          {
+            "title": "Plaza Mayor",
+            "desc": "The heart of the old town."
+          },
+          {
+            "title": "Casa de la Cultura",
+            "desc": "Promotes local arts and history."
+          }
+        ]
+      },
+      "landmark": "Colonial Center"
     },
     {
       "id": "puerto-la-cruz",
@@ -2152,7 +2408,9 @@
         "population": "300.000",
         "founded": "1925",
         "area": "200 km²",
-        "elevation": "10 μ."
+        "elevation": "10 μ.",
+        "famousFor": "Beaches",
+        "landmark": "Beaches"
       },
       "brief": "A modern port city on the northeastern coast, Puerto La Cruz is known for its beaches, shopping centers, and proximity to Mochima National Park. It is part of the greater Barcelona-Puerto La Cruz metropolitan area.",
       "history": "Established in 1925 when the Creole Petroleum Corporation built a terminal here for exporting oil. This industrial origin sparked rapid growth.\n\nUnlike many older Venezuelan cities, Puerto La Cruz was planned as a modern port town. It quickly attracted immigrants and businesses, becoming a key entry point for goods.\n\nOver time, it evolved into a tourist and commercial hub, leveraging its beautiful coastline and access to the islands of the Caribbean.",
@@ -2328,7 +2586,23 @@
       },
       "hist": {
         "summary": "Established in 1925 when the Creole Petroleum Corporation built a terminal here for exporting oil. This industrial origin sparked rapid growth.\n\nUnlike many older Venezuelan cities, Puerto La Cruz was planned as a modern port town. It quickly attracted immigrants and businesses, becoming a key entry point for goods.\n\nOver time, it evolved into a tourist and commercial hub, leveraging its beautiful coastline and access to the islands of the Caribbean.",
-        "highlights": []
+        "highlights": [
+          {
+            "year": "16ος - 18ος αι.",
+            "event": "Αποικιακή Περίοδος",
+            "desc": "Ίδρυση και οργάνωση του ιστορικού πυρήνα της πόλης."
+          },
+          {
+            "year": "19ος αι.",
+            "event": "Αγώνας Ανεξαρτησίας",
+            "desc": "Συμμετοχή στους εθνικούς αγώνες για την ελευθερία και διοικητική αναβάθμιση."
+          },
+          {
+            "year": "20ός αι. - Σήμερα",
+            "event": "Σύγχρονος Μετασχηματισμός",
+            "desc": "Ραγδαία πληθυσμιακή αύξηση και ανάδειξη σε εμπορικό και πολιτιστικό κέντρο."
+          }
+        ]
       },
       "demo": {
         "summary": "Πληθυσμός και κοινωνική διάρθρωση: 300.000",
@@ -2353,8 +2627,22 @@
       },
       "cult": {
         "summary": "The culture is heavily influenced by its status as a port and tourist destination. There is a lively beach scene, with promenades lined with restaurants and bars. The city is cosmopolitan, hosting people from all over Venezuela and foreign tourists. Events often revolve around maritime themes and summer festivals.",
-        "items": []
-      }
+        "items": [
+          {
+            "title": "Playa La Rosa",
+            "desc": "Popular urban beach."
+          },
+          {
+            "title": "Malecón de Puerto La Cruz",
+            "desc": "Waterfront promenade with shops and cafes."
+          },
+          {
+            "title": "Iglesia Nuestra Señora del Carmen",
+            "desc": "Patron saint church of the city."
+          }
+        ]
+      },
+      "landmark": "Beaches"
     },
     {
       "id": "cumana",
@@ -2379,7 +2667,9 @@
         "population": "300.000",
         "founded": "1510",
         "area": "500 km²",
-        "elevation": "10 μ."
+        "elevation": "10 μ.",
+        "famousFor": "Historical Significance",
+        "landmark": "Historical Significance"
       },
       "brief": "Cumaná is widely considered the first permanent European settlement on the mainland of South America, founded in 1510. Located on the northeast coast, it has a rich history involving Christopher Columbus and early colonial struggles.",
       "history": "Founded in 1510 as Nueva Toledo, later renamed Cumaná, it predates other famous cities like Havana and Cartagena. Christopher Columbus visited the area in 1498, landing at the mouth of the Orinoco.\n\nThe early years were marked by conflict with indigenous peoples and struggles for control among Spanish factions. It served as a base for expeditions into the interior.\n\nToday, Cumaná is the capital of Sucre state. While it has lost some political prominence, it retains immense historical significance and a relaxed coastal lifestyle.",
@@ -2555,7 +2845,23 @@
       },
       "hist": {
         "summary": "Founded in 1510 as Nueva Toledo, later renamed Cumaná, it predates other famous cities like Havana and Cartagena. Christopher Columbus visited the area in 1498, landing at the mouth of the Orinoco.\n\nThe early years were marked by conflict with indigenous peoples and struggles for control among Spanish factions. It served as a base for expeditions into the interior.\n\nToday, Cumaná is the capital of Sucre state. While it has lost some political prominence, it retains immense historical significance and a relaxed coastal lifestyle.",
-        "highlights": []
+        "highlights": [
+          {
+            "year": "16ος - 18ος αι.",
+            "event": "Αποικιακή Περίοδος",
+            "desc": "Ίδρυση και οργάνωση του ιστορικού πυρήνα της πόλης."
+          },
+          {
+            "year": "19ος αι.",
+            "event": "Αγώνας Ανεξαρτησίας",
+            "desc": "Συμμετοχή στους εθνικούς αγώνες για την ελευθερία και διοικητική αναβάθμιση."
+          },
+          {
+            "year": "20ός αι. - Σήμερα",
+            "event": "Σύγχρονος Μετασχηματισμός",
+            "desc": "Ραγδαία πληθυσμιακή αύξηση και ανάδειξη σε εμπορικό και πολιτιστικό κέντρο."
+          }
+        ]
       },
       "demo": {
         "summary": "Πληθυσμός και κοινωνική διάρθρωση: 300.000",
@@ -2580,8 +2886,22 @@
       },
       "cult": {
         "summary": "The city celebrates its status as the \"First City\" with historical reenactments and museums. The culture is deeply rooted in the Caribbean coast, with strong influences from African and indigenous traditions. Music, particularly calypso and local folk songs, is prevalent. The gastronomy features fresh seafood and tropical fruits.",
-        "items": []
-      }
+        "items": [
+          {
+            "title": "Castillo de Santa Fe",
+            "desc": "Ruins of the original fort."
+          },
+          {
+            "title": "Catedral de Cumaná",
+            "desc": "Historic cathedral in the center."
+          },
+          {
+            "title": "Plaza Bolívar",
+            "desc": "Central square."
+          }
+        ]
+      },
+      "landmark": "Historical Significance"
     }
   ]
 }

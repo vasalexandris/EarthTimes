@@ -108,7 +108,9 @@
         "density": "4.170 κάτοικοι/km²",
         "elevation": "2.640 μ.",
         "founded": "1538",
-        "timezone": "America/Bogota"
+        "timezone": "America/Bogota",
+        "famousFor": "Museo del Oro",
+        "landmark": "Museo del Oro"
       },
       "quote": {
         "text": "«Η Μπογκοτά είναι μια πόλη χτισμένη στα 2.640 μέτρα, όπου η βροχή και ο ήλιος αλλάζουν κάθε λίγα λεπτά.»",
@@ -449,7 +451,9 @@
         4.711,
         -74.0721
       ],
-      "zoom": 12.5
+      "zoom": 12.5,
+      "population": "7,4 εκ. (11 εκ. μητροπολιτική)",
+      "landmark": "Museo del Oro"
     },
     {
       "id": "medellin",
@@ -465,7 +469,9 @@
         "density": "6.580 κάτοικοι/km²",
         "elevation": "1.495 μ.",
         "founded": "1616",
-        "timezone": "America/Bogota"
+        "timezone": "America/Bogota",
+        "famousFor": "Plaza Botero",
+        "landmark": "Plaza Botero"
       },
       "quote": {
         "text": "«Το Μεδεγίν είναι μια πόλη που ξαναγεννήθηκε από τη βία και έγινε σύμβολο καινοτομίας και άνοιξης.»",
@@ -806,7 +812,9 @@
         6.2442,
         -75.5812
       ],
-      "zoom": 12.5
+      "zoom": 12.5,
+      "population": "2,5 εκ. (4 εκ. μητροπολιτική)",
+      "landmark": "Plaza Botero"
     },
     {
       "id": "cartagena",
@@ -822,7 +830,9 @@
         "density": "1.750 κάτοικοι/km²",
         "elevation": "0-20 μ.",
         "founded": "1533",
-        "timezone": "America/Bogota"
+        "timezone": "America/Bogota",
+        "famousFor": "Παλιά Πόλη & Τείχη",
+        "landmark": "Παλιά Πόλη & Τείχη"
       },
       "quote": {
         "text": "«Η Καρθαγένη είναι μια πόλη που μυρίζει θάλασσα, ζαχαροκάλαμο και ιστορία.»",
@@ -1163,7 +1173,9 @@
         10.391,
         -75.4794
       ],
-      "zoom": 12.5
+      "zoom": 12.5,
+      "population": "1 εκ. (1,1 εκ. μητροπολιτική)",
+      "landmark": "Παλιά Πόλη & Τείχη"
     },
     {
       "id": "cali",
@@ -1179,7 +1191,9 @@
         "density": "3.900 κάτοικοι/km²",
         "elevation": "1.018 μ.",
         "founded": "1536",
-        "timezone": "America/Bogota"
+        "timezone": "America/Bogota",
+        "famousFor": "Cerro de las Tres Cruces",
+        "landmark": "Cerro de las Tres Cruces"
       },
       "quote": {
         "text": "«Το Κάλι είναι η παγκόσμια πρωτεύουσα της σάλσας, όπου ο ρυθμός κυλά στις φλέβες όλου του κόσμου.»",
@@ -1520,7 +1534,9 @@
         3.4516,
         -76.532
       ],
-      "zoom": 12.5
+      "zoom": 12.5,
+      "population": "2,2 εκ. (2,8 εκ. μητροπολιτική)",
+      "landmark": "Cerro de las Tres Cruces"
     },
     {
       "id": "barranquilla",
@@ -1536,7 +1552,9 @@
         "density": "7.800 κάτοικοι/km²",
         "elevation": "18 μ.",
         "founded": "1813",
-        "timezone": "America/Bogota"
+        "timezone": "America/Bogota",
+        "famousFor": "Casa del Carnaval",
+        "landmark": "Casa del Carnaval"
       },
       "quote": {
         "text": "«Η Μπαρανκίγια είναι η Χρυσή Πύλη της Κολομβίας, όπου ο ποταμός Magdalena συναντά την Καραϊβική.»",
@@ -1877,7 +1895,9 @@
         10.9685,
         -74.7813
       ],
-      "zoom": 12.5
+      "zoom": 12.5,
+      "population": "1,3 εκ. (2,3 εκ. μητροπολιτική)",
+      "landmark": "Casa del Carnaval"
     },
     {
       "id": "bucaramanga",
@@ -1893,7 +1913,9 @@
         "density": "1.100 κάτοικοι/km²",
         "elevation": "959 μ.",
         "founded": "1622",
-        "timezone": "America/Bogota"
+        "timezone": "America/Bogota",
+        "famousFor": "Parque García Rovira",
+        "landmark": "Parque García Rovira"
       },
       "quote": {
         "text": "«Η Μπουκαραμάνγκα είναι η πόλη των πάρκων, που περπατά ανάμεσα σε λόφους και ποτάμια.»",
@@ -2234,7 +2256,9 @@
         7.1193,
         -73.1227
       ],
-      "zoom": 12.5
+      "zoom": 12.5,
+      "population": "530 χιλ. (1,1 εκ. μητροπολιτική)",
+      "landmark": "Parque García Rovira"
     },
     {
       "id": "pereira",
@@ -2250,7 +2274,9 @@
         "density": "670 κάτοικοι/km²",
         "elevation": "1.411 μ.",
         "founded": "1863",
-        "timezone": "America/Bogota"
+        "timezone": "America/Bogota",
+        "famousFor": "Plaza de Bolívar",
+        "landmark": "Plaza de Bolívar"
       },
       "quote": {
         "text": "«Η Περέιρα είναι η καρδιά του Eje Cafetero, όπου ο καφές μυρίζει σε κάθε γωνιά.»",
@@ -2591,7 +2617,9 @@
         4.8133,
         -75.6961
       ],
-      "zoom": 12.5
+      "zoom": 12.5,
+      "population": "470 χιλ. (700 χιλ. μητροπολιτική)",
+      "landmark": "Plaza de Bolívar"
     },
     {
       "id": "santa-marta",
@@ -2607,7 +2635,9 @@
         "density": "230 κάτοικοι/km²",
         "elevation": "6 μ.",
         "founded": "1525",
-        "timezone": "America/Bogota"
+        "timezone": "America/Bogota",
+        "famousFor": "Quinta de San Pedro Alejandrino",
+        "landmark": "Quinta de San Pedro Alejandrino"
       },
       "quote": {
         "text": "«Η Σάντα Μάρτα είναι η αρχαιότερη πόλη της Κολομβίας, όπου ο Bolívar έκλεισε τα μάτια του για πάντα.»",
@@ -2948,7 +2978,9 @@
         11.2408,
         -74.199
       ],
-      "zoom": 12.5
+      "zoom": 12.5,
+      "population": "550 χιλ.",
+      "landmark": "Quinta de San Pedro Alejandrino"
     },
     {
       "id": "cucuta",
@@ -2964,7 +2996,9 @@
         "density": "610 κάτοικοι/km²",
         "elevation": "320 μ.",
         "founded": "1773",
-        "timezone": "America/Bogota"
+        "timezone": "America/Bogota",
+        "famousFor": "Casa Natal de Santander",
+        "landmark": "Casa Natal de Santander"
       },
       "quote": {
         "text": "«Η Κούκουτα είναι η πόλη των συνόρων, όπου ο Bolívar έγραψε το Σύνταγμα της Gran Colombia.»",
@@ -3305,7 +3339,9 @@
         7.8939,
         -72.5078
       ],
-      "zoom": 12.5
+      "zoom": 12.5,
+      "population": "720 χιλ. (μητροπολιτική)",
+      "landmark": "Casa Natal de Santander"
     },
     {
       "id": "manizales",
@@ -3321,7 +3357,9 @@
         "density": "720 κάτοικοι/km²",
         "elevation": "2.150 μ.",
         "founded": "1849",
-        "timezone": "America/Bogota"
+        "timezone": "America/Bogota",
+        "famousFor": "Catedral Basílica de Manizales",
+        "landmark": "Catedral Basílica de Manizales"
       },
       "quote": {
         "text": "«Το Μανισάλες είναι η πόλη των καφέ και του ηφαίστειου, χτισμένη στις πλαγιές των Άνδεων.»",
@@ -3662,7 +3700,9 @@
         5.0703,
         -75.5138
       ],
-      "zoom": 12.5
+      "zoom": 12.5,
+      "population": "410 χιλ. (580 χιλ. μητροπολιτική)",
+      "landmark": "Catedral Basílica de Manizales"
     }
   ]
 }
