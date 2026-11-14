@@ -668,6 +668,36 @@ export const US_STATES = [
         "id": "san-diego",
         "name": "Σαν Ντιέγκο",
         "englishName": "San Diego"
+      },
+      {
+        "id": "san-jose",
+        "name": "Σαν Χοσέ",
+        "englishName": "San Jose"
+      },
+      {
+        "id": "fresno",
+        "name": "Φρέσνο",
+        "englishName": "Fresno"
+      },
+      {
+        "id": "oakland",
+        "name": "Όουκλαντ",
+        "englishName": "Oakland"
+      },
+      {
+        "id": "long-beach",
+        "name": "Λονγκ Μπιτς",
+        "englishName": "Long Beach"
+      },
+      {
+        "id": "bakersfield",
+        "name": "Μπέικερσφιλντ",
+        "englishName": "Bakersfield"
+      },
+      {
+        "id": "anaheim",
+        "name": "Άναχαϊμ",
+        "englishName": "Anaheim"
       }
     ]
   },
@@ -2434,6 +2464,36 @@ export const US_STATES = [
         "id": "san-antonio",
         "name": "Σαν Αντόνιο",
         "englishName": "San Antonio"
+      },
+      {
+        "id": "fort-worth",
+        "name": "Φορτ Γουόρθ",
+        "englishName": "Fort Worth"
+      },
+      {
+        "id": "el-paso",
+        "name": "Ελ Πάσο",
+        "englishName": "El Paso"
+      },
+      {
+        "id": "arlington-tx",
+        "name": "Άρλινγκτον",
+        "englishName": "Arlington"
+      },
+      {
+        "id": "corpus-christi",
+        "name": "Κόρπους Κρίστι",
+        "englishName": "Corpus Christi"
+      },
+      {
+        "id": "plano",
+        "name": "Πλάνο",
+        "englishName": "Plano"
+      },
+      {
+        "id": "lubbock",
+        "name": "Λάμποκ",
+        "englishName": "Lubbock"
       }
     ]
   },
@@ -2717,6 +2777,12 @@ export const CITY_TO_STATE = {
   "los-angeles": "california",
   "san-francisco": "california",
   "san-diego": "california",
+  "san-jose": "california",
+  "fresno": "california",
+  "oakland": "california",
+  "long-beach": "california",
+  "bakersfield": "california",
+  "anaheim": "california",
   "topeka": "kansas",
   "wichita": "kansas",
   "overland-park": "kansas",
@@ -2936,6 +3002,12 @@ export const CITY_TO_STATE = {
   "houston": "texas",
   "dallas": "texas",
   "san-antonio": "texas",
+  "fort-worth": "texas",
+  "el-paso": "texas",
+  "arlington-tx": "texas",
+  "corpus-christi": "texas",
+  "plano": "texas",
+  "lubbock": "texas",
   "atlanta": "georgia",
   "savannah": "georgia",
   "augusta-ga": "georgia",

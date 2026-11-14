@@ -1,4 +1,4 @@
-import { CITY_TO_STATE } from './states-data.js?v=20261114_us2';
+import { CITY_TO_STATE } from './states-data.js?v=20261114_us3';
 /**
  * Video Service Module
  * Registry of verified high-definition YouTube video tours for all cities
@@ -10506,11 +10506,115 @@ export const CITY_VIDEOS = {
           "youtubeId": "jJpK-mavW1c",
           "title": "Μπάρτλσβιλ 4K — Aerial View of Downtown Bartlesville, OK"
       }
+  },
+  "fort-worth": {
+      "drone": {
+          "youtubeId": "Lk9wg12mG5s",
+          "title": "Φορτ Γουόρθ 4K — Fort Worth Texas Aerial Tour | 4K Drone Video"
+      },
+      "live": {
+          "youtubeId": "blcDjPvPbss",
+          "label": "Φορτ Γουόρθ Live Cam",
+          "title": "Tower 55 in Fort Worth, TX | LIVE Train Cam"
+      }
+  },
+  "el-paso": {
+      "drone": {
+          "youtubeId": "PIWyHX7D0vQ",
+          "title": "Ελ Πάσο 4K — El Paso, Texas | 4K Drone Footage"
+      }
+  },
+  "arlington-tx": {
+      "drone": {
+          "youtubeId": "eLjOB2mhd38",
+          "title": "Άρλινγκτον 4K — ARLINGTON, TEXAS - by drone [4K]"
+      }
+  },
+  "corpus-christi": {
+      "drone": {
+          "youtubeId": "FAq0rOyRzbA",
+          "title": "Κόρπους Κρίστι 4K — Corpus Christi, Texas 4k UHD | Aerial Drone Tour"
+      },
+      "live": {
+          "youtubeId": "5s6X2045OTs",
+          "label": "Κόρπους Κρίστι Live Cam",
+          "title": "Packery Channel Surf Cam LIVE | Corpus Christi"
+      }
+  },
+  "plano": {
+      "drone": {
+          "youtubeId": "gG5eJ7QziO4",
+          "title": "Πλάνο 4K — Plano, TX 4K aerial view from DJI Mini 5 Pro"
+      }
+  },
+  "lubbock": {
+      "drone": {
+          "youtubeId": "eZuCnTH9MT8",
+          "title": "Λάμποκ 4K — 2024 Best Lubbock, TX 4K Drone Stock Footage by Cameron Bednarz Licensed Part 107 Pilot"
+      }
+  },
+  "fresno": {
+      "drone": {
+          "youtubeId": "_5CZMKYNovU",
+          "title": "Φρέσνο 4K — Fresno, California | 4K Drone Footage"
+      },
+      "live": {
+          "youtubeId": "sTF-6_xinUU",
+          "label": "Φρέσνο Live Cam",
+          "title": "Fresno, California Traffic & Skyline Live Cam"
+      }
+  },
+  "oakland": {
+      "drone": {
+          "youtubeId": "rQYMbQMR_fE",
+          "title": "Όουκλαντ 4K — Oakland, California | 4K drone video"
+      },
+      "live": {
+          "youtubeId": "CXYr04BWvmc",
+          "label": "Όουκλαντ Live Cam",
+          "title": "San Francisco-Oakland Bay Bridge Live Cam"
+      }
+  },
+  "long-beach": {
+      "drone": {
+          "youtubeId": "PWvL-8a-Gas",
+          "title": "Λονγκ Μπιτς 4K — Long Beach, California | 4K Drone Video"
+      }
+  },
+  "bakersfield": {
+      "drone": {
+          "youtubeId": "rUzTmCBm6yM",
+          "title": "Μπέικερσφιλντ 4K — A Stunning Aerial Tour of Bakersfield, USA | 4K Drone Footage 🌟"
+      }
+  },
+  "anaheim": {
+      "drone": {
+          "youtubeId": "g1U1fH-0kNg",
+          "title": "Άναχαϊμ 4K — Visit Anaheim Aerial Video | by One Zero Digital Media"
+      }
+  },
+  "sacramento": {
+      "drone": {
+          "youtubeId": "j3tuOlDLQTA",
+          "title": "Σακραμέντο 4K — Sacramento, Capital of California | 4K Drone Video"
+      },
+      "live": {
+          "youtubeId": "1aPhtRjjzb0",
+          "label": "Σακραμέντο Live Cam",
+          "title": "Sacramento Pacific Flyway Wildlife Live Cam"
+      }
+  },
+  "san-antonio": {
+      "drone": {
+          "youtubeId": "HhYetVm8JZ0",
+          "title": "Σαν Αντόνιο 4K — San Antonio, Texas from Above | Stunning 4K Drone Tour"
+      }
   }
 };
 
 /**
  * Returns video data for a city, prioritizing requested tour type.
+
  */
 export function getCityVideo(cityId, preferredType = 'drone') {
   if (!cityId) return null;

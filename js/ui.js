@@ -4,9 +4,9 @@
  * Base Map Layer selector, Date display, Video Overlay, and Deep Dive views.
  */
 
-import { getCityVideo, getAvailableVideoTypes, getAvailableCityTours, CITY_VIDEOS, findPoiLiveCam } from './video-service.js?v=20261114_us2';
-import { getDeepDiveData } from './deep-dive.js?v=20261114_us2';
-import { fetchWikiArticle, fetchWikiArticleHtml, cleanWikiTitle } from './wiki-service.js?v=20261114_us2';
+import { getCityVideo, getAvailableVideoTypes, getAvailableCityTours, CITY_VIDEOS, findPoiLiveCam } from './video-service.js?v=20261114_us3';
+import { getDeepDiveData } from './deep-dive.js?v=20261114_us3';
+import { fetchWikiArticle, fetchWikiArticleHtml, cleanWikiTitle } from './wiki-service.js?v=20261114_us3';
 
 let currentActiveVideoCityId = null;
 let currentActiveVideoType = 'drone';
