@@ -1,4 +1,4 @@
-import { CITY_TO_STATE } from './states-data.js?v=20261114_us4';
+import { CITY_TO_STATE } from './states-data.js?v=20261114_us5';
 /**
  * Video Service Module
  * Registry of verified high-definition YouTube video tours for all cities
@@ -10832,6 +10832,297 @@ export const CITY_VIDEOS = {
           "youtubeId": "1eSl6orusUY",
           "title": "Αλαμογκόρντο 4K — Alamogordo, New Mexico | 4K Sunset Drone Footage"
       }
+,
+  "tacoma": {
+    "drone": {
+      "youtubeId": "HWNWftwUun4",
+      "title": "Τακόμα 4K — Tacoma Waterways and City 4K Drone Exploration"
+    },
+    "secondary": {
+      "youtubeId": "_CSGDYFneAs",
+      "title": "Τακόμα Panoramic — TACOMA, WASHINGTON - Explore Beautiful City - [4K] Dolby Vision"
+    }
+  },
+  "vancouver-wa": {
+    "drone": {
+      "youtubeId": "fknGs1hvRBs",
+      "title": "Βανκούβερ (WA) 4K — Vancouver Waterfront in 4K | Stunning Drone Views Over the Columbia River"
+    },
+    "secondary": {
+      "youtubeId": "gt0SGoeCArY",
+      "title": "Βανκούβερ (WA) Panoramic — Vancouver Washington Waterfront (Fall 2025)"
+    }
+  },
+  "bellevue-wa": {
+    "drone": {
+      "youtubeId": "Dm5YLvTdWc4",
+      "title": "Μπέλβιου 4K — Bellevue Washington // 4K 60FPS Mavic 3 Pro"
+    },
+    "secondary": {
+      "youtubeId": "CAHd1bZvby0",
+      "title": "Μπέλβιου Panoramic — Bellevue, Washington USA 🇺🇸 by DJI Mini 3 Pro drone [4K]"
+    }
+  },
+  "everett": {
+    "drone": {
+      "youtubeId": "XO2PJX_FF8c",
+      "title": "Έβερετ 4K — Everett Washington in 4k | Aerial Views of Everett Marina & Jetty Island"
+    },
+    "secondary": {
+      "youtubeId": "z5YUotS5fmQ",
+      "title": "Έβερετ Panoramic — Everett Wa🇺🇸4K Drone Video ( Fall 2020)"
+    }
+  },
+  "kent-wa": {
+    "drone": {
+      "youtubeId": "GiM1p3p2c-8",
+      "title": "Κεντ 4K — Lake Fenwick Drone Tour - Kent Washington"
+    },
+    "secondary": {
+      "youtubeId": "qdGin1IPgh0",
+      "title": "Κεντ Panoramic — Washington DC - USA 🇺🇸 - by drone [4K]"
+    }
+  },
+  "yakima": {
+    "drone": {
+      "youtubeId": "SpzyvZvNRF8",
+      "title": "Γιάκιμα 4K — Yakima, Washington 🇺🇸 4k drone video in Ultra HD"
+    },
+    "secondary": {
+      "youtubeId": "wV-av010W6k",
+      "title": "Γιάκιμα Panoramic — Yakima Drone Footage"
+    }
+  },
+  "bellingham": {
+    "drone": {
+      "youtubeId": "O06mKHx8Ujw",
+      "title": "Μπέλινγκχαμ 4K — Bellingham, Washington 🇺🇸 | Stunning 4K Drone Tour | Pacific Northwest Aerial Views"
+    },
+    "secondary": {
+      "youtubeId": "AcYfZapRcck",
+      "title": "Μπέλινγκχαμ Panoramic — Above Bellingham - A 4K Drone Film"
+    }
+  },
+  "hillsboro": {
+    "drone": {
+      "youtubeId": "_XvLw1R7Zcg",
+      "title": "Χίλσμπορο 4K — DJI Mavic Air 2 Flight Over Hillsboro, Oregon in Ultra 4K"
+    },
+    "secondary": {
+      "youtubeId": "gYZVTDMM6KE",
+      "title": "Χίλσμπορο Panoramic — Hillsboro - Oregon - 4K Downtown Drive"
+    }
+  },
+  "beaverton": {
+    "drone": {
+      "youtubeId": "Jh4D6__NwVs",
+      "title": "Μπίβερτον 4K — Beaverton, Oregon from Above | 4K Drone Aerial Views"
+    },
+    "secondary": {
+      "youtubeId": "rUia-cvRCpM",
+      "title": "Μπίβερτον Panoramic — Beaverton, Oregon in Golden Autumn Light | 4K Drone Views"
+    }
+  },
+  "bend": {
+    "drone": {
+      "youtubeId": "JClQQBV83sU",
+      "title": "Μπεντ 4K — BEND, OREGON // 4K AERIAL DRONE VIDEO"
+    },
+    "secondary": {
+      "youtubeId": "5RbM9WLw6C0",
+      "title": "Μπεντ Panoramic — Bend Oregon 4k Drone: Aerial Views of Stunning Locations"
+    }
+  },
+  "medford": {
+    "drone": {
+      "youtubeId": "_1rEJjZ59qU",
+      "title": "Μέντφορντ 4K — 4k Drone flyover Bear creek Medford OR"
+    },
+    "secondary": {
+      "youtubeId": "TcqWtpVZCYE",
+      "title": "Μέντφορντ Panoramic — Medford Oregon Aerial View"
+    }
+  },
+  "corvallis": {
+    "drone": {
+      "youtubeId": "Qm1pg-NfUfw",
+      "title": "Κορβάλις 4K — Corvallis Oregon | Cinematic Drone Tour 4k"
+    },
+    "secondary": {
+      "youtubeId": "IQLljK4hM_A",
+      "title": "Κορβάλις Panoramic — Corvallis, Oregon | Oregon State University | 4K Scenic drone video"
+    }
+  },
+  "springfield-or": {
+    "drone": {
+      "youtubeId": "tWtKN-vyovw",
+      "title": "Σπρίνγκφιλντ (OR) 4K — Drone Springfield, Oregon | Highlights"
+    },
+    "secondary": {
+      "youtubeId": "LOu9_Oqdsww",
+      "title": "Σπρίνγκφιλντ (OR) Panoramic — Drone Springfield, Oregon"
+    }
+  },
+  "albany-or": {
+    "drone": {
+      "youtubeId": "2EXGKbyeKFc",
+      "title": "Όλμπανι (OR) 4K — Albany, Oregon in 4K | Scenic drone video"
+    },
+    "secondary": {
+      "youtubeId": "lqaTYyl-Mok",
+      "title": "Όλμπανι (OR) Panoramic — Albany Oregon History Museum: Old Photos Vs Today"
+    }
+  },
+  "henderson": {
+    "drone": {
+      "youtubeId": "JOU1qHHGTMw",
+      "title": "Χέντερσον 4K — Inspirada Henderson 4K Drone Aerial Best Las Vegas Neighborhoods Tours"
+    },
+    "secondary": {
+      "youtubeId": "SmepP-pr8cM",
+      "title": "Χέντερσον Panoramic — Henderson NV 🇺🇸 | From Desert to Modern City"
+    }
+  },
+  "north-las-vegas": {
+    "drone": {
+      "youtubeId": "GW5YgzH3BuA",
+      "title": "Βόρειο Λας Βέγκας 4K — [4K] LAS VEGAS 2026 🇺🇸 1 Hour Drone Aerial Film | Nevada NV USA United States of America"
+    },
+    "secondary": {
+      "youtubeId": "6UAXOifDnhI",
+      "title": "Βόρειο Λας Βέγκας Panoramic — Valley Vista North Las Vegas 4K Drone Footage"
+    }
+  },
+  "sparks": {
+    "drone": {
+      "youtubeId": "QumQ5iOQt6I",
+      "title": "Σπαρκς 4K — Flying over Sparks, NV. Marina 4K"
+    },
+    "secondary": {
+      "youtubeId": "f9ZXd8DD-_k",
+      "title": "Σπαρκς Panoramic — Sparks Marina Sparks, Nevada cinematic DJI Mini 2"
+    }
+  },
+  "boulder-city": {
+    "drone": {
+      "youtubeId": "C3e737VHTxU",
+      "title": "Μπόλντερ Σίτι 4K — Hoover Dam - Nevada / Arizona, USA 🇺🇸 - by drone [4K]"
+    },
+    "secondary": {
+      "youtubeId": "qdq8kPrUL9o",
+      "title": "Μπόλντερ Σίτι Panoramic — Hoover Dam - 4K Dash Tour 🌉 🌁"
+    }
+  },
+  "elko": {
+    "drone": {
+      "youtubeId": "e9vmCNbVz98",
+      "title": "Έλκο 4K — 48 hours in Elko (NV): a Nevada gem"
+    },
+    "secondary": {
+      "youtubeId": "UJqq8v57czA",
+      "title": "Έλκο Panoramic — Ruby Mountain Ranch | Elko County, Nevada"
+    }
+  },
+  "mesquite": {
+    "drone": {
+      "youtubeId": "-rtibmlshyE",
+      "title": "Μεσκίτ 4K — Wolf Creek - Mesquite Nevada USA by Eagle-Eye Aerials"
+    },
+    "secondary": {
+      "youtubeId": "SkJpoSiZtXY",
+      "title": "Μεσκίτ Panoramic — Mesquite - Nevada - 4K Downtown Drive"
+    }
+  },
+  "pahrump": {
+    "drone": {
+      "youtubeId": "LxXSqN3LFCk",
+      "title": "Παράμπ 4K — 4K Desert Orbital | Aerial Drone Footage | Pahrump, Nevada"
+    },
+    "secondary": {
+      "youtubeId": "ZZhR9MGdsAA",
+      "title": "Παράμπ Panoramic — Pahrump - Nevada - 4K Downtown Drive"
+    }
+  },
+  "west-valley-city": {
+    "drone": {
+      "youtubeId": "bhcndZo8p-8",
+      "title": "Γουέστ Βάλεϊ Σίτι 4K — West Valley City Tour - Salt Lake County, Utah"
+    },
+    "secondary": {
+      "youtubeId": "lSdzxJyArRo",
+      "title": "Γουέστ Βάλεϊ Σίτι Panoramic — West Valley City - Utah - 4K Downtown Drive"
+    }
+  },
+  "west-jordan": {
+    "drone": {
+      "youtubeId": "7pjt5kkAHa0",
+      "title": "Γουέστ Τζόρνταν 4K — West Jordan, UT | Gardner Village WitchFest Community Tour Halloween Tradition"
+    },
+    "secondary": {
+      "youtubeId": "u-JlkS3mcWc",
+      "title": "Γουέστ Τζόρνταν Panoramic — Gardner Village  – West Jordan, Utah"
+    }
+  },
+  "orem": {
+    "drone": {
+      "youtubeId": "iMh1TeSglgY",
+      "title": "Όρεμ 4K — 2023 Mt. Timpanogos Summit | 4K Drone Footage"
+    },
+    "secondary": {
+      "youtubeId": "tkhtmvrnIOk",
+      "title": "Όρεμ Panoramic — Mount Timpanogos with a Drone!! (4K!!)"
+    }
+  },
+  "sandy": {
+    "drone": {
+      "youtubeId": "sFiCo0TBrR8",
+      "title": "Σάντι 4K — Wasatch Mountains, Utah 4K Drone Footage | Powder Mountain Ski Resort Eden, UT | DJI Mavic 3"
+    },
+    "secondary": {
+      "youtubeId": "AbYefNCSQdc",
+      "title": "Σάντι Panoramic — Aerial View of Wasatch Mountains - Utah"
+    }
+  },
+  "st-george": {
+    "drone": {
+      "youtubeId": "lMLc4Mtmok0",
+      "title": "Σεντ Τζορτζ 4K — Drone St  George, Utah"
+    },
+    "secondary": {
+      "youtubeId": "8ezsONrmsog",
+      "title": "Σεντ Τζορτζ Panoramic — Stunning 4K 60 Drone Footage of Saint George, Utah"
+    }
+  },
+  "ogden": {
+    "drone": {
+      "youtubeId": "wmxpHKPyWoA",
+      "title": "Όγκντεν 4K — Historic 25th Street in Ogden, Utah  #dji #drone #djineo2 #city #streets"
+    },
+    "secondary": {
+      "youtubeId": "qBYJ7HygJgU",
+      "title": "Όγκντεν Panoramic — Did you know this CRAZY fact about historic 25th street in Ogden??"
+    }
+  },
+  "layton": {
+    "drone": {
+      "youtubeId": "DUXlJr4a5xw",
+      "title": "Λέιτον 4K — Salt Lake City (Utah, USA) Drone View | 4K Ultra HD"
+    },
+    "secondary": {
+      "youtubeId": "gePlxytbuN4",
+      "title": "Λέιτον Panoramic — Salt Lake City, Utah, USA  [4K Aerial View by Drone with Calming Music]"
+    }
+  },
+  "south-jordan": {
+    "drone": {
+      "youtubeId": "GxTTDmjOTfE",
+      "title": "Σάουθ Τζόρνταν 4K — DAYBREAK, SOUTH JORDAN, Utah Footage en 4K | Utah Drone Video – EP 005"
+    },
+    "secondary": {
+      "youtubeId": "N7Ve9je8RzU",
+      "title": "Σάουθ Τζόρνταν Panoramic — Daybreak (South Jordan) Is it Still Worth the Hype?"
+    }
+  }
   }
 };
 

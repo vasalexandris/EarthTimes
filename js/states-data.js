@@ -504,6 +504,46 @@ export const US_STATES = [
         "id": "provo",
         "name": "Προβο",
         "englishName": "Provo"
+      },
+      {
+        "id": "west-valley-city",
+        "name": "Γουέστ Βάλεϊ Σίτι",
+        "englishName": "West Valley City"
+      },
+      {
+        "id": "west-jordan",
+        "name": "Γουέστ Τζόρνταν",
+        "englishName": "West Jordan"
+      },
+      {
+        "id": "orem",
+        "name": "Όρεμ",
+        "englishName": "Orem"
+      },
+      {
+        "id": "sandy",
+        "name": "Σάντι",
+        "englishName": "Sandy"
+      },
+      {
+        "id": "st-george",
+        "name": "Σεντ Τζορτζ",
+        "englishName": "St. George"
+      },
+      {
+        "id": "ogden",
+        "name": "Όγκντεν",
+        "englishName": "Ogden"
+      },
+      {
+        "id": "layton",
+        "name": "Λέιτον",
+        "englishName": "Layton"
+      },
+      {
+        "id": "south-jordan",
+        "name": "Σάουθ Τζόρνταν",
+        "englishName": "South Jordan"
       }
     ]
   },
@@ -1629,6 +1669,41 @@ export const US_STATES = [
         "id": "reno",
         "name": "Ρίνο",
         "englishName": "Reno"
+      },
+      {
+        "id": "henderson",
+        "name": "Χέντερσον",
+        "englishName": "Henderson"
+      },
+      {
+        "id": "north-las-vegas",
+        "name": "Βόρειο Λας Βέγκας",
+        "englishName": "North Las Vegas"
+      },
+      {
+        "id": "sparks",
+        "name": "Σπαρκς",
+        "englishName": "Sparks"
+      },
+      {
+        "id": "boulder-city",
+        "name": "Μπόλντερ Σίτι",
+        "englishName": "Boulder City"
+      },
+      {
+        "id": "elko",
+        "name": "Έλκο",
+        "englishName": "Elko"
+      },
+      {
+        "id": "mesquite",
+        "name": "Μεσκίτ",
+        "englishName": "Mesquite"
+      },
+      {
+        "id": "pahrump",
+        "name": "Παράμπ",
+        "englishName": "Pahrump"
       }
     ]
   },
@@ -2130,6 +2205,41 @@ export const US_STATES = [
         "id": "eugene",
         "name": "Γιουτζίν",
         "englishName": "Eugene"
+      },
+      {
+        "id": "hillsboro",
+        "name": "Χίλσμπορο",
+        "englishName": "Hillsboro"
+      },
+      {
+        "id": "beaverton",
+        "name": "Μπίβερτον",
+        "englishName": "Beaverton"
+      },
+      {
+        "id": "bend",
+        "name": "Μπεντ",
+        "englishName": "Bend"
+      },
+      {
+        "id": "medford",
+        "name": "Μέντφορντ",
+        "englishName": "Medford"
+      },
+      {
+        "id": "corvallis",
+        "name": "Κορβάλις",
+        "englishName": "Corvallis"
+      },
+      {
+        "id": "springfield-or",
+        "name": "Σπρίνγκφιλντ",
+        "englishName": "Springfield"
+      },
+      {
+        "id": "albany-or",
+        "name": "Όλμπανι",
+        "englishName": "Albany"
       }
     ]
   },
@@ -2412,6 +2522,41 @@ export const US_STATES = [
         "id": "spokane",
         "name": "Σποκάν",
         "englishName": "Spokane"
+      },
+      {
+        "id": "tacoma",
+        "name": "Τακόμα",
+        "englishName": "Tacoma"
+      },
+      {
+        "id": "vancouver-wa",
+        "name": "Βανκούβερ",
+        "englishName": "Vancouver"
+      },
+      {
+        "id": "bellevue-wa",
+        "name": "Μπέλβιου",
+        "englishName": "Bellevue"
+      },
+      {
+        "id": "everett",
+        "name": "Έβερετ",
+        "englishName": "Everett"
+      },
+      {
+        "id": "kent-wa",
+        "name": "Κεντ",
+        "englishName": "Kent"
+      },
+      {
+        "id": "yakima",
+        "name": "Γιάκιμα",
+        "englishName": "Yakima"
+      },
+      {
+        "id": "bellingham",
+        "name": "Μπέλινγκχαμ",
+        "englishName": "Bellingham"
       }
     ]
   },
@@ -2759,7 +2904,7 @@ export const US_STATES = [
       }
     ]
   }
-];
+]];
 
 export const CITY_TO_STATE = {
   "hopkinsville": "kentucky",
@@ -3161,5 +3306,34 @@ export const CITY_TO_STATE = {
   "st-augustine": "florida",
   "naples-fl": "florida",
   "honolulu": "hawaii",
-  "hilo": "hawaii"
+  "hilo": "hawaii",
+  "west-valley-city": "utah",
+  "west-jordan": "utah",
+  "orem": "utah",
+  "sandy": "utah",
+  "st-george": "utah",
+  "ogden": "utah",
+  "layton": "utah",
+  "south-jordan": "utah",
+  "henderson": "nevada",
+  "north-las-vegas": "nevada",
+  "sparks": "nevada",
+  "boulder-city": "nevada",
+  "elko": "nevada",
+  "mesquite": "nevada",
+  "pahrump": "nevada",
+  "hillsboro": "oregon",
+  "beaverton": "oregon",
+  "bend": "oregon",
+  "medford": "oregon",
+  "corvallis": "oregon",
+  "springfield-or": "oregon",
+  "albany-or": "oregon",
+  "tacoma": "washington-state",
+  "vancouver-wa": "washington-state",
+  "bellevue-wa": "washington-state",
+  "everett": "washington-state",
+  "kent-wa": "washington-state",
+  "yakima": "washington-state",
+  "bellingham": "washington-state"
 };

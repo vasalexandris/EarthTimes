@@ -6,7 +6,10 @@
     "nickname": "The Beaver State / Η Πολιτεία του Κάστορα",
     "type": "state",
     "capital": "Σάλεμ",
-    "coords": [44.0, -120.5],
+    "coords": [
+      44.0,
+      -120.5
+    ],
     "zoom": 7.0,
     "stats": {
       "population": "4,27 εκατομμύρια (2024)",
@@ -100,7 +103,10 @@
       "englishName": "Salem",
       "nickname": "Cherry City / Η Πόλη των Κερασιών",
       "type": "city",
-      "coords": [44.9429, -123.0351],
+      "coords": [
+        44.9429,
+        -123.0351
+      ],
       "zoom": 12.9,
       "stats": {
         "population": "180.000",
@@ -269,31 +275,46 @@
         {
           "name": "Κοινοβούλιο του Όρεγκον",
           "category": "history",
-          "coords": [44.9387, -123.0304],
+          "coords": [
+            44.9387,
+            -123.0304
+          ],
           "desc": "Αρ ντεκό κτίριο του 1938 με τον επιχρυσωμένο «Gold Man» και τοιχογραφίες."
         },
         {
           "name": "Μουσείο Τέχνης Hallie Ford",
           "category": "culture",
-          "coords": [44.9377, -123.0347],
+          "coords": [
+            44.9377,
+            -123.0347
+          ],
           "desc": "Συλλογές αυτόχθονης τέχνης και έργα της Βορειοδυτικής Ακτής."
         },
         {
           "name": "Riverfront Park",
           "category": "nature",
-          "coords": [44.9430, -123.0400],
+          "coords": [
+            44.943,
+            -123.04
+          ],
           "desc": "Πάρκο δίπλα στον Willamette με μονοπάτια, γέφυρες και χώρους αναψυχής."
         },
         {
           "name": "Deepwood Museum & Gardens",
           "category": "history",
-          "coords": [44.9317, -123.0339],
+          "coords": [
+            44.9317,
+            -123.0339
+          ],
           "desc": "Βικτωριανό αρχοντικό του 1894 με ιστορικούς κήπους."
         },
         {
           "name": "Willamette University",
           "category": "culture",
-          "coords": [44.9362, -123.0310],
+          "coords": [
+            44.9362,
+            -123.031
+          ],
           "desc": "Το παλαιότερο πανεπιστήμιο της Δύσης, με δεντροστοιχίες και μουσεία."
         }
       ]
@@ -304,7 +325,10 @@
       "englishName": "Portland",
       "nickname": "Rose City / Stumptown",
       "type": "city",
-      "coords": [45.5152, -122.6784],
+      "coords": [
+        45.5152,
+        -122.6784
+      ],
       "zoom": 12.6,
       "stats": {
         "population": "630.000 (2,5 εκ. μητροπολιτική)",
@@ -478,31 +502,46 @@
         {
           "name": "Powell's City of Books",
           "category": "culture",
-          "coords": [45.5231, -122.6819],
+          "coords": [
+            45.5231,
+            -122.6819
+          ],
           "desc": "Το μεγαλύτερο ανεξάρτητο βιβλιοπωλείο του κόσμου, με ένα εκατομμύριο τίτλους."
         },
         {
           "name": "International Rose Test Garden",
           "category": "nature",
-          "coords": [45.5190, -122.7050],
+          "coords": [
+            45.519,
+            -122.705
+          ],
           "desc": "Ιστορικός κήπος με χιλιάδες τριαντάφυλλα και θέα στο όρος Hood."
         },
         {
           "name": "Portland Japanese Garden",
           "category": "nature",
-          "coords": [45.5188, -122.7084],
+          "coords": [
+            45.5188,
+            -122.7084
+          ],
           "desc": "Αυθεντικός ιαπωνικός κήπος με λίμνες, γέφυρες και τελετουργικό τσάι."
         },
         {
           "name": "Forest Park",
           "category": "nature",
-          "coords": [45.5500, -122.7600],
+          "coords": [
+            45.55,
+            -122.76
+          ],
           "desc": "Το μεγαλύτερο αστικό δάσος των ΗΠΑ, με μονοπάτια και άγρια ζωή."
         },
         {
           "name": "Moda Center",
           "category": "culture",
-          "coords": [45.5316, -122.6668],
+          "coords": [
+            45.5316,
+            -122.6668
+          ],
           "desc": "Αρένα των Portland Trail Blazers και χώρος συναυλιών στο κέντρο της πόλης."
         }
       ]
@@ -513,7 +552,10 @@
       "englishName": "Eugene",
       "nickname": "TrackTown USA / Emerald City",
       "type": "city",
-      "coords": [44.0521, -123.0868],
+      "coords": [
+        44.0521,
+        -123.0868
+      ],
       "zoom": 12.9,
       "stats": {
         "population": "178.000 (380.000 μητροπολιτική)",
@@ -682,32 +724,1723 @@
         {
           "name": "Hayward Field",
           "category": "culture",
-          "coords": [44.0422, -123.0720],
+          "coords": [
+            44.0422,
+            -123.072
+          ],
           "desc": "Ιστορικό στάδιο στίβου, έδρα των αγώνων του Πανεπιστημίου του Όρεγκον."
         },
         {
           "name": "Jordan Schnitzer Museum of Art",
           "category": "culture",
-          "coords": [44.0442, -123.0767],
+          "coords": [
+            44.0442,
+            -123.0767
+          ],
           "desc": "Μουσείο με ασιατική και αμερικανική τέχνη σε κτίριο του 1933."
         },
         {
           "name": "Alton Baker Park",
           "category": "nature",
-          "coords": [44.0520, -123.0700],
+          "coords": [
+            44.052,
+            -123.07
+          ],
           "desc": "Πάρκο στον Willamette με μονοπάτια, κήπους και χώρους αναψυχής."
         },
         {
           "name": "Skinner Butte",
           "category": "nature",
-          "coords": [44.0525, -123.0935],
+          "coords": [
+            44.0525,
+            -123.0935
+          ],
           "desc": "Λόφος με θέα στην πόλη και τα βουνά, ιστορικός τόπος του πρώτου οικισμού."
         },
         {
           "name": "Πανεπιστήμιο του Όρεγκον",
           "category": "culture",
-          "coords": [44.0448, -123.0700],
+          "coords": [
+            44.0448,
+            -123.07
+          ],
           "desc": "Ιστορική πανεπιστημιούπολη με μουσεία, κήπους και αρχιτεκτονική του 19ου αιώνα."
+        }
+      ]
+    },
+    {
+      "id": "hillsboro",
+      "name": "Χίλσμπορο",
+      "englishName": "Hillsboro",
+      "nickname": "Η Καρδιά του Silicon Forest",
+      "type": "city",
+      "coords": [
+        45.5229,
+        -122.9898
+      ],
+      "zoom": 12.5,
+      "stats": {
+        "population": "109.000",
+        "founded": "1842",
+        "area": "66 km²",
+        "elevation": "60 m"
+      },
+      "quote": "«Εκεί όπου οι πιο εξελιγμένοι μικροεπεξεργαστές του πλανήτη γεννιούνται ανάμεσα στα καταπράσινα αμπέλια της κοιλάδας Tualatin.»",
+      "geo": {
+        "summary": "Στην καρδιά της κοιλάδας Tualatin Valley, δυτικά του Πόρτλαντ, περιτριγυρισμένη από λοφώδεις αμπελώνες και την οροσειρά Oregon Coast Range.",
+        "highlights": [
+          {
+            "title": "Tualatin Valley",
+            "desc": "Εύφορη πεδιάδα με πλούσια γεωργική παράδοση και τεχνολογικά πάρκα."
+          },
+          {
+            "title": "Jackson Bottom Wetlands",
+            "desc": "Φυσικός προστατευόμενος υγρότοπος 710 στρεμμάτων κατά μήκος του ποταμού Tualatin."
+          },
+          {
+            "title": "Coast Range Foothills",
+            "desc": "Δασώδεις λόφοι που οριοθετούν τη δυτική έξοδο προς τις ακτές του Ειρηνικού."
+          }
+        ]
+      },
+      "hist": {
+        "summary": "Ιδρύθηκε το 1842 από πρωτοπόρους του Oregon Trail και πήρε το όνομά της από τον David Hill. Το 1976 η Intel δημιούργησε την πρώτη της εγκατάσταση, μεταμορφώνοντας την πόλη σε παγκόσμιο ημιαγωγικό κολοσσό.",
+        "highlights": [
+          {
+            "year": "1842",
+            "event": "Πρώτος Εποικισμός",
+            "desc": "Εγκατάσταση των πρώτων οικογενειών πρωτοπόρων στην περιοχή."
+          },
+          {
+            "year": "1876",
+            "event": "Ενσωμάτωση Πόλης",
+            "desc": "Επίσημη αναγνώριση του Χίλσμπορο ως έδρας της κομητείας Washington."
+          },
+          {
+            "year": "1976",
+            "event": "Άφιξη της Intel",
+            "desc": "Έναρξη λειτουργίας της Intel, θεμελιώνοντας το φημισμένο «Silicon Forest»."
+          }
+        ]
+      },
+      "demo": {
+        "summary": "Ευημερούσα, τεχνολογική και πολυπολιτισμική κοινωνία με υψηλό βιοτικό και μορφωτικό επίπεδο.",
+        "details": [
+          {
+            "label": "Πληθυσμός",
+            "text": "Περίπου 109.000 κάτοικοι, η 5η μεγαλύτερη πόλη στο Όρεγκον."
+          },
+          {
+            "label": "Επαγγελματικό Προφίλ",
+            "text": "Χιλιάδες κορυφαίοι μηχανικοί, επιστήμονες υλικών και ερευνητές νανοτεχνολογίας."
+          },
+          {
+            "label": "Πολυπολιτισμικότητα",
+            "text": "Σημαντικές κοινότητες Ασιατών (Ινδία, Κίνα) και Λατινοαμερικανών."
+          }
+        ]
+      },
+      "cult": {
+        "summary": "Μοναδικός συνδυασμός αγροτικής παράδοσης πρωτοπόρων, high-tech κουλτούρας και οινοτουρισμού.",
+        "items": [
+          {
+            "title": "Silicon Forest Culture",
+            "desc": "Εργαστήρια καινοτομίας, hackerspaces και διεθνή τεχνολογικά συνέδρια."
+          },
+          {
+            "title": "Οινοποιεία Tualatin Valley",
+            "desc": "Διάσημα boutique οινοποιεία παραγωγής Pinot Noir και Pinot Gris."
+          },
+          {
+            "title": "Hillsboro Hops Baseball",
+            "desc": "Η δημοφιλής επαγγελματική ομάδα μπέιζμπολ της πόλης στο στάδιο Ron Tonkin Field."
+          }
+        ]
+      },
+      "guide": {
+        "summary": "Υγρότοποι άγριας ζωής, ιστορικά κέντρα, σύγχρονα γήπεδα και τεχνολογικά πάρκα.",
+        "items": [
+          {
+            "title": "Jackson Bottom Wetlands Preserve",
+            "cat": "nature",
+            "catLabel": "Φύση",
+            "desc": "Καταφύγιο άγριας ζωής με 7 χλμ. μονοπατιών, παρατηρητήρια πουλιών και φαλακρούς αετούς.",
+            "wiki": "Jackson_Bottom_Wetlands_Preserve"
+          },
+          {
+            "title": "Historic Downtown Hillsboro",
+            "cat": "history",
+            "catLabel": "Ιστορία",
+            "desc": "Ιστορικό κέντρο με το κλασικό δικαστικό μέγαρο Washington County Courthouse.",
+            "wiki": "Hillsboro,_Oregon"
+          },
+          {
+            "title": "Ron Tonkin Field",
+            "cat": "sports",
+            "catLabel": "Αθλητισμός",
+            "desc": "Σύγχρονο ανοιχτό στάδιο μπέιζμπολ, έδρα των πρωταθλητών Hillsboro Hops.",
+            "wiki": "Ron_Tonkin_Field"
+          },
+          {
+            "title": "Rood Bridge Park",
+            "cat": "nature",
+            "catLabel": "Πάρκο",
+            "desc": "Πανέμορφο δασικό πάρκο στις όχθες του ποταμού Tualatin με εγκαταστάσεις κανό.",
+            "wiki": "Rood_Bridge_Park"
+          },
+          {
+            "title": "Rice Northwest Museum of Rocks & Minerals",
+            "cat": "museum",
+            "catLabel": "Μουσείο",
+            "desc": "Εκπληκτικό μουσείο ορυκτών και γεωλογίας σε ιστορικό κτήριο ράντσου.",
+            "wiki": "Rice_Northwest_Museum_of_Rocks_and_Minerals"
+          }
+        ]
+      },
+      "gastro": {
+        "summary": "Pinot Noir από τους τοπικούς λόφους, φρέσκα φρούτα μούρων και γκουρμέ burgers.",
+        "items": [
+          {
+            "title": "Oregon Truffle Butter Crostini",
+            "desc": "Φρυγανισμένο ψωμί με βούτυρο αρωματισμένο με σπάνιες λευκές τρούφες Όρεγκον.",
+            "tag": "Gourmet"
+          },
+          {
+            "title": "Marionberry BBQ Ribs",
+            "desc": "Χοιρινά παϊδάκια καπνιστά γλασαρισμένα με σάλτσα μπάρμπεκιου από τοπικά մούρα marionberry.",
+            "tag": "Κρεατικά"
+          },
+          {
+            "title": "Willamette Valley Pinot Noir",
+            "desc": "Κομψό ερυθρό κρασί με αρώματα κερασιού, γήινες νότες και μεταξένια υφή.",
+            "tag": "Κρασί"
+          },
+          {
+            "title": "Hops Pale Ale",
+            "desc": "Τοπική craft pale ale με έντονο άρωμα φρέσκου εσπεριδοειδούς λυκίσκου.",
+            "tag": "Μπίρα"
+          }
+        ]
+      },
+      "eco": {
+        "summary": "Βιοκλιματικά εργοστάσια ημιαγωγών, προστασία του ποταμού Tualatin και δίκτυο ηλεκτρικού σιδηροδρόμου MAX.",
+        "items": [
+          {
+            "title": "Tualatin River Flow Restoration",
+            "desc": "Ανακύκλωση και καθαρισμός νερού για τη διατήρηση της οικολογικής ροής του ποταμού.",
+            "cat": "water",
+            "catLabel": "Υδάτινοι Πόροι",
+            "wiki": "Tualatin_River"
+          },
+          {
+            "title": "MAX Blue Line Light Rail",
+            "desc": "Ηλεκτρικός σιδηρόδρομος που συνδέει το Χίλσμπορο με το Πόρτλαντ μειώνοντας τις μετακινήσεις με αυτοκίνητο.",
+            "cat": "transit",
+            "catLabel": "Μεταφορές",
+            "wiki": "MAX_Blue_Line"
+          },
+          {
+            "title": "Silicon Forest Renewable Power",
+            "desc": "Χρήση 100% πράσινης αιολικής και υδροηλεκτρικής ενέργειας στις εγκαταστάσεις παραγωγής chips.",
+            "cat": "energy",
+            "catLabel": "Ενέργεια",
+            "wiki": "Renewable_energy"
+          }
+        ]
+      },
+      "pastVsPresent": [
+        {
+          "epoch": "Χίλσμπορο 1926: Αγροτική Πρωτεύουσα Συμπυκνωμένου Γάλακτος",
+          "content": "Εργοστάσια επεξεργασίας γάλακτος Carnation, αμαξάδες με άλογα και ξύλινες σιταποθήκες κατά μήκος της κεντρικής οδού."
+        },
+        {
+          "epoch": "Χίλσμπορο 2026: Παγκόσμια Μέκκα Νανοτεχνολογίας και Πράσινης Ζωής",
+          "content": "Εργαστήρια ημιαγωγών ακριβείας υπο-νανομέτρων, προστατευμένοι υγρότοποι με φαλακρούς αετούς και υψηλό βιοτικό επίπεδο."
+        }
+      ],
+      "pois": [
+        {
+          "name": "Intel Ronler Acres Mega-Campus",
+          "category": "landmark",
+          "coords": [
+            45.5416,
+            -122.9198
+          ],
+          "desc": "Το τεράστιο κέντρο έρευνας και ανάπτυξης ημιαγωγών της Intel."
+        },
+        {
+          "name": "Jackson Bottom Wetlands Observation Deck",
+          "category": "nature",
+          "coords": [
+            45.5028,
+            -122.9867
+          ],
+          "desc": "Ξύλινο παρατηρητήριο φωλιών φαλακρών αετών."
+        },
+        {
+          "name": "Washington County Courthouse",
+          "category": "architecture",
+          "coords": [
+            45.5228,
+            -122.9897
+          ],
+          "desc": "Το κλασικό κτίριο του δικαστηρίου στην κεντρική πλατεία."
+        },
+        {
+          "name": "Ron Tonkin Field Stadium",
+          "category": "sports",
+          "coords": [
+            45.5489,
+            -122.9152
+          ],
+          "desc": "Το γήπεδο μπέιζμπολ των Hillsboro Hops."
+        },
+        {
+          "name": "Rice NW Rock & Mineral Museum",
+          "category": "museum",
+          "coords": [
+            45.5786,
+            -122.9649
+          ],
+          "desc": "Ιστορικό ράντσο με σπάνιους κρυστάλλους ροδοχρωσίτη."
+        }
+      ]
+    },
+    {
+      "id": "beaverton",
+      "name": "Μπίβερτον",
+      "englishName": "Beaverton",
+      "nickname": "Η Παγκόσμια Πρωτεύουσα του Αθλητικού Σχεδιασμού",
+      "type": "city",
+      "coords": [
+        45.4871,
+        -122.8037
+      ],
+      "zoom": 12.5,
+      "stats": {
+        "population": "98.000",
+        "founded": "1847",
+        "area": "50 km²",
+        "elevation": "58 m"
+      },
+      "quote": "«Εκεί όπου ο αθλητισμός, η τεχνολογία και το σύνθημα Just Do It έγιναν παγκόσμιος τρόπος ζωής μέσα σε καταπράσινα άλση.»",
+      "geo": {
+        "summary": "Στην ανατολική κοιλάδα Tualatin Valley, ακριβώς δυτικά των West Hills του Πόρτλαντ, διασχιζόμενη από το ρέμα Fanno Creek.",
+        "highlights": [
+          {
+            "title": "Fanno Creek",
+            "desc": "Γραφικό ρέμα με καταπράσινη παρόχθια ζώνη και ποδηλατόδρομους."
+          },
+          {
+            "title": "West Hills Overlook",
+            "desc": "Δασώδεις λόφοι που χωρίζουν το Μπίβερτον από το κέντρο του Πόρτλαντ."
+          },
+          {
+            "title": "Tualatin Hills Nature Park",
+            "desc": "Παρθένο φυσικό πάρκο 222 στρεμμάτων μέσα στον αστικό ιστό."
+          }
+        ]
+      },
+      "hist": {
+        "summary": "Πήρε το όνομά της από τα φράγματα καστόρων (beavers) στο ρέμα Fanno Creek. Το 1990 εγκαινιάστηκε το εμβληματικό παγκόσμιο αρχηγείο της Nike (World Headquarters), μετατρέποντας την πόλη σε διεθνές κέντρο design.",
+        "highlights": [
+          {
+            "year": "1847",
+            "event": "Πρώτοι Μύλοι",
+            "desc": "Ο Lawrence Hall κατασκεύασε τον πρώτο νερόμυλο στο Hall Creek."
+          },
+          {
+            "year": "1893",
+            "event": "Ενσωμάτωση Πόλης",
+            "desc": "Επίσημη ίδρυση του δήμου Μπίβερτον."
+          },
+          {
+            "year": "1990",
+            "event": "Nike World Headquarters",
+            "desc": "Εγκαίνια του τεράστιου παγκόσμιου campus της Nike."
+          },
+          {
+            "year": "2022",
+            "event": "Patricia Reser Center for the Arts",
+            "desc": "Εγκαίνια του υπερσύγχρονου πολιτιστικού κέντρου τεχνών της πόλης."
+          }
+        ]
+      },
+      "demo": {
+        "summary": "Κοσμοπολίτικος, δημιουργικός και εξαιρετικά πολυπολιτισμικός πληθυσμός με έντονο διεθνές άρωμα.",
+        "details": [
+          {
+            "label": "Πληθυσμός",
+            "text": "Περίπου 98.000 κάτοικοι, η δεύτερη μεγαλύτερη πόλη της κομητείας Washington."
+          },
+          {
+            "label": "Διεθνής Κοινότητα",
+            "text": "Πάνω από 100 διαφορετικές γλώσσες ομιλούνται στα σχολεία της πόλης."
+          },
+          {
+            "label": "Δημιουργική Οικονομία",
+            "text": "Κορυφαίοι σχεδιαστές υποδημάτων, αθλητές, στελέχη marketing και μηχανικοί λογισμικού."
+          }
+        ]
+      },
+      "cult": {
+        "summary": "Παγκόσμιο επίκεντρο αθλητικής κουλτούρας, σύγχρονης αρχιτεκτονικής και πολυεθνικής κουζίνας.",
+        "items": [
+          {
+            "title": "Nike Sports Culture",
+            "desc": "Campus με κτίρια αφιερωμένα σε αθλητικούς θρύλους όπως ο Michael Jordan, η Serena Williams και ο LeBron James."
+          },
+          {
+            "title": "Patricia Reser Center (The Reser)",
+            "desc": "Πολυτελές θέατρο 550 θέσεων για όπερα, τζαζ, χορό και θέατρο."
+          },
+          {
+            "title": "Πολυπολιτισμική Γαστρονομία",
+            "desc": "Διάσημη σκηνή κορεατικών, μεξικανικών και βιετναμέζικων εστιατορίων."
+          }
+        ]
+      },
+      "guide": {
+        "summary": "Φυσικά πάρκα με ελάφια, υπερσύγχρονα θέατρα, αθλητικά campus και ιστορικές γειτονιές.",
+        "items": [
+          {
+            "title": "Nike World Headquarters",
+            "cat": "landmark",
+            "catLabel": "Αξιοθέατο",
+            "desc": "Το θρυλικό παγκόσμιο campus με τεχνητή λίμνη, στίβους και φουτουριστικά κτίρια design.",
+            "wiki": "Nike,_Inc."
+          },
+          {
+            "title": "Tualatin Hills Nature Park",
+            "cat": "nature",
+            "catLabel": "Φύση",
+            "desc": "Προστατευόμενο καταφύγιο με αειθαλή δάση, έλη, ελάφια και κουκουβάγιες.",
+            "wiki": "Tualatin_Hills_Nature_Park"
+          },
+          {
+            "title": "The Reser Arts Center",
+            "cat": "culture",
+            "catLabel": "Πολιτισμός",
+            "desc": "Εντυπωσιακό κέντρο παραστατικών τεχνών με εκπληκτική ξύλινη αρχιτεκτονική.",
+            "wiki": "Patricia_Reser_Center_for_the_Arts"
+          },
+          {
+            "title": "Beaverton Farmers Market",
+            "cat": "landmark",
+            "catLabel": "Αγορά",
+            "desc": "Μία από τις μεγαλύτερες και ποιοτικότερες υπαίθριες αγορές παραγωγών στο Βορειοδυτικό.",
+            "wiki": "Beaverton,_Oregon"
+          },
+          {
+            "title": "Fanno Creek Regional Trail",
+            "cat": "nature",
+            "catLabel": "Μονοπάτι",
+            "desc": "Συνεχής ποδηλατόδρομος μέσα σε πράσινα πάρκα και υγροτόπους.",
+            "wiki": "Fanno_Creek"
+          }
+        ]
+      },
+      "gastro": {
+        "summary": "Αυθεντικό κορεατικό μπάρμπεκιου, χειροποίητα bao buns και τοπικά ciders.",
+        "items": [
+          {
+            "title": "Korean Galbi & Kimchi",
+            "desc": "Μαριναρισμένα μοσχαρίσια παϊδάκια στη σχάρα με σπιτικό πικάντικο κιμτσί.",
+            "tag": "Κορεατικό"
+          },
+          {
+            "title": "Pork Belly Steamed Bao",
+            "desc": "Αφράτα ψωμάκια ατμού με σιγομαγειρεμένη χοιρινή πανσέτα και πίκλες αγγουριού.",
+            "tag": "Street Food"
+          },
+          {
+            "title": "Northwest Apple Cider",
+            "desc": "Φυσικός αφρώδης μηλίτης από μήλα Honeycrisp και Granny Smith.",
+            "tag": "Μηλίτης"
+          },
+          {
+            "title": "Hazelnut Chocolate Tart",
+            "desc": "Τάρτα μαύρης σοκολάτας με καβουρδισμένα φουντούκια Όρεγκον (παράγει το 99% των ΗΠΑ).",
+            "tag": "Επιδόρπιο"
+          }
+        ]
+      },
+      "eco": {
+        "summary": "Πράσινο δίκτυο πάρκων THPRD, προστασία βιοτόπων καστόρων και βιώσιμη αστική δόμηση.",
+        "items": [
+          {
+            "title": "THPRD Greenway Conservation",
+            "desc": "Πρότυπη διαχείριση πάρκων και διαδρόμων άγριας ζωής από το ειδικό περιφερειακό διαμέρισμα.",
+            "cat": "nature",
+            "catLabel": "Διατήρηση",
+            "wiki": "Tualatin_Hills_Park_%26_Recreation_District"
+          },
+          {
+            "title": "Beaver Habitat Restoration",
+            "desc": "Επαναφορά φυσικών φραγμάτων καστόρων για φυσικό καθαρισμό των ρεμάτων.",
+            "cat": "wildlife",
+            "catLabel": "Άγρια Ζωή",
+            "wiki": "Castor_canadensis"
+          },
+          {
+            "title": "Active Transportation Network",
+            "desc": "Εκτεταμένο δίκτυο ποδηλατοδρόμων που συνδέουν τους σταθμούς MAX με σχολεία και γραφεία.",
+            "cat": "mobility",
+            "catLabel": "Κινητικότητα",
+            "wiki": "MAX_Light_Rail"
+          }
+        ]
+      },
+      "pastVsPresent": [
+        {
+          "epoch": "Μπίβερτον 1926: Ήσυχο Χωριό με Βάλτους και Οπωρώνες",
+          "content": "Ξύλινα σπίτια, λασπωμένοι δρόμοι και κυνηγοί στις εκβολές του Fanno Creek ανάμεσα στα φράγματα των καστόρων."
+        },
+        {
+          "epoch": "Μπίβερτον 2026: Παγκόσμια Μητρόπολη Design και Πολυπολιτισμικότητας",
+          "content": "Φουτουριστικά αθλητικά κτίρια, design studios παγκοσμίου επιρροής και ένα ζωντανό πολιτιστικό κέντρο μέσα σε πλούσια άλση."
+        }
+      ],
+      "pois": [
+        {
+          "name": "Nike Lake & Prefontaine Track",
+          "category": "sports",
+          "coords": [
+            45.5091,
+            -122.8286
+          ],
+          "desc": "Ο διάσημος στίβος μέσα στο campus της Nike αφιερωμένος στον Steve Prefontaine."
+        },
+        {
+          "name": "Patricia Reser Center for the Arts",
+          "category": "culture",
+          "coords": [
+            45.4883,
+            -122.8028
+          ],
+          "desc": "Το μοντέρνο γυάλινο κέντρο παραστατικών τεχνών δίπλα στο ρέμα."
+        },
+        {
+          "name": "Tualatin Hills Nature Center",
+          "category": "nature",
+          "coords": [
+            45.5034,
+            -122.8361
+          ],
+          "desc": "Το εκπαιδευτικό κέντρο φύσης μέσα στο αρχέγονο δάσος του πάρκου."
+        },
+        {
+          "name": "Beaverton City Library",
+          "category": "landmark",
+          "coords": [
+            45.4856,
+            -122.8023
+          ],
+          "desc": "Μία από τις πιο πολυσύχναστες και βραβευμένες δημόσιες βιβλιοθήκες των ΗΠΑ."
+        },
+        {
+          "name": "Fanno Creek Greenway Bridge",
+          "category": "nature",
+          "coords": [
+            45.4789,
+            -122.7954
+          ],
+          "desc": "Γραφική ξύλινη γέφυρα πάνω από τον βιότοπο των καστόρων."
+        }
+      ]
+    },
+    {
+      "id": "bend",
+      "name": "Μπεντ",
+      "englishName": "Bend",
+      "nickname": "Η Πρωτεύουσα της Υπαίθριας Περιπέτειας του Όρεγκον",
+      "type": "city",
+      "coords": [
+        44.0582,
+        -121.3153
+      ],
+      "zoom": 12.5,
+      "stats": {
+        "population": "103.000",
+        "founded": "1905",
+        "area": "86 km²",
+        "elevation": "1.104 m"
+      },
+      "quote": "«Εκεί όπου ο ηλιόλουστος άνεμος του High Desert συναντά τα κρυστάλλινα νερά του Deschutes River και τις χιονισμένες κορυφές των Cascades.»",
+      "geo": {
+        "summary": "Στο οροπέδιο Central Oregon High Desert, στους ανατολικούς πρόποδες των Cascade Mountains, κατά μήκος του ορμητικού ποταμού Deschutes.",
+        "highlights": [
+          {
+            "title": "Deschutes River",
+            "desc": "Κρυστάλλινος ποταμός που διασχίζει την πόλη, ιδανικός για καγιάκ, paddleboarding και rafting."
+          },
+          {
+            "title": "Cascade Mountains Vista",
+            "desc": "Θέα στις κορυφές Mt. Bachelor, Three Sisters, Broken Top και Mt. Jefferson."
+          },
+          {
+            "title": "Pilot Butte",
+            "desc": "Εξαφανισμένος ηφαιστειακός κώνος σκωρίας μέσα στα όρια της πόλης με θέα 360 μοιρών."
+          }
+        ]
+      },
+      "hist": {
+        "summary": "Ιδρύθηκε αρχικά ως πέρασμα του ποταμού Deschutes με την ονομασία «Farewell Bend». Στις αρχές του 20ού αιώνα έγινε γίγαντας της υλοτομίας με τα πριονιστήρια Brooks-Scanlon και Shevlin-Hixon, προτού εξελιχθεί σε κορυφαίο θέρετρο των ΗΠΑ.",
+        "highlights": [
+          {
+            "year": "1905",
+            "event": "Ενσωμάτωση Πόλης",
+            "desc": "Επίσημη ίδρυση της πόλης Μπεντ με 500 κατοίκους."
+          },
+          {
+            "year": "1916",
+            "event": "Έναρξη των Μεγάλων Μύλων",
+            "desc": "Εγκαίνια των δύο κορυφαίων πριονιστηρίων πεύκου Ponderosa στον κόσμο."
+          },
+          {
+            "year": "1958",
+            "event": "Χιονοδρομικό Mt. Bachelor",
+            "desc": "Έναρξη λειτουργίας του φημισμένου χιονοδρομικού κέντρου που άλλαξε την οικονομία."
+          },
+          {
+            "year": "1988",
+            "event": "Deschutes Brewery",
+            "desc": "Ίδρυση της πρωτοπόρου μικροζυθοποιίας που γέννησε την κουλτούρα της craft μπίρας."
+          }
+        ]
+      },
+      "demo": {
+        "summary": "Νεανικός, αθλητικός, μορφωμένος και φυσιολατρικός πληθυσμός με πάθος για τον υπαίθριο τρόπο ζωής.",
+        "details": [
+          {
+            "label": "Πληθυσμός",
+            "text": "Περίπου 103.000 κάτοικοι, η μεγαλύτερη πόλη στο Κεντρικό Όρεγκον."
+          },
+          {
+            "label": "Τρόπος Ζωής",
+            "text": "Κορυφαία πόλη στις ΗΠΑ για τηλεργασία, ορεινό αθλητισμό και υγιεινή διαβίωση."
+          },
+          {
+            "label": "Οικονομία",
+            "text": "Τουρισμός υπαίθριων σπορ, βιοτεχνολογία, craft ζυθοποιία και αεροδιαστημική."
+          }
+        ]
+      },
+      "cult": {
+        "summary": "Παγκόσμια πρωτεύουσα craft μπίρας, ορεινής ποδηλασίας, σκι και ανεξάρτητου πνεύματος.",
+        "items": [
+          {
+            "title": "Bend Ale Trail",
+            "desc": "Το μεγαλύτερο και διασημότερο μονοπάτι craft ζυθοποιίας στις δυτικές ΗΠΑ με πάνω από 30 taprooms."
+          },
+          {
+            "title": "The Last Blockbuster",
+            "desc": "Το τελευταίο αυθεντικό κατάστημα ενοικίασης βιντεοκασετών Blockbuster στον πλανήτη."
+          },
+          {
+            "title": "Κουλτούρα Υπαίθρου",
+            "desc": "Σχεδόν κάθε κάτοικος ασχολείται με σκι, αναρρίχηση στο Smith Rock ή ορεινό τρέξιμο."
+          }
+        ]
+      },
+      "guide": {
+        "summary": "Ηφαιστειακοί κώνοι, αναπλασμένες ιστορικές συνοικίες μύλων, καταρράκτες και ποτάμια πάρκα.",
+        "items": [
+          {
+            "title": "Old Mill District",
+            "cat": "history",
+            "catLabel": "Ιστορία",
+            "desc": "Παλιά πριονιστήρια που μετατράπηκαν σε πανέμορφη εμπορική και πολιτιστική προκυμαία δίπλα στο ποτάμι.",
+            "wiki": "Old_Mill_District"
+          },
+          {
+            "title": "Deschutes River Trail",
+            "cat": "nature",
+            "catLabel": "Μονοπάτι",
+            "desc": "Μαγευτικό μονοπάτι πεζοπορίας κατά μήκος των φαραγγιών και των καταρρακτών του ποταμού.",
+            "wiki": "Deschutes_River_(Oregon)"
+          },
+          {
+            "title": "Pilot Butte State Scenic Viewpoint",
+            "cat": "nature",
+            "catLabel": "Θέα",
+            "desc": "Ανάβαση στον ηφαιστειακό κώνο για πανοραμική θέα 360 μοιρών σε όλο το Cascade Range.",
+            "wiki": "Pilot_Butte_(Oregon)"
+          },
+          {
+            "title": "High Desert Museum",
+            "cat": "museum",
+            "catLabel": "Μουσείο",
+            "desc": "Μουσείο άγριας ζωής και ιστορίας με ζωντανές κουκουβάγιες, γεράκια, βίδρες και αυθεντικό πριονιστήριο του 1904.",
+            "wiki": "High_Desert_Museum"
+          },
+          {
+            "title": "The Last Blockbuster",
+            "cat": "culture",
+            "catLabel": "Πολιτισμός",
+            "desc": "Το μοναδικό εν λειτουργία κατάστημα Blockbuster Video στον κόσμο, ζωντανό σύμβολο ποπ κουλτούρας.",
+            "wiki": "The_Last_Blockbuster"
+          }
+        ]
+      },
+      "gastro": {
+        "summary": "Μπίρες Black Butte Porter, καπνιστές πέστροφες, μπέργκερ βίσονα και ψητά λαχανικά High Desert.",
+        "items": [
+          {
+            "title": "Black Butte Porter Stew",
+            "desc": "Μοσχαρίσιο στιφάδο σιγομαγειρεμένο με τη διάσημη μαύρη μπίρα του Μπεντ και ρίζες λαχανικών.",
+            "tag": "Κλασικό"
+          },
+          {
+            "title": "Pan-Seared Deschutes Trout",
+            "desc": "Πέστροφα ποταμού σοταρισμένη με τραγανό δέρμα, βούτυρο φασκόμηλου και αμύγδαλα.",
+            "tag": "Ψάρι"
+          },
+          {
+            "title": "High Desert Bison Burger",
+            "desc": "Ζουμερό μπέργκερ από τοπικό βίσονα με τυρί τσένταρ Tillamook και καπνιστό μπέικον.",
+            "tag": "Μπέργκερ"
+          },
+          {
+            "title": "Huckleberry Cheesecake",
+            "desc": "Βελούδινο τσιζκέικ γαρνιρισμένο με άγρια μύρτιλα huckleberry από τις πλαγιές του Mt. Bachelor.",
+            "tag": "Γλυκό"
+          }
+        ]
+      },
+      "eco": {
+        "summary": "Προστασία των υδάτων του Deschutes River, προστασία δασών από πυρκαγιές και 100% υπαίθρια υπευθυνότητα.",
+        "items": [
+          {
+            "title": "Upper Deschutes Watershed Restoration",
+            "desc": "Αποκατάσταση της φυσικής εποχικής ροής νερού για τη διάσωση του προστατευόμενου βατράχου Oregon Spotted Frog.",
+            "cat": "wildlife",
+            "catLabel": "Άγρια Ζωή",
+            "wiki": "Deschutes_River_(Oregon)"
+          },
+          {
+            "title": "Bend Clean Energy Plan",
+            "desc": "Φιλόδοξος στόχος μείωσης των εκπομπών άνθρακα κατά 70% έως το 2040.",
+            "cat": "climate",
+            "catLabel": "Κλίμα",
+            "wiki": "Renewable_energy"
+          },
+          {
+            "title": "Leave No Trace Culture",
+            "desc": "Ευρύτατη κοινοτική εκπαίδευση για την προστασία των παρθένων μονοπατιών των Cascades.",
+            "cat": "nature",
+            "catLabel": "Οικολογία",
+            "wiki": "Leave_No_Trace"
+          }
+        ]
+      },
+      "pastVsPresent": [
+        {
+          "epoch": "Μπεντ 1926: Η Πρωτεύουσα του Πεύκου Ponderosa",
+          "content": "Τεράστιες καπνοδόχοι των μύλων να καίνε πριονίδι, εκατοντάδες κορμοί να επιπλέουν στη λίμνη του ποταμού και ξυλοκόποι με καρό πουκάμισα."
+        },
+        {
+          "epoch": "Μπεντ 2026: Παγκόσμια Μητρόπολη Υπαίθριας Περιπέτειας και Καινοτομίας",
+          "content": "Paddleboarders στο ποτάμι, γεμάτα craft taprooms, ηλιακά σπίτια και αθλητές ορεινού τρεξίματος κάτω από τον λαμπερό ήλιο του High Desert."
+        }
+      ],
+      "pois": [
+        {
+          "name": "Old Mill Historic Smokestacks",
+          "category": "landmark",
+          "coords": [
+            44.0459,
+            -121.3142
+          ],
+          "desc": "Οι τρεις εμβληματικές ασημένιες καπνοδόχοι του παλιού πριονιστηρίου που δεσπόζουν στην προκυμαία."
+        },
+        {
+          "name": "Pilot Butte Summit",
+          "category": "viewpoint",
+          "coords": [
+            44.0601,
+            -121.2829
+          ],
+          "desc": "Η κορυφή του σβησμένου ηφαιστείου με θέα από το Mt. Hood μέχρι το Mt. Bachelor."
+        },
+        {
+          "name": "The Last Blockbuster Store",
+          "category": "culture",
+          "coords": [
+            44.0715,
+            -121.3129
+          ],
+          "desc": "Το θρυλικό μοναδικό κατάστημα Blockbuster στην οδό Revere Avenue."
+        },
+        {
+          "name": "High Desert Museum Otter Exhibit",
+          "category": "nature",
+          "coords": [
+            43.9744,
+            -121.3411
+          ],
+          "desc": "Το φυσικό παρατηρητήριο με τις παιχνιδιάρες ποταμίσιες βίδρες."
+        },
+        {
+          "name": "Deschutes River Whitewater Park",
+          "category": "sports",
+          "coords": [
+            44.0512,
+            -121.3218
+          ],
+          "desc": "Τεχνητό ποτάμιο πάρκο με μόνιμο κύμα για ποτάμιο σερφ και καγιάκ."
+        }
+      ]
+    },
+    {
+      "id": "medford",
+      "name": "Μέντφορντ",
+      "englishName": "Medford",
+      "nickname": "Η Καρδιά της Κοιλάδας Rogue River",
+      "type": "city",
+      "coords": [
+        42.3265,
+        -122.8756
+      ],
+      "zoom": 12.5,
+      "stats": {
+        "population": "86.000",
+        "founded": "1883",
+        "area": "67 km²",
+        "elevation": "421 m"
+      },
+      "quote": "«Ανάμεσα στα αρχαία οροπέδια Table Rocks και τα μυθικά νερά του Rogue River, εκεί όπου τα αχλάδια Royal Riviera έγιναν θρύλος.»",
+      "geo": {
+        "summary": "Στη ζεστή και ηλιόλουστη κοιλάδα Rogue River Valley στο Νότιο Όρεγκον, προστατευμένη από τις οροσειρές Siskiyou και Cascade.",
+        "highlights": [
+          {
+            "title": "Rogue River Valley",
+            "desc": "Πανέμορφη μεσογειακού τύπου κοιλάδα με οπωρώνες και αμπελώνες."
+          },
+          {
+            "title": "Upper & Lower Table Rocks",
+            "desc": "Δύο εντυπωσιακά επιτραπέζια ηφαιστειακά οροπέδια λάβας ηλικίας 7 εκατ. ετών."
+          },
+          {
+            "title": "Bear Creek",
+            "desc": "Παραπόταμος που διασχίζει την πόλη δημιουργώντας έναν πράσινο διάδρομο αναψυχής."
+          }
+        ]
+      },
+      "hist": {
+        "summary": "Ιδρύθηκε το 1883 ως σταθμός του Oregon and California Railroad. Έγινε η παγκόσμια πρωτεύουσα καλλιέργειας αχλαδιών χάρη στους αδελφούς Holmes και την εταιρεία Harry & David το 1934.",
+        "highlights": [
+          {
+            "year": "1883",
+            "event": "Άφιξη Σιδηροδρόμου",
+            "desc": "Ίδρυση της πόλης γύρω από τις νέες γραμμές του τρένου."
+          },
+          {
+            "year": "1885",
+            "event": "Ενσωμάτωση Πόλης",
+            "desc": "Επίσημη αναγνώριση του Μέντφορντ ως δήμου."
+          },
+          {
+            "year": "1934",
+            "event": "Harry & David Fruit-of-the-Month",
+            "desc": "Δημιουργία της θρυλικής λέσχης αποστολής γκουρμέ φρούτων σε όλο τον κόσμο."
+          }
+        ]
+      },
+      "demo": {
+        "summary": "Φιλόξενη, οικογενειακή και επιχειρηματική κοινότητα που λειτουργεί ως το ιατρικό και εμπορικό κέντρο του Νοτίου Όρεγκον.",
+        "details": [
+          {
+            "label": "Πληθυσμός",
+            "text": "Περίπου 86.000 κάτοικοι στην πόλη και πάνω από 225.000 στην κομητεία Jackson."
+          },
+          {
+            "label": "Περιφερειακός Ρόλος",
+            "text": "Κεντρικός κόμβος για υγεία, λιανικό εμπόριο και μεταφορές για όλη την περιοχή Rogue Valley."
+          },
+          {
+            "label": "Πολιτισμική Ποικιλομορφία",
+            "text": "Σημαντική και αυξανόμενη ισπανόφωνη κοινότητα με βαθιές αγροτικές και επιχειρηματικές ρίζες."
+          }
+        ]
+      },
+      "cult": {
+        "summary": "Αγροτική κομψότητα, οινοτουρισμός, πάθος για το θέατρο και πύλη για το Crater Lake.",
+        "items": [
+          {
+            "title": "Harry & David Heritage",
+            "desc": "Η παγκόσμια παράδοση των πολυτελών καλαθιών δώρων και των αχλαδιών Royal Riviera."
+          },
+          {
+            "title": "Rogue Valley AVA",
+            "desc": "Κορυφαία οινοπαραγωγός περιοχή με γεμάτα Syrah, Tempranillo, Viognier και Cabernet Franc."
+          },
+          {
+            "title": "Πύλη Crater Lake",
+            "desc": "Η κύρια πόλη εκκίνησης για τους επισκέπτες του μοναδικού Εθνικού Πάρκου του Όρεγκον."
+          }
+        ]
+      },
+      "guide": {
+        "summary": "Ιστορικά θέατρα, ηφαιστειακά οροπέδια πεζοπορίας, οπωρώνες και ποδηλατόδρομοι.",
+        "items": [
+          {
+            "title": "Craterian Theater at the Collier Center",
+            "cat": "culture",
+            "catLabel": "Πολιτισμός",
+            "desc": "Ιστορικό αναπαλαιωμένο θέατρο vaudeville του 1924 στο κέντρο της πόλης.",
+            "wiki": "Craterian_Theater"
+          },
+          {
+            "title": "Upper & Lower Table Rocks",
+            "cat": "nature",
+            "catLabel": "Φύση",
+            "desc": "Εμβληματικά επιτραπέζια βουνά με μονοπάτια πεζοπορίας και πανοραμική θέα σε όλη την κοιλάδα.",
+            "wiki": "Table_Rocks_(Oregon)"
+          },
+          {
+            "title": "Bear Creek Greenway",
+            "cat": "nature",
+            "catLabel": "Μονοπάτι",
+            "desc": "Ασφαλτοστρωμένος ποδηλατόδρομος 32 χιλιομέτρων που ενώνει το Μέντφορντ με το Άσλαντ.",
+            "wiki": "Bear_Creek_Greenway"
+          },
+          {
+            "title": "Harry & David Country Village",
+            "cat": "shopping",
+            "catLabel": "Αγορά",
+            "desc": "Το εμβληματικό κατάστημα με γκουρμέ λιχουδιές, σοκολάτες Moose Munch και γευσιγνωσίες.",
+            "wiki": "Harry_%26_David"
+          },
+          {
+            "title": "Alba Park",
+            "cat": "landmark",
+            "catLabel": "Πάρκο",
+            "desc": "Το παλαιότερο πάρκο της πόλης (1888) με ιστορικό σιντριβάνι και πανύψηλα δέντρα.",
+            "wiki": "Medford,_Oregon"
+          }
+        ]
+      },
+      "gastro": {
+        "summary": "Αχλάδια Royal Riviera, χειροποίητο ποπ κορν Moose Munch, τυρί Rogue River Blue και κρασιά.",
+        "items": [
+          {
+            "title": "Royal Riviera Pears",
+            "desc": "Τα περίφημα εξαιρετικά ζουμερά και γλυκά αχλάδια Comice που τρώγονται με κουτάλι.",
+            "tag": "Φρούτο"
+          },
+          {
+            "title": "Rogue River Blue Cheese",
+            "desc": "Το παγκοσμίου φήμης μπλε τυρί τυλιγμένο σε φύλλα σταφυλιού εμποτισμένα με λικέρ αχλαδιού.",
+            "tag": "Τυρί"
+          },
+          {
+            "title": "Moose Munch Popcorn",
+            "desc": "Τραγανό καραμελωμένο ποπ κορν με ολόκληρα αμύγδαλα, κάσιους και σοκολάτα γάλακτος.",
+            "tag": "Σνακ"
+          },
+          {
+            "title": "Rogue Valley Tempranillo",
+            "desc": "Πλούσιο κόκκινο κρασί με νότες δαμάσκηνου, καπνού και δέρματος από τους τοπικούς αμπελώνες.",
+            "tag": "Κρασί"
+          }
+        ]
+      },
+      "eco": {
+        "summary": "Βιολογική καλλιέργεια οπωρώνων, προστασία του Bear Creek και προστασία σπάνιων αγριολούλουδων.",
+        "items": [
+          {
+            "title": "Table Rocks Nature Conservancy",
+            "desc": "Κοινό πρόγραμμα προστασίας σπάνιων ενδημικών φυτών στα οροπέδια λάβας.",
+            "cat": "nature",
+            "catLabel": "Διατήρηση",
+            "wiki": "The_Nature_Conservancy"
+          },
+          {
+            "title": "Bear Creek Water Quality Cleanups",
+            "desc": "Συνεχής αποκατάσταση των παρόχθιων ζωνών για τη βελτίωση της διέλευσης ψαριών.",
+            "cat": "water",
+            "catLabel": "Νερό",
+            "wiki": "Bear_Creek_(Rogue_River_tributary)"
+          },
+          {
+            "title": "Rogue Solar Farm Project",
+            "desc": "Μεγάλης κλίμακας εγκαταστάσεις ηλιακής ενέργειας αξιοποιώντας την υψηλή ηλιοφάνεια της περιοχής.",
+            "cat": "solar",
+            "catLabel": "Ηλιακή Ενέργεια",
+            "wiki": "Solar_power"
+          }
+        ]
+      },
+      "pastVsPresent": [
+        {
+          "epoch": "Μέντφορντ 1926: Η Πρωτεύουσα των Αχλαδοκηπών",
+          "content": "Ξύλινα τελάρα με αχλάδια φορτώνονται στα τρένα ψυγεία, ενώ το νέο Craterian Theater ανοίγει τις πόρτες του στους κατοίκους."
+        },
+        {
+          "epoch": "Μέντφορντ 2026: Ιατρικός και Οινοτουριστικός Κόμβος του Νότιου Όρεγκον",
+          "content": "Σύγχρονα ιατρικά campus, βραβευμένα διεθνώς οινοποιεία και περιπατητές στα ηφαιστειακά μονοπάτια των Table Rocks."
+        }
+      ],
+      "pois": [
+        {
+          "name": "Upper Table Rock Trailhead",
+          "category": "nature",
+          "coords": [
+            42.4586,
+            -122.8879
+          ],
+          "desc": "Η αφετηρία του μονοπατιού προς την επιβλητική επίπεδη κορυφή λάβας."
+        },
+        {
+          "name": "Craterian Theater Marquee",
+          "category": "culture",
+          "coords": [
+            42.3262,
+            -122.8738
+          ],
+          "desc": "Η φωτεινή ιστορική πρόσοψη του θεάτρου στην οδό Central Avenue."
+        },
+        {
+          "name": "Harry & David Country Village Market",
+          "category": "shopping",
+          "coords": [
+            42.3087,
+            -122.8596
+          ],
+          "desc": "Το διάσημο κέντρο γευσιγνωσίας και αγορών γκουρμέ τροφίμων."
+        },
+        {
+          "name": "Vogel Plaza Clock",
+          "category": "landmark",
+          "coords": [
+            42.3259,
+            -122.8741
+          ],
+          "desc": "Το ιστορικό ρολόι στην κεντρική πλατεία του downtown."
+        },
+        {
+          "name": "Prescott Park / Roxy Ann Peak",
+          "category": "viewpoint",
+          "coords": [
+            42.3496,
+            -122.7874
+          ],
+          "desc": "Το μεγαλύτερο πάρκο της πόλης με θέα από την κορυφή Roxy Ann στα 1.089 μ."
+        }
+      ]
+    },
+    {
+      "id": "corvallis",
+      "name": "Κορβάλις",
+      "englishName": "Corvallis",
+      "nickname": "Η Καρδιά της Κοιλάδας (Heart of the Valley)",
+      "type": "city",
+      "coords": [
+        44.5646,
+        -123.262
+      ],
+      "zoom": 12.5,
+      "stats": {
+        "population": "60.000",
+        "founded": "1845",
+        "area": "37 km²",
+        "elevation": "72 m"
+      },
+      "quote": "«Στην καρδιά της κοιλάδας Willamette, εκεί όπου η επιστημονική έρευνα του Oregon State συναντά τα αιωνόβια δέντρα και τον πολιτισμό του ποδηλάτου.»",
+      "geo": {
+        "summary": "Στην κεντρική κοιλάδα Willamette Valley, κατά μήκος του ποταμού Willamette, στους ανατολικούς πρόποδες της οροσειράς Coast Range και του όρους Marys Peak.",
+        "highlights": [
+          {
+            "title": "Ποταμός Willamette",
+            "desc": "Ο κύριος ιστορικός υδάτινος άξονας του δυτικού Όρεγκον."
+          },
+          {
+            "title": "Marys Peak",
+            "desc": "Η ψηλότερη κορυφή της οροσειράς Oregon Coast Range (1.250 μ.) με θέα στον Ειρηνικό Ωκεανό."
+          },
+          {
+            "title": "McDonald-Dunn Forest",
+            "desc": "Πανεπιστημιακό ερευνητικό δάσος 11.000 στρεμμάτων ιδανικό για πεζοπορία."
+          }
+        ]
+      },
+      "hist": {
+        "summary": "Ιδρύθηκε το 1845 από τον Joseph C. Avery αρχικά ως Marysville, αλλά μετονομάστηκε το 1853 σε Corvallis (από τα λατινικά «cor vallis» - καρδιά της κοιλάδας). Το 1868 ιδρύθηκε το Oregon State University, καθορίζοντας την πορεία της.",
+        "highlights": [
+          {
+            "year": "1845",
+            "event": "Ίδρυση Οικισμού",
+            "desc": "Δημιουργία εμπορικού σταθμού στις όχθες του Willamette."
+          },
+          {
+            "year": "1853",
+            "event": "Ονοματοδοσία Corvallis",
+            "desc": "Επιλογή του λατινογενούς ονόματος «Καρδιά της Κοιλάδας»."
+          },
+          {
+            "year": "1868",
+            "event": "Ίδρυση Oregon State University",
+            "desc": "Ίδρυση του κορυφαίου δημόσιου ερευνητικού πανεπιστημίου της πολιτείας."
+          }
+        ]
+      },
+      "demo": {
+        "summary": "Μία από τις πιο μορφωμένες και πράσινες πόλεις των ΗΠΑ, με πάνω από το 50% των κατοίκων να είναι φοιτητές ή πανεπιστημιακοί.",
+        "details": [
+          {
+            "label": "Πληθυσμός",
+            "text": "Περίπου 60.000 μόνιμοι κάτοικοι συν 35.000 φοιτητές του Oregon State University."
+          },
+          {
+            "label": "Μόρφωση",
+            "text": "Σταθερά στις 5 κορυφαίες πόλεις των ΗΠΑ σε ποσοστό κατόχων διδακτορικών και μεταπτυχιακών τίτλων."
+          },
+          {
+            "label": "Οικονομία",
+            "text": "Ακαδημαϊκή έρευνα, δασοκομία, γεωργικές επιστήμες, ωκεανογραφία και εργαστήρια της HP Inc."
+          }
+        ]
+      },
+      "cult": {
+        "summary": "Ακαδημαϊκή πρωτοπορία, πάθος για το αμερικανικό ποδόσφαιρο των Beavers και πράσινος τρόπος ζωής.",
+        "items": [
+          {
+            "title": "Beaver Nation (OSU Athletics)",
+            "desc": "Η ασίγαστη υποστήριξη για τις ομάδες του Oregon State στο ιστορικό Reser Stadium."
+          },
+          {
+            "title": "Ποδηλατική Πρωτεύουσα",
+            "desc": "Μία από τις πιο φιλικές προς το ποδήλατο πόλεις στις ΗΠΑ με δίκτυο σε κάθε γειτονιά."
+          },
+          {
+            "title": "Επιστήμη & Περιβάλλον",
+            "desc": "Παγκόσμιο κέντρο έρευνας για την κλιματική αλλαγή, τη δασοπονία και τις θαλάσσιες επιστήμες."
+          }
+        ]
+      },
+      "guide": {
+        "summary": "Ιστορικά πανεπιστημιακά campus, ερευνητικά δάση, ποτάμια πάρκα και ποδηλατόδρομοι.",
+        "items": [
+          {
+            "title": "Oregon State University Campus",
+            "cat": "history",
+            "catLabel": "Πανεπιστήμιο",
+            "desc": "Ιστορικό campus με κόκκινα τούβλινα κτίρια, αιωνόβιες σεκόγιες και τη βιβλιοθήκη Valley Library.",
+            "wiki": "Oregon_State_University"
+          },
+          {
+            "title": "Reser Stadium",
+            "cat": "sports",
+            "catLabel": "Στάδιο",
+            "desc": "Το επιβλητικό ανακαινισμένο στάδιο αμερικανικού ποδοσφαίρου των OSU Beavers.",
+            "wiki": "Reser_Stadium"
+          },
+          {
+            "title": "Riverfront Commemorative Park",
+            "cat": "nature",
+            "catLabel": "Προκυμαία",
+            "desc": "Πάρκο προκυμαίας κατά μήκος του Willamette με σιντριβάνια, γλυπτά και πεζοδρόμους.",
+            "wiki": "Corvallis,_Oregon"
+          },
+          {
+            "title": "Marys Peak Scenic Area",
+            "cat": "nature",
+            "catLabel": "Βουνό",
+            "desc": "Εκπληκτικό μονοπάτι προς την κορυφή με αγριολούλουδα και θέα μέχρι τον ωκεανό.",
+            "wiki": "Marys_Peak"
+          },
+          {
+            "title": "The Arts Center",
+            "cat": "culture",
+            "catLabel": "Τέχνη",
+            "desc": "Κέντρο τεχνών στεγασμένο σε ιστορική επισκοπική εκκλησία του 1889 στο πάρκο Central Park.",
+            "wiki": "Corvallis,_Oregon#Arts_and_culture"
+          }
+        ]
+      },
+      "gastro": {
+        "summary": "Βιολογικά προϊόντα από την κοιλάδα, τυριά Beaver Classic, μανιτάρια του δάσους και craft stouts.",
+        "items": [
+          {
+            "title": "Beaver Classic Cheese",
+            "desc": "Βραβευμένα τυριά τσένταρ και provolone που παρασκευάζονται από φοιτητές γαλακτοκομίας του OSU.",
+            "tag": "Τυρί"
+          },
+          {
+            "title": "Chanterelle Mushroom Risotto",
+            "desc": "Κρεμώδες ριζότο με άγρια χρυσά μανιτάρια κανθαρέλες που συλλέγονται στα γύρω δάση.",
+            "tag": "Gourmet"
+          },
+          {
+            "title": "Corvallis Farm-to-Table Salad",
+            "desc": "Δροσερή σαλάτα με βιολογικά χόρτα κοιλάδας, φουντούκια Όρεγκον και κατσικίσιο τυρί.",
+            "tag": "Σαλάτα"
+          },
+          {
+            "title": "Oregon Marionberry Tart",
+            "desc": "Τάρτα με φρέσκα μούρα marionberry καλλιεργημένα στους τοπικούς πειραματικούς αγρούς.",
+            "tag": "Επιδόρπιο"
+          }
+        ]
+      },
+      "eco": {
+        "summary": "100% δωρεάν αστικές δημόσιες συγκοινωνίες, κορυφαία ανακύκλωση και προστασία δασικών οικοσυστημάτων.",
+        "items": [
+          {
+            "title": "Corvallis Fareless Transit",
+            "desc": "Το πρώτο πλήρως δωρεάν αστικό δίκτυο λεωφορείων στο Όρεγκον για μείωση χρήσης αυτοκινήτων.",
+            "cat": "transit",
+            "catLabel": "Συγκοινωνίες",
+            "wiki": "Corvallis_Transit_System"
+          },
+          {
+            "title": "OSU Carbon Neutrality Commitment",
+            "desc": "Πρωτοπόρο σχέδιο επίτευξης κλιματικής ουδετερότητας του πανεπιστημίου.",
+            "cat": "climate",
+            "catLabel": "Κλίμα",
+            "wiki": "Oregon_State_University"
+          },
+          {
+            "title": "Willamette River Clean Water Alliance",
+            "desc": "Προστασία της παρόχθιας χλωρίδας και απαγόρευση αποβλήτων στον ποταμό.",
+            "cat": "water",
+            "catLabel": "Νερό",
+            "wiki": "Willamette_River"
+          }
+        ]
+      },
+      "pastVsPresent": [
+        {
+          "epoch": "Κορβάλις 1926: Ακαδημαϊκή Κωμόπολη και Ατμόπλοια Ποταμού",
+          "content": "Ατμόπλοια με κουπιά να δένουν στην προκυμαία του Willamette και φοιτητές με κλασικά πηλήκια στο Oregon Agricultural College."
+        },
+        {
+          "epoch": "Κορβάλις 2026: Παγκόσμιο Κέντρο Κλιματικής Επιστήμης και Πράσινης Ζωής",
+          "content": "Χιλιάδες ποδηλάτες στους δρόμους, μηδενικών ρύπων δημόσια συγκοινωνία και πρωτοπόρα ερευνητικά εργαστήρια ωκεανογραφίας."
+        }
+      ],
+      "pois": [
+        {
+          "name": "Reser Stadium Beaver Statue",
+          "category": "sports",
+          "coords": [
+            44.5594,
+            -123.2815
+          ],
+          "desc": "Το μπρούτζινο άγαλμα του κάστορα έξω από το ιστορικό στάδιο."
+        },
+        {
+          "name": "OSU Valley Library Clock Tower",
+          "category": "architecture",
+          "coords": [
+            44.5651,
+            -123.2758
+          ],
+          "desc": "Ο εμβληματικός πύργος του ρολογιού της κεντρικής πανεπιστημιακής βιβλιοθήκης."
+        },
+        {
+          "name": "Riverfront Park Fountain",
+          "category": "landmark",
+          "coords": [
+            44.5639,
+            -123.2592
+          ],
+          "desc": "Διαδραστικό σιντριβάνι και πεζόδρομος κατά μήκος του ποταμού Willamette."
+        },
+        {
+          "name": "Marys Peak Summit Observation Site",
+          "category": "viewpoint",
+          "coords": [
+            44.5042,
+            -123.5511
+          ],
+          "desc": "Η ψηλότερη κορυφή του Coast Range με θέα στον ωκεανό και τις Cascades."
+        },
+        {
+          "name": "The Arts Center in Central Park",
+          "category": "culture",
+          "coords": [
+            44.5678,
+            -123.2644
+          ],
+          "desc": "Το ιστορικό κέντρο τέχνης μέσα στο καταπράσινο κεντρικό πάρκο."
+        }
+      ]
+    },
+    {
+      "id": "springfield-or",
+      "name": "Σπρίνγκφιλντ",
+      "englishName": "Springfield",
+      "nickname": "Η Αυθεντική Πόλη των Simpsons & Πύλη του McKenzie",
+      "type": "city",
+      "coords": [
+        44.0462,
+        -123.022
+      ],
+      "zoom": 12.5,
+      "stats": {
+        "population": "62.000",
+        "founded": "1848",
+        "area": "41 km²",
+        "elevation": "138 m"
+      },
+      "quote": "«Εκεί όπου ο Matt Groening εμπνεύστηκε τους θρυλικούς Simpsons, στις όχθες του McKenzie River ανάμεσα στα αρχέγονα έλατα.»",
+      "geo": {
+        "summary": "Στο ανατολικό άκρο της κοιλάδας Willamette Valley, δίπλα στο Γιουτζίν, κατά μήκος του ορμητικού ποταμού McKenzie River.",
+        "highlights": [
+          {
+            "title": "McKenzie River",
+            "desc": "Ένας από τους καθαρότερους και πιο ορμητικούς ποταμούς των ΗΠΑ, παγκοσμίως διάσημος για rafting."
+          },
+          {
+            "title": "Willamette River Confluence",
+            "desc": "Σημείο ένωσης των ποταμών McKenzie και Willamette."
+          },
+          {
+            "title": "Cascade Foothills",
+            "desc": "Δασωμένοι λόφοι ελάτης Douglas-fir που οδηγούν στα ορεινά περάσματα των Cascades."
+          }
+        ]
+      },
+      "hist": {
+        "summary": "Ιδρύθηκε το 1848 από τον Elias Briggs, ο οποίος έχτισε έναν νερόμυλο δίπλα σε μια φυσική πηγή (πηγή στο λιβάδι = Springfield). Το 2012 ο δημιουργός των Simpsons, Matt Groening, επιβεβαίωσε επίσημα ότι το Springfield του Όρεγκον ήταν η πραγματική έμπνευση για την πόλη της διάσημης σειράς.",
+        "highlights": [
+          {
+            "year": "1848",
+            "event": "Ίδρυση από τον Elias Briggs",
+            "desc": "Κατασκευή του πρώτου νερόμυλου και ονοματοδοσία της πόλης."
+          },
+          {
+            "year": "1885",
+            "event": "Ενσωμάτωση Πόλης",
+            "desc": "Επίσημη ίδρυση του δήμου Σπρίνγκφιλντ."
+          },
+          {
+            "year": "2012",
+            "event": "Αναγνώριση Έμπνευσης των Simpsons",
+            "desc": "Ο Matt Groening αποκαλύπτει ότι το Springfield του Όρεγκον ενέπνευσε τη σειρά."
+          }
+        ]
+      },
+      "demo": {
+        "summary": "Εργατική, αυθεντική, φιλόξενη και δημιουργική κοινότητα με βαθιές ρίζες στη βιομηχανία ξύλου και την υγειονομική περίθαλψη.",
+        "details": [
+          {
+            "label": "Πληθυσμός",
+            "text": "Περίπου 62.000 κάτοικοι, αποτελώντας το δίδυμο αστικό συγκρότημα Eugene-Springfield."
+          },
+          {
+            "label": "Οικονομία",
+            "text": "Υγεία (PeaceHealth Sacred Heart Medical Center), βιομηχανία ξυλείας, τουρισμός ποταμού."
+          },
+          {
+            "label": "Κοινότητα",
+            "text": "Υπερήφανη εργατική ταυτότητα που μεταμορφώνεται σε σύγχρονο καλλιτεχνικό κέντρο."
+          }
+        ]
+      },
+      "cult": {
+        "summary": "Η απόλυτη παγκόσμια έδρα των Simpsons, street art τοιχογραφίες και πάθος για το ποτάμι McKenzie.",
+        "items": [
+          {
+            "title": "The Simpsons Murals & Heritage",
+            "desc": "Τεράστιες επίσημες τοιχογραφίες του Homer, της Marge, του Bart και της Lisa στο κέντρο."
+          },
+          {
+            "title": "McKenzie River Drift Boats",
+            "desc": "Η γενέτειρα των παραδοσιακών ξύλινων σκαφών drift boats για ψάρεμα σε ορμητικά νερά."
+          },
+          {
+            "title": "Ιστορικό Main Street Revival",
+            "desc": "Αναγεννημένο κέντρο με ανεξάρτητα καφέ, micro-breweries και vintage καταστήματα."
+          }
+        ]
+      },
+      "guide": {
+        "summary": "Τοιχογραφίες Simpsons, παραποτάμια πάρκα, ιστορικά μουσεία και ορμητικά ποτάμια.",
+        "items": [
+          {
+            "title": "Official Simpsons Mural",
+            "cat": "culture",
+            "catLabel": "Πολιτισμός",
+            "desc": "Επιβλητική τοιχογραφία των Simpsons στον τοίχο του ιστορικού Emerald Art Center.",
+            "wiki": "The_Simpsons"
+          },
+          {
+            "title": "Springfield History Museum",
+            "cat": "history",
+            "catLabel": "Μουσείο",
+            "desc": "Μουσείο τοπικής ιστορίας με αυθεντικά αναμνηστικά και έκθεση αφιερωμένη στον Matt Groening.",
+            "wiki": "Springfield,_Oregon"
+          },
+          {
+            "title": "Island Park",
+            "cat": "nature",
+            "catLabel": "Πάρκο",
+            "desc": "Πανέμορφο πάρκο σε νησίδα του Willamette River με μονοπάτια και συναυλιακό χώρο.",
+            "wiki": "Springfield,_Oregon#Parks"
+          },
+          {
+            "title": "Dorris Ranch Living History Farm",
+            "cat": "history",
+            "catLabel": "Ιστορική Φάρμα",
+            "desc": "Η παλαιότερη εμπορική φάρμα καλλιέργειας φουντουκιών στις ΗΠΑ (από το 1892).",
+            "wiki": "Dorris_Ranch"
+          },
+          {
+            "title": "Clearwater Park & Boat Launch",
+            "cat": "sports",
+            "catLabel": "Ποτάμι",
+            "desc": "Σημείο εκκίνησης για βάρκες drift boat και καγιάκ στον ποταμό Willamette.",
+            "wiki": "Willamette_River"
+          }
+        ]
+      },
+      "gastro": {
+        "summary": "Doughnuts με ροζ γλάσο, καπνιστά κρέατα, φουντούκια Όρεγκον και craft ale.",
+        "items": [
+          {
+            "title": "Pink Iced Homer Simpson Doughnut",
+            "desc": "Το διάσημο τεράστιο ντόνατ με ροζ γλάσο φράουλας και πολύχρωμη τρούφα.",
+            "tag": "Γλυκό"
+          },
+          {
+            "title": "McKenzie Smoked Steelhead",
+            "desc": "Καπνιστή πέστροφα από τον ποταμό McKenzie με κρούστα μαύρου πιπεριού και λεμόνι.",
+            "tag": "Ψάρι"
+          },
+          {
+            "title": "Oregon Hazelnut Crusted Pork",
+            "desc": "Χοιρινό φιλέτο πανέ με τριμμένα τοπικά φουντούκια και σάλτσα μηλίτη.",
+            "tag": "Κρεατικά"
+          },
+          {
+            "title": "Springfield Craft IPA",
+            "desc": "Τοπική αφιλτράριστη IPA με αρώματα πεύκου και τροπικών φρούτων.",
+            "tag": "Μπίρα"
+          }
+        ]
+      },
+      "eco": {
+        "summary": "Προστασία των υδάτων του McKenzie River που αποτελεί την πηγή του καθαρότερου πόσιμου νερού στην πολιτεία.",
+        "items": [
+          {
+            "title": "McKenzie Watershed Council",
+            "desc": "Πρόγραμμα διατήρησης του παρθένου οικοσυστήματος του ποταμού McKenzie.",
+            "cat": "water",
+            "catLabel": "Υδάτινοι Πόροι",
+            "wiki": "McKenzie_River_(Oregon)"
+          },
+          {
+            "title": "Dorris Ranch Historic Orchard Preservation",
+            "desc": "Βιολογική διαχείριση και διατήρηση των αιωνόβιων δέντρων φουντουκιάς.",
+            "cat": "agriculture",
+            "catLabel": "Αγροτική Κληρονομιά",
+            "wiki": "Dorris_Ranch"
+          },
+          {
+            "title": "Middle Fork Willamette Restoration",
+            "desc": "Επανασύνδεση των φυσικών πλημμυρικών πεδιάδων για τα ενδημικά ψάρια.",
+            "cat": "nature",
+            "catLabel": "Οικολογία",
+            "wiki": "Willamette_River"
+          }
+        ]
+      },
+      "pastVsPresent": [
+        {
+          "epoch": "Σπρίνγκφιλντ 1926: Πριονιστήρια και Εργοστάσια Ξυλείας",
+          "content": "Σειρήνες των πριονιστηρίων της Booth-Kelly να ηχούν, χιλιάδες εργάτες στις αποβάθρες και ποτάμια γεμάτα επιπλέοντες κορμούς."
+        },
+        {
+          "epoch": "Σπρίνγκφιλντ 2026: Παγκόσμιο Είδωλο Ποπ Κουλτούρας και Πράσινης Ζωής",
+          "content": "Τουρίστες φωτογραφίζουν τις τοιχογραφίες των Simpsons, ζωντανά καφέ στην Main Street και ψαράδες στα κρυστάλλινα νερά του McKenzie."
+        }
+      ],
+      "pois": [
+        {
+          "name": "The Simpsons Official Mural",
+          "category": "culture",
+          "coords": [
+            44.0468,
+            -123.0189
+          ],
+          "desc": "Η γιγαντιαία τοιχογραφία της οικογένειας Simpson στο Emerald Art Center."
+        },
+        {
+          "name": "Dorris Ranch Historic Barn",
+          "category": "history",
+          "coords": [
+            44.0305,
+            -123.0181
+          ],
+          "desc": "Ο ιστορικός ξύλινος αχυρώνας του 1892 μέσα στους οπωρώνες φουντουκιάς."
+        },
+        {
+          "name": "Island Park Amphitheater",
+          "category": "entertainment",
+          "coords": [
+            44.0436,
+            -123.0278
+          ],
+          "desc": "Το υπαίθριο αμφιθέατρο στο νησάκι του ποταμού Willamette."
+        },
+        {
+          "name": "Springfield History Museum Galleries",
+          "category": "museum",
+          "coords": [
+            44.0465,
+            -123.0162
+          ],
+          "desc": "Το μουσείο ιστορίας στην κεντρική οδό Main Street."
+        },
+        {
+          "name": "Clearwater Park Boat Ramp",
+          "category": "sports",
+          "coords": [
+            44.0248,
+            -122.9734
+          ],
+          "desc": "Η κύρια ράμπα καθέλκυσης σκαφών drift boats στο ποτάμι."
+        }
+      ]
+    },
+    {
+      "id": "albany-or",
+      "name": "Όλμπανι",
+      "englishName": "Albany",
+      "nickname": "Η Πρωτεύουσα της Ιστορικής Αρχιτεκτονικής του Όρεγκον",
+      "type": "city",
+      "coords": [
+        44.6366,
+        -123.1059
+      ],
+      "zoom": 12.5,
+      "stats": {
+        "population": "57.000",
+        "founded": "1848",
+        "area": "46 km²",
+        "elevation": "64 m"
+      },
+      "quote": "«Εκεί όπου πάνω από 700 ιστορικά κτίρια τεσσάρων αιώνων αφηγούνται την ιστορία των πρωτοπόρων, στις όχθες του Willamette.»",
+      "geo": {
+        "summary": "Στη συμβολή των ποταμών Calapooia και Willamette στην εύφορη κοιλάδα Willamette Valley, ανάμεσα στο Σάλεμ και το Κορβάλις.",
+        "highlights": [
+          {
+            "title": "Συμβολή Calapooia & Willamette",
+            "desc": "Η στρατηγική ένωση δύο ιστορικών ποταμών του Όρεγκον."
+          },
+          {
+            "title": "Willamette Valley Grass Seed Capital",
+            "desc": "Η ευρύτερη περιοχή παράγει τη μεγαλύτερη ποσότητα σπόρων χλόης στον πλανήτη."
+          },
+          {
+            "title": "Historic Riverfront",
+            "desc": "Ιστορική όχθη ποταμού με παραδοσιακά κτίρια και πάρκα."
+          }
+        ]
+      },
+      "hist": {
+        "summary": "Ιδρύθηκε το 1848 από τους αδελφούς Walter και Thomas Monteith, οι οποίοι ονόμασαν την πόλη προς τιμήν της πρωτεύουσας της Νέας Υόρκης (Albany). Έγινε κορυφαίο λιμάνι ατμόπλοιων και σιδηροδρομικός κόμβος.",
+        "highlights": [
+          {
+            "year": "1848",
+            "event": "Ίδρυση από τους Αδελφούς Monteith",
+            "desc": "Αγορά της γης και κατασκευή του πρώτου σπιτιού."
+          },
+          {
+            "year": "1864",
+            "event": "Ενσωμάτωση Πόλης",
+            "desc": "Επίσημη αναγνώριση του Όλμπανι ως δήμου."
+          },
+          {
+            "year": "1909",
+            "event": "Κατασκευή Albany Carousel",
+            "desc": "Έναρξη της μοναδικής παράδοσης ξυλόγλυπτων ζώων για το ιστορικό καρουζέλ."
+          }
+        ]
+      },
+      "demo": {
+        "summary": "Παραδοσιακή, φιλόξενη και αναπτυσσόμενη κοινότητα με βαθιά εκτίμηση για την ιστορική κληρονομιά.",
+        "details": [
+          {
+            "label": "Πληθυσμός",
+            "text": "Περίπου 57.000 κάτοικοι στην πόλη και έδρα της κομητείας Linn."
+          },
+          {
+            "label": "Αρχιτεκτονική Κληρονομιά",
+            "text": "Φιλοξενεί τη μεγαλύτερη συγκέντρωση ιστορικών κατοικιών στο Όρεγκον (4 εθνικές ιστορικές συνοικίες)."
+          },
+          {
+            "label": "Οικονομία",
+            "text": "Μεταλλουργία σπανίων γαιών και τιτανίου (ATI), γεωργία σπόρων χλόης, ξυλεία και εμπόριο."
+          }
+        ]
+      },
+      "cult": {
+        "summary": "Βικτωριανή αρχιτεκτονική μεγαλοπρέπεια, ξυλογλυπτική παράδοση και φεστιβάλ ιστορικών σπιτιών.",
+        "items": [
+          {
+            "title": "Historic Carousel & Museum",
+            "desc": "Παγκοσμίως διάσημο χειροποίητο καρουζέλ με δεκάδες μοναδικά ξυλόγλυπτα ζώα."
+          },
+          {
+            "title": "Ιστορικές Συνοικίες (Monteith & Hackleman)",
+            "desc": "Ετήσιες ξεναγήσεις σε αυθεντικά βικτωριανά και νεοκλασικά αρχοντικά."
+          },
+          {
+            "title": "Northwest Art & Air Festival",
+            "desc": "Εντυπωσιακό φεστιβάλ αερόστατων θερμού αέρα και παραδοσιακής μουσικής κάθε Αύγουστο."
+          }
+        ]
+      },
+      "guide": {
+        "summary": "Χειροποίητα καρουζέλ, βικτωριανές γειτονιές, ποτάμιες όχθες και ιστορικά μουσεία.",
+        "items": [
+          {
+            "title": "Albany Historic Carousel & Museum",
+            "cat": "culture",
+            "catLabel": "Πολιτισμός",
+            "desc": "Θαυμάσιο κλειστό καρουζέλ με σκαλισμένα στο χέρι ζώα και ενεργό εργαστήριο ξυλογλυπτικής.",
+            "wiki": "Albany_Historic_Carousel_and_Museum"
+          },
+          {
+            "title": "Monteith House Museum",
+            "cat": "history",
+            "catLabel": "Μουσείο",
+            "desc": "Το παλαιότερο σπίτι στο Όλμπανι (1849), πλήρως επιπλωμένο με αυθεντικά αντικείμενα πρωτοπόρων.",
+            "wiki": "Monteith_House"
+          },
+          {
+            "title": "Talking Water Gardens",
+            "cat": "nature",
+            "catLabel": "Φύση",
+            "desc": "Πρότυπο οικολογικό πάρκο υγροτόπων επεξεργασίας νερού με καταρράκτες και εκατοντάδες είδη πουλιών.",
+            "wiki": "Albany,_Oregon"
+          },
+          {
+            "title": "Timber-Linn Memorial Park",
+            "cat": "landmark",
+            "catLabel": "Πάρκο",
+            "desc": "Τεράστιο πάρκο 90 στρεμμάτων με λίμνη, μνημείο βετεράνων και χώρους εκδηλώσεων.",
+            "wiki": "Albany,_Oregon#Parks"
+          },
+          {
+            "title": "Historic Downtown Albany",
+            "cat": "architecture",
+            "catLabel": "Αρχιτεκτονική",
+            "desc": "Πλακόστρωτοι δρόμοι με κτίρια από χυτοσίδηρο του 19ου αιώνα, αντικερί και τοπικά μπιστρό.",
+            "wiki": "Albany,_Oregon"
+          }
+        ]
+      },
+      "gastro": {
+        "summary": "Παραδοσιακές αμερικανικές πίτες, τοπικά τυριά, φρέσκο ψωμί προζυμιού και craft ciders.",
+        "items": [
+          {
+            "title": "Willamette Valley Berry Pie",
+            "desc": "Τραγανή σπιτική πίτα με μείγμα βατόμουρων, μύρτιλων και φράουλας.",
+            "tag": "Επιδόρπιο"
+          },
+          {
+            "title": "Grass-Fed Beef Sliders",
+            "desc": "Μίνι μπέργκερ από μοσχάρι ελευθέρας βοσκής της κοιλάδας με παλαιωμένο τσένταρ.",
+            "tag": "Κρεατικά"
+          },
+          {
+            "title": "Calapooia Amber Ale",
+            "desc": "Κλασική κεχριμπαρένια μπίρα με καραμελωμένη βύνη από την ιστορική ζυθοποιία της πόλης.",
+            "tag": "Μπίρα"
+          },
+          {
+            "title": "Roasted Sweet Corn Chowder",
+            "desc": "Κρεμώδης σούπα με καπνιστό γλυκό καλαμπόκι κοιλάδας Linn και μπέικον.",
+            "tag": "Σούπα"
+          }
+        ]
+      },
+      "eco": {
+        "summary": "Το παγκοσμίου φήμης έργο Talking Water Gardens για φυσικό βιολογικό καθαρισμό υδάτων.",
+        "items": [
+          {
+            "title": "Talking Water Gardens Wetland",
+            "desc": "Τεχνητός υγρότοπος που ψύχει και καθαρίζει τα επεξεργασμένα νερά μέσω φυσικών καταρρακτών πριν πέσουν στον ποταμό.",
+            "cat": "water",
+            "catLabel": "Υδάτινοι Πόροι",
+            "wiki": "Albany,_Oregon"
+          },
+          {
+            "title": "Historic Preservation Sustainability",
+            "desc": "Ανακύκλωση και διάσωση ιστορικών κτιρίων αντί για κατεδάφιση και νέες κατασκευές.",
+            "cat": "architecture",
+            "catLabel": "Βιωσιμότητα",
+            "wiki": "Historic_preservation"
+          },
+          {
+            "title": "Willamette River Water Trail",
+            "desc": "Οικολογικός θαλάσσιος διάδρομος για κανό και καγιάκ κατά μήκος της πόλης.",
+            "cat": "nature",
+            "catLabel": "Ποτάμια",
+            "wiki": "Willamette_River_Water_Trail"
+          }
+        ]
+      },
+      "pastVsPresent": [
+        {
+          "epoch": "Όλμπανι 1926: Ο Κόμβος των Ατμοπλοίων και των Τρένων",
+          "content": "Σφυρίγματα ατμομηχανών στο σιδηροδρομικό σταθμό Southern Pacific και ατμόπλοια να φορτώνουν σιτάρι στις αποβάθρες του Willamette."
+        },
+        {
+          "epoch": "Όλμπανι 2026: Ζωντανό Αρχιτεκτονικό Μουσείο και Πράσινη Καινοτομία",
+          "content": "Αναπαλαιωμένα βικτωριανά αρχοντικά, το μαγευτικό χειροποίητο καρουζέλ και πρωτοποριακοί υγρότοποι φυσικού καθαρισμού νερών."
+        }
+      ],
+      "pois": [
+        {
+          "name": "Albany Historic Carousel Pavilion",
+          "category": "culture",
+          "coords": [
+            44.6372,
+            -123.1075
+          ],
+          "desc": "Το υπέροχο κτίριο με τον περιστρεφόμενο θόλο και τα σκαλιστά ξύλινα ζώα."
+        },
+        {
+          "name": "Monteith House Museum",
+          "category": "history",
+          "coords": [
+            44.6361,
+            -123.1098
+          ],
+          "desc": "Το πρώτο σπίτι του Όλμπανι (1849) χτισμένο από τους ιδρυτές αδελφούς Monteith."
+        },
+        {
+          "name": "Talking Water Gardens Weirs",
+          "category": "nature",
+          "coords": [
+            44.6465,
+            -123.0789
+          ],
+          "desc": "Οι τεχνητοί καταρράκτες και οι λιμνούλες φυσικού καθαρισμού του νερού."
+        },
+        {
+          "name": "Albany Amtrak Historic Depot",
+          "category": "transport",
+          "coords": [
+            44.6322,
+            -123.0975
+          ],
+          "desc": "Ο ιστορικός πέτρινος σιδηροδρομικός σταθμός του 1909 σε στιλ Prairie."
+        },
+        {
+          "name": "Willamette River Dave Clark Trail",
+          "category": "nature",
+          "coords": [
+            44.6401,
+            -123.1042
+          ],
+          "desc": "Ο παραποτάμιος πεζόδρομος με θέα στα ιστορικά γεφύρια."
         }
       ]
     }

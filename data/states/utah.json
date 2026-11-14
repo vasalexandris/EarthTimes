@@ -6,7 +6,10 @@
     "nickname": "The Beehive State / Η Πολιτεία της Κυψέλης",
     "type": "state",
     "capital": "Σολτ Λέικ Σίτι",
-    "coords": [39.32, -111.09],
+    "coords": [
+      39.32,
+      -111.09
+    ],
     "zoom": 7.2,
     "stats": {
       "population": "3,5 εκατομμύρια (2024)",
@@ -104,7 +107,10 @@
       "englishName": "Salt Lake City",
       "nickname": "Crossroads of the West / Το Σταυροδρόμι της Δύσης",
       "type": "city",
-      "coords": [40.7608, -111.891],
+      "coords": [
+        40.7608,
+        -111.891
+      ],
       "zoom": 13.2,
       "stats": {
         "population": "209.000 (1,26 εκατ. μητροπολιτική)",
@@ -278,31 +284,46 @@
         {
           "name": "Temple Square",
           "category": "history",
-          "coords": [40.7707, -111.891],
+          "coords": [
+            40.7707,
+            -111.891
+          ],
           "desc": "Το ιστορικό κέντρο των Μορμόνων με τον ναό του 1893 και το Tabernacle."
         },
         {
           "name": "Καπιτώλιο της Γιούτα",
           "category": "history",
-          "coords": [40.7777, -111.8882],
+          "coords": [
+            40.7777,
+            -111.8882
+          ],
           "desc": "Το νεοκλασικό κοινοβούλιο της πολιτείας σε λόφο με θέα την κοιλάδα."
         },
         {
           "name": "Μουσείο Φυσικής Ιστορίας της Γιούτα",
           "category": "culture",
-          "coords": [40.7644, -111.8452],
+          "coords": [
+            40.7644,
+            -111.8452
+          ],
           "desc": "Απολιθώματα δεινοσαύρων και πολιτισμοί των αυτοχθόνων σε ένα εντυπωσιακό κτίριο."
         },
         {
           "name": "Νησί Antelope",
           "category": "nature",
-          "coords": [40.9583, -112.2108],
+          "coords": [
+            40.9583,
+            -112.2108
+          ],
           "desc": "Νησί στη Μεγάλη Αλμυρή Λίμνη με βίσοντες και αλμυρές παραλίες."
         },
         {
           "name": "Liberty Park",
           "category": "nature",
-          "coords": [40.7447, -111.8739],
+          "coords": [
+            40.7447,
+            -111.8739
+          ],
           "desc": "Το μεγαλύτερο πάρκο της πόλης, με λίμνη, αίθριο και μουσείο φυσικής ιστορίας."
         }
       ]
@@ -313,7 +334,10 @@
       "englishName": "Provo",
       "nickname": "Happy Valley / Η Κοιλάδα της Ευτυχίας",
       "type": "city",
-      "coords": [40.2338, -111.6585],
+      "coords": [
+        40.2338,
+        -111.6585
+      ],
       "zoom": 13.3,
       "stats": {
         "population": "115.000",
@@ -482,32 +506,1971 @@
         {
           "name": "Πανεπιστήμιο Brigham Young",
           "category": "culture",
-          "coords": [40.2518, -111.6493],
+          "coords": [
+            40.2518,
+            -111.6493
+          ],
           "desc": "Το μεγαλύτερο θρησκευτικό πανεπιστήμιο των ΗΠΑ, με μουσεία και κήπους."
         },
         {
           "name": "Ναός του Προβο",
           "category": "history",
-          "coords": [40.2301, -111.6582],
+          "coords": [
+            40.2301,
+            -111.6582
+          ],
           "desc": "Ο λευκός ναός της LDS που δεσπόζει στο κέντρο της πόλης."
         },
         {
           "name": "Καταρράκτης Bridal Veil",
           "category": "nature",
-          "coords": [40.1917, -111.6066],
+          "coords": [
+            40.1917,
+            -111.6066
+          ],
           "desc": "Καταρράκτης 200 μέτρων στο φαράγγι Provo."
         },
         {
           "name": "Πάρκο Λίμνης Utah",
           "category": "nature",
-          "coords": [40.2378, -111.7338],
+          "coords": [
+            40.2378,
+            -111.7338
+          ],
           "desc": "Παραλίμνια περιοχή για ψάρεμα, βαρκάδα και παρατήρηση πουλιών."
         },
         {
           "name": "Sundance Mountain Resort",
           "category": "culture",
-          "coords": [40.3919, -111.5889],
+          "coords": [
+            40.3919,
+            -111.5889
+          ],
           "desc": "Το θέρετρο του Robert Redford με σκι και καλλιτεχνικές εκδηλώσεις."
+        }
+      ]
+    },
+    {
+      "id": "west-valley-city",
+      "name": "Γουέστ Βάλεϊ Σίτι",
+      "englishName": "West Valley City",
+      "nickname": "Η Πόλη της Προόδου & του Πολυπολιτισμού",
+      "type": "city",
+      "coords": [
+        40.6916,
+        -111.9961
+      ],
+      "zoom": 12.5,
+      "stats": {
+        "population": "139.000",
+        "founded": "1849",
+        "area": "92 km²",
+        "elevation": "1.312 m"
+      },
+      "quote": "«Εκεί όπου οι ολυμπιακές αναμνήσεις του πάγου συναντούν τις καλοκαιρινές συμφωνίες κάτω από τα αστέρια των Oquirrh Mountains.»",
+      "geo": {
+        "summary": "Στο κεντροδυτικό τμήμα της κοιλάδας Salt Lake Valley, ανάμεσα στον ποταμό Jordan River και τους πρόποδες των Oquirrh Mountains.",
+        "highlights": [
+          {
+            "title": "Oquirrh Mountains",
+            "desc": "Επιβλητική οροσειρά που ορίζει το δυτικό όριο της κοιλάδας."
+          },
+          {
+            "title": "Jordan River Parkway",
+            "desc": "Πράσινος διάδρομος υγροτόπων και ποδηλατοδρόμων κατά μήκος του ποταμού."
+          },
+          {
+            "title": "Decker Lake",
+            "desc": "Φυσικός υγρότοπος και καταφύγιο αποδημητικών πουλιών δίπλα στο Maverik Center."
+          }
+        ]
+      },
+      "hist": {
+        "summary": "Σχηματίστηκε το 1980 από τη συνένωση τεσσάρων ιστορικών αγροτικών κοινοτήτων (Hunter, Granger, Chesterfield, Redwood). Το 2002 φιλοξένησε τους Χειμερινούς Ολυμπιακούς Αγώνες χόκεϊ επί πάγου στο E Center (νυν Maverik Center).",
+        "highlights": [
+          {
+            "year": "1849",
+            "event": "Πρώτοι Οικισμοί Granger & Hunter",
+            "desc": "Εγκατάσταση των πρώτων πρωτοπόρων και άρδευση της δυτικής κοιλάδας."
+          },
+          {
+            "year": "1980",
+            "event": "Ενσωμάτωση West Valley City",
+            "desc": "Ιστορική συγχώνευση των 4 κοινοτήτων που δημιούργησε τη 2η μεγαλύτερη πόλη της Γιούτα."
+          },
+          {
+            "year": "2002",
+            "event": "Χειμερινοί Ολυμπιακοί Αγώνες",
+            "desc": "Διεξαγωγή του ολυμπιακού τουρνουά χόκεϊ επί πάγου με παγκόσμια προβολή."
+          }
+        ]
+      },
+      "demo": {
+        "summary": "Η πιο πολυπολιτισμική πόλη της Γιούτα, με έντονη παρουσία κοινοτήτων από τη Λατινική Αμερική, τα νησιά του Ειρηνικού και την Ασία.",
+        "details": [
+          {
+            "label": "Πληθυσμός",
+            "text": "Περίπου 139.000 κάτοικοι, η 2η πολυπληθέστερη πόλη στην πολιτεία της Γιούτα."
+          },
+          {
+            "label": "Πολυμορφία",
+            "text": "Πάνω από το 40% του πληθυσμού είναι ισπανόφωνοι, με μεγάλη επίσης κοινότητα Πολυνησίων (Τόνγκα, Σαμόα)."
+          },
+          {
+            "label": "Οικονομία",
+            "text": "Χρηματοπιστωτικές υπηρεσίες, εμπορικά κέντρα, μεταποίηση και ψυχαγωγία."
+          }
+        ]
+      },
+      "cult": {
+        "summary": "Ολυμπιακό χόκεϊ επί πάγου, τεράστιες υπαίθριες συναυλίες και πολυεθνικές παραδόσεις.",
+        "items": [
+          {
+            "title": "Utah Grizzlies Hockey",
+            "desc": "Η ιστορική επαγγελματική ομάδα χόκεϊ της πόλης στο Maverik Center."
+          },
+          {
+            "title": "USANA Amphitheatre",
+            "desc": "Ένας από τους μεγαλύτερους υπαίθριους συναυλιακούς χώρους στις ΗΠΑ (20.000 θέσεων)."
+          },
+          {
+            "title": "Utah Cultural Celebration Center",
+            "desc": "Κέντρο αφιερωμένο στη διατήρηση των πολιτισμών όλων των μεταναστευτικών κοινοτήτων της Γιούτα."
+          }
+        ]
+      },
+      "guide": {
+        "summary": "Ολυμπιακές αρένες, υπαίθρια αμφιθέατρα, πολιτιστικά κέντρα και ποτάμια πάρκα.",
+        "items": [
+          {
+            "title": "Maverik Center",
+            "cat": "sports",
+            "catLabel": "Αρένα",
+            "desc": "Ολυμπιακή κλειστή αρένα 12.000 θέσεων, έδρα των Utah Grizzlies και μεγάλων συναυλιών.",
+            "wiki": "Maverik_Center"
+          },
+          {
+            "title": "USANA Amphitheatre",
+            "cat": "entertainment",
+            "catLabel": "Συναυλίες",
+            "desc": "Εντυπωσιακό υπαίθριο αμφιθέατρο με πανοραμική θέα στην οροσειρά Wasatch.",
+            "wiki": "USANA_Amphitheatre"
+          },
+          {
+            "title": "Utah Cultural Celebration Center",
+            "cat": "culture",
+            "catLabel": "Πολιτισμός",
+            "desc": "Πολιτιστικό συγκρότημα με γκαλερί τέχνης, φεστιβάλ και εκθέσεις παραδοσιακών τεχνών.",
+            "wiki": "West_Valley_City,_Utah"
+          },
+          {
+            "title": "Valley Fair Mall & Town Center",
+            "cat": "shopping",
+            "catLabel": "Εμπόριο",
+            "desc": "Το κεντρικό εμπορικό κέντρο της πόλης με κινηματογράφους και δεκάδες εστιατόρια.",
+            "wiki": "Valley_Fair_Mall_(Utah)"
+          },
+          {
+            "title": "Decker Lake Park",
+            "cat": "nature",
+            "catLabel": "Φύση",
+            "desc": "Περιπατητικός διάδρομος γύρω από τον προστατευόμενο υδροβιότοπο.",
+            "wiki": "West_Valley_City,_Utah#Parks_and_recreation"
+          }
+        ]
+      },
+      "gastro": {
+        "summary": "Αυθεντικό πολυνησιακό Luau BBQ, μεξικάνικο barbacoa, Utah scones και τοπικά milkshakes.",
+        "items": [
+          {
+            "title": "Polynesian Kalua Pork",
+            "desc": "Σιγομαγειρεμένο τρυφερό χοιρινό με καπνιστό θαλασσινό αλάτι και λάχανο, σερβιρισμένο με ρύζι.",
+            "tag": "Πολυνησιακό"
+          },
+          {
+            "title": "Tacos de Barbacoa",
+            "desc": "Αυθεντικά μαλακά τάκος με αργοψημένο βοδινό, πικάντικη σάλτσα chipotle, κρεμμύδι και κόλιανδρο.",
+            "tag": "Μεξικάνικο"
+          },
+          {
+            "title": "Utah Scone with Honey Butter",
+            "desc": "Τηγανητό αφράτο ψωμί ζύμης σερβιρισμένο καυτό με άφθονο βούτυρο μελιού και κανέλα.",
+            "tag": "Τοπικό"
+          },
+          {
+            "title": "Pastrami Burger",
+            "desc": "Κλασικό cheeseburger της κοιλάδας Salt Lake γαρνιρισμένο με ζεστό καπνιστό παστράμι και fry sauce.",
+            "tag": "Burger"
+          }
+        ]
+      },
+      "eco": {
+        "summary": "Σύνδεση με το ηλεκτρικό τραμ TRAX και αποκατάσταση των υγροτόπων του Jordan River.",
+        "items": [
+          {
+            "title": "Jordan River Parkway Trail Maintenance",
+            "desc": "Προστασία της παρόχθιας ζώνης και φύτευση ενδημικών δέντρων για τα αποδημητικά πουλιά.",
+            "cat": "nature",
+            "catLabel": "Ποτάμια",
+            "wiki": "Jordan_River_Parkway"
+          },
+          {
+            "title": "TRAX Green Line Extension",
+            "desc": "Ηλεκτρικό τραμ μηδενικών ρύπων που συνδέει το West Valley City απευθείας με το κέντρο και το αεροδρόμιο.",
+            "cat": "transit",
+            "catLabel": "Συγκοινωνίες",
+            "wiki": "Green_Line_(TRAX)"
+          },
+          {
+            "title": "West Valley Energy Efficiency Project",
+            "desc": "Αντικατάσταση φωτισμού των δημόσιων οδών και αρένων με συστήματα LED χαμηλής κατανάλωσης.",
+            "cat": "energy",
+            "catLabel": "Ενέργεια",
+            "wiki": "Energy_conservation"
+          }
+        ]
+      },
+      "pastVsPresent": [
+        {
+          "epoch": "Γουέστ Βάλεϊ 1926: Αγροτικές Κοινότητες Hunter και Granger",
+          "content": "Ατελείωτα χωράφια με ζαχαρότευτλα, αρδευτικά αυλάκια και οικογένειες πρωτοπόρων να μαζεύουν τη σοδειά κάτω από τα βουνά Oquirrh."
+        },
+        {
+          "epoch": "Γουέστ Βάλεϊ 2026: Πολυπολιτισμική Μητρόπολη Αθλητισμού και Τέχνης",
+          "content": "Ολυμπιακές αρένες, ηλεκτρικά τρένα TRAX, γιγαντιαία αμφιθέατρα συναυλιών και μια ζωντανή πολυεθνική κοινωνία."
+        }
+      ],
+      "pois": [
+        {
+          "name": "Maverik Center Arena Plaza",
+          "category": "sports",
+          "coords": [
+            40.7042,
+            -111.9542
+          ],
+          "desc": "Η ολυμπιακή αρένα και έδρα των Utah Grizzlies."
+        },
+        {
+          "name": "USANA Amphitheatre Lawn",
+          "category": "entertainment",
+          "coords": [
+            40.6698,
+            -112.0252
+          ],
+          "desc": "Η τεράστια υπαίθρια συναυλιακή σκηνή στους πρόποδες των Oquirrh."
+        },
+        {
+          "name": "Utah Cultural Celebration Center Amphitheater",
+          "category": "culture",
+          "coords": [
+            40.7231,
+            -111.9362
+          ],
+          "desc": "Το υπαίθριο αμφιθέατρο δίπλα στον ποταμό Jordan River."
+        },
+        {
+          "name": "West Valley Central TRAX Station",
+          "category": "transport",
+          "coords": [
+            40.7012,
+            -111.9568
+          ],
+          "desc": "Ο κεντρικός τερματικός σταθμός της πράσινης γραμμής του τραμ."
+        },
+        {
+          "name": "Decker Lake Boardwalk",
+          "category": "nature",
+          "coords": [
+            40.7078,
+            -111.9489
+          ],
+          "desc": "Ξύλινος πεζόδρομος παρατήρησης πουλιών στον υγρότοπο."
+        }
+      ]
+    },
+    {
+      "id": "west-jordan",
+      "name": "Γουέστ Τζόρνταν",
+      "englishName": "West Jordan",
+      "nickname": "Η Πόλη του Ιστορικού Μύλου & της Καινοτομίας",
+      "type": "city",
+      "coords": [
+        40.6063,
+        -111.9381
+      ],
+      "zoom": 12.5,
+      "stats": {
+        "population": "117.000",
+        "founded": "1849",
+        "area": "84 km²",
+        "elevation": "1.333 m"
+      },
+      "quote": "«Από τους ιστορικούς νερόμυλους του 1850 στις όχθες του Jordan River, στις σύγχρονες τεχνολογικές γειτονιές της κοιλάδας.»",
+      "geo": {
+        "summary": "Στο νοτιοδυτικό τμήμα της κοιλάδας Salt Lake Valley, απλώνεται από τις καταπράσινες όχθες του ποταμού Jordan River στα ανατολικά μέχρι τους πρόποδες των Oquirrh Mountains στα δυτικά.",
+        "highlights": [
+          {
+            "title": "Jordan River",
+            "desc": "Ο ιστορικός ποταμός που συνδέει τη Utah Lake με τη Great Salt Lake."
+          },
+          {
+            "title": "Oquirrh Foothills",
+            "desc": "Ανοιχτοί λόφοι με εκτεταμένη θέα σε ολόκληρη την οροσειρά Wasatch."
+          },
+          {
+            "title": "Bingham Creek",
+            "desc": "Φυσικό ρέμα με αναπλασμένο περιφερειακό πάρκο και μονοπάτια πεζοπορίας."
+          }
+        ]
+      },
+      "hist": {
+        "summary": "Ιδρύθηκε το 1849 από τον Archibald Gardner, ο οποίος έχτισε έναν από τους πρώτους νερόμυλους και πριονιστήρια στην επικράτεια της Γιούτα. Το ιστορικό Gardner Village αποτελεί σήμερα ζωντανό μνημείο της εποχής των πρωτοπόρων.",
+        "highlights": [
+          {
+            "year": "1849",
+            "event": "Ίδρυση από τον Archibald Gardner",
+            "desc": "Κατασκευή του ιστορικού αλευρόμυλου Gardner Mill."
+          },
+          {
+            "year": "1941",
+            "event": "Ενσωμάτωση Πόλης",
+            "desc": "Επίσημη ίδρυση του δήμου West Jordan."
+          },
+          {
+            "year": "1980",
+            "event": "Δημιουργία Gardner Village",
+            "desc": "Αναστήλωση των ιστορικών κτιρίων του 19ου αιώνα σε πολιτιστικό και εμπορικό χωριό."
+          }
+        ]
+      },
+      "demo": {
+        "summary": "Νεανική, οικογενειακή και επιχειρηματική κοινότητα με εξαιρετικό επίπεδο σχολείων και ασφάλειας.",
+        "details": [
+          {
+            "label": "Πληθυσμός",
+            "text": "Περίπου 117.000 κάτοικοι, η 4η μεγαλύτερη πόλη της Γιούτα."
+          },
+          {
+            "label": "Ηλικιακή Σύνθεση",
+            "text": "Μία από τις νεότερες μέσες ηλικίες στις ΗΠΑ (περίπου 28 έτη) με πολυμελείς οικογένειες."
+          },
+          {
+            "label": "Οικονομία",
+            "text": "Τεχνολογία, διανομή, ιατρικές υπηρεσίες και έδρα του Bingham Canyon Mine Operations."
+          }
+        ]
+      },
+      "cult": {
+        "summary": "Ιστορική κληρονομιά πρωτοπόρων, φεστιβάλ Halloween στο Gardner Village και αγάπη για το ροντέο.",
+        "items": [
+          {
+            "title": "Gardner Village Witchfest",
+            "desc": "Διάσημο ετήσιο φθινοπωρινό φεστιβάλ με ιστορικές αναπαραστάσεις και χειροτεχνίες."
+          },
+          {
+            "title": "Western Stampede Rodeo",
+            "desc": "Παραδοσιακό επαγγελματικό ροντέο PRCA που διοργανώνεται κάθε 4η Ιουλίου από το 1954."
+          },
+          {
+            "title": "Κοινοτικές Τέχνες",
+            "desc": "Τοπικές θεατρικές παραστάσεις στο Sugar Factory Playhouse."
+          }
+        ]
+      },
+      "guide": {
+        "summary": "Ιστορικοί νερόμυλοι, γιγαντιαία περιφερειακά πάρκα, ποτάμιοι διάδρομοι και παραδοσιακά χωριά.",
+        "items": [
+          {
+            "title": "Gardner Village",
+            "cat": "history",
+            "catLabel": "Ιστορικό Χωριό",
+            "desc": "Αναπαλαιωμένο χωριό του 1850 με τον αυθεντικό αλευρόμυλο, κανάλια, γεφυράκια και boutique μαγαζιά.",
+            "wiki": "Gardner_Mill"
+          },
+          {
+            "title": "Bingham Creek Regional Park",
+            "cat": "nature",
+            "catLabel": "Πάρκο",
+            "desc": "Τεράστιο νέο πάρκο 160 στρεμμάτων με γήπεδα, διαδρομές ποδηλασίας και πανοραμική θέα.",
+            "wiki": "West_Jordan,_Utah"
+          },
+          {
+            "title": "Jordan River Parkway Trail",
+            "cat": "nature",
+            "catLabel": "Μονοπάτι",
+            "desc": "Πανέμορφος ασφαλτοστρωμένος διάδρομος για ποδήλατο και τρέξιμο κατά μήκος του ποταμού.",
+            "wiki": "Jordan_River_Parkway"
+          },
+          {
+            "title": "Veterans Memorial Park",
+            "cat": "landmark",
+            "catLabel": "Μνημείο",
+            "desc": "Κεντρικό πάρκο 100 στρεμμάτων με μνημεία ηρώων, παιδικές χαρές και αθλητικά κέντρα.",
+            "wiki": "West_Jordan,_Utah#Parks_and_recreation"
+          },
+          {
+            "title": "West Jordan Historical Museum",
+            "cat": "museum",
+            "catLabel": "Μουσείο",
+            "desc": "Μουσείο στεγασμένο σε αυθεντικό πλινθόκτιστο κτήριο του 19ου αιώνα.",
+            "wiki": "West_Jordan,_Utah"
+          }
+        ]
+      },
+      "gastro": {
+        "summary": "Χειροποίητα γλυκά στο Mill, Utah funeral potatoes, παγωτό μελιού και σπιτικά μπισκότα.",
+        "items": [
+          {
+            "title": "Utah Funeral Potatoes",
+            "desc": "Παραδοσιακό ογκρατέν με τριμμένες πατάτες, τυρί τσένταρ, ξινή κρέμα και τραγανή κρούστα κορν φλέικς.",
+            "tag": "Παραδοσιακό"
+          },
+          {
+            "title": "Gardner Mill Fresh Pot Pie",
+            "desc": "Χειροποίητη κρεατόπιτα κοτόπουλου με βουτυράτη σφολιάτα ψημένη στον ιστορικό μύλο.",
+            "tag": "Comfort Food"
+          },
+          {
+            "title": "Clover Honey Ice Cream",
+            "desc": "Βελούδινο παγωτό από φρέσκο γάλα κοιλάδας και αγνό τοπικό μέλι τριφυλλιού.",
+            "tag": "Επιδόρπιο"
+          },
+          {
+            "title": "Western BBQ Pulled Pork Sandwich",
+            "desc": "Σιγοψημένο χοιρινό με γλυκιά καπνιστή σάλτσα BBQ και τραγανό coleslaw σε ψωμάκι μπριός.",
+            "tag": "BBQ"
+          }
+        ]
+      },
+      "eco": {
+        "summary": "Αποκατάσταση της κοίτης του Bingham Creek και προστασία των παρόχθιων ζωνών του Jordan River.",
+        "items": [
+          {
+            "title": "Bingham Creek Natural Open Space",
+            "desc": "Μετατροπή πρώην βιομηχανικών εκτάσεων σε φυσικό πάρκο και προστασία της τοπικής χλωρίδας.",
+            "cat": "nature",
+            "catLabel": "Ανάπλαση",
+            "wiki": "Bingham_Creek"
+          },
+          {
+            "title": "Water-Wise Conservation Programs",
+            "desc": "Κίνητρα αντικατάστασης γρασιδιού με ξηροφυτικά ενδημικά φυτά της Γιούτα.",
+            "cat": "water",
+            "catLabel": "Εξοικονόμηση",
+            "wiki": "Xeriscaping"
+          },
+          {
+            "title": "Active Commute Trails",
+            "desc": "Σύνδεση των οικιστικών περιοχών με τους σταθμούς του ηλεκτρικού τραμ TRAX Red Line.",
+            "cat": "mobility",
+            "catLabel": "Μεταφορές",
+            "wiki": "Red_Line_(TRAX)"
+          }
+        ]
+      },
+      "pastVsPresent": [
+        {
+          "epoch": "Γουέστ Τζόρνταν 1926: Η Πόλη των Αλευρόμυλων και των Καναλιών",
+          "content": "Ο τροχός του Gardner Mill να γυρίζει ακούραστα, νερό να κυλά στα ξύλινα αυλάκια και άμαξες γεμάτες σακιά αλεύρι."
+        },
+        {
+          "epoch": "Γουέστ Τζόρνταν 2026: Ακμάζον Κέντρο Οικογενειών και Πράσινων Πάρκων",
+          "content": "Γραφικά καφέ στο ιστορικό Gardner Village, χιλιάδες παιδιά στα νέα πάρκα του Bingham Creek και σύγχρονες τεχνολογικές υποδομές."
+        }
+      ],
+      "pois": [
+        {
+          "name": "Gardner Mill Waterwheel",
+          "category": "history",
+          "coords": [
+            40.6068,
+            -111.9365
+          ],
+          "desc": "Ο ιστορικός νερόμυλος του 1877 που λειτουργεί ακόμα στο Gardner Village."
+        },
+        {
+          "name": "Bingham Creek Regional Park Pavilion",
+          "category": "nature",
+          "coords": [
+            40.5692,
+            -111.9892
+          ],
+          "desc": "Το κεντρικό παρατηρητήριο του τεράστιου νέου πάρκου."
+        },
+        {
+          "name": "Veterans Memorial Park Clock Tower",
+          "category": "landmark",
+          "coords": [
+            40.6052,
+            -111.9421
+          ],
+          "desc": "Ο πύργος του ρολογιού και τα μνημεία των βετεράνων."
+        },
+        {
+          "name": "Jordan River Parkway Footbridge",
+          "category": "nature",
+          "coords": [
+            40.6152,
+            -111.9289
+          ],
+          "desc": "Κρεμαστή πεζογέφυρα πάνω από τον ποταμό Jordan River."
+        },
+        {
+          "name": "Historic West Jordan Sugar Factory Site",
+          "category": "culture",
+          "coords": [
+            40.6021,
+            -111.9412
+          ],
+          "desc": "Ο ιστορικός χώρος του παλιού εργοστασίου ζάχαρης που λειτουργεί ως πολιτιστικό κέντρο."
+        }
+      ]
+    },
+    {
+      "id": "orem",
+      "name": "Όρεμ",
+      "englishName": "Orem",
+      "nickname": "Η Πόλη της Οικογένειας (Family City USA)",
+      "type": "city",
+      "coords": [
+        40.2969,
+        -111.6946
+      ],
+      "zoom": 12.5,
+      "stats": {
+        "population": "98.000",
+        "founded": "1877",
+        "area": "48 km²",
+        "elevation": "1.455 m"
+      },
+      "quote": "«Στη σκιά του επιβλητικού Mount Timpanogos, εκεί όπου η εκπαιδευτική δύναμη του UVU συναντά την ιδανική οικογενειακή ζωή της Αμερικής.»",
+      "geo": {
+        "summary": "Στην κοιλάδα Utah Valley, ανάμεσα στην ανατολική όχθη της Utah Lake και τους δραματικούς γκρεμούς του Mount Timpanogos (3.582 μ.) στην οροσειρά Wasatch.",
+        "highlights": [
+          {
+            "title": "Mount Timpanogos",
+            "desc": "Το δεύτερο ψηλότερο βουνό των Wasatch Mountains, με τον παγετώδη σχηματισμό «Κοιμωμένη Κυρά»."
+          },
+          {
+            "title": "Utah Lake Shoreline",
+            "desc": "Η μεγάλη γλυκού νερού λίμνη στα δυτικά όρια της πόλης."
+          },
+          {
+            "title": "Provo Canyon Gateway",
+            "desc": "Η φυσική πύλη εισόδου προς τους καταρράκτες Bridal Veil Falls και το θέρετρο Sundance."
+          }
+        ]
+      },
+      "hist": {
+        "summary": "Αρχικά γνωστό ως «Provo Bench» λόγω της υπερυψωμένης γεωλογικής θέσης του. Μετονομάστηκε το 1914 σε Orem προς τιμήν του Walter C. Orem, προέδρου του ηλεκτρικού σιδηροδρόμου Salt Lake and Utah Railroad, για να τον προσελκύσουν να περάσει τις ράγες από την πόλη.",
+        "highlights": [
+          {
+            "year": "1877",
+            "event": "Πρώτοι Οικισμοί Provo Bench",
+            "desc": "Εγκατάσταση πρωτοπόρων και φύτευση εκτεταμένων οπωρώνων."
+          },
+          {
+            "year": "1914",
+            "event": "Ονοματοδοσία Orem",
+            "desc": "Επιλογή του ονόματος του Walter C. Orem για τον ηλεκτρικό σιδηρόδρομο."
+          },
+          {
+            "year": "1941",
+            "event": "Utah Valley University (UVU)",
+            "desc": "Ίδρυση της σχολής που εξελίχθηκε στο μεγαλύτερο δημόσιο πανεπιστήμιο της Γιούτα."
+          }
+        ]
+      },
+      "demo": {
+        "summary": "Νεανική, εξαιρετικά μορφωμένη και οικογενειακή κοινότητα με σχεδόν μηδενική εγκληματικότητα.",
+        "details": [
+          {
+            "label": "Πληθυσμός",
+            "text": "Περίπου 98.000 μόνιμοι κάτοικοι συν πάνω από 41.000 φοιτητές του UVU."
+          },
+          {
+            "label": "Επωνυμία «Family City USA»",
+            "text": "Σταθερά κατατάσσεται στην 1η θέση στις ΗΠΑ για την ανατροφή οικογένειας και την ασφάλεια."
+          },
+          {
+            "label": "Οικονομία",
+            "text": "Τεχνολογία (Silicon Slopes software hub), ανώτατη εκπαίδευση, εμπόριο και υγειονομική περίθαλψη."
+          }
+        ]
+      },
+      "cult": {
+        "summary": "Πανεπιστημιακός παλμός, πάθος για τις τέχνες στο Noorda Center και υπαίθρια παράδοση.",
+        "items": [
+          {
+            "title": "Noorda Center for the Performing Arts",
+            "desc": "Υπερσύγχρονο πολιτιστικό κέντρο με αίθουσες συναυλιών, όπερας και θεάτρου."
+          },
+          {
+            "title": "Timpanogos Storytelling Festival",
+            "desc": "Το μεγαλύτερο και διασημότερο φεστιβάλ προφορικής αφήγησης παραμυθιών στις ΗΠΑ."
+          },
+          {
+            "title": "Πανεπιστημιακός Αθλητισμός UVU Wolverines",
+            "desc": "Ένθερμη υποστήριξη για τις ομάδες μπάσκετ και ποδοσφαίρου του πανεπιστημίου."
+          }
+        ]
+      },
+      "guide": {
+        "summary": "Πανεπιστημιακά campus, θεαματικά πάρκα με θέα στο Timpanogos, καταρράκτες και εμπορικά κέντρα.",
+        "items": [
+          {
+            "title": "Noorda Center for the Arts",
+            "cat": "culture",
+            "catLabel": "Πολιτισμός",
+            "desc": "Αρχιτεκτονικό στολίδι στο UVU με αίθουσα συναυλιών σχεδιασμένη για τέλεια ακουστική.",
+            "wiki": "Utah_Valley_University"
+          },
+          {
+            "title": "Mount Timpanogos Park",
+            "cat": "nature",
+            "catLabel": "Φύση",
+            "desc": "Πανέμορφο πάρκο στην είσοδο του Provo Canyon με μονοπάτια και χώρους πικνίκ κάτω από τους βράχους.",
+            "wiki": "Mount_Timpanogos"
+          },
+          {
+            "title": "University Place & The Orchard",
+            "cat": "shopping",
+            "catLabel": "Εμπόριο",
+            "desc": "Αναπλασμένο εμπορικό κέντρο με υπαίθριο πάρκο, συντριβάνια και καλοκαιρινές συναυλίες.",
+            "wiki": "University_Place_(Orem,_Utah)"
+          },
+          {
+            "title": "SCERA Center for the Arts",
+            "cat": "history",
+            "catLabel": "Ιστορικό Θέατρο",
+            "desc": "Ιστορικός μη κερδοσκοπικός οργανισμός τεχνών του 1933 με υπαίθριο καλοκαιρινό θέατρο (Shell).",
+            "wiki": "SCERA"
+          },
+          {
+            "title": "All-Together Playground",
+            "cat": "landmark",
+            "catLabel": "Παιδική Χαρά",
+            "desc": "Πρότυπη τεράστια συμπεριληπτική παιδική χαρά χτισμένη εξ ολοκλήρου από εθελοντές πολίτες.",
+            "wiki": "Orem,_Utah"
+          }
+        ]
+      },
+      "gastro": {
+        "summary": "Κεράσια και ροδάκινα Utah Valley, παραδοσιακά milkshakes, γκουρμέ μπισκότα και artisan burgers.",
+        "items": [
+          {
+            "title": "Orem Peach Cobbler",
+            "desc": "Ζεστό γλυκό με τοπικά ζουμερά ροδάκινα, κανέλα και τραγανή κρούστα βουτύρου με παγωτό.",
+            "tag": "Επιδόρπιο"
+          },
+          {
+            "title": "Tart Cherry Glazed Pork Tenderloin",
+            "desc": "Χοιρινό φιλέτο γλασαρισμένο με σάλτσα από όξινα κεράσια Montmorency της κοιλάδας.",
+            "tag": "Κρεατικά"
+          },
+          {
+            "title": "Utah Dirty Soda",
+            "desc": "Το αγαπημένο τοπικό αναψυκτικό εμπλουτισμένο με σιρόπι καρύδας, φρέσκο λάιμ και κρέμα γάλακτος.",
+            "tag": "Ρόφημα"
+          },
+          {
+            "title": "Artisan Stuffed Cookies",
+            "desc": "Γιγαντιαία ζεστά μπισκότα με γέμιση λιωμένης σοκολάτας, φυστικοβούτυρου ή μαρσμέλοου.",
+            "tag": "Γλυκό"
+          }
+        ]
+      },
+      "eco": {
+        "summary": "Πράσινη γραμμή λεωφορείων ταχείας διέλευσης UVX και προστασία των υδάτων της Utah Lake.",
+        "items": [
+          {
+            "title": "Utah Valley Express (UVX) BRT",
+            "desc": "Ηλεκτρικά υβριδικά λεωφορεία μηδενικών εκπομπών με αποκλειστική λωρίδα που ενώνουν το Όρεμ με το Πρόβο.",
+            "cat": "transit",
+            "catLabel": "Συγκοινωνίες",
+            "wiki": "Utah_Valley_Express"
+          },
+          {
+            "title": "Utah Lake Water Quality Initiative",
+            "desc": "Πρόγραμμα απομάκρυνσης εισβολικών κυπρίνων και αποκατάστασης των ενδημικών ψαριών June Sucker.",
+            "cat": "wildlife",
+            "catLabel": "Άγρια Ζωή",
+            "wiki": "June_sucker"
+          },
+          {
+            "title": "Timpanogos Watershed Conservation",
+            "desc": "Προστασία των πηγών καθαρού νερού από το λιώσιμο του χιονιού στις κορυφές των Wasatch.",
+            "cat": "water",
+            "catLabel": "Υδάτινοι Πόροι",
+            "wiki": "Mount_Timpanogos"
+          }
+        ]
+      },
+      "pastVsPresent": [
+        {
+          "epoch": "Όρεμ 1926: Οι Ατελείωτοι Οπωρώνες του Provo Bench",
+          "content": "Χιλιάδες ανθισμένες κερασιές και μηλιές, το κόκκινο ηλεκτρικό τραμ του Walter Orem να διασχίζει τα χωράφια και οικογένειες να μαζεύουν φρούτα."
+        },
+        {
+          "epoch": "Όρεμ 2026: Παγκόσμια Πρωτεύουσα Οικογένειας και Τεχνολογίας",
+          "content": "Το ζωντανό campus του UVU, υπερσύγχρονες εταιρείες software στους Silicon Slopes και χιλιάδες παιδιά να παίζουν με θέα το χιονισμένο Timpanogos."
+        }
+      ],
+      "pois": [
+        {
+          "name": "Noorda Center Performing Arts Hall",
+          "category": "culture",
+          "coords": [
+            40.2785,
+            -111.7162
+          ],
+          "desc": "Το πολυτελές κέντρο τεχνών στο campus του Utah Valley University."
+        },
+        {
+          "name": "Mount Timpanogos Park Trailhead",
+          "category": "nature",
+          "coords": [
+            40.3458,
+            -111.6492
+          ],
+          "desc": "Η είσοδος του πάρκου κάτω από τους απόκρημνους βράχους του φαραγγιού."
+        },
+        {
+          "name": "The Orchard at University Place",
+          "category": "landmark",
+          "coords": [
+            40.2942,
+            -111.6789
+          ],
+          "desc": "Το υπαίθριο πάρκο με τα διαδραστικά σιντριβάνια και τη σκηνή εκδηλώσεων."
+        },
+        {
+          "name": "SCERA Shell Outdoor Amphitheater",
+          "category": "entertainment",
+          "coords": [
+            40.2889,
+            -111.6912
+          ],
+          "desc": "Το ιστορικό υπαίθριο θέατρο όπου προβάλλονται καλοκαιρινές παραστάσεις κάτω από τα αστέρια."
+        },
+        {
+          "name": "All-Together Playground Castle",
+          "category": "landmark",
+          "coords": [
+            40.3015,
+            -111.6948
+          ],
+          "desc": "Το ξύλινο κάστρο της πρωτοποριακής συμπεριληπτικής παιδικής χαράς."
+        }
+      ]
+    },
+    {
+      "id": "sandy",
+      "name": "Σάντι",
+      "englishName": "Sandy",
+      "nickname": "Η Πύλη των Φαραγγιών Cottonwood Canyons",
+      "type": "city",
+      "coords": [
+        40.57,
+        -111.8597
+      ],
+      "zoom": 12.5,
+      "stats": {
+        "population": "96.000",
+        "founded": "1871",
+        "area": "63 km²",
+        "elevation": "1.356 m"
+      },
+      "quote": "«Στους πρόποδες των γρανιτένιων κορυφών των Wasatch, εκεί όπου το ποδόσφαιρο των Real Salt Lake συναντά τα πιο διάσημα χιονοδρομικά του πλανήτη.»",
+      "geo": {
+        "summary": "Στο νοτιοανατολικό τμήμα της κοιλάδας Salt Lake Valley, ακριβώς στη βάση των Wasatch Mountains και στην είσοδο του Little Cottonwood Canyon (προς Alta και Snowbird).",
+        "highlights": [
+          {
+            "title": "Little Cottonwood Canyon Gateway",
+            "desc": "Το παγκοσμίου φήμης φαράγγι από γρανίτη που οδηγεί στο Alta και το Snowbird."
+          },
+          {
+            "title": "Lone Peak",
+            "desc": "Επιβλητική αλπική κορυφή γρανίτη (3.430 μ.) που δεσπόζει ακριβώς πάνω από την πόλη."
+          },
+          {
+            "title": "Bell Canyon",
+            "desc": "Εκπληκτικό φαράγγι πεζοπορίας με καταρράκτες και αλπικές δεξαμενές νερού."
+          }
+        ]
+      },
+      "hist": {
+        "summary": "Ιδρύθηκε το 1871 ως σιδηροδρομικός σταθμός και κέντρο καμινευτηρίων μεταλλευμάτων από τα πλούσια ορυχεία αργύρου του Little Cottonwood Canyon. Ενσωματώθηκε το 1893 και από τη δεκαετία του 1970 εξελίχθηκε σε ευημερούσα μητρόπολη.",
+        "highlights": [
+          {
+            "year": "1871",
+            "event": "Ίδρυση ως Κέντρο Καμινευτηρίων",
+            "desc": "Κατασκευή σιδηροδρόμου και επεξεργασία αργύρου και μολύβδου."
+          },
+          {
+            "year": "1893",
+            "event": "Ενσωμάτωση Πόλης",
+            "desc": "Επίσημη ίδρυση του δήμου Σάντι."
+          },
+          {
+            "year": "2008",
+            "event": "Εγκαίνια Rio Tinto Stadium",
+            "desc": "Άνοιγμα του ποδοσφαιρικού γηπέδου (νυν America First Field) για τη Real Salt Lake."
+          }
+        ]
+      },
+      "demo": {
+        "summary": "Ευημερούσα, αθλητική και φυσιολατρική κοινότητα με υψηλό εισόδημα και αγάπη για το σκι και το ποδόσφαιρο.",
+        "details": [
+          {
+            "label": "Πληθυσμός",
+            "text": "Περίπου 96.000 κάτοικοι, η 6η μεγαλύτερη πόλη στη Γιούτα."
+          },
+          {
+            "label": "Εισοδηματικό Επίπεδο",
+            "text": "Από τα υψηλότερα μέσα οικογενειακά εισοδήματα στην κοιλάδα Salt Lake Valley."
+          },
+          {
+            "label": "Οικονομία",
+            "text": "Επαγγελματικός αθλητισμός, ιατρική τεχνολογία (BD Medical), τουρισμός χιονοδρομίας και εμπόριο."
+          }
+        ]
+      },
+      "cult": {
+        "summary": "Παγκόσμιο επίκεντρο MLS soccer, ορειβατική κουλτούρα και πολυτελές θέατρο στο Hale Centre Theatre.",
+        "items": [
+          {
+            "title": "Real Salt Lake Soccer (MLS)",
+            "desc": "Το πάθος για την πρωταθλήτρια ομάδα MLS της Γιούτα στο America First Field."
+          },
+          {
+            "title": "Hale Centre Theatre",
+            "desc": "Ένα από τα πιο τεχνολογικά προηγμένα θέατρα κυκλικής σκηνής (theatre-in-the-round) στον κόσμο."
+          },
+          {
+            "title": "Ski Culture Gateway",
+            "desc": "Η πόλη όπου ζουν εκατοντάδες επαγγελματίες σκιέρ και ορειβάτες του Wasatch."
+          }
+        ]
+      },
+      "guide": {
+        "summary": "Ποδοσφαιρικά γήπεδα MLS, φουτουριστικά θέατρα, γρανιτένιοι καταρράκτες και εμπορικά κέντρα.",
+        "items": [
+          {
+            "title": "America First Field",
+            "cat": "sports",
+            "catLabel": "Γήπεδο",
+            "desc": "Εντυπωσιακό ποδοσφαιρικό γήπεδο 20.000 θέσεων με θέα στις χιονισμένες κορυφές των Wasatch.",
+            "wiki": "America_First_Field"
+          },
+          {
+            "title": "Hale Centre Theatre",
+            "cat": "culture",
+            "catLabel": "Θέατρο",
+            "desc": "Υπερσύγχρονο θέατρο με περιστρεφόμενες ανυψούμενες σκηνές και παραστάσεις επιπέδου Broadway.",
+            "wiki": "Hale_Centre_Theatre"
+          },
+          {
+            "title": "Bell Canyon Trail & Waterfalls",
+            "cat": "nature",
+            "catLabel": "Μονοπάτι",
+            "desc": "Θεαματικό μονοπάτι πεζοπορίας σε φαράγγι γρανίτη που οδηγεί σε ορμητικούς καταρράκτες.",
+            "wiki": "Bell_Canyon_(Utah)"
+          },
+          {
+            "title": "Mountain America Exposition Center",
+            "cat": "landmark",
+            "catLabel": "Εκθέσεις",
+            "desc": "Τεράστιο συνεδριακό και εκθεσιακό κέντρο για διεθνείς εκθέσεις σκι, σκαφών και αυτοκινήτων.",
+            "wiki": "Mountain_America_Exposition_Center"
+          },
+          {
+            "title": "The Shops at South Town",
+            "cat": "shopping",
+            "catLabel": "Εμπόριο",
+            "desc": "Μεγάλο εμπορικό κέντρο με διώροφο vintage καρουζέλ και δεκάδες καταστήματα.",
+            "wiki": "The_Shops_at_South_Town"
+          }
+        ]
+      },
+      "gastro": {
+        "summary": "Utah fry sauce με ζουμερά burgers, καπνιστά κρέατα, γκουρμέ ιταλική κουζίνα και craft μπίρες.",
+        "items": [
+          {
+            "title": "Crown Pastrami Cheeseburger",
+            "desc": "Το διάσημο μπέργκερ με λιωμένο τυρί, καπνιστό παστράμι και αυθεντική Utah fry sauce.",
+            "tag": "Burger"
+          },
+          {
+            "title": "Wasatch Granary Pizza",
+            "desc": "Τραγανή πίτσα με άλευρα από τοπικά σιτηρά, καπνιστό προσούτο και άγρια ρόκα.",
+            "tag": "Πίτσα"
+          },
+          {
+            "title": "Little Cottonwood Skier's Chili",
+            "desc": "Πλούσιο καυτερό τσίλι με βοδινό κιμά, μαύρα φασόλια και τριμμένο τσένταρ για μετά το σκι.",
+            "tag": "Σούπα"
+          },
+          {
+            "title": "Mountain Berry Cobbler",
+            "desc": "Ζεστό γλύκισμα με άγρια μούρα των Wasatch και παγωτό βανίλια Μαδαγασκάρης.",
+            "tag": "Επιδόρπιο"
+          }
+        ]
+      },
+      "eco": {
+        "summary": "Προστασία της λεκάνης απορροής Little Cottonwood Watershed που υδροδοτεί την κοιλάδα με παρθένο νερό.",
+        "items": [
+          {
+            "title": "Protected Watershed Enforcement",
+            "desc": "Αυστηρή απαγόρευση κατοικίδιων στα φαράγγια Cottonwood για τη διαφύλαξη της ποιότητας του πόσιμου νερού.",
+            "cat": "water",
+            "catLabel": "Πόσιμο Νερό",
+            "wiki": "Little_Cottonwood_Canyon"
+          },
+          {
+            "title": "Sandy Urban Forestry Canopy",
+            "desc": "Πρόγραμμα φύτευσης χιλιάδων δέντρων κατά μήκος των λεωφόρων για φυσική δροσιά.",
+            "cat": "greenery",
+            "catLabel": "Αστικό Πράσινο",
+            "wiki": "Urban_forestry"
+          },
+          {
+            "title": "TRAX Blue Line Connection",
+            "desc": "Ηλεκτρικός σιδηρόδρομος που ενώνει το Σάντι απευθείας με το κέντρο του Salt Lake City.",
+            "cat": "transit",
+            "catLabel": "Μεταφορές",
+            "wiki": "Blue_Line_(TRAX)"
+          }
+        ]
+      },
+      "pastVsPresent": [
+        {
+          "epoch": "Σάντι 1926: Σιδηροδρομικός Σταθμός Μεταλλευμάτων και Καμινευτηρίων",
+          "content": "Καπνός από τις καμίνους μολύβδου, βαγόνια γεμάτα ασήμι από το Alta και εργάτες με λερωμένα πρόσωπα στον σταθμό του Rio Grande Western."
+        },
+        {
+          "epoch": "Σάντι 2026: Πολυτελής Πύλη Αλπικού Σκι και Παγκόσμιου Ποδοσφαίρου",
+          "content": "Χιλιάδες φίλαθλοι με κόκκινα κασκόλ της Real Salt Lake, φουτουριστικά θέατρα με περιστρεφόμενες σκηνές και σκιέρ να ανηφορίζουν στα Cottonwood Canyons."
+        }
+      ],
+      "pois": [
+        {
+          "name": "America First Field Stadium",
+          "category": "sports",
+          "coords": [
+            40.5828,
+            -111.8931
+          ],
+          "desc": "Το ποδοσφαιρικό γήπεδο της Real Salt Lake."
+        },
+        {
+          "name": "Hale Centre Theatre Jewel Box",
+          "category": "culture",
+          "coords": [
+            40.5721,
+            -111.8962
+          ],
+          "desc": "Το υπερσύγχρονο θέατρο με τη γυάλινη πρόσοψη στον αυτοκινητόδρομο I-15."
+        },
+        {
+          "name": "Bell Canyon Granite Waterfalls",
+          "category": "nature",
+          "coords": [
+            40.5638,
+            -111.8021
+          ],
+          "desc": "Οι εντυπωσιακοί καταρράκτες ανάμεσα στους τεράστιους γρανιτένιους όγκους."
+        },
+        {
+          "name": "Sandy Historic District Museum",
+          "category": "history",
+          "coords": [
+            40.5908,
+            -111.8842
+          ],
+          "desc": "Το μουσείο τοπικής ιστορίας στην παλιά πόλη του Σάντι."
+        },
+        {
+          "name": "Little Cottonwood Canyon Entrance",
+          "category": "nature",
+          "coords": [
+            40.5715,
+            -111.7968
+          ],
+          "desc": "Η εντυπωσιακή πύλη προς τα χιονοδρομικά θέρετρα Snowbird και Alta."
+        }
+      ]
+    },
+    {
+      "id": "st-george",
+      "name": "Σεντ Τζορτζ",
+      "englishName": "St. George",
+      "nickname": "Το Dixie της Γιούτα & Πύλη του Zion",
+      "type": "city",
+      "coords": [
+        37.0965,
+        -113.5684
+      ],
+      "zoom": 12.5,
+      "stats": {
+        "population": "102.000",
+        "founded": "1861",
+        "area": "183 km²",
+        "elevation": "872 m"
+      },
+      "quote": "«Εκεί όπου οι κόκκινοι βράχοι συναντούν τους φοίνικες της ερήμου Mojave, στην πύλη των πιο θεαματικών φαραγγιών της Γης.»",
+      "geo": {
+        "summary": "Στο νοτιοδυτικό άκρο της Γιούτα, στη σύγκλιση της ερήμου Mojave, του Colorado Plateau και του Great Basin, κατά μήκος του ποταμού Virgin River.",
+        "highlights": [
+          {
+            "title": "Red Cliffs Desert Reserve",
+            "desc": "Πανέμορφοι κόκκινοι βράχοι ψαμμίτη Navajo Sandstone που αγκαλιάζουν την πόλη."
+          },
+          {
+            "title": "Snow Canyon State Park",
+            "desc": "Εντυπωσιακό πάρκο με αρχαίες ροές μαύρης λάβας πάνω από κόκκινους αμμόλοφους."
+          },
+          {
+            "title": "Virgin River Valley",
+            "desc": "Ο ποταμός που δημιούργησε το Zion National Park και διασχίζει την όαση του Σεντ Τζορτζ."
+          }
+        ]
+      },
+      "hist": {
+        "summary": "Ιδρύθηκε το 1861 από τον Brigham Young και 305 οικογένειες πρωτοπόρων ως αποστολή παραγωγής βαμβακιού (γι' αυτό ονομάστηκε Utah's Dixie). Ο λευκός ναός St. George Utah Temple ολοκληρώθηκε το 1877 και είναι ο παλαιότερος συνεχώς λειτουργών ναός της Εκκλησίας LDS.",
+        "highlights": [
+          {
+            "year": "1861",
+            "event": "Cotton Mission",
+            "desc": "Ίδρυση της πόλης για την καλλιέργεια βαμβακιού κατά τη διάρκεια του Εμφυλίου Πολέμου."
+          },
+          {
+            "year": "1877",
+            "event": "Ολοκλήρωση St. George Temple",
+            "desc": "Εγκαίνια του εμβληματικού κατάλευκου ναού στην καρδιά των κόκκινων βράχων."
+          },
+          {
+            "year": "1995",
+            "event": "Tuacahn Amphitheatre",
+            "desc": "Εγκαίνια του μαγευτικού υπαίθριου θεάτρου μέσα στο κόκκινο φαράγγι Padre Canyon."
+          }
+        ]
+      },
+      "demo": {
+        "summary": "Μία από τις ταχύτερα αναπτυσσόμενες μητροπόλεις των ΗΠΑ, με θερμό ηλιόλουστο κλίμα, συνταξιούχους, φοιτητές και λάτρεις της υπαίθρου.",
+        "details": [
+          {
+            "label": "Πληθυσμός",
+            "text": "Περίπου 102.000 κάτοικοι στην πόλη και πάνω από 190.000 στην κομητεία Washington."
+          },
+          {
+            "label": "Κλίμα",
+            "text": "Υποτροπικό ερημικό κλίμα με πάνω από 300 ημέρες ηλιοφάνειας ετησίως και ήπιους χειμώνες."
+          },
+          {
+            "label": "Οικονομία",
+            "text": "Τουρισμός (Zion National Park), αεροπορικές μεταφορές (SkyWest Airlines headquarters), υγεία και εκπαίδευση."
+          }
+        ]
+      },
+      "cult": {
+        "summary": "Μπροντγουέι στο φαράγγι στο Tuacahn, παγκόσμια πρωταθλήματα Ironman και ιστορία πρωτοπόρων της ερήμου.",
+        "items": [
+          {
+            "title": "Tuacahn Center for the Arts",
+            "desc": "Θέατρο 2.000 θέσεων με παραγωγές Broadway κάτω από τους κόκκινους βράχους ύψους 450 μέτρων."
+          },
+          {
+            "title": "Ironman World Championship St. George",
+            "desc": "Παγκοσμίου φήμης αγώνες τριάθλου στις δραματικές υψομετρικές κλίσεις της ερήμου."
+          },
+          {
+            "title": "Dixie Heritage",
+            "desc": "Διατήρηση της ιστορίας της βαμβακοκαλλιέργειας και της αρχιτεκτονικής πρωτοπόρων."
+          }
+        ]
+      },
+      "guide": {
+        "summary": "Κόκκινα φαράγγια, κατάλευκοι ιστορικοί ναοί, υπαίθρια αμφιθέατρα και πατημασιές δεινοσαύρων.",
+        "items": [
+          {
+            "title": "Snow Canyon State Park",
+            "cat": "nature",
+            "catLabel": "Φύση",
+            "desc": "Μαγευτικό πάρκο με μαύρη βασαλτική λάβα, κόκκινους αμμόλοφους και σπηλιές λάβας.",
+            "wiki": "Snow_Canyon_State_Park"
+          },
+          {
+            "title": "St. George Utah Temple",
+            "cat": "architecture",
+            "catLabel": "Αρχιτεκτονική",
+            "desc": "Ο επιβλητικός κατάλευκος ναός του 1877, παλαιότερος ενεργός ναός των Μορμόνων.",
+            "wiki": "St._George_Utah_Temple"
+          },
+          {
+            "title": "Tuacahn Amphitheatre",
+            "cat": "culture",
+            "catLabel": "Πολιτισμός",
+            "desc": "Το διάσημο υπαίθριο αμφιθέατρο «Broadway in the Canyon» μέσα στο Padre Canyon.",
+            "wiki": "Tuacahn_Center_for_the_Arts"
+          },
+          {
+            "title": "St. George Dinosaur Discovery Site",
+            "cat": "science",
+            "catLabel": "Παλαιοντολογία",
+            "desc": "Εξαιρετικό μουσείο χτισμένο ακριβώς πάνω από χιλιάδες αυθεντικές απολιθωμένες πατημασιές δεινοσαύρων της Ιουρασικής περιόδου.",
+            "wiki": "St._George_Dinosaur_Discovery_Site"
+          },
+          {
+            "title": "Pioneer Park & Sugarloaf Rock",
+            "cat": "landmark",
+            "catLabel": "Αξιοθέατο",
+            "desc": "Πάρκο κόκκινων βράχων με την επιγραφή «DIXIE» και θέα 360 μοιρών σε όλη την πόλη.",
+            "wiki": "St._George,_Utah#Parks_and_recreation"
+          }
+        ]
+      },
+      "gastro": {
+        "summary": "Dixie barbecue, ρόδια και σύκα της ερήμου, scones με μέλι και craft ice cream.",
+        "items": [
+          {
+            "title": "Red Rock Smoked Tri-Tip",
+            "desc": "Ζουμερό μοσχαρίσιο tri-tip σιγοκαπνισμένο με ξύλο μεσκίτ και σάλτσα ρόδι.",
+            "tag": "BBQ"
+          },
+          {
+            "title": "Pomegranate Glazed Salmon",
+            "desc": "Ψητός σολομός με γλάσο από τοπικά ρόδια του Σεντ Τζορτζ και δεντρολίβανο.",
+            "tag": "Ψάρι"
+          },
+          {
+            "title": "Dixie Honey Butter Scone",
+            "desc": "Μεγάλο τηγανητό αφράτο scone με λιωμένο βούτυρο μελιού και ζάχαρη άχνη.",
+            "tag": "Παραδοσιακό"
+          },
+          {
+            "title": "Prickly Pear Lemonade",
+            "desc": "Δροσερή ροζ λεμονάδα φτιαγμένη με φυσικό σιρόπι από καρπούς κάκτου της ερήμου.",
+            "tag": "Ρόφημα"
+          }
+        ]
+      },
+      "eco": {
+        "summary": "Προστασία της σπάνιας χελώνας της ερήμου Mojave και διαχείριση υδάτων του Virgin River.",
+        "items": [
+          {
+            "title": "Red Cliffs Desert Tortoise Reserve",
+            "desc": "Προστατευόμενο καταφύγιο 62.000 στρεμμάτων για τη σωτηρία της απειλούμενης χελώνας Mojave Desert Tortoise.",
+            "cat": "wildlife",
+            "catLabel": "Άγρια Ζωή",
+            "wiki": "Desert_tortoise"
+          },
+          {
+            "title": "Virgin River Water Conservation Plan",
+            "desc": "Σύγχρονα προγράμματα επαναχρησιμοποίησης νερού και περιορισμού άρδευσης γκαζόν.",
+            "cat": "water",
+            "catLabel": "Νερό",
+            "wiki": "Virgin_River"
+          },
+          {
+            "title": "Solar Energy Desert Standard",
+            "desc": "Εκμετάλλευση της εξαιρετικής ηλιοφάνειας με ηλιακά συστήματα σε δημόσια και ιδιωτικά κτίρια.",
+            "cat": "solar",
+            "catLabel": "Ηλιακή Ενέργεια",
+            "wiki": "Solar_power_in_Utah"
+          }
+        ]
+      },
+      "pastVsPresent": [
+        {
+          "epoch": "Σεντ Τζορτζ 1926: Απομονωμένη Αγροτική Όαση των Πρωτοπόρων",
+          "content": "Χωμάτινοι δρόμοι με κόκκινη σκόνη, κατάλευκος ναός να λάμπει στην έρημο και οικογένειες να μαζεύουν βαμβάκι και σύκα κάτω από τον καυτό ήλιο."
+        },
+        {
+          "epoch": "Σεντ Τζορτζ 2026: Παγκόσμια Πρωτεύουσα Υπαίθριας Περιπέτειας και Τεχνών",
+          "content": "Παραστάσεις Broadway μέσα στα κόκκινα φαράγγια του Tuacahn, αθλητές Ironman από όλο τον κόσμο και πύλη για τα θαύματα του Zion National Park."
+        }
+      ],
+      "pois": [
+        {
+          "name": "St. George Temple Spire",
+          "category": "architecture",
+          "coords": [
+            37.1009,
+            -113.5786
+          ],
+          "desc": "Το επιβλητικό λευκό κωδωνοστάσιο του ιστορικού ναού του 1877."
+        },
+        {
+          "name": "Tuacahn Amphitheatre Canyon Stage",
+          "category": "culture",
+          "coords": [
+            37.1925,
+            -113.6592
+          ],
+          "desc": "Η θεαματική σκηνή στη βάση των κατακόκκινων βράχων του Padre Canyon."
+        },
+        {
+          "name": "Snow Canyon Sand Dunes",
+          "category": "nature",
+          "coords": [
+            37.2189,
+            -113.6421
+          ],
+          "desc": "Οι εντυπωσιακοί κόκκινοι αμμόλοφοι ανάμεσα στις ροές μαύρης λάβας."
+        },
+        {
+          "name": "Dinosaur Trackway Quarry",
+          "category": "science",
+          "coords": [
+            37.1062,
+            -113.5412
+          ],
+          "desc": "Οι αυθεντικές πατημασιές δεινοσαύρων στο Dinosaur Discovery Site."
+        },
+        {
+          "name": "Sugarloaf Red Rock Overlook",
+          "category": "viewpoint",
+          "coords": [
+            37.1192,
+            -113.5828
+          ],
+          "desc": "Ο μεγάλος κόκκινος βράχος με την επιγραφή DIXIE και πανοραμική θέα."
+        }
+      ]
+    },
+    {
+      "id": "ogden",
+      "name": "Όγκντεν",
+      "englishName": "Ogden",
+      "nickname": "Η Πόλη των Σιδηροδρόμων & των Βουνών (Junction City)",
+      "type": "city",
+      "coords": [
+        41.223,
+        -111.9738
+      ],
+      "zoom": 12.5,
+      "stats": {
+        "population": "87.000",
+        "founded": "1846",
+        "area": "71 km²",
+        "elevation": "1.310 m"
+      },
+      "quote": "«Εκεί όπου ο πρώτος Διηπειρωτικός Σιδηρόδρομος ένωσε την Αμερική, στη σκιά του επιβλητικού Mount Ogden.»",
+      "geo": {
+        "summary": "Στη συμβολή των ποταμών Ogden και Weber, στους πρόποδες της οροσειράς Wasatch, 64 χλμ. βόρεια του Salt Lake City, με θέα στη Great Salt Lake.",
+        "highlights": [
+          {
+            "title": "Mount Ogden",
+            "desc": "Επιβλητική κορυφή (2.918 μ.) που υψώνεται δραματικά ακριβώς πίσω από την πόλη."
+          },
+          {
+            "title": "Ogden River",
+            "desc": "Ορμητικός ποταμός φαραγγιού που διασχίζει την πόλη δημιουργώντας έναν πράσινο διάδρομο αναψυχής."
+          },
+          {
+            "title": "Ogden Canyon",
+            "desc": "Στενό φαράγγι που οδηγεί στην κοιλάδα Ogden Valley και τα χιονοδρομικά Snowbasin και Powder Mountain."
+          }
+        ]
+      },
+      "hist": {
+        "summary": "Ιδρύθηκε το 1846 ως Fort Buenaventura από τον παγιδευτή γούνας Miles Goodyear (ο παλαιότερος ευρωπαϊκός μόνιμος οικισμός στη Γιούτα). Το 1869 έγινε η «Junction City» του πρώτου Διηπειρωτικού Σιδηροδρόμου (Transcontinental Railroad), μεταμορφώνοντας την πόλη σε κορυφαίο εμπορικό κόμβο της Άγριας Δύσης.",
+        "highlights": [
+          {
+            "year": "1846",
+            "event": "Ίδρυση Fort Buenaventura",
+            "desc": "Κατασκευή του πρώτου μόνιμου εμπορικού σταθμού γούνας στη Γιούτα."
+          },
+          {
+            "year": "1869",
+            "event": "Χρυσό Καρφί στο Promontory Summit",
+            "desc": "Η ολοκλήρωση του διηπειρωτικού σιδηροδρόμου καθιέρωσε το Όγκντεν ως Junction City."
+          },
+          {
+            "year": "1924",
+            "event": "Κατασκευή Union Station",
+            "desc": "Εγκαίνια του επιβλητικού ισπανικού αναγεννησιακού σταθμού τρένων."
+          },
+          {
+            "year": "2002",
+            "event": "Ολυμπιακοί Αγώνες στο Snowbasin",
+            "desc": "Διεξαγωγή των ολυμπιακών αγωνισμάτων κατάβασης (Downhill) και Super-G."
+          }
+        ]
+      },
+      "demo": {
+        "summary": "Αυθεντική, εργατική, ιστορική και ανεξάρτητη κοινότητα με έντονο φοιτητικό και υπαίθριο αθλητικό παλμό.",
+        "details": [
+          {
+            "label": "Πληθυσμός",
+            "text": "Περίπου 87.000 κάτοικοι, η 8η μεγαλύτερη πόλη στη Γιούτα και πρωτεύουσα της κομητείας Weber."
+          },
+          {
+            "label": "Φοιτητική Ζωή",
+            "text": "Έδρα του Weber State University με πάνω από 30.000 φοιτητές."
+          },
+          {
+            "label": "Οικονομία",
+            "text": "Αεροδιαστημική & άμυνα (Hill AFB contractors, Northrop Grumman), βιομηχανία υπαίθριων σπορ, logistics."
+          }
+        ]
+      },
+      "cult": {
+        "summary": "Η θρυλική Historic 25th Street, σιδηροδρομική ιστορία, παραγωγή πυροβόλων όπλων Browning και πάθος για σκι.",
+        "items": [
+          {
+            "title": "Historic 25th Street",
+            "desc": "Η ιστορική οδός των σαλούν και των πρωτοπόρων, σήμερα γεμάτη γκαλερί τέχνης, craft μπαρ και μπιστρό."
+          },
+          {
+            "title": "Browning Firearms Heritage",
+            "desc": "Η γενέτειρα του John Moses Browning, του κορυφαίου σχεδιαστή πυροβόλων όπλων στην ιστορία."
+          },
+          {
+            "title": "Ολυμπιακή Χιονοδρομία Snowbasin",
+            "desc": "Πρόσβαση σε μερικές από τις καλύτερες πίστες σκι και βαθύ χιόνι πούδρας στον κόσμο."
+          }
+        ]
+      },
+      "guide": {
+        "summary": "Ιστορικοί σιδηροδρομικοί σταθμοί, ιστορικές οδοί της Άγριας Δύσης, φαράγγια ποταμών και ολυμπιακές πλαγιές.",
+        "items": [
+          {
+            "title": "Ogden Union Station",
+            "cat": "history",
+            "catLabel": "Ιστορία",
+            "desc": "Εμβληματικός σιδηροδρομικός σταθμός του 1924 με 4 μουσεία (Browning, Σιδηροδρόμων, Αυτοκινήτων, Cowboy).",
+            "wiki": "Ogden_Union_Station"
+          },
+          {
+            "title": "Historic 25th Street",
+            "cat": "architecture",
+            "catLabel": "Αρχιτεκτονική",
+            "desc": "Βραβευμένη ιστορική οδός με κτίρια του 19ου αιώνα, εστιατόρια, καφέ και ανεξάρτητα καταστήματα.",
+            "wiki": "25th_Street_(Ogden,_Utah)"
+          },
+          {
+            "title": "Ogden River Parkway",
+            "cat": "nature",
+            "catLabel": "Μονοπάτι",
+            "desc": "Πανέμορφος παραποτάμιος διάδρομος 15 χλμ. με καταρράκτες, γέφυρες και πάρκα ψαρέματος πέστροφας.",
+            "wiki": "Ogden,_Utah#Parks_and_recreation"
+          },
+          {
+            "title": "Fort Buenaventura Park",
+            "cat": "history",
+            "catLabel": "Ιστορικό Οχυρό",
+            "desc": "Ανακατασκευασμένο ξύλινο οχυρό του 1846 μέσα σε δάσος με λίμνη και χώρους τοξοβολίας.",
+            "wiki": "Fort_Buenaventura"
+          },
+          {
+            "title": "Eccles Dinosaur Park",
+            "cat": "science",
+            "catLabel": "Μουσείο",
+            "desc": "Υπαίθριο πάρκο με πάνω από 100 ρομποτικά και γλυπτά ομοιώματα δεινοσαύρων φυσικού μεγέθους.",
+            "wiki": "George_S._Eccles_Dinosaur_Park"
+          }
+        ]
+      },
+      "gastro": {
+        "summary": "Σπιτικά burgers της 25ης Οδού, καπνιστή πέστροφα Ogden River, τοπικές μπίρες και Utah scones.",
+        "items": [
+          {
+            "title": "25th Street Junction Burger",
+            "desc": "Ζουμερό μπέργκερ με καπνιστό μπέικον, καραμελωμένα κρεμμύδια, τσένταρ και πικάντικη σάλτσα BBQ.",
+            "tag": "Burger"
+          },
+          {
+            "title": "Smoked Wasatch Trout Dip",
+            "desc": "Κρεμώδες ντιπ καπνιστής πέστροφας με άνηθο, ξύσμα λεμονιού και τραγανά κράκερ σίκαλης.",
+            "tag": "Ορεκτικό"
+          },
+          {
+            "title": "Ogden Valley Apple Cobbler",
+            "desc": "Ζεστό γλύκισμα με μήλα κοιλάδας, κανέλα, μοσχοκάρυδο και παγωτό βανίλια.",
+            "tag": "Επιδόρπιο"
+          },
+          {
+            "title": "Polygamy Porter",
+            "desc": "Η διάσημη μαύρη τοπική μπίρα της Wasatch Brewery με νότες σοκολάτας και καβουρδισμένης βύνης.",
+            "tag": "Μπίρα"
+          }
+        ]
+      },
+      "eco": {
+        "summary": "Το πολυβραβευμένο έργο Ogden River Restoration που μετέτρεψε έναν πρώην βιομηχανικό σκουπιδότοπο σε φυσικό παράδεισο.",
+        "items": [
+          {
+            "title": "Ogden River Restoration Project",
+            "desc": "Εθνικό πρότυπο καθαρισμού και αποκατάστασης φυσικής κοίτης ποταμού για το ψάρεμα πέστροφας.",
+            "cat": "water",
+            "catLabel": "Αποκατάσταση",
+            "wiki": "Ogden_River"
+          },
+          {
+            "title": "Ogden Valley Dark Sky Initiative",
+            "desc": "Προστασία του νυχτερινού ουρανού στα γύρω βουνά από το Powder Mountain έως το Snowbasin.",
+            "cat": "sky",
+            "catLabel": "Σκοτεινός Ουρανός",
+            "wiki": "Dark-sky_preserve"
+          },
+          {
+            "title": "Weber State Sustainability",
+            "desc": "Στόχος του πανεπιστημίου για μηδενικό ανθρακικό αποτύπωμα με ηλιακά πάρκα και γεωθερμία.",
+            "cat": "energy",
+            "catLabel": "Βιωσιμότητα",
+            "wiki": "Weber_State_University"
+          }
+        ]
+      },
+      "pastVsPresent": [
+        {
+          "epoch": "Όγκντεν 1926: Η Άγρια Πρωτεύουσα της 25ης Οδού",
+          "content": "Αμέτρητα τρένα να σφυρίζουν στον Union Station, σαλούν γεμάτα τζογαδόρους και λαθρεμπόριο στην περιβόητη «Two-Bit Street»."
+        },
+        {
+          "epoch": "Όγκντεν 2026: Παγκόσμια Μητρόπολη Υπαίθριων Σπορ και Ιστορίας",
+          "content": "Κομψά μπιστρό στην αναπαλαιωμένη 25th Street, σκιέρ και ποδηλάτες στα μονοπάτια του Mount Ogden και ένας πεντακάθαρος ποταμός γεμάτος πέστροφες."
+        }
+      ],
+      "pois": [
+        {
+          "name": "Ogden Union Station Historic Clock",
+          "category": "history",
+          "coords": [
+            41.2228,
+            -111.9792
+          ],
+          "desc": "Ο ιστορικός σιδηροδρομικός σταθμός στο τέλος της 25ης Οδού."
+        },
+        {
+          "name": "Historic 25th Street Arch",
+          "category": "landmark",
+          "coords": [
+            41.2229,
+            -111.9754
+          ],
+          "desc": "Η φωτεινή αψίδα στην είσοδο της ιστορικής συνοικίας."
+        },
+        {
+          "name": "Ogden River Parkway Falls",
+          "category": "nature",
+          "coords": [
+            41.2312,
+            -111.9542
+          ],
+          "desc": "Οι φυσικοί καταρράκτες και οι προβλήτες ψαρέματος στον ποταμό."
+        },
+        {
+          "name": "Fort Buenaventura Stockade",
+          "category": "history",
+          "coords": [
+            41.2185,
+            -111.9892
+          ],
+          "desc": "Το ξύλινο τείχος του παλαιότερου οχυρού της Γιούτα."
+        },
+        {
+          "name": "Snowbasin Olympic Downhill Tram",
+          "category": "sports",
+          "coords": [
+            41.2158,
+            -111.8568
+          ],
+          "desc": "Το τελεφερίκ προς την κορυφή της ολυμπιακής πίστας σκι του 2002."
+        }
+      ]
+    },
+    {
+      "id": "layton",
+      "name": "Λέιτον",
+      "englishName": "Layton",
+      "nickname": "Η Πόλη της Αεροπορίας & των Βουνών Wasatch",
+      "type": "city",
+      "coords": [
+        41.0602,
+        -111.971
+      ],
+      "zoom": 12.5,
+      "stats": {
+        "population": "84.000",
+        "founded": "1850",
+        "area": "58 km²",
+        "elevation": "1.326 m"
+      },
+      "quote": "«Εκεί όπου η αεροπορική ισχύς της Hill Air Force Base συναντά τα κρυστάλλινα νερά του Adams Canyon στους πρόποδες των Wasatch.»",
+      "geo": {
+        "summary": "Στην κομητεία Davis County, ανάμεσα στην ανατολική όχθη της Great Salt Lake και τις απόκρημνες πλαγιές των Wasatch Mountains, 40 χλμ. βόρεια του Salt Lake City.",
+        "highlights": [
+          {
+            "title": "Wasatch Front Mountain Wall",
+            "desc": "Απότομες κορυφές που υψώνονται πάνω από τα 2.800 μέτρα ακριβώς ανατολικά της πόλης."
+          },
+          {
+            "title": "Adams Canyon",
+            "desc": "Θεαματικό φαράγγι με καταρράκτη ύψους 12 μέτρων που πέφτει σε φυσική πισίνα."
+          },
+          {
+            "title": "Great Salt Lake Shorelands Preserve",
+            "desc": "Προστατευόμενος υγρότοπος παγκόσμιας σημασίας για εκατομμύρια αποδημητικά πουλιά."
+          }
+        ]
+      },
+      "hist": {
+        "summary": "Ιδρύθηκε τη δεκαετία του 1850 ως αγροτική προέκταση του Kaysville και πήρε το όνομά της από τον Christopher Layton, πρωτοπόρο και ηγέτη των Μορμόνων. Το 1940 η κατασκευή της γειτονικής αεροπορικής βάσης Hill Field (νυν Hill AFB) μετέτρεψε την πόλη σε κομβικό κέντρο στρατιωτικής αεροπορίας.",
+        "highlights": [
+          {
+            "year": "1850",
+            "event": "Πρώτος Εποικισμός",
+            "desc": "Εγκατάσταση των πρώτων αγροτικών οικογενειών πρωτοπόρων."
+          },
+          {
+            "year": "1920",
+            "event": "Ενσωμάτωση Πόλης",
+            "desc": "Επίσημη ίδρυση του δήμου Λέιτον."
+          },
+          {
+            "year": "1940",
+            "event": "Ίδρυση Hill Air Force Base",
+            "desc": "Δημιουργία της τεράστιας βάσης συντήρησης και διοίκησης αεροσκαφών."
+          },
+          {
+            "year": "1982",
+            "event": "Hill Aerospace Museum",
+            "desc": "Εγκαίνια του σπουδαίου μουσείου πολεμικής αεροπορίας."
+          }
+        ]
+      },
+      "demo": {
+        "summary": "Φιλική, ασφαλής, οικογενειακή και τεχνολογική κοινότητα με βαθιές στρατιωτικές και αεροδιαστημικές ρίζες.",
+        "details": [
+          {
+            "label": "Πληθυσμός",
+            "text": "Περίπου 84.000 κάτοικοι, η πολυπληθέστερη πόλη στην κομητεία Davis County."
+          },
+          {
+            "label": "Στρατιωτική Κοινότητα",
+            "text": "Χιλιάδες πιλότοι, μηχανικοί αεροσκαφών και επιστήμονες που εργάζονται στη βάση Hill AFB."
+          },
+          {
+            "label": "Οικονομία",
+            "text": "Αεροδιαστημική (F-35 Lightning II maintenance), λιανικό εμπόριο (Layton Hills Mall), υγεία."
+          }
+        ]
+      },
+      "cult": {
+        "summary": "Αεροπορική υπερηφάνεια, θερινές συναυλίες στο Ed Kenley Amphitheater και αγάπη για την ορεινή πεζοπορία.",
+        "items": [
+          {
+            "title": "Hill Aerospace Heritage",
+            "desc": "Η περηφάνια για τη συντήρηση των πιο προηγμένων μαχητικών αεροσκαφών του κόσμου."
+          },
+          {
+            "title": "Edward A. Kenley Centennial Amphitheater",
+            "desc": "Δημοφιλές υπαίθριο αμφιθέατρο με καλοκαιρινές συναυλίες τζαζ, ροκ και συμφωνικής μουσικής."
+          },
+          {
+            "title": "Πεζοπορία στο Adams Canyon",
+            "desc": "Η αγαπημένη εβδομαδιαία συνήθεια των κατοίκων προς τον καταρράκτη του φαραγγιού."
+          }
+        ]
+      },
+      "guide": {
+        "summary": "Αεροπορικά μουσεία παγκόσμιας κλάσης, καταρράκτες φαραγγιών, υπαίθρια αμφιθέατρα και υγρότοποι.",
+        "items": [
+          {
+            "title": "Hill Aerospace Museum",
+            "cat": "museum",
+            "catLabel": "Μουσείο",
+            "desc": "Εκπληκτικό μουσείο με πάνω από 100 ιστορικά πολεμικά αεροσκάφη (SR-71 Blackbird, B-17, B-29, F-16).",
+            "wiki": "Hill_Aerospace_Museum"
+          },
+          {
+            "title": "Adams Canyon Trail & Waterfall",
+            "cat": "nature",
+            "catLabel": "Φύση",
+            "desc": "Δημοφιλές μονοπάτι πεζοπορίας που οδηγεί σε θεαματικό καταρράκτη 12 μέτρων.",
+            "wiki": "Adams_Canyon"
+          },
+          {
+            "title": "Great Salt Lake Shorelands Preserve",
+            "cat": "nature",
+            "catLabel": "Υγρότοποι",
+            "desc": "Ξύλινος πεζόδρομος 1,6 χλμ. μέσα στους απέραντους υγροτόπους με παρατηρητήριο πουλιών.",
+            "wiki": "Great_Salt_Lake_Shorelands_Preserve"
+          },
+          {
+            "title": "Ed Kenley Amphitheater",
+            "cat": "culture",
+            "catLabel": "Πολιτισμός",
+            "desc": "Υπαίθριος συναυλιακός χώρος στο Layton Commons Park με εξαιρετική ακουστική.",
+            "wiki": "Layton,_Utah"
+          },
+          {
+            "title": "Layton Commons Park",
+            "cat": "landmark",
+            "catLabel": "Πάρκο",
+            "desc": "Το κεντρικό καταπράσινο πάρκο της πόλης με λίμνη πάπιων, παιδικές χαρές και φωτισμούς Χριστουγέννων.",
+            "wiki": "Layton,_Utah#Parks_and_recreation"
+          }
+        ]
+      },
+      "gastro": {
+        "summary": "Κλασικά steaks πιλότων, Utah fry sauce burgers, πίτες βατόμουρου και craft sodas.",
+        "items": [
+          {
+            "title": "F-35 Pilot's Ribeye Steak",
+            "desc": "Παχιά μπριζόλα ribeye ψημένη στη σχάρα με βούτυρο σκόρδου και ψητή πατάτα.",
+            "tag": "Steak"
+          },
+          {
+            "title": "Wasatch Mountain Burger",
+            "desc": "Διπλό μπιφτέκι με τυρί swiss, σοταρισμένα μανιτάρια και κρεμώδη Utah fry sauce.",
+            "tag": "Burger"
+          },
+          {
+            "title": "Adams Canyon Blackberry Cobbler",
+            "desc": "Ζεστό γλυκό με φρέσκα βατόμουρα του βουνού και τραγανή κρούστα βρώμης.",
+            "tag": "Επιδόρπιο"
+          },
+          {
+            "title": "Local Salted Caramel Shake",
+            "desc": "Πυκνό milkshake με παγωτό βανίλια και αλατισμένη καραμέλα από ντόπιο γάλα.",
+            "tag": "Ρόφημα"
+          }
+        ]
+      },
+      "eco": {
+        "summary": "Προστασία των υδροβιότοπων της Great Salt Lake και διατήρηση του Adams Canyon.",
+        "items": [
+          {
+            "title": "Great Salt Lake Shorelands Protection",
+            "desc": "Διατήρηση της ακτογραμμής από την αστική ανάπτυξη για την προστασία εκατομμυρίων πτηνών.",
+            "cat": "nature",
+            "catLabel": "Υγρότοποι",
+            "wiki": "The_Nature_Conservancy"
+          },
+          {
+            "title": "Adams Canyon Trail Maintenance",
+            "desc": "Εθελοντικές δράσεις προστασίας από τη διάβρωση και καθαρισμού του ορεινού μονοπατιού.",
+            "cat": "nature",
+            "catLabel": "Μονοπάτια",
+            "wiki": "Adams_Canyon"
+          },
+          {
+            "title": "FrontRunner Commuter Rail",
+            "desc": "Σύγχρονος προαστιακός σιδηρόδρομος που συνδέει το Λέιτον με το Salt Lake City και το Ogden.",
+            "cat": "transit",
+            "catLabel": "Σιδηρόδρομος",
+            "wiki": "FrontRunner"
+          }
+        ]
+      },
+      "pastVsPresent": [
+        {
+          "epoch": "Λέιτον 1926: Αγροτική Κοινότητα Σιτηρών και Ζαχαρότευτλων",
+          "content": "Σιταποθήκες κατά μήκος των σιδηροδρομικών γραμμών, άλογα να οργώνουν τα χωράφια και οικογένειες πρωτοπόρων να πηγαίνουν στην εκκλησία."
+        },
+        {
+          "epoch": "Λέιτον 2026: Υπερσύγχρονο Κέντρο Αεροδιαστημικής και Πράσινης Ζωής",
+          "content": "Μαχητικά stealth F-35 να πετούν πάνω από τα βουνά Wasatch, προαστιακά τρένα FrontRunner και οικογένειες να πεζοπορούν στον καταρράκτη του Adams Canyon."
+        }
+      ],
+      "pois": [
+        {
+          "name": "Hill Aerospace Museum SR-71 Blackbird",
+          "category": "museum",
+          "coords": [
+            41.1612,
+            -112.0195
+          ],
+          "desc": "Το θρυλικό κατασκοπευτικό αεροσκάφος Mach 3 στο κεντρικό υπόστεγο."
+        },
+        {
+          "name": "Adams Canyon Lower Trailhead",
+          "category": "nature",
+          "coords": [
+            41.0669,
+            -111.9052
+          ],
+          "desc": "Η αφετηρία του μονοπατιού προς τον καταρράκτη."
+        },
+        {
+          "name": "Ed Kenley Amphitheater Stage",
+          "category": "culture",
+          "coords": [
+            41.0592,
+            -111.9612
+          ],
+          "desc": "Η καλοκαιρινή σκηνή συναυλιών μέσα στο Layton Commons Park."
+        },
+        {
+          "name": "Great Salt Lake Shorelands Visitor Pavilion",
+          "category": "nature",
+          "coords": [
+            41.0345,
+            -112.0562
+          ],
+          "desc": "Το ξύλινο εκπαιδευτικό περίπτερο πάνω από τους υγροτόπους."
+        },
+        {
+          "name": "Layton FrontRunner Station",
+          "category": "transport",
+          "coords": [
+            41.0601,
+            -111.9742
+          ],
+          "desc": "Ο προαστιακός σιδηροδρομικός σταθμός της πόλης."
+        }
+      ]
+    },
+    {
+      "id": "south-jordan",
+      "name": "Σάουθ Τζόρνταν",
+      "englishName": "South Jordan",
+      "nickname": "Η Πόλη των Δύο Ναών & του Daybreak",
+      "type": "city",
+      "coords": [
+        40.5622,
+        -111.9297
+      ],
+      "zoom": 12.5,
+      "stats": {
+        "population": "80.000",
+        "founded": "1859",
+        "area": "57 km²",
+        "elevation": "1.353 m"
+      },
+      "quote": "«Εκεί όπου η πρωτοποριακή αστική κοινότητα Daybreak αγκαλιάζει τη λίμνη της, κάτω από τις χρυσές κορυφές των Oquirrh Mountains.»",
+      "geo": {
+        "summary": "Στο νοτιοδυτικό τμήμα της κοιλάδας Salt Lake Valley, απλώνεται από τις όχθες του ποταμού Jordan River στα ανατολικά μέχρι τους πρόποδες των Oquirrh Mountains στα δυτικά.",
+        "highlights": [
+          {
+            "title": "Oquirrh Lake (Daybreak)",
+            "desc": "Τεχνητή λίμνη 270 στρεμμάτων στην καρδιά της βραβευμένης οικολογικής κοινότητας Daybreak."
+          },
+          {
+            "title": "Jordan River Parkway",
+            "desc": "Πλούσιος παρόχθιος διάδρομος με φυσικούς υγροτόπους και μονοπάτια."
+          },
+          {
+            "title": "Oquirrh Mountains Vista",
+            "desc": "Ανοιχτός ορίζοντας προς την επιβλητική οροσειρά Oquirrh στα δυτικά."
+          }
+        ]
+      },
+      "hist": {
+        "summary": "Ιδρύθηκε το 1859 από Μορμόνους πρωτοπόρους υπό τον Isaac Wardle, οι οποίοι κατασκεύασαν το κανάλι Beckstead Ditch για να αντλήσουν νερό από τον Jordan River. Το 2004 ξεκίνησε η ανάπτυξη του Daybreak, ενός από τα πιο διάσημα πρότυπα New Urbanism στον κόσμο. Είναι η μοναδική πόλη στον κόσμο με δύο ναούς LDS (Jordan River Utah Temple και Oquirrh Mountain Utah Temple).",
+        "highlights": [
+          {
+            "year": "1859",
+            "event": "Πρώτος Εποικισμός",
+            "desc": "Κατασκευή των πρώτων πλίθινων σπιτιών και του αρδευτικού καναλιού."
+          },
+          {
+            "year": "1935",
+            "event": "Ενσωμάτωση Πόλης",
+            "desc": "Επίσημη ίδρυση του δήμου South Jordan."
+          },
+          {
+            "year": "1981",
+            "event": "Jordan River Utah Temple",
+            "desc": "Εγκαίνια του πρώτου μεγάλου ναού της πόλης."
+          },
+          {
+            "year": "2004",
+            "event": "Έναρξη Daybreak Community",
+            "desc": "Δημιουργία της πρότυπης βιώσιμης κοινότητας γύρω από την Oquirrh Lake."
+          },
+          {
+            "year": "2009",
+            "event": "Oquirrh Mountain Utah Temple",
+            "desc": "Εγκαίνια του δεύτερου ναού, καθιστώντας την πόλη μοναδική παγκοσμίως."
+          }
+        ]
+      },
+      "demo": {
+        "summary": "Εξαιρετικά ευημερούσα, μορφωμένη, νεανική και οικογενειακή πόλη με κορυφαία ποιότητα ζωής.",
+        "details": [
+          {
+            "label": "Πληθυσμός",
+            "text": "Περίπου 80.000 κάτοικοι, με σταθερά υψηλούς ρυθμούς αύξησης."
+          },
+          {
+            "label": "Ποιότητα Ζωής",
+            "text": "Σταθερά στις κορυφαίες 20 πόλεις των ΗΠΑ για ασφάλεια, εκπαίδευση και οικογένειες (Money Magazine)."
+          },
+          {
+            "label": "Οικονομία",
+            "text": "Ιατρική τεχνολογία (Merit Medical Systems headquarters), χρηματοοικονομικά, έρευνα και εμπόριο."
+          }
+        ]
+      },
+      "cult": {
+        "summary": "Κουλτούρα βιώσιμης κοινότητας Daybreak, παραλίμνια ζωή, αρχιτεκτονική ναών και οικογενειακές παραδόσεις.",
+        "items": [
+          {
+            "title": "Daybreak Lifestyle",
+            "desc": "Ποδήλατο παντού, καγιάκ στη λίμνη Oquirrh, υπαίθριες συναυλίες στο SoDa Row και γειτονιές χωρίς αυτοκίνητα."
+          },
+          {
+            "title": "Two Temples Heritage",
+            "desc": "Υπερηφάνεια για τους δύο μεγαλοπρεπείς ναούς που κοσμούν τα ανατολικά και δυτικά όρια της πόλης."
+          },
+          {
+            "title": "Gale Center of History and Culture",
+            "desc": "Μουσείο διαδραστικής ιστορίας πρωτοπόρων ειδικά σχεδιασμένο για παιδιά και οικογένειες."
+          }
+        ]
+      },
+      "guide": {
+        "summary": "Παραλίμνιες κοινότητες, μεγαλοπρεπείς ναοί, ποτάμια πάρκα και ιστορικά μουσεία.",
+        "items": [
+          {
+            "title": "Oquirrh Lake & Boardwalk",
+            "cat": "nature",
+            "catLabel": "Λίμνη",
+            "desc": "Πανέμορφη λίμνη 270 στρεμμάτων με νησίδες, παραλίες για κανό, καγιάκ και πεζόδρομους.",
+            "wiki": "Daybreak,_Utah"
+          },
+          {
+            "title": "Jordan River Utah Temple",
+            "cat": "architecture",
+            "catLabel": "Αρχιτεκτονική",
+            "desc": "Επιβλητικός ναός του 1981 με πανύψηλο κωδωνοστάσιο και εκτεταμένους κήπους.",
+            "wiki": "Jordan_River_Utah_Temple"
+          },
+          {
+            "title": "Oquirrh Mountain Utah Temple",
+            "cat": "architecture",
+            "catLabel": "Αρχιτεκτονική",
+            "desc": "Εντυπωσιακός ναός από ανοιχτόχρωμο γρανίτη στους πρόποδες των Oquirrh Mountains.",
+            "wiki": "Oquirrh_Mountain_Utah_Temple"
+          },
+          {
+            "title": "SoDa Row District",
+            "cat": "shopping",
+            "catLabel": "Εμπόριο",
+            "desc": "Η ζωντανή πεζοδρομημένη καρδιά του Daybreak με boutique καφέ, εστιατόρια και σκηνή συναυλιών.",
+            "wiki": "Daybreak,_Utah"
+          },
+          {
+            "title": "Gale Center of History and Culture",
+            "cat": "museum",
+            "catLabel": "Μουσείο",
+            "desc": "Διαδραστικό μουσείο όπου τα παιδιά εξερευνούν αυθεντικές πλίνθινες καλύβες και καλυμμένα κάρα.",
+            "wiki": "South_Jordan,_Utah"
+          }
+        ]
+      },
+      "gastro": {
+        "summary": "Daybreak artisan pastries, παγωτό μελιού, καπνιστά κρέατα και υγιεινά bowls.",
+        "items": [
+          {
+            "title": "Oquirrh Lake Acai Bowl",
+            "desc": "Δροσερό μπολ με acai, φρέσκα μούρα, μπανάνα, granola και τοπικό μέλι τριφυλλιού.",
+            "tag": "Υγιεινό"
+          },
+          {
+            "title": "SoDa Row Wood-Fired Flatbread",
+            "desc": "Τραγανή λεπτή πίτα με ψητά σύκα, προσούτο, κατσικίσιο τυρί και γλάσο βαλσάμικου.",
+            "tag": "Gourmet"
+          },
+          {
+            "title": "Utah Honey-Glazed Pork Chops",
+            "desc": "Χοιρινές μπριζόλες γλασαρισμένες με τοπικό μέλι, μουστάρδα και μήλα κοιλάδας.",
+            "tag": "Κρεατικά"
+          },
+          {
+            "title": "Salt Lake Cherry Cream Soda",
+            "desc": "Αφρώδης σόδα με γεύση μαύρου κερασιού, σιρόπι βανίλιας και σαντιγί.",
+            "tag": "Ρόφημα"
+          }
+        ]
+      },
+      "eco": {
+        "summary": "Το Daybreak αποτελεί ένα από τα κορυφαία διεθνή μοντέλα New Urbanism με 100% κατοικίες πιστοποιημένες Energy Star.",
+        "items": [
+          {
+            "title": "Daybreak Sustainable Urban Design",
+            "desc": "Κάθε σπίτι απέχει το πολύ 5 λεπτά με τα πόδια από πάρκο ή τη λίμνη, μειώνοντας δραστικά τη χρήση αυτοκινήτου.",
+            "cat": "urban",
+            "catLabel": "Αειφορία",
+            "wiki": "New_Urbanism"
+          },
+          {
+            "title": "Oquirrh Lake Stormwater Retention",
+            "desc": "Η λίμνη λειτουργεί ως φυσικό σύστημα συλλογής και φιλτραρίσματος των ομβρίων υδάτων της κοινότητας.",
+            "cat": "water",
+            "catLabel": "Νερό",
+            "wiki": "Daybreak,_Utah"
+          },
+          {
+            "title": "TRAX Red Line Connectivity",
+            "desc": "Δύο σταθμοί ελαφρού σιδηροδρόμου TRAX μέσα στο Daybreak για μετακινήσεις χωρίς εκπομπές ρύπων.",
+            "cat": "transit",
+            "catLabel": "Μεταφορές",
+            "wiki": "Red_Line_(TRAX)"
+          }
+        ]
+      },
+      "pastVsPresent": [
+        {
+          "epoch": "Σάουθ Τζόρνταν 1926: Αγροκτήματα στις Όχθες του Jordan River",
+          "content": "Ξύλινα αυλάκια ποτίσματος, χωράφια με μηδική (αλφάλφα) και αγελάδες να βόσκουν ειρηνικά δίπλα στο ποτάμι."
+        },
+        {
+          "epoch": "Σάουθ Τζόρνταν 2026: Παγκόσμιο Πρότυπο Πράσινης Ζωής και Αρχιτεκτονικής",
+          "content": "Ιστιοπλοϊκά και καγιάκ στα γαλήνια νερά της Oquirrh Lake, οικογένειες με ποδήλατα στο Daybreak και δύο μεγαλοπρεπείς ναοί να δεσπόζουν στον ορίζοντα."
+        }
+      ],
+      "pois": [
+        {
+          "name": "Oquirrh Lake Main Pier",
+          "category": "nature",
+          "coords": [
+            40.5482,
+            -112.0012
+          ],
+          "desc": "Η κεντρική ξύλινη προβλήτα και η παραλία για καγιάκ στο Daybreak."
+        },
+        {
+          "name": "Oquirrh Mountain Utah Temple",
+          "category": "architecture",
+          "coords": [
+            40.5512,
+            -112.0289
+          ],
+          "desc": "Ο ναός από ανοιχτόχρωμο γρανίτη στους πρόποδες των βουνών."
+        },
+        {
+          "name": "Jordan River Utah Temple Grounds",
+          "category": "landmark",
+          "coords": [
+            40.5662,
+            -111.9312
+          ],
+          "desc": "Οι πανέμορφοι δεντροφυτεμένοι κήποι του πρώτου ναού της πόλης."
+        },
+        {
+          "name": "SoDa Row Community Amphitheater",
+          "category": "culture",
+          "coords": [
+            40.5521,
+            -111.9942
+          ],
+          "desc": "Η υπαίθρια σκηνή συναυλιών στο κέντρο του Daybreak."
+        },
+        {
+          "name": "Gale Center of History and Culture",
+          "category": "museum",
+          "coords": [
+            40.5621,
+            -111.9348
+          ],
+          "desc": "Το διαδραστικό μουσείο τοπικής ιστορίας και πολιτισμού."
         }
       ]
     }
