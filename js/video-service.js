@@ -1,4 +1,4 @@
-import { CITY_TO_STATE } from './states-data.js?v=20261114_world1';
+import { CITY_TO_STATE } from './states-data.js?v=20261114_world2';
 /**
  * Video Service Module
  * Registry of verified high-definition YouTube video tours for all cities
@@ -11322,6 +11322,237 @@ export const CITY_VIDEOS = {
     "secondary": {
       "youtubeId": "KGGldSG7vwE",
       "title": "Κέπος Panoramic — Manuel Antonio, Costa Rica aerial view 4k"
+    }
+  }
+,
+  "quetzaltenango": {
+    "drone": {
+      "youtubeId": "Fe_YXZutGH8",
+      "title": "Κετσαλτενάνγκο (Xela) 4K — La Histórica Ciudad de Quetzaltenango | Vuelotenango [4K]"
+    },
+    "secondary": {
+      "youtubeId": "BPGVPNLuPYw",
+      "title": "Κετσαλτενάνγκο (Xela) Panoramic — Quetzaltenango, 30 lugares para visitar | Quetzaltenango #1"
+    }
+  },
+  "flores-gt": {
+    "drone": {
+      "youtubeId": "TTdkCddo0A0",
+      "title": "Φλόρες 4K — Flores, Guatemala Drone Adventure | Central America Ultimate Travel Adventure | Experience Culture"
+    },
+    "secondary": {
+      "youtubeId": "p2xGTLDAe_Y",
+      "title": "Φλόρες Panoramic — Isla Flores, Guatemala (4K)"
+    }
+  },
+  "panajachel": {
+    "drone": {
+      "youtubeId": "aOQDe2Cu9WQ",
+      "title": "Παναχατσέλ (Λίμνη Ατιτλάν) 4K — Panajachel, San Marcos, Lake Atitlan, Guatemala 4K HDR Drone"
+    },
+    "secondary": {
+      "youtubeId": "7Y-09iFxza4",
+      "title": "Παναχατσέλ (Λίμνη Ατιτλάν) Panoramic — Lake Atitlan: Central America's deepest lake"
+    }
+  },
+  "chichicastenango": {
+    "drone": {
+      "youtubeId": "NEkriOxGoMI",
+      "title": "Τσιτσικαστενάνγκο 4K — Chichicastenango, Guatemala - The Market City | 4K Walking Tour (No Talking)"
+    },
+    "secondary": {
+      "youtubeId": "z6VOvhQN1BI",
+      "title": "Τσιτσικαστενάνγκο Panoramic — Guatemala 4K Drone | Active Volcanoes & Tikal"
+    }
+  },
+  "coban": {
+    "drone": {
+      "youtubeId": "COkyLPZAWIM",
+      "title": "Κομπάν 4K — Coban Guatemala Drone 4k"
+    },
+    "secondary": {
+      "youtubeId": "X5DrnLg09jY",
+      "title": "Κομπάν Panoramic — Flying over Guatemala (4K UHD) - Relaxing music along scenic nature videos"
+    }
+  },
+  "puerto-barrios": {
+    "drone": {
+      "youtubeId": "FAkPKFIrweM",
+      "title": "Πουέρτο Μπάριος 4K — Puerto Barrios / Izabal / Guatemala / Caribe / Atlántico"
+    },
+    "secondary": {
+      "youtubeId": "Me9aEwOQzQQ",
+      "title": "Πουέρτο Μπάριος Panoramic — La Ciudad Caribeña MÁS RARA de Guatemala: Puerto Barrios"
+    }
+  },
+  "livingston": {
+    "drone": {
+      "youtubeId": "A9RvjJ68IoE",
+      "title": "Λίβινγκστον 4K — Flying Drone over Rio Dulce Livingston Izabal Guatemala 2025"
+    },
+    "secondary": {
+      "youtubeId": "mwCIBey7D1E",
+      "title": "Λίβινγκστον Panoramic — The Most Unique Celebration in Guatemala is in Livingston, Izabal!"
+    }
+  },
+  "escuintla": {
+    "drone": {
+      "youtubeId": "w0FjDdIpJeM",
+      "title": "Εσκουίντλα 4K — Guatemala 4K - Scenic Relaxation Film With Calming Music"
+    },
+    "secondary": {
+      "youtubeId": "C2DTxLdAWl8",
+      "title": "Εσκουίντλα Panoramic — ESCUINTLA La Ciudad mas CALIENTE de Guatemala 🇬🇹🇬🇹🔥"
+    }
+  },
+  "puerto-plata": {
+    "drone": {
+      "youtubeId": "P4FQMqMhOj8",
+      "title": "Πουέρτο Πλάτα 4K — Puerto Plata - Dominican Rep - Aerial Drone 4k Video"
+    },
+    "secondary": {
+      "youtubeId": "htoe4hJYElw",
+      "title": "Πουέρτο Πλάτα Panoramic — This is Puerto Plata, Dominican Republic - By Biz-Dev Media"
+    }
+  },
+  "la-romana": {
+    "drone": {
+      "youtubeId": "TiF8EYYTHbo",
+      "title": "Λα Ρομάνα 4K — La romana Dominican Republic 🇩🇴 landscape  #drone#travel#dominicanrepublic#djimini2#relaxing#4k#hdr "
+    },
+    "secondary": {
+      "youtubeId": "5r_S2IyhG8Y",
+      "title": "Λα Ρομάνα Panoramic — 🚘 Driving in LA ROMANA 🇩🇴 [4K Ultra HD] Dominican Republic"
+    }
+  },
+  "las-terrenas": {
+    "drone": {
+      "youtubeId": "d4CRZqx3WN0",
+      "title": "Λας Τερένας 4K — Las Terrenas Samana  Dominican Republic 4K Drone"
+    },
+    "secondary": {
+      "youtubeId": "mHFsS1Gs3Aw",
+      "title": "Λας Τερένας Panoramic — DRONE LAS TERRENAS # REPUBLICA DOMINICANA"
+    }
+  },
+  "samana": {
+    "drone": {
+      "youtubeId": "yWckiSJOex8",
+      "title": "Σαμανά 4K — Santa Barbara de Samana by drone view"
+    },
+    "secondary": {
+      "youtubeId": "JlSBi9thEGE",
+      "title": "Σαμανά Panoramic — Santa Bárbara de Samaná, Samana, Republica Dominicana - 4K UHD - Virtual Trip"
+    }
+  },
+  "barahona": {
+    "drone": {
+      "youtubeId": "zanHJKS8NmE",
+      "title": "Μπαραόνα 4K — Barahona #desdeelaireRD"
+    },
+    "secondary": {
+      "youtubeId": "Qbptnj6J7q0",
+      "title": "Μπαραόνα Panoramic — Barahona, Dominican Republic - 4K/Drone Footage"
+    }
+  },
+  "san-pedro-de-macoris": {
+    "drone": {
+      "youtubeId": "CDEwnrQZcaY",
+      "title": "Σαν Πέδρο ντε Μακορίς 4K — San Pedro de Macorís in 4K | Dominican Republic Travel | Series 23"
+    },
+    "secondary": {
+      "youtubeId": "xS88nmJJ8YA",
+      "title": "Σαν Πέδρο ντε Μακορίς Panoramic — San Pedro de Macorís (República Dominicana) 4K"
+    }
+  },
+  "jarabacoa": {
+    "drone": {
+      "youtubeId": "6Xpqf04L_eE",
+      "title": "Χαραμπακόα 4K — Hidden Mountains of the Dominican Republic ⛰️ | Jarabacoa Drone Film"
+    },
+    "secondary": {
+      "youtubeId": "gT8qAbcNuIE",
+      "title": "Χαραμπακόα Panoramic — Jarabacoa | Dominican Republic"
+    }
+  },
+  "david": {
+    "drone": {
+      "youtubeId": "PyMGbgyWPAc",
+      "title": "Νταβίντ 4K — Panama City, Panama | 4K 30fps Drone Footage (DJI Mini 4 • Part 107 Certified)"
+    },
+    "secondary": {
+      "youtubeId": "wCDzBcUvVog",
+      "title": "Νταβίντ Panoramic — FLYING OVER PANAMA (4K UHD) - Relaxing Music Along With Beautiful Nature Videos - 4k ULTRA HD"
+    }
+  },
+  "boquete": {
+    "drone": {
+      "youtubeId": "CHT7uTH7YVM",
+      "title": "Μποκέτε 4K — Boquete, Chiriquí Panamá - 4K DRONE CHIRIQUÍ"
+    },
+    "secondary": {
+      "youtubeId": "tYAQ4bP-v60",
+      "title": "Μποκέτε Panoramic — Boquete Panama Flyover in 4K | Panamedia PA Aerial Video"
+    }
+  },
+  "bocas-del-toro": {
+    "drone": {
+      "youtubeId": "3UcSul-7PN0",
+      "title": "Μπόκας ντελ Τόρο 4K — Bocas del Toro Panama in 4K"
+    },
+    "secondary": {
+      "youtubeId": "nnwKWkx7ClU",
+      "title": "Μπόκας ντελ Τόρο Panoramic — Bocas Del Toro | PANAMA  [ 4k + DRONE ]"
+    }
+  },
+  "chitre": {
+    "drone": {
+      "youtubeId": "8ff3d-64ECc",
+      "title": "Τσιτρέ 4K — Exploring Chilibre's Lush Nature by Drone 🌳 | Panama 4K Aerial Views"
+    },
+    "secondary": {
+      "youtubeId": "2kpK2OXEt1M",
+      "title": "Τσιτρέ Panoramic — Panama City 4K Drone Tour | Skyline & Marina"
+    }
+  },
+  "santiago-de-veraguas": {
+    "drone": {
+      "youtubeId": "TsGYJm2I4SA",
+      "title": "Σαντιάγο ντε Βεράγουας 4K — Santiago de Veraguas Walking Tour , Panama - 4K UHD - Virtual Trip"
+    },
+    "secondary": {
+      "youtubeId": "2kpK2OXEt1M",
+      "title": "Σαντιάγο ντε Βεράγουας Panoramic — Panama City 4K Drone Tour | Skyline & Marina"
+    }
+  },
+  "las-tablas": {
+    "drone": {
+      "youtubeId": "7Fij-YFYCWo",
+      "title": "Λας Τάμπλας 4K — Los Santos, Panama: Discover The Azuero Peninsula in 4K"
+    },
+    "secondary": {
+      "youtubeId": "0dWvS55CQGE",
+      "title": "Λας Τάμπλας Panoramic — Chitre, Las Tablas & Azuero: Honest Cost Breakdown for Expats 2026"
+    }
+  },
+  "penonome": {
+    "drone": {
+      "youtubeId": "PyMGbgyWPAc",
+      "title": "Πενονομέ 4K — Panama City, Panama | 4K 30fps Drone Footage (DJI Mini 4 • Part 107 Certified)"
+    },
+    "secondary": {
+      "youtubeId": "v2JtJkL179o",
+      "title": "Πενονομέ Panoramic — You Won’t Believe This Place Exists | Panama 4K | Drone Documentary"
+    }
+  },
+  "portobelo": {
+    "drone": {
+      "youtubeId": "fLrKCRsJ0d4",
+      "title": "Πορτομπέλο 4K — Portobelo, Colón : Exploring Panama’s Historic Coastal Town - 4K UHD - Virtual Trip"
+    },
+    "secondary": {
+      "youtubeId": "qOJSjbAJcUg",
+      "title": "Πορτομπέλο Panoramic — Panamá Beach Drone, Colón, Portobelo: The Most beautiful Mangrove forests to crystal clear waters"
     }
   }
   }

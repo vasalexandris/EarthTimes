@@ -4,12 +4,12 @@
  * USA, Leaflet Map, Base Layers, UI Dossier, and Time Machine.
  */
 
-import { loadWorldData, loadCountryData, loadStateData } from './data-service.js?v=20261114_world1';
-import * as MapModule from './map.js?v=20261114_world1';
-import * as UIModule from './ui.js?v=20261114_world1';
-import * as TimeMachine from './time-machine.js?v=20261114_world1';
-import * as NavigatorModule from './navigator.js?v=20261114_world1';
-import { US_STATES, CITY_TO_STATE } from './states-data.js?v=20261114_world1';
+import { loadWorldData, loadCountryData, loadStateData } from './data-service.js?v=20261114_world2';
+import * as MapModule from './map.js?v=20261114_world2';
+import * as UIModule from './ui.js?v=20261114_world2';
+import * as TimeMachine from './time-machine.js?v=20261114_world2';
+import * as NavigatorModule from './navigator.js?v=20261114_world2';
+import { US_STATES, CITY_TO_STATE } from './states-data.js?v=20261114_world2';
 
 // Application State
 let worldData = null;
@@ -499,10 +499,10 @@ export async function flyToCity(cityId) {
       'san-jose': 'costa-rica', 'alajuela': 'costa-rica', 'puerto-limon': 'costa-rica', 'heredia': 'costa-rica', 'cartago': 'costa-rica', 'puntarenas': 'costa-rica', 'liberia': 'costa-rica', 'la-fortuna': 'costa-rica', 'monteverde': 'costa-rica', 'quepos': 'costa-rica',
       'havana': 'cuba', 'santiago-de-cuba': 'cuba', 'trinidad': 'cuba', 'camaguey': 'cuba', 'cienfuegos': 'cuba', 'santa-clara': 'cuba', 'varadero': 'cuba', 'holguin': 'cuba', 'vinales': 'cuba', 'baracoa': 'cuba',
       'roseau': 'dominica',
-      'santo-domingo': 'dominican-republic', 'santiago-de-los-caballeros': 'dominican-republic', 'punta-cana': 'dominican-republic',
+      'santo-domingo': 'dominican-republic', 'santiago-de-los-caballeros': 'dominican-republic', 'punta-cana': 'dominican-republic', 'puerto-plata': 'dominican-republic', 'la-romana': 'dominican-republic', 'las-terrenas': 'dominican-republic', 'samana': 'dominican-republic', 'barahona': 'dominican-republic', 'san-pedro-de-macoris': 'dominican-republic', 'jarabacoa': 'dominican-republic',
       'san-salvador': 'el-salvador', 'santa-ana': 'el-salvador',
       'st-georges': 'grenada',
-      'guatemala-city': 'guatemala', 'antigua-guatemala': 'guatemala',
+      'guatemala-city': 'guatemala', 'antigua-guatemala': 'guatemala', 'quetzaltenango': 'guatemala', 'flores-gt': 'guatemala', 'panajachel': 'guatemala', 'chichicastenango': 'guatemala', 'coban': 'guatemala', 'puerto-barrios': 'guatemala', 'livingston': 'guatemala', 'escuintla': 'guatemala',
       'port-au-prince': 'haiti', 'cap-haitien': 'haiti',
       'basseterre': 'saint-kitts-and-nevis',
       'castries': 'saint-lucia',
@@ -511,7 +511,7 @@ export async function flyToCity(cityId) {
       'tegucigalpa': 'honduras', 'san-pedro-sula': 'honduras',
       'kingston': 'jamaica', 'montego-bay': 'jamaica',
       'managua': 'nicaragua', 'granada-ni': 'nicaragua',
-      'panama-city': 'panama', 'colon': 'panama',
+      'panama-city': 'panama', 'colon': 'panama', 'david': 'panama', 'boquete': 'panama', 'bocas-del-toro': 'panama', 'chitre': 'panama', 'santiago-de-veraguas': 'panama', 'las-tablas': 'panama', 'penonome': 'panama', 'portobelo': 'panama',
       'yerevan': 'armenia', 'gyumri': 'armenia',
       'baku': 'azerbaijan', 'ganja': 'azerbaijan',
       'tbilisi': 'georgia', 'batumi': 'georgia',

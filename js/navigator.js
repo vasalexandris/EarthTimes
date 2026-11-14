@@ -1,4 +1,4 @@
-import { US_STATES, CITY_TO_STATE } from './states-data.js?v=20261114_world1';
+import { US_STATES, CITY_TO_STATE } from './states-data.js?v=20261114_world2';
 /**
  * Navigator Module
  * Hierarchical Cascading Navigation: Continents -> Countries -> Cities
@@ -847,7 +847,14 @@ export const CONTINENTS_DATA = [
         cities: [
           { id: 'santo-domingo', name: 'Σάντο Ντομίνγκο', badge: 'Πρωτεύουσα' },
           { id: 'santiago-de-los-caballeros', name: 'Σαντιάγο ντε λος Καμπαγιέρος' },
-          { id: 'punta-cana', name: 'Πούντα Κάνα', badge: 'Καραϊβική' }
+          { id: 'punta-cana', name: 'Πούντα Κάνα', badge: 'Καραϊβική' },
+          { id: 'puerto-plata', name: 'Πουέρτο Πλάτα' },
+          { id: 'la-romana', name: 'Λα Ρομάνα' },
+          { id: 'las-terrenas', name: 'Λας Τερένας' },
+          { id: 'samana', name: 'Σαμανά' },
+          { id: 'barahona', name: 'Μπαραόνα' },
+          { id: 'san-pedro-de-macoris', name: 'Σαν Πέδρο ντε Μακορίς' },
+          { id: 'jarabacoa', name: 'Χαραμπακόα' }
         ]
       },
       {
@@ -856,7 +863,15 @@ export const CONTINENTS_DATA = [
         flag: '🇬🇹',
         cities: [
           { id: 'guatemala-city', name: 'Γουατεμάλα Σίτι', badge: 'Πρωτεύουσα' },
-          { id: 'antigua-guatemala', name: 'Αντίγουα Γουατεμάλα', badge: 'Αποικιακή' }
+          { id: 'antigua-guatemala', name: 'Αντίγουα Γουατεμάλα', badge: 'Αποικιακή' },
+          { id: 'quetzaltenango', name: 'Κετσαλτενάνγκο' },
+          { id: 'flores-gt', name: 'Φλόρες' },
+          { id: 'panajachel', name: 'Παναχατσέλ' },
+          { id: 'chichicastenango', name: 'Τσιτσικαστενάνγκο' },
+          { id: 'coban', name: 'Κομπάν' },
+          { id: 'puerto-barrios', name: 'Πουέρτο Μπάριος' },
+          { id: 'livingston', name: 'Λίβινγκστον' },
+          { id: 'escuintla', name: 'Εσκουίντλα' }
         ]
       },
       {
@@ -992,7 +1007,15 @@ export const CONTINENTS_DATA = [
         flag: '🇵🇦',
         cities: [
           { id: 'panama-city', name: 'Πόλη του Παναμά', badge: 'Πρωτεύουσα' },
-          { id: 'colon', name: 'Κολόν' }
+          { id: 'colon', name: 'Κολόν' },
+          { id: 'david', name: 'Νταβίντ' },
+          { id: 'boquete', name: 'Μποκέτε' },
+          { id: 'bocas-del-toro', name: 'Μπόκας ντελ Τόρο' },
+          { id: 'chitre', name: 'Τσιτρέ' },
+          { id: 'santiago-de-veraguas', name: 'Σαντιάγο ντε Βεράγουας' },
+          { id: 'las-tablas', name: 'Λας Τάμπλας' },
+          { id: 'penonome', name: 'Πενονομέ' },
+          { id: 'portobelo', name: 'Πορτομπέλο' }
         ]
       }
     ]
