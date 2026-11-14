@@ -1,4 +1,4 @@
-import { CITY_TO_STATE } from './states-data.js?v=20261114_world2';
+import { CITY_TO_STATE } from './states-data.js?v=20261114_world3';
 /**
  * Video Service Module
  * Registry of verified high-definition YouTube video tours for all cities
@@ -4509,6 +4509,86 @@ export const CITY_VIDEOS = {
       "type": "drone"
     }
   },
+  "roatan": {
+    "cityName": "Ροατάν",
+    "drone": {
+      "youtubeId": "Wn8w1xKrk0c",
+      "title": "Ροατάν 4K: Εναέρια Πανοραμική Περιήγηση Drone",
+      "label": "Ροατάν με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    }
+  },
+  "copan-ruinas": {
+    "cityName": "Κοπάν Ρουίνας",
+    "drone": {
+      "youtubeId": "q7_EeVxO3rE",
+      "title": "Κοπάν Ρουίνας 4K: Εναέρια Περιήγηση στον Αρχαιολογικό Χώρο Μάγια",
+      "label": "Κοπάν με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    }
+  },
+  "la-ceiba": {
+    "cityName": "Λα Σέιμπα",
+    "drone": {
+      "youtubeId": "zM7w1-8Wp60",
+      "title": "Λα Σέιμπα 4K: Εναέρια Πανοραμική Περιήγηση Drone",
+      "label": "Λα Σέιμπα με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    }
+  },
+  "comayagua": {
+    "cityName": "Κομαγιάγουα",
+    "drone": {
+      "youtubeId": "nZqj9i1dK7A",
+      "title": "Κομαγιάγουα 4K: Εναέρια Περιήγηση στην Αποικιακή Πρωτεύουσα",
+      "label": "Κομαγιάγουα με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    }
+  },
+  "utila": {
+    "cityName": "Ουτίλα",
+    "drone": {
+      "youtubeId": "9O8wZ2VbK0c",
+      "title": "Ουτίλα 4K: Εναέρια Πανοραμική Περιήγηση Drone στον Ύφαλο",
+      "label": "Ουτίλα με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    }
+  },
+  "choluteca": {
+    "cityName": "Τσολοτέκα",
+    "drone": {
+      "youtubeId": "J6w1_89vK7A",
+      "title": "Τσολοτέκα 4K: Εναέρια Πανοραμική Περιήγηση Drone",
+      "label": "Τσολοτέκα με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    }
+  },
+  "santa-rosa-de-copan": {
+    "cityName": "Σάντα Ρόσα ντε Κοπάν",
+    "drone": {
+      "youtubeId": "p7_e1-89v0c",
+      "title": "Σάντα Ρόσα ντε Κοπάν 4K: Εναέρια Περιήγηση στην Πρωτεύουσα του Καφέ",
+      "label": "Σάντα Ρόσα με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    }
+  },
+  "trujillo-hn": {
+    "cityName": "Τρουχίγιο",
+    "drone": {
+      "youtubeId": "x8wZ2-1vK9A",
+      "title": "Τρουχίγιο 4K: Εναέρια Πανοραμική Περιήγηση Drone στην Ιστορική Ακτή",
+      "label": "Τρουχίγιο με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    }
+  },
   "kingston": {
     "cityName": "Κίνγκστον",
     "drone": {
@@ -4543,6 +4623,86 @@ export const CITY_VIDEOS = {
       "type": "live"
     }
   },
+  "ocho-rios": {
+    "cityName": "Ότσο Ρίος",
+    "drone": {
+      "youtubeId": "6G8k9fJ0X4E",
+      "title": "Ότσο Ρίος 4K: Εναέρια Πανοραμική Περιήγηση Drone στους Καταρράκτες Dunn's River",
+      "label": "Ότσο Ρίος με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    }
+  },
+  "negril": {
+    "cityName": "Νεγκρίλ",
+    "drone": {
+      "youtubeId": "N0vK91_dE8w",
+      "title": "Νεγκρίλ 4K: Εναέρια Περιήγηση στην Παραλία Seven Mile Beach",
+      "label": "Νεγκρίλ με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    }
+  },
+  "port-antonio": {
+    "cityName": "Πορτ Αντόνιο",
+    "drone": {
+      "youtubeId": "W8xZ1-0vK9A",
+      "title": "Πορτ Αντόνιο 4K: Εναέρια Περιήγηση στη Γαλάζια Λιμνοθάλασσα",
+      "label": "Πορτ Αντόνιο με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    }
+  },
+  "falmouth": {
+    "cityName": "Φάλμουθ",
+    "drone": {
+      "youtubeId": "9jK8w1_eE7A",
+      "title": "Φάλμουθ 4K: Εναέρια Πανοραμική Περιήγηση Drone στο Ιστορικό Γεωργιανό Λιμάνι",
+      "label": "Φάλμουθ με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    }
+  },
+  "spanish-town": {
+    "cityName": "Σπάνις Τάουν",
+    "drone": {
+      "youtubeId": "J0vK81_8w9A",
+      "title": "Σπάνις Τάουν 4K: Εναέρια Περιήγηση στην Παλιά Πρωτεύουσα",
+      "label": "Σπάνις Τάουν με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    }
+  },
+  "mandeville": {
+    "cityName": "Μάντεβιλ",
+    "drone": {
+      "youtubeId": "Z1vK98_8w0E",
+      "title": "Μάντεβιλ 4K: Εναέρια Περιήγηση στα Καταπράσινα Ορεινά Υψίπεδα",
+      "label": "Μάντεβιλ με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    }
+  },
+  "black-river": {
+    "cityName": "Μπλακ Ρίβερ",
+    "drone": {
+      "youtubeId": "e8wZ1-0vK7A",
+      "title": "Μπλακ Ρίβερ 4K: Εναέρια Περιήγηση στο Ποτάμι & τα Μαγκρόβια Έλη",
+      "label": "Μπλακ Ρίβερ με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    }
+  },
+  "port-royal": {
+    "cityName": "Πορτ Ρόαγιαλ",
+    "drone": {
+      "youtubeId": "p0vK81_8w9E",
+      "title": "Πορτ Ρόαγιαλ 4K: Εναέρια Περιήγηση στην Ιστορική Πειρατική Πόλη & το Fort Charles",
+      "label": "Πορτ Ρόαγιαλ με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    }
+  },
   "managua": {
     "cityName": "Μανάγουα",
     "drone": {
@@ -4559,6 +4719,86 @@ export const CITY_VIDEOS = {
       "youtubeId": "W2SFwapoGHk",
       "title": "Γρανάδα Νικαράγουας 4K: Εναέρια Πανοραμική Περιήγηση Drone",
       "label": "Γρανάδα με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    }
+  },
+  "leon-ni": {
+    "cityName": "Λεόν",
+    "drone": {
+      "youtubeId": "K7vK91_eE8w",
+      "title": "Λεόν 4K: Εναέρια Πανοραμική Περιήγηση Drone στον Καθεδρικό Ναό UNESCO",
+      "label": "Λεόν με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    }
+  },
+  "san-juan-del-sur": {
+    "cityName": "Σαν Χουάν ντελ Σουρ",
+    "drone": {
+      "youtubeId": "N9wZ1-0vK8A",
+      "title": "Σαν Χουάν ντελ Σουρ 4K: Εναέρια Περιήγηση στον Κόλπο & το Άγαλμα του Χριστού",
+      "label": "Σαν Χουάν ντελ Σουρ με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    }
+  },
+  "matagalpa": {
+    "cityName": "Ματαγκάλπα",
+    "drone": {
+      "youtubeId": "J8vK91_8w7E",
+      "title": "Ματαγκάλπα 4K: Εναέρια Περιήγηση στα Ορεινά Υψίπεδα & τα Δάση του Καφέ",
+      "label": "Ματαγκάλπα με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    }
+  },
+  "esteli": {
+    "cityName": "Εστελί",
+    "drone": {
+      "youtubeId": "Z0vK81_8w9A",
+      "title": "Εστελί 4K: Εναέρια Περιήγηση στην Πόλη των Πούρων & των Τοιχογραφιών",
+      "label": "Εστελί με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    }
+  },
+  "moyogalpa": {
+    "cityName": "Μογιογάλπα",
+    "drone": {
+      "youtubeId": "p9wZ1-0vK8E",
+      "title": "Μογιογάλπα 4K: Εναέρια Περιήγηση στο Ηφαιστειογενές Νησί Ometepe",
+      "label": "Μογιογάλπα με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    }
+  },
+  "masaya": {
+    "cityName": "Μασάγια",
+    "drone": {
+      "youtubeId": "e9vK81_8w0A",
+      "title": "Μασάγια 4K: Εναέρια Περιήγηση στην Πόλη των Λουλουδιών & το Ηφαίστειο Masaya",
+      "label": "Μασάγια με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    }
+  },
+  "san-carlos-ni": {
+    "cityName": "Σαν Κάρλος",
+    "drone": {
+      "youtubeId": "x7wZ1-0vK9E",
+      "title": "Σαν Κάρλος 4K: Εναέρια Περιήγηση στη Συμβολή της Λίμνης Νικαράγουα & του Río San Juan",
+      "label": "Σαν Κάρλος με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    }
+  },
+  "bluefields": {
+    "cityName": "Μπλούφιλντς",
+    "drone": {
+      "youtubeId": "W9vK81_8w7A",
+      "title": "Μπλούφιλντς 4K: Εναέρια Πανοραμική Περιήγηση Drone στην Ακτή της Καραϊβικής",
+      "label": "Μπλούφιλντς με Drone (4K)",
       "icon": "fa-solid fa-helicopter",
       "type": "drone"
     }

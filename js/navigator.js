@@ -1,4 +1,4 @@
-import { US_STATES, CITY_TO_STATE } from './states-data.js?v=20261114_world2';
+import { US_STATES, CITY_TO_STATE } from './states-data.js?v=20261114_world3';
 /**
  * Navigator Module
  * Hierarchical Cascading Navigation: Continents -> Countries -> Cities
@@ -980,7 +980,15 @@ export const CONTINENTS_DATA = [
         flag: '🇭🇳',
         cities: [
           { id: 'tegucigalpa', name: 'Τεγκουσιγκάλπα', badge: 'Πρωτεύουσα' },
-          { id: 'san-pedro-sula', name: 'Σαν Πέδρο Σούλα' }
+          { id: 'san-pedro-sula', name: 'Σαν Πέδρο Σούλα' },
+          { id: 'roatan', name: 'Ροατάν', badge: 'Καραϊβική' },
+          { id: 'copan-ruinas', name: 'Κοπάν Ρουίνας', badge: 'UNESCO' },
+          { id: 'la-ceiba', name: 'Λα Σέιμπα' },
+          { id: 'comayagua', name: 'Κομαγιάγουα', badge: 'Ιστορική' },
+          { id: 'utila', name: 'Ουτίλα', badge: 'Καταδύσεις' },
+          { id: 'choluteca', name: 'Τσολοτέκα' },
+          { id: 'santa-rosa-de-copan', name: 'Σάντα Ρόσα ντε Κοπάν' },
+          { id: 'trujillo-hn', name: 'Τρουχίγιο', badge: 'Ιστορική' }
         ]
       },
       {
@@ -989,7 +997,15 @@ export const CONTINENTS_DATA = [
         flag: '🇯🇲',
         cities: [
           { id: 'kingston', name: 'Κίνγκστον', badge: 'Πρωτεύουσα' },
-          { id: 'montego-bay', name: 'Μοντέγκο Μπέι' }
+          { id: 'montego-bay', name: 'Μοντέγκο Μπέι', badge: 'Καραϊβική' },
+          { id: 'ocho-rios', name: 'Ότσο Ρίος', badge: 'Καταρράκτες' },
+          { id: 'negril', name: 'Νεγκρίλ', badge: 'Παραλία' },
+          { id: 'port-antonio', name: 'Πορτ Αντόνιο', badge: 'Φύση' },
+          { id: 'falmouth', name: 'Φάλμουθ', badge: 'Ιστορική' },
+          { id: 'spanish-town', name: 'Σπάνις Τάουν', badge: 'Ιστορική' },
+          { id: 'mandeville', name: 'Μάντεβιλ' },
+          { id: 'black-river', name: 'Μπλακ Ρίβερ' },
+          { id: 'port-royal', name: 'Πορτ Ρόαγιαλ', badge: 'Ιστορική' }
         ]
       },
       {
@@ -998,7 +1014,15 @@ export const CONTINENTS_DATA = [
         flag: '🇳🇮',
         cities: [
           { id: 'managua', name: 'Μανάγουα', badge: 'Πρωτεύουσα' },
-          { id: 'granada-ni', name: 'Γρανάδα' }
+          { id: 'granada-ni', name: 'Γρανάδα', badge: 'Ιστορική' },
+          { id: 'leon-ni', name: 'Λεόν', badge: 'UNESCO' },
+          { id: 'san-juan-del-sur', name: 'Σαν Χουάν ντελ Σουρ', badge: 'Σέρφινγκ' },
+          { id: 'matagalpa', name: 'Ματαγκάλπα', badge: 'Καφές' },
+          { id: 'esteli', name: 'Εστελί', badge: 'Πούρα' },
+          { id: 'moyogalpa', name: 'Μογιογάλπα', badge: 'Ηφαίστειο' },
+          { id: 'masaya', name: 'Μασάγια', badge: 'Λαογραφία' },
+          { id: 'san-carlos-ni', name: 'Σαν Κάρλος' },
+          { id: 'bluefields', name: 'Μπλούφιλντς', badge: 'Καραϊβική' }
         ]
       },
       {

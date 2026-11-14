@@ -4,12 +4,12 @@
  * USA, Leaflet Map, Base Layers, UI Dossier, and Time Machine.
  */
 
-import { loadWorldData, loadCountryData, loadStateData } from './data-service.js?v=20261114_world2';
-import * as MapModule from './map.js?v=20261114_world2';
-import * as UIModule from './ui.js?v=20261114_world2';
-import * as TimeMachine from './time-machine.js?v=20261114_world2';
-import * as NavigatorModule from './navigator.js?v=20261114_world2';
-import { US_STATES, CITY_TO_STATE } from './states-data.js?v=20261114_world2';
+import { loadWorldData, loadCountryData, loadStateData } from './data-service.js?v=20261114_world3';
+import * as MapModule from './map.js?v=20261114_world3';
+import * as UIModule from './ui.js?v=20261114_world3';
+import * as TimeMachine from './time-machine.js?v=20261114_world3';
+import * as NavigatorModule from './navigator.js?v=20261114_world3';
+import { US_STATES, CITY_TO_STATE } from './states-data.js?v=20261114_world3';
 
 // Application State
 let worldData = null;
@@ -508,9 +508,9 @@ export async function flyToCity(cityId) {
       'castries': 'saint-lucia',
       'kingstown': 'saint-vincent-and-the-grenadines',
       'port-of-spain': 'trinidad-and-tobago', 'san-fernando': 'trinidad-and-tobago',
-      'tegucigalpa': 'honduras', 'san-pedro-sula': 'honduras',
-      'kingston': 'jamaica', 'montego-bay': 'jamaica',
-      'managua': 'nicaragua', 'granada-ni': 'nicaragua',
+      'tegucigalpa': 'honduras', 'san-pedro-sula': 'honduras', 'roatan': 'honduras', 'copan-ruinas': 'honduras', 'la-ceiba': 'honduras', 'comayagua': 'honduras', 'utila': 'honduras', 'choluteca': 'honduras', 'santa-rosa-de-copan': 'honduras', 'trujillo-hn': 'honduras',
+      'kingston': 'jamaica', 'montego-bay': 'jamaica', 'ocho-rios': 'jamaica', 'negril': 'jamaica', 'port-antonio': 'jamaica', 'falmouth': 'jamaica', 'spanish-town': 'jamaica', 'mandeville': 'jamaica', 'black-river': 'jamaica', 'port-royal': 'jamaica',
+      'managua': 'nicaragua', 'granada-ni': 'nicaragua', 'leon-ni': 'nicaragua', 'san-juan-del-sur': 'nicaragua', 'matagalpa': 'nicaragua', 'esteli': 'nicaragua', 'moyogalpa': 'nicaragua', 'masaya': 'nicaragua', 'san-carlos-ni': 'nicaragua', 'bluefields': 'nicaragua',
       'panama-city': 'panama', 'colon': 'panama', 'david': 'panama', 'boquete': 'panama', 'bocas-del-toro': 'panama', 'chitre': 'panama', 'santiago-de-veraguas': 'panama', 'las-tablas': 'panama', 'penonome': 'panama', 'portobelo': 'panama',
       'yerevan': 'armenia', 'gyumri': 'armenia',
       'baku': 'azerbaijan', 'ganja': 'azerbaijan',
