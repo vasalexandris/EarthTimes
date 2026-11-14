@@ -4,12 +4,12 @@
  * USA, Leaflet Map, Base Layers, UI Dossier, and Time Machine.
  */
 
-import { loadWorldData, loadCountryData, loadStateData } from './data-service.js?v=20261114_us5';
-import * as MapModule from './map.js?v=20261114_us5';
-import * as UIModule from './ui.js?v=20261114_us5';
-import * as TimeMachine from './time-machine.js?v=20261114_us5';
-import * as NavigatorModule from './navigator.js?v=20261114_us5';
-import { US_STATES, CITY_TO_STATE } from './states-data.js?v=20261114_us5';
+import { loadWorldData, loadCountryData, loadStateData } from './data-service.js?v=20261114_world1';
+import * as MapModule from './map.js?v=20261114_world1';
+import * as UIModule from './ui.js?v=20261114_world1';
+import * as TimeMachine from './time-machine.js?v=20261114_world1';
+import * as NavigatorModule from './navigator.js?v=20261114_world1';
+import { US_STATES, CITY_TO_STATE } from './states-data.js?v=20261114_world1';
 
 // Application State
 let worldData = null;
@@ -411,7 +411,7 @@ export async function flyToCity(cityId) {
       'luxembourg-city': 'luxembourg',
       'valletta': 'malta', 'mdina': 'malta',
       'ottawa': 'canada', 'toronto': 'canada', 'montreal': 'canada', 'vancouver': 'canada', 'calgary': 'canada', 'edmonton': 'canada', 'quebec-city': 'canada', 'winnipeg': 'canada', 'halifax': 'canada', 'victoria-bc': 'canada',
-      'mexico-city': 'mexico', 'guadalajara': 'mexico', 'monterrey': 'mexico', 'cancun': 'mexico',
+      'mexico-city': 'mexico', 'guadalajara': 'mexico', 'monterrey': 'mexico', 'cancun': 'mexico', 'puebla': 'mexico', 'tijuana': 'mexico', 'merida': 'mexico', 'oaxaca': 'mexico', 'queretaro': 'mexico', 'san-miguel-de-allende': 'mexico',
       'brasilia': 'brazil', 'rio-de-janeiro': 'brazil', 'sao-paulo': 'brazil', 'salvador': 'brazil',
       'buenos-aires': 'argentina', 'cordoba': 'argentina', 'rosario': 'argentina',
       'santiago': 'chile', 'valparaiso': 'chile',
@@ -496,8 +496,8 @@ export async function flyToCity(cityId) {
       'nassau': 'bahamas',
       'bridgetown': 'barbados',
       'belize-city': 'belize', 'san-ignacio': 'belize',
-      'san-jose': 'costa-rica', 'alajuela': 'costa-rica', 'puerto-limon': 'costa-rica',
-      'havana': 'cuba', 'santiago-de-cuba': 'cuba', 'trinidad': 'cuba',
+      'san-jose': 'costa-rica', 'alajuela': 'costa-rica', 'puerto-limon': 'costa-rica', 'heredia': 'costa-rica', 'cartago': 'costa-rica', 'puntarenas': 'costa-rica', 'liberia': 'costa-rica', 'la-fortuna': 'costa-rica', 'monteverde': 'costa-rica', 'quepos': 'costa-rica',
+      'havana': 'cuba', 'santiago-de-cuba': 'cuba', 'trinidad': 'cuba', 'camaguey': 'cuba', 'cienfuegos': 'cuba', 'santa-clara': 'cuba', 'varadero': 'cuba', 'holguin': 'cuba', 'vinales': 'cuba', 'baracoa': 'cuba',
       'roseau': 'dominica',
       'santo-domingo': 'dominican-republic', 'santiago-de-los-caballeros': 'dominican-republic', 'punta-cana': 'dominican-republic',
       'san-salvador': 'el-salvador', 'santa-ana': 'el-salvador',

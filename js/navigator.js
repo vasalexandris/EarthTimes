@@ -1,4 +1,4 @@
-import { US_STATES, CITY_TO_STATE } from './states-data.js?v=20261114_us5';
+import { US_STATES, CITY_TO_STATE } from './states-data.js?v=20261114_world1';
 /**
  * Navigator Module
  * Hierarchical Cascading Navigation: Continents -> Countries -> Cities
@@ -797,7 +797,13 @@ export const CONTINENTS_DATA = [
           { id: 'mexico-city', name: 'Πόλη του Μεξικού', badge: 'Πρωτεύουσα' },
           { id: 'guadalajara', name: 'Γκουανταλαχάρα' },
           { id: 'monterrey', name: 'Μοντερέι' },
-          { id: 'cancun', name: 'Κανκούν' }
+          { id: 'cancun', name: 'Κανκούν' },
+          { id: 'puebla', name: 'Πουέμπλα' },
+          { id: 'tijuana', name: 'Τιχουάνα' },
+          { id: 'merida', name: 'Μέριντα' },
+          { id: 'oaxaca', name: 'Οαχάκα' },
+          { id: 'queretaro', name: 'Κερέταρο' },
+          { id: 'san-miguel-de-allende', name: 'Σαν Μιγκέλ ντε Αγιέντε' }
         ]
       },
       {
@@ -807,7 +813,14 @@ export const CONTINENTS_DATA = [
         cities: [
           { id: 'havana', name: 'Αβάνα', badge: 'Πρωτεύουσα' },
           { id: 'santiago-de-cuba', name: 'Σαντιάγο ντε Κούβα', badge: 'Ιστορική' },
-          { id: 'trinidad', name: 'Τρινιδάδ', badge: 'UNESCO' }
+          { id: 'trinidad', name: 'Τρινιδάδ', badge: 'UNESCO' },
+          { id: 'camaguey', name: 'Καμαγουέι' },
+          { id: 'cienfuegos', name: 'Σιενφουέγος' },
+          { id: 'santa-clara', name: 'Σάντα Κλάρα' },
+          { id: 'varadero', name: 'Βαραδέρο' },
+          { id: 'holguin', name: 'Ολγκίν' },
+          { id: 'vinales', name: 'Βινιάλες' },
+          { id: 'baracoa', name: 'Μπαρακόα' }
         ]
       },
       {
@@ -817,7 +830,14 @@ export const CONTINENTS_DATA = [
         cities: [
           { id: 'san-jose', name: 'Σαν Χοσέ', badge: 'Πρωτεύουσα' },
           { id: 'alajuela', name: 'Αλαχουέλα' },
-          { id: 'puerto-limon', name: 'Πουέρτο Λιμόν' }
+          { id: 'puerto-limon', name: 'Πουέρτο Λιμόν' },
+          { id: 'heredia', name: 'Ερέδια' },
+          { id: 'cartago', name: 'Καρτάγο' },
+          { id: 'puntarenas', name: 'Πουνταρένας' },
+          { id: 'liberia', name: 'Λιμπέρια' },
+          { id: 'la-fortuna', name: 'Λα Φορτούνα' },
+          { id: 'monteverde', name: 'Μοντεβέρδε' },
+          { id: 'quepos', name: 'Κέπος' }
         ]
       },
       {

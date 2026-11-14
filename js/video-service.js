@@ -1,4 +1,4 @@
-import { CITY_TO_STATE } from './states-data.js?v=20261114_us5';
+import { CITY_TO_STATE } from './states-data.js?v=20261114_world1';
 /**
  * Video Service Module
  * Registry of verified high-definition YouTube video tours for all cities
@@ -11121,6 +11121,207 @@ export const CITY_VIDEOS = {
     "secondary": {
       "youtubeId": "N7Ve9je8RzU",
       "title": "Σάουθ Τζόρνταν Panoramic — Daybreak (South Jordan) Is it Still Worth the Hype?"
+    }
+  }
+,
+  "puebla": {
+    "drone": {
+      "youtubeId": "2rltaAPDbrg",
+      "title": "Πουέμπλα 4K — Puebla City In Mexico 🇲🇽 4K |"
+    },
+    "secondary": {
+      "youtubeId": "ZoixSWSsUAU",
+      "title": "Πουέμπλα Panoramic — Puebla, México (4K)"
+    }
+  },
+  "tijuana": {
+    "drone": {
+      "youtubeId": "iaGNcv_kusI",
+      "title": "Τιχουάνα 4K — TIJUANA 2023 🇲🇽 MEXICO 4K ULTRA HD  DRONE FOOTAGE"
+    },
+    "secondary": {
+      "youtubeId": "MBUBf1mKkuI",
+      "title": "Τιχουάνα Panoramic — Tijuana and northern Baja Aerial Video Service"
+    }
+  },
+  "merida": {
+    "drone": {
+      "youtubeId": "_h5SnqZVtD4",
+      "title": "Μέριντα 4K — MERIDA 🇲🇽 Drone Aerial 4K | Mérida Yucatán Mexico Ultra HD Dron"
+    },
+    "secondary": {
+      "youtubeId": "4iYzl3Od_Kw",
+      "title": "Μέριντα Panoramic — Mérida, México (4K)"
+    }
+  },
+  "oaxaca": {
+    "drone": {
+      "youtubeId": "nKJXJxMlvYA",
+      "title": "Οαχάκα 4K — Oaxaca, Mexico - 4K Scenic Aerial Compilation"
+    },
+    "secondary": {
+      "youtubeId": "kmQciqKbRp8",
+      "title": "Οαχάκα Panoramic — OAXACA 🇲🇽 Drone Aerial 4K | Mexico Ultra HD Dron"
+    }
+  },
+  "queretaro": {
+    "drone": {
+      "youtubeId": "A27KpLZuyUM",
+      "title": "Κερέταρο 4K — VISTAS AEREAS EN 4K DE QUERETARO, MEXICO. DRONE TOUR 🇲🇽 2026."
+    },
+    "secondary": {
+      "youtubeId": "YSh7VIz1jnY",
+      "title": "Κερέταρο Panoramic — Querétaro Aerial Views 4K | Stunning Drone Footage | Vistas Aéreas de Querétaro"
+    }
+  },
+  "san-miguel-de-allende": {
+    "drone": {
+      "youtubeId": "3fnfvMrs1mM",
+      "title": "Σαν Μιγκέλ ντε Αγιέντε 4K — San Miguel de Allende Mexico Mx | Cinematic Drone Views 4K"
+    },
+    "secondary": {
+      "youtubeId": "PKtfpypMinU",
+      "title": "Σαν Μιγκέλ ντε Αγιέντε Panoramic — San Miguel de Allende 4K Drone, Guanajuato, México #sanmigueldeallende  #dji #djiair2s"
+    }
+  },
+  "camaguey": {
+    "drone": {
+      "youtubeId": "0Xab9_b6wfo",
+      "title": "Καμαγουέι 4K — Exploring the Historic Centre of Camagüey, Cuba"
+    },
+    "secondary": {
+      "youtubeId": "rSj-iX7UaE4",
+      "title": "Καμαγουέι Panoramic — Top things to do in Camaguey, Cuba"
+    }
+  },
+  "cienfuegos": {
+    "drone": {
+      "youtubeId": "MMLIsZkYnKE",
+      "title": "Σιενφουέγος 4K — Cienfuegos, Cuba en auto | Recorrido 4K – Parte 1"
+    },
+    "secondary": {
+      "youtubeId": "takAduTV6hA",
+      "title": "Σιενφουέγος Panoramic — Cienfuegos, Cuba  [Amazing Places 4K]"
+    }
+  },
+  "santa-clara": {
+    "drone": {
+      "youtubeId": "qlgHmU5cf2w",
+      "title": "Σάντα Κλάρα 4K — SANTA CLARA CUBA - Vincenzo Troisio"
+    },
+    "secondary": {
+      "youtubeId": "ozuRDfuUgD8",
+      "title": "Σάντα Κλάρα Panoramic — Cuba 4K Ultra HD • Stunning Footage Cuba | Relaxation Film With Calming Music | 4k Videos"
+    }
+  },
+  "varadero": {
+    "drone": {
+      "youtubeId": "RRY9RnKhVN4",
+      "title": "Βαραδέρο 4K — Varadero Beach Cuba 4K"
+    },
+    "secondary": {
+      "youtubeId": "qaWfwTrr2GE",
+      "title": "Βαραδέρο Panoramic — THE BEST PLACES TO VISIT VARADERO - CUBA - 4K Varadero Travel Guide"
+    }
+  },
+  "holguin": {
+    "drone": {
+      "youtubeId": "V6yML4ypzvE",
+      "title": "Ολγκίν 4K — (4K) Holguin, Cuba 2015"
+    },
+    "secondary": {
+      "youtubeId": "H0kfnBLVMQg",
+      "title": "Ολγκίν Panoramic — Holguìn, Cuba 2025"
+    }
+  },
+  "vinales": {
+    "drone": {
+      "youtubeId": "BMp5CwzAcpE",
+      "title": "Βινιάλες 4K — VIÑALES | CUBA | 4K"
+    },
+    "secondary": {
+      "youtubeId": "5kHg8-uJBjo",
+      "title": "Βινιάλες Panoramic — The Real Viñales | A Day in Cuba’s Green Heart"
+    }
+  },
+  "baracoa": {
+    "drone": {
+      "youtubeId": "YsDrkuxyEJU",
+      "title": "Μπαρακόα 4K — Baracoa Cuba Best Tour Drone views 2016 Drone in Cuba before Irma."
+    },
+    "secondary": {
+      "youtubeId": "AIS7LfeZZBQ",
+      "title": "Μπαρακόα Panoramic — Baracoa, Guantanamo, Cuba antes del Huracan Matthew. 4K video."
+    }
+  },
+  "heredia": {
+    "drone": {
+      "youtubeId": "AOcVZrqPCUg",
+      "title": "Ερέδια 4K — COSTA RICA HEREDIA Historic Center in Drone 4K"
+    },
+    "secondary": {
+      "youtubeId": "WUBaoFxCJpo",
+      "title": "Ερέδια Panoramic — Heredia, Costa Rica 🇨🇷 #drone #costarica"
+    }
+  },
+  "cartago": {
+    "drone": {
+      "youtubeId": "BAl1-P1353M",
+      "title": "Καρτάγο 4K — Cartago, Costa Rica (4K)"
+    },
+    "secondary": {
+      "youtubeId": "Mjiy83UO9bc",
+      "title": "Καρτάγο Panoramic — 🇨🇷 COSTA RICA - Basilica Nuesta Señora de los Angeles CARTAGO in Drone 4K ✝"
+    }
+  },
+  "puntarenas": {
+    "drone": {
+      "youtubeId": "qgJAIRzN-zE",
+      "title": "Πουνταρένας 4K — PUNTARENAS, COSTA RICA 🇨🇷: Stunning 4K Drone Tour over Paseo de Los Turistas! 🌴🌊"
+    },
+    "secondary": {
+      "youtubeId": "2rHrFPI9jAs",
+      "title": "Πουνταρένας Panoramic — Puntarenas, Costa Rica (4K)"
+    }
+  },
+  "liberia": {
+    "drone": {
+      "youtubeId": "pXmCC5CWRMc",
+      "title": "Λιμπέρια 4K — Bagaces, Guanacaste, Costa Rica by Drone (4K)"
+    },
+    "secondary": {
+      "youtubeId": "-FuG-Bl1v7M",
+      "title": "Λιμπέρια Panoramic — Let's explore the City of Liberia, Guanacaste, Costa Rica 🇨🇷 "
+    }
+  },
+  "la-fortuna": {
+    "drone": {
+      "youtubeId": "Ysnf0faV3Ls",
+      "title": "Λα Φορτούνα 4K — La Fortuna : Aerial Drone Footage of Costa Rica's Natural Paradise"
+    },
+    "secondary": {
+      "youtubeId": "kKJhFPXctp8",
+      "title": "Λα Φορτούνα Panoramic — Costa Rica, Arenal La Fortuna - 4k Aerial Drone Video"
+    }
+  },
+  "monteverde": {
+    "drone": {
+      "youtubeId": "F68GWUNCsW8",
+      "title": "Μοντεβέρδε 4K — Costa Rica's Monteverde Cloud Forest Sits Above the Clouds Permanently #Shorts"
+    },
+    "secondary": {
+      "youtubeId": "46a-lb8Tkhk",
+      "title": "Μοντεβέρδε Panoramic — ⭐ Costa Rica Monteverde cloud forest Is Even More Stunning Than You Think"
+    }
+  },
+  "quepos": {
+    "drone": {
+      "youtubeId": "H7EZIu00VKQ",
+      "title": "Κέπος 4K — Manuel Antonio, Quepos, Costa Rica (4K)"
+    },
+    "secondary": {
+      "youtubeId": "KGGldSG7vwE",
+      "title": "Κέπος Panoramic — Manuel Antonio, Costa Rica aerial view 4k"
     }
   }
   }
