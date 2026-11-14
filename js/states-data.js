@@ -21,6 +21,51 @@ export const US_STATES = [
         "name": "Μπόισι",
         "englishName": "Boise",
         "badge": "Πρωτεύουσα"
+      },
+      {
+        "id": "meridian-id",
+        "name": "Μερίντιαν",
+        "englishName": "Meridian"
+      },
+      {
+        "id": "nampa",
+        "name": "Νάμπα",
+        "englishName": "Nampa"
+      },
+      {
+        "id": "idaho-falls",
+        "name": "Άινταχο Φολς",
+        "englishName": "Idaho Falls"
+      },
+      {
+        "id": "coeur-d-alene",
+        "name": "Κερ ντ' Αλέν",
+        "englishName": "Coeur d'Alene"
+      },
+      {
+        "id": "pocatello",
+        "name": "Ποκατέλο",
+        "englishName": "Pocatello"
+      },
+      {
+        "id": "twin-falls",
+        "name": "Τουίν Φολς",
+        "englishName": "Twin Falls"
+      },
+      {
+        "id": "sun-valley",
+        "name": "Σαν Βάλεϊ",
+        "englishName": "Sun Valley"
+      },
+      {
+        "id": "moscow-id",
+        "name": "Μόσκοου",
+        "englishName": "Moscow"
+      },
+      {
+        "id": "lewiston-id",
+        "name": "Λιούιστον",
+        "englishName": "Lewiston"
       }
     ]
   },
@@ -1576,6 +1621,41 @@ export const US_STATES = [
         "id": "bozeman",
         "name": "Μποζμαν",
         "englishName": "Bozeman"
+      },
+      {
+        "id": "missoula",
+        "name": "Μισούλα",
+        "englishName": "Missoula"
+      },
+      {
+        "id": "great-falls",
+        "name": "Γκρέιτ Φολς",
+        "englishName": "Great Falls"
+      },
+      {
+        "id": "kalispell",
+        "name": "Κάλισπελ",
+        "englishName": "Kalispell"
+      },
+      {
+        "id": "butte",
+        "name": "Μπιούτ",
+        "englishName": "Butte"
+      },
+      {
+        "id": "whitefish",
+        "name": "Γουάιτφις",
+        "englishName": "Whitefish"
+      },
+      {
+        "id": "miles-city",
+        "name": "Μάιλς Σίτι",
+        "englishName": "Miles City"
+      },
+      {
+        "id": "livingston-mt",
+        "name": "Λίβινγκστον",
+        "englishName": "Livingston"
       }
     ]
   },
@@ -2264,6 +2344,46 @@ export const US_STATES = [
         "id": "jackson-wy",
         "name": "Τζάκσον",
         "englishName": "Jackson"
+      },
+      {
+        "id": "casper",
+        "name": "Κάσπερ",
+        "englishName": "Casper"
+      },
+      {
+        "id": "laramie",
+        "name": "Λάραμι",
+        "englishName": "Laramie"
+      },
+      {
+        "id": "cody",
+        "name": "Κόντι",
+        "englishName": "Cody"
+      },
+      {
+        "id": "rock-springs",
+        "name": "Ροκ Σπρινγκς",
+        "englishName": "Rock Springs"
+      },
+      {
+        "id": "sheridan-wy",
+        "name": "Σέρινταν",
+        "englishName": "Sheridan"
+      },
+      {
+        "id": "gillette",
+        "name": "Τζιλέτ",
+        "englishName": "Gillette"
+      },
+      {
+        "id": "evanston-wy",
+        "name": "Έβανστον",
+        "englishName": "Evanston"
+      },
+      {
+        "id": "lander",
+        "name": "Λάντερ",
+        "englishName": "Lander"
       }
     ]
   },
@@ -3335,5 +3455,29 @@ export const CITY_TO_STATE = {
   "everett": "washington-state",
   "kent-wa": "washington-state",
   "yakima": "washington-state",
-  "bellingham": "washington-state"
+  "bellingham": "washington-state",
+  "meridian-id": "idaho",
+  "nampa": "idaho",
+  "idaho-falls": "idaho",
+  "coeur-d-alene": "idaho",
+  "pocatello": "idaho",
+  "twin-falls": "idaho",
+  "sun-valley": "idaho",
+  "moscow-id": "idaho",
+  "lewiston-id": "idaho",
+  "missoula": "montana",
+  "great-falls": "montana",
+  "kalispell": "montana",
+  "butte": "montana",
+  "whitefish": "montana",
+  "miles-city": "montana",
+  "livingston-mt": "montana",
+  "casper": "wyoming",
+  "laramie": "wyoming",
+  "cody": "wyoming",
+  "rock-springs": "wyoming",
+  "sheridan-wy": "wyoming",
+  "gillette": "wyoming",
+  "evanston-wy": "wyoming",
+  "lander": "wyoming"
 };

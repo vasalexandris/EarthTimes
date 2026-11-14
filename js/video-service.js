@@ -11795,6 +11795,309 @@ export const CITY_VIDEOS = {
       "title": "Πορτομπέλο Panoramic — Panamá Beach Drone, Colón, Portobelo: The Most beautiful Mangrove forests to crystal clear waters"
     }
   }
+,
+  "boise": {
+    "drone": {
+      "youtubeId": "BNsrs7W7RTs",
+      "title": "Μπόισι 4K — Boise, Idaho | 4K Drone Footage"
+    },
+    "secondary": {
+      "youtubeId": "SyFtEElNboY",
+      "title": "Μπόισι Panoramic — Boise, Idaho, USA in 8K drone"
+    }
+  },
+  "meridian-id": {
+    "drone": {
+      "youtubeId": "BxSFM-HCwCk",
+      "title": "Μεριντιάν (ID) 4K — Drone Meridian, Idaho"
+    },
+    "secondary": {
+      "youtubeId": "pE_UZckS7X0",
+      "title": "Μεριντιάν (ID) Panoramic — MERIDIAN IDAHO Aerial Tour: Fascinating Views!"
+    }
+  },
+  "nampa": {
+    "drone": {
+      "youtubeId": "Qr2mQHA8zn0",
+      "title": "Νάμπα 4K — Drone shot of Nampa, Idaho from the sky"
+    },
+    "secondary": {
+      "youtubeId": "Z7rp184CuDM",
+      "title": "Νάμπα Panoramic — A Year of Droning Through Idaho - 4K Drone Footage"
+    }
+  },
+  "idaho-falls": {
+    "drone": {
+      "youtubeId": "hNSOwKlKS38",
+      "title": "Άινταχο Φολς 4K — 2024 Idaho Falls Drone Footage"
+    },
+    "secondary": {
+      "youtubeId": "Kd4MY3tZZHQ",
+      "title": "Άινταχο Φολς Panoramic — Idaho Falls, Idaho 2026 | Best Drone Footage & Scenic Locations | 4K Aerial Tour"
+    }
+  },
+  "coeur-d-alene": {
+    "drone": {
+      "youtubeId": "-JJ6pgaKVBU",
+      "title": "Κερ ντ' Αλέν 4K — Immersive 4K Drone Flight: Lake Coeur d'Alene from Above!"
+    },
+    "secondary": {
+      "youtubeId": "Uvr7Sigx-EM",
+      "title": "Κερ ντ' Αλέν Panoramic — Drone Coeur dAlene, Idaho"
+    }
+  },
+  "pocatello": {
+    "drone": {
+      "youtubeId": "HY5_4ddFtdM",
+      "title": "Ποκατέλο 4K — POCATELLO, IDAHO. (4K-Cinematic)Drone Video, DJI Mini 2"
+    },
+    "secondary": {
+      "youtubeId": "qoW_CyleZEM",
+      "title": "Ποκατέλο Panoramic — Pocatello: Views from Above (4k Drone)"
+    }
+  },
+  "twin-falls": {
+    "drone": {
+      "youtubeId": "f6TH1mdF-_o",
+      "title": "Τουίν Φολς 4K — Drone SHOSHONE FALLS, IDAHO- Earth From Above 4k"
+    },
+    "secondary": {
+      "youtubeId": "F0-83h9cd7s",
+      "title": "Τουίν Φολς Panoramic — Drone Twin Falls, Idaho"
+    }
+  },
+  "sun-valley": {
+    "drone": {
+      "youtubeId": "hWaTyRpAXEw",
+      "title": "Σαν Βάλεϊ 4K — Ketchum/Sun Valley/Elkhorn aerial tour"
+    },
+    "secondary": {
+      "youtubeId": "ufFHrSA82XM",
+      "title": "Σαν Βάλεϊ Panoramic — Ketchum, Idaho | Cinematic Drone"
+    }
+  },
+  "moscow-id": {
+    "drone": {
+      "youtubeId": "a5u0WLwDEXQ",
+      "title": "Μόσκοου (ID) 4K — Captivating University of Idaho Campus from Above | Breathtaking Drone Footage"
+    },
+    "secondary": {
+      "youtubeId": "3Eh0Xbnv9b4",
+      "title": "Μόσκοου (ID) Panoramic — University of Idaho | 8K Campus Drone Tour"
+    }
+  },
+  "lewiston-id": {
+    "drone": {
+      "youtubeId": "Uw9I6dZqH-E",
+      "title": "Λιούιστον (ID) 4K — Visit Idaho Presents: The Snake River | The 3100™"
+    },
+    "secondary": {
+      "youtubeId": "IQ-w8aI4Npo",
+      "title": "Λιούιστον (ID) Panoramic — Lewiston Idaho *drone fottage*"
+    }
+  },
+  "helena": {
+    "drone": {
+      "youtubeId": "gQXAORKqxhA",
+      "title": "Χέλενα 4K — Montana Drone Company - Helena Montana Property Showcases"
+    },
+    "secondary": {
+      "youtubeId": "2ZmwFS_adlk",
+      "title": "Χέλενα Panoramic — Flying toward Helena, MT"
+    }
+  },
+  "billings": {
+    "drone": {
+      "youtubeId": "p2IcJMPSHSQ",
+      "title": "Μπίλινγκς 4K — Billings, Montana by Drone Pt.1"
+    },
+    "secondary": {
+      "youtubeId": "n4jiuIQPSv0",
+      "title": "Μπίλινγκς Panoramic — Breathtaking Aerial Tour of Billings, MT | Chris Young's Young Love & Saturday Nights"
+    }
+  },
+  "bozeman": {
+    "drone": {
+      "youtubeId": "fsE7I4IIv3Y",
+      "title": "Μπόουζμαν 4K — Bozeman Montana 4K  | Cinematic Drone Footage of Big Sky Country"
+    },
+    "secondary": {
+      "youtubeId": "KjdcBhvIoVk",
+      "title": "Μπόουζμαν Panoramic — MONTANA 4k Aerial Footage | Downtown Bozeman | 5,000$ Drone"
+    }
+  },
+  "missoula": {
+    "drone": {
+      "youtubeId": "ujU-R7_N5LE",
+      "title": "Μισούλα 4K — Missoula Tour by Drone [4K]"
+    },
+    "secondary": {
+      "youtubeId": "ImDTsK5Zktg",
+      "title": "Μισούλα Panoramic — Missoula Montana from Above | Downtown & Mountain Views"
+    }
+  },
+  "great-falls": {
+    "drone": {
+      "youtubeId": "4qrLbb0uQTA",
+      "title": "Γκρέιτ Φολς 4K — Great Falls - Montana: The Great Tour"
+    },
+    "secondary": {
+      "youtubeId": "seGQAemNexY",
+      "title": "Γκρέιτ Φολς Panoramic — Drone View Of Great Falls City, Montana (MT), USA"
+    }
+  },
+  "kalispell": {
+    "drone": {
+      "youtubeId": "7HSH4Xbj5Qw",
+      "title": "Κάλισπελ 4K — Kidsport Complex, Kalispell MONTANA / 4k 60fps Drone Footage"
+    },
+    "secondary": {
+      "youtubeId": "5IWrLR-Vmao",
+      "title": "Κάλισπελ Panoramic — Downtown Kalispell, MONTANA / 4K 60fps Drone Footage"
+    }
+  },
+  "butte": {
+    "drone": {
+      "youtubeId": "6eUBAdlVZXI",
+      "title": "Μπιούτ 4K — Butte - Montana: The Great Tour - Season 2"
+    },
+    "secondary": {
+      "youtubeId": "sWcynNq0W7w",
+      "title": "Μπιούτ Panoramic — Butte Montana aerial views"
+    }
+  },
+  "whitefish": {
+    "drone": {
+      "youtubeId": "c8kufpG4NUM",
+      "title": "Γουάιτφις 4K — Drone Tour | Whitefish Mountain Resort, Montana"
+    },
+    "live": {
+      "youtubeId": "AspLvGaVG-4",
+      "label": "Whitefish / Essex MT Railcam",
+      "title": "Γουάιτφις Live Railcam — Montana BNSF Live Trains"
+    }
+  },
+  "miles-city": {
+    "drone": {
+      "youtubeId": "ewlQ8eiBYzA",
+      "title": "Μάιλς Σίτι 4K — Miles City,  MT   One of the Most Affordable Places to live in Montana"
+    },
+    "secondary": {
+      "youtubeId": "TCK2KWpdpkU",
+      "title": "Μάιλς Σίτι Panoramic — Miles City, Montana from the sky - June 2015"
+    }
+  },
+  "livingston-mt": {
+    "drone": {
+      "youtubeId": "MQIUZyVrrGQ",
+      "title": "Λίβινγκστον (MT) 4K — Spring day in Montana, Yellowstone River 4k Drone Footage by Shaun Johnson Licensed Part 107 Pilot"
+    },
+    "secondary": {
+      "youtubeId": "fvrKs2QfUQo",
+      "title": "Λίβινγκστον (MT) Panoramic — Aerial Video for Live Water Property on the Yellowstone River | Livingston, Montana"
+    }
+  },
+  "cheyenne": {
+    "drone": {
+      "youtubeId": "4ER-T4BhJNg",
+      "title": "Σαγιέν 4K — Cheyenne, Wyoming Capital | 4K drone footage"
+    },
+    "secondary": {
+      "youtubeId": "5JZgq0iAz_Q",
+      "title": "Σαγιέν Panoramic — Cheyenne, Wyoming from Above: Capitol Building & Downtown Drone Tour"
+    }
+  },
+  "jackson-wy": {
+    "drone": {
+      "youtubeId": "FAzf5DtqOes",
+      "title": "Τζάκσον (WY) 4K — Wyoming 4K Relaxation Film | Grand Teton National Park | Yellowstone with Ambient Music"
+    },
+    "live": {
+      "youtubeId": "1EiC9bvVGnk",
+      "label": "Jackson Hole Live Cam",
+      "title": "Τζάκσον Live Cam — Jackson Hole Town Square Live 24/7"
+    }
+  },
+  "casper": {
+    "drone": {
+      "youtubeId": "bHOSuxFQx8c",
+      "title": "Κάσπερ 4K — Casper Wyoming Quick 4K Drone and Ground Video Tour"
+    },
+    "secondary": {
+      "youtubeId": "SYXMj5yBNj4",
+      "title": "Κάσπερ Panoramic — 🌸 Springtime in Casper, Wyoming | Drone footage South of Wyoming Blvd"
+    }
+  },
+  "laramie": {
+    "drone": {
+      "youtubeId": "cUKX3ENpmwU",
+      "title": "Λάραμι 4K — Laramie Wyoming - DJI Mavic Mini (1080p)"
+    },
+    "secondary": {
+      "youtubeId": "-qVELO7TBPg",
+      "title": "Λάραμι Panoramic — Laramie, Wyoming (Drone)"
+    }
+  },
+  "cody": {
+    "drone": {
+      "youtubeId": "CWVtPylH0ws",
+      "title": "Κόντι 4K — Wonderful Wyoming #drone  #nature  #nofilter"
+    },
+    "secondary": {
+      "youtubeId": "eaYGbzPUSkg",
+      "title": "Κόντι Panoramic — Cody, Wyoming: Best Small Town in the West"
+    }
+  },
+  "rock-springs": {
+    "drone": {
+      "youtubeId": "RJeaBUDX7N4",
+      "title": "Ροκ Σπρινγκς 4K — Drone Rock Springs, Wyoming"
+    },
+    "secondary": {
+      "youtubeId": "1b28za2MNwU",
+      "title": "Ροκ Σπρινγκς Panoramic — Rock Springs, Wyoming! Drive with me in Wyoming!"
+    }
+  },
+  "sheridan-wy": {
+    "drone": {
+      "youtubeId": "Bj-FBMqGvlc",
+      "title": "Σέρινταν (WY) 4K — Flying Over the Bighorn Mountains"
+    },
+    "secondary": {
+      "youtubeId": "m1Wen_Uc63I",
+      "title": "Σέρινταν (WY) Panoramic — Sheridan Wyoming Area - Drone"
+    }
+  },
+  "gillette": {
+    "drone": {
+      "youtubeId": "hgJP4SO3BAM",
+      "title": "Ζιλέτ 4K — Drone Gillette, Wyoming"
+    },
+    "secondary": {
+      "youtubeId": "M29pzLVo3Xw",
+      "title": "Ζιλέτ Panoramic — Gillette - Wyoming - 4K Downtown Drive"
+    }
+  },
+  "evanston-wy": {
+    "drone": {
+      "youtubeId": "U4QK7mm0EIQ",
+      "title": "Έβανστον (WY) 4K — Evanston Wyoming Aerial View"
+    },
+    "secondary": {
+      "youtubeId": "l-AebUjiIOI",
+      "title": "Έβανστον (WY) Panoramic — Evanston, Wyoming! Drive with me through a Wyoming Town!"
+    }
+  },
+  "lander": {
+    "drone": {
+      "youtubeId": "yHLRdbDLeZU",
+      "title": "Λάντερ 4K — Sinks Canyon Wyoming | Cinematic Reel [4K Drone Footage]"
+    },
+    "secondary": {
+      "youtubeId": "-TSKEBQNOzA",
+      "title": "Λάντερ Panoramic — Discover Sinks Canyon State Park & Popo Agie Falls from Above | Wyoming Beauty"
+    }
+  }
   }
 };
 
