@@ -4,12 +4,12 @@
  * USA, Leaflet Map, Base Layers, UI Dossier, and Time Machine.
  */
 
-import { loadWorldData, loadCountryData, loadStateData } from './data-service.js?v=20261114_world7';
-import * as MapModule from './map.js?v=20261114_world7';
-import * as UIModule from './ui.js?v=20261114_world7';
-import * as TimeMachine from './time-machine.js?v=20261114_world7';
-import * as NavigatorModule from './navigator.js?v=20261114_world7';
-import { US_STATES, CITY_TO_STATE } from './states-data.js?v=20261114_world7';
+import { loadWorldData, loadCountryData, loadStateData } from './data-service.js?v=20261114_world8';
+import * as MapModule from './map.js?v=20261114_world8';
+import * as UIModule from './ui.js?v=20261114_world8';
+import * as TimeMachine from './time-machine.js?v=20261114_world8';
+import * as NavigatorModule from './navigator.js?v=20261114_world8';
+import { US_STATES, CITY_TO_STATE } from './states-data.js?v=20261114_world8';
 
 // Application State
 let worldData = null;
@@ -576,7 +576,7 @@ export async function flyToCity(cityId) {
       // trinidad-and-tobago
       'port-of-spain': 'trinidad-and-tobago', 'san-fernando': 'trinidad-and-tobago', 'chaguanas': 'trinidad-and-tobago', 'arima': 'trinidad-and-tobago', 'point-fortin': 'trinidad-and-tobago', 'scarborough-tt': 'trinidad-and-tobago', 'crown-point': 'trinidad-and-tobago', 'couva': 'trinidad-and-tobago', 'diego-martin': 'trinidad-and-tobago', 'marabella': 'trinidad-and-tobago',
       // barbados
-      'bridgetown': 'barbados', 'speightstown': 'barbados', 'holetown': 'barbados', 'oistins': 'barbados', 'bathsheba': 'barbados', 'st-lawrence-gap': 'barbados', 'warrens': 'barbados', 'the-crane': 'barbados', 'six-cross-roads': 'barbados', 'chalky-mount': 'barbados'
+      'bridgetown': 'barbados', 'speightstown': 'barbados', 'holetown': 'barbados', 'oistins': 'barbados', 'bathsheba': 'barbados', 'st-lawrence-gap': 'barbados', 'warrens': 'barbados', 'the-crane': 'barbados', 'six-cross-roads': 'barbados', 'chalky-mount': 'barbados',
   
   'cochabamba': 'bolivia',
   'potosi': 'bolivia',
