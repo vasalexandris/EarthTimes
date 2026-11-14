@@ -9,7 +9,7 @@
  *    blending seamlessly in real time according to the astronomical Subsolar point!
  */
 
-import { calculateSubsolarPoint } from './solar-terminator.js?v=20261114_world12';
+import { calculateSubsolarPoint } from './solar-terminator.js?v=20261114_world13';
 
 let globeInstance = null;
 let currentProjection = '2d'; // '2d' | '3d'
@@ -425,13 +425,16 @@ export function setProjectionMode(mode) {
     if (view3dBtn) {
       view3dBtn.className = 'px-2.5 py-1 rounded-md text-xs font-bold transition flex items-center gap-1.5 bg-sky-600 text-white shadow cursor-pointer';
     }
+
+    if (window.updateWidgetButtonUI) {
+      window.updateWidgetButtonUI();
+    }
   } else {
     // Stop 3D simulation if running
     stopGlobeSimulation();
 
     // Show 2D Leaflet Map
     if (mapEl) mapEl.classList.remove('hidden');
-    if (dayNightWidget) dayNightWidget.classList.remove('hidden');
 
     // Hide 3D Globe
     if (globeContainer) globeContainer.classList.add('hidden');
@@ -445,9 +448,16 @@ export function setProjectionMode(mode) {
       view3dBtn.className = 'px-2.5 py-1 rounded-md text-xs font-bold transition flex items-center gap-1.5 text-slate-400 hover:text-slate-200 cursor-pointer';
     }
 
-    // Refresh Leaflet map layout
+    if (window.updateWidgetButtonUI) {
+      window.updateWidgetButtonUI();
+    }
+
+    // Refresh Leaflet map layout and clip path
     if (window.invalidateMapSize) {
       window.invalidateMapSize();
+    }
+    if (window.refreshDayNight) {
+      window.refreshDayNight();
     }
   }
 

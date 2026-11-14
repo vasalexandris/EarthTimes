@@ -2,9 +2,17 @@
  * Solar Terminator Module (Ημέρα & Νύχτα σε Πραγματικό Χρόνο)
  * Calculates the real-time subsolar point, night hemisphere shadow polygon,
  * and celestial markers (Sun Zenith & Midnight Moon) across planet Earth.
+ *
+ * Supports:
+ * 1. 2D Flat Map Composite Day & Night:
+ *    Clips the NASA City Lights tile layer dynamically to the night hemisphere
+ *    over the active base layer (Topo/Relief, Satellite, etc.).
+ * 2. Real-time Sun tracking & 24h fast simulation.
+ * 3. Synchronization with 3D Globe shader.
  */
 
 let mapInstance = null;
+let nightTileLayer = null;
 let nightPolygon = null;
 let sunMarker = null;
 let moonMarker = null;
@@ -13,6 +21,7 @@ let isSimulating = false;
 let simulationInterval = null;
 let simulatedDate = null;
 let liveInterval = null;
+let currentTermData = null;
 
 // Approximate geographical region of coordinates
 function getGeographicalRegion(lat, lon) {
@@ -86,12 +95,14 @@ export function calculateTerminatorPolygon(dt = new Date(), steps = 180) {
     const lon = -180.0 + (360.0 / steps) * i;
     const lonDiff = ((lon - lonSun) * Math.PI) / 180.0;
     const tanLat = -Math.cos(lonDiff) / tanDec;
-    const lat = (Math.atan(tanLat) * 180.0) / Math.PI;
+    let lat = (Math.atan(tanLat) * 180.0) / Math.PI;
+    // Keep within Web Mercator bounds
+    lat = Math.max(-85.0, Math.min(85.0, lat));
     coords.push([Number(lat.toFixed(4)), Number(lon.toFixed(4))]);
   }
 
-  // Close polygon around the pole that is experiencing polar night
-  const darkPoleLat = dec >= 0 ? -90.0 : 90.0;
+  // Close polygon around the pole experiencing polar night (+/-85.0 for Web Mercator)
+  const darkPoleLat = dec >= 0 ? -85.0 : 85.0;
   coords.push([darkPoleLat, 180.0]);
   coords.push([darkPoleLat, -180.0]);
 
@@ -106,13 +117,45 @@ export function calculateTerminatorPolygon(dt = new Date(), steps = 180) {
 }
 
 /**
+ * Updates the CSS clip-path on the night lights tile pane so NASA City Lights
+ * are ONLY visible on the night side of the flat map.
+ */
+function updateNightClipPath(termData) {
+  if (!mapInstance || !nightTileLayer || !isEnabled) return;
+  const pane = mapInstance.getPane('nightLightsPane');
+  if (!pane || !termData || !termData.coords) return;
+
+  try {
+    const coords = termData.coords;
+    const pts = coords.map(c => {
+      const pt = mapInstance.latLngToLayerPoint(c);
+      return `${Math.round(pt.x)}px ${Math.round(pt.y)}px`;
+    });
+
+    const clipVal = `polygon(${pts.join(', ')})`;
+    pane.style.clipPath = clipVal;
+    pane.style.webkitClipPath = clipVal;
+  } catch (err) {
+    console.warn('[Terminator] updateNightClipPath warning:', err);
+  }
+}
+
+/**
  * Initializes the Day / Night Terminator layer on the Leaflet map.
  */
 export function initDayNight(map) {
   mapInstance = map;
   if (!mapInstance || !window.L) return;
 
-  // Custom Sun DivIcon
+  // 1. Create a dedicated pane for clipped NASA City Lights
+  let nightPane = mapInstance.getPane('nightLightsPane');
+  if (!nightPane) {
+    nightPane = mapInstance.createPane('nightLightsPane');
+    nightPane.style.zIndex = 220; // Above base layer (200), below overlays (400)
+    nightPane.style.pointerEvents = 'none'; // Clicks pass through to base map & pins
+  }
+
+  // 2. Custom Sun DivIcon
   const sunIcon = L.divIcon({
     className: 'solar-sun-icon',
     html: `
@@ -127,7 +170,7 @@ export function initDayNight(map) {
     iconAnchor: [16, 16]
   });
 
-  // Custom Moon DivIcon
+  // 3. Custom Moon DivIcon
   const moonIcon = L.divIcon({
     className: 'solar-moon-icon',
     html: `
@@ -142,35 +185,62 @@ export function initDayNight(map) {
     iconAnchor: [14, 14]
   });
 
-  const termData = calculateTerminatorPolygon();
+  currentTermData = calculateTerminatorPolygon();
 
-  // Create Leaflet Layers
-  nightPolygon = L.polygon(termData.coords, {
+  // 4. NASA City Lights Tile Layer (in custom nightLightsPane)
+  nightTileLayer = L.tileLayer(
+    'https://gibs.earthdata.nasa.gov/wmts/epsg3857/best/VIIRS_CityLights_2012/default/2012-01-01/GoogleMapsCompatible_Level8/{z}/{y}/{x}.jpg',
+    {
+      pane: 'nightLightsPane',
+      maxZoom: 8,
+      opacity: 0.96,
+      attribution: 'NASA Earth Observatory / NOAA'
+    }
+  );
+
+  // 5. Golden Terminator Border Polygon
+  nightPolygon = L.polygon(currentTermData.coords, {
     fillColor: '#020617',
-    fillOpacity: 0.52,
+    fillOpacity: 0.12, // Subtle dark tint over night tiles, allowing city lights to shine brightly
     color: '#f59e0b',
-    weight: 1.5,
-    opacity: 0.45,
+    weight: 2.0,
+    opacity: 0.85,
     interactive: false
   });
 
-  sunMarker = L.marker([termData.subsolarLat, termData.subsolarLon], {
+  sunMarker = L.marker([currentTermData.subsolarLat, currentTermData.subsolarLon], {
     icon: sunIcon,
     zIndexOffset: 1000
   });
 
-  moonMarker = L.marker([termData.antisolarLat, termData.antisolarLon], {
+  moonMarker = L.marker([currentTermData.antisolarLat, currentTermData.antisolarLon], {
     icon: moonIcon,
     zIndexOffset: 990
   });
 
   if (isEnabled) {
+    nightTileLayer.addTo(mapInstance);
     nightPolygon.addTo(mapInstance);
     sunMarker.addTo(mapInstance);
     moonMarker.addTo(mapInstance);
   }
 
-  updateTooltipsAndUI(termData, new Date());
+  // Update position & clip path
+  updateNightClipPath(currentTermData);
+  updateTooltipsAndUI(currentTermData, new Date());
+
+  // Keep clip-path aligned on map move and zoom
+  mapInstance.on('move', () => {
+    if (isEnabled && currentTermData) {
+      updateNightClipPath(currentTermData);
+    }
+  });
+
+  mapInstance.on('zoom', () => {
+    if (isEnabled && currentTermData) {
+      updateNightClipPath(currentTermData);
+    }
+  });
 
   // Start live 30s update interval
   if (liveInterval) clearInterval(liveInterval);
@@ -226,13 +296,14 @@ function updateTooltipsAndUI(termData, date) {
 export function refreshDayNight(targetDate = null) {
   if (!mapInstance || !nightPolygon) return;
   const d = targetDate || new Date();
-  const termData = calculateTerminatorPolygon(d);
+  currentTermData = calculateTerminatorPolygon(d);
 
-  nightPolygon.setLatLngs(termData.coords);
-  if (sunMarker) sunMarker.setLatLng([termData.subsolarLat, termData.subsolarLon]);
-  if (moonMarker) moonMarker.setLatLng([termData.antisolarLat, termData.antisolarLon]);
+  nightPolygon.setLatLngs(currentTermData.coords);
+  if (sunMarker) sunMarker.setLatLng([currentTermData.subsolarLat, currentTermData.subsolarLon]);
+  if (moonMarker) moonMarker.setLatLng([currentTermData.antisolarLat, currentTermData.antisolarLon]);
 
-  updateTooltipsAndUI(termData, d);
+  updateNightClipPath(currentTermData);
+  updateTooltipsAndUI(currentTermData, d);
 
   // Sync 3D Globe Sun Direction in real-time
   if (typeof window !== 'undefined' && window.updateGlobeSunPosition) {
@@ -244,18 +315,35 @@ export function refreshDayNight(targetDate = null) {
  * Toggles Day/Night overlay visibility on/off.
  */
 export function toggleDayNight() {
+  // If user is currently viewing the 3D Globe, toggle the 3D globe's texture mode instead!
+  if (typeof window !== 'undefined' && window.getProjectionMode && window.getProjectionMode() === '3d') {
+    if (window.setGlobeTextureMode && window.getGlobeTextureMode) {
+      const nextMode = window.getGlobeTextureMode() === 'composite' ? 'day' : 'composite';
+      window.setGlobeTextureMode(nextMode);
+    }
+    return isEnabled;
+  }
+
   isEnabled = !isEnabled;
   if (!mapInstance || !nightPolygon) return isEnabled;
 
+  const pane = mapInstance.getPane('nightLightsPane');
+
   if (isEnabled) {
+    if (nightTileLayer) nightTileLayer.addTo(mapInstance);
     nightPolygon.addTo(mapInstance);
     if (sunMarker) sunMarker.addTo(mapInstance);
     if (moonMarker) moonMarker.addTo(mapInstance);
     refreshDayNight();
   } else {
+    if (nightTileLayer) mapInstance.removeLayer(nightTileLayer);
     mapInstance.removeLayer(nightPolygon);
     if (sunMarker) mapInstance.removeLayer(sunMarker);
     if (moonMarker) mapInstance.removeLayer(moonMarker);
+    if (pane) {
+      pane.style.clipPath = '';
+      pane.style.webkitClipPath = '';
+    }
     stopSimulation();
   }
 
@@ -320,6 +408,8 @@ export function resetToLive() {
 function updateWidgetButtonUI() {
   const btn = document.getElementById('toggleDayNightBtn');
   const widget = document.getElementById('dayNightFloatingWidget');
+  const is3d = typeof window !== 'undefined' && window.getProjectionMode && window.getProjectionMode() === '3d';
+
   if (btn) {
     if (isEnabled) {
       btn.className = 'px-3 py-1.5 rounded-lg bg-amber-500/20 text-amber-300 border border-amber-500/40 font-semibold text-xs flex items-center gap-1.5 shadow transition cursor-pointer';
@@ -327,8 +417,10 @@ function updateWidgetButtonUI() {
       btn.className = 'px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-750 text-slate-400 hover:text-slate-200 border border-slate-700 font-semibold text-xs flex items-center gap-1.5 shadow transition cursor-pointer';
     }
   }
+
+  // Never unhide the 2D floating widget if currently in 3D sphere mode!
   if (widget) {
-    if (isEnabled) {
+    if (isEnabled && !is3d) {
       widget.classList.remove('hidden');
     } else {
       widget.classList.add('hidden');
@@ -340,4 +432,5 @@ if (typeof window !== 'undefined') {
   window.toggleDayNight = toggleDayNight;
   window.toggleSimulation = toggleSimulation;
   window.resetToLive = resetToLive;
+  window.updateWidgetButtonUI = updateWidgetButtonUI;
 }
