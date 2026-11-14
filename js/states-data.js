@@ -3264,7 +3264,7 @@ export const US_STATES = [
       }
     ]
   }
-]];
+];
 
 export const CITY_TO_STATE = {
   "hopkinsville": "kentucky",

@@ -1,4 +1,4 @@
-import { CITY_TO_STATE } from './states-data.js?v=20261114_world4';
+import { CITY_TO_STATE } from './states-data.js?v=20261114_world5';
 /**
  * Video Service Module
  * Registry of verified high-definition YouTube video tours for all cities
@@ -11072,7 +11072,7 @@ export const CITY_VIDEOS = {
           "youtubeId": "1eSl6orusUY",
           "title": "Αλαμογκόρντο 4K — Alamogordo, New Mexico | 4K Sunset Drone Footage"
       }
-,
+  },
   "tacoma": {
     "drone": {
       "youtubeId": "HWNWftwUun4",
@@ -12097,8 +12097,7 @@ export const CITY_VIDEOS = {
       "youtubeId": "-TSKEBQNOzA",
       "title": "Λάντερ Panoramic — Discover Sinks Canyon State Park & Popo Agie Falls from Above | Wyoming Beauty"
     }
-  }
-  }
+  },
   "bismarck": {
     "cityName": "Μπίσμαρκ",
     "drone": {
