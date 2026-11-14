@@ -233,6 +233,11 @@ export function refreshDayNight(targetDate = null) {
   if (moonMarker) moonMarker.setLatLng([termData.antisolarLat, termData.antisolarLon]);
 
   updateTooltipsAndUI(termData, d);
+
+  // Sync 3D Globe Sun Direction in real-time
+  if (typeof window !== 'undefined' && window.updateGlobeSunPosition) {
+    try { window.updateGlobeSunPosition(d); } catch (e) {}
+  }
 }
 
 /**

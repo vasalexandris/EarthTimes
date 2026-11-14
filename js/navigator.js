@@ -1,4 +1,4 @@
-import { US_STATES, CITY_TO_STATE } from './states-data.js?v=20261114_world11';
+import { US_STATES, CITY_TO_STATE } from './states-data.js?v=20261114_world12';
 /**
  * Navigator Module
  * Hierarchical Cascading Navigation: Continents -> Countries -> Cities

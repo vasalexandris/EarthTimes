@@ -1,17 +1,30 @@
 /**
  * Globe View Module (3D Spherical Projection - Google Earth Style)
  * Powered by WebGL (Globe.gl & Three.js).
- * Renders an interactive 3D Earth globe with Day/Night textures,
- * topography bump mapping, glowing atmosphere, auto-rotation,
- * and 3D city pins with smooth camera fly-to animations.
+ * Renders an interactive 3D Earth globe with:
+ * 1. Day Mode: Full NASA Blue Marble daylight
+ * 2. Night Mode: Full NASA City Lights (Black Marble)
+ * 3. Composite Mode (Day & Night Terminator):
+ *    Sunlit hemisphere renders daytime map, night hemisphere renders city lights,
+ *    blending seamlessly in real time according to the astronomical Subsolar point!
  */
+
+import { calculateSubsolarPoint } from './solar-terminator.js?v=20261114_world12';
 
 let globeInstance = null;
 let currentProjection = '2d'; // '2d' | '3d'
+let currentTextureMode = 'composite'; // 'day' | 'night' | 'composite'
 let isAutoRotating = true;
-let isNightTexture = false;
+let isSimulating = false;
+let simulationInterval = null;
+let simulatedDate = null;
 let registeredCities = [];
 let onCityClickCallback = null;
+
+let defaultMaterial = null;
+let dayNightMaterial = null;
+let dayTexture = null;
+let nightTexture = null;
 
 const TEXTURES = {
   day: 'https://unpkg.com/three-globe/example/img/earth-blue-marble.jpg',
@@ -19,6 +32,71 @@ const TEXTURES = {
   topology: 'https://unpkg.com/three-globe/example/img/earth-topology.png',
   background: 'https://unpkg.com/three-globe/example/img/night-sky.png'
 };
+
+/**
+ * Creates or retrieves the custom Three.js Day & Night blending ShaderMaterial.
+ */
+function getDayNightMaterial() {
+  if (dayNightMaterial) return dayNightMaterial;
+  const THREE = window.THREE;
+  if (!THREE) return null;
+
+  const loader = new THREE.TextureLoader();
+  loader.setCrossOrigin('anonymous');
+
+  dayTexture = loader.load(TEXTURES.day);
+  nightTexture = loader.load(TEXTURES.night);
+
+  dayNightMaterial = new THREE.ShaderMaterial({
+    uniforms: {
+      dayTexture: { value: dayTexture },
+      nightTexture: { value: nightTexture },
+      sunDirection: { value: new THREE.Vector3(0, 0, 1) }
+    },
+    vertexShader: `
+      varying vec2 vUv;
+      varying vec3 vNormal;
+
+      void main() {
+        vUv = uv;
+        vNormal = normalize(normal);
+        gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+      }
+    `,
+    fragmentShader: `
+      uniform sampler2D dayTexture;
+      uniform sampler2D nightTexture;
+      uniform vec3 sunDirection;
+
+      varying vec2 vUv;
+      varying vec3 vNormal;
+
+      void main() {
+        // Dot product between local surface normal and Sun vector
+        float sunIntensity = dot(vNormal, sunDirection);
+
+        vec4 dayColor = texture2D(dayTexture, vUv);
+        vec4 nightColor = texture2D(nightTexture, vUv);
+
+        // Smooth twilight terminator between -0.12 (night) and +0.12 (day)
+        float dayFactor = smoothstep(-0.12, 0.12, sunIntensity);
+
+        // Diffuse daytime sunlight with soft ambient illumination
+        vec3 litDay = dayColor.rgb * (0.32 + 0.68 * max(0.0, sunIntensity));
+
+        // Artificial city lights glowing vibrant in the darkness
+        vec3 litNight = nightColor.rgb * 1.35;
+
+        // Composite: day where sunlight hits, glowing city lights where it is night!
+        vec3 finalColor = mix(litNight, litDay, dayFactor);
+
+        gl_FragColor = vec4(finalColor, 1.0);
+      }
+    `
+  });
+
+  return dayNightMaterial;
+}
 
 /**
  * Initializes the 3D Globe instance inside the target DOM container.
@@ -36,7 +114,7 @@ export function initGlobe(container, onCityClick) {
   const height = container.clientHeight || window.innerHeight;
 
   globeInstance = window.Globe()(container)
-    .globeImageUrl(isNightTexture ? TEXTURES.night : TEXTURES.day)
+    .globeImageUrl(TEXTURES.day)
     .bumpImageUrl(TEXTURES.topology)
     .backgroundImageUrl(TEXTURES.background)
     .showAtmosphere(true)
@@ -44,6 +122,9 @@ export function initGlobe(container, onCityClick) {
     .atmosphereAltitude(0.22)
     .width(width)
     .height(height);
+
+  // Capture the default Phong material for later swapping
+  defaultMaterial = globeInstance.globeMaterial();
 
   // Configure OrbitControls
   const controls = globeInstance.controls();
@@ -56,8 +137,11 @@ export function initGlobe(container, onCityClick) {
     controls.maxDistance = 600;
   }
 
-  // Initial Point of View (Europe / World)
+  // Initial Point of View (Europe / Mediterranean center)
   globeInstance.pointOfView({ lat: 25, lng: 15, altitude: 2.3 }, 0);
+
+  // Apply default texture mode (Composite Day & Night)
+  setGlobeTextureMode(currentTextureMode);
 
   // If cities were registered before globe init, render them now
   if (registeredCities.length > 0) {
@@ -80,6 +164,145 @@ export function resizeGlobe(container) {
   const h = container.clientHeight;
   if (w > 0 && h > 0) {
     globeInstance.width(w).height(h);
+  }
+}
+
+/**
+ * Updates the Sun Direction uniform in the 3D Shader based on the astronomical subsolar point.
+ */
+export function updateGlobeSunPosition(targetDate = null) {
+  if (!globeInstance || currentTextureMode !== 'composite') return;
+  const d = targetDate || new Date();
+  const subsolar = calculateSubsolarPoint(d);
+
+  const mat = getDayNightMaterial();
+  if (!mat) return;
+
+  const THREE = window.THREE;
+  if (!THREE) return;
+
+  const scene = globeInstance.scene ? globeInstance.scene() : null;
+  let globeObj = null;
+  if (scene) {
+    globeObj = scene.getObjectByProperty('__globeObjType', 'globe');
+  }
+
+  if (globeObj && typeof globeInstance.getCoords === 'function') {
+    const coords = globeInstance.getCoords(subsolar.lat, subsolar.lon);
+    if (coords) {
+      const worldVec = new THREE.Vector3(coords.x, coords.y, coords.z);
+      globeObj.updateMatrixWorld();
+      const localVec = globeObj.worldToLocal(worldVec).normalize();
+      mat.uniforms.sunDirection.value.copy(localVec);
+      return;
+    }
+  }
+
+  // Analytical local vector fallback
+  const phi = (90.0 - subsolar.lat) * Math.PI / 180.0;
+  const theta = (90.0 - subsolar.lon) * Math.PI / 180.0;
+  const x_local = Math.sin(phi) * Math.sin(theta);
+  const y_local = Math.cos(phi);
+  const z_local = -Math.sin(phi) * Math.cos(theta);
+  mat.uniforms.sunDirection.value.set(x_local, y_local, z_local).normalize();
+}
+
+/**
+ * Sets the 3D Globe Texture Mode: 'day' | 'night' | 'composite'
+ */
+export function setGlobeTextureMode(mode) {
+  if (mode !== 'day' && mode !== 'night' && mode !== 'composite') return;
+  currentTextureMode = mode;
+  if (!globeInstance) return;
+
+  const mat = getDayNightMaterial();
+
+  if (mode === 'composite' && mat) {
+    globeInstance.globeMaterial(mat);
+    globeInstance.atmosphereColor('#38bdf8');
+    updateGlobeSunPosition(simulatedDate || new Date());
+  } else if (mode === 'night') {
+    if (defaultMaterial) globeInstance.globeMaterial(defaultMaterial);
+    globeInstance.globeImageUrl(TEXTURES.night);
+    globeInstance.atmosphereColor('#6366f1');
+  } else {
+    // 'day'
+    if (defaultMaterial) globeInstance.globeMaterial(defaultMaterial);
+    globeInstance.globeImageUrl(TEXTURES.day);
+    globeInstance.atmosphereColor('#38bdf8');
+  }
+
+  updateGlobeModeButtonsUI();
+}
+
+export function getGlobeTextureMode() {
+  return currentTextureMode;
+}
+
+function updateGlobeModeButtonsUI() {
+  const dayBtn = document.getElementById('globeModeDayBtn');
+  const nightBtn = document.getElementById('globeModeNightBtn');
+  const compBtn = document.getElementById('globeModeCompositeBtn');
+  const simBtn = document.getElementById('globeSimBtn');
+
+  const activeCls = 'px-2.5 py-1 rounded-md text-[11px] font-bold transition flex items-center gap-1 bg-amber-500/20 text-amber-300 border border-amber-500/40 shadow cursor-pointer';
+  const inactiveCls = 'px-2 py-1 rounded-md text-[11px] font-bold transition flex items-center gap-1 text-slate-400 hover:text-slate-200 cursor-pointer';
+
+  if (dayBtn) dayBtn.className = currentTextureMode === 'day' ? activeCls : inactiveCls;
+  if (nightBtn) nightBtn.className = currentTextureMode === 'night' ? activeCls : inactiveCls;
+  if (compBtn) compBtn.className = currentTextureMode === 'composite' ? activeCls : inactiveCls;
+
+  if (simBtn) {
+    if (currentTextureMode === 'composite') {
+      simBtn.classList.remove('hidden');
+    } else {
+      simBtn.classList.add('hidden');
+    }
+  }
+}
+
+/**
+ * Toggles a 24-hour fast simulation on the 3D globe showing the sun moving over continents.
+ */
+export function toggleGlobeSimulation() {
+  if (isSimulating) {
+    stopGlobeSimulation();
+  } else {
+    startGlobeSimulation();
+  }
+}
+
+export function startGlobeSimulation() {
+  if (currentTextureMode !== 'composite') {
+    setGlobeTextureMode('composite');
+  }
+  isSimulating = true;
+  if (!simulatedDate) simulatedDate = new Date();
+
+  const simBtn = document.getElementById('globeSimBtn');
+  if (simBtn) {
+    simBtn.innerHTML = '<i class="fa-solid fa-pause text-amber-400"></i> <span>Παύση</span>';
+    simBtn.className = 'px-2.5 py-1 rounded-lg bg-amber-500/20 text-amber-300 border border-amber-500/40 font-bold transition flex items-center gap-1 cursor-pointer';
+  }
+
+  if (simulationInterval) clearInterval(simulationInterval);
+  // Advance 30 minutes every 300ms (full 24-hour cycle in ~14 seconds)
+  simulationInterval = setInterval(() => {
+    simulatedDate = new Date(simulatedDate.getTime() + 30 * 60 * 1000);
+    updateGlobeSunPosition(simulatedDate);
+  }, 300);
+}
+
+export function stopGlobeSimulation() {
+  isSimulating = false;
+  if (simulationInterval) {
+    clearInterval(simulationInterval);
+    simulationInterval = null;
+  }
+  const simBtn = document.getElementById('globeSimBtn');
+  if (simBtn) {
+    simBtn.innerHTML = '<i class="fa-solid fa-play text-amber-400"></i> <span>24h</span>';
+    simBtn.className = 'px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 border border-slate-700 text-amber-300 font-bold transition flex items-center gap-1 cursor-pointer';
   }
 }
 
@@ -125,7 +348,6 @@ function updateGlobeCities() {
  */
 export function flyToGlobeCoords(lat, lng, altitude = 0.8, duration = 1600) {
   if (!globeInstance) return;
-  // Pause auto-rotation when user flies to a specific point
   setAutoRotate(false);
   globeInstance.pointOfView({ lat, lng, altitude }, duration);
 }
@@ -157,41 +379,11 @@ export function setAutoRotate(enabled) {
 }
 
 /**
- * Toggles between NASA Blue Marble (Day) and NASA Black Marble (Night) 3D textures.
- */
-export function toggleGlobeDayNight() {
-  isNightTexture = !isNightTexture;
-  if (globeInstance) {
-    globeInstance.globeImageUrl(isNightTexture ? TEXTURES.night : TEXTURES.day);
-    globeInstance.atmosphereColor(isNightTexture ? '#6366f1' : '#38bdf8');
-  }
-  const btn = document.getElementById('globeDayNightBtn');
-  if (btn) {
-    if (isNightTexture) {
-      btn.innerHTML = '<i class="fa-solid fa-city text-yellow-300"></i> <span>Φώτα Νύχτας</span>';
-      btn.className = 'px-2.5 py-1 rounded-lg bg-indigo-500/20 text-yellow-300 border border-indigo-500/40 font-bold transition flex items-center gap-1 cursor-pointer';
-    } else {
-      btn.innerHTML = '<i class="fa-solid fa-sun text-amber-400"></i> <span>Ημέρα</span>';
-      btn.className = 'px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 border border-slate-700 text-amber-300 font-bold transition flex items-center gap-1 cursor-pointer';
-    }
-  }
-  return isNightTexture;
-}
-
-/**
  * Resets 3D Globe camera to global overview.
  */
 export function resetGlobeView() {
   if (!globeInstance) return;
   globeInstance.pointOfView({ lat: 20, lng: 0, altitude: 2.3 }, 1500);
-}
-
-/**
- * Gets current Point of View from 3D Globe { lat, lng, altitude }.
- */
-export function getGlobePointOfView() {
-  if (!globeInstance) return null;
-  return globeInstance.pointOfView();
 }
 
 /**
@@ -209,7 +401,7 @@ export function setProjectionMode(mode) {
   const view3dBtn = document.getElementById('view3dBtn');
 
   if (mode === '3d') {
-    // Hide 2D Leaflet Map
+    // Hide 2D Leaflet Map & 2D DayNight widget
     if (mapEl) mapEl.classList.add('hidden');
     if (dayNightWidget) dayNightWidget.classList.add('hidden');
 
@@ -222,6 +414,7 @@ export function setProjectionMode(mode) {
         });
       }
       resizeGlobe(globeContainer);
+      updateGlobeSunPosition();
     }
     if (globeControls) globeControls.classList.remove('hidden');
 
@@ -233,6 +426,9 @@ export function setProjectionMode(mode) {
       view3dBtn.className = 'px-2.5 py-1 rounded-md text-xs font-bold transition flex items-center gap-1.5 bg-sky-600 text-white shadow cursor-pointer';
     }
   } else {
+    // Stop 3D simulation if running
+    stopGlobeSimulation();
+
     // Show 2D Leaflet Map
     if (mapEl) mapEl.classList.remove('hidden');
     if (dayNightWidget) dayNightWidget.classList.remove('hidden');
@@ -262,10 +458,12 @@ export function getProjectionMode() {
   return currentProjection;
 }
 
-// Attach globally for inline HTML event handlers
+// Global browser window bindings
 if (typeof window !== 'undefined') {
   window.setProjectionMode = setProjectionMode;
+  window.setGlobeTextureMode = setGlobeTextureMode;
   window.toggleAutoRotate = toggleAutoRotate;
-  window.toggleGlobeDayNight = toggleGlobeDayNight;
+  window.toggleGlobeSimulation = toggleGlobeSimulation;
   window.resetGlobeView = resetGlobeView;
+  window.updateGlobeSunPosition = updateGlobeSunPosition;
 }
