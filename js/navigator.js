@@ -1,4 +1,4 @@
-import { US_STATES, CITY_TO_STATE } from './states-data.js?v=20261114_world15';
+import { US_STATES, CITY_TO_STATE } from './states-data.js?v=20261114_world16';
 /**
  * Navigator Module
  * Hierarchical Cascading Navigation: Continents -> Countries -> Cities
@@ -1965,7 +1965,16 @@ export const CONTINENTS_DATA = [
         name: 'Ανατολικό Τιμόρ',
         flag: '🇹🇱',
         cities: [
-          { id: 'dili', name: 'Ντίλι', badge: 'Πρωτεύουσα' }
+          { id: 'dili', name: 'Ντίλι', badge: 'Πρωτεύουσα & Λιμάνι' },
+          { id: 'baucau', name: 'Μπάουκαου', badge: 'Δεύτερη Μεγαλύτερη...' },
+          { id: 'maliana', name: 'Μαλιάνα', badge: 'Διοικητικό Κέντρο ...' },
+          { id: 'suai', name: 'Σούαι', badge: 'Διοικητικό Κέντρο ...' },
+          { id: 'ermera', name: 'Ερμέρα', badge: 'Διοικητικό Κέντρο ...' },
+          { id: 'liquica', name: 'Λικίσα', badge: 'Διοικητικό Κέντρο ...' },
+          { id: 'pante-macassar', name: 'Πάντε Μακάσαρ', badge: 'Διοικητικό Κέντρο ...' },
+          { id: 'lospalos', name: 'Λοσπάλος', badge: 'Διοικητικό Κέντρο ...' },
+          { id: 'ainaro', name: 'Αϊνάρο', badge: 'Διοικητικό Κέντρο ...' },
+          { id: 'manatuto', name: 'Μανουτούτο', badge: 'Διοικητικό Κέντρο ...' }
         ]
       },
       {
@@ -2253,12 +2262,16 @@ export const CONTINENTS_DATA = [
         name: 'Αυστραλία',
         flag: '🇦🇺',
         cities: [
-          { id: 'sydney', name: 'Σύδνεϋ', badge: 'Μητρόπολη' },
-          { id: 'melbourne', name: 'Μελβούρνη', badge: 'Πολιτισμός' },
-          { id: 'brisbane', name: 'Μπρίσμπεϊν', badge: 'Κουίνσλαντ' },
-          { id: 'perth', name: 'Περθ', badge: 'Δυτική Αυστραλία' },
-          { id: 'adelaide', name: 'Αδελαΐδα', badge: 'Νότια Αυστραλία' },
-          { id: 'canberra', name: 'Καμπέρα', badge: 'Πρωτεύουσα' }
+          { id: 'sydney', name: 'Σύδνεϋ', badge: 'Πολιτιστική & Οικονομική Μητρόπολη' },
+          { id: 'melbourne', name: 'Μελβούρνη', badge: 'Πρωτεύουσα του Καφέ & του Πολιτισμού' },
+          { id: 'brisbane', name: 'Μπρίσμπεϊν', badge: 'Ηλιόλουστη Πόλη του Ποταμού' },
+          { id: 'perth', name: 'Περθ', badge: 'Πύλη του Ινδικού Ωκεανού' },
+          { id: 'adelaide', name: 'Αδελαΐδα', badge: 'Πόλη των Φεστιβάλ & του Κρασιού' },
+          { id: 'canberra', name: 'Καμπέρα', badge: 'Πρωτεύουσα Σχεδιασμένη Πόλη-Κήπος' },
+          { id: 'hobart', name: 'Χόμπαρτ', badge: 'Πολιτιστική Πύλη προς την Ανταρκτική' },
+          { id: 'darwin', name: 'Ντάργουιν', badge: 'Τροπική Πύλη προς την Ασία' },
+          { id: 'gold-coast', name: 'Γκολντ Κοστ', badge: 'Τουριστική & Παραλιακή Μητρόπολη' },
+          { id: 'cairns', name: 'Κερνς', badge: 'Τροπική Πύλη προς τον Ύφαλο' }
         ]
       },
       {
@@ -2266,10 +2279,16 @@ export const CONTINENTS_DATA = [
         name: 'Νέα Ζηλανδία',
         flag: '🇳🇿',
         cities: [
-          { id: 'auckland', name: 'Ώκλαντ', badge: 'Μητρόπολη' },
-          { id: 'wellington', name: 'Ουέλινγκτον', badge: 'Πρωτεύουσα' },
-          { id: 'christchurch', name: 'Κράιστσερτς', badge: 'Νότιο Νησί' },
-          { id: 'queenstown', name: 'Κουίνσταουν', badge: 'Άλπεις & Λίμνες' }
+          { id: 'auckland', name: 'Ώκλαντ', badge: 'Πολιτιστική & Οικονομική Μητρόπολη' },
+          { id: 'wellington', name: 'Ουέλινγκτον', badge: 'Πολιτική & Πολιτιστική Πρωτεύουσα' },
+          { id: 'christchurch', name: 'Κράιστσερτς', badge: 'Πόλη των Κήπων & Αναγέννησης' },
+          { id: 'hamilton', name: 'Χάμιλτον', badge: 'Πανεπιστημιακή & Αγροτική Μητρόπολη' },
+          { id: 'tauranga', name: 'Ταουράνγκα', badge: 'Λιμενική & Παραλιακή Πόλη' },
+          { id: 'dunedin', name: 'Ντούνεντιν', badge: 'Πανεπιστημιακή & Σκωτσέζικη Πόλη' },
+          { id: 'queenstown', name: 'Κουίνσταουν', badge: 'Παγκόσμια Πρωτεύουσα Περιπέτειας' },
+          { id: 'rotorua', name: 'Ροτορούα', badge: 'Γεωθερμική & Māori Πρωτεύουσα' },
+          { id: 'napier', name: 'Νέιπιερ', badge: 'Αρχιτεκτονική & Αμπελουργική Πόλη' },
+          { id: 'nelson', name: 'Νέλσον', badge: 'Καλλιτεχνική & Αμπελουργική Πόλη' }
         ]
       },
       {
@@ -2277,8 +2296,16 @@ export const CONTINENTS_DATA = [
         name: 'Παπούα Νέα Γουινέα',
         flag: '🇵🇬',
         cities: [
-          { id: 'port-moresby', name: 'Πορτ Μόρεσμπι', badge: 'Πρωτεύουσα' },
-          { id: 'lae', name: 'Λάε', badge: 'Λιμάνι' }
+          { id: 'port-moresby', name: 'Πορτ Μόρεσμπι', badge: 'Πρωτεύουσα & Διοικητικό Κέντρο' },
+          { id: 'lae', name: 'Λάε', badge: 'Βιομηχανική Πύλη προς τα Υψίπεδα' },
+          { id: 'mount-hagen', name: 'Μάουντ Χάγκεν', badge: 'Αγροτική & Πολιτιστική Πύλη Υψιπέδων' },
+          { id: 'madang', name: 'Μάντανγκ', badge: 'Παράκτιος & Καταδυτικός Παράδεισος' },
+          { id: 'goroka', name: 'Γκορόκα', badge: 'Αγροτική & Καφές-Πολιτιστική Πόλη' },
+          { id: 'wewak', name: 'Γουέγουακ', badge: 'Παράκτια Πόλη του Sepik' },
+          { id: 'rabaul', name: 'Ραμπαούλ', badge: 'Ηφαιστειακή & Ναυτική Πόλη' },
+          { id: 'popondetta', name: 'Ποποντέτα', badge: 'Πόλη του Kokoda & Αγροτική' },
+          { id: 'kavieng', name: 'Καβιένγκ', badge: 'Παράκτια Πόλη & Καταδυτικός Παράδεισος' },
+          { id: 'alotau', name: 'Αλοτάου', badge: 'Παράκτια Πόλη του Νησιού Κόσμου' }
         ]
       },
       {
@@ -2286,24 +2313,16 @@ export const CONTINENTS_DATA = [
         name: 'Φίτζι',
         flag: '🇫🇯',
         cities: [
-          { id: 'suva', name: 'Σούβα', badge: 'Πρωτεύουσα' },
-          { id: 'nadi', name: 'Νάντι', badge: 'Τουρισμός' }
-        ]
-      },
-      {
-        id: 'samoa',
-        name: 'Σαμόα',
-        flag: '🇼🇸',
-        cities: [
-          { id: 'apia', name: 'Άπια', badge: 'Πρωτεύουσα' }
-        ]
-      },
-      {
-        id: 'vanuatu',
-        name: 'Βανουάτου',
-        flag: '🇻🇺',
-        cities: [
-          { id: 'port-vila', name: 'Πορτ Βίλα', badge: 'Πρωτεύουσα' }
+          { id: 'suva', name: 'Σούβα', badge: 'Πρωτεύουσα & Οικονομικό Κέντρο' },
+          { id: 'nadi', name: 'Νάντι', badge: 'Τουριστικός Κόμβος & Διεθνές Αεροδρόμιο' },
+          { id: 'lautoka', name: 'Λαουτόκα', badge: 'Δεύτερη Πόλη & Βιομηχανικός Λιμένας' },
+          { id: 'labasa', name: 'Λαμπάσα', badge: 'Αγροτικό Κέντρο Βόρειου Φίτζι' },
+          { id: 'nausori', name: 'Ναουσόρι', badge: 'Αστικό Κέντρο κοντά στη Σούβα' },
+          { id: 'ba', name: 'Μπα', badge: 'Αγροτικό Κέντρο Δυτικής Viti Levu' },
+          { id: 'savusavu', name: 'Σαβουσάβου', badge: 'Λιμένας & Θέρετρο Vanua Levu' },
+          { id: 'sigatoka', name: 'Σιγκατόκα', badge: 'Τουριστικό & Αγροτικό Κέντρο' },
+          { id: 'levuka', name: 'Λεβούκα', badge: 'Ιστορική Πόλη & Μνημείο UNESCO' },
+          { id: 'tavua', name: 'Ταβούα', badge: 'Οικισμός Ορυχείων & Αγροτικό Κέντρο' }
         ]
       },
       {
@@ -2311,15 +2330,50 @@ export const CONTINENTS_DATA = [
         name: 'Νήσοι Σολομώντα',
         flag: '🇸🇧',
         cities: [
-          { id: 'honiara', name: 'Χονιάρα', badge: 'Πρωτεύουσα' }
+          { id: 'honiara', name: 'Χονιάρα', badge: 'Πρωτεύουσα & Διοικητικό Κέντρο' },
+          { id: 'gizo', name: 'Γκίζο', badge: 'Πρωτεύουσα Δυτικής Επαρχίας' },
+          { id: 'auki', name: 'Άουκι', badge: 'Διοικητικό Κέντρο Νήσου Malaita' },
+          { id: 'noro', name: 'Νόρο', badge: 'Βιομηχανικό Κέντρο Αλιείας' },
+          { id: 'kirakira', name: 'Κιρακιρά', badge: 'Διοικητικό Κέντρο Νήσου Makira' },
+          { id: 'buala', name: 'Μπουάλα', badge: 'Διοικητικό Κέντρο Νήσου Santa Isabel' },
+          { id: 'tulagi', name: 'Τουλάγκι', badge: 'Παλαιά Πρωτεύουσα & Ιστορική Πόλη' },
+          { id: 'lata', name: 'Λάτα', badge: 'Διοικητικό Κέντρο Νήσων Santa Cruz' },
+          { id: 'taro-island', name: 'Νήσος Τάρο', badge: 'Διοικητικό Κέντρο Νήσου Choiseul' },
+          { id: 'munda', name: 'Μούντα', badge: 'Τουριστικό Κέντρο Δυτικής Επαρχίας' }
         ]
       },
       {
-        id: 'micronesia',
-        name: 'Μικρονησία',
-        flag: '🇫🇲',
+        id: 'vanuatu',
+        name: 'Βανουάτου',
+        flag: '🇻🇺',
         cities: [
-          { id: 'palikir', name: 'Παλικίρ', badge: 'Πρωτεύουσα' }
+          { id: 'port-vila', name: 'Πορτ Βίλα', badge: 'Πρωτεύουσα & Τουριστικό Κέντρο' },
+          { id: 'luganville', name: 'Λουγκανβίλ', badge: 'Δεύτερη Πόλη & Λιμένας' },
+          { id: 'norsup', name: 'Νόρσουπ', badge: 'Διοικητικό Κέντρο Νήσου Malakula' },
+          { id: 'isangel', name: 'Ισανγκέλ', badge: 'Διοικητικό Κέντρο Νήσου Tanna' },
+          { id: 'sola', name: 'Σόλα', badge: 'Διοικητικό Κέντρο Νήσων Banks' },
+          { id: 'lakatoro', name: 'Λακατόρο', badge: 'Διοικητικό Κέντρο Νήσου Malakula' },
+          { id: 'saratamata', name: 'Σαραταμάτα', badge: 'Διοικητικό Κέντρο Νήσου Ambae' },
+          { id: 'lenakel', name: 'Λενακέλ', badge: 'Κύριος Οικισμός Νήσου Tanna' },
+          { id: 'port-olry', name: 'Πορτ Όλρυ', badge: 'Αλιευτικός Οικισμός Νήσου Santo' },
+          { id: 'longana', name: 'Λονγκάνα', badge: 'Παράκτιος Οικισμός Νήσου Ambae' }
+        ]
+      },
+      {
+        id: 'samoa',
+        name: 'Σαμόα',
+        flag: '🇼🇸',
+        cities: [
+          { id: 'apia', name: 'Άπια', badge: 'Πρωτεύουσα & Οικονομικό Κέντρο' },
+          { id: 'vaitele', name: 'Βαϊτέλε', badge: 'Πυκνοκατοικημένος Οικισμός' },
+          { id: 'faleasiu', name: 'Φαλεασίου', badge: 'Παράκτιο Ιστορικό Χωριό' },
+          { id: 'vailele', name: 'Βαϊλέλε', badge: 'Ανατολικό Προάστιο της Άπια' },
+          { id: 'leauvaa', name: 'Λεαουβάα', badge: 'Παράκτιο Χωριό ΒΔ Upolu' },
+          { id: 'salamumu', name: 'Σαλαμουμού', badge: 'Παραλίες & Φυσικό Καταφύγιο' },
+          { id: 'mulifanua', name: 'Μουλιφανούα', badge: 'Χωριό-Λιμάνι Πορθμού' },
+          { id: 'salelologa', name: 'Σαλελολόγκα', badge: 'Κύριος Οικισμός Savai'i' },
+          { id: 'asau', name: 'Ασάου', badge: 'Λιμάνι & Αλιευτικό Χωριό' },
+          { id: 'safotu', name: 'Σαφοτού', badge: 'Ιστορικό Χωριό Βόρειας Savai'i' }
         ]
       },
       {
@@ -2327,15 +2381,33 @@ export const CONTINENTS_DATA = [
         name: 'Τόνγκα',
         flag: '🇹🇴',
         cities: [
-          { id: 'nukualofa', name: 'Νουκουαλόφα', badge: 'Πρωτεύουσα' }
+          { id: 'nukualofa', name: 'Νουκουαλόφα', badge: 'Πρωτεύουσα & Λιμάνι' },
+          { id: 'neiafu', name: 'Νεϊάφου', badge: 'Κύριος Οικισμός Vava'u' },
+          { id: 'pangai', name: 'Πανγκάι', badge: 'Κύριος Οικισμός Χααπάι' },
+          { id: 'mua', name: 'Μουά', badge: 'Αρχαιολογικό & Ιστορικό Κέντρο' },
+          { id: 'haveluloto', name: 'Χαβελουλότο', badge: 'Προάστιο Νουκουαλόφα' },
+          { id: 'vaini', name: 'Βαϊνί', badge: 'Εσωτερικό Χωριό Τονγκατάπου' },
+          { id: 'ohonua', name: 'Οχονούα', badge: 'Κύριος Οικισμός 'Eua' },
+          { id: 'hihifo', name: 'Χίχιφο', badge: 'Κύριος Οικισμός Niuatoputapu' },
+          { id: 'kolonga', name: 'Κολόνγκα', badge: 'Ανατολικό Παράκτιο Χωριό' },
+          { id: 'pepehake', name: 'Πεπεχάκε', badge: 'Χωριό Αρχιπελάγους Χααπάι' }
         ]
       },
       {
-        id: 'kiribati',
-        name: 'Κιριμπάτι',
-        flag: '🇰🇮',
+        id: 'micronesia',
+        name: 'Μικρονησία',
+        flag: '🇫🇲',
         cities: [
-          { id: 'south-tarawa', name: 'Νότια Ταράουα', badge: 'Πρωτεύουσα' }
+          { id: 'palikir', name: 'Παλικίρ', badge: 'Ομοσπονδιακή Πρωτεύουσα' },
+          { id: 'kolonia', name: 'Κολόνια', badge: 'Κύριος Οικισμός Ποχνπέι' },
+          { id: 'weno', name: 'Γουένο', badge: 'Κύριος Οικισμός & Λιμάνι Τσουκ' },
+          { id: 'tol', name: 'Τολ', badge: 'Νησί & Οικισμός Τσουκ' },
+          { id: 'colonia-yap', name: 'Κολόνια Γιαπ', badge: 'Κύριος Οικισμός Πολιτείας Γιαπ' },
+          { id: 'tofol', name: 'Τοφόλ', badge: 'Κύριος Οικισμός Πολιτείας Κοσράε' },
+          { id: 'madolenihmw', name: 'Μαντολενίμ', badge: 'Δήμος Ποχνπέι (Ανατολικός)' },
+          { id: 'kitti', name: 'Κίτι', badge: 'Δήμος Ποχνπέι (Νότιος)' },
+          { id: 'u-pohnpei', name: 'Ου', badge: 'Δήμος Ποχνπέι (Βόρειος)' },
+          { id: 'lelu', name: 'Λελού', badge: 'Δήμος Κοσράε & Αρχαιολογικό Κέντρο' }
         ]
       },
       {
@@ -2343,8 +2415,16 @@ export const CONTINENTS_DATA = [
         name: 'Παλάου',
         flag: '🇵🇼',
         cities: [
-          { id: 'ngerulmud', name: 'Νγκερουλμούντ', badge: 'Πρωτεύουσα' },
-          { id: 'koror', name: 'Κορόρ', badge: 'Κέντρο' }
+          { id: 'ngerulmud', name: 'Νγκερουλμούντ', badge: 'Νεότερη Πρωτεύουσα του Κόσμου (2006)' },
+          { id: 'koror', name: 'Κορόρ', badge: 'Πρώην Πρωτεύουσα & Εμπορικός Πυρήνας' },
+          { id: 'meyuns', name: 'Μεγιούνς', badge: 'Πύλη Εισόδου & Νοσοκομείο' },
+          { id: 'airai', name: 'Αϊράι', badge: 'Έδρα Διεθνούς Αεροδρομίου & Παραδοσιακό Κέντρο' },
+          { id: 'kloulklubed', name: 'Κλοουλκλούμπεντ', badge: 'Κύριος Οικισμός του Πελελίου' },
+          { id: 'ulimang', name: 'Ουλιμάνγκ', badge: 'Παραδοσιακό Χωριό Ngaraard' },
+          { id: 'ngerkebesang', name: 'Νγκερκεμπέσανγκ', badge: 'Παραθαλάσσιο Νησί Νότιας Παλάου' },
+          { id: 'ngeremlengui', name: 'Νγκερεμλένγκουι', badge: 'Κρατίδιο Δυτικού Μπαμπελνταόμπ' },
+          { id: 'melekeok', name: 'Μελέκεοκ', badge: 'Έδρα του Κρατιδίου της Πρωτεύουσας' },
+          { id: 'peleliu', name: 'Πελελίου', badge: 'Κρατίδιο & Νησί Μάχης' }
         ]
       },
       {
@@ -2352,7 +2432,33 @@ export const CONTINENTS_DATA = [
         name: 'Νήσοι Μάρσαλ',
         flag: '🇲🇭',
         cities: [
-          { id: 'majuro', name: 'Ματζούρο', badge: 'Πρωτεύουσα' }
+          { id: 'majuro', name: 'Ματζούρο', badge: 'Πρωτεύουσα & Εμπορικό Κέντρο' },
+          { id: 'ebeye', name: 'Έμπειε', badge: 'Πυκνότερα Κατοικημένο Νησί του Ειρηνικού' },
+          { id: 'laura', name: 'Λάουρα', badge: 'Δυτικότερος Οικισμός Ατόλλης Majuro' },
+          { id: 'jaluit', name: 'Τζαλοουίτ', badge: 'Ιστορικό Κέντρο Ράλικ Αλυσίδας' },
+          { id: 'wotje', name: 'Γουότζε', badge: 'Κύριος Οικισμός Βόρειας Ρατάκ' },
+          { id: 'ailinglaplap', name: 'Άιλινγκλαπλάπ', badge: 'Τόπος Γέννησης Προέδρων της Χώρας' },
+          { id: 'mili', name: 'Μίλι', badge: 'Νότιο Ακρο του Αρχιπελάγους' },
+          { id: 'kwajalein', name: 'Κουατζαλέιν', badge: 'Αμερικανική Στρατιωτική Βάση' },
+          { id: 'kili', name: 'Κίλι', badge: 'Δεύτερη Πατρίδα των Κατοίκων του Μπίκινι' },
+          { id: 'arno', name: 'Άρνο', badge: 'Κοντινότερη Ατόλλη στο Majuro' }
+        ]
+      },
+      {
+        id: 'kiribati',
+        name: 'Κιριμπάτι',
+        flag: '🇰🇮',
+        cities: [
+          { id: 'south-tarawa', name: 'Νότια Ταράουα', badge: 'Πρωτεύουσα & Διοικητικό Κέντρο' },
+          { id: 'betio', name: 'Μπετίο', badge: 'Πεδίο Μάχης του Ταράουα 1943' },
+          { id: 'bikenibeu', name: 'Μπικενιμπέου', badge: 'Έδρα Κεντρικού Νοσοκομείου' },
+          { id: 'teaoraereke', name: 'Τέαοραερέκε', badge: 'Εμπορικός Κόμβος Νότιας Ταράουα' },
+          { id: 'taborio', name: 'Ταμπορίουε', badge: 'Έδρα Σχολείων & ΝαυτικHL Ακαδημίας' },
+          { id: 'bonriki', name: 'Μπονρίκι', badge: 'Έδρα Διεθνούς Αεροδρομίου' },
+          { id: 'london-kiritimati', name: 'Λονδίνο / Κιριτιμάτι', badge: 'Πρώτη Πόλη που Βλέπει τον Ήλιο' },
+          { id: 'tabuaeran', name: 'Ταμπουαεράν', badge: 'Κοραλλιογενής Ατόλλη Νήσων Λάιν' },
+          { id: 'butaritari', name: 'Μπουτάριταρι', badge: 'Βόρειο Άκρο Νήσων Γκίλμπερτ' },
+          { id: 'abaiang', name: 'Αμπαϊάνγκ', badge: 'Κοντινή Ατόλλη στην Πρωτεύουσα' }
         ]
       },
       {
@@ -2360,7 +2466,16 @@ export const CONTINENTS_DATA = [
         name: 'Ναουρού',
         flag: '🇳🇷',
         cities: [
-          { id: 'yaren', name: 'Γιαρέν', badge: 'Πρωτεύουσα' }
+          { id: 'yaren', name: 'Γιάρεν', badge: 'Έδρα Κυβέρνησης & Κοινοβουλίου' },
+          { id: 'boe', name: 'Μπόε', badge: 'Παραδοσιακό Κέντρο Νότιας Ακτής' },
+          { id: 'aiwo', name: 'Άιγουο', badge: 'Κέντρο Επεξεργασίας & Εξαγωγής Φωσφάτου' },
+          { id: 'anibare', name: 'Ανιμπάρε', badge: 'Μεγαλύτερη Περιφέρεια σε Έκταση' },
+          { id: 'meneng', name: 'Μένενγκ', badge: 'Παραδοσιακή Ανατολική Ακτή' },
+          { id: 'denigomodu', name: 'Ντενιγκομόντου', badge: 'Οικισμός Εργαζομένων NPC' },
+          { id: 'ewa', name: 'Εύα', badge: 'Δυτική Ακτή του Βορρά' },
+          { id: 'baiti', name: 'Μπάιτι', badge: 'Παραδοσιακή Βόρεια Ακτή' },
+          { id: 'uaboe', name: 'Ουαμπόε', badge: 'Παραδοσιακή Βόρεια Ακτή' },
+          { id: 'nibok', name: 'Νιμπόκ', badge: 'Εργαστήρια NPC & Εξορυκτική Ζώνη' }
         ]
       },
       {
@@ -2368,9 +2483,70 @@ export const CONTINENTS_DATA = [
         name: 'Τουβαλού',
         flag: '🇹🇻',
         cities: [
-          { id: 'funafuti', name: 'Φουναφούτι', badge: 'Πρωτεύουσα' }
+          { id: 'vaiaku', name: 'Βαϊάκου', badge: 'Έδρα Κυβέρνησης & Κοινοβουλίου' },
+          { id: 'fongafale', name: 'Φονγκαφάλε', badge: 'Μεγαλύτερος Οικισμός του Τουβαλού' },
+          { id: 'alapi', name: 'Αλάπι', badge: 'Παραδοσιακό Χωριό Ατόλλης' },
+          { id: 'senala', name: 'Σενάλα', badge: 'Παραδοσιακό Χωριό Ατόλλης' },
+          { id: 'nanumea', name: 'Νανουμέα', badge: 'Παραδοσιακή Ατόλλη Βορρά' },
+          { id: 'niutao', name: 'Νιουτάο', badge: 'Παραδοσιακό Νησί Βόρειου Ειρηνικού' },
+          { id: 'nukufetau', name: 'Νουκουφετάου', badge: 'Παραδοσιακή Ατόλλη Κέντρου' },
+          { id: 'nukulaelae', name: 'Νουκουλαελάε', badge: 'Νότια Ατόλλη Ειρηνικού' },
+          { id: 'vaitupu', name: 'Βαϊτούπου', badge: 'Κέντρο Εκπαίδευσης & Παραδόσεων' },
+          { id: 'nanumanga', name: 'Νανουμάνγκα', badge: 'Παραδοσιακό Νησί Βόρειου Ειρηνικού' }
+        ]
+      },
+      {
+        id: 'cook-islands',
+        name: 'Νήσοι Κουκ (Σύνδεση με ΝΖ)',
+        flag: '🇨🇰',
+        cities: [
+          { id: 'avarua', name: 'Αβαρούα', badge: 'Πρωτεύουσα και κύριο λιμάνι' },
+          { id: 'arorangi', name: 'Αροράνγκι', badge: 'Δυτική παραλιακή κοινότητα Ραροτόνγκα' },
+          { id: 'ngatangiia', name: 'Νγκατανγκίια', badge: 'Ανατολική παραλιακή κοινότητα Ραροτόνγκα' },
+          { id: 'matavera', name: 'Ματαβέρα', badge: 'Παράκτια-εσωτερική κοινότητα ανατολής' },
+          { id: 'titikaveka', name: 'Τιτικαβέκα', badge: 'Παραλιακή κοινότητα νότιας Ραροτόνγκα' },
+          { id: 'arutanga', name: 'Αρουτάνγκα / Αϊτουτάκι', badge: 'Κύριο χωριό & ατόλλη Αϊτουτάκι' },
+          { id: 'mangaia', name: 'Μανγκάια', badge: 'Δεύτερο μεγαλύτερο νησί Κουκ' },
+          { id: 'atiu', name: 'Ατίου', badge: 'Κοραλλιογενές νησί με σπηλιές' },
+          { id: 'mauke', name: 'Μαουκέ', badge: 'Κοραλλιογενές νησί με makatea' },
+          { id: 'mitiaro', name: 'Μιτιάρο', badge: 'Μικρό κοραλλιογενές νησί' }
+        ]
+      },
+      {
+        id: 'french-polynesia',
+        name: 'Γαλλική Πολυνησία (Έδαφος Γαλλίας)',
+        flag: '🇵🇫',
+        cities: [
+          { id: 'papeete', name: 'Παπεέτε', badge: 'Πρωτεύουσα της Γαλλικής Πολυνησίας' },
+          { id: 'bora-bora', name: 'Μπόρα Μπόρα', badge: 'Το πιο διάσημο νησί-θέρετρο στον κόσμο' },
+          { id: 'faaa', name: 'Φααα', badge: 'Η πολυπληθέστερη κοινότητα της Γαλλικής Πολυνησίας' },
+          { id: 'punaauia', name: 'Πουνααούια', badge: 'Δεύτερη μεγαλύτερη κοινότητα της Ταϊτής' },
+          { id: 'moorea', name: 'Μοορέα', badge: 'Το πιο πράσινο νησί της Σοσιετέ' },
+          { id: 'uturoa', name: 'Ουτουρόα', badge: 'Διοικητικό κέντρο Σοσιετέ Νήσων' },
+          { id: 'huahine', name: 'Χουαχίνε', badge: 'Καταφύγιο Παράδοσης Σοσιετέ' },
+          { id: 'rangiroa', name: 'Ρανγκιρόα', badge: 'Η μεγαλύτερη ατόλλη του Ειρηνικού' },
+          { id: 'nuku-hiva', name: 'Νούκου Χίβα', badge: 'Το μεγαλύτερο νησί των Μαρκίζων' },
+          { id: 'taiohae', name: 'Ταϊοχάε', badge: 'Διοικητικό κέντρο του αρχιπελάγους των Μαρκίζων' }
+        ]
+      },
+      {
+        id: 'new-caledonia',
+        name: 'Νέα Καληδονία (Έδαφος Γαλλίας)',
+        flag: '🇳🇨',
+        cities: [
+          { id: 'noumea', name: 'Νουμέα', badge: 'Πρωτεύουσα της Νέας Καληδονίας' },
+          { id: 'dumbea', name: 'Ντουμπέα', badge: 'Δεύτερη μεγαλύτερη κοινότητα της Νέας Καληδονίας' },
+          { id: 'mont-dore', name: 'Μον-Ντορ', badge: 'Κοιλάδα Yaté & νικελίου' },
+          { id: 'paita', name: 'Πάιτα', badge: 'Έδρα Διεθνούς Αεροδρομίου Tontouta' },
+          { id: 'bourail', name: 'Μπουράιγ', badge: 'Κέντρο Αγροκτηνοτομίας της Δυτικής Ακτής' },
+          { id: 'lifou', name: 'Λιφού', badge: 'Κοραλλιογενές Υψίπεδο του Loyalty' },
+          { id: 'kone', name: 'Κονέ', badge: 'Πρωτεύουσα της Βόρειας Επαρχίας' },
+          { id: 'mare', name: 'Μαρέ', badge: 'Νήσος Loyalty με Κοραλλιογενή Μορφολογία' },
+          { id: 'ouvea', name: 'Ουβέα', badge: 'Δυτική Νήσος Loyalty' },
+          { id: 'poindimie', name: 'Πουεντιμιέ', badge: 'Κέντρο Ανατολικής Ακτής του Grande Terre' }
         ]
       }
+    ]
     ]
   }
 ];

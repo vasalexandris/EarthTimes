@@ -1,0 +1,1481 @@
+{
+  "country": {
+    "id": "new-caledonia",
+    "name": "Νέα Καληδονία",
+    "englishName": "New Caledonia",
+    "nickname": "Le Caillou — Η Πέτρα του Ειρηνικού",
+    "badge": "Ειδική Κοινότητα της Γαλλίας (Sui Generis)",
+    "type": "sui-generis-collectivity",
+    "coords": [
+      -21.5,
+      165.5
+    ],
+    "zoom": 7,
+    "timeZone": "UTC+11 (Pacific/Noumea)",
+    "capital": "Νουμέα (Nouméa)",
+    "landmark": "Laggonnaire de la Nouvelle-Calédonie (UNESCO) & Όρος Panié",
+    "brief": "Ειδική κοινότητα της Γαλλίας στον νοτιοδυτικό Ειρηνικό που περιλαμβάνει το Grande Terre, τις νήσους Loyalty (Lifou, Maré, Ouvéa), το Chesterfield Islands και το Isle of Pines.",
+    "stats": {
+      "population": "271.407 (απογραφή 2019)",
+      "area": "18.576 km² (ακτογραμμή 2.254 km)",
+      "highestPoint": "Όρος Panié, 1.628 m",
+      "officialLanguages": "Γαλλικά (επίσημη), 28 Kanak γλώσσες",
+      "currency": "CFP Φράγκο (XPF)",
+      "landmark": "Lagonnaire de la Nouvelle-Calédonie (UNESCO) & Όρος Panié"
+    },
+    "geo": {
+      "title": "Grande Terre & Νήσοι Loyalty",
+      "text": "Το Grande Terre είναι το τρίτο μεγαλύτερο νησί του Ειρηνικού μετά τη Νέα Γουινέα και τη Νέα Ζηλανδία. Περιβάλλεται από τον δεύτερο μεγαλύτερο κοραλλιογενή ύφαλο στον κόσμο (1.600 km).",
+      "highlights": [
+        {
+          "icon": "fa-mountain",
+          "title": " Grande Terre",
+          "text": "Κυρίως νησί μήκους 400 km με ορεινή σπονδυλική στήλη."
+        },
+        {
+          "icon": "fa-water",
+          "title": "Κοραλλιογενής Ύφαλος UNESCO",
+          "text": "1.600 km συνεχής ύφαλος, ο δεύτερος μεγαλύτερος στον κόσμο."
+        },
+        {
+          "icon": "fa-tree",
+          "title": "Νήσοι Loyalty",
+          "text": "Lifou, Maré, Ouvéa — τρία uplifted κοραλλιογενή νησιά ανατολικά."
+        }
+      ]
+    },
+    "hist": {
+      "title": "Από Καράβι του Cook σε Sui Generis Κοινότητα",
+      "text": "4.000 χρόνια Kanak πολιτισμού, βρετανική ανακάλυψη, γαλλική αποικιοκρατία και τραγική ιστορία 'Κούλτουρας' (Caldoche) και Κανάκων.",
+      "highlights": [
+        {
+          "year": "1774",
+          "title": "James Cook Discover",
+          "desc": "Ο James Cook ονομάζει το νησί 'New Caledonia' λόγω της ομοιότητας με τη Σκωτία."
+        },
+        {
+          "year": "1853",
+          "title": "Γαλλική Προσάρτηση",
+          "desc": "Ο Admiral Febvrier-Despointes προσαρτά τη Νέα Καληδονία στη Γαλλία."
+        },
+        {
+          "year": "1998",
+          "title": "Συμφωνία Nouméa",
+          "desc": "Ιστορική συμφωνία αυτοδιάθεσης που δημιουργεί το καθεστώς sui generis."
+        }
+      ]
+    },
+    "cult": {
+      "title": "Μελανησιακός Πολιτισμός Kanak",
+      "items": [
+        {
+          "icon": "fa-archway",
+          "title": "Kanak Chiefdoms",
+          "desc": "Παραδοσιακή κοινωνία με 8 customary regions και chefferies."
+        },
+        {
+          "icon": "fa-paint-brush",
+          "title": "Kanak Contemporary Art",
+          "desc": "Κέντρο Tjibaou — το μεγαλύτερο μνημείο Kanak τέχνης από τον Renzo Piano."
+        },
+        {
+          "icon": "fa-leaf",
+          "title": "Yam Culture & Custom",
+          "text": "Η καλλιέργεια yam (κολοκύθα) είναι πνευματική πράξη Kanak."
+        }
+      ]
+    }
+  },
+  "cities": [
+    {
+      "id": "noumea",
+      "name": "Νουμέα",
+      "englishName": "Nouméa",
+      "nickname": "Petite Paris du Pacifique",
+      "badge": "Πρωτεύουσα της Νέας Καληδονίας",
+      "type": "city",
+      "coords": [
+        -22.2667,
+        166.45
+      ],
+      "zoom": 12,
+      "timeZone": "UTC+11 (Pacific/Noumea)",
+      "landmark": "Place des Cocotiers & Centre Culturel Tjibaou",
+      "stats": {
+        "population": "94.000 (182.000 ευρύτερη)",
+        "founded": "1854",
+        "area": "45,7 km²",
+        "elevation": "0–122 m",
+        "famousFor": "Centre Tjibaou, Παραλία Anse Vata, Aquarium",
+        "landmark": "Place des Cocotiers & Centre Culturel Tjibaou"
+      },
+      "quote": "«Η Νουμέα είναι το Παρίσι του Νότιου Ειρηνικού — με φοίνικες αντί πλατάνων.»",
+      "brief": "Η πρωτεύουσα και το διοικητικό, εμπορικό και πολιτιστικό κέντρο της Νέας Καληδονίας.",
+      "geo": {
+        "title": "Χερσόνησος & Προστατευμένοι Κόλποι",
+        "text": "Χτισμένη σε ορεινή χερσόνησο με τους κόλπους Anse Vata και Baie des Citrons.",
+        "highlights": [
+          {
+            "icon": "fa-water",
+            "title": "Anse Vata & Baie des Citrons",
+            "text": "Δύο εμβληματικοί κόλποι-παραλίες στο νότιο άκρο."
+          },
+          {
+            "icon": "fa-tree",
+            "title": "Place des Cocotiers",
+            "text": "Η κεντρική πλατεία με φοίνικες στο κέντρο της πόλης."
+          },
+          {
+            "icon": "fa-mountain",
+            "title": "Mont Coffin",
+            "text": "Λόφος 122 m με πανοραμική θέα στο λιμάνι."
+          }
+        ]
+      },
+      "hist": {
+        "title": "Ιστορική Διαδρομή",
+        "text": "Από γαλλικό στρατιωτικό οικισμό Port-de-France σε σύγχρονη πόλη.",
+        "highlights": [
+          {
+            "year": "1854",
+            "title": "Ίδρυση Port-de-France",
+            "desc": "Ο Colonel Testard ιδρύει τον στρατιωτικό οικισμό που αργότερα μετονομάζεται σε Nouméa."
+          },
+          {
+            "year": "1864",
+            "title": "Ποινική Αποικία",
+            "desc": "Η Νουμέα γίνεται κέντρο μεταφοράς ποινικών κρατουμένων."
+          },
+          {
+            "year": "1998",
+            "title": "Kanak-Αναγνώριση",
+            "desc": "Με τη συμφωνία Nouméa δημιουργείται το Centre Culturel Tjibaou."
+          }
+        ]
+      },
+      "cult": {
+        "title": "Πολιτιστική Πρωτεύουσα του Ειρηνικού",
+        "items": [
+          {
+            "icon": "fa-paint-brush",
+            "title": "Centre Tjibaou",
+            "desc": "Αριστούργημα του Renzo Piano αφιερωμένο στον Kanak πολιτισμό."
+          },
+          {
+            "icon": "fa-fish",
+            "title": "Aquarium des Lagons",
+            "desc": "Εξειδικευμένο σε είδη του New Caledonian lagoon."
+          },
+          {
+            "icon": "fa-landmark",
+            "title": "Musée de Nouvelle-Calédonie",
+            "desc": "Κορυφαίο μουσείο Kanak και Μελανησιακής τέχνης."
+          }
+        ]
+      },
+      "demo": {
+        "details": [
+          {
+            "label": "Πληθυσμός & Γλώσσες",
+            "text": "Κοσμοπολίτικη κοινότητα Kanak, Caldoche, Μητροπολιτών Γάλλων, Ασιατών και Πολυνησίων. Γαλλικά είναι επίσημη γλώσσα."
+          },
+          {
+            "label": "Οικονομία",
+            "text": "Διοίκηση, νικελίo, τουρισμός, υπηρεσίες και ναυτιλία."
+          }
+        ]
+      },
+      "pois": [
+        {
+          "id": "no-tjibaou",
+          "name": "Centre Culturel Tjibaou",
+          "category": "culture",
+          "coords": [
+            -22.259,
+            166.472
+          ],
+          "year": "1998",
+          "desc": "Αριστούργημα του Renzo Piano αφιερωμένο στον Kanak πολιτισμό."
+        },
+        {
+          "id": "no-place",
+          "name": "Place des Cocotiers",
+          "category": "landmark",
+          "coords": [
+            -22.265,
+            166.452
+          ],
+          "year": "1875",
+          "desc": "Η κεντρική πλατεία με φοίνικες, κρήνη και banyan."
+        },
+        {
+          "id": "no-aquarium",
+          "name": "Aquarium des Lagons",
+          "category": "culture",
+          "coords": [
+            -22.3,
+            166.44
+          ],
+          "year": "1956",
+          "desc": "Εξειδικευμένο σε είδη του New Caledonian lagoon."
+        }
+      ],
+      "pastVsPresent": {
+        "title": "Από Ποινική Αποικία σε Πολιτιστική Πρωτεύουσα",
+        "pastText": "Στρατιωτικός οικισμός Port-de-France και κέντρο ποινικής αποικίας.",
+        "presentText": "Σύγχρονη πρωτεύουσα του Παλέρμικού του Πατριακού Ειρηνικού με μουσεία και νυχτερινή ζωή."
+      }
+    },
+    {
+      "id": "dumbea",
+      "name": "Ντουμπέα",
+      "englishName": "Dumbéa",
+      "nickname": "Η Πράσινη Πύλη της Νουμέα",
+      "badge": "Δεύτερη μεγαλύτερη κοινότητα της Νέας Καληδονίας",
+      "type": "city",
+      "coords": [
+        -22.1833,
+        166.3667
+      ],
+      "zoom": 12,
+      "timeZone": "UTC+11 (Pacific/Noumea)",
+      "landmark": "Φράγμα Dumbea & Mont Mou",
+      "stats": {
+        "population": "31.800",
+        "founded": "1860",
+        "area": "305 km²",
+        "elevation": "0–1.215 m",
+        "famousFor": "Φράγμα νερού, Kogné Forest, Mont Mou",
+        "landmark": "Φράγμα Dumbea & Mont Mou"
+      },
+      "quote": "«Στο Dumbea ξεκινά το πράσινο βουνό και τελειώνει η πόλη.»",
+      "brief": "Παράκτια και ημιορεινή κοινότητα βόρεια της Νουμέα, κύρια πηγή νερού για την πρωτεύουσα.",
+      "geo": {
+        "title": "Κοιλάδα ποταμού & Βουνό Mou",
+        "text": "Ακτογραμμή και εκτεταμένη ορεινή ενδοχώρα με δάσος και φράγματα.",
+        "highlights": [
+          {
+            "icon": "fa-water",
+            "title": "Φράγμα Dumbea",
+            "text": "Ιστορικό φράγμα που τροφοδοτεί τη Νουμέα."
+          },
+          {
+            "icon": "fa-tree",
+            "title": "Parc Forestier de Kogné",
+            "text": "Το μεγαλύτερο δασικό πάρκο στη Νέα Καληδονία."
+          },
+          {
+            "icon": "fa-mountain",
+            "title": "Mont Mou",
+            "text": "Κορυφή 1.215 m με θέα σε ολόκληρο το νότιο τμήμα."
+          }
+        ]
+      },
+      "hist": {
+        "title": "Ιστορική Διαδρομή",
+        "text": "Από αγροτική κοινότητα Kanak σε στρατηγικό κόμβο ύδρευσης.",
+        "highlights": [
+          {
+            "year": "1860",
+            "title": "Ίδρυση Κοινότητας",
+            "desc": "Ορίστηκε ως αυτόνομη κοινότητα με την ανάπτυξη γεωργίας."
+          },
+          {
+            "year": "1893",
+            "title": "Φράγμα Dumbea",
+            "desc": "Κατασκευάζεται το πρώτο μεγάλο φράγμα που τροφοδοτεί τη Νουμέα."
+          },
+          {
+            "year": "1995",
+            "title": "Forestier de Kogné",
+            "desc": "Ανοίγει το μεγαλύτερο δασικό πάρκο του νησιού."
+          }
+        ]
+      },
+      "cult": {
+        "title": "Πολιτισμός & Περιβάλλον",
+        "items": [
+          {
+            "icon": "fa-tree",
+            "title": "Kogné Forestier",
+            "desc": "Διατήρηση Araucaria και Kaori endemικών δέντρων."
+          },
+          {
+            "icon": "fa-bicycle",
+            "title": "Mountain Bike Park",
+            "desc": "Δίκτυο 30+ διαδρομών mountain bike."
+          },
+          {
+            "icon": "fa-water",
+            "title": "Κατάδυση RN1",
+            "desc": "Σπήλαια και φάρμα καρχαριών στην ακτή."
+          }
+        ]
+      },
+      "demo": {
+        "details": [
+          {
+            "label": "Πληθυσμός & Γλώσσες",
+            "text": "Νεότερη και ταχέως αναπτυσσόμενη κοινότητα με μείγμα Caldoche, Kanak και Μητροπολιτών Γάλλων."
+          },
+          {
+            "label": "Οικονομία",
+            "text": "Υπηρεσίες, ύδρευση, αναψυχή και οικοτουρισμός."
+          }
+        ]
+      },
+      "pois": [
+        {
+          "id": "du-dam",
+          "name": "Φράγμα Dumbea (Barrage de Dumbea)",
+          "category": "landmark",
+          "coords": [
+            -22.173,
+            166.385
+          ],
+          "year": "1893",
+          "desc": "Ιστορικό φράγμα που τροφοδοτεί τη Νουμέα με νερό."
+        },
+        {
+          "id": "du-kogne",
+          "name": "Parc Forestier de Kogné",
+          "category": "nature",
+          "coords": [
+            -22.14,
+            166.36
+          ],
+          "year": "1995",
+          "desc": "Το μεγαλύτερο δασικό πάρκο με endemικά Kaori."
+        },
+        {
+          "id": "du-mou",
+          "name": "Mont Mou",
+          "category": "viewpoint",
+          "coords": [
+            -22.15,
+            166.35
+          ],
+          "year": "φυσικό",
+          "desc": "Κορυφή 1.215 m με πανοραμική θέα."
+        }
+      ],
+      "pastVsPresent": {
+        "title": "Από Πηγή Νερού σε Πράσινο Προάστιο",
+        "pastText": "Αγροτική κοινότητα με βουνά που τροφοδοτούσε τη Νουμέα με νερό.",
+        "presentText": "Ταχέως αναπτυσσόμενο προάστιο με δάση και μονοπάτια αναψυχής."
+      }
+    },
+    {
+      "id": "mont-dore",
+      "name": "Μον-Ντορ",
+      "englishName": "Mont-Dore",
+      "nickname": "Η Πύλη του Νότου",
+      "badge": "Κοιλάδα Yaté & νικελίου",
+      "type": "city",
+      "coords": [
+        -22.25,
+        166.6667
+      ],
+      "zoom": 12,
+      "timeZone": "UTC+11 (Pacific/Noumea)",
+      "landmark": "Φράγμα Yaté & Lac de Yaté",
+      "stats": {
+        "population": "27.700",
+        "founded": "1880",
+        "area": "743 km²",
+        "elevation": "0–1.228 m",
+        "famousFor": "Lac de Yaté, Plage de la Roche Percee, Nickel",
+        "landmark": "Φράγμα Yaté & Lac de Yaté"
+      },
+      "quote": "«Το Mont-Dore είναι η πύλη προς τον ερυθρό βράχο του νικελίου.»",
+      "brief": "Μεγάλη νότια κοινότητα της Νέας Καληδονίας με βιομηχανία νικελίου και φράγματα.",
+      "geo": {
+        "title": "Κοραλλιογενής Ύφαλος & Βουνά Νικελίου",
+        "text": "Ακτή με πλατφόρμες φόρτωσης νικελίου και ηπειρωτική ενδοχώρα με φράγματα.",
+        "highlights": [
+          {
+            "icon": "fa-water",
+            "title": "Lac de Yaté",
+            "text": "Τεχνητή λίμνη 4.000 εκτάρια που τροφοδοτεί υδροηλεκτρική ενέργεια."
+          },
+          {
+            "icon": "fa-tree",
+            "title": "Parc Provincial de la Rivière Bleue",
+            "text": "Προστατευόμενη περιοχή με endemικά Kaori δέντρα."
+          },
+          {
+            "icon": "fa-industry",
+            "title": "Eramet SLN Doniambo",
+            "text": "Στρατηγική πύλη μεταφοράς νικελίου."
+          }
+        ]
+      },
+      "hist": {
+        "title": "Ιστορική Διαδρομή",
+        "text": "Από κοιλάδα Kanak σε κέντρο εξόρυξης νικελίου.",
+        "highlights": [
+          {
+            "year": "1880",
+            "title": "Ίδρυση Κοινότητας",
+            "desc": "Ορίστηκε ως κοινότητα γύρω από τον οικισμό."
+          },
+          {
+            "year": "1955",
+            "title": "Φράγμα Yaté",
+            "desc": "Κατασκευάζεται το πρώτο μεγάλο υδροηλεκτρικό φράγμα."
+          },
+          {
+            "year": "1959",
+            "title": "Crête Mining",
+            "desc": "Ανοίγουν τα πρώτα μεγάλα ορυχεία νικελίου."
+          }
+        ]
+      },
+      "cult": {
+        "title": "Βιομηχανική & Φυσική Κληρονομιά",
+        "items": [
+          {
+            "icon": "fa-tree",
+            "title": "Kaori Anciens",
+            "desc": "Endemικά δέντρα Kaori που φτάνουν τα 1.000 έτη."
+          },
+          {
+            "icon": "fa-industry",
+            "title": "SLN Nickel",
+            "desc": "Εταιρεία Société Le Nickel (SLN) από το 1880."
+          },
+          {
+            "icon": "fa-fish",
+            "title": "Plage Roche Percee",
+            "desc": "Διάσημη παραλία με σχηματισμένες πέτρες."
+          }
+        ]
+      },
+      "demo": {
+        "details": [
+          {
+            "label": "Πληθυσμός & Γλώσσες",
+            "text": "Μείγμα Kanak και Caldoche, με πολλούς εργαζομένους στη βιομηχανία νικελίου."
+          },
+          {
+            "label": "Οικονομία",
+            "text": "Βιομηχανία νικελίου, υδροηλεκτρική ενέργεια και οικοτουρισμός."
+          }
+        ]
+      },
+      "pois": [
+        {
+          "id": "md-yate-dam",
+          "name": "Φράγμα Yaté (Lac de Yaté)",
+          "category": "landmark",
+          "coords": [
+            -22.17,
+            166.75
+          ],
+          "year": "1955",
+          "desc": "Τεχνητή λίμνη που τροφοδοτεί υδροηλεκτρική ενέργεια."
+        },
+        {
+          "id": "md-riviere-bleue",
+          "name": "Parc Provincial de la Rivière Bleue",
+          "category": "nature",
+          "coords": [
+            -22.15,
+            166.65
+          ],
+          "year": "1980",
+          "desc": "Προστατευόμενη περιοχή με endemικά Kaori δέντρα."
+        },
+        {
+          "id": "md-roche-percee",
+          "name": "Plage de la Roche Percee",
+          "category": "beach",
+          "coords": [
+            -22.37,
+            166.63
+          ],
+          "year": "φυσική",
+          "desc": "Διάσημη παραλία με σχηματισμένες πέτρες."
+        }
+      ],
+      "pastVsPresent": {
+        "title": "Από Κοιλάδα Kanak σε Κόμβος Ενέργειας",
+        "pastText": "Κοιλάδα Kanak με παραδοσιακές κοινότητες και φυσικό τοπίο.",
+        "presentText": "Στρατηγικός κόμβος νικελίου, υδροηλεκτρικής ενέργειας και οικοτουρισμού."
+      }
+    },
+    {
+      "id": "paita",
+      "name": "Πάιτα",
+      "englishName": "Païta",
+      "nickname": "Το Δυτικό Προάστιο & Διεθνές Αεροδρόμιο",
+      "badge": "Έδρα Διεθνούς Αεροδρομίου Tontouta",
+      "type": "city",
+      "coords": [
+        -22.1333,
+        166.35
+      ],
+      "zoom": 12,
+      "timeZone": "UTC+11 (Pacific/Noumea)",
+      "landmark": "Διεθνές Αεροδρόμιο La Tontouta & Parc Fayard",
+      "stats": {
+        "population": "23.800",
+        "founded": "1900",
+        "area": "417 km²",
+        "elevation": "0–800 m",
+        "famousFor": "Διεθνές Αεροδρόμιο Tontouta, Mt Mouh Privé",
+        "landmark": "Διεθνές Αεροδρόμιο La Tontouta & Parc Fayard"
+      },
+      "quote": "«Από την Paita ξεκινά η γαλλική Νέα Καληδονία — και ο κόσμος.»",
+      "brief": "Προάστιο και έδρα του μοναδικού διεθνούς αεροδρομίου της Νέας Καληδονίας.",
+      "geo": {
+        "title": "Λεκανοπέδιο Tontouta & Σαβάνα",
+        "text": "Παράκτια σαβάνα και λόφοι με το διεθνές αεροδρόμιο.",
+        "highlights": [
+          {
+            "icon": "fa-plane",
+            "title": "Aéroport International La Tontouta",
+            "text": "Η κύρια πύλη εισόδου στη Νέα Καληδονία (NOU)."
+          },
+          {
+            "icon": "fa-tree",
+            "title": "Parc Fayard",
+            "text": "Παραλίας πάρκο αναψυχής."
+          },
+          {
+            "icon": "fa-water",
+            "title": "Ποταμός Tontouta",
+            "text": "Κατάλληλος για kayaking και rafting."
+          }
+        ]
+      },
+      "hist": {
+        "title": "Ιστορική Διαδρομή",
+        "text": "Από αγροτική σαβάνα σε στρατηγικό αεροδρόμιο του Ειρηνικού.",
+        "highlights": [
+          {
+            "year": "1900",
+            "title": "Ίδρυση Κοινότητας",
+            "desc": "Αυτόνομη κοινότητα αποσπώμενη από τη Nouméa."
+          },
+          {
+            "year": "1942",
+            "title": "Αμερικανική Στρατιωτική Βάση",
+            "desc": "Οι ΗΠΑ εγκαθιστούν αεροδρόμιο για τον πόλεμο του Ειρηνικού."
+          },
+          {
+            "year": "1985",
+            "title": "Διεθνές Αεροδρόμιο Tontouta",
+            "desc": "Νέο τερματικό σταθμό για διεθνείς πτήσεις."
+          }
+        ]
+      },
+      "cult": {
+        "title": "Πολιτισμός & Στρατιωτική Ιστορία",
+        "items": [
+          {
+            "icon": "fa-plane",
+            "title": "Tontouta Air Base",
+            "desc": "Στρατιωτικός αερολιμένας που φιλοξενεί Escadron de transport."
+          },
+          {
+            "icon": "fa-music",
+            "title": "Festival des Nuits de Mai",
+            "desc": "Ετήσιο φεστιβάλ παραδοσιακής μουσικής και χορού."
+          },
+          {
+            "icon": "fa-tree",
+            "title": "Niaouli Tree Forests",
+            "desc": "Endemικό δέντρο Melaleuca quinquenervia."
+          }
+        ]
+      },
+      "demo": {
+        "details": [
+          {
+            "label": "Πληθυσμός & Γλώσσες",
+            "text": "Ταχέως αναπτυσσόμενη κοινότητα Caldoche και Kanak."
+          },
+          {
+            "label": "Οικονομία",
+            "text": "Αεροδρόμιο, αγροτική παραγωγή, βιομηχανίες."
+          }
+        ]
+      },
+      "pois": [
+        {
+          "id": "pa-airport",
+          "name": "Aéroport International de Nouvelle-Calédonie (La Tontouta)",
+          "category": "landmark",
+          "coords": [
+            -22.0147,
+            166.215
+          ],
+          "year": "1942",
+          "desc": "Το μοναδικό διεθνές αεροδρόμιο της Νέας Καληδονίας."
+        },
+        {
+          "id": "pa-fayard",
+          "name": "Parc Fayard",
+          "category": "landmark",
+          "coords": [
+            -22.143,
+            166.37
+          ],
+          "year": "1990",
+          "desc": "Παραλίας πάρκο αναψυχής με παραλία."
+        },
+        {
+          "id": "pa-saut",
+          "name": "Saut des Trois Cascades",
+          "category": "nature",
+          "coords": [
+            -22.15,
+            166.3
+          ],
+          "year": "φυσικό",
+          "desc": "Τρεις καταρράκτες στον ποταμό Tontouta."
+        }
+      ],
+      "pastVsPresent": {
+        "title": "Από Αγροτική Σαβάνα σε Πύλη Αερομεταφοράς",
+        "pastText": "Αγροτική σαβάνα με κοιλάδες Tontouta.",
+        "presentText": "Η κύρια πύλη εισόδου για τη Νέα Καληδονία και ταχέως αναπτυσσόμενο προάστιο."
+      }
+    },
+    {
+      "id": "bourail",
+      "name": "Μπουράιγ",
+      "englishName": "Bourail",
+      "nickname": "Cow-Boy Capital του Ειρηνικού",
+      "badge": "Κέντρο Αγροκτηνοτομίας της Δυτικής Ακτής",
+      "type": "city",
+      "coords": [
+        -21.5667,
+        165.5
+      ],
+      "zoom": 11,
+      "timeZone": "UTC+11 (Pacific/Noumea)",
+      "landmark": "La Roche Percée & Bonhomme de Bourail",
+      "stats": {
+        "population": "5.500",
+        "founded": "1865",
+        "area": "1.005 km²",
+        "elevation": "0–1.000 m",
+        "famousFor": "Bonhomme Rock, αγροκτηνοτομία Rodeo, Nespop Cow-Boys",
+        "landmark": "La Roche Percée & Bonhomme de Bourail"
+      },
+      "quote": "«Στο Bourail οι πραγματικοί cow-boys του Ειρηνικού ιππεύουν ακόμα κάτω από τα Araucaria.»",
+      "brief": "Αγροτική κοινότητα της δυτικής ακτής με φημισμένη ροντέο και εμβληματικούς βράχους.",
+      "geo": {
+        "title": "Δυτική Ακτή & Κοιλάδα Boghen",
+        "text": "Ακτογραμμή με βράχους και ενδοχώρα με αγροτικές εκτάσεις.",
+        "highlights": [
+          {
+            "icon": "fa-mountain",
+            "title": "Bonhomme de Bourail",
+            "text": "Χαρακτηριστικός βράχος σε σχήμα ανθρώπου."
+          },
+          {
+            "icon": "fa-water",
+            "title": "La Roche Percée",
+            "text": "Παραλία με διάτρητο βράχο."
+          },
+          {
+            "icon": "fa-tree",
+            "title": "Forêt de Tiéa",
+            "text": "Προστατευόμενο δάσος Araucaria."
+          }
+        ]
+      },
+      "hist": {
+        "title": "Ιστορική Διαδρομή",
+        "text": "Από κοιλάδα Kanak σε ορμητήριο Caldoche αγροτών.",
+        "highlights": [
+          {
+            "year": "1865",
+            "title": "Αποικία Bourail",
+            "desc": "Ιδρύεται ως αποικία ποινικών απελευθερωθέντων (πορνάδων)."
+          },
+          {
+            "year": "1875",
+            "title": "Agricultural Expansion",
+            "desc": "Ανάπτυξη αγροκτηνοτομίας και καλαμποκιού."
+          },
+          {
+            "year": "1954",
+            "title": "Bonhomme Discovery",
+            "desc": "Γίνεται γνωστός ο εμβληματικός βράχος."
+          }
+        ]
+      },
+      "cult": {
+        "title": "Caldoche Αγροτική Παράδοση",
+        "items": [
+          {
+            "icon": "fa-horse",
+            "title": "Bourail Rodeo",
+            "desc": "Το μεγαλύτερο rodeo της Νέας Καληδονίας κάθε Αύγουστο."
+          },
+          {
+            "icon": "fa-leaf",
+            "title": "Café & Maïs",
+            "desc": "Παραγωγή καλαμποκιού και τοπικού καφέ."
+          },
+          {
+            "icon": "fa-place-of-worship",
+            "title": "Église de Bourail",
+            "desc": "Ιστορικός ναός του 1879."
+          }
+        ]
+      },
+      "demo": {
+        "details": [
+          {
+            "label": "Πληθυσμός & Γλώσσες",
+            "text": "Κυρίως Caldoche αγροτικοί κτηνοτρόφοι με Kanak κοινότητες στην ενδοχώρα."
+          },
+          {
+            "label": "Οικονομία",
+            "text": "Αγροκτηνοτομία, καλλιέργειες καλαμποκιού και τοπικός τουρισμός."
+          }
+        ]
+      },
+      "pois": [
+        {
+          "id": "bo-bonhomme",
+          "name": "Bonhomme de Bourail",
+          "category": "landmark",
+          "coords": [
+            -21.615,
+            165.49
+          ],
+          "year": "φυσικό",
+          "desc": "Εμβληματικός βράχος σε σχήμα ανθρώπου."
+        },
+        {
+          "id": "bo-roche",
+          "name": "La Roche Percée",
+          "category": "beach",
+          "coords": [
+            -21.62,
+            165.5
+          ],
+          "year": "φυσικό",
+          "desc": "Παραλία με διάτρητο βράχο."
+        },
+        {
+          "id": "bo-rodeo",
+          "name": "Bourail Rodeo Ground",
+          "category": "culture",
+          "coords": [
+            -21.5667,
+            165.5
+          ],
+          "year": "1965",
+          "desc": "Η έδρα του μεγαλύτερου rodeo του Ειρηνικού."
+        }
+      ],
+      "pastVsPresent": {
+        "title": "Από Ποινική Αποικία σε Cow-Boy Κοινότητα",
+        "pastText": "Ποινική αποικία Bourail με απελευθερωμένους κρατούμενους.",
+        "presentText": "Αγροτική κοινότητα με rodeo και εμβληματικούς βράχους."
+      }
+    },
+    {
+      "id": "lifou",
+      "name": "Λιφού",
+      "englishName": "Lifou",
+      "nickname": "Η Μεγαλύτερη Νήσος Loyalty",
+      "badge": "Κοραλλιογενές Υψίπεδο του Loyalty",
+      "type": "city",
+      "coords": [
+        -20.9333,
+        167.25
+      ],
+      "zoom": 11,
+      "timeZone": "UTC+11 (Pacific/Noumea)",
+      "landmark": "Jokin Cliffs & Χωριό Easo",
+      "stats": {
+        "population": "9.200",
+        "founded": "~1840 (ιαποστολικός σταθμός)",
+        "area": "1.207 km²",
+        "elevation": "0–104 m",
+        "famousFor": "Jokin Cliffs, Katépahié Cave, Muc Luthiers",
+        "landmark": "Jokin Cliffs & Χωριό Easo"
+      },
+      "quote": "«Το Lifou είναι η καρδιά των Loyalty — κοράλλι που υψώθηκε από τη θάλασσα.»",
+      "brief": "Το μεγαλύτερο νησί του αρχιπελάγους Loyalty και πρωτεύουσα Wé.",
+      "geo": {
+        "title": "Uplifted Κοραλλιογενές Νησί",
+        "text": "Ένα uplifted κοραλλιογενές νησί χωρίς λιμνοθάλασσα αλλά με απότομους βράχους.",
+        "highlights": [
+          {
+            "icon": "fa-mountain",
+            "title": "Jokin Cliffs",
+            "text": "Εμβληματικοί απότομοι κοραλλιογενείς βράχοι 40 m."
+          },
+          {
+            "icon": "fa-cave",
+            "title": "Σπήλαιο Katépahié",
+            "text": "Τεράστιο σπήλαιο με γλυκά νερά."
+          },
+          {
+            "icon": "fa-water",
+            "title": "Παραλία Easo",
+            "text": "Λευκή άμμος με κρυστάλλινα νερά."
+          }
+        ]
+      },
+      "hist": {
+        "title": "Ιστορική Διαδρομή",
+        "text": "Από ιερό κέντρο Kanak σε χριστιανικό κέντρο των Loyalty.",
+        "highlights": [
+          {
+            "year": "1840",
+            "title": "Samoa Missionaries",
+            "desc": "Samoa ιεραπόστολοι (LMS) φθάνουν στο Lifou."
+          },
+          {
+            "year": "1860",
+            "title": "Ανθρωποκυνηγητό Blackbirding",
+            "desc": "Λιγότερο επηρεασμένο από Queensland blackbirding."
+          },
+          {
+            "year": "1900",
+            "title": "Λειτουργικές Σπηλιές",
+            "desc": "Οι σπηλιές Katépahié και Luengoni χρησιμοποιούνται ως ιεροί τόποι."
+          }
+        ]
+      },
+      "cult": {
+        "title": "Kanak Παράδοση Lifou",
+        "items": [
+          {
+            "icon": "fa-archway",
+            "title": "Chiefdoms Lifou",
+            "desc": "13 παραδοσιακά chefferies με αρχαιότητα."
+          },
+          {
+            "icon": "fa-cave",
+            "title": "Κατάδυση Σπηλιών",
+            "desc": "Σπηλιές με γλυκά νερά για κατάδυση."
+          },
+          {
+            "icon": "fa-fish",
+            "title": "Αλιεία Κοραλλιών",
+            "desc": "Παραδοσιακή αλιεία στον ύφαλο."
+          }
+        ]
+      },
+      "demo": {
+        "details": [
+          {
+            "label": "Πληθυσμός & Γλώσσες",
+            "text": "Κυρίως Kanak που μιλούν Drehu, μία από τις 28 Kanak γλώσσες."
+          },
+          {
+            "label": "Οικονομία",
+            "text": "Αλιεία, καλλιέργειες copra και περιορισμένος τουρισμός."
+          }
+        ]
+      },
+      "pois": [
+        {
+          "id": "li-jokin",
+          "name": "Jokin Cliffs",
+          "category": "viewpoint",
+          "coords": [
+            -20.87,
+            167.27
+          ],
+          "year": "φυσικό",
+          "desc": "Εμβληματικοί απότομοι κοραλλιογενείς βράχοι."
+        },
+        {
+          "id": "li-katepahie",
+          "name": "Σπήλαιο Katépahié",
+          "category": "nature",
+          "coords": [
+            -20.94,
+            167.22
+          ],
+          "year": "φυσικό",
+          "desc": "Τεράστιο σπήλαιο με γλυκά νερά."
+        },
+        {
+          "id": "li-easo",
+          "name": "Παραλία Easo",
+          "category": "beach",
+          "coords": [
+            -20.87,
+            167.25
+          ],
+          "year": "φυσική",
+          "desc": "Λευκή άμμος με κρυστάλλινα νερά."
+        }
+      ],
+      "pastVsPresent": {
+        "title": "Από Ιερό Κοράλλι σε Προορισμό Φύσης",
+        "pastText": "Ιερό κέντρο Kanak με σπηλιές για τελετές.",
+        "presentText": "Προορισμός φυσικού τουρισμού με σπηλιές και απότομους βράχους."
+      }
+    },
+    {
+      "id": "kone",
+      "name": "Κονέ",
+      "englishName": "Koné",
+      "nickname": "Πύλη του Βορρά",
+      "badge": "Πρωτεύουσα της Βόρειας Επαρχίας",
+      "type": "city",
+      "coords": [
+        -21.0667,
+        164.85
+      ],
+      "zoom": 12,
+      "timeZone": "UTC+11 (Pacific/Noumea)",
+      "landmark": "Βουνό Aoupinié & Ποταμός Koné",
+      "stats": {
+        "population": "7.500",
+        "founded": "1900",
+        "area": "412 km²",
+        "elevation": "0–1.006 m",
+        "famousFor": "Aoupinié Reserve, Koniambo Nickel, Plateau Pouembout",
+        "landmark": "Βουνό Aoupinié & Ποταμός Koné"
+      },
+      "quote": "«Από το Koné ξεκινά η Βόρεια Επαρχία — η καρδιά του Kanak πολιτισμού.»",
+      "brief": "Η πρωτεύουσα της Βόρειας Επαρχίας της Νέας Καληδονίας και κέντρο βιομηχανίας νικελίου.",
+      "geo": {
+        "title": "Παράκτια Λεκανοπέδιο & Ορεινή Ενδοχώρα",
+        "text": "Παράκτια πεδιάδα Koné με ορεινή ενδοχώρα που οδηγεί στο Βουνό Aoupinié.",
+        "highlights": [
+          {
+            "icon": "fa-mountain",
+            "title": "Mont Aoupinié",
+            "text": "Προστατευόμενη περιοχή με endemικά πουλιά."
+          },
+          {
+            "icon": "fa-industry",
+            "title": "Koniambo Nickel",
+            "text": "Στρατηγικό ορυχείο Koniambo (SLN-SMX)."
+          },
+          {
+            "icon": "fa-water",
+            "title": "Ποταμός Koné",
+            "text": "Ιστορικός ποταμός που διαρρέει την πόλη."
+          }
+        ]
+      },
+      "hist": {
+        "title": "Ιστορική Διαδρομή",
+        "text": "Από παραδοσιακό κέντρο Kanak σε διοικητική πρωτεύουσα της Βόρειας Επαρχίας.",
+        "highlights": [
+          {
+            "year": "1900",
+            "title": "Ίδρυση Κοινότητας",
+            "desc": "Ορίζεται ως αυτόνομη κοινότητα."
+          },
+          {
+            "year": "1989",
+            "title": "Αυτονομία Βόρειας Επαρχίας",
+            "desc": "Μετά τη συμφωνία Matignon ορίζεται πρωτεύουσα της Βόρειας Επαρχίας."
+          },
+          {
+            "year": "2013",
+            "title": "Koniambo Nickel Plant",
+            "desc": "Ανοίγει το μεγάλο εργοστάσιο νικελίου Koniambo."
+          }
+        ]
+      },
+      "cult": {
+        "title": "Kanak Παράδοση & Βιομηχανία",
+        "items": [
+          {
+            "icon": "fa-archway",
+            "title": "PAAC Customary District",
+            "desc": "Ένα από τα 8 customary districts της Νέας Καληδονίας."
+          },
+          {
+            "icon": "fa-tree",
+            "title": "Aoupinié Reserve",
+            "desc": "Προστατεία endemικών Κagou (符号.New Caledonian bird)."
+          },
+          {
+            "icon": "fa-fish",
+            "title": "Mangrove PWébu",
+            "desc": "Παραδοσιακή αλιεία στο μαγκρόβιο."
+          }
+        ]
+      },
+      "demo": {
+        "details": [
+          {
+            "label": "Πληθυσμός & Γλώσσες",
+            "text": "Κυρίως Kanak με γαλλόφωνη διοικητική κοινότητα. Γλώσσες Pwamei και Cèmuhî."
+          },
+          {
+            "label": "Οικονομία",
+            "text": "Βιομηχανία νικελίου Koniambo, διοίκηση, αγροτική παραγωγή."
+          }
+        ]
+      },
+      "pois": [
+        {
+          "id": "ko-aoupine",
+          "name": "Réserve Spéciale de Faune du Mont Aoupinié",
+          "category": "nature",
+          "coords": [
+            -21.15,
+            164.87
+          ],
+          "year": "1950",
+          "desc": "Προστατευόμενη περιοχή με endemικά Kagu και NOTOU pigeons."
+        },
+        {
+          "id": "ko-koniambo",
+          "name": "Koniambo Nickel Smelter",
+          "category": "industry",
+          "coords": [
+            -21.03,
+            164.83
+          ],
+          "year": "2013",
+          "desc": "Μεγάλο εργοστάσιο νικελίου Koniambo (KNS)."
+        },
+        {
+          "id": "ko-mairie",
+          "name": "Mairie de Koné & Place de la Province Nord",
+          "category": "landmark",
+          "coords": [
+            -21.0667,
+            164.85
+          ],
+          "year": "1989",
+          "desc": "Η έδρα της Βόρειας Επαρχίας."
+        }
+      ],
+      "pastVsPresent": {
+        "title": "Από Παραδοσιακό Κέντρο σε Διοικητική Πρωτεύουσα",
+        "pastText": "Παραδοσιακό κέντρο Kanak PAAC customary district.",
+        "presentText": "Διοικητική πρωτεύουσα της Βόρειας Επαρχίας και κέντρο βιομηχανίας νικελίου."
+      }
+    },
+    {
+      "id": "mare",
+      "name": "Μαρέ",
+      "englishName": "Maré",
+      "nickname": "Το Νησί του Βυθού (Greek Trough)",
+      "badge": "Νήσος Loyalty με Κοραλλιογενή Μορφολογία",
+      "type": "city",
+      "coords": [
+        -21.5,
+        167.8333
+      ],
+      "zoom": 11,
+      "timeZone": "UTC+11 (Pacific/Noumea)",
+      "landmark": "Πλατφόρμα Tadine & Σπηλαιο Αβανί",
+      "stats": {
+        "population": "5.700",
+        "founded": "~1843 (ιαποστολικός σταθμός)",
+        "area": "642 km²",
+        "elevation": "0–129 m",
+        "famousFor": "Cœur de Maré, Σπηλιές, Αλιεία Holothuries",
+        "landmark": "Πλατφόρμα Tadine & Σπηλαιο Αβανί"
+      },
+      "quote": "«Το Maré — η ωραία των Loyalty, με τη θάλασσα που ζωγραφίζει πέτρες.»",
+      "brief": "Το δεύτερο νησί του αρχιπελάγους Loyalty με κεντρικό οικισμό Tadine.",
+      "geo": {
+        "title": "Uplifted Κοραλλιογενές Νησί",
+        "text": "Κοραλλιογενές νησί με ιδιαίτερη μορφολογία «γκρεμισμένης» θάλασσας.",
+        "highlights": [
+          {
+            "icon": "fa-water",
+            "title": "Cœur de Maré",
+            "text": "Φυσική πισίνα σε σχήμα καρδιάς."
+          },
+          {
+            "icon": "fa-cave",
+            "title": "Σπηλαιο Αβανί",
+            "text": "Πνευματική σπηλιά με γλυκά νερά."
+          },
+          {
+            "icon": "fa-mountain",
+            "title": "Πεδινη Ανύψωση",
+            "text": "Συνολική ανύψωση του νησιού έως 129 m."
+          }
+        ]
+      },
+      "hist": {
+        "title": "Ιστορική Διαδρομή",
+        "text": "Από πνευματικό κέντρο Kanak σε απομονωμένο προορισμό.",
+        "highlights": [
+          {
+            "year": "1843",
+            "title": "Ιεραποστολικός Σταθμός",
+            "desc": "Samoa ιεραπόστολοι φθάνουν στο Maré."
+          },
+          {
+            "year": "1862",
+            "title": "Blackbirding Events",
+            "desc": "Maré επηρεάζεται λιγότερο από άλλα νησιά Loyalty."
+          },
+          {
+            "year": "1984",
+            "title": "Air Calédonie Flights",
+            "desc": "Ανοίγει αεροδρόμιο La Roche (MEE)."
+          }
+        ]
+      },
+      "cult": {
+        "title": "Kanak Παράδοση Nengone",
+        "items": [
+          {
+            "icon": "fa-archway",
+            "title": "Chiefdoms Maré",
+            "desc": "29 chiefdoms και ένα από τα 8 customary districts."
+          },
+          {
+            "icon": "fa-fish",
+            "title": "Αλιεία Holothuries",
+            "desc": "Παραδοσιακή συγκομιδή θαλασσινού αγγουριού."
+          },
+          {
+            "icon": "fa-leaf",
+            "title": "Κηπευτικά Plantations",
+            "desc": "Καλλιέργειες τάρο, yam και μπανάνας."
+          }
+        ]
+      },
+      "demo": {
+        "details": [
+          {
+            "label": "Πληθυσμός & Γλώσσες",
+            "text": "Κυρίως Kanak που μιλούν Nengone γλώσσα."
+          },
+          {
+            "label": "Οικονομία",
+            "text": "Αλιεία, copra και οικοτουρισμός."
+          }
+        ]
+      },
+      "pois": [
+        {
+          "id": "ma-coeur",
+          "name": "Cœur de Maré",
+          "category": "nature",
+          "coords": [
+            -21.516,
+            167.84
+          ],
+          "year": "φυσικό",
+          "desc": "Φυσική πισίνα σε σχήμα καρδιάς."
+        },
+        {
+          "id": "ma-cave",
+          "name": "Σπηλαία Αβανί",
+          "category": "nature",
+          "coords": [
+            -21.55,
+            167.8
+          ],
+          "year": "φυσικό",
+          "desc": "Πνευματική σπηλιά με γλυκά νερά."
+        },
+        {
+          "id": "ma-tadine",
+          "name": "Πλατφόρμα Tadine",
+          "category": "landmark",
+          "coords": [
+            -21.5,
+            167.8333
+          ],
+          "year": "1900",
+          "desc": "Το κεντρικό λιμάνι και οικισμός."
+        }
+      ],
+      "pastVsPresent": {
+        "title": "Από Πνευματικό Κέντρο σε Φυσικό Καταφύγιο",
+        "pastText": "Πνευματικό κέντρο Kanak με σπηλιές ιεροτελεστίας.",
+        "presentText": "Απομονωμένο προορισμό φυσικού τουρισμού με ιδιαίτερη μορφολογία."
+      }
+    },
+    {
+      "id": "ouvea",
+      "name": "Ουβέα",
+      "englishName": "Ouvéa",
+      "nickname": "Το Κοντινότενο στον Παράδεισο",
+      "badge": "Δυτική Νήσος Loyalty",
+      "type": "city",
+      "coords": [
+        -20.6333,
+        166.5333
+      ],
+      "zoom": 11,
+      "timeZone": "UTC+11 (Pacific/Noumea)",
+      "landmark": "Παραλία Mouli & Γέφυρα Mouli",
+      "stats": {
+        "population": "3.400",
+        "founded": "~1847 (ιαποστολικός σταθμός)",
+        "area": "132 km²",
+        "elevation": "0–46 m",
+        "famousFor": "Παραλία Mouli 25km, Lékine Cliffs, Bleu de Ouvéa",
+        "landmark": "Παραλία Mouli & Γέφυρα Mouli"
+      },
+      "quote": "«Η Ouvéa είναι η πιο κοντινή εικόνα του παραδείσου στον Ειρηνικό.»",
+      "brief": "Το δυτικότερο νησί του αρχιπελάγους Loyalty με 25 km συνεχούς λευκής παραλίας.",
+      "geo": {
+        "title": "Υψωμένο Κοράλλι & Λευκή Άμμος",
+        "text": "Ουβέα αποτελείται από το κύριο νησί και το νησί Mouli που συνδέονται με γέφυρα.",
+        "highlights": [
+          {
+            "icon": "fa-umbrella-beach",
+            "title": "Παραλία Mouli",
+            "text": "25 km συνεχούς λευκής άμμου με τιρκουάζ νερά."
+          },
+          {
+            "icon": "fa-water",
+            "title": "Lékine Cliffs",
+            "text": "Δυτική πλαγιά 30 m στον κόλπο Lékine."
+          },
+          {
+            "icon": "fa-bridge",
+            "title": "Pont de Mouli",
+            "text": "Γέφυρα που συνδέει το Mouli με το κύριο νησί."
+          }
+        ]
+      },
+      "hist": {
+        "title": "Ιστορική Διαδρομή",
+        "text": "Από ιερό Kanak σε κέντρο πολιτικής έντασης.",
+        "highlights": [
+          {
+            "year": "1847",
+            "title": "Marist Missionaries",
+            "desc": "Ίδρυση μόνιμου καθολικού σταθμού."
+          },
+          {
+            "year": "1988",
+            "title": "Ouvéa Hostage Crisis",
+            "desc": "Δραματική ομήρων κρίση που οδήγησε στη συμφωνία Matignon."
+          },
+          {
+            "year": "1998",
+            "title": "Συμφωνία Nouméa",
+            "desc": "Η τραγωδία του 1988 οδήγησε στη συμφωνία Nouméa."
+          }
+        ]
+      },
+      "cult": {
+        "title": "Kanak Παράδοση Iaaï",
+        "items": [
+          {
+            "icon": "fa-archway",
+            "title": "Chiefdoms Ouvéa",
+            "desc": "Μία από τις 8 customary districts της Νέας Καληδονίας."
+          },
+          {
+            "icon": "fa-fish",
+            "title": "Coquillage Devises",
+            "desc": "Παραδοσιακά κοσμήματα Cypraea."
+          },
+          {
+            "icon": "fa-leaf",
+            "title": "Φύτευση Παρόρων",
+            "desc": "Παραδοσιακή καλλιέργεια κυδωνιών."
+          }
+        ]
+      },
+      "demo": {
+        "details": [
+          {
+            "label": "Πληθυσμός & Γλώσσες",
+            "text": "Κυρίως Kanak που μιλούν Iaaï και Faga Uvea (Wallisian διάλεκτο)."
+          },
+          {
+            "label": "Οικονομία",
+            "text": "Αλιεία, copra και οικοτουρισμός."
+          }
+        ]
+      },
+      "pois": [
+        {
+          "id": "ou-mouli-beach",
+          "name": "Παραλία Mouli",
+          "category": "beach",
+          "coords": [
+            -20.616,
+            166.48
+          ],
+          "year": "φυσικό",
+          "desc": "25 km συνεχούς λευκής άμμου με τιρκουάζ νερά."
+        },
+        {
+          "id": "ou-lekine",
+          "name": "Lékine Cliffs & Bay",
+          "category": "viewpoint",
+          "coords": [
+            -20.65,
+            166.55
+          ],
+          "year": "φυσικό",
+          "desc": "Δυτική πλαγιά 30 m στον κόλπο Lékine."
+        },
+        {
+          "id": "ou-pont",
+          "name": "Pont de Mouli",
+          "category": "landmark",
+          "coords": [
+            -20.633,
+            166.533
+          ],
+          "year": "1984",
+          "desc": "Γέφυρα που συνδέει το Mouli με το κύριο νησί."
+        }
+      ],
+      "pastVsPresent": {
+        "title": "Από Ιερό Kanak σε Παραδεισένιο Προορισμό",
+        "pastText": "Ιερό Kanak κέντρο με πνευματική παράδοση.",
+        "presentText": "Παραδεισένιος προορισμός με 25 km λευκής παραλίας και γεγονότα που άλλαξαν την ιστορία."
+      }
+    },
+    {
+      "id": "poindimie",
+      "name": "Πουεντιμιέ",
+      "englishName": "Poindimié",
+      "nickname": "Η Πύλη της Ανατολικής Ακτής",
+      "badge": "Κέντρο Ανατολικής Ακτής του Grande Terre",
+      "type": "city",
+      "coords": [
+        -20.75,
+        165.3333
+      ],
+      "zoom": 12,
+      "timeZone": "UTC+11 (Pacific/Noumea)",
+      "landmark": "Καταρράκτης Tao & Ύφαλος NE Lagoon",
+      "stats": {
+        "population": "5.000",
+        "founded": "1880",
+        "area": "213 km²",
+        "elevation": "0–1.000 m",
+        "famousFor": "Σπήλαιο Tao, NE Coast Customary",
+        "landmark": "Καταρράκτης Tao & Ύφαλος NE Lagoon"
+      },
+      "quote": "«Στο Poindimié ο άνεμος της Ανατολής φέρνει μυρωδιές vanille και καρπούς yam.»",
+      "brief": "Παράκτια κοινότητα της ανατολικής ακτής του Grande Terre με υγρό κλίμα και πυκνή βλάστηση.",
+      "geo": {
+        "title": "Ανατολική Ακτή & Κοιλάδα Tao",
+        "text": "Ακτή με ύφαλο και ενδοχώρα με κοιλάδες και καταρράκτες.",
+        "highlights": [
+          {
+            "icon": "fa-cave",
+            "title": "Σπήλαιο Tao",
+            "text": "Πνευματική σπηλιά Kanak."
+          },
+          {
+            "icon": "fa-water",
+            "title": "Kαταρράκτης Tao",
+            "text": "Καταρράκτης στην ομώνυμη κοιλάδα."
+          },
+          {
+            "icon": "fa-tree",
+            "title": "Tropical Forest",
+            "text": "Πυκνή τροπική βλάστηση."
+          }
+        ]
+      },
+      "hist": {
+        "title": "Ιστορική Διαδρομή",
+        "text": "Από παραδοσιακό κέντρο Kanak σε κοινοτικό πυρήνα.",
+        "highlights": [
+          {
+            "year": "1880",
+            "title": "Ίδρυση Κοινότητας",
+            "desc": "Ορίζεται ως αυτόνομη κοινότητα."
+          },
+          {
+            "year": "1965",
+            "title": "Pasteur Institute",
+            "desc": "Ιδρύεται ερευνητικός σταθμός."
+          },
+          {
+            "year": "2005",
+            "title": "Customary District Recognized",
+            "desc": "Αναγνώριση του customary district CEPP (Cadre à l'Est)."
+          }
+        ]
+      },
+      "cult": {
+        "title": "Kanak Ανατολικής Ακτής",
+        "items": [
+          {
+            "icon": "fa-archway",
+            "title": "CEPP Customary District",
+            "desc": "Ένα από τα 8 customary districts."
+          },
+          {
+            "icon": "fa-leaf",
+            "title": "Κηπευτικά Καλλιέργειες",
+            "desc": "Παραγωγή ignames, taros και μπανάνας."
+          },
+          {
+            "icon": "fa-fish",
+            "title": "Αλιεία NE Lagoon",
+            "desc": "Παραδοσιακή αλιεία στον ανατολικό ύφαλο."
+          }
+        ]
+      },
+      "demo": {
+        "details": [
+          {
+            "label": "Πληθυσμός & Γλώσσες",
+            "text": "Κυρίως Kanak με Cèmuhî γλώσσα."
+          },
+          {
+            "label": "Οικονομία",
+            "text": "Κηπευτικά, αλιεία και αγροτικός τουρισμός."
+          }
+        ]
+      },
+      "pois": [
+        {
+          "id": "po-tao-cave",
+          "name": "Σπήλαιο Tao",
+          "category": "nature",
+          "coords": [
+            -20.733,
+            165.31
+          ],
+          "year": "φυσικό",
+          "desc": "Πνευματική σπηλιά Kanak με αρχαιολογικά ευρήματα."
+        },
+        {
+          "id": "po-tao-falls",
+          "name": "Καταρράκτης Tao",
+          "category": "nature",
+          "coords": [
+            -20.728,
+            165.315
+          ],
+          "year": "φυσικό",
+          "desc": "Καταρράκτης στην κοιλάδα Tao."
+        },
+        {
+          "id": "po-pierredere",
+          "name": "Saint-Pierre-Claver Church & Mission",
+          "category": "monument",
+          "coords": [
+            -20.75,
+            165.3333
+          ],
+          "year": "1890",
+          "desc": "Ιστορικός καθολικός σταθμός Marist."
+        }
+      ],
+      "pastVsPresent": {
+        "title": "Από Κοιλάδα Kanak σε Αγροτική Κοινότητα",
+        "pastText": "Παραδοσιακό κέντρο Kanak με πνευματικές σπηλιές.",
+        "presentText": "Σύγχρονη κοινότητα με παραδοσιακή οικονομία και φυσικό τοπίο."
+      }
+    }
+  ]
+}

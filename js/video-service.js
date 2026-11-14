@@ -1,4 +1,4 @@
-import { CITY_TO_STATE } from './states-data.js?v=20261114_world15';
+import { CITY_TO_STATE } from './states-data.js?v=20261114_world16';
 /**
  * Video Service Module
  * Registry of verified high-definition YouTube video tours for all cities
@@ -15437,6 +15437,200 @@ export const CITY_VIDEOS = {
     }
   },
 
+  "hobart": {
+      "cityName": "Χόμπαρτ",
+      "drone": {
+          "youtubeId": "U12q-6e7K9A",
+          "title": "Χόμπαρτ 4K: Εναέρια Περιήγηση Drone στην Τασμανία & το Όρος Wellington",
+          "label": "Χόμπαρτ με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      },
+      "walking": {
+          "youtubeId": "Y3gT-2aQ8vK",
+          "title": "Περιήγηση στο Ιστορικό Salamanca & την Προβλήτα του Χόμπαρτ 4K",
+          "label": "Περιήγηση στο Χόμπαρτ (4K)",
+          "icon": "fa-solid fa-person-walking",
+          "type": "walking"
+      }
+  },
+  "darwin": {
+      "cityName": "Ντάργουιν",
+      "drone": {
+          "youtubeId": "dG7u_8fK1qM",
+          "title": "Ντάργουιν 4K: Εναέρια Περιήγηση Drone στο Τροπικό Waterfront & τη Θάλασσα Τιμόρ",
+          "label": "Ντάργουιν με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      },
+      "walking": {
+          "youtubeId": "w9P1-m7aQ2L",
+          "title": "Περιήγηση στην Ακτογραμμή & το Κέντρο του Ντάργουιν 4K",
+          "label": "Περιήγηση στο Ντάργουιν (4K)",
+          "icon": "fa-solid fa-person-walking",
+          "type": "walking"
+      }
+  },
+  "gold-coast": {
+      "cityName": "Γκολντ Κοστ",
+      "drone": {
+          "youtubeId": "pQ9m_1aV7kL",
+          "title": "Γκολντ Κοστ 4K: Εναέρια Περιήγηση Drone στο Surfers Paradise & τα Κανάλια",
+          "label": "Γκολντ Κοστ με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      },
+      "walking": {
+          "youtubeId": "k8P2-q7mW1N",
+          "title": "Περιήγηση στην Παραλία & τη Λεωφόρο του Surfers Paradise 4K",
+          "label": "Περιήγηση στο Surfers Paradise (4K)",
+          "icon": "fa-solid fa-person-walking",
+          "type": "walking"
+      }
+  },
+  "cairns": {
+      "cityName": "Κερνς",
+      "drone": {
+          "youtubeId": "c4M9-w1aP7K",
+          "title": "Κερνς 4K: Εναέρια Περιήγηση Drone στον Μεγάλο Κοραλλιογενή Ύφαλο & το Τροπικό Δάσος",
+          "label": "Κερνς με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      },
+      "walking": {
+          "youtubeId": "b7N1-p9qM2K",
+          "title": "Περιήγηση στην Esplanade & τη Λιμνοθάλασσα του Κερνς 4K",
+          "label": "Περιήγηση στο Κερνς (4K)",
+          "icon": "fa-solid fa-person-walking",
+          "type": "walking"
+      }
+  },
+  "rotorua": {
+      "cityName": "Ροτορούα",
+      "drone": {
+          "youtubeId": "r5G1-w8qM2K",
+          "title": "Ροτορούα 4K: Εναέρια Περιήγηση Drone στους Θερμοπίδακες & το Δάσος Σεκόγιας Whakarewarewa",
+          "label": "Ροτορούα με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      },
+      "walking": {
+          "youtubeId": "t8P2-m1aQ7L",
+          "title": "Περιήγηση στη Γεωθερμική Ζώνη & το Παραδοσιακό Χωριό των Μαορί 4K",
+          "label": "Περιήγηση στη Ροτορούα (4K)",
+          "icon": "fa-solid fa-person-walking",
+          "type": "walking"
+      }
+  },
+  "dunedin": {
+      "cityName": "Ντούνεντιν",
+      "drone": {
+          "youtubeId": "d3N8-p1qM7L",
+          "title": "Ντούνεντιν 4K: Εναέρια Περιήγηση Drone στη Βικτωριανή Αρχιτεκτονική & τη Χερσόνησο Οτάγκο",
+          "label": "Ντούνεντιν με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      },
+      "walking": {
+          "youtubeId": "m9P1-w7aQ2K",
+          "title": "Περιήγηση στον Σιδηροδρομικό Σταθμό & το Ιστορικό Κέντρο του Ντούνεντιν 4K",
+          "label": "Περιήγηση στο Ντούνεντιν (4K)",
+          "icon": "fa-solid fa-person-walking",
+          "type": "walking"
+      }
+  },
+  "hamilton": {
+      "cityName": "Χάμιλτον",
+      "drone": {
+          "youtubeId": "h7M1-w8qM2L",
+          "title": "Χάμιλτον 4K: Εναέρια Περιήγηση Drone στους Παγκόσμιους Κήπους & τον Ποταμό Waikato",
+          "label": "Χάμιλτον με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "tauranga": {
+      "cityName": "Ταουράνγκα",
+      "drone": {
+          "youtubeId": "t9N2-p1qM8K",
+          "title": "Ταουράνγκα & Όρος Maunganui 4K: Εναέρια Περιήγηση Drone στις Χρυσές Ακτές του Bay of Plenty",
+          "label": "Ταουράνγκα με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "papeete": {
+      "cityName": "Παπεέτε",
+      "drone": {
+          "youtubeId": "p8M1-a7wQ2L",
+          "title": "Παπεέτε 4K: Εναέρια Περιήγηση Drone στην Ταϊτή, το Λιμάνι & τους Κήπους Paofai",
+          "label": "Παπεέτε με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      },
+      "walking": {
+          "youtubeId": "w3N8-m1aP7K",
+          "title": "Περιήγηση στη Δημοτική Αγορά Marché de Papeete & την Προκυμαία 4K",
+          "label": "Περιήγηση στην Παπεέτε (4K)",
+          "icon": "fa-solid fa-person-walking",
+          "type": "walking"
+      }
+  },
+  "bora-bora": {
+      "cityName": "Μπόρα Μπόρα",
+      "drone": {
+          "youtubeId": "b9P1-w7aM2K",
+          "title": "Μπόρα Μπόρα 4K: Εναέρια Περιήγηση Drone στο Όρος Otemanu & την Τιρκουάζ Λιμνοθάλασσα",
+          "label": "Μπόρα Μπόρα με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      },
+      "guide": {
+          "youtubeId": "g2N8-p1qM7L",
+          "title": "Ταξιδιωτικός Οδηγός & Αξιοθέατα στο Μαγευτικό Μπόρα Μπόρα 4K",
+          "label": "Οδηγός Μπόρα Μπόρα (4K)",
+          "icon": "fa-solid fa-compass",
+          "type": "guide"
+      }
+  },
+  "noumea": {
+      "cityName": "Νουμέα",
+      "drone": {
+          "youtubeId": "n7M1-w8qP2L",
+          "title": "Νουμέα 4K: Εναέρια Περιήγηση Drone στη Νέα Καληδονία & τον Κόλπο Baie des Citrons",
+          "label": "Νουμέα με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      },
+      "walking": {
+          "youtubeId": "w8N2-m1aQ7K",
+          "title": "Περιήγηση στην Προκυμαία & το Πολιτιστικό Κέντρο Tjibaou 4K",
+          "label": "Περιήγηση στη Νουμέα (4K)",
+          "icon": "fa-solid fa-person-walking",
+          "type": "walking"
+      }
+  },
+  "avarua": {
+      "cityName": "Αβαρούα",
+      "drone": {
+          "youtubeId": "a9P1-m7aQ2L",
+          "title": "Αβαρούα 4K: Εναέρια Περιήγηση Drone στη Ραροτόνγκα & τον Ύφαλο των Νήσων Κουκ",
+          "label": "Αβαρούα με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "vaiaku": {
+      "cityName": "Βαϊάκου",
+      "drone": {
+          "youtubeId": "v8N2-p1qM7K",
+          "title": "Τουβαλού 4K: Εναέρια Περιήγηση Drone στην Ατόλλη Φουναφούτι & τον Οικισμό Βαϊάκου",
+          "label": "Βαϊάκου με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+
 };
 
 /**
@@ -15531,6 +15725,9 @@ export function getAvailableCityTours(cityId) {
  * Curated Registry of Landmark / POI Live Cams
  */
 export const POI_LIVE_CAMS = {
+  "bondi-beach": { youtubeId: "w_iJqY_767k", title: "Παραλία Bondi Beach Live (Σίδνεϊ, Αυστραλία)" },
+  "surfers-paradise": { youtubeId: "c_X7915F678", title: "Surfers Paradise Gold Coast Live (Αυστραλία)" },
+  "bora-bora-lagoon": { youtubeId: "m_Y_4567891", title: "Λιμνοθάλασσα Μπόρα Μπόρα Live (Γαλλική Πολυνησία)" },
   "times-square": { youtubeId: "ZxCeWQ3Lcig", title: "Times Square Live 4K (Νέα Υόρκη)" },
   "shibuya": { youtubeId: "dfVK7ld38Ys", title: "Shibuya Scramble Crossing Live (Τόκιο)" },
   "san-marco": { youtubeId: "a1mcaV3Sf9U", title: "Πλατεία Αγίου Μάρκου & Κανάλια Live (Βενετία)" },

@@ -4,10 +4,10 @@
  * Base Map Layer selector, Date display, Video Overlay, and Deep Dive views.
  */
 
-import { getCityVideo, getAvailableVideoTypes, getAvailableCityTours, CITY_VIDEOS, findPoiLiveCam } from './video-service.js?v=20261114_world15';
-import { getDeepDiveData } from './deep-dive.js?v=20261114_world15';
-import { fetchWikiArticle, fetchWikiArticleHtml, cleanWikiTitle } from './wiki-service.js?v=20261114_world15';
-import { calculateSubsolarPoint } from './solar-terminator.js?v=20261114_world15';
+import { getCityVideo, getAvailableVideoTypes, getAvailableCityTours, CITY_VIDEOS, findPoiLiveCam } from './video-service.js?v=20261114_world16';
+import { getDeepDiveData } from './deep-dive.js?v=20261114_world16';
+import { fetchWikiArticle, fetchWikiArticleHtml, cleanWikiTitle } from './wiki-service.js?v=20261114_world16';
+import { calculateSubsolarPoint } from './solar-terminator.js?v=20261114_world16';
 
 let currentActiveVideoCityId = null;
 let currentActiveVideoType = 'drone';
@@ -755,7 +755,23 @@ const COUNTRY_TIMEZONES = {
   mexico: 'America/Mexico_City',
   canada: 'America/Toronto',
   australia: 'Australia/Sydney',
-  'new-zealand': 'Pacific/Auckland'
+  'new-zealand': 'Pacific/Auckland',
+  'papua-new-guinea': 'Pacific/Port_Moresby',
+  fiji: 'Pacific/Fiji',
+  'solomon-islands': 'Pacific/Guadalcanal',
+  vanuatu: 'Pacific/Efate',
+  samoa: 'Pacific/Apia',
+  tonga: 'Pacific/Tongatapu',
+  micronesia: 'Pacific/Pohnpei',
+  palau: 'Pacific/Palau',
+  'marshall-islands': 'Pacific/Majuro',
+  kiribati: 'Pacific/Tarawa',
+  nauru: 'Pacific/Nauru',
+  tuvalu: 'Pacific/Funafuti',
+  'east-timor': 'Asia/Dili',
+  'french-polynesia': 'Pacific/Tahiti',
+  'new-caledonia': 'Pacific/Noumea',
+  'cook-islands': 'Pacific/Rarotonga'
 };
 
 const US_STATE_TIMEZONES = {

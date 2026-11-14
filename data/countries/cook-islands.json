@@ -1,0 +1,1481 @@
+{
+  "country": {
+    "id": "cook-islands",
+    "name": "Νήσοι Κουκ",
+    "englishName": "Cook Islands",
+    "nickname": "Έδαφος σε Ελεύθερη Σχέση με τη Νέα Ζηλανδία",
+    "badge": "Αυτόνομο Κράτος σε Free Association με NZ",
+    "type": "self-governing-state",
+    "coords": [
+      -21.2333,
+      -159.772
+    ],
+    "zoom": 7,
+    "timeZone": "UTC-10 (Pacific/Rarotonga)",
+    "capital": "Αβαρούα (Avarua), Ραροτόνγκα",
+    "landmark": "Te Rua Manga (The Needle) & Λιμνοθάλασσα Αϊτουτάκι",
+    "brief": "Αυτόνομο κράτος σε ελεύθερη σχέση με τη Νέα Ζηλανδία που αποτελείται από 15 νησιά διάσπαρτα σε 2,2 εκατομμύρια km² ωκεανού.",
+    "stats": {
+      "population": "17.459 (απογραφή 2016)",
+      "area": "236 km² (ακτογραμμή 120 km)",
+      "highestPoint": "Te Manga, 652 m (Ραροτόνγκα)",
+      "officialLanguages": "Cook Islands Maori, Αγγλικά",
+      "currency": "Δολάριο Νήσων Κουκ (CKD) & Δολάριο NZ",
+      "landmark": "Te Rua Manga (The Needle) & Λιμνοθάλασσα Αϊτουτάκι"
+    },
+    "geo": {
+      "title": "Βόρεια & Νότια Νησιά Κουκ",
+      "text": "Διακρίνονται σε δύο ομάδες: τα Νότια Νησιά (ηφαιστειογενή με κοραλλιογενείς ύφαλους — Ραροτόνγκα, Αϊτουτάκι, Μανγκάια, Ατίου, Μαουκέ, Μιτιάρο) και τα Βόρεια Νησιά (ατόλλες — Penrhyn, Manihiki, Rakahanga, Pukapuka, Nassau, Palmerston, Suwarrow).",
+      "highlights": [
+        {
+          "icon": "fa-mountain",
+          "title": "Νότια Ηφαιστειογενή Νησιά",
+          "text": "Ραροτόνγκα, Αϊτουτάκι και Μανγκάια — με ψηλά βουνά και κοραλλιογενείς ύφαλους."
+        },
+        {
+          "icon": "fa-circle-notch",
+          "title": "Βόρειες Ατόλλες",
+          "text": "15 χαμηλές ατόλλες όπως Manihiki και Penrhyn για μαύρα μαργαριτάρια."
+        },
+        {
+          "icon": "fa-water",
+          "title": "Λιμνοθάλασσα Αϊτουτάκι",
+          "text": "Μία από τις πιο διάσημες λιμνοθάλασσες στον κόσμο."
+        }
+      ]
+    },
+    "hist": {
+      "title": "Από Πολυνησιακή Ανακάλυψη σε Free Association",
+      "text": "Περίπου 1.500 χρόνια κατοίκησης πριν την ευρωπαϊκή επαφή, ιεραποστολική περίοδος και τελικά αυτονομία με τη Νέα Ζηλανδία.",
+      "highlights": [
+        {
+          "year": "~800 μ.Χ.",
+          "title": "Πρώτοι Πολυνήσιοι",
+          "desc": "Ναυτικοί από τη Γαλλική Πολυνησία και Tonga αποικίζουν τα νότια νησιά."
+        },
+        {
+          "year": "1773",
+          "title": "James Cook Discover",
+          "desc": "Ο James Cook φθάνει στα νησιά και δίνει αργότερα το όνομά τους."
+        },
+        {
+          "year": "1965",
+          "title": "Free Association with NZ",
+          "desc": "Οι Νήσοι Κουκ γίνονται αυτόνομο κράτος σε ελεύθερη σχέση με τη Νέα Ζηλανδία."
+        }
+      ]
+    },
+    "cult": {
+      "title": "Cook Islands Māori Παράδοση",
+      "items": [
+        {
+          "icon": "fa-music",
+          "title": "Ura (Εραστικού Χορού)",
+          "desc": "Παραδοσιακός χορός με γυμνά πόδια και εσοχές ισχίων."
+        },
+        {
+          "icon": "fa-tshirt",
+          "title": "Tivaevae Κουρτούρες",
+          "desc": "Παραδοσιακά κεντήματα που εισήχθησαν από ιεραποστόλους."
+        },
+        {
+          "icon": "fa-ship",
+          "title": "Vaka Polynesian Canoe",
+          "desc": "Παραδοσιακά κανό που διατηρούν τη ναυτική κληρονομιά."
+        }
+      ]
+    }
+  },
+  "cities": [
+    {
+      "id": "avarua",
+      "name": "Αβαρούα",
+      "englishName": "Avarua",
+      "nickname": "Πρωτεύουσα των Νήσων Κουκ",
+      "badge": "Πρωτεύουσα και κύριο λιμάνι",
+      "type": "city",
+      "coords": [
+        -21.2078,
+        -159.775
+      ],
+      "zoom": 13,
+      "timeZone": "UTC-10 (Pacific/Rarotonga)",
+      "landmark": "Cooks' Church & Punanga Nui Market",
+      "stats": {
+        "population": "5.400 (εκτιμήσεις 2016)",
+        "founded": "1823 (ιαποστολικός σταθμός)",
+        "area": "6 km²",
+        "elevation": "0–20 m",
+        "famousFor": "Punanga Nui Market, Cook Islands Christian Church",
+        "landmark": "Cooks' Church & Punanga Nui Market"
+      },
+      "quote": "«Στην Αβαρούα ο ρυθμός της ζωής έχει το μέτρο του νησιού και όχι του ρολογιού.»",
+      "brief": "Η πρωτεύουσα και κύριο λιμάνι των Νήσων Κουκ στη βόρεια ακτή της Ραροτόνγκα.",
+      "geo": {
+        "title": "Παράκτιο Λιμάνι & Κοραλλιογενής Ύφαλος",
+        "text": "Παράκτια κοινότητα με λιμάνι που προστατεύεται από εξωτερικό ύφαλο.",
+        "highlights": [
+          {
+            "icon": "fa-anchor",
+            "title": "Avatiu Port",
+            "text": "Το κύριο λιμάνι εισόδου και εμπορίου."
+          },
+          {
+            "icon": "fa-tree",
+            "title": "Punanga Nui Market",
+            "text": "Το κεντρικό υπαίθριο παζάρι."
+          },
+          {
+            "icon": "fa-place-of-worship",
+            "title": "CICC Cook Islands Christian Church",
+            "text": "Ο ιστορικός λευκός ναός του 1853."
+          }
+        ]
+      },
+      "hist": {
+        "title": "Ιστορική Διαδρομή",
+        "text": "Από παραδοσιακό αρχηγείο Makea Karika σε ιεραποστολικό κέντρο και πρωτεύουσα.",
+        "highlights": [
+          {
+            "year": "1823",
+            "title": "John Williams Mission",
+            "desc": "Ο John Williams του LMS φθάνει και εγκαθιδρύει μόνιμο σταθμό."
+          },
+          {
+            "year": "1853",
+            "title": "CICC Church Built",
+            "desc": "Χτίζεται ο ιστορικός ναός που δεσπόζει μέχρι σήμερα."
+          },
+          {
+            "year": "1965",
+            "title": "Capital of Free Associated State",
+            "desc": "Με τη συνθήκη Free Association η Αβαρούα γίνεται πρωτεύουσα."
+          }
+        ]
+      },
+      "cult": {
+        "title": "Πολιτική & Πολιτιστική Καρδιά",
+        "items": [
+          {
+            "icon": "fa-landmark",
+            "title": "Parliament Building",
+            "desc": "Η έδρα του Cook Islands Parliament."
+          },
+          {
+            "icon": "fa-shopping-bag",
+            "title": "Punanga Nui Market",
+            "desc": "Κάθε Σάββατο — το πιο τουριστικό σημείο."
+          },
+          {
+            "icon": "fa-music",
+            "title": "Island Night Shows",
+            "desc": "Παραδοσιακός χορός ura και μουσική με κρουστά."
+          }
+        ]
+      },
+      "demo": {
+        "details": [
+          {
+            "label": "Πληθυσμός & Γλώσσες",
+            "text": "Κυρίως Cook Islanders Maori με διεθνή κοινότητα Νεοζηλανδών και τουριστών. Γλώσσες Maori και αγγλικά."
+          },
+          {
+            "label": "Οικονομία",
+            "text": "Διοίκηση, εμπόριο, τουρισμός και αλιεία."
+          }
+        ]
+      },
+      "pois": [
+        {
+          "id": "av-cicc",
+          "name": "Cook Islands Christian Church (CICC)",
+          "category": "monument",
+          "coords": [
+            -21.209,
+            -159.774
+          ],
+          "year": "1853",
+          "desc": "Ο ιστορικός λευκός ναός του 1853 στο κέντρο της πόλης."
+        },
+        {
+          "id": "av-market",
+          "name": "Punanga Nui Market",
+          "category": "market",
+          "coords": [
+            -21.211,
+            -159.776
+          ],
+          "year": "1980",
+          "desc": "Το κεντρικό υπαίθριο παζάρι που ανοίγει κάθε Σάββατο."
+        },
+        {
+          "id": "av-port",
+          "name": "Avatiu Port",
+          "category": "landmark",
+          "coords": [
+            -21.205,
+            -159.776
+          ],
+          "year": "1900",
+          "desc": "Το κύριο λιμάνι εμπορίου και κρουαζιέρας."
+        }
+      ],
+      "pastVsPresent": {
+        "title": "Από Παραδοσιακό Αρχηγείο σε Πρωτεύουσα",
+        "pastText": "Παραδοσιακό αρχηγείο Makea Karika με ιεραποστολικό σταθμό.",
+        "presentText": "Πρωτεύουσα 5.400 κατοίκων με κοινοβούλιο, παζάρι και λιμάνι."
+      }
+    },
+    {
+      "id": "arorangi",
+      "name": "Αροράνγκι",
+      "englishName": "Arorangi",
+      "nickname": "Παραλιακό Χωριό της Δυτικής Ακτής",
+      "badge": "Δυτική παραλιακή κοινότητα Ραροτόνγκα",
+      "type": "city",
+      "coords": [
+        -21.2211,
+        -159.8286
+      ],
+      "zoom": 13,
+      "timeZone": "UTC-10 (Pacific/Rarotonga)",
+      "landmark": "Παραλία Aroa Beach & Edgewater Resort",
+      "stats": {
+        "population": "2.700",
+        "founded": "1823 (ιαποστολικός σταθμός)",
+        "area": "5 km²",
+        "elevation": "0–50 m",
+        "famousFor": "Aroa Beach, Marine Reserve, Edgewater Resort",
+        "landmark": "Παραλία Aroa Beach & Edgewater Resort"
+      },
+      "quote": "«Στο Arorangi το ηλιοβασίλεμα είναι η μόνη ώρα που σταματά η ζωή.»",
+      "brief": "Παραλιακό χωριό στη δυτική ακτή της Ραροτόνγκα με Marine Reserve.",
+      "geo": {
+        "title": "Δυτική Ακτή & Marine Reserve",
+        "text": "Παραλία με Marine Reserve και ήσυχη ατμόσφαιρα.",
+        "highlights": [
+          {
+            "icon": "fa-umbrella-beach",
+            "title": "Aroa Beach",
+            "text": "Προστατευόμενη παραλία με κοράλλια και τροπικά ψάρια."
+          },
+          {
+            "icon": "fa-fish",
+            "title": "Marine Reserve",
+            "text": "Πρώτη marine reserve των Cook Islands."
+          },
+          {
+            "icon": "fa-leaf",
+            "title": "Palm Groves",
+            "text": "Πυκνά φοινικόδασος κατά μήκος της παραλίας."
+          }
+        ]
+      },
+      "hist": {
+        "title": "Ιστορική Διαδρομή",
+        "text": "Από παραδοσιακό κέντρο Makea σε τουριστικό θέρετρο.",
+        "highlights": [
+          {
+            "year": "1823",
+            "title": "Missionary Settlement",
+            "desc": "Ο John Williams φθάνει και ιδρύει σταθμό."
+          },
+          {
+            "year": "1999",
+            "title": "Marine Reserve",
+            "desc": "Ανακηρύσσεται η πρώτη marine reserve των Cook Islands."
+          },
+          {
+            "year": "2010",
+            "title": "Tourism Development",
+            "desc": "Ανάπτυξη μεγάλων θέρετρων όπως Edgewater."
+          }
+        ]
+      },
+      "cult": {
+        "title": "Παράκτια Παράδοση",
+        "items": [
+          {
+            "icon": "fa-umbrella-beach",
+            "title": "Παραλιακή Ζωή",
+            "desc": "Παραδοσιακή αλιεία και συγκομιδή κοχυλιών."
+          },
+          {
+            "icon": "fa-fish",
+            "title": "Snorkeling Reserve",
+            "desc": "Marine reserve με παπαλίνα και τροπικά ψάρια."
+          },
+          {
+            "icon": "fa-tree",
+            "title": "Tropic Gardens",
+            "desc": "Κήποι με hibiscus και frangipani."
+          }
+        ]
+      },
+      "demo": {
+        "details": [
+          {
+            "label": "Πληθυσμός & Γλώσσες",
+            "text": "Κυρίως Cook Islanders Maori και διεθνής τουριστική κοινότητα."
+          },
+          {
+            "label": "Οικονομία",
+            "text": "Τουρισμός, θαλάσσιες δραστηριότητες και αλιεία."
+          }
+        ]
+      },
+      "pois": [
+        {
+          "id": "ar-beach",
+          "name": "Aroa Beach & Marine Reserve",
+          "category": "beach",
+          "coords": [
+            -21.223,
+            -159.83
+          ],
+          "year": "1999",
+          "desc": "Προστατευόμενη παραλία με marine reserve."
+        },
+        {
+          "id": "ar-resort",
+          "name": "Edgewater Resort & Spa",
+          "category": "landmark",
+          "coords": [
+            -21.221,
+            -159.8286
+          ],
+          "year": "1972",
+          "desc": "Ιστορικό θέρετρο στη δυτική ακτή."
+        },
+        {
+          "id": "ar-cirriculum",
+          "name": "Aroa Nui Cultural Centre",
+          "category": "culture",
+          "coords": [
+            -21.219,
+            -159.826
+          ],
+          "year": "1995",
+          "desc": "Κέντρο παραδοσιακών χορών ura."
+        }
+      ],
+      "pastVsPresent": {
+        "title": "Από Παραδοσιακό Χωριό σε Θέρετρο",
+        "pastText": "Παραδοσιακό αρχηγείο Makea με παραδοσιακή αλιεία.",
+        "presentText": "Παραλιακό θέρετρο με marine reserve και πολυτελή ξενοδοχεία."
+      }
+    },
+    {
+      "id": "ngatangiia",
+      "name": "Νγκατανγκίια",
+      "englishName": "Ngatangiia",
+      "nickname": "Πύλη της Λιμνοθάλασσας Muri",
+      "badge": "Ανατολική παραλιακή κοινότητα Ραροτόνγκα",
+      "type": "city",
+      "coords": [
+        -21.1911,
+        -159.7297
+      ],
+      "zoom": 13,
+      "timeZone": "UTC-10 (Pacific/Rarotonga)",
+      "landmark": "Λιμνοθάλασσα Muri & Motu Κοράλλια",
+      "stats": {
+        "population": "3.000",
+        "founded": "1823 (ιαποστολικός σταθμός)",
+        "area": "7 km²",
+        "elevation": "0–30 m",
+        "famousFor": "Muri Lagoon, Παραλία Muri, Motu Koromiri",
+        "landmark": "Λιμνοθάλασσα Muri & Motu Κοράλλια"
+      },
+      "quote": "«Στη Ngatangiia η λιμνοθάλασσα Muri καθρεφτίζει 1.000 αποχρώσεις του τιρκουάζ.»",
+      "brief": "Παραλιακό χωριό στη νοτιοανατολική ακτή της Ραροτόνγκα με τη διάσημη λιμνοθάλασσα Muri.",
+      "geo": {
+        "title": "Λιμνοθάλασσα Muri & 4 Motu",
+        "text": "Παραλία με προστατευόμενη λιμνοθάλασσα και τέσσερα motu (νησάκια).",
+        "highlights": [
+          {
+            "icon": "fa-water",
+            "title": "Muri Lagoon",
+            "text": "Μία από τις πιο διάσημες λιμνοθάλασσες του Ειρηνικού."
+          },
+          {
+            "icon": "fa-tree",
+            "title": "Motu Koromiri",
+            "text": "Το μεγαλύτερο motu της λιμνοθάλασσας."
+          },
+          {
+            "icon": "fa-fish",
+            "title": "Snorkeling Ti'Va'a",
+            "text": "Περιοχή snorkeling με θαλάσσια χελώνα."
+          }
+        ]
+      },
+      "hist": {
+        "title": "Ιστορική Διαδρομή",
+        "text": "Από αρχαίο λιμάνι των πολονήζων σε τουριστικό προορισμό.",
+        "highlights": [
+          {
+            "year": "~1350",
+            "title": "Tangiia Nui Settlement",
+            "desc": "Ο αρχηγός Tangiia Nui ιδρύει τον οικισμό."
+          },
+          {
+            "year": "1823",
+            "title": "Missionary Station",
+            "desc": "Ο John Williams ιδρύει μόνιμο σταθμό."
+          },
+          {
+            "year": "1990",
+            "title": "Muri Tourism Expansion",
+            "desc": "Ανάπτυξη τουρισμού και θέρετρων Muri."
+          }
+        ]
+      },
+      "cult": {
+        "title": "Παραδοσιακή Ταυτότητα",
+        "items": [
+          {
+            "icon": "fa-archway",
+            "title": "Marae Taputapuatea",
+            "desc": "Αρχαίος ναός της περίόδου Tangiia Nui."
+          },
+          {
+            "icon": "fa-fish",
+            "title": "Παραδοσιακή Αλιεία",
+            "desc": "Αλιεία με δίχτυα στη λιμνοθάλασσα."
+          },
+          {
+            "icon": "fa-ship",
+            "title": "Vaka Canoe Hub",
+            "desc": "Σημείο αναχώρησης παραδοσιακών κανό."
+          }
+        ]
+      },
+      "demo": {
+        "details": [
+          {
+            "label": "Πληθυσμός & Γλώσσες",
+            "text": "Κυρίως Cook Islanders Maori και διεθνής τουριστική κοινότητα."
+          },
+          {
+            "label": "Οικονομία",
+            "text": "Τουρισμός, θαλάσσιες δραστηριότητες και αλιεία."
+          }
+        ]
+      },
+      "pois": [
+        {
+          "id": "ng-muri",
+          "name": "Muri Lagoon",
+          "category": "landmark",
+          "coords": [
+            -21.193,
+            -159.728
+          ],
+          "year": "φυσικό",
+          "desc": "Διάσημη λιμνοθάλασσα με τιρκουάζ νερά."
+        },
+        {
+          "id": "ng-motu",
+          "name": "Motu Koromiri",
+          "category": "landmark",
+          "coords": [
+            -21.19,
+            -159.727
+          ],
+          "year": "φυσικό",
+          "desc": "Το μεγαλύτερο motu της λιμνοθάλασσας."
+        },
+        {
+          "id": "ng-marae",
+          "name": "Marae Taputapuatea Ngatangiia",
+          "category": "monument",
+          "coords": [
+            -21.192,
+            -159.731
+          ],
+          "year": "~1350",
+          "desc": "Αρχαίος ναός της περιόδου Tangiia Nui."
+        }
+      ],
+      "pastVsPresent": {
+        "title": "Από Αρχαίο Λιμάνι σε Θέρετρο Muri",
+        "pastText": "Αρχαίο λιμάνι των Πολυνήσιων και ναός Marae.",
+        "presentText": "Παγκόσμιος προορισμός τουρισμού με λιμνοθάλασσα Muri."
+      }
+    },
+    {
+      "id": "matavera",
+      "name": "Ματαβέρα",
+      "englishName": "Matavera",
+      "nickname": "Εσωτερικό Χωριό Ανατολής",
+      "badge": "Παράκτια-εσωτερική κοινότητα ανατολής",
+      "type": "city",
+      "coords": [
+        -21.2011,
+        -159.7392
+      ],
+      "zoom": 13,
+      "timeZone": "UTC-10 (Pacific/Rarotonga)",
+      "landmark": "Παραλία Muri Lagoon East & Highland Passage",
+      "stats": {
+        "population": "1.900",
+        "founded": "1823 (ιαποστολικός σταθμός)",
+        "area": "5 km²",
+        "elevation": "0–60 m",
+        "famousFor": "Muri East Beach, Cross-Island Track",
+        "landmark": "Παραλία Muri Lagoon East & Highland Passage"
+      },
+      "quote": "«Στο Matavera ο Ειρηνικός φαίνεται πιο κοντά και τα βουνά πιο ψηλά.»",
+      "brief": "Παράκτια και εσωτερική κοινότητα στην ανατολική Ραροτόνγκα, κοντά στο Muri.",
+      "geo": {
+        "title": "Παράκτια Πεδιάδα & Πλαγιές Βουνού",
+        "text": "Ακτή και ενδοχώρα με πλαγιές προς Te Manga (ψηλότερη κορυφή).",
+        "highlights": [
+          {
+            "icon": "fa-mountain",
+            "title": "Te Manga Foot",
+            "text": "Η κοιλάδα που οδηγεί στην ψηλότερη κορυφή."
+          },
+          {
+            "icon": "fa-water",
+            "title": "Muri East Beach",
+            "text": "Ανατολική άκρη της λιμνοθάλασσας."
+          },
+          {
+            "icon": "fa-tree",
+            "title": "Cross-Island Track",
+            "text": "Διάσημο μονοπάτι προς Te Rua Manga."
+          }
+        ]
+      },
+      "hist": {
+        "title": "Ιστορική Διαδρομή",
+        "text": "Από αγροτικό κέντρο σε διαδρομή Cross-Island.",
+        "highlights": [
+          {
+            "year": "1823",
+            "title": "Mission Station",
+            "desc": "Ιδρύεται μόνιμος σταθμός."
+          },
+          {
+            "year": "1960",
+            "title": "Cross-Island Track",
+            "desc": "Ανοίγει η διάσημη διαδρομή προς Te Rua Manga."
+          },
+          {
+            "year": "1995",
+            "title": " Highland Road",
+            "desc": "Ασφαλτοστρώνονται οι βασικοί δρόμοι."
+          }
+        ]
+      },
+      "cult": {
+        "title": "Πολυνησιακή Παράδοση",
+        "items": [
+          {
+            "icon": "fa-archway",
+            "title": "Marae Marae",
+            "desc": "Τοπικοί αρχαίοι ναοί."
+          },
+          {
+            "icon": "fa-leaf",
+            "title": "Κηπευτικά Καλλιέργειες",
+            "desc": "Παραγωγή taro και μπανάνας."
+          },
+          {
+            "icon": "fa-ship",
+            "title": "Παραδοσιακή Αλιεία",
+            "desc": "Αλιεία στον ύφαλο."
+          }
+        ]
+      },
+      "demo": {
+        "details": [
+          {
+            "label": "Πληθυσμός & Γλώσσες",
+            "text": "Κυρίως Cook Islanders Maori που διατηρούν παραδοσιακό τρόπο ζωής."
+          },
+          {
+            "label": "Οικονομία",
+            "text": "Κηπευτικά, αλιεία και οικοτουρισμός."
+          }
+        ]
+      },
+      "pois": [
+        {
+          "id": "ma-cicc",
+          "name": "Matavera CICC Church",
+          "category": "monument",
+          "coords": [
+            -21.2011,
+            -159.7392
+          ],
+          "year": "1840",
+          "desc": "Ιστορικός ναός του 1840."
+        },
+        {
+          "id": "ma-cross-island",
+          "name": "Cross-Island Track Trailhead",
+          "category": "landmark",
+          "coords": [
+            -21.204,
+            -159.742
+          ],
+          "year": "1960",
+          "desc": "Αφετηρία της διάσημης διαδρομής προς Te Rua Manga."
+        },
+        {
+          "id": "ma-muri-east",
+          "name": "Muri Lagoon East Beach",
+          "category": "beach",
+          "coords": [
+            -21.198,
+            -159.736
+          ],
+          "year": "φυσικό",
+          "desc": "Ανατολική άκρη της λιμνοθάλασσας."
+        }
+      ],
+      "pastVsPresent": {
+        "title": "Από Αγροτικό Χωριό σε Κόμβο Περιήγησης",
+        "pastText": "Αγροτικό κοινοτικό κέντρο με καλλιέργειες taro.",
+        "presentText": "Πύλη για το Cross-Island Track και Te Rua Manga."
+      }
+    },
+    {
+      "id": "titikaveka",
+      "name": "Τιτικαβέκα",
+      "englishName": "Titikaveka",
+      "nickname": "Νότια Παραλία Κοραλλιών",
+      "badge": "Παραλιακή κοινότητα νότιας Ραροτόνγκα",
+      "type": "city",
+      "coords": [
+        -21.2278,
+        -159.7736
+      ],
+      "zoom": 13,
+      "timeZone": "UTC-10 (Pacific/Rarotonga)",
+      "landmark": "Titikaveka Beach & Pacific Resort",
+      "stats": {
+        "population": "1.800",
+        "founded": "1823 (ιαποστολικός σταθμός)",
+        "area": "5 km²",
+        "elevation": "0–30 m",
+        "famousFor": "Παραλία Titikaveka, Snorkeling Spot, Rarotongan Beach Resort",
+        "landmark": "Titikaveka Beach & Pacific Resort"
+      },
+      "quote": "«Η Titikaveka είναι η σκηνή στην οποία ο Ειρηνικός ζωγραφίζει το αριστούργημά του.»",
+      "brief": "Παραλιακό χωριό στη νότια ακτή της Ραροτόνγκα με τη διάσημη παραλία Titikaveka.",
+      "geo": {
+        "title": "Νότια Παραλία & Ύφαλος",
+        "text": "Προστατευόμενη παραλία με εξωτερικό ύφαλο και λευκή άμμο.",
+        "highlights": [
+          {
+            "icon": "fa-umbrella-beach",
+            "title": "Titikaveka Beach",
+            "text": "Διάσημη παραλία με κρυστάλλινα νερά."
+          },
+          {
+            "icon": "fa-fish",
+            "title": "Snorkeling Spot",
+            "text": "Ένα από τα καλύτερα σημεία snorkeling."
+          },
+          {
+            "icon": "fa-tree",
+            "title": "Palm Forest",
+            "text": "Πυκνά φοινικόδασος κατά μήκος."
+          }
+        ]
+      },
+      "hist": {
+        "title": "Ιστορική Διαδρομή",
+        "text": "Από παραδοσιακό αρχηγείο σε τουριστικό προορισμό.",
+        "highlights": [
+          {
+            "year": "1823",
+            "title": "Mission Station",
+            "desc": "Ιδρύεται μόνιμος σταθμός."
+          },
+          {
+            "year": "1975",
+            "title": "Pacific Resort",
+            "desc": "Ανοίγει το Pacific Resort Titikaveka."
+          },
+          {
+            "year": "1990",
+            "title": "Snorkeling Tourism",
+            "desc": "Ανάπτυξη snorkeling τουρισμού."
+          }
+        ]
+      },
+      "cult": {
+        "title": "Παραδοσιακή Ταυτότητα",
+        "items": [
+          {
+            "icon": "fa-umbrella-beach",
+            "title": "Παραλία & Ύφαλος",
+            "desc": "Παραδοσιακή αλιεία στον ύφαλο."
+          },
+          {
+            "icon": "fa-tshirt",
+            "title": "Tivaevae Quilting",
+            "desc": "Παραδοσιακή τέχνη κεντημάτων."
+          },
+          {
+            "icon": "fa-music",
+            "title": "Island Nights",
+            "desc": "Παραδοσιακοί χοροί ura κάθε βράδυ."
+          }
+        ]
+      },
+      "demo": {
+        "details": [
+          {
+            "label": "Πληθυσμός & Γλώσσες",
+            "text": "Κυρίως Cook Islanders Maori με διεθνή τουριστική κοινότητα."
+          },
+          {
+            "label": "Οικονομία",
+            "text": "Τουρισμός, θαλάσσιες δραστηριότητες και αλιεία."
+          }
+        ]
+      },
+      "pois": [
+        {
+          "id": "ti-beach",
+          "name": "Titikaveka Beach",
+          "category": "beach",
+          "coords": [
+            -21.228,
+            -159.774
+          ],
+          "year": "φυσικό",
+          "desc": "Διάσημη παραλία με κρυστάλλινα νερά."
+        },
+        {
+          "id": "ti-resort",
+          "name": "Pacific Resort Rarotonga",
+          "category": "landmark",
+          "coords": [
+            -21.226,
+            -159.774
+          ],
+          "year": "1975",
+          "desc": "Ιστορικό θέρετρο στη νότια ακτή."
+        },
+        {
+          "id": "ti-snorkeling",
+          "name": "Titikaveka Snorkel Spot",
+          "category": "landmark",
+          "coords": [
+            -21.229,
+            -159.773
+          ],
+          "year": "φυσικό",
+          "desc": "Ένα από τα καλύτερα σημεία snorkeling."
+        }
+      ],
+      "pastVsPresent": {
+        "title": "Από Παραδοσιακό Χωριό σε Παραδεισένιο Προορισμό",
+        "pastText": "Παραδοσιακό αρχηγείο με αλιεία στον ύφαλο.",
+        "presentText": "Παραδεισένιος προορισμός με Pacific Resort και κορυφαία snorkeling."
+      }
+    },
+    {
+      "id": "arutanga",
+      "name": "Αρουτάνγκα / Αϊτουτάκι",
+      "englishName": "Arutanga (Aitutaki)",
+      "nickname": "Η Λιμνοθάλασσα του Μύθου",
+      "badge": "Κύριο χωριό & ατόλλη Αϊτουτάκι",
+      "type": "city",
+      "coords": [
+        -18.8544,
+        -159.7831
+      ],
+      "zoom": 12,
+      "timeZone": "UTC-10 (Pacific/Rarotonga)",
+      "landmark": "Λιμνοθάλασσα Αϊτουτάκι & One Foot Island",
+      "stats": {
+        "population": "2.000 (Αϊτουτάκι συνολικά)",
+        "founded": "1821 (ιαποστολικός σταθμός John Williams)",
+        "area": "18 km² (γη) + 50 km² λιμνοθάλασσα",
+        "elevation": "0–123 m",
+        "famousFor": "One Foot Island, Tapuaetai, Maina Motu",
+        "landmark": "Λιμνοθάλασσα Αϊτουτάκι & One Foot Island"
+      },
+      "quote": "«Η λιμνοθάλασσα του Αϊτουτάκι είναι τόσο τέλεια που φαίνεται ψεύτικη.» — Captain James Cook",
+      "brief": "Το κύριο χωριό της ατόλλης Αϊτουτάκι που θεωρείται μία από τις ομορφότερες λιμνοθάλασσες στον κόσμο.",
+      "geo": {
+        "title": "Ατόλλη με Τρεις Ήπειρους & 15 Motu",
+        "text": "Ατόλλη με κύριο νησί Araura και 15 motu γύρω από την κεντρική λιμνοθάλασσα.",
+        "highlights": [
+          {
+            "icon": "fa-umbrella-beach",
+            "title": "One Foot Island (Tapuaetai)",
+            "text": "Το πιο διάσημο motu με το μικρό ταχυδρομείο."
+          },
+          {
+            "icon": "fa-water",
+            "title": "Maina Motu",
+            "text": "Σημείο φωλιάσης θαλάσσιων πουλιών."
+          },
+          {
+            "icon": "fa-mountain",
+            "title": "Maungapu",
+            "text": "Η ψηλότερη κορυφή (123 m) με θέα σε ολόκληρη την ατόλλη."
+          }
+        ]
+      },
+      "hist": {
+        "title": "Ιστορική Διαδρομή",
+        "text": "Από αρχαίο κέντρο ναυτιλίας σε παγκόσμιο προορισμό.",
+        "highlights": [
+          {
+            "year": "1821",
+            "title": "John Williams Mission",
+            "desc": "Ο John Williams φθάνει και ιδρύει μόνιμο σταθμό."
+          },
+          {
+            "year": "1789",
+            "title": "Mutiny on the Bounty Reference",
+            "desc": "Αναφορές για το πλοίο Bounty και ίχνη του πολεμικού στο χώρο."
+          },
+          {
+            "year": "2000",
+            "title": "Survivor Cook Islands",
+            "desc": "Το τηλεοπτικό Survivor γυρίζεται στο Αϊτουτάκι."
+          }
+        ]
+      },
+      "cult": {
+        "title": "Παραδοσιακή Αλιεία & Κοράλλια",
+        "items": [
+          {
+            "icon": "fa-fish",
+            "title": "Bone Fishing Lagoon",
+            "desc": "Παγκόσμια πρωτεύουσα bonefishing."
+          },
+          {
+            "icon": "fa-ship",
+            "title": "Vaka Canoe",
+            "desc": "Παραδοσιακά κανό στη λιμνοθάλασσα."
+          },
+          {
+            "icon": "fa-umbrella-beach",
+            "title": "Motu Trips",
+            "desc": "Παραδοσιακές εκδρομές στα motu."
+          }
+        ]
+      },
+      "demo": {
+        "details": [
+          {
+            "label": "Πληθυσμός & Γλώσσες",
+            "text": "Κυρίως Cook Islanders Maori με τουριστική κοινότητα."
+          },
+          {
+            "label": "Οικονομία",
+            "text": "Τουρισμός, bonefishing και αλιεία."
+          }
+        ]
+      },
+      "pois": [
+        {
+          "id": "ai-one-foot",
+          "name": "One Foot Island (Tapuaetai)",
+          "category": "landmark",
+          "coords": [
+            -18.87,
+            -159.78
+          ],
+          "year": "φυσικό",
+          "desc": "Το πιο διάσημο motu με ταχυδρομικό σταθμό."
+        },
+        {
+          "id": "ai-maina",
+          "name": "Maina Motu",
+          "category": "landmark",
+          "coords": [
+            -18.9,
+            -159.79
+          ],
+          "year": "φυσικό",
+          "desc": "Σημείο φωλιάσης θαλάσσιων πουλιών."
+        },
+        {
+          "id": "ai-church",
+          "name": "Arutanga CICC Church (Oldest Cook Islands)",
+          "category": "monument",
+          "coords": [
+            -18.854,
+            -159.783
+          ],
+          "year": "1828",
+          "desc": "Ο αρχαιότερος ναός CICC των Cook Islands."
+        }
+      ],
+      "pastVsPresent": {
+        "title": "Από Ναυτικό Κέντρο σε Παγκόσμιο Προορισμό",
+        "pastText": "Αρχαίο κέντρο ναυτιλίας και ιεραποστολικός σταθμός.",
+        "presentText": "Παγκόσμιος προορισμός με διάσημη λιμνοθάλασσα και One Foot Island."
+      }
+    },
+    {
+      "id": "mangaia",
+      "name": "Μανγκάια",
+      "englishName": "Mangaia",
+      "nickname": "Το Παλαιότερο Νησί του Ειρηνικού",
+      "badge": "Δεύτερο μεγαλύτερο νησί Κουκ",
+      "type": "city",
+      "coords": [
+        -21.2,
+        -157.9
+      ],
+      "zoom": 11,
+      "timeZone": "UTC-10 (Pacific/Rarotonga)",
+      "landmark": "Σπηλιές Te Rua Rere & Oneroa Village",
+      "stats": {
+        "population": "700",
+        "founded": "~500-800 μ.Χ. (πρώιμος οικισμός)",
+        "area": "51,8 km²",
+        "elevation": "0–169 m",
+        "famousFor": "Oldest Pacific Island 18 Ma, Tivaevae, Te Rua Rere Cave",
+        "landmark": "Σπηλιές Te Rua Rere & Oneroa Village"
+      },
+      "quote": "«Η Mangaia είναι η πρώτη γη που αναδύθηκε στον Ειρηνικό — 18 εκατομμύρια χρόνια πριν.»",
+      "brief": "Το δεύτερο μεγαλύτερο νησί των Cook Islands και το παλαιότερο νησί του Ειρηνικού (18 εκατομμύρια χρόνια).",
+      "geo": {
+        "title": "Προϋψωμένο Κοραλλιογενές Νησί",
+        "text": "Κοραλλιογενές νησί με κεντρικό ηφαιστειογενές πυρήνα που περιβάλλεται από ανυψωμένο makatea (κοραλλιογενές ασβεστόλιθο).",
+        "highlights": [
+          {
+            "icon": "fa-cave",
+            "title": "Te Rua Rere Cave",
+            "text": "Φημισμένη σπηλιά με stalactites."
+          },
+          {
+            "icon": "fa-umbrella-beach",
+            "title": "Oneroa Beach",
+            "text": "Κύριος κόλπος και οικισμός."
+          },
+          {
+            "icon": "fa-tree",
+            "title": "Makatea Forest",
+            "text": "Σπάνια βλάστηση στο ασβεστολιθικό οροπέδιο."
+          }
+        ]
+      },
+      "hist": {
+        "title": "Ιστορική Διαδρομή",
+        "text": "Από αρχαίο οικισμό 500 μ.Χ. σε πολιτιστικό κέντρο.",
+        "highlights": [
+          {
+            "year": "~500-800 μ.Χ.",
+            "title": "Πρώτοι Οικιστές",
+            "desc": "Πρώιμη εγκατάσταση Πολυνήσιων."
+          },
+          {
+            "year": "1777",
+            "title": "James Cook Discovery",
+            "desc": "Ο Cook ανακαλύπτει το Mangaia."
+          },
+          {
+            "year": "1824",
+            "title": "Mission Arrival",
+            "desc": "Φθάνουν οι πρώτοι ιεραπόστολοι."
+          }
+        ]
+      },
+      "cult": {
+        "title": "Πολιτιστική Καρδιά Cook Islands",
+        "items": [
+          {
+            "icon": "fa-tshirt",
+            "title": "Tivaevae Tradition",
+            "desc": "Η Mangaia είναι κέντρο παραδοσιακής τέχνης tivaevae."
+          },
+          {
+            "icon": "fa-drum",
+            "title": "Mangaian Drumming",
+            "desc": "Ιδιαίτερη μουσική παράδοση με κρουστά."
+          },
+          {
+            "icon": "fa-archway",
+            "title": "Are Karioi",
+            "desc": "Παραδοσιακά σπίτια Are Karioi (τάφοι)."
+          }
+        ]
+      },
+      "demo": {
+        "details": [
+          {
+            "label": "Πληθυσμός & Γλώσσες",
+            "text": "Κυρίως Cook Islanders Maori με ιδιαίτερη διάλεκτο Mangaian."
+          },
+          {
+            "label": "Οικονομία",
+            "text": "Κηπευτικά, αλιεία και περιορισμένος οικοτουρισμός."
+          }
+        ]
+      },
+      "pois": [
+        {
+          "id": "mg-cave",
+          "name": "Te Rua Rere Cave",
+          "category": "nature",
+          "coords": [
+            -21.21,
+            -157.9
+          ],
+          "year": "φυσικό",
+          "desc": "Φημισμένη σπηλιά με stalactites."
+        },
+        {
+          "id": "mg-oneroa",
+          "name": "Oneroa Village & Harbour",
+          "category": "landmark",
+          "coords": [
+            -21.205,
+            -157.895
+          ],
+          "year": "ανέκαθεν",
+          "desc": "Ο κύριος οικισμός και λιμάνι."
+        },
+        {
+          "id": "mg-tuara",
+          "name": "Tuara Peak Viewpoint",
+          "category": "viewpoint",
+          "coords": [
+            -21.215,
+            -157.91
+          ],
+          "year": "φυσικό",
+          "desc": "Ψηλότερο σημείο με θέα σε ολόκληρο το νησί."
+        }
+      ],
+      "pastVsPresent": {
+        "title": "Από Αρχαίο Νησί σε Κέντρο Tivaevae",
+        "pastText": "Πρώιμος οικισμός 500 μ.Χ. και ιεραποστολικό κέντρο.",
+        "presentText": "Απομονωμένο νησί με ιδιαίτερη κληρονομιά tivaevae και μουσικής."
+      }
+    },
+    {
+      "id": "atiu",
+      "name": "Ατίου",
+      "englishName": "Atiu",
+      "nickname": "Το Νησί των Πουλιών",
+      "badge": "Κοραλλιογενές νησί με σπηλιές",
+      "type": "city",
+      "coords": [
+        -20.0167,
+        -158.7333
+      ],
+      "zoom": 11,
+      "timeZone": "UTC-10 (Pacific/Rarotonga)",
+      "landmark": "Σπηλιές Anatakitaki & Χωριό Tengatangi",
+      "stats": {
+        "population": "470",
+        "founded": "~800 μ.Χ. (πρώιμος οικισμός)",
+        "area": "27 km²",
+        "elevation": "0–71 m",
+        "famousFor": "Kopeka Bird, Σπηλιές Anatakitaki, Coffee Atiu",
+        "landmark": "Σπηλιές Anatakitaki & Χωριό Tengatangi"
+      },
+      "quote": "«Στο Atiu οι Kopeka — τα πουλιά του σκότους — πλοηγούνται με ηχολόγηση στις σπηλιές.»",
+      "brief": "Κοραλλιογενές νησί με κεντρικό οροπέδιο makatea και πέντε παραδοσιακά χωριά.",
+      "geo": {
+        "title": "Κοραλλιογενές Οροπέδιο & Σπηλιές",
+        "text": "Κοραλλιογενές νησί με κεντρικό ηφαιστειακό πυρήνα που περιβάλλεται από makatea και σπηλιές.",
+        "highlights": [
+          {
+            "icon": "fa-cave",
+            "title": "Σπηλιές Anatakitaki",
+            "text": "Σπηλιές με το είδος Kopeka (Atiu swiftlet)."
+          },
+          {
+            "icon": "fa-tree",
+            "title": "Makatea Forest",
+            "text": "Σπάνια βλάστηση στο οροπέδιο."
+          },
+          {
+            "icon": "fa-umbrella-beach",
+            "title": "Τα Πέντε Χωριά",
+            "text": "Tengatangi, Maputi, Ngatiarua, Areora και Teenui."
+          }
+        ]
+      },
+      "hist": {
+        "title": "Ιστορική Διαδρομή",
+        "text": "Από οικισμό Πολυνήσιων σε απομονωμένο κέντρο παραδοσιακής τέχνης.",
+        "highlights": [
+          {
+            "year": "~800 μ.Χ.",
+            "title": "Πρώτοι Οικιστές",
+            "desc": "Πρώιμη εγκατάσταση Πολυνήσιων."
+          },
+          {
+            "year": "1777",
+            "title": "Cook Discovery",
+            "desc": "Ο James Cook ανακαλύπτει το Atiu."
+          },
+          {
+            "year": "1823",
+            "title": "Mission Arrival",
+            "desc": "Φθάνουν οι πρώτοι ιεραπόστολοι."
+          }
+        ]
+      },
+      "cult": {
+        "title": "Παράδοση Atiu",
+        "items": [
+          {
+            "icon": "fa-feather",
+            "title": "Kopeka Swiftlet",
+            "desc": "Endemικό πουλί που πλοηγείται με ηχολόγηση."
+          },
+          {
+            "icon": "fa-coffee",
+            "title": "Atiu Coffee",
+            "desc": "Παραγωγή Atiu coffee — διάσημη στους Coffee Connoisseurs."
+          },
+          {
+            "icon": "fa-tshirt",
+            "title": "Tivaevae Tungane",
+            "desc": "Κέντρο παραδοσιακών κεντημάτων Tivaevae Tungane."
+          }
+        ]
+      },
+      "demo": {
+        "details": [
+          {
+            "label": "Πληθυσμός & Γλώσσες",
+            "text": "Κυρίως Cook Islanders Maori με ιδιαίτερη διάλεκτο Atiuan."
+          },
+          {
+            "label": "Οικονομία",
+            "text": "Καλλιέργειες καφέ, αλιεία και οικοτουρισμός."
+          }
+        ]
+      },
+      "pois": [
+        {
+          "id": "at-cave",
+          "name": "Anatakitaki Cave (Kopeka Cave)",
+          "category": "nature",
+          "coords": [
+            -20.02,
+            -158.73
+          ],
+          "year": "φυσικό",
+          "desc": "Σπηλιές με endemικό Kopeka swiftlet."
+        },
+        {
+          "id": "at-tengatangi",
+          "name": "Tengatangi Village",
+          "category": "landmark",
+          "coords": [
+            -20.015,
+            -158.735
+          ],
+          "year": "ανέκαθεν",
+          "desc": "Το μεγαλύτερο από τα πέντε παραδοσιακά χωριά."
+        },
+        {
+          "id": "at-coffee",
+          "name": "Atiu Coffee Factory",
+          "category": "culture",
+          "coords": [
+            -20.018,
+            -158.732
+          ],
+          "year": "1985",
+          "desc": "Εργοστάσιο παραγωγής Atiu coffee."
+        }
+      ],
+      "pastVsPresent": {
+        "title": "Από Αρχαίο Οικισμό σε Κέντρο Καφέ",
+        "pastText": "Αρχαίος οικισμός Πολυνήσιων με σπηλιές.",
+        "presentText": "Απομονωμένο νησί με σπάνια Kopeka και παραγωγή Atiu coffee."
+      }
+    },
+    {
+      "id": "mauke",
+      "name": "Μαουκέ",
+      "englishName": "Mauke",
+      "nickname": "Το Νησί των Κήπων",
+      "badge": "Κοραλλιογενές νησί με makatea",
+      "type": "city",
+      "coords": [
+        -20.1167,
+        -157.35
+      ],
+      "zoom": 11,
+      "timeZone": "UTC-10 (Pacific/Rarotonga)",
+      "landmark": "Σπηλιές Motuanga & Χωριό Kimiangatau",
+      "stats": {
+        "population": "300",
+        "founded": "~800 μ.Χ. (πρώιμος οικισμός)",
+        "area": "18,4 km²",
+        "elevation": "0–22 m",
+        "famousFor": "Παραλία Mangea, Σπηλιές Motuanga, Κήποι Citrus",
+        "landmark": "Σπηλιές Motuanga & Χωριό Kimiangatau"
+      },
+      "quote": "«Στο Mauke κάθε σπίτι έχει έναν κήπο εσπεριδοειδών.»",
+      "brief": "Μικρό κοραλλιογενές νησί ανατολικά της Ραροτόνγκα με πλούσια βλάστηση και σπηλιές.",
+      "geo": {
+        "title": "Χαμηλό Κοραλλιογενές Νησί & Σπηλιές",
+        "text": "Κοραλλιογενές νησί με makatea και υπογείες σπηλιές.",
+        "highlights": [
+          {
+            "icon": "fa-cave",
+            "title": "Motuanga Cave",
+            "text": "Σπηλιά με δύο θαλάμους — ένας ξηρός, ένας με νερό."
+          },
+          {
+            "icon": "fa-umbrella-beach",
+            "title": "Mangea Beach",
+            "text": "Κεντρική παραλία του νησιού."
+          },
+          {
+            "icon": "fa-tree",
+            "title": "Citrus Gardens",
+            "text": "Παραγωγή πορτοκαλιών και λάιμ."
+          }
+        ]
+      },
+      "hist": {
+        "title": "Ιστορική Διαδρομή",
+        "text": "Από οικισμό Πολυνήσιων σε απομονωμένο κέντρο κηπευτικών.",
+        "highlights": [
+          {
+            "year": "~800 μ.Χ.",
+            "title": "Πρώτοι Οικιστές",
+            "desc": "Πρώιμη εγκατάσταση Πολυνήσιων."
+          },
+          {
+            "year": "1888",
+            "title": "British Protectorate",
+            "desc": "Το Mauke περιέρχεται στο британικό προτεκτοράτο."
+          },
+          {
+            "year": "1965",
+            "title": "Cook Islands Autonomy",
+            "desc": "Με το καθεστώς Free Association."
+          }
+        ]
+      },
+      "cult": {
+        "title": "Παράδοση Mauke",
+        "items": [
+          {
+            "icon": "fa-leaf",
+            "title": "Citrus Tradition",
+            "desc": "Παραδοσιακή παραγωγή εσπεριδοειδών."
+          },
+          {
+            "icon": "fa-archway",
+            "title": "Are House",
+            "desc": "Ιδιαίτερα παραδοσιακά σπίτια με καλαμωτή."
+          },
+          {
+            "icon": "fa-music",
+            "title": "Ura Hymn Tradition",
+            "desc": "Παραδοσιακός χορός και ύμνοι."
+          }
+        ]
+      },
+      "demo": {
+        "details": [
+          {
+            "label": "Πληθυσμός & Γλώσσες",
+            "text": "Κυρίως Cook Islanders Maori με ιδιαίτερη διάλεκτο Maukean."
+          },
+          {
+            "label": "Οικονομία",
+            "text": "Κηπευτικά, αλιεία και οικοτουρισμός."
+          }
+        ]
+      },
+      "pois": [
+        {
+          "id": "mk-cave",
+          "name": "Motuanga Cave",
+          "category": "nature",
+          "coords": [
+            -20.12,
+            -157.35
+          ],
+          "year": "φυσικό",
+          "desc": "Σπηλιά με δύο θαλάμους — ξηρό και υδάτινο."
+        },
+        {
+          "id": "mk-beach",
+          "name": "Mangea Beach",
+          "category": "beach",
+          "coords": [
+            -20.115,
+            -157.352
+          ],
+          "year": "φυσικό",
+          "desc": "Κεντρική παραλία του νησιού."
+        },
+        {
+          "id": "mk-kimiangatau",
+          "name": "Kimiangatau Village",
+          "category": "landmark",
+          "coords": [
+            -20.1167,
+            -157.35
+          ],
+          "year": "ανέκαθεν",
+          "desc": "Το κύριο χωριό του νησιού."
+        }
+      ],
+      "pastVsPresent": {
+        "title": "Από Αρχαίο Νησί σε Κήπους Εσπεριδοειδών",
+        "pastText": "Αρχαίος οικισμός Πολυνήσιων με σπηλιές.",
+        "presentText": "Απομονωμένο νησί με παραγωγή εσπεριδοειδών."
+      }
+    },
+    {
+      "id": "mitiaro",
+      "name": "Μιτιάρο",
+      "englishName": "Mitiaro",
+      "nickname": "Το Νησί της Γαλήνης",
+      "badge": "Μικρό κοραλλιογενές νησί",
+      "type": "city",
+      "coords": [
+        -19.85,
+        -157.1167
+      ],
+      "zoom": 11,
+      "timeZone": "UTC-10 (Pacific/Rarotonga)",
+      "landmark": "Λίμνη Tiroto & Χωριό Takaue",
+      "stats": {
+        "population": "180",
+        "founded": "~800 μ.Χ. (πρώιμος οικισμός)",
+        "area": "22,3 km²",
+        "elevation": "0–14 m",
+        "famousFor": "Λίμνη Tiroto, Λίμνη Te Roto, Freshwater Eels",
+        "landmark": "Λίμνη Tiroto & Χωριό Takaue"
+      },
+      "quote": "«Στο Mitiaro οι δύο λίμνες είναι τα μάτια του νησιού που κοιτάζουν τον ουρανό.»",
+      "brief": "Το μικρότερο και πιο γαλήνιο από τα νότια νησιά Κουκ με δύο εσωτερικές λίμνες.",
+      "geo": {
+        "title": "Χαμηλό Κοραλλιογενές Νησί με Λίμνες",
+        "text": "Χαμηλό κοραλλιογενές νησί με δύο εσωτερικές λίμνες γλυκού νερού.",
+        "highlights": [
+          {
+            "icon": "fa-water",
+            "title": "Λίμνη Tiroto",
+            "text": "Η μεγαλύτερη εσωτερική λίμνη γλυκού νερού."
+          },
+          {
+            "icon": "fa-water",
+            "title": "Λίμνη Te Roto",
+            "text": "Η δεύτερη εσωτερική λίμνη."
+          },
+          {
+            "icon": "fa-umbrella-beach",
+            "title": "Makatea Cliffs",
+            "text": "Χαμηλές πλαγιές makatea."
+          }
+        ]
+      },
+      "hist": {
+        "title": "Ιστορική Διαδρομή",
+        "text": "Από αρχαίο οικισμό σε απομονωμένη κοινότητα.",
+        "highlights": [
+          {
+            "year": "~800 μ.Χ.",
+            "title": "Πρώτοι Οικιστές",
+            "desc": "Πρώιμη εγκατάσταση Πολυνήσιων."
+          },
+          {
+            "year": "1823",
+            "title": "Mission Arrival",
+            "desc": "Φθάνουν οι πρώτοι ιεραπόστολοι."
+          },
+          {
+            "year": "1888",
+            "title": "British Protectorate",
+            "desc": "Περιέρχεται στο βρετανικό προτεκτοράτο."
+          }
+        ]
+      },
+      "cult": {
+        "title": "Παράδοση Mitiaro",
+        "items": [
+          {
+            "icon": "fa-fish",
+            "title": "Freshwater Eels",
+            "desc": "Παραδοσιακή αλιεία χελιών στις λίμνες."
+          },
+          {
+            "icon": "fa-archway",
+            "title": "Takaue & Auta Villages",
+            "desc": "Τα δύο παραδοσιακά χωριά."
+          },
+          {
+            "icon": "fa-leaf",
+            "title": "Coconut Plantations",
+            "desc": "Παραγωγή copra και καρύων."
+          }
+        ]
+      },
+      "demo": {
+        "details": [
+          {
+            "label": "Πληθυσμός & Γλώσσες",
+            "text": "Κυρίως Cook Islanders Maori με ιδιαίτερη διάλεκτο Mitiaroan."
+          },
+          {
+            "label": "Οικονομία",
+            "text": "Κηπευτικά, αλιεία χελιών και copra."
+          }
+        ]
+      },
+      "pois": [
+        {
+          "id": "mt-tiroto",
+          "name": "Λίμνη Tiroto (Te Roto)",
+          "category": "nature",
+          "coords": [
+            -19.855,
+            -157.12
+          ],
+          "year": "φυσικό",
+          "desc": "Η μεγαλύτερη εσωτερική λίμνη γλυκού νερού."
+        },
+        {
+          "id": "mt-takaue",
+          "name": "Takaue Village",
+          "category": "landmark",
+          "coords": [
+            -19.85,
+            -157.1167
+          ],
+          "year": "ανέκαθεν",
+          "desc": "Το ένα από τα δύο παραδοσιακά χωριά."
+        },
+        {
+          "id": "mt-cliffs",
+          "name": "Makatea Cliffs",
+          "category": "viewpoint",
+          "coords": [
+            -19.845,
+            -157.115
+          ],
+          "year": "φυσικό",
+          "desc": "Χαμηλές πλαγιές makatea με θέα στον ωκεανό."
+        }
+      ],
+      "pastVsPresent": {
+        "title": "Από Αρχαίο Οικισμό σε Γαλήνιο Νησί",
+        "pastText": "Αρχαίος οικισμός Πολυνήσιων με λίμνες.",
+        "presentText": "Γαλήνιο νησί με λίμνες γλυκού νερού και παραδοσιακή αλιεία."
+      }
+    }
+  ]
+}
