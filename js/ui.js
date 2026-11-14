@@ -4,9 +4,10 @@
  * Base Map Layer selector, Date display, Video Overlay, and Deep Dive views.
  */
 
-import { getCityVideo, getAvailableVideoTypes, getAvailableCityTours, CITY_VIDEOS, findPoiLiveCam } from './video-service.js?v=20261114_world14';
-import { getDeepDiveData } from './deep-dive.js?v=20261114_world14';
-import { fetchWikiArticle, fetchWikiArticleHtml, cleanWikiTitle } from './wiki-service.js?v=20261114_world14';
+import { getCityVideo, getAvailableVideoTypes, getAvailableCityTours, CITY_VIDEOS, findPoiLiveCam } from './video-service.js?v=20261114_world15';
+import { getDeepDiveData } from './deep-dive.js?v=20261114_world15';
+import { fetchWikiArticle, fetchWikiArticleHtml, cleanWikiTitle } from './wiki-service.js?v=20261114_world15';
+import { calculateSubsolarPoint } from './solar-terminator.js?v=20261114_world15';
 
 let currentActiveVideoCityId = null;
 let currentActiveVideoType = 'drone';
@@ -700,6 +701,322 @@ export function updateTabButtons(activeTab) {
   });
 }
 
+let activeDossierClockTimer = null;
+
+const COUNTRY_TIMEZONES = {
+  greece: 'Europe/Athens',
+  cyprus: 'Asia/Nicosia',
+  italy: 'Europe/Rome',
+  france: 'Europe/Paris',
+  germany: 'Europe/Berlin',
+  spain: 'Europe/Madrid',
+  portugal: 'Europe/Lisbon',
+  'united-kingdom': 'Europe/London',
+  uk: 'Europe/London',
+  ireland: 'Europe/Dublin',
+  netherlands: 'Europe/Amsterdam',
+  belgium: 'Europe/Brussels',
+  switzerland: 'Europe/Zurich',
+  austria: 'Europe/Vienna',
+  sweden: 'Europe/Stockholm',
+  norway: 'Europe/Oslo',
+  finland: 'Europe/Helsinki',
+  denmark: 'Europe/Copenhagen',
+  poland: 'Europe/Warsaw',
+  czech: 'Europe/Prague',
+  hungary: 'Europe/Budapest',
+  romania: 'Europe/Bucharest',
+  bulgaria: 'Europe/Sofia',
+  turkey: 'Europe/Istanbul',
+  albania: 'Europe/Tirane',
+  serbia: 'Europe/Belgrade',
+  croatia: 'Europe/Zagreb',
+  russia: 'Europe/Moscow',
+  ukraine: 'Europe/Kyiv',
+  japan: 'Asia/Tokyo',
+  china: 'Asia/Shanghai',
+  india: 'Asia/Kolkata',
+  'south-korea': 'Asia/Seoul',
+  egypt: 'Africa/Cairo',
+  'south-africa': 'Africa/Johannesburg',
+  morocco: 'Africa/Casablanca',
+  chile: 'America/Santiago',
+  argentina: 'America/Argentina/Buenos_Aires',
+  brazil: 'America/Sao_Paulo',
+  uruguay: 'America/Montevideo',
+  paraguay: 'America/Asuncion',
+  bolivia: 'America/La_Paz',
+  peru: 'America/Lima',
+  colombia: 'America/Bogota',
+  venezuela: 'America/Caracas',
+  ecuador: 'America/Guayaquil',
+  guyana: 'America/Guyana',
+  suriname: 'America/Paramaribo',
+  mexico: 'America/Mexico_City',
+  canada: 'America/Toronto',
+  australia: 'Australia/Sydney',
+  'new-zealand': 'Pacific/Auckland'
+};
+
+const US_STATE_TIMEZONES = {
+  connecticut: 'America/New_York',
+  delaware: 'America/New_York',
+  florida: 'America/New_York',
+  georgia: 'America/New_York',
+  maine: 'America/New_York',
+  maryland: 'America/New_York',
+  massachusetts: 'America/New_York',
+  'new-hampshire': 'America/New_York',
+  'new-jersey': 'America/New_York',
+  'new-york': 'America/New_York',
+  'north-carolina': 'America/New_York',
+  ohio: 'America/New_York',
+  pennsylvania: 'America/New_York',
+  'rhode-island': 'America/New_York',
+  'south-carolina': 'America/New_York',
+  vermont: 'America/New_York',
+  virginia: 'America/New_York',
+  'washington-dc': 'America/New_York',
+  'west-virginia': 'America/New_York',
+  alabama: 'America/Chicago',
+  arkansas: 'America/Chicago',
+  illinois: 'America/Chicago',
+  iowa: 'America/Chicago',
+  kansas: 'America/Chicago',
+  kentucky: 'America/New_York',
+  louisiana: 'America/Chicago',
+  minnesota: 'America/Chicago',
+  mississippi: 'America/Chicago',
+  missouri: 'America/Chicago',
+  nebraska: 'America/Chicago',
+  'north-dakota': 'America/Chicago',
+  oklahoma: 'America/Chicago',
+  'south-dakota': 'America/Chicago',
+  tennessee: 'America/Chicago',
+  texas: 'America/Chicago',
+  wisconsin: 'America/Chicago',
+  arizona: 'America/Phoenix',
+  colorado: 'America/Denver',
+  idaho: 'America/Boise',
+  montana: 'America/Denver',
+  'new-mexico': 'America/Denver',
+  utah: 'America/Denver',
+  wyoming: 'America/Denver',
+  california: 'America/Los_Angeles',
+  nevada: 'America/Los_Angeles',
+  oregon: 'America/Los_Angeles',
+  'washington-state': 'America/Los_Angeles',
+  alaska: 'America/Anchorage',
+  hawaii: 'Pacific/Honolulu'
+};
+
+export function stopDossierClock() {
+  if (activeDossierClockTimer) {
+    clearInterval(activeDossierClockTimer);
+    activeDossierClockTimer = null;
+  }
+}
+
+export function getEntityLocalTime(entity, entityType = 'city') {
+  const now = new Date();
+  
+  if (entityType === 'world' || !entity) {
+    const hh = String(now.getUTCHours()).padStart(2, '0');
+    const mm = String(now.getUTCMinutes()).padStart(2, '0');
+    const ss = String(now.getUTCSeconds()).padStart(2, '0');
+    let dateStr = '';
+    try {
+      dateStr = new Intl.DateTimeFormat('el-GR', {
+        timeZone: 'UTC',
+        day: 'numeric',
+        month: 'short'
+      }).format(now);
+    } catch (e) {
+      dateStr = `${now.getUTCDate()} ${now.getUTCMonth() + 1}`;
+    }
+    return {
+      time: `${hh}:${mm}`,
+      seconds: ss,
+      date: dateStr,
+      isDay: true,
+      title: 'Παγκόσμια Ώρα (UTC)'
+    };
+  }
+
+  const coords = entity.coords || entity.coordinates || (entity.center ? [entity.center[0], entity.center[1]] : null);
+  const lat = (coords && typeof coords[0] === 'number') ? coords[0] : 0;
+  const lng = (coords && typeof coords[1] === 'number') ? coords[1] : 0;
+
+  let tz = entity.timeZone || entity.timezone;
+  let iana = null;
+  if (tz) {
+    const m = tz.match(/\(([^)]+)\)/);
+    if (m) {
+      iana = m[1].trim();
+    } else if (tz.includes('/')) {
+      iana = tz.trim();
+    }
+  }
+
+  // Fallback to Country / State lookup if direct IANA timezone not specified
+  if (!iana) {
+    const sId = entity._stateId || entity.stateId;
+    const cId = entity._countryId || entity.countryId || entity.id;
+    if (sId && US_STATE_TIMEZONES[sId]) {
+      iana = US_STATE_TIMEZONES[sId];
+    } else if (cId && COUNTRY_TIMEZONES[cId]) {
+      iana = COUNTRY_TIMEZONES[cId];
+    }
+  }
+
+  let timeStr = '';
+  let secStr = '';
+  let dateStr = '';
+
+  // Try formatting with IANA timezone
+  if (iana) {
+    try {
+      const parts = new Intl.DateTimeFormat('el-GR', {
+        timeZone: iana,
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        hour12: false
+      }).formatToParts(now);
+
+      const h = parts.find(p => p.type === 'hour')?.value || '00';
+      const m = parts.find(p => p.type === 'minute')?.value || '00';
+      const s = parts.find(p => p.type === 'second')?.value || '00';
+      timeStr = `${h}:${m}`;
+      secStr = s;
+
+      dateStr = new Intl.DateTimeFormat('el-GR', {
+        timeZone: iana,
+        day: 'numeric',
+        month: 'short'
+      }).format(now);
+    } catch (e) {
+      iana = null;
+    }
+  }
+
+  // If IANA failed or unavailable, try explicit UTC offset e.g. "UTC-3"
+  if (!timeStr && tz) {
+    const utcMatch = tz.match(/UTC\s*([+-]\d+(?:\.\d+)?)/i);
+    if (utcMatch) {
+      const offset = parseFloat(utcMatch[1]);
+      const utcMs = now.getTime() + (now.getTimezoneOffset() * 60000);
+      const targetMs = utcMs + (offset * 3600000);
+      const localDate = new Date(targetMs);
+
+      const hh = String(localDate.getHours()).padStart(2, '0');
+      const mm = String(localDate.getMinutes()).padStart(2, '0');
+      const ss = String(localDate.getSeconds()).padStart(2, '0');
+      timeStr = `${hh}:${mm}`;
+      secStr = ss;
+
+      try {
+        dateStr = new Intl.DateTimeFormat('el-GR', {
+          day: 'numeric',
+          month: 'short'
+        }).format(localDate);
+      } catch (e) {
+        dateStr = `${localDate.getDate()} ${localDate.getMonth() + 1}`;
+      }
+    }
+  }
+
+  // Fallback to longitude offset if neither IANA nor UTC string was successful
+  if (!timeStr) {
+    const offsetHours = Math.round(lng / 15.0);
+    const utcMs = now.getTime() + (now.getTimezoneOffset() * 60000);
+    const targetMs = utcMs + (offsetHours * 3600000);
+    const localDate = new Date(targetMs);
+
+    const hh = String(localDate.getHours()).padStart(2, '0');
+    const mm = String(localDate.getMinutes()).padStart(2, '0');
+    const ss = String(localDate.getSeconds()).padStart(2, '0');
+    timeStr = `${hh}:${mm}`;
+    secStr = ss;
+
+    try {
+      dateStr = new Intl.DateTimeFormat('el-GR', {
+        day: 'numeric',
+        month: 'short'
+      }).format(localDate);
+    } catch (e) {
+      dateStr = `${localDate.getDate()} ${localDate.getMonth() + 1}`;
+    }
+  }
+
+  // Astronomical day/night calculation using the subsolar point
+  let isDay = true;
+  try {
+    const { lat: sunLat, lon: sunLon } = calculateSubsolarPoint(now);
+    const rad = Math.PI / 180.0;
+    const phi1 = lat * rad;
+    const phi0 = sunLat * rad;
+    const dLambda = (lng - sunLon) * rad;
+    const cosPsi = Math.sin(phi1) * Math.sin(phi0) + Math.cos(phi1) * Math.cos(phi0) * Math.cos(dLambda);
+    isDay = cosPsi > 0;
+  } catch (e) {
+    const h = parseInt(timeStr.split(':')[0], 10);
+    isDay = h >= 6 && h < 20;
+  }
+
+  let title = 'Τοπική Ώρα';
+  if (entityType === 'country') {
+    title = entity.capital ? `Ώρα (${entity.capital})` : 'Ώρα Χώρας';
+  }
+
+  return {
+    time: timeStr,
+    seconds: secStr,
+    date: dateStr,
+    isDay,
+    title
+  };
+}
+
+export function updateDossierClock(entity, entityType) {
+  const stat4Container = document.getElementById('stat4-container');
+  if (!stat4Container) return;
+
+  const stat4Title = document.getElementById('stat4-title');
+  const stat4Time = document.getElementById('stat4-time');
+  const stat4Sec = document.getElementById('stat4-sec');
+  const stat4Date = document.getElementById('stat4-date');
+  const stat4Icon = document.getElementById('stat4-icon');
+
+  const info = getEntityLocalTime(entity, entityType);
+
+  if (stat4Title) stat4Title.innerText = info.title;
+  if (stat4Time) stat4Time.innerText = info.time;
+  if (stat4Sec) stat4Sec.innerText = `:${info.seconds}`;
+  if (stat4Date) stat4Date.innerText = info.date;
+
+  if (stat4Icon) {
+    if (entityType === 'world') {
+      stat4Icon.className = 'fa-solid fa-earth-americas text-sky-400 text-[10px]';
+    } else if (info.isDay) {
+      stat4Icon.className = 'fa-solid fa-sun text-amber-400 text-[10px] animate-pulse';
+    } else {
+      stat4Icon.className = 'fa-solid fa-moon text-indigo-300 text-[10px]';
+    }
+  }
+
+  const stat4 = document.getElementById('stat4');
+  if (stat4) {
+    if (entityType === 'world') {
+      stat4.className = 'text-xs sm:text-sm font-bold text-sky-300 truncate flex items-center justify-center gap-0.5';
+    } else if (info.isDay) {
+      stat4.className = 'text-xs sm:text-sm font-bold text-amber-300 truncate flex items-center justify-center gap-0.5';
+    } else {
+      stat4.className = 'text-xs sm:text-sm font-bold text-indigo-200 truncate flex items-center justify-center gap-0.5';
+    }
+  }
+}
+
 export function renderDossier(entity, entityType = 'state', currentTab = 'geo', activeYear = null, activeSpots = [], isPlaying = false) {
   if (!entity) return;
 
@@ -750,32 +1067,44 @@ export function renderDossier(entity, entityType = 'state', currentTab = 'geo', 
 
   if (entityType === 'world') {
     if (stat1Label) stat1Label.innerText = 'Πληθυσμός';
-    if (stat1) stat1.innerText = entity.stats?.population || '8.15 Δισ.';
+    if (stat1) { stat1.innerText = entity.stats?.population || '8.15 Δισ.'; stat1.title = stat1.innerText; }
 
     if (stat2Label) stat2Label.innerText = 'Κράτη / Ήπειροι';
-    if (stat2) stat2.innerText = `${entity.stats?.countries?.split(' ')[0] || '195'} / 7`;
+    if (stat2) { stat2.innerText = `${entity.stats?.countries?.split(' ')[0] || '195'} / 7`; stat2.title = stat2.innerText; }
 
     if (stat3Label) stat3Label.innerText = 'Επιφάνεια';
-    if (stat3) stat3.innerText = entity.stats?.area || '510M km²';
+    if (stat3) { stat3.innerText = entity.stats?.area || '510M km²'; stat3.title = stat3.innerText; }
   } else if (entityType === 'country') {
     if (stat1Label) stat1Label.innerText = 'Πληθυσμός';
-    if (stat1) stat1.innerText = entity.stats?.population || '-';
+    if (stat1) { stat1.innerText = entity.stats?.population || '-'; stat1.title = stat1.innerText; }
 
-    if (stat2Label) stat2Label.innerText = 'Ίδρυση / Ανεξαρτησία';
-    if (stat2) stat2.innerText = entity.stats?.founded || '-';
+    if (stat2Label) stat2Label.innerText = 'Ίδρυση / Ανεξ.';
+    if (stat2) { stat2.innerText = entity.stats?.founded || '-'; stat2.title = stat2.innerText; }
 
-    if (stat3Label) stat3Label.innerText = 'Έκταση / ΑΕΠ';
-    if (stat3) stat3.innerText = entity.stats?.area || entity.stats?.gdp || '-';
+    if (stat3Label) stat3Label.innerText = 'Έκταση';
+    if (stat3) { stat3.innerText = entity.stats?.area || entity.stats?.gdp || '-'; stat3.title = stat3.innerText; }
   } else {
+    // City
     if (stat1Label) stat1Label.innerText = 'Πληθυσμός';
-    if (stat1) stat1.innerText = entity.stats?.population || entity.population || '-';
+    if (stat1) { stat1.innerText = entity.stats?.population || entity.population || '-'; stat1.title = stat1.innerText; }
 
-    if (stat2Label) stat2Label.innerText = entityType === 'city' ? 'Ορόσημο' : 'Ίδρυση / Ενσωμ.';
-    if (stat2) stat2.innerText = entity.landmark || entity.stats?.landmark || entity.stats?.famousFor || entity.badge || entity.stats?.founded || '-';
+    if (stat2Label) stat2Label.innerText = 'Ίδρυση';
+    if (stat2) { stat2.innerText = entity.stats?.founded || entity.founded || '-'; stat2.title = stat2.innerText; }
 
-    if (stat3Label) stat3Label.innerText = entity.stats?.elevation ? 'Υψόμετρο / Έκταση' : 'Έκταση / ΑΕΠ';
-    if (stat3) stat3.innerText = entity.stats?.elevation || entity.stats?.area || entity.stats?.gdp || '-';
+    if (stat3Label) stat3Label.innerText = 'Ορόσημο';
+    const landmarkVal = entity.landmark || entity.stats?.landmark || entity.stats?.famousFor || entity.badge || (entity.stats?.elevation ? 'Υψομ. ' + entity.stats.elevation : (entity.stats?.area || '-'));
+    if (stat3) { stat3.innerText = landmarkVal; stat3.title = landmarkVal; }
   }
+
+  // Update Live Local Time & Date in Dossier Pill 4
+  if (activeDossierClockTimer) {
+    clearInterval(activeDossierClockTimer);
+    activeDossierClockTimer = null;
+  }
+  updateDossierClock(entity, entityType);
+  activeDossierClockTimer = setInterval(() => {
+    updateDossierClock(entity, entityType);
+  }, 1000);
 
   const docuQuote = document.getElementById('docuQuote');
   if (docuQuote) docuQuote.innerText = entity.quote || '';

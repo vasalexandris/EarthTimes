@@ -4,13 +4,13 @@
  * USA, Leaflet Map, Base Layers, UI Dossier, and Time Machine.
  */
 
-import { loadWorldData, loadCountryData, loadStateData } from './data-service.js?v=20261114_world14';
-import * as MapModule from './map.js?v=20261114_world14';
-import * as UIModule from './ui.js?v=20261114_world14';
-import * as TimeMachine from './time-machine.js?v=20261114_world14';
-import * as NavigatorModule from './navigator.js?v=20261114_world14';
-import * as GlobeModule from './globe-view.js?v=20261114_world14';
-import { US_STATES, CITY_TO_STATE } from './states-data.js?v=20261114_world14';
+import { loadWorldData, loadCountryData, loadStateData } from './data-service.js?v=20261114_world15';
+import * as MapModule from './map.js?v=20261114_world15';
+import * as UIModule from './ui.js?v=20261114_world15';
+import * as TimeMachine from './time-machine.js?v=20261114_world15';
+import * as NavigatorModule from './navigator.js?v=20261114_world15';
+import * as GlobeModule from './globe-view.js?v=20261114_world15';
+import { US_STATES, CITY_TO_STATE } from './states-data.js?v=20261114_world15';
 
 // Application State
 let worldData = null;
@@ -239,6 +239,7 @@ export async function flyToCountry(countryId = 'greece') {
   if (!dataset || !dataset.country) return;
 
   const country = dataset.country;
+  country._countryId = countryId;
   UIModule.updateStatusBadge(`Πτήση: ${country.name}`);
   UIModule.updateBreadcrumbs('country', country);
   UIModule.updateJumpSelect(`country:${country.id}`);
@@ -290,6 +291,8 @@ export async function flyToState(stateId = 'massachusetts') {
 
   if (!sData || !sData.state) return;
   const state = sData.state;
+  state._countryId = 'usa';
+  state._stateId = stateId;
 
   UIModule.updateStatusBadge(`Πτήση: Πολιτεία ${state.name}`);
   UIModule.updateBreadcrumbs('state', state);
@@ -701,6 +704,9 @@ export async function flyToCity(cityId) {
     parent = massachusettsData.state;
     activeCities = massachusettsData.cities;
   }
+
+  city._countryId = currentCountryId;
+  city._stateId = currentStateId;
 
   UIModule.updateStatusBadge(`Πτήση: ${city.name} (${city.englishName})`);
   UIModule.updateBreadcrumbs('city', parent, city);

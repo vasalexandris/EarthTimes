@@ -807,18 +807,29 @@
           </div>
 
           <!-- Quick Stat Pills -->
-          <div id="quickStatsRow" class="grid grid-cols-3 gap-2 mt-3 pt-3 border-t border-slate-800/80 text-center">
-            <div class="bg-slate-800/40 border border-slate-700/40 rounded-lg p-1.5">
-              <div id="stat1-label" class="text-[10px] text-slate-400 uppercase">Πληθυσμός</div>
-              <div id="stat1" class="text-xs sm:text-sm font-semibold text-slate-100">8.15 Δισ.</div>
+          <div id="quickStatsRow" class="grid grid-cols-2 sm:grid-cols-4 gap-2 mt-3 pt-3 border-t border-slate-800/80 text-center">
+            <div class="bg-slate-800/40 border border-slate-700/40 rounded-lg p-1.5 flex flex-col justify-center min-w-0">
+              <div id="stat1-label" class="text-[10px] text-slate-400 uppercase truncate">Πληθυσμός</div>
+              <div id="stat1" class="text-xs sm:text-sm font-semibold text-slate-100 truncate">8.15 Δισ.</div>
             </div>
-            <div class="bg-slate-800/40 border border-slate-700/40 rounded-lg p-1.5">
-              <div id="stat2-label" class="text-[10px] text-slate-400 uppercase">Κράτη / Ήπειροι</div>
-              <div id="stat2" class="text-xs sm:text-sm font-semibold text-amber-300">195 / 7</div>
+            <div class="bg-slate-800/40 border border-slate-700/40 rounded-lg p-1.5 flex flex-col justify-center min-w-0">
+              <div id="stat2-label" class="text-[10px] text-slate-400 uppercase truncate">Ίδρυση</div>
+              <div id="stat2" class="text-xs sm:text-sm font-semibold text-amber-300 truncate">195 / 7</div>
             </div>
-            <div class="bg-slate-800/40 border border-slate-700/40 rounded-lg p-1.5">
-              <div id="stat3-label" class="text-[10px] text-slate-400 uppercase">Επιφάνεια</div>
-              <div id="stat3" class="text-xs sm:text-sm font-semibold text-sky-300">510M km²</div>
+            <div class="bg-slate-800/40 border border-slate-700/40 rounded-lg p-1.5 flex flex-col justify-center min-w-0">
+              <div id="stat3-label" class="text-[10px] text-slate-400 uppercase truncate">Ορόσημο</div>
+              <div id="stat3" class="text-xs sm:text-sm font-semibold text-sky-300 truncate">510M km²</div>
+            </div>
+            <div id="stat4-container" class="bg-slate-800/40 border border-slate-700/40 rounded-lg p-1.5 flex flex-col justify-center min-w-0">
+              <div id="stat4-label" class="text-[10px] text-slate-400 uppercase truncate flex items-center justify-center gap-1">
+                <i id="stat4-icon" class="fa-solid fa-clock text-sky-400 text-[10px]"></i>
+                <span id="stat4-title">Τοπική Ώρα</span>
+              </div>
+              <div id="stat4" class="text-xs sm:text-sm font-bold text-emerald-400 truncate flex items-center justify-center gap-0.5">
+                <span id="stat4-time">--:--</span>
+                <span id="stat4-sec" class="text-[10px] text-slate-400 font-normal font-mono">:--</span>
+              </div>
+              <div id="stat4-date" class="text-[9px] text-slate-400 truncate mt-0.5">--</div>
             </div>
           </div>
         </div>
@@ -1180,6 +1191,6 @@
   </div>
 
   <!-- Modular Application Scripts -->
-  <script type="module" src="js/app.js?v=20261114_world14"></script>
+  <script type="module" src="js/app.js?v=20261114_world15"></script>
 </body>
 </html>

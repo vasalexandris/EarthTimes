@@ -9,7 +9,7 @@
  *    blending seamlessly in real time according to the astronomical Subsolar point!
  */
 
-import { calculateSubsolarPoint } from './solar-terminator.js?v=20261114_world14';
+import { calculateSubsolarPoint } from './solar-terminator.js?v=20261114_world15';
 
 let globeInstance = null;
 let currentProjection = '2d'; // '2d' | '3d'
