@@ -4,10 +4,10 @@
  * Base Map Layer selector, Date display, Video Overlay, and Deep Dive views.
  */
 
-import { getCityVideo, getAvailableVideoTypes, getAvailableCityTours, CITY_VIDEOS, findPoiLiveCam } from './video-service.js?v=20261115_africa1';
-import { getDeepDiveData } from './deep-dive.js?v=20261115_africa1';
-import { fetchWikiArticle, fetchWikiArticleHtml, cleanWikiTitle } from './wiki-service.js?v=20261115_africa1';
-import { calculateSubsolarPoint } from './solar-terminator.js?v=20261115_africa1';
+import { getCityVideo, getAvailableVideoTypes, getAvailableCityTours, CITY_VIDEOS, findPoiLiveCam } from './video-service.js?v=20261115_africa2';
+import { getDeepDiveData } from './deep-dive.js?v=20261115_africa2';
+import { fetchWikiArticle, fetchWikiArticleHtml, cleanWikiTitle } from './wiki-service.js?v=20261115_africa2';
+import { calculateSubsolarPoint } from './solar-terminator.js?v=20261115_africa2';
 
 let currentActiveVideoCityId = null;
 let currentActiveVideoType = 'drone';

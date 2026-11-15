@@ -1,4 +1,4 @@
-import { CITY_TO_STATE } from './states-data.js?v=20261115_africa1';
+import { CITY_TO_STATE } from './states-data.js?v=20261115_africa2';
 /**
  * Video Service Module
  * Registry of verified high-definition YouTube video tours for all cities
@@ -15630,8 +15630,6 @@ export const CITY_VIDEOS = {
           "type": "drone"
       }
   },
-
-,
   "annaba": {
       "cityName": "Ανάμπα",
       "drone": {
