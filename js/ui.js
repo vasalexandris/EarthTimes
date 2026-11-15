@@ -4,10 +4,10 @@
  * Base Map Layer selector, Date display, Video Overlay, and Deep Dive views.
  */
 
-import { getCityVideo, getAvailableVideoTypes, getAvailableCityTours, CITY_VIDEOS, findPoiLiveCam } from './video-service.js?v=20261115_africa4';
-import { getDeepDiveData } from './deep-dive.js?v=20261115_africa4';
-import { fetchWikiArticle, fetchWikiArticleHtml, cleanWikiTitle } from './wiki-service.js?v=20261115_africa4';
-import { calculateSubsolarPoint } from './solar-terminator.js?v=20261115_africa4';
+import { getCityVideo, getAvailableVideoTypes, getAvailableCityTours, CITY_VIDEOS, findPoiLiveCam } from './video-service.js?v=20261116_africa5';
+import { getDeepDiveData } from './deep-dive.js?v=20261116_africa5';
+import { fetchWikiArticle, fetchWikiArticleHtml, cleanWikiTitle } from './wiki-service.js?v=20261116_africa5';
+import { calculateSubsolarPoint } from './solar-terminator.js?v=20261116_africa5';
 
 let currentActiveVideoCityId = null;
 let currentActiveVideoType = 'drone';
@@ -802,6 +802,15 @@ const COUNTRY_TIMEZONES = {
   'zambia': 'Africa/Lusaka',
   'malawi': 'Africa/Blantyre',
   'seychelles': 'Indian/Mahe',
+  congo: 'Africa/Brazzaville',
+  gabon: 'Africa/Libreville',
+  'equatorial-guinea': 'Africa/Malabo',
+  niger: 'Africa/Niamey',
+  chad: 'Africa/Ndjamena',
+  'central-african-republic': 'Africa/Bangui',
+  somalia: 'Africa/Mogadishu',
+  guinea: 'Africa/Conakry',
+  'south-sudan': 'Africa/Juba',
 };
 
 const US_STATE_TIMEZONES = {

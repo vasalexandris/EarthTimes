@@ -1,4 +1,4 @@
-import { US_STATES, CITY_TO_STATE } from './states-data.js?v=20261115_africa4';
+import { US_STATES, CITY_TO_STATE } from './states-data.js?v=20261116_africa5';
 /**
  * Navigator Module
  * Hierarchical Cascading Navigation: Continents -> Countries -> Cities
@@ -1801,7 +1801,16 @@ export const CONTINENTS_DATA = [
         name: 'Γουινέα',
         flag: '🇬🇳',
         cities: [
-          { id: 'conakry', name: 'Κονακρί', badge: 'Πρωτεύουσα' }
+          { id: 'conakry', name: 'Κονακρί', badge: '🌆' },
+          { id: 'kankan', name: 'Κανκάν', badge: '🏛️' },
+          { id: 'nzerekore', name: 'Νζερεκορέ', badge: '🌳' },
+          { id: 'kindia', name: 'Κιντιά', badge: '💦' },
+          { id: 'labe', name: 'Λαμπέ', badge: '⛰️' },
+          { id: 'boke', name: 'Μποκέ', badge: '⛏️' },
+          { id: 'mamou', name: 'Μαμού', badge: '🚂' },
+          { id: 'gueckedou', name: 'Γκεκεντού', badge: '🛒' },
+          { id: 'fria', name: 'Φρια', badge: '🏭' },
+          { id: 'siguiri', name: 'Σιγκιρί', badge: '🏅' }
         ]
       },
       {
@@ -1842,7 +1851,16 @@ export const CONTINENTS_DATA = [
         name: 'Νίγηρας',
         flag: '🇳🇪',
         cities: [
-          { id: 'niamey', name: 'Νιαμέι', badge: 'Πρωτεύουσα' }
+          { id: 'niamey', name: 'Νιαμέι', badge: 'Πρωτεύουσα' },
+          { id: 'zinder', name: 'Ζίντερ', badge: 'Ιστορική Πρωτεύουσα' },
+          { id: 'maradi', name: 'Μαραντί', badge: 'Γεωργικό Κέντρο' },
+          { id: 'agadez', name: 'Αγκααντέζ', badge: 'Μνημείο UNESCO' },
+          { id: 'tahoua', name: 'Ταχούα', badge: 'Διοικητικό Κέντρο' },
+          { id: 'dosso', name: 'Ντόσο', badge: 'Ιστορικό Σουλτανάτο' },
+          { id: 'diffa', name: 'Ντιφά', badge: 'Συνοριακή Πόλη' },
+          { id: 'arlit', name: 'Αρλίτ', badge: 'Βιομηχανικό Κέντρο' },
+          { id: 'bilma', name: 'Μπιλμά', badge: 'Όαση Έρημου' },
+          { id: 'tillaberi', name: 'Τιλαμπερί', badge: 'Αγροτική Πρωτεύουσα' }
         ]
       },
       {
@@ -1875,7 +1893,16 @@ export const CONTINENTS_DATA = [
         name: 'Τσαντ',
         flag: '🇹🇩',
         cities: [
-          { id: 'ndjamena', name: 'Ντζαμένα', badge: 'Πρωτεύουσα' }
+          { id: 'ndjamena', name: 'Ντζαμένα', badge: 'Πρωτεύουσα' },
+          { id: 'moundou', name: 'Μούντου', badge: 'Οικονομική Πρωτεύουσα' },
+          { id: 'sarh', name: 'Σαρ', badge: 'Πρώην Φορ-Αρσανμπό' },
+          { id: 'abeche', name: 'Αμπέσε', badge: 'Ιστορική Πρωτεύουσα' },
+          { id: 'kelo', name: 'Κέλο', badge: 'Αγροτικό Κέντρο' },
+          { id: 'koumra', name: 'Κουμρά', badge: 'Αγροτική Πρωτεύουσα' },
+          { id: 'pala', name: 'Πάλα', badge: 'Ορυκτός Πλούτος' },
+          { id: 'am-timan', name: 'Αμ Τιμάν', badge: 'Περιφερειακή Πρωτεύουσα' },
+          { id: 'faya-largeau', name: 'Φάγια-Λαρζό', badge: 'Όαση Σαχάρας' },
+          { id: 'bongor', name: 'Μπόνγκορ', badge: 'Συνοριακή Πόλη' }
         ]
       },
       {
@@ -1883,7 +1910,16 @@ export const CONTINENTS_DATA = [
         name: 'Κεντροαφρικανική Δημοκρατία',
         flag: '🇨🇫',
         cities: [
-          { id: 'bangui', name: 'Μπανγκί', badge: 'Πρωτεύουσα' }
+          { id: 'bangui', name: 'Μπανγκί', badge: 'Πρωτεύουσα' },
+          { id: 'bimbo', name: 'Μπιμπό', badge: 'Προάστιο Πρωτεύουσας' },
+          { id: 'berberati', name: 'Μπερμπεράτι', badge: 'Διαμαντοφόρος Πόλη' },
+          { id: 'carnot', name: 'Καρνό', badge: 'Μεταλλευτικό Κέντρο' },
+          { id: 'bambari', name: 'Μπαμπάρι', badge: 'Κεντρικό Κόμβο' },
+          { id: 'bouar', name: 'Μπουάρ', badge: 'Προϊστορικός Χώρος' },
+          { id: 'bossangoa', name: 'Μποσανγκόα', badge: 'Βορειοδυτικό Κέντρο' },
+          { id: 'bria', name: 'Μπριά', badge: 'Διαμαντοφόρος Πόλη' },
+          { id: 'bangassou', name: 'Μπανγκασού', badge: 'Νοτιοανατολικό Κέντρο' },
+          { id: 'nola', name: 'Νολά', badge: 'Δασική Πόλη' }
         ]
       },
       {
@@ -1891,8 +1927,16 @@ export const CONTINENTS_DATA = [
         name: 'Κονγκό',
         flag: '🇨🇬',
         cities: [
-          { id: 'brazzaville', name: 'Μπραζαβίλ', badge: 'Πρωτεύουσα' },
-          { id: 'pointe-noire', name: 'Πουάντ-Νουάρ' }
+          { id: 'brazzaville', name: 'Μπραζαβίλ', badge: 'Πρωτεύουσα & Πολιτιστική Μητρόπολη' },
+          { id: 'pointe-noire', name: 'Πουάντ-Νουάρ', badge: 'Οικονομική Πρωτεύουσα & Λιμάνι Βαθέων Υδάτων' },
+          { id: 'dolisie', name: 'Ντολισί', badge: 'Τρίτη Πόλη & Σιδηροδρομικός Κόμβος' },
+          { id: 'nkayi', name: 'Νκαγί', badge: 'Βιομηχανικό Κέντρο Ζαχαροκάλαμου' },
+          { id: 'ouesso', name: 'Ουεσό', badge: 'Πρωτεύουσα της Sangha & Τροπική Πύλη' },
+          { id: 'impfondo', name: 'Ιμπφόντο', badge: 'Πρωτεύουσα της Likouala & Ποταμίσιος Κόμβος' },
+          { id: 'owando', name: 'Οβάντο', badge: 'Πρωτεύουσα της Cuvette & Ιστορικό Φυλάκιο' },
+          { id: 'kinkala', name: 'Κινκάλα', badge: 'Πρωτεύουσα του Pool & Αγροτικό Κέντρο' },
+          { id: 'mossendjo', name: 'Μοσεντζό', badge: 'Ορεινή Πόλη & Λατομεία Chaillu' },
+          { id: 'djambala', name: 'Τσιμπάμπα', badge: 'Πρωτεύουσα των Plateaux & Αγροτικό Κέντρο' }
         ]
       },
       {
@@ -1900,7 +1944,16 @@ export const CONTINENTS_DATA = [
         name: 'Ισημερινή Γουινέα',
         flag: '🇬🇶',
         cities: [
-          { id: 'malabo', name: 'Μαλάμπο', badge: 'Πρωτεύουσα' }
+          { id: 'malabo', name: 'Μαλάμπο', badge: 'Πρωτεύουσα & Νησιωτικό Διοικητικό Κέντρο' },
+          { id: 'bata', name: 'Μπάτα', badge: 'Μεγαλύτερη Πόλη & Εμπορικό Κέντρο' },
+          { id: 'ciudad-de-la-paz', name: 'Σιουδάδ δε λα Παζ (Ογιάλα)', badge: 'Νέα Πρωτεύουσα υπό Κατασκευή' },
+          { id: 'ebebiyin', name: 'Εβεμπιγίνγκ', badge: 'Βορειοανατολικό Σύνορο & Αγροτικό Κέντρο' },
+          { id: 'mongomo', name: 'Μονγκόμο', badge: 'Πατρίδα του Προέδρου Obiang & Πολιτικό Κέντρο' },
+          { id: 'luba', name: 'Λούμπα', badge: 'Παράκτιο Λιμάνι & Νησιωτική Πόλη' },
+          { id: 'anisok', name: 'Ανισόκ', badge: 'Κέντρο Wele-Nzas & Εσωτερική Πόλη' },
+          { id: 'evinayong', name: 'Εβιναγιόνγκ', badge: 'Πρωτεύουσα Centro Sur & Ορεινή Πόλη' },
+          { id: 'aconibe', name: 'Ακονίμπε', badge: 'Αγροτικό Κέντρο Centro Sur' },
+          { id: 'san-antonio-de-pale', name: 'Σαν Αντόνιο ντε Παλέ', badge: 'Πρωτεύουσα Αννοβόν & Νησιωτική Κοινότητα' }
         ]
       },
       {
@@ -1908,7 +1961,16 @@ export const CONTINENTS_DATA = [
         name: 'Γκαμπόν',
         flag: '🇬🇦',
         cities: [
-          { id: 'libreville', name: 'Λιμπρεβίλ', badge: 'Πρωτεύουσα' }
+          { id: 'libreville', name: 'Λιμπρεβίλ', badge: 'Πρωτεύουσα & Διοικητικό Κέντρο' },
+          { id: 'port-gentil', name: 'Πορ-Ζαντίλ', badge: 'Οικονομική Πρωτεύουσα & Νησιωτικό Λιμάνι' },
+          { id: 'franceville', name: 'Φρανσβίλ', badge: 'Πρωτεύουσα Haut-Ogooué & Σιδηροδρομικός Τερματικός' },
+          { id: 'oyem', name: 'Ογιέμ', badge: 'Πρωτεύουσα Woleu-Ntem & Αγροτικό Κέντρο' },
+          { id: 'moanda', name: 'Μοαντά', badge: 'Κέντρο Εξόρυξης & Βιομηχανία' },
+          { id: 'mouila', name: 'Μουιλά', badge: 'Πρωτεύουσα Ngounié & Παραδοσιακό Κέντρο' },
+          { id: 'lambarene', name: 'Λαμπαρενέ', badge: 'Ιστορικό Ιατρικό Κέντρο & Ποταμίσια Πόλη' },
+          { id: 'tchibanga', name: 'Τσιμπάνγκα', badge: 'Πρωτεύουσα Nyanga & Αγροτικό Κέντρο' },
+          { id: 'koulamoutou', name: 'Κουλαμουτού', badge: 'Πρωτεύουσα Ogooué-Lolo & Δασικό Κέντρο' },
+          { id: 'makokou', name: 'Μακόκου', badge: 'Πρωτεύουσα Ogooué-Ivindo & Δασική Πύλη' }
         ]
       },
       {
@@ -1966,7 +2028,15 @@ export const CONTINENTS_DATA = [
         flag: '🇸🇴',
         cities: [
           { id: 'mogadishu', name: 'Μογκαντίσου', badge: 'Πρωτεύουσα' },
-          { id: 'hargeisa', name: 'Χαργκέισα' }
+          { id: 'hargeisa', name: 'Χαργκέισα', badge: 'Πρωτεύουσα Σομαλιλάντ' },
+          { id: 'bosaso', name: 'Μποσάσο', badge: 'Εμπορικό Λιμάνι Πούντλαντ' },
+          { id: 'kismayo', name: 'Κισμάγιο', badge: 'Νότιο Λιμάνι' },
+          { id: 'berbera', name: 'Μπερμπέρα', badge: 'Ιστορικό Λιμάνι' },
+          { id: 'baidoa', name: 'Μπαϊντόα', badge: 'Αγροτικό Κέντρο' },
+          { id: 'galkayo', name: 'Γκαλκάγιο', badge: 'Συγκοινωνιακός Κόμβος' },
+          { id: 'borama', name: 'Μπόραμα', badge: 'Εκπαιδευτικό Κέντρο' },
+          { id: 'merca', name: 'Μέρκα', badge: 'Ιστορικό Λιμάνι' },
+          { id: 'garowe', name: 'Γκαρόουε', badge: 'Πρωτεύουσα Πούντλαντ' }
         ]
       },
       {
@@ -1991,7 +2061,16 @@ export const CONTINENTS_DATA = [
         name: 'Νότιο Σουδάν',
         flag: '🇸🇸',
         cities: [
-          { id: 'juba', name: 'Τζούμπα', badge: 'Πρωτεύουσα' }
+          { id: 'juba', name: 'Τζούμπα', badge: 'Πρωτεύουσα' },
+          { id: 'wau', name: 'Βάου', badge: 'Καθεδρικός Αγίας Μαρίας' },
+          { id: 'malakal', name: 'Μαλακάλ', badge: 'Ποτάμιο Λιμάνι' },
+          { id: 'yei', name: 'Γέι', badge: 'Αγροτικό & Εμπορικό Κέντρο' },
+          { id: 'bentiu', name: 'Μπεντίου', badge: 'Πετρέλαιο & Sudd' },
+          { id: 'rumbek', name: 'Ρουμπέκ', badge: 'Κτηνοτροφική Παράδοση' },
+          { id: 'aweil', name: 'Αουέιλ', badge: 'Σιδηροδρομικός Κόμβος' },
+          { id: 'bor', name: 'Μπορ', badge: 'Ιστορική Πόλη 1983' },
+          { id: 'torit', name: 'Τορίτ', badge: 'Πρωτεύουσα Ανατολικής Ισημερινής' },
+          { id: 'maridi', name: 'Μαριντί', badge: 'Δασικά Τοπία' }
         ]
       },
       {
