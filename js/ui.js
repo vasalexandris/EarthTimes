@@ -4,10 +4,10 @@
  * Base Map Layer selector, Date display, Video Overlay, and Deep Dive views.
  */
 
-import { getCityVideo, getAvailableVideoTypes, getAvailableCityTours, CITY_VIDEOS, findPoiLiveCam } from './video-service.js?v=20261114_world16';
-import { getDeepDiveData } from './deep-dive.js?v=20261114_world16';
-import { fetchWikiArticle, fetchWikiArticleHtml, cleanWikiTitle } from './wiki-service.js?v=20261114_world16';
-import { calculateSubsolarPoint } from './solar-terminator.js?v=20261114_world16';
+import { getCityVideo, getAvailableVideoTypes, getAvailableCityTours, CITY_VIDEOS, findPoiLiveCam } from './video-service.js?v=20261115_africa1';
+import { getDeepDiveData } from './deep-dive.js?v=20261115_africa1';
+import { fetchWikiArticle, fetchWikiArticleHtml, cleanWikiTitle } from './wiki-service.js?v=20261115_africa1';
+import { calculateSubsolarPoint } from './solar-terminator.js?v=20261115_africa1';
 
 let currentActiveVideoCityId = null;
 let currentActiveVideoType = 'drone';
@@ -740,6 +740,27 @@ const COUNTRY_TIMEZONES = {
   egypt: 'Africa/Cairo',
   'south-africa': 'Africa/Johannesburg',
   morocco: 'Africa/Casablanca',
+  algeria: 'Africa/Algiers',
+  angola: 'Africa/Luanda',
+  botswana: 'Africa/Gaborone',
+  cameroon: 'Africa/Douala',
+  'dr-congo': 'Africa/Kinshasa',
+  ethiopia: 'Africa/Addis_Ababa',
+  ghana: 'Africa/Accra',
+  'ivory-coast': 'Africa/Abidjan',
+  kenya: 'Africa/Nairobi',
+  madagascar: 'Africa/Antananarivo',
+  mauritius: 'Indian/Mauritius',
+  mozambique: 'Africa/Maputo',
+  namibia: 'Africa/Windhoek',
+  nigeria: 'Africa/Lagos',
+  rwanda: 'Africa/Kigali',
+  senegal: 'Africa/Dakar',
+  sudan: 'Africa/Khartoum',
+  tanzania: 'Africa/Dar_es_Salaam',
+  tunisia: 'Africa/Tunis',
+  uganda: 'Africa/Kampala',
+  zimbabwe: 'Africa/Harare',
   chile: 'America/Santiago',
   argentina: 'America/Argentina/Buenos_Aires',
   brazil: 'America/Sao_Paulo',

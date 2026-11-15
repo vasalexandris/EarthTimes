@@ -1,4 +1,4 @@
-import { US_STATES, CITY_TO_STATE } from './states-data.js?v=20261114_world16';
+import { US_STATES, CITY_TO_STATE } from './states-data.js?v=20261115_africa1';
 /**
  * Navigator Module
  * Hierarchical Cascading Navigation: Continents -> Countries -> Cities
@@ -1325,42 +1325,68 @@ export const CONTINENTS_DATA = [
         name: 'Αίγυπτος',
         flag: '🇪🇬',
         cities: [
-          { id: 'cairo', name: 'Κάιρο', badge: 'Πρωτεύουσα' },
-          { id: 'alexandria', name: 'Αλεξάνδρεια', badge: 'Μεσόγειος' },
-          { id: 'luxor', name: 'Λούξορ', badge: 'Ιστορικό' },
-          { id: 'giza', name: 'Γκίζα', badge: 'Πυραμίδες' }
-        ]
+            { id: 'cairo', name: 'Κάιρο', badge: 'Πρωτεύουσα & Μητρόπολη του Αραβικού Κόσμου' },
+            { id: 'alexandria', name: 'Αλεξάνδρεια', badge: 'Αρχαία Ελληνιστική Πρωτεύουσα & Κοσμοπολίτικο Λιμάνι' },
+            { id: 'giza', name: 'Γκίζα', badge: 'Αρχαιολογικό Θαύμα & Σύγχρονη Μητρόπολη' },
+            { id: 'luxor', name: 'Λούξορ', badge: 'Αρχαία Θήβαι & Φαραωνική Νεκρόπολη' },
+            { id: 'aswan', name: 'Ασουάν', badge: 'Αρχαία Σύνορος & Φράγμα του Νείλου' },
+            { id: 'port-said', name: 'Πορτ Σάιντ', badge: 'Μεσογειακό Λιμάνι & Είσοδος Σουέζ' },
+            { id: 'suez', name: 'Σουέζ', badge: 'Λιμάνι Ερυθράς Θάλασσας & Βιομηχανικό Κέντρο' },
+            { id: 'sharm-el-sheikh', name: 'Σαρμ ελ Σέιχ', badge: 'Θέρετρο Ερυθράς Θάλασσας & Διεθνείς Συνδιασκέψεις' },
+            { id: 'hurghada', name: 'Χουργκάντα', badge: 'Θέρετρο Καταδύσεων & Παραθαλάσσιος Τουρισμός' },
+            { id: 'mansoura', name: 'Μανσούρα', badge: 'Πρωτεύουσα του Κυβερνείου Dakahlia' }
+          ]
       },
       {
         id: 'morocco',
         name: 'Μαρόκο',
         flag: '🇲🇦',
         cities: [
-          { id: 'rabat', name: 'Ραμπάτ', badge: 'Πρωτεύουσα' },
-          { id: 'casablanca', name: 'Καζαμπλάνκα', badge: 'Μητρόπολη' },
-          { id: 'marrakesh', name: 'Μαρακές', badge: 'Ιστορικό' },
-          { id: 'fes', name: 'Φες' }
-        ]
+            { id: 'rabat', name: 'Ραμπάτ', badge: 'Βασιλική Πρωτεύουσα & Πόλη Κληρονομιάς' },
+            { id: 'casablanca', name: 'Καζαμπλάνκα', badge: 'Οικονομική Πρωτεύουσα & Μεγάλο Λιμάνι' },
+            { id: 'marrakesh', name: 'Μαρακές', badge: 'Αυτοκρατορική Πόλη & Κέντρο Πολιτισμού' },
+            { id: 'fes', name: 'Φες', badge: 'Αυτοκρατορική Πόλη & Κέντρο Γνώσης' },
+            { id: 'tangier', name: 'Ταγγέρη', badge: 'Σταυροδρόμι Δύο Ηπείρων' },
+            { id: 'agadir', name: 'Αγκαντίρ', badge: 'Σύγχρονο Θαλάσσιο Θέρετρο' },
+            { id: 'meknes', name: 'Μεκνές', badge: 'Αυτοκρατορική Πόλη των Αλμοραβίδων' },
+            { id: 'essaouira', name: 'Εσσαουίρα', badge: 'Λιμάνι των Θαλασσοπόρων' },
+            { id: 'ouarzazate', name: 'Ουαρζαζάτ', badge: 'Κινηματογραφική Πρωτεύουσα της Αφρικής' },
+            { id: 'chefchaouen', name: 'Σεφσαουέν', badge: 'Ορεινό Κρησφύγετο του Ριφ' }
+          ]
       },
       {
         id: 'tunisia',
         name: 'Τυνησία',
         flag: '🇹🇳',
         cities: [
-          { id: 'tunis', name: 'Τύνιδα', badge: 'Πρωτεύουσα' },
-          { id: 'sfax', name: 'Σφαξ' },
-          { id: 'sousse', name: 'Σους' }
-        ]
+            { id: 'tunis', name: 'Τύνιδα', badge: 'Πρωτεύουσα & Κληρονομιά UNESCO' },
+            { id: 'sfax', name: 'Σφαξ', badge: 'Εμπορικό Λιμάνι & Ελιές' },
+            { id: 'sousse', name: 'Σους', badge: 'Φοινικική Κληρονομιά & Θέρετρο' },
+            { id: 'kairouan', name: 'Καϊρουάν', badge: 'Ιερή Πόλη & Πρωτεύουσα των Αγλαβιδών' },
+            { id: 'bizerte', name: 'Μπιζέρτα', badge: 'Ναυτική Πόλη & Λιμάνι' },
+            { id: 'gabes', name: 'Γκαμπές', badge: 'Παράκτια Όαση & Αγροτική Παράδοση' },
+            { id: 'nabeul', name: 'Ναμπούλ', badge: 'Κεραμική Παράδοση & Ακρογιαλιές' },
+            { id: 'hammamet', name: 'Χαμμαμέτ', badge: 'Κοσμοπολίτικο Θέρετρο' },
+            { id: 'monastir', name: 'Μοναστίρ', badge: 'Οχυρό Παραθαλάσσιο Κέντρο' },
+            { id: 'houmt-souk', name: 'Χουμτ Σουκ (Ντζέρμπα)', badge: 'Νησιωτικό Σταυροδρόμι Πολιτισμών' }
+          ]
       },
       {
         id: 'algeria',
         name: 'Αλγερία',
         flag: '🇩🇿',
         cities: [
-          { id: 'algiers', name: 'Αλγέρι', badge: 'Πρωτεύουσα' },
-          { id: 'oran', name: 'Οράν' },
-          { id: 'constantine', name: 'Κωνσταντίνη' }
-        ]
+            { id: 'algiers', name: 'Αλγέρι', badge: 'Πρωτεύουσα & Μεσογειακό Σταυροδρόμι' },
+            { id: 'oran', name: 'Οράν', badge: 'Μουσικό Λιμάνι της Δύσης' },
+            { id: 'constantine', name: 'Κωνσταντίνη', badge: 'Αετοφωλιά των Φαραγγιών' },
+            { id: 'annaba', name: 'Ανάμπα', badge: 'Λιμάνι & Χριστιανική Κληρονομιά' },
+            { id: 'batna', name: 'Μπατνά', badge: 'Ορεινή Πύλη της Σαχάρας' },
+            { id: 'setif', name: 'Σετίφ', badge: 'Ρωμαϊκή Κληρονομιά & Χειμωνιάτικη Πρωτεύουσα' },
+            { id: 'tlemcen', name: 'Τλεμσέν', badge: 'Πρωτεύουσα των Ζαγιανιδών' },
+            { id: 'biskra', name: 'Μπίσκρα', badge: 'Πύλη της Σαχάρας' },
+            { id: 'bejaia', name: 'Μπετζάια', badge: 'Καβυλική Κληρονομιά & Κόλπος' },
+            { id: 'ghardaia', name: 'Γκαρντάια', badge: 'Πεντάπολη των Μοζαβιτών' }
+          ]
       },
       {
         id: 'libya',
@@ -1376,46 +1402,85 @@ export const CONTINENTS_DATA = [
         name: 'Νιγηρία',
         flag: '🇳🇬',
         cities: [
-          { id: 'abuja', name: 'Αμπούτζα', badge: 'Πρωτεύουσα' },
-          { id: 'lagos', name: 'Λάγος', badge: 'Μητρόπολη' },
-          { id: 'kano', name: 'Κάνο' }
-        ]
+            { id: 'lagos', name: 'Λάγος', badge: 'Οικονομική Μητρόπολη & Πολιτιστικός Γίγαντας' },
+            { id: 'abuja', name: 'Αμπούτζα', badge: 'Η Πολιτική Καρδιά της Νιγηρίας' },
+            { id: 'kano', name: 'Κάνο', badge: 'Αρχαία Πόλη-Κράτος & Εμπορικός Κόμβος της Σαχάρας' },
+            { id: 'ibadan', name: 'Ιμπαντάν', badge: 'Η Μεγαλύτερη Πόλη της Δυτικής Αφρικής σε Έκταση' },
+            { id: 'port-harcourt', name: 'Πορτ Χάρκορτ', badge: 'Η Πετρελαϊκή Πρωτεύουσα της Νιγηρίας' },
+            { id: 'benin-city', name: 'Μπενίν Σίτι', badge: 'Ιστορική Πρωτεύουσα του Βασιλείου του Μπενίν' },
+            { id: 'kaduna', name: 'Καντούνα', badge: 'Διοικητικό & Βιομηχανικό Κέντρο του Βορρά' },
+            { id: 'enugu', name: 'Ενούγκου', badge: 'Ιστορική Πρωτεύουσα της Ανατολικής Νιγηρίας' },
+            { id: 'calabar', name: 'Καλαμπάρ', badge: 'Ιστορικό Λιμάνι & Κέντρο Καρναβαλιού' },
+            { id: 'zaria', name: 'Ζάρια', badge: 'Ιστορική Έδρα Μάθησης & Κεραμικής' }
+          ]
       },
       {
         id: 'ghana',
         name: 'Γκάνα',
         flag: '🇬🇭',
         cities: [
-          { id: 'accra', name: 'Άκρα', badge: 'Πρωτεύουσα' },
-          { id: 'kumasi', name: 'Κουμάσι' }
-        ]
+            { id: 'accra', name: 'Άκρα', badge: 'Πρωτεύουσα & Οικονομικό Κέντρο' },
+            { id: 'kumasi', name: 'Κουμάσι', badge: 'Πρωτεύουσα του Βασιλείου των Ασάντε' },
+            { id: 'tamale', name: 'Ταμαλέ', badge: 'Πρωτεύουσα της Βόρειας Περιφέρειας' },
+            { id: 'sekondi-takoradi', name: 'Σεκόντι-Τακοράντι', badge: 'Πρωτεύουσα Δυτικής Περιφέρειας & Ο petrol hub' },
+            { id: 'cape-coast', name: 'Κέιπ Κοστ', badge: 'Ιστορική Πρωτεύουσα & Πανεπιστημιακή Πόλη' },
+            { id: 'sunyani', name: 'Σουνιάνι', badge: 'Πρωτεύουσα Περιφέρειας Bono' },
+            { id: 'ho', name: 'Χο', badge: 'Πρωτεύουσα Περιφέρειας Volta' },
+            { id: 'tema', name: 'Τεμά', badge: 'Βιομηχανικό & Λιμενικό Κέντρο' },
+            { id: 'koforidua', name: 'Κοφοριντούα', badge: 'Πρωτεύουσα Ανατολικής Περιφέρειας' },
+            { id: 'bolgatanga', name: 'Μπολγκατάνγκα', badge: 'Πρωτεύουσα Άνω Ανατολικής Περιφέρειας' }
+          ]
       },
       {
         id: 'senegal',
         name: 'Σενεγάλη',
         flag: '🇸🇳',
         cities: [
-          { id: 'dakar', name: 'Ντακάρ', badge: 'Πρωτεύουσα' },
-          { id: 'saint-louis', name: 'Σαιν-Λουί' }
-        ]
+            { id: 'dakar', name: 'Ντακάρ', badge: 'Πρωτεύουσα & Πολιτιστικό Κέντρο' },
+            { id: 'saint-louis', name: 'Σαιν-Λουί', badge: 'Πρώτη Πρωτεύουσα & Μνημείο UNESCO' },
+            { id: 'touba', name: 'Τουμπά', badge: 'Πνευματικό Κέντρο & Προσκύνημα' },
+            { id: 'thies', name: 'Τιές', badge: 'Δεύτερη Πόλη & Βιομηχανικό Κέντρο' },
+            { id: 'ziguinchor', name: 'Ζιγκινσόρ', badge: 'Πρωτεύουσα Περιφέρειας Casamance' },
+            { id: 'kaolack', name: 'Καολάκ', badge: 'Κόμβος Αλατιού & Τιτζανίyya' },
+            { id: 'mbour', name: 'Μπουρ', badge: 'Αλιευτικό & Τουριστικό Κέντρο' },
+            { id: 'rufisque', name: 'Ρουφίσκ', badge: 'Ιστορική Πόλη & Βιομηχανικό Προάστιο' },
+            { id: 'saly', name: 'Σαλί', badge: 'Θερέτρο & Παραλίες' },
+            { id: 'cap-skirring', name: 'Καπ Σκιρίνγκ', badge: 'Θερέτρο Νότιας Casamance' }
+          ]
       },
       {
         id: 'ivory-coast',
         name: 'Ακτή Ελεφαντοστού',
         flag: '🇨🇮',
         cities: [
-          { id: 'yamoussoukro', name: 'Γιαμουσούκρο', badge: 'Πρωτεύουσα' },
-          { id: 'abidjan', name: 'Αμπιτζάν', badge: 'Μητρόπολη' }
-        ]
+            { id: 'yamoussoukro', name: 'Γιαμουσούκρο', badge: 'Επίσημη Πρωτεύουσα' },
+            { id: 'abidjan', name: 'Αμπιτζάν', badge: 'Οικονομική Πρωτεύουσα & Μητρόπολη' },
+            { id: 'bouake', name: 'Μπουακέ', badge: 'Δεύτερη Πόλη & Κέντρο Gbêkê' },
+            { id: 'san-pedro', name: 'Σαν-Πέδρο', badge: 'Δεύτερο Λιμάνι & Πετρελαικός Κόμβος' },
+            { id: 'korhogo', name: 'Κορογκό', badge: 'Πρωτεύουσα Περιφέρειας Poro' },
+            { id: 'daloa', name: 'Νταλόα', badge: 'Πρωτεύουσα Περιφέρειας Haut-Sassandra' },
+            { id: 'man', name: 'Μαν', badge: 'Πρωτεύουσα Περιφέρειας Tonkpi' },
+            { id: 'grand-bassam', name: 'Γκραν-Μπασάμ', badge: 'Ιστορική Πόλη & Μνημείο UNESCO' },
+            { id: 'gagnoa', name: 'Γκανιόα', badge: 'Πρωτεύουσα Περιφέρειας Gôh' },
+            { id: 'abengourou', name: 'Αμπενγκουρού', badge: 'Πρωτεύουσα Περιφέρειας Indénié-Djuablin' }
+          ]
       },
       {
         id: 'cameroon',
         name: 'Καμερούν',
         flag: '🇨🇲',
         cities: [
-          { id: 'yaounde', name: 'Γιαουντέ', badge: 'Πρωτεύουσα' },
-          { id: 'douala', name: 'Ντουάλα' }
-        ]
+            { id: 'yaounde', name: 'Γιαουντέ', badge: 'Πρωτεύουσα & Πνευματικό Κέντρο' },
+            { id: 'douala', name: 'Ντουάλα', badge: 'Λιμάνι & Βιομηχανικό Κέντρο' },
+            { id: 'bafoussam', name: 'Μπαφουσάμ', badge: 'Οροπέδιο & Παράδοση' },
+            { id: 'garoua', name: 'Γκαρούα', badge: 'Σαβάνα & Εμπορικός Κόμβος' },
+            { id: 'bamenda', name: 'Μπαμέντα', badge: 'Οροπέδιο & Αγγλόφωνη Κληρονομιά' },
+            { id: 'maroua', name: 'Μαρουά', badge: 'Σαχέλ & Παράδοση Φουλάνι' },
+            { id: 'kribi', name: 'Κρίμπι', badge: 'Ωκεανός & Καταρράκτες' },
+            { id: 'limbe', name: 'Λίμπε', badge: 'Βοτανικός Παράδεισος & Όρος Καμερούν' },
+            { id: 'ngaoundere', name: 'Νγκαουντερέ', badge: 'Οροπέδιο & Σιδηροδρομικός Κόμβος' },
+            { id: 'nkongsamba', name: 'Ενκόνγκσαμπα', badge: 'Ορεινός Σταθμός & Γεωργία' }
+          ]
       },
       {
         id: 'cape-verde',
@@ -1440,129 +1505,238 @@ export const CONTINENTS_DATA = [
         name: 'Νότια Αφρική',
         flag: '🇿🇦',
         cities: [
-          { id: 'cape-town', name: 'Κέιπ Τάουν', badge: 'Πρωτεύουσα' },
-          { id: 'johannesburg', name: 'Γιοχάνεσμπουργκ', badge: 'Μητρόπολη' },
-          { id: 'pretoria', name: 'Πρετόρια', badge: 'Διοικητική' },
-          { id: 'durban', name: 'Ντέρμπαν' }
-        ]
+            { id: 'cape-town', name: 'Κέιπ Τάουν', badge: 'Νομοθετική Πρωτεύουσα & Παγκόσμιο Ορόσημο' },
+            { id: 'johannesburg', name: 'Γιοχάνεσμπουργκ', badge: 'Οικονομική Καρδιά της Αφρικής' },
+            { id: 'pretoria', name: 'Πρετόρια', badge: 'Εκτελεστική Πρωτεύουσα' },
+            { id: 'durban', name: 'Ντέρμπαν', badge: 'Μεγαλύτερο Λιμάνι της Αφρικής' },
+            { id: 'gqeberha', name: 'Γκεμπέχα', badge: 'Πύλη της Ανατολικής Ακτής' },
+            { id: 'bloemfontein', name: 'Μπλουμφοντέιν', badge: 'Δικαστική Πρωτεύουσα' },
+            { id: 'soweto', name: 'Σοβέτο', badge: 'Σύμβολο του Αγώνα κατά του Απαρτχάιντ' },
+            { id: 'mbombela', name: 'Μπομπέλα', badge: 'Πρωτεύουσα του Mpumalanga' },
+            { id: 'polokwane', name: 'Πολοκουάνε', badge: 'Πρωτεύουσα του Limpopo' },
+            { id: 'stellenbosch', name: 'Στέλενμπος', badge: 'Καρδιά των Cape Winelands' }
+          ]
       },
       {
         id: 'kenya',
         name: 'Κένυα',
         flag: '🇰🇪',
         cities: [
-          { id: 'nairobi', name: 'Ναϊρόμπι', badge: 'Πρωτεύουσα' },
-          { id: 'mombasa', name: 'Μομπάσα', badge: 'Λιμάνι' }
-        ]
+            { id: 'nairobi', name: 'Ναϊρόμπι', badge: 'Πρωτεύουσα & Τεχνολογικός Πυρήνας Ανατολικής Αφρικής' },
+            { id: 'mombasa', name: 'Μομπάσα', badge: 'Ιστορικό Λιμάνι & Πύλη της Ακτής των Σουαχίλι' },
+            { id: 'kisumu', name: 'Κισούμου', badge: 'Λιμάνι της Λίμνης Βικτόρια & Πολιτιστικό Κέντρο των Luo' },
+            { id: 'nakuru', name: 'Νακούρου', badge: 'Κόμβος της Μεγάλης Ρηξιγενούς Κοιλάδας' },
+            { id: 'eldoret', name: 'Έλντορετ', badge: 'Υψίπεδα Κενυάτων Δρομέων & Αγροτικό Κέντρο' },
+            { id: 'malindi', name: 'Μαλίντι', badge: 'Σουαχίλι Παράκτιο Κέντρο & Θαλάσσιο Πάρκο' },
+            { id: 'lamu', name: 'Λαμού', badge: 'Μνημείο UNESCO & Ιστορικό Αραβο-Σουαχίλι Λιμάνι' },
+            { id: 'nanyuki', name: 'Νανιούκι', badge: 'Ορεινή Πόλη & Βάση για το Όρος Κένυα' },
+            { id: 'thika', name: 'Θίκα', badge: 'Βιομηχανικό & Αγροτικό Κέντρο Κεντρικής Κένυας' },
+            { id: 'garissa', name: 'Γκαρίσα', badge: 'Κέντρο Σομαλικής Κουλτούρας & Ποταμού Tana' }
+          ]
       },
       {
         id: 'tanzania',
         name: 'Τανζανία',
         flag: '🇹🇿',
         cities: [
-          { id: 'dodoma', name: 'Ντοντόμα', badge: 'Πρωτεύουσα' },
-          { id: 'dar-es-salaam', name: 'Νταρ ες Σαλάμ', badge: 'Μητρόπολη' },
-          { id: 'zanzibar', name: 'Ζανζιβάρη', badge: 'Νησί' }
-        ]
+            { id: 'dodoma', name: 'Ντοντόμα', badge: 'Διοικητική Πρωτεύουσα & Κεντρικό Οροπέδιο' },
+            { id: 'dar-es-salaam', name: 'Νταρ ες Σαλάμ', badge: 'Οικονομική Μητρόπολη & Μεγάλο Λιμάνι της Ανατολικής Αφρικής' },
+            { id: 'zanzibar', name: 'Ζανζιβάρη', badge: 'Ιστορική Πόλη Σουαχίλι & Πολιτιστική Πρωτεύουσα του Αρχιπελάγους' },
+            { id: 'arusha', name: 'Αρούσα', badge: 'Βάση για Κιλιμάντζαρο, Σερενγκέτι & Νγκορονγκόρο' },
+            { id: 'mwanza', name: 'Μουάνζα', badge: 'Λιμάνι στη νότια όχθη της Λίμνης Βικτόρια' },
+            { id: 'moshi', name: 'Μόσι', badge: 'Πύλη Ανάβασης στο Υψηλότερο Βουνό της Αφρικής' },
+            { id: 'tanga', name: 'Τάνγκα', badge: 'Ιστορικό Παράκτιο Λιμάνι & Βιομηχανικό Κέντρο' },
+            { id: 'mbeya', name: 'Μπέγια', badge: 'Ορεινός Κόμβος στα Νότια Υψίπεδα' },
+            { id: 'morogoro', name: 'Μορογκόρο', badge: 'Γεωργικό & Πανεπιστημιακό Κέντρο κάτω από τα Όρη Uluguru' },
+            { id: 'kigoma', name: 'Κιγκόμα', badge: 'Λιμάνι στη Λίμνη Τανγκανίκα & Ιστορικός Κόμβος' }
+          ]
       },
       {
         id: 'ethiopia',
         name: 'Αιθιοπία',
         flag: '🇪🇹',
         cities: [
-          { id: 'addis-ababa', name: 'Αντίς Αμπέμπα', badge: 'Πρωτεύουσα' },
-          { id: 'lalibela', name: 'Λαλιμπέλα', badge: 'Ιστορικό' }
-        ]
+            { id: 'addis-ababa', name: 'Αντίς Αμπέμπα', badge: 'Πρωτεύουσα, Αφρικανική Ένωση & Διπλωματικό Κέντρο' },
+            { id: 'gondar', name: 'Γκοντάρ', badge: 'Ιστορική Αυτοκρατορική Πρωτεύουσα των Αιθιοπικών Υψιπέδων' },
+            { id: 'lalibela', name: 'Λαλιμπέλα', badge: 'Μνημείο UNESCO & Υπόγειες Λαξευτές Εκκλησίες' },
+            { id: 'axum', name: 'Αξούμ', badge: 'Αρχαία Πρωτεύουσα του Βασιλείου του Άξουμ' },
+            { id: 'bahir-dar', name: 'Μπαχίρ Νταρ', badge: 'Παραλίμνια Πόλη της Λίμνης Τάνα & Πηγή του Μπλε Νείλου' },
+            { id: 'harar', name: 'Χαράρ', badge: 'Ιστορική περιτειχισμένη πόλη Ισλαμικής Κληρονομιάς' },
+            { id: 'dire-dawa', name: 'Ντίρε Ντάουα', badge: 'Κόμβος του Σιδηροδρόμου Αιθιοπίας–Τζιμπουτί' },
+            { id: 'hawassa', name: 'Χαβάσα', badge: 'Λίμνη Hawassa & Αναδυόμενο Διοικητικό/Εμπορικό Κέντρο' },
+            { id: 'mekele', name: 'Μέκελε', badge: 'Πρωτεύουσα του Τιγκράι & Κέντρο Βόρειων Υψιπέδων' },
+            { id: 'jimma', name: 'Τζίμα', badge: 'Κέντρο της ιστορικής περιοχής Kaffa, πατρίδας του καφέ' }
+          ]
       },
       {
         id: 'madagascar',
         name: 'Μαδαγασκάρη',
         flag: '🇲🇬',
         cities: [
-          { id: 'antananarivo', name: 'Ανταναναρίβο', badge: 'Πρωτεύουσα' },
-          { id: 'toamasina', name: 'Τοαμασίνα' }
-        ]
+            { id: 'antananarivo', name: 'Ανταναναρίβο', badge: 'Πρωτεύουσα & Ιστορική Έδρα των Merina' },
+            { id: 'toamasina', name: 'Τοαμασίνα', badge: 'Κύριο Λιμάνι & Ανατολική Ακτή' },
+            { id: 'antsirabe', name: 'Αντσιραμπέ', badge: 'Θεματική Πόλη Σπα & Κεντρικό Οροπέδιο' },
+            { id: 'mahajanga', name: 'Μαχατζάνγκα', badge: 'Βορειοδυτικό Λιμάνι & Πύλη Sakalava' },
+            { id: 'fianarantsoa', name: 'Φιαναραντσόα', badge: 'Πνευματική & Εκπαιδευτική Έδρα των Betsileo' },
+            { id: 'toliara', name: 'Τολιάρα', badge: 'Νοτιοδυτική Πύλη & Έδρα των Vezo/Sakalava' },
+            { id: 'antsiranana', name: 'Αντσιρανάνα', badge: 'Βόρειο Λιμάνι & Φυσικός Κόλπος' },
+            { id: 'nosi-be', name: 'Νόσι Μπε', badge: 'Τουριστικό Νησιωτικό Κέντρο' },
+            { id: 'morondava', name: 'Μοροντάβα', badge: 'Δυτική Πύλη & Έδρα Sakalava' },
+            { id: 'saint-marie', name: 'Σαιντ Μαρί', badge: 'Κοραλλιογενές Νησί & Ιστορική Οχυρωμένη Πύλη' }
+          ]
       },
       {
         id: 'namibia',
         name: 'Ναμίμπια',
         flag: '🇳🇦',
         cities: [
-          { id: 'windhoek', name: 'Βίντχουκ', badge: 'Πρωτεύουσα' },
-          { id: 'swakopmund', name: 'Σουακοπμούντ' }
-        ]
+            { id: 'windhoek', name: 'Βίντχουκ', badge: 'Πρωτεύουσα & Διοικητικό Κέντρο' },
+            { id: 'swakopmund', name: 'Σουακοπμούντ', badge: 'Παράκτιο Θέρετρο & Σιδηροδρομικός Κόμβος' },
+            { id: 'walvis-bay', name: 'Γουόλβις Μπέι', badge: 'Βιομηχανικό Λιμάνι & Αλιευτικό Κέντρο' },
+            { id: 'luderitz', name: 'Λούντεριτζ', badge: 'Παράκτιο Διαμαντοχώραφο & Αποικιακό Κέντρο' },
+            { id: 'tsumeb', name: 'Τσουμέμπ', badge: 'Ορυκτό Κέντρο & Πύλη προς το Etosha' },
+            { id: 'otjiwarongo', name: 'Οτιβαρόνγκο', badge: 'Γεωργικό Κέντρο & Πύλη προς το Βορρά' },
+            { id: 'keetmanshoop', name: 'Κεετμανσχούπ', badge: 'Νότιο Κέντρο Καλαχάρι & Σιδηροδρομικός Κόμβος' },
+            { id: 'rundu', name: 'Ρούντου', badge: 'Παραποτάμιο Κέντρο & Βορειοανατολική Πύλη' },
+            { id: 'katima-mulilo', name: 'Κατίμα Μουλίλο', badge: 'Ακρότατο Βορειοανατολικό Κέντρο' },
+            { id: 'oshakati', name: 'Οσακάτι', badge: 'Κέντρο Βόρειου Oshiwambo & Μεγαλύτερη πόλη Βορρά' }
+          ]
       },
       {
         id: 'botswana',
         name: 'Μποτσουάνα',
         flag: '🇧🇼',
         cities: [
-          { id: 'gaborone', name: 'Γκαμπορόνε', badge: 'Πρωτεύουσα' },
-          { id: 'maun', name: 'Μαούν', badge: 'Σαφάρι' }
-        ]
+            { id: 'gaborone', name: 'Γκαμπορόνε', badge: 'Πρωτεύουσα & μεγαλύτερη πόλη της Μποτσουάνας' },
+            { id: 'francistown', name: 'Φρανσισταούν', badge: 'Δεύτερη μεγαλύτερη πόλη & πύλη προς Ζιμπάμπουε' },
+            { id: 'maun', name: 'Μαούν', badge: 'Τουριστική πρωτεύουσα & πύλη προς δέλτα Οκαβάνγκο' },
+            { id: 'kasane', name: 'Κασάνε', badge: 'Πύλη προς Εθνικό Πάρκο Chobe' },
+            { id: 'serowe', name: 'Σερόουε', badge: 'Ιστορική πρωτεύουσα του βασιλείου Bangwato' },
+            { id: 'molepolole', name: 'Μολεπολόλε', badge: 'Πρωτεύουσα Bakwena & μεγάλη παραδοσιακή πόλη' },
+            { id: 'lobatse', name: 'Λομπάτσε', badge: 'Έδρα Ανωτάτου Δικαστηρίου & BMC' },
+            { id: 'palapye', name: 'Παλάπιε', badge: 'Ταχέως αναπτυσσόμενη κεντρική πόλη' },
+            { id: 'selebi-phikwe', name: 'Σέλεμπι-Φίκουε', badge: 'Οικονομία μετά το κλείσιμο του ορυχείου' },
+            { id: 'jwaneng', name: 'Τζουανένγκ', badge: 'Πιό πλούσιο ορυχείο διαμαντιών στον κόσμο' }
+          ]
       },
       {
         id: 'zimbabwe',
         name: 'Ζιμπάμπουε',
         flag: '🇿🇼',
         cities: [
-          { id: 'harare', name: 'Χαράρε', badge: 'Πρωτεύουσα' },
-          { id: 'victoria-falls', name: 'Βικτόρια Φολς', badge: 'Καταρράκτες' }
-        ]
+            { id: 'harare', name: 'Χαράρε', badge: 'Πρωτεύουσα & Διοικητικό Κέντρο' },
+            { id: 'bulawayo', name: 'Μπουλαουάγιο', badge: 'Δεύτερη Πόλη & Βιομηχανικό Κέντρο Ndebele' },
+            { id: 'victoria-falls', name: 'Βικτόρια Φολς', badge: 'Τουριστικό Κέντρο & Μνημείο UNESCO' },
+            { id: 'mutare', name: 'Μουτάρε', badge: 'Πρωτεύουσα Manicaland & Πύλη Ανατολής' },
+            { id: 'gweru', name: 'Γκουέρου', badge: 'Κεντρικό Κέντρο & Πύλη Μεταφορών' },
+            { id: 'kwekwe', name: 'Κουέκουε', badge: 'Ορυκτό & Βιομηχανικό Κέντρο' },
+            { id: 'masvingo', name: 'Μασβίνγκο', badge: 'Πρωτεύουσα Masvingo & Πύλη προς Μεγάλη Ζιμπάμπουε' },
+            { id: 'chinhoyi', name: 'Τσινχόγι', badge: 'Πρωτεύουσα Mashonaland West & Σπηλιές Chinhoyi' },
+            { id: 'bindura', name: 'Μπίντουρα', badge: 'Πρωτεύουσα Mashonaland Central & Ορυκτό Κέντρο' },
+            { id: 'zvishavane', name: 'Ζβισαβάνε', badge: 'Ορυκτό Κέντρο & Πύλη Plattina/Asbestos' }
+          ]
       },
       {
         id: 'rwanda',
         name: 'Ρουάντα',
         flag: '🇷🇼',
         cities: [
-          { id: 'kigali', name: 'Κιγκάλι', badge: 'Πρωτεύουσα' },
-          { id: 'gisenyi', name: 'Γκισένι' }
-        ]
+            { id: 'kigali', name: 'Κιγκάλι', badge: 'Πρωτεύουσα & Κέντρο Ανασυγκρότησης της Αφρικής' },
+            { id: 'gisenyi', name: 'Γκισένι', badge: 'Πρωτεύουσα της επαρχίας Rubavu & Παραλιακός Κόμβος' },
+            { id: 'butare', name: 'Μπουτάρε', badge: 'Πανεπιστημιακή Πόλη & Ιστορική Έδρα του Βασιλείου' },
+            { id: 'ruhengeri', name: 'Ρουχενγκέρι', badge: 'Πρωτεύουσα της επαρχίας Musanze & Πύλη προς το Εθνικό Πάρκο Virunga' },
+            { id: 'kibuye', name: 'Κιμπούγε', badge: 'Πρωτεύουσα της επαρχίας Karongi & Παραλίμνια Πόλη' },
+            { id: 'cyangugu', name: 'Τσιάνγκουγκου', badge: 'Πρωτεύουσα της επαρχίας Rusizi & Συνοριακό Λιμάνι' },
+            { id: 'nyanza', name: 'Νυάνζα', badge: 'Ιστορική Πρωτεύουσα του Βασιλείου της Ρουάντας' },
+            { id: 'muhanga', name: 'Μουχάνγκα', badge: 'Πρωτεύουσα της επαρχίας Muhanga (πρώην Gitarama)' },
+            { id: 'rwamagana', name: 'Ρβαμαγκάνα', badge: 'Πρωτεύουσα της επαρχίας Rwamagana & Ανατολικό Κέντρο' },
+            { id: 'byumba', name: 'Μπυούμπα', badge: 'Πρωτεύουσα της επαρχίας Gicumbi (πρώην Byumba)' }
+          ]
       },
       {
         id: 'uganda',
         name: 'Ουγκάντα',
         flag: '🇺🇬',
         cities: [
-          { id: 'kampala', name: 'Καμπάλα', badge: 'Πρωτεύουσα' },
-          { id: 'entebbe', name: 'Εντέμπε' }
-        ]
+            { id: 'kampala', name: 'Καμπάλα', badge: 'Πρωτεύουσα & Ιστορική Έδρα των Buganda' },
+            { id: 'entebbe', name: 'Εντέμπε', badge: 'Πύλη της χώρας & Πρώην Διοικητική Πρωτεύουσα' },
+            { id: 'jinja', name: 'Τζίντζα', badge: 'Βιομηχανική Πρωτεύουσα & Σημείο Εκροής της Λίμνης Βικτώρια' },
+            { id: 'gulu', name: 'Γκουλού', badge: 'Κέντρο της Βόρειας Ουγκάντας & Χώρος Ειρήνης Acholi' },
+            { id: 'mbarara', name: 'Μπαράρα', badge: 'Πρωτεύουσα του Ankole & Κέντρο Γαλακτοκομίας' },
+            { id: 'fort-portal', name: 'Φορτ Πόρταλ', badge: 'Πρωτεύουσα της περιοχής Tooro & Πύλη προς Rwenzori' },
+            { id: 'masaka', name: 'Μασάκα', badge: 'Διοικητικό Κέντρο της Νότιας Buganda & Σταυροδρόμι Καμπάλας-Καμπαλέ' },
+            { id: 'arua', name: 'Αρούα', badge: 'Πρωτεύουσα του Δυτικού Νείλου (West Nile) & Σύνορο Κονγκό' },
+            { id: 'mbale', name: 'Μπάλε', badge: 'Πρωτεύουσα της Ανατολικής Ουγκάνδας & Πύλη προς Mount Elgon' },
+            { id: 'kasese', name: 'Κασέσε', badge: 'Πρωτεύουσα της περιοχής Rwenzori & Κέντρο Μεταλλευμάτων' }
+          ]
       },
       {
         id: 'mauritius',
         name: 'Μαυρίκιος',
         flag: '🇲🇺',
         cities: [
-          { id: 'port-louis', name: 'Πορ Λουί', badge: 'Πρωτεύουσα' },
-          { id: 'grand-baie', name: 'Γκραν Μπε', badge: 'Θέρετρο' }
-        ]
+            { id: 'port-louis', name: 'Πορ Λουί', badge: 'Πρωτεύουσα & κύριο λιμάνι του Μαυρίκιου' },
+            { id: 'grand-baie', name: 'Γκραν Μπε', badge: 'Κύριος τουριστικός προορισμός βόρειας ακτής' },
+            { id: 'curepipe', name: 'Κουρπίπ', badge: 'Δεύτερη μεγαλύτερη πόλη & κέντρο οροπεδίου' },
+            { id: 'beau-bassin-rose-hill', name: 'Μπο Μπασάν-Ροζ Ιλ', badge: 'Συνορεύουσες πόλεις στο κεντρικό οροπέδιο' },
+            { id: 'vacoas-phoenix', name: 'Βακόας-Φοίνιξ', badge: 'Πράσινη πόλη του κεντρικού οροπεδίου' },
+            { id: 'quatre-bornes', name: 'Κατρ Μπορν', badge: 'Εμπορική πόλη του κεντρικού οροπεδίου' },
+            { id: 'mahebourg', name: 'Μαεμπούρ', badge: 'Ιστορικό λιμάνι της νοτιοανατολικής ακτής' },
+            { id: 'flic-en-flac', name: 'Φλικ αν Φλακ', badge: 'Δημοφιλής παραθεριστικός προορισμός δυτικής ακτής' },
+            { id: 'tamarin', name: 'Ταμαρέν', badge: 'Παραθεριστικός προορισμός με δελφίνια' },
+            { id: 'souillac', name: 'Σουγιάκ', badge: 'Νότιος προορισμός με εντυπωσιακή ακτή' }
+          ]
       },
       {
         id: 'dr-congo',
         name: 'Λαϊκή Δημοκρατία του Κονγκό',
         flag: '🇨🇩',
         cities: [
-          { id: 'kinshasa', name: 'Κινσάσα', badge: 'Πρωτεύουσα' },
-          { id: 'goma', name: 'Γκόμα' }
-        ]
+            { id: 'kinshasa', name: 'Κινσάσα', badge: 'Πρωτεύουσα & Μεγαλύτερη Γαλλόφωνη Πόλη της Γης' },
+            { id: 'lubumbashi', name: 'Λουμπουμπάσι', badge: 'Ορυκτός Πλούτος & Πολιτιστικό Κέντρο' },
+            { id: 'goma', name: 'Γκόμα', badge: 'Πύλη των Παρθένων Ηφαιστείων' },
+            { id: 'bukavu', name: 'Μπουκαβού', badge: 'Παραλίμνιο Κέντρο & Πύλη του Kahuzi-Biega' },
+            { id: 'kisangani', name: 'Κισανγκάνι', badge: 'Ποταμός & Τροπικό Δάσος' },
+            { id: 'kananga', name: 'Κανάνγκα', badge: 'Σταυροδρόμι του Κάσαϊ' },
+            { id: 'mbuji-mayi', name: 'Μπούτζι-Μάγι', badge: 'Διαμάντι & Εμπόριο του Κάσαϊ' },
+            { id: 'matadi', name: 'Ματάντι', badge: 'Λιμάνι & Εμπορικός Κόμβος' },
+            { id: 'kikwit', name: 'Κικουίτ', badge: 'Γεωργικό & Εμπορικό Κέντρο' },
+            { id: 'tshikapa', name: 'Τσικάπα', badge: 'Ορυχεία & Ποταμός Κάσαϊ' }
+          ]
       },
       {
         id: 'angola',
         name: 'Αγκόλα',
         flag: '🇦🇴',
         cities: [
-          { id: 'luanda', name: 'Λουάντα', badge: 'Πρωτεύουσα' },
-          { id: 'benguela', name: 'Μπενγκέλα' }
-        ]
+            { id: 'luanda', name: 'Λουάντα', badge: 'Πρωτεύουσα & Ατλαντικό Λιμάνι' },
+            { id: 'benguela', name: 'Μπενγκέλα', badge: 'Ιστορικό Λιμάνι & Παραλία' },
+            { id: 'huambo', name: 'Χουάμπο', badge: 'Οροπέδιο & Κέντρο του Πλάνου' },
+            { id: 'lobito', name: 'Λομπίτο', badge: 'Λιμάνι & Τερματικός Σταθμός Benguela' },
+            { id: 'lubango', name: 'Λουμπάνγκο', badge: 'Ορεινός Σταθμός & Πύλη της Tundavala' },
+            { id: 'cabinda', name: 'Καμπίντα', badge: 'Θύλακας & Πετρελαϊκό Κέντρο' },
+            { id: 'malanje', name: 'Μαλάνζε', badge: 'Πύλη των Kalandula & Kwanza' },
+            { id: 'soyo', name: 'Σόγιο', badge: 'Εκβολές του Κονγκό & Υγροβιότοποι' },
+            { id: 'uige', name: 'Ουίγκε', badge: 'Βόρειο Οροπέδιο & Αγροτική Παράδοση' },
+            { id: 'namibe', name: 'Ναμίμπε', badge: 'Έρημος Namib & Ατλαντική Ακτή' }
+          ]
       },
       {
         id: 'mozambique',
         name: 'Μοζαμβίκη',
         flag: '🇲🇿',
         cities: [
-          { id: 'maputo', name: 'Μαπούτο', badge: 'Πρωτεύουσα' },
-          { id: 'beira', name: 'Μπέιρα' }
-        ]
+            { id: 'maputo', name: 'Μαπούτο', badge: 'Πρωτεύουσα & Κύριος Λιμένας της Μοζαμβίκης' },
+            { id: 'beira', name: 'Μπέιρα', badge: 'Δεύτερη μεγαλύτερη πόλη & κύριος λιμένας ενδοχώρας' },
+            { id: 'nampula', name: 'Ναμπούλα', badge: 'Τρίτη μεγαλύτερη πόλη & οικονομικός κόμβος Βορρά' },
+            { id: 'pemba', name: 'Πέμπα', badge: 'Πρωτεύουσα Cabo Delgado & λιμάνι φυσικού αερίου' },
+            { id: 'quelimane', name: 'Κελιμάνε', badge: 'Πρωτεύουσα Ζαμβεζίας & ιστορικός λιμενοστάθμος' },
+            { id: 'tete', name: 'Τέτε', badge: 'Πρωτεύουσα Τέτε & κέντρο ανθρακοφόρων' },
+            { id: 'chimoio', name: 'Σιμόιο', badge: 'Πρωτεύουσα Manica & εμπορικός κόμβος' },
+            { id: 'inhambane', name: 'Ινιαμπάνε', badge: 'Αρχαιότερη πορτογαλική πόλη της Μοζαμβίκης' },
+            { id: 'nacala', name: 'Νασάλα', badge: 'Τέταρτη πόλη & βαθύτερο φυσικό λιμάνι Αφρικής' },
+            { id: 'xai-xai', name: 'Σάι-Σάι', badge: 'Πρωτεύουσα Γάζας & παράκτιος κόμβος' }
+          ]
       },
       {
         id: 'benin',
@@ -1742,9 +1916,17 @@ export const CONTINENTS_DATA = [
         name: 'Σουδάν',
         flag: '🇸🇩',
         cities: [
-          { id: 'khartoum', name: 'Χαρτούμ', badge: 'Πρωτεύουσα' },
-          { id: 'port-sudan', name: 'Πορτ Σουδάν' }
-        ]
+            { id: 'khartoum', name: 'Χαρτούμ', badge: 'Πρωτεύουσα & Ιστορική Διοικητική Έδρα' },
+            { id: 'omdurman', name: 'Ομντουρμάν', badge: 'Ιστορικό Κέντρο του Σουδάν & Πνευματική Έδρα Σούφι' },
+            { id: 'port-sudan', name: 'Πορτ Σουδάν', badge: 'Κύριο Θαλάσσιο Λιμάνι & Διοικητικός Κόμβος' },
+            { id: 'kassala', name: 'Κασσάλα', badge: 'Πρωτεύουσα του ανατολικού Κασσάλα & Σύνορο Eritrea' },
+            { id: 'nyala', name: 'Νυάλα', badge: 'Πρωτεύουσα της Νότιας επαρχίας Darfur & Διοικητικό Κέντρο' },
+            { id: 'wad-madani', name: 'Ουάντ Μαντανί', badge: 'Πρωτεύουσα της επαρχίας Gezira & Κέντρο Αρδευτικού Έργου' },
+            { id: 'el-obeid', name: 'Ελ Ομπέιντ', badge: 'Πρωτεύουσα της επαρχίας North Kordofan & Σιδηροδρομικός Κόμβος' },
+            { id: 'atbara', name: 'Ατμπαρά', badge: 'Σιδηροδρομικό Κέντρο του Σουδάν & Σύνοδος Ατμπαρά-Νείλου' },
+            { id: 'kosti', name: 'Κόστι', badge: 'Πρωτεύουσα της επαρχίας White Nile & Λιμενική Πόλη' },
+            { id: 'el-fasher', name: 'Ελ Φασέρ', badge: 'Πρωτεύουσα της επαρχίας North Darfur & Ιστορική Πρωτεύουσα του Sultanate' }
+          ]
       },
       {
         id: 'south-sudan',

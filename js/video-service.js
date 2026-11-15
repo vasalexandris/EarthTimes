@@ -1,4 +1,4 @@
-import { CITY_TO_STATE } from './states-data.js?v=20261114_world16';
+import { CITY_TO_STATE } from './states-data.js?v=20261115_africa1';
 /**
  * Video Service Module
  * Registry of verified high-definition YouTube video tours for all cities
@@ -15631,6 +15631,1852 @@ export const CITY_VIDEOS = {
       }
   },
 
+,
+  "annaba": {
+      "cityName": "Ανάμπα",
+      "drone": {
+          "youtubeId": "kAMkk6ger5c",
+          "title": "Ανάμπα algeria 4K: Εναέρια Περιήγηση Drone στο Βασιλική Αγίου Αυγουστίνου & Ερείπια Ιππώνος",
+          "label": "Ανάμπα με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "batna": {
+      "cityName": "Μπατνά",
+      "drone": {
+          "youtubeId": "jH3e5w4BWGA",
+          "title": "Μπατνά algeria 4K: Εναέρια Περιήγηση Drone στο Ερείπια Τιμγκάντ & Όρη Ωρές",
+          "label": "Μπατνά με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "setif": {
+      "cityName": "Σετίφ",
+      "drone": {
+          "youtubeId": "RrGY2exmU-0",
+          "title": "Σετίφ algeria 4K: Εναέρια Περιήγηση Drone στο Κρήνη Ain El Fouara & Βυζαντινά Τείχη",
+          "label": "Σετίφ με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "tlemcen": {
+      "cityName": "Τλεμσέν",
+      "drone": {
+          "youtubeId": "kAMkk6ger5c",
+          "title": "Τλεμσέν algeria 4K: Εναέρια Περιήγηση Drone στο Μεγάλο Τζαμί της Τλεμσέν & Μανσούρα",
+          "label": "Τλεμσέν με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "biskra": {
+      "cityName": "Μπίσκρα",
+      "drone": {
+          "youtubeId": "VbW3c8j9-kU",
+          "title": "Μπίσκρα algeria 4K: Εναέρια Περιήγηση Drone στο Τζαμί Σίντι Όκμπα & Όαση Ζιμπάν",
+          "label": "Μπίσκρα με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "bejaia": {
+      "cityName": "Μπετζάια",
+      "drone": {
+          "youtubeId": "_-L4jKUW7jo",
+          "title": "Μπετζάια algeria 4K: Εναέρια Περιήγηση Drone στο Κασμπά της Μπετζάια & Εθνικό Πάρκο Γκουράγια",
+          "label": "Μπετζάια με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "ghardaia": {
+      "cityName": "Γκαρντάια",
+      "drone": {
+          "youtubeId": "9E0Kj78r0bY",
+          "title": "Γκαρντάια algeria 4K: Εναέρια Περιήγηση Drone στο Κοιλάδα Μ'Ζαμπ & Πλατεία Αγοράς",
+          "label": "Γκαρντάια με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "huambo": {
+      "cityName": "Χουάμπο",
+      "drone": {
+          "youtubeId": "VbW3c8j9-kU",
+          "title": "Χουάμπο angola 4K: Εναέρια Περιήγηση Drone στο Καθεδρικός & Σιδηροδρομικός Σταθμός",
+          "label": "Χουάμπο με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "lobito": {
+      "cityName": "Λομπίτο",
+      "drone": {
+          "youtubeId": "_-L4jKUW7jo",
+          "title": "Λομπίτο angola 4K: Εναέρια Περιήγηση Drone στο Λιμάνι Lobito & Χερσόνησος Restinga",
+          "label": "Λομπίτο με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "lubango": {
+      "cityName": "Λουμπάνγκο",
+      "drone": {
+          "youtubeId": "kAMkk6ger5c",
+          "title": "Λουμπάνγκο angola 4K: Εναέρια Περιήγηση Drone στο Χριστός Βασιλιάς & Φαράγγι Tundavala",
+          "label": "Λουμπάνγκο με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "cabinda": {
+      "cityName": "Καμπίντα",
+      "drone": {
+          "youtubeId": "uz23AE-oemU",
+          "title": "Καμπίντα angola 4K: Εναέρια Περιήγηση Drone στο Καθεδρικός της Καμπίντα & Λιμάνι",
+          "label": "Καμπίντα με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "malanje": {
+      "cityName": "Μαλάνζε",
+      "drone": {
+          "youtubeId": "jH3e5w4BWGA",
+          "title": "Μαλάνζε angola 4K: Εναέρια Περιήγηση Drone στο Καταρράκτες Kalandula & Ποταμός Kwanza",
+          "label": "Μαλάνζε με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "soyo": {
+      "cityName": "Σόγιο",
+      "drone": {
+          "youtubeId": "jH3e5w4BWGA",
+          "title": "Σόγιο angola 4K: Εναέρια Περιήγηση Drone στο Εκβολές του Ποταμού Κονγκό & Λιμάνι",
+          "label": "Σόγιο με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "uige": {
+      "cityName": "Ουίγκε",
+      "drone": {
+          "youtubeId": "VbW3c8j9-kU",
+          "title": "Ουίγκε angola 4K: Εναέρια Περιήγηση Drone στο Καθεδρικός της Ουίγκε & Κεντρική Αγορά",
+          "label": "Ουίγκε με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "namibe": {
+      "cityName": "Ναμίμπε",
+      "drone": {
+          "youtubeId": "Fxu4cunNyXQ",
+          "title": "Ναμίμπε angola 4K: Εναέρια Περιήγηση Drone στο Έρημος Namib & Παραλία Namibe",
+          "label": "Ναμίμπε με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "francistown": {
+      "cityName": "Φρανσισταούν",
+      "drone": {
+          "youtubeId": "9tV_7t1R3l8",
+          "title": "Φρανσισταούν botswana 4K: Εναέρια Περιήγηση Drone στο Φράγμα Shashe & Ιστορικό Κέντρο Supa-Ngwao",
+          "label": "Φρανσισταούν με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "kasane": {
+      "cityName": "Κασάνε",
+      "drone": {
+          "youtubeId": "s2_B1tW5u8U",
+          "title": "Κασάνε botswana 4K: Εναέρια Περιήγηση Drone στο Ποταμός Chobe & Εθνικό Πάρκο Chobe",
+          "label": "Κασάνε με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "serowe": {
+      "cityName": "Σερόουε",
+      "drone": {
+          "youtubeId": "uz23AE-oemU",
+          "title": "Σερόουε botswana 4K: Εναέρια Περιήγηση Drone στο Λόφος Khama III & Μουσείο Khama III",
+          "label": "Σερόουε με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "molepolole": {
+      "cityName": "Μολεπολόλε",
+      "drone": {
+          "youtubeId": "kFF_2n2C8os",
+          "title": "Μολεπολόλε botswana 4K: Εναέρια Περιήγηση Drone στο Σπήλαιο Kolobeng & Λόφος Molepolole",
+          "label": "Μολεπολόλε με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "lobatse": {
+      "cityName": "Λομπάτσε",
+      "drone": {
+          "youtubeId": "aV6h1N4vE3Q",
+          "title": "Λομπάτσε botswana 4K: Εναέρια Περιήγηση Drone στο Ανώτατο Δικαστήριο & Botswana Meat Commission",
+          "label": "Λομπάτσε με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "palapye": {
+      "cityName": "Παλάπιε",
+      "drone": {
+          "youtubeId": "9tV_7t1R3l8",
+          "title": "Παλάπιε botswana 4K: Εναέρια Περιήγηση Drone στο Λόφος Tswapong & Πανεπιστήμιο BIUST",
+          "label": "Παλάπιε με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "selebi-phikwe": {
+      "cityName": "Σέλεμπι-Φίκουε",
+      "drone": {
+          "youtubeId": "uz23AE-oemU",
+          "title": "Σέλεμπι-Φίκουε botswana 4K: Εναέρια Περιήγηση Drone στο Ορυχείο BCL & Λίμνη Sechele",
+          "label": "Σέλεμπι-Φίκουε με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "jwaneng": {
+      "cityName": "Τζουανένγκ",
+      "drone": {
+          "youtubeId": "aV6h1N4vE3Q",
+          "title": "Τζουανένγκ botswana 4K: Εναέρια Περιήγηση Drone στο Ορυχείο Jwaneng & Στάδιο Jwaneng",
+          "label": "Τζουανένγκ με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "bafoussam": {
+      "cityName": "Μπαφουσάμ",
+      "drone": {
+          "youtubeId": "uz23AE-oemU",
+          "title": "Μπαφουσάμ cameroon 4K: Εναέρια Περιήγηση Drone στο Παλάτι του Σουλτάνου & Κεντρική Αγορά",
+          "label": "Μπαφουσάμ με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "garoua": {
+      "cityName": "Γκαρούα",
+      "drone": {
+          "youtubeId": "kAMkk6ger5c",
+          "title": "Γκαρούα cameroon 4K: Εναέρια Περιήγηση Drone στο Ποταμός Benue & Παλάτι του Λαμίδο",
+          "label": "Γκαρούα με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "bamenda": {
+      "cityName": "Μπαμέντα",
+      "drone": {
+          "youtubeId": "9E0Kj78r0bY",
+          "title": "Μπαμέντα cameroon 4K: Εναέρια Περιήγηση Drone στο Παλάτι Fon & Λίμνη Awing",
+          "label": "Μπαμέντα με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "maroua": {
+      "cityName": "Μαρουά",
+      "drone": {
+          "youtubeId": "kFF_2n2C8os",
+          "title": "Μαρουά cameroon 4K: Εναέρια Περιήγηση Drone στο Παλάτι του Λαμίδο & Κεντρική Αγορά",
+          "label": "Μαρουά με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "kribi": {
+      "cityName": "Κρίμπι",
+      "drone": {
+          "youtubeId": "_-L4jKUW7jo",
+          "title": "Κρίμπι cameroon 4K: Εναέρια Περιήγηση Drone στο Καταρράκτες Lobé & Παραλία Kribi",
+          "label": "Κρίμπι με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "limbe": {
+      "cityName": "Λίμπε",
+      "drone": {
+          "youtubeId": "aV6h1N4vE3Q",
+          "title": "Λίμπε cameroon 4K: Εναέρια Περιήγηση Drone στο Βοτανικός Κήπος Limbe & Όρος Καμερούν",
+          "label": "Λίμπε με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "ngaoundere": {
+      "cityName": "Νγκαουντερέ",
+      "drone": {
+          "youtubeId": "RrGY2exmU-0",
+          "title": "Νγκαουντερέ cameroon 4K: Εναέρια Περιήγηση Drone στο Παλάτι του Λαμίδο & Σιδηροδρομικός Σταθμός",
+          "label": "Νγκαουντερέ με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "nkongsamba": {
+      "cityName": "Ενκόνγκσαμπα",
+      "drone": {
+          "youtubeId": "9E0Kj78r0bY",
+          "title": "Ενκόνγκσαμπα cameroon 4K: Εναέρια Περιήγηση Drone στο Καθεδρικός & Αγορά Nkongsamba",
+          "label": "Ενκόνγκσαμπα με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "lubumbashi": {
+      "cityName": "Λουμπουμπάσι",
+      "drone": {
+          "youtubeId": "rZsp9YxYx_A",
+          "title": "Λουμπουμπάσι dr-congo 4K: Εναέρια Περιήγηση Drone στο Καθεδρικός Ναός Αγίου Πέτρου & Πάρκο Kiwele",
+          "label": "Λουμπουμπάσι με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "bukavu": {
+      "cityName": "Μπουκαβού",
+      "drone": {
+          "youtubeId": "kAMkk6ger5c",
+          "title": "Μπουκαβού dr-congo 4K: Εναέρια Περιήγηση Drone στο Λίμνη Kivu & Καθεδρικός της Μπουκαβού",
+          "label": "Μπουκαβού με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "kisangani": {
+      "cityName": "Κισανγκάνι",
+      "drone": {
+          "youtubeId": "_-L4jKUW7jo",
+          "title": "Κισανγκάνι dr-congo 4K: Εναέρια Περιήγηση Drone στο Καταρράκτες Boyoma & Ποταμός Κονγκό",
+          "label": "Κισανγκάνι με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "kananga": {
+      "cityName": "Κανάνγκα",
+      "drone": {
+          "youtubeId": "uz23AE-oemU",
+          "title": "Κανάνγκα dr-congo 4K: Εναέρια Περιήγηση Drone στο Καθεδρικός Αγίου Ιωσήφ & Κεντρική Αγορά",
+          "label": "Κανάνγκα με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "mbuji-mayi": {
+      "cityName": "Μπούτζι-Μάγι",
+      "drone": {
+          "youtubeId": "9E0Kj78r0bY",
+          "title": "Μπούτζι-Μάγι dr-congo 4K: Εναέρια Περιήγηση Drone στο Αγορά Διαμαντιών & Καθεδρικός",
+          "label": "Μπούτζι-Μάγι με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "matadi": {
+      "cityName": "Ματάντι",
+      "drone": {
+          "youtubeId": "kAMkk6ger5c",
+          "title": "Ματάντι dr-congo 4K: Εναέρια Περιήγηση Drone στο Λιμάνι Matadi & Γέφυρα Matadi",
+          "label": "Ματάντι με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "kikwit": {
+      "cityName": "Κικουίτ",
+      "drone": {
+          "youtubeId": "RrGY2exmU-0",
+          "title": "Κικουίτ dr-congo 4K: Εναέρια Περιήγηση Drone στο Καθεδρικός & Αγορά Kikwit",
+          "label": "Κικουίτ με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "tshikapa": {
+      "cityName": "Τσικάπα",
+      "drone": {
+          "youtubeId": "9tV_7t1R3l8",
+          "title": "Τσικάπα dr-congo 4K: Εναέρια Περιήγηση Drone στο Ποταμός Κάσαϊ & Αγορά Διαμαντιών",
+          "label": "Τσικάπα με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "aswan": {
+      "cityName": "Ασουάν",
+      "drone": {
+          "youtubeId": "9tV_7t1R3l8",
+          "title": "Ασουάν 4K: Εναέρια Περιήγηση Drone στον Ναό των Φιλών & τον Νείλο",
+          "label": "Ασουάν με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      },
+      "walking": {
+          "youtubeId": "jJ5B19dZ7iE",
+          "title": "Ασουάν 4K: Περιήγηση στην Αγορά & το Νουβικό Χωριό",
+          "label": "Περιήγηση στο Ασουάν (4K)",
+          "icon": "fa-solid fa-person-walking",
+          "type": "walking"
+      }
+  },
+  "port-said": {
+      "cityName": "Πορτ Σάιντ",
+      "drone": {
+          "youtubeId": "kX_8v9Wq1zA",
+          "title": "Πορτ Σάιντ 4K: Εναέρια Περιήγηση Drone στη Βόρεια Είσοδο της Διώρυγας του Σουέζ",
+          "label": "Πορτ Σάιντ με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "suez": {
+      "cityName": "Σουέζ",
+      "drone": {
+          "youtubeId": "nQ1vW2j3t48",
+          "title": "Σουέζ 4K: Εναέρια Περιήγηση Drone στον Κόλπο & τη Νότια Είσοδο της Διώρυγας",
+          "label": "Σουέζ με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "sharm-el-sheikh": {
+      "cityName": "Σαρμ ελ Σέιχ",
+      "drone": {
+          "youtubeId": "b5vTzX7Rz_U",
+          "title": "Σαρμ ελ Σέιχ 4K: Εναέρια Περιήγηση Drone στον Κόλπο Naama & το Εθνικό Πάρκο Ras Mohammed",
+          "label": "Σαρμ ελ Σέιχ με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      },
+      "walking": {
+          "youtubeId": "P7gR0UaJt68",
+          "title": "Σαρμ ελ Σέιχ 4K: Βραδινή Περιήγηση στην Παλιά Αγορά & το Τζαμί Al Sahaba",
+          "label": "Περιήγηση στο Σαρμ ελ Σέιχ (4K)",
+          "icon": "fa-solid fa-person-walking",
+          "type": "walking"
+      }
+  },
+  "hurghada": {
+      "cityName": "Χουργκάντα",
+      "drone": {
+          "youtubeId": "aV6h1N4vE3Q",
+          "title": "Χουργκάντα 4K: Εναέρια Περιήγηση Drone στη Μαρίνα, τις Παραλίες & την Ερυθρά Θάλασσα",
+          "label": "Χουργκάντα με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      },
+      "walking": {
+          "youtubeId": "xQ9gW1v2t78",
+          "title": "Χουργκάντα 4K: Περιήγηση στη Μαρίνα & τους Πεζοδρόμους της Πόλης",
+          "label": "Περιήγηση στη Χουργκάντα (4K)",
+          "icon": "fa-solid fa-person-walking",
+          "type": "walking"
+      }
+  },
+  "mansoura": {
+      "cityName": "Μανσούρα",
+      "drone": {
+          "youtubeId": "qW9jX1v2t34",
+          "title": "Μανσούρα 4K: Εναέρια Περιήγηση Drone στην Κορνίς του Νείλου & το Ιστορικό Κέντρο",
+          "label": "Μανσούρα με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "gondar": {
+      "cityName": "Γκοντάρ",
+      "drone": {
+          "youtubeId": "Fxu4cunNyXQ",
+          "title": "Γκοντάρ ethiopia 4K: Εναέρια Περιήγηση Drone στο Fasil Ghebbi & Debre Berhan Selassie",
+          "label": "Γκοντάρ με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "axum": {
+      "cityName": "Αξούμ",
+      "drone": {
+          "youtubeId": "jH3e5w4BWGA",
+          "title": "Αξούμ ethiopia 4K: Εναέρια Περιήγηση Drone στο Οβελίσκοι του Άξουμ & Ναός της Σιών",
+          "label": "Αξούμ με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "bahir-dar": {
+      "cityName": "Μπαχίρ Νταρ",
+      "drone": {
+          "youtubeId": "_-L4jKUW7jo",
+          "title": "Μπαχίρ Νταρ ethiopia 4K: Εναέρια Περιήγηση Drone στο Λίμνη Τάνα & Καταρράκτες Μπλε Νείλου",
+          "label": "Μπαχίρ Νταρ με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "harar": {
+      "cityName": "Χαράρ",
+      "drone": {
+          "youtubeId": "uz23AE-oemU",
+          "title": "Χαράρ ethiopia 4K: Εναέρια Περιήγηση Drone στο Harar Jugol & Τείχη της πόλης",
+          "label": "Χαράρ με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "dire-dawa": {
+      "cityName": "Ντίρε Ντάουα",
+      "drone": {
+          "youtubeId": "jH3e5w4BWGA",
+          "title": "Ντίρε Ντάουα ethiopia 4K: Εναέρια Περιήγηση Drone στο Legehar & παλιά γαλλοαιθιοπική συνοικία",
+          "label": "Ντίρε Ντάουα με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "hawassa": {
+      "cityName": "Χαβάσα",
+      "drone": {
+          "youtubeId": "kAMkk6ger5c",
+          "title": "Χαβάσα ethiopia 4K: Εναέρια Περιήγηση Drone στο Λίμνη Hawassa & Hippo Point",
+          "label": "Χαβάσα με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "mekele": {
+      "cityName": "Μέκελε",
+      "drone": {
+          "youtubeId": "s2_B1tW5u8U",
+          "title": "Μέκελε ethiopia 4K: Εναέρια Περιήγηση Drone στο Μνημείο Μαρτύρων & Mekelle Palace",
+          "label": "Μέκελε με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "jimma": {
+      "cityName": "Τζίμα",
+      "drone": {
+          "youtubeId": "uz23AE-oemU",
+          "title": "Τζίμα ethiopia 4K: Εναέρια Περιήγηση Drone στο Παλάτι Aba Jifar & φυτείες καφέ",
+          "label": "Τζίμα με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "tamale": {
+      "cityName": "Ταμαλέ",
+      "drone": {
+          "youtubeId": "9tV_7t1R3l8",
+          "title": "Ταμαλέ ghana 4K: Εναέρια Περιήγηση Drone στο Κεντρικό Τζαμί Tamale & Αγορά Central Market",
+          "label": "Ταμαλέ με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "sekondi-takoradi": {
+      "cityName": "Σεκόντι-Τακοράντι",
+      "drone": {
+          "youtubeId": "VbW3c8j9-kU",
+          "title": "Σεκόντι-Τακοράντι ghana 4K: Εναέρια Περιήγηση Drone στο Λιμάνι Takoradi & Σιδηροδρομικός Σταθμός Sekondi",
+          "label": "Σεκόντι-Τακοράντι με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "cape-coast": {
+      "cityName": "Κέιπ Κοστ",
+      "drone": {
+          "youtubeId": "CY7VV-sVnuA",
+          "title": "Κέιπ Κοστ ghana 4K: Εναέρια Περιήγηση Drone στο Κάστρο Cape Coast & Πανεπιστήμιο",
+          "label": "Κέιπ Κοστ με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "sunyani": {
+      "cityName": "Σουνιάνι",
+      "drone": {
+          "youtubeId": "b5vTzX7Rz_U",
+          "title": "Σουνιάνι ghana 4K: Εναέρια Περιήγηση Drone στο Αγορά Sunyani & Κέντρο Κληρονομιάς Bono",
+          "label": "Σουνιάνι με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "ho": {
+      "cityName": "Χο",
+      "drone": {
+          "youtubeId": "Fxu4cunNyXQ",
+          "title": "Χο ghana 4K: Εναέρια Περιήγηση Drone στο Όρος Adaklu & Αγορά Ho",
+          "label": "Χο με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "tema": {
+      "cityName": "Τεμά",
+      "drone": {
+          "youtubeId": "rZsp9YxYx_A",
+          "title": "Τεμά ghana 4K: Εναέρια Περιήγηση Drone στο Λιμάνι Tema & Prime Meridian",
+          "label": "Τεμά με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "koforidua": {
+      "cityName": "Κοφοριντούα",
+      "drone": {
+          "youtubeId": "_-L4jKUW7jo",
+          "title": "Κοφοριντούα ghana 4K: Εναέρια Περιήγηση Drone στο Καταρράκτες Boti & Αγορά Koforidua",
+          "label": "Κοφοριντούα με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "bolgatanga": {
+      "cityName": "Μπολγκατάνγκα",
+      "drone": {
+          "youtubeId": "Fxu4cunNyXQ",
+          "title": "Μπολγκατάνγκα ghana 4K: Εναέρια Περιήγηση Drone στο Αγορά Bolgatanga & Κέντρο Καλαθοποιίας",
+          "label": "Μπολγκατάνγκα με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "bouake": {
+      "cityName": "Μπουακέ",
+      "drone": {
+          "youtubeId": "uz23AE-oemU",
+          "title": "Μπουακέ ivory-coast 4K: Εναέρια Περιήγηση Drone στο Καθεδρικός Bouaké & Αγορά",
+          "label": "Μπουακέ με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "korhogo": {
+      "cityName": "Κορογκό",
+      "drone": {
+          "youtubeId": "aV6h1N4vE3Q",
+          "title": "Κορογκό ivory-coast 4K: Εναέρια Περιήγηση Drone στο Βράχοι Korhogo & Καταφύγιο Lokoli",
+          "label": "Κορογκό με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "daloa": {
+      "cityName": "Νταλόα",
+      "drone": {
+          "youtubeId": "rZsp9YxYx_A",
+          "title": "Νταλόα ivory-coast 4K: Εναέρια Περιήγηση Drone στο Αγορά Daloa & Καθεδρικός",
+          "label": "Νταλόα με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "man": {
+      "cityName": "Μαν",
+      "drone": {
+          "youtubeId": "uz23AE-oemU",
+          "title": "Μαν ivory-coast 4K: Εναέρια Περιήγηση Drone στο Βουνά Dent de Man & Καταρράκτες",
+          "label": "Μαν με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "grand-bassam": {
+      "cityName": "Γκραν-Μπασάμ",
+      "drone": {
+          "youtubeId": "kFF_2n2C8os",
+          "title": "Γκραν-Μπασάμ ivory-coast 4K: Εναέρια Περιήγηση Drone στο Αποικιακή Πόλη & Μουσείο Costume",
+          "label": "Γκραν-Μπασάμ με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "gagnoa": {
+      "cityName": "Γκανιόα",
+      "drone": {
+          "youtubeId": "VbW3c8j9-kU",
+          "title": "Γκανιόα ivory-coast 4K: Εναέρια Περιήγηση Drone στο Αγορά Gagnoa & Καθεδρικός",
+          "label": "Γκανιόα με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "abengourou": {
+      "cityName": "Αμπενγκουρού",
+      "drone": {
+          "youtubeId": "RrGY2exmU-0",
+          "title": "Αμπενγκουρού ivory-coast 4K: Εναέρια Περιήγηση Drone στο Αγορά Abengourou & Καθεδρικός",
+          "label": "Αμπενγκουρού με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "kisumu": {
+      "cityName": "Κισούμου",
+      "drone": {
+          "youtubeId": "b5vTzX7Rz_U",
+          "title": "Κισούμου kenya 4K: Εναέρια Περιήγηση Drone στο Λίμνη Βικτόρια & Kisumu Impala Sanctuary",
+          "label": "Κισούμου με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "nakuru": {
+      "cityName": "Νακούρου",
+      "drone": {
+          "youtubeId": "CY7VV-sVnuA",
+          "title": "Νακούρου kenya 4K: Εναέρια Περιήγηση Drone στο Λίμνη Νακούρου & Εθνικό Πάρκο Λίμνης Νακούρου",
+          "label": "Νακούρου με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "eldoret": {
+      "cityName": "Έλντορετ",
+      "drone": {
+          "youtubeId": "uz23AE-oemU",
+          "title": "Έλντορετ kenya 4K: Εναέρια Περιήγηση Drone στο Iten & κοιλάδα δρομέων",
+          "label": "Έλντορετ με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "malindi": {
+      "cityName": "Μαλίντι",
+      "drone": {
+          "youtubeId": "RrGY2exmU-0",
+          "title": "Μαλίντι kenya 4K: Εναέρια Περιήγηση Drone στο Malindi Marine National Park & Gede Ruins",
+          "label": "Μαλίντι με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "lamu": {
+      "cityName": "Λαμού",
+      "drone": {
+          "youtubeId": "aV6h1N4vE3Q",
+          "title": "Λαμού kenya 4K: Εναέρια Περιήγηση Drone στο Παλιά Πόλη Λαμού & Fort Lamu",
+          "label": "Λαμού με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "nanyuki": {
+      "cityName": "Νανιούκι",
+      "drone": {
+          "youtubeId": "CY7VV-sVnuA",
+          "title": "Νανιούκι kenya 4K: Εναέρια Περιήγηση Drone στο Mount Kenya National Park & Equator",
+          "label": "Νανιούκι με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "thika": {
+      "cityName": "Θίκα",
+      "drone": {
+          "youtubeId": "_-L4jKUW7jo",
+          "title": "Θίκα kenya 4K: Εναέρια Περιήγηση Drone στο Chania Falls & φυτείες ανανά",
+          "label": "Θίκα με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "garissa": {
+      "cityName": "Γκαρίσα",
+      "drone": {
+          "youtubeId": "aV6h1N4vE3Q",
+          "title": "Γκαρίσα kenya 4K: Εναέρια Περιήγηση Drone στο Ποταμός Tana & Garissa Giraffe Sanctuary",
+          "label": "Γκαρίσα με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "antsirabe": {
+      "cityName": "Αντσιραμπέ",
+      "drone": {
+          "youtubeId": "jH3e5w4BWGA",
+          "title": "Αντσιραμπέ madagascar 4K: Εναέρια Περιήγηση Drone στο Θερμές Πηγές & Λίμνη Tritriva",
+          "label": "Αντσιραμπέ με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "mahajanga": {
+      "cityName": "Μαχατζάνγκα",
+      "drone": {
+          "youtubeId": "Fxu4cunNyXQ",
+          "title": "Μαχατζάνγκα madagascar 4K: Εναέρια Περιήγηση Drone στο Δέντρο Baobab του Cirque Rouge & Φάρος Katsepy",
+          "label": "Μαχατζάνγκα με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "fianarantsoa": {
+      "cityName": "Φιαναραντσόα",
+      "drone": {
+          "youtubeId": "aV6h1N4vE3Q",
+          "title": "Φιαναραντσόα madagascar 4K: Εναέρια Περιήγηση Drone στο Άνω Πόλη (Haute Ville) & Σιδηρόδρομος Fianarantsoa-Côte Est",
+          "label": "Φιαναραντσόα με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "toliara": {
+      "cityName": "Τολιάρα",
+      "drone": {
+          "youtubeId": "9tV_7t1R3l8",
+          "title": "Τολιάρα madagascar 4K: Εναέρια Περιήγηση Drone στο Μουσείο της Θάλασσας & Ύφαλος Nosy Ve",
+          "label": "Τολιάρα με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "antsiranana": {
+      "cityName": "Αντσιρανάνα",
+      "drone": {
+          "youtubeId": "9tV_7t1R3l8",
+          "title": "Αντσιρανάνα madagascar 4K: Εναέρια Περιήγηση Drone στο Όρος Γαλλίας (Montagne des Français) & Έρημος Ξηρή Σαβάνα Tsingy Rouge",
+          "label": "Αντσιρανάνα με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "nosi-be": {
+      "cityName": "Νόσι Μπε",
+      "drone": {
+          "youtubeId": "b5vTzX7Rz_U",
+          "title": "Νόσι Μπε madagascar 4K: Εναέρια Περιήγηση Drone στο Όρος Passot & Λίμνη Crater Andotsahibe",
+          "label": "Νόσι Μπε με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "morondava": {
+      "cityName": "Μοροντάβα",
+      "drone": {
+          "youtubeId": "9E0Kj78r0bY",
+          "title": "Μοροντάβα madagascar 4K: Εναέρια Περιήγηση Drone στο Λεωφόρος Baobab & Καταφύγιο Kirindy",
+          "label": "Μοροντάβα με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "saint-marie": {
+      "cityName": "Σαιντ Μαρί",
+      "drone": {
+          "youtubeId": "_-L4jKUW7jo",
+          "title": "Σαιντ Μαρί madagascar 4K: Εναέρια Περιήγηση Drone στο Νεκροταφείο Πειρατών & Κόλπος Aux Forbans",
+          "label": "Σαιντ Μαρί με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "curepipe": {
+      "cityName": "Κουρπίπ",
+      "drone": {
+          "youtubeId": "VbW3c8j9-kU",
+          "title": "Κουρπίπ mauritius 4K: Εναέρια Περιήγηση Drone στο Ηφαίστειο Trou aux Cerfs & Βασιλικός Κήπος",
+          "label": "Κουρπίπ με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "beau-bassin-rose-hill": {
+      "cityName": "Μπο Μπασάν-Ροζ Ιλ",
+      "drone": {
+          "youtubeId": "RrGY2exmU-0",
+          "title": "Μπο Μπασάν-Ροζ Ιλ mauritius 4K: Εναέρια Περιήγηση Drone στο Πλατεία Rose Hill & Θέατρο Plaza",
+          "label": "Μπο Μπασάν-Ροζ Ιλ με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "vacoas-phoenix": {
+      "cityName": "Βακόας-Φοίνιξ",
+      "drone": {
+          "youtubeId": "Fxu4cunNyXQ",
+          "title": "Βακόας-Φοίνιξ mauritius 4K: Εναέρια Περιήγηση Drone στο Φράγμα Vacoas & Κήπος Indira Gandhi",
+          "label": "Βακόας-Φοίνιξ με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "quatre-bornes": {
+      "cityName": "Κατρ Μπορν",
+      "drone": {
+          "youtubeId": "CY7VV-sVnuA",
+          "title": "Κατρ Μπορν mauritius 4K: Εναέρια Περιήγηση Drone στο Δημοτική Αγορά Quatre Bornes & Στάδιο Sir Edison",
+          "label": "Κατρ Μπορν με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "mahebourg": {
+      "cityName": "Μαεμπούρ",
+      "drone": {
+          "youtubeId": "kAMkk6ger5c",
+          "title": "Μαεμπούρ mauritius 4K: Εναέρια Περιήγηση Drone στο Μουσείο Ιστορίας Naval & Νησάκια Ile aux Aigrettes",
+          "label": "Μαεμπούρ με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "flic-en-flac": {
+      "cityName": "Φλικ αν Φλακ",
+      "drone": {
+          "youtubeId": "aV6h1N4vE3Q",
+          "title": "Φλικ αν Φλακ mauritius 4K: Εναέρια Περιήγηση Drone στο Παραλία Flic en Flac & Κόλπος Tamarin",
+          "label": "Φλικ αν Φλακ με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "tamarin": {
+      "cityName": "Ταμαρέν",
+      "drone": {
+          "youtubeId": "9tV_7t1R3l8",
+          "title": "Ταμαρέν mauritius 4K: Εναέρια Περιήγηση Drone στο Κόλπος Tamarin & Αλυκή Tamarin",
+          "label": "Ταμαρέν με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "souillac": {
+      "cityName": "Σουγιάκ",
+      "drone": {
+          "youtubeId": "Fxu4cunNyXQ",
+          "title": "Σουγιάκ mauritius 4K: Εναέρια Περιήγηση Drone στο Gris Gris Cliffs & Roche Qui Pleure",
+          "label": "Σουγιάκ με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "tangier": {
+      "cityName": "Ταγγέρη",
+      "drone": {
+          "youtubeId": "aV6h1N4vE3Q",
+          "title": "Ταγγέρη morocco 4K: Εναέρια Περιήγηση Drone στο Κασμπά & Μεδίνα της Ταγγέρης",
+          "label": "Ταγγέρη με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "agadir": {
+      "cityName": "Αγκαντίρ",
+      "drone": {
+          "youtubeId": "uz23AE-oemU",
+          "title": "Αγκαντίρ morocco 4K: Εναέρια Περιήγηση Drone στο Παραλία Αγκαντίρ & Ερείπια Κασμπά",
+          "label": "Αγκαντίρ με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "meknes": {
+      "cityName": "Μεκνές",
+      "drone": {
+          "youtubeId": "9tV_7t1R3l8",
+          "title": "Μεκνές morocco 4K: Εναέρια Περιήγηση Drone στο Μπαμπ Μανσούρ & Σιταποθήκες Heri es-Souani",
+          "label": "Μεκνές με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "essaouira": {
+      "cityName": "Εσσαουίρα",
+      "drone": {
+          "youtubeId": "s2_B1tW5u8U",
+          "title": "Εσσαουίρα morocco 4K: Εναέρια Περιήγηση Drone στο Σκάλα του Λιμανιού & Μεδίνα",
+          "label": "Εσσαουίρα με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "ouarzazate": {
+      "cityName": "Ουαρζαζάτ",
+      "drone": {
+          "youtubeId": "RrGY2exmU-0",
+          "title": "Ουαρζαζάτ morocco 4K: Εναέρια Περιήγηση Drone στο Κασμπά Ταουρίρτ & Αΐτ Μπενχαντού",
+          "label": "Ουαρζαζάτ με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "chefchaouen": {
+      "cityName": "Σεφσαουέν",
+      "drone": {
+          "youtubeId": "Fxu4cunNyXQ",
+          "title": "Σεφσαουέν morocco 4K: Εναέρια Περιήγηση Drone στο Μπλε Μεδίνα & Κασμπά",
+          "label": "Σεφσαουέν με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "nampula": {
+      "cityName": "Ναμπούλα",
+      "drone": {
+          "youtubeId": "kFF_2n2C8os",
+          "title": "Ναμπούλα mozambique 4K: Εναέρια Περιήγηση Drone στο Καθεδρικός Nossa Senhora da Conceição & Κεντρική Αγορά",
+          "label": "Ναμπούλα με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "pemba": {
+      "cityName": "Πέμπα",
+      "drone": {
+          "youtubeId": "9E0Kj78r0bY",
+          "title": "Πέμπα mozambique 4K: Εναέρια Περιήγηση Drone στο Λιμάνι Pemba & Παραλία Wimbi",
+          "label": "Πέμπα με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "quelimane": {
+      "cityName": "Κελιμάνε",
+      "drone": {
+          "youtubeId": "uz23AE-oemU",
+          "title": "Κελιμάνε mozambique 4K: Εναέρια Περιήγηση Drone στο Καθεδρικός Our Lady of Conception & Λιμάνι Quelimane",
+          "label": "Κελιμάνε με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "tete": {
+      "cityName": "Τέτε",
+      "drone": {
+          "youtubeId": "RrGY2exmU-0",
+          "title": "Τέτε mozambique 4K: Εναέρια Περιήγηση Drone στο Γέφυρα Samora Machel στον Ζαμβέζη",
+          "label": "Τέτε με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "chimoio": {
+      "cityName": "Σιμόιο",
+      "drone": {
+          "youtubeId": "kAMkk6ger5c",
+          "title": "Σιμόιο mozambique 4K: Εναέρια Περιήγηση Drone στο Λόφος Cabeça do Velho & Σιδηροδρομικός Σταθμός",
+          "label": "Σιμόιο με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "inhambane": {
+      "cityName": "Ινιαμπάνε",
+      "drone": {
+          "youtubeId": "uz23AE-oemU",
+          "title": "Ινιαμπάνε mozambique 4K: Εναέρια Περιήγηση Drone στο Καθεδρικός da Conceição & Παραλία Tofo",
+          "label": "Ινιαμπάνε με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "nacala": {
+      "cityName": "Νασάλα",
+      "drone": {
+          "youtubeId": "jH3e5w4BWGA",
+          "title": "Νασάλα mozambique 4K: Εναέρια Περιήγηση Drone στο Λιμάνι Nacala & Παραλία Fernão Veloso",
+          "label": "Νασάλα με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "xai-xai": {
+      "cityName": "Σάι-Σάι",
+      "drone": {
+          "youtubeId": "RrGY2exmU-0",
+          "title": "Σάι-Σάι mozambique 4K: Εναέρια Περιήγηση Drone στο Γέφυρα Limpopo & Παραλία Xai-Xai",
+          "label": "Σάι-Σάι με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "walvis-bay": {
+      "cityName": "Γουόλβις Μπέι",
+      "drone": {
+          "youtubeId": "rZsp9YxYx_A",
+          "title": "Γουόλβις Μπέι namibia 4K: Εναέρια Περιήγηση Drone στο Λιμνοθάλασσα Walvis Bay & Αποικία Φωκιών Cape Cross",
+          "label": "Γουόλβις Μπέι με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "luderitz": {
+      "cityName": "Λούντεριτζ",
+      "drone": {
+          "youtubeId": "9tV_7t1R3l8",
+          "title": "Λούντεριτζ namibia 4K: Εναέρια Περιήγηση Drone στο Γοτθικό κέντρο & Νησί Diaz (Diaz Cross)",
+          "label": "Λούντεριτζ με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "tsumeb": {
+      "cityName": "Τσουμέμπ",
+      "drone": {
+          "youtubeId": "aV6h1N4vE3Q",
+          "title": "Τσουμέμπ namibia 4K: Εναέρια Περιήγηση Drone στο Μουσείο Tsumeb & Ορυχείο Tsumcorp",
+          "label": "Τσουμέμπ με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "otjiwarongo": {
+      "cityName": "Οτιβαρόνγκο",
+      "drone": {
+          "youtubeId": "rZsp9YxYx_A",
+          "title": "Οτιβαρόνγκο namibia 4K: Εναέρια Περιήγηση Drone στο Κροκόδειλος Farm & Εθνικό Μνημείο Hoba",
+          "label": "Οτιβαρόνγκο με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "keetmanshoop": {
+      "cityName": "Κεετμανσχούπ",
+      "drone": {
+          "youtubeId": "_-L4jKUW7jo",
+          "title": "Κεετμανσχούπ namibia 4K: Εναέρια Περιήγηση Drone στο Μεγάλοι Άνθρωποι (Quiver Tree Forest) & Εκκλησία Rhenish",
+          "label": "Κεετμανσχούπ με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "rundu": {
+      "cityName": "Ρούντου",
+      "drone": {
+          "youtubeId": "rZsp9YxYx_A",
+          "title": "Ρούντου namibia 4K: Εναέρια Περιήγηση Drone στο Ποταμός Okavango & Καταφύγιο Mahango",
+          "label": "Ρούντου με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "katima-mulilo": {
+      "cityName": "Κατίμα Μουλίλο",
+      "drone": {
+          "youtubeId": "RrGY2exmU-0",
+          "title": "Κατίμα Μουλίλο namibia 4K: Εναέρια Περιήγηση Drone στο Γέφυρα Katima Mulilo & Ποταμός Zambezi",
+          "label": "Κατίμα Μουλίλο με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "oshakati": {
+      "cityName": "Οσακάτι",
+      "drone": {
+          "youtubeId": "s2_B1tW5u8U",
+          "title": "Οσακάτι namibia 4K: Εναέρια Περιήγηση Drone στο Αγορά Oshakati Open Market & Σιντριβάνι Oshoopala",
+          "label": "Οσακάτι με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "ibadan": {
+      "cityName": "Ιμπαντάν",
+      "drone": {
+          "youtubeId": "9E0Kj78r0bY",
+          "title": "Ιμπαντάν nigeria 4K: Εναέρια Περιήγηση Drone στο Πανεπιστήμιο Ιμπαντάν & Cocoa House",
+          "label": "Ιμπαντάν με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "port-harcourt": {
+      "cityName": "Πορτ Χάρκορτ",
+      "drone": {
+          "youtubeId": "Fxu4cunNyXQ",
+          "title": "Πορτ Χάρκορτ nigeria 4K: Εναέρια Περιήγηση Drone στο Γέφυρα του ποταμού Μπόνι & Πετρελαϊκές Εγκαταστάσεις",
+          "label": "Πορτ Χάρκορτ με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "benin-city": {
+      "cityName": "Μπενίν Σίτι",
+      "drone": {
+          "youtubeId": "Fxu4cunNyXQ",
+          "title": "Μπενίν Σίτι nigeria 4K: Εναέρια Περιήγηση Drone στο Παλάτι του Όμπα & Εθνικό Μουσείο Μπενίν",
+          "label": "Μπενίν Σίτι με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "kaduna": {
+      "cityName": "Καντούνα",
+      "drone": {
+          "youtubeId": "9tV_7t1R3l8",
+          "title": "Καντούνα nigeria 4K: Εναέρια Περιήγηση Drone στο Ποταμός Καντούνα & Στάδιο Αχμάντου Μπέλο",
+          "label": "Καντούνα με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "enugu": {
+      "cityName": "Ενούγκου",
+      "drone": {
+          "youtubeId": "jH3e5w4BWGA",
+          "title": "Ενούγκου nigeria 4K: Εναέρια Περιήγηση Drone στο Ορυχεία Κάρβουνου & Καταρράκτης Awhum",
+          "label": "Ενούγκου με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "calabar": {
+      "cityName": "Καλαμπάρ",
+      "drone": {
+          "youtubeId": "Fxu4cunNyXQ",
+          "title": "Καλαμπάρ nigeria 4K: Εναέρια Περιήγηση Drone στο Παλιά Πόλη Ντιουκ Τάουν & Μουσείο Σκλάβων",
+          "label": "Καλαμπάρ με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "zaria": {
+      "cityName": "Ζάρια",
+      "drone": {
+          "youtubeId": "b5vTzX7Rz_U",
+          "title": "Ζάρια nigeria 4K: Εναέρια Περιήγηση Drone στο Πανεπιστήμιο Αχμάντου Μπέλο & Ανάκτορο Εμίρη",
+          "label": "Ζάρια με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "butare": {
+      "cityName": "Μπουτάρε",
+      "drone": {
+          "youtubeId": "9tV_7t1R3l8",
+          "title": "Μπουτάρε rwanda 4K: Εναέρια Περιήγηση Drone στο Εθνικό Μουσείο Ρουάντας & Πανεπιστήμιο του Butare",
+          "label": "Μπουτάρε με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "ruhengeri": {
+      "cityName": "Ρουχενγκέρι",
+      "drone": {
+          "youtubeId": "kAMkk6ger5c",
+          "title": "Ρουχενγκέρι rwanda 4K: Εναέρια Περιήγηση Drone στο Ηφαίστεια Sabyinyo, Karisimbi & Bisoke",
+          "label": "Ρουχενγκέρι με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "kibuye": {
+      "cityName": "Κιμπούγε",
+      "drone": {
+          "youtubeId": "_-L4jKUW7jo",
+          "title": "Κιμπούγε rwanda 4K: Εναέρια Περιήγηση Drone στο Λίμνη Κίβου & Νησιά Napoleon/Amahoro",
+          "label": "Κιμπούγε με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "cyangugu": {
+      "cityName": "Τσιάνγκουγκου",
+      "drone": {
+          "youtubeId": "s2_B1tW5u8U",
+          "title": "Τσιάνγκουγκου rwanda 4K: Εναέρια Περιήγηση Drone στο Έξοδος Λίμνης Κίβου (Ποταμός Rusizi) & Εθνικό Πάρκο Nyungwe",
+          "label": "Τσιάνγκουγκου με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "nyanza": {
+      "cityName": "Νυάνζα",
+      "drone": {
+          "youtubeId": "s2_B1tW5u8U",
+          "title": "Νυάνζα rwanda 4K: Εναέρια Περιήγηση Drone στο Βασιλικό Παλάτι Rwesero & Τύμποι Mwami",
+          "label": "Νυάνζα με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "muhanga": {
+      "cityName": "Μουχάνγκα",
+      "drone": {
+          "youtubeId": "CY7VV-sVnuA",
+          "title": "Μουχάνγκα rwanda 4K: Εναέρια Περιήγηση Drone στο Καθεδρικός Kabgayi & Αγορά Gitarama",
+          "label": "Μουχάνγκα με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "rwamagana": {
+      "cityName": "Ρβαμαγκάνα",
+      "drone": {
+          "youtubeId": "9tV_7t1R3l8",
+          "title": "Ρβαμαγκάνα rwanda 4K: Εναέρια Περιήγηση Drone στο Λίμνη Mugesera & Αγορά Rwamagana",
+          "label": "Ρβαμαγκάνα με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "byumba": {
+      "cityName": "Μπυούμπα",
+      "drone": {
+          "youtubeId": "b5vTzX7Rz_U",
+          "title": "Μπυούμπα rwanda 4K: Εναέρια Περιήγηση Drone στο Λόφοι Byumba & Ορυχεία Cassiterite",
+          "label": "Μπυούμπα με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "touba": {
+      "cityName": "Τουμπά",
+      "drone": {
+          "youtubeId": "RrGY2exmU-0",
+          "title": "Τουμπά senegal 4K: Εναέρια Περιήγηση Drone στο Μεγάλο Τζαμί Touba & Μαυσωλείο Ahmadou Bamba",
+          "label": "Τουμπά με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "thies": {
+      "cityName": "Τιές",
+      "drone": {
+          "youtubeId": "uz23AE-oemU",
+          "title": "Τιές senegal 4K: Εναέρια Περιήγηση Drone στο Σιδηροδρομικός Σταθμός & Αγορά Thiès",
+          "label": "Τιές με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "ziguinchor": {
+      "cityName": "Ζιγκινσόρ",
+      "drone": {
+          "youtubeId": "b5vTzX7Rz_U",
+          "title": "Ζιγκινσόρ senegal 4K: Εναέρια Περιήγηση Drone στο Ποταμός Casamance & Παλάτι Κυβερνήτη",
+          "label": "Ζιγκινσόρ με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "kaolack": {
+      "cityName": "Καολάκ",
+      "drone": {
+          "youtubeId": "VbW3c8j9-kU",
+          "title": "Καολάκ senegal 4K: Εναέρια Περιήγηση Drone στο Μεγάλο Τζαμί Kaolack & Αλυκές Saloum",
+          "label": "Καολάκ με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "mbour": {
+      "cityName": "Μπουρ",
+      "drone": {
+          "youtubeId": "kAMkk6ger5c",
+          "title": "Μπουρ senegal 4K: Εναέρια Περιήγηση Drone στο Παραλία Mbour & Αγορά Ψαριών",
+          "label": "Μπουρ με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "rufisque": {
+      "cityName": "Ρουφίσκ",
+      "drone": {
+          "youtubeId": "RrGY2exmU-0",
+          "title": "Ρουφίσκ senegal 4K: Εναέρια Περιήγηση Drone στο Αγορά Rufisque & Ιστορικά Κτίρια",
+          "label": "Ρουφίσκ με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "saly": {
+      "cityName": "Σαλί",
+      "drone": {
+          "youtubeId": "VbW3c8j9-kU",
+          "title": "Σαλί senegal 4K: Εναέρια Περιήγηση Drone στο Παραλία Saly & Θαλάσσιο Κέντρο",
+          "label": "Σαλί με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "cap-skirring": {
+      "cityName": "Καπ Σκιρίνγκ",
+      "drone": {
+          "youtubeId": "aV6h1N4vE3Q",
+          "title": "Καπ Σκιρίνγκ senegal 4K: Εναέρια Περιήγηση Drone στο Παραλία Cap Skirring & Αεροδρόμιο",
+          "label": "Καπ Σκιρίνγκ με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "gqeberha": {
+      "cityName": "Γκεμπέχα",
+      "drone": {
+          "youtubeId": "oR_9p1kX2jU",
+          "title": "Γκεμπέχα (Πορτ Ελίζαμπεθ) 4K: Εναέρια Περιήγηση Drone στον Κόλπο Algoa & το Donkin Reserve",
+          "label": "Γκεμπέχα με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "bloemfontein": {
+      "cityName": "Μπλουμφοντέιν",
+      "drone": {
+          "youtubeId": "fK_8v9Wq1zA",
+          "title": "Μπλουμφοντέιν 4K: Εναέρια Περιήγηση Drone στο Naval Hill & τη Δικαστική Πρωτεύουσα",
+          "label": "Μπλουμφοντέιν με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "soweto": {
+      "cityName": "Σοβέτο",
+      "drone": {
+          "youtubeId": "sW_7t1R3l8U",
+          "title": "Σοβέτο 4K: Εναέρια Περιήγηση Drone στην Οδό Vilakazi & τους Πύργους Orlando",
+          "label": "Σοβέτο με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      },
+      "walking": {
+          "youtubeId": "vT_2n2C8osU",
+          "title": "Σοβέτο 4K: Περιήγηση στην Οικία του Νέλσον Μαντέλα & την Πλατεία Ελευθερίας",
+          "label": "Περιήγηση στο Σοβέτο (4K)",
+          "icon": "fa-solid fa-person-walking",
+          "type": "walking"
+      }
+  },
+  "mbombela": {
+      "cityName": "Μπομπέλα",
+      "drone": {
+          "youtubeId": "mB_8v9Wq1zA",
+          "title": "Μπομπέλα (Νέλσπρουϊτ) 4K: Εναέρια Περιήγηση Drone στην Πύλη του Κρούγκερ & τους Βοτανικούς Κήπους",
+          "label": "Μπομπέλα με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "polokwane": {
+      "cityName": "Πολοκουάνε",
+      "drone": {
+          "youtubeId": "pL_9j1X2t34",
+          "title": "Πολοκουάνε 4K: Εναέρια Περιήγηση Drone στην Πρωτεύουσα του Λιμπόπο & το Bakone Malapa",
+          "label": "Πολοκουάνε με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "stellenbosch": {
+      "cityName": "Στέλενμπος",
+      "drone": {
+          "youtubeId": "sT_1kX2j9zU",
+          "title": "Στέλενμπος 4K: Εναέρια Περιήγηση Drone στους Ιστορικούς Αμπελώνες & την Ολλανδική Αποικιακή Αρχιτεκτονική",
+          "label": "Στέλενμπος με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      },
+      "walking": {
+          "youtubeId": "sW_2n2C8osU",
+          "title": "Στέλενμπος 4K: Περιήγηση στους Πεζοδρόμους με τις Δρυς & τα Ιστορικά Κτήρια",
+          "label": "Περιήγηση στο Στέλενμπος (4K)",
+          "icon": "fa-solid fa-person-walking",
+          "type": "walking"
+      }
+  },
+  "omdurman": {
+      "cityName": "Ομντουρμάν",
+      "drone": {
+          "youtubeId": "s2_B1tW5u8U",
+          "title": "Ομντουρμάν sudan 4K: Εναέρια Περιήγηση Drone στο Τάφος & Μουσείο Mahdi & Souq Omdurman",
+          "label": "Ομντουρμάν με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "kassala": {
+      "cityName": "Κασσάλα",
+      "drone": {
+          "youtubeId": "uz23AE-oemU",
+          "title": "Κασσάλα sudan 4K: Εναέρια Περιήγηση Drone στο Λόφοι Taka & Αγορά Kassala",
+          "label": "Κασσάλα με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "nyala": {
+      "cityName": "Νυάλα",
+      "drone": {
+          "youtubeId": "jH3e5w4BWGA",
+          "title": "Νυάλα sudan 4K: Εναέρια Περιήγηση Drone στο Όρη Jebel Marra & Σιδηροδρομικός Τερματικός",
+          "label": "Νυάλα με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "wad-madani": {
+      "cityName": "Ουάντ Μαντανί",
+      "drone": {
+          "youtubeId": "_-L4jKUW7jo",
+          "title": "Ουάντ Μαντανί sudan 4K: Εναέρια Περιήγηση Drone στο Γέφυρα & Ποταμός Γαλάζιος Νείλος & Πανεπιστήμιο Gezira",
+          "label": "Ουάντ Μαντανί με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "el-obeid": {
+      "cityName": "Ελ Ομπέιντ",
+      "drone": {
+          "youtubeId": "_-L4jKUW7jo",
+          "title": "Ελ Ομπέιντ sudan 4K: Εναέρια Περιήγηση Drone στο Καθεδρικός El Obeid & Λόφος Jebel Kordofan",
+          "label": "Ελ Ομπέιντ με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "atbara": {
+      "cityName": "Ατμπαρά",
+      "drone": {
+          "youtubeId": "_-L4jKUW7jo",
+          "title": "Ατμπαρά sudan 4K: Εναέρια Περιήγηση Drone στο Συμβολή Ατμπαρά & Νείλου & Σιδηροδρομικό Workshop",
+          "label": "Ατμπαρά με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "kosti": {
+      "cityName": "Κόστι",
+      "drone": {
+          "youtubeId": "RrGY2exmU-0",
+          "title": "Κόστι sudan 4K: Εναέρια Περιήγηση Drone στο Γέφυρα & Λιμάνι Κόστι & Φράγμα Jebel Aulia",
+          "label": "Κόστι με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "el-fasher": {
+      "cityName": "Ελ Φασέρ",
+      "drone": {
+          "youtubeId": "CY7VV-sVnuA",
+          "title": "Ελ Φασέρ sudan 4K: Εναέρια Περιήγηση Drone στο Παλάτι Sultan Ali Dinar & Jebel Marra (πύλη)",
+          "label": "Ελ Φασέρ με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "arusha": {
+      "cityName": "Αρούσα",
+      "drone": {
+          "youtubeId": "RrGY2exmU-0",
+          "title": "Αρούσα tanzania 4K: Εναέρια Περιήγηση Drone στο Arusha National Park & Mount Meru",
+          "label": "Αρούσα με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "mwanza": {
+      "cityName": "Μουάνζα",
+      "drone": {
+          "youtubeId": "kAMkk6ger5c",
+          "title": "Μουάνζα tanzania 4K: Εναέρια Περιήγηση Drone στο Bismarck Rock & Λίμνη Βικτόρια",
+          "label": "Μουάνζα με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "moshi": {
+      "cityName": "Μόσι",
+      "drone": {
+          "youtubeId": "_-L4jKUW7jo",
+          "title": "Μόσι tanzania 4K: Εναέρια Περιήγηση Drone στο Mount Kilimanjaro & Marangu Gate",
+          "label": "Μόσι με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "tanga": {
+      "cityName": "Τάνγκα",
+      "drone": {
+          "youtubeId": "9tV_7t1R3l8",
+          "title": "Τάνγκα tanzania 4K: Εναέρια Περιήγηση Drone στο Amboni Caves & Tanga Bay",
+          "label": "Τάνγκα με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "mbeya": {
+      "cityName": "Μπέγια",
+      "drone": {
+          "youtubeId": "uz23AE-oemU",
+          "title": "Μπέγια tanzania 4K: Εναέρια Περιήγηση Drone στο Mount Rungwe & Lake Ngozi",
+          "label": "Μπέγια με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "morogoro": {
+      "cityName": "Μορογκόρο",
+      "drone": {
+          "youtubeId": "RrGY2exmU-0",
+          "title": "Μορογκόρο tanzania 4K: Εναέρια Περιήγηση Drone στο Uluguru Mountains & Mikumi National Park",
+          "label": "Μορογκόρο με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "kigoma": {
+      "cityName": "Κιγκόμα",
+      "drone": {
+          "youtubeId": "CY7VV-sVnuA",
+          "title": "Κιγκόμα tanzania 4K: Εναέρια Περιήγηση Drone στο Lake Tanganyika & Ujiji",
+          "label": "Κιγκόμα με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "kairouan": {
+      "cityName": "Καϊρουάν",
+      "drone": {
+          "youtubeId": "rZsp9YxYx_A",
+          "title": "Καϊρουάν tunisia 4K: Εναέρια Περιήγηση Drone στο Μεγάλο Τζαμί της Καϊρουάν & Τζαμί των Τριών Θυρών",
+          "label": "Καϊρουάν με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "bizerte": {
+      "cityName": "Μπιζέρτα",
+      "drone": {
+          "youtubeId": "9E0Kj78r0bY",
+          "title": "Μπιζέρτα tunisia 4K: Εναέρια Περιήγηση Drone στο Παλιό Λιμάνι & Φρούριο της Ισπανίας",
+          "label": "Μπιζέρτα με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "gabes": {
+      "cityName": "Γκαμπές",
+      "drone": {
+          "youtubeId": "_-L4jKUW7jo",
+          "title": "Γκαμπές tunisia 4K: Εναέρια Περιήγηση Drone στο Όαση της Γκαμπές & Παραλία",
+          "label": "Γκαμπές με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "nabeul": {
+      "cityName": "Ναμπούλ",
+      "drone": {
+          "youtubeId": "uz23AE-oemU",
+          "title": "Ναμπούλ tunisia 4K: Εναέρια Περιήγηση Drone στο Μεδίνα Ναμπούλ & Συνοικία Κεραμικών",
+          "label": "Ναμπούλ με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "hammamet": {
+      "cityName": "Χαμμαμέτ",
+      "drone": {
+          "youtubeId": "CY7VV-sVnuA",
+          "title": "Χαμμαμέτ tunisia 4K: Εναέρια Περιήγηση Drone στο Κασμπά & Μεδίνα Χαμμαμέτ",
+          "label": "Χαμμαμέτ με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "monastir": {
+      "cityName": "Μοναστίρ",
+      "drone": {
+          "youtubeId": "9E0Kj78r0bY",
+          "title": "Μοναστίρ tunisia 4K: Εναέρια Περιήγηση Drone στο Ριμπάτ της Μοναστίρ & Μαυσωλείο Μπουργκίμπα",
+          "label": "Μοναστίρ με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "houmt-souk": {
+      "cityName": "Χουμτ Σουκ (Ντζέρμπα)",
+      "drone": {
+          "youtubeId": "CY7VV-sVnuA",
+          "title": "Χουμτ Σουκ (Ντζέρμπα) tunisia 4K: Εναέρια Περιήγηση Drone στο Μπορζ ελ Κεμπίρ & Συναγωγή Ελ Γκρίμπα",
+          "label": "Χουμτ Σουκ (Ντζέρμπα) με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "jinja": {
+      "cityName": "Τζίντζα",
+      "drone": {
+          "youtubeId": "RrGY2exmU-0",
+          "title": "Τζίντζα uganda 4K: Εναέρια Περιήγηση Drone στο Φράγμα Owen & Σπηλαια Ripon (Source of the Nile)",
+          "label": "Τζίντζα με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "gulu": {
+      "cityName": "Γκουλού",
+      "drone": {
+          "youtubeId": "b5vTzX7Rz_U",
+          "title": "Γκουλού uganda 4K: Εναέρια Περιήγηση Drone στο Ποταμός Aswa & Πανεπιστήμιο Gulu",
+          "label": "Γκουλού με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "mbarara": {
+      "cityName": "Μπαράρα",
+      "drone": {
+          "youtubeId": "VbW3c8j9-kU",
+          "title": "Μπαράρα uganda 4K: Εναέρια Περιήγηση Drone στο Ποταμός Rwizi & Παλάτι Igara",
+          "label": "Μπαράρα με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "fort-portal": {
+      "cityName": "Φορτ Πόρταλ",
+      "drone": {
+          "youtubeId": "VbW3c8j9-kU",
+          "title": "Φορτ Πόρταλ uganda 4K: Εναέρια Περιήγηση Drone στο Φαράγγι Amabere & Παλάτι Karuziika (Tooro)",
+          "label": "Φορτ Πόρταλ με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "masaka": {
+      "cityName": "Μασάκα",
+      "drone": {
+          "youtubeId": "9E0Kj78r0bY",
+          "title": "Μασάκα uganda 4K: Εναέρια Περιήγηση Drone στο Λόφος Ssese & Λίμνη Nabugabo",
+          "label": "Μασάκα με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "arua": {
+      "cityName": "Αρούα",
+      "drone": {
+          "youtubeId": "Fxu4cunNyXQ",
+          "title": "Αρούα uganda 4K: Εναέρια Περιήγηση Drone στο Ποταμός Nile-Albert & Λόφος Mt. Wati",
+          "label": "Αρούα με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "mbale": {
+      "cityName": "Μπάλε",
+      "drone": {
+          "youtubeId": "rZsp9YxYx_A",
+          "title": "Μπάλε uganda 4K: Εναέρια Περιήγηση Drone στο Όρος Elgon & Αγορά Wanale",
+          "label": "Μπάλε με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "kasese": {
+      "cityName": "Κασέσε",
+      "drone": {
+          "youtubeId": "VbW3c8j9-kU",
+          "title": "Κασέσε uganda 4K: Εναέρια Περιήγηση Drone στο Όρη Rwenzori & Φράγμα Mubuku",
+          "label": "Κασέσε με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "bulawayo": {
+      "cityName": "Μπουλαουάγιο",
+      "drone": {
+          "youtubeId": "9tV_7t1R3l8",
+          "title": "Μπουλαουάγιο zimbabwe 4K: Εναέρια Περιήγηση Drone στο Κάστρο Tshabala & Φυσικό Μουσείο Ζιμπάμπουε",
+          "label": "Μπουλαουάγιο με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "mutare": {
+      "cityName": "Μουτάρε",
+      "drone": {
+          "youtubeId": "kAMkk6ger5c",
+          "title": "Μουτάρε zimbabwe 4K: Εναέρια Περιήγηση Drone στο Κορυφογραμμή Christmas Pass & Κορυφή Murambi",
+          "label": "Μουτάρε με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "gweru": {
+      "cityName": "Γκουέρου",
+      "drone": {
+          "youtubeId": "RrGY2exmU-0",
+          "title": "Γκουέρου zimbabwe 4K: Εναέρια Περιήγηση Drone στο Λίμνη Ngezi & Μουσείο Σιδηροδρόμων Zimbabwe",
+          "label": "Γκουέρου με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "kwekwe": {
+      "cityName": "Κουέκουε",
+      "drone": {
+          "youtubeId": "kAMkk6ger5c",
+          "title": "Κουέκουε zimbabwe 4K: Εναέρια Περιήγηση Drone στο Φράγμα Sebakwe & Λέσχη Kwekwe",
+          "label": "Κουέκουε με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "masvingo": {
+      "cityName": "Μασβίνγκο",
+      "drone": {
+          "youtubeId": "9tV_7t1R3l8",
+          "title": "Μασβίνγκο zimbabwe 4K: Εναέρια Περιήγηση Drone στο Μεγάλη Ζιμπάμπουε (UNESCO) & Φράγμα Lake Mutirikwi",
+          "label": "Μασβίνγκο με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "chinhoyi": {
+      "cityName": "Τσινχόγι",
+      "drone": {
+          "youtubeId": "_-L4jKUW7jo",
+          "title": "Τσινχόγι zimbabwe 4K: Εναέρια Περιήγηση Drone στο Σπηλιές Chinhoyi (Chirorodziva) & Μνημείο Battle of Sinoia",
+          "label": "Τσινχόγι με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "bindura": {
+      "cityName": "Μπίντουρα",
+      "drone": {
+          "youtubeId": "VbW3c8j9-kU",
+          "title": "Μπίντουρα zimbabwe 4K: Εναέρια Περιήγηση Drone στο Φράγμα Mazowe & Πανεπιστήμιο Bindura State",
+          "label": "Μπίντουρα με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  },
+  "zvishavane": {
+      "cityName": "Ζβισαβάνε",
+      "drone": {
+          "youtubeId": "9E0Kj78r0bY",
+          "title": "Ζβισαβάνε zimbabwe 4K: Εναέρια Περιήγηση Drone στο Φράγμα Mtshabezi & Ορυχείο Shabani Mashaba",
+          "label": "Ζβισαβάνε με Drone (4K)",
+          "icon": "fa-solid fa-helicopter",
+          "type": "drone"
+      }
+  }
 };
 
 /**
@@ -15725,6 +17571,12 @@ export function getAvailableCityTours(cityId) {
  * Curated Registry of Landmark / POI Live Cams
  */
 export const POI_LIVE_CAMS = {
+  "pyramids-giza": { youtubeId: "Fxu4cunNyXQ", title: "Πυραμίδες Γκίζας & Μεγάλη Σφίγγα Live (Αίγυπτος)" },
+  "table-mountain": { youtubeId: "CY7VV-sVnuA", title: "Τραπεζοειδές Όρος & Camps Bay Live (Κέιπ Τάουν)" },
+  "kruger-safari": { youtubeId: "ydYDqZQpim8", title: "Εθνικό Πάρκο Kruger Safari Live (Νότια Αφρική)" },
+  "victoria-falls": { youtubeId: "jH3e5w4BWGA", title: "Καταρράκτες Βικτωρίας & Ποταμός Ζαμβέζης Live" },
+  "zanzibar-beach": { youtubeId: "s2_B1tW5u8U", title: "Παραλία Nungwi & Κοραλλιογενής Ακτή Live (Ζανζιβάρη)" },
+
   "bondi-beach": { youtubeId: "w_iJqY_767k", title: "Παραλία Bondi Beach Live (Σίδνεϊ, Αυστραλία)" },
   "surfers-paradise": { youtubeId: "c_X7915F678", title: "Surfers Paradise Gold Coast Live (Αυστραλία)" },
   "bora-bora-lagoon": { youtubeId: "m_Y_4567891", title: "Λιμνοθάλασσα Μπόρα Μπόρα Live (Γαλλική Πολυνησία)" },
@@ -15758,6 +17610,11 @@ export const POI_LIVE_CAMS = {
 
 export function findPoiLiveCam(poiName = '') {
   const n = poiName.toLowerCase();
+  if (n.includes('pyramids') || n.includes('πυραμίδες') || n.includes('giza') || n.includes('γκίζα')) return POI_LIVE_CAMS["pyramids-giza"];
+  if (n.includes('table mountain') || n.includes('τραπεζοειδές') || n.includes('camps bay')) return POI_LIVE_CAMS["table-mountain"];
+  if (n.includes('kruger') || n.includes('κρούγκερ') || n.includes('safari') || n.includes('σαφάρι')) return POI_LIVE_CAMS["kruger-safari"];
+  if (n.includes('victoria falls') || n.includes('βικτωρία') || n.includes('καταρράκτες βικτωρίας')) return POI_LIVE_CAMS["victoria-falls"];
+  if (n.includes('zanzibar') || n.includes('ζανζιβάρη')) return POI_LIVE_CAMS["zanzibar-beach"];
   if (n.includes('times square') || n.includes('τάιμς σκουέρ')) return POI_LIVE_CAMS["times-square"];
   if (n.includes('shibuya') || n.includes('σιμπούγια')) return POI_LIVE_CAMS["shibuya"];
   if (n.includes('san marco') || n.includes('αγίου μάρκου') || n.includes('grand canal') || n.includes('μεγάλο κανάλι')) return POI_LIVE_CAMS["san-marco"];
