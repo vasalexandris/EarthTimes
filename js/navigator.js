@@ -2553,9 +2553,9 @@ export const CONTINENTS_DATA = [
           { id: 'leauvaa', name: 'Λεαουβάα', badge: 'Παράκτιο Χωριό ΒΔ Upolu' },
           { id: 'salamumu', name: 'Σαλαμουμού', badge: 'Παραλίες & Φυσικό Καταφύγιο' },
           { id: 'mulifanua', name: 'Μουλιφανούα', badge: 'Χωριό-Λιμάνι Πορθμού' },
-          { id: 'salelologa', name: 'Σαλελολόγκα', badge: 'Κύριος Οικισμός Savai'i' },
+          { id: 'salelologa', name: 'Σαλελολόγκα', badge: 'Κύριος Οικισμός Savai\'i' },
           { id: 'asau', name: 'Ασάου', badge: 'Λιμάνι & Αλιευτικό Χωριό' },
-          { id: 'safotu', name: 'Σαφοτού', badge: 'Ιστορικό Χωριό Βόρειας Savai'i' }
+          { id: 'safotu', name: 'Σαφοτού', badge: 'Ιστορικό Χωριό Βόρειας Savai\'i' }
         ]
       },
       {
@@ -2564,12 +2564,12 @@ export const CONTINENTS_DATA = [
         flag: '🇹🇴',
         cities: [
           { id: 'nukualofa', name: 'Νουκουαλόφα', badge: 'Πρωτεύουσα & Λιμάνι' },
-          { id: 'neiafu', name: 'Νεϊάφου', badge: 'Κύριος Οικισμός Vava'u' },
+          { id: 'neiafu', name: 'Νεϊάφου', badge: 'Κύριος Οικισμός Vava\'u' },
           { id: 'pangai', name: 'Πανγκάι', badge: 'Κύριος Οικισμός Χααπάι' },
           { id: 'mua', name: 'Μουά', badge: 'Αρχαιολογικό & Ιστορικό Κέντρο' },
           { id: 'haveluloto', name: 'Χαβελουλότο', badge: 'Προάστιο Νουκουαλόφα' },
           { id: 'vaini', name: 'Βαϊνί', badge: 'Εσωτερικό Χωριό Τονγκατάπου' },
-          { id: 'ohonua', name: 'Οχονούα', badge: 'Κύριος Οικισμός 'Eua' },
+          { id: 'ohonua', name: 'Οχονούα', badge: 'Κύριος Οικισμός \'Eua' },
           { id: 'hihifo', name: 'Χίχιφο', badge: 'Κύριος Οικισμός Niuatoputapu' },
           { id: 'kolonga', name: 'Κολόνγκα', badge: 'Ανατολικό Παράκτιο Χωριό' },
           { id: 'pepehake', name: 'Πεπεχάκε', badge: 'Χωριό Αρχιπελάγους Χααπάι' }
@@ -2728,7 +2728,6 @@ export const CONTINENTS_DATA = [
           { id: 'poindimie', name: 'Πουεντιμιέ', badge: 'Κέντρο Ανατολικής Ακτής του Grande Terre' }
         ]
       }
-    ]
     ]
   }
 ];
