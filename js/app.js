@@ -4,13 +4,13 @@
  * USA, Leaflet Map, Base Layers, UI Dossier, and Time Machine.
  */
 
-import { loadWorldData, loadCountryData, loadStateData } from './data-service.js?v=20261115_africa2';
-import * as MapModule from './map.js?v=20261115_africa2';
-import * as UIModule from './ui.js?v=20261115_africa2';
-import * as TimeMachine from './time-machine.js?v=20261115_africa2';
-import * as NavigatorModule from './navigator.js?v=20261115_africa2';
-import * as GlobeModule from './globe-view.js?v=20261115_africa2';
-import { US_STATES, CITY_TO_STATE } from './states-data.js?v=20261115_africa2';
+import { loadWorldData, loadCountryData, loadStateData } from './data-service.js?v=20261115_africa3';
+import * as MapModule from './map.js?v=20261115_africa3';
+import * as UIModule from './ui.js?v=20261115_africa3';
+import * as TimeMachine from './time-machine.js?v=20261115_africa3';
+import * as NavigatorModule from './navigator.js?v=20261115_africa3';
+import * as GlobeModule from './globe-view.js?v=20261115_africa3';
+import { US_STATES, CITY_TO_STATE } from './states-data.js?v=20261115_africa3';
 
 // Application State
 let worldData = null;
