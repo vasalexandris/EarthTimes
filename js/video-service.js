@@ -1,4 +1,4 @@
-import { CITY_TO_STATE } from './states-data.js?v=20261115_africa3';
+import { CITY_TO_STATE } from './states-data.js?v=20261115_africa4';
 /**
  * Video Service Module
  * Registry of verified high-definition YouTube video tours for all cities
@@ -18362,11 +18362,11 @@ export const POI_LIVE_CAMS = {
 };
 
 export function findPoiLiveCam(poiName = '') {
-  if (n.includes('seychelles') || n.includes('σεϋχέλλες') || n.includes('source d'argent')) return POI_LIVE_CAMS["seychelles-beach"];
+  const n = poiName.toLowerCase();
+  if (n.includes('seychelles') || n.includes('σεϋχέλλες') || n.includes("source d'argent")) return POI_LIVE_CAMS["seychelles-beach"];
   if (n.includes('djenne') || n.includes('τζενέ')) return POI_LIVE_CAMS["djenne-mosque"];
   if (n.includes('leptis magna') || n.includes('λέπτις μάγκνα')) return POI_LIVE_CAMS["leptis-magna"];
   if (n.includes('malawi') || n.includes('μαλάουι')) return POI_LIVE_CAMS["lake-malawi"];
-  const n = poiName.toLowerCase();
   if (n.includes('pyramids') || n.includes('πυραμίδες') || n.includes('giza') || n.includes('γκίζα')) return POI_LIVE_CAMS["pyramids-giza"];
   if (n.includes('table mountain') || n.includes('τραπεζοειδές') || n.includes('camps bay')) return POI_LIVE_CAMS["table-mountain"];
   if (n.includes('kruger') || n.includes('κρούγκερ') || n.includes('safari') || n.includes('σαφάρι')) return POI_LIVE_CAMS["kruger-safari"];

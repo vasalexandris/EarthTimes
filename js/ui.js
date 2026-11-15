@@ -4,10 +4,10 @@
  * Base Map Layer selector, Date display, Video Overlay, and Deep Dive views.
  */
 
-import { getCityVideo, getAvailableVideoTypes, getAvailableCityTours, CITY_VIDEOS, findPoiLiveCam } from './video-service.js?v=20261115_africa3';
-import { getDeepDiveData } from './deep-dive.js?v=20261115_africa3';
-import { fetchWikiArticle, fetchWikiArticleHtml, cleanWikiTitle } from './wiki-service.js?v=20261115_africa3';
-import { calculateSubsolarPoint } from './solar-terminator.js?v=20261115_africa3';
+import { getCityVideo, getAvailableVideoTypes, getAvailableCityTours, CITY_VIDEOS, findPoiLiveCam } from './video-service.js?v=20261115_africa4';
+import { getDeepDiveData } from './deep-dive.js?v=20261115_africa4';
+import { fetchWikiArticle, fetchWikiArticleHtml, cleanWikiTitle } from './wiki-service.js?v=20261115_africa4';
+import { calculateSubsolarPoint } from './solar-terminator.js?v=20261115_africa4';
 
 let currentActiveVideoCityId = null;
 let currentActiveVideoType = 'drone';
@@ -792,7 +792,7 @@ const COUNTRY_TIMEZONES = {
   'east-timor': 'Asia/Dili',
   'french-polynesia': 'Pacific/Tahiti',
   'new-caledonia': 'Pacific/Noumea',
-  'cook-islands': 'Pacific/Rarotonga'
+  'cook-islands': 'Pacific/Rarotonga',
   'benin': 'Africa/Porto-Novo',
   'togo': 'Africa/Lome',
   'burkina-faso': 'Africa/Ouagadougou',
