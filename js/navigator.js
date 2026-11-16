@@ -1,4 +1,4 @@
-import { US_STATES, CITY_TO_STATE } from './states-data.js?v=20261116_asia3';
+import { US_STATES, CITY_TO_STATE } from './states-data.js?v=20261116_batch4';
 /**
  * Navigator Module
  * Hierarchical Cascading Navigation: Continents -> Countries -> Cities
@@ -33,7 +33,7 @@ export const CONTINENTS_DATA = [
         name: 'Γαλλία',
         flag: '🇫🇷',
         cities: [
-          { id: 'paris', name: 'Παρίσι', badge: 'Πρωτεύουσα' },
+          { id: 'paris', name: 'Παρίσι' },
           { id: 'marseille', name: 'Μασσαλία' },
           { id: 'lyon', name: 'Λυών' },
           { id: 'nice', name: 'Νίκαια' },
@@ -42,7 +42,22 @@ export const CONTINENTS_DATA = [
           { id: 'toulouse', name: 'Τουλούζη' },
           { id: 'lille', name: 'Λιλ' },
           { id: 'nantes', name: 'Νάντη' },
-          { id: 'montpellier', name: 'Μονπελιέ' }
+          { id: 'montpellier', name: 'Μονπελιέ' },
+          { id: 'rennes', name: 'Ρεν' },
+          { id: 'reims', name: 'Ρενς' },
+          { id: 'rouen', name: 'Ρουέν' },
+          { id: 'avignon', name: 'Αβινιόν' },
+          { id: 'dijon', name: 'Ντιζόν' },
+          { id: 'grenoble', name: 'Γκρενόμπλ' },
+          { id: 'toulon', name: 'Τουλόν' },
+          { id: 'angers', name: 'Ανζέ' },
+          { id: 'cannes', name: 'Κάννες' },
+          { id: 'carcassonne', name: 'Καρκασόν' },
+          { id: 'tours', name: 'Τουρ' },
+          { id: 'clermont-ferrand', name: 'Κλερμόν-Φεράν' },
+          { id: 'aix-en-provence', name: 'Εξ-αν-Προβάνς' },
+          { id: 'metz', name: 'Μετς' },
+          { id: 'le-havre', name: 'Χάβρη' }
         ]
       },
       {
@@ -50,7 +65,7 @@ export const CONTINENTS_DATA = [
         name: 'Ιταλία',
         flag: '🇮🇹',
         cities: [
-          { id: 'rome', name: 'Ρώμη', badge: 'Πρωτεύουσα' },
+          { id: 'rome', name: 'Ρώμη' },
           { id: 'florence', name: 'Φλωρεντία' },
           { id: 'milan', name: 'Μιλάνο' },
           { id: 'venice', name: 'Βενετία' },
@@ -59,7 +74,22 @@ export const CONTINENTS_DATA = [
           { id: 'turin', name: 'Τορίνο' },
           { id: 'verona', name: 'Βερόνα' },
           { id: 'palermo', name: 'Παλέρμο' },
-          { id: 'genoa', name: 'Γένοβα' }
+          { id: 'genoa', name: 'Γένοβα' },
+          { id: 'catania', name: 'Κατάνια' },
+          { id: 'bari', name: 'Μπάρι' },
+          { id: 'pisa', name: 'Πίζα' },
+          { id: 'padua', name: 'Πάντοβα' },
+          { id: 'trieste', name: 'Τεργέστη' },
+          { id: 'siena', name: 'Σιένα' },
+          { id: 'cagliari', name: 'Κάλιαρι' },
+          { id: 'parma', name: 'Πάρμα' },
+          { id: 'perugia', name: 'Περούτζια' },
+          { id: 'ravenna', name: 'Ραβέννα' },
+          { id: 'bergamo', name: 'Μπέργκαμο' },
+          { id: 'salerno', name: 'Σαλέρνο' },
+          { id: 'reggio-calabria', name: 'Ρέτζιο Καλάβρια' },
+          { id: 'ferrara', name: 'Φερράρα' },
+          { id: 'lecce', name: 'Λέτσε' }
         ]
       },
       {
@@ -67,7 +97,7 @@ export const CONTINENTS_DATA = [
         name: 'Γερμανία',
         flag: '🇩🇪',
         cities: [
-          { id: 'berlin', name: 'Βερολίνο', badge: 'Πρωτεύουσα' },
+          { id: 'berlin', name: 'Βερολίνο' },
           { id: 'munich', name: 'Μόναχο' },
           { id: 'hamburg', name: 'Αμβούργο' },
           { id: 'frankfurt', name: 'Φρανκφούρτη' },
@@ -76,7 +106,22 @@ export const CONTINENTS_DATA = [
           { id: 'dusseldorf', name: 'Ντίσελντορφ' },
           { id: 'leipzig', name: 'Λειψία' },
           { id: 'dresden', name: 'Δρέσδη' },
-          { id: 'nuremberg', name: 'Νυρεμβέργη' }
+          { id: 'nuremberg', name: 'Νυρεμβέργη' },
+          { id: 'dortmund', name: 'Ντόρτμουντ' },
+          { id: 'bremen', name: 'Βρέμη' },
+          { id: 'hannover', name: 'Αννόβερο' },
+          { id: 'heidelberg', name: 'Χαϊδελβέργη' },
+          { id: 'bonn', name: 'Βόννη' },
+          { id: 'potsdam', name: 'Πότσνταμ' },
+          { id: 'augsburg', name: 'Άουγκσμπουργκ' },
+          { id: 'freiburg', name: 'Φράιμπουργκ' },
+          { id: 'lubeck', name: 'Λίμπεκ' },
+          { id: 'rostock', name: 'Ρόστοκ' },
+          { id: 'aachen', name: 'Άαχεν' },
+          { id: 'munster', name: 'Μύνστερ' },
+          { id: 'karlsruhe', name: 'Καρλσρούη' },
+          { id: 'wurzburg', name: 'Βύρτσμπουργκ' },
+          { id: 'erfurt', name: 'Έρφουρτ' }
         ]
       },
       {
@@ -2622,8 +2667,16 @@ export const CONTINENTS_DATA = [
         name: 'Αφγανιστάν',
         flag: '🇦🇫',
         cities: [
-          { id: 'kabul', name: 'Καμπούλ', badge: 'Πρωτεύουσα' },
-          { id: 'herat', name: 'Χεράτ' }
+          { id: 'kabul', name: 'Καμπούλ' },
+          { id: 'herat', name: 'Χεράτ' },
+          { id: 'mazar-i-sharif', name: 'Μαζάρ-ι-Σαρίφ' },
+          { id: 'kandahar', name: 'Κανταχάρ' },
+          { id: 'jalalabad', name: 'Τζαλαλαμπάντ' },
+          { id: 'kunduz', name: 'Κουντούζ' },
+          { id: 'bamyan', name: 'Μπαμιάν' },
+          { id: 'ghazni', name: 'Γκάζνι' },
+          { id: 'balkh', name: 'Μπαλχ' },
+          { id: 'khost', name: 'Χοστ' }
         ]
       },
       {
@@ -2665,8 +2718,16 @@ export const CONTINENTS_DATA = [
         name: 'Συρία',
         flag: '🇸🇾',
         cities: [
-          { id: 'damascus', name: 'Δαμασκός', badge: 'Πρωτεύουσα' },
-          { id: 'aleppo', name: 'Χαλέπι' }
+          { id: 'damascus', name: 'Δαμασκός' },
+          { id: 'aleppo', name: 'Χαλέπι' },
+          { id: 'homs', name: 'Χομς' },
+          { id: 'latakia', name: 'Λατάκεια' },
+          { id: 'hama', name: 'Χάμα' },
+          { id: 'tartus', name: 'Ταρτούς' },
+          { id: 'palmyra', name: 'Παλμύρα' },
+          { id: 'deir-ez-zor', name: 'Ντέιρ εζ-Ζορ' },
+          { id: 'bosra', name: 'Μπόσρα' },
+          { id: 'as-suwayda', name: 'Ας-Σουγουάιντα' }
         ]
       },
       {
@@ -2827,8 +2888,16 @@ export const CONTINENTS_DATA = [
         name: 'Γεωργία',
         flag: '🇬🇪',
         cities: [
-          { id: 'tbilisi', name: 'Τιφλίδα', badge: 'Πρωτεύουσα' },
-          { id: 'batumi', name: 'Μπατούμι' }
+          { id: 'tbilisi', name: 'Τιφλίδα' },
+          { id: 'batumi', name: 'Μπατούμι' },
+          { id: 'kutaisi', name: 'Κουτάισι' },
+          { id: 'mtskheta', name: 'Μτσχέτα' },
+          { id: 'gori', name: 'Γκόρι' },
+          { id: 'rustavi', name: 'Ρουστάβι' },
+          { id: 'zugdidi', name: 'Ζουγκντίντι' },
+          { id: 'telavi', name: 'Τελάβι' },
+          { id: 'akhaltsikhe', name: 'Αχαλτσίχε' },
+          { id: 'sighnaghi', name: 'Σιγνάγκι' }
         ]
       },
       {
@@ -2836,8 +2905,16 @@ export const CONTINENTS_DATA = [
         name: 'Αρμενία',
         flag: '🇦🇲',
         cities: [
-          { id: 'yerevan', name: 'Ερεβάν', badge: 'Πρωτεύουσα' },
-          { id: 'gyumri', name: 'Γκιουμρί' }
+          { id: 'yerevan', name: 'Ερεβάν' },
+          { id: 'gyumri', name: 'Γκιουμρί' },
+          { id: 'vanadzor', name: 'Βανατζόρ' },
+          { id: 'vagharshapat', name: 'Βαγαρσαπάτ' },
+          { id: 'dilijan', name: 'Ντιλιτζάν' },
+          { id: 'goris', name: 'Γκορίς' },
+          { id: 'kapan', name: 'Καπάν' },
+          { id: 'sevan', name: 'Σεβάν' },
+          { id: 'tsaghkadzor', name: 'Τσαχκαντζόρ' },
+          { id: 'jermuk', name: 'Τζερμούκ' }
         ]
       },
       {
@@ -2845,8 +2922,16 @@ export const CONTINENTS_DATA = [
         name: 'Αζερμπαϊτζάν',
         flag: '🇦🇿',
         cities: [
-          { id: 'baku', name: 'Μπακού', badge: 'Πρωτεύουσα' },
-          { id: 'ganja', name: 'Γκαντζά' }
+          { id: 'baku', name: 'Μπακού' },
+          { id: 'ganja', name: 'Γκάντζα' },
+          { id: 'sumqayit', name: 'Σουμγκαγίτ' },
+          { id: 'sheki', name: 'Σέκι' },
+          { id: 'gabala', name: 'Γκαμπάλα' },
+          { id: 'shusha', name: 'Σούσα' },
+          { id: 'lankaran', name: 'Λανκαράν' },
+          { id: 'mingachevir', name: 'Μινγκατσεβίρ' },
+          { id: 'quba', name: 'Κούμπα' },
+          { id: 'nakhchivan', name: 'Ναχιτσεβάν' }
         ]
       },
       {
@@ -2905,8 +2990,16 @@ export const CONTINENTS_DATA = [
         name: 'Τατζικιστάν',
         flag: '🇹🇯',
         cities: [
-          { id: 'dushanbe', name: 'Ντουσαμπέ', badge: 'Πρωτεύουσα' },
-          { id: 'khujand', name: 'Χουτζάντ' }
+          { id: 'dushanbe', name: 'Ντουσαμπέ' },
+          { id: 'khujand', name: 'Χουτζάντ' },
+          { id: 'bokhtar', name: 'Μποχτάρ' },
+          { id: 'kulob', name: 'Κουλόμπ' },
+          { id: 'panjakent', name: 'Παντζακέντ' },
+          { id: 'khorog', name: 'Χορόγκ' },
+          { id: 'istaravshan', name: 'Ισταραβσάν' },
+          { id: 'nurek', name: 'Νουρέκ' },
+          { id: 'tursunzoda', name: 'Τουρσουνζόντα' },
+          { id: 'murghab', name: 'Μουργκάμπ' }
         ]
       },
       {
@@ -2914,8 +3007,16 @@ export const CONTINENTS_DATA = [
         name: 'Τουρκμενιστάν',
         flag: '🇹🇲',
         cities: [
-          { id: 'ashgabat', name: 'Ασγκαμπάτ', badge: 'Πρωτεύουσα' },
-          { id: 'turkmenabat', name: 'Τουρκμεναμπάτ' }
+          { id: 'ashgabat', name: 'Ασγκαμπάτ' },
+          { id: 'turkmenabat', name: 'Τουρκμεναμπάτ' },
+          { id: 'mary', name: 'Μέρι' },
+          { id: 'turkmenbashi', name: 'Τουρκμενμπασί' },
+          { id: 'dashoguz', name: 'Ντασογκούζ' },
+          { id: 'balkanabat', name: 'Μπαλκαναμπάτ' },
+          { id: 'konye-urgench', name: 'Κούνια-Ουργκέντς' },
+          { id: 'derweze', name: 'Ντερβέζε' },
+          { id: 'serdar', name: 'Σερντάρ' },
+          { id: 'annau', name: 'Ανάου' }
         ]
       }
     ]

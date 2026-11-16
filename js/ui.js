@@ -4,10 +4,10 @@
  * Base Map Layer selector, Date display, Video Overlay, and Deep Dive views.
  */
 
-import { getCityVideo, getAvailableVideoTypes, getAvailableCityTours, CITY_VIDEOS, findPoiLiveCam } from './video-service.js?v=20261116_asia3';
-import { getDeepDiveData } from './deep-dive.js?v=20261116_asia3';
-import { fetchWikiArticle, fetchWikiArticleHtml, cleanWikiTitle } from './wiki-service.js?v=20261116_asia3';
-import { calculateSubsolarPoint } from './solar-terminator.js?v=20261116_asia3';
+import { getCityVideo, getAvailableVideoTypes, getAvailableCityTours, CITY_VIDEOS, findPoiLiveCam } from './video-service.js?v=20261116_batch4';
+import { getDeepDiveData } from './deep-dive.js?v=20261116_batch4';
+import { fetchWikiArticle, fetchWikiArticleHtml, cleanWikiTitle } from './wiki-service.js?v=20261116_batch4';
+import { calculateSubsolarPoint } from './solar-terminator.js?v=20261116_batch4';
 
 let currentActiveVideoCityId = null;
 let currentActiveVideoType = 'drone';
@@ -850,6 +850,61 @@ const COUNTRY_TIMEZONES = {
   iran: 'Asia/Tehran',
   iraq: 'Asia/Baghdad',
   israel: 'Asia/Jerusalem',
+  afghanistan: 'Asia/Kabul',
+  andorra: 'Europe/Andorra',
+  'antigua-and-barbuda': 'America/Antigua',
+  armenia: 'Asia/Yerevan',
+  azerbaijan: 'Asia/Baku',
+  bahamas: 'America/Nassau',
+  bahrain: 'Asia/Bahrain',
+  barbados: 'America/Barbados',
+  belarus: 'Europe/Minsk',
+  belize: 'America/Belize',
+  bosnia: 'Europe/Sarajevo',
+  brunei: 'Asia/Brunei',
+  'costa-rica': 'America/Costa_Rica',
+  cuba: 'America/Havana',
+  dominica: 'America/Dominica',
+  'dominican-republic': 'America/Santo_Domingo',
+  'el-salvador': 'America/El_Salvador',
+  estonia: 'Europe/Tallinn',
+  georgia: 'Asia/Tbilisi',
+  grenada: 'America/Grenada',
+  guatemala: 'America/Guatemala',
+  haiti: 'America/Port-au-Prince',
+  honduras: 'America/Tegucigalpa',
+  iceland: 'Atlantic/Reykjavik',
+  jamaica: 'America/Jamaica',
+  kuwait: 'Asia/Kuwait',
+  latvia: 'Europe/Riga',
+  liechtenstein: 'Europe/Vaduz',
+  lithuania: 'Europe/Vilnius',
+  luxembourg: 'Europe/Luxembourg',
+  maldives: 'Indian/Maldives',
+  malta: 'Europe/Malta',
+  moldova: 'Europe/Chisinau',
+  monaco: 'Europe/Monaco',
+  montenegro: 'Europe/Podgorica',
+  nicaragua: 'America/Managua',
+  'north-korea': 'Asia/Pyongyang',
+  'north-macedonia': 'Europe/Skopje',
+  palestine: 'Asia/Gaza',
+  panama: 'America/Panama',
+  'saint-kitts-and-nevis': 'America/St_Kitts',
+  'saint-lucia': 'America/St_Lucia',
+  'saint-vincent-and-the-grenadines': 'America/St_Vincent',
+  'san-marino': 'Europe/San_Marino',
+  singapore: 'Asia/Singapore',
+  slovakia: 'Europe/Bratislava',
+  slovenia: 'Europe/Ljubljana',
+  syria: 'Asia/Damascus',
+  tajikistan: 'Asia/Dushanbe',
+  'trinidad-and-tobago': 'America/Port_of_Spain',
+  turkmenistan: 'Asia/Ashgabat',
+  usa: 'America/New_York',
+  vatican: 'Europe/Vatican',
+  yemen: 'Asia/Aden',
+
 };
 
 const US_STATE_TIMEZONES = {
@@ -941,7 +996,7 @@ export function getEntityLocalTime(entity, entityType = 'city') {
   const lat = (coords && typeof coords[0] === 'number') ? coords[0] : 0;
   const lng = (coords && typeof coords[1] === 'number') ? coords[1] : 0;
 
-  let tz = entity.timeZone || entity.timezone;
+  let tz = entity.timeZone || entity.timezone || (entity.stats && (entity.stats.timeZone || entity.stats.timezone));
   let iana = null;
   if (tz) {
     const m = tz.match(/\(([^)]+)\)/);
@@ -955,7 +1010,10 @@ export function getEntityLocalTime(entity, entityType = 'city') {
   // Fallback to Country / State lookup if direct IANA timezone not specified
   if (!iana) {
     const sId = entity._stateId || entity.stateId;
-    const cId = entity._countryId || entity.countryId || entity.id;
+    let cId = entity._countryId || entity.countryId;
+    if (!cId && entityType === 'country') {
+      cId = entity.id;
+    }
     if (sId && US_STATE_TIMEZONES[sId]) {
       iana = US_STATE_TIMEZONES[sId];
     } else if (cId && COUNTRY_TIMEZONES[cId]) {
@@ -1003,9 +1061,9 @@ export function getEntityLocalTime(entity, entityType = 'city') {
       const targetMs = utcMs + (offset * 3600000);
       const localDate = new Date(targetMs);
 
-      const hh = String(localDate.getHours()).padStart(2, '0');
-      const mm = String(localDate.getMinutes()).padStart(2, '0');
-      const ss = String(localDate.getSeconds()).padStart(2, '0');
+      const hh = String(localDate.getUTCHours()).padStart(2, '0');
+      const mm = String(localDate.getUTCMinutes()).padStart(2, '0');
+      const ss = String(localDate.getUTCSeconds()).padStart(2, '0');
       timeStr = `${hh}:${mm}`;
       secStr = ss;
 
@@ -1646,14 +1704,27 @@ export function getCuratedGastroItems(entity) {
     return entity.gastro.items;
   }
   if (entity.gastro?.specialties && Array.isArray(entity.gastro.specialties) && entity.gastro.specialties.length > 0) {
-    return entity.gastro.specialties.map(s => ({
-      title: s.name || s.title || '',
-      cat: 'recipe',
-      catLabel: `🍽️ ${s.type || 'Γαστρονομία'}`,
-      tag: 'Παραδοσιακό',
-      desc: s.description || s.desc || '',
-      wiki: s.name || ''
-    }));
+    return entity.gastro.specialties.map(s => {
+      if (typeof s === 'string') {
+        const m = s.match(/^(.*?)\s*\((.*?)\)$/);
+        return {
+          title: m ? m[1].trim() : s,
+          cat: 'recipe',
+          catLabel: '🍽️ Γαστρονομία',
+          tag: 'Παραδοσιακό',
+          desc: m ? m[2].trim() : (entity.gastro.culture || s),
+          wiki: m ? m[1].trim() : s
+        };
+      }
+      return {
+        title: s.name || s.title || '',
+        cat: 'recipe',
+        catLabel: `🍽️ ${s.type || 'Γαστρονομία'}`,
+        tag: 'Παραδοσιακό',
+        desc: s.description || s.desc || '',
+        wiki: s.name || ''
+      };
+    });
   }
   if (entity.cuisine && Array.isArray(entity.cuisine) && entity.cuisine.length > 0) {
     return entity.cuisine.map(c => typeof c === 'object' ? {
