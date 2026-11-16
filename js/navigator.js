@@ -1,4 +1,4 @@
-import { US_STATES, CITY_TO_STATE } from './states-data.js?v=20261116_asia2';
+import { US_STATES, CITY_TO_STATE } from './states-data.js?v=20261116_asia3';
 /**
  * Navigator Module
  * Hierarchical Cascading Navigation: Continents -> Countries -> Cities
@@ -2631,9 +2631,16 @@ export const CONTINENTS_DATA = [
         name: 'Ιράν',
         flag: '🇮🇷',
         cities: [
-          { id: 'tehran', name: 'Τεχεράνη', badge: 'Πρωτεύουσα' },
-          { id: 'isfahan', name: 'Ισφαχάν' },
-          { id: 'shiraz', name: 'Σιράζ' }
+          { id: 'tehran', name: 'Τεχεράνη', badge: 'Πρωτεύουσα · Παλάτι Golestan UNESCO · Πύργος Azadi' },
+          { id: 'isfahan', name: 'Ισφαχάν', badge: '«Το Ήμισυ του Κόσμου» · Πλατεία Naqsh-e Jahan UNESCO · Γέφυρα Si-o-se-pol' },
+          { id: 'shiraz', name: 'Σιράζ', badge: 'Πόλη των Ποιητών Χαφέζ & Σααντί · Κήποι · Περσέπολη UNESCO' },
+          { id: 'tabriz', name: 'Ταμπρίζ', badge: 'Ιστορικό Μεγάλο Σκεπαστό Παζάρι UNESCO · Μπλε Τζαμί' },
+          { id: 'yazd', name: 'Γιαζντ', badge: 'Πύργοι του Ανέμου Badgirs · Ζωροαστρικοί Πύργοι της Σιωπής UNESCO' },
+          { id: 'mashhad', name: 'Μασχάντ', badge: 'Ιερή Πόλη · Τέμενος Ιμάμη Ρεζά · Πύλη του Χορασάν' },
+          { id: 'kashan', name: 'Κασάν', badge: 'Περσικός Κήπος Fin UNESCO · Ροδόνερο · Ιστορικές Κατοικίες' },
+          { id: 'kerman', name: 'Κερμάν', badge: 'Ιστορικό Συγκρότημα Ganjali Khan · Πύλη της Ερήμου Λουτ' },
+          { id: 'ahvaz', name: 'Αχβάζ', badge: 'Πόλη των Γεφυρών · Ποταμός Karun · Αρχαία Σούσα' },
+          { id: 'kish', name: 'Κις', badge: 'Ελεύθερη Ζώνη · Κοραλλιογενείς Ακτές · Περσικός Κόλπος' }
         ]
       },
       {
@@ -2641,8 +2648,16 @@ export const CONTINENTS_DATA = [
         name: 'Ιράκ',
         flag: '🇮🇶',
         cities: [
-          { id: 'baghdad', name: 'Βαγδάτη', badge: 'Πρωτεύουσα' },
-          { id: 'erbil', name: 'Ερμπίλ' }
+          { id: 'baghdad', name: 'Βαγδάτη', badge: 'Ιστορική Πρωτεύουσα των Αββασιδών & «Στρογγυλή Πόλη» στον Τίγρη' },
+          { id: 'basra', name: 'Βασόρα', badge: 'Η Βενετία της Ανατολής & Μεγάλο Λιμάνι στο Σατ αλ-Άραμπ' },
+          { id: 'erbil', name: 'Ερμπίλ', badge: 'Αρχαία Ακρόπολη UNESCO, Συνεχώς Κατοικημένη για 6.000 Χρόνια' },
+          { id: 'mosul', name: 'Μοσούλη', badge: 'Ιστορική Πόλη Απέναντι από την Αρχαία Νινευή & Τέμενος Al-Nuri' },
+          { id: 'najaf', name: 'Νατζάφ', badge: 'Ιερή Πόλη & Τέμενος Ιμάμη Αλί με το Χρυσό Τρούλο' },
+          { id: 'karbala', name: 'Κερμπάλα', badge: 'Ιερός Τόπος του Σιιτισμού & Τέμενος Ιμάμη Χουσεΐν' },
+          { id: 'hillah', name: 'Χίλα', badge: 'Η Πόλη δίπλα στα Ερείπια της Αρχαίας Βαβυλώνας UNESCO' },
+          { id: 'sulaymaniyah', name: 'Σουλεϊμανίγια', badge: 'Η Πολιτιστική Πρωτεύουσα του Ιρακινού Κουρδιστάν' },
+          { id: 'samarra', name: 'Σαμάρα', badge: 'Αρχαία Πρωτεύουσα των Αββασιδών & Ελικοειδής Μιναρές Malwiya UNESCO' },
+          { id: 'nasiriyah', name: 'Νασιρίγια', badge: 'Η Πόλη του Μεγάλου Ζιγκουράτ της Ουρ των Σουμερίων' }
         ]
       },
       {
@@ -2676,8 +2691,16 @@ export const CONTINENTS_DATA = [
         name: 'Ισραήλ',
         flag: '🇮🇱',
         cities: [
-          { id: 'jerusalem', name: 'Ιερουσαλήμ', badge: 'Πρωτεύουσα' },
-          { id: 'tel-aviv', name: 'Τελ Αβίβ' }
+          { id: 'jerusalem', name: 'Ιερουσαλήμ', badge: 'Η Ιερή Πόλη Τριών Θρησκειών, Δυτικό Τείχος & Ναός της Αναστάσεως UNESCO' },
+          { id: 'tel-aviv', name: 'Τελ Αβίβ', badge: 'Η Λευκή Πόλη του Bauhaus UNESCO, Παραλιακή Κορνίς & Silicon Wadi' },
+          { id: 'haifa', name: 'Χάιφα', badge: 'Η Πόλη του Όρους Κάρμηλος & Κρεμαστοί Κήποι των Μπαχάι UNESCO' },
+          { id: 'nazareth', name: 'Ναζαρέτ', badge: 'Η Πόλη του Ευαγγελισμού & Ιστορικό Παζάρι της Γαλιλαίας' },
+          { id: 'eilat', name: 'Εϊλάτ', badge: 'Το Νότιο Θέρετρο στην Ερυθρά Θάλασσα & Κοραλλιογενής Ύφαλος' },
+          { id: 'tiberias', name: 'Τιβεριάδα', badge: 'Ιστορική Πόλη στις Όχθες της Θάλασσας της Γαλιλαίας (Κινέρετ)' },
+          { id: 'acre', name: 'Άκρα (Ακκό)', badge: 'Η Σταυροφορική & Οθωμανική Τειχισμένη Πόλη-Λιμάνι UNESCO' },
+          { id: 'beersheba', name: 'Μπερ Σεβά', badge: 'Η Πρωτεύουσα της Ερήμου Νεγκέβ & Πηγάδι του Αβραάμ' },
+          { id: 'caesarea', name: 'Καισάρεια', badge: 'Το Ρωμαϊκό Λιμάνι του Ηρώδη, Υδραγωγείο & Αρχαίο Θέατρο' },
+          { id: 'netanya', name: 'Νετάνια', badge: 'Η «Ριβιέρα του Ισραήλ» με Χρυσές Αμμουδιές' }
         ]
       },
       {
@@ -2711,9 +2734,16 @@ export const CONTINENTS_DATA = [
         name: 'Σαουδική Αραβία',
         flag: '🇸🇦',
         cities: [
-          { id: 'riyadh', name: 'Ριάντ', badge: 'Πρωτεύουσα' },
-          { id: 'jeddah', name: 'Τζέντα' },
-          { id: 'mecca', name: 'Μέκκα' }
+          { id: 'riyadh', name: 'Ριάντ', badge: 'Πρωτεύουσα & Οικονομικό Κέντρο' },
+          { id: 'jeddah', name: 'Τζέντα', badge: 'Δεύτερη Πόλη & Λιμάνι Χατζ' },
+          { id: 'mecca', name: 'Μέκκα', badge: 'Πνευματικό Κέντρο του Ισλάμ' },
+          { id: 'medina', name: 'Μεδίνα', badge: 'Δεύτερη Ιερή Πόλη του Ισλάμ' },
+          { id: 'dammam', name: 'Νταμάμ', badge: 'Λιμάνι & Ενεργειακό Κέντρο' },
+          { id: 'alula', name: 'Αλ-Ούλα', badge: 'Αρχαιολογικό Μνημείο UNESCO' },
+          { id: 'taif', name: 'Ταΐφ', badge: 'Καλοκαιρινή Πρωτεύουσα & Κήπος Ρόδων' },
+          { id: 'abha', name: 'Άμπχα', badge: 'Πρωτεύουσα Περιφέρειας Ασίρ' },
+          { id: 'tabuk', name: 'Ταμπούκ', badge: 'Πύλη του Neom & Βόρεια Πρωτεύουσα' },
+          { id: 'al-khobar', name: 'Αλ-Χομπάρ', badge: 'Παράκτια Μητρόπολη του Αραβικού Κόλπου' }
         ]
       },
       {
@@ -2721,9 +2751,16 @@ export const CONTINENTS_DATA = [
         name: 'ΗΑΕ',
         flag: '🇦🇪',
         cities: [
-          { id: 'abu-dhabi', name: 'Άμπου Ντάμπι', badge: 'Πρωτεύουσα' },
-          { id: 'dubai', name: 'Ντουμπάι', badge: 'Μητρόπολη' },
-          { id: 'sharjah', name: 'Σάρτζα' }
+          { id: 'dubai', name: 'Ντουμπάι', badge: 'Παγκόσμια Μητρόπολη & Κόμβος Εμπορίου' },
+          { id: 'abu-dhabi', name: 'Άμπου Ντάμπι', badge: 'Ομοσπονδιακή Πρωτεύουσα' },
+          { id: 'sharjah', name: 'Σάρτζα', badge: 'Πολιτιστική Πρωτεύουσα UNESCO' },
+          { id: 'al-ain', name: 'Αλ Αΐν', badge: 'Πόλη-Κήπος & Μνημείο UNESCO' },
+          { id: 'ajman', name: 'Ατζμάν', badge: 'Πρωτεύουσα Εμιράτου & Ναυπηγείο' },
+          { id: 'ras-al-khaimah', name: 'Ρας Αλ Χαϊμά', badge: 'Βόρειο Εμιράτο & Βουνό' },
+          { id: 'fujairah', name: 'Φουτζέιρα', badge: 'Πρωτεύουσα Ανατολικής Ακτής' },
+          { id: 'umm-al-quwain', name: 'Ουμ Αλ Κουγουέιν', badge: 'Πρωτεύουσα Εμιράτου & Λιμνοθάλασσα' },
+          { id: 'khor-fakkan', name: 'Χορ Φακάν', badge: 'Παράκτιος Θύλακας της Σάρτζας' },
+          { id: 'hatta', name: 'Χάτα', badge: 'Ορεινή Όαση του Ντουμπάι' }
         ]
       },
       {
@@ -2731,7 +2768,16 @@ export const CONTINENTS_DATA = [
         name: 'Κατάρ',
         flag: '🇶🇦',
         cities: [
-          { id: 'doha', name: 'Ντόχα', badge: 'Πρωτεύουσα' }
+          { id: 'doha', name: 'Ντόχα', badge: 'Πρωτεύουσα & Πολιτιστικό Κέντρο' },
+          { id: 'al-wakrah', name: 'Αλ Ουάκρα', badge: 'Ιστορικό Λιμάνι & Παράκτια Πόλη' },
+          { id: 'al-khor', name: 'Αλ Χορ', badge: 'Βόρειο Παράκτιο Λιμάνι' },
+          { id: 'lusail', name: 'Λουσαΐλ', badge: 'Έξυπνη Πόλη του Μέλλοντος' },
+          { id: 'al-rayyan', name: 'Αλ Ραγιάν', badge: 'Πανεπιστημιακή Πόλη & Φρούρια' },
+          { id: 'madinat-ash-shamal', name: 'Μαντινάτ Ας Σαμάλ', badge: 'Βόρειο Άκρο του Κατάρ' },
+          { id: 'umm-salal', name: 'Ουμ Σαλάλ', badge: 'Ιστορικοί Πύργοι Barzan' },
+          { id: 'mesaieed', name: 'Μουσαϊίντ', badge: 'Βιομηχανικό Κέντρο & Εσωτερική Θάλασσα' },
+          { id: 'dukhan', name: 'Ντουχάν', badge: 'Πρώτη Πετρελαιοπηγή του Κατάρ' },
+          { id: 'al-zubarah', name: 'Αλ Ζουμπάρα', badge: 'UNESCO Μνημείο 18ου Αιώνα' }
         ]
       },
       {
@@ -2808,8 +2854,16 @@ export const CONTINENTS_DATA = [
         name: 'Καζακστάν',
         flag: '🇰🇿',
         cities: [
-          { id: 'astana', name: 'Αστανά', badge: 'Πρωτεύουσα' },
-          { id: 'almaty', name: 'Αλμάτι' }
+          { id: 'astana', name: 'Αστανά', badge: 'Το Όραμα της Στέπας' },
+          { id: 'almaty', name: 'Αλμάτι', badge: 'Η Πόλη των Μήλων' },
+          { id: 'shymkent', name: 'Σιμκέντ', badge: 'Η Πολιτιστική Μητρόπολη του Νότου' },
+          { id: 'aktau', name: 'Ακτάου', badge: 'Το Λιμάνι της Κασπίας' },
+          { id: 'atyrau', name: 'Ατιράου', badge: 'Η Πόλη στη Συμβολή Ευρώπης & Ασίας' },
+          { id: 'karaganda', name: 'Καραγκάντα', badge: 'Η Βιομηχανική Μητρόπολη της Στέπας' },
+          { id: 'aktobe', name: 'Ακτόμπε', badge: 'Η Δυτική Εμπορική Πύλη' },
+          { id: 'turkistan', name: 'Τουρκεστάν', badge: 'Η Πνευματική Πρωτεύουσα των Τουρκικών Εθνών' },
+          { id: 'oskemen', name: 'Οσκεμέν', badge: 'Η Πύλη της Οροσειράς Αλτάι' },
+          { id: 'pavlodar', name: 'Παβλοντάρ', badge: 'Η Βόρεια Πόλη στον Ποταμό Ιρτίς' }
         ]
       },
       {
@@ -2817,9 +2871,16 @@ export const CONTINENTS_DATA = [
         name: 'Ουζμπεκιστάν',
         flag: '🇺🇿',
         cities: [
-          { id: 'tashkent', name: 'Τασκένδη', badge: 'Πρωτεύουσα' },
-          { id: 'samarkand', name: 'Σαμαρκάνδη', badge: 'Δρόμος Μεταξιού' },
-          { id: 'bukhara', name: 'Μπουχάρα' }
+          { id: 'tashkent', name: 'Τασκένδη', badge: 'Η Πέτρινη Πόλη των Σιντριβανιών' },
+          { id: 'samarkand', name: 'Σαμαρκάνδη', badge: 'Το Γαλάζιο Μαργαριτάρι της Ανατολής' },
+          { id: 'bukhara', name: 'Μπουχάρα', badge: 'Η Ευγενής Πόλη των Καραβανσεράι' },
+          { id: 'khiva', name: 'Χίβα', badge: 'Η Ζωντανή Μεσαιωνική Πόλη-Μουσείο' },
+          { id: 'nukus', name: 'Νουκούς', badge: 'Η Πρωτεύουσα της Καρακαλπακίας' },
+          { id: 'andijan', name: 'Αντιτζάν', badge: 'Η Γενέτειρα του Αυτοκράτορα Μπαμπούρ' },
+          { id: 'fergana', name: 'Φεργκάνα', badge: 'Η Πράσινη Πρωτεύουσα του Μεταξιού' },
+          { id: 'namangan', name: 'Ναμανγκάν', badge: 'Η Πόλη των Λουλουδιών & των Τεχνιτών' },
+          { id: 'termez', name: 'Τερμέζ', badge: 'Η Πύλη στον Ώξο Ποταμό' },
+          { id: 'shahrisabz', name: 'Σαχριζάμπζ', badge: 'Η Γενέτειρα του Ταμερλάνου' }
         ]
       },
       {
@@ -2827,8 +2888,16 @@ export const CONTINENTS_DATA = [
         name: 'Κιργιζία',
         flag: '🇰🇬',
         cities: [
-          { id: 'bishkek', name: 'Μπισκέκ', badge: 'Πρωτεύουσα' },
-          { id: 'osh', name: 'Ος' }
+          { id: 'bishkek', name: 'Μπισκέκ', badge: 'Η Πράσινη Πόλη κάτω από το Τιέν Σαν' },
+          { id: 'osh', name: 'Ος', badge: 'Η Νότια Πρωτεύουσα του Δρόμου του Μεταξιού' },
+          { id: 'karakol', name: 'Καρακόλ', badge: 'Η Ορεινή Πρωτεύουσα της Πεζοπορίας' },
+          { id: 'tokmok', name: 'Τοκμόκ', badge: 'Η Πύλη του Ιστορικού Μπαλασαγκούν' },
+          { id: 'cholpon-ata', name: 'Τσολπόν-Ατά', badge: 'Το Παραθεριστικό Κέντρο της Λίμνης Ισίκ-Κουλ' },
+          { id: 'naryn', name: 'Ναρίν', badge: 'Η Ορεινή Πύλη των Νομάδων' },
+          { id: 'jalal-abad', name: 'Τζαλάλ-Αμπάντ', badge: 'Η Πύλη του Δάσους Αγριοκαρυδιών' },
+          { id: 'talas', name: 'Ταλάς', badge: 'Η Κοιλάδα του Θρυλικού Μανάς' },
+          { id: 'balykchy', name: 'Μπαλικτσί', badge: 'Η Δυτική Πύλη της Λίμνης Ισίκ-Κουλ' },
+          { id: 'kochkor', name: 'Κοτσκόρ', badge: 'Το Κέντρο Παραδοσιακών Ταπήτων Shyrdak' }
         ]
       },
       {

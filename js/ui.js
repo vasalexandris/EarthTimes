@@ -4,10 +4,10 @@
  * Base Map Layer selector, Date display, Video Overlay, and Deep Dive views.
  */
 
-import { getCityVideo, getAvailableVideoTypes, getAvailableCityTours, CITY_VIDEOS, findPoiLiveCam } from './video-service.js?v=20261116_asia2';
-import { getDeepDiveData } from './deep-dive.js?v=20261116_asia2';
-import { fetchWikiArticle, fetchWikiArticleHtml, cleanWikiTitle } from './wiki-service.js?v=20261116_asia2';
-import { calculateSubsolarPoint } from './solar-terminator.js?v=20261116_asia2';
+import { getCityVideo, getAvailableVideoTypes, getAvailableCityTours, CITY_VIDEOS, findPoiLiveCam } from './video-service.js?v=20261116_asia3';
+import { getDeepDiveData } from './deep-dive.js?v=20261116_asia3';
+import { fetchWikiArticle, fetchWikiArticleHtml, cleanWikiTitle } from './wiki-service.js?v=20261116_asia3';
+import { calculateSubsolarPoint } from './solar-terminator.js?v=20261116_asia3';
 
 let currentActiveVideoCityId = null;
 let currentActiveVideoType = 'drone';
@@ -841,6 +841,15 @@ const COUNTRY_TIMEZONES = {
   jordan: 'Asia/Amman',
   oman: 'Asia/Muscat',
   lebanon: 'Asia/Beirut',
+  'saudi-arabia': 'Asia/Riyadh',
+  uae: 'Asia/Dubai',
+  qatar: 'Asia/Qatar',
+  uzbekistan: 'Asia/Tashkent',
+  kazakhstan: 'Asia/Almaty',
+  kyrgyzstan: 'Asia/Bishkek',
+  iran: 'Asia/Tehran',
+  iraq: 'Asia/Baghdad',
+  israel: 'Asia/Jerusalem',
 };
 
 const US_STATE_TIMEZONES = {
