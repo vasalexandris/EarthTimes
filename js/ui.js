@@ -4,10 +4,10 @@
  * Base Map Layer selector, Date display, Video Overlay, and Deep Dive views.
  */
 
-import { getCityVideo, getAvailableVideoTypes, getAvailableCityTours, CITY_VIDEOS, findPoiLiveCam } from './video-service.js?v=20261116_africa6';
-import { getDeepDiveData } from './deep-dive.js?v=20261116_africa6';
-import { fetchWikiArticle, fetchWikiArticleHtml, cleanWikiTitle } from './wiki-service.js?v=20261116_africa6';
-import { calculateSubsolarPoint } from './solar-terminator.js?v=20261116_africa6';
+import { getCityVideo, getAvailableVideoTypes, getAvailableCityTours, CITY_VIDEOS, findPoiLiveCam } from './video-service.js?v=20261116_africa7';
+import { getDeepDiveData } from './deep-dive.js?v=20261116_africa7';
+import { fetchWikiArticle, fetchWikiArticleHtml, cleanWikiTitle } from './wiki-service.js?v=20261116_africa7';
+import { calculateSubsolarPoint } from './solar-terminator.js?v=20261116_africa7';
 
 let currentActiveVideoCityId = null;
 let currentActiveVideoType = 'drone';
@@ -811,6 +811,18 @@ const COUNTRY_TIMEZONES = {
   somalia: 'Africa/Mogadishu',
   guinea: 'Africa/Conakry',
   'south-sudan': 'Africa/Juba',
+  'cape-verde': 'Atlantic/Cape_Verde',
+  gambia: 'Africa/Banjul',
+  'guinea-bissau': 'Africa/Bissau',
+  liberia: 'Africa/Monrovia',
+  'sierra-leone': 'Africa/Freetown',
+  'sao-tome-and-principe': 'Africa/Sao_Tome',
+  djibouti: 'Africa/Djibouti',
+  eritrea: 'Africa/Asmara',
+  burundi: 'Africa/Bujumbura',
+  comoros: 'Indian/Comoro',
+  eswatini: 'Africa/Mbabane',
+  lesotho: 'Africa/Maseru',
 };
 
 const US_STATE_TIMEZONES = {
@@ -1795,7 +1807,9 @@ export function renderTabContent(tabId, entity, activeYear = null, activeSpots =
   let html = '';
 
   if (tabId === 'geo') {
-    const summary = entity.geo?.summary || entity.geo?.description || entity.geo?.overview || entity.brief || '';
+    const summary = entity.geo?.summary || entity.geo?.description || entity.geo?.overview
+      || [entity.geo?.location, entity.geo?.topography, entity.geo?.climate].filter(Boolean).join(' ')
+      || entity.brief || '';
     const rawHighlights = entity.geo?.highlights || (Array.isArray(entity.highlights) ? entity.highlights.map(h => typeof h === 'object' ? { title: h.title || 'Ορόσημο', desc: h.desc || '' } : { title: String(h), desc: '' }) : []);
     const highlights = rawHighlights.map(item => ({
       title: item.title || item.name || 'Ορόσημο',
@@ -1831,8 +1845,11 @@ export function renderTabContent(tabId, entity, activeYear = null, activeSpots =
       </div>
     `;
   } else if (tabId === 'hist') {
-    const summary = entity.hist?.summary || entity.hist?.overview || entity.hist?.description || (typeof entity.history === 'string' ? entity.history : '') || '';
-    const rawHighlights = entity.hist?.highlights || entity.hist?.keyEvents || (Array.isArray(entity.history) ? entity.history : []);
+    const summary = entity.hist?.summary || entity.hist?.overview || entity.hist?.description
+      || (typeof entity.history === 'string' ? entity.history : '')
+      || [entity.hist?.founded, entity.hist?.keyEvent].filter(Boolean).join(' · ')
+      || '';
+    const rawHighlights = entity.hist?.highlights || entity.hist?.keyEvents || entity.hist?.timeline || (Array.isArray(entity.history) ? entity.history : []);
     const highlights = rawHighlights.map(h => ({
       year: String(h.year || ''),
       event: h.event || h.title || '',
@@ -1870,8 +1887,13 @@ export function renderTabContent(tabId, entity, activeYear = null, activeSpots =
       </div>
     `;
   } else if (tabId === 'demo') {
-    const summary = entity.demo?.summary || entity.demo?.overview || (entity.population ? `Πληθυσμός: ${entity.population}` : '');
-    const rawDetails = entity.demo?.details || (Array.isArray(entity.fastFacts) ? entity.fastFacts.map(f => typeof f === 'object' ? { label: f.label || 'Στοιχείο', text: f.value || f.text || '' } : { label: 'Στοιχείο', text: String(f) }) : []);
+    const summary = entity.demo?.summary || entity.demo?.overview || entity.demo?.demographics || (entity.population ? `Πληθυσμός: ${entity.population}` : '');
+    const rawDetails = entity.demo?.details
+      || [
+        entity.demo?.languages ? { label: 'Γλώσσες', text: entity.demo.languages } : null,
+        entity.demo?.demographics ? { label: 'Δημογραφία & Κοινωνία', text: entity.demo.demographics } : null
+      ].filter(Boolean)
+      || (Array.isArray(entity.fastFacts) ? entity.fastFacts.map(f => typeof f === 'object' ? { label: f.label || 'Στοιχείο', text: f.value || f.text || '' } : { label: 'Στοιχείο', text: String(f) }) : []);
     const details = rawDetails.map(d => ({ label: d.label || 'Στοιχείο', text: d.text || '' }));
     html = `
       <div class="space-y-3">
@@ -1895,8 +1917,11 @@ export function renderTabContent(tabId, entity, activeYear = null, activeSpots =
       </div>
     `;
   } else if (tabId === 'cult') {
-    const summary = entity.cult?.summary || entity.cult?.overview || (typeof entity.culture === 'string' ? entity.culture : '') || '';
-    const items = entity.cult?.items || [];
+    const summary = entity.cult?.summary || entity.cult?.overview
+      || (typeof entity.culture === 'string' ? entity.culture : '')
+      || [entity.cult?.traditions, entity.cult?.cuisine].filter(Boolean).join(' ')
+      || '';
+    const items = entity.cult?.items || entity.cult?.highlights || [];
     html = `
       <div class="space-y-3">
         <div class="p-3.5 bg-slate-800/50 rounded-xl border border-slate-700/60 text-slate-200">
@@ -2207,15 +2232,34 @@ export function renderTabContent(tabId, entity, activeYear = null, activeSpots =
             <i class="fa-solid fa-arrows-split-up-and-left text-amber-400"></i> Σύγκριση Εποχών: Τότε & Τώρα
           </h4>
           <div class="grid grid-cols-1 gap-2.5">
-            ${(entity.pastVsPresent || []).map((p, idx) => `
-              <div class="p-3 rounded-xl border ${idx === 0 ? 'bg-amber-950/20 border-amber-800/50' : 'bg-sky-950/20 border-sky-800/50'}">
-                <div class="flex items-center gap-2 font-black text-xs mb-1 ${idx === 0 ? 'text-amber-400' : 'text-sky-400'}">
-                  <i class="fa-solid ${idx === 0 ? 'fa-scroll' : 'fa-building-columns'}"></i>
+            ${(() => {
+              const pvp = entity.pastVsPresent;
+              let items = [];
+              if (Array.isArray(pvp)) {
+                items = pvp.map(p => ({ epoch: p.epoch, content: p.content }));
+              } else if (pvp && typeof pvp === 'object') {
+                if (pvp.past) items.push({ epoch: 'Τότε', content: pvp.past });
+                if (pvp.present) items.push({ epoch: 'Σήμερα', content: pvp.present });
+                if (pvp.comparison) items.push({ epoch: 'Η Εξέλιξη', content: pvp.comparison });
+              }
+              const styles = [
+                { box: 'bg-amber-950/20 border-amber-800/50', text: 'text-amber-400', icon: 'fa-scroll' },
+                { box: 'bg-sky-950/20 border-sky-800/50', text: 'text-sky-400', icon: 'fa-building-columns' },
+                { box: 'bg-emerald-950/20 border-emerald-800/50', text: 'text-emerald-400', icon: 'fa-chart-line' }
+              ];
+              return items.map((p, idx) => {
+                const s = styles[idx] || styles[1];
+                return `
+              <div class="p-3 rounded-xl border ${s.box}">
+                <div class="flex items-center gap-2 font-black text-xs mb-1 ${s.text}">
+                  <i class="fa-solid ${s.icon}"></i>
                   <span>${p.epoch}</span>
                 </div>
                 <p class="text-xs text-slate-300 leading-relaxed">${p.content}</p>
               </div>
-            `).join('')}
+            `;
+              }).join('');
+            })()}
           </div>
         </div>
       </div>

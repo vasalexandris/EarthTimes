@@ -4,13 +4,13 @@
  * USA, Leaflet Map, Base Layers, UI Dossier, and Time Machine.
  */
 
-import { loadWorldData, loadCountryData, loadStateData } from './data-service.js?v=20261116_africa6';
-import * as MapModule from './map.js?v=20261116_africa6';
-import * as UIModule from './ui.js?v=20261116_africa6';
-import * as TimeMachine from './time-machine.js?v=20261116_africa6';
-import * as NavigatorModule from './navigator.js?v=20261116_africa6';
-import * as GlobeModule from './globe-view.js?v=20261116_africa6';
-import { US_STATES, CITY_TO_STATE } from './states-data.js?v=20261116_africa6';
+import { loadWorldData, loadCountryData, loadStateData } from './data-service.js?v=20261116_africa7';
+import * as MapModule from './map.js?v=20261116_africa7';
+import * as UIModule from './ui.js?v=20261116_africa7';
+import * as TimeMachine from './time-machine.js?v=20261116_africa7';
+import * as NavigatorModule from './navigator.js?v=20261116_africa7';
+import * as GlobeModule from './globe-view.js?v=20261116_africa7';
+import { US_STATES, CITY_TO_STATE } from './states-data.js?v=20261116_africa7';
 
 // Application State
 let worldData = null;
@@ -477,13 +477,13 @@ export async function flyToCity(cityId) {
       'pyongyang': 'north-korea',
       'ulaanbaatar': 'mongolia',
       'taipei': 'taiwan', 'kaohsiung': 'taiwan',
-      'hanoi': 'vietnam', 'ho-chi-minh-city': 'vietnam', 'da-nang': 'vietnam',
-      'bangkok': 'thailand', 'chiang-mai': 'thailand', 'phuket': 'thailand',
+      'hanoi': 'vietnam', 'ho-chi-minh-city': 'vietnam', 'da-nang': 'vietnam', 'hue': 'vietnam', 'hoi-an': 'vietnam', 'ha-long': 'vietnam', 'nha-trang': 'vietnam', 'can-tho': 'vietnam', 'da-lat': 'vietnam', 'sapa': 'vietnam',
+      'bangkok': 'thailand', 'chiang-mai': 'thailand', 'phuket': 'thailand', 'ayutthaya': 'thailand', 'sukhothai': 'thailand', 'pattaya': 'thailand', 'krabi': 'thailand', 'chiang-rai': 'thailand', 'hua-hin': 'thailand', 'nakhon-ratchasima': 'thailand',
       'jakarta': 'indonesia', 'bali-denpasar': 'indonesia', 'surabaya': 'indonesia',
       'kuala-lumpur': 'malaysia', 'george-town': 'malaysia',
       'singapore': 'singapore',
       'manila': 'philippines', 'cebu-city': 'philippines',
-      'phnom-penh': 'cambodia', 'siem-reap': 'cambodia',
+      'phnom-penh': 'cambodia', 'siem-reap': 'cambodia', 'battambang': 'cambodia', 'sihanoukville': 'cambodia', 'kampot': 'cambodia', 'kep': 'cambodia', 'koh-kong': 'cambodia', 'kampong-cham': 'cambodia', 'kratie': 'cambodia', 'pursat': 'cambodia',
       'vientiane': 'laos', 'luang-prabang': 'laos',
       'yangon': 'myanmar', 'mandalay': 'myanmar',
       'bandar-seri-begawan': 'brunei',
