@@ -6,7 +6,10 @@
     "nickname": "Η Πόλη του Λιονταριού",
     "type": "country",
     "capital": "Σιγκαπούρη",
-    "coords": [1.3521, 103.8198],
+    "coords": [
+      1.3521,
+      103.8198
+    ],
     "zoom": 6.5,
     "stats": {
       "population": "6 εκατομμύρια",
@@ -109,228 +112,1284 @@
   },
   "cities": [
     {
-      "id": "singapore",
-      "name": "Σιγκαπούρη",
-      "englishName": "Singapore",
-      "nickname": "Η Πόλη του Λιονταριού",
-      "type": "city",
-      "coords": [1.3521, 103.8198],
-      "zoom": 12.1,
+      "id": "singapore-downtown",
+      "name": "Downtown Core & Marina Bay",
+      "englishName": "Downtown Core & Marina Bay",
+      "nickname": "Η Καρδιά της Σύγχρονης Σιγκαπούρης",
+      "badge": "Marina Bay Sands, Merlion, Gardens by the Bay",
+      "type": "metropolis",
+      "coords": [
+        1.2834,
+        103.8607
+      ],
+      "zoom": 12.7,
       "stats": {
-        "population": "6 εκατ.",
-        "elevation": "15 μ."
+        "population": "200.000 (περιοχή)",
+        "elevation": "5 μ.",
+        "founded": "1819",
+        "timeZone": "SGT (UTC+8)"
       },
-      "quote": "«Στη Σιγκαπούρη το πράσινο ανεβαίνει στους τοίχους και το νερό γίνεται κήπος.»",
+      "quote": "«Στη Marina Bay το μέλλον αντανακλάται στα νερά, ανάμεσα σε υπερδέντρα και ουρανοξύστες.»",
       "geo": {
-        "summary": "Η Σιγκαπούρη είναι ένα πυκνοδομημένο νησί με λόφους, παραλίες και τεχνητούς κόλπους. Η πόλη έχει σχεδιαστεί με πράσινους διαδρόμους και δημόσιες μετακινήσεις.",
-        "highlights": [
-          {
-            "title": "Ο κόλπος της Μαρίνα",
-            "desc": "Ο τεχνητός κόλπος με το φράγμα, τους κήπους και τους πύργους, κέντρο της σύγχρονης πόλης."
-          },
-          {
-            "title": "Το Μπουκίτ Τιμάχ",
-            "desc": "Το ψηλότερο σημείο του νησιού, με δάσος και μονοπάτια."
-          },
-          {
-            "title": "Η νότια ακτή",
-            "desc": "Οι παραλίες της Σεντόζα και τα νησιά γύρω από το λιμάνι."
-          }
-        ]
+        "climate": "Τροπικό δασικό κλίμα με υγρασία όλο τον χρόνο",
+        "terrain": "Ακτή και τεχνητός κόλπος με ανακτήσεις γης",
+        "significance": "Κέντρο των οικονομικών και τουριστικών δραστηριοτήτων της πόλης-κράτους"
       },
       "hist": {
-        "summary": "Η Σιγκαπούρη αναπτύχθηκε ως βρετανικό εμπορικό λιμάνι τον 19ο αιώνα, με μετανάστες από την Κίνα, την Ινδία και τη Μαλαισία. Μετά την ανεξαρτησία του 1965 έγινε ένα από τα πιο ανεπτυγμένα κράτη της Ασίας.",
+        "ancient": "Αρχικά θαλάσσια περιοχή με μαλαϊκά ψαροχώρια και εκβολές ποταμού Σιγκαπούρης",
+        "modern": "Μετά το 1819 αναπτύχθηκε σε αποικιακό κέντρο και μετά το 2000 σε σύγχρονο κόμβο με Marina Bay Sands",
         "highlights": [
-          {
-            "year": "1819",
-            "event": "Η ίδρυση του λιμανιού",
-            "desc": "Ο Ράφλς ιδρύει τον εμπορικό σταθμό και η Σιγκαπούρη γίνεται κόμβος ελεύθερου εμπορίου."
-          },
-          {
-            "year": "1965",
-            "event": "Η ανεξαρτησία",
-            "desc": "Το νησί αποχωρεί από τη Μαλαισία και ξεκινά μια πορεία εκβιομηχάνισης και ανάπτυξης."
-          },
-          {
-            "year": "2008",
-            "event": "Το Γκραν Πρι",
-            "desc": "Η Σιγκαπούρη φιλοξενεί τον πρώτο νυχτερινό αγώνα Formula 1, ενισχύοντας τον τουρισμό."
-          }
-        ]
-      },
-      "demo": {
-        "summary": "Περίπου 6 εκατομμύρια κάτοικοι, μία από τις πυκνότερες χώρες του κόσμου, με υψηλό βιοτικό επίπεδο και μεγάλη κοινότητα αλλοδαπών.",
-        "details": [
-          {
-            "label": "Στέγαση",
-            "text": "Η πλειονότητα ζει σε δημόσιες κατοικίες HDB, σχεδιασμένες σε γειτονιές με σχολεία και αγορές."
-          },
-          {
-            "label": "Μετακινήσεις",
-            "text": "Το μετρό MRT και τα λεωφορεία καλύπτουν το νησί, με αυστηρούς κανόνες για τα αυτοκίνητα."
-          },
-          {
-            "label": "Νερό",
-            "text": "Η χώρα ανακυκλώνει νερό και αφαλατώνει θαλασσινό, μειώνοντας την εξάρτηση από τη Μαλαισία."
-          }
+          "1819 — Ίδρυση εμπορικού σταθμού από Raffles",
+          "1965 — Ανεξαρτησία της πόλης",
+          "2010 — Λειτουργία Marina Bay Sands",
+          "2012 — Άνοιγμα Gardens by the Bay"
         ]
       },
       "cult": {
-        "summary": "Η Σιγκαπούρη έχει κινεζικές, μαλαϊκές και ινδικές γειτονιές, με ναούς, τζαμιά και μια κουζίνα δρόμου παγκόσμιας φήμης.",
-        "items": [
-          {
-            "title": "Πολυπολιτισμικές γειτονιές",
-            "desc": "Η Τσάιναταουν, το Λιτλ Ιντια και το Καμπόνγκ Γκλάμ διατηρούν γλώσσες, ναούς και αγορές."
-          },
-          {
-            "title": "Hawker culture",
-            "desc": "Τα κέντρα φαγητού hawker είναι καταγεγραμμένα από την UNESCO ως άυλη κληρονομιά."
-          },
-          {
-            "title": "Τέχνη και αρχιτεκτονική",
-            "desc": "Τα μουσεία και τα κτίρια της πόλης συνδυάζουν αποικιακό και σύγχρονο σχεδιασμό."
-          }
-        ]
-      },
-      "guide": {
-        "summary": "Η Σιγκαπούρη είναι μικρή και εύκολη με το μετρό, με τα κύρια αξιοθέατα γύρω από τη Μαρίνα και την Ορχάρντ.",
-        "items": [
-          {
-            "title": "Marina Bay Sands",
-            "cat": "culture",
-            "catLabel": "🎨 Πολιτισμός",
-            "desc": "Το ξενοδοχείο με την πισίνα στην κορυφή και το παρατηρητήριο.",
-            "wiki": "Marina_Bay_Sands"
-          },
-          {
-            "title": "Gardens by the Bay",
-            "cat": "nature",
-            "catLabel": "🌿 Φύση",
-            "desc": "Κήποι με υπερδέντρα, θερμοκήπια και νυχτερινό φωτισμό.",
-            "wiki": "Gardens_by_the_Bay"
-          },
-          {
-            "title": "Μέρλιον",
-            "cat": "culture",
-            "catLabel": "🎨 Πολιτισμός",
-            "desc": "Το άγαλμα του λιονταριού-ψαριού, σύμβολο της πόλης.",
-            "wiki": "Merlion"
-          },
-          {
-            "title": "Βοτανικός Κήπος",
-            "cat": "nature",
-            "catLabel": "🌿 Φύση",
-            "desc": "Ο κήπος των 74 εκταρίων, μνημείο παγκόσμιας κληρονομιάς.",
-            "wiki": "Singapore_Botanic_Gardens"
-          }
-        ]
+        "traditions": "Πολυπολιτισμικές παραδόσεις, Peranakan κουλτούρα, εορτή Λιονταριών και συναυλίες",
+        "landmarks": "Marina Bay Sands, Merlion, Gardens by the Bay, Esplanade",
+        "localLife": "Οικονομικοί επαγγελματίες, τουρίστες, hawker centres και νυχτερινή ζωή"
       },
       "gastro": {
-        "summary": "Η κουζίνα της Σιγκαπούρης είναι μείγμα κινεζικών, μαλαϊκών και ινδικών γεύσεων, με κέντρα φαγητού σε κάθε γειτονιά.",
-        "items": [
-          {
-            "title": "Χάινεζε Τσικεν Ράις",
-            "cat": "recipe",
-            "catLabel": "🥧 Παραδοσιακό Πιάτο",
-            "tag": "Ρύζι",
-            "desc": "Ρύζι με βραστό κοτόπουλο, σάλτσα σόγιας και τζίντζερ."
-          },
-          {
-            "title": "Τσίλι Κραμπ",
-            "cat": "recipe",
-            "catLabel": "🥧 Παραδοσιακό Πιάτο",
-            "tag": "Θαλασσινά",
-            "desc": "Καβούρι σε πικάντικη σάλτσα ντομάτας και αυγού."
-          },
-          {
-            "title": "Λάκσα",
-            "cat": "recipe",
-            "catLabel": "🥧 Παραδοσιακό Πιάτο",
-            "tag": "Σούπα",
-            "desc": "Νουντλς σε ζωμό καρύδας με γαρίδες και αυγό."
-          },
-          {
-            "title": "Τσάι με γάλα",
-            "cat": "drink",
-            "catLabel": "🍹 Ποτό",
-            "tag": "Τσάι",
-            "desc": "Δυνατό τσάι με γάλα και ζάχαρη, σερβιρισμένο με πάγο."
-          }
-        ]
+        "specialties": [
+          "Chili crab",
+          "Hainanese chicken rice",
+          "Laksa",
+          "Satay",
+          "Kaya toast"
+        ],
+        "culture": "Πολυεθνική κουζίνα σε hawker centres που έχουν αναγνωριστεί από UNESCO"
       },
-      "eco": {
-        "summary": "Η Σιγκαπούρη είναι πρωτοπόρος στην αστική πράσινη ανάπτυξη, με κάθετους κήπους, ανακύκλωση νερού και δημόσιες μετακινήσεις.",
-        "items": [
-          {
-            "title": "Gardens by the Bay",
-            "cat": "park",
-            "catLabel": "🌳 Πάρκα",
-            "desc": "Κήποι με τεχνητά υπερδέντρα και θερμοκήπια βιώσιμου σχεδιασμού.",
-            "wiki": "Gardens_by_the_Bay"
-          },
-          {
-            "title": "Βοτανικός Κήπος",
-            "cat": "green",
-            "catLabel": "🌿 Φύση",
-            "desc": "Μνημείο παγκόσμιας κληρονομιάς με τροπικά φυτά και δάσος.",
-            "wiki": "Singapore_Botanic_Gardens"
-          },
-          {
-            "title": "Πράσινα κτίρια",
-            "cat": "initiative",
-            "catLabel": "⚡ Ενέργεια",
-            "desc": "Το πρόγραμμα Green Mark προωθεί ενεργειακά αποδοτικά κτίρια και φυτεμένες όψεις.",
-            "wiki": "Singapore"
-          }
-        ]
+      "demo": {
+        "languages": "Αγγλικά, Κινεζικά, Μαλαϊκά, Ταμίλ",
+        "demographics": "Περίπου 200.000 κάτοικοι στην περιοχή, κυρίως επαγγελματίες και expat"
       },
-      "pastVsPresent": [
-        {
-          "epoch": "Σιγκαπούρη 1926: Αποικιακό Λιμάνι",
-          "content": "Η πόλη είναι βρετανική αποικία με λιμάνι, αποθήκες και πληθυσμό περίπου 500.000, κυρίως Κινέζους, Μαλαισιανούς και Ινδούς."
-        },
-        {
-          "epoch": "Σιγκαπούρη 2026: Έξυπνη Πόλη",
-          "content": "Η Σιγκαπούρη είναι παγκόσμιο χρηματοοικονομικό κέντρο με αυτόνομα οχήματα, πράσινη αρχιτεκτονική και ψηφιακές υπηρεσίες."
-        }
-      ],
       "pois": [
         {
+          "id": "marina-bay-sands",
           "name": "Marina Bay Sands",
           "category": "culture",
-          "coords": [1.2834, 103.8607],
-          "desc": "Το ξενοδοχείο με πισίνα στην κορυφή και παρατηρητήριο.",
-          "wiki": "Marina_Bay_Sands"
+          "coords": [
+            1.2834,
+            103.8607
+          ],
+          "year": 2010,
+          "desc": "Θεματικό ξενοδοχείο 55 ορόφων με πισίνα στην κορυφή."
         },
         {
+          "id": "gardens-by-the-bay",
           "name": "Gardens by the Bay",
           "category": "nature",
-          "coords": [1.2816, 103.8636],
-          "desc": "Κήποι με υπερδέντρα και θερμοκήπια.",
-          "wiki": "Gardens_by_the_Bay"
+          "coords": [
+            1.2816,
+            103.8636
+          ],
+          "year": 2012,
+          "desc": "Κήποι με υπερδέντρα, θερμοκήπια και νυχτερινό φωτισμό."
         },
         {
-          "name": "Μέρλιον",
+          "id": "merlion",
+          "name": "Merlion",
           "category": "culture",
-          "coords": [1.2868, 103.8545],
-          "desc": "Το άγαλμα του λιονταριού-ψαριού.",
-          "wiki": "Merlion"
+          "coords": [
+            1.2868,
+            103.8545
+          ],
+          "year": 1972,
+          "desc": "Το άγαλμα του λιονταριού-ψαριού, σύμβολο της πόλης."
         },
         {
-          "name": "Σεντόζα",
-          "category": "nature",
-          "coords": [1.2494, 103.8303],
-          "desc": "Νησί αναψυχής με παραλίες και πάρκα.",
-          "wiki": "Sentosa"
+          "id": "esplanade",
+          "name": "Esplanade - Theatres on the Bay",
+          "category": "culture",
+          "coords": [
+            1.2894,
+            103.8559
+          ],
+          "year": 2002,
+          "desc": "Θεατρικό κέντρο σε σχήμα σταυλοφόρου."
         },
         {
-          "name": "Βοτανικός Κήπος",
-          "category": "nature",
-          "coords": [1.3138, 103.8159],
-          "desc": "Ο κήπος των 74 εκταρίων, μνημείο παγκόσμιας κληρονομιάς.",
-          "wiki": "Singapore_Botanic_Gardens"
+          "id": "artscience-museum",
+          "name": "ArtScience Museum",
+          "category": "culture",
+          "coords": [
+            1.2863,
+            103.8593
+          ],
+          "year": 2011,
+          "desc": "Μουσείο σε σχήμα λωτού."
+        },
+        {
+          "id": "helix-bridge",
+          "name": "Γέφυρα Helix",
+          "category": "history",
+          "coords": [
+            1.2834,
+            103.8602
+          ],
+          "year": 2010,
+          "desc": "Πεζογέφυρα σε σχήμα DNA."
         }
-      ]
+      ],
+      "pastVsPresent": {
+        "era1": "Marina Bay 1926: Ακτή με αποθήκες, λιμάνι και μαλαϊκά ψαροχώρια",
+        "era2": "Marina Bay 2026: Σύγχρονη καρδιά με Marina Bay Sands, υπερδέντρα και εμπορικά κέντρα",
+        "synthesis": "Από τεχνητό λιμάνι σε σύγχρονο κόμβο — ο κόλπος πάντα τράβηξε το βλέμμα της πόλης προς τη θάλασσα"
+      },
+      "timeZone": "Asia/Singapore"
+    },
+    {
+      "id": "chinatown-sg",
+      "name": "Chinatown",
+      "englishName": "Chinatown",
+      "nickname": "Η Κινεζική Καρδιά της Σιγκαπούρης",
+      "badge": "Ναός Buddha Tooth Relic & Ιστορικά Shophouses",
+      "type": "district",
+      "coords": [
+        1.2847,
+        103.8443
+      ],
+      "zoom": 13.0,
+      "stats": {
+        "population": "30.000",
+        "elevation": "10 μ.",
+        "founded": "1819",
+        "timeZone": "SGT (UTC+8)"
+      },
+      "quote": "«Στη Chinatown τα κόκκινα φανάρια θυμούν τους μετανάστες που έφεραν τις ρίζες τους στο νησί.»",
+      "geo": {
+        "climate": "Τροπικό δασικό κλίμα",
+        "terrain": "Λοφώδης περιοχή κοντά στον ποταμό Σιγκαπούρης",
+        "significance": "Ιστορική κινεζική συνοικία με ναούς και αγορές"
+      },
+      "hist": {
+        "ancient": "Ανεπτύχθη μετά το 1819 ως περιοχή Κινέζων μεταναστών στη βρετανική αποικία",
+        "modern": "Διατηρήθηκε ως ιστορική συνοικία με αναστηλωμένα shophouses και ναούς",
+        "highlights": [
+          "1819 — Ίδρυση Κινεζικού σταθμού",
+          "1840 — Κτίση ναού Thian Hock Keng",
+          "1980s — Αναστήλωση shophouses",
+          "2007 — Άνοιγμα Buddha Tooth Relic Temple"
+        ]
+      },
+      "cult": {
+        "traditions": "Κινεζικά φεστιβάλ (Lunar New Year, Mid-Autumn), τεΐστ τελετουργίες, λαϊκή τέχνη",
+        "landmarks": "Buddha Tooth Relic Temple, Sri Mariamman Temple, Masjid Jamae, Chinatown Heritage Centre",
+        "localLife": "Street food, αγορές, νυχτερινή αγορά Smith Street, παραδοσιακά εστιατόρια"
+      },
+      "gastro": {
+        "specialties": [
+          "Hainanese chicken rice",
+          "Char kway teow",
+          "Dim sum",
+          "Bak kut teh",
+          "Chendol"
+        ],
+        "culture": "Κινεζική κουζίνα σε Hawker Centres όπως Maxwell και Chinatown Complex"
+      },
+      "demo": {
+        "languages": "Κινεζικά (Mandarin, Hokkien, Cantonese), Αγγλικά",
+        "demographics": "Περίπου 30.000 κάτοικοι, μεικτή κοινότητα Κινέζων και expat"
+      },
+      "pois": [
+        {
+          "id": "buddha-tooth-relic-temple",
+          "name": "Ναός Buddha Tooth Relic",
+          "category": "culture",
+          "coords": [
+            1.2817,
+            103.8446
+          ],
+          "year": 2007,
+          "desc": "Ναός με λείψανο δοντιού του Βούδα."
+        },
+        {
+          "id": "sri-mariamman-temple",
+          "name": "Sri Mariamman Temple",
+          "category": "culture",
+          "coords": [
+            1.2827,
+            103.8453
+          ],
+          "year": 1827,
+          "desc": "Ο παλαιότερος ινδουιστικός ναός της Σιγκαπούρης."
+        },
+        {
+          "id": "thian-hock-keng",
+          "name": "Thian Hock Keng Temple",
+          "category": "culture",
+          "coords": [
+            1.2831,
+            103.846
+          ],
+          "year": 1840,
+          "desc": "Ιστορικός ναός Ma Zu (Θεά Θαλάσσης)."
+        },
+        {
+          "id": "chinatown-heritage-centre",
+          "name": "Chinatown Heritage Centre",
+          "category": "history",
+          "coords": [
+            1.2839,
+            103.8445
+          ],
+          "year": 2002,
+          "desc": "Μουσείο ιστορίας Κινέζων μεταναστών."
+        },
+        {
+          "id": "maxwell-food-centre",
+          "name": "Maxwell Food Centre",
+          "category": "culture",
+          "coords": [
+            1.2805,
+            103.8451
+          ],
+          "year": 1980,
+          "desc": "Δημοφιλές Hawker Centre."
+        },
+        {
+          "id": "pagoda-street-shophouses",
+          "name": "Pagoda Street Shophouses",
+          "category": "historic",
+          "coords": [
+            1.2834,
+            103.844
+          ],
+          "year": 1840,
+          "desc": "Ιστορικά shophouses στην Pagoda Street."
+        }
+      ],
+      "pastVsPresent": {
+        "era1": "Chinatown 1926: Πυκνή κινεζική συνοικία με σπιτώματα, ναούς και αγορές",
+        "era2": "Chinatown 2026: Αναστηλωμένη ιστορική συνοικία με ναούς, μουσεία και hawker centres",
+        "synthesis": "Από φτωχικό καταυλισμό σε τουριστική κληρονομιά — τα κόκκινα φανάρια πάντα φωτίζουν τις ρίζες"
+      },
+      "timeZone": "Asia/Singapore"
+    },
+    {
+      "id": "little-india-sg",
+      "name": "Little India",
+      "englishName": "Little India",
+      "nickname": "Η Ινδική Γειτονιά της Σιγκαπούρης",
+      "badge": "Ναός Sri Veeramakaliamman & Μπαχαρικά",
+      "type": "district",
+      "coords": [
+        1.3064,
+        103.8494
+      ],
+      "zoom": 13.0,
+      "stats": {
+        "population": "20.000",
+        "elevation": "10 μ.",
+        "founded": "1840",
+        "timeZone": "SGT (UTC+8)"
+      },
+      "quote": "«Στο Little India τα μπαχαρικά μυρίζουν σαν αγορά της Βομβάης και οι ναοί ακούν προσευχές στα Ταμίλ.»",
+      "geo": {
+        "climate": "Τροπικό δασικό κλίμα",
+        "terrain": "Επίπεδη περιοχή βόρεια του ποταμού Σιγκαπούρης",
+        "significance": "Ιστορική και πολιτιστική καρδιά της ινδικής κοινότητας"
+      },
+      "hist": {
+        "ancient": "Αναπτύχθηκε τον 19ο αιώνα με την άφιξη Ινδών εργατών και στρατιωτών της βρετανικής αποικίας",
+        "modern": "Διατηρείται ως ζωντανή ινδική γειτονιά με ναούς, αγορές και εστιατόρια",
+        "highlights": [
+          "1840 — Άφιξη Ινδών εργατών",
+          "1855 — Κτίση ναού Sri Veeramakaliamman",
+          "1980s — Αναστήλωση περιοχής",
+          "2000s — Tourist hub"
+        ]
+      },
+      "cult": {
+        "traditions": "Ινδικά φεστιβάλ (Deepavali, Thaipusam), Bharatanatyam χορός, ινδική μουσική",
+        "landmarks": "Sri Veeramakaliamman Temple, Sri Srinivasa Perumal Temple, Abdul Gafoor Mosque, Little India Arcade",
+        "localLife": "Αγορές μπαχαρικών, σάρι, χρυσός και street food like roti prata"
+      },
+      "gastro": {
+        "specialties": [
+          "Fish head curry",
+          "Roti prata",
+          "Biryani",
+          "Masala dosa",
+          "Teh tarik"
+        ],
+        "culture": "Ινδική κουζίνα Βόρειας και Νότιας Ινδίας σε εστιατόρια και hawkers"
+      },
+      "demo": {
+        "languages": "Ταμίλ, Hindi, Αγγλικά",
+        "demographics": "Περίπου 20.000 κάτοικοι, μεικτή ινδική κοινότητα"
+      },
+      "pois": [
+        {
+          "id": "sri-veeramakaliamman",
+          "name": "Sri Veeramakaliamman Temple",
+          "category": "culture",
+          "coords": [
+            1.3072,
+            103.8493
+          ],
+          "year": 1855,
+          "desc": "Ιστορικός ινδουιστικός ναός της θεάς Kali."
+        },
+        {
+          "id": "sri-srinivasa-perumal",
+          "name": "Sri Srinivasa Perumal Temple",
+          "category": "culture",
+          "coords": [
+            1.3081,
+            103.8517
+          ],
+          "year": 1855,
+          "desc": "Ναός Vishnu με εικονογραφημένο gopuram."
+        },
+        {
+          "id": "abdul-gafoor-mosque",
+          "name": "Abdul Gafoor Mosque",
+          "category": "culture",
+          "coords": [
+            1.306,
+            103.8491
+          ],
+          "year": 1907,
+          "desc": "Ιστορικό τζαμί με μωσαϊκά και κίονες."
+        },
+        {
+          "id": "mustafa-centre",
+          "name": "Mustafa Centre",
+          "category": "history",
+          "coords": [
+            1.3097,
+            103.849
+          ],
+          "year": 1970,
+          "desc": "24ωρο εμπορικό κέντρο με μπαχαρικά και ηλεκτρονικά."
+        },
+        {
+          "id": "little-india-arcade",
+          "name": "Little India Arcade",
+          "category": "history",
+          "coords": [
+            1.307,
+            103.8492
+          ],
+          "year": 1980,
+          "desc": "Ιστορικά σπιτώματα αναστηλωμένα σε αγορά."
+        },
+        {
+          "id": "tekka-centre",
+          "name": "Tekka Centre",
+          "category": "culture",
+          "coords": [
+            1.308,
+            103.85
+          ],
+          "year": 1980,
+          "desc": "Hawker Centre και αγορά ινδικών τροφίμων."
+        }
+      ],
+      "pastVsPresent": {
+        "era1": "Little India 1926: Πυκνή συνοικία με Ινδούς εργάτες, σπιτώματα και ναούς",
+        "era2": "Little India 2026: Ζωντανή τουριστική και εμπορική γειτονιά με μουσεία και αγορές",
+        "synthesis": "Από καταυλισμό εργατών σε τουριστική καρδιά — τα μπαχαρικά πάντα κρατούν τον ινδικό παλμό"
+      },
+      "timeZone": "Asia/Singapore"
+    },
+    {
+      "id": "kampong-glam",
+      "name": "Kampong Glam",
+      "englishName": "Kampong Glam",
+      "nickname": "Η Μουσουλμανική Γειτονιά",
+      "badge": "Τζαμί Sultan & Οδός Arab Street",
+      "type": "district",
+      "coords": [
+        1.3022,
+        103.8595
+      ],
+      "zoom": 13.0,
+      "stats": {
+        "population": "10.000",
+        "elevation": "10 μ.",
+        "founded": "1820",
+        "timeZone": "SGT (UTC+8)"
+      },
+      "quote": "«Στο Kampong Glam το τζαμί Sultan χρυσώνει στον ήλιο και τα χαλιά στρώνουν το δρόμο της Arab Street.»",
+      "geo": {
+        "climate": "Τροπικό δασικό κλίμα",
+        "terrain": "Επίπεδη περιοχή ανατολικά του ποταμού Σιγκαπούρης",
+        "significance": "Ιστορική μαλαϊκή και αραβική συνοικία"
+      },
+      "hist": {
+        "ancient": "Παραδοσιακό μαλαϊκό ψαροχώρι και κατοικία του Sultan του Johore",
+        "modern": "Διατηρήθηκε ως μουσουλμανική συνοικία με το τζαμί Sultan και την Arab Street",
+        "highlights": [
+          "1820 — Διακανονισμός περιοχής για Sultan Hussein",
+          "1824 — Κτίση τζαμιού Sultan",
+          "1900s — Ανάπτυξη Arab Street",
+          "2015 — Άνοιγμα Malay Heritage Centre"
+        ]
+      },
+      "cult": {
+        "traditions": "Μαλαϊκή μουσική, αραβικά χαλιά, ρούχα songket, ισλαμικά φεστιβάλ (Ramadan)",
+        "landmarks": "Sultan Mosque, Malay Heritage Centre, Haji Lane, Arab Street",
+        "localLife": "Καφετέριες, εστιατόρια halal, ψώνια υφασμάτων και χαλιών"
+      },
+      "gastro": {
+        "specialties": [
+          "Nasi padang",
+          "Mee goreng",
+          "Roti john",
+          "Satay",
+          "Teh halia"
+        ],
+        "culture": "Μαλαϊκή και αραβική κουζίνα με εστιατόρια halal και καφέδες"
+      },
+      "demo": {
+        "languages": "Μαλαϊκά, Αραβικά, Αγγλικά",
+        "demographics": "Περίπου 10.000 κάτοικοι, μουσουλμανική κοινότητα"
+      },
+      "pois": [
+        {
+          "id": "sultan-mosque",
+          "name": "Τζαμί Sultan",
+          "category": "culture",
+          "coords": [
+            1.3022,
+            103.8595
+          ],
+          "year": 1824,
+          "desc": "Ιστορικό τζαμί με χρυσό τρούλο."
+        },
+        {
+          "id": "malay-heritage-centre",
+          "name": "Malay Heritage Centre",
+          "category": "history",
+          "coords": [
+            1.3017,
+            103.8586
+          ],
+          "year": 2005,
+          "desc": "Μουσείο μαλαϊκής κληρονομιάς."
+        },
+        {
+          "id": "haji-lane",
+          "name": "Haji Lane",
+          "category": "culture",
+          "coords": [
+            1.3011,
+            103.8582
+          ],
+          "year": 2000,
+          "desc": "Στενή οδός με μπουτίκες και καφέ."
+        },
+        {
+          "id": "arab-street",
+          "name": "Arab Street",
+          "category": "culture",
+          "coords": [
+            1.302,
+            103.8585
+          ],
+          "year": 1820,
+          "desc": "Ιστορικός δρόμος με χαλιά και υφάσματα."
+        },
+        {
+          "id": "bussorah-street",
+          "name": "Bussorah Street",
+          "category": "history",
+          "coords": [
+            1.3025,
+            103.8592
+          ],
+          "year": 1820,
+          "desc": "Πεζόδρομος προς το τζαμί Sultan."
+        },
+        {
+          "id": "hajjah-fatimah-mosque",
+          "name": "Hajjah Fatimah Mosque",
+          "category": "culture",
+          "coords": [
+            1.3025,
+            103.8614
+          ],
+          "year": 1846,
+          "desc": "Ιστορικό τζαμί με κλίση πύργου."
+        }
+      ],
+      "pastVsPresent": {
+        "era1": "Kampong Glam 1926: Παραδοσιακή μαλαϊκή και αραβική συνοικία με τζαμί Sultan και αγορές",
+        "era2": "Kampong Glam 2026: Τουριστική καρδιά με μουσείο, καφέ και αναστηλωμένα σπιτώματα",
+        "synthesis": "Από ψαροχώρι Sultan σε ιστορικό κέντρο — ο χρυσός τρούλος του τζαμιού πάντα φωτίζει την Arab Street"
+      },
+      "timeZone": "Asia/Singapore"
+    },
+    {
+      "id": "orchard-road",
+      "name": "Orchard Road",
+      "englishName": "Orchard Road",
+      "nickname": "Η Λεωφόρος των Αγορών",
+      "badge": "Παγκόσμια Μητρόπολη Μόδας & Εμπορικών Κέντρων",
+      "type": "district",
+      "coords": [
+        1.304,
+        103.832
+      ],
+      "zoom": 12.8,
+      "stats": {
+        "population": "15.000",
+        "elevation": "15 μ.",
+        "founded": "1830",
+        "timeZone": "SGT (UTC+8)"
+      },
+      "quote": "«Στην Orchard Road ο καφές είναι cool και οι οθόνες χρωματίζουν τη νύχτα.»",
+      "geo": {
+        "climate": "Τροπικό δασικό κλίμα",
+        "terrain": "Λοφώδης κοιλάδα με ποτάμι Orchard",
+        "significance": "Παγκόσμιο εμπορικό κέντρο και καρδιά της μόδας"
+      },
+      "hist": {
+        "ancient": "Ιστορικά οπωρώνες μπαχαρικών και καουτσούκ τον 19ο αιώνα",
+        "modern": "Μετά τη δεκαετία 1970 μετατράπηκε σε παγκόσμιο εμπορικό κέντρο με malls και ξενοδοχεία",
+        "highlights": [
+          "1830 — Φυτείες μπαχαρικών και καουτσούκ",
+          "1958 — Άνοιγμα CK Tang department store",
+          "1974 — Άνοιγμα Plaza Singapura",
+          "2017 — Άνοιγμα ION Orchard"
+        ]
+      },
+      "cult": {
+        "traditions": "Μόδα, ψώνια, χριστουγεννιάτικα φώτα και εκδηλώσεις Halloween",
+        "landmarks": "ION Orchard, Ngee Ann City, Paragon, Plaza Singapura",
+        "localLife": "Καφετέριες, μπουτίκες, πολυτέλεια και νυχτερινή ζωή"
+      },
+      "gastro": {
+        "specialties": [
+          "High tea μπουτίκ",
+          "Sushi deluxe",
+          "Tacos σύνθεσης",
+          "Foie gras με ρύζι",
+          "Craft cocktails"
+        ],
+        "culture": "Πολυτελείς εστιατόρια, cafés και Food halls σε malls"
+      },
+      "demo": {
+        "languages": "Αγγλικά, Κινεζικά, Ιαπωνικά",
+        "demographics": "Περίπου 15.000 κάτοικοι, expat και τουρίστες"
+      },
+      "pois": [
+        {
+          "id": "ion-orchard",
+          "name": "ION Orchard",
+          "category": "culture",
+          "coords": [
+            1.304,
+            103.8324
+          ],
+          "year": 2009,
+          "desc": "Σύγχρονο εμπορικό κέντρο με observation deck."
+        },
+        {
+          "id": "ngee-ann-city",
+          "name": "Ngee Ann City",
+          "category": "history",
+          "coords": [
+            1.3035,
+            103.8317
+          ],
+          "year": 1993,
+          "desc": "Εμπορικό κέντρο με Takashimaya."
+        },
+        {
+          "id": "paragon",
+          "name": "Paragon",
+          "category": "history",
+          "coords": [
+            1.3037,
+            103.832
+          ],
+          "year": 2001,
+          "desc": "Πολυτελές mall με μπουτίκες."
+        },
+        {
+          "id": "plaza-singapura",
+          "name": "Plaza Singapura",
+          "category": "history",
+          "coords": [
+            1.3006,
+            103.8449
+          ],
+          "year": 1974,
+          "desc": "Το παλαιότερο mall της Orchard Road."
+        },
+        {
+          "id": "botanics-tanglin-gate",
+          "name": "Botanic Gardens Tanglin Gate",
+          "category": "nature",
+          "coords": [
+            1.308,
+            103.815
+          ],
+          "year": 1859,
+          "desc": "Είσοδος του βοτανικού κήπου κοντά στο Tanglin."
+        },
+        {
+          "id": "orchard-central",
+          "name": "Orchard Central",
+          "category": "culture",
+          "coords": [
+            1.3012,
+            103.8382
+          ],
+          "year": 2009,
+          "desc": "Mall με terrace garden και view."
+        }
+      ],
+      "pastVsPresent": {
+        "era1": "Orchard Road 1926: Φυτείες μπαχαρικών και καουτσούκ με μικρές κατοικίες",
+        "era2": "Orchard Road 2026: Παγκόσμια λεωφόρος αγορών με malls, ξενοδοχεία και νυχτερινή ζωή",
+        "synthesis": "Από φυτείες καουτσούκ σε εμπορικό paradise — ο δρόμος πάντα μετατρέπεται με τους ρυθμούς της πόλης"
+      },
+      "timeZone": "Asia/Singapore"
+    },
+    {
+      "id": "sentosa-island",
+      "name": "Νήσος Σεντόσα",
+      "englishName": "Sentosa Island",
+      "nickname": "Το Νησί της Αναψυχής",
+      "badge": "Τροπικές Παραλίες & Fort Siloso",
+      "type": "nature",
+      "coords": [
+        1.2494,
+        103.8303
+      ],
+      "zoom": 12.4,
+      "stats": {
+        "population": "5.000 (έμποντες)",
+        "elevation": "30 μ.",
+        "founded": "1972",
+        "timeZone": "SGT (UTC+8)"
+      },
+      "quote": "«Η Σεντόσα είναι το νησί όπου ο ήλιος και τα πάρκα γιορτάζουν κάθε μέρα.»",
+      "geo": {
+        "climate": "Τροπικό δασικό κλίμα",
+        "terrain": "Νησί αναψυχής νοτίως του κύριου νησιού με λόφους και παραλίες",
+        "significance": "Κύριο τουριστικό και αναψυχής νησί της Σιγκαπούρης"
+      },
+      "hist": {
+        "ancient": "Ιστορικά γνωστό ως Pulau Blakang Mati, τόπος ναυτικών και φρουρίου",
+        "modern": "Μετονομάστηκε σε Sentosa (ειρήνη) το 1972 και μετατράπηκε σε νησί αναψυχής",
+        "highlights": [
+          "1880 — Κτίση Fort Siloso",
+          "1942 — Σφαγή από Ιαπωνία",
+          "1972 — Μετονομασία σε Sentosa",
+          "2010 — Άνοιγμα Resorts World Sentosa"
+        ]
+      },
+      "cult": {
+        "traditions": "Εορτές παραλίας, υπαίθριες συναυλίες, διατηρημένο φρούριο",
+        "landmarks": "Fort Siloso, Universal Studios Singapore, S.E.A. Aquarium, Skyline Luge",
+        "localLife": "Θέρετρα, καζίνο, παραλίες, golf και θαλάσσια σπορ"
+      },
+      "gastro": {
+        "specialties": [
+          "Beach BBQ",
+          "Tropical cocktails",
+          "Seafood platters",
+          "Surf & turf",
+          "Coconut shakes"
+        ],
+        "culture": "Κουζίνα παραλίας και διεθνών εστιατορίων σε θέρετρα"
+      },
+      "demo": {
+        "languages": "Αγγλικά, Κινεζικά, Ιαπωνικά",
+        "demographics": "Περίπου 5.000 έμποντες και εργαζόμενοι, με τεράστια τουριστική κίνηση"
+      },
+      "pois": [
+        {
+          "id": "fort-siloso",
+          "name": "Fort Siloso",
+          "category": "history",
+          "coords": [
+            1.262,
+            103.83
+          ],
+          "year": 1880,
+          "desc": "Φρούριο WWII με μουσείο και πυροβόλα."
+        },
+        {
+          "id": "universal-studios-sg",
+          "name": "Universal Studios Singapore",
+          "category": "culture",
+          "coords": [
+            1.2541,
+            103.8189
+          ],
+          "year": 2010,
+          "desc": "Πάρκο θεμάτων με 24 ατραξιόν."
+        },
+        {
+          "id": "sea-aquarium",
+          "name": "S.E.A. Aquarium",
+          "category": "nature",
+          "coords": [
+            1.258,
+            103.817
+          ],
+          "year": 2012,
+          "desc": "Ενυδρείο με 100.000 θαλάσσια ζώα."
+        },
+        {
+          "id": "sentosa-merlion",
+          "name": "Sentosa Merlion",
+          "category": "culture",
+          "coords": [
+            1.2527,
+            103.8206
+          ],
+          "year": 1996,
+          "desc": "37μ. άγαλμα Merlion."
+        },
+        {
+          "id": "siloso-beach",
+          "name": "Παραλία Siloso",
+          "category": "nature",
+          "coords": [
+            1.257,
+            103.815
+          ],
+          "year": 1972,
+          "desc": "Κύρια παραλία του νησιού."
+        },
+        {
+          "id": "sentosa-cable-car",
+          "name": "Sentosa Cable Car",
+          "category": "culture",
+          "coords": [
+            1.2667,
+            103.8383
+          ],
+          "year": 1974,
+          "desc": "Τηλεκαμπίνα που συνδέει το Mount Faber με Sentosa."
+        }
+      ],
+      "pastVsPresent": {
+        "era1": "Sentosa 1926: Βρετανικό φρούριο και στρατιωτικό νησί Pulau Blakang Mati",
+        "era2": "Sentosa 2026: Πρώτουριστικό νησί αναψυχής με πάρκα, θέρετρα και καζίνο",
+        "synthesis": "Από στρατιωτικό φρούριο σε paradise αναψυχής — το νησί άλλαξε όνομα αλλά κράτησε τον ρόλο πύλης"
+      },
+      "timeZone": "Asia/Singapore"
+    },
+    {
+      "id": "jurong",
+      "name": "Τζουρόνγκ",
+      "englishName": "Jurong",
+      "nickname": "Το Δεύτερο Κέντρο της Σιγκαπούρης",
+      "badge": "Πάρκο Πουλιών Jurong & Λίμνη",
+      "type": "district",
+      "coords": [
+        1.3329,
+        103.7436
+      ],
+      "zoom": 12.2,
+      "stats": {
+        "population": "250.000",
+        "elevation": "10 μ.",
+        "founded": "1960",
+        "timeZone": "SGT (UTC+8)"
+      },
+      "quote": "«Στο Τζουρόνγκ η βιομηχανία συναντά το πάρκο πουλιών και τη λίμνη.»",
+      "geo": {
+        "climate": "Τροπικό δασικό κλίμα",
+        "terrain": "Παράκτια περιοχή δυτικά με λιμάνι και τεχνητή λίμνη",
+        "significance": "Κύριο βιομηχανικό και αναψυχής κέντρο"
+      },
+      "hist": {
+        "ancient": "Παραδοσιακή περιοχή με μαγκρόβια και αλιεία",
+        "modern": "Ανεπτύχθη από τη δεκαετία 1960 σε βιομηχανικό κέντρο και μετά σε αναψυχής περιοχή με το Jurong Lake Gardens",
+        "highlights": [
+          "1960s — Ανάπτυξη βιομηχανικής ζώνης",
+          "1971 — Άνοιγμα Jurong Bird Park",
+          "1980 — Λίμνη Jurong",
+          "2014 — Άνοιγμα River Safari/Jurong Lake Gardens"
+        ]
+      },
+      "cult": {
+        "traditions": "Οικογενειακές επισκέψεις σε πάρκα, αναψυχή, βιομηχανική έκθεση",
+        "landmarks": "Jurong Bird Park, Jurong Lake Gardens, Science Centre, Chinese Garden",
+        "localLife": "Οικογενειακή περιοχή με HDB estates, εστιατόρια και πάρκα"
+      },
+      "gastro": {
+        "specialties": [
+          "Dim sum Jurong",
+          "Hawker centre pizza",
+          "Seafood HDB",
+          "Wonton noodles",
+          "Kaya toast"
+        ],
+        "culture": "Μεικτή κουζίνα σε Jurong Point hawker centre και malls"
+      },
+      "demo": {
+        "languages": "Αγγλικά, Κινεζικά, Μαλαϊκά",
+        "demographics": "Περίπου 250.000 κάτοικοι, κυρίως οικογένειες HDB"
+      },
+      "pois": [
+        {
+          "id": "jurong-bird-park",
+          "name": "Jurong Bird Park",
+          "category": "nature",
+          "coords": [
+            1.3187,
+            103.7067
+          ],
+          "year": 1971,
+          "desc": "Ιστορικό πάρκο πουλιών με 5.000 πτηνά."
+        },
+        {
+          "id": "jurong-lake-gardens",
+          "name": "Jurong Lake Gardens",
+          "category": "nature",
+          "coords": [
+            1.3383,
+            103.7175
+          ],
+          "year": 2014,
+          "desc": "Κήποι γύρω από τεχνητή λίμνη."
+        },
+        {
+          "id": "science-centre-sg",
+          "name": "Science Centre Singapore",
+          "category": "culture",
+          "coords": [
+            1.3337,
+            103.7358
+          ],
+          "year": 1977,
+          "desc": "Διαδραστικό μουσείο επιστημών."
+        },
+        {
+          "id": "chinese-garden",
+          "name": "Chinese Garden",
+          "category": "culture",
+          "coords": [
+            1.337,
+            103.7245
+          ],
+          "year": 1975,
+          "desc": "Κήπος ιαπωνικού και κινεζικού στιλ."
+        },
+        {
+          "id": "jurong-point",
+          "name": "Jurong Point Shopping Centre",
+          "category": "history",
+          "coords": [
+            1.338,
+            103.707
+          ],
+          "year": 1995,
+          "desc": "Μεγάλο suburban mall."
+        },
+        {
+          "id": "tuas-port",
+          "name": "Λιμάνι Tuas",
+          "category": "history",
+          "coords": [
+            1.265,
+            103.6333
+          ],
+          "year": 1980,
+          "desc": "Σύγχρονο βιομηχανικό λιμάνι της δυτικής ακτής."
+        }
+      ],
+      "pastVsPresent": {
+        "era1": "Jurong 1926: Αγροτική περιοχή με μαγκρόβια και αλιευτικά χωριά",
+        "era2": "Jurong 2026: Βιομηχανικό κέντρο με πάρκο πουλιών, λίμνη και οικισμούς",
+        "synthesis": "Από μαγκρόβια σε βιομηχανική ζώνη — η λίμνη Jurong ένωσε τη φύση με την ανάπτυξη"
+      },
+      "timeZone": "Asia/Singapore"
+    },
+    {
+      "id": "katong-joo-chiat",
+      "name": "Katong & Joo Chiat",
+      "englishName": "Katong & Joo Chiat",
+      "nickname": "Το Κέντρο του Πολιτισμού Peranakan",
+      "badge": "Πολύχρωμα Αρχοντικά & Laksa",
+      "type": "district",
+      "coords": [
+        1.312,
+        103.904
+      ],
+      "zoom": 13.0,
+      "stats": {
+        "population": "30.000",
+        "elevation": "10 μ.",
+        "founded": "1900",
+        "timeZone": "SGT (UTC+8)"
+      },
+      "quote": "«Στο Katong τα αρχοντικά Peranakan είναι παστέλ και η laksa καυτή.»",
+      "geo": {
+        "climate": "Τροπικό δασικό κλίμα",
+        "terrain": "Ανατολική ακτή με παραλίες και πεδινούς λόφους",
+        "significance": "Κέντρο πολιτισμού Peranakan και ιστορικών αρχοντικών"
+      },
+      "hist": {
+        "ancient": "Αγροτική περιοχή με φυτείες κοκοφοίνικων και νησάκια",
+        "modern": "Ανεπτύχθη σε προάστιο της ανατολικής ακτής με κοινότητα Peranakan και αρχοντικά",
+        "highlights": [
+          "1900 — Φυτείες κοκοφοίνικων",
+          "1920s — Κτίση αρχοντικών Peranakan",
+          "1990s — Αναστήλωση περιοχής",
+          "2011 — Κατάταξη ως διατηρητέα"
+        ]
+      },
+      "cult": {
+        "traditions": "Peranakan (Baba-Nyonya) κουζίνα, υφάσματα songket, φεστιβάλ Lunar New Year",
+        "landmarks": "Katong Red House, Joo Chiat Road, Sri Tanjung Pagar, Peranakan Trail",
+        "localLife": "Καφετέριες, εστιατόρια laksa και πολύχρωμα αρχοντικά"
+      },
+      "gastro": {
+        "specialties": [
+          "Katong laksa",
+          "Kueh lapis",
+          "Ayam buah keluak",
+          "Mee siam",
+          "Kueh dadar"
+        ],
+        "culture": "Peranakan κουζίνα με μείγμα κινεζικών και μαλαϊκών γεύσεων"
+      },
+      "demo": {
+        "languages": "Αγγλικά, Malay, Baba Malay",
+        "demographics": "Περίπου 30.000 κάτοικοι, κυρίως Peranakan και expat"
+      },
+      "pois": [
+        {
+          "id": "red-house-bakery",
+          "name": "Katong Red House Bakery",
+          "category": "history",
+          "coords": [
+            1.3127,
+            103.9056
+          ],
+          "year": 1925,
+          "desc": "Ιστορικό κοκκινοκίτρινο σπιτώμα."
+        },
+        {
+          "id": "joo-chiat-road",
+          "name": "Joo Chiat Road",
+          "category": "culture",
+          "coords": [
+            1.3134,
+            103.9048
+          ],
+          "year": 1920,
+          "desc": "Ιστορικός δρόμος με αρχοντικά Peranakan."
+        },
+        {
+          "id": "kim-choo-kueh",
+          "name": "Kim Choo Kueh Chang",
+          "category": "culture",
+          "coords": [
+            1.312,
+            103.904
+          ],
+          "year": 1945,
+          "desc": "Ιστορικό κατάστημα kueh και nyonya πιάτων."
+        },
+        {
+          "id": "katong-park",
+          "name": "Katong Park",
+          "category": "nature",
+          "coords": [
+            1.3028,
+            103.8867
+          ],
+          "year": 1960,
+          "desc": "Παραλιακό πάρκο στην ανατολική ακτή."
+        },
+        {
+          "id": "peranakan-trail",
+          "name": "Peranakan Trail",
+          "category": "culture",
+          "coords": [
+            1.313,
+            103.9045
+          ],
+          "year": 2000,
+          "desc": "Διαδρομή με τα ιστορικά αρχοντικά."
+        },
+        {
+          "id": "katong-shopping-centre",
+          "name": "Katong Shopping Centre",
+          "category": "history",
+          "coords": [
+            1.3107,
+            103.8944
+          ],
+          "year": 1973,
+          "desc": "Ένα από τα παλαιότερα malls."
+        }
+      ],
+      "pastVsPresent": {
+        "era1": "Katong 1926: Παραλιακό προάστιο με φυτείες κοκοφοίνικων και βίλες Peranakan",
+        "era2": "Katong 2026: Διατηρητέα περιοχή με πολύχρωμα αρχοντικά και κουζίνα Peranakan",
+        "synthesis": "Από φυτείες κοκοφοίνικων σε διατηρητέο προάστιο — οι νονές και τα αρχοντικά πάντα κρατούν τη μνήμη"
+      },
+      "timeZone": "Asia/Singapore"
+    },
+    {
+      "id": "woodlands",
+      "name": "Woodlands",
+      "englishName": "Woodlands",
+      "nickname": "Η Βόρεια Πύλη",
+      "badge": "Γέφυρα Johor Causeway & Θέα στη Μαλαισία",
+      "type": "district",
+      "coords": [
+        1.4382,
+        103.7888
+      ],
+      "zoom": 12.5,
+      "stats": {
+        "population": "250.000",
+        "elevation": "15 μ.",
+        "founded": "1923",
+        "timeZone": "SGT (UTC+8)"
+      },
+      "quote": "«Στα Woodlands η γέφυρα Causeway ενώνει δύο χώρες και χωρίζει δύο κουλτούρες.»",
+      "geo": {
+        "climate": "Τροπικό δασικό κλίμα",
+        "terrain": "Παράκτια περιοχή στον πορθμό Johor",
+        "significance": "Βόρεια πύλη της Σιγκαπούρης με τη Γέφυρα Causeway προς Johor Bahru"
+      },
+      "hist": {
+        "ancient": "Ιστορικά μικρά ψαροχώρια και φυτείες στον πορθμό Johor",
+        "modern": "Ανεπτύχθη σε συνοικία και κόμβο συνδέσεων με τη Μαλαισία μετά τη γέφυρα Causeway",
+        "highlights": [
+          "1923 — Άνοιγμα Johor-Singapore Causeway",
+          "1960s — Οικιστική ανάπτυξη",
+          "1990s — Woodlands MRT",
+          "2014 — Causeway προς JB"
+        ]
+      },
+      "cult": {
+        "traditions": "Μεικτή κουλτούρα Σιγκαπούρης-Μαλαισίας, νυχτερινή αγορά Ramadan, εμπόριο",
+        "landmarks": "Causeway Woodlands, Woodlands Checkpoint, Causeway Point Mall",
+        "localLife": "Συνοικία HDB, εμπόριο και ταξίδια προς Johor Bahru"
+      },
+      "gastro": {
+        "specialties": [
+          "Laksa Johor",
+          "Roti canai JB",
+          "Asam pedas",
+          "Satay Johor",
+          "Teh ais"
+        ],
+        "culture": "Μεικτή μαλαϊκή-σιγκαπουριανή κουζίνα με εστιατόρια halal"
+      },
+      "demo": {
+        "languages": "Αγγλικά, Malay, Tamil",
+        "demographics": "Περίπου 250.000 κάτοικοι, μεικτή κοινότητα και commuters"
+      },
+      "pois": [
+        {
+          "id": "johor-causeway",
+          "name": "Johor-Singapore Causeway",
+          "category": "history",
+          "coords": [
+            1.4413,
+            103.7711
+          ],
+          "year": 1923,
+          "desc": "Γέφυρα 1 χλμ που συνδέει Σιγκαπούρη με Johor Bahru."
+        },
+        {
+          "id": "woodlands-checkpoint",
+          "name": "Woodlands Checkpoint",
+          "category": "history",
+          "coords": [
+            1.442,
+            103.77
+          ],
+          "year": 1923,
+          "desc": "Συνοριακός σταθμός ασφαλείας."
+        },
+        {
+          "id": "causeway-point-mall",
+          "name": "Causeway Point Mall",
+          "category": "history",
+          "coords": [
+            1.4368,
+            103.7866
+          ],
+          "year": 1999,
+          "desc": "Μεγάλο suburban mall."
+        },
+        {
+          "id": "woodlands-waterfront",
+          "name": "Woodlands Waterfront",
+          "category": "nature",
+          "coords": [
+            1.4547,
+            103.7697
+          ],
+          "year": 2011,
+          "desc": "Παραλιακός δρόμος με θέα στο Johor."
+        },
+        {
+          "id": "republic-polytechnic",
+          "name": "Republic Polytechnic",
+          "category": "culture",
+          "coords": [
+            1.4425,
+            103.7858
+          ],
+          "year": 2002,
+          "desc": "Τριτοβάθμιο ίδρυμα στα Woodlands."
+        },
+        {
+          "id": "woodlands-mrt",
+          "name": "Woodlands MRT Station",
+          "category": "history",
+          "coords": [
+            1.4373,
+            103.7867
+          ],
+          "year": 1996,
+          "desc": "Σταθμός MRT διασταύρωσης North-South και Thomson-East Coast."
+        }
+      ],
+      "pastVsPresent": {
+        "era1": "Woodlands 1926: Αγροτική περιοχή με γέφυρα Causeway προς Johor Bahru",
+        "era2": "Woodlands 2026: Κυρία συνοικία και πύλη της Σιγκαπούρης με MRT, malls και waterfront",
+        "synthesis": "Από αγροτικός σταθμός σε διοικητικό κέντρο — η γέφυρα Causeway πάντα ήταν η καρδιά"
+      },
+      "timeZone": "Asia/Singapore"
+    },
+    {
+      "id": "changi",
+      "name": "Changi",
+      "englishName": "Changi",
+      "nickname": "Το Παράκτιο Χωριό & το Jewel",
+      "badge": "Jewel Changi & Πάρκο Changi Beach",
+      "type": "district",
+      "coords": [
+        1.3667,
+        103.9667
+      ],
+      "zoom": 12.6,
+      "stats": {
+        "population": "20.000",
+        "elevation": "10 μ.",
+        "founded": "Ιστορικά από 1800s",
+        "timeZone": "SGT (UTC+8)"
+      },
+      "quote": "«Στο Changi ο καταρράκτης Jewel συναντά τη γαλήνη του παλιού χωριού.»",
+      "geo": {
+        "climate": "Τροπικό δασικό κλίμα",
+        "terrain": "Ανατολική ακτή με παραλίες και λόφους",
+        "significance": "Κόμβος με το αεροδρόμιο Changi και ιστορικό παραλιακό χωριό"
+      },
+      "hist": {
+        "ancient": "Παραδοσιακό παραλιακό χωριό και στρατιωτικό φρούριο",
+        "modern": "Μετά το 1981 μετατράπηκε σε κόμβο με το διεθνές αεροδρόμιο Changi και αργότερα το Jewel",
+        "highlights": [
+          "1920s — Κτίση φρουρίου Changi",
+          "1942 — Στρατόπεδο αιχμαλώτων WWII",
+          "1981 — Άνοιγμα αεροδρομίου Changi",
+          "2019 — Άνοιγμα Jewel Changi"
+        ]
+      },
+      "cult": {
+        "traditions": "Παραλιακή κουζίνα, μουσείο Changi, αναμνήσεις αιχμαλώτων",
+        "landmarks": "Jewel Changi, Changi Airport, Changi Beach Park, Changi Chapel & Museum",
+        "localLife": "Παραλιακός δρόμος, αγορές, αεροδρόμιο και εστιατόρια"
+      },
+      "gastro": {
+        "specialties": [
+          "Nasi lemak Changi",
+          "Changi Village hawker",
+          "Seafood BBQ",
+          "Coconut ice cream",
+          "Satay"
+        ],
+        "culture": "Τοπικά hawker centres με μαλαϊκή και σιγκαπουριανή κουζίνα"
+      },
+      "demo": {
+        "languages": "Αγγλικά, Malay, Κινεζικά",
+        "demographics": "Περίπου 20.000 κάτοικοι, με τεράστια κίνηση expat"
+      },
+      "pois": [
+        {
+          "id": "jewel-changi",
+          "name": "Jewel Changi",
+          "category": "culture",
+          "coords": [
+            1.3586,
+            103.9462
+          ],
+          "year": 2019,
+          "desc": "Σύγχρονο εμπορικό κέντρο με καταρράκτη 40μ."
+        },
+        {
+          "id": "changi-airport",
+          "name": "Singapore Changi Airport",
+          "category": "history",
+          "coords": [
+            1.3644,
+            103.9915
+          ],
+          "year": 1981,
+          "desc": "Διεθνές αεροδρόμιο με 4 τερματικούς."
+        },
+        {
+          "id": "changi-beach-park",
+          "name": "Changi Beach Park",
+          "category": "nature",
+          "coords": [
+            1.3886,
+            103.9914
+          ],
+          "year": 1950,
+          "desc": "Παραλιακό πάρκο με πεύκα."
+        },
+        {
+          "id": "changi-chapel-museum",
+          "name": "Changi Chapel & Museum",
+          "category": "history",
+          "coords": [
+            1.379,
+            103.983
+          ],
+          "year": 1988,
+          "desc": "Μουσείο αφιερωμένο σε POW WWII."
+        },
+        {
+          "id": "changi-village",
+          "name": "Changi Village",
+          "category": "culture",
+          "coords": [
+            1.3896,
+            103.9872
+          ],
+          "year": 1950,
+          "desc": "Παραλιακό χωριό με hawker centre."
+        },
+        {
+          "id": "changi-boardwalk",
+          "name": "Changi Boardwalk",
+          "category": "nature",
+          "coords": [
+            1.39,
+            103.99
+          ],
+          "year": 2002,
+          "desc": "Πεζογέφυρα πάνω από μαγκρόβια."
+        }
+      ],
+      "pastVsPresent": {
+        "era1": "Changi 1926: Παραλιακό χωριό με φρούριο και στρατιωτικές εγκαταστάσεις",
+        "era2": "Changi 2026: Σύγχρονος κόμβος με αεροδρόμιο, Jewel και πάρκο",
+        "synthesis": "Από φρούριο WWII σε διεθνές αεροδρόμιο — η ακτογραμμή πάντα φιλοξενεί έλευση και αναχώρηση"
+      },
+      "timeZone": "Asia/Singapore"
     }
   ]
 }

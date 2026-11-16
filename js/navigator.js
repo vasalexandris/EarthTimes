@@ -1,4 +1,4 @@
-import { US_STATES, CITY_TO_STATE } from './states-data.js?v=20261116_batch4';
+import { US_STATES, CITY_TO_STATE } from './states-data.js?v=20261116_asia_final';
 /**
  * Navigator Module
  * Hierarchical Cascading Navigation: Continents -> Countries -> Cities
@@ -2346,7 +2346,16 @@ export const CONTINENTS_DATA = [
         name: 'Βόρεια Κορέα',
         flag: '🇰🇵',
         cities: [
-          { id: 'pyongyang', name: 'Πιονγιάνγκ', badge: 'Πρωτεύουσα' }
+          { id: 'pyongyang', name: 'Πιονγιάνγκ' },
+          { id: 'hamhung', name: 'Χαμχούνγκ' },
+          { id: 'chongjin', name: 'Τσονγκτζίν' },
+          { id: 'nampo', name: 'Νάμπο' },
+          { id: 'wonsan', name: 'Γουονσάν' },
+          { id: 'kaesong', name: 'Κεσόνγκ' },
+          { id: 'sinuiju', name: 'Σινουΐτζου' },
+          { id: 'sariwon', name: 'Σαριγουόν' },
+          { id: 'samjiyon', name: 'Σαμτζιγιόν' },
+          { id: 'haeju', name: 'Χετζού' }
         ]
       },
       {
@@ -2456,7 +2465,16 @@ export const CONTINENTS_DATA = [
         name: 'Σιγκαπούρη',
         flag: '🇸🇬',
         cities: [
-          { id: 'singapore', name: 'Σιγκαπούρη', badge: 'Πόλη-Κράτος' }
+          { id: 'singapore-downtown', name: 'Downtown Core & Marina Bay' },
+          { id: 'chinatown-sg', name: 'Chinatown' },
+          { id: 'little-india-sg', name: 'Little India' },
+          { id: 'kampong-glam', name: 'Kampong Glam' },
+          { id: 'orchard-road', name: 'Orchard Road' },
+          { id: 'sentosa-island', name: 'Νήσος Σεντόσα' },
+          { id: 'jurong', name: 'Τζουρόνγκ' },
+          { id: 'katong-joo-chiat', name: 'Katong & Joo Chiat' },
+          { id: 'woodlands', name: 'Woodlands' },
+          { id: 'changi', name: 'Changi' }
         ]
       },
       {
@@ -2532,7 +2550,16 @@ export const CONTINENTS_DATA = [
         name: 'Μπρουνέι',
         flag: '🇧🇳',
         cities: [
-          { id: 'bandar-seri-begawan', name: 'Μπαντάρ Σερί Μπεγκαβάν', badge: 'Πρωτεύουσα' }
+          { id: 'bandar-seri-begawan', name: 'Μπαντάρ Σερί Μπεγκαβάν' },
+          { id: 'kampong-ayer', name: 'Kampong Ayer' },
+          { id: 'kuala-belait', name: 'Kuala Belait' },
+          { id: 'seria', name: 'Seria' },
+          { id: 'muara', name: 'Muara' },
+          { id: 'tutong', name: 'Tutong' },
+          { id: 'bangar', name: 'Bangar' },
+          { id: 'jerudong', name: 'Jerudong' },
+          { id: 'gadong', name: 'Gadong' },
+          { id: 'temburong', name: 'Temburong' }
         ]
       },
       {
@@ -2540,16 +2567,16 @@ export const CONTINENTS_DATA = [
         name: 'Ανατολικό Τιμόρ',
         flag: '🇹🇱',
         cities: [
-          { id: 'dili', name: 'Ντίλι', badge: 'Πρωτεύουσα & Λιμάνι' },
-          { id: 'baucau', name: 'Μπάουκαου', badge: 'Δεύτερη Μεγαλύτερη...' },
-          { id: 'maliana', name: 'Μαλιάνα', badge: 'Διοικητικό Κέντρο ...' },
-          { id: 'suai', name: 'Σούαι', badge: 'Διοικητικό Κέντρο ...' },
-          { id: 'ermera', name: 'Ερμέρα', badge: 'Διοικητικό Κέντρο ...' },
-          { id: 'liquica', name: 'Λικίσα', badge: 'Διοικητικό Κέντρο ...' },
-          { id: 'pante-macassar', name: 'Πάντε Μακάσαρ', badge: 'Διοικητικό Κέντρο ...' },
-          { id: 'lospalos', name: 'Λοσπάλος', badge: 'Διοικητικό Κέντρο ...' },
-          { id: 'ainaro', name: 'Αϊνάρο', badge: 'Διοικητικό Κέντρο ...' },
-          { id: 'manatuto', name: 'Μανουτούτο', badge: 'Διοικητικό Κέντρο ...' }
+          { id: 'dili', name: 'Ντίλι' },
+          { id: 'baucau', name: 'Μπάουκαου' },
+          { id: 'maliana', name: 'Μαλιάνα' },
+          { id: 'suai', name: 'Σούαι' },
+          { id: 'ermera', name: 'Ερμέρα' },
+          { id: 'liquica', name: 'Λικίσα' },
+          { id: 'pante-macassar', name: 'Πάντε Μακάσαρ' },
+          { id: 'lospalos', name: 'Λοσπάλος' },
+          { id: 'ainaro', name: 'Αϊνάρο' },
+          { id: 'manatuto', name: 'Μανουτούτο' }
         ]
       },
       {
@@ -2659,7 +2686,16 @@ export const CONTINENTS_DATA = [
         name: 'Μαλδίβες',
         flag: '🇲🇻',
         cities: [
-          { id: 'male', name: 'Μαλέ', badge: 'Πρωτεύουσα' }
+          { id: 'male', name: 'Μαλέ' },
+          { id: 'hulhumale', name: 'Χουλχουμαλέ' },
+          { id: 'villingili', name: 'Βιλινγκίλι' },
+          { id: 'addu-city', name: 'Πόλη Άντου' },
+          { id: 'fuvahmulah', name: 'Φουβαχμουλάχ' },
+          { id: 'kulhudhuffushi', name: 'Κουλχουντουφούσι' },
+          { id: 'maafushi', name: 'Μααφούσι' },
+          { id: 'dhangethi', name: 'Ντανγκέτι' },
+          { id: 'thoddoo', name: 'Τόντου' },
+          { id: 'gan', name: 'Γκαν' }
         ]
       },
       {
@@ -2769,8 +2805,16 @@ export const CONTINENTS_DATA = [
         name: 'Παλαιστίνη',
         flag: '🇵🇸',
         cities: [
-          { id: 'ramallah', name: 'Ραμάλα', badge: 'Διοικητική Έδρα' },
-          { id: 'bethlehem', name: 'Βηθλεέμ' }
+          { id: 'ramallah', name: 'Ραμάλα' },
+          { id: 'bethlehem', name: 'Βηθλεέμ' },
+          { id: 'jericho', name: 'Ιεριχώ' },
+          { id: 'nablus', name: 'Ναμπλούς' },
+          { id: 'hebron', name: 'Χεβρώνα' },
+          { id: 'gaza-city', name: 'Πόλη της Γάζας' },
+          { id: 'jenin', name: 'Τζενίν' },
+          { id: 'tulkarm', name: 'Τουλκάρμ' },
+          { id: 'qalqilya', name: 'Καλκίλια' },
+          { id: 'khan-yunis', name: 'Χαν Γιουνίς' }
         ]
       },
       {
@@ -2846,7 +2890,16 @@ export const CONTINENTS_DATA = [
         name: 'Κουβέιτ',
         flag: '🇰🇼',
         cities: [
-          { id: 'kuwait-city', name: 'Πόλη του Κουβέιτ', badge: 'Πρωτεύουσα' }
+          { id: 'kuwait-city', name: 'Πόλη του Κουβέιτ' },
+          { id: 'al-ahmadi', name: 'Αλ-Αχμάντι' },
+          { id: 'hawalli', name: 'Χαουαλί' },
+          { id: 'salmiya', name: 'Αλ-Σαλμίγια' },
+          { id: 'al-farwaniyah', name: 'Αλ-Φαρουανίγια' },
+          { id: 'al-jahra', name: 'Αλ-Τζάχρα' },
+          { id: 'sabah-al-ahmad', name: 'Σαμπάχ αλ-Αχμάντ' },
+          { id: 'mangaf', name: 'Μανγκάφ' },
+          { id: 'fahaheel', name: 'Φαχαχίλ' },
+          { id: 'failaka-island', name: 'Νήσος Φαϊλάκα' }
         ]
       },
       {
@@ -2854,7 +2907,16 @@ export const CONTINENTS_DATA = [
         name: 'Μπαχρέιν',
         flag: '🇧🇭',
         cities: [
-          { id: 'manama', name: 'Μανάμα', badge: 'Πρωτεύουσα' }
+          { id: 'manama', name: 'Μανάμα' },
+          { id: 'muharraq', name: 'Μουχαράκ' },
+          { id: 'riffa', name: 'Ρίφα' },
+          { id: 'hamad-town', name: 'Πόλη Χαμάντ' },
+          { id: 'aali', name: 'Άαλι' },
+          { id: 'isa-town', name: 'Πόλη Ίσα' },
+          { id: 'sitra', name: 'Σίτρα' },
+          { id: 'budaiya', name: 'Μπουντάγια' },
+          { id: 'zallaq', name: 'Ζαλάκ' },
+          { id: 'durrat-al-bahrain', name: 'Ντουράτ αλ-Μπαχρέιν' }
         ]
       },
       {
@@ -2879,8 +2941,16 @@ export const CONTINENTS_DATA = [
         name: 'Υεμένη',
         flag: '🇾🇪',
         cities: [
-          { id: 'sanaa', name: 'Σαναά', badge: 'Πρωτεύουσα' },
-          { id: 'aden', name: 'Άντεν' }
+          { id: 'sanaa', name: 'Σαναά' },
+          { id: 'aden', name: 'Άντεν' },
+          { id: 'taiz', name: 'Ταΐζ' },
+          { id: 'shibam', name: 'Σιμπάμ' },
+          { id: 'al-hudaydah', name: 'Αλ-Χουντάιντα' },
+          { id: 'ibb', name: 'Ιμπ' },
+          { id: 'al-mukalla', name: 'Αλ-Μουκάλα' },
+          { id: 'zabid', name: 'Ζαμπίντ' },
+          { id: 'tarim', name: 'Ταρίμ' },
+          { id: 'hadibu', name: 'Χαντίμπου' }
         ]
       },
       {
