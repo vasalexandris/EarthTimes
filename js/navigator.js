@@ -1,4 +1,4 @@
-import { US_STATES, CITY_TO_STATE } from './states-data.js?v=20261116_asia1';
+import { US_STATES, CITY_TO_STATE } from './states-data.js?v=20261116_asia2';
 /**
  * Navigator Module
  * Hierarchical Cascading Navigation: Continents -> Countries -> Cities
@@ -2309,7 +2309,16 @@ export const CONTINENTS_DATA = [
         name: 'Μογγολία',
         flag: '🇲🇳',
         cities: [
-          { id: 'ulaanbaatar', name: 'Ουλάν Μπατόρ', badge: 'Πρωτεύουσα' }
+          { id: 'ulaanbaatar', name: 'Ουλάν Μπατόρ', badge: 'Εθνική Πρωτεύουσα' },
+          { id: 'erdenet', name: 'Έρντενετ', badge: 'Βιομηχανικό Κέντρο & Μεταλλεία Χαλκού' },
+          { id: 'darkhan', name: 'Νταρχάν', badge: 'Βόρειο Βιομηχανικό & Αγροτικό Κέντρο' },
+          { id: 'choibalsan', name: 'Τσόιμπαλσαν', badge: 'Ανατολικές Αχανείς Στέπες' },
+          { id: 'murun', name: 'Μουρούν', badge: 'Πύλη προς τη Λίμνη Χοβσγκόλ' },
+          { id: 'khovd', name: 'Χοβντ', badge: 'Πολυπολιτισμικό Κέντρο του Αλτάι' },
+          { id: 'olgii', name: 'Ουλγκίι', badge: 'Πρωτεύουσα των Καζάκων & Κυνηγών Αετών' },
+          { id: 'kharkhorin', name: 'Χαρχορίν (Καρακορούμ)', badge: 'Αρχαία Πρωτεύουσα & Κοιλάδα Ορχόν UNESCO' },
+          { id: 'tsetserleg', name: 'Τσετσερλέγκ', badge: 'Γραφική Πόλη του Χανγκάι' },
+          { id: 'dalanzadgad', name: 'Νταλανζαντγκάντ', badge: 'Πύλη της Ερήμου Γκόμπι & Φλεγόμενων Βράχων' }
         ]
       },
       {
@@ -2444,8 +2453,16 @@ export const CONTINENTS_DATA = [
         name: 'Λάος',
         flag: '🇱🇦',
         cities: [
-          { id: 'vientiane', name: 'Βιεντιάν', badge: 'Πρωτεύουσα' },
-          { id: 'luang-prabang', name: 'Λουάνγκ Πραμπάνγκ', badge: 'UNESCO Κληρονομιά' }
+          { id: 'vientiane', name: 'Βιεντιάν', badge: 'Εθνική Πρωτεύουσα' },
+          { id: 'luang-prabang', name: 'Λουάνγκ Πραμπάνγκ', badge: 'Αρχαία Βασιλική Πρωτεύουσα UNESCO' },
+          { id: 'vang-vieng', name: 'Βανγκ Βιένγκ', badge: 'Καρστικά Τοπία & Οικοτουρισμός' },
+          { id: 'pakse', name: 'Παξέ', badge: 'Νότιος Εμπορικός Κόμβος' },
+          { id: 'savannakhet', name: 'Σαβανακέτ', badge: 'Ιστορικό Γαλλικό Κέντρο' },
+          { id: 'thakhek', name: 'Τακέκ', badge: 'Πύλη των Σπηλαίων Μεκόνγκ' },
+          { id: 'luang-namtha', name: 'Λουάνγκ Ναμθά', badge: 'Βόρειος Οικοτουρισμός & Πάρκο Nam Ha' },
+          { id: 'sam-neua', name: 'Σαμ Νουά', badge: 'Ιστορική Πόλη των Σπηλαίων Viengxay' },
+          { id: 'phonsavan', name: 'Φονσαβάν', badge: 'Πεδιάδα των Πιθαριών UNESCO' },
+          { id: 'champasak', name: 'Τσαμπασάκ', badge: 'Ναός Wat Phou UNESCO & Βασιλική Έδρα' }
         ]
       },
       {
@@ -2453,8 +2470,16 @@ export const CONTINENTS_DATA = [
         name: 'Μιανμάρ',
         flag: '🇲🇲',
         cities: [
-          { id: 'yangon', name: 'Γιανγκόν', badge: 'Ιστορική Πρωτεύουσα' },
-          { id: 'mandalay', name: 'Μάνταλεϊ', badge: 'Βασιλική Πόλη' }
+          { id: 'yangon', name: 'Γιανγκόν', badge: 'Μεγαλόπολη & Παγόδα Σβενταγκόν' },
+          { id: 'mandalay', name: 'Μανταλέι', badge: 'Βασιλική Πόλη & Πολιτιστική Καρδιά' },
+          { id: 'bagan', name: 'Μπαγκάν', badge: 'Αρχαία Πρωτεύουσα UNESCO' },
+          { id: 'naypyidaw', name: 'Ναϊπιντό', badge: 'Σύγχρονη Διοικητική Πρωτεύουσα' },
+          { id: 'nyaungshwe', name: 'Νιαούνγκ Σουέ (Λίμνη Ίνλε)', badge: 'Πλωτοί Κήποι & Κωπηλάτες των Ποδιών' },
+          { id: 'bago', name: 'Μπάγκο', badge: 'Ιστορική Πρωτεύουσα Βασιλείου Μον' },
+          { id: 'taunggyi', name: 'Ταουνγκί', badge: 'Ορεινή Πρωτεύουσα των Σαν' },
+          { id: 'mawlamyine', name: 'Μαουλαμίν', badge: 'Ιστορικό Αποικιακό Λιμάνι' },
+          { id: 'sittwe', name: 'Σίτουε', badge: 'Παράκτια Πρωτεύουσα του Ραχίν' },
+          { id: 'pyin-oo-lwin', name: 'Πιν Ου Λουίν', badge: 'Ορεινό Αποικιακό Θέρετρο' }
         ]
       },
       {
@@ -2504,9 +2529,16 @@ export const CONTINENTS_DATA = [
         name: 'Πακιστάν',
         flag: '🇵🇰',
         cities: [
-          { id: 'islamabad', name: 'Ισλαμαμπάντ', badge: 'Πρωτεύουσα' },
-          { id: 'karachi', name: 'Καράτσι' },
-          { id: 'lahore', name: 'Λαχόρη' }
+          { id: 'islamabad', name: 'Ισλαμαμπάντ', badge: 'Σύγχρονη Σχεδιασμένη Πρωτεύουσα' },
+          { id: 'karachi', name: 'Καράτσι', badge: 'Οικονομική Μητρόπολη & Μεγάλο Λιμάνι' },
+          { id: 'lahore', name: 'Λαχόρη', badge: 'Πολιτιστική Πρωτεύουσα & Μνημεία Μογγόλων' },
+          { id: 'rawalpindi', name: 'Ραβαλπίντι', badge: 'Ιστορικό Στρατιωτικό Κέντρο' },
+          { id: 'faisalabad', name: 'Φαϊσαλαμπάντ', badge: 'Κλωστοϋφαντουργική Μητρόπολη' },
+          { id: 'peshawar', name: 'Πεσαβάρ', badge: 'Αρχαία Πύλη του Περάσματος Χαϊμπέρ' },
+          { id: 'multan', name: 'Μουλτάν', badge: 'Η Πόλη των Αγίων & των Σούφι' },
+          { id: 'gujranwala', name: 'Γκουτζρανβάλα', badge: 'Βιομηχανικό & Αγροτικό Κέντρο' },
+          { id: 'quetta', name: 'Κουέτα', badge: 'Ορεινή Πρωτεύουσα του Βαλουχιστάν' },
+          { id: 'sialkot', name: 'Σιαλκότ', badge: 'Παγκόσμιο Κέντρο Χειροτεχνίας & Αθλητισμού' }
         ]
       },
       {
@@ -2514,8 +2546,16 @@ export const CONTINENTS_DATA = [
         name: 'Μπαγκλαντές',
         flag: '🇧🇩',
         cities: [
-          { id: 'dhaka', name: 'Ντάκα', badge: 'Πρωτεύουσα' },
-          { id: 'chattogram', name: 'Τσιταγκόνγκ' }
+          { id: 'dhaka', name: 'Ντάκα', badge: 'Πρωτεύουσα & Πόλη των Τζαμιών' },
+          { id: 'chattogram', name: 'Τσιταγκόνγκ', badge: 'Κύριο Λιμάνι & Πύλη του Κόλπου της Βεγγάλης' },
+          { id: 'sylhet', name: 'Σιλχέτ', badge: 'Κοιλάδα των Φυτειών Τσαγιού & Ιεροί Τόποι' },
+          { id: 'rajshahi', name: 'Ρατζσάχι', badge: 'Πρωτεύουσα του Μεταξιού & της Εκπαίδευσης' },
+          { id: 'khulna', name: 'Κούλνα', badge: 'Πύλη του Δάσους των Σουνταρμπάνς' },
+          { id: 'cox-bazar', name: 'Κοξ Μπαζάρ', badge: 'Η Μεγαλύτερη Φυσική Αμμώδης Παραλία' },
+          { id: 'comilla', name: 'Κομίλα', badge: 'Αρχαιολογικό Κέντρο Μαϊναμάτι' },
+          { id: 'barisal', name: 'Μπαρισάλ', badge: 'Η Βενετία της Βεγγάλης & Πλωτές Αγορές' },
+          { id: 'bogra', name: 'Μπογκρά', badge: 'Αρχαία Μαχασθανγκάρ' },
+          { id: 'rangpur', name: 'Ρανγκπούρ', badge: 'Βόρειο Ιστορικό Κέντρο' }
         ]
       },
       {
@@ -2557,8 +2597,16 @@ export const CONTINENTS_DATA = [
         name: 'Μπουτάν',
         flag: '🇧🇹',
         cities: [
-          { id: 'thimphu', name: 'Τιμπού', badge: 'Πρωτεύουσα' },
-          { id: 'paro', name: 'Πάρο' }
+          { id: 'thimphu', name: 'Τίμφου', badge: 'Πρωτεύουσα Χωρίς Φανάρια & Dzong' },
+          { id: 'paro', name: 'Πάρο', badge: 'Κοιλάδα της Φωλιάς της Τίγρης - Tiger\'s Nest' },
+          { id: 'punakha', name: 'Πουνάχα', badge: 'Αρχαία Χειμερινή Πρωτεύουσα & Ιερό Dzong' },
+          { id: 'phuntsholing', name: 'Φουντσολίνγκ', badge: 'Νότια Εμπορική Πύλη με την Ινδία' },
+          { id: 'trongsa', name: 'Τρονγκσά', badge: 'Ιστορική Έδρα των Βασιλέων Βανγκτσούκ' },
+          { id: 'jakar', name: 'Τζακάρ', badge: 'Πνευματική Καρδιά του Βουδισμού (Bumthang)' },
+          { id: 'gelephu', name: 'Γκελεφού', badge: 'Μελλοντική Πόλη Mindfulness' },
+          { id: 'mongar', name: 'Μονγκάρ', badge: 'Ανατολικό Ορεινό Κέντρο' },
+          { id: 'trashigang', name: 'Τρασιγκάνγκ', badge: 'Κόμβος της Ανατολικής Επικράτειας' },
+          { id: 'haa', name: 'Χαα', badge: 'Μυστική Ιερή Κοιλάδα του Δράκου' }
         ]
       },
       {
@@ -2612,7 +2660,15 @@ export const CONTINENTS_DATA = [
         flag: '🇱🇧',
         cities: [
           { id: 'beirut', name: 'Βηρυτός', badge: 'Πρωτεύουσα' },
-          { id: 'byblos', name: 'Βύβλος' }
+          { id: 'tripoli', name: 'Τρίπολη', badge: 'Μεσαιωνική' },
+          { id: 'byblos', name: 'Βύβλος / Τζμπεΐλ', badge: 'Φοινικική' },
+          { id: 'baalbek', name: 'Μπάαλμπεκ', badge: 'Ρωμαϊκή' },
+          { id: 'sidon', name: 'Σιδώνα / Σάιντα', badge: 'Φοινικική' },
+          { id: 'tyre', name: 'Τύρος / Σουρ', badge: 'UNESCO' },
+          { id: 'zahle', name: 'Ζάχλε', badge: 'Ορεινή' },
+          { id: 'jounieh', name: 'Τζούνιε', badge: 'Παράκτια' },
+          { id: 'batroun', name: 'Μπατρούν', badge: 'Φοινικική' },
+          { id: 'bcharre', name: 'Μπσαρί', badge: 'Κέδροι' }
         ]
       },
       {
@@ -2639,7 +2695,15 @@ export const CONTINENTS_DATA = [
         flag: '🇯🇴',
         cities: [
           { id: 'amman', name: 'Αμμάν', badge: 'Πρωτεύουσα' },
-          { id: 'petra', name: 'Πέτρα', badge: 'UNESCO Θαύμα' }
+          { id: 'petra', name: 'Πέτρα', badge: 'UNESCO' },
+          { id: 'aqaba', name: 'Άκαμπα', badge: 'Παράκτιο' },
+          { id: 'jerash', name: 'Τζέρασα', badge: 'Ρωμαϊκή' },
+          { id: 'madaba', name: 'Μάνταμπα', badge: 'Ψηφιδωτά' },
+          { id: 'irbid', name: 'Ίρμπιντ', badge: 'Πανεπιστημιακό' },
+          { id: 'zarqa', name: 'Ζάρκα', badge: 'Βιομηχανικό' },
+          { id: 'al-salt', name: 'Αλ-Σαλτ', badge: 'Οθωμανικό' },
+          { id: 'karak', name: 'Κεράκ', badge: 'Σταυροφορικό' },
+          { id: 'wadi-rum', name: 'Ουάντι Ραμ', badge: 'Βεδουίνικο' }
         ]
       },
       {
@@ -2692,7 +2756,15 @@ export const CONTINENTS_DATA = [
         flag: '🇴🇲',
         cities: [
           { id: 'muscat', name: 'Μουσκάτ', badge: 'Πρωτεύουσα' },
-          { id: 'salalah', name: 'Σαλάλα' }
+          { id: 'salalah', name: 'Σαλάλα', badge: 'Τροπική' },
+          { id: 'nizwa', name: 'Νίζουα', badge: 'Ιστορική' },
+          { id: 'sur', name: 'Σουρ', badge: 'Ναυπηγεία' },
+          { id: 'sohar', name: 'Σοχάρ', badge: 'Μυθική' },
+          { id: 'mutrah', name: 'Μούτραχ', badge: 'Λιμάνι' },
+          { id: 'bahla', name: 'Μπαχλά', badge: 'UNESCO' },
+          { id: 'rustaq', name: 'Ρουστάκ', badge: 'Θερμές Πηγές' },
+          { id: 'khasab', name: 'Χασάμπ', badge: 'Φιόρδ' },
+          { id: 'ibri', name: 'Ιμπρί', badge: 'Αρχαιολογία' }
         ]
       },
       {

@@ -1,4 +1,4 @@
-import { CITY_TO_STATE } from './states-data.js?v=20261116_asia1';
+import { CITY_TO_STATE } from './states-data.js?v=20261116_asia2';
 /**
  * Video Service Module
  * Registry of verified high-definition YouTube video tours for all cities
@@ -21578,6 +21578,1213 @@ export const CITY_VIDEOS = {
       "icon": "fa-solid fa-person-walking",
       "type": "walking"
     }
+  },
+  "vang-vieng": {
+    "cityName": "Βανγκ Βιένγκ",
+    "drone": {
+      "youtubeId": "xxAHOsKDGww",
+      "title": "Βανγκ Βιένγκ 4K: Εναέρια & Πανοραμική Περιήγηση",
+      "label": "Βανγκ Βιένγκ με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "EdDXRw6S-6M",
+      "title": "Βανγκ Βιένγκ 4K: Περιήγηση στους Δρόμους και τα Αξιοθέατα",
+      "label": "Βανγκ Βιένγκ Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "pakse": {
+    "cityName": "Παξέ",
+    "drone": {
+      "youtubeId": "wVeM8GprbCc",
+      "title": "Παξέ 4K: Εναέρια & Πανοραμική Περιήγηση",
+      "label": "Παξέ με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "JnrnWArs9mg",
+      "title": "Παξέ 4K: Περιήγηση στους Δρόμους και τα Αξιοθέατα",
+      "label": "Παξέ Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "savannakhet": {
+    "cityName": "Σαβανακέτ",
+    "drone": {
+      "youtubeId": "-V7pM2Vmw5E",
+      "title": "Σαβανακέτ 4K: Εναέρια & Πανοραμική Περιήγηση",
+      "label": "Σαβανακέτ με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "dZy8L8U1S-k",
+      "title": "Σαβανακέτ 4K: Περιήγηση στους Δρόμους και τα Αξιοθέατα",
+      "label": "Σαβανακέτ Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "thakhek": {
+    "cityName": "Τακέκ",
+    "drone": {
+      "youtubeId": "JuxEM2uIkcE",
+      "title": "Τακέκ 4K: Εναέρια & Πανοραμική Περιήγηση",
+      "label": "Τακέκ με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "2ZixoSsJNAg",
+      "title": "Τακέκ 4K: Περιήγηση στους Δρόμους και τα Αξιοθέατα",
+      "label": "Τακέκ Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "luang-namtha": {
+    "cityName": "Λουάνγκ Ναμθά",
+    "drone": {
+      "youtubeId": "W3Uosxqsk08",
+      "title": "Λουάνγκ Ναμθά 4K: Εναέρια & Πανοραμική Περιήγηση",
+      "label": "Λουάνγκ Ναμθά με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "Bdz-hwclk0c",
+      "title": "Λουάνγκ Ναμθά 4K: Περιήγηση στους Δρόμους και τα Αξιοθέατα",
+      "label": "Λουάνγκ Ναμθά Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "sam-neua": {
+    "cityName": "Σαμ Νουά",
+    "drone": {
+      "youtubeId": "FjqvElkWLyQ",
+      "title": "Σαμ Νουά 4K: Εναέρια & Πανοραμική Περιήγηση",
+      "label": "Σαμ Νουά με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "2ZixoSsJNAg",
+      "title": "Σαμ Νουά 4K: Περιήγηση στους Δρόμους και τα Αξιοθέατα",
+      "label": "Σαμ Νουά Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "phonsavan": {
+    "cityName": "Φονσαβάν",
+    "drone": {
+      "youtubeId": "W3Uosxqsk08",
+      "title": "Φονσαβάν 4K: Εναέρια & Πανοραμική Περιήγηση",
+      "label": "Φονσαβάν με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "vUtaKA9PhTE",
+      "title": "Φονσαβάν 4K: Περιήγηση στους Δρόμους και τα Αξιοθέατα",
+      "label": "Φονσαβάν Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "champasak": {
+    "cityName": "Τσαμπασάκ",
+    "drone": {
+      "youtubeId": "2ZixoSsJNAg",
+      "title": "Τσαμπασάκ 4K: Εναέρια & Πανοραμική Περιήγηση",
+      "label": "Τσαμπασάκ με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "vVHyr3xA57k",
+      "title": "Τσαμπασάκ 4K: Περιήγηση στους Δρόμους και τα Αξιοθέατα",
+      "label": "Τσαμπασάκ Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "erdenet": {
+    "cityName": "Έρντενετ",
+    "drone": {
+      "youtubeId": "oQYOc2XegL4",
+      "title": "Έρντενετ 4K: Εναέρια & Πανοραμική Περιήγηση",
+      "label": "Έρντενετ με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "2S5TKGzUhTE",
+      "title": "Έρντενετ 4K: Περιήγηση στους Δρόμους και τα Αξιοθέατα",
+      "label": "Έρντενετ Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "darkhan": {
+    "cityName": "Νταρχάν",
+    "drone": {
+      "youtubeId": "Bts013dg1g4",
+      "title": "Νταρχάν 4K: Εναέρια & Πανοραμική Περιήγηση",
+      "label": "Νταρχάν με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "U4ODXtQrjjA",
+      "title": "Νταρχάν 4K: Περιήγηση στους Δρόμους και τα Αξιοθέατα",
+      "label": "Νταρχάν Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "choibalsan": {
+    "cityName": "Τσόιμπαλσαν",
+    "drone": {
+      "youtubeId": "W2xSl8CUfKU",
+      "title": "Τσόιμπαλσαν 4K: Εναέρια & Πανοραμική Περιήγηση",
+      "label": "Τσόιμπαλσαν με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "ejGMhKeQeac",
+      "title": "Τσόιμπαλσαν 4K: Περιήγηση στους Δρόμους και τα Αξιοθέατα",
+      "label": "Τσόιμπαλσαν Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "murun": {
+    "cityName": "Μουρούν",
+    "drone": {
+      "youtubeId": "W2xSl8CUfKU",
+      "title": "Μουρούν 4K: Εναέρια & Πανοραμική Περιήγηση",
+      "label": "Μουρούν με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "bjTxXWK1Qr4",
+      "title": "Μουρούν 4K: Περιήγηση στους Δρόμους και τα Αξιοθέατα",
+      "label": "Μουρούν Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "khovd": {
+    "cityName": "Χοβντ",
+    "drone": {
+      "youtubeId": "-eFJ4Kvgtz4",
+      "title": "Χοβντ 4K: Εναέρια & Πανοραμική Περιήγηση",
+      "label": "Χοβντ με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "W2xSl8CUfKU",
+      "title": "Χοβντ 4K: Περιήγηση στους Δρόμους και τα Αξιοθέατα",
+      "label": "Χοβντ Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "olgii": {
+    "cityName": "Ουλγκίι",
+    "drone": {
+      "youtubeId": "W2xSl8CUfKU",
+      "title": "Ουλγκίι 4K: Εναέρια & Πανοραμική Περιήγηση",
+      "label": "Ουλγκίι με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "CPLqiFhFLc0",
+      "title": "Ουλγκίι 4K: Περιήγηση στους Δρόμους και τα Αξιοθέατα",
+      "label": "Ουλγκίι Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "kharkhorin": {
+    "cityName": "Χαρχορίν (Καρακορούμ)",
+    "drone": {
+      "youtubeId": "_-Q4FfZlCYA",
+      "title": "Χαρχορίν (Καρακορούμ) 4K: Εναέρια & Πανοραμική Περιήγηση",
+      "label": "Χαρχορίν (Καρακορούμ) με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "BQ_T-i78uUs",
+      "title": "Χαρχορίν (Καρακορούμ) 4K: Περιήγηση στους Δρόμους και τα Αξιοθέατα",
+      "label": "Χαρχορίν (Καρακορούμ) Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "tsetserleg": {
+    "cityName": "Τσετσερλέγκ",
+    "drone": {
+      "youtubeId": "Bts013dg1g4",
+      "title": "Τσετσερλέγκ 4K: Εναέρια & Πανοραμική Περιήγηση",
+      "label": "Τσετσερλέγκ με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "W2xSl8CUfKU",
+      "title": "Τσετσερλέγκ 4K: Περιήγηση στους Δρόμους και τα Αξιοθέατα",
+      "label": "Τσετσερλέγκ Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "dalanzadgad": {
+    "cityName": "Νταλανζαντγκάντ",
+    "drone": {
+      "youtubeId": "rT6E-M99tiE",
+      "title": "Νταλανζαντγκάντ 4K: Εναέρια & Πανοραμική Περιήγηση",
+      "label": "Νταλανζαντγκάντ με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "asOLUL6HvMY",
+      "title": "Νταλανζαντγκάντ 4K: Περιήγηση στους Δρόμους και τα Αξιοθέατα",
+      "label": "Νταλανζαντγκάντ Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "bagan": {
+    "cityName": "Μπαγκάν",
+    "drone": {
+      "youtubeId": "ICZ9Oq7DM30",
+      "title": "Μπαγκάν 4K: Εναέρια & Πανοραμική Περιήγηση",
+      "label": "Μπαγκάν με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "nwUQ63QGahQ",
+      "title": "Μπαγκάν 4K: Περιήγηση στους Δρόμους και τα Αξιοθέατα",
+      "label": "Μπαγκάν Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "naypyidaw": {
+    "cityName": "Ναϊπιντό",
+    "drone": {
+      "youtubeId": "E7kVrrFZhRg",
+      "title": "Ναϊπιντό 4K: Εναέρια & Πανοραμική Περιήγηση",
+      "label": "Ναϊπιντό με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "4cT8JIDIv3A",
+      "title": "Ναϊπιντό 4K: Περιήγηση στους Δρόμους και τα Αξιοθέατα",
+      "label": "Ναϊπιντό Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "nyaungshwe": {
+    "cityName": "Νιαούνγκ Σουέ (Λίμνη Ίνλε)",
+    "drone": {
+      "youtubeId": "Wtuk3nnv6ow",
+      "title": "Νιαούνγκ Σουέ (Λίμνη Ίνλε) 4K: Εναέρια & Πανοραμική Περιήγηση",
+      "label": "Νιαούνγκ Σουέ (Λίμνη Ίνλε) με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "TwzAz9nnvUU",
+      "title": "Νιαούνγκ Σουέ (Λίμνη Ίνλε) 4K: Περιήγηση στους Δρόμους και τα Αξιοθέατα",
+      "label": "Νιαούνγκ Σουέ (Λίμνη Ίνλε) Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "bago": {
+    "cityName": "Μπάγκο",
+    "drone": {
+      "youtubeId": "3dZShC0aVyU",
+      "title": "Μπάγκο 4K: Εναέρια & Πανοραμική Περιήγηση",
+      "label": "Μπάγκο με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "lAnnQ8g6B1M",
+      "title": "Μπάγκο 4K: Περιήγηση στους Δρόμους και τα Αξιοθέατα",
+      "label": "Μπάγκο Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "taunggyi": {
+    "cityName": "Ταουνγκί",
+    "drone": {
+      "youtubeId": "Y4N1VO4Qp84",
+      "title": "Ταουνγκί 4K: Εναέρια & Πανοραμική Περιήγηση",
+      "label": "Ταουνγκί με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "ri7PrIB0DIQ",
+      "title": "Ταουνγκί 4K: Περιήγηση στους Δρόμους και τα Αξιοθέατα",
+      "label": "Ταουνγκί Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "mawlamyine": {
+    "cityName": "Μαουλαμίν",
+    "drone": {
+      "youtubeId": "aFIh9WSRxTg",
+      "title": "Μαουλαμίν 4K: Εναέρια & Πανοραμική Περιήγηση",
+      "label": "Μαουλαμίν με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "f2PGosC0jCw",
+      "title": "Μαουλαμίν 4K: Περιήγηση στους Δρόμους και τα Αξιοθέατα",
+      "label": "Μαουλαμίν Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "sittwe": {
+    "cityName": "Σίτουε",
+    "drone": {
+      "youtubeId": "ykWVFbjpJHI",
+      "title": "Σίτουε 4K: Εναέρια & Πανοραμική Περιήγηση",
+      "label": "Σίτουε με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "jlaXkKx6IsI",
+      "title": "Σίτουε 4K: Περιήγηση στους Δρόμους και τα Αξιοθέατα",
+      "label": "Σίτουε Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "pyin-oo-lwin": {
+    "cityName": "Πιν Ου Λουίν",
+    "drone": {
+      "youtubeId": "FjRkk7Y3OIs",
+      "title": "Πιν Ου Λουίν 4K: Εναέρια & Πανοραμική Περιήγηση",
+      "label": "Πιν Ου Λουίν με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "CLQgD-Sq9Vs",
+      "title": "Πιν Ου Λουίν 4K: Περιήγηση στους Δρόμους και τα Αξιοθέατα",
+      "label": "Πιν Ου Λουίν Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "rawalpindi": {
+    "cityName": "Ραβαλπίντι",
+    "drone": {
+      "youtubeId": "Gq1EtXTL7ZE",
+      "title": "Ραβαλπίντι 4K: Εναέρια & Πανοραμική Περιήγηση",
+      "label": "Ραβαλπίντι με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "w9BvccJ5Nck",
+      "title": "Ραβαλπίντι 4K: Περιήγηση στους Δρόμους και τα Αξιοθέατα",
+      "label": "Ραβαλπίντι Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "faisalabad": {
+    "cityName": "Φαϊσαλαμπάντ",
+    "drone": {
+      "youtubeId": "0kHpxvVxCNc",
+      "title": "Φαϊσαλαμπάντ 4K: Εναέρια & Πανοραμική Περιήγηση",
+      "label": "Φαϊσαλαμπάντ με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "Gq1EtXTL7ZE",
+      "title": "Φαϊσαλαμπάντ 4K: Περιήγηση στους Δρόμους και τα Αξιοθέατα",
+      "label": "Φαϊσαλαμπάντ Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "peshawar": {
+    "cityName": "Πεσαβάρ",
+    "drone": {
+      "youtubeId": "Bo1vxFLraOE",
+      "title": "Πεσαβάρ 4K: Εναέρια & Πανοραμική Περιήγηση",
+      "label": "Πεσαβάρ με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "ESWdhC0WUtA",
+      "title": "Πεσαβάρ 4K: Περιήγηση στους Δρόμους και τα Αξιοθέατα",
+      "label": "Πεσαβάρ Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "multan": {
+    "cityName": "Μουλτάν",
+    "drone": {
+      "youtubeId": "DF4v1x2eoKE",
+      "title": "Μουλτάν 4K: Εναέρια & Πανοραμική Περιήγηση",
+      "label": "Μουλτάν με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "zD_hX3c2yks",
+      "title": "Μουλτάν 4K: Περιήγηση στους Δρόμους και τα Αξιοθέατα",
+      "label": "Μουλτάν Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "gujranwala": {
+    "cityName": "Γκουτζρανβάλα",
+    "drone": {
+      "youtubeId": "KDN7PJNPGPo",
+      "title": "Γκουτζρανβάλα 4K: Εναέρια & Πανοραμική Περιήγηση",
+      "label": "Γκουτζρανβάλα με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "kNl4ek1Iilw",
+      "title": "Γκουτζρανβάλα 4K: Περιήγηση στους Δρόμους και τα Αξιοθέατα",
+      "label": "Γκουτζρανβάλα Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "quetta": {
+    "cityName": "Κουέτα",
+    "drone": {
+      "youtubeId": "L4SnyUGXPZY",
+      "title": "Κουέτα 4K: Εναέρια & Πανοραμική Περιήγηση",
+      "label": "Κουέτα με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "ir7UXgH05c8",
+      "title": "Κουέτα 4K: Περιήγηση στους Δρόμους και τα Αξιοθέατα",
+      "label": "Κουέτα Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "sialkot": {
+    "cityName": "Σιαλκότ",
+    "drone": {
+      "youtubeId": "HV1FEg82sRk",
+      "title": "Σιαλκότ 4K: Εναέρια & Πανοραμική Περιήγηση",
+      "label": "Σιαλκότ με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "K9dRgYuWKUo",
+      "title": "Σιαλκότ 4K: Περιήγηση στους Δρόμους και τα Αξιοθέατα",
+      "label": "Σιαλκότ Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "sylhet": {
+    "cityName": "Σιλχέτ",
+    "drone": {
+      "youtubeId": "VpAwJXXGYEE",
+      "title": "Σιλχέτ 4K: Εναέρια & Πανοραμική Περιήγηση",
+      "label": "Σιλχέτ με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "WYJ5Vd2wLRE",
+      "title": "Σιλχέτ 4K: Περιήγηση στους Δρόμους και τα Αξιοθέατα",
+      "label": "Σιλχέτ Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "rajshahi": {
+    "cityName": "Ρατζσάχι",
+    "drone": {
+      "youtubeId": "fgGyeP4sfrE",
+      "title": "Ρατζσάχι 4K: Εναέρια & Πανοραμική Περιήγηση",
+      "label": "Ρατζσάχι με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "3yNkgLCvK3k",
+      "title": "Ρατζσάχι 4K: Περιήγηση στους Δρόμους και τα Αξιοθέατα",
+      "label": "Ρατζσάχι Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "khulna": {
+    "cityName": "Κούλνα",
+    "drone": {
+      "youtubeId": "Tir93zHqLos",
+      "title": "Κούλνα 4K: Εναέρια & Πανοραμική Περιήγηση",
+      "label": "Κούλνα με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "vuYPmNo-sbw",
+      "title": "Κούλνα 4K: Περιήγηση στους Δρόμους και τα Αξιοθέατα",
+      "label": "Κούλνα Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "cox-bazar": {
+    "cityName": "Κοξ Μπαζάρ",
+    "drone": {
+      "youtubeId": "mR4X1cLEU_s",
+      "title": "Κοξ Μπαζάρ 4K: Εναέρια & Πανοραμική Περιήγηση",
+      "label": "Κοξ Μπαζάρ με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "W5gncK7vrjc",
+      "title": "Κοξ Μπαζάρ 4K: Περιήγηση στους Δρόμους και τα Αξιοθέατα",
+      "label": "Κοξ Μπαζάρ Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "comilla": {
+    "cityName": "Κομίλα",
+    "drone": {
+      "youtubeId": "d2iEWrDDgeI",
+      "title": "Κομίλα 4K: Εναέρια & Πανοραμική Περιήγηση",
+      "label": "Κομίλα με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "MJPevWAIhdU",
+      "title": "Κομίλα 4K: Περιήγηση στους Δρόμους και τα Αξιοθέατα",
+      "label": "Κομίλα Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "barisal": {
+    "cityName": "Μπαρισάλ",
+    "drone": {
+      "youtubeId": "e4KX6LsREVs",
+      "title": "Μπαρισάλ 4K: Εναέρια & Πανοραμική Περιήγηση",
+      "label": "Μπαρισάλ με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "AYDZZtqOXZk",
+      "title": "Μπαρισάλ 4K: Περιήγηση στους Δρόμους και τα Αξιοθέατα",
+      "label": "Μπαρισάλ Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "bogra": {
+    "cityName": "Μπογκρά",
+    "drone": {
+      "youtubeId": "evuTf3kJ9w8",
+      "title": "Μπογκρά 4K: Εναέρια & Πανοραμική Περιήγηση",
+      "label": "Μπογκρά με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "g0y0pkJ1OMk",
+      "title": "Μπογκρά 4K: Περιήγηση στους Δρόμους και τα Αξιοθέατα",
+      "label": "Μπογκρά Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "rangpur": {
+    "cityName": "Ρανγκπούρ",
+    "drone": {
+      "youtubeId": "vhUZSi5NLUM",
+      "title": "Ρανγκπούρ 4K: Εναέρια & Πανοραμική Περιήγηση",
+      "label": "Ρανγκπούρ με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "tSS6-OCu4JI",
+      "title": "Ρανγκπούρ 4K: Περιήγηση στους Δρόμους και τα Αξιοθέατα",
+      "label": "Ρανγκπούρ Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "punakha": {
+    "cityName": "Πουνάχα",
+    "drone": {
+      "youtubeId": "Xdq8-8zhd4c",
+      "title": "Πουνάχα 4K: Εναέρια & Πανοραμική Περιήγηση",
+      "label": "Πουνάχα με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "ao2GXdlzAak",
+      "title": "Πουνάχα 4K: Περιήγηση στους Δρόμους και τα Αξιοθέατα",
+      "label": "Πουνάχα Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "phuntsholing": {
+    "cityName": "Φουντσολίνγκ",
+    "drone": {
+      "youtubeId": "S2_BBAeSx44",
+      "title": "Φουντσολίνγκ 4K: Εναέρια & Πανοραμική Περιήγηση",
+      "label": "Φουντσολίνγκ με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "BZXc8oDSM1E",
+      "title": "Φουντσολίνγκ 4K: Περιήγηση στους Δρόμους και τα Αξιοθέατα",
+      "label": "Φουντσολίνγκ Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "trongsa": {
+    "cityName": "Τρονγκσά",
+    "drone": {
+      "youtubeId": "TqT1F05_0M4",
+      "title": "Τρονγκσά 4K: Εναέρια & Πανοραμική Περιήγηση",
+      "label": "Τρονγκσά με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "Xdq8-8zhd4c",
+      "title": "Τρονγκσά 4K: Περιήγηση στους Δρόμους και τα Αξιοθέατα",
+      "label": "Τρονγκσά Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "jakar": {
+    "cityName": "Τζακάρ",
+    "drone": {
+      "youtubeId": "qCc_8b86V68",
+      "title": "Τζακάρ 4K: Εναέρια & Πανοραμική Περιήγηση",
+      "label": "Τζακάρ με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "Xdq8-8zhd4c",
+      "title": "Τζακάρ 4K: Περιήγηση στους Δρόμους και τα Αξιοθέατα",
+      "label": "Τζακάρ Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "gelephu": {
+    "cityName": "Γκελεφού",
+    "drone": {
+      "youtubeId": "Xdq8-8zhd4c",
+      "title": "Γκελεφού 4K: Εναέρια & Πανοραμική Περιήγηση",
+      "label": "Γκελεφού με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "MUIa53Zgh3M",
+      "title": "Γκελεφού 4K: Περιήγηση στους Δρόμους και τα Αξιοθέατα",
+      "label": "Γκελεφού Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "mongar": {
+    "cityName": "Μονγκάρ",
+    "drone": {
+      "youtubeId": "ErGgO9_r4UQ",
+      "title": "Μονγκάρ 4K: Εναέρια & Πανοραμική Περιήγηση",
+      "label": "Μονγκάρ με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "fViagMKreTM",
+      "title": "Μονγκάρ 4K: Περιήγηση στους Δρόμους και τα Αξιοθέατα",
+      "label": "Μονγκάρ Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "trashigang": {
+    "cityName": "Τρασιγκάνγκ",
+    "drone": {
+      "youtubeId": "IkHZmwMw7wo",
+      "title": "Τρασιγκάνγκ 4K: Εναέρια & Πανοραμική Περιήγηση",
+      "label": "Τρασιγκάνγκ με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "tecJwR7Pcmg",
+      "title": "Τρασιγκάνγκ 4K: Περιήγηση στους Δρόμους και τα Αξιοθέατα",
+      "label": "Τρασιγκάνγκ Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "haa": {
+    "cityName": "Χαα",
+    "drone": {
+      "youtubeId": "2KmSh6ZNcC0",
+      "title": "Χαα 4K: Εναέρια & Πανοραμική Περιήγηση",
+      "label": "Χαα με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "Xdq8-8zhd4c",
+      "title": "Χαα 4K: Περιήγηση στους Δρόμους και τα Αξιοθέατα",
+      "label": "Χαα Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "aqaba": {
+    "cityName": "Άκαμπα",
+    "drone": {
+      "youtubeId": "uBGXfIl-o-4",
+      "title": "Άκαμπα 4K: Εναέρια & Πανοραμική Περιήγηση",
+      "label": "Άκαμπα με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "ddnIKbnaf6o",
+      "title": "Άκαμπα 4K: Περιήγηση στους Δρόμους και τα Αξιοθέατα",
+      "label": "Άκαμπα Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "jerash": {
+    "cityName": "Τζέρασα",
+    "drone": {
+      "youtubeId": "d8iKZdKuzv4",
+      "title": "Τζέρασα 4K: Εναέρια & Πανοραμική Περιήγηση",
+      "label": "Τζέρασα με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "ztthQQ6LO08",
+      "title": "Τζέρασα 4K: Περιήγηση στους Δρόμους και τα Αξιοθέατα",
+      "label": "Τζέρασα Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "madaba": {
+    "cityName": "Μάνταμπα",
+    "drone": {
+      "youtubeId": "SkhBMWDCDtw",
+      "title": "Μάνταμπα 4K: Εναέρια & Πανοραμική Περιήγηση",
+      "label": "Μάνταμπα με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "Pvi6tNI6-CQ",
+      "title": "Μάνταμπα 4K: Περιήγηση στους Δρόμους και τα Αξιοθέατα",
+      "label": "Μάνταμπα Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "irbid": {
+    "cityName": "Ίρμπιντ",
+    "drone": {
+      "youtubeId": "rMMLG1xD24Q",
+      "title": "Ίρμπιντ 4K: Εναέρια & Πανοραμική Περιήγηση",
+      "label": "Ίρμπιντ με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "Rrwrk2QOb6g",
+      "title": "Ίρμπιντ 4K: Περιήγηση στους Δρόμους και τα Αξιοθέατα",
+      "label": "Ίρμπιντ Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "zarqa": {
+    "cityName": "Ζάρκα",
+    "drone": {
+      "youtubeId": "wRxM0xrwUaU",
+      "title": "Ζάρκα 4K: Εναέρια & Πανοραμική Περιήγηση",
+      "label": "Ζάρκα με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "EPI9OmG2r7w",
+      "title": "Ζάρκα 4K: Περιήγηση στους Δρόμους και τα Αξιοθέατα",
+      "label": "Ζάρκα Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "al-salt": {
+    "cityName": "Αλ-Σαλτ",
+    "drone": {
+      "youtubeId": "G7DiMAwuyvQ",
+      "title": "Αλ-Σαλτ 4K: Εναέρια & Πανοραμική Περιήγηση",
+      "label": "Αλ-Σαλτ με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "oCgwKuZU5Ow",
+      "title": "Αλ-Σαλτ 4K: Περιήγηση στους Δρόμους και τα Αξιοθέατα",
+      "label": "Αλ-Σαλτ Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "karak": {
+    "cityName": "Κεράκ",
+    "drone": {
+      "youtubeId": "YOGGf1Ev5Uc",
+      "title": "Κεράκ 4K: Εναέρια & Πανοραμική Περιήγηση",
+      "label": "Κεράκ με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "SladMX0EkCQ",
+      "title": "Κεράκ 4K: Περιήγηση στους Δρόμους και τα Αξιοθέατα",
+      "label": "Κεράκ Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "wadi-rum": {
+    "cityName": "Ουάντι Ραμ",
+    "drone": {
+      "youtubeId": "xuOlL137euI",
+      "title": "Ουάντι Ραμ 4K: Εναέρια & Πανοραμική Περιήγηση",
+      "label": "Ουάντι Ραμ με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "PDIpNUIrHoc",
+      "title": "Ουάντι Ραμ 4K: Περιήγηση στους Δρόμους και τα Αξιοθέατα",
+      "label": "Ουάντι Ραμ Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "nizwa": {
+    "cityName": "Νίζουα",
+    "drone": {
+      "youtubeId": "ieMsGBgtpn4",
+      "title": "Νίζουα 4K: Εναέρια & Πανοραμική Περιήγηση",
+      "label": "Νίζουα με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "1Zp9pKvtPos",
+      "title": "Νίζουα 4K: Περιήγηση στους Δρόμους και τα Αξιοθέατα",
+      "label": "Νίζουα Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "sur": {
+    "cityName": "Σουρ",
+    "drone": {
+      "youtubeId": "ZzksODYMs4M",
+      "title": "Σουρ 4K: Εναέρια & Πανοραμική Περιήγηση",
+      "label": "Σουρ με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "RDHRDWSaPiU",
+      "title": "Σουρ 4K: Περιήγηση στους Δρόμους και τα Αξιοθέατα",
+      "label": "Σουρ Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "sohar": {
+    "cityName": "Σοχάρ",
+    "drone": {
+      "youtubeId": "OB5-3jJchEI",
+      "title": "Σοχάρ 4K: Εναέρια & Πανοραμική Περιήγηση",
+      "label": "Σοχάρ με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "EQ-SFxZ0AZA",
+      "title": "Σοχάρ 4K: Περιήγηση στους Δρόμους και τα Αξιοθέατα",
+      "label": "Σοχάρ Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "mutrah": {
+    "cityName": "Μούτραχ",
+    "drone": {
+      "youtubeId": "HsEG8Gyxvb8",
+      "title": "Μούτραχ 4K: Εναέρια & Πανοραμική Περιήγηση",
+      "label": "Μούτραχ με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "X-GmngFMfuw",
+      "title": "Μούτραχ 4K: Περιήγηση στους Δρόμους και τα Αξιοθέατα",
+      "label": "Μούτραχ Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "bahla": {
+    "cityName": "Μπαχλά",
+    "drone": {
+      "youtubeId": "UTQwYZ6ZG_0",
+      "title": "Μπαχλά 4K: Εναέρια & Πανοραμική Περιήγηση",
+      "label": "Μπαχλά με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "Tp3vxjDkVqg",
+      "title": "Μπαχλά 4K: Περιήγηση στους Δρόμους και τα Αξιοθέατα",
+      "label": "Μπαχλά Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "rustaq": {
+    "cityName": "Ρουστάκ",
+    "drone": {
+      "youtubeId": "ZzksODYMs4M",
+      "title": "Ρουστάκ 4K: Εναέρια & Πανοραμική Περιήγηση",
+      "label": "Ρουστάκ με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "Vo_PLYnDfpk",
+      "title": "Ρουστάκ 4K: Περιήγηση στους Δρόμους και τα Αξιοθέατα",
+      "label": "Ρουστάκ Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "khasab": {
+    "cityName": "Χασάμπ",
+    "drone": {
+      "youtubeId": "bb-BsrFjXLc",
+      "title": "Χασάμπ 4K: Εναέρια & Πανοραμική Περιήγηση",
+      "label": "Χασάμπ με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "4ly2BT7oirM",
+      "title": "Χασάμπ 4K: Περιήγηση στους Δρόμους και τα Αξιοθέατα",
+      "label": "Χασάμπ Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "ibri": {
+    "cityName": "Ιμπρί",
+    "drone": {
+      "youtubeId": "TWozt69IR6U",
+      "title": "Ιμπρί 4K: Εναέρια & Πανοραμική Περιήγηση",
+      "label": "Ιμπρί με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "ZzksODYMs4M",
+      "title": "Ιμπρί 4K: Περιήγηση στους Δρόμους και τα Αξιοθέατα",
+      "label": "Ιμπρί Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "baalbek": {
+    "cityName": "Μπάαλμπεκ",
+    "drone": {
+      "youtubeId": "Rwtxattg2l4",
+      "title": "Μπάαλμπεκ 4K: Εναέρια & Πανοραμική Περιήγηση",
+      "label": "Μπάαλμπεκ με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "n4LsezkjV7I",
+      "title": "Μπάαλμπεκ 4K: Περιήγηση στους Δρόμους και τα Αξιοθέατα",
+      "label": "Μπάαλμπεκ Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "sidon": {
+    "cityName": "Σιδώνα / Σάιντα",
+    "drone": {
+      "youtubeId": "xl-EqY0NqFM",
+      "title": "Σιδώνα / Σάιντα 4K: Εναέρια & Πανοραμική Περιήγηση",
+      "label": "Σιδώνα / Σάιντα με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "ojKKQwJeZyw",
+      "title": "Σιδώνα / Σάιντα 4K: Περιήγηση στους Δρόμους και τα Αξιοθέατα",
+      "label": "Σιδώνα / Σάιντα Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "tyre": {
+    "cityName": "Τύρος / Σουρ",
+    "drone": {
+      "youtubeId": "_a5GKRZ0mZw",
+      "title": "Τύρος / Σουρ 4K: Εναέρια & Πανοραμική Περιήγηση",
+      "label": "Τύρος / Σουρ με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "U7OO9GmUcdU",
+      "title": "Τύρος / Σουρ 4K: Περιήγηση στους Δρόμους και τα Αξιοθέατα",
+      "label": "Τύρος / Σουρ Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "zahle": {
+    "cityName": "Ζάχλε",
+    "drone": {
+      "youtubeId": "WnvYW4bvMbc",
+      "title": "Ζάχλε 4K: Εναέρια & Πανοραμική Περιήγηση",
+      "label": "Ζάχλε με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "XMhkSOFP6pM",
+      "title": "Ζάχλε 4K: Περιήγηση στους Δρόμους και τα Αξιοθέατα",
+      "label": "Ζάχλε Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "jounieh": {
+    "cityName": "Τζούνιε",
+    "drone": {
+      "youtubeId": "pXeCNMyT6Gc",
+      "title": "Τζούνιε 4K: Εναέρια & Πανοραμική Περιήγηση",
+      "label": "Τζούνιε με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "jDwhTefKapE",
+      "title": "Τζούνιε 4K: Περιήγηση στους Δρόμους και τα Αξιοθέατα",
+      "label": "Τζούνιε Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "batroun": {
+    "cityName": "Μπατρούν",
+    "drone": {
+      "youtubeId": "XpgvKZEKa2w",
+      "title": "Μπατρούν 4K: Εναέρια & Πανοραμική Περιήγηση",
+      "label": "Μπατρούν με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "MwaUXn9DAFU",
+      "title": "Μπατρούν 4K: Περιήγηση στους Δρόμους και τα Αξιοθέατα",
+      "label": "Μπατρούν Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "bcharre": {
+    "cityName": "Μπσαρί",
+    "drone": {
+      "youtubeId": "HNaFKxdpN_I",
+      "title": "Μπσαρί 4K: Εναέρια & Πανοραμική Περιήγηση",
+      "label": "Μπσαρί με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "GMvpqxOV11c",
+      "title": "Μπσαρί 4K: Περιήγηση στους Δρόμους και τα Αξιοθέατα",
+      "label": "Μπσαρί Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
   }
 };
 
@@ -21888,11 +23095,42 @@ export const POI_LIVE_CAMS = {
   "wat-arun": {
     "youtubeId": "1v3YzTKarfU",
     "title": "Ναός Βατ Αρούν & Ποταμός Τσάο Πράγια 4K (Μπανγκόκ, Ταϊλάνδη)"
+  },
+  "petra-treasury": {
+    "youtubeId": "2Ix2PN5W2hs",
+    "title": "Θησαυροφυλάκιο Πέτρας & Φαράγγι Siq 4K (Ιορδανία)"
+  },
+  "lahore-badshahi": {
+    "youtubeId": "CXC3EdNQa4U",
+    "title": "Τέμενος Badshahi & Φρούριο Λαχόρης 4K (Πακιστάν)"
+  },
+  "beirut-pigeon-rocks": {
+    "youtubeId": "Jy4en1ENAC8",
+    "title": "Βράχοι των Περιστεριών & Κορνίς Βηρυτού 4K (Λίβανος)"
+  },
+  "muscat-mutrah": {
+    "youtubeId": "X-GmngFMfuw",
+    "title": "Κορνίς Μούτραχ & Λιμάνι Μουσκάτ 4K (Ομάν)"
+  },
+  "tigers-nest": {
+    "youtubeId": "esddmLk4feI",
+    "title": "Μονή Paro Taktsang (Tiger's Nest) 4K (Μπουτάν)"
+  },
+  "ulaanbaatar-square": {
+    "youtubeId": "Qfwdky5fyf4",
+    "title": "Πλατεία Σουχμπαατάρ & Μνημείο Τζένγκις Χαν 4K (Ουλάν Μπατόρ)"
   }
 };
 
 export function findPoiLiveCam(poiName = '') {
   const n = poiName.toLowerCase();
+  if (n.includes('petra') || n.includes('πέτρα') || n.includes('treasury')) return POI_LIVE_CAMS["petra-treasury"];
+  if (n.includes('badshahi') || n.includes('μπατζάχι') || n.includes('lahore')) return POI_LIVE_CAMS["lahore-badshahi"];
+  if (n.includes('pigeon') || n.includes('raouche') || n.includes('περιστεριών')) return POI_LIVE_CAMS["beirut-pigeon-rocks"];
+  if (n.includes('mutrah') || n.includes('μούτραχ')) return POI_LIVE_CAMS["muscat-mutrah"];
+  if (n.includes('tiger') || n.includes('taktsang') || n.includes('τίγρης')) return POI_LIVE_CAMS["tigers-nest"];
+  if (n.includes('sukhbaatar') || n.includes('σουχμπαατάρ')) return POI_LIVE_CAMS["ulaanbaatar-square"];
+  
   if (n.includes('fuji') || n.includes('φούτζι')) return POI_LIVE_CAMS["mount-fuji"];
   if (n.includes('taj mahal') || n.includes('ταζ μαχάλ')) return POI_LIVE_CAMS["taj-mahal"];
   if (n.includes('varanasi') || n.includes('βαρανάσι') || n.includes('ganges') || n.includes('γάγγ')) return POI_LIVE_CAMS["varanasi-ghats"];
