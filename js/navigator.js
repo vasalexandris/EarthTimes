@@ -1,4 +1,4 @@
-import { US_STATES, CITY_TO_STATE } from './states-data.js?v=20261116_africa7';
+import { US_STATES, CITY_TO_STATE } from './states-data.js?v=20261116_asia1';
 /**
  * Navigator Module
  * Hierarchical Cascading Navigation: Continents -> Countries -> Cities
@@ -2267,12 +2267,16 @@ export const CONTINENTS_DATA = [
         name: 'Ιαπωνία',
         flag: '🇯🇵',
         cities: [
-          { id: 'tokyo', name: 'Τόκιο', badge: 'Πρωτεύουσα' },
-          { id: 'kyoto', name: 'Κιότο', badge: 'Αρχαία Πρωτεύουσα' },
-          { id: 'osaka', name: 'Οσάκα', badge: 'Γαστρονομία & Εμπόριο' },
-          { id: 'hiroshima', name: 'Χιροσίμα', badge: 'Μνημείο Ειρήνης' },
-          { id: 'sapporo', name: 'Σαππόρο', badge: 'Χοκκάιντο' },
-          { id: 'fukuoka', name: 'Φουκουόκα', badge: 'Πύλη Κιούσου' }
+          { id: 'tokyo', name: 'Τόκιο', badge: 'Η Ανατολική Πρωτεύουσα' },
+          { id: 'kyoto', name: 'Κιότο', badge: 'Η Αυτοκρατορική Πρωτεύουσα' },
+          { id: 'osaka', name: 'Οσάκα', badge: 'Η Μητρόπολη του Εμπορίου' },
+          { id: 'hiroshima', name: 'Χιροσίμα', badge: 'Η Πόλη της Ειρήνης' },
+          { id: 'sapporo', name: 'Σαππόρο', badge: 'Η Πρωτεύουσα του Βορρά' },
+          { id: 'fukuoka', name: 'Φουκουόκα', badge: 'Η Πύλη του Κιούσου' },
+          { id: 'nara', name: 'Νάρα', badge: 'Ιεροί Ναοί & Ελάφια' },
+          { id: 'nagoya', name: 'Ναγκόγια', badge: 'Κάστρο και Τεχνουργία' },
+          { id: 'yokohama', name: 'Γιοκοχάμα', badge: 'Λιμάνι και Κοσμοπολιτισμός' },
+          { id: 'kobe', name: 'Κόμπε', badge: 'Λιμάνι και Όρος Rokko' }
         ]
       },
       {
@@ -2280,9 +2284,16 @@ export const CONTINENTS_DATA = [
         name: 'Νότια Κορέα',
         flag: '🇰🇷',
         cities: [
-          { id: 'seoul', name: 'Σεούλ', badge: 'Πρωτεύουσα' },
-          { id: 'busan', name: 'Μπουσάν', badge: 'Μεγάλο Λιμάνι' },
-          { id: 'incheon', name: 'Ίντσον', badge: 'Διεθνής Πύλη' }
+          { id: 'seoul', name: 'Σεούλ', badge: 'Η Πόλη του Ποταμού Χαν' },
+          { id: 'busan', name: 'Μπουσάν', badge: 'Η Πόλη του Λιμανιού' },
+          { id: 'incheon', name: 'Ίντσον', badge: 'Η Πύλη της Κορέας' },
+          { id: 'daegu', name: 'Ντέγκου', badge: 'Υφαντουργία και Ιατρική' },
+          { id: 'daejeon', name: 'Ντετζόν', badge: 'Επιστήμη και Τεχνολογία' },
+          { id: 'gwangju', name: 'Γκουάνγκτζου', badge: 'Δημοκρατία και Τέχνη' },
+          { id: 'gyeongju', name: 'Γκιόνγκτζου', badge: 'Χρυσή Πρωτεύουσα Silla UNESCO' },
+          { id: 'jeju', name: 'Τζετζού', badge: 'UNESCO Φυσική Κληρονομιά' },
+          { id: 'suwon', name: 'Σούγουον', badge: 'Φρούριο Hwaseong UNESCO' },
+          { id: 'jeonju', name: 'Τζόντζου', badge: 'Πόλη Γαστρονομίας UNESCO' }
         ]
       },
       {
@@ -2306,8 +2317,16 @@ export const CONTINENTS_DATA = [
         name: 'Ταϊβάν',
         flag: '🇹🇼',
         cities: [
-          { id: 'taipei', name: 'Ταϊπέι', badge: 'Πρωτεύουσα' },
-          { id: 'kaohsiung', name: 'Καοσιούνγκ', badge: 'Νότιο Λιμάνι' }
+          { id: 'taipei', name: 'Ταϊπέι', badge: 'Η Πόλη των Ναών και των Ουρανοξυστών' },
+          { id: 'kaohsiung', name: 'Καοσιούνγκ', badge: 'Η Πόλη του Λιμανιού του Νότου' },
+          { id: 'taichung', name: 'Ταϊτσούνγκ', badge: 'Πολιτισμός και Φύση' },
+          { id: 'tainan', name: 'Ταϊνάν', badge: 'Πρώτη Πρωτεύουσα και Ναοί' },
+          { id: 'hsinchu', name: 'Σιντσού', badge: 'Ημιαγωγοί και Τεχνολογία' },
+          { id: 'keelung', name: 'Κιλόνγκ', badge: 'Λιμάνι και Βροχή' },
+          { id: 'chiayi', name: 'Τσιαγί', badge: 'Όρη Alishan' },
+          { id: 'hualien', name: 'Χουαλιέν', badge: 'Μαρμάρινο Φαράγγι Taroko' },
+          { id: 'taitung', name: 'Ταϊτούνγκ', badge: 'Αυτόχθονες και Ειρηνικός' },
+          { id: 'lukang', name: 'Λουκάνγκ', badge: 'Παραδοσιακή Αρχιτεκτονική' }
         ]
       },
       {
@@ -2349,9 +2368,16 @@ export const CONTINENTS_DATA = [
         name: 'Ινδονησία',
         flag: '🇮🇩',
         cities: [
-          { id: 'jakarta', name: 'Τζακάρτα', badge: 'Πρωτεύουσα' },
-          { id: 'bali-denpasar', name: 'Ντενπασάρ', badge: 'Μπαλί' },
-          { id: 'surabaya', name: 'Σουραμπάγια', badge: 'Ανατολική Ιάβα' }
+          { id: 'jakarta', name: 'Τζακάρτα', badge: 'Ιστορική Πρωτεύουσα & Μητρόπολη' },
+          { id: 'bali-denpasar', name: 'Ντενπασάρ', badge: 'Πολιτιστικό & Τουριστικό Κέντρο' },
+          { id: 'surabaya', name: 'Σουραμπάγια', badge: 'Μεγάλο Λιμάνι & Ιστορική Πόλη' },
+          { id: 'yogyakarta', name: 'Τζογκτζακάρτα', badge: 'Σουλτανάτο & Ναοί UNESCO' },
+          { id: 'bandung', name: 'Μπαντούνγκ', badge: 'Πόλη των Λουλουδιών & Ιστορική Διάσκεψη' },
+          { id: 'medan', name: 'Μεντάν', badge: 'Μητρόπολη της Σουμάτρας' },
+          { id: 'makassar', name: 'Μακασάρ', badge: 'Ιστορικό Λιμάνι του Σουλαουέζι' },
+          { id: 'semarang', name: 'Σεμαράνγκ', badge: 'Κεντρική Ιάβα & Αποικιακό Λιμάνι' },
+          { id: 'solo-surakarta', name: 'Σουρακάρτα (Σόλο)', badge: 'Βασιλική Πόλη & Κέντρο Μπατίκ' },
+          { id: 'labuan-bajo', name: 'Λαμπουάν Μπάτζο', badge: 'Εθνικό Πάρκο Κομόντο & Νήσος Φλόρες' }
         ]
       },
       {
@@ -2359,8 +2385,16 @@ export const CONTINENTS_DATA = [
         name: 'Μαλαισία',
         flag: '🇲🇾',
         cities: [
-          { id: 'kuala-lumpur', name: 'Κουάλα Λουμπούρ', badge: 'Πρωτεύουσα' },
-          { id: 'george-town', name: 'Τζορτζ Τάουν', badge: 'Πενάνγκ UNESCO' }
+          { id: 'kuala-lumpur', name: 'Κουάλα Λουμπούρ', badge: 'Εθνική Πρωτεύουσα & Μητρόπολη' },
+          { id: 'george-town', name: 'Τζορτζ Τάουν', badge: 'Ιστορικό Λιμάνι & Γαστρονομία UNESCO' },
+          { id: 'malacca', name: 'Μαλάκκα', badge: 'Αποικιακό Λιμάνι & Σουλτανάτο UNESCO' },
+          { id: 'johor-bahru', name: 'Τζοχόρ Μπάχρου', badge: 'Πρωτεύουσα του Τζοχόρ & Σύνορο με Σιγκαπούρη' },
+          { id: 'kota-kinabalu', name: 'Κότα Κιναμπάλου', badge: 'Πρωτεύουσα Σαμπάχ & Όρος Κιναμπάλου' },
+          { id: 'kuching', name: 'Κούτσινγκ', badge: 'Πρωτεύουσα Σαραουάκ & Πόλη Γαστρονομίας UNESCO' },
+          { id: 'ipoh', name: 'Ίπο', badge: 'Αποικιακή Αρχιτεκτονική & Σπήλαια' },
+          { id: 'kuantan', name: 'Κουαντάν', badge: 'Ανατολική Ακτή & Θάλασσα της Νότιας Κίνας' },
+          { id: 'alor-setar', name: 'Άλορ Σετάρ', badge: 'Ιστορική Πόλη των Ορυζώνων του Κεντάχ' },
+          { id: 'langkawi', name: 'Λανγκάουι', badge: 'Γεωπάρκο UNESCO & Τροπικό Αρχιπέλαγος' }
         ]
       },
       {
@@ -2376,8 +2410,16 @@ export const CONTINENTS_DATA = [
         name: 'Φιλιππίνες',
         flag: '🇵🇭',
         cities: [
-          { id: 'manila', name: 'Μανίλα', badge: 'Πρωτεύουσα' },
-          { id: 'cebu-city', name: 'Σεμπού', badge: 'Βασίλισσα Νότου' }
+          { id: 'manila', name: 'Μανίλα', badge: 'Εθνική Πρωτεύουσα & Ιστορική Intramuros' },
+          { id: 'cebu-city', name: 'Σεμπού', badge: 'Πρώτος Ισπανικός Οικισμός & Κέντρο Βισάγιας' },
+          { id: 'davao', name: 'Νταβάο', badge: 'Μητρόπολη του Μιντανάο & Όρος Apo' },
+          { id: 'baguio', name: 'Μπαγκούιο', badge: 'Ορεινή Πόλη των Πεύκων & Δημιουργική Πόλη UNESCO' },
+          { id: 'vigan', name: 'Βιγκάν', badge: 'Διατηρητέα Ισπανική Πόλη UNESCO' },
+          { id: 'iloilo', name: 'Ιλοΐλο', badge: 'Ιστορικές Εκκλησίες & Πόλη Γαστρονομίας UNESCO' },
+          { id: 'zamboanga', name: 'Ζαμποάνγκα', badge: 'Ισπανικό Κρεολικό Ιδίωμα & Πολιτιστικό Σταυροδρόμι' },
+          { id: 'puerto-princesa', name: 'Πουέρτο Πρινσέσα', badge: 'Υπόγειος Ποταμός Παλαουάν UNESCO' },
+          { id: 'angeles-city', name: 'Άνχελες Σίτι', badge: 'Γαστρονομία Παμπάνγκα & Ιστορικές Επαύλεις' },
+          { id: 'tagaytay', name: 'Ταγκαϊτάι', badge: 'Πανοραμική Θέα στο Ηφαίστειο Taal' }
         ]
       },
       {
@@ -2445,10 +2487,16 @@ export const CONTINENTS_DATA = [
         name: 'Ινδία',
         flag: '🇮🇳',
         cities: [
-          { id: 'new-delhi', name: 'Νέο Δελχί', badge: 'Πρωτεύουσα' },
-          { id: 'mumbai', name: 'Βομβάη', badge: 'Οικονομικό Κέντρο' },
-          { id: 'jaipur', name: 'Τζαϊπούρ', badge: 'Ροζ Πόλη' },
-          { id: 'agra', name: 'Άγκρα', badge: 'Ταζ Μαχάλ' }
+          { id: 'new-delhi', name: 'Νέο Δελχί', badge: 'Η Πράσινη Αυτοκρατορική Πρωτεύουσα' },
+          { id: 'mumbai', name: 'Βομβάη', badge: 'Η Πόλη των Ονείρων' },
+          { id: 'jaipur', name: 'Τζαϊπούρ', badge: 'Η Ροζ Πόλη των Μαχαραγιάδων' },
+          { id: 'agra', name: 'Άγκρα', badge: 'Η Πόλη της Αιώνιας Αγάπης και του Μαρμάρου' },
+          { id: 'kolkata', name: 'Καλκούτα', badge: 'Πολιτιστική Πρωτεύουσα της Βεγγάλης' },
+          { id: 'bengaluru', name: 'Μπανγκαλόρ', badge: 'Silicon Valley της Ινδίας' },
+          { id: 'chennai', name: 'Τσεννάι', badge: 'Πρωτεύουσα των Ταμίλ & Ναοί Dravidian' },
+          { id: 'varanasi', name: 'Βαρανάσι', badge: 'Ιερότερη Πόλη στον Ποταμό Γάγγη' },
+          { id: 'amritsar', name: 'Αμριτσάρ', badge: 'Ο Χρυσός Ναός των Σιχ' },
+          { id: 'hyderabad', name: 'Χαϊντεραμπάντ', badge: 'Πόλη των Νιζάμ & Τεχνολογίας' }
         ]
       },
       {
@@ -2475,8 +2523,16 @@ export const CONTINENTS_DATA = [
         name: 'Σρι Λάνκα',
         flag: '🇱🇰',
         cities: [
-          { id: 'colombo', name: 'Κολόμπο', badge: 'Πρωτεύουσα' },
-          { id: 'kandy', name: 'Κάντι' }
+          { id: 'colombo', name: 'Κολόμπο', badge: 'Η Κοσμοπολίτικη Πύλη του Ινδικού' },
+          { id: 'kandy', name: 'Κάντι', badge: 'Η Ιερή Πρωτεύουσα των Λόφων' },
+          { id: 'galle', name: 'Γκάλε', badge: 'Ιστορικό Ολλανδικό Φρούριο UNESCO' },
+          { id: 'jaffna', name: 'Τζάφνα', badge: 'Πολιτιστικό Κέντρο των Ταμίλ στον Βορρά' },
+          { id: 'anuradhapura', name: 'Ανουρανταπούρα', badge: 'Αρχαία Ιερή Πρωτεύουσα UNESCO' },
+          { id: 'sigiriya', name: 'Σιγκιρίγια', badge: 'Το «Βράχος των Λεόντων» & Αρχαίο Παλάτι UNESCO' },
+          { id: 'nuwara-eliya', name: 'Νουβάρα Ελίγια', badge: '«Μικρή Αγγλία» στα Υψίπεδα του Τσαγιού' },
+          { id: 'trincomalee', name: 'Τρινκομαλί', badge: 'Φυσικό Βαθύ Λιμάνι & Ιεροί Ινδουιστικοί Ναοί' },
+          { id: 'negombo', name: 'Νεγκόμπο', badge: 'Παραδοσιακό Αλιευτικό & Αποικιακό Κέντρο' },
+          { id: 'batticaloa', name: 'Μπατικαλόα', badge: 'Ανατολική Ακτή & Λιμνοθάλασσες' }
         ]
       },
       {
@@ -2484,8 +2540,16 @@ export const CONTINENTS_DATA = [
         name: 'Νεπάλ',
         flag: '🇳🇵',
         cities: [
-          { id: 'kathmandu', name: 'Κατμαντού', badge: 'Πρωτεύουσα' },
-          { id: 'pokhara', name: 'Ποκάρα' }
+          { id: 'kathmandu', name: 'Κατμαντού', badge: 'Η Πόλη των Χιλίων Ναών' },
+          { id: 'pokhara', name: 'Ποκάρα', badge: 'Η Πόλη των Λιμνών και της Αναπούρνα' },
+          { id: 'lalitpur-patan', name: 'Λαλιτπούρ', badge: 'Πόλη των Καλών Τεχνών & Πλατεία Durbar UNESCO' },
+          { id: 'bhaktapur', name: 'Μπακταπούρ', badge: 'Μεσαιωνική Πόλη της Κουλτούρας Newar UNESCO' },
+          { id: 'lumbini', name: 'Λουμπίνι', badge: 'Ιερή Γενέτειρα του Βούδα UNESCO' },
+          { id: 'janakpur', name: 'Τζανακπούρ', badge: 'Ιστορικός Ναός Janaki & Πολιτισμός Mithila' },
+          { id: 'biratnagar', name: 'Μπιρατναγκάρ', badge: 'Βιομηχανικός & Εμπορικός Κόμβος του Νότου' },
+          { id: 'dharan', name: 'Νταράν', badge: 'Πόλη στους Πρόποδες των Ιμαλαΐων & Κέντρο Gurkha' },
+          { id: 'chitwan', name: 'Τσιτουάν', badge: 'Εθνικό Πάρκο Μονόκερων Ρινόκερων UNESCO' },
+          { id: 'butwal', name: 'Μπουτβάλ', badge: 'Ιστορικός Συγκοινωνιακός Κόμβος' }
         ]
       },
       {
