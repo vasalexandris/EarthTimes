@@ -211,7 +211,8 @@ export function setOverlayMediaMode(mode, specificId = null) {
     iframe.className = 'w-full h-full max-w-5xl rounded-xl shadow-2xl border border-amber-500/40 bg-white transition-all duration-300';
     const searchQuery = query || (currentActiveVideoCityId ? currentActiveVideoCityId.replace(/_/g, ' ') : 'Travel');
     if (title) title.innerText = `📹 Video Search: ${searchQuery}`;
-    iframe.src = `https://www.bing.com/videos/search?q=${encodeURIComponent(searchQuery)}`;
+    // Filter Bing Video Search to embeddable providers (YouTube & Dailymotion) so 100% of results play in the iframe without MSN refusal errors
+    iframe.src = `https://www.bing.com/videos/search?q=${encodeURIComponent(searchQuery + ' (site:youtube.com OR site:dailymotion.com)')}`;
   } else if (currentOverlayMode === 'web') {
     iframe.className = 'w-full h-full max-w-5xl rounded-xl shadow-2xl border border-sky-500/40 bg-white transition-all duration-300';
     const searchQuery = query || (currentActiveVideoCityId ? currentActiveVideoCityId.replace(/_/g, ' ') : 'Travel');
@@ -476,68 +477,90 @@ export function reloadCurrentVideoIframe() {
   }
 }
 
+export function extractMsnVideoQuery(rawUrl) {
+  if (!rawUrl) return '';
+  try {
+    const cleanUrl = rawUrl.startsWith('http') ? rawUrl : 'https://' + rawUrl;
+    const u = new URL(cleanUrl);
+    const parts = u.pathname.split('/').filter(Boolean);
+    const categories = ['video', 'news', 'entertainment', 'food-and-drink', 'lifestyle', 'travel', 'sports', 'weather', 'autos'];
+    for (let i = parts.length - 1; i >= 0; i--) {
+      const p = parts[i];
+      if (/^[a-z]{2}-[a-z]{2}$/i.test(p)) continue;
+      if (categories.includes(p.toLowerCase())) continue;
+      if (p.toLowerCase().startsWith('vi-') || p.toLowerCase().startsWith('ar-')) continue;
+      const clean = decodeURIComponent(p).replace(/[-_+]/g, ' ').trim();
+      if (clean && clean.length > 2) return clean;
+    }
+  } catch (e) {
+    // fallback
+  }
+  return '';
+}
+
+export function showMsnNotice(rawUrl, query) {
+  const container = document.getElementById('videoIframeContainer');
+  if (!container) return;
+  const existing = document.getElementById('msnEmbedNotice');
+  if (existing) existing.remove();
+
+  const notice = document.createElement('div');
+  notice.id = 'msnEmbedNotice';
+  notice.className = 'absolute bottom-4 left-4 right-4 sm:left-auto sm:right-4 sm:max-w-md bg-slate-900/95 border border-amber-500/60 rounded-xl p-3 shadow-2xl z-40 text-xs backdrop-blur-md flex items-start gap-2.5 animate-fade-in transition-all';
+  notice.innerHTML = `
+    <div class="w-7 h-7 rounded-lg bg-amber-500/20 text-amber-400 flex items-center justify-center shrink-0 mt-0.5">
+      <i class="fa-solid fa-triangle-exclamation"></i>
+    </div>
+    <div class="flex-1 min-w-0">
+      <div class="font-bold text-white mb-0.5">Προστασία βίντεο MSN (Microsoft)</div>
+      <div class="text-[11px] text-slate-300 leading-relaxed">
+        Η Microsoft απαγορεύει την προβολή βίντεο από το MSN σε εξωτερικές σελίδες (X-Frame-Options). Φορτώθηκε αυτόματα αντίστοιχο βίντεο για άμεση αναπαραγωγή!
+      </div>
+      <div class="mt-2 flex items-center gap-2">
+        <a href="${rawUrl}" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 rounded bg-sky-600 hover:bg-sky-500 text-white font-bold text-[10px] transition flex items-center gap-1 shadow">
+          <i class="fa-solid fa-arrow-up-right-from-square"></i> Άνοιγμα στο MSN
+        </a>
+        <button onclick="document.getElementById('msnEmbedNotice')?.remove()" class="px-2 py-1 rounded bg-slate-800 hover:bg-slate-700 text-slate-300 font-bold text-[10px] transition">
+          Κατάλαβα
+        </button>
+      </div>
+    </div>
+    <button onclick="document.getElementById('msnEmbedNotice')?.remove()" class="text-slate-400 hover:text-white p-1">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+  `;
+  container.appendChild(notice);
+  setTimeout(() => {
+    const el = document.getElementById('msnEmbedNotice');
+    if (el) el.remove();
+  }, 10000);
+}
+
 export function playMsnVideo(rawUrlOrQuery) {
-  const iframe = document.getElementById('mapVideoIframe');
+  const query = extractMsnVideoQuery(rawUrlOrQuery) || (currentOverlayQuery || currentActiveVideoCityId || 'Travel').trim();
   const title = document.getElementById('videoOverlayTitle');
-  if (!iframe) return;
 
-  let query = (rawUrlOrQuery || '').trim();
-  let label = 'MSN Video';
-
-  // Extract slug or title from MSN URL (e.g., https://www.msn.com/el-gr/video/watch/salonica-music/vi-AA1A2nfs)
-  const viMatch = query.match(/vi-([a-zA-Z0-9]+)/i);
-  const slugMatch = query.match(/msn\.com\/[^/]+\/(?:video|news|entertainment|lifestyle|travel|food-and-drink)\/[^/]+\/([^/?#]+)/i);
-
-  if (slugMatch && slugMatch[1]) {
-    const cleanSlug = decodeURIComponent(slugMatch[1]).replace(/vi-[a-zA-Z0-9]+/i, '').replace(/[-_+]/g, ' ').trim();
-    if (cleanSlug) {
-      query = cleanSlug;
-      label = cleanSlug;
-    } else if (viMatch) {
-      query = viMatch[0];
-      label = viMatch[0];
-    }
-  } else if (viMatch) {
-    query = viMatch[0];
-    label = viMatch[0];
-  } else if (/msn\.com/i.test(query)) {
-    const pathParts = query.replace(/^https?:\/\/(?:www\.)?msn\.com\/?/i, '').split(/[/?#]/).filter(Boolean);
-    const lastPart = pathParts.pop() || '';
-    const cleanLast = decodeURIComponent(lastPart).replace(/[-_+]/g, ' ').trim();
-    if (cleanLast) {
-      query = cleanLast;
-      label = cleanLast;
-    }
+  // 1. Check if query matches our local gastro recipe videos
+  const gastro = getGastroRecipeVideo(query, '');
+  if (gastro && gastro.youtubeId) {
+    openGastroVideo(query);
+    showMsnNotice(rawUrlOrQuery, gastro.title || query);
+    return;
   }
 
-  if (title) title.innerText = `📹 MSN Video: ${label}`;
-  iframe.classList.remove('hidden');
-  iframe.className = 'w-full h-full max-w-5xl rounded-xl shadow-2xl border border-sky-500/50 bg-slate-950 transition-all duration-300';
+  // 2. Check if matches POI video
+  const poi = getPoiVideoInfo(query, '');
+  if (poi && poi.youtubeId && !poi.isCityTourFallback) {
+    openPoiVideo(query);
+    showMsnNotice(rawUrlOrQuery, poi.title || query);
+    return;
+  }
 
-  // Route through Bing's video player with view=detail so MSN's frame-ancestors policy allows playback inside the iframe
-  iframe.src = `https://www.bing.com/videos/search?q=${encodeURIComponent('site:msn.com ' + query)}&view=detail`;
-
-  currentOverlayMode = 'video_search';
-  const btnMap = {
-    player: document.getElementById('mediaModePlayerBtn'),
-    shorts: document.getElementById('mediaModeShortsBtn'),
-    video_search: document.getElementById('mediaModeVideoSearchBtn'),
-    web: document.getElementById('mediaModeWebBtn'),
-  };
-  const activeColorMap = {
-    player: 'bg-rose-600 text-white shadow-md',
-    shorts: 'bg-emerald-600 text-white shadow-md shadow-emerald-900/50',
-    video_search: 'bg-amber-600 text-white shadow-md shadow-amber-900/50',
-    web: 'bg-sky-600 text-white shadow-md shadow-sky-900/50',
-  };
-  Object.entries(btnMap).forEach(([m, btn]) => {
-    if (!btn) return;
-    if (m === 'video_search') {
-      btn.className = `px-2.5 py-1 rounded-lg ${activeColorMap[m]} text-xs font-bold transition flex items-center gap-1.5 shadow cursor-pointer shrink-0`;
-    } else {
-      btn.className = 'px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white border border-slate-700 text-xs font-bold transition flex items-center gap-1.5 cursor-pointer shrink-0';
-    }
-  });
+  // 3. Search and play video via Video Search with embeddable sources filtered
+  currentOverlayQuery = query;
+  if (title) title.innerText = `📹 Βίντεο: ${query}`;
+  setOverlayMediaMode('video_search');
+  showMsnNotice(rawUrlOrQuery, query);
 }
 
 export function submitOverlayVideoSearch() {
