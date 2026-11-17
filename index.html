@@ -729,9 +729,13 @@
                   <i class="fa-solid fa-play"></i>
                   <span class="hidden sm:inline">4K Player</span>
                 </button>
-                <button id="mediaModeTikTokBtn" onclick="window.setOverlayMediaMode('tiktok')" class="px-2 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white border border-slate-700 text-[11px] font-bold transition flex items-center gap-1 cursor-pointer shrink-0" title="TikTok & Shorts στο παράθυρο">
+                <button id="mediaModeTikTokBtn" onclick="window.setOverlayMediaMode('tiktok')" class="px-2 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white border border-slate-700 text-[11px] font-bold transition flex items-center gap-1 cursor-pointer shrink-0" title="Πραγματικό TikTok Player (Ένθετο βίντεο)">
                   <i class="fa-brands fa-tiktok text-pink-400"></i>
                   <span class="hidden sm:inline">TikTok</span>
+                </button>
+                <button id="mediaModeInstagramBtn" onclick="window.setOverlayMediaMode('instagram')" class="px-2 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white border border-slate-700 text-[11px] font-bold transition flex items-center gap-1 cursor-pointer shrink-0" title="Πραγματικό Instagram Reels Player (Ένθετο Reel)">
+                  <i class="fa-brands fa-instagram text-fuchsia-400"></i>
+                  <span class="hidden sm:inline">Instagram</span>
                 </button>
                 <button id="mediaModeWebBtn" onclick="window.setOverlayMediaMode('web')" class="px-2 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white border border-slate-700 text-[11px] font-bold transition flex items-center gap-1 cursor-pointer shrink-0" title="Αναζήτηση Ιστού στο παράθυρο (Χωρίς να φεύγετε από τη σελίδα)">
                   <i class="fa-solid fa-globe text-sky-400"></i>
@@ -745,8 +749,8 @@
             </div>
 
             <!-- Video Player Frame -->
-            <div class="flex-1 p-2 sm:p-4 flex items-center justify-center bg-black">
-              <iframe id="mapVideoIframe" class="w-full h-full max-w-5xl rounded-xl shadow-2xl border border-slate-800" src="" title="YouTube Video Tour" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <div id="videoIframeContainer" class="flex-1 p-2 sm:p-4 flex items-center justify-center bg-black overflow-hidden relative">
+              <iframe id="mapVideoIframe" class="w-full h-full max-w-5xl rounded-xl shadow-2xl border border-slate-800 transition-all duration-300" src="" title="Media Tour Player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             </div>
           </div>
 
@@ -1333,7 +1337,7 @@
   </div>
 
   <!-- Modular Application Scripts -->
-  <script type="module" src="js/app.js?v=20261117_pres7"></script>
+  <script type="module" src="js/app.js?v=20261117_pres8"></script>
   <!-- Fullscreen Toggle Script (Android, WebKit, Desktop) -->
   <script>
     window.toggleFullScreen = function() {

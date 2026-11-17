@@ -4,12 +4,12 @@
  * Base Map Layer selector, Date display, Video Overlay, and Deep Dive views.
  */
 
-import { getCityVideo, getAvailableVideoTypes, getAvailableCityTours, CITY_VIDEOS, findPoiLiveCam, getPoiVideoInfo, getGastroRecipeVideo } from './video-service.js?v=20261117_pres7';
-import { getDeepDiveData } from './deep-dive.js?v=20261117_pres7';
-import { fetchWikiArticle, fetchWikiArticleHtml, cleanWikiTitle } from './wiki-service.js?v=20261117_pres7';
-import { calculateSubsolarPoint } from './solar-terminator.js?v=20261117_pres7';
-import { CITY_TO_STATE } from './states-data.js?v=20261117_pres7';
-import { CITY_TO_COUNTRY } from './navigator.js?v=20261117_pres7';
+import { getCityVideo, getAvailableVideoTypes, getAvailableCityTours, CITY_VIDEOS, findPoiLiveCam, getPoiVideoInfo, getGastroRecipeVideo, getSocialMediaVideos } from './video-service.js?v=20261117_pres8';
+import { getDeepDiveData } from './deep-dive.js?v=20261117_pres8';
+import { fetchWikiArticle, fetchWikiArticleHtml, cleanWikiTitle } from './wiki-service.js?v=20261117_pres8';
+import { calculateSubsolarPoint } from './solar-terminator.js?v=20261117_pres8';
+import { CITY_TO_STATE } from './states-data.js?v=20261117_pres8';
+import { CITY_TO_COUNTRY } from './navigator.js?v=20261117_pres8';
 
 let currentActiveVideoCityId = null;
 let currentActiveVideoType = 'drone';
@@ -20,6 +20,8 @@ let currentOverlayQuery = '';
 let currentOverlayYoutubeId = '';
 let currentOverlayTitle = '';
 let currentOverlayStartSec = 0;
+let currentOverlayTikTokId = '';
+let currentOverlayInstagramId = '';
 
 let currentWikiTitle = '';
 let currentWikiLang = 'el';
@@ -165,24 +167,28 @@ export function openCityVideo(cityId, preferredType = 'drone') {
   syncMapFloatingControlsVisibility();
 }
 
-export function setOverlayMediaMode(mode) {
+export function setOverlayMediaMode(mode, specificId = null) {
   currentOverlayMode = mode || 'player';
   const iframe = document.getElementById('mapVideoIframe');
   const title = document.getElementById('videoOverlayTitle');
   const searchInput = document.getElementById('videoSearchInput');
+  const directLink = document.getElementById('videoDirectLink');
+  const choicePills = document.getElementById('videoChoicePills');
   const query = (searchInput?.value?.trim() || currentOverlayQuery || 'Athens Greece').trim();
 
   // Update button active styles
   const btnMap = {
     player: document.getElementById('mediaModePlayerBtn'),
     tiktok: document.getElementById('mediaModeTikTokBtn'),
+    instagram: document.getElementById('mediaModeInstagramBtn'),
     web: document.getElementById('mediaModeWebBtn'),
     videos: document.getElementById('mediaModeVideosBtn'),
   };
 
   const activeColorMap = {
     player: 'bg-rose-600 text-white shadow-md',
-    tiktok: 'bg-pink-600 text-white shadow-md',
+    tiktok: 'bg-pink-600 text-white shadow-md shadow-pink-900/50',
+    instagram: 'bg-gradient-to-r from-purple-600 to-pink-600 text-white shadow-md shadow-purple-900/50',
     web: 'bg-sky-600 text-white shadow-md',
     videos: 'bg-amber-600 text-white shadow-md',
   };
@@ -199,20 +205,154 @@ export function setOverlayMediaMode(mode) {
   if (!iframe) return;
 
   if (currentOverlayMode === 'player') {
+    // 16:9 widescreen layout
+    iframe.className = 'w-full h-full max-w-5xl rounded-xl shadow-2xl border border-slate-800 transition-all duration-300';
     if (currentOverlayYoutubeId) {
       if (title && currentOverlayTitle) title.innerText = currentOverlayTitle;
+      if (directLink) {
+        directLink.href = `https://www.youtube.com/watch?v=${currentOverlayYoutubeId}${currentOverlayStartSec > 0 ? `&t=${currentOverlayStartSec}s` : ''}`;
+        directLink.innerHTML = '<i class="fa-brands fa-youtube"></i><span class="hidden sm:inline">YouTube</span>';
+        directLink.className = 'px-2.5 py-1 rounded-lg bg-red-600 hover:bg-red-500 text-white text-xs font-bold transition flex items-center gap-1.5 shadow';
+      }
       iframe.src = `https://www.youtube-nocookie.com/embed/${currentOverlayYoutubeId}?autoplay=1&rel=0${currentOverlayStartSec > 0 ? `&start=${currentOverlayStartSec}` : ''}`;
     }
   } else if (currentOverlayMode === 'tiktok') {
-    if (title) title.innerText = `📱 TikTok & Reels: ${query}`;
-    iframe.src = `https://www.bing.com/videos/search?q=${encodeURIComponent(query + ' tiktok reels shorts')}`;
+    // Smartphone 9:16 vertical layout centered
+    iframe.className = 'w-full h-full max-w-[380px] sm:max-w-[420px] rounded-2xl shadow-2xl border border-pink-500/40 bg-black transition-all duration-300 mx-auto';
+    const social = getSocialMediaVideos(query, currentActiveVideoCityId);
+    const tts = social?.tiktok || [];
+    const activeId = specificId || currentOverlayTikTokId || (tts[0] && tts[0].id) || '7106594312292453637';
+    currentOverlayTikTokId = activeId;
+
+    if (title) title.innerText = `📱 TikTok: ${social?.name || query}`;
+    if (directLink) {
+      directLink.href = `https://www.tiktok.com/@tiktok/video/${activeId}`;
+      directLink.innerHTML = '<i class="fa-brands fa-tiktok text-pink-300"></i><span class="hidden sm:inline">TikTok</span>';
+      directLink.className = 'px-2.5 py-1 rounded-lg bg-pink-700 hover:bg-pink-600 text-white text-xs font-bold transition flex items-center gap-1.5 shadow';
+    }
+    iframe.src = `https://www.tiktok.com/player/v1/${activeId}?embed_from=oembed&music_info=1&description=1&autoplay=1`;
+
+    if (choicePills) {
+      const pillsHtml = [
+        ...tts.map(t => {
+          const isAct = t.id === activeId;
+          return `
+            <button onclick="window.switchOverlayTikTok('${t.id}', '${escapeStr(t.title)}')" class="px-2.5 py-1 rounded-lg text-xs font-bold transition flex items-center gap-1.5 ${isAct ? 'bg-pink-600 text-white shadow-md' : 'bg-slate-800 text-slate-300 hover:text-white border border-slate-700'} cursor-pointer shrink-0">
+              <i class="fa-brands fa-tiktok text-pink-400"></i>
+              <span>${t.label || t.title}</span>
+            </button>
+          `;
+        }),
+        ...(social?.instagram || []).map(ig => `
+          <button onclick="window.setOverlayMediaMode('instagram', '${ig.id}')" class="px-2.5 py-1 rounded-lg text-xs font-bold transition flex items-center gap-1.5 bg-slate-800 text-purple-300 hover:text-white border border-purple-800/60 cursor-pointer shrink-0" title="Προβολή στο Instagram Reels">
+            <i class="fa-brands fa-instagram text-fuchsia-400"></i>
+            <span>${ig.label || 'Instagram Reel'}</span>
+          </button>
+        `)
+      ].join('');
+      choicePills.innerHTML = pillsHtml;
+    }
+  } else if (currentOverlayMode === 'instagram') {
+    // Smartphone 9:16 vertical layout centered
+    iframe.className = 'w-full h-full max-w-[380px] sm:max-w-[420px] rounded-2xl shadow-2xl border border-purple-500/40 bg-black transition-all duration-300 mx-auto';
+    const social = getSocialMediaVideos(query, currentActiveVideoCityId);
+    const igs = social?.instagram || [];
+    const activeId = specificId || currentOverlayInstagramId || (igs[0] && igs[0].id) || 'C8qFmP_Nn9K';
+    currentOverlayInstagramId = activeId;
+
+    if (title) title.innerText = `📸 Instagram Reel: ${social?.name || query}`;
+    if (directLink) {
+      directLink.href = `https://www.instagram.com/reel/${activeId}/`;
+      directLink.innerHTML = '<i class="fa-brands fa-instagram text-fuchsia-300"></i><span class="hidden sm:inline">Instagram</span>';
+      directLink.className = 'px-2.5 py-1 rounded-lg bg-gradient-to-r from-purple-700 to-pink-700 hover:from-purple-600 hover:to-pink-600 text-white text-xs font-bold transition flex items-center gap-1.5 shadow';
+    }
+    iframe.src = `https://www.instagram.com/reel/${activeId}/embed/`;
+
+    if (choicePills) {
+      const pillsHtml = [
+        ...igs.map(ig => {
+          const isAct = ig.id === activeId;
+          return `
+            <button onclick="window.switchOverlayInstagram('${ig.id}', '${escapeStr(ig.title)}')" class="px-2.5 py-1 rounded-lg text-xs font-bold transition flex items-center gap-1.5 ${isAct ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white shadow-md' : 'bg-slate-800 text-slate-300 hover:text-white border border-slate-700'} cursor-pointer shrink-0">
+              <i class="fa-brands fa-instagram text-fuchsia-400"></i>
+              <span>${ig.label || ig.title}</span>
+            </button>
+          `;
+        }),
+        ...(social?.tiktok || []).map(t => `
+          <button onclick="window.setOverlayMediaMode('tiktok', '${t.id}')" class="px-2.5 py-1 rounded-lg text-xs font-bold transition flex items-center gap-1.5 bg-slate-800 text-pink-300 hover:text-white border border-pink-800/60 cursor-pointer shrink-0" title="Προβολή στο TikTok">
+            <i class="fa-brands fa-tiktok text-pink-400"></i>
+            <span>${t.label || 'TikTok'}</span>
+          </button>
+        `)
+      ].join('');
+      choicePills.innerHTML = pillsHtml;
+    }
   } else if (currentOverlayMode === 'web') {
+    iframe.className = 'w-full h-full max-w-5xl rounded-xl shadow-2xl border border-slate-800 transition-all duration-300';
     if (title) title.innerText = `🌐 Web Search: ${query}`;
+    if (directLink) {
+      directLink.href = `https://www.bing.com/search?q=${encodeURIComponent(query)}`;
+      directLink.innerHTML = '<i class="fa-solid fa-globe"></i><span class="hidden sm:inline">Web Search</span>';
+      directLink.className = 'px-2.5 py-1 rounded-lg bg-sky-600 hover:bg-sky-500 text-white text-xs font-bold transition flex items-center gap-1.5 shadow';
+    }
     iframe.src = `https://www.bing.com/search?q=${encodeURIComponent(query)}`;
   } else if (currentOverlayMode === 'videos') {
+    iframe.className = 'w-full h-full max-w-5xl rounded-xl shadow-2xl border border-slate-800 transition-all duration-300';
     if (title) title.innerText = `🎥 Όλα τα Βίντεο: ${query}`;
+    if (directLink) {
+      directLink.href = `https://www.bing.com/videos/search?q=${encodeURIComponent(query)}`;
+      directLink.innerHTML = '<i class="fa-solid fa-film"></i><span class="hidden sm:inline">Βίντεο</span>';
+      directLink.className = 'px-2.5 py-1 rounded-lg bg-amber-600 hover:bg-amber-500 text-white text-xs font-bold transition flex items-center gap-1.5 shadow';
+    }
     iframe.src = `https://www.bing.com/videos/search?q=${encodeURIComponent(query)}`;
   }
+}
+
+export function switchOverlayTikTok(tiktokId, titleText = '') {
+  currentOverlayTikTokId = tiktokId;
+  const iframe = document.getElementById('mapVideoIframe');
+  const title = document.getElementById('videoOverlayTitle');
+  const directLink = document.getElementById('videoDirectLink');
+
+  if (iframe && tiktokId) {
+    iframe.src = `https://www.tiktok.com/player/v1/${tiktokId}?embed_from=oembed&music_info=1&description=1&autoplay=1`;
+  }
+  if (title && titleText) title.innerText = `📱 TikTok: ${titleText}`;
+  if (directLink) directLink.href = `https://www.tiktok.com/@tiktok/video/${tiktokId}`;
+
+  // Update active pill styling
+  const pills = document.querySelectorAll('#videoChoicePills button');
+  pills.forEach(btn => {
+    if (btn.getAttribute('onclick')?.includes(tiktokId)) {
+      btn.className = 'px-2.5 py-1 rounded-lg text-xs font-bold transition flex items-center gap-1.5 bg-pink-600 text-white shadow-md cursor-pointer shrink-0';
+    } else {
+      btn.className = 'px-2.5 py-1 rounded-lg text-xs font-bold transition flex items-center gap-1.5 bg-slate-800 text-slate-300 hover:text-white border border-slate-700 cursor-pointer shrink-0';
+    }
+  });
+}
+
+export function switchOverlayInstagram(reelId, titleText = '') {
+  currentOverlayInstagramId = reelId;
+  const iframe = document.getElementById('mapVideoIframe');
+  const title = document.getElementById('videoOverlayTitle');
+  const directLink = document.getElementById('videoDirectLink');
+
+  if (iframe && reelId) {
+    iframe.src = `https://www.instagram.com/reel/${reelId}/embed/`;
+  }
+  if (title && titleText) title.innerText = `📸 Instagram Reel: ${titleText}`;
+  if (directLink) directLink.href = `https://www.instagram.com/reel/${reelId}/`;
+
+  // Update active pill styling
+  const pills = document.querySelectorAll('#videoChoicePills button');
+  pills.forEach(btn => {
+    if (btn.getAttribute('onclick')?.includes(reelId)) {
+      btn.className = 'px-2.5 py-1 rounded-lg text-xs font-bold transition flex items-center gap-1.5 bg-gradient-to-r from-purple-600 to-pink-600 text-white shadow-md cursor-pointer shrink-0';
+    } else {
+      btn.className = 'px-2.5 py-1 rounded-lg text-xs font-bold transition flex items-center gap-1.5 bg-slate-800 text-slate-300 hover:text-white border border-slate-700 cursor-pointer shrink-0';
+    }
+  });
 }
 
 export function switchOverlayVideo(youtubeId, startSec = 0, titleText = '') {
@@ -228,7 +368,11 @@ export function switchOverlayVideo(youtubeId, startSec = 0, titleText = '') {
   currentOverlayMode = 'player';
 
   if (title && titleText) title.innerText = titleText;
-  if (directLink) directLink.href = `https://www.youtube.com/watch?v=${youtubeId}${startSec > 0 ? `&t=${startSec}s` : ''}`;
+  if (directLink) {
+    directLink.href = `https://www.youtube.com/watch?v=${youtubeId}${startSec > 0 ? `&t=${startSec}s` : ''}`;
+    directLink.innerHTML = '<i class="fa-brands fa-youtube"></i><span class="hidden sm:inline">YouTube</span>';
+    directLink.className = 'px-2.5 py-1 rounded-lg bg-red-600 hover:bg-red-500 text-white text-xs font-bold transition flex items-center gap-1.5 shadow';
+  }
   iframe.src = `https://www.youtube-nocookie.com/embed/${youtubeId}?autoplay=1&rel=0${startSec > 0 ? `&start=${startSec}` : ''}`;
 
   setOverlayMediaMode('player');
@@ -252,15 +396,27 @@ export function submitOverlayVideoSearch() {
 
   currentOverlayQuery = raw;
 
-  // If currently in an embedded search mode (tiktok, web, videos), re-run directly inside iframe!
-  if (currentOverlayMode === 'tiktok' || currentOverlayMode === 'web' || currentOverlayMode === 'videos') {
-    setOverlayMediaMode(currentOverlayMode);
+  // 1. Check if user pasted a TikTok URL or 15-22 digit TikTok video ID
+  const ttMatch = raw.match(/tiktok\.com\/(?:@[\w.-]+\/video\/|v\/)?(\d{15,22})/i);
+  if (ttMatch || /^\d{15,22}$/.test(raw)) {
+    const tid = ttMatch ? ttMatch[1] : raw;
+    currentOverlayTikTokId = tid;
+    setOverlayMediaMode('tiktok', tid);
     return;
   }
 
-  // Check if it's a YouTube URL or 11-char ID
+  // 2. Check if user pasted an Instagram Reel or Post URL
+  const igMatch = raw.match(/instagram\.com\/(?:reel|p)\/([\w-]+)/i);
+  if (igMatch) {
+    const igId = igMatch[1];
+    currentOverlayInstagramId = igId;
+    setOverlayMediaMode('instagram', igId);
+    return;
+  }
+
+  // 3. Check if it's a YouTube URL or 11-char ID
   let ytId = null;
-  const urlMatch = raw.match(/(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))([\w-]{11})/);
+  const urlMatch = raw.match(/(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=|shorts\/))([\w-]{11})/);
   if (urlMatch) {
     ytId = urlMatch[1];
   } else if (/^[\w-]{11}$/.test(raw)) {
@@ -272,7 +428,25 @@ export function submitOverlayVideoSearch() {
     return;
   }
 
-  // Check if query matches our gastro or POI registry
+  // 4. If currently in 'tiktok' mode, find best matching TikTok
+  if (currentOverlayMode === 'tiktok') {
+    setOverlayMediaMode('tiktok');
+    return;
+  }
+
+  // 5. If currently in 'instagram' mode, find best matching Instagram Reel
+  if (currentOverlayMode === 'instagram') {
+    setOverlayMediaMode('instagram');
+    return;
+  }
+
+  // 6. If currently in 'web' or 'videos' mode, re-run directly inside iframe!
+  if (currentOverlayMode === 'web' || currentOverlayMode === 'videos') {
+    setOverlayMediaMode(currentOverlayMode);
+    return;
+  }
+
+  // 7. Check if query matches our gastro or POI registry
   const gastro = getGastroRecipeVideo(raw, '');
   if (gastro && gastro.youtubeId) {
     openGastroVideo(raw);
@@ -513,10 +687,15 @@ export function switchCityVideoType(type) {
 export function closeMapVideoOverlay() {
   const overlay = document.getElementById('mapVideoOverlay');
   const iframe = document.getElementById('mapVideoIframe');
-  if (iframe) iframe.src = '';
+  if (iframe) {
+    iframe.src = '';
+    iframe.className = 'w-full h-full max-w-5xl rounded-xl shadow-2xl border border-slate-800 transition-all duration-300';
+  }
   if (overlay) overlay.classList.add('hidden');
   currentActiveVideoCityId = null;
   currentOverlayMode = 'player';
+  currentOverlayTikTokId = '';
+  currentOverlayInstagramId = '';
   syncMapFloatingControlsVisibility();
 }
 
