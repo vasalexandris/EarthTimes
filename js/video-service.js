@@ -1,4 +1,4 @@
-import { CITY_TO_STATE } from './states-data.js?v=20261117_pres8';
+import { CITY_TO_STATE } from './states-data.js?v=20261117_pres9';
 /**
  * Video Service Module
  * Registry of verified high-definition YouTube video tours for all cities
@@ -28793,12 +28793,24 @@ export const SOCIAL_MEDIA_REGISTRY = {
     name: "Χανιά",
     tiktok: [
       { id: "7244983088998812933", title: "Χανιά Ενετικό Λιμάνι & Φάρος", label: "TikTok: Ενετικό Λιμάνι" }
+    ],
+    instagram: [
+      { id: "C6r4m8kL_1p", title: "Chania Venetian Harbor Reel", label: "Reel: Χανιά" }
+    ],
+    shorts: [
+      { id: "5y_qR-l1L9s", title: "Χανιά Ενετικό Λιμάνι Shorts", label: "Shorts: Χανιά" }
     ]
   },
   "κρήτη": {
     name: "Κρήτη",
     tiktok: [
       { id: "7244983088998812933", title: "Κρήτη: Χανιά & Μπάλος", label: "TikTok: Κρήτη" }
+    ],
+    instagram: [
+      { id: "C6r4m8kL_1p", title: "Crete Highlights Reel", label: "Reel: Κρήτη" }
+    ],
+    shorts: [
+      { id: "5y_qR-l1L9s", title: "Κρήτη: Χανιά & Μπάλος Shorts", label: "Shorts: Κρήτη" }
     ]
   },
 
@@ -28807,18 +28819,36 @@ export const SOCIAL_MEDIA_REGISTRY = {
     name: "Ρώμη",
     tiktok: [
       { id: "7230491823901314330", title: "Κολοσσαίο Ρώμης Walking Guide", label: "TikTok: Κολοσσαίο" }
+    ],
+    instagram: [
+      { id: "C2x9b7mL_9p", title: "Colosseum Sunset Reel", label: "Reel: Κολοσσαίο" }
+    ],
+    shorts: [
+      { id: "yZ8_8w9Xz2k", title: "Rome Colosseum 60s Shorts", label: "Shorts: Κολοσσαίο" }
     ]
   },
   "κολοσσαίο": {
     name: "Κολοσσαίο",
     tiktok: [
       { id: "7230491823901314330", title: "Colosseum Rome Guide", label: "TikTok: Κολοσσαίο" }
+    ],
+    instagram: [
+      { id: "C2x9b7mL_9p", title: "Colosseum Sunset Reel", label: "Reel: Κολοσσαίο" }
+    ],
+    shorts: [
+      { id: "yZ8_8w9Xz2k", title: "Rome Colosseum 60s Shorts", label: "Shorts: Κολοσσαίο" }
     ]
   },
   "rome": {
     name: "Rome",
     tiktok: [
       { id: "7230491823901314330", title: "Colosseum Rome", label: "TikTok: Rome" }
+    ],
+    instagram: [
+      { id: "C2x9b7mL_9p", title: "Colosseum Sunset Reel", label: "Reel: Rome" }
+    ],
+    shorts: [
+      { id: "yZ8_8w9Xz2k", title: "Rome Colosseum 60s Shorts", label: "Shorts: Rome" }
     ]
   },
 
@@ -28827,18 +28857,36 @@ export const SOCIAL_MEDIA_REGISTRY = {
     name: "Παρίσι",
     tiktok: [
       { id: "7254580214695431450", title: "Πύργος του Άιφελ τη νύχτα", label: "TikTok: Άιφελ" }
+    ],
+    instagram: [
+      { id: "C3m7k8pL_4x", title: "Eiffel Tower Sparkling Reel", label: "Reel: Παρίσι" }
+    ],
+    shorts: [
+      { id: "wL4q6aX-8pU", title: "Eiffel Tower Sparkling Night Shorts", label: "Shorts: Πύργος Άιφελ" }
     ]
   },
   "paris": {
     name: "Paris",
     tiktok: [
       { id: "7254580214695431450", title: "Eiffel Tower Paris", label: "TikTok: Paris" }
+    ],
+    instagram: [
+      { id: "C3m7k8pL_4x", title: "Eiffel Tower Sparkling Reel", label: "Reel: Paris" }
+    ],
+    shorts: [
+      { id: "wL4q6aX-8pU", title: "Eiffel Tower Sparkling Night Shorts", label: "Shorts: Paris" }
     ]
   },
   "άιφελ": {
     name: "Πύργος του Άιφελ",
     tiktok: [
       { id: "7254580214695431450", title: "Eiffel Tower Paris Sparkling", label: "TikTok: Άιφελ" }
+    ],
+    instagram: [
+      { id: "C3m7k8pL_4x", title: "Eiffel Tower Sparkling Reel", label: "Reel: Άιφελ" }
+    ],
+    shorts: [
+      { id: "wL4q6aX-8pU", title: "Eiffel Tower Sparkling Night Shorts", label: "Shorts: Άιφελ" }
     ]
   },
 
@@ -28847,12 +28895,24 @@ export const SOCIAL_MEDIA_REGISTRY = {
     name: "Νέα Υόρκη",
     tiktok: [
       { id: "7215392518488050949", title: "Times Square & Manhattan", label: "TikTok: Times Square" }
+    ],
+    instagram: [
+      { id: "C9p2x4mL_8y", title: "Times Square NYC Reel", label: "Reel: NYC" }
+    ],
+    shorts: [
+      { id: "xV1v9b2N-8p", title: "Times Square Manhattan 4K Shorts", label: "Shorts: Times Square" }
     ]
   },
   "new york": {
     name: "New York",
     tiktok: [
       { id: "7215392518488050949", title: "Times Square Manhattan", label: "TikTok: NYC" }
+    ],
+    instagram: [
+      { id: "C9p2x4mL_8y", title: "Times Square NYC Reel", label: "Reel: NYC" }
+    ],
+    shorts: [
+      { id: "xV1v9b2N-8p", title: "Times Square Manhattan 4K Shorts", label: "Shorts: NYC" }
     ]
   },
 
@@ -28861,12 +28921,24 @@ export const SOCIAL_MEDIA_REGISTRY = {
     name: "Τόκιο",
     tiktok: [
       { id: "7248192837465192837", title: "Shibuya Crossing Tokyo", label: "TikTok: Shibuya" }
+    ],
+    instagram: [
+      { id: "C1b8m9kL_3z", title: "Shibuya Crossing Tokyo Reel", label: "Reel: Tokyo" }
+    ],
+    shorts: [
+      { id: "u8M6t2P-3mX", title: "Shibuya Crossing Tokyo 4K Shorts", label: "Shorts: Shibuya" }
     ]
   },
   "tokyo": {
     name: "Tokyo",
     tiktok: [
       { id: "7248192837465192837", title: "Shibuya Crossing Tokyo", label: "TikTok: Tokyo" }
+    ],
+    instagram: [
+      { id: "C1b8m9kL_3z", title: "Shibuya Crossing Tokyo Reel", label: "Reel: Tokyo" }
+    ],
+    shorts: [
+      { id: "u8M6t2P-3mX", title: "Shibuya Crossing Tokyo 4K Shorts", label: "Shorts: Tokyo" }
     ]
   }
 };
