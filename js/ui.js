@@ -141,28 +141,12 @@ export function openCityVideo(cityId, preferredType = 'drone') {
     choicePills.innerHTML = '';
   }
 
-  setOverlayMediaMode('player');
-
-  // Render switcher pills for all available tour options (Drone, Walking, Guide, Live)
   if (typeSelector) {
-    const tours = getAvailableCityTours(cityId);
-    if (tours.length > 1) {
-      typeSelector.innerHTML = tours.map(t => {
-        const isActive = currentActiveVideoType === t.type;
-        const isLive = t.type === 'live';
-        const shortLabel = t.type === 'drone' ? 'Drone 4K' : (t.type === 'walking' ? 'Walking 4K' : (isLive ? 'Live Cam' : 'Αξιοθέατα 4K'));
-        return `
-          <button onclick="switchCityVideoType('${t.type}')" class="px-2.5 py-1 rounded-lg text-xs font-bold transition flex items-center gap-1.5 ${isActive ? (isLive ? 'bg-red-600 text-white shadow-md shadow-red-900/50' : 'bg-sky-600 text-white shadow-md') : (isLive ? 'bg-red-950/70 text-red-300 hover:text-white border border-red-700/60 hover:bg-red-900/80' : 'bg-slate-800 text-slate-300 hover:text-white border border-slate-700')}">
-            ${isLive ? '<span class="relative flex h-2 w-2 mr-0.5"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-red-500"></span></span>' : `<i class="${t.icon}"></i>`}
-            <span>${shortLabel}</span>
-          </button>
-        `;
-      }).join('');
-      typeSelector.classList.remove('hidden');
-    } else {
-      typeSelector.classList.add('hidden');
-    }
+    typeSelector.classList.add('hidden');
+    typeSelector.innerHTML = '';
   }
+
+  setOverlayMediaMode('player');
 
   overlay.classList.remove('hidden');
   syncMapFloatingControlsVisibility();
@@ -174,48 +158,41 @@ export function setOverlayMediaMode(mode, specificId = null) {
   const gallery = document.getElementById('allVideosGalleryView');
   const title = document.getElementById('videoOverlayTitle');
   const searchInput = document.getElementById('videoSearchInput');
-  const directLink = document.getElementById('videoDirectLink');
-  const choicePills = document.getElementById('videoChoicePills');
-  const query = (searchInput?.value?.trim() || currentOverlayQuery || 'Athens Greece').trim();
+  const query = (searchInput?.value?.trim() || currentOverlayQuery || (currentActiveVideoCityId ? currentActiveVideoCityId.replace(/_/g, ' ') : '') || 'Athens Greece').trim();
 
   // Update button active styles
   const btnMap = {
     player: document.getElementById('mediaModePlayerBtn'),
     shorts: document.getElementById('mediaModeShortsBtn'),
-    videos: document.getElementById('mediaModeVideosBtn'),
+    web: document.getElementById('mediaModeWebBtn'),
   };
 
   const activeColorMap = {
     player: 'bg-rose-600 text-white shadow-md',
     shorts: 'bg-emerald-600 text-white shadow-md shadow-emerald-900/50',
-    videos: 'bg-amber-600 text-white shadow-md shadow-amber-900/50',
+    web: 'bg-sky-600 text-white shadow-md shadow-sky-900/50',
   };
 
   Object.entries(btnMap).forEach(([m, btn]) => {
     if (!btn) return;
     if (m === currentOverlayMode) {
-      btn.className = `px-2 py-1 rounded-lg ${activeColorMap[m]} text-[11px] font-bold transition flex items-center gap-1 cursor-pointer shrink-0`;
+      btn.className = `px-2.5 py-1 rounded-lg ${activeColorMap[m]} text-xs font-bold transition flex items-center gap-1.5 shadow cursor-pointer shrink-0`;
     } else {
-      btn.className = 'px-2 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white border border-slate-700 text-[11px] font-bold transition flex items-center gap-1 cursor-pointer shrink-0';
+      btn.className = 'px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white border border-slate-700 text-xs font-bold transition flex items-center gap-1.5 cursor-pointer shrink-0';
     }
   });
 
   if (!iframe) return;
+  if (gallery) gallery.classList.add('hidden');
+  iframe.classList.remove('hidden');
 
   if (currentOverlayMode === 'player') {
-    if (gallery) { gallery.classList.add('hidden'); }
-    iframe.classList.remove('hidden');
     iframe.className = 'w-full h-full max-w-5xl rounded-xl shadow-2xl border border-slate-800 transition-all duration-300';
     if (currentOverlayYoutubeId) {
       if (title && currentOverlayTitle) title.innerText = currentOverlayTitle;
-      if (directLink) {
-        directLink.setAttribute('data-youtube-id', currentOverlayYoutubeId);
-      }
       iframe.src = `https://www.youtube.com/embed/${currentOverlayYoutubeId}?autoplay=1&playsinline=1&rel=0&modestbranding=1&enablejsapi=1${currentOverlayStartSec > 0 ? `&start=${currentOverlayStartSec}` : ''}`;
     }
   } else if (currentOverlayMode === 'shorts') {
-    if (gallery) { gallery.classList.add('hidden'); }
-    iframe.classList.remove('hidden');
     iframe.className = 'w-full h-full max-w-[380px] sm:max-w-[420px] rounded-2xl shadow-2xl border border-emerald-500/50 bg-black transition-all duration-300 mx-auto';
 
     const social = getSocialMediaVideos(query, currentActiveVideoCityId);
@@ -226,38 +203,13 @@ export function setOverlayMediaMode(mode, specificId = null) {
     currentOverlayShortsId = activeId;
     const activeItem = shortsList.find(s => s.id === activeId) || shortsList[0];
 
-    if (title) title.innerText = `📱 Κάθετο Βίντεο (Shorts): ${activeItem.title}`;
-    if (directLink) {
-      directLink.setAttribute('data-youtube-id', activeId);
-    }
+    if (title) title.innerText = `📱 Shorts: ${activeItem.title}`;
     iframe.src = `https://www.youtube.com/embed/${activeId}?autoplay=1&playsinline=1&rel=0&loop=1&enablejsapi=1`;
-
-    if (choicePills) {
-      choicePills.innerHTML = shortsList.map(s => {
-        const isAct = s.id === activeId;
-        return `
-          <button onclick="window.switchOverlayShorts('${s.id}', '${escapeStr(s.title)}')" class="px-2.5 py-1 rounded-lg text-xs font-bold transition flex items-center gap-1.5 ${isAct ? 'bg-emerald-600 text-white shadow-md' : 'bg-slate-800 text-slate-300 hover:text-white border border-slate-700'} cursor-pointer shrink-0">
-            <i class="fa-solid fa-mobile-screen text-emerald-400"></i>
-            <span>${s.label || s.title}</span>
-          </button>
-        `;
-      }).join('');
-    }
-  } else if (currentOverlayMode === 'videos') {
-    iframe.classList.add('hidden');
-    iframe.src = '';
-    if (gallery) {
-      gallery.classList.remove('hidden');
-      renderAllVideosGallery(query, 'all');
-    }
-    if (title) title.innerText = `🎥 Όλα τα Βίντεο: ${query || 'Εξερεύνηση'}`;
-    if (choicePills) {
-      choicePills.innerHTML = `
-        <span class="text-[11px] text-amber-400 font-bold flex items-center gap-1">
-          <i class="fa-solid fa-film"></i> Επιλέξτε βίντεο για άμεση αναπαραγωγή στο Iframe:
-        </span>
-      `;
-    }
+  } else if (currentOverlayMode === 'web') {
+    iframe.className = 'w-full h-full max-w-5xl rounded-xl shadow-2xl border border-sky-500/40 bg-white transition-all duration-300';
+    const searchQuery = query || (currentActiveVideoCityId ? currentActiveVideoCityId.replace(/_/g, ' ') : 'Travel');
+    if (title) title.innerText = `🌐 Web Search: ${searchQuery}`;
+    iframe.src = `https://www.bing.com/search?q=${encodeURIComponent(searchQuery + ' travel guide')}`;
   }
 }
 
@@ -567,8 +519,8 @@ export function submitOverlayVideoSearch() {
     return;
   }
 
-  // 5. In-App Video Browser / Search: render interactive gallery matching query inside iframe container!
-  setOverlayMediaMode('videos');
+  // 5. In-App Web Search directly inside the iframe!
+  setOverlayMediaMode('web');
 }
 
 export function openPoiVideo(poiTitle, cityId = '', explicitStart = null) {
@@ -666,33 +618,10 @@ export function openPoiVideo(poiTitle, cityId = '', explicitStart = null) {
     }).join('');
   }
 
-  // Top bar badge
+  // Top bar: keep clean and badge-free
   if (typeSelector) {
-    let badgeHtml = '';
-    if (info.isDedicated) {
-      badgeHtml = `
-        <span class="px-2.5 py-1 rounded-lg text-xs font-bold bg-amber-600 text-white shadow-md flex items-center gap-1.5">
-          <i class="fa-solid fa-crown text-yellow-300"></i>
-          <span>Αποκλειστικό 4K</span>
-        </span>
-      `;
-    } else if (info.isExactTimestamp) {
-      badgeHtml = `
-        <span class="px-2.5 py-1 rounded-lg text-xs font-bold bg-rose-600 text-white shadow-md flex items-center gap-1.5">
-          <i class="fa-solid fa-clock"></i>
-          <span>${timeFormatted}</span>
-        </span>
-      `;
-    } else {
-      badgeHtml = `
-        <span class="px-2.5 py-1 rounded-lg text-xs font-bold bg-sky-700 text-white shadow-md flex items-center gap-1.5">
-          <i class="fa-solid fa-city"></i>
-          <span>4K Tour Πόλης</span>
-        </span>
-      `;
-    }
-    typeSelector.innerHTML = badgeHtml;
-    typeSelector.classList.remove('hidden');
+    typeSelector.innerHTML = '';
+    typeSelector.classList.add('hidden');
   }
 
   overlay.classList.remove('hidden');
@@ -777,13 +706,8 @@ export function openGastroVideo(dishTitle, cityName = '') {
   }
 
   if (typeSelector) {
-    typeSelector.innerHTML = `
-      <span class="px-2.5 py-1 rounded-lg text-xs font-bold bg-amber-600 text-white shadow-md flex items-center gap-1.5">
-        <i class="fa-solid fa-utensils text-amber-200"></i>
-        <span>${recipe ? (recipe.dish || dishTitle) : 'Γαστρονομία'}</span>
-      </span>
-    `;
-    typeSelector.classList.remove('hidden');
+    typeSelector.innerHTML = '';
+    typeSelector.classList.add('hidden');
   }
 
   overlay.classList.remove('hidden');
