@@ -4,12 +4,12 @@
  * Base Map Layer selector, Date display, Video Overlay, and Deep Dive views.
  */
 
-import { getCityVideo, getAvailableVideoTypes, getAvailableCityTours, CITY_VIDEOS, findPoiLiveCam, getPoiVideoInfo } from './video-service.js?v=20261117_pres4';
-import { getDeepDiveData } from './deep-dive.js?v=20261117_pres4';
-import { fetchWikiArticle, fetchWikiArticleHtml, cleanWikiTitle } from './wiki-service.js?v=20261117_pres4';
-import { calculateSubsolarPoint } from './solar-terminator.js?v=20261117_pres4';
-import { CITY_TO_STATE } from './states-data.js?v=20261117_pres4';
-import { CITY_TO_COUNTRY } from './navigator.js?v=20261117_pres4';
+import { getCityVideo, getAvailableVideoTypes, getAvailableCityTours, CITY_VIDEOS, findPoiLiveCam, getPoiVideoInfo, getGastroRecipeVideo } from './video-service.js?v=20261117_pres5';
+import { getDeepDiveData } from './deep-dive.js?v=20261117_pres5';
+import { fetchWikiArticle, fetchWikiArticleHtml, cleanWikiTitle } from './wiki-service.js?v=20261117_pres5';
+import { calculateSubsolarPoint } from './solar-terminator.js?v=20261117_pres5';
+import { CITY_TO_STATE } from './states-data.js?v=20261117_pres5';
+import { CITY_TO_COUNTRY } from './navigator.js?v=20261117_pres5';
 
 let currentActiveVideoCityId = null;
 let currentActiveVideoType = 'drone';
@@ -177,19 +177,52 @@ export function openPoiVideo(poiTitle, cityId = '', explicitStart = null) {
   const mins = Math.floor(startSec / 60);
   const secs = startSec % 60;
   const timeFormatted = `${mins}:${secs < 10 ? '0' : ''}${secs}`;
-  const videoTitle = `🎥 ${poiTitle || 'Αξιοθέατο'} • 4K Video Tour (${timeFormatted})`;
+
+  let videoTitle = `🎥 ${poiTitle || 'Αξιοθέατο'} • 4K Video`;
+  if (info.isDedicated) {
+    videoTitle = `🏛️ ${info.title || poiTitle} (Αποκλειστικό 4K Βίντεο)`;
+  } else if (info.isExactTimestamp) {
+    videoTitle = `🎥 ${info.attractionName || poiTitle} • 4K Tour (${timeFormatted})`;
+  } else if (info.isCityTourFallback) {
+    videoTitle = `🏙️ ${poiTitle ? poiTitle + ' • ' : ''}4K Περιήγηση Πόλης`;
+  }
 
   if (title) title.innerText = videoTitle;
-  if (directLink) directLink.href = `https://www.youtube.com/watch?v=${info.youtubeId}&t=${startSec}s`;
-  iframe.src = `https://www.youtube-nocookie.com/embed/${info.youtubeId}?autoplay=1&rel=0&start=${startSec}`;
+  if (directLink) directLink.href = `https://www.youtube.com/watch?v=${info.youtubeId}${startSec > 0 ? `&t=${startSec}s` : ''}`;
+  iframe.src = `https://www.youtube-nocookie.com/embed/${info.youtubeId}?autoplay=1&rel=0${startSec > 0 ? `&start=${startSec}` : ''}`;
 
   if (typeSelector) {
     const tours = getAvailableCityTours(cityId);
+    let badgeHtml = '';
+    if (info.isDedicated) {
+      badgeHtml = `
+        <span class="px-2.5 py-1 rounded-lg text-xs font-bold bg-amber-600 text-white shadow-md flex items-center gap-1.5">
+          <i class="fa-solid fa-crown text-yellow-300"></i>
+          <span>Αποκλειστικό Βίντεο Αξιοθέατου</span>
+        </span>
+      `;
+    } else if (info.isExactTimestamp) {
+      badgeHtml = `
+        <span class="px-2.5 py-1 rounded-lg text-xs font-bold bg-rose-600 text-white shadow-md flex items-center gap-1.5">
+          <i class="fa-solid fa-clock"></i>
+          <span>${timeFormatted} • ${poiTitle}</span>
+        </span>
+      `;
+    } else {
+      badgeHtml = `
+        <span class="px-2.5 py-1 rounded-lg text-xs font-bold bg-sky-700 text-white shadow-md flex items-center gap-1.5">
+          <i class="fa-solid fa-city"></i>
+          <span>4K Περιήγηση Πόλης</span>
+        </span>
+        <a href="https://www.youtube.com/results?search_query=${encodeURIComponent(poiTitle + ' 4K tour')}" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 rounded-lg text-xs font-bold bg-red-600 hover:bg-red-500 text-white shadow-md flex items-center gap-1.5 transition">
+          <i class="fa-brands fa-youtube"></i>
+          <span>YouTube Αναζήτηση</span>
+        </a>
+      `;
+    }
+
     typeSelector.innerHTML = `
-      <span class="px-2.5 py-1 rounded-lg text-xs font-bold bg-rose-600 text-white shadow-md flex items-center gap-1.5">
-        <i class="fa-solid fa-film"></i>
-        <span>${timeFormatted} • ${poiTitle}</span>
-      </span>
+      ${badgeHtml}
       ${tours.map(t => {
         const shortLabel = t.type === 'drone' ? 'Drone 4K' : (t.type === 'walking' ? 'Walking 4K' : (t.type === 'live' ? 'Live Cam' : 'Οδηγός 4K'));
         return `
@@ -205,6 +238,67 @@ export function openPoiVideo(poiTitle, cityId = '', explicitStart = null) {
 
   overlay.classList.remove('hidden');
   syncMapFloatingControlsVisibility();
+}
+
+export function openGastroVideo(dishTitle, cityName = '') {
+  if (!cityName && window.getCurrentEntity) {
+    const cur = window.getCurrentEntity();
+    if (cur && cur.name) cityName = cur.name;
+  }
+
+  const recipe = getGastroRecipeVideo(dishTitle, cityName);
+  const overlay = document.getElementById('mapVideoOverlay');
+  const iframe = document.getElementById('mapVideoIframe');
+  const title = document.getElementById('videoOverlayTitle');
+  const deepDiveOverlay = document.getElementById('mapDeepDiveOverlay');
+  const wikiOverlay = document.getElementById('mapWikiOverlay');
+  const streetViewOverlay = document.getElementById('mapStreetViewOverlay');
+  const directLink = document.getElementById('videoDirectLink');
+  const typeSelector = document.getElementById('videoTypeSelector');
+
+  if (!overlay || !iframe) return;
+
+  // If curated recipe video exists:
+  if (recipe && recipe.youtubeId) {
+    if (window.closeCityPresentation) window.closeCityPresentation();
+    if (deepDiveOverlay) deepDiveOverlay.classList.add('hidden');
+    if (wikiOverlay) {
+      const wikiFrame = document.getElementById('mapWikiIframe');
+      if (wikiFrame) wikiFrame.srcdoc = '';
+      wikiOverlay.classList.add('hidden');
+    }
+    if (streetViewOverlay) {
+      const svFrame = document.getElementById('mapStreetViewIframe');
+      if (svFrame) svFrame.src = 'about:blank';
+      streetViewOverlay.classList.add('hidden');
+    }
+
+    const videoTitle = `👨‍🍳 Βίντεο Συνταγής: ${recipe.dish || dishTitle} (${recipe.region || cityName})`;
+    if (title) title.innerText = videoTitle;
+    if (directLink) directLink.href = `https://www.youtube.com/watch?v=${recipe.youtubeId}`;
+    iframe.src = `https://www.youtube-nocookie.com/embed/${recipe.youtubeId}?autoplay=1&rel=0`;
+
+    if (typeSelector) {
+      typeSelector.innerHTML = `
+        <span class="px-2.5 py-1 rounded-lg text-xs font-bold bg-amber-600 text-white shadow-md flex items-center gap-1.5">
+          <i class="fa-solid fa-utensils text-amber-200"></i>
+          <span>${recipe.title || dishTitle}</span>
+        </span>
+        <a href="https://www.youtube.com/results?search_query=${encodeURIComponent('συνταγή ' + dishTitle + ' ' + cityName)}" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 rounded-lg text-xs font-bold bg-red-600 hover:bg-red-500 text-white shadow-md flex items-center gap-1.5 transition">
+          <i class="fa-brands fa-youtube"></i>
+          <span>Περισσότερες Συνταγές</span>
+        </a>
+      `;
+      typeSelector.classList.remove('hidden');
+    }
+
+    overlay.classList.remove('hidden');
+    syncMapFloatingControlsVisibility();
+  } else {
+    // Open targeted YouTube recipe search in new window
+    const query = encodeURIComponent(`συνταγή ${dishTitle} ${cityName}`);
+    window.open(`https://www.youtube.com/results?search_query=${query}`, '_blank');
+  }
 }
 
 export function switchCityVideoType(type) {
@@ -528,8 +622,8 @@ export async function openDeepDive(keyOrTitle, fallbackSummary = '', contextEnti
           </div>
           <div>
             <div class="text-xs font-bold text-rose-300 uppercase tracking-wider flex items-center gap-1.5">
-              <span>4K Video Tour</span>
-              <span class="px-1.5 py-0.2 bg-rose-600 text-white text-[9px] font-extrabold rounded">TIMESTAMP</span>
+              <span>${poiVidInfo.isDedicated ? 'Αποκλειστικό 4K Βίντεο' : (poiVidInfo.isExactTimestamp ? '4K Video Tour' : '4K Περιήγηση Πόλης')}</span>
+              ${poiVidInfo.isDedicated ? '<span class="px-1.5 py-0.2 bg-amber-600 text-white text-[9px] font-extrabold rounded">DEDICATED</span>' : (poiVidInfo.isExactTimestamp ? '<span class="px-1.5 py-0.2 bg-rose-600 text-white text-[9px] font-extrabold rounded">TIMESTAMP</span>' : '')}
             </div>
             <div class="text-sm font-bold text-white">${poiVidInfo.label}</div>
           </div>
@@ -2281,14 +2375,18 @@ export function renderTabContent(tabId, entity, activeYear = null, activeSpots =
                 </div>
               </div>
               <p class="text-xs text-slate-300 leading-relaxed mb-3">${item.desc}</p>
-              <div class="flex items-center gap-2 pt-2 border-t border-slate-800/70">
-                <button onclick="window.openDeepDive('${escapeStr(item.title)}', '${escapeStr(item.desc)}', '${escapeStr(entity.name)}')" class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-amber-300 hover:text-white border border-slate-700 text-[11px] font-bold transition flex items-center gap-1.5 shadow">
+              <div class="flex flex-wrap items-center gap-2 pt-2 border-t border-slate-800/70">
+                <button onclick="window.openDeepDive('${escapeStr(item.title)}', '${escapeStr(item.desc)}', '${escapeStr(entity.name)}')" class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-amber-300 hover:text-white border border-slate-700 text-[11px] font-bold transition flex items-center gap-1.5 shadow cursor-pointer">
                   <i class="fa-solid fa-wand-magic-sparkles text-amber-400"></i>
                   <span>Ανάλυση AI</span>
                 </button>
-                <button onclick="window.openMapWikiReader('${escapeStr(item.wiki || item.title)}', 'el')" class="px-2.5 py-1 rounded-lg bg-sky-950/80 hover:bg-sky-900 text-sky-300 hover:text-white border border-sky-700/50 text-[11px] font-bold transition flex items-center gap-1.5 shadow">
+                <button onclick="window.openMapWikiReader('${escapeStr(item.wiki || item.title)}', 'el')" class="px-2.5 py-1 rounded-lg bg-sky-950/80 hover:bg-sky-900 text-sky-300 hover:text-white border border-sky-700/50 text-[11px] font-bold transition flex items-center gap-1.5 shadow cursor-pointer">
                   <i class="fa-brands fa-wikipedia-w"></i>
                   <span>Wikipedia στον Χάρτη</span>
+                </button>
+                <button onclick="window.openGastroVideo('${escapeStr(item.title)}', '${escapeStr(entity.name)}')" class="px-2.5 py-1 rounded-lg bg-rose-950/80 hover:bg-rose-900 text-rose-300 hover:text-white border border-rose-700/50 text-[11px] font-bold transition flex items-center gap-1.5 shadow cursor-pointer" title="Προβολή βίντεο συνταγής">
+                  <i class="fa-solid fa-play text-rose-400"></i>
+                  <span>Βίντεο Συνταγής 👨‍🍳</span>
                 </button>
               </div>
             </div>

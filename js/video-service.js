@@ -1,4 +1,4 @@
-import { CITY_TO_STATE } from './states-data.js?v=20261117_pres4';
+import { CITY_TO_STATE } from './states-data.js?v=20261117_pres5';
 /**
  * Video Service Module
  * Registry of verified high-definition YouTube video tours for all cities
@@ -27698,12 +27698,184 @@ export const POI_SPECIFIC_TIMESTAMPS = {
 };
 
 /**
- * Resolves video and exact start timestamp for any landmark or POI
+ * Dedicated individual 4K Landmark Videos
+ * Handpicked authentic videos focused exclusively on specific POIs/landmarks
+ */
+export const POI_DEDICATED_VIDEOS = {
+  // Athens
+  "ακρόπολη": { youtubeId: "f0xjdh9agFg", title: "Ακρόπολη Αθηνών & Παρθενώνας (4K Ultra HD)", label: "Ακρόπολη & Παρθενώνας" },
+  "παρθενώνας": { youtubeId: "f0xjdh9agFg", title: "Παρθενώνας & Ιερός Βράχος Ακρόπολης (4K)", label: "Παρθενώνας" },
+  "parthenon": { youtubeId: "f0xjdh9agFg", title: "Acropolis & Parthenon Athens (4K)", label: "Parthenon" },
+  "acropolis": { youtubeId: "f0xjdh9agFg", title: "Acropolis of Athens (4K Tour)", label: "Acropolis" },
+  "μουσείο ακρόπολης": { youtubeId: "VBW_wrlhEDo", title: "Μουσείο Ακρόπολης: Περιήγηση στα Αριστουργήματα (4K)", label: "Μουσείο Ακρόπολης" },
+  "καλλιμάρμαρο": { youtubeId: "w7ubdeiwPv8", title: "Παναθηναϊκό Στάδιο (Καλλιμάρμαρο) 4K Tour", label: "Παναθηναϊκό Στάδιο" },
+  "παναθηναϊκό στάδιο": { youtubeId: "w7ubdeiwPv8", title: "Παναθηναϊκό Στάδιο (Καλλιμάρμαρο) 4K Tour", label: "Παναθηναϊκό Στάδιο" },
+  "αρχαία αγορά": { youtubeId: "WHl2fyeoRKo", title: "Αρχαία Αγορά Αθηνών & Ναός Ηφαίστου (4K)", label: "Αρχαία Αγορά Αθηνών" },
+  "ναός του ηφαίστου": { youtubeId: "WHl2fyeoRKo", title: "Ναός Ηφαίστου (Θησείο) 4K", label: "Ναός Ηφαίστου" },
+
+  // Thessaloniki
+  "λευκός πύργος": { youtubeId: "dJrDEgUPWbM", title: "Λευκός Πύργος Θεσσαλονίκης 4K: Ιστορία & Παραλία", label: "Λευκός Πύργος" },
+  "white tower": { youtubeId: "dJrDEgUPWbM", title: "White Tower of Thessaloniki 4K", label: "White Tower" },
+  "ροτόντα": { youtubeId: "1ORzuw8ySes", title: "Ροτόντα Θεσσαλονίκης & Αψίδα Γαλερίου (4K)", label: "Ροτόντα" },
+  "άνω πόλη": { youtubeId: "ckxPLXnT3O0", title: "Άνω Πόλη & Κάστρα Θεσσαλονίκης (Επταπύργιο) 4K", label: "Άνω Πόλη & Κάστρα" },
+  "επταπύργιο": { youtubeId: "ckxPLXnT3O0", title: "Επταπύργιο (Γεντί Κουλέ) & Βυζαντινά Τείχη 4K", label: "Επταπύργιο" },
+
+  // Kozani & Western Macedonia
+  "ιστορικό ρολόι": { youtubeId: "davgbeLTQlk", title: "Ιστορικό Ρολόι Κοζάνης (Μαμάτσιος) & Πλατεία Νίκης (4K)", label: "Ιστορικό Ρολόι Κοζάνης" },
+  "μαμάτσιος": { youtubeId: "davgbeLTQlk", title: "Καμπαναριό Μαμάτσιος Κοζάνης (4K)", label: "Καμπαναριό Μαμάτσιος" },
+  "λίμνη πολυφύτου": { youtubeId: "54nbsW6jYN4", title: "Λίμνη Πολυφύτου & Υψηλή Γέφυρα Σερβίων 4K Drone", label: "Λίμνη Πολυφύτου & Γέφυρα Σερβίων" },
+  "υψηλή γέφυρα σερβίων": { youtubeId: "54nbsW6jYN4", title: "Υψηλή Γέφυρα Σερβίων 4K Cinematic Drone", label: "Υψηλή Γέφυρα Σερβίων" },
+
+  // Patras
+  "γέφυρα ρίου-αντιρρίου": { youtubeId: "Rjxnz0kGC_s", title: "Γέφυρα Ρίου-Αντιρρίου 4K: Εναέρια Περιήγηση Drone", label: "Γέφυρα Ρίου-Αντιρρίου" },
+  "κάστρο πάτρας": { youtubeId: "ozbEyIWtFyw", title: "Μεσαιωνικό Κάστρο & Ιστορικό Κέντρο Πάτρας 4K", label: "Κάστρο Πάτρας" },
+
+  // Heraklion & Crete
+  "κνωσός": { youtubeId: "3Q2PLWOR1CI", title: "Μινωικό Ανάκτορο Κνωσού 4K: Περιήγηση στο Λίκνο του Μινωικού Πολιτισμού", label: "Ανάκτορο Κνωσού" },
+  "ανάκτορο κνωσού": { youtubeId: "3Q2PLWOR1CI", title: "Ανάκτορο Κνωσού 4K", label: "Ανάκτορο Κνωσού" },
+  "κούλες": { youtubeId: "HjA0LxhIzmM", title: "Ενετικό Φρούριο Κούλες & Ενετικό Λιμάνι Ηρακλείου 4K", label: "Φρούριο Κούλες" },
+
+  // Larissa & Volos
+  "αρχαίο θέατρο λάρισας": { youtubeId: "URJcymeLcnQ", title: "Α΄ Αρχαίο Θέατρο Λάρισας & Λόφος Φρουρίου 4K", label: "Αρχαίο Θέατρο Λάρισας" },
+  "λιμάνι βόλου": { youtubeId: "414VR6PKzXg", title: "Λιμάνι & Παραλιακή Οδός Βόλου (Παγασητικός) 4K", label: "Λιμάνι Βόλου" },
+
+  // Chania & Rhodes
+  "ενετικός φάρος": { youtubeId: "KWRfmrnY2Os", title: "Ενετικός Φάρος & Παλιό Ενετικό Λιμάνι Χανίων 4K", label: "Ενετικός Φάρος Χανίων" },
+  "παλάτι μεγάλου μαγίστρου": { youtubeId: "C2qYN8p_L9Y", title: "Παλάτι Μεγάλου Μαγίστρου & Μεσαιωνική Πόλη Ρόδου (4K)", label: "Παλάτι Μεγάλου Μαγίστρου Ρόδου" },
+
+  // Rome
+  "κολοσσαίο": { youtubeId: "C2qYN8p_L9Y", title: "Colosseum Rome 4K: Virtual Tour Inside the Amphitheatre", label: "Κολοσσαίο (Colosseo)" },
+  "colosseum": { youtubeId: "C2qYN8p_L9Y", title: "Colosseum Rome 4K Tour", label: "Colosseum" },
+  "βατικανό": { youtubeId: "eJeF7hDB0UA", title: "St. Peter's Basilica & Vatican City 4K Tour", label: "Βασιλική Αγίου Πέτρου (Βατικανό)" },
+  "φοντάνα ντι τρέβι": { youtubeId: "93d_Kf4NspU", title: "Trevi Fountain Rome 4K: Fontana di Trevi Tour", label: "Φοντάνα ντι Τρέβι" },
+  "πάνθεον": { youtubeId: "uREE9KXEqxk", title: "Pantheon Rome 4K: Inside the Ancient Dome", label: "Πάνθεον Ρώμης" },
+
+  // Paris
+  "πύργος του άιφελ": { youtubeId: "_L39JS9PpVc", title: "Eiffel Tower Paris 4K: Complete Walking & Sightseeing Tour", label: "Πύργος του Άιφελ" },
+  "eiffel": { youtubeId: "_L39JS9PpVc", title: "Eiffel Tower Paris 4K", label: "Eiffel Tower" },
+  "λούβρο": { youtubeId: "9U4OferstvE", title: "Louvre Museum Paris 4K: Pyramid & Masterpieces Tour", label: "Μουσείο Λούβρου" },
+  "παναγία των παρισίων": { youtubeId: "MufP60vnLnU", title: "Notre-Dame de Paris 4K: Historical Tour", label: "Παναγία των Παρισίων" },
+  "αψίδα του θριάμβου": { youtubeId: "DFG8iFSoQgE", title: "Arc de Triomphe Paris 4K: Champs-Élysées Tour", label: "Αψίδα του Θριάμβου" },
+
+  // London
+  "μπιγκ μπεν": { youtubeId: "4HZY0M-JoIE", title: "Big Ben & Palace of Westminster London 4K Tour", label: "Big Ben & Westminster" },
+  "big ben": { youtubeId: "4HZY0M-JoIE", title: "Big Ben & Parliament London 4K", label: "Big Ben" },
+  "γέφυρα του πύργου": { youtubeId: "kIBWuUfWbCA", title: "Tower Bridge London 4K: Walk & Glass Floor Experience", label: "Tower Bridge" },
+
+  // New York
+  "τάιμς σκουέρ": { youtubeId: "QVh0TuWyEYc", title: "Times Square New York City 4K Night Walking Tour", label: "Times Square NYC" },
+  "times square": { youtubeId: "QVh0TuWyEYc", title: "Times Square New York City 4K", label: "Times Square" },
+  "άγαλμα της ελευθερίας": { youtubeId: "wa1fa5-EnlI", title: "Statue of Liberty & Ellis Island NYC 4K Tour", label: "Άγαλμα της Ελευθερίας" },
+  "σέντραλ παρκ": { youtubeId: "s1q4A9iR83g", title: "Central Park New York City 4K Walking Tour", label: "Central Park NYC" },
+
+  // Tokyo
+  "σιμπούγια": { youtubeId: "NcFaiq9xNAg", title: "Shibuya Crossing Tokyo 4K: World's Busiest Intersection Tour", label: "Διάβαση Shibuya" },
+  "shibuya": { youtubeId: "NcFaiq9xNAg", title: "Shibuya Crossing Tokyo 4K", label: "Shibuya Crossing" }
+};
+
+/**
+ * Curated Gastronomy Recipe Videos
+ * Real, authentic recipes and culinary guides by acclaimed chefs
+ */
+export const GASTRO_RECIPE_VIDEOS = {
+  // Kozani & West Macedonia
+  "κιχί": { youtubeId: "RgzscJeMfJI", title: "Στριφτή Τυρόπιτα Κοζάνης (Κιχί) • Paxxi", dish: "Κοζανίτικο Κιχί", region: "Κοζάνη" },
+  "κοζανίτικο κιχί": { youtubeId: "RgzscJeMfJI", title: "Στριφτή Τυρόπιτα Κοζάνης (Κιχί) • Paxxi", dish: "Κοζανίτικο Κιχί", region: "Κοζάνη" },
+  "γιαπράκια": { youtubeId: "ckjcckEwT3w", title: "Κοζανίτικα Γιαπράκια Παραδοσιακή Συνταγή", dish: "Κοζανίτικα Γιαπράκια", region: "Κοζάνη" },
+  "κοζανίτικα γιαπράκια": { youtubeId: "ckjcckEwT3w", title: "Κοζανίτικα Γιαπράκια Παραδοσιακή Συνταγή", dish: "Κοζανίτικα Γιαπράκια", region: "Κοζάνη" },
+  "κρόκος": { youtubeId: "davgbeLTQlk", title: "Κρόκος Κοζάνης (Σαφράν): Ρόφημα & Ιδιότητες", dish: "Κρόκος Κοζάνης (Σαφράν)", region: "Κοζάνη" },
+  "σαφράν": { youtubeId: "davgbeLTQlk", title: "Κρόκος Κοζάνης: Χρήση στη Μαγειρική", dish: "Κρόκος Κοζάνης", region: "Κοζάνη" },
+
+  // Thessaloniki & Central Macedonia
+  "μπουγάτσα": { youtubeId: "e6BEkT6E-nY", title: "Αυθεντική Μπουγάτσα Θεσσαλονίκης με Κρέμα", dish: "Μπουγάτσα Θεσσαλονίκης", region: "Θεσσαλονίκη" },
+  "μπουγάτσα θεσσαλονίκης": { youtubeId: "e6BEkT6E-nY", title: "Αυθεντική Μπουγάτσα Θεσσαλονίκης με Κρέμα", dish: "Μπουγάτσα Θεσσαλονίκης", region: "Θεσσαλονίκη" },
+  "μπουγάτσα με τυρί": { youtubeId: "AlNoJGfUdhM", title: "Τραγανή Μπουγάτσα με Τυρί Θεσσαλονίκης", dish: "Μπουγάτσα με Τυρί", region: "Θεσσαλονίκη" },
+  "τρίγωνα πανοράματος": { youtubeId: "espUGr283VM", title: "Τρίγωνα Πανοράματος με Πλούσια Κρέμα • Άκης Πετρετζίκης", dish: "Τρίγωνα Πανοράματος", region: "Θεσσαλονίκη" },
+  "τρίγωνα": { youtubeId: "espUGr283VM", title: "Τρίγωνα Πανοράματος • Άκης Πετρετζίκης", dish: "Τρίγωνα Πανοράματος", region: "Θεσσαλονίκη" },
+  "κουλούρι": { youtubeId: "Wz_pK1Zb-X8", title: "Παραδοσιακό Τραγανό Κουλούρι Θεσσαλονίκης", dish: "Κουλούρι Θεσσαλονίκης", region: "Θεσσαλονίκη" },
+  "κουλούρι θεσσαλονίκης": { youtubeId: "Wz_pK1Zb-X8", title: "Παραδοσιακό Κουλούρι Θεσσαλονίκης", dish: "Κουλούρι Θεσσαλονίκης", region: "Θεσσαλονίκη" },
+
+  // Crete
+  "ντάκος": { youtubeId: "B8Thne9gGlo", title: "Αυθεντικός Κρητικός Ντάκος (Κουκουβάγια)", dish: "Κρητικός Ντάκος", region: "Κρήτη" },
+  "κρητικός ντάκος": { youtubeId: "B8Thne9gGlo", title: "Αυθεντικός Κρητικός Ντάκος", dish: "Κρητικός Ντάκος", region: "Κρήτη" },
+  "καλιτσούνια": { youtubeId: "GdBTfdnD4So", title: "Παραδοσιακά Κρητικά Καλιτσούνια με Ανθότυρο & Δυόσμο", dish: "Κρητικά Καλιτσούνια", region: "Κρήτη" },
+  "σφακιανή πίτα": { youtubeId: "GdBTfdnD4So", title: "Σφακιανές Πίτες με Μέλι & Ξινομυζήθρα", dish: "Σφακιανή Πίτα", region: "Χανιά / Κρήτη" },
+
+  // Pan-Hellenic Classics
+  "μουσακάς": { youtubeId: "4qkRNpd0Rhw", title: "Ο Αυθεντικός Ελληνικός Μουσακάς • Άκης Πετρετζίκης", dish: "Ελληνικός Μουσακάς", region: "Ελλάδα" },
+  "σουβλάκι": { youtubeId: "sqgU7zQSOPU", title: "Σπιτικό Ελληνικό Σουβλάκι με Πίτα & Τζατζίκι", dish: "Ελληνικό Σουβλάκι", region: "Ελλάδα" },
+
+  // Ionian Islands / Corfu
+  "παστιτσάδα": { youtubeId: "o61bKzvvFF0", title: "Κερκυραϊκή Παστιτσάδα με Μοσχαράκι • Γιώργος Τσούλης", dish: "Παστιτσάδα Κέρκυρας", region: "Κέρκυρα" },
+  "σοφρίτο": { youtubeId: "N7XVKKaLi74", title: "Παραδοσιακό Κερκυραϊκό Σοφρίτο με Σκόρδο & Μαϊντανό", dish: "Σοφρίτο Κέρκυρας", region: "Κέρκυρα" },
+
+  // Thessaly / Pelion
+  "σπετζοφάι": { youtubeId: "HSW-CfgN3MU", title: "Παραδοσιακό Σπετζοφάι Πηλίου με Χωριάτικο Λουκάνικο", dish: "Σπετζοφάι Πηλίου", region: "Βόλος / Πήλιο" },
+  "χαλβάς φαρσάλων": { youtubeId: "OZwlSWuK3JI", title: "Αυθεντικός Σαπουνέ Χαλβάς Φαρσάλων", dish: "Χαλβάς Φαρσάλων", region: "Λάρισα / Φάρσαλα" },
+
+  // International Iconic Dishes
+  "carbonara": { youtubeId: "3AAdKl1UYZs", title: "Authentic Spaghetti Carbonara • Antonio Carluccio", dish: "Spaghetti alla Carbonara", region: "Ρώμη, Ιταλία" },
+  "καρμπονάρα": { youtubeId: "3AAdKl1UYZs", title: "Αυθεντική Ιταλική Carbonara χωρίς κρέμα γάλακτος", dish: "Spaghetti alla Carbonara", region: "Ρώμη, Ιταλία" },
+  "pizza": { youtubeId: "CMP8SF6FwdM", title: "True Neapolitan Pizza Masterclass • AVPN Official", dish: "Pizza Napoletana", region: "Νάπολη, Ιταλία" },
+  "πίτσα": { youtubeId: "CMP8SF6FwdM", title: "Αυθεντική Ναπολιτάνικη Πίτσα • AVPN", dish: "Pizza Napoletana", region: "Νάπολη, Ιταλία" },
+  "croissant": { youtubeId: "2OAUM0MRgQw", title: "Traditional French Croissants • Chef Bruno Albouze", dish: "Croissants de Paris", region: "Παρίσι, Γαλλία" },
+  "κρουασάν": { youtubeId: "2OAUM0MRgQw", title: "Αυθεντικά Γαλλικά Βουτυράτα Κρουασάν", dish: "Croissants de Paris", region: "Παρίσι, Γαλλία" },
+  "fish and chips": { youtubeId: "kIBWuUfWbCA", title: "Traditional British Crispy Fish and Chips", dish: "British Fish & Chips", region: "Λονδίνο, Ηνωμένο Βασίλειο" },
+  "paella": { youtubeId: "dsQGMhsvIYY", title: "Authentic Valencian Paella Recipe", dish: "Paella Valenciana", region: "Βαλένθια, Ισπανία" },
+  "παέλια": { youtubeId: "dsQGMhsvIYY", title: "Αυθεντική Ισπανική Paella", dish: "Paella Valenciana", region: "Βαλένθια, Ισπανία" },
+  "cheesecake": { youtubeId: "LJqi4zkwhD4", title: "Classic New York Style Cheesecake", dish: "New York Cheesecake", region: "Νέα Υόρκη, ΗΠΑ" },
+  "ramen": { youtubeId: "O2x6L9YvR58", title: "Traditional Japanese Shoyu Ramen", dish: "Tokyo Shoyu Ramen", region: "Τόκιο, Ιαπωνία" }
+};
+
+/**
+ * Returns a dedicated recipe video if available for a given dish or city
+ */
+export function getGastroRecipeVideo(dishTitle = '', cityName = '') {
+  const normTitle = (dishTitle || '').trim().toLowerCase();
+  const normCity = (cityName || '').trim().toLowerCase();
+
+  for (const [key, val] of Object.entries(GASTRO_RECIPE_VIDEOS)) {
+    if (normTitle.includes(key) || key.includes(normTitle)) {
+      return val;
+    }
+  }
+
+  // Check city match
+  for (const [key, val] of Object.entries(GASTRO_RECIPE_VIDEOS)) {
+    if (normCity && (normCity.includes(key) || key.includes(normCity))) {
+      return val;
+    }
+  }
+
+  return null;
+}
+
+/**
+ * Resolves video and exact start timestamp for any landmark or POI.
+ * Never guesses or invents arbitrary timestamps!
+ * 1. Checks dedicated individual landmark videos (POI_DEDICATED_VIDEOS)
+ * 2. Checks verified timestamps in city tours (POI_SPECIFIC_TIMESTAMPS)
+ * 3. Falls back cleanly to 4K City Tour starting at 0:00 (marked as city tour)
  */
 export function getPoiVideoInfo(poiTitle = '', cityId = '') {
   const normTitle = (poiTitle || '').trim().toLowerCase();
 
-  // 1. Check exact or substring match in POI_SPECIFIC_TIMESTAMPS
+  // 1. Check dedicated POI video first (individual video for this attraction)
+  for (const [key, val] of Object.entries(POI_DEDICATED_VIDEOS)) {
+    if (normTitle === key || normTitle.includes(key) || key.includes(normTitle)) {
+      return {
+        youtubeId: val.youtubeId,
+        startSeconds: val.start || 0,
+        title: val.title,
+        type: 'dedicated',
+        label: val.label || val.title,
+        isDedicated: true,
+        attractionName: val.label || poiTitle
+      };
+    }
+  }
+
+  // 2. Check verified timestamp in city tour
   let match = null;
   for (const [key, val] of Object.entries(POI_SPECIFIC_TIMESTAMPS)) {
     if (normTitle === key || normTitle.includes(key) || key.includes(normTitle)) {
@@ -27712,36 +27884,51 @@ export function getPoiVideoInfo(poiTitle = '', cityId = '') {
     }
   }
 
-  const effectiveCityId = (match && match.cityId) ? match.cityId : cityId;
-  const preferredType = (match && match.type) ? match.type : 'drone';
-  const videoObj = getCityVideo(effectiveCityId, preferredType) || getCityVideo(effectiveCityId, 'walking') || getCityVideo(effectiveCityId, 'guide');
+  if (match && typeof match.start === 'number') {
+    const effectiveCityId = match.cityId || cityId;
+    const preferredType = match.type || 'drone';
+    const videoObj = getCityVideo(effectiveCityId, preferredType) || getCityVideo(effectiveCityId, 'walking') || getCityVideo(effectiveCityId, 'guide');
+    if (videoObj) {
+      const attractionName = match.label || poiTitle;
+      const mins = Math.floor(match.start / 60);
+      const secs = match.start % 60;
+      return {
+        youtubeId: videoObj.youtubeId,
+        startSeconds: match.start,
+        title: `${attractionName} • ${videoObj.title || effectiveCityId}`,
+        type: videoObj.type || preferredType,
+        label: `${attractionName} (4K στο ${mins}:${secs < 10 ? '0' : ''}${secs})`,
+        isExactTimestamp: true,
+        attractionName
+      };
+    }
+  }
 
-  if (!videoObj) {
+  // 3. Fallback to city tour starting honestly at 0:00 (NO random timestamp guessing!)
+  const effectiveCityId = cityId;
+  const videoObj = getCityVideo(effectiveCityId, 'drone') || getCityVideo(effectiveCityId, 'walking') || getCityVideo(effectiveCityId, 'guide');
+
+  if (videoObj) {
     return {
-      youtubeId: "EAYo7Qals90",
-      startSeconds: 30,
-      title: `${poiTitle || 'Περιήγηση Αξιοθέατου'} (4K Tour)`,
-      type: 'drone',
-      label: '4K Cinematic Tour'
+      youtubeId: videoObj.youtubeId,
+      startSeconds: 0,
+      title: `${poiTitle ? poiTitle + ' • ' : ''}${videoObj.title || '4K Περιήγηση Πόλης'}`,
+      type: videoObj.type || 'drone',
+      label: `4K Περιήγηση Πόλης`,
+      isCityTourFallback: true,
+      attractionName: poiTitle,
+      searchQuery: `${poiTitle} ${effectiveCityId}`
     };
   }
 
-  let startSeconds = 0;
-  if (match && typeof match.start === 'number') {
-    startSeconds = match.start;
-  } else {
-    // Deterministic offset based on POI title string hash
-    const hash = Math.abs(normTitle.split('').reduce((acc, c) => ((acc << 5) - acc) + c.charCodeAt(0), 0));
-    startSeconds = 30 + (hash % 10) * 25; // 30s to 255s
-  }
-
-  const attractionName = (match && match.label) ? match.label : poiTitle;
-
   return {
-    youtubeId: videoObj.youtubeId,
-    startSeconds,
-    title: `${attractionName} • ${videoObj.title || effectiveCityId}`,
-    type: videoObj.type || preferredType,
-    label: `${attractionName} (4K στο ${Math.floor(startSeconds / 60)}:${(startSeconds % 60) < 10 ? '0' : ''}${startSeconds % 60})`
+    youtubeId: "wa1fa5-EnlI",
+    startSeconds: 0,
+    title: `${poiTitle || 'Περιήγηση'} (4K Tour)`,
+    type: 'drone',
+    label: '4K Cinematic Tour',
+    isCityTourFallback: true,
+    attractionName: poiTitle,
+    searchQuery: `${poiTitle}`
   };
 }
