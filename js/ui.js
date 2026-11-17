@@ -4,7 +4,7 @@
  * Base Map Layer selector, Date display, Video Overlay, and Deep Dive views.
  */
 
-import { getCityVideo, getAvailableVideoTypes, getAvailableCityTours, CITY_VIDEOS, findPoiLiveCam, getPoiVideoInfo, getGastroRecipeVideo, getSocialMediaVideos, SOCIAL_MEDIA_REGISTRY, GASTRO_RECIPE_VIDEOS } from './video-service.js?v=20261117_video_iframe_fix';
+import { getCityVideo, getAvailableVideoTypes, getAvailableCityTours, CITY_VIDEOS, findPoiLiveCam, getPoiVideoInfo, getGastroRecipeVideo, getSocialMediaVideos, SOCIAL_MEDIA_REGISTRY, GASTRO_RECIPE_VIDEOS } from './video-service.js?v=20261117_valencia_gastro_msn_fix';
 import { getDeepDiveData } from './deep-dive.js?v=20261117_video_iframe_fix';
 import { fetchWikiArticle, fetchWikiArticleHtml, cleanWikiTitle } from './wiki-service.js?v=20261117_video_iframe_fix';
 import { calculateSubsolarPoint } from './solar-terminator.js?v=20261117_video_iframe_fix';
@@ -211,8 +211,7 @@ export function setOverlayMediaMode(mode, specificId = null) {
     iframe.className = 'w-full h-full max-w-5xl rounded-xl shadow-2xl border border-amber-500/40 bg-white transition-all duration-300';
     const searchQuery = query || (currentActiveVideoCityId ? currentActiveVideoCityId.replace(/_/g, ' ') : 'Travel');
     if (title) title.innerText = `📹 Video Search: ${searchQuery}`;
-    // Filter Bing Video Search to embeddable providers (YouTube & Dailymotion) so 100% of results play in the iframe without MSN refusal errors
-    iframe.src = `https://www.bing.com/videos/search?q=${encodeURIComponent(searchQuery + ' (site:youtube.com OR site:dailymotion.com)')}`;
+    iframe.src = `https://www.bing.com/videos/search?q=${encodeURIComponent(searchQuery)}`;
   } else if (currentOverlayMode === 'web') {
     iframe.className = 'w-full h-full max-w-5xl rounded-xl shadow-2xl border border-sky-500/40 bg-white transition-all duration-300';
     const searchQuery = query || (currentActiveVideoCityId ? currentActiveVideoCityId.replace(/_/g, ' ') : 'Travel');
@@ -512,9 +511,9 @@ export function showMsnNotice(rawUrl, query) {
       <i class="fa-solid fa-triangle-exclamation"></i>
     </div>
     <div class="flex-1 min-w-0">
-      <div class="font-bold text-white mb-0.5">Προστασία βίντεο MSN (Microsoft)</div>
+      <div class="font-bold text-white mb-0.5">Άνοιγμα βίντεο MSN (Microsoft)</div>
       <div class="text-[11px] text-slate-300 leading-relaxed">
-        Η Microsoft απαγορεύει την προβολή βίντεο από το MSN σε εξωτερικές σελίδες (X-Frame-Options). Φορτώθηκε αυτόματα αντίστοιχο βίντεο για άμεση αναπαραγωγή!
+        Τα βίντεο από το MSN ανοίγουν εξωτερικά σε νέο παράθυρο λόγω των περιορισμών ασφαλείας της Microsoft (X-Frame-Options).
       </div>
       <div class="mt-2 flex items-center gap-2">
         <a href="${rawUrl}" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 rounded bg-sky-600 hover:bg-sky-500 text-white font-bold text-[10px] transition flex items-center gap-1 shadow">
@@ -537,6 +536,11 @@ export function showMsnNotice(rawUrl, query) {
 }
 
 export function playMsnVideo(rawUrlOrQuery) {
+  if (typeof rawUrlOrQuery === 'string' && (rawUrlOrQuery.startsWith('http://') || rawUrlOrQuery.startsWith('https://'))) {
+    try {
+      window.open(rawUrlOrQuery, '_blank', 'noopener,noreferrer');
+    } catch (_) {}
+  }
   const query = extractMsnVideoQuery(rawUrlOrQuery) || (currentOverlayQuery || currentActiveVideoCityId || 'Travel').trim();
   const title = document.getElementById('videoOverlayTitle');
 
@@ -826,8 +830,14 @@ export function openGastroVideo(dishTitle, cityName = '') {
     streetViewOverlay.classList.add('hidden');
   }
 
-  const primaryYtId = recipe?.youtubeId || 'wa1fa5-EnlI';
-  const videoTitle = recipe ? `👨‍🍳 Βίντεο Συνταγής: ${recipe.dish || dishTitle} (${recipe.region || cityName})` : `👨‍🍳 Αναζήτηση Συνταγής: ${dishTitle}`;
+  // Dynamic city resolution for fallback
+  const curEntity = window.getCurrentEntity ? window.getCurrentEntity() : null;
+  const currentCityKey = curEntity?.id || currentActiveVideoCityId || '';
+  const currentCityName = cityName || curEntity?.name || currentCityKey;
+  const cityVid = getCityVideo(currentCityKey, 'drone') || getCityVideo(currentCityKey, 'walking') || getCityVideo(currentCityKey);
+
+  const primaryYtId = recipe?.youtubeId || cityVid?.youtubeId || 'mWTDKXzOyg0';
+  const videoTitle = recipe ? `👨‍🍳 Βίντεο Συνταγής: ${recipe.dish || dishTitle} (${recipe.region || currentCityName})` : `👨‍🍳 Γαστρονομία: ${dishTitle} (${currentCityName})`;
 
   currentOverlayYoutubeId = primaryYtId;
   currentOverlayStartSec = 0;

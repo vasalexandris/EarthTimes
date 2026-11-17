@@ -6307,10 +6307,10 @@ export const CITY_VIDEOS = {
       "youtubeId": "mWTDKXzOyg0",
       "title": "Βαλένθια 4K — Valencia , Spain 🇪🇸 | 4K Drone Footage (With Subtitles)"
     },
-    "live": {
-      "youtubeId": "wa1fa5-EnlI",
-      "label": "Βαλένθια Live Cam",
-      "title": "🍊 WEBCAM EN #DIRECTO  #fallas2026  #LIVE 24h DESDE #VALENCIA #plaza Ayuntamiento Valencia"
+    "walking": {
+      "youtubeId": "bJb9hT2mJpY",
+      "label": "Βαλένθια Walking 4K",
+      "title": "Valencia Walking Tour 4K — Spain"
     }
   },
   "granada-es": {
@@ -28141,6 +28141,89 @@ export const POI_DEDICATED_VIDEOS = {
  * Multi-option culinary registry: Authentic Recipes, Street Food & Masterclasses
  */
 export const GASTRO_RECIPE_VIDEOS = {
+  // Valencia & Spanish Specialties
+  "paella valenciana": {
+    youtubeId: "6rX7zHdo4_w",
+    title: "Αυθεντική Παέγια (Paella) • Άκης Πετρετζίκης",
+    dish: "Paella Valenciana",
+    region: "Βαλένθια",
+    searchQuery: "paella valenciana συνταγη",
+    options: [
+      { youtubeId: "6rX7zHdo4_w", title: "Αυθεντική Παέγια • Άκης Πετρετζίκης", label: "Συνταγή (Άκης)", icon: "fa-solid fa-utensils" },
+      { youtubeId: "Wb-T2F6t7Oo", title: "Traditional Paella Valenciana • Kenji López-Alt", label: "Authentic Paella", icon: "fa-solid fa-fire-burner" }
+    ]
+  },
+  "paella": {
+    youtubeId: "6rX7zHdo4_w",
+    title: "Αυθεντική Παέγια (Paella) • Άκης Πετρετζίκης",
+    dish: "Paella Valenciana",
+    region: "Βαλένθια",
+    searchQuery: "paella valenciana συνταγη",
+    options: [
+      { youtubeId: "6rX7zHdo4_w", title: "Αυθεντική Παέγια • Άκης Πετρετζίκης", label: "Συνταγή (Άκης)", icon: "fa-solid fa-utensils" }
+    ]
+  },
+  "παέγια βαλένθια": {
+    youtubeId: "6rX7zHdo4_w",
+    title: "Αυθεντική Παέγια (Paella) • Άκης Πετρετζίκης",
+    dish: "Paella Valenciana",
+    region: "Βαλένθια",
+    searchQuery: "paella valenciana συνταγη",
+    options: [
+      { youtubeId: "6rX7zHdo4_w", title: "Αυθεντική Παέγια • Άκης Πετρετζίκης", label: "Συνταγή (Άκης)", icon: "fa-solid fa-utensils" }
+    ]
+  },
+  "παέγια": {
+    youtubeId: "6rX7zHdo4_w",
+    title: "Αυθεντική Παέγια (Paella) • Άκης Πετρετζίκης",
+    dish: "Paella Valenciana",
+    region: "Βαλένθια",
+    searchQuery: "paella valenciana συνταγη",
+    options: [
+      { youtubeId: "6rX7zHdo4_w", title: "Αυθεντική Παέγια • Άκης Πετρετζίκης", label: "Συνταγή (Άκης)", icon: "fa-solid fa-utensils" }
+    ]
+  },
+  "horchata": {
+    youtubeId: "mWTDKXzOyg0",
+    title: "Horchata de Chufa Valenciana • Παραδοσιακή Ορχάτα Βαλένθιας",
+    dish: "Horchata de Chufa",
+    region: "Βαλένθια",
+    searchQuery: "horchata de chufa valenciana recipe",
+    options: [
+      { youtubeId: "mWTDKXzOyg0", title: "Horchata de Chufa Valenciana", label: "Ορχάτα Βαλένθιας", icon: "fa-solid fa-mug-saucer" }
+    ]
+  },
+  "ορχάτα": {
+    youtubeId: "mWTDKXzOyg0",
+    title: "Horchata de Chufa Valenciana • Παραδοσιακή Ορχάτα Βαλένθιας",
+    dish: "Horchata de Chufa",
+    region: "Βαλένθια",
+    searchQuery: "horchata de chufa valenciana recipe",
+    options: [
+      { youtubeId: "mWTDKXzOyg0", title: "Horchata de Chufa Valenciana", label: "Ορχάτα Βαλένθιας", icon: "fa-solid fa-mug-saucer" }
+    ]
+  },
+  "fartons": {
+    youtubeId: "mWTDKXzOyg0",
+    title: "Fartons Valencianos • Παραδοσιακά Γλυκά Βαλένθιας",
+    dish: "Fartons",
+    region: "Βαλένθια",
+    searchQuery: "fartons valencianos recipe",
+    options: [
+      { youtubeId: "mWTDKXzOyg0", title: "Fartons Valencianos", label: "Fartons", icon: "fa-solid fa-bread-slice" }
+    ]
+  },
+  "agua de valencia": {
+    youtubeId: "mWTDKXzOyg0",
+    title: "Agua de Valencia Cocktail • Παραδοσιακό Κοκτέιλ Βαλένθιας",
+    dish: "Agua de Valencia",
+    region: "Βαλένθια",
+    searchQuery: "agua de valencia cocktail recipe",
+    options: [
+      { youtubeId: "mWTDKXzOyg0", title: "Agua de Valencia", label: "Κοκτέιλ Βαλένθιας", icon: "fa-solid fa-martini-glass" }
+    ]
+  },
+
   // Athens Street Food & Specialties
   "αυθεντικό σουβλάκι μοναστηρακίου": {
     youtubeId: "L3JTmHYtozQ",
