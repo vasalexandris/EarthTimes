@@ -681,17 +681,18 @@
 
           <!-- YOUTUBE VIDEO OVERLAY (In place of map) -->
           <div id="mapVideoOverlay" class="absolute inset-0 z-30 bg-slate-950/95 flex flex-col hidden">
-            <div class="bg-slate-900 border-b border-slate-800 px-3 sm:px-4 py-2 flex flex-wrap items-center justify-between gap-2 shrink-0 shadow-lg">
-              <div class="flex items-center gap-2">
-                <span class="px-2 py-0.5 rounded bg-red-600/20 text-red-400 border border-red-500/30 text-xs font-bold flex items-center gap-1">
+            <!-- Top Controls Bar -->
+            <div class="bg-slate-900 border-b border-slate-800 px-3 sm:px-4 py-2 flex flex-wrap items-center justify-between gap-2 shrink-0 shadow-lg z-20">
+              <div class="flex items-center gap-2 min-w-0">
+                <span class="px-2 py-0.5 rounded bg-red-600/20 text-red-400 border border-red-500/30 text-xs font-bold flex items-center gap-1 shrink-0">
                   <i class="fa-brands fa-youtube text-red-500"></i> Video Tour
                 </span>
-                <h3 id="videoOverlayTitle" class="text-xs sm:text-sm font-bold text-white truncate max-w-[150px] sm:max-w-xs md:max-w-md">Περιήγηση Πόλης</h3>
+                <h3 id="videoOverlayTitle" class="text-xs sm:text-sm font-bold text-white truncate max-w-[160px] sm:max-w-xs md:max-w-md">Περιήγηση Πόλης</h3>
               </div>
 
-              <!-- Drone vs Walking Mode Switcher Pills -->
+              <!-- Tour switcher pills (Drone / Walking / etc.) -->
               <div id="videoTypeSelector" class="flex items-center gap-1.5 hidden">
-                <!-- Injected dynamically: [ 🚁 Drone 4K ] [ 🚶 Walking 4K ] -->
+                <!-- Injected dynamically -->
               </div>
 
               <div class="flex items-center gap-2">
@@ -699,12 +700,41 @@
                   <i class="fa-brands fa-youtube"></i>
                   <span class="hidden sm:inline">YouTube</span>
                 </a>
-                <button onclick="closeMapVideoOverlay()" class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 hover:text-white text-xs font-bold transition flex items-center gap-1.5 border border-slate-700 shadow">
+                <button onclick="closeMapVideoOverlay()" class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 hover:text-white text-xs font-bold transition flex items-center gap-1.5 border border-slate-700 shadow cursor-pointer">
                   <i class="fa-solid fa-xmark"></i>
                   <span>Κλείσιμο</span>
                 </button>
               </div>
             </div>
+
+            <!-- Secondary Interactive Video Selector & Search Bar -->
+            <div id="videoOptionsBar" class="bg-slate-900/95 border-b border-slate-800 px-3 py-1.5 flex flex-wrap items-center justify-between gap-2 shrink-0 text-xs z-10">
+              <!-- Multiple Video Choice Pills -->
+              <div id="videoChoicePills" class="flex items-center gap-1.5 overflow-x-auto py-0.5 max-w-full">
+                <!-- Injected dynamically: e.g. [ 👨‍🍳 Άκης ] [ 🥙 Street Food ] [ 📱 Shorts ] -->
+              </div>
+
+              <!-- In-Overlay Search Bar & Direct Platform Launchers -->
+              <div class="flex items-center gap-1.5 ml-auto">
+                <div class="relative flex items-center">
+                  <input id="videoSearchInput" type="text" placeholder="Αναζήτηση βίντεο ή YouTube ID..." class="bg-slate-800/90 border border-slate-700 focus:border-red-500 text-white text-[11px] px-2.5 py-1 rounded-lg w-36 sm:w-52 focus:outline-none transition" />
+                  <button id="videoSearchBtn" onclick="window.submitOverlayVideoSearch()" class="absolute right-1 px-1.5 py-0.5 text-slate-400 hover:text-white cursor-pointer" title="Αναζήτηση">
+                    <i class="fa-solid fa-magnifying-glass text-xs"></i>
+                  </button>
+                </div>
+                <a id="videoSearchYouTube" href="#" target="_blank" rel="noopener noreferrer" class="px-2 py-1 rounded-lg bg-red-600/20 hover:bg-red-600 text-red-300 hover:text-white border border-red-500/40 text-[11px] font-bold transition flex items-center gap-1" title="Αναζήτηση στο YouTube">
+                  <i class="fa-brands fa-youtube"></i>
+                </a>
+                <a id="videoSearchTikTok" href="#" target="_blank" rel="noopener noreferrer" class="px-2 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white border border-slate-700 text-[11px] font-bold transition flex items-center gap-1" title="Αναζήτηση στο TikTok">
+                  <i class="fa-brands fa-tiktok"></i>
+                </a>
+                <a id="videoSearchGoogle" href="#" target="_blank" rel="noopener noreferrer" class="px-2 py-1 rounded-lg bg-sky-950/80 hover:bg-sky-900 text-sky-300 hover:text-white border border-sky-700/50 text-[11px] font-bold transition flex items-center gap-1" title="Αναζήτηση στο Google">
+                  <i class="fa-brands fa-google"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- Video Player Frame -->
             <div class="flex-1 p-2 sm:p-4 flex items-center justify-center bg-black">
               <iframe id="mapVideoIframe" class="w-full h-full max-w-5xl rounded-xl shadow-2xl border border-slate-800" src="" title="YouTube Video Tour" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             </div>
@@ -1293,7 +1323,7 @@
   </div>
 
   <!-- Modular Application Scripts -->
-  <script type="module" src="js/app.js?v=20261117_pres5"></script>
+  <script type="module" src="js/app.js?v=20261117_pres6"></script>
   <!-- Fullscreen Toggle Script (Android, WebKit, Desktop) -->
   <script>
     window.toggleFullScreen = function() {

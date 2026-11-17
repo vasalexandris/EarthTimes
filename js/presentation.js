@@ -9,8 +9,8 @@
  * - Fullscreen, Keyboard navigation (Arrow keys, Space, Esc, F), and Mobile Touch Swipe
  */
 
-import { getEntityLocalTime, getCuratedGuideItems, getCuratedGastroItems } from './ui.js?v=20261117_pres5';
-import { CITY_VIDEOS, getPoiVideoInfo } from './video-service.js?v=20261117_pres5';
+import { getEntityLocalTime, getCuratedGuideItems, getCuratedGastroItems } from './ui.js?v=20261117_pres6';
+import { CITY_VIDEOS, getPoiVideoInfo } from './video-service.js?v=20261117_pres6';
 
 let currentEntity = null;
 let currentEntityType = 'city';
