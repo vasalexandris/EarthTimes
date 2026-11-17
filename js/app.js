@@ -4,14 +4,14 @@
  * USA, Leaflet Map, Base Layers, UI Dossier, and Time Machine.
  */
 
-import { loadWorldData, loadCountryData, loadStateData } from './data-service.js?v=20261117_pres3';
-import * as MapModule from './map.js?v=20261117_pres3';
-import * as UIModule from './ui.js?v=20261117_pres3';
-import * as TimeMachine from './time-machine.js?v=20261117_pres3';
-import * as NavigatorModule from './navigator.js?v=20261117_pres3';
-import * as GlobeModule from './globe-view.js?v=20261117_pres3';
-import { US_STATES, CITY_TO_STATE } from './states-data.js?v=20261117_pres3';
-import * as PresentationModule from './presentation.js?v=20261117_pres3';
+import { loadWorldData, loadCountryData, loadStateData } from './data-service.js?v=20261117_pres4';
+import * as MapModule from './map.js?v=20261117_pres4';
+import * as UIModule from './ui.js?v=20261117_pres4';
+import * as TimeMachine from './time-machine.js?v=20261117_pres4';
+import * as NavigatorModule from './navigator.js?v=20261117_pres4';
+import * as GlobeModule from './globe-view.js?v=20261117_pres4';
+import { US_STATES, CITY_TO_STATE } from './states-data.js?v=20261117_pres4';
+import * as PresentationModule from './presentation.js?v=20261117_pres4';
 
 // Application State
 let worldData = null;
@@ -965,6 +965,7 @@ window.openCurrentStreetView = openCurrentStreetView;
 
 window.openDeepDive = UIModule.openDeepDive;
 window.closeDeepDiveOverlay = UIModule.closeDeepDiveOverlay;
+window.openPoiVideo = UIModule.openPoiVideo;
 window.openCurrentCityVideo = () => {
   if (currentCityId) {
     UIModule.openCityVideo(currentCityId);
@@ -1141,8 +1142,8 @@ async function init() {
       TimeMachine.openCreateSpotModal(lat, lng);
     });
 
-    // 5. Set initial base layer UI state (Topographic Relief default)
-    UIModule.updateBaseLayerUI('topo');
+    // 5. Set initial base layer UI state (Satellite Esri World Imagery default)
+    UIModule.updateBaseLayerUI('satellite');
 
     // 6. Initial Time Slider setup
     TimeMachine.updateTimeSliderUI();

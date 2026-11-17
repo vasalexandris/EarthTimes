@@ -4,12 +4,12 @@
  * Base Map Layer selector, Date display, Video Overlay, and Deep Dive views.
  */
 
-import { getCityVideo, getAvailableVideoTypes, getAvailableCityTours, CITY_VIDEOS, findPoiLiveCam } from './video-service.js?v=20261117_pres3';
-import { getDeepDiveData } from './deep-dive.js?v=20261117_pres3';
-import { fetchWikiArticle, fetchWikiArticleHtml, cleanWikiTitle } from './wiki-service.js?v=20261117_pres3';
-import { calculateSubsolarPoint } from './solar-terminator.js?v=20261117_pres3';
-import { CITY_TO_STATE } from './states-data.js?v=20261117_pres3';
-import { CITY_TO_COUNTRY } from './navigator.js?v=20261117_pres3';
+import { getCityVideo, getAvailableVideoTypes, getAvailableCityTours, CITY_VIDEOS, findPoiLiveCam, getPoiVideoInfo } from './video-service.js?v=20261117_pres4';
+import { getDeepDiveData } from './deep-dive.js?v=20261117_pres4';
+import { fetchWikiArticle, fetchWikiArticleHtml, cleanWikiTitle } from './wiki-service.js?v=20261117_pres4';
+import { calculateSubsolarPoint } from './solar-terminator.js?v=20261117_pres4';
+import { CITY_TO_STATE } from './states-data.js?v=20261117_pres4';
+import { CITY_TO_COUNTRY } from './navigator.js?v=20261117_pres4';
 
 let currentActiveVideoCityId = null;
 let currentActiveVideoType = 'drone';
@@ -129,6 +129,78 @@ export function openCityVideo(cityId, preferredType = 'drone') {
     } else {
       typeSelector.classList.add('hidden');
     }
+  }
+
+  overlay.classList.remove('hidden');
+  syncMapFloatingControlsVisibility();
+}
+
+export function openPoiVideo(poiTitle, cityId = '', explicitStart = null) {
+  if (!cityId && window.getCurrentEntity) {
+    const cur = window.getCurrentEntity();
+    if (cur && cur.id) cityId = cur.id;
+  }
+
+  const info = getPoiVideoInfo(poiTitle, cityId);
+  if (!info || !info.youtubeId) return;
+
+  const startSec = (explicitStart !== null && typeof explicitStart === 'number') ? explicitStart : info.startSeconds;
+
+  const overlay = document.getElementById('mapVideoOverlay');
+  const iframe = document.getElementById('mapVideoIframe');
+  const title = document.getElementById('videoOverlayTitle');
+  const deepDiveOverlay = document.getElementById('mapDeepDiveOverlay');
+  const wikiOverlay = document.getElementById('mapWikiOverlay');
+  const streetViewOverlay = document.getElementById('mapStreetViewOverlay');
+  const directLink = document.getElementById('videoDirectLink');
+  const typeSelector = document.getElementById('videoTypeSelector');
+
+  if (!overlay || !iframe) return;
+
+  currentActiveVideoCityId = cityId;
+  currentActiveVideoType = info.type;
+
+  // Close other map overlays if open
+  if (window.closeCityPresentation) window.closeCityPresentation();
+  if (deepDiveOverlay) deepDiveOverlay.classList.add('hidden');
+  if (wikiOverlay) {
+    const wikiFrame = document.getElementById('mapWikiIframe');
+    if (wikiFrame) wikiFrame.srcdoc = '';
+    wikiOverlay.classList.add('hidden');
+  }
+  if (streetViewOverlay) {
+    const svFrame = document.getElementById('mapStreetViewIframe');
+    if (svFrame) svFrame.src = 'about:blank';
+    streetViewOverlay.classList.add('hidden');
+  }
+
+  const mins = Math.floor(startSec / 60);
+  const secs = startSec % 60;
+  const timeFormatted = `${mins}:${secs < 10 ? '0' : ''}${secs}`;
+  const videoTitle = `🎥 ${poiTitle || 'Αξιοθέατο'} • 4K Video Tour (${timeFormatted})`;
+
+  if (title) title.innerText = videoTitle;
+  if (directLink) directLink.href = `https://www.youtube.com/watch?v=${info.youtubeId}&t=${startSec}s`;
+  iframe.src = `https://www.youtube-nocookie.com/embed/${info.youtubeId}?autoplay=1&rel=0&start=${startSec}`;
+
+  if (typeSelector) {
+    const tours = getAvailableCityTours(cityId);
+    typeSelector.innerHTML = `
+      <span class="px-2.5 py-1 rounded-lg text-xs font-bold bg-rose-600 text-white shadow-md flex items-center gap-1.5">
+        <i class="fa-solid fa-film"></i>
+        <span>${timeFormatted} • ${poiTitle}</span>
+      </span>
+      ${tours.map(t => {
+        const shortLabel = t.type === 'drone' ? 'Drone 4K' : (t.type === 'walking' ? 'Walking 4K' : (t.type === 'live' ? 'Live Cam' : 'Οδηγός 4K'));
+        return `
+          <button onclick="openCityVideo('${cityId}', '${t.type}')" class="px-2.5 py-1 rounded-lg text-xs font-bold bg-slate-800 text-slate-300 hover:text-white border border-slate-700 transition flex items-center gap-1.5 cursor-pointer">
+            <i class="${t.icon}"></i>
+            <span>${shortLabel}</span>
+          </button>
+        `;
+      }).join('')}
+    `;
+    typeSelector.classList.remove('hidden');
   }
 
   overlay.classList.remove('hidden');
@@ -418,6 +490,8 @@ export async function openDeepDive(keyOrTitle, fallbackSummary = '', contextEnti
   if (wikiHeaderBtn) wikiHeaderBtn.classList.remove('hidden');
 
   const poiLive = data.liveCam ? { youtubeId: data.liveCam, title: data.title } : findPoiLiveCam(data.title || keyOrTitle);
+  const curEntity = window.getCurrentEntity ? window.getCurrentEntity() : null;
+  const poiVidInfo = getPoiVideoInfo(data.title || keyOrTitle, curEntity?.id || '');
 
   let sectionsHtml = '';
   if (data.sections && data.sections.length) {
@@ -444,6 +518,28 @@ export async function openDeepDive(keyOrTitle, fallbackSummary = '', contextEnti
         <p class="text-xs text-slate-300 mt-1 italic drop-shadow">${data.caption || ''}</p>
       </div>
     </div>
+
+    ${poiVidInfo && poiVidInfo.youtubeId ? `
+      <!-- 4K Video Tour Deep-Link Callout -->
+      <div class="p-4 rounded-2xl bg-gradient-to-r from-rose-950/80 via-slate-900 to-slate-900 border border-rose-600/50 flex flex-wrap items-center justify-between gap-3 shadow-xl">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-rose-600/20 text-rose-400 border border-rose-500/40 flex items-center justify-center text-lg">
+            <i class="fa-solid fa-film"></i>
+          </div>
+          <div>
+            <div class="text-xs font-bold text-rose-300 uppercase tracking-wider flex items-center gap-1.5">
+              <span>4K Video Tour</span>
+              <span class="px-1.5 py-0.2 bg-rose-600 text-white text-[9px] font-extrabold rounded">TIMESTAMP</span>
+            </div>
+            <div class="text-sm font-bold text-white">${poiVidInfo.label}</div>
+          </div>
+        </div>
+        <button onclick="window.openPoiVideo('${escapeStr(data.title || keyOrTitle)}', '${escapeStr(curEntity?.id || '')}')" class="px-4 py-2 rounded-xl bg-rose-600 hover:bg-rose-500 text-white font-bold text-xs flex items-center gap-2 shadow-lg hover:shadow-rose-900/50 transition cursor-pointer">
+          <i class="fa-solid fa-play text-xs"></i>
+          <span>Προβολή στο Βίντεο 4K</span>
+        </button>
+      </div>
+    ` : ''}
 
     ${poiLive ? `
       <!-- Live Camera Banner Callout -->
@@ -2150,6 +2246,10 @@ export function renderTabContent(tabId, entity, activeYear = null, activeSpots =
                 <button onclick="window.openMapStreetView(${itemCoords[0]}, ${itemCoords[1]}, '${escapeStr(searchPlace)}')" class="px-2.5 py-1 rounded-lg bg-amber-500/15 hover:bg-amber-500/25 text-amber-300 hover:text-white border border-amber-500/30 text-[11px] font-bold transition flex items-center gap-1.5 shadow" title="Περιήγηση Street View στον Χάρτη">
                   <i class="fa-solid fa-street-view text-amber-400"></i>
                   <span>Street View</span>
+                </button>
+                <button onclick="window.openPoiVideo('${escapeStr(item.title)}', '${escapeStr(entity.id || '')}')" class="px-2.5 py-1 rounded-lg bg-rose-950/80 hover:bg-rose-900 text-rose-300 hover:text-white border border-rose-700/50 text-[11px] font-bold transition flex items-center gap-1.5 shadow" title="Προβολή στο Βίντεο Περιήγησης (4K στο κατάλληλο σημείο)">
+                  <i class="fa-solid fa-film text-rose-400"></i>
+                  <span>Βίντεο (4K)</span>
                 </button>
               </div>
             </div>

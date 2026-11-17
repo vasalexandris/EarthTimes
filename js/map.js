@@ -4,12 +4,12 @@
  * polygon highlights, markers, time capsules, and camera animations.
  */
 
-import { findPoiLiveCam } from './video-service.js?v=20261117_pres3';
-import { initDayNight } from './solar-terminator.js?v=20261117_pres3';
+import { findPoiLiveCam } from './video-service.js?v=20261117_pres4';
+import { initDayNight } from './solar-terminator.js?v=20261117_pres4';
 
 let map = null;
 let activeBaseLayer = null;
-let currentBaseLayerKey = 'topo'; // default to topographic relief (Ανάγλυφο)
+let currentBaseLayerKey = 'satellite'; // default to Satellite (Esri World Imagery)
 let statePolygonLayer = null;
 let cityMarkersGroup = null;
 let poiMarkersGroup = null;
@@ -310,6 +310,9 @@ export function renderCityPois(city, currentPoiFilter = 'all', onPoiMoreClick) {
         <div class="flex items-center gap-1.5">
           <button onclick="window.openMapStreetView(${poi.coords[0]}, ${poi.coords[1]}, '${poi.name.replace(/'/g, "\\'")}')" class="px-2 py-1 rounded bg-amber-500/20 hover:bg-amber-500/30 text-amber-900 border border-amber-500/40 text-[11px] font-bold flex items-center gap-1 transition shadow-sm cursor-pointer" title="Περιήγηση Street View στον Χάρτη">
             <i class="fa-solid fa-street-view text-amber-700"></i> Street View
+          </button>
+          <button onclick="window.openPoiVideo('${poi.name.replace(/'/g, "\\'")}', '${city.id}')" class="px-2 py-1 rounded bg-rose-950/80 hover:bg-rose-900 text-rose-300 border border-rose-700/50 text-[11px] font-bold flex items-center gap-1 transition shadow-sm cursor-pointer" title="Προβολή στο Βίντεο Περιήγησης (4K στο κατάλληλο σημείο)">
+            <i class="fa-solid fa-film text-rose-400"></i> Βίντεο 4K
           </button>
           ${poiLiveCam ? `
             <button onclick="window.openLiveCamModal('${poiLiveCam.youtubeId}', '${poi.name.replace(/'/g, "\\'")}')" class="px-2 py-1 rounded bg-red-600 hover:bg-red-500 text-white text-[11px] font-bold flex items-center gap-1 transition shadow-sm cursor-pointer" title="Ζωντανή Μετάδοση (Live Cam)">

@@ -9,8 +9,8 @@
  * - Fullscreen, Keyboard navigation (Arrow keys, Space, Esc, F), and Mobile Touch Swipe
  */
 
-import { getEntityLocalTime, getCuratedGuideItems, getCuratedGastroItems } from './ui.js?v=20261117_pres3';
-import { CITY_VIDEOS } from './video-service.js?v=20261117_pres3';
+import { getEntityLocalTime, getCuratedGuideItems, getCuratedGastroItems } from './ui.js?v=20261117_pres4';
+import { CITY_VIDEOS, getPoiVideoInfo } from './video-service.js?v=20261117_pres4';
 
 let currentEntity = null;
 let currentEntityType = 'city';
@@ -720,10 +720,49 @@ function renderDotsAndCounter(activeIndex, total) {
 }
 
 // =========================================================================
-// SLIDE HTML TEMPLATES
+// SLIDE HTML TEMPLATES & VISUAL PHOTOGRAPHY ENHANCEMENT
 // =========================================================================
 
-// Slide 1: Hero Overview
+function escapeStr(str) {
+  if (!str) return '';
+  return String(str)
+    .replace(/\\/g, '\\\\')
+    .replace(/'/g, "\\'")
+    .replace(/"/g, '&quot;')
+    .replace(/\n/g, ' ');
+}
+
+function getSlidePhoto(slideType, entity) {
+  if (!entity) return null;
+  const vidEntry = CITY_VIDEOS ? CITY_VIDEOS[entity.id] : null;
+  const droneId = vidEntry?.drone?.youtubeId;
+  const walkingId = vidEntry?.walking?.youtubeId;
+  const guideId = vidEntry?.guide?.youtubeId;
+
+  let chosenId = null;
+  if (slideType === 'overview') {
+    chosenId = droneId || walkingId || guideId;
+  } else if (slideType === 'geography') {
+    chosenId = droneId || walkingId;
+  } else if (slideType === 'history') {
+    chosenId = guideId || walkingId || droneId;
+  } else if (slideType === 'culture') {
+    chosenId = walkingId || guideId || droneId;
+  } else if (slideType === 'gastronomy') {
+    chosenId = walkingId || guideId || droneId;
+  } else if (slideType === 'modern') {
+    chosenId = droneId || walkingId;
+  } else if (slideType === 'finale') {
+    chosenId = droneId || walkingId || guideId;
+  }
+
+  if (chosenId) {
+    return `https://img.youtube.com/vi/${chosenId}/hqdefault.jpg`;
+  }
+  return null;
+}
+
+// Slide 1: Hero Overview & Identity
 function renderSlide1Overview(e, timeInfo) {
   const isVelvet = currentTheme === 'velvet';
   const cardBorder = isVelvet ? 'border-amber-500/25 bg-slate-900/60' : 'border-cyan-500/30 bg-slate-900/60';
@@ -734,10 +773,11 @@ function renderSlide1Overview(e, timeInfo) {
   const founded = e.stats?.founded || e.founded || 'Αρχαιότητα';
   const landmark = e.landmark || e.stats?.landmark || e.stats?.famousFor || e.badge || 'Ιστορικό Κέντρο';
   const sunBadge = timeInfo.isDay ? '☀️ Ημέρα' : '🌙 Νύχτα';
+  const photoUrl = getSlidePhoto('overview', e);
 
   return `
-    <div class="space-y-4 sm:space-y-6">
-      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-3 border-b border-slate-800 pb-3 sm:pb-4">
+    <div class="space-y-3 sm:space-y-4">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-slate-800 pb-2 sm:pb-3">
         <div>
           <div class="flex items-center gap-2 text-xs uppercase tracking-wider text-slate-400 font-bold mb-1">
             <span>${e.flag || '📍'}</span>
@@ -745,7 +785,7 @@ function renderSlide1Overview(e, timeInfo) {
             <span>•</span>
             <span class="${accentText}">${e.nickname || 'Παγκόσμιος Προορισμός'}</span>
           </div>
-          <h1 class="text-3xl sm:text-4xl md:text-5xl font-black text-white tracking-tight leading-tight">
+          <h1 class="text-2xl sm:text-3xl md:text-4xl font-black text-white tracking-tight leading-tight">
             ${e.name || 'Πόλη'}
           </h1>
         </div>
@@ -756,34 +796,51 @@ function renderSlide1Overview(e, timeInfo) {
         </div>
       </div>
 
-      <!-- Stylized Quote -->
-      ${e.quote ? `
-        <div class="p-3 sm:p-4 rounded-2xl ${cardBorder} backdrop-blur-md border shadow-lg flex items-start gap-3">
-          <i class="fa-solid fa-quote-left text-xl sm:text-2xl ${accentText} opacity-60 shrink-0 mt-0.5"></i>
-          <p class="text-xs sm:text-sm md:text-base font-serif italic ${quoteText} leading-relaxed">
-            ${e.quote}
-          </p>
-        </div>
-      ` : ''}
+      <!-- Main Visual Grid: Photo & Content -->
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-3 items-stretch">
+        ${photoUrl ? `
+          <div class="md:col-span-5 relative rounded-2xl overflow-hidden border ${cardBorder} shadow-2xl h-44 sm:h-52 md:h-auto min-h-[170px] group bg-slate-900">
+            <img src="${photoUrl}" alt="${e.name}" class="w-full h-full object-cover group-hover:scale-105 transition duration-700" onerror="this.style.display='none'">
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent flex flex-col justify-end p-3">
+              <span class="text-[10px] font-bold uppercase tracking-wider text-amber-300 bg-slate-950/70 px-2 py-0.5 rounded backdrop-blur border border-amber-500/30 w-fit">
+                <i class="fa-solid fa-camera mr-1"></i> Πανοραμική Θέα 4K
+              </span>
+              <span class="text-xs font-semibold text-white mt-1 drop-shadow">${e.name} ${e.englishName ? '• ' + e.englishName : ''}</span>
+            </div>
+          </div>
+        ` : ''}
 
-      <!-- 4 Quick Stat Badges -->
-      <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 sm:gap-3">
-        <div class="p-3 rounded-2xl ${cardBorder} backdrop-blur-md border shadow text-center">
-          <div class="text-[10px] uppercase font-bold text-slate-400 mb-1">Πληθυσμός</div>
-          <div class="text-xs sm:text-sm md:text-base font-black text-white truncate">${pop}</div>
-        </div>
-        <div class="p-3 rounded-2xl ${cardBorder} backdrop-blur-md border shadow text-center">
-          <div class="text-[10px] uppercase font-bold text-slate-400 mb-1">Ίδρυση / Εποχή</div>
-          <div class="text-xs sm:text-sm md:text-base font-black ${accentText} truncate">${founded}</div>
-        </div>
-        <div class="p-3 rounded-2xl ${cardBorder} backdrop-blur-md border shadow text-center">
-          <div class="text-[10px] uppercase font-bold text-slate-400 mb-1">Ορόσημο</div>
-          <div class="text-xs sm:text-sm md:text-base font-black text-white truncate" title="${landmark}">${landmark}</div>
-        </div>
-        <div class="p-3 rounded-2xl ${cardBorder} backdrop-blur-md border shadow text-center">
-          <div class="text-[10px] uppercase font-bold text-slate-400 mb-1">Συντεταγμένες</div>
-          <div class="text-xs sm:text-sm font-mono font-bold text-slate-300 truncate">
-            ${e.coords ? `${e.coords[0].toFixed(2)}°, ${e.coords[1].toFixed(2)}°` : 'Γεωγραφικός Κόμβος'}
+        <div class="${photoUrl ? 'md:col-span-7' : 'md:col-span-12'} flex flex-col justify-between gap-3">
+          <!-- Stylized Quote -->
+          ${e.quote ? `
+            <div class="p-3 sm:p-4 rounded-2xl ${cardBorder} backdrop-blur-md border shadow-lg flex items-start gap-3 flex-1">
+              <i class="fa-solid fa-quote-left text-lg sm:text-xl ${accentText} opacity-60 shrink-0 mt-0.5"></i>
+              <p class="text-xs sm:text-sm font-serif italic ${quoteText} leading-relaxed">
+                ${e.quote}
+              </p>
+            </div>
+          ` : ''}
+
+          <!-- 4 Quick Stat Badges -->
+          <div class="grid grid-cols-2 gap-2">
+            <div class="p-2.5 rounded-xl ${cardBorder} backdrop-blur-md border shadow text-center">
+              <div class="text-[10px] uppercase font-bold text-slate-400 mb-0.5">Πληθυσμός</div>
+              <div class="text-xs sm:text-sm font-black text-white truncate">${pop}</div>
+            </div>
+            <div class="p-2.5 rounded-xl ${cardBorder} backdrop-blur-md border shadow text-center">
+              <div class="text-[10px] uppercase font-bold text-slate-400 mb-0.5">Ίδρυση / Εποχή</div>
+              <div class="text-xs sm:text-sm font-black ${accentText} truncate">${founded}</div>
+            </div>
+            <div class="p-2.5 rounded-xl ${cardBorder} backdrop-blur-md border shadow text-center">
+              <div class="text-[10px] uppercase font-bold text-slate-400 mb-0.5">Ορόσημο</div>
+              <div class="text-xs sm:text-sm font-black text-white truncate" title="${landmark}">${landmark}</div>
+            </div>
+            <div class="p-2.5 rounded-xl ${cardBorder} backdrop-blur-md border shadow text-center">
+              <div class="text-[10px] uppercase font-bold text-slate-400 mb-0.5">Συντεταγμένες</div>
+              <div class="text-xs font-mono font-bold text-slate-300 truncate">
+                ${e.coords ? `${e.coords[0].toFixed(2)}°, ${e.coords[1].toFixed(2)}°` : 'Γεωγραφικός Κόμβος'}
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -799,37 +856,51 @@ function renderSlide2Geography(e) {
 
   const summary = e.geo?.summary || 'Πόλη χτισμένη σε στρατηγική γεωγραφική τοποθεσία, συνδυάζοντας φυσικό ανάγλυφο, πλούσια οικοσυστήματα και μοναδικό τοπικό μικροκλίμα.';
   const highlights = e.geo?.highlights || [];
+  const photoUrl = getSlidePhoto('geography', e);
 
   return `
-    <div class="space-y-4">
-      <div class="p-4 sm:p-5 rounded-2xl ${cardBorder} backdrop-blur-md border shadow-lg">
-        <h4 class="text-xs font-black uppercase tracking-wider ${accentText} mb-2 flex items-center gap-2">
-          <i class="fa-solid fa-map-location-dot"></i>
-          <span>Φυσικό Περιβάλλον & Τοπογραφία</span>
-        </h4>
-        <p class="text-xs sm:text-sm text-slate-200 leading-relaxed">
-          ${summary}
-        </p>
+    <div class="space-y-3">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-3 items-stretch">
+        <div class="${photoUrl ? 'md:col-span-8' : 'md:col-span-12'} p-3.5 sm:p-4 rounded-2xl ${cardBorder} backdrop-blur-md border shadow-lg flex flex-col justify-center">
+          <h4 class="text-xs font-black uppercase tracking-wider ${accentText} mb-1.5 flex items-center gap-2">
+            <i class="fa-solid fa-map-location-dot"></i>
+            <span>Φυσικό Περιβάλλον & Τοπογραφία</span>
+          </h4>
+          <p class="text-xs sm:text-sm text-slate-200 leading-relaxed">
+            ${summary}
+          </p>
+        </div>
+
+        ${photoUrl ? `
+          <div class="md:col-span-4 relative rounded-2xl overflow-hidden border ${cardBorder} shadow-lg h-32 sm:h-36 md:h-auto min-h-[120px] bg-slate-900">
+            <img src="${photoUrl}" alt="Γεωγραφικό Ανάγλυφο" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 to-transparent flex items-end p-2.5">
+              <span class="text-[10px] font-bold text-emerald-300 flex items-center gap-1">
+                <i class="fa-solid fa-mountain-sun"></i> Φυσικό Ανάγλυφο
+              </span>
+            </div>
+          </div>
+        ` : ''}
       </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
         ${highlights.length > 0 ? highlights.slice(0, 4).map((h, i) => `
-          <div class="p-3 sm:p-4 rounded-xl ${cardBorder} backdrop-blur-md border shadow flex items-start gap-3">
-            <span class="w-8 h-8 rounded-lg ${isVelvet ? 'bg-amber-500/20 text-amber-300' : 'bg-cyan-500/20 text-cyan-300'} flex items-center justify-center shrink-0 text-sm font-bold">
+          <div class="p-3 rounded-xl ${cardBorder} backdrop-blur-md border shadow flex items-start gap-2.5">
+            <span class="w-7 h-7 rounded-lg ${isVelvet ? 'bg-amber-500/20 text-amber-300' : 'bg-cyan-500/20 text-cyan-300'} flex items-center justify-center shrink-0 text-xs font-bold">
               ${i + 1}
             </span>
             <div class="min-w-0">
-              <h5 class="text-xs sm:text-sm font-bold text-white mb-0.5 truncate">${h.title}</h5>
-              <p class="text-[11px] sm:text-xs text-slate-300 leading-relaxed">${h.desc}</p>
+              <h5 class="text-xs font-bold text-white mb-0.5 truncate">${h.title}</h5>
+              <p class="text-[11px] text-slate-300 leading-relaxed">${h.desc}</p>
             </div>
           </div>
         `).join('') : `
-          <div class="p-4 rounded-xl ${cardBorder} backdrop-blur-md border shadow">
-            <h5 class="text-xs sm:text-sm font-bold text-white mb-1">🌿 Φυσικό Τοπίο</h5>
+          <div class="p-3 rounded-xl ${cardBorder} backdrop-blur-md border shadow">
+            <h5 class="text-xs font-bold text-white mb-1">🌿 Φυσικό Τοπίο</h5>
             <p class="text-xs text-slate-300 leading-relaxed">Μοναδικό οικοσύστημα και πράσινοι πνεύμονες που πλαισιώνουν την αστική ζώνη.</p>
           </div>
-          <div class="p-4 rounded-xl ${cardBorder} backdrop-blur-md border shadow">
-            <h5 class="text-xs sm:text-sm font-bold text-white mb-1">🌊 Υδάτινοι Πόροι</h5>
+          <div class="p-3 rounded-xl ${cardBorder} backdrop-blur-md border shadow">
+            <h5 class="text-xs font-bold text-white mb-1">🌊 Υδάτινοι Πόροι</h5>
             <p class="text-xs text-slate-300 leading-relaxed">Ποταμοί, ακτογραμμές ή φυσικές πηγές που καθόρισαν την ανάπτυξη της πόλης.</p>
           </div>
         `}
@@ -848,33 +919,47 @@ function renderSlide3History(e) {
   const summary = e.hist?.summary || 'Μια μακραίωνη ιστορική διαδρομή γεμάτη κομβικά γεγονότα, αναγεννησιακές περιόδους και πολιτιστικές κατακτήσεις.';
   const highlights = e.hist?.highlights || [];
   const pastPresent = e.pastVsPresent || [];
+  const photoUrl = getSlidePhoto('history', e);
 
   return `
-    <div class="space-y-4">
-      <div class="p-4 rounded-2xl ${cardBorder} backdrop-blur-md border shadow-lg">
-        <h4 class="text-xs font-black uppercase tracking-wider ${accentText} mb-2 flex items-center gap-2">
-          <i class="fa-solid fa-hourglass-half"></i>
-          <span>Ιστορικό Χρονικό & Κληρονομιά</span>
-        </h4>
-        <p class="text-xs sm:text-sm text-slate-200 leading-relaxed">
-          ${summary}
-        </p>
+    <div class="space-y-3">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-3 items-stretch">
+        <div class="${photoUrl ? 'md:col-span-8' : 'md:col-span-12'} p-3.5 sm:p-4 rounded-2xl ${cardBorder} backdrop-blur-md border shadow-lg flex flex-col justify-center">
+          <h4 class="text-xs font-black uppercase tracking-wider ${accentText} mb-1.5 flex items-center gap-2">
+            <i class="fa-solid fa-hourglass-half"></i>
+            <span>Ιστορικό Χρονικό & Κληρονομιά</span>
+          </h4>
+          <p class="text-xs sm:text-sm text-slate-200 leading-relaxed">
+            ${summary}
+          </p>
+        </div>
+
+        ${photoUrl ? `
+          <div class="md:col-span-4 relative rounded-2xl overflow-hidden border ${cardBorder} shadow-lg h-32 sm:h-36 md:h-auto min-h-[120px] bg-slate-900">
+            <img src="${photoUrl}" alt="Ιστορικό Ορόσημο" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 to-transparent flex items-end p-2.5">
+              <span class="text-[10px] font-bold text-amber-300 flex items-center gap-1">
+                <i class="fa-solid fa-landmark"></i> Ιστορικό Ορόσημο
+              </span>
+            </div>
+          </div>
+        ` : ''}
       </div>
 
       <!-- Timeline Highlights Grid -->
-      <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
         ${highlights.length > 0 ? highlights.slice(0, 3).map(h => `
-          <div class="p-3 sm:p-4 rounded-xl ${cardBorder} backdrop-blur-md border shadow flex flex-col justify-between">
+          <div class="p-3 rounded-xl ${cardBorder} backdrop-blur-md border shadow flex flex-col justify-between">
             <div>
-              <span class="inline-block px-2 py-0.5 rounded text-[11px] font-mono font-bold ${badgeBg} border mb-2">
+              <span class="inline-block px-2 py-0.5 rounded text-[10px] font-mono font-bold ${badgeBg} border mb-1.5">
                 ${h.year || 'Ορόσημο'}
               </span>
-              <h5 class="text-xs sm:text-sm font-bold text-white mb-1">${h.event || h.title}</h5>
-              <p class="text-[11px] text-slate-300 leading-relaxed">${h.desc || ''}</p>
+              <h5 class="text-xs font-bold text-white mb-1">${h.event || h.title}</h5>
+              <p class="text-[11px] text-slate-300 leading-relaxed line-clamp-3">${h.desc || ''}</p>
             </div>
           </div>
         `).join('') : `
-          <div class="p-4 rounded-xl ${cardBorder} backdrop-blur-md border shadow col-span-3 text-center">
+          <div class="p-3 rounded-xl ${cardBorder} backdrop-blur-md border shadow col-span-3 text-center">
             <p class="text-xs text-slate-300">Ιστορική πόλη με βαθιές ρίζες και αξιοσημείωτα μνημεία από κάθε περίοδο.</p>
           </div>
         `}
@@ -882,11 +967,11 @@ function renderSlide3History(e) {
 
       <!-- Past vs Present Snippet -->
       ${pastPresent.length > 0 ? `
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-0.5">
           ${pastPresent.slice(0, 2).map(pvp => `
-            <div class="p-3 rounded-xl bg-slate-950/70 border border-slate-800 text-xs">
-              <span class="font-bold text-amber-400 block mb-1">⏳ ${pvp.epoch}</span>
-              <p class="text-slate-300 leading-relaxed text-[11px]">${pvp.content}</p>
+            <div class="p-2.5 rounded-xl bg-slate-950/70 border border-slate-800 text-xs">
+              <span class="font-bold text-amber-400 block mb-0.5">⏳ ${pvp.epoch}</span>
+              <p class="text-slate-300 leading-relaxed text-[11px] line-clamp-2">${pvp.content}</p>
             </div>
           `).join('')}
         </div>
@@ -903,30 +988,44 @@ function renderSlide4Culture(e) {
 
   const summary = e.cult?.summary || 'Ζωντανή καλλιτεχνική δημιουργία, παραδόσεις, φεστιβάλ και αρχιτεκτονικά αριστουργήματα.';
   const items = e.cult?.items || [];
+  const photoUrl = getSlidePhoto('culture', e);
 
   return `
-    <div class="space-y-4">
-      <div class="p-4 rounded-2xl ${cardBorder} backdrop-blur-md border shadow-lg">
-        <h4 class="text-xs font-black uppercase tracking-wider ${accentText} mb-2 flex items-center gap-2">
-          <i class="fa-solid fa-masks-theater"></i>
-          <span>Πολιτισμός, Τέχνες & Παράδοση</span>
-        </h4>
-        <p class="text-xs sm:text-sm text-slate-200 leading-relaxed">
-          ${summary}
-        </p>
+    <div class="space-y-3">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-3 items-stretch">
+        <div class="${photoUrl ? 'md:col-span-8' : 'md:col-span-12'} p-3.5 sm:p-4 rounded-2xl ${cardBorder} backdrop-blur-md border shadow-lg flex flex-col justify-center">
+          <h4 class="text-xs font-black uppercase tracking-wider ${accentText} mb-1.5 flex items-center gap-2">
+            <i class="fa-solid fa-masks-theater"></i>
+            <span>Πολιτισμός, Τέχνες & Παράδοση</span>
+          </h4>
+          <p class="text-xs sm:text-sm text-slate-200 leading-relaxed">
+            ${summary}
+          </p>
+        </div>
+
+        ${photoUrl ? `
+          <div class="md:col-span-4 relative rounded-2xl overflow-hidden border ${cardBorder} shadow-lg h-32 sm:h-36 md:h-auto min-h-[120px] bg-slate-900">
+            <img src="${photoUrl}" alt="Πολιτισμός" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 to-transparent flex items-end p-2.5">
+              <span class="text-[10px] font-bold text-violet-300 flex items-center gap-1">
+                <i class="fa-solid fa-palette"></i> Τέχνες & Κληρονομιά
+              </span>
+            </div>
+          </div>
+        ` : ''}
       </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
         ${items.length > 0 ? items.slice(0, 4).map(it => `
-          <div class="p-3 sm:p-4 rounded-xl ${cardBorder} backdrop-blur-md border shadow">
-            <h5 class="text-xs sm:text-sm font-bold text-white mb-1 flex items-center gap-1.5">
+          <div class="p-3 rounded-xl ${cardBorder} backdrop-blur-md border shadow">
+            <h5 class="text-xs font-bold text-white mb-1 flex items-center gap-1.5">
               <i class="fa-solid fa-feather-pointed ${accentText} text-xs"></i>
               <span>${it.title}</span>
             </h5>
-            <p class="text-[11px] sm:text-xs text-slate-300 leading-relaxed">${it.desc}</p>
+            <p class="text-[11px] text-slate-300 leading-relaxed line-clamp-3">${it.desc}</p>
           </div>
         `).join('') : `
-          <div class="p-4 rounded-xl ${cardBorder} backdrop-blur-md border shadow col-span-2 text-center text-xs text-slate-300">
+          <div class="p-3 rounded-xl ${cardBorder} backdrop-blur-md border shadow col-span-2 text-center text-xs text-slate-300">
             Πλούσια πολιτιστική ζωή με μουσεία, θέατρα και παραδοσιακά δρώμενα.
           </div>
         `}
@@ -935,7 +1034,7 @@ function renderSlide4Culture(e) {
   `;
 }
 
-// Slide 5: Landmarks & Attractions
+// Slide 5: Landmarks & Attractions (with Deep Link Video Button & Photo Thumbnail!)
 function renderSlide5Landmarks(e, guideItems) {
   const isVelvet = currentTheme === 'velvet';
   const cardBorder = isVelvet ? 'border-amber-500/25 bg-slate-900/60' : 'border-cyan-500/30 bg-slate-900/60';
@@ -944,31 +1043,58 @@ function renderSlide5Landmarks(e, guideItems) {
   const pois = guideItems.slice(0, 4);
 
   return `
-    <div class="space-y-3 sm:space-y-4">
+    <div class="space-y-3">
       <div class="flex items-center justify-between">
         <h4 class="text-xs font-black uppercase tracking-wider ${accentText} flex items-center gap-2">
           <i class="fa-solid fa-monument"></i>
           <span>Κορυφαία Σημεία Ενδιαφέροντος</span>
         </h4>
-        <span class="text-[11px] text-slate-400">Επιλεγμένα Αξιοθέατα</span>
+        <span class="text-[11px] text-slate-400">Επιλεγμένα Αξιοθέατα με Βίντεο 4K</span>
       </div>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
         ${pois.map(p => {
           const categoryIcon = p.cat === 'nature' ? '🌿' : (p.cat === 'culture' ? '🎨' : '🏛️');
+          const poiVid = getPoiVideoInfo(p.title, e.id);
+          const thumb = poiVid?.youtubeId ? `https://img.youtube.com/vi/${poiVid.youtubeId}/hqdefault.jpg` : null;
+
           return `
-            <div class="p-3 sm:p-4 rounded-xl ${cardBorder} backdrop-blur-md border shadow flex flex-col justify-between">
+            <div class="p-3 rounded-xl ${cardBorder} backdrop-blur-md border shadow flex flex-col justify-between group">
               <div>
-                <div class="flex items-center justify-between gap-2 mb-1.5">
-                  <span class="text-xs sm:text-sm font-bold text-white truncate flex items-center gap-1.5">
-                    <span>${categoryIcon}</span>
-                    <span>${p.title}</span>
-                  </span>
-                  <span class="text-[10px] font-mono px-1.5 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700 shrink-0">
-                    ${p.catLabel || 'Αξιοθέατο'}
-                  </span>
+                <div class="flex items-start gap-2.5 mb-2">
+                  ${thumb ? `
+                    <div class="w-16 h-12 rounded-lg overflow-hidden border border-slate-700 shrink-0 relative bg-slate-950">
+                      <img src="${thumb}" alt="${p.title}" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                      <div class="absolute bottom-0 right-0 px-1 py-0.2 bg-black/80 text-[8px] font-mono text-amber-300 font-bold rounded-tl">
+                        4K
+                      </div>
+                    </div>
+                  ` : ''}
+                  <div class="min-w-0 flex-1">
+                    <div class="flex items-center justify-between gap-1 mb-0.5">
+                      <span class="text-xs font-bold text-white truncate flex items-center gap-1">
+                        <span>${categoryIcon}</span>
+                        <span class="truncate">${p.title}</span>
+                      </span>
+                      <span class="text-[9px] font-mono px-1 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700 shrink-0">
+                        ${p.catLabel || 'Αξιοθέατο'}
+                      </span>
+                    </div>
+                    <p class="text-[11px] text-slate-300 leading-snug line-clamp-2">${p.desc}</p>
+                  </div>
                 </div>
-                <p class="text-[11px] text-slate-300 leading-relaxed line-clamp-3">${p.desc}</p>
+              </div>
+
+              <!-- Action Deep-Links -->
+              <div class="flex items-center gap-2 pt-2 border-t border-slate-800/80 mt-1">
+                <button onclick="window.closeCityPresentation(); window.openPoiVideo('${escapeStr(p.title)}', '${escapeStr(e.id)}')" class="px-2.5 py-1 rounded-lg bg-rose-600 hover:bg-rose-500 text-white font-bold text-[11px] flex items-center gap-1.5 transition shadow cursor-pointer" title="Άμεση προβολή στο σημείο του 4K Βίντεο">
+                  <i class="fa-solid fa-play text-[10px]"></i>
+                  <span>Βίντεο (4K)</span>
+                </button>
+                <button onclick="window.closeCityPresentation(); window.openDeepDive('${escapeStr(p.title)}', '${escapeStr(p.desc)}', '${escapeStr(e.name)}')" class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-amber-300 hover:text-white border border-slate-700 font-bold text-[11px] flex items-center gap-1.5 transition shadow cursor-pointer">
+                  <i class="fa-solid fa-wand-magic-sparkles text-[10px] text-amber-400"></i>
+                  <span>Ανάλυση AI</span>
+                </button>
               </div>
             </div>
           `;
@@ -985,32 +1111,46 @@ function renderSlide6Gastronomy(e, gastroItems) {
   const accentText = isVelvet ? 'text-amber-400' : 'text-cyan-400';
 
   const items = gastroItems.slice(0, 4);
+  const photoUrl = getSlidePhoto('gastronomy', e);
 
   return `
-    <div class="space-y-4">
-      <div class="p-4 rounded-2xl ${cardBorder} backdrop-blur-md border shadow-lg">
-        <h4 class="text-xs font-black uppercase tracking-wider ${accentText} mb-2 flex items-center gap-2">
-          <i class="fa-solid fa-kitchen-set"></i>
-          <span>Γαστρονομία & Αυθεντικές Τοπικές Γεύσεις</span>
-        </h4>
-        <p class="text-xs sm:text-sm text-slate-200 leading-relaxed">
-          ${e.gastro?.culture || e.gastro?.summary || 'Παραδοσιακές συνταγές, τοπικά προϊόντα προστατευόμενης ονομασίας και γαστρονομικές εμπειρίες που διατηρούνται αναλλοίωτες στο πέρασμα των αιώνων.'}
-        </p>
+    <div class="space-y-3">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-3 items-stretch">
+        <div class="${photoUrl ? 'md:col-span-8' : 'md:col-span-12'} p-3.5 sm:p-4 rounded-2xl ${cardBorder} backdrop-blur-md border shadow-lg flex flex-col justify-center">
+          <h4 class="text-xs font-black uppercase tracking-wider ${accentText} mb-1.5 flex items-center gap-2">
+            <i class="fa-solid fa-kitchen-set"></i>
+            <span>Γαστρονομία & Αυθεντικές Τοπικές Γεύσεις</span>
+          </h4>
+          <p class="text-xs sm:text-sm text-slate-200 leading-relaxed">
+            ${e.gastro?.culture || e.gastro?.summary || 'Παραδοσιακές συνταγές, τοπικά προϊόντα προστατευόμενης ονομασίας και γαστρονομικές εμπειρίες που διατηρούνται αναλλοίωτες στο πέρασμα των αιώνων.'}
+          </p>
+        </div>
+
+        ${photoUrl ? `
+          <div class="md:col-span-4 relative rounded-2xl overflow-hidden border ${cardBorder} shadow-lg h-32 sm:h-36 md:h-auto min-h-[120px] bg-slate-900">
+            <img src="${photoUrl}" alt="Γαστρονομία" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 to-transparent flex items-end p-2.5">
+              <span class="text-[10px] font-bold text-amber-300 flex items-center gap-1">
+                <i class="fa-solid fa-utensils"></i> Τοπικές Γεύσεις
+              </span>
+            </div>
+          </div>
+        ` : ''}
       </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
         ${items.length > 0 ? items.map(item => `
-          <div class="p-3 sm:p-4 rounded-xl ${cardBorder} backdrop-blur-md border shadow flex items-start gap-3">
+          <div class="p-3 rounded-xl ${cardBorder} backdrop-blur-md border shadow flex items-start gap-2.5">
             <span class="w-8 h-8 rounded-xl ${isVelvet ? 'bg-amber-500/20 text-amber-300' : 'bg-cyan-500/20 text-cyan-300'} flex items-center justify-center shrink-0 text-base">
               🍽️
             </span>
             <div class="min-w-0">
-              <h5 class="text-xs sm:text-sm font-bold text-white mb-0.5 truncate">${item.title}</h5>
-              <p class="text-[11px] sm:text-xs text-slate-300 leading-relaxed">${item.desc}</p>
+              <h5 class="text-xs font-bold text-white mb-0.5 truncate">${item.title}</h5>
+              <p class="text-[11px] text-slate-300 leading-relaxed line-clamp-3">${item.desc}</p>
             </div>
           </div>
         `).join('') : `
-          <div class="p-4 rounded-xl ${cardBorder} backdrop-blur-md border shadow col-span-2 text-center text-xs text-slate-300">
+          <div class="p-3 rounded-xl ${cardBorder} backdrop-blur-md border shadow col-span-2 text-center text-xs text-slate-300">
             Γαστρονομική παράδοση με τοπικά εδέσματα και παραδοσιακή φιλοξενία.
           </div>
         `}
@@ -1027,35 +1167,49 @@ function renderSlide7Modern(e) {
 
   const demoSummary = e.demo?.summary || 'Μια σύγχρονη, δυναμική πόλη που συνδυάζει την ιστορική της ταυτότητα με την καινοτομία, τη βιώσιμη ανάπτυξη και την υψηλή ποιότητα ζωής.';
   const details = e.demo?.details || [];
+  const photoUrl = getSlidePhoto('modern', e);
 
   return `
-    <div class="space-y-4">
-      <div class="p-4 rounded-2xl ${cardBorder} backdrop-blur-md border shadow-lg">
-        <h4 class="text-xs font-black uppercase tracking-wider ${accentText} mb-2 flex items-center gap-2">
-          <i class="fa-solid fa-city"></i>
-          <span>Σύγχρονη Πόλη, Κοινωνία & Ανάπτυξη</span>
-        </h4>
-        <p class="text-xs sm:text-sm text-slate-200 leading-relaxed">
-          ${demoSummary}
-        </p>
+    <div class="space-y-3">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-3 items-stretch">
+        <div class="${photoUrl ? 'md:col-span-8' : 'md:col-span-12'} p-3.5 sm:p-4 rounded-2xl ${cardBorder} backdrop-blur-md border shadow-lg flex flex-col justify-center">
+          <h4 class="text-xs font-black uppercase tracking-wider ${accentText} mb-1.5 flex items-center gap-2">
+            <i class="fa-solid fa-city"></i>
+            <span>Σύγχρονη Πόλη, Κοινωνία & Ανάπτυξη</span>
+          </h4>
+          <p class="text-xs sm:text-sm text-slate-200 leading-relaxed">
+            ${demoSummary}
+          </p>
+        </div>
+
+        ${photoUrl ? `
+          <div class="md:col-span-4 relative rounded-2xl overflow-hidden border ${cardBorder} shadow-lg h-32 sm:h-36 md:h-auto min-h-[120px] bg-slate-900">
+            <img src="${photoUrl}" alt="Σύγχρονη Πόλη" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 to-transparent flex items-end p-2.5">
+              <span class="text-[10px] font-bold text-cyan-300 flex items-center gap-1">
+                <i class="fa-solid fa-bolt"></i> Σύγχρονος Παλμός
+              </span>
+            </div>
+          </div>
+        ` : ''}
       </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
         ${details.length > 0 ? details.slice(0, 4).map(d => `
-          <div class="p-3 sm:p-4 rounded-xl ${cardBorder} backdrop-blur-md border shadow">
-            <h5 class="text-xs sm:text-sm font-bold text-white mb-1 flex items-center gap-1.5">
+          <div class="p-3 rounded-xl ${cardBorder} backdrop-blur-md border shadow">
+            <h5 class="text-xs font-bold text-white mb-1 flex items-center gap-1.5">
               <i class="fa-solid fa-sparkles ${accentText} text-xs"></i>
               <span>${d.label}</span>
             </h5>
-            <p class="text-[11px] sm:text-xs text-slate-300 leading-relaxed">${d.text}</p>
+            <p class="text-[11px] text-slate-300 leading-relaxed line-clamp-3">${d.text}</p>
           </div>
         `).join('') : `
-          <div class="p-4 rounded-xl ${cardBorder} backdrop-blur-md border shadow">
-            <h5 class="text-xs sm:text-sm font-bold text-white mb-1">🚀 Καινοτομία & Τεχνολογία</h5>
+          <div class="p-3 rounded-xl ${cardBorder} backdrop-blur-md border shadow">
+            <h5 class="text-xs font-bold text-white mb-1">🚀 Καινοτομία & Τεχνολογία</h5>
             <p class="text-xs text-slate-300 leading-relaxed">Σύγχρονοι ψηφιακοί κόμβοι, ακαδημαϊκά ιδρύματα και νεοφυείς επιχειρήσεις.</p>
           </div>
-          <div class="p-4 rounded-xl ${cardBorder} backdrop-blur-md border shadow">
-            <h5 class="text-xs sm:text-sm font-bold text-white mb-1">🌱 Βιωσιμότητα & Ποιότητα Ζωής</h5>
+          <div class="p-3 rounded-xl ${cardBorder} backdrop-blur-md border shadow">
+            <h5 class="text-xs font-bold text-white mb-1">🌱 Βιωσιμότητα & Ποιότητα Ζωής</h5>
             <p class="text-xs text-slate-300 leading-relaxed">Επενδύσεις σε πράσινη κινητικότητα και ανανεώσιμες πηγές ενέργειας.</p>
           </div>
         `}
@@ -1068,41 +1222,54 @@ function renderSlide7Modern(e) {
 function renderSlide8Finale(e, videoTour) {
   const isVelvet = currentTheme === 'velvet';
   const cardBorder = isVelvet ? 'border-amber-500/25 bg-slate-900/60' : 'border-cyan-500/30 bg-slate-900/60';
-  const accentText = isVelvet ? 'text-amber-400' : 'text-cyan-400';
+  const photoUrl = getSlidePhoto('finale', e);
 
   return `
-    <div class="space-y-4 text-center">
-      <div class="p-5 sm:p-6 rounded-3xl ${cardBorder} backdrop-blur-md border shadow-xl">
-        <span class="inline-block p-3 rounded-2xl ${isVelvet ? 'bg-amber-500/20 text-amber-300' : 'bg-cyan-500/20 text-cyan-300'} text-2xl mb-3">
-          🌍
-        </span>
-        <h3 class="text-xl sm:text-2xl font-black text-white tracking-tight mb-2">
+    <div class="space-y-3 text-center">
+      <div class="p-4 sm:p-5 rounded-3xl ${cardBorder} backdrop-blur-md border shadow-xl">
+        <h3 class="text-lg sm:text-xl md:text-2xl font-black text-white tracking-tight mb-1">
           Εξερευνήστε περισσότερο την πόλη ${e.name}
         </h3>
-        <p class="text-xs sm:text-sm text-slate-300 max-w-xl mx-auto leading-relaxed mb-5">
-          Η περιήγηση ολοκληρώθηκε! Μπορείτε να συνεχίσετε με ζωντανή βίντεο-ξενάγηση 4K, πανοραμική θέα 360° στους δρόμους, ή ανάγνωση του πλήρους άρθρου της Wikipedia απευθείας στον χάρτη.
+        <p class="text-xs sm:text-sm text-slate-300 max-w-lg mx-auto leading-relaxed mb-3">
+          Η περιήγηση ολοκληρώθηκε! Συνεχίστε με ζωντανή βίντεο-ξενάγηση 4K, πανοραμική θέα 360° στους δρόμους, ή άνοιγμα της Wikipedia απευθείας στον χάρτη.
         </p>
 
+        <!-- Big Cinematic Video Card -->
+        ${photoUrl ? `
+          <div onclick="window.closeCityPresentation(); window.openCityVideo('${e.id}')" class="relative rounded-2xl overflow-hidden border border-red-500/40 shadow-2xl h-40 sm:h-52 max-w-xl mx-auto cursor-pointer group bg-slate-900 mb-4">
+            <img src="${photoUrl}" alt="${e.name} 4K Video" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+            <div class="absolute inset-0 bg-slate-950/40 group-hover:bg-slate-950/20 transition flex items-center justify-center">
+              <div class="w-14 h-14 rounded-full bg-red-600/90 text-white flex items-center justify-center text-xl shadow-2xl group-hover:scale-115 transition">
+                <i class="fa-solid fa-play ml-0.5"></i>
+              </div>
+            </div>
+            <div class="absolute bottom-2 left-2 right-2 flex items-center justify-between text-[11px] text-white bg-slate-950/80 px-3 py-1.5 rounded-xl backdrop-blur border border-slate-700">
+              <span class="font-bold flex items-center gap-1.5"><i class="fa-brands fa-youtube text-red-500"></i> Έναρξη 4K Video Tour (${e.name})</span>
+              <span class="text-amber-400 font-mono">Ultra HD</span>
+            </div>
+          </div>
+        ` : ''}
+
         <!-- Quick Action Launchpad -->
-        <div class="flex flex-wrap items-center justify-center gap-2.5 sm:gap-3">
+        <div class="flex flex-wrap items-center justify-center gap-2 sm:gap-2.5">
           ${videoTour ? `
-            <button onclick="window.closeCityPresentation(); window.openCityVideo('${e.id}')" class="px-3.5 py-2 rounded-xl bg-red-600 hover:bg-red-500 text-white font-bold text-xs sm:text-sm transition flex items-center gap-2 shadow-lg cursor-pointer">
-              <i class="fa-brands fa-youtube text-base"></i>
+            <button onclick="window.closeCityPresentation(); window.openCityVideo('${e.id}')" class="px-3.5 py-1.5 rounded-xl bg-red-600 hover:bg-red-500 text-white font-bold text-xs transition flex items-center gap-1.5 shadow-lg cursor-pointer">
+              <i class="fa-brands fa-youtube text-sm"></i>
               <span>Βίντεο Περιήγηση 4K</span>
             </button>
           ` : ''}
 
-          <button onclick="window.closeCityPresentation(); window.openCurrentStreetView()" class="px-3.5 py-2 rounded-xl bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 hover:text-white border border-amber-500/40 font-bold text-xs sm:text-sm transition flex items-center gap-2 shadow-lg cursor-pointer">
-            <i class="fa-solid fa-street-view text-amber-400 text-base"></i>
+          <button onclick="window.closeCityPresentation(); window.openCurrentStreetView()" class="px-3.5 py-1.5 rounded-xl bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 hover:text-white border border-amber-500/40 font-bold text-xs transition flex items-center gap-1.5 shadow-lg cursor-pointer">
+            <i class="fa-solid fa-street-view text-amber-400 text-sm"></i>
             <span>Street View 360°</span>
           </button>
 
-          <button onclick="window.closeCityPresentation(); window.openMapWikiReader('${e.name}', 'el', '${e.englishName || ''}')" class="px-3.5 py-2 rounded-xl bg-sky-600/20 hover:bg-sky-600/30 text-sky-300 hover:text-white border border-sky-500/40 font-bold text-xs sm:text-sm transition flex items-center gap-2 shadow-lg cursor-pointer">
-            <i class="fa-brands fa-wikipedia-w text-sky-400 text-base"></i>
+          <button onclick="window.closeCityPresentation(); window.openMapWikiReader('${e.name}', 'el', '${e.englishName || ''}')" class="px-3.5 py-1.5 rounded-xl bg-sky-600/20 hover:bg-sky-600/30 text-sky-300 hover:text-white border border-sky-500/40 font-bold text-xs transition flex items-center gap-1.5 shadow-lg cursor-pointer">
+            <i class="fa-brands fa-wikipedia-w text-sky-400 text-sm"></i>
             <span>Wikipedia Reader</span>
           </button>
 
-          <button onclick="window.closeCityPresentation()" class="px-3.5 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white border border-slate-700 font-bold text-xs sm:text-sm transition flex items-center gap-2 cursor-pointer">
+          <button onclick="window.closeCityPresentation()" class="px-3.5 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white border border-slate-700 font-bold text-xs transition flex items-center gap-1.5 cursor-pointer">
             <i class="fa-solid fa-map-location-dot"></i>
             <span>Επιστροφή στον Χάρτη</span>
           </button>

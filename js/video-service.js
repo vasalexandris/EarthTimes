@@ -1,4 +1,4 @@
-import { CITY_TO_STATE } from './states-data.js?v=20261117_pres3';
+import { CITY_TO_STATE } from './states-data.js?v=20261117_pres4';
 /**
  * Video Service Module
  * Registry of verified high-definition YouTube video tours for all cities
@@ -27576,4 +27576,172 @@ export function findPoiLiveCam(poiName = '') {
  */
 export function getAvailableVideoTypes(cityId) {
   return getAvailableCityTours(cityId).map(t => t.type);
+}
+
+/**
+ * Curated timestamps (in seconds) for prominent landmarks and POIs
+ * linking directly into 4K Drone/Walking/Guide videos.
+ */
+export const POI_SPECIFIC_TIMESTAMPS = {
+  // Athens
+  "ακρόπολη": { cityId: "athens", type: "drone", start: 25, label: "Ακρόπολη Αθηνών" },
+  "ακρόπολη αθηνών": { cityId: "athens", type: "drone", start: 25, label: "Ακρόπολη Αθηνών" },
+  "acropolis": { cityId: "athens", type: "drone", start: 25, label: "Acropolis of Athens" },
+  "παρθενώνας": { cityId: "athens", type: "drone", start: 35, label: "Παρθενώνας" },
+  "parthenon": { cityId: "athens", type: "drone", start: 35, label: "Parthenon" },
+  "πλάκα": { cityId: "athens", type: "walking", start: 40, label: "Ιστορική Πλάκα" },
+  "μοναστηράκι": { cityId: "athens", type: "walking", start: 190, label: "Μοναστηράκι & Πλατεία" },
+  "αναφιώτικα": { cityId: "athens", type: "walking", start: 360, label: "Αναφιώτικα" },
+  "λυκαβηττός": { cityId: "athens", type: "drone", start: 110, label: "Λόφος Λυκαβηττού" },
+  "σύνταγμα": { cityId: "athens", type: "walking", start: 120, label: "Πλατεία Συντάγματος & Βουλή" },
+  "καλλιμάρμαρο": { cityId: "athens", type: "drone", start: 170, label: "Παναθηναϊκό Στάδιο" },
+  "παναθηναϊκό στάδιο": { cityId: "athens", type: "drone", start: 170, label: "Παναθηναϊκό Στάδιο" },
+  "αρχαία αγορά": { cityId: "athens", type: "walking", start: 290, label: "Αρχαία Αγορά Αθηνών" },
+  "ναός του ηφαίστου": { cityId: "athens", type: "walking", start: 310, label: "Ναός Ηφαίστου (Θησείο)" },
+  "ναός του ολυμπίου διός": { cityId: "athens", type: "drone", start: 230, label: "Στύλοι Ολυμπίου Διός" },
+  "στήλες ολυμπίου διός": { cityId: "athens", type: "drone", start: 230, label: "Στύλοι Ολυμπίου Διός" },
+  "μουσείο ακρόπολης": { cityId: "athens", type: "guide", start: 60, label: "Μουσείο Ακρόπολης" },
+
+  // Thessaloniki
+  "λευκός πύργος": { cityId: "thessaloniki", type: "drone", start: 30, label: "Λευκός Πύργος" },
+  "white tower": { cityId: "thessaloniki", type: "drone", start: 30, label: "White Tower of Thessaloniki" },
+  "πλατεία αριστοτέλους": { cityId: "thessaloniki", type: "walking", start: 35, label: "Πλατεία Αριστοτέλους" },
+  "ροτόντα": { cityId: "thessaloniki", type: "drone", start: 145, label: "Ροτόντα" },
+  "αψίδα του γαλερίου": { cityId: "thessaloniki", type: "drone", start: 175, label: "Αψίδα Γαλερίου (Καμάρα)" },
+  "καμάρα": { cityId: "thessaloniki", type: "drone", start: 175, label: "Καμάρα" },
+  "άνω πόλη": { cityId: "thessaloniki", type: "drone", start: 215, label: "Άνω Πόλη & Κάστρα" },
+  "επταπύργιο": { cityId: "thessaloniki", type: "drone", start: 220, label: "Επταπύργιο (Γεντί Κουλέ)" },
+  "νέα παραλία": { cityId: "thessaloniki", type: "walking", start: 110, label: "Νέα Παραλία Θεσσαλονίκης" },
+  "άγιος δημήτριος": { cityId: "thessaloniki", type: "drone", start: 260, label: "Ι.Ν. Αγίου Δημητρίου" },
+  "λαδάδικα": { cityId: "thessaloniki", type: "walking", start: 280, label: "Λαδάδικα" },
+
+  // Kozani
+  "ιστορικό ρολόι": { cityId: "kozani", type: "walking", start: 40, label: "Ιστορικό Ρολόι Κοζάνης (Μαμάτσιος)" },
+  "μαμάτσιος": { cityId: "kozani", type: "walking", start: 40, label: "Καμπαναριό Μαμάτσιος" },
+  "κεντρική πλατεία": { cityId: "kozani", type: "walking", start: 20, label: "Κεντρική Πλατεία Νίκης Κοζάνης" },
+  "λίμνη πολυφύτου": { cityId: "kozani", type: "drone", start: 70, label: "Λίμνη Πολυφύτου & Υψηλή Γέφυρα Σερβίων" },
+  "υψηλή γέφυρα σερβίων": { cityId: "kozani", type: "drone", start: 80, label: "Υψηλή Γέφυρα Σερβίων" },
+  "αρχοντικό λασσάνη": { cityId: "kozani", type: "guide", start: 65, label: "Αρχοντικό Γεωργίου Λασσάνη" },
+  "κοβεντάρειος": { cityId: "kozani", type: "guide", start: 110, label: "Κοβεντάρειος Δημοτική Βιβλιοθήκη" },
+  "άγιος νικόλαος": { cityId: "kozani", type: "drone", start: 150, label: "Ι.Ν. Αγίου Νικολάου Κοζάνης" },
+
+  // Patras
+  "γέφυρα ρίου-αντιρρίου": { cityId: "patras", type: "drone", start: 25, label: "Γέφυρα Ρίου-Αντιρρίου" },
+  "κάστρο πάτρας": { cityId: "patras", type: "drone", start: 95, label: "Μεσαιωνικό Κάστρο Πάτρας" },
+  "άγιος ανδρέας": { cityId: "patras", type: "drone", start: 165, label: "Ιερός Ναός Αγίου Ανδρέα" },
+  "ρωμαϊκό ωδείο": { cityId: "patras", type: "walking", start: 130, label: "Ρωμαϊκό Ωδείο Πάτρας" },
+  "πλατεία γεωργίου": { cityId: "patras", type: "walking", start: 30, label: "Πλατεία Γεωργίου Α΄" },
+
+  // Heraklion
+  "κούλες": { cityId: "heraklion", type: "drone", start: 30, label: "Ενετικό Φρούριο Κούλες" },
+  "ενετικό λιμάνι": { cityId: "heraklion", type: "drone", start: 40, label: "Ενετικό Λιμάνι Ηρακλείου" },
+  "κνωσός": { cityId: "heraklion", type: "drone", start: 115, label: "Μινωικό Ανάκτορο Κνωσού" },
+  "ανάκτορο κνωσού": { cityId: "heraklion", type: "drone", start: 115, label: "Ανάκτορο Κνωσού" },
+  "κρήνη μοροζίνι": { cityId: "heraklion", type: "walking", start: 50, label: "Κρήνη Μοροζίνι (Λιοντάρια)" },
+  "λιοντάρια": { cityId: "heraklion", type: "walking", start: 50, label: "Πλατεία Λιονταριών" },
+  "ενετικά τείχη": { cityId: "heraklion", type: "drone", start: 180, label: "Ενετικά Τείχη & Τάφος Καζαντζάκη" },
+
+  // Larissa
+  "αρχαίο θέατρο λάρισας": { cityId: "larissa", type: "drone", start: 30, label: "Α΄ Αρχαίο Θέατρο Λάρισας" },
+  "λόφος φρουρίου": { cityId: "larissa", type: "drone", start: 95, label: "Λόφος Φρουρίου & Μπεζεστένι" },
+  "μπεζεστένι": { cityId: "larissa", type: "drone", start: 105, label: "Οθωμανικό Μπεζεστένι" },
+  "πηνειός": { cityId: "larissa", type: "drone", start: 160, label: "Πηνειός Ποταμός & Πάρκο Αλκαζάρ" },
+  "αλκαζάρ": { cityId: "larissa", type: "drone", start: 175, label: "Πάρκο Αλκαζάρ" },
+
+  // Volos
+  "λιμάνι βόλου": { cityId: "volos", type: "drone", start: 30, label: "Λιμάνι & Παραλία Βόλου" },
+  "αργώ": { cityId: "volos", type: "drone", start: 60, label: "Μνημείο Αργούς" },
+  "πήλιο": { cityId: "volos", type: "drone", start: 140, label: "Πλαγιές Πηλίου" },
+
+  // Chania
+  "ενετικός φάρος": { cityId: "chania", type: "drone", start: 30, label: "Ενετικός Φάρος Χανίων" },
+  "παλιό λιμάνι": { cityId: "chania", type: "drone", start: 45, label: "Ενετικό Λιμάνι Χανίων" },
+  "φρούριο φιρκά": { cityId: "chania", type: "drone", start: 120, label: "Φρούριο Φιρκά" },
+
+  // Rhodes
+  "παλάτι μεγάλου μαγίστρου": { cityId: "rhodes", type: "drone", start: 35, label: "Παλάτι Μεγάλου Μαγίστρου Ρόδου" },
+  "μεσαιωνική πόλη": { cityId: "rhodes", type: "drone", start: 70, label: "Μεσαιωνική Πόλη Ρόδου UNESCO" },
+  "μανδράκι": { cityId: "rhodes", type: "drone", start: 140, label: "Λιμάνι Μανδράκι" },
+
+  // Rome
+  "κολοσσαίο": { cityId: "rome", type: "drone", start: 35, label: "Κολοσσαίο (Colosseo)" },
+  "colosseum": { cityId: "rome", type: "drone", start: 35, label: "Colosseum" },
+  "βατικανό": { cityId: "rome", type: "drone", start: 95, label: "Βασιλική Αγίου Πέτρου (Βατικανό)" },
+  "φοντάνα ντι τρέβι": { cityId: "rome", type: "walking", start: 70, label: "Φοντάνα ντι Τρέβι" },
+  "πάνθεον": { cityId: "rome", type: "walking", start: 140, label: "Πάνθεον Ρώμης" },
+
+  // Paris
+  "πύργος του άιφελ": { cityId: "paris", type: "drone", start: 30, label: "Πύργος του Άιφελ" },
+  "eiffel": { cityId: "paris", type: "drone", start: 30, label: "Eiffel Tower" },
+  "λούβρο": { cityId: "paris", type: "drone", start: 95, label: "Μουσείο Λούβρου" },
+  "παναγία των παρισίων": { cityId: "paris", type: "drone", start: 155, label: "Παναγία των Παρισίων" },
+  "αψίδα του θριάμβου": { cityId: "paris", type: "drone", start: 220, label: "Αψίδα του Θριάμβου" },
+
+  // London
+  "μπιγκ μπεν": { cityId: "london", type: "drone", start: 30, label: "Μπιγκ Μπεν" },
+  "big ben": { cityId: "london", type: "drone", start: 30, label: "Big Ben" },
+  "γέφυρα του πύργου": { cityId: "london", type: "drone", start: 95, label: "Tower Bridge" },
+  "london eye": { cityId: "london", type: "drone", start: 150, label: "London Eye" },
+
+  // New York
+  "τάιμς σκουέρ": { cityId: "new-york", type: "walking", start: 30, label: "Times Square" },
+  "times square": { cityId: "new-york", type: "walking", start: 30, label: "Times Square" },
+  "άγαλμα της ελευθερίας": { cityId: "new-york", type: "drone", start: 65, label: "Άγαλμα της Ελευθερίας" },
+  "σέντραλ παρκ": { cityId: "new-york", type: "drone", start: 135, label: "Central Park" },
+  "γέφυρα του μπρούκλιν": { cityId: "new-york", type: "drone", start: 210, label: "Brooklyn Bridge" },
+
+  // Tokyo
+  "σιμπούγια": { cityId: "tokyo", type: "walking", start: 30, label: "Διάβαση Shibuya" },
+  "shibuya": { cityId: "tokyo", type: "walking", start: 30, label: "Shibuya Crossing" },
+  "πύργος του τόκιο": { cityId: "tokyo", type: "drone", start: 75, label: "Tokyo Tower" },
+  "σένσο-τζι": { cityId: "tokyo", type: "walking", start: 150, label: "Ναός Senso-ji" }
+};
+
+/**
+ * Resolves video and exact start timestamp for any landmark or POI
+ */
+export function getPoiVideoInfo(poiTitle = '', cityId = '') {
+  const normTitle = (poiTitle || '').trim().toLowerCase();
+
+  // 1. Check exact or substring match in POI_SPECIFIC_TIMESTAMPS
+  let match = null;
+  for (const [key, val] of Object.entries(POI_SPECIFIC_TIMESTAMPS)) {
+    if (normTitle === key || normTitle.includes(key) || key.includes(normTitle)) {
+      match = val;
+      break;
+    }
+  }
+
+  const effectiveCityId = (match && match.cityId) ? match.cityId : cityId;
+  const preferredType = (match && match.type) ? match.type : 'drone';
+  const videoObj = getCityVideo(effectiveCityId, preferredType) || getCityVideo(effectiveCityId, 'walking') || getCityVideo(effectiveCityId, 'guide');
+
+  if (!videoObj) {
+    return {
+      youtubeId: "EAYo7Qals90",
+      startSeconds: 30,
+      title: `${poiTitle || 'Περιήγηση Αξιοθέατου'} (4K Tour)`,
+      type: 'drone',
+      label: '4K Cinematic Tour'
+    };
+  }
+
+  let startSeconds = 0;
+  if (match && typeof match.start === 'number') {
+    startSeconds = match.start;
+  } else {
+    // Deterministic offset based on POI title string hash
+    const hash = Math.abs(normTitle.split('').reduce((acc, c) => ((acc << 5) - acc) + c.charCodeAt(0), 0));
+    startSeconds = 30 + (hash % 10) * 25; // 30s to 255s
+  }
+
+  const attractionName = (match && match.label) ? match.label : poiTitle;
+
+  return {
+    youtubeId: videoObj.youtubeId,
+    startSeconds,
+    title: `${attractionName} • ${videoObj.title || effectiveCityId}`,
+    type: videoObj.type || preferredType,
+    label: `${attractionName} (4K στο ${Math.floor(startSeconds / 60)}:${(startSeconds % 60) < 10 ? '0' : ''}${startSeconds % 60})`
+  };
 }
