@@ -4,12 +4,12 @@
  * Base Map Layer selector, Date display, Video Overlay, and Deep Dive views.
  */
 
-import { getCityVideo, getAvailableVideoTypes, getAvailableCityTours, CITY_VIDEOS, findPoiLiveCam } from './video-service.js?v=20261117_timefix2';
-import { getDeepDiveData } from './deep-dive.js?v=20261117_timefix2';
-import { fetchWikiArticle, fetchWikiArticleHtml, cleanWikiTitle } from './wiki-service.js?v=20261117_timefix2';
-import { calculateSubsolarPoint } from './solar-terminator.js?v=20261117_timefix2';
-import { CITY_TO_STATE } from './states-data.js?v=20261117_timefix2';
-import { CITY_TO_COUNTRY } from './navigator.js?v=20261117_timefix2';
+import { getCityVideo, getAvailableVideoTypes, getAvailableCityTours, CITY_VIDEOS, findPoiLiveCam } from './video-service.js?v=20261117_pres1';
+import { getDeepDiveData } from './deep-dive.js?v=20261117_pres1';
+import { fetchWikiArticle, fetchWikiArticleHtml, cleanWikiTitle } from './wiki-service.js?v=20261117_pres1';
+import { calculateSubsolarPoint } from './solar-terminator.js?v=20261117_pres1';
+import { CITY_TO_STATE } from './states-data.js?v=20261117_pres1';
+import { CITY_TO_COUNTRY } from './navigator.js?v=20261117_pres1';
 
 let currentActiveVideoCityId = null;
 let currentActiveVideoType = 'drone';
@@ -90,6 +90,7 @@ export function openCityVideo(cityId, preferredType = 'drone') {
   currentActiveVideoType = vid.type || preferredType;
 
   // Close other map overlays if open
+  if (window.closeCityPresentation) window.closeCityPresentation();
   if (deepDiveOverlay) deepDiveOverlay.classList.add('hidden');
   if (wikiOverlay) {
     const wikiFrame = document.getElementById('mapWikiIframe');
@@ -240,6 +241,7 @@ export async function openMapWikiReader(queryOrTitle, lang = 'el', fallbackEnQue
   // Close video overlay and street view overlay if open
   closeMapVideoOverlay();
   closeMapStreetViewOverlay();
+  if (window.closeCityPresentation) window.closeCityPresentation();
 
   overlay.classList.remove('hidden');
   syncMapFloatingControlsVisibility();
@@ -348,6 +350,7 @@ export function openMapStreetView(lat, lng, title = '') {
   closeMapVideoOverlay();
   closeMapWikiOverlay();
   closeDeepDiveOverlay();
+  if (window.closeCityPresentation) window.closeCityPresentation();
 
   if (titleEl) {
     titleEl.innerText = title || 'Περιήγηση Δρόμων (Street View)';
@@ -408,6 +411,7 @@ export async function openDeepDive(keyOrTitle, fallbackSummary = '', contextEnti
   closeMapVideoOverlay();
   closeMapWikiOverlay();
   closeMapStreetViewOverlay();
+  if (window.closeCityPresentation) window.closeCityPresentation();
 
   if (title) title.innerText = data.title;
   if (badge) badge.innerText = data.badge || data.category;
@@ -1294,6 +1298,16 @@ export function renderDossier(entity, entityType = 'state', currentTab = 'geo', 
       cityStreetViewBtn.classList.remove('hidden');
     } else {
       cityStreetViewBtn.classList.add('hidden');
+    }
+  }
+
+  // Show/Hide City Presentation Button
+  const cityPresentationBtn = document.getElementById('cityPresentationBtn');
+  if (cityPresentationBtn) {
+    if (entityType === 'city') {
+      cityPresentationBtn.classList.remove('hidden');
+    } else {
+      cityPresentationBtn.classList.add('hidden');
     }
   }
 

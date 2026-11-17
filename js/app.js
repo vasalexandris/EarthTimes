@@ -4,13 +4,14 @@
  * USA, Leaflet Map, Base Layers, UI Dossier, and Time Machine.
  */
 
-import { loadWorldData, loadCountryData, loadStateData } from './data-service.js?v=20261117_timefix2';
-import * as MapModule from './map.js?v=20261117_timefix2';
-import * as UIModule from './ui.js?v=20261117_timefix2';
-import * as TimeMachine from './time-machine.js?v=20261117_timefix2';
-import * as NavigatorModule from './navigator.js?v=20261117_timefix2';
-import * as GlobeModule from './globe-view.js?v=20261117_timefix2';
-import { US_STATES, CITY_TO_STATE } from './states-data.js?v=20261117_timefix2';
+import { loadWorldData, loadCountryData, loadStateData } from './data-service.js?v=20261117_pres1';
+import * as MapModule from './map.js?v=20261117_pres1';
+import * as UIModule from './ui.js?v=20261117_pres1';
+import * as TimeMachine from './time-machine.js?v=20261117_pres1';
+import * as NavigatorModule from './navigator.js?v=20261117_pres1';
+import * as GlobeModule from './globe-view.js?v=20261117_pres1';
+import { US_STATES, CITY_TO_STATE } from './states-data.js?v=20261117_pres1';
+import * as PresentationModule from './presentation.js?v=20261117_pres1';
 
 // Application State
 let worldData = null;
@@ -183,6 +184,7 @@ export function toggleTimePlayback() {
 
 export function flyToWorld() {
   UIModule.stopNarrate();
+  PresentationModule.closeCityPresentation();
   UIModule.closeMapVideoOverlay();
   UIModule.closeMapWikiOverlay();
   UIModule.closeMapStreetViewOverlay();
@@ -219,6 +221,7 @@ export function flyToWorld() {
 
 export async function flyToCountry(countryId = 'greece') {
   UIModule.stopNarrate();
+  PresentationModule.closeCityPresentation();
   UIModule.closeMapVideoOverlay();
   UIModule.closeMapStreetViewOverlay();
   UIModule.closeDeepDiveOverlay();
@@ -270,6 +273,7 @@ export async function flyToCountry(countryId = 'greece') {
 
 export async function flyToState(stateId = 'massachusetts') {
   UIModule.stopNarrate();
+  PresentationModule.closeCityPresentation();
   UIModule.closeMapVideoOverlay();
   UIModule.closeMapStreetViewOverlay();
   UIModule.closeDeepDiveOverlay();
@@ -744,8 +748,10 @@ export async function flyToCity(cityId) {
   // Stop any active TTS audio from previous city/scope
   UIModule.stopNarrate();
 
-  // If video overlay is active, seamlessly switch video tour to the new city
-  if (UIModule.isMapVideoOverlayOpen()) {
+  // If presentation overlay is active, seamlessly switch presentation to the new city
+  if (PresentationModule.isPresentationOpen()) {
+    PresentationModule.openCityPresentation(city, 'city');
+  } else if (UIModule.isMapVideoOverlayOpen()) {
     UIModule.openCityVideo(city.id, UIModule.getCurrentActiveVideoType());
   } else if (UIModule.isMapWikiOverlayOpen()) {
     // If wiki overlay reader is active, update to new city's Wikipedia article
@@ -964,6 +970,22 @@ window.openCurrentCityVideo = () => {
     UIModule.openCityVideo(currentCityId);
   }
 };
+window.getCurrentEntity = getCurrentEntity;
+
+// Presentation window bindings
+window.openCityPresentation = (entity) => {
+  const target = entity || getCurrentEntity();
+  PresentationModule.openCityPresentation(target, currentScope);
+};
+window.closeCityPresentation = PresentationModule.closeCityPresentation;
+window.nextPresentationSlide = PresentationModule.nextPresentationSlide;
+window.prevPresentationSlide = PresentationModule.prevPresentationSlide;
+window.goToPresentationSlide = PresentationModule.goToPresentationSlide;
+window.togglePresentationAutoplay = PresentationModule.togglePresentationAutoplay;
+window.togglePresentationTheme = PresentationModule.togglePresentationTheme;
+window.togglePresentationNarration = PresentationModule.togglePresentationNarration;
+window.togglePresentationFullscreen = PresentationModule.togglePresentationFullscreen;
+window.isPresentationOpen = PresentationModule.isPresentationOpen;
 
 // Time Machine & Spot Creation window bindings
 window.toggleTimePlayback = toggleTimePlayback;

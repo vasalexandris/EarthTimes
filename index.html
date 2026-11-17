@@ -592,6 +592,88 @@
             </button>
           </div>
 
+          <!-- INTERACTIVE PRESENTATION OVERLAY (In place of map) -->
+          <div id="mapPresentationOverlay" class="absolute inset-0 z-30 bg-slate-950/95 flex flex-col hidden select-none">
+            <!-- Presentation Header -->
+            <div id="presentationHeader" class="bg-slate-900/95 backdrop-blur-md border-b border-slate-800 px-3 sm:px-5 py-2.5 flex items-center justify-between gap-2 shrink-0 shadow-xl z-20">
+              <div class="flex items-center gap-2 sm:gap-3 min-w-0">
+                <span class="px-2.5 py-1 rounded-lg bg-gradient-to-r from-purple-600/30 to-indigo-600/30 text-purple-300 border border-purple-500/40 text-xs font-black flex items-center gap-1.5 shrink-0 shadow-inner">
+                  <i class="fa-solid fa-person-chalkboard text-purple-400 animate-pulse"></i>
+                  <span class="hidden sm:inline">Παρουσίαση</span>
+                </span>
+                <div class="min-w-0">
+                  <h3 id="presentationTitle" class="text-sm sm:text-base font-black text-white truncate flex items-center gap-2"></h3>
+                  <p id="presentationSubtitle" class="text-[11px] text-slate-400 truncate hidden sm:block"></p>
+                </div>
+              </div>
+
+              <!-- Top Action Controls -->
+              <div class="flex items-center gap-1.5 sm:gap-2 shrink-0">
+                <!-- Theme Template Switcher -->
+                <button id="presThemeBtn" onclick="window.togglePresentationTheme()" title="Εναλλαγή Προτύπου Σχεδίασης (Velvet Gold / Cyber Neon)" class="px-2.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-amber-300 hover:text-amber-200 border border-slate-700 text-xs font-bold transition flex items-center gap-1.5 cursor-pointer shadow">
+                  <i id="presThemeIcon" class="fa-solid fa-wand-magic-sparkles text-amber-400"></i>
+                  <span id="presThemeLabel" class="hidden md:inline">Velvet Gold</span>
+                </button>
+
+                <!-- Voice / Speech Narration Toggle -->
+                <button id="presNarrateBtn" onclick="window.togglePresentationNarration()" title="Εκφώνηση Διαφάνειας (Αφήγηση AI)" class="px-2.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white border border-slate-700 text-xs font-bold transition flex items-center gap-1.5 cursor-pointer shadow">
+                  <i id="presNarrateIcon" class="fa-solid fa-volume-high text-slate-400"></i>
+                  <span class="hidden lg:inline">Αφήγηση</span>
+                </button>
+
+                <!-- Autoplay / Play-Pause -->
+                <button id="presAutoplayBtn" onclick="window.togglePresentationAutoplay()" title="Αυτόματη Προβολή Διαφανειών (Space)" class="px-2.5 py-1.5 rounded-lg bg-emerald-600/20 hover:bg-emerald-600/30 text-emerald-300 hover:text-white border border-emerald-500/40 text-xs font-bold transition flex items-center gap-1.5 cursor-pointer shadow">
+                  <i id="presAutoplayIcon" class="fa-solid fa-play text-emerald-400"></i>
+                  <span id="presAutoplayLabel" class="hidden sm:inline">Play</span>
+                </button>
+
+                <!-- Fullscreen Toggle -->
+                <button id="presFullscreenBtn" onclick="window.togglePresentationFullscreen()" title="Πλήρης Οθόνη (F)" class="p-2 sm:px-2.5 sm:py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white border border-slate-700 text-xs font-bold transition flex items-center gap-1 cursor-pointer shadow">
+                  <i id="presFullscreenIcon" class="fa-solid fa-expand text-xs"></i>
+                </button>
+
+                <!-- Close Button -->
+                <button onclick="window.closeCityPresentation()" title="Κλείσιμο Παρουσίασης (Esc)" class="px-2.5 py-1.5 rounded-lg bg-rose-600/20 hover:bg-rose-600/30 text-rose-300 hover:text-white border border-rose-500/40 text-xs font-bold transition flex items-center gap-1.5 cursor-pointer shadow">
+                  <i class="fa-solid fa-xmark"></i>
+                  <span class="hidden sm:inline">Κλείσιμο</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Slide Main Canvas Area -->
+            <div id="presentationViewport" class="flex-1 relative overflow-hidden flex flex-col justify-center items-center p-3 sm:p-6 md:p-8">
+              <!-- Injected dynamically by presentation.js -->
+            </div>
+
+            <!-- Progress Bar of Presentation -->
+            <div class="w-full h-1 bg-slate-800 shrink-0 relative overflow-hidden">
+              <div id="presentationProgressBar" class="h-full bg-gradient-to-r from-purple-500 via-sky-400 to-amber-400 transition-all duration-300" style="width: 12.5%;"></div>
+            </div>
+
+            <!-- Presentation Footer Controls -->
+            <div id="presentationFooter" class="bg-slate-900/95 backdrop-blur-md border-t border-slate-800 px-3 sm:px-6 py-2.5 flex items-center justify-between gap-3 shrink-0 shadow-2xl z-20">
+              <!-- Prev Button -->
+              <button onclick="window.prevPresentationSlide()" id="presPrevBtn" class="px-3 sm:px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-bold text-xs sm:text-sm border border-slate-700 transition flex items-center gap-2 cursor-pointer shadow">
+                <i class="fa-solid fa-arrow-left text-xs"></i>
+                <span class="hidden sm:inline">Προηγούμενη</span>
+              </button>
+
+              <!-- Slide Indicators Dots & Counter -->
+              <div class="flex items-center gap-2 sm:gap-3">
+                <div id="presentationDots" class="flex items-center gap-1 sm:gap-1.5 overflow-x-auto max-w-[200px] sm:max-w-md py-1"></div>
+                <span id="presentationCounter" class="text-xs font-mono font-bold text-slate-400 bg-slate-800/80 px-2 py-1 rounded-lg border border-slate-700/60 shrink-0">
+                  1 / 8
+                </span>
+              </div>
+
+              <!-- Next Button -->
+              <button onclick="window.nextPresentationSlide()" id="presNextBtn" class="px-3 sm:px-4 py-2 rounded-xl bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white font-bold text-xs sm:text-sm transition flex items-center gap-2 cursor-pointer shadow-lg shadow-purple-900/30">
+                <span class="hidden sm:inline">Επόμενη</span>
+                <i class="fa-solid fa-arrow-right text-xs"></i>
+              </button>
+            </div>
+          </div>
+
           <!-- YOUTUBE VIDEO OVERLAY (In place of map) -->
           <div id="mapVideoOverlay" class="absolute inset-0 z-30 bg-slate-950/95 flex flex-col hidden">
             <div class="bg-slate-900 border-b border-slate-800 px-3 sm:px-4 py-2 flex flex-wrap items-center justify-between gap-2 shrink-0 shadow-lg">
@@ -797,6 +879,12 @@
               <button id="cityStreetViewBtn" onclick="window.openCurrentStreetView()" title="Περιήγηση στους δρόμους της πόλης με Google Street View (360°)" class="hidden px-2.5 py-1.5 rounded-xl bg-amber-500/10 hover:bg-amber-500/20 text-amber-300 hover:text-white border border-amber-500/30 text-xs font-bold transition flex items-center gap-1.5 shadow">
                 <i class="fa-solid fa-street-view text-amber-400"></i>
                 <span class="hidden sm:inline">Street View</span>
+              </button>
+
+              <!-- City Presentation Slideshow Button -->
+              <button id="cityPresentationBtn" onclick="window.openCityPresentation()" title="Διαδραστική Παρουσίαση Πόλης με Διαφάνειες (Slideshow Presentation)" class="hidden px-2.5 py-1.5 rounded-xl bg-purple-600/20 hover:bg-purple-600/30 text-purple-300 hover:text-white border border-purple-500/40 text-xs font-bold transition flex items-center gap-1.5 shadow">
+                <i class="fa-solid fa-person-chalkboard text-purple-400"></i>
+                <span class="hidden sm:inline">Παρουσίαση</span>
               </button>
 
               <div class="flex items-center gap-1 bg-slate-800/80 p-1 rounded-xl border border-slate-700">
@@ -1195,7 +1283,7 @@
   </div>
 
   <!-- Modular Application Scripts -->
-  <script type="module" src="js/app.js?v=20261117_timefix2"></script>
+  <script type="module" src="js/app.js?v=20261117_pres1"></script>
   <!-- Fullscreen Toggle Script (Android, WebKit, Desktop) -->
   <script>
     window.toggleFullScreen = function() {
