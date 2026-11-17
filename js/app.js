@@ -971,6 +971,7 @@ window.switchOverlayVideo = UIModule.switchOverlayVideo;
 window.submitOverlayVideoSearch = UIModule.submitOverlayVideoSearch;
 window.setOverlayMediaMode = UIModule.setOverlayMediaMode;
 window.switchOverlayShorts = UIModule.switchOverlayShorts;
+window.playMsnVideo = UIModule.playMsnVideo;
 window.playVideoInIframe = UIModule.playVideoInIframe;
 window.filterAllVideosGallery = UIModule.filterAllVideosGallery;
 window.reloadCurrentVideoIframe = UIModule.reloadCurrentVideoIframe;

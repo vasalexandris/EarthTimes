@@ -476,6 +476,70 @@ export function reloadCurrentVideoIframe() {
   }
 }
 
+export function playMsnVideo(rawUrlOrQuery) {
+  const iframe = document.getElementById('mapVideoIframe');
+  const title = document.getElementById('videoOverlayTitle');
+  if (!iframe) return;
+
+  let query = (rawUrlOrQuery || '').trim();
+  let label = 'MSN Video';
+
+  // Extract slug or title from MSN URL (e.g., https://www.msn.com/el-gr/video/watch/salonica-music/vi-AA1A2nfs)
+  const viMatch = query.match(/vi-([a-zA-Z0-9]+)/i);
+  const slugMatch = query.match(/msn\.com\/[^/]+\/(?:video|news|entertainment|lifestyle|travel|food-and-drink)\/[^/]+\/([^/?#]+)/i);
+
+  if (slugMatch && slugMatch[1]) {
+    const cleanSlug = decodeURIComponent(slugMatch[1]).replace(/vi-[a-zA-Z0-9]+/i, '').replace(/[-_+]/g, ' ').trim();
+    if (cleanSlug) {
+      query = cleanSlug;
+      label = cleanSlug;
+    } else if (viMatch) {
+      query = viMatch[0];
+      label = viMatch[0];
+    }
+  } else if (viMatch) {
+    query = viMatch[0];
+    label = viMatch[0];
+  } else if (/msn\.com/i.test(query)) {
+    const pathParts = query.replace(/^https?:\/\/(?:www\.)?msn\.com\/?/i, '').split(/[/?#]/).filter(Boolean);
+    const lastPart = pathParts.pop() || '';
+    const cleanLast = decodeURIComponent(lastPart).replace(/[-_+]/g, ' ').trim();
+    if (cleanLast) {
+      query = cleanLast;
+      label = cleanLast;
+    }
+  }
+
+  if (title) title.innerText = `📹 MSN Video: ${label}`;
+  iframe.classList.remove('hidden');
+  iframe.className = 'w-full h-full max-w-5xl rounded-xl shadow-2xl border border-sky-500/50 bg-slate-950 transition-all duration-300';
+
+  // Route through Bing's video player with view=detail so MSN's frame-ancestors policy allows playback inside the iframe
+  iframe.src = `https://www.bing.com/videos/search?q=${encodeURIComponent('site:msn.com ' + query)}&view=detail`;
+
+  currentOverlayMode = 'video_search';
+  const btnMap = {
+    player: document.getElementById('mediaModePlayerBtn'),
+    shorts: document.getElementById('mediaModeShortsBtn'),
+    video_search: document.getElementById('mediaModeVideoSearchBtn'),
+    web: document.getElementById('mediaModeWebBtn'),
+  };
+  const activeColorMap = {
+    player: 'bg-rose-600 text-white shadow-md',
+    shorts: 'bg-emerald-600 text-white shadow-md shadow-emerald-900/50',
+    video_search: 'bg-amber-600 text-white shadow-md shadow-amber-900/50',
+    web: 'bg-sky-600 text-white shadow-md shadow-sky-900/50',
+  };
+  Object.entries(btnMap).forEach(([m, btn]) => {
+    if (!btn) return;
+    if (m === 'video_search') {
+      btn.className = `px-2.5 py-1 rounded-lg ${activeColorMap[m]} text-xs font-bold transition flex items-center gap-1.5 shadow cursor-pointer shrink-0`;
+    } else {
+      btn.className = 'px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white border border-slate-700 text-xs font-bold transition flex items-center gap-1.5 cursor-pointer shrink-0';
+    }
+  });
+}
+
 export function submitOverlayVideoSearch() {
   const input = document.getElementById('videoSearchInput');
   if (!input) return;
@@ -506,7 +570,74 @@ export function submitOverlayVideoSearch() {
     return;
   }
 
-  // 3. Check if query matches our gastro or POI registry
+  // 3. Check if user pasted an MSN Video URL
+  const isMsn = /msn\.com/i.test(raw) || /assets\.msn\.com/i.test(raw) || /^vi-[a-zA-Z0-9]+/i.test(raw);
+  if (isMsn) {
+    playMsnVideo(raw);
+    return;
+  }
+
+  // 4. Check if user pasted a Bing Videos URL (detail / riverview / search)
+  if (/bing\.com\/videos/i.test(raw)) {
+    const iframe = document.getElementById('mapVideoIframe');
+    const title = document.getElementById('videoOverlayTitle');
+    if (title) title.innerText = '📹 Video: Bing Player';
+    if (iframe) {
+      iframe.classList.remove('hidden');
+      iframe.className = 'w-full h-full max-w-5xl rounded-xl shadow-2xl border border-slate-800 transition-all duration-300';
+      iframe.src = raw;
+    }
+    setOverlayMediaMode('video_search');
+    return;
+  }
+
+  // 5. Check if user pasted a Dailymotion URL
+  const dmMatch = raw.match(/(?:dailymotion\.com\/video\/|dai\.ly\/)([a-zA-Z0-9]+)/i);
+  if (dmMatch) {
+    const dmId = dmMatch[1];
+    const iframe = document.getElementById('mapVideoIframe');
+    const title = document.getElementById('videoOverlayTitle');
+    if (title) title.innerText = `🎬 Dailymotion: ${dmId}`;
+    if (iframe) {
+      iframe.classList.remove('hidden');
+      iframe.className = 'w-full h-full max-w-5xl rounded-xl shadow-2xl border border-slate-800 transition-all duration-300';
+      iframe.src = `https://www.dailymotion.com/embed/video/${dmId}?autoplay=1`;
+    }
+    setOverlayMediaMode('player');
+    return;
+  }
+
+  // 6. Check if user pasted a Vimeo URL
+  const vimeoMatch = raw.match(/vimeo\.com\/(?:video\/)?([0-9]+)/i);
+  if (vimeoMatch) {
+    const vId = vimeoMatch[1];
+    const iframe = document.getElementById('mapVideoIframe');
+    const title = document.getElementById('videoOverlayTitle');
+    if (title) title.innerText = `🎬 Vimeo: ${vId}`;
+    if (iframe) {
+      iframe.classList.remove('hidden');
+      iframe.className = 'w-full h-full max-w-5xl rounded-xl shadow-2xl border border-slate-800 transition-all duration-300';
+      iframe.src = `https://player.vimeo.com/video/${vId}?autoplay=1`;
+    }
+    setOverlayMediaMode('player');
+    return;
+  }
+
+  // 7. Check if user pasted a direct video file (.mp4, .webm, .ogg)
+  if (/\.(mp4|webm|ogg)($|\?)/i.test(raw)) {
+    const iframe = document.getElementById('mapVideoIframe');
+    const title = document.getElementById('videoOverlayTitle');
+    if (title) title.innerText = `🎬 Βίντεο: ${raw.split('/').pop().split('?')[0]}`;
+    if (iframe) {
+      iframe.classList.remove('hidden');
+      iframe.className = 'w-full h-full max-w-5xl rounded-xl shadow-2xl border border-slate-800 transition-all duration-300';
+      iframe.src = raw;
+    }
+    setOverlayMediaMode('player');
+    return;
+  }
+
+  // 8. Check if query matches our gastro or POI registry
   const gastro = getGastroRecipeVideo(raw, '');
   if (gastro && gastro.youtubeId) {
     openGastroVideo(raw);
@@ -519,14 +650,14 @@ export function submitOverlayVideoSearch() {
     return;
   }
 
-  // 4. Check if query matches a city directly
+  // 9. Check if query matches a city directly
   const cMatch = Object.keys(CITY_VIDEOS).find(k => k === raw.toLowerCase() || (CITY_VIDEOS[k].cityName && CITY_VIDEOS[k].cityName.toLowerCase() === raw.toLowerCase()));
   if (cMatch) {
     openCityVideo(cMatch);
     return;
   }
 
-  // 5. In-App Video or Web Search directly inside the iframe!
+  // 10. In-App Video or Web Search directly inside the iframe!
   if (currentOverlayMode === 'video_search') {
     setOverlayMediaMode('video_search');
   } else {

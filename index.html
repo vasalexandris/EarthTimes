@@ -733,7 +733,7 @@
 
             <!-- Video Player Frame & In-App Web View -->
             <div id="videoIframeContainer" class="flex-1 p-2 sm:p-4 flex items-center justify-center bg-black overflow-hidden relative">
-              <iframe id="mapVideoIframe" class="w-full h-full max-w-5xl rounded-xl shadow-2xl border border-slate-800 transition-all duration-300" src="" title="Media Tour Player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen playsinline></iframe>
+              <iframe id="mapVideoIframe" class="w-full h-full max-w-5xl rounded-xl shadow-2xl border border-slate-800 transition-all duration-300" src="" title="Media Tour Player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" allowfullscreen="true" playsinline></iframe>
             </div>
 
             <!-- Hidden placeholders for backwards-compatibility -->
@@ -1325,7 +1325,7 @@
   </div>
 
   <!-- Modular Application Scripts -->
-  <script type="module" src="js/app.js?v=20261117_inapp_video_search"></script>
+  <script type="module" src="js/app.js?v=20261117_msn_video_support"></script>
   <!-- Fullscreen Toggle Script (Android, WebKit, Desktop) -->
   <script>
     window.toggleFullScreen = function() {
