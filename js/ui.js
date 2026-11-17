@@ -164,12 +164,14 @@ export function setOverlayMediaMode(mode, specificId = null) {
   const btnMap = {
     player: document.getElementById('mediaModePlayerBtn'),
     shorts: document.getElementById('mediaModeShortsBtn'),
+    video_search: document.getElementById('mediaModeVideoSearchBtn'),
     web: document.getElementById('mediaModeWebBtn'),
   };
 
   const activeColorMap = {
     player: 'bg-rose-600 text-white shadow-md',
     shorts: 'bg-emerald-600 text-white shadow-md shadow-emerald-900/50',
+    video_search: 'bg-amber-600 text-white shadow-md shadow-amber-900/50',
     web: 'bg-sky-600 text-white shadow-md shadow-sky-900/50',
   };
 
@@ -205,6 +207,11 @@ export function setOverlayMediaMode(mode, specificId = null) {
 
     if (title) title.innerText = `📱 Shorts: ${activeItem.title}`;
     iframe.src = `https://www.youtube.com/embed/${activeId}?autoplay=1&playsinline=1&rel=0&loop=1&enablejsapi=1`;
+  } else if (currentOverlayMode === 'video_search') {
+    iframe.className = 'w-full h-full max-w-5xl rounded-xl shadow-2xl border border-amber-500/40 bg-white transition-all duration-300';
+    const searchQuery = query || (currentActiveVideoCityId ? currentActiveVideoCityId.replace(/_/g, ' ') : 'Travel');
+    if (title) title.innerText = `📹 Video Search: ${searchQuery}`;
+    iframe.src = `https://www.bing.com/videos/search?q=${encodeURIComponent(searchQuery)}`;
   } else if (currentOverlayMode === 'web') {
     iframe.className = 'w-full h-full max-w-5xl rounded-xl shadow-2xl border border-sky-500/40 bg-white transition-all duration-300';
     const searchQuery = query || (currentActiveVideoCityId ? currentActiveVideoCityId.replace(/_/g, ' ') : 'Travel');
@@ -519,8 +526,12 @@ export function submitOverlayVideoSearch() {
     return;
   }
 
-  // 5. In-App Web Search directly inside the iframe!
-  setOverlayMediaMode('web');
+  // 5. In-App Video or Web Search directly inside the iframe!
+  if (currentOverlayMode === 'video_search') {
+    setOverlayMediaMode('video_search');
+  } else {
+    setOverlayMediaMode('web');
+  }
 }
 
 export function openPoiVideo(poiTitle, cityId = '', explicitStart = null) {

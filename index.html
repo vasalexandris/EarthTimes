@@ -711,7 +711,13 @@
                   <span>Shorts</span>
                 </button>
 
-                <!-- 3. Web Search Button -->
+                <!-- 3. Video Search Button (Bing Videos directly in frame) -->
+                <button id="mediaModeVideoSearchBtn" onclick="window.setOverlayMediaMode('video_search')" class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white border border-slate-700 text-xs font-bold transition flex items-center gap-1.5 cursor-pointer shrink-0" title="Αναζήτηση Βίντεο στο Iframe">
+                  <i class="fa-solid fa-video text-amber-400"></i>
+                  <span>Video Search</span>
+                </button>
+
+                <!-- 4. Web Search Button -->
                 <button id="mediaModeWebBtn" onclick="window.setOverlayMediaMode('web')" class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white border border-slate-700 text-xs font-bold transition flex items-center gap-1.5 cursor-pointer shrink-0" title="Αναζήτηση στο Web">
                   <i class="fa-solid fa-globe text-sky-400"></i>
                   <span>Web Search</span>
@@ -1319,7 +1325,7 @@
   </div>
 
   <!-- Modular Application Scripts -->
-  <script type="module" src="js/app.js?v=20261117_clean_player_web_restore"></script>
+  <script type="module" src="js/app.js?v=20261117_inapp_video_search"></script>
   <!-- Fullscreen Toggle Script (Android, WebKit, Desktop) -->
   <script>
     window.toggleFullScreen = function() {
