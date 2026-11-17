@@ -1,4 +1,5 @@
-import { US_STATES, CITY_TO_STATE } from './states-data.js?v=20261117_pres9';
+import { US_STATES, CITY_TO_STATE } from './states-data.js?v=20261117_video_iframe_fix';
+import { CITY_VIDEOS } from './video-service.js?v=20261117_video_iframe_fix';
 /**
  * Navigator Module
  * Hierarchical Cascading Navigation: Continents -> Countries -> Cities
@@ -3544,11 +3545,13 @@ export function filterContinentNav(query) {
   searchResultsEl.classList.remove('hidden');
   treeEl.classList.add('hidden');
 
+  const isVideoQuery = ['βιντεο', 'βίντεο', 'video', 'videos', 'shorts', 'όλα τα βίντεο', 'ολα τα βιντεο', 'όλα τα video'].some(k => q.includes(k));
+
   const matches = [];
   for (const continent of CONTINENTS_DATA) {
     for (const country of continent.countries) {
-      // Check country match
-      if (country.name.toLowerCase().includes(q) || country.id.includes(q)) {
+      // Check country match (skip when user explicitly searches for videos)
+      if (!isVideoQuery && (country.name.toLowerCase().includes(q) || country.id.includes(q))) {
         matches.push({
           type: 'country',
           value: `country:${country.id}`,
@@ -3559,9 +3562,12 @@ export function filterContinentNav(query) {
       }
       // Check cities
       for (const city of country.cities) {
-        if (city.name.toLowerCase().includes(q) || city.id.includes(q)) {
+        const hasVideo = !!(CITY_VIDEOS && CITY_VIDEOS[city.id]);
+        if (city.name.toLowerCase().includes(q) || city.id.includes(q) || (isVideoQuery && hasVideo)) {
           matches.push({
             type: 'city',
+            cityId: city.id,
+            hasVideo: hasVideo,
             value: `city:${city.id}`,
             title: city.name,
             sub: `${country.flag} ${country.name} • ${continent.name}`,
@@ -3575,10 +3581,11 @@ export function filterContinentNav(query) {
 
   // Check all 51 US States and 121 Cities
   for (const state of US_STATES) {
-    if (state.name.toLowerCase().includes(q) || 
+    if (!isVideoQuery && (
+        state.name.toLowerCase().includes(q) || 
         state.englishName.toLowerCase().includes(q) || 
         state.id.includes(q) || 
-        state.capital.toLowerCase().includes(q)) {
+        state.capital.toLowerCase().includes(q))) {
       matches.push({
         type: 'state',
         value: `state:${state.id}`,
@@ -3589,12 +3596,16 @@ export function filterContinentNav(query) {
       });
     }
     for (const city of state.cities) {
+      const hasVideo = !!(CITY_VIDEOS && CITY_VIDEOS[city.id]);
       if (city.name.toLowerCase().includes(q) || 
           city.englishName.toLowerCase().includes(q) || 
-          city.id.includes(q)) {
+          city.id.includes(q) || 
+          (isVideoQuery && hasVideo)) {
         if (!matches.some(m => m.value === `city:${city.id}`)) {
           matches.push({
             type: 'city',
+            cityId: city.id,
+            hasVideo: hasVideo,
             value: `city:${city.id}`,
             title: city.name,
             sub: `🇺🇸 ${state.name} (${state.englishName}) • Βόρεια Αμερική`,
@@ -3617,21 +3628,30 @@ export function filterContinentNav(query) {
   }
 
   searchResultsEl.innerHTML = `
-    <div class="px-3 py-1.5 text-[10px] font-bold uppercase tracking-wider text-slate-400 border-b border-slate-800">
-      Αποτελέσματα Αναζήτησης (${matches.length})
+    <div class="px-3 py-1.5 text-[10px] font-bold uppercase tracking-wider text-slate-400 border-b border-slate-800 flex items-center justify-between">
+      <span>${isVideoQuery ? '🎬 Βίντεο Περιηγήσεων 4K' : 'Αποτελέσματα Αναζήτησης'} (${matches.length})</span>
+      <span class="text-[9px] text-slate-500 font-normal">Κλικ στο [Video] για αναπαραγωγή</span>
     </div>
     <div class="py-1">
       ${matches.map(m => `
-        <button onclick="window.selectNavTarget('${m.value}', '${m.title.replace(/'/g, "\\'")}')" class="w-full text-left px-3 py-2 hover:bg-slate-800/90 text-slate-200 transition flex items-center justify-between group">
-          <div class="flex items-center gap-2.5 min-w-0">
+        <div onclick="window.selectNavTarget('${m.value}', '${m.title.replace(/'/g, "\\'")}')" class="w-full text-left px-3 py-2 hover:bg-slate-800/90 text-slate-200 transition flex items-center justify-between group cursor-pointer border-b border-slate-800/40">
+          <div class="flex items-center gap-2.5 min-w-0 flex-1 mr-2">
             <i class="fa-solid ${m.icon} text-xs shrink-0"></i>
             <div class="min-w-0">
               <div class="font-bold text-xs text-white group-hover:text-sky-300 truncate">${m.title}</div>
               <div class="text-[10px] text-slate-400 truncate">${m.sub}</div>
             </div>
           </div>
-          ${m.badge ? `<span class="text-[9px] px-1.5 py-0.5 rounded bg-amber-500/10 text-amber-300 border border-amber-500/30 shrink-0 font-medium">${m.badge}</span>` : ''}
-        </button>
+          <div class="flex items-center gap-1.5 shrink-0">
+            ${m.hasVideo ? `
+              <button type="button" onclick="event.stopPropagation(); window.playCityVideoFromNav('${m.cityId}')" class="px-2 py-0.5 rounded-md bg-red-600/20 hover:bg-red-600/40 text-red-300 hover:text-white border border-red-500/40 text-[10px] font-bold flex items-center gap-1 transition shadow cursor-pointer" title="Άμεση αναπαραγωγή βίντεο στο Iframe">
+                <i class="fa-brands fa-youtube text-red-500"></i>
+                <span>Video</span>
+              </button>
+            ` : ''}
+            ${m.badge ? `<span class="text-[9px] px-1.5 py-0.5 rounded bg-amber-500/10 text-amber-300 border border-amber-500/30 font-medium">${m.badge}</span>` : ''}
+          </div>
+        </div>
       `).join('')}
     </div>
   `;

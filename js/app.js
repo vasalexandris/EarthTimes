@@ -4,14 +4,14 @@
  * USA, Leaflet Map, Base Layers, UI Dossier, and Time Machine.
  */
 
-import { loadWorldData, loadCountryData, loadStateData } from './data-service.js?v=20261117_pres9';
-import * as MapModule from './map.js?v=20261117_pres9';
-import * as UIModule from './ui.js?v=20261117_pres9';
-import * as TimeMachine from './time-machine.js?v=20261117_pres9';
-import * as NavigatorModule from './navigator.js?v=20261117_pres9';
-import * as GlobeModule from './globe-view.js?v=20261117_pres9';
-import { US_STATES, CITY_TO_STATE } from './states-data.js?v=20261117_pres9';
-import * as PresentationModule from './presentation.js?v=20261117_pres9';
+import { loadWorldData, loadCountryData, loadStateData } from './data-service.js?v=20261117_video_iframe_fix';
+import * as MapModule from './map.js?v=20261117_video_iframe_fix';
+import * as UIModule from './ui.js?v=20261117_video_iframe_fix';
+import * as TimeMachine from './time-machine.js?v=20261117_video_iframe_fix';
+import * as NavigatorModule from './navigator.js?v=20261117_video_iframe_fix';
+import * as GlobeModule from './globe-view.js?v=20261117_video_iframe_fix';
+import { US_STATES, CITY_TO_STATE } from './states-data.js?v=20261117_video_iframe_fix';
+import * as PresentationModule from './presentation.js?v=20261117_video_iframe_fix';
 
 // Application State
 let worldData = null;
@@ -971,9 +971,13 @@ window.switchOverlayVideo = UIModule.switchOverlayVideo;
 window.submitOverlayVideoSearch = UIModule.submitOverlayVideoSearch;
 window.setOverlayMediaMode = UIModule.setOverlayMediaMode;
 window.switchOverlayShorts = UIModule.switchOverlayShorts;
-window.switchOverlayTikTok = UIModule.switchOverlayTikTok;
-window.switchOverlayInstagram = UIModule.switchOverlayInstagram;
-window.forceLoadEmbedIframe = UIModule.forceLoadEmbedIframe;
+window.playVideoInIframe = UIModule.playVideoInIframe;
+window.filterAllVideosGallery = UIModule.filterAllVideosGallery;
+window.reloadCurrentVideoIframe = UIModule.reloadCurrentVideoIframe;
+window.playCityVideoFromNav = (cityId) => {
+  flyToCity(cityId);
+  UIModule.openCityVideo(cityId);
+};
 window.openCurrentCityVideo = () => {
   if (currentCityId) {
     UIModule.openCityVideo(currentCityId);

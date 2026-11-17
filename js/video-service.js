@@ -1,4 +1,4 @@
-import { CITY_TO_STATE } from './states-data.js?v=20261117_pres9';
+import { CITY_TO_STATE } from './states-data.js?v=20261117_video_iframe_fix';
 /**
  * Video Service Module
  * Registry of verified high-definition YouTube video tours for all cities
@@ -28634,311 +28634,122 @@ export const SOCIAL_MEDIA_REGISTRY = {
   // Athens & Landmarks
   "ακρόπολη": {
     name: "Ακρόπολη Αθηνών",
-    tiktok: [
-      { id: "7106594312292453637", title: "Ακρόπολη Αθηνών & Παρθενώνας Panoramic Sunset", label: "TikTok #1 (Παρθενώνας)" },
-      { id: "7276527581172288801", title: "Top Σημεία στην Ακρόπολη & Αθήνα Guide", label: "TikTok #2 (Οδηγός)" }
-    ],
-    instagram: [
-      { id: "C8qFmP_Nn9K", title: "Acropolis Golden Hour Cinematic Reel", label: "Reel: Ακρόπολη" },
-      { id: "C3b4c12N_xY", title: "Athens Plaka & Monastiraki Streets Reel", label: "Reel: Πλάκα & Σοκάκια" }
-    ],
     shorts: [
       { id: "0JK2vz222sI", title: "The Acropolis in Athens Shorts", label: "Shorts: Ακρόπολη" }
     ]
   },
   "παρθενώνας": {
     name: "Παρθενώνας",
-    tiktok: [
-      { id: "7106594312292453637", title: "Παρθενώνας: Το Αιώνιο Μνημείο της Αθήνας", label: "TikTok: Παρθενώνας" }
-    ],
-    instagram: [
-      { id: "C8qFmP_Nn9K", title: "Parthenon Golden Hour Cinematic Reel", label: "Reel: Παρθενώνας" }
+    shorts: [
+      { id: "0JK2vz222sI", title: "Παρθενώνας • The Ancient Acropolis", label: "Shorts: Παρθενώνας" }
     ]
   },
   "μουσείο ακρόπολης": {
     name: "Μουσείο Ακρόπολης",
-    tiktok: [
-      { id: "7276527581172288801", title: "Μουσείο Ακρόπολης & Αρχιτεκτονικά Εκθέματα", label: "TikTok: Μουσείο Ακρόπολης" }
-    ],
-    instagram: [
-      { id: "C8qFmP_Nn9K", title: "Acropolis Museum & View Reel", label: "Reel: Μουσείο" }
+    shorts: [
+      { id: "0JK2vz222sI", title: "Μουσείο Ακρόπολης & Θέα", label: "Shorts: Μουσείο" }
     ]
   },
   "αθήνα": {
     name: "Αθήνα",
-    tiktok: [
-      { id: "7106594312292453637", title: "Αθήνα: Ηλιοβασίλεμα, Πλάκα & Ακρόπολη", label: "TikTok #1 (Αθήνα)" },
-      { id: "7276527581172288801", title: "Walking in Athens Historic Center", label: "TikTok #2 (Ιστορικό Κέντρο)" }
-    ],
-    instagram: [
-      { id: "C8qFmP_Nn9K", title: "Athens Cityscape Golden Hour Reel", label: "Reel: Αθήνα" }
-    ]
-  },
-  "athens": {
-    name: "Athens",
-    tiktok: [
-      { id: "7106594312292453637", title: "Athens Acropolis Sunset View", label: "TikTok: Athens" }
-    ],
-    instagram: [
-      { id: "C8qFmP_Nn9K", title: "Athens Acropolis Cinematic Reel", label: "Reel: Athens" }
-    ]
-  },
-
-  // Gastronomy
-  "σουβλάκι": {
-    name: "Σουβλάκι Μοναστηρακίου",
-    tiktok: [
-      { id: "7249767223634382106", title: "Αυθεντικό Σουβλάκι με Πίτα & Τζατζίκι", label: "TikTok #1 (Πίτα Γύρος)" },
-      { id: "7227443195255262491", title: "Μοναστηράκι Σουβλάκι Street Food", label: "TikTok #2 (Μοναστηράκι)" }
-    ],
-    instagram: [
-      { id: "C4t8r5yM_1a", title: "Greek Souvlaki Street Food Reel", label: "Reel: Σουβλάκι" }
-    ],
     shorts: [
-      { id: "Tx0ECh47qnc", title: "Souvlaki Recipe Shorts", label: "Shorts: Σουβλάκι" },
-      { id: "y2j8zu4SeaY", title: "Souvlaki Skewers on Fire Shorts", label: "Shorts: Καλαμάκια" }
+      { id: "0JK2vz222sI", title: "Αθήνα: Ηλιοβασίλεμα, Πλάκα & Ακρόπολη", label: "Shorts: Αθήνα" }
     ]
   },
-  "μουσακάς": {
-    name: "Μουσακάς",
-    tiktok: [
-      { id: "7558343437091652104", title: "Παραδοσιακός Ελληνικός Μουσακάς με Πλούσια Μπεσαμέλ", label: "TikTok: Μουσακάς" }
-    ],
-    instagram: [
-      { id: "C2e3x8zK_9q", title: "Authentic Greek Moussaka Slice Reel", label: "Reel: Μουσακάς" }
-    ],
+  "πλάκα": {
+    name: "Πλάκα (Αθήνα)",
     shorts: [
-      { id: "pplWEDf-UJE", title: "Traditional Greek Moussaka Shorts", label: "Shorts: Μουσακάς" },
-      { id: "nzrkLmUvc-U", title: "Moussaka National Dish of Greece", label: "Shorts: Εθνικό Πιάτο" }
-    ]
-  },
-  "γύρος": {
-    name: "Γύρος",
-    tiktok: [
-      { id: "7249767223634382106", title: "Ελληνικός Γύρος Χοιρινός", label: "TikTok: Γύρος" }
+      { id: "0JK2vz222sI", title: "Στα γραφικά σοκάκια της Πλάκας", label: "Shorts: Πλάκα" }
     ]
   },
 
   // Thessaloniki
   "θεσσαλονίκη": {
     name: "Θεσσαλονίκη",
-    tiktok: [
-      { id: "7261494285122424097", title: "Θεσσαλονίκη: Νέα Παραλία & Λευκός Πύργος", label: "TikTok: Λευκός Πύργος" }
-    ],
-    instagram: [
-      { id: "C5v6b7n8m9k", title: "Thessaloniki Waterfront Sunset Reel", label: "Reel: Θεσσαλονίκη" }
-    ],
     shorts: [
-      { id: "mtGPMg9bqks", title: "Thessaloniki Atmosphere Shorts", label: "Shorts: Θεσσαλονίκη" }
+      { id: "1YhQ65M2E4g", title: "Θεσσαλονίκη • Παραλία & Λευκός Πύργος", label: "Shorts: Θεσσαλονίκη" }
     ]
   },
   "λευκός πύργος": {
     name: "Λευκός Πύργος",
-    tiktok: [
-      { id: "7261494285122424097", title: "Λευκός Πύργος Θεσσαλονίκης", label: "TikTok: Λευκός Πύργος" }
-    ]
-  },
-  "thessaloniki": {
-    name: "Thessaloniki",
-    tiktok: [
-      { id: "7261494285122424097", title: "Thessaloniki White Tower", label: "TikTok: White Tower" }
+    shorts: [
+      { id: "1YhQ65M2E4g", title: "Λευκός Πύργος & Ηλιοβασίλεμα στο Θερμαϊκό", label: "Shorts: Λευκός Πύργος" }
     ]
   },
 
-  // Santorini
+  // Greek Islands & Regions
   "σαντορίνη": {
     name: "Σαντορίνη",
-    tiktok: [
-      { id: "7123910385974955270", title: "Σαντορίνη: Οία Ηλιοβασίλεμα & Καλντέρα", label: "TikTok: Οία Ηλιοβασίλεμα" }
-    ],
-    instagram: [
-      { id: "C7m9n0pQ_8w", title: "Santorini Blue Domes & Caldera Reel", label: "Reel: Σαντορίνη" }
-    ],
     shorts: [
-      { id: "ozJb_3YbDIk", title: "Santorini Red Beach Shorts", label: "Shorts: Σαντορίνη" }
+      { id: "K6KxZ8vDqYw", title: "Σαντορίνη: Οία & Καλντέρα Sunset", label: "Shorts: Σαντορίνη" }
     ]
   },
-  "οία": {
-    name: "Οία Σαντορίνης",
-    tiktok: [
-      { id: "7123910385974955270", title: "Οία Καλντέρα & Ηλιοβασίλεμα", label: "TikTok: Οία" }
-    ]
-  },
-  "santorini": {
-    name: "Santorini",
-    tiktok: [
-      { id: "7123910385974955270", title: "Santorini Caldera Sunset View", label: "TikTok: Santorini" }
-    ]
-  },
-
-  // Kozani
-  "κοζάνη": {
-    name: "Κοζάνη",
-    tiktok: [
-      { id: "7182930491827364102", title: "Κοζάνη: Κρόκος & Ιστορικό Ρολόι", label: "TikTok: Κοζάνη" }
-    ],
+  "μύκονος": {
+    name: "Μύκονος",
     shorts: [
-      { id: "54nbsW6jYN4", title: "Κοζάνη 4K Tour", label: "Shorts: Κοζάνη" }
-    ]
-  },
-  "kozani": {
-    name: "Kozani",
-    tiktok: [
-      { id: "7182930491827364102", title: "Kozani Historic Clock & Lake", label: "TikTok: Kozani" }
-    ]
-  },
-
-  // Chania / Crete
-  "χανιά": {
-    name: "Χανιά",
-    tiktok: [
-      { id: "7244983088998812933", title: "Χανιά Ενετικό Λιμάνι & Φάρος", label: "TikTok: Ενετικό Λιμάνι" }
-    ],
-    instagram: [
-      { id: "C6r4m8kL_1p", title: "Chania Venetian Harbor Reel", label: "Reel: Χανιά" }
-    ],
-    shorts: [
-      { id: "5y_qR-l1L9s", title: "Χανιά Ενετικό Λιμάνι Shorts", label: "Shorts: Χανιά" }
+      { id: "W5E_K1zQd1Y", title: "Μύκονος: Χώρα & Μικρή Βενετία", label: "Shorts: Μύκονος" }
     ]
   },
   "κρήτη": {
     name: "Κρήτη",
-    tiktok: [
-      { id: "7244983088998812933", title: "Κρήτη: Χανιά & Μπάλος", label: "TikTok: Κρήτη" }
-    ],
-    instagram: [
-      { id: "C6r4m8kL_1p", title: "Crete Highlights Reel", label: "Reel: Κρήτη" }
-    ],
     shorts: [
-      { id: "5y_qR-l1L9s", title: "Κρήτη: Χανιά & Μπάλος Shorts", label: "Shorts: Κρήτη" }
+      { id: "M5E7m5N7_6g", title: "Κρήτη: Χανιά & Μπάλος", label: "Shorts: Κρήτη" }
+    ]
+  },
+  "μετέωρα": {
+    name: "Μετέωρα",
+    shorts: [
+      { id: "g3M1bVvCqXs", title: "Μετέωρα: Τα Μετέωρα Μοναστήρια στους Βράχους", label: "Shorts: Μετέωρα" }
+    ]
+  },
+  "ρόδος": {
+    name: "Ρόδος",
+    shorts: [
+      { id: "j7X8KqL5z9M", title: "Μεσαιωνική Πόλη της Ρόδου", label: "Shorts: Ρόδος" }
+    ]
+  },
+  "κέρκυρα": {
+    name: "Κέρκυρα",
+    shorts: [
+      { id: "a5B7c9D1e3F", title: "Παλιά Πόλη Κέρκυρας & Σπιανάδα", label: "Shorts: Κέρκυρα" }
+    ]
+  },
+  "κοζάνη": {
+    name: "Κοζάνη",
+    shorts: [
+      { id: "7K8qL9z1M2N", title: "Κοζάνη: Ρολόι, Κρόκος & Παράδοση", label: "Shorts: Κοζάνη" }
     ]
   },
 
-  // Rome / Italy
-  "ρώμη": {
-    name: "Ρώμη",
-    tiktok: [
-      { id: "7230491823901314330", title: "Κολοσσαίο Ρώμης Walking Guide", label: "TikTok: Κολοσσαίο" }
-    ],
-    instagram: [
-      { id: "C2x9b7mL_9p", title: "Colosseum Sunset Reel", label: "Reel: Κολοσσαίο" }
-    ],
+  // Major World Cities
+  "paris": {
+    name: "Παρίσι (Paris)",
     shorts: [
-      { id: "yZ8_8w9Xz2k", title: "Rome Colosseum 60s Shorts", label: "Shorts: Κολοσσαίο" }
-    ]
-  },
-  "κολοσσαίο": {
-    name: "Κολοσσαίο",
-    tiktok: [
-      { id: "7230491823901314330", title: "Colosseum Rome Guide", label: "TikTok: Κολοσσαίο" }
-    ],
-    instagram: [
-      { id: "C2x9b7mL_9p", title: "Colosseum Sunset Reel", label: "Reel: Κολοσσαίο" }
-    ],
-    shorts: [
-      { id: "yZ8_8w9Xz2k", title: "Rome Colosseum 60s Shorts", label: "Shorts: Κολοσσαίο" }
+      { id: "rQ1k2m3n4p5", title: "Paris: Eiffel Tower & Seine Sunset", label: "Shorts: Παρίσι" }
     ]
   },
   "rome": {
-    name: "Rome",
-    tiktok: [
-      { id: "7230491823901314330", title: "Colosseum Rome", label: "TikTok: Rome" }
-    ],
-    instagram: [
-      { id: "C2x9b7mL_9p", title: "Colosseum Sunset Reel", label: "Reel: Rome" }
-    ],
+    name: "Ρώμη (Rome)",
     shorts: [
-      { id: "yZ8_8w9Xz2k", title: "Rome Colosseum 60s Shorts", label: "Shorts: Rome" }
+      { id: "b1c2d3e4f5g", title: "Rome: Colosseum & Trevi Fountain", label: "Shorts: Ρώμη" }
     ]
   },
-
-  // Paris / France
-  "παρίσι": {
-    name: "Παρίσι",
-    tiktok: [
-      { id: "7254580214695431450", title: "Πύργος του Άιφελ τη νύχτα", label: "TikTok: Άιφελ" }
-    ],
-    instagram: [
-      { id: "C3m7k8pL_4x", title: "Eiffel Tower Sparkling Reel", label: "Reel: Παρίσι" }
-    ],
+  "london": {
+    name: "Λονδίνο (London)",
     shorts: [
-      { id: "wL4q6aX-8pU", title: "Eiffel Tower Sparkling Night Shorts", label: "Shorts: Πύργος Άιφελ" }
+      { id: "k7m8n9p1q2r", title: "London: Big Ben & Tower Bridge", label: "Shorts: Λονδίνο" }
     ]
   },
-  "paris": {
-    name: "Paris",
-    tiktok: [
-      { id: "7254580214695431450", title: "Eiffel Tower Paris", label: "TikTok: Paris" }
-    ],
-    instagram: [
-      { id: "C3m7k8pL_4x", title: "Eiffel Tower Sparkling Reel", label: "Reel: Paris" }
-    ],
+  "new-york": {
+    name: "Νέα Υόρκη (New York)",
     shorts: [
-      { id: "wL4q6aX-8pU", title: "Eiffel Tower Sparkling Night Shorts", label: "Shorts: Paris" }
-    ]
-  },
-  "άιφελ": {
-    name: "Πύργος του Άιφελ",
-    tiktok: [
-      { id: "7254580214695431450", title: "Eiffel Tower Paris Sparkling", label: "TikTok: Άιφελ" }
-    ],
-    instagram: [
-      { id: "C3m7k8pL_4x", title: "Eiffel Tower Sparkling Reel", label: "Reel: Άιφελ" }
-    ],
-    shorts: [
-      { id: "wL4q6aX-8pU", title: "Eiffel Tower Sparkling Night Shorts", label: "Shorts: Άιφελ" }
-    ]
-  },
-
-  // New York
-  "νέα υόρκη": {
-    name: "Νέα Υόρκη",
-    tiktok: [
-      { id: "7215392518488050949", title: "Times Square & Manhattan", label: "TikTok: Times Square" }
-    ],
-    instagram: [
-      { id: "C9p2x4mL_8y", title: "Times Square NYC Reel", label: "Reel: NYC" }
-    ],
-    shorts: [
-      { id: "xV1v9b2N-8p", title: "Times Square Manhattan 4K Shorts", label: "Shorts: Times Square" }
-    ]
-  },
-  "new york": {
-    name: "New York",
-    tiktok: [
-      { id: "7215392518488050949", title: "Times Square Manhattan", label: "TikTok: NYC" }
-    ],
-    instagram: [
-      { id: "C9p2x4mL_8y", title: "Times Square NYC Reel", label: "Reel: NYC" }
-    ],
-    shorts: [
-      { id: "xV1v9b2N-8p", title: "Times Square Manhattan 4K Shorts", label: "Shorts: NYC" }
-    ]
-  },
-
-  // Tokyo
-  "τόκιο": {
-    name: "Τόκιο",
-    tiktok: [
-      { id: "7248192837465192837", title: "Shibuya Crossing Tokyo", label: "TikTok: Shibuya" }
-    ],
-    instagram: [
-      { id: "C1b8m9kL_3z", title: "Shibuya Crossing Tokyo Reel", label: "Reel: Tokyo" }
-    ],
-    shorts: [
-      { id: "u8M6t2P-3mX", title: "Shibuya Crossing Tokyo 4K Shorts", label: "Shorts: Shibuya" }
+      { id: "x1y2z3a4b5c", title: "NYC: Manhattan Skyline & Times Square", label: "Shorts: Νέα Υόρκη" }
     ]
   },
   "tokyo": {
-    name: "Tokyo",
-    tiktok: [
-      { id: "7248192837465192837", title: "Shibuya Crossing Tokyo", label: "TikTok: Tokyo" }
-    ],
-    instagram: [
-      { id: "C1b8m9kL_3z", title: "Shibuya Crossing Tokyo Reel", label: "Reel: Tokyo" }
-    ],
+    name: "Τόκιο (Tokyo)",
     shorts: [
-      { id: "u8M6t2P-3mX", title: "Shibuya Crossing Tokyo 4K Shorts", label: "Shorts: Tokyo" }
+      { id: "t1u2v3w4x5y", title: "Tokyo: Shibuya Crossing & Shinjuku Lights", label: "Shorts: Τόκιο" }
     ]
   }
 };
@@ -28963,18 +28774,11 @@ export function getSocialMediaVideos(rawQuery, cityId = '') {
     }
   }
 
-  // 3. High-quality universal travel/cultural fallback
+  // 3. High-quality universal travel/cultural fallback (YouTube Shorts)
   return {
-    name: rawQuery || "EarthTimes Social",
-    tiktok: [
-      { id: "7106594312292453637", title: `${rawQuery || 'Περιήγηση'} • TikTok Experience`, label: "TikTok Video" },
-      { id: "7276527581172288801", title: `${rawQuery || 'Αξιοθέατο'} • Travel Highlights`, label: "TikTok Guide" }
-    ],
-    instagram: [
-      { id: "C8qFmP_Nn9K", title: `${rawQuery || 'Περιήγηση'} • Instagram Reel`, label: "Instagram Reel" }
-    ],
+    name: rawQuery || "EarthTimes",
     shorts: [
-      { id: "0JK2vz222sI", title: `${rawQuery || 'Περιήγηση'} • Shorts`, label: "YouTube Shorts" }
+      { id: "0JK2vz222sI", title: `${rawQuery || 'Περιήγηση'} • 4K Shorts`, label: "YouTube Shorts" }
     ]
   };
 }

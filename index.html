@@ -696,10 +696,10 @@
               </div>
 
               <div class="flex items-center gap-2">
-                <a id="videoDirectLink" href="#" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 rounded-lg bg-red-600 hover:bg-red-500 text-white text-xs font-bold transition flex items-center gap-1.5 shadow">
-                  <i class="fa-brands fa-youtube"></i>
-                  <span class="hidden sm:inline">YouTube</span>
-                </a>
+                <button id="videoDirectLink" onclick="window.reloadCurrentVideoIframe()" class="px-2.5 py-1 rounded-lg bg-red-600/30 hover:bg-red-600/50 text-red-300 hover:text-white border border-red-500/40 text-xs font-bold transition flex items-center gap-1.5 shadow cursor-pointer" title="Επαναφόρτωση / Συνέχιση στο Iframe">
+                  <i class="fa-solid fa-rotate-right text-xs"></i>
+                  <span class="hidden sm:inline">Iframe Player</span>
+                </button>
                 <button onclick="closeMapVideoOverlay()" class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 hover:text-white text-xs font-bold transition flex items-center gap-1.5 border border-slate-700 shadow cursor-pointer">
                   <i class="fa-solid fa-xmark"></i>
                   <span>Κλείσιμο</span>
@@ -711,7 +711,7 @@
             <div id="videoOptionsBar" class="bg-slate-900/95 border-b border-slate-800 px-3 py-1.5 flex flex-wrap items-center justify-between gap-2 shrink-0 text-xs z-10">
               <!-- Multiple Video Choice Pills -->
               <div id="videoChoicePills" class="flex items-center gap-1.5 overflow-x-auto py-0.5 max-w-full">
-                <!-- Injected dynamically: e.g. [ 👨‍🍳 Άκης ] [ 🥙 Street Food ] [ 📱 Shorts ] -->
+                <!-- Injected dynamically: e.g. [ 🚁 Drone 4K ] [ 🚶 Walking 4K ] [ 📱 Shorts ] -->
               </div>
 
               <!-- In-App Media & Search Mode Switcher (Zero external popups!) -->
@@ -729,33 +729,23 @@
                   <i class="fa-solid fa-play"></i>
                   <span class="hidden sm:inline">4K Player</span>
                 </button>
-                <button id="mediaModeShortsBtn" onclick="window.setOverlayMediaMode('shorts')" class="px-2 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white border border-slate-700 text-[11px] font-bold transition flex items-center gap-1 cursor-pointer shrink-0" title="Κάθετα Βίντεο Shorts (Παίζουν απευθείας στο κινητό)">
+                <button id="mediaModeShortsBtn" onclick="window.setOverlayMediaMode('shorts')" class="px-2 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white border border-slate-700 text-[11px] font-bold transition flex items-center gap-1 cursor-pointer shrink-0" title="Κάθετα Βίντεο Shorts (Παίζουν απευθείας στο iframe)">
                   <i class="fa-solid fa-mobile-screen text-emerald-400"></i>
                   <span class="hidden sm:inline">Shorts</span>
                 </button>
-                <button id="mediaModeTikTokBtn" onclick="window.setOverlayMediaMode('tiktok')" class="px-2 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white border border-slate-700 text-[11px] font-bold transition flex items-center gap-1 cursor-pointer shrink-0" title="TikTok Media Hub & App Launcher">
-                  <i class="fa-brands fa-tiktok text-pink-400"></i>
-                  <span class="hidden sm:inline">TikTok</span>
-                </button>
-                <button id="mediaModeInstagramBtn" onclick="window.setOverlayMediaMode('instagram')" class="px-2 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white border border-slate-700 text-[11px] font-bold transition flex items-center gap-1 cursor-pointer shrink-0" title="Instagram Reels Hub & App Launcher">
-                  <i class="fa-brands fa-instagram text-fuchsia-400"></i>
-                  <span class="hidden sm:inline">Instagram</span>
-                </button>
-                <button id="mediaModeWebBtn" onclick="window.setOverlayMediaMode('web')" class="px-2 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white border border-slate-700 text-[11px] font-bold transition flex items-center gap-1 cursor-pointer shrink-0" title="Αναζήτηση Ιστού στο παράθυρο (Χωρίς να φεύγετε από τη σελίδα)">
-                  <i class="fa-solid fa-globe text-sky-400"></i>
-                  <span class="hidden sm:inline">Web Search</span>
-                </button>
-                <button id="mediaModeVideosBtn" onclick="window.setOverlayMediaMode('videos')" class="px-2 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white border border-slate-700 text-[11px] font-bold transition flex items-center gap-1 cursor-pointer shrink-0" title="Αναζήτηση όλων των βίντεο στο παράθυρο">
+                <button id="mediaModeVideosBtn" onclick="window.setOverlayMediaMode('videos')" class="px-2 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white border border-slate-700 text-[11px] font-bold transition flex items-center gap-1 cursor-pointer shrink-0" title="Περιήγηση σε όλα τα βίντεο της εφαρμογής">
                   <i class="fa-solid fa-film text-amber-400"></i>
                   <span class="hidden sm:inline">Όλα τα Βίντεο</span>
                 </button>
               </div>
             </div>
 
-            <!-- Video Player Frame -->
+            <!-- Video Player Frame & In-App Gallery (Plays 100% in iframe) -->
             <div id="videoIframeContainer" class="flex-1 p-2 sm:p-4 flex items-center justify-center bg-black overflow-hidden relative">
-              <iframe id="mapVideoIframe" class="w-full h-full max-w-5xl rounded-xl shadow-2xl border border-slate-800 transition-all duration-300" src="" title="Media Tour Player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-              <div id="socialHubCard" class="hidden w-full h-full max-w-[380px] sm:max-w-[420px] rounded-2xl shadow-2xl bg-gradient-to-b from-slate-900 via-slate-950 to-black border p-5 flex flex-col justify-between items-center text-center mx-auto overflow-y-auto"></div>
+              <iframe id="mapVideoIframe" class="w-full h-full max-w-5xl rounded-xl shadow-2xl border border-slate-800 transition-all duration-300" src="" title="Media Tour Player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen playsinline></iframe>
+              <div id="allVideosGalleryView" class="hidden w-full h-full max-w-5xl rounded-xl border border-slate-800 bg-slate-950 p-3 sm:p-4 flex flex-col overflow-hidden shadow-2xl">
+                <!-- Injected dynamically with categories, search and playable video cards -->
+              </div>
             </div>
           </div>
 
@@ -1342,7 +1332,7 @@
   </div>
 
   <!-- Modular Application Scripts -->
-  <script type="module" src="js/app.js?v=20261117_pres9"></script>
+  <script type="module" src="js/app.js?v=20261117_video_iframe_fix"></script>
   <!-- Fullscreen Toggle Script (Android, WebKit, Desktop) -->
   <script>
     window.toggleFullScreen = function() {

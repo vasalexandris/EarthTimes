@@ -4,12 +4,12 @@
  * Base Map Layer selector, Date display, Video Overlay, and Deep Dive views.
  */
 
-import { getCityVideo, getAvailableVideoTypes, getAvailableCityTours, CITY_VIDEOS, findPoiLiveCam, getPoiVideoInfo, getGastroRecipeVideo, getSocialMediaVideos } from './video-service.js?v=20261117_pres9';
-import { getDeepDiveData } from './deep-dive.js?v=20261117_pres9';
-import { fetchWikiArticle, fetchWikiArticleHtml, cleanWikiTitle } from './wiki-service.js?v=20261117_pres9';
-import { calculateSubsolarPoint } from './solar-terminator.js?v=20261117_pres9';
-import { CITY_TO_STATE } from './states-data.js?v=20261117_pres9';
-import { CITY_TO_COUNTRY } from './navigator.js?v=20261117_pres9';
+import { getCityVideo, getAvailableVideoTypes, getAvailableCityTours, CITY_VIDEOS, findPoiLiveCam, getPoiVideoInfo, getGastroRecipeVideo, getSocialMediaVideos, SOCIAL_MEDIA_REGISTRY, GASTRO_RECIPE_VIDEOS } from './video-service.js?v=20261117_video_iframe_fix';
+import { getDeepDiveData } from './deep-dive.js?v=20261117_video_iframe_fix';
+import { fetchWikiArticle, fetchWikiArticleHtml, cleanWikiTitle } from './wiki-service.js?v=20261117_video_iframe_fix';
+import { calculateSubsolarPoint } from './solar-terminator.js?v=20261117_video_iframe_fix';
+import { CITY_TO_STATE } from './states-data.js?v=20261117_video_iframe_fix';
+import { CITY_TO_COUNTRY } from './navigator.js?v=20261117_video_iframe_fix';
 
 let currentActiveVideoCityId = null;
 let currentActiveVideoType = 'drone';
@@ -21,8 +21,6 @@ let currentOverlayYoutubeId = '';
 let currentOverlayTitle = '';
 let currentOverlayStartSec = 0;
 let currentOverlayShortsId = '';
-let currentOverlayTikTokId = '';
-let currentOverlayInstagramId = '';
 
 let currentWikiTitle = '';
 let currentWikiLang = 'el';
@@ -122,8 +120,10 @@ export function openCityVideo(cityId, preferredType = 'drone') {
   currentOverlayMode = 'player';
 
   if (title) title.innerText = videoTitle;
-  if (directLink) directLink.href = `https://www.youtube.com/watch?v=${youtubeId}`;
-  iframe.src = `https://www.youtube-nocookie.com/embed/${youtubeId}?autoplay=1&rel=0`;
+  if (directLink) {
+    directLink.setAttribute('data-youtube-id', youtubeId);
+  }
+  iframe.src = `https://www.youtube.com/embed/${youtubeId}?autoplay=1&playsinline=1&rel=0&modestbranding=1&enablejsapi=1`;
 
   const searchInput = document.getElementById('videoSearchInput');
   if (searchInput) {
@@ -171,7 +171,7 @@ export function openCityVideo(cityId, preferredType = 'drone') {
 export function setOverlayMediaMode(mode, specificId = null) {
   currentOverlayMode = mode || 'player';
   const iframe = document.getElementById('mapVideoIframe');
-  const socialHubCard = document.getElementById('socialHubCard');
+  const gallery = document.getElementById('allVideosGalleryView');
   const title = document.getElementById('videoOverlayTitle');
   const searchInput = document.getElementById('videoSearchInput');
   const directLink = document.getElementById('videoDirectLink');
@@ -182,19 +182,13 @@ export function setOverlayMediaMode(mode, specificId = null) {
   const btnMap = {
     player: document.getElementById('mediaModePlayerBtn'),
     shorts: document.getElementById('mediaModeShortsBtn'),
-    tiktok: document.getElementById('mediaModeTikTokBtn'),
-    instagram: document.getElementById('mediaModeInstagramBtn'),
-    web: document.getElementById('mediaModeWebBtn'),
     videos: document.getElementById('mediaModeVideosBtn'),
   };
 
   const activeColorMap = {
     player: 'bg-rose-600 text-white shadow-md',
     shorts: 'bg-emerald-600 text-white shadow-md shadow-emerald-900/50',
-    tiktok: 'bg-pink-600 text-white shadow-md shadow-pink-900/50',
-    instagram: 'bg-gradient-to-r from-purple-600 to-pink-600 text-white shadow-md shadow-purple-900/50',
-    web: 'bg-sky-600 text-white shadow-md',
-    videos: 'bg-amber-600 text-white shadow-md',
+    videos: 'bg-amber-600 text-white shadow-md shadow-amber-900/50',
   };
 
   Object.entries(btnMap).forEach(([m, btn]) => {
@@ -209,20 +203,18 @@ export function setOverlayMediaMode(mode, specificId = null) {
   if (!iframe) return;
 
   if (currentOverlayMode === 'player') {
-    if (socialHubCard) { socialHubCard.classList.add('hidden'); socialHubCard.innerHTML = ''; }
+    if (gallery) { gallery.classList.add('hidden'); }
     iframe.classList.remove('hidden');
     iframe.className = 'w-full h-full max-w-5xl rounded-xl shadow-2xl border border-slate-800 transition-all duration-300';
     if (currentOverlayYoutubeId) {
       if (title && currentOverlayTitle) title.innerText = currentOverlayTitle;
       if (directLink) {
-        directLink.href = `https://www.youtube.com/watch?v=${currentOverlayYoutubeId}${currentOverlayStartSec > 0 ? `&t=${currentOverlayStartSec}s` : ''}`;
-        directLink.innerHTML = '<i class="fa-brands fa-youtube"></i><span class="hidden sm:inline">YouTube</span>';
-        directLink.className = 'px-2.5 py-1 rounded-lg bg-red-600 hover:bg-red-500 text-white text-xs font-bold transition flex items-center gap-1.5 shadow';
+        directLink.setAttribute('data-youtube-id', currentOverlayYoutubeId);
       }
-      iframe.src = `https://www.youtube-nocookie.com/embed/${currentOverlayYoutubeId}?autoplay=1&rel=0${currentOverlayStartSec > 0 ? `&start=${currentOverlayStartSec}` : ''}`;
+      iframe.src = `https://www.youtube.com/embed/${currentOverlayYoutubeId}?autoplay=1&playsinline=1&rel=0&modestbranding=1&enablejsapi=1${currentOverlayStartSec > 0 ? `&start=${currentOverlayStartSec}` : ''}`;
     }
   } else if (currentOverlayMode === 'shorts') {
-    if (socialHubCard) { socialHubCard.classList.add('hidden'); socialHubCard.innerHTML = ''; }
+    if (gallery) { gallery.classList.add('hidden'); }
     iframe.classList.remove('hidden');
     iframe.className = 'w-full h-full max-w-[380px] sm:max-w-[420px] rounded-2xl shadow-2xl border border-emerald-500/50 bg-black transition-all duration-300 mx-auto';
 
@@ -236,296 +228,251 @@ export function setOverlayMediaMode(mode, specificId = null) {
 
     if (title) title.innerText = `📱 Κάθετο Βίντεο (Shorts): ${activeItem.title}`;
     if (directLink) {
-      directLink.href = `https://www.youtube.com/shorts/${activeId}`;
-      directLink.innerHTML = '<i class="fa-solid fa-mobile-screen"></i><span class="hidden sm:inline">Shorts</span>';
-      directLink.className = 'px-2.5 py-1 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold transition flex items-center gap-1.5 shadow';
+      directLink.setAttribute('data-youtube-id', activeId);
     }
-    iframe.src = `https://www.youtube-nocookie.com/embed/${activeId}?autoplay=1&rel=0&loop=1`;
+    iframe.src = `https://www.youtube.com/embed/${activeId}?autoplay=1&playsinline=1&rel=0&loop=1&enablejsapi=1`;
 
     if (choicePills) {
-      const pillsHtml = [
-        ...shortsList.map(s => {
-          const isAct = s.id === activeId;
-          return `
-            <button onclick="window.switchOverlayShorts('${s.id}', '${escapeStr(s.title)}')" class="px-2.5 py-1 rounded-lg text-xs font-bold transition flex items-center gap-1.5 ${isAct ? 'bg-emerald-600 text-white shadow-md' : 'bg-slate-800 text-slate-300 hover:text-white border border-slate-700'} cursor-pointer shrink-0">
-              <i class="fa-solid fa-mobile-screen text-emerald-400"></i>
-              <span>${s.label || s.title}</span>
-            </button>
-          `;
-        }),
-        ...(social?.tiktok || []).map(t => `
-          <button onclick="window.setOverlayMediaMode('tiktok', '${t.id}')" class="px-2.5 py-1 rounded-lg text-xs font-bold transition flex items-center gap-1.5 bg-slate-800 text-pink-300 hover:text-white border border-pink-800/60 cursor-pointer shrink-0" title="Προβολή TikTok Hub">
-            <i class="fa-brands fa-tiktok text-pink-400"></i>
-            <span>${t.label || 'TikTok Hub'}</span>
-          </button>
-        `),
-        ...(social?.instagram || []).map(ig => `
-          <button onclick="window.setOverlayMediaMode('instagram', '${ig.id}')" class="px-2.5 py-1 rounded-lg text-xs font-bold transition flex items-center gap-1.5 bg-slate-800 text-purple-300 hover:text-white border border-purple-800/60 cursor-pointer shrink-0" title="Προβολή Instagram Reels Hub">
-            <i class="fa-brands fa-instagram text-fuchsia-400"></i>
-            <span>${ig.label || 'Reels Hub'}</span>
-          </button>
-        `)
-      ].join('');
-      choicePills.innerHTML = pillsHtml;
-    }
-  } else if (currentOverlayMode === 'tiktok') {
-    iframe.classList.add('hidden');
-    iframe.src = '';
-
-    const social = getSocialMediaVideos(query, currentActiveVideoCityId);
-    const tts = social?.tiktok || [];
-    const activeId = specificId || currentOverlayTikTokId || (tts[0] && tts[0].id) || '7106594312292453637';
-    currentOverlayTikTokId = activeId;
-    const activeItem = tts.find(t => t.id === activeId) || { id: activeId, title: social?.name || query, label: 'TikTok Video' };
-
-    if (title) title.innerText = `📱 TikTok Hub: ${social?.name || query}`;
-    if (directLink) {
-      directLink.href = `https://www.tiktok.com/@tiktok/video/${activeId}`;
-      directLink.innerHTML = '<i class="fa-brands fa-tiktok text-pink-300"></i><span class="hidden sm:inline">TikTok App</span>';
-      directLink.className = 'px-2.5 py-1 rounded-lg bg-pink-700 hover:bg-pink-600 text-white text-xs font-bold transition flex items-center gap-1.5 shadow';
-    }
-
-    if (socialHubCard) {
-      socialHubCard.classList.remove('hidden');
-      socialHubCard.className = 'w-full h-full max-w-[380px] sm:max-w-[420px] rounded-2xl shadow-2xl bg-gradient-to-b from-slate-900 via-slate-950 to-black border border-pink-500/50 shadow-pink-950/40 p-5 flex flex-col justify-between items-center text-center mx-auto overflow-y-auto animate-fade-in';
-      socialHubCard.innerHTML = `
-        <div class="w-full flex flex-col items-center pt-2">
-          <div class="w-16 h-16 rounded-full bg-black border-2 border-pink-500 flex items-center justify-center shadow-lg shadow-pink-500/30 text-3xl text-pink-400 mb-3 animate-pulse">
-            <i class="fa-brands fa-tiktok"></i>
-          </div>
-          <span class="px-3 py-0.5 rounded-full text-[10px] font-black bg-pink-950 text-pink-300 border border-pink-700/60 uppercase tracking-widest">
-            TIKTOK EXPERIENCE
-          </span>
-          <h3 class="text-base sm:text-lg font-bold text-white mt-3 leading-snug px-2">
-            ${activeItem.title}
-          </h3>
-          <p class="text-xs text-slate-400 mt-1 flex items-center gap-1.5 justify-center">
-            <i class="fa-solid fa-location-dot text-pink-400"></i>
-            <span>${social?.name || query}</span>
-          </p>
-
-          <div class="my-4 p-3.5 rounded-xl bg-slate-900/90 border border-slate-800 text-left w-full shadow-inner">
-            <div class="flex items-center gap-2 text-pink-400 text-xs font-bold mb-1.5">
-              <i class="fa-solid fa-shield-halved"></i>
-              <span>Προστασία Εφαρμογής TikTok (App Policy)</span>
-            </div>
-            <p class="text-[11px] text-slate-300 leading-relaxed">
-              Το TikTok απαγορεύει στα προγράμματα περιήγησης κινητών (Chrome κλπ) να αναπαράγουν βίντεο μέσα από πλαίσιο τρίτης σελίδας (εμφανίζοντας σφάλμα <em>"Player authentication failed"</em>).
-            </p>
-          </div>
-        </div>
-
-        <div class="w-full space-y-2.5 pb-2">
-          <a href="https://www.tiktok.com/@tiktok/video/${activeId}" target="_blank" rel="noopener noreferrer" class="w-full py-3 px-4 rounded-xl bg-gradient-to-r from-pink-600 via-rose-600 to-pink-500 hover:opacity-95 text-white font-bold text-sm shadow-lg shadow-pink-950/60 flex items-center justify-center gap-2 transition cursor-pointer">
-            <i class="fa-brands fa-tiktok text-lg"></i>
-            <span>Άνοιγμα στο TikTok App / Web</span>
-            <i class="fa-solid fa-arrow-up-right-from-square text-xs opacity-75"></i>
-          </a>
-
-          <button onclick="window.setOverlayMediaMode('shorts')" class="w-full py-2.5 px-4 rounded-xl bg-emerald-950/60 hover:bg-emerald-900/80 text-emerald-300 hover:text-white border border-emerald-600/50 font-bold text-xs flex items-center justify-center gap-2 transition cursor-pointer shadow">
+      choicePills.innerHTML = shortsList.map(s => {
+        const isAct = s.id === activeId;
+        return `
+          <button onclick="window.switchOverlayShorts('${s.id}', '${escapeStr(s.title)}')" class="px-2.5 py-1 rounded-lg text-xs font-bold transition flex items-center gap-1.5 ${isAct ? 'bg-emerald-600 text-white shadow-md' : 'bg-slate-800 text-slate-300 hover:text-white border border-slate-700'} cursor-pointer shrink-0">
             <i class="fa-solid fa-mobile-screen text-emerald-400"></i>
-            <span>Παίξε Κάθετο Βίντεο ΕΔΩ (Shorts 9:16)</span>
+            <span>${s.label || s.title}</span>
           </button>
-
-          <button onclick="window.forceLoadEmbedIframe('tiktok', '${activeId}')" class="text-[10px] text-slate-500 hover:text-slate-400 underline pt-1 block mx-auto cursor-pointer">
-            Δοκιμή εξαναγκασμένης φόρτωσης στο πλαίσιο (Μόνο Desktop)
-          </button>
-        </div>
-      `;
+        `;
+      }).join('');
     }
-
-    if (choicePills) {
-      const pillsHtml = [
-        ...tts.map(t => {
-          const isAct = t.id === activeId;
-          return `
-            <button onclick="window.switchOverlayTikTok('${t.id}', '${escapeStr(t.title)}')" class="px-2.5 py-1 rounded-lg text-xs font-bold transition flex items-center gap-1.5 ${isAct ? 'bg-pink-600 text-white shadow-md' : 'bg-slate-800 text-slate-300 hover:text-white border border-slate-700'} cursor-pointer shrink-0">
-              <i class="fa-brands fa-tiktok text-pink-400"></i>
-              <span>${t.label || t.title}</span>
-            </button>
-          `;
-        }),
-        ...(social?.instagram || []).map(ig => `
-          <button onclick="window.setOverlayMediaMode('instagram', '${ig.id}')" class="px-2.5 py-1 rounded-lg text-xs font-bold transition flex items-center gap-1.5 bg-slate-800 text-purple-300 hover:text-white border border-purple-800/60 cursor-pointer shrink-0" title="Προβολή στο Instagram Reels">
-            <i class="fa-brands fa-instagram text-fuchsia-400"></i>
-            <span>${ig.label || 'Reels'}</span>
-          </button>
-        `),
-        ...(social?.shorts || []).map(s => `
-          <button onclick="window.setOverlayMediaMode('shorts', '${s.id}')" class="px-2.5 py-1 rounded-lg text-xs font-bold transition flex items-center gap-1.5 bg-emerald-950/70 text-emerald-300 hover:text-white border border-emerald-700/60 cursor-pointer shrink-0" title="Παίξε Κάθετο Βίντεο ΕΔΩ">
-            <i class="fa-solid fa-mobile-screen text-emerald-400"></i>
-            <span>${s.label || 'Shorts'}</span>
-          </button>
-        `)
-      ].join('');
-      choicePills.innerHTML = pillsHtml;
-    }
-  } else if (currentOverlayMode === 'instagram') {
-    iframe.classList.add('hidden');
-    iframe.src = '';
-
-    const social = getSocialMediaVideos(query, currentActiveVideoCityId);
-    const igs = social?.instagram || [];
-    const activeId = specificId || currentOverlayInstagramId || (igs[0] && igs[0].id) || 'C8qFmP_Nn9K';
-    currentOverlayInstagramId = activeId;
-    const activeItem = igs.find(ig => ig.id === activeId) || { id: activeId, title: social?.name || query, label: 'Instagram Reel' };
-
-    if (title) title.innerText = `📸 Instagram Reels: ${social?.name || query}`;
-    if (directLink) {
-      directLink.href = `https://www.instagram.com/reel/${activeId}/`;
-      directLink.innerHTML = '<i class="fa-brands fa-instagram text-fuchsia-300"></i><span class="hidden sm:inline">Reel App</span>';
-      directLink.className = 'px-2.5 py-1 rounded-lg bg-gradient-to-r from-purple-700 to-pink-700 hover:from-purple-600 hover:to-pink-600 text-white text-xs font-bold transition flex items-center gap-1.5 shadow';
-    }
-
-    if (socialHubCard) {
-      socialHubCard.classList.remove('hidden');
-      socialHubCard.className = 'w-full h-full max-w-[380px] sm:max-w-[420px] rounded-2xl shadow-2xl bg-gradient-to-b from-slate-900 via-slate-950 to-black border border-purple-500/50 shadow-purple-950/40 p-5 flex flex-col justify-between items-center text-center mx-auto overflow-y-auto animate-fade-in';
-      socialHubCard.innerHTML = `
-        <div class="w-full flex flex-col items-center pt-2">
-          <div class="w-16 h-16 rounded-full bg-gradient-to-tr from-amber-500 via-pink-500 to-purple-600 flex items-center justify-center shadow-lg shadow-purple-500/30 text-3xl text-white mb-3 animate-pulse">
-            <i class="fa-brands fa-instagram"></i>
-          </div>
-          <span class="px-3 py-0.5 rounded-full text-[10px] font-black bg-purple-950 text-purple-300 border border-purple-700/60 uppercase tracking-widest">
-            INSTAGRAM REEL
-          </span>
-          <h3 class="text-base sm:text-lg font-bold text-white mt-3 leading-snug px-2">
-            ${activeItem.title}
-          </h3>
-          <p class="text-xs text-slate-400 mt-1 flex items-center gap-1.5 justify-center">
-            <i class="fa-solid fa-location-dot text-purple-400"></i>
-            <span>${social?.name || query}</span>
-          </p>
-
-          <div class="my-4 p-3.5 rounded-xl bg-slate-900/90 border border-slate-800 text-left w-full shadow-inner">
-            <div class="flex items-center gap-2 text-purple-400 text-xs font-bold mb-1.5">
-              <i class="fa-solid fa-shield-halved"></i>
-              <span>Προστασία Instagram (Meta DRM Policy)</span>
-            </div>
-            <p class="text-[11px] text-slate-300 leading-relaxed">
-              Η Meta δεν επιτρέπει σε προγράμματα περιήγησης κινητών να προβάλλουν Reels σε τρίτες ιστοσελίδες χωρίς σύνδεση ("Ο σύνδεσμος μπορεί να μην λειτουργεί").
-            </p>
-          </div>
-        </div>
-
-        <div class="w-full space-y-2.5 pb-2">
-          <a href="https://www.instagram.com/reel/${activeId}/" target="_blank" rel="noopener noreferrer" class="w-full py-3 px-4 rounded-xl bg-gradient-to-r from-purple-600 via-pink-600 to-amber-600 hover:opacity-95 text-white font-bold text-sm shadow-lg shadow-purple-950/60 flex items-center justify-center gap-2 transition cursor-pointer">
-            <i class="fa-brands fa-instagram text-lg"></i>
-            <span>Άνοιγμα στο Instagram Reel App</span>
-            <i class="fa-solid fa-arrow-up-right-from-square text-xs opacity-75"></i>
-          </a>
-
-          <button onclick="window.setOverlayMediaMode('shorts')" class="w-full py-2.5 px-4 rounded-xl bg-emerald-950/60 hover:bg-emerald-900/80 text-emerald-300 hover:text-white border border-emerald-600/50 font-bold text-xs flex items-center justify-center gap-2 transition cursor-pointer shadow">
-            <i class="fa-solid fa-mobile-screen text-emerald-400"></i>
-            <span>Παίξε Κάθετο Βίντεο ΕΔΩ (Shorts 9:16)</span>
-          </button>
-
-          <button onclick="window.forceLoadEmbedIframe('instagram', '${activeId}')" class="text-[10px] text-slate-500 hover:text-slate-400 underline pt-1 block mx-auto cursor-pointer">
-            Δοκιμή εξαναγκασμένης φόρτωσης στο πλαίσιο (Μόνο Desktop)
-          </button>
-        </div>
-      `;
-    }
-
-    if (choicePills) {
-      const pillsHtml = [
-        ...igs.map(ig => {
-          const isAct = ig.id === activeId;
-          return `
-            <button onclick="window.switchOverlayInstagram('${ig.id}', '${escapeStr(ig.title)}')" class="px-2.5 py-1 rounded-lg text-xs font-bold transition flex items-center gap-1.5 ${isAct ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white shadow-md' : 'bg-slate-800 text-slate-300 hover:text-white border border-slate-700'} cursor-pointer shrink-0">
-              <i class="fa-brands fa-instagram text-fuchsia-400"></i>
-              <span>${ig.label || ig.title}</span>
-            </button>
-          `;
-        }),
-        ...(social?.tiktok || []).map(t => `
-          <button onclick="window.setOverlayMediaMode('tiktok', '${t.id}')" class="px-2.5 py-1 rounded-lg text-xs font-bold transition flex items-center gap-1.5 bg-slate-800 text-pink-300 hover:text-white border border-pink-800/60 cursor-pointer shrink-0" title="Προβολή στο TikTok Hub">
-            <i class="fa-brands fa-tiktok text-pink-400"></i>
-            <span>${t.label || 'TikTok'}</span>
-          </button>
-        `),
-        ...(social?.shorts || []).map(s => `
-          <button onclick="window.setOverlayMediaMode('shorts', '${s.id}')" class="px-2.5 py-1 rounded-lg text-xs font-bold transition flex items-center gap-1.5 bg-emerald-950/70 text-emerald-300 hover:text-white border border-emerald-700/60 cursor-pointer shrink-0" title="Παίξε Κάθετο Βίντεο ΕΔΩ">
-            <i class="fa-solid fa-mobile-screen text-emerald-400"></i>
-            <span>${s.label || 'Shorts'}</span>
-          </button>
-        `)
-      ].join('');
-      choicePills.innerHTML = pillsHtml;
-    }
-  } else if (currentOverlayMode === 'web') {
-    if (socialHubCard) { socialHubCard.classList.add('hidden'); socialHubCard.innerHTML = ''; }
-    iframe.classList.remove('hidden');
-    iframe.className = 'w-full h-full max-w-5xl rounded-xl shadow-2xl border border-slate-800 transition-all duration-300';
-    if (title) title.innerText = `🌐 Web Search: ${query}`;
-    if (directLink) {
-      directLink.href = `https://www.bing.com/search?q=${encodeURIComponent(query)}`;
-      directLink.innerHTML = '<i class="fa-solid fa-globe"></i><span class="hidden sm:inline">Web Search</span>';
-      directLink.className = 'px-2.5 py-1 rounded-lg bg-sky-600 hover:bg-sky-500 text-white text-xs font-bold transition flex items-center gap-1.5 shadow';
-    }
-    iframe.src = `https://www.bing.com/search?q=${encodeURIComponent(query)}`;
   } else if (currentOverlayMode === 'videos') {
-    if (socialHubCard) { socialHubCard.classList.add('hidden'); socialHubCard.innerHTML = ''; }
-    iframe.classList.remove('hidden');
-    iframe.className = 'w-full h-full max-w-5xl rounded-xl shadow-2xl border border-slate-800 transition-all duration-300';
-    if (title) title.innerText = `🎥 Όλα τα Βίντεο: ${query}`;
-    if (directLink) {
-      directLink.href = `https://www.bing.com/videos/search?q=${encodeURIComponent(query)}`;
-      directLink.innerHTML = '<i class="fa-solid fa-film"></i><span class="hidden sm:inline">Βίντεο</span>';
-      directLink.className = 'px-2.5 py-1 rounded-lg bg-amber-600 hover:bg-amber-500 text-white text-xs font-bold transition flex items-center gap-1.5 shadow';
+    iframe.classList.add('hidden');
+    iframe.src = '';
+    if (gallery) {
+      gallery.classList.remove('hidden');
+      renderAllVideosGallery(query, 'all');
     }
-    iframe.src = `https://www.bing.com/videos/search?q=${encodeURIComponent(query)}`;
+    if (title) title.innerText = `🎥 Όλα τα Βίντεο: ${query || 'Εξερεύνηση'}`;
+    if (choicePills) {
+      choicePills.innerHTML = `
+        <span class="text-[11px] text-amber-400 font-bold flex items-center gap-1">
+          <i class="fa-solid fa-film"></i> Επιλέξτε βίντεο για άμεση αναπαραγωγή στο Iframe:
+        </span>
+      `;
+    }
+  }
+}
+
+export function renderAllVideosGallery(query = '', categoryFilter = 'all') {
+  const gallery = document.getElementById('allVideosGalleryView');
+  if (!gallery) return;
+
+  const q = (query || '').toLowerCase().trim();
+  const curCity = currentActiveVideoCityId;
+
+  // Collect videos from CITY_VIDEOS, POI_VIDEOS_REGISTRY, GASTRO_RECIPE_VIDEOS, and SHORTS
+  const list = [];
+
+  // 1. Current City tours (highlighted first)
+  if (curCity && CITY_VIDEOS[curCity]) {
+    const entry = CITY_VIDEOS[curCity];
+    ['drone', 'walking', 'guide', 'live'].forEach(type => {
+      if (entry[type] && entry[type].youtubeId) {
+        list.push({
+          cityId: curCity,
+          cityName: entry.cityName,
+          type: type,
+          title: entry[type].title || `${entry.cityName} ${type}`,
+          youtubeId: entry[type].youtubeId,
+          badgeLabel: type === 'drone' ? 'DRONE 4K' : (type === 'walking' ? 'WALKING 4K' : (type === 'live' ? 'LIVE CAM' : 'ΑΞΙΟΘΕΑΤΑ')),
+          badgeClass: type === 'live' ? 'bg-red-600 text-white' : (type === 'drone' ? 'bg-sky-600 text-white' : 'bg-emerald-600 text-white')
+        });
+      }
+    });
+  }
+
+  // 2. Search query or Featured city tours from CITY_VIDEOS
+  const allCityKeys = Object.keys(CITY_VIDEOS);
+  for (const cKey of allCityKeys) {
+    if (cKey === curCity) continue;
+    const entry = CITY_VIDEOS[cKey];
+    const match = !q || cKey.includes(q) || (entry.cityName && entry.cityName.toLowerCase().includes(q));
+    if (match) {
+      ['drone', 'walking', 'guide', 'live'].forEach(type => {
+        if (entry[type] && entry[type].youtubeId) {
+          list.push({
+            cityId: cKey,
+            cityName: entry.cityName,
+            type: type,
+            title: entry[type].title || `${entry.cityName} ${type}`,
+            youtubeId: entry[type].youtubeId,
+            badgeLabel: type === 'drone' ? 'DRONE 4K' : (type === 'walking' ? 'WALKING 4K' : (type === 'live' ? 'LIVE CAM' : 'ΑΞΙΟΘΕΑΤΑ')),
+            badgeClass: type === 'live' ? 'bg-red-600 text-white' : (type === 'drone' ? 'bg-sky-600 text-white' : 'bg-emerald-600 text-white')
+          });
+        }
+      });
+    }
+    if (list.length >= 60) break;
+  }
+
+  // 3. Shorts from registry
+  if (SOCIAL_MEDIA_REGISTRY) {
+    Object.entries(SOCIAL_MEDIA_REGISTRY).forEach(([key, val]) => {
+      if (val && val.shorts) {
+        val.shorts.forEach(s => {
+          if (!q || key.includes(q) || (val.name && val.name.toLowerCase().includes(q)) || s.title.toLowerCase().includes(q)) {
+            list.push({
+              cityId: '',
+              cityName: val.name || key,
+              type: 'shorts',
+              title: s.title,
+              youtubeId: s.id,
+              badgeLabel: 'SHORTS',
+              badgeClass: 'bg-emerald-600 text-white'
+            });
+          }
+        });
+      }
+    });
+  }
+
+  // 4. Recipes from GASTRO_RECIPE_VIDEOS
+  if (GASTRO_RECIPE_VIDEOS) {
+    Object.entries(GASTRO_RECIPE_VIDEOS).forEach(([dish, info]) => {
+      if (info && info.youtubeId) {
+        if (!q || dish.includes(q) || (info.title && info.title.toLowerCase().includes(q))) {
+          list.push({
+            cityId: '',
+            cityName: dish,
+            type: 'gastro',
+            title: info.title || dish,
+            youtubeId: info.youtubeId,
+            badgeLabel: 'ΣΥΝΤΑΓΗ',
+            badgeClass: 'bg-amber-600 text-white'
+          });
+        }
+      }
+    });
+  }
+
+  // Filter by categoryFilter
+  const filtered = categoryFilter === 'all' ? list : list.filter(item => {
+    if (categoryFilter === 'drone') return item.type === 'drone';
+    if (categoryFilter === 'walking') return item.type === 'walking';
+    if (categoryFilter === 'shorts') return item.type === 'shorts';
+    if (categoryFilter === 'live') return item.type === 'live';
+    if (categoryFilter === 'gastro') return item.type === 'gastro';
+    return true;
+  });
+
+  const categories = [
+    { id: 'all', label: 'Όλα', icon: 'fa-globe' },
+    { id: 'drone', label: 'Drone 4K', icon: 'fa-helicopter' },
+    { id: 'walking', label: 'Walking 4K', icon: 'fa-person-walking' },
+    { id: 'shorts', label: 'Shorts', icon: 'fa-mobile-screen' },
+    { id: 'live', label: 'Live Cam', icon: 'fa-tower-broadcast' },
+    { id: 'gastro', label: 'Συνταγές', icon: 'fa-utensils' }
+  ];
+
+  gallery.innerHTML = `
+    <!-- Gallery Header & Categories -->
+    <div class="flex flex-wrap items-center justify-between gap-2 pb-3 mb-3 border-b border-slate-800 shrink-0">
+      <div class="flex items-center gap-2">
+        <span class="px-2.5 py-1 rounded-lg bg-amber-500/20 text-amber-300 border border-amber-500/40 text-xs font-bold flex items-center gap-1.5">
+          <i class="fa-solid fa-film text-amber-400"></i>
+          <span>Βιβλιοθήκη Βίντεο (${filtered.length})</span>
+        </span>
+        <span class="text-[11px] text-slate-400 hidden sm:inline">Κάντε κλικ σε οποιοδήποτε βίντεο για άμεση αναπαραγωγή στο Iframe</span>
+      </div>
+
+      <!-- Category Filter Pills -->
+      <div class="flex items-center gap-1 overflow-x-auto py-0.5">
+        ${categories.map(cat => {
+          const isAct = categoryFilter === cat.id;
+          return `
+            <button onclick="window.filterAllVideosGallery('${escapeStr(q)}', '${cat.id}')" class="px-2.5 py-1 rounded-lg text-xs font-bold transition flex items-center gap-1 cursor-pointer shrink-0 ${isAct ? 'bg-amber-500 text-slate-950 shadow-md' : 'bg-slate-800 text-slate-300 hover:text-white border border-slate-700'}">
+              <i class="fa-solid ${cat.icon}"></i>
+              <span>${cat.label}</span>
+            </button>
+          `;
+        }).join('')}
+      </div>
+    </div>
+
+    <!-- Gallery Grid (Scrollable) -->
+    <div class="flex-1 overflow-y-auto pr-1">
+      ${filtered.length === 0 ? `
+        <div class="h-64 flex flex-col items-center justify-center text-center p-6 text-slate-400">
+          <i class="fa-solid fa-film text-4xl text-slate-600 mb-2"></i>
+          <p class="text-sm font-semibold text-slate-300">Δεν βρέθηκαν βίντεο για την κατηγορία.</p>
+          <p class="text-xs text-slate-500 mt-1">Δοκιμάστε άλλη κατηγορία ή αναζήτηση με όνομα πόλης.</p>
+        </div>
+      ` : `
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3">
+          ${filtered.map(item => `
+            <div onclick="window.playVideoInIframe('${item.youtubeId}', '${escapeStr(item.title)}', '${item.type}')" class="bg-slate-900/90 hover:bg-slate-850 border border-slate-800 hover:border-amber-500/60 rounded-xl overflow-hidden transition cursor-pointer flex flex-col group shadow-lg">
+              <div class="relative w-full aspect-video bg-slate-950 overflow-hidden">
+                <img src="https://i.ytimg.com/vi/${item.youtubeId}/mqdefault.jpg" alt="${item.title}" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" loading="lazy" />
+                <span class="absolute top-2 left-2 px-1.5 py-0.5 rounded text-[9px] font-black ${item.badgeClass} shadow">
+                  ${item.badgeLabel}
+                </span>
+                <div class="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition duration-200">
+                  <div class="w-10 h-10 rounded-full bg-red-600 text-white flex items-center justify-center text-sm shadow-2xl group-hover:scale-110 transition">
+                    <i class="fa-solid fa-play ml-0.5"></i>
+                  </div>
+                </div>
+              </div>
+              <div class="p-2.5 flex-1 flex flex-col justify-between">
+                <div class="text-xs font-bold text-slate-100 group-hover:text-amber-300 line-clamp-2 leading-snug">
+                  ${item.title}
+                </div>
+                <div class="text-[10px] text-slate-400 mt-2 pt-1.5 border-t border-slate-800/80 flex items-center justify-between">
+                  <span class="truncate max-w-[140px] text-slate-300 font-medium">📍 ${item.cityName}</span>
+                  <span class="text-amber-400 font-bold flex items-center gap-1 shrink-0"><i class="fa-solid fa-play text-[9px]"></i> Iframe Play</span>
+                </div>
+              </div>
+            </div>
+          `).join('')}
+        </div>
+      `}
+    </div>
+  `;
+}
+
+export function filterAllVideosGallery(query, category) {
+  renderAllVideosGallery(query, category);
+}
+
+export function playVideoInIframe(youtubeId, titleText = '', type = 'drone') {
+  if (type === 'shorts') {
+    switchOverlayShorts(youtubeId, titleText);
+  } else {
+    switchOverlayVideo(youtubeId, 0, titleText);
   }
 }
 
 export function switchOverlayShorts(shortId, titleText = '') {
   currentOverlayShortsId = shortId;
   const iframe = document.getElementById('mapVideoIframe');
+  const gallery = document.getElementById('allVideosGalleryView');
   const title = document.getElementById('videoOverlayTitle');
   const directLink = document.getElementById('videoDirectLink');
 
+  if (gallery) gallery.classList.add('hidden');
   if (iframe && shortId) {
-    iframe.src = `https://www.youtube-nocookie.com/embed/${shortId}?autoplay=1&rel=0&loop=1`;
+    iframe.classList.remove('hidden');
+    iframe.className = 'w-full h-full max-w-[380px] sm:max-w-[420px] rounded-2xl shadow-2xl border border-emerald-500/50 bg-black transition-all duration-300 mx-auto';
+    iframe.src = `https://www.youtube.com/embed/${shortId}?autoplay=1&playsinline=1&rel=0&loop=1&enablejsapi=1`;
   }
   if (title && titleText) title.innerText = `📱 Κάθετο Βίντεο: ${titleText}`;
-  if (directLink) directLink.href = `https://www.youtube.com/shorts/${shortId}`;
-
-  const pills = document.querySelectorAll('#videoChoicePills button');
-  pills.forEach(btn => {
-    if (btn.getAttribute('onclick')?.includes(shortId)) {
-      btn.className = 'px-2.5 py-1 rounded-lg text-xs font-bold transition flex items-center gap-1.5 bg-emerald-600 text-white shadow-md cursor-pointer shrink-0';
-    } else {
-      btn.className = 'px-2.5 py-1 rounded-lg text-xs font-bold transition flex items-center gap-1.5 bg-slate-800 text-slate-300 hover:text-white border border-slate-700 cursor-pointer shrink-0';
-    }
-  });
-}
-
-export function switchOverlayTikTok(tiktokId, titleText = '') {
-  currentOverlayTikTokId = tiktokId;
-  setOverlayMediaMode('tiktok', tiktokId);
-}
-
-export function switchOverlayInstagram(reelId, titleText = '') {
-  currentOverlayInstagramId = reelId;
-  setOverlayMediaMode('instagram', reelId);
-}
-
-export function forceLoadEmbedIframe(platform, id) {
-  const iframe = document.getElementById('mapVideoIframe');
-  const socialHubCard = document.getElementById('socialHubCard');
-  if (socialHubCard) socialHubCard.classList.add('hidden');
-  if (iframe) {
-    iframe.classList.remove('hidden');
-    iframe.className = 'w-full h-full max-w-[380px] sm:max-w-[420px] rounded-2xl shadow-2xl border border-slate-700 bg-black transition-all duration-300 mx-auto';
-    if (platform === 'tiktok') {
-      iframe.src = `https://www.tiktok.com/player/v1/${id}?embed_from=oembed&music_info=1&description=1&autoplay=1`;
-    } else if (platform === 'instagram') {
-      iframe.src = `https://www.instagram.com/reel/${id}/embed/`;
-    }
+  if (directLink) {
+    directLink.setAttribute('data-youtube-id', shortId);
   }
+
+  setOverlayMediaMode('shorts', shortId);
 }
 
 export function switchOverlayVideo(youtubeId, startSec = 0, titleText = '') {
   const iframe = document.getElementById('mapVideoIframe');
+  const gallery = document.getElementById('allVideosGalleryView');
   const title = document.getElementById('videoOverlayTitle');
   const directLink = document.getElementById('videoDirectLink');
 
@@ -536,13 +483,15 @@ export function switchOverlayVideo(youtubeId, startSec = 0, titleText = '') {
   if (titleText) currentOverlayTitle = titleText;
   currentOverlayMode = 'player';
 
+  if (gallery) gallery.classList.add('hidden');
+  iframe.classList.remove('hidden');
+  iframe.className = 'w-full h-full max-w-5xl rounded-xl shadow-2xl border border-slate-800 transition-all duration-300';
+
   if (title && titleText) title.innerText = titleText;
   if (directLink) {
-    directLink.href = `https://www.youtube.com/watch?v=${youtubeId}${startSec > 0 ? `&t=${startSec}s` : ''}`;
-    directLink.innerHTML = '<i class="fa-brands fa-youtube"></i><span class="hidden sm:inline">YouTube</span>';
-    directLink.className = 'px-2.5 py-1 rounded-lg bg-red-600 hover:bg-red-500 text-white text-xs font-bold transition flex items-center gap-1.5 shadow';
+    directLink.setAttribute('data-youtube-id', youtubeId);
   }
-  iframe.src = `https://www.youtube-nocookie.com/embed/${youtubeId}?autoplay=1&rel=0${startSec > 0 ? `&start=${startSec}` : ''}`;
+  iframe.src = `https://www.youtube.com/embed/${youtubeId}?autoplay=1&playsinline=1&rel=0&modestbranding=1&enablejsapi=1${startSec > 0 ? `&start=${startSec}` : ''}`;
 
   setOverlayMediaMode('player');
 
@@ -557,6 +506,17 @@ export function switchOverlayVideo(youtubeId, startSec = 0, titleText = '') {
   });
 }
 
+export function reloadCurrentVideoIframe() {
+  const iframe = document.getElementById('mapVideoIframe');
+  if (iframe && iframe.src) {
+    const currentSrc = iframe.src;
+    iframe.src = '';
+    setTimeout(() => {
+      iframe.src = currentSrc;
+    }, 50);
+  }
+}
+
 export function submitOverlayVideoSearch() {
   const input = document.getElementById('videoSearchInput');
   if (!input) return;
@@ -565,34 +525,15 @@ export function submitOverlayVideoSearch() {
 
   currentOverlayQuery = raw;
 
-  // 1. Check if user pasted a TikTok URL or 15-22 digit TikTok video ID
-  const ttMatch = raw.match(/tiktok\.com\/(?:@[\w.-]+\/video\/|v\/)?(\d{15,22})/i);
-  if (ttMatch || /^\d{15,22}$/.test(raw)) {
-    const tid = ttMatch ? ttMatch[1] : raw;
-    currentOverlayTikTokId = tid;
-    setOverlayMediaMode('tiktok', tid);
-    return;
-  }
-
-  // 2. Check if user pasted an Instagram Reel or Post URL
-  const igMatch = raw.match(/instagram\.com\/(?:reel|p)\/([\w-]+)/i);
-  if (igMatch) {
-    const igId = igMatch[1];
-    currentOverlayInstagramId = igId;
-    setOverlayMediaMode('instagram', igId);
-    return;
-  }
-
-  // 3. Check if user pasted a YouTube Shorts URL
+  // 1. Check if user pasted a YouTube Shorts URL
   const shortsMatch = raw.match(/youtube\.com\/shorts\/([\w-]{11})/i);
   if (shortsMatch) {
     const sId = shortsMatch[1];
-    currentOverlayShortsId = sId;
-    setOverlayMediaMode('shorts', sId);
+    switchOverlayShorts(sId, `📱 Shorts: ${sId}`);
     return;
   }
 
-  // 4. Check if it's a YouTube URL or 11-char ID
+  // 2. Check if it's a YouTube URL or 11-char ID
   let ytId = null;
   const urlMatch = raw.match(/(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))([\w-]{11})/);
   if (urlMatch) {
@@ -606,31 +547,7 @@ export function submitOverlayVideoSearch() {
     return;
   }
 
-  // 5. If currently in 'shorts' mode, re-run
-  if (currentOverlayMode === 'shorts') {
-    setOverlayMediaMode('shorts');
-    return;
-  }
-
-  // 6. If currently in 'tiktok' mode, find best matching TikTok
-  if (currentOverlayMode === 'tiktok') {
-    setOverlayMediaMode('tiktok');
-    return;
-  }
-
-  // 7. If currently in 'instagram' mode, find best matching Instagram Reel
-  if (currentOverlayMode === 'instagram') {
-    setOverlayMediaMode('instagram');
-    return;
-  }
-
-  // 8. If currently in 'web' or 'videos' mode, re-run directly inside iframe!
-  if (currentOverlayMode === 'web' || currentOverlayMode === 'videos') {
-    setOverlayMediaMode(currentOverlayMode);
-    return;
-  }
-
-  // 7. Check if query matches our gastro or POI registry
+  // 3. Check if query matches our gastro or POI registry
   const gastro = getGastroRecipeVideo(raw, '');
   if (gastro && gastro.youtubeId) {
     openGastroVideo(raw);
@@ -643,8 +560,15 @@ export function submitOverlayVideoSearch() {
     return;
   }
 
-  // Seamless embedded in-app search: instead of opening external window, switch to Web search directly in iframe!
-  setOverlayMediaMode('web');
+  // 4. Check if query matches a city directly
+  const cMatch = Object.keys(CITY_VIDEOS).find(k => k === raw.toLowerCase() || (CITY_VIDEOS[k].cityName && CITY_VIDEOS[k].cityName.toLowerCase() === raw.toLowerCase()));
+  if (cMatch) {
+    openCityVideo(cMatch);
+    return;
+  }
+
+  // 5. In-App Video Browser / Search: render interactive gallery matching query inside iframe container!
+  setOverlayMediaMode('videos');
 }
 
 export function openPoiVideo(poiTitle, cityId = '', explicitStart = null) {
@@ -708,8 +632,10 @@ export function openPoiVideo(poiTitle, cityId = '', explicitStart = null) {
   currentOverlayMode = 'player';
 
   if (title) title.innerText = videoTitle;
-  if (directLink) directLink.href = `https://www.youtube.com/watch?v=${info.youtubeId}${startSec > 0 ? `&t=${startSec}s` : ''}`;
-  iframe.src = `https://www.youtube-nocookie.com/embed/${info.youtubeId}?autoplay=1&rel=0${startSec > 0 ? `&start=${startSec}` : ''}`;
+  if (directLink) {
+    directLink.setAttribute('data-youtube-id', info.youtubeId);
+  }
+  iframe.src = `https://www.youtube.com/embed/${info.youtubeId}?autoplay=1&playsinline=1&rel=0&modestbranding=1&enablejsapi=1${startSec > 0 ? `&start=${startSec}` : ''}`;
 
   setOverlayMediaMode('player');
 
@@ -816,8 +742,10 @@ export function openGastroVideo(dishTitle, cityName = '') {
   currentOverlayMode = 'player';
 
   if (title) title.innerText = videoTitle;
-  if (directLink) directLink.href = `https://www.youtube.com/watch?v=${primaryYtId}`;
-  iframe.src = `https://www.youtube-nocookie.com/embed/${primaryYtId}?autoplay=1&rel=0`;
+  if (directLink) {
+    directLink.setAttribute('data-youtube-id', primaryYtId);
+  }
+  iframe.src = `https://www.youtube.com/embed/${primaryYtId}?autoplay=1&playsinline=1&rel=0&modestbranding=1&enablejsapi=1`;
 
   setOverlayMediaMode('player');
 
@@ -871,22 +799,20 @@ export function switchCityVideoType(type) {
 export function closeMapVideoOverlay() {
   const overlay = document.getElementById('mapVideoOverlay');
   const iframe = document.getElementById('mapVideoIframe');
-  const socialHubCard = document.getElementById('socialHubCard');
+  const gallery = document.getElementById('allVideosGalleryView');
   if (iframe) {
     iframe.src = '';
     iframe.className = 'w-full h-full max-w-5xl rounded-xl shadow-2xl border border-slate-800 transition-all duration-300';
     iframe.classList.remove('hidden');
   }
-  if (socialHubCard) {
-    socialHubCard.classList.add('hidden');
-    socialHubCard.innerHTML = '';
+  if (gallery) {
+    gallery.classList.add('hidden');
+    gallery.innerHTML = '';
   }
   if (overlay) overlay.classList.add('hidden');
   currentActiveVideoCityId = null;
   currentOverlayMode = 'player';
   currentOverlayShortsId = '';
-  currentOverlayTikTokId = '';
-  currentOverlayInstagramId = '';
   syncMapFloatingControlsVisibility();
 }
 
@@ -904,8 +830,10 @@ export function openLiveCamModal(youtubeId, titleText = 'Ζωντανή Μετά
   closeDeepDiveOverlay();
 
   if (title) title.innerText = `🔴 Live Cam: ${titleText}`;
-  if (directLink) directLink.href = `https://www.youtube.com/watch?v=${youtubeId}`;
-  iframe.src = `https://www.youtube-nocookie.com/embed/${youtubeId}?autoplay=1&rel=0`;
+  if (directLink) {
+    directLink.setAttribute('data-youtube-id', youtubeId);
+  }
+  iframe.src = `https://www.youtube.com/embed/${youtubeId}?autoplay=1&playsinline=1&rel=0&modestbranding=1&enablejsapi=1`;
 
   if (typeSelector) typeSelector.classList.add('hidden');
 
