@@ -4,13 +4,13 @@
  * USA, Leaflet Map, Base Layers, UI Dossier, and Time Machine.
  */
 
-import { loadWorldData, loadCountryData, loadStateData } from './data-service.js?v=20261116_asia_final';
-import * as MapModule from './map.js?v=20261116_asia_final';
-import * as UIModule from './ui.js?v=20261116_asia_final';
-import * as TimeMachine from './time-machine.js?v=20261116_asia_final';
-import * as NavigatorModule from './navigator.js?v=20261116_asia_final';
-import * as GlobeModule from './globe-view.js?v=20261116_asia_final';
-import { US_STATES, CITY_TO_STATE } from './states-data.js?v=20261116_asia_final';
+import { loadWorldData, loadCountryData, loadStateData } from './data-service.js?v=20261117_timefix2';
+import * as MapModule from './map.js?v=20261117_timefix2';
+import * as UIModule from './ui.js?v=20261117_timefix2';
+import * as TimeMachine from './time-machine.js?v=20261117_timefix2';
+import * as NavigatorModule from './navigator.js?v=20261117_timefix2';
+import * as GlobeModule from './globe-view.js?v=20261117_timefix2';
+import { US_STATES, CITY_TO_STATE } from './states-data.js?v=20261117_timefix2';
 
 // Application State
 let worldData = null;
@@ -190,6 +190,7 @@ export function flyToWorld() {
 
   currentScope = 'world';
   currentCountryId = null;
+  currentStateId = null;
   currentCityId = null;
 
   UIModule.updateStatusBadge("Προβολή: Πλανήτης Γη (World Overview)");
@@ -224,6 +225,7 @@ export async function flyToCountry(countryId = 'greece') {
 
   currentScope = 'country';
   currentCountryId = countryId;
+  currentStateId = null;
   currentCityId = null;
 
   let dataset = countriesMap.get(countryId);
@@ -657,7 +659,7 @@ export async function flyToCity(cityId) {
   'onverwacht': 'suriname',
   'wageningen-sr': 'suriname',
 };
-    const targetCountry = cityToCountry[cityId];
+    const targetCountry = (NavigatorModule.CITY_TO_COUNTRY && NavigatorModule.CITY_TO_COUNTRY[cityId]) || cityToCountry[cityId];
     if (targetCountry && !countriesMap.has(targetCountry)) {
       try {
         const cData = await loadCountryData(targetCountry);
@@ -682,6 +684,7 @@ export async function flyToCity(cityId) {
   for (const [cId, cData] of countriesMap.entries()) {
     if (cData && cData.cities && cData.cities.some(c => c.id === cityId)) {
       currentCountryId = cId;
+      currentStateId = null;
       parent = cData.country;
       activeCities = cData.cities;
       break;
@@ -704,9 +707,18 @@ export async function flyToCity(cityId) {
     parent = massachusettsData.state;
     activeCities = massachusettsData.cities;
   }
+  if (!parent && NavigatorModule.CITY_TO_COUNTRY && NavigatorModule.CITY_TO_COUNTRY[cityId]) {
+    currentCountryId = NavigatorModule.CITY_TO_COUNTRY[cityId];
+    currentStateId = null;
+  }
 
-  city._countryId = currentCountryId;
-  city._stateId = currentStateId;
+  if (currentCountryId === 'usa') {
+    city._countryId = 'usa';
+    city._stateId = currentStateId;
+  } else {
+    city._countryId = currentCountryId;
+    city._stateId = null;
+  }
 
   UIModule.updateStatusBadge(`Πτήση: ${city.name} (${city.englishName})`);
   UIModule.updateBreadcrumbs('city', parent, city);

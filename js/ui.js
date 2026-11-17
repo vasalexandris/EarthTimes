@@ -4,10 +4,12 @@
  * Base Map Layer selector, Date display, Video Overlay, and Deep Dive views.
  */
 
-import { getCityVideo, getAvailableVideoTypes, getAvailableCityTours, CITY_VIDEOS, findPoiLiveCam } from './video-service.js?v=20261116_asia_final';
-import { getDeepDiveData } from './deep-dive.js?v=20261116_asia_final';
-import { fetchWikiArticle, fetchWikiArticleHtml, cleanWikiTitle } from './wiki-service.js?v=20261116_asia_final';
-import { calculateSubsolarPoint } from './solar-terminator.js?v=20261116_asia_final';
+import { getCityVideo, getAvailableVideoTypes, getAvailableCityTours, CITY_VIDEOS, findPoiLiveCam } from './video-service.js?v=20261117_timefix2';
+import { getDeepDiveData } from './deep-dive.js?v=20261117_timefix2';
+import { fetchWikiArticle, fetchWikiArticleHtml, cleanWikiTitle } from './wiki-service.js?v=20261117_timefix2';
+import { calculateSubsolarPoint } from './solar-terminator.js?v=20261117_timefix2';
+import { CITY_TO_STATE } from './states-data.js?v=20261117_timefix2';
+import { CITY_TO_COUNTRY } from './navigator.js?v=20261117_timefix2';
 
 let currentActiveVideoCityId = null;
 let currentActiveVideoType = 'drone';
@@ -704,207 +706,206 @@ export function updateTabButtons(activeTab) {
 let activeDossierClockTimer = null;
 
 const COUNTRY_TIMEZONES = {
-  greece: 'Europe/Athens',
-  cyprus: 'Asia/Nicosia',
-  italy: 'Europe/Rome',
-  france: 'Europe/Paris',
-  germany: 'Europe/Berlin',
-  spain: 'Europe/Madrid',
-  portugal: 'Europe/Lisbon',
-  'united-kingdom': 'Europe/London',
-  uk: 'Europe/London',
-  ireland: 'Europe/Dublin',
-  netherlands: 'Europe/Amsterdam',
-  belgium: 'Europe/Brussels',
-  switzerland: 'Europe/Zurich',
-  austria: 'Europe/Vienna',
-  sweden: 'Europe/Stockholm',
-  norway: 'Europe/Oslo',
-  finland: 'Europe/Helsinki',
-  denmark: 'Europe/Copenhagen',
-  poland: 'Europe/Warsaw',
-  czech: 'Europe/Prague',
-  hungary: 'Europe/Budapest',
-  romania: 'Europe/Bucharest',
-  bulgaria: 'Europe/Sofia',
-  turkey: 'Europe/Istanbul',
-  albania: 'Europe/Tirane',
-  serbia: 'Europe/Belgrade',
-  croatia: 'Europe/Zagreb',
-  russia: 'Europe/Moscow',
-  ukraine: 'Europe/Kyiv',
-  japan: 'Asia/Tokyo',
-  china: 'Asia/Shanghai',
-  india: 'Asia/Kolkata',
-  'south-korea': 'Asia/Seoul',
-  egypt: 'Africa/Cairo',
-  'south-africa': 'Africa/Johannesburg',
-  morocco: 'Africa/Casablanca',
-  algeria: 'Africa/Algiers',
-  angola: 'Africa/Luanda',
-  botswana: 'Africa/Gaborone',
-  cameroon: 'Africa/Douala',
-  'dr-congo': 'Africa/Kinshasa',
-  ethiopia: 'Africa/Addis_Ababa',
-  ghana: 'Africa/Accra',
-  'ivory-coast': 'Africa/Abidjan',
-  kenya: 'Africa/Nairobi',
-  madagascar: 'Africa/Antananarivo',
-  mauritius: 'Indian/Mauritius',
-  mozambique: 'Africa/Maputo',
-  namibia: 'Africa/Windhoek',
-  nigeria: 'Africa/Lagos',
-  rwanda: 'Africa/Kigali',
-  senegal: 'Africa/Dakar',
-  sudan: 'Africa/Khartoum',
-  tanzania: 'Africa/Dar_es_Salaam',
-  tunisia: 'Africa/Tunis',
-  uganda: 'Africa/Kampala',
-  zimbabwe: 'Africa/Harare',
-  chile: 'America/Santiago',
-  argentina: 'America/Argentina/Buenos_Aires',
-  brazil: 'America/Sao_Paulo',
-  uruguay: 'America/Montevideo',
-  paraguay: 'America/Asuncion',
-  bolivia: 'America/La_Paz',
-  peru: 'America/Lima',
-  colombia: 'America/Bogota',
-  venezuela: 'America/Caracas',
-  ecuador: 'America/Guayaquil',
-  guyana: 'America/Guyana',
-  suriname: 'America/Paramaribo',
-  mexico: 'America/Mexico_City',
-  canada: 'America/Toronto',
-  australia: 'Australia/Sydney',
-  'new-zealand': 'Pacific/Auckland',
-  'papua-new-guinea': 'Pacific/Port_Moresby',
-  fiji: 'Pacific/Fiji',
-  'solomon-islands': 'Pacific/Guadalcanal',
-  vanuatu: 'Pacific/Efate',
-  samoa: 'Pacific/Apia',
-  tonga: 'Pacific/Tongatapu',
-  micronesia: 'Pacific/Pohnpei',
-  palau: 'Pacific/Palau',
-  'marshall-islands': 'Pacific/Majuro',
-  kiribati: 'Pacific/Tarawa',
-  nauru: 'Pacific/Nauru',
-  tuvalu: 'Pacific/Funafuti',
-  'east-timor': 'Asia/Dili',
-  'french-polynesia': 'Pacific/Tahiti',
-  'new-caledonia': 'Pacific/Noumea',
-  'cook-islands': 'Pacific/Rarotonga',
-  'benin': 'Africa/Porto-Novo',
-  'togo': 'Africa/Lome',
-  'burkina-faso': 'Africa/Ouagadougou',
-  'libya': 'Africa/Tripoli',
-  'mali': 'Africa/Bamako',
-  'mauritania': 'Africa/Nouakchott',
-  'zambia': 'Africa/Lusaka',
-  'malawi': 'Africa/Blantyre',
-  'seychelles': 'Indian/Mahe',
-  congo: 'Africa/Brazzaville',
-  gabon: 'Africa/Libreville',
-  'equatorial-guinea': 'Africa/Malabo',
-  niger: 'Africa/Niamey',
-  chad: 'Africa/Ndjamena',
-  'central-african-republic': 'Africa/Bangui',
-  somalia: 'Africa/Mogadishu',
-  guinea: 'Africa/Conakry',
-  'south-sudan': 'Africa/Juba',
-  'cape-verde': 'Atlantic/Cape_Verde',
-  gambia: 'Africa/Banjul',
-  'guinea-bissau': 'Africa/Bissau',
-  liberia: 'Africa/Monrovia',
-  'sierra-leone': 'Africa/Freetown',
-  'sao-tome-and-principe': 'Africa/Sao_Tome',
-  djibouti: 'Africa/Djibouti',
-  eritrea: 'Africa/Asmara',
-  burundi: 'Africa/Bujumbura',
-  comoros: 'Indian/Comoro',
-  eswatini: 'Africa/Mbabane',
-  lesotho: 'Africa/Maseru',
-  vietnam: 'Asia/Ho_Chi_Minh',
-  thailand: 'Asia/Bangkok',
-  cambodia: 'Asia/Phnom_Penh',
-  taiwan: 'Asia/Taipei',
-  nepal: 'Asia/Kathmandu',
-  'sri-lanka': 'Asia/Colombo',
-  philippines: 'Asia/Manila',
-  malaysia: 'Asia/Kuala_Lumpur',
-  indonesia: 'Asia/Jakarta',
-  laos: 'Asia/Vientiane',
-  mongolia: 'Asia/Ulaanbaatar',
-  myanmar: 'Asia/Yangon',
-  pakistan: 'Asia/Karachi',
-  bangladesh: 'Asia/Dhaka',
-  bhutan: 'Asia/Thimphu',
-  jordan: 'Asia/Amman',
-  oman: 'Asia/Muscat',
-  lebanon: 'Asia/Beirut',
-  'saudi-arabia': 'Asia/Riyadh',
-  uae: 'Asia/Dubai',
-  qatar: 'Asia/Qatar',
-  uzbekistan: 'Asia/Tashkent',
-  kazakhstan: 'Asia/Almaty',
-  kyrgyzstan: 'Asia/Bishkek',
-  iran: 'Asia/Tehran',
-  iraq: 'Asia/Baghdad',
-  israel: 'Asia/Jerusalem',
   afghanistan: 'Asia/Kabul',
+  albania: 'Europe/Tirane',
+  algeria: 'Africa/Algiers',
   andorra: 'Europe/Andorra',
+  angola: 'Africa/Luanda',
   'antigua-and-barbuda': 'America/Antigua',
+  argentina: 'America/Argentina/Buenos_Aires',
   armenia: 'Asia/Yerevan',
+  australia: 'Australia/Sydney',
+  austria: 'Europe/Vienna',
   azerbaijan: 'Asia/Baku',
   bahamas: 'America/Nassau',
   bahrain: 'Asia/Bahrain',
+  bangladesh: 'Asia/Dhaka',
   barbados: 'America/Barbados',
   belarus: 'Europe/Minsk',
+  belgium: 'Europe/Brussels',
   belize: 'America/Belize',
+  benin: 'Africa/Porto-Novo',
+  bhutan: 'Asia/Thimphu',
+  bolivia: 'America/La_Paz',
   bosnia: 'Europe/Sarajevo',
+  botswana: 'Africa/Gaborone',
+  brazil: 'America/Sao_Paulo',
   brunei: 'Asia/Brunei',
+  bulgaria: 'Europe/Sofia',
+  'burkina-faso': 'Africa/Ouagadougou',
+  burundi: 'Africa/Bujumbura',
+  cambodia: 'Asia/Phnom_Penh',
+  cameroon: 'Africa/Douala',
+  canada: 'America/Toronto',
+  'cape-verde': 'Atlantic/Cape_Verde',
+  'central-african-republic': 'Africa/Bangui',
+  chad: 'Africa/Ndjamena',
+  chile: 'America/Santiago',
+  china: 'Asia/Shanghai',
+  colombia: 'America/Bogota',
+  comoros: 'Indian/Comoro',
+  congo: 'Africa/Brazzaville',
+  'cook-islands': 'Pacific/Rarotonga',
   'costa-rica': 'America/Costa_Rica',
+  croatia: 'Europe/Zagreb',
   cuba: 'America/Havana',
+  cyprus: 'Asia/Nicosia',
+  czech: 'Europe/Prague',
+  denmark: 'Europe/Copenhagen',
+  djibouti: 'Africa/Djibouti',
   dominica: 'America/Dominica',
   'dominican-republic': 'America/Santo_Domingo',
+  'dr-congo': 'Africa/Kinshasa',
+  'east-timor': 'Asia/Dili',
+  ecuador: 'America/Guayaquil',
+  egypt: 'Africa/Cairo',
   'el-salvador': 'America/El_Salvador',
+  'equatorial-guinea': 'Africa/Malabo',
+  eritrea: 'Africa/Asmara',
   estonia: 'Europe/Tallinn',
+  eswatini: 'Africa/Mbabane',
+  ethiopia: 'Africa/Addis_Ababa',
+  fiji: 'Pacific/Fiji',
+  finland: 'Europe/Helsinki',
+  france: 'Europe/Paris',
+  'french-polynesia': 'Pacific/Tahiti',
+  gabon: 'Africa/Libreville',
+  gambia: 'Africa/Banjul',
   georgia: 'Asia/Tbilisi',
+  germany: 'Europe/Berlin',
+  ghana: 'Africa/Accra',
+  greece: 'Europe/Athens',
   grenada: 'America/Grenada',
   guatemala: 'America/Guatemala',
+  guinea: 'Africa/Conakry',
+  'guinea-bissau': 'Africa/Bissau',
+  guyana: 'America/Guyana',
   haiti: 'America/Port-au-Prince',
   honduras: 'America/Tegucigalpa',
+  hungary: 'Europe/Budapest',
   iceland: 'Atlantic/Reykjavik',
+  india: 'Asia/Kolkata',
+  indonesia: 'Asia/Jakarta',
+  iran: 'Asia/Tehran',
+  iraq: 'Asia/Baghdad',
+  ireland: 'Europe/Dublin',
+  israel: 'Asia/Jerusalem',
+  italy: 'Europe/Rome',
+  'ivory-coast': 'Africa/Abidjan',
   jamaica: 'America/Jamaica',
+  japan: 'Asia/Tokyo',
+  jordan: 'Asia/Amman',
+  kazakhstan: 'Asia/Almaty',
+  kenya: 'Africa/Nairobi',
+  kiribati: 'Pacific/Tarawa',
   kuwait: 'Asia/Kuwait',
+  kyrgyzstan: 'Asia/Bishkek',
+  laos: 'Asia/Vientiane',
   latvia: 'Europe/Riga',
+  lebanon: 'Asia/Beirut',
+  lesotho: 'Africa/Maseru',
+  liberia: 'Africa/Monrovia',
+  libya: 'Africa/Tripoli',
   liechtenstein: 'Europe/Vaduz',
   lithuania: 'Europe/Vilnius',
   luxembourg: 'Europe/Luxembourg',
+  madagascar: 'Africa/Antananarivo',
+  malawi: 'Africa/Blantyre',
+  malaysia: 'Asia/Kuala_Lumpur',
   maldives: 'Indian/Maldives',
+  mali: 'Africa/Bamako',
   malta: 'Europe/Malta',
+  'marshall-islands': 'Pacific/Majuro',
+  mauritania: 'Africa/Nouakchott',
+  mauritius: 'Indian/Mauritius',
+  mexico: 'America/Mexico_City',
+  micronesia: 'Pacific/Pohnpei',
   moldova: 'Europe/Chisinau',
   monaco: 'Europe/Monaco',
+  mongolia: 'Asia/Ulaanbaatar',
   montenegro: 'Europe/Podgorica',
+  morocco: 'Africa/Casablanca',
+  mozambique: 'Africa/Maputo',
+  myanmar: 'Asia/Yangon',
+  namibia: 'Africa/Windhoek',
+  nauru: 'Pacific/Nauru',
+  nepal: 'Asia/Kathmandu',
+  netherlands: 'Europe/Amsterdam',
+  'new-caledonia': 'Pacific/Noumea',
+  'new-zealand': 'Pacific/Auckland',
   nicaragua: 'America/Managua',
+  niger: 'Africa/Niamey',
+  nigeria: 'Africa/Lagos',
   'north-korea': 'Asia/Pyongyang',
   'north-macedonia': 'Europe/Skopje',
+  norway: 'Europe/Oslo',
+  oman: 'Asia/Muscat',
+  pakistan: 'Asia/Karachi',
+  palau: 'Pacific/Palau',
   palestine: 'Asia/Gaza',
   panama: 'America/Panama',
+  'papua-new-guinea': 'Pacific/Port_Moresby',
+  paraguay: 'America/Asuncion',
+  peru: 'America/Lima',
+  philippines: 'Asia/Manila',
+  poland: 'Europe/Warsaw',
+  portugal: 'Europe/Lisbon',
+  qatar: 'Asia/Qatar',
+  romania: 'Europe/Bucharest',
+  russia: 'Europe/Moscow',
+  rwanda: 'Africa/Kigali',
   'saint-kitts-and-nevis': 'America/St_Kitts',
   'saint-lucia': 'America/St_Lucia',
   'saint-vincent-and-the-grenadines': 'America/St_Vincent',
+  samoa: 'Pacific/Apia',
   'san-marino': 'Europe/San_Marino',
+  'sao-tome-and-principe': 'Africa/Sao_Tome',
+  'saudi-arabia': 'Asia/Riyadh',
+  senegal: 'Africa/Dakar',
+  serbia: 'Europe/Belgrade',
+  seychelles: 'Indian/Mahe',
+  'sierra-leone': 'Africa/Freetown',
   singapore: 'Asia/Singapore',
   slovakia: 'Europe/Bratislava',
   slovenia: 'Europe/Ljubljana',
+  'solomon-islands': 'Pacific/Guadalcanal',
+  somalia: 'Africa/Mogadishu',
+  'south-africa': 'Africa/Johannesburg',
+  'south-korea': 'Asia/Seoul',
+  'south-sudan': 'Africa/Juba',
+  spain: 'Europe/Madrid',
+  'sri-lanka': 'Asia/Colombo',
+  sudan: 'Africa/Khartoum',
+  suriname: 'America/Paramaribo',
+  sweden: 'Europe/Stockholm',
+  switzerland: 'Europe/Zurich',
   syria: 'Asia/Damascus',
+  taiwan: 'Asia/Taipei',
   tajikistan: 'Asia/Dushanbe',
+  tanzania: 'Africa/Dar_es_Salaam',
+  thailand: 'Asia/Bangkok',
+  togo: 'Africa/Lome',
+  tonga: 'Pacific/Tongatapu',
   'trinidad-and-tobago': 'America/Port_of_Spain',
+  tunisia: 'Africa/Tunis',
+  turkey: 'Europe/Istanbul',
   turkmenistan: 'Asia/Ashgabat',
+  tuvalu: 'Pacific/Funafuti',
+  uae: 'Asia/Dubai',
+  uganda: 'Africa/Kampala',
+  uk: 'Europe/London',
+  ukraine: 'Europe/Kyiv',
+  'united-kingdom': 'Europe/London',
+  uruguay: 'America/Montevideo',
   usa: 'America/New_York',
+  uzbekistan: 'Asia/Tashkent',
+  vanuatu: 'Pacific/Efate',
   vatican: 'Europe/Vatican',
+  venezuela: 'America/Caracas',
+  vietnam: 'Asia/Ho_Chi_Minh',
   yemen: 'Asia/Aden',
-
+  zambia: 'Africa/Lusaka',
+  zimbabwe: 'Africa/Harare'
 };
 
 const US_STATE_TIMEZONES = {
@@ -996,8 +997,10 @@ export function getEntityLocalTime(entity, entityType = 'city') {
   const lat = (coords && typeof coords[0] === 'number') ? coords[0] : 0;
   const lng = (coords && typeof coords[1] === 'number') ? coords[1] : 0;
 
-  let tz = entity.timeZone || entity.timezone || (entity.stats && (entity.stats.timeZone || entity.stats.timezone));
+  let tz = entity.timeZone || entity.timezone;
   let iana = null;
+
+  // 1. Direct entity.timeZone / entity.timezone parsing
   if (tz) {
     const m = tz.match(/\(([^)]+)\)/);
     if (m) {
@@ -1007,17 +1010,19 @@ export function getEntityLocalTime(entity, entityType = 'city') {
     }
   }
 
-  // Fallback to Country / State lookup if direct IANA timezone not specified
+  // 2. State / Country / City resolution
   if (!iana) {
-    const sId = entity._stateId || entity.stateId;
-    let cId = entity._countryId || entity.countryId;
-    if (!cId && entityType === 'country') {
-      cId = entity.id;
-    }
-    if (sId && US_STATE_TIMEZONES[sId]) {
+    const isUsCity = CITY_TO_STATE && entity.id && Boolean(CITY_TO_STATE[entity.id]);
+    const sId = isUsCity ? CITY_TO_STATE[entity.id] : (entity._stateId || entity.stateId);
+    const countryMapped = (CITY_TO_COUNTRY && entity.id && CITY_TO_COUNTRY[entity.id]) || null;
+    const cId = entity._countryId || countryMapped || entity.countryId || (COUNTRY_TIMEZONES[entity.id] ? entity.id : null);
+
+    if (sId && US_STATE_TIMEZONES[sId] && (cId === 'usa' || entityType === 'state' || isUsCity)) {
       iana = US_STATE_TIMEZONES[sId];
     } else if (cId && COUNTRY_TIMEZONES[cId]) {
       iana = COUNTRY_TIMEZONES[cId];
+    } else if (sId && US_STATE_TIMEZONES[sId]) {
+      iana = US_STATE_TIMEZONES[sId];
     }
   }
 
@@ -1025,7 +1030,7 @@ export function getEntityLocalTime(entity, entityType = 'city') {
   let secStr = '';
   let dateStr = '';
 
-  // Try formatting with IANA timezone
+  // 3. Try formatting with IANA timezone
   if (iana) {
     try {
       const parts = new Intl.DateTimeFormat('el-GR', {
@@ -1049,55 +1054,63 @@ export function getEntityLocalTime(entity, entityType = 'city') {
       }).format(now);
     } catch (e) {
       iana = null;
+      timeStr = '';
     }
   }
 
-  // If IANA failed or unavailable, try explicit UTC offset e.g. "UTC-3"
+  // 4. If IANA failed or unavailable, try explicit UTC / GMT offset e.g. 'UTC-3', 'GMT-4', 'UTC+9:30'
   if (!timeStr && tz) {
-    const utcMatch = tz.match(/UTC\s*([+-]\d+(?:\.\d+)?)/i);
+    const utcMatch = tz.match(/(?:UTC|GMT)\s*([+-]\d+(?::\d+|\.\d+)?)/i);
     if (utcMatch) {
-      const offset = parseFloat(utcMatch[1]);
-      const utcMs = now.getTime() + (now.getTimezoneOffset() * 60000);
-      const targetMs = utcMs + (offset * 3600000);
-      const localDate = new Date(targetMs);
+      const offsetRaw = utcMatch[1];
+      let offsetHours = 0;
+      if (offsetRaw.includes(':')) {
+        const [oh, om] = offsetRaw.split(':').map(Number);
+        offsetHours = oh + (oh < 0 ? -om / 60 : om / 60);
+      } else {
+        offsetHours = parseFloat(offsetRaw);
+      }
+      const targetMs = now.getTime() + (offsetHours * 3600000);
+      const targetDate = new Date(targetMs);
 
-      const hh = String(localDate.getUTCHours()).padStart(2, '0');
-      const mm = String(localDate.getUTCMinutes()).padStart(2, '0');
-      const ss = String(localDate.getUTCSeconds()).padStart(2, '0');
+      const hh = String(targetDate.getUTCHours()).padStart(2, '0');
+      const mm = String(targetDate.getUTCMinutes()).padStart(2, '0');
+      const ss = String(targetDate.getUTCSeconds()).padStart(2, '0');
       timeStr = `${hh}:${mm}`;
       secStr = ss;
 
       try {
         dateStr = new Intl.DateTimeFormat('el-GR', {
+          timeZone: 'UTC',
           day: 'numeric',
           month: 'short'
-        }).format(localDate);
+        }).format(targetDate);
       } catch (e) {
-        dateStr = `${localDate.getDate()} ${localDate.getMonth() + 1}`;
+        dateStr = `${targetDate.getUTCDate()} ${targetDate.getUTCMonth() + 1}`;
       }
     }
   }
 
-  // Fallback to longitude offset if neither IANA nor UTC string was successful
+  // 5. Fallback to longitude offset in pure UTC (browser-timezone independent)
   if (!timeStr) {
     const offsetHours = Math.round(lng / 15.0);
-    const utcMs = now.getTime() + (now.getTimezoneOffset() * 60000);
-    const targetMs = utcMs + (offsetHours * 3600000);
-    const localDate = new Date(targetMs);
+    const targetMs = now.getTime() + (offsetHours * 3600000);
+    const targetDate = new Date(targetMs);
 
-    const hh = String(localDate.getHours()).padStart(2, '0');
-    const mm = String(localDate.getMinutes()).padStart(2, '0');
-    const ss = String(localDate.getSeconds()).padStart(2, '0');
+    const hh = String(targetDate.getUTCHours()).padStart(2, '0');
+    const mm = String(targetDate.getUTCMinutes()).padStart(2, '0');
+    const ss = String(targetDate.getUTCSeconds()).padStart(2, '0');
     timeStr = `${hh}:${mm}`;
     secStr = ss;
 
     try {
       dateStr = new Intl.DateTimeFormat('el-GR', {
+        timeZone: 'UTC',
         day: 'numeric',
         month: 'short'
-      }).format(localDate);
+      }).format(targetDate);
     } catch (e) {
-      dateStr = `${localDate.getDate()} ${localDate.getMonth() + 1}`;
+      dateStr = `${targetDate.getUTCDate()} ${targetDate.getUTCMonth() + 1}`;
     }
   }
 

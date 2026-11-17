@@ -1,4 +1,4 @@
-import { US_STATES, CITY_TO_STATE } from './states-data.js?v=20261116_asia_final';
+import { US_STATES, CITY_TO_STATE } from './states-data.js?v=20261117_timefix2';
 /**
  * Navigator Module
  * Hierarchical Cascading Navigation: Continents -> Countries -> Cities
@@ -3388,6 +3388,19 @@ export const CONTINENTS_DATA = [
     ]
   }
 ];
+
+export const CITY_TO_COUNTRY = {};
+for (const continent of CONTINENTS_DATA) {
+  if (continent.countries) {
+    for (const country of continent.countries) {
+      if (country.cities) {
+        for (const city of country.cities) {
+          CITY_TO_COUNTRY[city.id] = country.id;
+        }
+      }
+    }
+  }
+}
 
 let isNavDropdownOpen = false;
 let expandedContinents = new Set(['europe']);
