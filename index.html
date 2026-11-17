@@ -714,23 +714,33 @@
                 <!-- Injected dynamically: e.g. [ 👨‍🍳 Άκης ] [ 🥙 Street Food ] [ 📱 Shorts ] -->
               </div>
 
-              <!-- In-Overlay Search Bar & Direct Platform Launchers -->
-              <div class="flex items-center gap-1.5 ml-auto">
+              <!-- In-App Media & Search Mode Switcher (Zero external popups!) -->
+              <div class="flex items-center gap-1.5 ml-auto flex-wrap">
+                <!-- Search Input -->
                 <div class="relative flex items-center">
-                  <input id="videoSearchInput" type="text" placeholder="Αναζήτηση βίντεο ή YouTube ID..." class="bg-slate-800/90 border border-slate-700 focus:border-red-500 text-white text-[11px] px-2.5 py-1 rounded-lg w-36 sm:w-52 focus:outline-none transition" />
+                  <input id="videoSearchInput" type="text" placeholder="Αναζήτηση βίντεο / συνταγής..." class="bg-slate-800/90 border border-slate-700 focus:border-red-500 text-white text-[11px] px-2.5 py-1 rounded-lg w-32 sm:w-44 focus:outline-none transition" />
                   <button id="videoSearchBtn" onclick="window.submitOverlayVideoSearch()" class="absolute right-1 px-1.5 py-0.5 text-slate-400 hover:text-white cursor-pointer" title="Αναζήτηση">
                     <i class="fa-solid fa-magnifying-glass text-xs"></i>
                   </button>
                 </div>
-                <a id="videoSearchYouTube" href="#" target="_blank" rel="noopener noreferrer" class="px-2 py-1 rounded-lg bg-red-600/20 hover:bg-red-600 text-red-300 hover:text-white border border-red-500/40 text-[11px] font-bold transition flex items-center gap-1" title="Αναζήτηση στο YouTube">
-                  <i class="fa-brands fa-youtube"></i>
-                </a>
-                <a id="videoSearchTikTok" href="#" target="_blank" rel="noopener noreferrer" class="px-2 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white border border-slate-700 text-[11px] font-bold transition flex items-center gap-1" title="Αναζήτηση στο TikTok">
-                  <i class="fa-brands fa-tiktok"></i>
-                </a>
-                <a id="videoSearchGoogle" href="#" target="_blank" rel="noopener noreferrer" class="px-2 py-1 rounded-lg bg-sky-950/80 hover:bg-sky-900 text-sky-300 hover:text-white border border-sky-700/50 text-[11px] font-bold transition flex items-center gap-1" title="Αναζήτηση στο Google">
-                  <i class="fa-brands fa-google"></i>
-                </a>
+
+                <!-- In-App Mode Buttons (Everything plays in iframe!) -->
+                <button id="mediaModePlayerBtn" onclick="window.setOverlayMediaMode('player')" class="px-2 py-1 rounded-lg bg-rose-600 text-white text-[11px] font-bold transition flex items-center gap-1 shadow cursor-pointer shrink-0" title="Αναπαραγωγή Βίντεο 4K">
+                  <i class="fa-solid fa-play"></i>
+                  <span class="hidden sm:inline">4K Player</span>
+                </button>
+                <button id="mediaModeTikTokBtn" onclick="window.setOverlayMediaMode('tiktok')" class="px-2 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white border border-slate-700 text-[11px] font-bold transition flex items-center gap-1 cursor-pointer shrink-0" title="TikTok & Shorts στο παράθυρο">
+                  <i class="fa-brands fa-tiktok text-pink-400"></i>
+                  <span class="hidden sm:inline">TikTok</span>
+                </button>
+                <button id="mediaModeWebBtn" onclick="window.setOverlayMediaMode('web')" class="px-2 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white border border-slate-700 text-[11px] font-bold transition flex items-center gap-1 cursor-pointer shrink-0" title="Αναζήτηση Ιστού στο παράθυρο (Χωρίς να φεύγετε από τη σελίδα)">
+                  <i class="fa-solid fa-globe text-sky-400"></i>
+                  <span class="hidden sm:inline">Web Search</span>
+                </button>
+                <button id="mediaModeVideosBtn" onclick="window.setOverlayMediaMode('videos')" class="px-2 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white border border-slate-700 text-[11px] font-bold transition flex items-center gap-1 cursor-pointer shrink-0" title="Αναζήτηση όλων των βίντεο στο παράθυρο">
+                  <i class="fa-solid fa-film text-amber-400"></i>
+                  <span class="hidden sm:inline">Όλα τα Βίντεο</span>
+                </button>
               </div>
             </div>
 
@@ -1323,7 +1333,7 @@
   </div>
 
   <!-- Modular Application Scripts -->
-  <script type="module" src="js/app.js?v=20261117_pres6"></script>
+  <script type="module" src="js/app.js?v=20261117_pres7"></script>
   <!-- Fullscreen Toggle Script (Android, WebKit, Desktop) -->
   <script>
     window.toggleFullScreen = function() {

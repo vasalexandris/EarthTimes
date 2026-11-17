@@ -4,16 +4,22 @@
  * Base Map Layer selector, Date display, Video Overlay, and Deep Dive views.
  */
 
-import { getCityVideo, getAvailableVideoTypes, getAvailableCityTours, CITY_VIDEOS, findPoiLiveCam, getPoiVideoInfo, getGastroRecipeVideo } from './video-service.js?v=20261117_pres6';
-import { getDeepDiveData } from './deep-dive.js?v=20261117_pres6';
-import { fetchWikiArticle, fetchWikiArticleHtml, cleanWikiTitle } from './wiki-service.js?v=20261117_pres6';
-import { calculateSubsolarPoint } from './solar-terminator.js?v=20261117_pres6';
-import { CITY_TO_STATE } from './states-data.js?v=20261117_pres6';
-import { CITY_TO_COUNTRY } from './navigator.js?v=20261117_pres6';
+import { getCityVideo, getAvailableVideoTypes, getAvailableCityTours, CITY_VIDEOS, findPoiLiveCam, getPoiVideoInfo, getGastroRecipeVideo } from './video-service.js?v=20261117_pres7';
+import { getDeepDiveData } from './deep-dive.js?v=20261117_pres7';
+import { fetchWikiArticle, fetchWikiArticleHtml, cleanWikiTitle } from './wiki-service.js?v=20261117_pres7';
+import { calculateSubsolarPoint } from './solar-terminator.js?v=20261117_pres7';
+import { CITY_TO_STATE } from './states-data.js?v=20261117_pres7';
+import { CITY_TO_COUNTRY } from './navigator.js?v=20261117_pres7';
 
 let currentActiveVideoCityId = null;
 let currentActiveVideoType = 'drone';
 let isNarrating = false;
+
+let currentOverlayMode = 'player';
+let currentOverlayQuery = '';
+let currentOverlayYoutubeId = '';
+let currentOverlayTitle = '';
+let currentOverlayStartSec = 0;
 
 let currentWikiTitle = '';
 let currentWikiLang = 'el';
@@ -106,9 +112,33 @@ export function openCityVideo(cityId, preferredType = 'drone') {
   const youtubeId = vid?.youtubeId || '54nbsW6jYN4';
   const videoTitle = vid?.title || `Περιήγηση 4K: ${cityId}`;
 
+  currentOverlayYoutubeId = youtubeId;
+  currentOverlayStartSec = 0;
+  currentOverlayTitle = videoTitle;
+  currentOverlayQuery = cityId;
+  currentOverlayMode = 'player';
+
   if (title) title.innerText = videoTitle;
   if (directLink) directLink.href = `https://www.youtube.com/watch?v=${youtubeId}`;
   iframe.src = `https://www.youtube-nocookie.com/embed/${youtubeId}?autoplay=1&rel=0`;
+
+  const searchInput = document.getElementById('videoSearchInput');
+  if (searchInput) {
+    searchInput.value = cityId;
+    if (!searchInput.dataset.bound) {
+      searchInput.dataset.bound = 'true';
+      searchInput.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') submitOverlayVideoSearch();
+      });
+    }
+  }
+
+  const choicePills = document.getElementById('videoChoicePills');
+  if (choicePills) {
+    choicePills.innerHTML = '';
+  }
+
+  setOverlayMediaMode('player');
 
   // Render switcher pills for all available tour options (Drone, Walking, Guide, Live)
   if (typeSelector) {
@@ -135,6 +165,56 @@ export function openCityVideo(cityId, preferredType = 'drone') {
   syncMapFloatingControlsVisibility();
 }
 
+export function setOverlayMediaMode(mode) {
+  currentOverlayMode = mode || 'player';
+  const iframe = document.getElementById('mapVideoIframe');
+  const title = document.getElementById('videoOverlayTitle');
+  const searchInput = document.getElementById('videoSearchInput');
+  const query = (searchInput?.value?.trim() || currentOverlayQuery || 'Athens Greece').trim();
+
+  // Update button active styles
+  const btnMap = {
+    player: document.getElementById('mediaModePlayerBtn'),
+    tiktok: document.getElementById('mediaModeTikTokBtn'),
+    web: document.getElementById('mediaModeWebBtn'),
+    videos: document.getElementById('mediaModeVideosBtn'),
+  };
+
+  const activeColorMap = {
+    player: 'bg-rose-600 text-white shadow-md',
+    tiktok: 'bg-pink-600 text-white shadow-md',
+    web: 'bg-sky-600 text-white shadow-md',
+    videos: 'bg-amber-600 text-white shadow-md',
+  };
+
+  Object.entries(btnMap).forEach(([m, btn]) => {
+    if (!btn) return;
+    if (m === currentOverlayMode) {
+      btn.className = `px-2 py-1 rounded-lg ${activeColorMap[m]} text-[11px] font-bold transition flex items-center gap-1 cursor-pointer shrink-0`;
+    } else {
+      btn.className = 'px-2 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white border border-slate-700 text-[11px] font-bold transition flex items-center gap-1 cursor-pointer shrink-0';
+    }
+  });
+
+  if (!iframe) return;
+
+  if (currentOverlayMode === 'player') {
+    if (currentOverlayYoutubeId) {
+      if (title && currentOverlayTitle) title.innerText = currentOverlayTitle;
+      iframe.src = `https://www.youtube-nocookie.com/embed/${currentOverlayYoutubeId}?autoplay=1&rel=0${currentOverlayStartSec > 0 ? `&start=${currentOverlayStartSec}` : ''}`;
+    }
+  } else if (currentOverlayMode === 'tiktok') {
+    if (title) title.innerText = `📱 TikTok & Reels: ${query}`;
+    iframe.src = `https://www.bing.com/videos/search?q=${encodeURIComponent(query + ' tiktok reels shorts')}`;
+  } else if (currentOverlayMode === 'web') {
+    if (title) title.innerText = `🌐 Web Search: ${query}`;
+    iframe.src = `https://www.bing.com/search?q=${encodeURIComponent(query)}`;
+  } else if (currentOverlayMode === 'videos') {
+    if (title) title.innerText = `🎥 Όλα τα Βίντεο: ${query}`;
+    iframe.src = `https://www.bing.com/videos/search?q=${encodeURIComponent(query)}`;
+  }
+}
+
 export function switchOverlayVideo(youtubeId, startSec = 0, titleText = '') {
   const iframe = document.getElementById('mapVideoIframe');
   const title = document.getElementById('videoOverlayTitle');
@@ -142,9 +222,16 @@ export function switchOverlayVideo(youtubeId, startSec = 0, titleText = '') {
 
   if (!iframe || !youtubeId) return;
 
+  currentOverlayYoutubeId = youtubeId;
+  currentOverlayStartSec = startSec;
+  if (titleText) currentOverlayTitle = titleText;
+  currentOverlayMode = 'player';
+
   if (title && titleText) title.innerText = titleText;
   if (directLink) directLink.href = `https://www.youtube.com/watch?v=${youtubeId}${startSec > 0 ? `&t=${startSec}s` : ''}`;
   iframe.src = `https://www.youtube-nocookie.com/embed/${youtubeId}?autoplay=1&rel=0${startSec > 0 ? `&start=${startSec}` : ''}`;
+
+  setOverlayMediaMode('player');
 
   // Update active pill styling
   const pills = document.querySelectorAll('#videoChoicePills button');
@@ -162,6 +249,14 @@ export function submitOverlayVideoSearch() {
   if (!input) return;
   const raw = input.value.trim();
   if (!raw) return;
+
+  currentOverlayQuery = raw;
+
+  // If currently in an embedded search mode (tiktok, web, videos), re-run directly inside iframe!
+  if (currentOverlayMode === 'tiktok' || currentOverlayMode === 'web' || currentOverlayMode === 'videos') {
+    setOverlayMediaMode(currentOverlayMode);
+    return;
+  }
 
   // Check if it's a YouTube URL or 11-char ID
   let ytId = null;
@@ -190,9 +285,8 @@ export function submitOverlayVideoSearch() {
     return;
   }
 
-  // Direct YouTube search in new window
-  const query = encodeURIComponent(raw);
-  window.open(`https://www.youtube.com/results?search_query=${query}`, '_blank');
+  // Seamless embedded in-app search: instead of opening external window, switch to Web search directly in iframe!
+  setOverlayMediaMode('web');
 }
 
 export function openPoiVideo(poiTitle, cityId = '', explicitStart = null) {
@@ -216,9 +310,6 @@ export function openPoiVideo(poiTitle, cityId = '', explicitStart = null) {
   const typeSelector = document.getElementById('videoTypeSelector');
   const choicePills = document.getElementById('videoChoicePills');
   const searchInput = document.getElementById('videoSearchInput');
-  const searchYt = document.getElementById('videoSearchYouTube');
-  const searchTk = document.getElementById('videoSearchTikTok');
-  const searchGg = document.getElementById('videoSearchGoogle');
 
   if (!overlay || !iframe) return;
 
@@ -252,12 +343,19 @@ export function openPoiVideo(poiTitle, cityId = '', explicitStart = null) {
     videoTitle = `🏙️ ${poiTitle ? poiTitle + ' • ' : ''}4K Περιήγηση Πόλης`;
   }
 
+  currentOverlayYoutubeId = info.youtubeId;
+  currentOverlayStartSec = startSec;
+  currentOverlayTitle = videoTitle;
+  currentOverlayQuery = poiTitle || info.title || '';
+  currentOverlayMode = 'player';
+
   if (title) title.innerText = videoTitle;
   if (directLink) directLink.href = `https://www.youtube.com/watch?v=${info.youtubeId}${startSec > 0 ? `&t=${startSec}s` : ''}`;
   iframe.src = `https://www.youtube-nocookie.com/embed/${info.youtubeId}?autoplay=1&rel=0${startSec > 0 ? `&start=${startSec}` : ''}`;
 
-  // Configure search bar and external links
-  const searchQuery = info.searchQuery || `${poiTitle} 4K tour`;
+  setOverlayMediaMode('player');
+
+  // Configure search bar
   if (searchInput) {
     searchInput.value = poiTitle;
     if (!searchInput.dataset.bound) {
@@ -267,9 +365,6 @@ export function openPoiVideo(poiTitle, cityId = '', explicitStart = null) {
       });
     }
   }
-  if (searchYt) searchYt.href = `https://www.youtube.com/results?search_query=${encodeURIComponent(searchQuery)}`;
-  if (searchTk) searchTk.href = `https://www.tiktok.com/search?q=${encodeURIComponent(searchQuery)}`;
-  if (searchGg) searchGg.href = `https://www.google.com/search?q=${encodeURIComponent(searchQuery)}`;
 
   // Render multiple choice options in the options bar
   if (choicePills) {
@@ -337,9 +432,6 @@ export function openGastroVideo(dishTitle, cityName = '') {
   const typeSelector = document.getElementById('videoTypeSelector');
   const choicePills = document.getElementById('videoChoicePills');
   const searchInput = document.getElementById('videoSearchInput');
-  const searchYt = document.getElementById('videoSearchYouTube');
-  const searchTk = document.getElementById('videoSearchTikTok');
-  const searchGg = document.getElementById('videoSearchGoogle');
 
   if (!overlay || !iframe) return;
 
@@ -358,12 +450,20 @@ export function openGastroVideo(dishTitle, cityName = '') {
 
   const primaryYtId = recipe?.youtubeId || 'wa1fa5-EnlI';
   const videoTitle = recipe ? `👨‍🍳 Βίντεο Συνταγής: ${recipe.dish || dishTitle} (${recipe.region || cityName})` : `👨‍🍳 Αναζήτηση Συνταγής: ${dishTitle}`;
+
+  currentOverlayYoutubeId = primaryYtId;
+  currentOverlayStartSec = 0;
+  currentOverlayTitle = videoTitle;
+  currentOverlayQuery = dishTitle || recipe?.dish || '';
+  currentOverlayMode = 'player';
+
   if (title) title.innerText = videoTitle;
   if (directLink) directLink.href = `https://www.youtube.com/watch?v=${primaryYtId}`;
   iframe.src = `https://www.youtube-nocookie.com/embed/${primaryYtId}?autoplay=1&rel=0`;
 
-  // Pre-fill search bar and set external search links
-  const searchQuery = recipe?.searchQuery || `συνταγή ${dishTitle} ${cityName}`;
+  setOverlayMediaMode('player');
+
+  // Pre-fill search bar
   if (searchInput) {
     searchInput.value = dishTitle;
     if (!searchInput.dataset.bound) {
@@ -373,9 +473,6 @@ export function openGastroVideo(dishTitle, cityName = '') {
       });
     }
   }
-  if (searchYt) searchYt.href = `https://www.youtube.com/results?search_query=${encodeURIComponent(searchQuery)}`;
-  if (searchTk) searchTk.href = `https://www.tiktok.com/search?q=${encodeURIComponent(searchQuery)}`;
-  if (searchGg) searchGg.href = `https://www.google.com/search?q=${encodeURIComponent(searchQuery)}`;
 
   // Render multiple choice options in the options bar
   if (choicePills) {
@@ -419,6 +516,7 @@ export function closeMapVideoOverlay() {
   if (iframe) iframe.src = '';
   if (overlay) overlay.classList.add('hidden');
   currentActiveVideoCityId = null;
+  currentOverlayMode = 'player';
   syncMapFloatingControlsVisibility();
 }
 
