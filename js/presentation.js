@@ -9,8 +9,8 @@
  * - Fullscreen, Keyboard navigation (Arrow keys, Space, Esc, F), and Mobile Touch Swipe
  */
 
-import { getEntityLocalTime, getCuratedGuideItems, getCuratedGastroItems } from './ui.js?v=20261117_pres2';
-import { CITY_VIDEOS } from './video-service.js?v=20261117_pres2';
+import { getEntityLocalTime, getCuratedGuideItems, getCuratedGastroItems } from './ui.js?v=20261117_pres3';
+import { CITY_VIDEOS } from './video-service.js?v=20261117_pres3';
 
 let currentEntity = null;
 let currentEntityType = 'city';
@@ -86,16 +86,14 @@ export function openCityPresentation(entity = null, entityType = 'city') {
   // Update theme button
   updateThemeButtonUI();
 
-  // If autoplay is already active, restart timer
-  if (isAutoplay) {
-    startAutoplayTimer();
-  }
+  // Start playback (narration or autoplay)
+  startSlidePlayback();
 }
 
 export function closeCityPresentation() {
   stopAutoplay();
   stopNarration();
-  clearSpeechTimers();
+  clearAllTimers();
   updateSpeechIndicator(false, '');
 
   const overlay = document.getElementById('mapPresentationOverlay');
@@ -112,9 +110,12 @@ export function nextPresentationSlide() {
   if (currentSlideIndex < slides.length - 1) {
     goToPresentationSlide(currentSlideIndex + 1);
   } else {
-    // Loop back to start if in autoplay
-    if (isAutoplay) {
-      goToPresentationSlide(0);
+    // Reached the end of the presentation!
+    // Stop autoplay so it NEVER loops forever.
+    stopAutoplay();
+    const nextBtn = document.getElementById('presNextBtn');
+    if (nextBtn) {
+      nextBtn.innerHTML = `<span>Ολοκληρώθηκε</span> <i class="fa-solid fa-check text-xs text-emerald-400"></i>`;
     }
   }
 }
@@ -129,20 +130,42 @@ export function goToPresentationSlide(index) {
   const slides = getSlideDefinitions();
   if (index < 0 || index >= slides.length) return;
 
-  // Clear timers and speech
-  clearSpeechTimers();
+  // 1. Clear all timers and detach previous utterance listeners
+  clearAllTimers();
+  if (currentSpeechUtterance) {
+    currentSpeechUtterance.onstart = null;
+    currentSpeechUtterance.onend = null;
+    currentSpeechUtterance.onerror = null;
+    currentSpeechUtterance = null;
+  }
   if ('speechSynthesis' in window) {
     window.speechSynthesis.cancel();
   }
   isSpeaking = false;
   updateSpeechIndicator(false, '');
 
+  // 2. Render new slide DOM & counter
   currentSlideIndex = index;
   renderSlide(currentSlideIndex);
 
-  // Reset autoplay timer on slide change
-  if (isAutoplay) {
-    startAutoplayTimer();
+  // 3. Initiate playback for the new slide
+  startSlidePlayback();
+}
+
+function startSlidePlayback() {
+  clearAllTimers();
+
+  if (isNarrating && ('speechSynthesis' in window)) {
+    // Narration is ON: speak the slide after a tiny 60ms pause for audio buffer clearance
+    setTimeout(() => {
+      speakCurrentSlide();
+    }, 60);
+  } else if (isAutoplay) {
+    // Narration is OFF, Autoplay is ON: start standard fixed 8-second timer
+    startStandardAutoplayTimer();
+  } else {
+    // Both OFF: manual mode
+    updateProgressBar(currentSlideIndex, 0);
   }
 }
 
@@ -157,11 +180,26 @@ export function togglePresentationAutoplay() {
 function startAutoplay() {
   isAutoplay = true;
   updateAutoplayButtonUI();
-  startAutoplayTimer();
+
+  // If user was on the final slide, restart from slide 0
+  const slides = getSlideDefinitions();
+  if (currentSlideIndex >= slides.length - 1) {
+    goToPresentationSlide(0);
+    return;
+  }
+
+  startSlidePlayback();
 }
 
 function stopAutoplay() {
   isAutoplay = false;
+  clearAutoplayTimers();
+  clearSpeechTimers();
+  updateAutoplayButtonUI();
+  updateProgressBar(currentSlideIndex, 0);
+}
+
+function clearAutoplayTimers() {
   if (autoplayTimer) {
     clearTimeout(autoplayTimer);
     autoplayTimer = null;
@@ -170,9 +208,6 @@ function stopAutoplay() {
     clearInterval(autoplayProgressTimer);
     autoplayProgressTimer = null;
   }
-  clearSpeechTimers();
-  updateAutoplayButtonUI();
-  updateProgressBar(currentSlideIndex, 0);
 }
 
 function clearSpeechTimers() {
@@ -184,6 +219,11 @@ function clearSpeechTimers() {
     clearTimeout(speechSafetyTimer);
     speechSafetyTimer = null;
   }
+}
+
+function clearAllTimers() {
+  clearAutoplayTimers();
+  clearSpeechTimers();
 }
 
 function updateSpeechIndicator(active, text = '') {
@@ -230,13 +270,13 @@ function onSlideSpeechCompleted() {
   updateProgressBar(currentSlideIndex, 1.0);
 
   if (isAutoplay) {
-    if (speechCompletionTimer) clearTimeout(speechCompletionTimer);
-    // Pause for 1.3 seconds so user registers completion before slide transition
+    clearSpeechTimers();
+    // Pause for 1.4s so user comfortably absorbs the conclusion before transition
     speechCompletionTimer = setTimeout(() => {
       if (isAutoplay) {
         nextPresentationSlide();
       }
-    }, 1300);
+    }, 1400);
   } else {
     // Fade out status badge after 2.5s in manual mode
     setTimeout(() => {
@@ -245,21 +285,8 @@ function onSlideSpeechCompleted() {
   }
 }
 
-function startAutoplayTimer() {
-  if (autoplayTimer) clearTimeout(autoplayTimer);
-  if (autoplayProgressTimer) clearInterval(autoplayProgressTimer);
-  clearSpeechTimers();
-
-  // If narration is active, let speech synthesis control the slide transition
-  if (isNarrating && ('speechSynthesis' in window)) {
-    // If not currently speaking, trigger speech
-    if (!isSpeaking) {
-      speakCurrentSlide();
-    }
-    return;
-  }
-
-  // Narration is OFF: standard fixed 8-second slide duration
+function startStandardAutoplayTimer() {
+  clearAutoplayTimers();
   autoplayStartTime = Date.now();
 
   autoplayProgressTimer = setInterval(() => {
@@ -325,30 +352,28 @@ function startNarration() {
   }
   isNarrating = true;
   updateNarrateButtonUI();
-  speakCurrentSlide();
-
-  // If autoplay is running, cancel the fixed timer so speech drives the transition
-  if (isAutoplay) {
-    if (autoplayTimer) {
-      clearTimeout(autoplayTimer);
-      autoplayTimer = null;
-    }
-  }
+  startSlidePlayback();
 }
 
 function stopNarration() {
   isNarrating = false;
   isSpeaking = false;
   clearSpeechTimers();
+  if (currentSpeechUtterance) {
+    currentSpeechUtterance.onstart = null;
+    currentSpeechUtterance.onend = null;
+    currentSpeechUtterance.onerror = null;
+    currentSpeechUtterance = null;
+  }
   if ('speechSynthesis' in window) {
     window.speechSynthesis.cancel();
   }
   updateSpeechIndicator(false, '');
   updateNarrateButtonUI();
 
-  // If autoplay is active, resume standard 8s timer seamlessly
+  // If autoplay is active, smoothly switch to standard 8s timer
   if (isAutoplay) {
-    startAutoplayTimer();
+    startSlidePlayback();
   }
 }
 
@@ -370,7 +395,6 @@ function speakCurrentSlide() {
   if (!isNarrating || !('speechSynthesis' in window)) return;
 
   clearSpeechTimers();
-  window.speechSynthesis.cancel();
 
   const slides = getSlideDefinitions();
   const slide = slides[currentSlideIndex];
@@ -380,7 +404,7 @@ function speakCurrentSlide() {
     if (isAutoplay) {
       speechCompletionTimer = setTimeout(() => {
         if (isAutoplay) nextPresentationSlide();
-      }, 4000);
+      }, 3500);
     }
     return;
   }
@@ -391,19 +415,22 @@ function speakCurrentSlide() {
     .replace(/[«»]/g, '')
     .trim();
 
-  currentSpeechUtterance = new SpeechSynthesisUtterance(cleanText);
-  currentSpeechUtterance.lang = 'el-GR';
-  currentSpeechUtterance.rate = 0.95;
+  const utterance = new SpeechSynthesisUtterance(cleanText);
+  currentSpeechUtterance = utterance;
+  utterance.lang = 'el-GR';
+  utterance.rate = 0.95;
 
   const voices = window.speechSynthesis.getVoices();
   const elVoice = voices.find(v => v.lang.startsWith('el'));
-  if (elVoice) currentSpeechUtterance.voice = elVoice;
+  if (elVoice) utterance.voice = elVoice;
 
-  // Greek speaking speed: ~2.3 words/sec + 2.5s padding
+  // Greek speaking speed: ~2.3 words/sec + 2s padding
   const words = cleanText.split(/\s+/).filter(Boolean).length;
-  estimatedDurationMs = Math.max(5000, Math.round((words / 2.3) * 1000) + 2500);
+  estimatedDurationMs = Math.max(5000, Math.round((words / 2.3) * 1000) + 2000);
 
-  currentSpeechUtterance.onstart = () => {
+  utterance.onstart = () => {
+    // Only proceed if this utterance is still the active one
+    if (currentSpeechUtterance !== utterance) return;
     isSpeaking = true;
     updateSpeechIndicator(true, 'Αφήγηση σε εξέλιξη...');
     if (isAutoplay) {
@@ -411,33 +438,32 @@ function speakCurrentSlide() {
     }
   };
 
-  currentSpeechUtterance.onend = () => {
+  utterance.onend = () => {
+    // Only proceed if this utterance is still the active one
+    if (currentSpeechUtterance !== utterance) return;
     isSpeaking = false;
     clearSpeechTimers();
     onSlideSpeechCompleted();
   };
 
-  currentSpeechUtterance.onerror = (e) => {
-    console.warn('SpeechSynthesis event/cancel:', e);
+  utterance.onerror = (e) => {
+    // CRITICAL: Ignore cancellation/interruption events completely!
+    if (e.error === 'canceled' || e.error === 'interrupted') {
+      return;
+    }
+    if (currentSpeechUtterance !== utterance) return;
+    console.warn('SpeechSynthesis error:', e.error);
     isSpeaking = false;
     clearSpeechTimers();
+    updateSpeechIndicator(false, '');
     if (isAutoplay) {
-      onSlideSpeechCompleted();
-    } else {
-      updateSpeechIndicator(false, '');
+      speechCompletionTimer = setTimeout(() => {
+        if (isAutoplay) nextPresentationSlide();
+      }, SLIDE_DURATION);
     }
   };
 
-  // Fallback safety timeout if onend is not triggered by browser
-  speechSafetyTimer = setTimeout(() => {
-    if (isSpeaking) {
-      console.warn('Speech safety fallback triggered');
-      isSpeaking = false;
-      onSlideSpeechCompleted();
-    }
-  }, estimatedDurationMs + 4000);
-
-  window.speechSynthesis.speak(currentSpeechUtterance);
+  window.speechSynthesis.speak(utterance);
 }
 
 export function togglePresentationFullscreen() {
@@ -659,11 +685,6 @@ function renderSlide(index) {
 
   // Update Dots & Counter
   renderDotsAndCounter(index, slides.length);
-
-  // If narration is active, read the new slide
-  if (isNarrating) {
-    speakCurrentSlide();
-  }
 }
 
 function renderDotsAndCounter(activeIndex, total) {

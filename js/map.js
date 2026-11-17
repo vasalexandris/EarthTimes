@@ -4,12 +4,12 @@
  * polygon highlights, markers, time capsules, and camera animations.
  */
 
-import { findPoiLiveCam } from './video-service.js?v=20261117_pres2';
-import { initDayNight } from './solar-terminator.js?v=20261117_pres2';
+import { findPoiLiveCam } from './video-service.js?v=20261117_pres3';
+import { initDayNight } from './solar-terminator.js?v=20261117_pres3';
 
 let map = null;
 let activeBaseLayer = null;
-let currentBaseLayerKey = 'dark'; // default to cinematic dark
+let currentBaseLayerKey = 'topo'; // default to topographic relief (Ανάγλυφο)
 let statePolygonLayer = null;
 let cityMarkersGroup = null;
 let poiMarkersGroup = null;
@@ -47,12 +47,12 @@ export const BASE_LAYERS = {
     }
   },
   topo: {
-    name: 'Γεωγραφικός / Τοπογραφικός',
+    name: 'Γεωγραφικός / Τοπογραφικός (Ανάγλυφο)',
     icon: 'fa-mountain-sun',
-    url: 'https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png',
+    url: 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}',
     options: {
-      maxZoom: 17,
-      attribution: 'Map &copy; <a href="https://opentopomap.org">OpenTopoMap</a>'
+      maxZoom: 19,
+      attribution: 'Tiles &copy; <a href="https://www.esri.com/">Esri</a>, USGS, NOAA'
     }
   },
   googleRoad: {
