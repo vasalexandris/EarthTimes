@@ -4,12 +4,12 @@
  * Base Map Layer selector, Date display, Video Overlay, and Deep Dive views.
  */
 
-import { getCityVideo, getAvailableVideoTypes, getAvailableCityTours, CITY_VIDEOS, findPoiLiveCam } from './video-service.js?v=20261117_pres1';
-import { getDeepDiveData } from './deep-dive.js?v=20261117_pres1';
-import { fetchWikiArticle, fetchWikiArticleHtml, cleanWikiTitle } from './wiki-service.js?v=20261117_pres1';
-import { calculateSubsolarPoint } from './solar-terminator.js?v=20261117_pres1';
-import { CITY_TO_STATE } from './states-data.js?v=20261117_pres1';
-import { CITY_TO_COUNTRY } from './navigator.js?v=20261117_pres1';
+import { getCityVideo, getAvailableVideoTypes, getAvailableCityTours, CITY_VIDEOS, findPoiLiveCam } from './video-service.js?v=20261117_pres2';
+import { getDeepDiveData } from './deep-dive.js?v=20261117_pres2';
+import { fetchWikiArticle, fetchWikiArticleHtml, cleanWikiTitle } from './wiki-service.js?v=20261117_pres2';
+import { calculateSubsolarPoint } from './solar-terminator.js?v=20261117_pres2';
+import { CITY_TO_STATE } from './states-data.js?v=20261117_pres2';
+import { CITY_TO_COUNTRY } from './navigator.js?v=20261117_pres2';
 
 let currentActiveVideoCityId = null;
 let currentActiveVideoType = 'drone';
@@ -1192,23 +1192,36 @@ export function renderDossier(entity, entityType = 'state', currentTab = 'geo', 
   const badgeCategory = document.getElementById('badgeCategory');
   if (badgeCategory) {
     if (entityType === 'world') {
+      badgeCategory.classList.remove('hidden');
       badgeCategory.innerText = 'Παγκόσμιος Φάκελος Γης';
-      badgeCategory.className = 'px-2 py-0.5 rounded text-[11px] font-bold tracking-wide uppercase bg-emerald-950/80 text-emerald-300 border border-emerald-600/50';
+      badgeCategory.className = 'px-2 py-0.5 rounded text-[11px] font-bold tracking-wide uppercase bg-emerald-950/80 text-emerald-300 border border-emerald-600/50 shrink-0';
     } else if (entityType === 'country') {
+      badgeCategory.classList.remove('hidden');
       badgeCategory.innerText = 'Εθνικός Φάκελος Χώρας';
-      badgeCategory.className = 'px-2 py-0.5 rounded text-[11px] font-bold tracking-wide uppercase bg-indigo-950/80 text-indigo-300 border border-indigo-600/50';
+      badgeCategory.className = 'px-2 py-0.5 rounded text-[11px] font-bold tracking-wide uppercase bg-indigo-950/80 text-indigo-300 border border-indigo-600/50 shrink-0';
     } else if (entityType === 'city') {
-      badgeCategory.innerText = 'Αστικός Φάκελος';
-      badgeCategory.className = 'px-2 py-0.5 rounded text-[11px] font-bold tracking-wide uppercase bg-amber-900/60 text-amber-300 border border-amber-700/50';
+      // User request: Don't show 'Αστικός Φάκελος' tag
+      badgeCategory.classList.add('hidden');
     } else {
+      badgeCategory.classList.remove('hidden');
       badgeCategory.innerText = 'Πολιτειακός / Περιφερειακός Φάκελος';
-      badgeCategory.className = 'px-2 py-0.5 rounded text-[11px] font-bold tracking-wide uppercase bg-sky-900/60 text-sky-300 border border-sky-700/50';
+      badgeCategory.className = 'px-2 py-0.5 rounded text-[11px] font-bold tracking-wide uppercase bg-sky-900/60 text-sky-300 border border-sky-700/50 shrink-0';
     }
   }
 
   const badgeNickname = document.getElementById('badgeNickname');
   if (badgeNickname) {
-    badgeNickname.innerText = entity.nickname ? `"${entity.nickname}"` : '';
+    if (entityType === 'city') {
+      // Beside city name: display nickname or curated description
+      const desc = entity.nickname 
+        ? `«${entity.nickname.replace(/^[«"]+|[»"]+$/g, '')}»` 
+        : (entity.badge || entity.tagline || '');
+      badgeNickname.innerText = desc;
+      badgeNickname.className = 'text-xs sm:text-sm text-amber-400 font-medium italic';
+    } else {
+      badgeNickname.innerText = entity.nickname ? `"${entity.nickname}"` : '';
+      badgeNickname.className = 'text-xs text-amber-400/90 italic';
+    }
   }
 
   const entityTitle = document.getElementById('entityTitle');
@@ -1221,7 +1234,10 @@ export function renderDossier(entity, entityType = 'state', currentTab = 'geo', 
     } else if (entityType === 'country') {
       entitySubtitle.innerText = `${entity.englishName} • Πρωτεύουσα: ${entity.capital || 'Αθήνα'}`;
     } else if (entityType === 'city') {
-      entitySubtitle.innerText = `${entity.englishName}`;
+      const sub = [entity.englishName];
+      if (entity.countryName) sub.push(entity.countryName);
+      else if (entity.stateName) sub.push(entity.stateName);
+      entitySubtitle.innerText = sub.filter(Boolean).join(' • ');
     } else {
       entitySubtitle.innerText = `${entity.englishName} • Πρωτεύουσα: ${entity.capital || 'Βοστώνη'}`;
     }
@@ -1308,6 +1324,16 @@ export function renderDossier(entity, entityType = 'state', currentTab = 'geo', 
       cityPresentationBtn.classList.remove('hidden');
     } else {
       cityPresentationBtn.classList.add('hidden');
+    }
+  }
+
+  // Show/Hide Entire City Action Buttons Row
+  const cityActionsContainer = document.getElementById('cityActionsContainer');
+  if (cityActionsContainer) {
+    if (entityType === 'city') {
+      cityActionsContainer.classList.remove('hidden');
+    } else {
+      cityActionsContainer.classList.add('hidden');
     }
   }
 

@@ -9,8 +9,8 @@
  * - Fullscreen, Keyboard navigation (Arrow keys, Space, Esc, F), and Mobile Touch Swipe
  */
 
-import { getEntityLocalTime, getCuratedGuideItems, getCuratedGastroItems } from './ui.js?v=20261117_pres1';
-import { CITY_VIDEOS } from './video-service.js?v=20261117_pres1';
+import { getEntityLocalTime, getCuratedGuideItems, getCuratedGastroItems } from './ui.js?v=20261117_pres2';
+import { CITY_VIDEOS } from './video-service.js?v=20261117_pres2';
 
 let currentEntity = null;
 let currentEntityType = 'city';
@@ -20,9 +20,13 @@ let isAutoplay = false;
 let autoplayTimer = null;
 let autoplayProgressTimer = null;
 let autoplayStartTime = 0;
-const SLIDE_DURATION = 8000; // 8 seconds per slide
+const SLIDE_DURATION = 8000; // 8 seconds per slide when narration is OFF
 let isNarrating = false;
+let isSpeaking = false;
 let currentSpeechUtterance = null;
+let speechCompletionTimer = null;
+let speechSafetyTimer = null;
+let estimatedDurationMs = 8000;
 
 // Touch swipe tracking
 let touchStartX = 0;
@@ -73,16 +77,26 @@ export function openCityPresentation(entity = null, entityType = 'city') {
   // Setup Keyboard and Touch Listeners once
   setupPresentationListeners();
 
+  // Reset speech indicator
+  updateSpeechIndicator(false, '');
+
   // Render first slide
   renderSlide(currentSlideIndex);
 
   // Update theme button
   updateThemeButtonUI();
+
+  // If autoplay is already active, restart timer
+  if (isAutoplay) {
+    startAutoplayTimer();
+  }
 }
 
 export function closeCityPresentation() {
   stopAutoplay();
   stopNarration();
+  clearSpeechTimers();
+  updateSpeechIndicator(false, '');
 
   const overlay = document.getElementById('mapPresentationOverlay');
   if (overlay) overlay.classList.add('hidden');
@@ -115,10 +129,18 @@ export function goToPresentationSlide(index) {
   const slides = getSlideDefinitions();
   if (index < 0 || index >= slides.length) return;
 
+  // Clear timers and speech
+  clearSpeechTimers();
+  if ('speechSynthesis' in window) {
+    window.speechSynthesis.cancel();
+  }
+  isSpeaking = false;
+  updateSpeechIndicator(false, '');
+
   currentSlideIndex = index;
   renderSlide(currentSlideIndex);
 
-  // Reset autoplay timer on manual slide change
+  // Reset autoplay timer on slide change
   if (isAutoplay) {
     startAutoplayTimer();
   }
@@ -148,14 +170,96 @@ function stopAutoplay() {
     clearInterval(autoplayProgressTimer);
     autoplayProgressTimer = null;
   }
+  clearSpeechTimers();
   updateAutoplayButtonUI();
   updateProgressBar(currentSlideIndex, 0);
+}
+
+function clearSpeechTimers() {
+  if (speechCompletionTimer) {
+    clearTimeout(speechCompletionTimer);
+    speechCompletionTimer = null;
+  }
+  if (speechSafetyTimer) {
+    clearTimeout(speechSafetyTimer);
+    speechSafetyTimer = null;
+  }
+}
+
+function updateSpeechIndicator(active, text = '') {
+  const statusEl = document.getElementById('presSpeechStatus');
+  const textEl = document.getElementById('presSpeechStatusText');
+  const iconEl = document.getElementById('presSpeechStatusIcon');
+  if (!statusEl) return;
+
+  if (active) {
+    statusEl.classList.remove('hidden');
+    statusEl.classList.add('flex');
+    if (textEl) textEl.innerText = text || 'Αφήγηση σε εξέλιξη...';
+    if (iconEl) iconEl.className = 'fa-solid fa-volume-high text-emerald-400 animate-pulse text-xs';
+  } else if (text) {
+    statusEl.classList.remove('hidden');
+    statusEl.classList.add('flex');
+    if (textEl) textEl.innerText = text;
+    if (iconEl) iconEl.className = 'fa-solid fa-circle-check text-emerald-400 text-xs';
+  } else {
+    statusEl.classList.add('hidden');
+    statusEl.classList.remove('flex');
+  }
+}
+
+function startSpeechProgressTracking(durationMs) {
+  if (autoplayProgressTimer) clearInterval(autoplayProgressTimer);
+  autoplayStartTime = Date.now();
+
+  autoplayProgressTimer = setInterval(() => {
+    if (!isSpeaking) {
+      clearInterval(autoplayProgressTimer);
+      autoplayProgressTimer = null;
+      return;
+    }
+    const elapsed = Date.now() - autoplayStartTime;
+    // Cap at 0.95 until onend fires
+    const progress = Math.min(0.95, elapsed / durationMs);
+    updateProgressBar(currentSlideIndex, progress);
+  }, 60);
+}
+
+function onSlideSpeechCompleted() {
+  updateSpeechIndicator(false, 'Ολοκληρώθηκε');
+  updateProgressBar(currentSlideIndex, 1.0);
+
+  if (isAutoplay) {
+    if (speechCompletionTimer) clearTimeout(speechCompletionTimer);
+    // Pause for 1.3 seconds so user registers completion before slide transition
+    speechCompletionTimer = setTimeout(() => {
+      if (isAutoplay) {
+        nextPresentationSlide();
+      }
+    }, 1300);
+  } else {
+    // Fade out status badge after 2.5s in manual mode
+    setTimeout(() => {
+      if (!isSpeaking) updateSpeechIndicator(false, '');
+    }, 2500);
+  }
 }
 
 function startAutoplayTimer() {
   if (autoplayTimer) clearTimeout(autoplayTimer);
   if (autoplayProgressTimer) clearInterval(autoplayProgressTimer);
+  clearSpeechTimers();
 
+  // If narration is active, let speech synthesis control the slide transition
+  if (isNarrating && ('speechSynthesis' in window)) {
+    // If not currently speaking, trigger speech
+    if (!isSpeaking) {
+      speakCurrentSlide();
+    }
+    return;
+  }
+
+  // Narration is OFF: standard fixed 8-second slide duration
   autoplayStartTime = Date.now();
 
   autoplayProgressTimer = setInterval(() => {
@@ -222,14 +326,30 @@ function startNarration() {
   isNarrating = true;
   updateNarrateButtonUI();
   speakCurrentSlide();
+
+  // If autoplay is running, cancel the fixed timer so speech drives the transition
+  if (isAutoplay) {
+    if (autoplayTimer) {
+      clearTimeout(autoplayTimer);
+      autoplayTimer = null;
+    }
+  }
 }
 
 function stopNarration() {
   isNarrating = false;
+  isSpeaking = false;
+  clearSpeechTimers();
   if ('speechSynthesis' in window) {
     window.speechSynthesis.cancel();
   }
+  updateSpeechIndicator(false, '');
   updateNarrateButtonUI();
+
+  // If autoplay is active, resume standard 8s timer seamlessly
+  if (isAutoplay) {
+    startAutoplayTimer();
+  }
 }
 
 function updateNarrateButtonUI() {
@@ -249,19 +369,73 @@ function updateNarrateButtonUI() {
 function speakCurrentSlide() {
   if (!isNarrating || !('speechSynthesis' in window)) return;
 
+  clearSpeechTimers();
   window.speechSynthesis.cancel();
 
   const slides = getSlideDefinitions();
   const slide = slides[currentSlideIndex];
-  if (!slide || !slide.speechText) return;
+  if (!slide || !slide.speechText) {
+    isSpeaking = false;
+    updateSpeechIndicator(false, '');
+    if (isAutoplay) {
+      speechCompletionTimer = setTimeout(() => {
+        if (isAutoplay) nextPresentationSlide();
+      }, 4000);
+    }
+    return;
+  }
 
-  currentSpeechUtterance = new SpeechSynthesisUtterance(slide.speechText);
+  const cleanText = slide.speechText
+    .replace(/<[^>]*>/g, '')
+    .replace(/\[\d+\]/g, '')
+    .replace(/[«»]/g, '')
+    .trim();
+
+  currentSpeechUtterance = new SpeechSynthesisUtterance(cleanText);
   currentSpeechUtterance.lang = 'el-GR';
   currentSpeechUtterance.rate = 0.95;
 
   const voices = window.speechSynthesis.getVoices();
   const elVoice = voices.find(v => v.lang.startsWith('el'));
   if (elVoice) currentSpeechUtterance.voice = elVoice;
+
+  // Greek speaking speed: ~2.3 words/sec + 2.5s padding
+  const words = cleanText.split(/\s+/).filter(Boolean).length;
+  estimatedDurationMs = Math.max(5000, Math.round((words / 2.3) * 1000) + 2500);
+
+  currentSpeechUtterance.onstart = () => {
+    isSpeaking = true;
+    updateSpeechIndicator(true, 'Αφήγηση σε εξέλιξη...');
+    if (isAutoplay) {
+      startSpeechProgressTracking(estimatedDurationMs);
+    }
+  };
+
+  currentSpeechUtterance.onend = () => {
+    isSpeaking = false;
+    clearSpeechTimers();
+    onSlideSpeechCompleted();
+  };
+
+  currentSpeechUtterance.onerror = (e) => {
+    console.warn('SpeechSynthesis event/cancel:', e);
+    isSpeaking = false;
+    clearSpeechTimers();
+    if (isAutoplay) {
+      onSlideSpeechCompleted();
+    } else {
+      updateSpeechIndicator(false, '');
+    }
+  };
+
+  // Fallback safety timeout if onend is not triggered by browser
+  speechSafetyTimer = setTimeout(() => {
+    if (isSpeaking) {
+      console.warn('Speech safety fallback triggered');
+      isSpeaking = false;
+      onSlideSpeechCompleted();
+    }
+  }, estimatedDurationMs + 4000);
 
   window.speechSynthesis.speak(currentSpeechUtterance);
 }
