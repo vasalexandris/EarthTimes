@@ -113,21 +113,28 @@ export function openCityVideo(cityId, preferredType = 'drone') {
   const youtubeId = vid?.youtubeId || '54nbsW6jYN4';
   const videoTitle = vid?.title || `Περιήγηση 4K: ${cityId}`;
 
+  let cityName = cityId;
+  if (window.getCurrentEntity) {
+    const cur = window.getCurrentEntity();
+    if (cur && cur.name) cityName = cur.name;
+  }
+  const searchQuery = `${cityName} ${preferredType === 'drone' ? 'drone 4k' : 'walking tour 4k'}`;
+
   currentOverlayYoutubeId = youtubeId;
   currentOverlayStartSec = 0;
-  currentOverlayTitle = videoTitle;
-  currentOverlayQuery = cityId;
-  currentOverlayMode = 'player';
+  currentOverlayTitle = `📹 Video Search: ${cityName}`;
+  currentOverlayQuery = searchQuery;
+  currentOverlayMode = 'video_search';
 
-  if (title) title.innerText = videoTitle;
+  if (title) title.innerText = `📹 Video Search: ${cityName}`;
   if (directLink) {
     directLink.setAttribute('data-youtube-id', youtubeId);
+    directLink.href = `https://www.bing.com/videos/search?q=${encodeURIComponent(searchQuery)}`;
   }
-  iframe.src = `https://www.youtube.com/embed/${youtubeId}?autoplay=1&playsinline=1&rel=0&modestbranding=1&enablejsapi=1`;
 
   const searchInput = document.getElementById('videoSearchInput');
   if (searchInput) {
-    searchInput.value = cityId;
+    searchInput.value = searchQuery;
     if (!searchInput.dataset.bound) {
       searchInput.dataset.bound = 'true';
       searchInput.addEventListener('keydown', (e) => {
@@ -146,21 +153,33 @@ export function openCityVideo(cityId, preferredType = 'drone') {
     typeSelector.innerHTML = '';
   }
 
-  setOverlayMediaMode('player');
+  setOverlayMediaMode('video_search');
 
   overlay.classList.remove('hidden');
   syncMapFloatingControlsVisibility();
 }
 
 export function setOverlayMediaMode(mode, specificId = null) {
-  currentOverlayMode = mode || 'player';
+  currentOverlayMode = mode || 'video_search';
   const iframe = document.getElementById('mapVideoIframe');
   const gallery = document.getElementById('allVideosGalleryView');
   const title = document.getElementById('videoOverlayTitle');
+  const icon = document.getElementById('videoOverlayIcon');
   const searchInput = document.getElementById('videoSearchInput');
+  const directLink = document.getElementById('videoDirectLink');
+  const ytDirectLink = document.getElementById('videoYoutubeDirectLink');
+  const googleDirectLink = document.getElementById('videoGoogleDirectLink');
   const query = (searchInput?.value?.trim() || currentOverlayQuery || (currentActiveVideoCityId ? currentActiveVideoCityId.replace(/_/g, ' ') : '') || 'Athens Greece').trim();
 
-  // Update button active styles
+  // Sync external search shortcuts
+  if (ytDirectLink) {
+    ytDirectLink.href = `https://www.youtube.com/results?search_query=${encodeURIComponent(query)}`;
+  }
+  if (googleDirectLink) {
+    googleDirectLink.href = `https://www.google.com/search?q=${encodeURIComponent(query)}`;
+  }
+
+  // Update button active styles (Keep player and shorts hidden per user request)
   const btnMap = {
     player: document.getElementById('mediaModePlayerBtn'),
     shorts: document.getElementById('mediaModeShortsBtn'),
@@ -177,10 +196,12 @@ export function setOverlayMediaMode(mode, specificId = null) {
 
   Object.entries(btnMap).forEach(([m, btn]) => {
     if (!btn) return;
+    const isHiddenBtn = (m === 'player' || m === 'shorts');
+    const hideClass = isHiddenBtn ? 'hidden ' : '';
     if (m === currentOverlayMode) {
-      btn.className = `px-2.5 py-1 rounded-lg ${activeColorMap[m]} text-xs font-bold transition flex items-center gap-1.5 shadow cursor-pointer shrink-0`;
+      btn.className = `${hideClass}px-2.5 py-1 rounded-lg ${activeColorMap[m]} text-xs font-bold transition flex items-center gap-1.5 shadow cursor-pointer shrink-0`;
     } else {
-      btn.className = 'px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white border border-slate-700 text-xs font-bold transition flex items-center gap-1.5 cursor-pointer shrink-0';
+      btn.className = `${hideClass}px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white border border-slate-700 text-xs font-bold transition flex items-center gap-1.5 cursor-pointer shrink-0`;
     }
   });
 
@@ -189,12 +210,18 @@ export function setOverlayMediaMode(mode, specificId = null) {
   iframe.classList.remove('hidden');
 
   if (currentOverlayMode === 'player') {
+    if (icon) icon.className = 'fa-solid fa-play text-rose-500 text-xs shrink-0';
     iframe.className = 'w-full h-full max-w-5xl rounded-xl shadow-2xl border border-slate-800 transition-all duration-300';
     if (currentOverlayYoutubeId) {
       if (title && currentOverlayTitle) title.innerText = currentOverlayTitle;
+      if (directLink) {
+        directLink.href = `https://www.youtube.com/watch?v=${currentOverlayYoutubeId}${currentOverlayStartSec > 0 ? `&t=${currentOverlayStartSec}s` : ''}`;
+        directLink.setAttribute('data-youtube-id', currentOverlayYoutubeId);
+      }
       iframe.src = `https://www.youtube.com/embed/${currentOverlayYoutubeId}?autoplay=1&playsinline=1&rel=0&modestbranding=1&enablejsapi=1${currentOverlayStartSec > 0 ? `&start=${currentOverlayStartSec}` : ''}`;
     }
   } else if (currentOverlayMode === 'shorts') {
+    if (icon) icon.className = 'fa-solid fa-mobile-screen text-emerald-400 text-xs shrink-0';
     iframe.className = 'w-full h-full max-w-[380px] sm:max-w-[420px] rounded-2xl shadow-2xl border border-emerald-500/50 bg-black transition-all duration-300 mx-auto';
 
     const social = getSocialMediaVideos(query, currentActiveVideoCityId);
@@ -206,17 +233,34 @@ export function setOverlayMediaMode(mode, specificId = null) {
     const activeItem = shortsList.find(s => s.id === activeId) || shortsList[0];
 
     if (title) title.innerText = `📱 Shorts: ${activeItem.title}`;
+    if (directLink) {
+      directLink.href = `https://www.youtube.com/shorts/${activeId}`;
+    }
     iframe.src = `https://www.youtube.com/embed/${activeId}?autoplay=1&playsinline=1&rel=0&loop=1&enablejsapi=1`;
   } else if (currentOverlayMode === 'video_search') {
+    if (icon) icon.className = 'fa-solid fa-video text-amber-400 text-xs shrink-0';
     iframe.className = 'w-full h-full max-w-5xl rounded-xl shadow-2xl border border-amber-500/40 bg-white transition-all duration-300';
     const searchQuery = query || (currentActiveVideoCityId ? currentActiveVideoCityId.replace(/_/g, ' ') : 'Travel');
     if (title) title.innerText = `📹 Video Search: ${searchQuery}`;
-    iframe.src = `https://www.bing.com/videos/search?q=${encodeURIComponent(searchQuery)}`;
+    const targetUrl = `https://www.bing.com/videos/search?q=${encodeURIComponent(searchQuery)}`;
+    if (directLink) {
+      directLink.href = targetUrl;
+    }
+    if (iframe.src !== targetUrl) {
+      iframe.src = targetUrl;
+    }
   } else if (currentOverlayMode === 'web') {
+    if (icon) icon.className = 'fa-solid fa-globe text-sky-400 text-xs shrink-0';
     iframe.className = 'w-full h-full max-w-5xl rounded-xl shadow-2xl border border-sky-500/40 bg-white transition-all duration-300';
     const searchQuery = query || (currentActiveVideoCityId ? currentActiveVideoCityId.replace(/_/g, ' ') : 'Travel');
     if (title) title.innerText = `🌐 Web Search: ${searchQuery}`;
-    iframe.src = `https://www.bing.com/search?q=${encodeURIComponent(searchQuery + ' travel guide')}`;
+    const targetUrl = `https://www.bing.com/search?q=${encodeURIComponent(searchQuery + ' travel guide')}`;
+    if (directLink) {
+      directLink.href = targetUrl;
+    }
+    if (iframe.src !== targetUrl) {
+      iframe.src = targetUrl;
+    }
   }
 }
 
@@ -684,12 +728,8 @@ export function submitOverlayVideoSearch() {
     return;
   }
 
-  // 10. In-App Video or Web Search directly inside the iframe!
-  if (currentOverlayMode === 'video_search') {
-    setOverlayMediaMode('video_search');
-  } else {
-    setOverlayMediaMode('web');
-  }
+  // 10. In-App Video Search directly inside the iframe!
+  setOverlayMediaMode('video_search');
 }
 
 export function openPoiVideo(poiTitle, cityId = '', explicitStart = null) {
@@ -697,6 +737,13 @@ export function openPoiVideo(poiTitle, cityId = '', explicitStart = null) {
     const cur = window.getCurrentEntity();
     if (cur && cur.id) cityId = cur.id;
   }
+
+  let cityName = '';
+  if (window.getCurrentEntity) {
+    const cur = window.getCurrentEntity();
+    if (cur && cur.name) cityName = cur.name;
+  }
+  const searchQuery = `${poiTitle} ${cityName}`.trim();
 
   const info = getPoiVideoInfo(poiTitle, cityId);
   if (!info || !info.youtubeId) return;
@@ -748,21 +795,21 @@ export function openPoiVideo(poiTitle, cityId = '', explicitStart = null) {
 
   currentOverlayYoutubeId = info.youtubeId;
   currentOverlayStartSec = startSec;
-  currentOverlayTitle = videoTitle;
-  currentOverlayQuery = poiTitle || info.title || '';
-  currentOverlayMode = 'player';
+  currentOverlayTitle = `📹 Video Search: ${poiTitle}`;
+  currentOverlayQuery = searchQuery;
+  currentOverlayMode = 'video_search';
 
-  if (title) title.innerText = videoTitle;
+  if (title) title.innerText = `📹 Video Search: ${poiTitle}`;
   if (directLink) {
     directLink.setAttribute('data-youtube-id', info.youtubeId);
+    directLink.href = `https://www.bing.com/videos/search?q=${encodeURIComponent(searchQuery)}`;
   }
-  iframe.src = `https://www.youtube.com/embed/${info.youtubeId}?autoplay=1&playsinline=1&rel=0&modestbranding=1&enablejsapi=1${startSec > 0 ? `&start=${startSec}` : ''}`;
 
-  setOverlayMediaMode('player');
+  setOverlayMediaMode('video_search');
 
   // Configure search bar
   if (searchInput) {
-    searchInput.value = poiTitle;
+    searchInput.value = searchQuery;
     if (!searchInput.dataset.bound) {
       searchInput.dataset.bound = 'true';
       searchInput.addEventListener('keydown', (e) => {
@@ -837,25 +884,26 @@ export function openGastroVideo(dishTitle, cityName = '') {
   const cityVid = getCityVideo(currentCityKey, 'drone') || getCityVideo(currentCityKey, 'walking') || getCityVideo(currentCityKey);
 
   const primaryYtId = recipe?.youtubeId || cityVid?.youtubeId || 'mWTDKXzOyg0';
-  const videoTitle = recipe ? `👨‍🍳 Βίντεο Συνταγής: ${recipe.dish || dishTitle} (${recipe.region || currentCityName})` : `👨‍🍳 Γαστρονομία: ${dishTitle} (${currentCityName})`;
+  const videoTitle = recipe ? `👨‍🍳 ${recipe.dish || dishTitle} (${recipe.region || currentCityName})` : `👨‍🍳 Γαστρονομία: ${dishTitle} (${currentCityName})`;
+  const searchQuery = `${dishTitle} συνταγή`;
 
   currentOverlayYoutubeId = primaryYtId;
   currentOverlayStartSec = 0;
-  currentOverlayTitle = videoTitle;
-  currentOverlayQuery = dishTitle || recipe?.dish || '';
-  currentOverlayMode = 'player';
+  currentOverlayTitle = `👨‍🍳 Video Search: ${dishTitle}`;
+  currentOverlayQuery = searchQuery;
+  currentOverlayMode = 'video_search';
 
-  if (title) title.innerText = videoTitle;
+  if (title) title.innerText = `👨‍🍳 Video Search: ${dishTitle}`;
   if (directLink) {
     directLink.setAttribute('data-youtube-id', primaryYtId);
+    directLink.href = `https://www.bing.com/videos/search?q=${encodeURIComponent(searchQuery)}`;
   }
-  iframe.src = `https://www.youtube.com/embed/${primaryYtId}?autoplay=1&playsinline=1&rel=0&modestbranding=1&enablejsapi=1`;
 
-  setOverlayMediaMode('player');
+  setOverlayMediaMode('video_search');
 
   // Pre-fill search bar
   if (searchInput) {
-    searchInput.value = dishTitle;
+    searchInput.value = searchQuery;
     if (!searchInput.dataset.bound) {
       searchInput.dataset.bound = 'true';
       searchInput.addEventListener('keydown', (e) => {
@@ -910,7 +958,7 @@ export function closeMapVideoOverlay() {
   }
   if (overlay) overlay.classList.add('hidden');
   currentActiveVideoCityId = null;
-  currentOverlayMode = 'player';
+  currentOverlayMode = 'video_search';
   currentOverlayShortsId = '';
   syncMapFloatingControlsVisibility();
 }
