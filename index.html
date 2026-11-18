@@ -699,14 +699,14 @@
                   </button>
                 </div>
 
-                <!-- 1. Normal Video Button (Hidden per user request, ready for future reactivation) -->
-                <button id="mediaModePlayerBtn" onclick="window.setOverlayMediaMode('player')" class="hidden px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white border border-slate-700 text-xs font-bold transition flex items-center gap-1.5 shadow cursor-pointer shrink-0" title="Κανονικό Βίντεο">
+                <!-- 1. Normal Video Button -->
+                <button id="mediaModePlayerBtn" onclick="window.setOverlayMediaMode('player')" class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white border border-slate-700 text-xs font-bold transition flex items-center gap-1.5 shadow cursor-pointer shrink-0" title="Κανονικό Βίντεο">
                   <i class="fa-solid fa-film"></i>
                   <span>Βίντεο</span>
                 </button>
 
-                <!-- 2. Shorts Button (Hidden per user request, ready for future reactivation) -->
-                <button id="mediaModeShortsBtn" onclick="window.setOverlayMediaMode('shorts')" class="hidden px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white border border-slate-700 text-xs font-bold transition flex items-center gap-1.5 cursor-pointer shrink-0" title="Shorts (Κάθετα βίντεο)">
+                <!-- 2. Shorts Button -->
+                <button id="mediaModeShortsBtn" onclick="window.setOverlayMediaMode('shorts')" class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white border border-slate-700 text-xs font-bold transition flex items-center gap-1.5 cursor-pointer shrink-0" title="Shorts (Κάθετα βίντεο)">
                   <i class="fa-solid fa-mobile-screen text-emerald-400"></i>
                   <span>Shorts</span>
                 </button>
@@ -1342,7 +1342,7 @@
   </div>
 
   <!-- Modular Application Scripts -->
-  <script type="module" src="js/app.js?v=20261117_multilingual_search_v2"></script>
+  <script type="module" src="js/app.js?v=20261118_curated_video_fallback_v1"></script>
   <!-- Fullscreen Toggle Script (Android, WebKit, Desktop) -->
   <script>
     window.toggleFullScreen = function() {
