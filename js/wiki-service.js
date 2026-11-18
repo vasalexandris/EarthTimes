@@ -142,6 +142,33 @@ export async function fetchWikiArticleHtml(queryOrTitle, lang = 'el', fallbackEn
     }
   }
 
+  // 3. Smart OpenSearch API fallback to resolve close titles (e.g., foods, landmarks, cultural items)
+  if (!res) {
+    async function tryOpenSearch(targetLang, query) {
+      if (!query) return null;
+      const cleanQ = cleanWikiTitle(query) || query;
+      try {
+        const searchEndpoint = `https://${targetLang}.wikipedia.org/w/api.php?action=opensearch&search=${encodeURIComponent(cleanQ)}&limit=1&namespace=0&format=json&origin=*`;
+        const sRes = await fetch(searchEndpoint);
+        if (sRes.ok) {
+          const sData = await sRes.json();
+          if (sData && Array.isArray(sData[1]) && sData[1].length > 0) {
+            const candidate = sData[1][0];
+            return await tryFetchHtml(targetLang, candidate);
+          }
+        }
+      } catch (err) {
+        console.warn(`[WikiService] OpenSearch error for ${cleanQ} in ${targetLang}:`, err);
+      }
+      return null;
+    }
+
+    res = await tryOpenSearch(lang, queryOrTitle);
+    if (!res && lang === 'el') {
+      res = await tryOpenSearch('en', fallbackEnQuery || queryOrTitle);
+    }
+  }
+
   return res;
 }
 

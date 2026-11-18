@@ -700,48 +700,25 @@
                 </div>
 
                 <!-- 1. Normal Video Button -->
-                <button id="mediaModePlayerBtn" onclick="window.setOverlayMediaMode('player')" class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white border border-slate-700 text-xs font-bold transition flex items-center gap-1.5 shadow cursor-pointer shrink-0" title="Κανονικό Βίντεο">
+                <button id="mediaModePlayerBtn" onclick="window.setOverlayMediaMode('player')" class="px-2.5 py-1 rounded-lg bg-rose-600 text-white text-xs font-bold transition flex items-center gap-1.5 shadow cursor-pointer shrink-0" title="Κανονικό Βίντεο">
                   <i class="fa-solid fa-film"></i>
                   <span>Βίντεο</span>
                 </button>
 
-                <!-- 2. Shorts Button -->
-                <button id="mediaModeShortsBtn" onclick="window.setOverlayMediaMode('shorts')" class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white border border-slate-700 text-xs font-bold transition flex items-center gap-1.5 cursor-pointer shrink-0" title="Shorts (Κάθετα βίντεο)">
-                  <i class="fa-solid fa-mobile-screen text-emerald-400"></i>
-                  <span>Shorts</span>
-                </button>
-
-                <!-- 3. Video Search Button (Bing Videos directly in frame - Default active) -->
-                <button id="mediaModeVideoSearchBtn" onclick="window.setOverlayMediaMode('video_search')" class="px-2.5 py-1 rounded-lg bg-amber-600 text-white shadow-md shadow-amber-900/50 text-xs font-bold transition flex items-center gap-1.5 cursor-pointer shrink-0" title="Αναζήτηση Βίντεο στο Iframe">
-                  <i class="fa-solid fa-video text-amber-200"></i>
+                <!-- 2. Video Search Button (Bing Videos directly in frame) -->
+                <button id="mediaModeVideoSearchBtn" onclick="window.setOverlayMediaMode('video_search')" class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white border border-slate-700 text-xs font-bold transition flex items-center gap-1.5 cursor-pointer shrink-0" title="Αναζήτηση Βίντεο στο Iframe">
+                  <i class="fa-solid fa-video text-amber-400"></i>
                   <span>Video Search</span>
                 </button>
 
-                <!-- 4. Web Search Button -->
-                <button id="mediaModeWebBtn" onclick="window.setOverlayMediaMode('web')" class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white border border-slate-700 text-xs font-bold transition flex items-center gap-1.5 cursor-pointer shrink-0" title="Αναζήτηση στο Web">
-                  <i class="fa-solid fa-globe text-sky-400"></i>
-                  <span class="hidden sm:inline">Web Search</span>
+                <!-- 3. AI Search Button (Bing AI Mode directly in frame) -->
+                <button id="mediaModeAiBtn" onclick="window.setOverlayMediaMode('ai_search')" class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white border border-slate-700 text-xs font-bold transition flex items-center gap-1.5 cursor-pointer shrink-0" title="Αναζήτηση Bing AI στο Iframe">
+                  <i class="fa-solid fa-wand-magic-sparkles text-amber-400"></i>
+                  <span>AI Search</span>
                 </button>
 
-                <!-- Prominent External Window Button (Direct User Request) -->
-                <a id="videoDirectLink" href="#" target="_blank" rel="noopener noreferrer" class="px-2.5 sm:px-3 py-1 rounded-lg bg-gradient-to-r from-amber-600 to-amber-500 hover:from-amber-500 hover:to-amber-400 text-white text-xs font-bold transition flex items-center gap-1.5 shadow-md hover:scale-105 cursor-pointer" title="Προβολή αυτού του βίντεο / αναζήτησης σε εξωτερικό νέο παράθυρο">
-                  <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                  <span>Προβολή έξω</span>
-                </a>
-
-                <!-- 1-Tap External Search to YouTube & Google -->
-                <a id="videoYoutubeDirectLink" href="#" target="_blank" rel="noopener noreferrer" class="px-2 py-1 rounded-lg bg-red-600/20 hover:bg-red-600 text-red-300 hover:text-white border border-red-500/40 text-xs font-bold transition flex items-center gap-1 shadow cursor-pointer" title="Αναζήτηση στο YouTube">
-                  <i class="fa-brands fa-youtube text-red-400"></i>
-                  <span class="hidden md:inline">YouTube</span>
-                </a>
-
-                <a id="videoGoogleDirectLink" href="#" target="_blank" rel="noopener noreferrer" class="px-2 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white border border-slate-700 text-xs font-bold transition flex items-center gap-1 shadow cursor-pointer" title="Αναζήτηση στο Google">
-                  <i class="fa-brands fa-google text-sky-400"></i>
-                  <span class="hidden md:inline">Google</span>
-                </a>
-
                 <!-- Close Overlay -->
-                <button onclick="closeMapVideoOverlay()" class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 hover:text-white text-xs font-bold transition flex items-center gap-1.5 border border-slate-700 shadow cursor-pointer ml-0.5" title="Κλείσιμο">
+                <button onclick="closeMapVideoOverlay()" class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 hover:text-white text-xs font-bold transition flex items-center gap-1.5 border border-slate-700 shadow cursor-pointer ml-1" title="Κλείσιμο">
                   <i class="fa-solid fa-xmark"></i>
                   <span class="hidden sm:inline">Κλείσιμο</span>
                 </button>
@@ -769,6 +746,11 @@
                 <h3 id="deepDiveTitle" class="text-xs sm:text-sm font-semibold text-slate-300 truncate max-w-[200px] sm:max-w-md hidden sm:block"></h3>
               </div>
               <div class="flex items-center gap-2">
+                <button id="deepDiveBingAiBtn" onclick="window.openDeepDiveBingAiSearch()" title="Αναζήτηση Bing AI Search για το θέμα" class="px-3 py-1.5 rounded-lg bg-gradient-to-r from-amber-600 to-orange-600 hover:from-amber-500 hover:to-orange-500 text-white text-xs font-bold transition flex items-center gap-1.5 shadow cursor-pointer">
+                  <i class="fa-solid fa-wand-magic-sparkles text-amber-200"></i>
+                  <span class="hidden sm:inline">Bing AI Search</span>
+                  <span class="sm:hidden">AI Search</span>
+                </button>
                 <button id="deepDiveWikiHeaderBtn" onclick="openDeepDiveWikiReader()" title="Ανάγνωση στη Wikipedia στον Χάρτη" class="hidden px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-sky-400 hover:text-white border border-slate-700 text-xs font-bold transition flex items-center gap-1.5 shadow">
                   <i class="fa-brands fa-wikipedia-w text-sky-400"></i>
                   <span class="hidden sm:inline">Wikipedia</span>
@@ -796,6 +778,10 @@
                 <span id="wikiOverlayLangBadge" class="hidden sm:inline-block px-1.5 py-0.5 rounded text-[10px] font-mono bg-slate-800 text-sky-300 border border-slate-700">EL</span>
               </div>
               <div class="flex items-center gap-2 shrink-0">
+                <button id="wikiBingAiBtn" onclick="window.switchWikiToBingSearch()" class="px-2.5 py-1 rounded-lg bg-gradient-to-r from-amber-600 to-orange-600 hover:from-amber-500 hover:to-orange-500 text-white text-xs font-bold transition flex items-center gap-1.5 shadow cursor-pointer" title="Αναζήτηση στο Bing με AI">
+                  <i class="fa-solid fa-wand-magic-sparkles text-amber-200"></i>
+                  <span class="hidden sm:inline">Bing AI Search</span>
+                </button>
                 <button id="wikiTranslateBtn" onclick="translateWikiReaderInPlace()" class="hidden px-2.5 py-1 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold transition flex items-center gap-1.5 shadow">
                   <i class="fa-solid fa-language"></i>
                   <span id="wikiTranslateBtnLabel">Μετάφραση στα Ελληνικά</span>
@@ -818,7 +804,7 @@
             </div>
 
             <!-- Sandboxed reader frame inside the map container -->
-            <iframe id="mapWikiIframe" class="w-full flex-1 border-0 bg-[#0b0f19] hidden" sandbox="allow-same-origin allow-scripts" title="Wikipedia Article Reader"></iframe>
+            <iframe id="mapWikiIframe" class="w-full flex-1 border-0 bg-[#0b0f19] hidden" sandbox="allow-same-origin allow-scripts allow-forms allow-popups" title="Wikipedia Article Reader"></iframe>
           </div>
 
           <!-- IN-MAP GOOGLE STREET VIEW OVERLAY (Takes exact map canvas dimensions) -->
@@ -1342,7 +1328,7 @@
   </div>
 
   <!-- Modular Application Scripts -->
-  <script type="module" src="js/app.js?v=20261118_curated_video_fallback_v1"></script>
+  <script type="module" src="js/app.js?v=20261118_ai_search_wiki_bing_v2"></script>
   <!-- Fullscreen Toggle Script (Android, WebKit, Desktop) -->
   <script>
     window.toggleFullScreen = function() {

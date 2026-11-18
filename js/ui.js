@@ -4,9 +4,9 @@
  * Base Map Layer selector, Date display, Video Overlay, and Deep Dive views.
  */
 
-import { getCityVideo, getAvailableVideoTypes, getAvailableCityTours, CITY_VIDEOS, findPoiLiveCam, getPoiVideoInfo, getGastroRecipeVideo, getSocialMediaVideos, SOCIAL_MEDIA_REGISTRY, GASTRO_RECIPE_VIDEOS } from './video-service.js?v=20261118_curated_video_fallback_v1';
+import { getCityVideo, getAvailableVideoTypes, getAvailableCityTours, CITY_VIDEOS, findPoiLiveCam, getPoiVideoInfo, getGastroRecipeVideo, getSocialMediaVideos, SOCIAL_MEDIA_REGISTRY, GASTRO_RECIPE_VIDEOS } from './video-service.js?v=20261118_ai_search_wiki_bing_v2';
 import { getDeepDiveData } from './deep-dive.js?v=20261117_video_iframe_fix';
-import { fetchWikiArticle, fetchWikiArticleHtml, cleanWikiTitle } from './wiki-service.js?v=20261117_video_iframe_fix';
+import { fetchWikiArticle, fetchWikiArticleHtml, cleanWikiTitle } from './wiki-service.js?v=20261118_ai_search_wiki_bing_v2';
 import { calculateSubsolarPoint } from './solar-terminator.js?v=20261117_video_iframe_fix';
 import { CITY_TO_STATE } from './states-data.js?v=20261117_video_iframe_fix';
 import { CITY_TO_COUNTRY } from './navigator.js?v=20261117_video_iframe_fix';
@@ -613,37 +613,27 @@ export function setOverlayMediaMode(mode, specificId = null) {
   const title = document.getElementById('videoOverlayTitle');
   const icon = document.getElementById('videoOverlayIcon');
   const searchInput = document.getElementById('videoSearchInput');
-  const directLink = document.getElementById('videoDirectLink');
-  const ytDirectLink = document.getElementById('videoYoutubeDirectLink');
-  const googleDirectLink = document.getElementById('videoGoogleDirectLink');
   const query = (searchInput?.value?.trim() || currentOverlayQuery || (currentActiveVideoCityId ? currentActiveVideoCityId.replace(/_/g, ' ') : '') || 'Athens Greece').trim();
-
-  // Sync external search shortcuts
-  if (ytDirectLink) {
-    ytDirectLink.href = `https://www.youtube.com/results?search_query=${encodeURIComponent(query)}`;
-  }
-  if (googleDirectLink) {
-    googleDirectLink.href = `https://www.google.com/search?q=${encodeURIComponent(query)}`;
-  }
 
   // Update button active styles (all buttons active and accessible)
   const btnMap = {
     player: document.getElementById('mediaModePlayerBtn'),
-    shorts: document.getElementById('mediaModeShortsBtn'),
     video_search: document.getElementById('mediaModeVideoSearchBtn'),
-    web: document.getElementById('mediaModeWebBtn'),
+    ai_search: document.getElementById('mediaModeAiBtn') || document.getElementById('mediaModeWebBtn'),
+    web: document.getElementById('mediaModeAiBtn') || document.getElementById('mediaModeWebBtn'),
   };
 
   const activeColorMap = {
     player: 'bg-rose-600 text-white shadow-md',
-    shorts: 'bg-emerald-600 text-white shadow-md shadow-emerald-900/50',
     video_search: 'bg-amber-600 text-white shadow-md shadow-amber-900/50',
-    web: 'bg-sky-600 text-white shadow-md shadow-sky-900/50',
+    ai_search: 'bg-gradient-to-r from-amber-500 to-orange-500 text-slate-950 font-black shadow-md shadow-amber-900/50',
+    web: 'bg-gradient-to-r from-amber-500 to-orange-500 text-slate-950 font-black shadow-md shadow-amber-900/50',
   };
 
   Object.entries(btnMap).forEach(([m, btn]) => {
     if (!btn) return;
-    if (m === currentOverlayMode) {
+    const isAct = (m === currentOverlayMode) || (currentOverlayMode === 'ai_search' && m === 'web') || (currentOverlayMode === 'web' && m === 'ai_search');
+    if (isAct) {
       btn.className = `px-2.5 py-1 rounded-lg ${activeColorMap[m]} text-xs font-bold transition flex items-center gap-1.5 shadow cursor-pointer shrink-0`;
     } else {
       btn.className = `px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white border border-slate-700 text-xs font-bold transition flex items-center gap-1.5 cursor-pointer shrink-0`;
@@ -666,58 +656,32 @@ export function setOverlayMediaMode(mode, specificId = null) {
     iframe.className = 'w-full h-full max-w-5xl rounded-xl shadow-2xl border border-slate-800 transition-all duration-300';
     if (currentOverlayYoutubeId) {
       if (title && currentOverlayTitle) title.innerText = currentOverlayTitle;
-      if (directLink) {
-        directLink.href = `https://www.youtube.com/watch?v=${currentOverlayYoutubeId}${currentOverlayStartSec > 0 ? `&t=${currentOverlayStartSec}s` : ''}`;
-        directLink.setAttribute('data-youtube-id', currentOverlayYoutubeId);
-      }
       iframe.src = `https://www.youtube.com/embed/${currentOverlayYoutubeId}?autoplay=1&playsinline=1&rel=0&modestbranding=1&enablejsapi=1${currentOverlayStartSec > 0 ? `&start=${currentOverlayStartSec}` : ''}`;
     } else {
       // Fallback to video search if no youtubeId available
       setOverlayMediaMode('video_search');
       return;
     }
-  } else if (currentOverlayMode === 'shorts') {
-    if (icon) icon.className = 'fa-solid fa-mobile-screen text-emerald-400 text-xs shrink-0';
-    iframe.className = 'w-full h-full max-w-[380px] sm:max-w-[420px] rounded-2xl shadow-2xl border border-emerald-500/50 bg-black transition-all duration-300 mx-auto';
-
-    const social = getSocialMediaVideos(query, currentActiveVideoCityId);
-    const shortsList = social?.shorts && social.shorts.length ? social.shorts : [
-      { id: '0JK2vz222sI', title: `${social?.name || query} • Shorts`, label: 'Shorts' }
-    ];
-    const activeId = specificId || currentOverlayShortsId || shortsList[0].id;
-    currentOverlayShortsId = activeId;
-    const activeItem = shortsList.find(s => s.id === activeId) || shortsList[0];
-
-    if (title) title.innerText = `📱 Shorts: ${activeItem.title}`;
-    if (directLink) {
-      directLink.href = `https://www.youtube.com/shorts/${activeId}`;
-    }
-    iframe.src = `https://www.youtube.com/embed/${activeId}?autoplay=1&playsinline=1&rel=0&loop=1&enablejsapi=1`;
   } else if (currentOverlayMode === 'video_search') {
     if (icon) icon.className = 'fa-solid fa-video text-amber-400 text-xs shrink-0';
     iframe.className = 'w-full h-full max-w-5xl rounded-xl shadow-2xl border border-amber-500/40 bg-white transition-all duration-300';
     const searchQuery = query || (currentActiveVideoCityId ? currentActiveVideoCityId.replace(/_/g, ' ') : 'Travel');
     if (title) title.innerText = `📹 Video Search: ${searchQuery}`;
     const targetUrl = `https://www.bing.com/videos/search?q=${encodeURIComponent(searchQuery)}`;
-    if (directLink) {
-      directLink.href = targetUrl;
-    }
     if (iframe.src !== targetUrl) {
       iframe.src = targetUrl;
     }
-  } else if (currentOverlayMode === 'web') {
-    if (icon) icon.className = 'fa-solid fa-globe text-sky-400 text-xs shrink-0';
-    iframe.className = 'w-full h-full max-w-5xl rounded-xl shadow-2xl border border-sky-500/40 bg-white transition-all duration-300';
+  } else if (currentOverlayMode === 'ai_search' || currentOverlayMode === 'web') {
+    if (icon) icon.className = 'fa-solid fa-wand-magic-sparkles text-amber-400 text-xs shrink-0';
+    iframe.className = 'w-full h-full max-w-5xl rounded-xl shadow-2xl border border-amber-500/40 bg-white transition-all duration-300';
     const searchQuery = query || (currentActiveVideoCityId ? currentActiveVideoCityId.replace(/_/g, ' ') : 'Travel');
-    if (title) title.innerText = `🌐 Web Search: ${searchQuery}`;
-    const targetUrl = `https://www.bing.com/search?q=${encodeURIComponent(searchQuery + ' travel guide')}`;
-    if (directLink) {
-      directLink.href = targetUrl;
-    }
+    if (title) title.innerText = `✨ AI Search: ${searchQuery}`;
+    const targetUrl = `https://www.bing.com/copilotsearch?q=${encodeURIComponent(searchQuery)}&FORM=CSSCOP`;
     if (iframe.src !== targetUrl) {
       iframe.src = targetUrl;
     }
   }
+}
 }
 
 export function renderAllVideosGallery(query = '', categoryFilter = 'all') {
@@ -1184,8 +1148,12 @@ export function submitOverlayVideoSearch() {
     return;
   }
 
-  // 10. In-App Video Search directly inside the iframe!
-  setOverlayMediaMode('video_search');
+  // 10. In-App Video or AI Search directly inside the iframe!
+  if (currentOverlayMode === 'video_search') {
+    setOverlayMediaMode('video_search');
+  } else {
+    setOverlayMediaMode('ai_search');
+  }
 }
 
 export function openPoiVideo(poiTitle, cityId = '', explicitStart = null) {
@@ -1577,25 +1545,89 @@ export async function openMapWikiReader(queryOrTitle, lang = 'el', fallbackEnQue
     if (loading) loading.classList.add('hidden');
     iframe.classList.remove('hidden');
   } else {
-    // Fallback message inside reader frame
+    // Article not found via REST API: Try Wikipedia Search or offer Bing AI Search fallback
+    if (loading) loading.classList.add('hidden');
+    iframe.classList.remove('hidden');
+    const cleanQ = queryOrTitle.trim();
+    const wikiSearchUrl = `https://${lang}.wikipedia.org/w/index.php?search=${encodeURIComponent(cleanQ)}`;
+
     iframe.srcdoc = `
-      <div style="background:#0b0f19;color:#cbd5e1;font-family:system-ui,-apple-system,sans-serif;padding:48px 24px;text-align:center;">
-        <div style="width:48px;height:48px;border-radius:12px;background:rgba(239,68,68,0.15);color:#f87171;display:inline-flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:16px;">
-          ✕
+      <!DOCTYPE html>
+      <html>
+      <head>
+        <meta charset="utf-8">
+        <style>
+          body { margin: 0; background: #0b0f19; color: #cbd5e1; font-family: system-ui, -apple-system, sans-serif; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; padding: 24px; box-sizing: border-box; text-align: center; }
+          .card { background: #111827; border: 1px solid #1f2937; border-radius: 20px; padding: 32px 24px; max-width: 520px; width: 100%; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5); }
+          .icon { width: 56px; height: 56px; border-radius: 16px; background: rgba(245, 158, 11, 0.15); color: #fbbf24; display: inline-flex; align-items: center; justify-content: center; font-size: 26px; margin-bottom: 20px; }
+          h2 { color: #f8fafc; font-size: 19px; margin: 0 0 10px 0; font-weight: 800; }
+          p { color: #94a3b8; font-size: 13px; line-height: 1.6; margin: 0 0 24px 0; }
+          .btn-group { display: flex; flex-direction: column; gap: 10px; width: 100%; }
+          .btn { padding: 12px 18px; border-radius: 12px; font-size: 13px; font-weight: 700; cursor: pointer; border: none; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 8px; transition: all 0.2s; }
+          .btn-bing { background: linear-gradient(135deg, #d97706, #ea580c); color: white; box-shadow: 0 4px 14px rgba(217,119,6,0.35); }
+          .btn-bing:hover { opacity: 0.95; transform: scale(1.02); }
+          .btn-wiki { background: #0284c7; color: white; }
+          .btn-wiki:hover { background: #0369a1; }
+          .btn-back { background: #1f2937; color: #94a3b8; border: 1px solid #374151; }
+          .btn-back:hover { color: white; background: #374151; }
+        </style>
+      </head>
+      <body>
+        <div class="card">
+          <div class="icon">🔍</div>
+          <h2>Αναζήτηση Λήμματος Wikipedia</h2>
+          <p>
+            Δεν βρέθηκε ακριβές λήμμα για το θέμα "<strong>${escapeStr(cleanQ)}</strong>". Επιλέξτε τρόπο προβολής εντός της εφαρμογής:
+          </p>
+          <div class="btn-group">
+            <button class="btn btn-bing" onclick="window.parent.switchWikiToBingSearch('${escapeStr(cleanQ)}')">
+              ✨ Αναζήτηση Bing AI για Wikipedia
+            </button>
+            <button class="btn btn-wiki" onclick="window.location.href='${wikiSearchUrl}'">
+              📖 Αναζήτηση στην ίδια τη Wikipedia
+            </button>
+            <button class="btn btn-back" onclick="window.parent.postMessage({ type: 'EARTH_TIMES_CLOSE_WIKI' }, '*')">
+              ✕ Επιστροφή στον Χάρτη
+            </button>
+          </div>
         </div>
-        <h2 style="color:#f8fafc;font-size:18px;margin-bottom:8px;font-weight:700;">Δεν βρέθηκε άρθρο στη Wikipedia</h2>
-        <p style="color:#94a3b8;font-size:13px;max-width:440px;margin:0 auto 20px auto;line-height:1.6;">
-          Δεν κατέστη δυνατή η φόρτωση επίσημου λήμματος για το θέμα "<strong>${escapeStr(queryOrTitle)}</strong>" στη γλώσσα <strong>${lang.toUpperCase()}</strong>.
-        </p>
-        <button onclick="window.parent.postMessage({ type: 'EARTH_TIMES_CLOSE_WIKI' }, '*')" style="background:#0284c7;color:white;border:none;padding:8px 18px;border-radius:8px;font-size:13px;font-weight:bold;cursor:pointer;">
-          Επιστροφή στον Χάρτη
-        </button>
-      </div>
+      </body>
+      </html>
     `;
     if (loading) loading.classList.add('hidden');
     iframe.classList.remove('hidden');
   }
 }
+
+export function switchWikiToBingSearch(term = '') {
+  const query = (term || currentWikiTitle || '').trim();
+  const iframe = document.getElementById('mapWikiIframe');
+  const titleEl = document.getElementById('wikiOverlayTitle');
+  const loading = document.getElementById('wikiOverlayLoading');
+  if (loading) loading.classList.add('hidden');
+  if (titleEl) titleEl.innerText = `✨ Bing AI Search: ${query} Wikipedia`;
+  if (iframe) {
+    iframe.srcdoc = '';
+    iframe.classList.remove('hidden');
+    iframe.src = `https://www.bing.com/search?q=${encodeURIComponent(query + ' wikipedia')}`;
+  }
+}
+window.switchWikiToBingSearch = switchWikiToBingSearch;
+
+export function openDeepDiveBingAiSearch(topic = '') {
+  const query = (topic || activeDeepDiveData?.title || currentWikiTitle || (currentActiveVideoCityId ? currentActiveVideoCityId.replace(/_/g, ' ') : 'Travel')).trim();
+  closeDeepDiveOverlay();
+  closeMapWikiOverlay();
+
+  const overlay = document.getElementById('mapVideoOverlay');
+  if (overlay) overlay.classList.remove('hidden');
+  currentOverlayQuery = query;
+  const searchInput = document.getElementById('videoSearchInput');
+  if (searchInput) searchInput.value = query;
+  setOverlayMediaMode('ai_search');
+  syncMapFloatingControlsVisibility();
+}
+window.openDeepDiveBingAiSearch = openDeepDiveBingAiSearch;
 
 export function toggleWikiReaderLanguage() {
   const nextLang = currentWikiLang === 'el' ? 'en' : 'el';
@@ -1873,10 +1905,11 @@ export async function openDeepDive(keyOrTitle, fallbackSummary = '', contextEnti
           </div>
         </div>
         <div class="pt-3 border-t border-slate-800/80 flex flex-wrap items-center justify-between gap-3">
-          <span class="text-[11px] text-slate-400 italic">
-            Άμεση πρόσβαση για περαιτέρω διάβασμα:
-          </span>
-          <button onclick="openMapWikiReader('${escapeStr(article.rawTitle || article.title)}', '${article.lang}', '${escapeStr(data.wikiEnQuery || '')}')" class="px-4 py-2 rounded-xl bg-sky-600/20 hover:bg-sky-600/40 text-sky-300 hover:text-white border border-sky-500/40 text-xs font-bold transition flex items-center gap-2 shadow">
+          <button onclick="window.openDeepDiveBingAiSearch('${escapeStr(data.title)}')" class="px-3.5 py-1.5 rounded-xl bg-gradient-to-r from-amber-600 to-orange-600 hover:from-amber-500 hover:to-orange-500 text-white font-bold text-xs transition flex items-center gap-1.5 shadow cursor-pointer">
+            <i class="fa-solid fa-wand-magic-sparkles text-amber-200"></i>
+            <span>Bing AI Search</span>
+          </button>
+          <button onclick="openMapWikiReader('${escapeStr(article.rawTitle || article.title)}', '${article.lang}', '${escapeStr(data.wikiEnQuery || '')}')" class="px-4 py-2 rounded-xl bg-sky-600/20 hover:bg-sky-600/40 text-sky-300 hover:text-white border border-sky-500/40 text-xs font-bold transition flex items-center gap-2 shadow cursor-pointer">
             <i class="fa-brands fa-wikipedia-w text-sky-400"></i>
             <span>Ανάγνωση ολόκληρου του άρθρου στον Χάρτη (${article.lang.toUpperCase()})</span>
             <i class="fa-solid fa-arrow-right text-[10px]"></i>
@@ -1888,9 +1921,16 @@ export async function openDeepDive(keyOrTitle, fallbackSummary = '', contextEnti
       wikiBox.innerHTML = `
         <div class="p-3.5 bg-slate-950/60 rounded-xl border border-slate-800 text-xs text-slate-300 flex items-start gap-2.5">
           <i class="fa-solid fa-feather text-amber-400 text-sm mt-0.5"></i>
-          <div>
+          <div class="flex-1">
             <p class="font-semibold text-slate-200">Πλήρης Πρωτότυπη Καταγραφή EarthTimes</p>
             <p class="text-slate-400 mt-0.5">Δεν βρέθηκε αυτοτελές λήμμα στη Wikipedia. Η ανάλυση που διαβάζετε παραπάνω συντέθηκε αποκλειστικά από την AI και το ψηφιακό αρχείο του EarthTimes.</p>
+            <div class="mt-3 pt-2.5 border-t border-slate-800 flex items-center justify-between gap-2">
+              <span class="text-[11px] text-slate-400">Εναλλακτική διερεύνηση:</span>
+              <button onclick="window.openDeepDiveBingAiSearch('${escapeStr(data.title)}')" class="px-3 py-1.5 rounded-lg bg-gradient-to-r from-amber-600 to-orange-600 hover:from-amber-500 hover:to-orange-500 text-white text-xs font-bold transition flex items-center gap-1.5 shadow cursor-pointer">
+                <i class="fa-solid fa-wand-magic-sparkles text-amber-200"></i>
+                <span>Αναζήτηση στο Bing AI Search</span>
+              </button>
+            </div>
           </div>
         </div>
       `;
