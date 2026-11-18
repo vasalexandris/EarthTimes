@@ -9,7 +9,7 @@
  * - Fullscreen, Keyboard navigation (Arrow keys, Space, Esc, F), and Mobile Touch Swipe
  */
 
-import { getEntityLocalTime, getCuratedGuideItems, getCuratedGastroItems } from './ui.js?v=20261117_video_iframe_fix';
+import { getEntityLocalTime, getCuratedGuideItems, getCuratedGastroItems } from './ui.js?v=20261118_restore_ui_v4';
 import { CITY_VIDEOS, getPoiVideoInfo } from './video-service.js?v=20261117_video_iframe_fix';
 
 let currentEntity = null;
