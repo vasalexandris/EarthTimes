@@ -6,7 +6,7 @@
 
 import { loadWorldData, loadCountryData, loadStateData } from './data-service.js?v=20261117_video_iframe_fix';
 import * as MapModule from './map.js?v=20261117_video_iframe_fix';
-import * as UIModule from './ui.js?v=20261117_video_search_external_v1';
+import * as UIModule from './ui.js?v=20261117_multilingual_search_v2';
 import * as TimeMachine from './time-machine.js?v=20261117_video_iframe_fix';
 import * as NavigatorModule from './navigator.js?v=20261117_video_iframe_fix';
 import * as GlobeModule from './globe-view.js?v=20261117_video_iframe_fix';

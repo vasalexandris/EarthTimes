@@ -4,7 +4,7 @@
  * Base Map Layer selector, Date display, Video Overlay, and Deep Dive views.
  */
 
-import { getCityVideo, getAvailableVideoTypes, getAvailableCityTours, CITY_VIDEOS, findPoiLiveCam, getPoiVideoInfo, getGastroRecipeVideo, getSocialMediaVideos, SOCIAL_MEDIA_REGISTRY, GASTRO_RECIPE_VIDEOS } from './video-service.js?v=20261117_valencia_gastro_msn_fix';
+import { getCityVideo, getAvailableVideoTypes, getAvailableCityTours, CITY_VIDEOS, findPoiLiveCam, getPoiVideoInfo, getGastroRecipeVideo, getSocialMediaVideos, SOCIAL_MEDIA_REGISTRY, GASTRO_RECIPE_VIDEOS } from './video-service.js?v=20261117_multilingual_search_v2';
 import { getDeepDiveData } from './deep-dive.js?v=20261117_video_iframe_fix';
 import { fetchWikiArticle, fetchWikiArticleHtml, cleanWikiTitle } from './wiki-service.js?v=20261117_video_iframe_fix';
 import { calculateSubsolarPoint } from './solar-terminator.js?v=20261117_video_iframe_fix';
@@ -75,6 +75,423 @@ export function getCurrentActiveVideoCityId() {
   return currentActiveVideoCityId;
 }
 
+/**
+ * Multilingual Search Localization Engine
+ * Provides authentic native keyword translations for US states, European countries,
+ * and international destinations to ensure Bing, YouTube, and Google produce
+ * authentic, high-quality local videos and recipes (e.g. Massachusetts traditional recipes
+ * instead of Greek supermarket misspellings like "Μασούτης").
+ */
+export const GREEK_TO_NATIVE_NAMES = {
+  // US States
+  'μασαχουσέτη': 'Massachusetts',
+  'μασαχουσέτης': 'Massachusetts',
+  'καλιφόρνια': 'California',
+  'νέα υόρκη': 'New York',
+  'τεξας': 'Texas',
+  'τέξας': 'Texas',
+  'φλόριντα': 'Florida',
+  'ιλινόι': 'Illinois',
+  'ιλινόις': 'Illinois',
+  'πενσυλβάνια': 'Pennsylvania',
+  'οχάιο': 'Ohio',
+  'τζόρτζια': 'Georgia',
+  'βόρεια καρολίνα': 'North Carolina',
+  'νότια καρολίνα': 'South Carolina',
+  'μιτσιγκαν': 'Michigan',
+  'μίτσιγκαν': 'Michigan',
+  'νιου τζέρσεϊ': 'New Jersey',
+  'βιρτζίνια': 'Virginia',
+  'ουάσινγκτον': 'Washington',
+  'αριζόνα': 'Arizona',
+  'τενεσί': 'Tennessee',
+  'ιντιάνα': 'Indiana',
+  'μισούρι': 'Missouri',
+  'μέριλαντ': 'Maryland',
+  'ουισκόνσιν': 'Wisconsin',
+  'κολοράντο': 'Colorado',
+  'μινεσότα': 'Minnesota',
+  'νότια ντακότα': 'South Dakota',
+  'βόρεια ντακότα': 'North Dakota',
+  'αλαμπάμα': 'Alabama',
+  'λουιζιάνα': 'Louisiana',
+  'λούισιανα': 'Louisiana',
+  'κεντάκι': 'Kentucky',
+  'όρεγκον': 'Oregon',
+  'οκλαχόμα': 'Oklahoma',
+  'κονέκτικατ': 'Connecticut',
+  'γιούτα': 'Utah',
+  'αϊόβα': 'Iowa',
+  'νέβαδα': 'Nevada',
+  'νεβάδα': 'Nevada',
+  'άρκανσο': 'Arkansas',
+  'μισισίπι': 'Mississippi',
+  'κάνσας': 'Kansas',
+  'νέο μεξικό': 'New Mexico',
+  'νεμπράσκα': 'Nebraska',
+  'αϊντάχο': 'Idaho',
+  'δυτική βιρτζίνια': 'West Virginia',
+  'χαβάη': 'Hawaii',
+  'νιου χάμσαϊρ': 'New Hampshire',
+  'μέιν': 'Maine',
+  'μοντάνα': 'Montana',
+  'ρόουντ άιλαντ': 'Rhode Island',
+  'ντελαγουέρ': 'Delaware',
+  'βερμόντ': 'Vermont',
+  'γουαϊόμινγκ': 'Wyoming',
+  'αλάσκα': 'Alaska',
+
+  // Major US Cities
+  'βοστώνη': 'Boston',
+  'βοστόνη': 'Boston',
+  'κέιμπριτζ': 'Cambridge',
+  'γουόρτσεστερ': 'Worcester',
+  'σπρίνγκφιλντ': 'Springfield',
+  'λοουελ': 'Lowell',
+  'σάλεμ': 'Salem',
+  'γκλόστερ': 'Gloucester',
+  'πλίμουθ': 'Plymouth',
+  'πλύμουθ': 'Plymouth',
+  'λος άντζελες': 'Los Angeles',
+  'σικάγο': 'Chicago',
+  'χιούστον': 'Houston',
+  'φοίνιξ': 'Phoenix',
+  'φιλαδέλφεια': 'Philadelphia',
+  'σαν αντόνιο': 'San Antonio',
+  'σαν ντιέγκο': 'San Diego',
+  'ντάλας': 'Dallas',
+  'σαν χοσέ': 'San Jose',
+  'όστιν': 'Austin',
+  'σαν φρανσίσκο': 'San Francisco',
+  'σιατλ': 'Seattle',
+  'σιάτλ': 'Seattle',
+  'ντένβερ': 'Denver',
+  'νάσβιλ': 'Nashville',
+  'λας βέγκας': 'Las Vegas',
+  'μαϊάμι': 'Miami',
+  'ατλάντα': 'Atlanta',
+  'νέα ορλεάνη': 'New Orleans',
+  'χονολουλού': 'Honolulu',
+  'πόρτλαντ': 'Portland',
+
+  // European Cities & Countries
+  'παρίσι': 'Paris',
+  'γαλλία': 'France',
+  'λυών': 'Lyon',
+  'μασσαλία': 'Marseille',
+  'νίκαια': 'Nice',
+  'μπορντό': 'Bordeaux',
+  'στρασβούργο': 'Strasbourg',
+  'τουλούζη': 'Toulouse',
+  'ρώμη': 'Rome',
+  'ιταλία': 'Italy',
+  'μιλάνο': 'Milan',
+  'φλωρεντία': 'Florence',
+  'βενετία': 'Venice',
+  'νάπολη': 'Naples',
+  'τορίνο': 'Turin',
+  'μπολόνια': 'Bologna',
+  'παλέρμο': 'Palermo',
+  'μαδρίτη': 'Madrid',
+  'ισπανία': 'Spain',
+  'βαρκελώνη': 'Barcelona',
+  'σεβίλλη': 'Seville',
+  'βαλένθια': 'Valencia',
+  'γρανάδα': 'Granada',
+  'μπιλμπάο': 'Bilbao',
+  'λονδίνο': 'London',
+  'αγγλία': 'England',
+  'ηνωμένο βασίλειο': 'United Kingdom',
+  'εδιμβούργο': 'Edinburgh',
+  'μαντσεστερ': 'Manchester',
+  'λιβερπουλ': 'Liverpool',
+  'βερολίνο': 'Berlin',
+  'γερμανία': 'Germany',
+  'μόναχο': 'Munich',
+  'αμβούργο': 'Hamburg',
+  'φρανκφούρτη': 'Frankfurt',
+  'κολωνία': 'Cologne',
+  'βιέννη': 'Vienna',
+  'αυστρία': 'Austria',
+  'σαλτσμπουργκ': 'Salzburg',
+  'άμστερνταμ': 'Amsterdam',
+  'ολλανδία': 'Netherlands',
+  'ρότερνταμ': 'Rotterdam',
+  'βρυξέλλες': 'Brussels',
+  'βέλγιο': 'Belgium',
+  'μπριζ': 'Bruges',
+  'ζυρίχη': 'Zurich',
+  'ελβετία': 'Switzerland',
+  'γενεύη': 'Geneva',
+  'λισαβόνα': 'Lisbon',
+  'πορτογαλία': 'Portugal',
+  'πόρτο': 'Porto',
+  'κωνσταντινούπολη': 'Istanbul',
+  'τουρκία': 'Turkey',
+  'άγκυρα': 'Ankara',
+  'σμύρνη': 'Izmir',
+  'κοπεγχάγη': 'Copenhagen',
+  'δανία': 'Denmark',
+  'στοκχόλμη': 'Stockholm',
+  'σουηδία': 'Sweden',
+  'όσλο': 'Oslo',
+  'νορβηγία': 'Norway',
+  'ελσίνκι': 'Helsinki',
+  'φινλανδία': 'Finland',
+  'πράγα': 'Prague',
+  'τσεχία': 'Czech Republic',
+  'βαρσοβία': 'Warsaw',
+  'πολωνία': 'Poland',
+  'βουδαπέστη': 'Budapest',
+  'ουγγαρία': 'Hungary',
+  'βουκουρέστι': 'Bucharest',
+  'ρουμανία': 'Romania',
+  'μπρασόφ': 'Brasov',
+
+  // Asia / Americas / World
+  'τόκιο': 'Tokyo',
+  'ιαπωνία': 'Japan',
+  'κιότο': 'Kyoto',
+  'οσάκα': 'Osaka',
+  'πεκίνο': 'Beijing',
+  'κίνα': 'China',
+  'σαγκάη': 'Shanghai',
+  'σεούλ': 'Seoul',
+  'νότια κορέα': 'South Korea',
+  'μπανγκόκ': 'Bangkok',
+  'ταϊλάνδη': 'Thailand',
+  'σιγκαπούρη': 'Singapore',
+  'ντουμπάι': 'Dubai',
+  'ηαε': 'UAE',
+  'κάιρο': 'Cairo',
+  'αίγυπτος': 'Egypt',
+  'σιδνεϊ': 'Sydney',
+  'αυστραλία': 'Australia',
+  'μελβούρνη': 'Melbourne',
+  'τορόντο': 'Toronto',
+  'καναδάς': 'Canada',
+  'βανκούβερ': 'Vancouver',
+  'μοντρεαλ': 'Montreal',
+  'ρίο ντε τζανέιρο': 'Rio de Janeiro',
+  'βραζιλία': 'Brazil',
+  'μπουένος άιρες': 'Buenos Aires',
+  'αργεντινή': 'Argentina'
+};
+
+export function detectEntityLanguage(cityId = '', cityName = '', entity = null) {
+  const normId = (cityId || entity?.id || '').toLowerCase().trim();
+  const normName = (cityName || entity?.name || '').toLowerCase().trim();
+
+  // 1. Direct Greece / Cyprus checks
+  if (normId === 'greece' || normId === 'cyprus' || normId === 'gr' || normId === 'cy' ||
+      normName === 'ελλάδα' || normName === 'κύπρος' || normName.includes('ελλάδ') || normName.includes('κύπρ')) {
+    return 'el';
+  }
+
+  const countryId = CITY_TO_COUNTRY[normId] || (entity?.country ? entity.country.toLowerCase() : '');
+  if (countryId === 'greece' || countryId === 'cyprus' || countryId === 'gr' || countryId === 'cy') {
+    return 'el';
+  }
+
+  const greekCities = [
+    'athens', 'thessaloniki', 'patras', 'heraklion', 'chania', 'larissa', 'volos',
+    'ioannina', 'trikala', 'chalkida', 'rhodes', 'corfu', 'kavala', 'kalamata',
+    'serres', 'alexandroupoli', 'xanthi', 'komotini', 'kozani', 'kastoria',
+    'veria', 'edessa', 'katerini', 'rethymno', 'agios-nikolaos', 'mytilene',
+    'chios', 'samos', 'syros', 'mykonos', 'santorini', 'naxos', 'paros',
+    'sparta', 'nafplio', 'tripoli', 'lamia', 'amfissa', 'karpenisi', 'mesolonghi',
+    'artas', 'preveza', 'igoumenitsa', 'grevena', 'florina', 'kilkis', 'polygyros',
+    'drama', 'lefkada', 'kefalonia', 'zakynthos', 'nicosia', 'limassol', 'larnaca', 'paphos'
+  ];
+  if (greekCities.includes(normId)) {
+    return 'el';
+  }
+
+  // 2. US States / Cities
+  if (CITY_TO_STATE[normId] || normId === 'massachusetts' || normId === 'united-states' || countryId === 'united-states' || countryId === 'us' || countryId === 'usa' || entity?.type === 'state') {
+    return 'en';
+  }
+
+  // 3. Specific language mapping
+  if (countryId === 'france' || normId === 'france') return 'fr';
+  if (countryId === 'italy' || normId === 'italy') return 'it';
+  if (countryId === 'spain' || normId === 'spain') return 'es';
+  if (countryId === 'germany' || countryId === 'austria' || normId === 'germany' || normId === 'austria') return 'de';
+  if (countryId === 'portugal' || countryId === 'brazil' || normId === 'portugal') return 'pt';
+  if (countryId === 'turkey' || normId === 'turkey') return 'tr';
+
+  // 4. If name is in GREEK_TO_NATIVE_NAMES and it's foreign, it's non-Greek
+  if (GREEK_TO_NATIVE_NAMES[normName]) {
+    const native = GREEK_TO_NATIVE_NAMES[normName];
+    if (['Paris', 'Nice', 'Lyon', 'Marseille', 'Bordeaux'].includes(native)) return 'fr';
+    if (['Rome', 'Milan', 'Florence', 'Venice', 'Naples'].includes(native)) return 'it';
+    if (['Madrid', 'Barcelona', 'Seville', 'Valencia'].includes(native)) return 'es';
+    if (['Berlin', 'Munich', 'Hamburg', 'Frankfurt', 'Vienna'].includes(native)) return 'de';
+    if (['Istanbul', 'Ankara', 'Izmir'].includes(native)) return 'tr';
+    return 'en';
+  }
+
+  // Default international language is English
+  return 'en';
+}
+
+export function getNativeNameForEntity(nameOrId = '', entity = null) {
+  if (!nameOrId && entity) {
+    nameOrId = entity.englishName || entity.id || entity.name || '';
+  }
+  if (!nameOrId) return '';
+
+  let str = String(nameOrId).trim();
+
+  // 1. If Latin text with Greek in parentheses: "Freedom Trail (Μονοπάτι Ελευθερίας)" -> "Freedom Trail"
+  const greekParenMatch = str.match(/^([A-Za-z0-9\s,'\.\-]+?)\s*\([\u0370-\u03FF\s,'\.\-]+\)$/);
+  if (greekParenMatch && greekParenMatch[1].trim().length > 1) {
+    return greekParenMatch[1].trim();
+  }
+
+  // 2. If Greek text with Latin in parentheses: "Όρη Μπέρκσιρ (Berkshires)" -> "Berkshires"
+  const parenMatch = str.match(/\(([A-Za-z0-9\s,'\.\-]+)\)/);
+  if (parenMatch && parenMatch[1].trim().length > 1) {
+    return parenMatch[1].trim();
+  }
+
+  const norm = str.toLowerCase();
+
+  // 3. Direct dictionary lookup
+  if (GREEK_TO_NATIVE_NAMES[norm]) {
+    return GREEK_TO_NATIVE_NAMES[norm];
+  }
+
+  // Clean entity englishName if available
+  if (entity && entity.englishName) {
+    const cleanEn = entity.englishName
+      .replace(/^(State of|Commonwealth of|Republic of)\s+/i, '')
+      .replace(/\s*\([^)]*\)/g, '')
+      .trim();
+    if (cleanEn) return cleanEn;
+  }
+
+  // 4. If predominantly Latin already
+  const latinCount = (str.match(/[a-zA-Z]/g) || []).length;
+  const greekCount = (str.match(/[\u0370-\u03FF]/g) || []).length;
+  if (latinCount >= 3 && latinCount >= greekCount) {
+    const cleaned = str.replace(/\s*\([^)]*\)/g, '').trim();
+    if (/^[a-z0-9\-_]+$/i.test(cleaned)) {
+      return cleaned.split(/[\-_]+/).map(w => w.charAt(0).toUpperCase() + w.slice(1).toLowerCase()).join(' ');
+    }
+    return cleaned;
+  }
+
+  // 5. If slug with hyphens or underscores e.g. 'new-york' -> 'New York', 'boston' -> 'Boston'
+  if (/^[a-z0-9\-_]+$/i.test(str)) {
+    return str.split(/[\-_]+/).map(w => w.charAt(0).toUpperCase() + w.slice(1).toLowerCase()).join(' ');
+  }
+
+  return str;
+}
+
+export function buildLocalizedGastroQuery(dishTitle = '', cityName = '', entity = null, recipe = null) {
+  // If recipe has explicit verified searchQuery, prioritize it!
+  if (recipe && recipe.searchQuery) {
+    return recipe.searchQuery;
+  }
+
+  const curEntity = entity || (window.getCurrentEntity ? window.getCurrentEntity() : null);
+  const cityKey = curEntity?.id || currentActiveVideoCityId || '';
+  const effCityName = cityName || curEntity?.name || cityKey;
+  const lang = detectEntityLanguage(cityKey, effCityName, curEntity);
+
+  const cleanDish = (dishTitle || '').replace(/\s*\([^)]*\)/g, '').trim();
+  const normDish = cleanDish.toLowerCase();
+
+  // Check if generic recipe / gastro header in Greek
+  const isGenericGastro = /^(παραδοσιακ|κουζίνα|γεύσεις|συνταγ|φαγητ|τοπικ)/i.test(normDish) ||
+                          normDish.includes('παραδοσιακή κουζίνα') ||
+                          normDish.includes('παραδοσιακές συνταγές');
+
+  if (lang === 'el') {
+    if (isGenericGastro) {
+      return `${effCityName} παραδοσιακές συνταγές`.trim();
+    }
+    return `${cleanDish} συνταγή`.trim();
+  }
+
+  // Foreign / International region:
+  const nativeRegion = getNativeNameForEntity(effCityName, curEntity) || 'Travel';
+
+  if (isGenericGastro || (normDish === normDish.replace(/[a-z]/g, '') && GREEK_TO_NATIVE_NAMES[normDish])) {
+    const targetRegion = GREEK_TO_NATIVE_NAMES[normDish] || nativeRegion;
+    if (lang === 'it') return `${targetRegion} ricette tradizionali`;
+    if (lang === 'fr') return `${targetRegion} recettes traditionnelles`;
+    if (lang === 'es') return `${targetRegion} recetas tradicionales`;
+    if (lang === 'de') return `${targetRegion} traditionelle rezepte`;
+    return `${targetRegion} traditional food recipes`;
+  }
+
+  // If dish title is already English/Latin or has Latin extracted
+  const nativeDish = getNativeNameForEntity(dishTitle, null);
+  const hasLatinDish = /[a-zA-Z]{3,}/.test(nativeDish);
+
+  if (hasLatinDish) {
+    if (lang === 'it') return `${nativeDish} ricetta`;
+    if (lang === 'fr') return `${nativeDish} recette`;
+    if (lang === 'es') return `${nativeDish} receta`;
+    if (lang === 'de') return `${nativeDish} rezept`;
+    return `${nativeDish} recipe`;
+  }
+
+  // Fallback for foreign region with translated dish name
+  return `${nativeRegion} traditional food recipes`;
+}
+
+export function buildLocalizedCityVideoQuery(cityId = '', preferredType = 'drone', entity = null) {
+  const curEntity = entity || (window.getCurrentEntity ? window.getCurrentEntity() : null);
+  const cityKey = cityId || curEntity?.id || currentActiveVideoCityId || '';
+  const cityName = curEntity?.name || cityKey;
+  const lang = detectEntityLanguage(cityKey, cityName, curEntity);
+
+  const suffix = preferredType === 'drone' ? 'drone 4k' : 'walking tour 4k';
+
+  if (lang === 'el') {
+    return `${cityName} ${suffix}`.trim();
+  }
+
+  const nativeCity = getNativeNameForEntity(cityKey, curEntity) || getNativeNameForEntity(cityName, curEntity);
+  return `${nativeCity} ${suffix}`.trim();
+}
+
+export function buildLocalizedPoiQuery(poiTitle = '', cityId = '', cityName = '', entity = null, info = null) {
+  if (info && info.searchQuery) {
+    return info.searchQuery;
+  }
+
+  const curEntity = entity || (window.getCurrentEntity ? window.getCurrentEntity() : null);
+  const cityKey = cityId || curEntity?.id || currentActiveVideoCityId || '';
+  const effCityName = cityName || curEntity?.name || cityKey;
+  const lang = detectEntityLanguage(cityKey, effCityName, curEntity);
+
+  if (lang === 'el') {
+    return `${poiTitle} ${effCityName}`.trim();
+  }
+
+  // Extract authentic native POI title
+  const nativePoi = getNativeNameForEntity(poiTitle, null);
+  const nativeCity = getNativeNameForEntity(effCityName, curEntity);
+
+  // If POI already includes the city name, avoid duplicate like "Boston Common Boston"
+  if (nativePoi.toLowerCase().includes(nativeCity.toLowerCase())) {
+    return `${nativePoi} 4k`.trim();
+  }
+
+  return `${nativePoi} ${nativeCity}`.trim();
+}
+
+window.detectEntityLanguage = detectEntityLanguage;
+window.getNativeNameForEntity = getNativeNameForEntity;
+window.buildLocalizedGastroQuery = buildLocalizedGastroQuery;
+window.buildLocalizedCityVideoQuery = buildLocalizedCityVideoQuery;
+window.buildLocalizedPoiQuery = buildLocalizedPoiQuery;
+
 export function openCityVideo(cityId, preferredType = 'drone') {
   const vid = getCityVideo(cityId, preferredType);
   const overlay = document.getElementById('mapVideoOverlay');
@@ -113,12 +530,11 @@ export function openCityVideo(cityId, preferredType = 'drone') {
   const youtubeId = vid?.youtubeId || '54nbsW6jYN4';
   const videoTitle = vid?.title || `Περιήγηση 4K: ${cityId}`;
 
+  const curEntity = window.getCurrentEntity ? window.getCurrentEntity() : null;
   let cityName = cityId;
-  if (window.getCurrentEntity) {
-    const cur = window.getCurrentEntity();
-    if (cur && cur.name) cityName = cur.name;
-  }
-  const searchQuery = `${cityName} ${preferredType === 'drone' ? 'drone 4k' : 'walking tour 4k'}`;
+  if (curEntity && curEntity.name) cityName = curEntity.name;
+  
+  const searchQuery = buildLocalizedCityVideoQuery(cityId, preferredType, curEntity);
 
   currentOverlayYoutubeId = youtubeId;
   currentOverlayStartSec = 0;
@@ -733,20 +1149,20 @@ export function submitOverlayVideoSearch() {
 }
 
 export function openPoiVideo(poiTitle, cityId = '', explicitStart = null) {
-  if (!cityId && window.getCurrentEntity) {
-    const cur = window.getCurrentEntity();
-    if (cur && cur.id) cityId = cur.id;
+  const curEntity = window.getCurrentEntity ? window.getCurrentEntity() : null;
+  if (!cityId && curEntity && curEntity.id) {
+    cityId = curEntity.id;
   }
 
   let cityName = '';
-  if (window.getCurrentEntity) {
-    const cur = window.getCurrentEntity();
-    if (cur && cur.name) cityName = cur.name;
+  if (curEntity && curEntity.name) {
+    cityName = curEntity.name;
   }
-  const searchQuery = `${poiTitle} ${cityName}`.trim();
 
   const info = getPoiVideoInfo(poiTitle, cityId);
   if (!info || !info.youtubeId) return;
+
+  const searchQuery = buildLocalizedPoiQuery(poiTitle, cityId, cityName, curEntity, info);
 
   const startSec = (explicitStart !== null && typeof explicitStart === 'number') ? explicitStart : info.startSeconds;
 
@@ -885,7 +1301,7 @@ export function openGastroVideo(dishTitle, cityName = '') {
 
   const primaryYtId = recipe?.youtubeId || cityVid?.youtubeId || 'mWTDKXzOyg0';
   const videoTitle = recipe ? `👨‍🍳 ${recipe.dish || dishTitle} (${recipe.region || currentCityName})` : `👨‍🍳 Γαστρονομία: ${dishTitle} (${currentCityName})`;
-  const searchQuery = `${dishTitle} συνταγή`;
+  const searchQuery = buildLocalizedGastroQuery(dishTitle, currentCityName, curEntity, recipe);
 
   currentOverlayYoutubeId = primaryYtId;
   currentOverlayStartSec = 0;

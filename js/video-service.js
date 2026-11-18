@@ -28141,6 +28141,89 @@ export const POI_DEDICATED_VIDEOS = {
  * Multi-option culinary registry: Authentic Recipes, Street Food & Masterclasses
  */
 export const GASTRO_RECIPE_VIDEOS = {
+  // Massachusetts & New England Specialties
+  "new england clam chowder": {
+    youtubeId: "J2zQ4Vv6Z6k",
+    title: "Authentic New England Clam Chowder Recipe",
+    dish: "New England Clam Chowder",
+    region: "Massachusetts",
+    searchQuery: "New England Clam Chowder recipe",
+    options: [
+      { youtubeId: "J2zQ4Vv6Z6k", title: "Authentic New England Clam Chowder", label: "Clam Chowder Recipe", icon: "fa-solid fa-utensils" }
+    ]
+  },
+  "clam chowder": {
+    youtubeId: "J2zQ4Vv6Z6k",
+    title: "Authentic New England Clam Chowder Recipe",
+    dish: "New England Clam Chowder",
+    region: "Massachusetts",
+    searchQuery: "New England Clam Chowder recipe",
+    options: [
+      { youtubeId: "J2zQ4Vv6Z6k", title: "Authentic New England Clam Chowder", label: "Clam Chowder Recipe", icon: "fa-solid fa-utensils" }
+    ]
+  },
+  "boston cream pie": {
+    youtubeId: "d6P3GkXkP_g",
+    title: "Classic Boston Cream Pie • Masterclass Recipe",
+    dish: "Boston Cream Pie",
+    region: "Massachusetts",
+    searchQuery: "Boston Cream Pie recipe",
+    options: [
+      { youtubeId: "d6P3GkXkP_g", title: "Classic Boston Cream Pie", label: "Boston Cream Pie", icon: "fa-solid fa-cake-candles" }
+    ]
+  },
+  "cape cod lobster roll": {
+    youtubeId: "w_i2rV7Zz5s",
+    title: "Traditional New England Lobster Roll Recipe",
+    dish: "Cape Cod Lobster Roll",
+    region: "Massachusetts",
+    searchQuery: "Cape Cod Lobster Roll recipe",
+    options: [
+      { youtubeId: "w_i2rV7Zz5s", title: "Traditional Lobster Roll", label: "Lobster Roll", icon: "fa-solid fa-utensils" }
+    ]
+  },
+  "lobster roll": {
+    youtubeId: "w_i2rV7Zz5s",
+    title: "Traditional New England Lobster Roll Recipe",
+    dish: "Cape Cod Lobster Roll",
+    region: "Massachusetts",
+    searchQuery: "New England Lobster Roll recipe",
+    options: [
+      { youtubeId: "w_i2rV7Zz5s", title: "Traditional Lobster Roll", label: "Lobster Roll", icon: "fa-solid fa-utensils" }
+    ]
+  },
+  "boston baked beans": {
+    youtubeId: "8O6vL8QpWp8",
+    title: "Traditional Boston Baked Beans Recipe",
+    dish: "Boston Baked Beans",
+    region: "Massachusetts",
+    searchQuery: "Boston Baked Beans recipe",
+    options: [
+      { youtubeId: "8O6vL8QpWp8", title: "Traditional Boston Baked Beans", label: "Boston Baked Beans", icon: "fa-solid fa-utensils" }
+    ]
+  },
+  "μασαχουσέτη": {
+    youtubeId: "J2zQ4Vv6Z6k",
+    title: "Massachusetts & New England Traditional Recipes",
+    dish: "Massachusetts Traditional Food",
+    region: "Massachusetts",
+    searchQuery: "Massachusetts traditional food recipes",
+    options: [
+      { youtubeId: "J2zQ4Vv6Z6k", title: "Massachusetts Clam Chowder", label: "Clam Chowder", icon: "fa-solid fa-utensils" },
+      { youtubeId: "w_i2rV7Zz5s", title: "Cape Cod Lobster Roll", label: "Lobster Roll", icon: "fa-solid fa-utensils" }
+    ]
+  },
+  "μασαχουσέτης": {
+    youtubeId: "J2zQ4Vv6Z6k",
+    title: "Massachusetts & New England Traditional Recipes",
+    dish: "Massachusetts Traditional Food",
+    region: "Massachusetts",
+    searchQuery: "Massachusetts traditional food recipes",
+    options: [
+      { youtubeId: "J2zQ4Vv6Z6k", title: "Massachusetts Clam Chowder", label: "Clam Chowder", icon: "fa-solid fa-utensils" }
+    ]
+  },
+
   // Valencia & Spanish Specialties
   "paella valenciana": {
     youtubeId: "6rX7zHdo4_w",
@@ -28577,10 +28660,11 @@ export function getGastroRecipeVideo(dishTitle = '', cityName = '') {
   for (const key of sortedKeys) {
     if (normTitle === key || normTitle.includes(key)) {
       const val = GASTRO_RECIPE_VIDEOS[key];
+      const isGreek = val.region && (val.region.toLowerCase().includes('ελλάδ') || val.region.toLowerCase().includes('greece') || val.region.toLowerCase().includes('αθήν') || val.region.toLowerCase().includes('θεσσαλον') || val.region.toLowerCase().includes('κοζάν'));
       return {
         ...val,
         options: val.options || [{ youtubeId: val.youtubeId, title: val.title, label: val.dish || 'Συνταγή', icon: 'fa-solid fa-utensils' }],
-        searchQuery: val.searchQuery || `συνταγή ${val.dish || dishTitle} ${cityName}`
+        searchQuery: val.searchQuery || (isGreek ? `συνταγή ${val.dish || dishTitle} ${cityName}` : `${val.dish || dishTitle} recipe`)
       };
     }
   }
@@ -28590,10 +28674,11 @@ export function getGastroRecipeVideo(dishTitle = '', cityName = '') {
   for (const key of sortedKeys) {
     if (titleTokens.some(token => token === key || key.includes(token))) {
       const val = GASTRO_RECIPE_VIDEOS[key];
+      const isGreek = val.region && (val.region.toLowerCase().includes('ελλάδ') || val.region.toLowerCase().includes('greece') || val.region.toLowerCase().includes('αθήν') || val.region.toLowerCase().includes('θεσσαλον') || val.region.toLowerCase().includes('κοζάν'));
       return {
         ...val,
         options: val.options || [{ youtubeId: val.youtubeId, title: val.title, label: val.dish || 'Συνταγή', icon: 'fa-solid fa-utensils' }],
-        searchQuery: val.searchQuery || `συνταγή ${val.dish || dishTitle} ${cityName}`
+        searchQuery: val.searchQuery || (isGreek ? `συνταγή ${val.dish || dishTitle} ${cityName}` : `${val.dish || dishTitle} recipe`)
       };
     }
   }
@@ -28602,10 +28687,11 @@ export function getGastroRecipeVideo(dishTitle = '', cityName = '') {
   for (const key of sortedKeys) {
     if (normCity && (normCity.includes(key) || key.includes(normCity))) {
       const val = GASTRO_RECIPE_VIDEOS[key];
+      const isGreek = val.region && (val.region.toLowerCase().includes('ελλάδ') || val.region.toLowerCase().includes('greece') || val.region.toLowerCase().includes('αθήν') || val.region.toLowerCase().includes('θεσσαλον') || val.region.toLowerCase().includes('κοζάν'));
       return {
         ...val,
         options: val.options || [{ youtubeId: val.youtubeId, title: val.title, label: val.dish || 'Συνταγή', icon: 'fa-solid fa-utensils' }],
-        searchQuery: val.searchQuery || `συνταγή ${val.dish || dishTitle} ${cityName}`
+        searchQuery: val.searchQuery || (isGreek ? `συνταγή ${val.dish || dishTitle} ${cityName}` : `${val.dish || dishTitle} recipe`)
       };
     }
   }
