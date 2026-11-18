@@ -9,7 +9,7 @@ import { getDeepDiveData } from './deep-dive.js?v=20261117_video_iframe_fix';
 import { fetchWikiArticle, fetchWikiArticleHtml, cleanWikiTitle } from './wiki-service.js?v=20261118_restore_ui_v4';
 import { calculateSubsolarPoint } from './solar-terminator.js?v=20261117_video_iframe_fix';
 import { CITY_TO_STATE } from './states-data.js?v=20261117_video_iframe_fix';
-import { CITY_TO_COUNTRY } from './navigator.js?v=20261117_video_iframe_fix';
+import { CITY_TO_COUNTRY } from './navigator.js?v=20261118_usa_states_cleanup_v5';
 
 let currentActiveVideoCityId = null;
 let currentActiveVideoType = 'drone';
@@ -2014,7 +2014,8 @@ export function updateBreadcrumbs(scope, stateOrCountry, city) {
     if (bcStateSep) bcStateSep.classList.remove('hidden');
     if (bcState) {
       bcState.classList.remove('hidden');
-      bcState.innerText = stateOrCountry ? stateOrCountry.name : 'Ελλάδα';
+      const isUsState = stateOrCountry && (stateOrCountry._countryId === 'usa' || stateOrCountry.type === 'state');
+      bcState.innerText = stateOrCountry ? (isUsState ? `${stateOrCountry.name} (ΗΠΑ)` : stateOrCountry.name) : 'Ελλάδα';
       bcState.className = 'text-slate-400 hover:text-sky-300 transition';
     }
     if (bcCitySep) bcCitySep.classList.remove('hidden');

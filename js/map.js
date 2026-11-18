@@ -233,6 +233,7 @@ export function renderCityPins(cities, currentScope, currentCityId, onCityClick)
 
   cities.forEach(city => {
     const isSelected = (currentScope === 'city' && currentCityId === city.id);
+    const isState = city.isState || city._isState === true;
 
     const customIcon = L.divIcon({
       className: 'city-pin-wrapper',
@@ -241,9 +242,11 @@ export function renderCityPins(cities, currentScope, currentCityId, onCityClick)
           <div class="px-2.5 py-1 rounded-full text-xs font-bold shadow-lg border flex items-center gap-1.5 transition ${
             isSelected 
               ? 'bg-amber-500 text-slate-950 border-amber-300 ring-4 ring-amber-400/30' 
-              : 'bg-slate-900/90 text-white border-slate-600 hover:border-sky-400 hover:text-sky-300'
+              : (isState 
+                  ? 'bg-emerald-950/90 text-emerald-200 border-emerald-600 hover:border-emerald-300 hover:text-white' 
+                  : 'bg-slate-900/90 text-white border-slate-600 hover:border-sky-400 hover:text-sky-300')
           }">
-            <i class="fa-solid fa-city text-[10px]"></i>
+            <i class="fa-solid ${isState ? 'fa-landmark text-emerald-400 text-[10px]' : 'fa-city text-[10px]'}"></i>
             <span>${city.name}</span>
           </div>
         </div>

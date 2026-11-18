@@ -5,10 +5,10 @@
  */
 
 import { loadWorldData, loadCountryData, loadStateData } from './data-service.js?v=20261117_video_iframe_fix';
-import * as MapModule from './map.js?v=20261117_video_iframe_fix';
-import * as UIModule from './ui.js?v=20261118_restore_ui_v4';
+import * as MapModule from './map.js?v=20261118_usa_states_cleanup_v5';
+import * as UIModule from './ui.js?v=20261118_usa_states_cleanup_v5';
 import * as TimeMachine from './time-machine.js?v=20261117_video_iframe_fix';
-import * as NavigatorModule from './navigator.js?v=20261117_video_iframe_fix';
+import * as NavigatorModule from './navigator.js?v=20261118_usa_states_cleanup_v5';
 import * as GlobeModule from './globe-view.js?v=20261117_video_iframe_fix';
 import { US_STATES, CITY_TO_STATE } from './states-data.js?v=20261117_video_iframe_fix';
 import * as PresentationModule from './presentation.js?v=20261117_video_iframe_fix';
@@ -64,7 +64,7 @@ const tourSequence = [
   { type: 'country', id: 'hungary' },
   { type: 'city', id: 'budapest' },
   { type: 'country', id: 'usa' },
-  { type: 'city', id: 'new-york' },
+  { type: 'state', id: 'massachusetts' },
   { type: 'city', id: 'boston' }
 ];
 
@@ -252,9 +252,23 @@ export async function flyToCountry(countryId = 'greece') {
 
   MapModule.flyToCoords(country.coords, country.zoom, 1.6);
   GlobeModule.flyToGlobeCoords(country.coords[0], country.coords[1], 1.5);
-  if (dataset.cities) GlobeModule.setGlobeCities(dataset.cities);
   MapModule.toggleStateHighlight(false);
-  MapModule.renderCityPins(dataset.cities, currentScope, currentCityId, flyToCity);
+
+  if (countryId === 'usa') {
+    // For USA: render all 51 state pins across the country map
+    const statePins = US_STATES.map(s => ({
+      id: s.id,
+      name: s.name,
+      coords: s.coords,
+      isState: true
+    }));
+    MapModule.renderCityPins(statePins, 'country', null, (stId) => {
+      flyToState(stId);
+    });
+  } else {
+    if (dataset.cities) GlobeModule.setGlobeCities(dataset.cities);
+    MapModule.renderCityPins(dataset.cities, currentScope, currentCityId, flyToCity);
+  }
   MapModule.clearPois();
   UIModule.renderDossier(
     country, 
@@ -685,13 +699,36 @@ export async function flyToCity(cityId) {
   let parent = null;
   let activeCities = [];
 
-  for (const [cId, cData] of countriesMap.entries()) {
-    if (cData && cData.cities && cData.cities.some(c => c.id === cityId)) {
-      currentCountryId = cId;
-      currentStateId = null;
-      parent = cData.country;
-      activeCities = cData.cities;
-      break;
+  const targetState = CITY_TO_STATE && CITY_TO_STATE[cityId];
+  if (targetState) {
+    let sData = statesMap.get(targetState);
+    if (!sData) {
+      try {
+        sData = await loadStateData(targetState);
+        statesMap.set(targetState, sData);
+        if (targetState === 'massachusetts') massachusettsData = sData;
+      } catch (err) {
+        console.warn(`[App] Error loading state ${targetState}:`, err);
+      }
+    }
+    if (sData && sData.state) {
+      currentCountryId = 'usa';
+      currentStateId = targetState;
+      parent = sData.state;
+      parent._countryId = 'usa';
+      activeCities = sData.cities || [];
+    }
+  }
+
+  if (!parent) {
+    for (const [cId, cData] of countriesMap.entries()) {
+      if (cId !== 'usa' && cData && cData.cities && cData.cities.some(c => c.id === cityId)) {
+        currentCountryId = cId;
+        currentStateId = null;
+        parent = cData.country;
+        activeCities = cData.cities;
+        break;
+      }
     }
   }
   if (!parent) {
@@ -700,6 +737,7 @@ export async function flyToCity(cityId) {
         currentCountryId = 'usa';
         currentStateId = sId;
         parent = sData.state;
+        parent._countryId = 'usa';
         activeCities = sData.cities;
         break;
       }
@@ -709,6 +747,7 @@ export async function flyToCity(cityId) {
     currentCountryId = 'usa';
     currentStateId = 'massachusetts';
     parent = massachusettsData.state;
+    parent._countryId = 'usa';
     activeCities = massachusettsData.cities;
   }
   if (!parent && NavigatorModule.CITY_TO_COUNTRY && NavigatorModule.CITY_TO_COUNTRY[cityId]) {
@@ -731,7 +770,11 @@ export async function flyToCity(cityId) {
 
   MapModule.flyToCoords(city.coords, city.zoom, 1.4);
   GlobeModule.flyToGlobeCoords(city.coords[0], city.coords[1], 0.6);
-  MapModule.toggleStateHighlight(false);
+  if (currentCountryId === 'usa' && currentStateId === 'massachusetts') {
+    MapModule.toggleStateHighlight(true);
+  } else {
+    MapModule.toggleStateHighlight(false);
+  }
 
   MapModule.renderCityPins(activeCities, currentScope, currentCityId, flyToCity);
   MapModule.renderCityPois(city, currentPoiFilter, switchTab);

@@ -805,18 +805,7 @@ export const CONTINENTS_DATA = [
         id: 'usa',
         name: 'Ηνωμένες Πολιτείες (ΗΠΑ)',
         flag: '🇺🇸',
-        cities: [
-          { id: 'new-york', name: 'Νέα Υόρκη', badge: 'Μητρόπολη' },
-          { id: 'los-angeles', name: 'Λος Άντζελες' },
-          { id: 'chicago', name: 'Σικάγο' },
-          { id: 'boston', name: 'Βοστώνη' },
-          { id: 'houston', name: 'Χιούστον' },
-          { id: 'philadelphia', name: 'Φιλαδέλφεια' },
-          { id: 'phoenix', name: 'Φοίνιξ' },
-          { id: 'san-diego', name: 'Σαν Ντιέγκο' },
-          { id: 'dallas', name: 'Ντάλας' },
-          { id: 'san-antonio', name: 'Σαν Αντόνιο' }
-        ]
+        cities: []
       },
       {
         id: 'canada',
@@ -3402,6 +3391,15 @@ for (const continent of CONTINENTS_DATA) {
     }
   }
 }
+if (typeof US_STATES !== 'undefined' && Array.isArray(US_STATES)) {
+  for (const state of US_STATES) {
+    if (state.cities) {
+      for (const sc of state.cities) {
+        CITY_TO_COUNTRY[sc.id] = 'usa';
+      }
+    }
+  }
+}
 
 let isNavDropdownOpen = false;
 let expandedContinents = new Set(['europe']);
@@ -3579,7 +3577,7 @@ export function filterContinentNav(query) {
     }
   }
 
-  // Check all 51 US States and 121 Cities
+  // Check all 51 US States and 501 Cities
   for (const state of US_STATES) {
     if (!isVideoQuery && (
         state.name.toLowerCase().includes(q) || 
@@ -3664,7 +3662,7 @@ export function renderContinentNav() {
   container.innerHTML = CONTINENTS_DATA.map(continent => {
     const isContExpanded = expandedContinents.has(continent.id);
     const countryCount = continent.countries.length;
-    const totalCities = continent.countries.reduce((acc, c) => acc + c.cities.length, 0);
+    const totalCities = continent.countries.reduce((acc, c) => acc + (c.id === 'usa' ? 501 : c.cities.length), 0);
 
     return `
       <div class="border border-slate-800/80 rounded-xl overflow-hidden bg-slate-950/40 mb-1.5">
@@ -3685,7 +3683,7 @@ export function renderContinentNav() {
           <div class="p-1 space-y-1 bg-slate-900/50">
             ${continent.countries.map(country => {
               const isCountryExpanded = expandedCountries.has(country.id);
-              const cityCount = country.cities.length;
+              const cityCount = country.id === 'usa' ? '50 Πολιτείες (501)' : country.cities.length;
 
               return `
                 <div class="rounded-lg overflow-hidden border border-slate-800/50 bg-slate-950/30">
@@ -3711,7 +3709,7 @@ export function renderContinentNav() {
                       </button>
 
                       <!-- Individual Cities -->
-                      ${country.cities.map(city => `
+                      ${country.id !== 'usa' ? country.cities.map(city => `
                         <button onclick="window.selectNavTarget('city:${city.id}', '📍 ${city.name.replace(/'/g, "\\'")}')" class="w-full text-left px-2 py-1 rounded hover:bg-slate-800 text-slate-300 hover:text-sky-300 transition flex items-center justify-between text-[11px] group">
                           <span class="flex items-center gap-1.5 truncate">
                             <i class="fa-solid fa-location-dot text-[9px] text-sky-400 group-hover:scale-110 transition-transform"></i>
@@ -3719,53 +3717,50 @@ export function renderContinentNav() {
                           </span>
                           ${city.badge ? `<span class="text-[8px] px-1 rounded bg-slate-800 text-slate-400 border border-slate-700/60 group-hover:border-sky-500/40 group-hover:text-sky-300 shrink-0">${city.badge}</span>` : ''}
                         </button>
-                      `).join('')}
+                      `).join('') : ''}
 
                       ${country.id === 'usa' ? `
-                        <!-- Collapsible All US States Section (51 States, 121 Cities) -->
+                        <!-- Structured All US States Section (51 States, 501 Cities) -->
                         <div class="mt-2 pt-2 border-t border-slate-800/60">
-                          <button onclick="window.toggleAllStatesSection(event)" class="w-full px-2 py-1.5 rounded-lg bg-emerald-950/40 hover:bg-emerald-900/50 border border-emerald-700/40 flex items-center justify-between text-left text-[11px] font-bold text-emerald-300 hover:text-emerald-200 transition group">
+                          <div class="w-full px-2 py-1.5 rounded-lg bg-emerald-950/40 border border-emerald-700/40 flex items-center justify-between text-left text-[11px] font-bold text-emerald-300 mb-1">
                             <div class="flex items-center gap-1.5">
                               <i class="fa-solid fa-flag-usa text-emerald-400"></i>
                               <span>🏛️ 50 Πολιτείες & D.C.</span>
-                              <span class="text-[9px] px-1.5 py-0.2 rounded bg-emerald-900/60 text-emerald-300 font-mono">121 πόλεις</span>
                             </div>
-                            <i class="fa-solid fa-chevron-down text-[9px] transition-transform duration-200 ${showAllStates ? 'rotate-180 text-emerald-300' : ''}"></i>
-                          </button>
+                            <span class="text-[9px] px-1.5 py-0.2 rounded bg-emerald-900/60 text-emerald-300 font-mono">501 πόλεις</span>
+                          </div>
 
-                          ${showAllStates ? `
-                            <div class="mt-1 pl-1 space-y-1 max-h-[350px] overflow-y-auto pr-1 custom-scrollbar">
-                              ${US_STATES.map(state => {
-                                const isStExpanded = expandedStates.has(state.id);
-                                return `
-                                  <div class="rounded border border-slate-800/40 bg-slate-900/40 overflow-hidden">
-                                    <div class="w-full px-2 py-1 hover:bg-slate-800/60 flex items-center justify-between transition text-[11px]">
-                                      <button onclick="window.selectNavTarget('state:${state.id}', '🏛️ ${state.name.replace(/'/g, "\\'")}')" class="flex items-center gap-1.5 text-left min-w-0 flex-1 group">
-                                        <i class="fa-solid fa-landmark text-[9px] text-emerald-400 shrink-0"></i>
-                                        <span class="font-medium text-slate-300 group-hover:text-emerald-300 truncate">${state.name}</span>
-                                        <span class="text-[8px] text-slate-500 font-mono">(${state.cities.length})</span>
+                          <div class="mt-1 pl-1 space-y-1 max-h-[360px] overflow-y-auto pr-1 custom-scrollbar">
+                            ${US_STATES.map(state => {
+                              const isStExpanded = expandedStates.has(state.id);
+                              return `
+                                <div class="rounded border border-slate-800/40 bg-slate-900/40 overflow-hidden">
+                                  <div class="w-full px-2 py-1 hover:bg-slate-800/60 flex items-center justify-between transition text-[11px]">
+                                    <button onclick="window.selectNavTarget('state:${state.id}', '🏛️ ${state.name.replace(/'/g, "\\'")}')" class="flex items-center gap-1.5 text-left min-w-0 flex-1 group">
+                                      <i class="fa-solid fa-landmark text-[9px] text-emerald-400 shrink-0"></i>
+                                      <span class="font-medium text-slate-300 group-hover:text-emerald-300 truncate">${state.name}</span>
+                                      <span class="text-[8px] text-slate-500 font-mono">(${state.cities.length})</span>
+                                    </button>
+                                    ${state.cities.length > 0 ? `
+                                      <button onclick="window.toggleStateSection('${state.id}', event)" class="p-1 text-slate-400 hover:text-white transition" title="Προβολή πόλεων ${state.name}">
+                                        <i class="fa-solid fa-chevron-down text-[8px] transition-transform duration-200 ${isStExpanded ? 'rotate-180 text-emerald-400' : ''}"></i>
                                       </button>
-                                      ${state.cities.length > 0 ? `
-                                        <button onclick="window.toggleStateSection('${state.id}', event)" class="p-1 text-slate-400 hover:text-white transition" title="Προβολή πόλεων ${state.name}">
-                                          <i class="fa-solid fa-chevron-down text-[8px] transition-transform duration-200 ${isStExpanded ? 'rotate-180 text-emerald-400' : ''}"></i>
-                                        </button>
-                                      ` : ''}
-                                    </div>
-                                    ${isStExpanded && state.cities.length > 0 ? `
-                                      <div class="px-2 py-0.5 bg-slate-950/80 border-t border-slate-800/30 space-y-0.5 pl-4">
-                                        ${state.cities.map(sc => `
-                                          <button onclick="window.selectNavTarget('city:${sc.id}', '📍 ${sc.name.replace(/'/g, "\\'")}')" class="w-full text-left px-1.5 py-0.5 rounded hover:bg-slate-800 text-slate-400 hover:text-sky-300 transition flex items-center justify-between text-[10px] group">
-                                            <span class="truncate">📍 ${sc.name}</span>
-                                            ${sc.badge ? `<span class="text-[7px] px-1 rounded bg-slate-800 text-amber-300 border border-amber-600/30 shrink-0">${sc.badge}</span>` : ''}
-                                          </button>
-                                        `).join('')}
-                                      </div>
                                     ` : ''}
                                   </div>
-                                `;
-                              }).join('')}
-                            </div>
-                          ` : ''}
+                                  ${isStExpanded && state.cities.length > 0 ? `
+                                    <div class="px-2 py-0.5 bg-slate-950/80 border-t border-slate-800/30 space-y-0.5 pl-4">
+                                      ${state.cities.map(sc => `
+                                        <button onclick="window.selectNavTarget('city:${sc.id}', '📍 ${sc.name.replace(/'/g, "\\'")}')" class="w-full text-left px-1.5 py-0.5 rounded hover:bg-slate-800 text-slate-400 hover:text-sky-300 transition flex items-center justify-between text-[10px] group">
+                                          <span class="truncate">📍 ${sc.name}</span>
+                                          ${sc.badge ? `<span class="text-[7px] px-1 rounded bg-slate-800 text-amber-300 border border-amber-600/30 shrink-0">${sc.badge}</span>` : ''}
+                                        </button>
+                                      `).join('')}
+                                    </div>
+                                  ` : ''}
+                                </div>
+                              `;
+                            }).join('')}
+                          </div>
                         </div>
                       ` : ''}
                     </div>
