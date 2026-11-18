@@ -28485,6 +28485,76 @@ export const GASTRO_RECIPE_VIDEOS = {
       { youtubeId: "Wz_pK1Zb-X8", title: "Παραδοσιακό Κουλούρι", label: "Κουλούρι", icon: "fa-solid fa-circle-notch" }
     ]
   },
+  "σουτζουκάκια σμυρναίικα": {
+    youtubeId: "W5OQo14lGkI",
+    title: "Αυθεντικά Σουτζουκάκια Σμυρναίικα • Άκης Πετρετζίκης",
+    dish: "Σουτζουκάκια Σμυρναίικα",
+    region: "Θεσσαλονίκη",
+    searchQuery: "σουτζουκακια σμυρναιικα συνταγη",
+    options: [
+      { youtubeId: "W5OQo14lGkI", title: "Σουτζουκάκια Σμυρναίικα", label: "Σουτζουκάκια", icon: "fa-solid fa-utensils" }
+    ]
+  },
+  "σουτζουκάκια": {
+    youtubeId: "W5OQo14lGkI",
+    title: "Σουτζουκάκια Σμυρναίικα",
+    dish: "Σουτζουκάκια",
+    region: "Θεσσαλονίκη",
+    searchQuery: "σουτζουκακια συνταγη",
+    options: [
+      { youtubeId: "W5OQo14lGkI", title: "Σουτζουκάκια", label: "Σουτζουκάκια", icon: "fa-solid fa-utensils" }
+    ]
+  },
+  "πατσάς θεσσαλονίκης": {
+    youtubeId: "9Wd04Lg9y54",
+    title: "Παραδοσιακός Πατσάς Θεσσαλονίκης με Σκορδοστούμπι",
+    dish: "Πατσάς Θεσσαλονίκης",
+    region: "Θεσσαλονίκη",
+    searchQuery: "πατσας θεσσαλονικη συνταγη",
+    options: [
+      { youtubeId: "9Wd04Lg9y54", title: "Παραδοσιακός Πατσάς", label: "Πατσάς", icon: "fa-solid fa-bowl-food" }
+    ]
+  },
+  "πατσάς": {
+    youtubeId: "9Wd04Lg9y54",
+    title: "Παραδοσιακός Πατσάς",
+    dish: "Πατσάς",
+    region: "Θεσσαλονίκη",
+    searchQuery: "πατσας συνταγη",
+    options: [
+      { youtubeId: "9Wd04Lg9y54", title: "Παραδοσιακός Πατσάς", label: "Πατσάς", icon: "fa-solid fa-bowl-food" }
+    ]
+  },
+  "γύρος & πανσέτα θεσσαλονίκης": {
+    youtubeId: "8b23cT7vF7c",
+    title: "Σπιτικός Χοιρινός Γύρος & Πανσέτα Θεσσαλονίκης",
+    dish: "Γύρος & Πανσέτα",
+    region: "Θεσσαλονίκη",
+    searchQuery: "γυρος θεσσαλονικη συνταγη",
+    options: [
+      { youtubeId: "8b23cT7vF7c", title: "Γύρος & Πανσέτα", label: "Γύρος", icon: "fa-solid fa-utensils" }
+    ]
+  },
+  "μύδια θερμαϊκού & θαλασσινά": {
+    youtubeId: "H9x_T7c8b0k",
+    title: "Μύδια Σαγανάκι & Μυδοπίλαφο Θεσσαλονίκης",
+    dish: "Μύδια Θερμαϊκού",
+    region: "Θεσσαλονίκη",
+    searchQuery: "μυδια σαγανακι μυδοπιλαφο θεσσαλονικη",
+    options: [
+      { youtubeId: "H9x_T7c8b0k", title: "Μύδια Σαγανάκι", label: "Μύδια Σαγανάκι", icon: "fa-solid fa-shrimp" }
+    ]
+  },
+  "μύδια σαγανάκι": {
+    youtubeId: "H9x_T7c8b0k",
+    title: "Μύδια Σαγανάκι με Φέτα",
+    dish: "Μύδια Σαγανάκι",
+    region: "Θεσσαλονίκη",
+    searchQuery: "μυδια σαγανακι συνταγη",
+    options: [
+      { youtubeId: "H9x_T7c8b0k", title: "Μύδια Σαγανάκι", label: "Μύδια Σαγανάκι", icon: "fa-solid fa-shrimp" }
+    ]
+  },
 
   // Crete
   "κρητικός ντάκος": {

@@ -201,7 +201,44 @@
           ],
           "desc": "Η ιστορική καρδιά της Μαδρίτης των Αψβούργων."
         }
-      ]
+      ],
+      "gastro": {
+        "summary": "Η μαδριλένικη γαστρονομία φημίζεται για τα πλούσια μαγειρευτά της (cocido), τα τάπας στα παραδοσιακά μπαρ της La Latina και τα ζεστά churros.",
+        "items": [
+          {
+            "title": "Cocido Madrileño",
+            "cat": "recipe",
+            "catLabel": "🍲 Παραδοσιακό",
+            "tag": "Σιγομαγειρεμένο",
+            "desc": "Παραδοσιακό χειμωνιάτικο πιάτο με ρεβίθια, κρέατα, λουκάνικα chorizo και λαχανικά.",
+            "wiki": "Cocido_madrileño"
+          },
+          {
+            "title": "Bocadillo de Calamares",
+            "cat": "recipe",
+            "catLabel": "🥖 Street Food",
+            "tag": "Plaza Mayor",
+            "desc": "Τραγανές τηγανητές ροδέλες καλαμαριού σε αφράτο μπαγκέτα, το σήμα κατατεθέν της Plaza Mayor.",
+            "wiki": "Bocadillo_de_calamares"
+          },
+          {
+            "title": "Churros con Chocolate",
+            "cat": "dessert",
+            "catLabel": "☕ Ζαχαροπλαστική",
+            "tag": "Chocolatería",
+            "desc": "Τραγανά μπαστουνάκια τηγανητής ζύμης που βουτιούνται σε παχύρρευστη ζεστή σοκολάτα.",
+            "wiki": "Churro"
+          },
+          {
+            "title": "Callos a la Madrileña",
+            "cat": "recipe",
+            "catLabel": "🍲 Κλασική Γεύση",
+            "tag": "Τάπας",
+            "desc": "Πικάντικος πατσάς με chorizo, morcilla και πάπρικα, κορυφαίος μεζές των ταβερνών.",
+            "wiki": "Callos_a_la_madrileña"
+          }
+        ]
+      }
     },
     {
       "id": "barcelona",
@@ -309,7 +346,44 @@
           ],
           "desc": "Το παραμυθένιο κτίριο με την πρόσοψη σε σχήμα δράκου."
         }
-      ]
+      ],
+      "gastro": {
+        "summary": "Η καταλανική κουζίνα της Βαρκελώνης παντρεύει τη θάλασσα με το βουνό (mar i muntanya), με βάση το εξαιρετικό ελαιόλαδο, τα φρέσκα θαλασσινά και τις σάλτσες romesco και allioli.",
+        "items": [
+          {
+            "title": "Pa amb Tomàquet",
+            "cat": "recipe",
+            "catLabel": "🥖 Καταλανικό",
+            "tag": "Κλασικό",
+            "desc": "Φρυγανισμένο ψωμί αλειμμένο με ώριμη ντομάτα, σκόρδο, έξτρα παρθένο ελαιόλαδο και αλάτι.",
+            "wiki": "Pa_amb_tomàquet"
+          },
+          {
+            "title": "Fideuà de Barcelona",
+            "cat": "seafood",
+            "catLabel": "🥘 Θαλασσινό",
+            "tag": "Παραδοσιακό",
+            "desc": "Όμοιο με την παέγια αλλά μαγειρεμένο με λεπτά κοντά ζυμαρικά, γαρίδες, σουπιές και allioli.",
+            "wiki": "Fideuà"
+          },
+          {
+            "title": "Escalivada Catalana",
+            "cat": "recipe",
+            "catLabel": "🥗 Ορεκτικό",
+            "tag": "Ψητά Λαχανικά",
+            "desc": "Ψητές καπνιστές μελιτζάνες, πιπεριές και κρεμμύδια περιχυμένα με ελαιόλαδο και αντζούγιες.",
+            "wiki": "Escalivada"
+          },
+          {
+            "title": "Crema Catalana",
+            "cat": "dessert",
+            "catLabel": "🍮 Επιδόρπιο",
+            "tag": "Γλυκό",
+            "desc": "Βελούδινη κρέμα αρωματισμένη με κανέλα και ξύσμα λεμονιού, με τραγανή καραμελωμένη κρούστα.",
+            "wiki": "Crema_catalana"
+          }
+        ]
+      }
     },
     {
       "id": "seville",
@@ -2142,28 +2216,40 @@
         {
           "name": "Βασιλική του Πιλάρ",
           "category": "history",
-          "coords": [41.6567, -0.8785],
+          "coords": [
+            41.6567,
+            -0.8785
+          ],
           "desc": "Το επιβλητικό μπαρόκ σύμβολο της Σαραγόσας στις όχθες του Έβρου.",
           "wiki": "Cathedral-Basilica_of_Our_Lady_of_the_Pillar"
         },
         {
           "name": "Παλάτι Aljafería",
           "category": "history",
-          "coords": [41.6565, -0.8972],
+          "coords": [
+            41.6565,
+            -0.8972
+          ],
           "desc": "Οχυρωμένο ισλαμικό παλάτι του 11ου αιώνα και σημερινή έδρα του Κοινοβουλίου της Αραγωνίας.",
           "wiki": "Aljafería"
         },
         {
           "name": "Καθεδρικός Ναός La Seo",
           "category": "history",
-          "coords": [41.6547, -0.8756],
+          "coords": [
+            41.6547,
+            -0.8756
+          ],
           "desc": "Μνημείο Παγκόσμιας Κληρονομιάς της UNESCO με μοναδική αρχιτεκτονική Mudéjar.",
           "wiki": "Cathedral_of_the_Salvador_of_Zaragoza"
         },
         {
           "name": "Πέτρινη Γέφυρα (Puente de Piedra)",
           "category": "landmark",
-          "coords": [41.6578, -0.8753],
+          "coords": [
+            41.6578,
+            -0.8753
+          ],
           "desc": "Ιστορική γέφυρα του 15ου αιώνα με πανοραμική θέα στη Βασιλική του Πιλάρ.",
           "wiki": "Puente_de_Piedra,_Zaragoza"
         }

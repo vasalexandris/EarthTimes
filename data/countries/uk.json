@@ -210,7 +210,44 @@
           ],
           "desc": "Ο γιγαντιαίος τροχός παρατήρησης με θέα 360 μοιρών σε όλο το Λονδίνο."
         }
-      ]
+      ],
+      "gastro": {
+        "summary": "Η γαστρονομία του Λονδίνου συνδυάζει τις βρετανικές ιστορικές παραδόσεις της pub με την πολυπολιτισμική διεθνή σκηνή του Borough Market.",
+        "items": [
+          {
+            "title": "Traditional Fish & Chips",
+            "cat": "recipe",
+            "catLabel": "🐟 British Classic",
+            "tag": "Εθνικό",
+            "desc": "Τραγανός μπακαλιάρος παναρισμένος σε κουρκούτι μπύρας, σερβιρισμένος με παχιές τηγανητές πατάτες και mushy peas.",
+            "wiki": "Fish_and_chips"
+          },
+          {
+            "title": "Full English Breakfast",
+            "cat": "recipe",
+            "catLabel": "🍳 Πρωινό",
+            "tag": "Παραδοσιακό",
+            "desc": "Αυγά, μπέικον, λουκάνικα, ψητά φασόλια, μανιτάρια, ψητή ντομάτα και φρυγανισμένο ψωμί.",
+            "wiki": "Full_breakfast"
+          },
+          {
+            "title": "Sunday Roast with Yorkshire Pudding",
+            "cat": "recipe",
+            "catLabel": "🥩 Κυριακάτικο",
+            "tag": "Pub Classic",
+            "desc": "Ψητό μοσχάρι με φουσκωτό Yorkshire pudding, ψητές πατάτες, λαχανικά και πλούσιο gravy.",
+            "wiki": "Sunday_roast"
+          },
+          {
+            "title": "Afternoon Tea & Scones",
+            "cat": "dessert",
+            "catLabel": "☕ Παράδοση",
+            "tag": "Τσάι",
+            "desc": "Βρετανικό τσάι συνοδευόμενο από ζεστά scones με clotted cream, μαρμελάδα φράουλα και μικρά σάντουιτς.",
+            "wiki": "Tea_(meal)"
+          }
+        ]
+      }
     },
     {
       "id": "edinburgh",
@@ -323,7 +360,44 @@
           ],
           "desc": "Το μνημείο εμπνευσμένο από τον Παρθενώνα που χάρισε στην πόλη το προσωνύμιο «Αθήνα του Βορρά»."
         }
-      ]
+      ],
+      "gastro": {
+        "summary": "Η σκωτσέζικη γαστρονομία του Εδιμβούργου τιμά τα άγρια κρέατα, τα φρέσκα θαλασσινά των Highlands και τα παγκοσμίως διάσημα single malt ουίσκι.",
+        "items": [
+          {
+            "title": "Haggis, Neeps and Tatties",
+            "cat": "recipe",
+            "catLabel": "🥩 Σκωτσέζικο",
+            "tag": "Εθνικό Πιάτο",
+            "desc": "Το διάσημο εθνικό πιάτο της Σκωτίας με κιμά αρνιού, βρώμη και μπαχαρικά, σερβιρισμένο με πουρέ γογγυλιού και πατάτας.",
+            "wiki": "Haggis"
+          },
+          {
+            "title": "Cullen Skink",
+            "cat": "soup",
+            "catLabel": "🍲 Σούπα",
+            "tag": "Highlands",
+            "desc": "Πηχτή καπνιστή ψαρόσουπα με καπνιστό μπακαλιάρο (haddock), πατάτες, κρεμμύδι και γάλα.",
+            "wiki": "Cullen_skink"
+          },
+          {
+            "title": "Scottish Shortbread",
+            "cat": "dessert",
+            "catLabel": "🧈 Μπισκότο",
+            "tag": "Γλυκό",
+            "desc": "Παραδοσιακά βουτυρένια μπισκότα που λιώνουν στο στόμα, ψημένα με αγνό σκωτσέζικο βούτυρο.",
+            "wiki": "Shortbread"
+          },
+          {
+            "title": "Scotch Whisky Tasting",
+            "cat": "product",
+            "catLabel": "🥃 Απόσταγμα",
+            "tag": "Single Malt",
+            "desc": "Δοκιμή παλαιωμένων σκωτσέζικων single malt ουίσκι από τις ιστορικές περιοχές Speyside και Islay.",
+            "wiki": "Scotch_whisky"
+          }
+        ]
+      }
     },
     {
       "id": "manchester",

@@ -4,11 +4,11 @@
  * USA, Leaflet Map, Base Layers, UI Dossier, and Time Machine.
  */
 
-import { loadWorldData, loadCountryData, loadStateData } from './data-service.js?v=20261117_video_iframe_fix';
-import * as MapModule from './map.js?v=20261118_usa_states_cleanup_v5';
-import * as UIModule from './ui.js?v=20261118_usa_states_cleanup_v5';
+import { loadWorldData, loadCountryData, loadStateData } from './data-service.js?v=20261118_gastro_overhaul_v6';
+import * as MapModule from './map.js?v=20261118_gastro_overhaul_v6';
+import * as UIModule from './ui.js?v=20261118_gastro_overhaul_v6';
 import * as TimeMachine from './time-machine.js?v=20261117_video_iframe_fix';
-import * as NavigatorModule from './navigator.js?v=20261118_usa_states_cleanup_v5';
+import * as NavigatorModule from './navigator.js?v=20261118_gastro_overhaul_v6';
 import * as GlobeModule from './globe-view.js?v=20261117_video_iframe_fix';
 import { US_STATES, CITY_TO_STATE } from './states-data.js?v=20261117_video_iframe_fix';
 import * as PresentationModule from './presentation.js?v=20261117_video_iframe_fix';

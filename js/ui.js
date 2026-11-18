@@ -4,12 +4,12 @@
  * Base Map Layer selector, Date display, Video Overlay, and Deep Dive views.
  */
 
-import { getCityVideo, getAvailableVideoTypes, getAvailableCityTours, CITY_VIDEOS, findPoiLiveCam, getPoiVideoInfo, getGastroRecipeVideo, getSocialMediaVideos, SOCIAL_MEDIA_REGISTRY, GASTRO_RECIPE_VIDEOS } from './video-service.js?v=20261118_ai_search_wiki_bing_v2';
+import { getCityVideo, getAvailableVideoTypes, getAvailableCityTours, CITY_VIDEOS, findPoiLiveCam, getPoiVideoInfo, getGastroRecipeVideo, getSocialMediaVideos, SOCIAL_MEDIA_REGISTRY, GASTRO_RECIPE_VIDEOS } from './video-service.js?v=20261118_gastro_overhaul_v6';
 import { getDeepDiveData } from './deep-dive.js?v=20261117_video_iframe_fix';
-import { fetchWikiArticle, fetchWikiArticleHtml, cleanWikiTitle } from './wiki-service.js?v=20261118_restore_ui_v4';
+import { fetchWikiArticle, fetchWikiArticleHtml, cleanWikiTitle } from './wiki-service.js?v=20261118_gastro_overhaul_v6';
 import { calculateSubsolarPoint } from './solar-terminator.js?v=20261117_video_iframe_fix';
 import { CITY_TO_STATE } from './states-data.js?v=20261117_video_iframe_fix';
-import { CITY_TO_COUNTRY } from './navigator.js?v=20261118_usa_states_cleanup_v5';
+import { CITY_TO_COUNTRY } from './navigator.js?v=20261118_gastro_overhaul_v6';
 
 let currentActiveVideoCityId = null;
 let currentActiveVideoType = 'drone';
@@ -413,7 +413,8 @@ export function buildLocalizedGastroQuery(dishTitle = '', cityName = '', entity 
     if (isGenericGastro) {
       return `${effCityName} παραδοσιακές συνταγές`.trim();
     }
-    return `${cleanDish} συνταγή`.trim();
+    const hasCity = normDish.includes(effCityName.toLowerCase().slice(0, 5));
+    return `${cleanDish}${!hasCity && effCityName ? ` ${effCityName}` : ''} συνταγή`.trim();
   }
 
   // Foreign / International region:
@@ -3160,6 +3161,66 @@ export function getCuratedGastroItems(entity) {
     });
   }
   const id = entity.id || '';
+  if (id === 'thessaloniki') {
+    return [
+      {
+        title: 'Μπουγάτσα Θεσσαλονίκης',
+        cat: 'recipe',
+        catLabel: '🥧 Παραδοσιακή Πίτα',
+        tag: 'Σήμα Κατατεθέν',
+        desc: 'Με κρέμα, τυρί, κιμά ή σπανάκι. Τραγανό χειροποίητο φύλλο αέρος πασπαλισμένο με άχνη ζάχαρη και κανέλα.',
+        wiki: 'Μπουγάτσα'
+      },
+      {
+        title: 'Κουλούρι Θεσσαλονίκης',
+        cat: 'product',
+        catLabel: '🥖 Street Food',
+        tag: 'Πρωινή Συνήθεια',
+        desc: 'Τραγανό εξωτερικά, αφράτο στο εσωτερικό και πλούσια καλυμμένο με καβουρδισμένο σουσάμι.',
+        wiki: 'Κουλούρι_Θεσσαλονίκης'
+      },
+      {
+        title: 'Γύρος & Πανσέτα Θεσσαλονίκης',
+        cat: 'recipe',
+        catLabel: '🥩 Κλασική Γεύση',
+        tag: 'Διάσημο Σάντουιτς',
+        desc: 'Σερβίρεται σε παραδοσιακό ψωμάκι ή πίτα με ντομάτα, κρεμμύδι, τζατζίκι ή ρώσικη σαλάτα και τηγανητές πατάτες.',
+        wiki: 'Γύρος_(φαγητό)'
+      },
+      {
+        title: 'Σουτζουκάκια Σμυρναίικα',
+        cat: 'recipe',
+        catLabel: '🍲 Μικρασιατική Παράδοση',
+        tag: 'Μαγειρευτό',
+        desc: 'Πικάντικα μακρόστενα κεφτεδάκια μοσχαρίσιου κιμά με κύμινο, σκόρδο και πλούσια δεμένη σάλτσα φρέσκιας ντομάτας.',
+        wiki: 'Σουτζουκάκια'
+      },
+      {
+        title: 'Μύδια Θερμαϊκού & Θαλασσινά',
+        cat: 'seafood',
+        catLabel: '🦐 Ουζερί & Ψαροταβέρνες',
+        tag: 'Θαλασσινό',
+        desc: 'Τα διάσημα μύδια Ολυμπιάδας και Χαλάστρας, μαγειρεμένα ως σαγανάκι με φέτα, μυδοπίλαφο ή αχνιστά με λευκό κρασί.',
+        wiki: 'Μύδι'
+      },
+      {
+        title: 'Πατσάς Θεσσαλονίκης',
+        cat: 'soup',
+        catLabel: '🍲 Μεταμεσονύκτια Παράδοση',
+        tag: 'Ιστορικό Πιάτο',
+        desc: 'Παραδοσιακή σούπα κοιλιάς ή ποδαριού με σκορδοστούμπι και μπούκοβο, στενά συνδεδεμένη με τη νυχτερινή ζωή και τους πρόσφυγες.',
+        wiki: 'Πατσάς'
+      },
+      {
+        title: 'Τρίγωνα Πανοράματος & Πολίτικα Σιροπιαστά',
+        cat: 'dessert',
+        catLabel: '🍰 Ζαχαροπλαστική',
+        tag: 'Γλυκό',
+        desc: 'Τραγανά χρυσαφένια τρίγωνα φύλλου γεμισμένα με πλούσια κρέμα, πολίτικα καζάν ντιπί, εκμέκ καταΐφι και μαστιχωτά τσουρέκια.',
+        wiki: 'Τρίγωνα_Πανοράματος'
+      }
+    ];
+  }
   if (id === 'kozani') {
     return [
       {
@@ -3226,10 +3287,27 @@ export function getCuratedGastroItems(entity) {
   }
   return [
     {
-      title: `Παραδοσιακή Κουζίνα & Γεύσεις (${entity.name})`,
+      title: `Παραδοσιακές Συνταγές & Σπεσιαλιτέ (${entity.name})`,
       cat: 'recipe',
-      catLabel: '🥧 Τοπική Κουζίνα',
-      desc: `Αυθεντικές συνταγές, υλικά και γαστρονομικές συνήθειες που διαμόρφωσαν την κουλτούρα της περιοχής.`,
+      catLabel: '🍲 Κλασική Γεύση',
+      tag: 'Τοπικό Πιάτο',
+      desc: `Αυθεντικές τοπικές συνταγές, παραδοσιακά υλικά και σπεσιαλιτέ που χαρακτηρίζουν την περιοχή (${entity.name}).`,
+      wiki: entity.name
+    },
+    {
+      title: `Τοπικά Προϊόντα & Εδέσματα (${entity.name})`,
+      cat: 'product',
+      catLabel: '🍇 Προϊόντα Γης',
+      tag: 'Τοπική Παραγωγή',
+      desc: `Παραδοσιακά προϊόντα της τοπικής γης, τυριά, ελαιόλαδο, οίνοι και τοπικά αρτοσκευάσματα (${entity.name}).`,
+      wiki: entity.name
+    },
+    {
+      title: `Παραδοσιακά Επιδόρπια & Γλυκά (${entity.name})`,
+      cat: 'dessert',
+      catLabel: '🍯 Ζαχαροπλαστική',
+      tag: 'Γλυκές Γεύσεις',
+      desc: `Τοπικά γλυκίσματα, σιροπιαστά, πίτες και παραδοσιακές γλυκές λιχουδιές της περιοχής (${entity.name}).`,
       wiki: entity.name
     }
   ];
@@ -3529,44 +3607,91 @@ export function renderTabContent(tabId, entity, activeYear = null, activeSpots =
     `;
   } else if (tabId === 'gastro') {
     const items = getCuratedGastroItems(entity);
+    const gastroSummary = entity.gastro?.summary || 
+      `Η παραδοσιακή κουζίνα και οι γεύσεις (${entity.name}) διαμορφώθηκαν μέσα από ιστορικές και πολυπολιτισμικές επιρροές, συνδυάζοντας εκλεκτά τοπικά υλικά, παραδοσιακές συνταγές και αυθεντική τοπική γαστρονομική ταυτότητα.`;
+
     html = `
       <div class="space-y-3">
-        <div class="p-3.5 bg-slate-800/50 rounded-xl border border-slate-700/60 text-slate-200">
-          <div class="flex items-center gap-2 text-amber-400 font-semibold mb-1 text-sm">
-            <i class="fa-solid fa-utensils"></i> Γαστρονομία & Τοπικές Γεύσεις
+        <!-- 1. General Local Cuisine Overview Card with Direct City Exploration -->
+        <div class="p-4 bg-gradient-to-br from-amber-950/40 via-slate-900/90 to-slate-950 rounded-2xl border border-amber-600/40 shadow-lg text-slate-200">
+          <div class="flex items-center justify-between gap-2 mb-2">
+            <div class="flex items-center gap-2 text-amber-400 font-bold text-sm">
+              <i class="fa-solid fa-utensils text-amber-300"></i>
+              <span>Παραδοσιακή & Τοπική Κουζίνα (${entity.name})</span>
+            </div>
+            <span class="text-[10px] px-2 py-0.5 rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/30 font-bold shrink-0">
+              Γενικός Οδηγός
+            </span>
           </div>
-          <p class="leading-relaxed">Παραδοσιακές συνταγές, προϊόντα με Προστατευόμενη Ονομασία Προέλευσης (ΠΟΠ) και τοπική κουζίνα (${entity.name}).</p>
+          <p class="text-xs text-slate-300 leading-relaxed mb-3">${gastroSummary}</p>
+          <div class="flex flex-wrap items-center gap-2 pt-2.5 border-t border-slate-800/80">
+            <button onclick="window.openDeepDive('Παραδοσιακή Κουζίνα (${escapeStr(entity.name)})', '${escapeStr(gastroSummary)}', '${escapeStr(entity.name)}')" class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-amber-300 hover:text-white border border-slate-700 text-[11px] font-bold transition flex items-center gap-1.5 shadow cursor-pointer">
+              <i class="fa-solid fa-wand-magic-sparkles text-amber-400"></i>
+              <span>Ανάλυση AI</span>
+            </button>
+            <button onclick="window.openDeepDiveBingAiSearch('${escapeStr(entity.name)} παραδοσιακή κουζίνα γαστρονομία travel guide')" class="px-2.5 py-1 rounded-lg bg-gradient-to-r from-amber-600 to-orange-600 hover:from-amber-500 hover:to-orange-500 text-white text-[11px] font-bold transition flex items-center gap-1.5 shadow cursor-pointer" title="Bing AI Search για την κουζίνα της πόλης">
+              <i class="fa-solid fa-magnifying-glass text-amber-200"></i>
+              <span>Bing AI Search</span>
+            </button>
+            <button onclick="window.openMapWikiReader('${escapeStr(entity.name)} Γαστρονομία', 'el', '${escapeStr(entity.name)} cuisine')" class="px-2.5 py-1 rounded-lg bg-sky-950/80 hover:bg-sky-900 text-sky-300 hover:text-white border border-sky-700/50 text-[11px] font-bold transition flex items-center gap-1.5 shadow cursor-pointer">
+              <i class="fa-brands fa-wikipedia-w text-sky-400"></i>
+              <span>Wikipedia</span>
+            </button>
+            <button onclick="window.openGastroVideo('Παραδοσιακή Κουζίνα & Γεύσεις', '${escapeStr(entity.name)}')" class="px-2.5 py-1 rounded-lg bg-rose-950/80 hover:bg-rose-900 text-rose-300 hover:text-white border border-rose-700/50 text-[11px] font-bold transition flex items-center gap-1.5 shadow cursor-pointer" title="Βίντεο τοπικής κουζίνας">
+              <i class="fa-solid fa-play text-rose-400"></i>
+              <span>Βίντεο Κουζίνας 📹</span>
+            </button>
+          </div>
         </div>
 
-        <div class="space-y-2.5 mt-3">
-          ${items.map(item => `
-            <div class="p-3.5 bg-slate-800/30 hover:bg-slate-800/80 hover:border-amber-500/50 transition border border-slate-700/40 rounded-xl">
-              <div class="flex items-start justify-between gap-2 mb-1.5">
-                <div>
-                  <span class="inline-block px-2 py-0.5 rounded text-[10px] font-bold bg-amber-950/80 text-amber-300 border border-amber-600/40 mb-1">
-                    ${item.catLabel}
-                  </span>
-                  <h5 class="font-bold text-slate-100 text-sm text-amber-200">${item.title}</h5>
-                </div>
-              </div>
-              <p class="text-xs text-slate-300 leading-relaxed mb-3">${item.desc}</p>
-              <div class="flex flex-wrap items-center gap-2 pt-2 border-t border-slate-800/70">
-                <button onclick="window.openDeepDive('${escapeStr(item.title)}', '${escapeStr(item.desc)}', '${escapeStr(entity.name)}')" class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-amber-300 hover:text-white border border-slate-700 text-[11px] font-bold transition flex items-center gap-1.5 shadow cursor-pointer">
-                  <i class="fa-solid fa-wand-magic-sparkles text-amber-400"></i>
-                  <span>Ανάλυση AI</span>
-                </button>
-                <button onclick="window.openMapWikiReader('${escapeStr(item.wiki || item.title)}', 'el')" class="px-2.5 py-1 rounded-lg bg-sky-950/80 hover:bg-sky-900 text-sky-300 hover:text-white border border-sky-700/50 text-[11px] font-bold transition flex items-center gap-1.5 shadow cursor-pointer">
-                  <i class="fa-brands fa-wikipedia-w"></i>
-                  <span>Wikipedia στον Χάρτη</span>
-                </button>
-                <button onclick="window.openGastroVideo('${escapeStr(item.title)}', '${escapeStr(entity.name)}')" class="px-2.5 py-1 rounded-lg bg-rose-950/80 hover:bg-rose-900 text-rose-300 hover:text-white border border-rose-700/50 text-[11px] font-bold transition flex items-center gap-1.5 shadow cursor-pointer" title="Προβολή βίντεο συνταγής">
-                  <i class="fa-solid fa-play text-rose-400"></i>
-                  <span>Βίντεο Συνταγής 👨‍🍳</span>
-                </button>
-              </div>
+        <!-- 2. Dedicated Cards for Famous Dishes & Specialties -->
+        ${items && items.length > 0 ? `
+          <div class="pt-1.5">
+            <div class="text-[11px] font-bold uppercase tracking-wider text-amber-400/90 flex items-center gap-1.5 mb-2 px-1">
+              <i class="fa-solid fa-fire-burner text-amber-500"></i>
+              <span>Ξακουστά Φαγητά, Συνταγές & Σπεσιαλιτέ (${items.length})</span>
             </div>
-          `).join('')}
-        </div>
+
+            <div class="space-y-2.5">
+              ${items.map(item => `
+                <div class="p-3.5 bg-slate-800/30 hover:bg-slate-800/80 hover:border-amber-500/50 transition border border-slate-700/40 rounded-xl">
+                  <div class="flex items-start justify-between gap-2 mb-1.5">
+                    <div>
+                      <span class="inline-block px-2 py-0.5 rounded text-[10px] font-bold bg-amber-950/80 text-amber-300 border border-amber-600/40 mb-1">
+                        ${item.catLabel || '🍽️ Σπεσιαλιτέ'}
+                      </span>
+                      <h5 class="font-bold text-slate-100 text-sm text-amber-200">${item.title}</h5>
+                    </div>
+                    ${item.tag ? `
+                      <span class="text-[9px] px-1.5 py-0.5 rounded bg-slate-800 text-slate-400 border border-slate-700 font-medium shrink-0">
+                        ${item.tag}
+                      </span>
+                    ` : ''}
+                  </div>
+                  <p class="text-xs text-slate-300 leading-relaxed mb-3">${item.desc}</p>
+                  <div class="flex flex-wrap items-center gap-2 pt-2 border-t border-slate-800/70">
+                    <button onclick="window.openDeepDive('${escapeStr(item.title)}', '${escapeStr(item.desc)}', '${escapeStr(entity.name)}')" class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-amber-300 hover:text-white border border-slate-700 text-[11px] font-bold transition flex items-center gap-1.5 shadow cursor-pointer">
+                      <i class="fa-solid fa-wand-magic-sparkles text-amber-400"></i>
+                      <span>Ανάλυση AI</span>
+                    </button>
+                    <button onclick="window.openDeepDiveBingAiSearch('${escapeStr(item.title)} ${escapeStr(entity.name)}')" class="px-2.5 py-1 rounded-lg bg-gradient-to-r from-amber-600 to-orange-600 hover:from-amber-500 hover:to-orange-500 text-white text-[11px] font-bold transition flex items-center gap-1.5 shadow cursor-pointer" title="Απευθείας Bing AI αναζήτηση για το πιάτο">
+                      <i class="fa-solid fa-magnifying-glass text-amber-200"></i>
+                      <span>Bing AI</span>
+                    </button>
+                    <button onclick="window.openMapWikiReader('${escapeStr(item.wiki || item.title)}', 'el', '${escapeStr(item.title)}')" class="px-2.5 py-1 rounded-lg bg-sky-950/80 hover:bg-sky-900 text-sky-300 hover:text-white border border-sky-700/50 text-[11px] font-bold transition flex items-center gap-1.5 shadow cursor-pointer">
+                      <i class="fa-brands fa-wikipedia-w"></i>
+                      <span>Wikipedia</span>
+                    </button>
+                    <button onclick="window.openGastroVideo('${escapeStr(item.title)}', '${escapeStr(entity.name)}')" class="px-2.5 py-1 rounded-lg bg-rose-950/80 hover:bg-rose-900 text-rose-300 hover:text-white border border-rose-700/50 text-[11px] font-bold transition flex items-center gap-1.5 shadow cursor-pointer" title="Προβολή βίντεο συνταγής">
+                      <i class="fa-solid fa-play text-rose-400"></i>
+                      <span>Βίντεο Συνταγής 👨‍🍳</span>
+                    </button>
+                  </div>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+        ` : ''}
       </div>
     `;
   } else if (tabId === 'eco') {
