@@ -205,7 +205,44 @@
           ],
           "desc": "Το κορυφαίο μουσείο τέχνης και ιστορίας."
         }
-      ]
+      ],
+      "gastro": {
+        "summary": "Η κουζίνα του Άμστερνταμ συνδυάζει τις παραδοσιακές ολλανδικές θαλασσινές συνήθειες με διάσημα τυριά (Gouda, Edam) και γλυκά street food των καναλιών.",
+        "items": [
+          {
+            "title": "Hollandse Nieuwe (Raw Herring)",
+            "cat": "seafood",
+            "catLabel": "🐟 Street Food",
+            "tag": "Παραδοσιακό",
+            "desc": "Ωμή παστή ρέγγα σερβιρισμένη παραδοσιακά με ψιλοκομμένο κρεμμύδι και πίκλες αγγουριού.",
+            "wiki": "Soused_herring"
+          },
+          {
+            "title": "Stroopwafel",
+            "cat": "dessert",
+            "catLabel": "🧇 Ζαχαροπλαστική",
+            "tag": "Ζεστό Street Food",
+            "desc": "Δύο λεπτές τραγανές βάφλες ενωμένες με ζεστό σιρόπι καραμέλας και κανέλας.",
+            "wiki": "Stroopwafel"
+          },
+          {
+            "title": "Bitterballen",
+            "cat": "recipe",
+            "catLabel": "🧆 Bar Snack",
+            "tag": "Pub Classic",
+            "desc": "Τραγανές τηγανητές κροκέτες με πλούσια γέμιση κρεμώδους μοσχαρίσιου ραγού, σερβιρισμένες με μουστάρδα.",
+            "wiki": "Bitterballen"
+          },
+          {
+            "title": "Poffertjes",
+            "cat": "dessert",
+            "catLabel": "🥞 Μικρές Τηγανίτες",
+            "tag": "Γλυκό",
+            "desc": "Μικρά αφράτα pancakes από φαγόπυρο, πασπαλισμένα με λιωμένο βούτυρο και άχνη ζάχαρη.",
+            "wiki": "Poffertjes"
+          }
+        ]
+      }
     },
     {
       "id": "rotterdam",
