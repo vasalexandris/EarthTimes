@@ -4,12 +4,12 @@
  * Base Map Layer selector, Date display, Video Overlay, and Deep Dive views.
  */
 
-import { getCityVideo, getAvailableVideoTypes, getAvailableCityTours, CITY_VIDEOS, findPoiLiveCam, getPoiVideoInfo, getGastroRecipeVideo, getSocialMediaVideos, SOCIAL_MEDIA_REGISTRY, GASTRO_RECIPE_VIDEOS } from './video-service.js?v=20261118_gastro_overhaul_v7';
+import { getCityVideo, getAvailableVideoTypes, getAvailableCityTours, CITY_VIDEOS, findPoiLiveCam, getPoiVideoInfo, getGastroRecipeVideo, getSocialMediaVideos, SOCIAL_MEDIA_REGISTRY, GASTRO_RECIPE_VIDEOS } from './video-service.js?v=20261118_gastro_overhaul_v8';
 import { getDeepDiveData } from './deep-dive.js?v=20261117_video_iframe_fix';
-import { fetchWikiArticle, fetchWikiArticleHtml, cleanWikiTitle } from './wiki-service.js?v=20261118_gastro_overhaul_v7';
+import { fetchWikiArticle, fetchWikiArticleHtml, cleanWikiTitle } from './wiki-service.js?v=20261118_gastro_overhaul_v8';
 import { calculateSubsolarPoint } from './solar-terminator.js?v=20261117_video_iframe_fix';
 import { CITY_TO_STATE } from './states-data.js?v=20261117_video_iframe_fix';
-import { CITY_TO_COUNTRY } from './navigator.js?v=20261118_gastro_overhaul_v7';
+import { CITY_TO_COUNTRY } from './navigator.js?v=20261118_gastro_overhaul_v8';
 
 let currentActiveVideoCityId = null;
 let currentActiveVideoType = 'drone';
