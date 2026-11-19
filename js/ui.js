@@ -13,6 +13,7 @@ import { CITY_TO_COUNTRY } from './navigator.js?v=20261118_gastro_overhaul_v8';
 import { renderGeographyTabHtml, mountLiveWeatherData } from './geo-service.js?v=20261119_geo_v1';
 import { renderHistoryTabHtml } from './history-service.js?v=20261119_hist_v2';
 import { renderCultureTabHtml } from './culture-service.js?v=20261119_cult_v1';
+import { renderGastronomyTabHtml } from './gastro-service.js?v=20261119_gastro_v1';
 
 let currentActiveVideoCityId = null;
 let currentActiveVideoType = 'drone';
@@ -4233,137 +4234,7 @@ export function renderTabContent(tabId, entity, activeYear = null, activeSpots =
     `;
   } else if (tabId === 'gastro') {
     const items = getCuratedGastroItems(entity);
-    const gastroSummary = entity.gastro?.summary || entity.gastro?.culture || 
-      `Η παραδοσιακή κουζίνα και οι γεύσεις (${entity.name}) διαμορφώθηκαν μέσα από ιστορικές και πολυπολιτισμικές επιρροές, συνδυάζοντας εκλεκτά τοπικά υλικά, παραδοσιακές συνταγές και αυθεντική τοπική γαστρονομική ταυτότητα.`;
-
-    html = `
-      <div class="space-y-3">
-        <!-- 1. General Local Cuisine Overview Card with Direct City Exploration -->
-        <div class="p-4 bg-gradient-to-br from-amber-950/40 via-slate-900/90 to-slate-950 rounded-2xl border border-amber-600/40 shadow-lg text-slate-200">
-          <div class="flex items-center justify-between gap-2 mb-2">
-            <div class="flex items-center gap-2 text-amber-400 font-bold text-sm">
-              <i class="fa-solid fa-utensils text-amber-300"></i>
-              <span>Παραδοσιακή & Τοπική Κουζίνα (${entity.name})</span>
-            </div>
-            <span class="text-[10px] px-2 py-0.5 rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/30 font-bold shrink-0">
-              Γενικός Οδηγός
-            </span>
-          </div>
-          <p class="text-xs text-slate-300 leading-relaxed mb-3">${gastroSummary}</p>
-          <div class="flex flex-wrap items-center gap-2 pt-2.5 border-t border-slate-800/80">
-            <button onclick="window.openDeepDive('Παραδοσιακή Κουζίνα (${escapeStr(entity.name)})', '${escapeStr(gastroSummary)}', '${escapeStr(entity.name)}')" class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-amber-300 hover:text-white border border-slate-700 text-[11px] font-bold transition flex items-center gap-1.5 shadow cursor-pointer">
-              <i class="fa-solid fa-wand-magic-sparkles text-amber-400"></i>
-              <span>Ανάλυση AI</span>
-            </button>
-            <button onclick="window.openDeepDiveBingAiSearch('${escapeStr(entity.name)} παραδοσιακή κουζίνα γαστρονομία travel guide')" class="px-2.5 py-1 rounded-lg bg-gradient-to-r from-amber-600 to-orange-600 hover:from-amber-500 hover:to-orange-500 text-white text-[11px] font-bold transition flex items-center gap-1.5 shadow cursor-pointer" title="Bing AI Search για την κουζίνα της πόλης">
-              <i class="fa-solid fa-magnifying-glass text-amber-200"></i>
-              <span>Bing AI Search</span>
-            </button>
-            <button onclick="window.openMapWikiReader('${escapeStr(entity.name)} Γαστρονομία', 'el', '${escapeStr(entity.name)} cuisine')" class="px-2.5 py-1 rounded-lg bg-sky-950/80 hover:bg-sky-900 text-sky-300 hover:text-white border border-sky-700/50 text-[11px] font-bold transition flex items-center gap-1.5 shadow cursor-pointer">
-              <i class="fa-brands fa-wikipedia-w text-sky-400"></i>
-              <span>Wikipedia</span>
-            </button>
-            <button onclick="window.openGastroVideo('Παραδοσιακή Κουζίνα & Γεύσεις', '${escapeStr(entity.name)}')" class="px-2.5 py-1 rounded-lg bg-rose-950/80 hover:bg-rose-900 text-rose-300 hover:text-white border border-rose-700/50 text-[11px] font-bold transition flex items-center gap-1.5 shadow cursor-pointer" title="Βίντεο τοπικής κουζίνας">
-              <i class="fa-solid fa-play text-rose-400"></i>
-              <span>Βίντεο Κουζίνας 📹</span>
-            </button>
-          </div>
-        </div>
-
-        <!-- 2. Dedicated Street Food & Outdoor Flavors Overview Card -->
-        <div class="p-4 bg-gradient-to-br from-orange-950/40 via-slate-900/90 to-slate-950 rounded-2xl border border-orange-600/40 shadow-lg text-slate-200">
-          <div class="flex items-center justify-between gap-2 mb-2">
-            <div class="flex items-center gap-2 text-orange-400 font-bold text-sm">
-              <i class="fa-solid fa-store text-orange-300"></i>
-              <span>Street Food & Υπαίθριες Γεύσεις (${entity.name})</span>
-            </div>
-            <span class="text-[10px] px-2 py-0.5 rounded-full bg-orange-500/20 text-orange-300 border border-orange-500/30 font-bold shrink-0">
-              🌯 Street Food
-            </span>
-          </div>
-          <p class="text-xs text-slate-300 leading-relaxed mb-3">Δημοφιλές φαγητό του δρόμου, αυθεντικά τοπικά στέκια, υπαίθριες λιχουδιές και γρήγορες παραδοσιακές γεύσεις (${entity.name}).</p>
-          <div class="flex flex-wrap items-center gap-2 pt-2.5 border-t border-slate-800/80">
-            <button onclick="window.openDeepDive('Street Food (${escapeStr(entity.name)})', 'Δημοφιλές φαγητό του δρόμου, τοπικά στέκια και υπαίθριες γεύσεις (${escapeStr(entity.name)}).', '${escapeStr(entity.name)}')" class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-amber-300 hover:text-white border border-slate-700 text-[11px] font-bold transition flex items-center gap-1.5 shadow cursor-pointer">
-              <i class="fa-solid fa-wand-magic-sparkles text-amber-400"></i>
-              <span>Ανάλυση AI</span>
-            </button>
-            <button onclick="window.openDeepDiveBingAiSearch('${escapeStr(entity.name)} street food travel guide spots')" class="px-2.5 py-1 rounded-lg bg-gradient-to-r from-orange-600 to-amber-600 hover:from-orange-500 hover:to-amber-500 text-white text-[11px] font-bold transition flex items-center gap-1.5 shadow cursor-pointer" title="Bing AI Search για το street food της πόλης">
-              <i class="fa-solid fa-magnifying-glass text-orange-200"></i>
-              <span>Bing AI Search</span>
-            </button>
-            <button onclick="window.openMapWikiReader('${escapeStr(entity.name)} street food', 'el', '${escapeStr(entity.name)} street food')" class="px-2.5 py-1 rounded-lg bg-sky-950/80 hover:bg-sky-900 text-sky-300 hover:text-white border border-sky-700/50 text-[11px] font-bold transition flex items-center gap-1.5 shadow cursor-pointer">
-              <i class="fa-brands fa-wikipedia-w text-sky-400"></i>
-              <span>Wikipedia</span>
-            </button>
-            <button onclick="window.openGastroVideo('Street Food & Υπαίθριες Γεύσεις', '${escapeStr(entity.name)}')" class="px-2.5 py-1 rounded-lg bg-orange-950/80 hover:bg-orange-900 text-orange-300 hover:text-white border border-orange-700/50 text-[11px] font-bold transition flex items-center gap-1.5 shadow cursor-pointer" title="Προβολή βίντεο Street Food">
-              <i class="fa-solid fa-store text-orange-400"></i>
-              <span>Βίντεο Street Food 🌯</span>
-            </button>
-          </div>
-        </div>
-
-        <!-- 3. Dedicated Cards for Famous Dishes & Specialties -->
-        ${items && items.length > 0 ? `
-          <div class="pt-1.5">
-            <div class="text-[11px] font-bold uppercase tracking-wider text-amber-400/90 flex items-center gap-1.5 mb-2 px-1">
-              <i class="fa-solid fa-fire-burner text-amber-500"></i>
-              <span>Ξακουστά Φαγητά, Συνταγές & Σπεσιαλιτέ (${items.length})</span>
-            </div>
-
-            <div class="space-y-2.5">
-              ${items.map(item => {
-                const isItemStreetFood = item.cat === 'street_food' || (item.title && item.title.toLowerCase().includes('street food'));
-                const badgeClass = isItemStreetFood
-                  ? 'bg-orange-950/80 text-orange-300 border-orange-600/40'
-                  : 'bg-amber-950/80 text-amber-300 border-amber-600/40';
-                const btnColor = isItemStreetFood
-                  ? 'bg-orange-950/80 hover:bg-orange-900 text-orange-300 border-orange-700/50'
-                  : 'bg-rose-950/80 hover:bg-rose-900 text-rose-300 hover:text-white border border-rose-700/50';
-                const btnIcon = isItemStreetFood ? 'fa-solid fa-store text-orange-400' : 'fa-solid fa-play text-rose-400';
-                const btnLabel = isItemStreetFood ? 'Βίντεο Street Food 🌯' : 'Βίντεο Συνταγής 👨‍🍳';
-
-                return `
-                <div class="p-3.5 bg-slate-800/30 hover:bg-slate-800/80 hover:border-amber-500/50 transition border border-slate-700/40 rounded-xl">
-                  <div class="flex items-start justify-between gap-2 mb-1.5">
-                    <div>
-                      <span class="inline-block px-2 py-0.5 rounded text-[10px] font-bold ${badgeClass} mb-1">
-                        ${item.catLabel || (isItemStreetFood ? '🌯 Street Food' : '🍽️ Σπεσιαλιτέ')}
-                      </span>
-                      <h5 class="font-bold text-slate-100 text-sm ${isItemStreetFood ? 'text-orange-200' : 'text-amber-200'}">${item.title}</h5>
-                    </div>
-                    ${item.tag ? `
-                      <span class="text-[9px] px-1.5 py-0.5 rounded bg-slate-800 text-slate-400 border border-slate-700 font-medium shrink-0">
-                        ${item.tag}
-                      </span>
-                    ` : ''}
-                  </div>
-                  <p class="text-xs text-slate-300 leading-relaxed mb-3">${item.desc}</p>
-                  <div class="flex flex-wrap items-center gap-2 pt-2 border-t border-slate-800/70">
-                    <button onclick="window.openDeepDive('${escapeStr(item.title)}', '${escapeStr(item.desc)}', '${escapeStr(entity.name)}')" class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-amber-300 hover:text-white border border-slate-700 text-[11px] font-bold transition flex items-center gap-1.5 shadow cursor-pointer">
-                      <i class="fa-solid fa-wand-magic-sparkles text-amber-400"></i>
-                      <span>Ανάλυση AI</span>
-                    </button>
-                    <button onclick="window.openDeepDiveBingAiSearch('${escapeStr(item.title)} ${escapeStr(entity.name)}')" class="px-2.5 py-1 rounded-lg bg-gradient-to-r from-amber-600 to-orange-600 hover:from-amber-500 hover:to-orange-500 text-white text-[11px] font-bold transition flex items-center gap-1.5 shadow cursor-pointer" title="Απευθείας Bing AI αναζήτηση για το πιάτο">
-                      <i class="fa-solid fa-magnifying-glass text-amber-200"></i>
-                      <span>Bing AI</span>
-                    </button>
-                    <button onclick="window.openMapWikiReader('${escapeStr(item.wiki || item.title)}', 'el', '${escapeStr(item.title)}')" class="px-2.5 py-1 rounded-lg bg-sky-950/80 hover:bg-sky-900 text-sky-300 hover:text-white border border-sky-700/50 text-[11px] font-bold transition flex items-center gap-1.5 shadow cursor-pointer">
-                      <i class="fa-brands fa-wikipedia-w"></i>
-                      <span>Wikipedia</span>
-                    </button>
-                    <button onclick="window.openGastroVideo('${escapeStr(item.title)}', '${escapeStr(entity.name)}')" class="px-2.5 py-1 rounded-lg ${btnColor} hover:text-white border text-[11px] font-bold transition flex items-center gap-1.5 shadow cursor-pointer" title="${isItemStreetFood ? 'Προβολή βίντεο Street Food' : 'Προβολή βίντεο συνταγής'}">
-                      <i class="${btnIcon}"></i>
-                      <span>${btnLabel}</span>
-                    </button>
-                  </div>
-                </div>
-              `;
-              }).join('')}
-            </div>
-          </div>
-        ` : ''}
-      </div>
-    `;
+    html = renderGastronomyTabHtml(entity, items);
   } else if (tabId === 'eco') {
     const edu = getCityEducationData(entity);
     const schools = edu?.schools;
