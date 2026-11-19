@@ -19,6 +19,77 @@ let currentUser = {
   title: 'Κάτοικος Κοζάνης'
 };
 
+function escapeStr(str) {
+  return String(str || '').replace(/'/g, "\\'").replace(/"/g, '&quot;');
+}
+
+export function extractYouTubeId(urlOrId) {
+  if (!urlOrId || typeof urlOrId !== 'string') return null;
+  const str = urlOrId.trim();
+  if (/^[a-zA-Z0-9_-]{11}$/.test(str)) return str;
+
+  const match = str.match(/(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|shorts\/|watch\?v=|watch\?.+&v=))([\w-]{11})/);
+  if (match && match[1]) return match[1];
+
+  return null;
+}
+
+export function getYouTubeThumbnail(youtubeId) {
+  if (!youtubeId) return '';
+  return `https://img.youtube.com/vi/${youtubeId}/hqdefault.jpg`;
+}
+
+export function normalizeChronicleMedia(chronicle) {
+  if (!chronicle) return;
+
+  // 1. Check if chronicle already has youtubeId or videoUrl
+  let ytId = extractYouTubeId(chronicle.youtubeId || chronicle.videoUrl);
+
+  // 2. Scan photos array for YouTube links
+  if (Array.isArray(chronicle.photos)) {
+    chronicle.photos.forEach(photo => {
+      if (!photo || !photo.url) return;
+      const detected = extractYouTubeId(photo.url);
+      if (detected) {
+        if (!ytId) ytId = detected;
+        photo.isYouTube = true;
+        photo.youtubeId = detected;
+        photo.originalVideoUrl = photo.url;
+        photo.url = getYouTubeThumbnail(detected);
+      }
+    });
+  }
+
+  // 3. Scan story for YouTube links if not found yet
+  if (!ytId && chronicle.story) {
+    const match = chronicle.story.match(/(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/(?:watch\?v=|embed\/|shorts\/)|youtu\.be\/)([\w-]{11})/);
+    if (match && match[1]) {
+      ytId = match[1];
+    }
+  }
+
+  if (ytId) {
+    chronicle.youtubeId = ytId;
+    if (!chronicle.videoUrl) {
+      chronicle.videoUrl = `https://www.youtube.com/watch?v=${ytId}`;
+    }
+    // If no photos or only unsplash placeholder photo, ensure high-res video thumbnail is available
+    if (!chronicle.photos || chronicle.photos.length === 0 || 
+        (chronicle.photos.length === 1 && chronicle.photos[0].url && chronicle.photos[0].url.includes('unsplash.com'))) {
+      chronicle.photos = [
+        {
+          url: getYouTubeThumbnail(ytId),
+          caption: chronicle.title || "Ιστορικό Βίντεο Εποχής",
+          year: chronicle.fromYear,
+          credit: chronicle.authorName || "YouTube",
+          isYouTube: true,
+          youtubeId: ytId
+        }
+      ];
+    }
+  }
+}
+
 export async function initTimeMachine() {
   timeCapsules = await loadTimeCapsules();
 
@@ -32,22 +103,34 @@ export async function initTimeMachine() {
     console.warn('Error reading user profile', e);
   }
 
-  // Merge any user-created custom spots from localStorage
+  // Merge any user-created custom spots from localStorage and normalize media/videos
   try {
     const customSpots = localStorage.getItem('earthtimes_custom_spots');
     if (customSpots) {
       const parsed = JSON.parse(customSpots);
       if (Array.isArray(parsed)) {
         parsed.forEach(p => {
+          if (p.chronicles && Array.isArray(p.chronicles)) {
+            p.chronicles.forEach(c => normalizeChronicleMedia(c));
+          }
           if (!timeCapsules.some(s => s.id === p.id)) {
             timeCapsules.push(p);
           }
         });
+        // Save back normalized spots so YouTube thumbnails and video attributes persist
+        localStorage.setItem('earthtimes_custom_spots', JSON.stringify(parsed));
       }
     }
   } catch (e) {
     console.warn('Error reading custom spots', e);
   }
+
+  // Normalize all loaded timeCapsules chronicles
+  timeCapsules.forEach(s => {
+    if (s.chronicles && Array.isArray(s.chronicles)) {
+      s.chronicles.forEach(c => normalizeChronicleMedia(c));
+    }
+  });
 
   updateUserBadgeUI();
   return timeCapsules;
@@ -215,6 +298,8 @@ export function renderTimeCapsuleModalContent(spot, activeChronicle) {
   const container = document.getElementById('timeCapsuleModalBody');
   if (!container || !spot) return;
 
+  normalizeChronicleMedia(activeChronicle);
+  const ytId = activeChronicle.youtubeId || extractYouTubeId(activeChronicle.videoUrl);
   const isOfficial = activeChronicle.authorType === 'official';
 
   container.innerHTML = `
@@ -247,6 +332,7 @@ export function renderTimeCapsuleModalContent(spot, activeChronicle) {
           ${spot.chronicles.map(c => {
             const isSelected = (activeChronicle.id === c.id);
             const eraLabel = c.toYear ? `${c.fromYear} - ${c.toYear}` : `${c.fromYear} - Σήμερα`;
+            const hasVideo = Boolean(c.youtubeId || (c.photos && c.photos.some(p => p.isYouTube || p.youtubeId)));
             return `
               <button onclick="selectSpotEra('${c.id}')" class="px-3 py-1.5 rounded-lg text-xs font-bold whitespace-nowrap transition flex items-center gap-1.5 ${
                 isSelected 
@@ -255,6 +341,7 @@ export function renderTimeCapsuleModalContent(spot, activeChronicle) {
               }">
                 <i class="fa-regular fa-clock text-[10px]"></i>
                 <span>${eraLabel}</span>
+                ${hasVideo ? '<i class="fa-brands fa-youtube text-red-500 text-[11px] ml-0.5"></i>' : ''}
               </button>
             `;
           }).join('')}
@@ -282,7 +369,13 @@ export function renderTimeCapsuleModalContent(spot, activeChronicle) {
           </div>
 
           <!-- Archive / Story Badge -->
-          <div class="shrink-0">
+          <div class="shrink-0 flex items-center gap-2">
+            ${ytId ? `
+              <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-bold bg-rose-950/80 text-rose-300 border border-rose-600/50">
+                <i class="fa-brands fa-youtube text-red-500 text-[12px]"></i>
+                <span>Βίντεο Εποχής</span>
+              </span>
+            ` : ''}
             ${isOfficial ? `
               <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-bold bg-sky-950/80 text-sky-300 border border-sky-600/50">
                 <i class="fa-solid fa-landmark text-sky-400 text-[11px]"></i>
@@ -308,16 +401,63 @@ export function renderTimeCapsuleModalContent(spot, activeChronicle) {
         </div>
       </div>
 
+      <!-- Historical Video Player of that Era -->
+      ${ytId ? `
+        <div class="rounded-2xl overflow-hidden bg-slate-900 border border-amber-500/50 shadow-2xl">
+          <div class="px-4 py-2.5 bg-gradient-to-r from-amber-950/80 via-slate-900 to-slate-900 border-b border-amber-500/30 flex items-center justify-between flex-wrap gap-2">
+            <div class="flex items-center gap-2 text-xs font-bold text-amber-300">
+              <i class="fa-brands fa-youtube text-red-500 text-base"></i>
+              <span>🎬 Ιστορικό Βίντεο Εποχής (${activeChronicle.fromYear} - ${activeChronicle.toYear || 'Σήμερα'})</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <button onclick="window.openTimeCapsuleVideo('${ytId}', '${escapeStr(activeChronicle.title)}', '${escapeStr(spot.name)}')" class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-[11px] text-amber-300 hover:text-white border border-slate-700 font-bold transition flex items-center gap-1.5 shadow cursor-pointer">
+                <i class="fa-solid fa-expand text-[10px]"></i>
+                <span>4K Player Χάρτη</span>
+              </button>
+              <a href="https://www.youtube.com/watch?v=${ytId}" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 rounded-lg bg-red-950/80 hover:bg-red-900 text-[11px] text-red-300 hover:text-white border border-red-700/50 font-bold transition flex items-center gap-1.5 shadow">
+                <i class="fa-brands fa-youtube text-red-400"></i>
+                <span>YouTube</span>
+              </a>
+            </div>
+          </div>
+          <div class="relative w-full aspect-video bg-black">
+            <iframe 
+              src="https://www.youtube.com/embed/${ytId}?rel=0&modestbranding=1&playsinline=1" 
+              class="w-full h-full border-0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              allowfullscreen>
+            </iframe>
+          </div>
+        </div>
+      ` : ''}
+
       <!-- Photo Gallery of that Era -->
       ${(activeChronicle.photos && activeChronicle.photos.length) ? `
         <div>
           <h4 class="text-xs uppercase tracking-wider font-bold text-slate-400 mb-3 flex items-center gap-1.5">
-            <i class="fa-solid fa-camera text-sky-400"></i> Φωτογραφικό Αρχείο της Εποχής (${activeChronicle.fromYear} - ${activeChronicle.toYear || 'Σήμερα'})
+            <i class="fa-solid fa-camera text-sky-400"></i> Φωτογραφικό Αρχείο & Τεκμήρια (${activeChronicle.fromYear} - ${activeChronicle.toYear || 'Σήμερα'})
           </h4>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            ${activeChronicle.photos.map(p => `
-              <div class="group relative rounded-xl overflow-hidden bg-slate-900 border border-slate-700/60 shadow-lg">
-                <img src="${p.url}" alt="${p.caption}" class="w-full h-44 object-cover group-hover:scale-105 transition duration-500" loading="lazy" />
+            ${activeChronicle.photos.map(p => {
+              const photoYtId = p.youtubeId || extractYouTubeId(p.url) || (p.isYouTube ? ytId : null);
+              const isVideo = Boolean(photoYtId);
+              const displayUrl = photoYtId ? getYouTubeThumbnail(photoYtId) : p.url;
+              return `
+              <div class="group relative rounded-xl overflow-hidden bg-slate-900 border ${isVideo ? 'border-amber-500/60 shadow-amber-500/10' : 'border-slate-700/60'} shadow-lg ${isVideo ? 'cursor-pointer' : ''}" ${isVideo ? `onclick="window.openTimeCapsuleVideo('${photoYtId}', '${escapeStr(p.caption || activeChronicle.title)}', '${escapeStr(spot.name)}')"` : ''}>
+                <div class="relative w-full h-44 overflow-hidden bg-slate-950">
+                  <img src="${displayUrl}" alt="${p.caption}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" loading="lazy" />
+                  ${isVideo ? `
+                    <div class="absolute inset-0 bg-black/35 group-hover:bg-black/15 transition flex items-center justify-center">
+                      <div class="w-12 h-12 rounded-full bg-red-600/90 text-white flex items-center justify-center shadow-2xl group-hover:scale-115 transition">
+                        <i class="fa-solid fa-play text-lg ml-0.5"></i>
+                      </div>
+                    </div>
+                    <div class="absolute top-2 left-2 px-2 py-0.5 rounded-full bg-red-950/90 border border-red-600/60 text-red-300 text-[10px] font-black flex items-center gap-1">
+                      <i class="fa-brands fa-youtube text-red-500"></i>
+                      <span>Βίντεο Εποχής</span>
+                    </div>
+                  ` : ''}
+                </div>
                 <div class="p-3 bg-slate-900/95 border-t border-slate-800">
                   <div class="text-xs text-slate-200 font-medium">${p.caption}</div>
                   <div class="flex items-center justify-between text-[11px] text-slate-400 mt-1">
@@ -326,7 +466,7 @@ export function renderTimeCapsuleModalContent(spot, activeChronicle) {
                   </div>
                 </div>
               </div>
-            `).join('')}
+            `;}).join('')}
           </div>
         </div>
       ` : ''}
@@ -423,12 +563,28 @@ export function submitNewSpot(event) {
   const authorType = document.getElementById('newSpotAuthorType').value;
   const authorName = document.getElementById('newSpotAuthorName').value.trim() || currentUser.name;
   const story = document.getElementById('newSpotStory').value.trim();
+  const videoUrlInput = document.getElementById('newSpotVideoUrl');
+  const videoUrl = videoUrlInput ? videoUrlInput.value.trim() : '';
   const photoUrl = document.getElementById('newSpotPhotoUrl').value.trim();
   const memoryText = document.getElementById('newSpotMemoryText').value.trim();
 
   if (!name || isNaN(lat) || isNaN(lng) || isNaN(fromYear) || !story) {
     alert('Παρακαλούμε συμπληρώστε όλα τα απαραίτητα πεδία!');
     return;
+  }
+
+  // Detect YouTube video from video input, photo input, or story
+  const detectedYtId = extractYouTubeId(videoUrl) || extractYouTubeId(photoUrl);
+  let finalVideoUrl = videoUrl || (extractYouTubeId(photoUrl) ? photoUrl : '');
+  if (!finalVideoUrl && detectedYtId) {
+    finalVideoUrl = `https://www.youtube.com/watch?v=${detectedYtId}`;
+  }
+
+  let finalPhotoUrl = photoUrl;
+  if (extractYouTubeId(photoUrl)) {
+    finalPhotoUrl = getYouTubeThumbnail(detectedYtId);
+  } else if (!finalPhotoUrl && detectedYtId) {
+    finalPhotoUrl = getYouTubeThumbnail(detectedYtId);
   }
 
   const newSpot = {
@@ -449,11 +605,15 @@ export function submitNewSpot(event) {
         authorName,
         verified: authorType === 'official',
         story,
-        photos: photoUrl ? [{
-          url: photoUrl,
+        youtubeId: detectedYtId || '',
+        videoUrl: finalVideoUrl,
+        photos: finalPhotoUrl ? [{
+          url: finalPhotoUrl,
           caption: eraTitle || name,
           year: fromYear,
-          credit: authorName
+          credit: authorName,
+          isYouTube: Boolean(detectedYtId),
+          youtubeId: detectedYtId || ''
         }] : [
           {
             url: "https://images.unsplash.com/photo-1513694203232-719a280e022f?w=800&auto=format&fit=crop&q=80",
@@ -470,6 +630,9 @@ export function submitNewSpot(event) {
       }
     ]
   };
+
+  // Run normalization
+  normalizeChronicleMedia(newSpot.chronicles[0]);
 
   timeCapsules.push(newSpot);
 
@@ -571,9 +734,24 @@ export function submitNewEra(event) {
   const authorType = document.getElementById('eraAuthorType').value;
   const category = document.getElementById('eraCategory').value;
   const story = document.getElementById('eraStory').value.trim();
+  const videoUrlInput = document.getElementById('eraVideoUrl');
+  const videoUrl = videoUrlInput ? videoUrlInput.value.trim() : '';
   const photoUrl = document.getElementById('eraPhotoUrl').value.trim();
 
   if (!title || isNaN(fromYear) || !story) return;
+
+  const detectedYtId = extractYouTubeId(videoUrl) || extractYouTubeId(photoUrl);
+  let finalVideoUrl = videoUrl || (extractYouTubeId(photoUrl) ? photoUrl : '');
+  if (!finalVideoUrl && detectedYtId) {
+    finalVideoUrl = `https://www.youtube.com/watch?v=${detectedYtId}`;
+  }
+
+  let finalPhotoUrl = photoUrl;
+  if (extractYouTubeId(photoUrl)) {
+    finalPhotoUrl = getYouTubeThumbnail(detectedYtId);
+  } else if (!finalPhotoUrl && detectedYtId) {
+    finalPhotoUrl = getYouTubeThumbnail(detectedYtId);
+  }
 
   const spot = timeCapsules.find(s => s.id === spotId);
   if (spot) {
@@ -587,17 +765,34 @@ export function submitNewEra(event) {
       authorName: authorName || currentUser.name,
       verified: authorType === 'official',
       story,
-      photos: photoUrl ? [{
-        url: photoUrl,
+      youtubeId: detectedYtId || '',
+      videoUrl: finalVideoUrl,
+      photos: finalPhotoUrl ? [{
+        url: finalPhotoUrl,
         caption: title,
         year: fromYear,
-        credit: authorName
+        credit: authorName,
+        isYouTube: Boolean(detectedYtId),
+        youtubeId: detectedYtId || ''
       }] : [],
       memories: []
     };
 
+    normalizeChronicleMedia(newChronicle);
+
     spot.chronicles.push(newChronicle);
     spot.chronicles.sort((a, b) => a.fromYear - b.fromYear);
+
+    // Save updated custom spots to localStorage if applicable
+    try {
+      const existing = JSON.parse(localStorage.getItem('earthtimes_custom_spots') || '[]');
+      const spotIdx = existing.findIndex(s => s.id === spotId);
+      if (spotIdx !== -1) {
+        existing[spotIdx] = spot;
+        localStorage.setItem('earthtimes_custom_spots', JSON.stringify(existing));
+      }
+    } catch (e) {}
+
     renderTimeCapsuleModalContent(spot, newChronicle);
   }
 

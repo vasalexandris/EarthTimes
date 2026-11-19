@@ -1130,7 +1130,19 @@
         </div>
 
         <div>
-          <label class="block text-xs font-semibold text-slate-300 mb-1">Σύνδεσμος Φωτογραφίας (URL - Προαιρετικό)</label>
+          <label class="block text-xs font-semibold text-slate-300 mb-1 flex items-center justify-between">
+            <span class="flex items-center gap-1.5">
+              <i class="fa-brands fa-youtube text-red-500"></i> Σύνδεσμος Βίντεο (YouTube URL - Προαιρετικό)
+            </span>
+            <span class="text-[10px] text-sky-400 font-normal">π.χ. βίντεο εποχής, οδήγηση, ντοκιμαντέρ</span>
+          </label>
+          <input type="url" id="eraVideoUrl" placeholder="https://www.youtube.com/watch?v=... ή https://youtu.be/..." class="w-full bg-slate-800 border border-slate-700 rounded-xl px-3 py-2 text-sm text-white focus:ring-2 focus:ring-sky-500 outline-none">
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-slate-300 mb-1">
+            <i class="fa-regular fa-image text-sky-400 mr-1"></i> Σύνδεσμος Φωτογραφίας (URL Εικόνας - Προαιρετικό)
+          </label>
           <input type="url" id="eraPhotoUrl" placeholder="https://..." class="w-full bg-slate-800 border border-slate-700 rounded-xl px-3 py-2 text-sm text-white focus:ring-2 focus:ring-sky-500 outline-none">
         </div>
 
@@ -1253,8 +1265,22 @@
           </div>
 
           <div class="mb-3">
-            <label class="block text-xs font-semibold text-slate-300 mb-1">Σύνδεσμος Φωτογραφίας (URL - Προαιρετικό)</label>
+            <label class="block text-xs font-semibold text-slate-300 mb-1 flex items-center justify-between">
+              <span class="flex items-center gap-1.5">
+                <i class="fa-brands fa-youtube text-red-500"></i> Σύνδεσμος Βίντεο (YouTube URL - Προαιρετικό)
+              </span>
+              <span class="text-[10px] text-amber-400 font-normal">π.χ. οδήγηση στην πόλη, ιστορικό αρχείο</span>
+            </label>
+            <input type="url" id="newSpotVideoUrl" placeholder="https://www.youtube.com/watch?v=... ή https://youtu.be/..." class="w-full bg-slate-800 border border-slate-700 rounded-xl px-3 py-2 text-sm text-white focus:ring-2 focus:ring-amber-500 outline-none">
+            <p class="text-[10px] text-slate-400 mt-0.5">Υποστηρίζονται σύνδεσμοι YouTube (βίντεο οδήγησης, ντοκιμαντέρ, αφιερώματα).</p>
+          </div>
+
+          <div class="mb-3">
+            <label class="block text-xs font-semibold text-slate-300 mb-1">
+              <i class="fa-regular fa-image text-sky-400 mr-1"></i> Σύνδεσμος Φωτογραφίας (URL Εικόνας - Προαιρετικό)
+            </label>
             <input type="url" id="newSpotPhotoUrl" placeholder="https://..." class="w-full bg-slate-800 border border-slate-700 rounded-xl px-3 py-2 text-sm text-white focus:ring-2 focus:ring-amber-500 outline-none">
+            <p class="text-[10px] text-slate-400 mt-0.5">Αν βάλετε YouTube link σε οποιοδήποτε πεδίο, αναγνωρίζεται αυτόματα ως βίντεο και εξάγεται η εικόνα του!</p>
           </div>
 
           <div>
@@ -1328,7 +1354,7 @@
   </div>
 
   <!-- Modular Application Scripts -->
-  <script type="module" src="js/app.js?v=20261119_education_innovation_v1"></script>
+  <script type="module" src="js/app.js?v=20261119_video_timecapsule_v1"></script>
   <!-- Fullscreen Toggle Script (Android, WebKit, Desktop) -->
   <script>
     window.toggleFullScreen = function() {

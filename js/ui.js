@@ -1500,6 +1500,71 @@ export function openEducationVideo(titleText, cityName = '', explicitYoutubeId =
 }
 window.openEducationVideo = openEducationVideo;
 
+export function openTimeCapsuleVideo(youtubeId, titleText = 'Ιστορικό Βίντεο', cityName = '') {
+  if (!youtubeId) return;
+
+  const overlay = document.getElementById('mapVideoOverlay');
+  const iframe = document.getElementById('mapVideoIframe');
+  const title = document.getElementById('videoOverlayTitle');
+  const deepDiveOverlay = document.getElementById('mapDeepDiveOverlay');
+  const wikiOverlay = document.getElementById('mapWikiOverlay');
+  const streetViewOverlay = document.getElementById('mapStreetViewOverlay');
+  const directLink = document.getElementById('videoDirectLink');
+  const typeSelector = document.getElementById('videoTypeSelector');
+  const choicePills = document.getElementById('videoChoicePills');
+  const searchInput = document.getElementById('videoSearchInput');
+
+  if (!overlay || !iframe) return;
+
+  if (window.closeCityPresentation) window.closeCityPresentation();
+  if (deepDiveOverlay) deepDiveOverlay.classList.add('hidden');
+  if (wikiOverlay) {
+    const wikiFrame = document.getElementById('mapWikiIframe');
+    if (wikiFrame) wikiFrame.srcdoc = '';
+    wikiOverlay.classList.add('hidden');
+  }
+  if (streetViewOverlay) {
+    const svFrame = document.getElementById('mapStreetViewIframe');
+    if (svFrame) svFrame.src = 'about:blank';
+    streetViewOverlay.classList.add('hidden');
+  }
+
+  const curEntity = window.getCurrentEntity ? window.getCurrentEntity() : null;
+  const currentCityName = cityName || curEntity?.name || '';
+  const fullTitle = `🎬 ${titleText}${currentCityName ? ` (${currentCityName})` : ''}`;
+
+  currentOverlayYoutubeId = youtubeId;
+  currentOverlayStartSec = 0;
+  currentOverlayTitle = fullTitle;
+  currentOverlayMode = 'player';
+  currentOverlayQuery = `${titleText} ${currentCityName}`.trim();
+
+  if (title) title.innerText = fullTitle;
+  if (directLink) {
+    directLink.setAttribute('data-youtube-id', youtubeId);
+    directLink.href = `https://www.youtube.com/watch?v=${youtubeId}`;
+  }
+  if (searchInput) {
+    searchInput.value = currentOverlayQuery;
+    if (!searchInput.dataset.bound) {
+      searchInput.dataset.bound = 'true';
+      searchInput.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') submitOverlayVideoSearch();
+      });
+    }
+  }
+  if (choicePills) choicePills.innerHTML = '';
+  if (typeSelector) {
+    typeSelector.innerHTML = '';
+    typeSelector.classList.add('hidden');
+  }
+
+  setOverlayMediaMode('player');
+  overlay.classList.remove('hidden');
+  syncMapFloatingControlsVisibility();
+}
+window.openTimeCapsuleVideo = openTimeCapsuleVideo;
+
 export function switchCityVideoType(type) {
   if (currentActiveVideoCityId) {
     openCityVideo(currentActiveVideoCityId, type);
@@ -4664,7 +4729,22 @@ export function renderTabContent(tabId, entity, activeYear = null, activeSpots =
       if (matched) {
         activeChronicleCards.push({ spot, chronicle: matched });
         if (matched.photos && matched.photos.length) {
-          matched.photos.forEach(p => eraPhotos.push({ ...p, spotName: spot.name, spotId: spot.id }));
+          matched.photos.forEach(p => {
+            let imgUrl = p.url;
+            let isYt = Boolean(p.isYouTube);
+            let ytId = p.youtubeId || null;
+            if (!ytId && typeof imgUrl === 'string') {
+              const m = imgUrl.match(/(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|shorts\/|watch\?v=|watch\?.+&v=))([\w-]{11})/);
+              if (m && m[1]) {
+                ytId = m[1];
+                isYt = true;
+              }
+            }
+            if (isYt && ytId) {
+              imgUrl = `https://img.youtube.com/vi/${ytId}/hqdefault.jpg`;
+            }
+            eraPhotos.push({ ...p, url: imgUrl, isYouTube: isYt, youtubeId: ytId, spotName: spot.name, spotId: spot.id });
+          });
         }
       }
     });
@@ -4716,11 +4796,19 @@ export function renderTabContent(tabId, entity, activeYear = null, activeSpots =
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
               ${eraPhotos.slice(0, 4).map(photo => `
-                <div class="group relative rounded-xl overflow-hidden border border-slate-700/80 bg-slate-950 shadow cursor-pointer hover:border-amber-400 transition" onclick="openSpotTimeCapsule('${photo.spotId}')">
+                <div class="group relative rounded-xl overflow-hidden border ${photo.isYouTube ? 'border-amber-500/70 shadow-amber-500/10' : 'border-slate-700/80'} bg-slate-950 shadow cursor-pointer hover:border-amber-400 transition" onclick="${photo.isYouTube ? `window.openTimeCapsuleVideo('${photo.youtubeId}', '${escapeStr(photo.caption || photo.spotName)}', '${escapeStr(entity.name)}')` : `openSpotTimeCapsule('${photo.spotId}')`}">
                   <img src="${photo.url}" alt="${photo.caption}" class="w-full h-32 object-cover group-hover:scale-105 transition duration-300" loading="lazy">
-                  <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent p-2.5 flex flex-col justify-end">
-                    <span class="text-[10px] font-bold text-amber-300 bg-amber-950/80 px-1.5 py-0.5 rounded w-max border border-amber-600/50 mb-1">
-                      ${photo.year || yr}
+                  ${photo.isYouTube ? `
+                    <div class="absolute inset-0 bg-black/35 group-hover:bg-black/15 transition flex items-center justify-center">
+                      <div class="w-10 h-10 rounded-full bg-red-600/90 text-white flex items-center justify-center shadow-xl">
+                        <i class="fa-solid fa-play text-sm ml-0.5"></i>
+                      </div>
+                    </div>
+                  ` : ''}
+                  <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent p-2.5 flex flex-col justify-end pointer-events-none">
+                    <span class="text-[10px] font-bold text-amber-300 bg-amber-950/80 px-1.5 py-0.5 rounded w-max border border-amber-600/50 mb-1 flex items-center gap-1">
+                      ${photo.isYouTube ? '<i class="fa-brands fa-youtube text-red-500"></i>' : ''}
+                      <span>${photo.year || yr}</span>
                     </span>
                     <p class="text-[11px] font-medium text-slate-100 line-clamp-2 leading-tight">${photo.caption}</p>
                     <span class="text-[9px] text-slate-400 mt-0.5 italic truncate">${photo.credit || photo.spotName}</span>
@@ -4743,24 +4831,48 @@ export function renderTabContent(tabId, entity, activeYear = null, activeSpots =
             ${activeChronicleCards.map(({ spot, chronicle }) => {
               const isOfficial = chronicle.authorType === 'official';
               const memory = chronicle.memories && chronicle.memories[0];
+              let chronicleYtId = chronicle.youtubeId || null;
+              if (!chronicleYtId && chronicle.videoUrl) {
+                const m = chronicle.videoUrl.match(/(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|shorts\/|watch\?v=|watch\?.+&v=))([\w-]{11})/);
+                if (m && m[1]) chronicleYtId = m[1];
+              }
+              if (!chronicleYtId && chronicle.photos) {
+                const foundYt = chronicle.photos.find(p => p.youtubeId || p.isYouTube);
+                if (foundYt) chronicleYtId = foundYt.youtubeId;
+              }
               return `
-                <div class="p-3.5 bg-slate-800/40 hover:bg-slate-800/70 border border-slate-700/60 rounded-xl transition shadow">
+                <div class="p-3.5 bg-slate-800/40 hover:bg-slate-800/70 border ${chronicleYtId ? 'border-amber-500/40' : 'border-slate-700/60'} rounded-xl transition shadow">
                   <div class="flex items-start justify-between gap-2 mb-1.5">
                     <div>
-                      <span class="px-2 py-0.5 rounded text-[10px] font-bold ${
-                        isOfficial 
-                          ? 'bg-sky-900/80 text-sky-300 border border-sky-600/50' 
-                          : 'bg-emerald-900/80 text-emerald-300 border border-emerald-600/50'
-                      }">
-                        ${isOfficial ? '🏛️ Επίσημο Αρχείο' : '👤 Μαρτυρία Πολίτη'}
-                      </span>
+                      <div class="flex items-center gap-1.5 flex-wrap">
+                        <span class="px-2 py-0.5 rounded text-[10px] font-bold ${
+                          isOfficial 
+                            ? 'bg-sky-900/80 text-sky-300 border border-sky-600/50' 
+                            : 'bg-emerald-900/80 text-emerald-300 border border-emerald-600/50'
+                        }">
+                          ${isOfficial ? '🏛️ Επίσημο Αρχείο' : '👤 Μαρτυρία Πολίτη'}
+                        </span>
+                        ${chronicleYtId ? `
+                          <span class="px-1.5 py-0.5 rounded text-[10px] font-bold bg-rose-950/90 text-rose-300 border border-rose-600/50 flex items-center gap-1">
+                            <i class="fa-brands fa-youtube text-red-500"></i> Βίντεο
+                          </span>
+                        ` : ''}
+                      </div>
                       <h5 class="font-bold text-slate-100 text-sm mt-1">${spot.name}</h5>
                       <span class="text-[11px] text-amber-400 font-semibold">${chronicle.title}</span>
                     </div>
-                    <button onclick="openSpotTimeCapsule('${spot.id}', ${yr === 'all' ? chronicle.fromYear : yr})" class="px-2.5 py-1 rounded-lg bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 border border-amber-500/50 text-xs font-bold shrink-0 transition flex items-center gap-1">
-                      <i class="fa-solid fa-eye text-[10px]"></i>
-                      <span>Προβολή</span>
-                    </button>
+                    <div class="flex items-center gap-1.5 shrink-0">
+                      ${chronicleYtId ? `
+                        <button onclick="window.openTimeCapsuleVideo('${chronicleYtId}', '${escapeStr(chronicle.title)}', '${escapeStr(spot.name)}')" class="px-2.5 py-1 rounded-lg bg-red-950/80 hover:bg-red-900 text-red-300 border border-red-700/50 text-xs font-bold transition flex items-center gap-1 shadow cursor-pointer" title="Αναπαραγωγή Βίντεο">
+                          <i class="fa-solid fa-play text-red-400 text-[10px]"></i>
+                          <span>Βίντεο 📹</span>
+                        </button>
+                      ` : ''}
+                      <button onclick="openSpotTimeCapsule('${spot.id}', ${yr === 'all' ? chronicle.fromYear : yr})" class="px-2.5 py-1 rounded-lg bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 border border-amber-500/50 text-xs font-bold transition flex items-center gap-1 shadow cursor-pointer">
+                        <i class="fa-solid fa-eye text-[10px]"></i>
+                        <span>Προβολή</span>
+                      </button>
+                    </div>
                   </div>
                   <p class="text-xs text-slate-300 leading-relaxed mb-2 line-clamp-3">${chronicle.story}</p>
                   

@@ -361,13 +361,18 @@ export function renderTimeCapsulePins(spots, activeYear, onSpotClick) {
       ? (activeChronicle.toYear ? `${activeChronicle.fromYear}-${activeChronicle.toYear}` : `${activeChronicle.fromYear}+`)
       : 'Ιστορία';
 
+    const hasVideo = Boolean(activeChronicle?.youtubeId || (activeChronicle?.photos && activeChronicle.photos.some(p => p.isYouTube || p.youtubeId)));
+
     const customIcon = L.divIcon({
       className: 'time-capsule-marker-wrapper',
       html: `
         <div class="custom-poi-marker marker-pulse cursor-pointer group">
           <div class="px-2.5 py-1 rounded-full text-xs font-black shadow-2xl border-2 border-amber-300 bg-amber-500 text-slate-950 flex items-center gap-1.5 transition transform group-hover:scale-110">
             <i class="fa-solid fa-hourglass-start text-[10px]"></i>
-            <span class="text-[10px] font-mono bg-slate-900 text-amber-300 px-1.5 py-0.2 rounded-full">${eraText}</span>
+            <span class="text-[10px] font-mono bg-slate-900 text-amber-300 px-1.5 py-0.2 rounded-full flex items-center gap-1">
+              ${hasVideo ? '<i class="fa-brands fa-youtube text-red-500 text-[10px]"></i>' : ''}
+              <span>${eraText}</span>
+            </span>
             <span class="truncate max-w-[110px]">${activeChronicle ? activeChronicle.title : spot.name}</span>
           </div>
         </div>
