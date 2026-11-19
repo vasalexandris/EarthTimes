@@ -6,7 +6,7 @@
 
 import { loadWorldData, loadCountryData, loadStateData } from './data-service.js?v=20261118_gastro_overhaul_v8';
 import * as MapModule from './map.js?v=20261118_gastro_overhaul_v8';
-import * as UIModule from './ui.js?v=20261119_street_food_v1';
+import * as UIModule from './ui.js?v=20261119_education_innovation_v1';
 import * as TimeMachine from './time-machine.js?v=20261117_video_iframe_fix';
 import * as NavigatorModule from './navigator.js?v=20261118_gastro_overhaul_v8';
 import * as GlobeModule from './globe-view.js?v=20261117_video_iframe_fix';
@@ -1012,6 +1012,8 @@ window.openDeepDive = UIModule.openDeepDive;
 window.closeDeepDiveOverlay = UIModule.closeDeepDiveOverlay;
 window.openPoiVideo = UIModule.openPoiVideo;
 window.openGastroVideo = UIModule.openGastroVideo;
+window.openEducationVideo = UIModule.openEducationVideo;
+window.getCityEducationData = UIModule.getCityEducationData;
 window.switchOverlayVideo = UIModule.switchOverlayVideo;
 window.submitOverlayVideoSearch = UIModule.submitOverlayVideoSearch;
 window.setOverlayMediaMode = UIModule.setOverlayMediaMode;

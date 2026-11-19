@@ -1404,6 +1404,102 @@ export function openGastroVideo(dishTitle, cityName = '') {
   syncMapFloatingControlsVisibility();
 }
 
+export function openEducationVideo(titleText, cityName = '', explicitYoutubeId = '') {
+  if (!cityName && window.getCurrentEntity) {
+    const cur = window.getCurrentEntity();
+    if (cur && cur.name) cityName = cur.name;
+  }
+
+  const overlay = document.getElementById('mapVideoOverlay');
+  const iframe = document.getElementById('mapVideoIframe');
+  const title = document.getElementById('videoOverlayTitle');
+  const deepDiveOverlay = document.getElementById('mapDeepDiveOverlay');
+  const wikiOverlay = document.getElementById('mapWikiOverlay');
+  const streetViewOverlay = document.getElementById('mapStreetViewOverlay');
+  const directLink = document.getElementById('videoDirectLink');
+  const typeSelector = document.getElementById('videoTypeSelector');
+  const choicePills = document.getElementById('videoChoicePills');
+  const searchInput = document.getElementById('videoSearchInput');
+
+  if (!overlay || !iframe) return;
+
+  if (window.closeCityPresentation) window.closeCityPresentation();
+  if (deepDiveOverlay) deepDiveOverlay.classList.add('hidden');
+  if (wikiOverlay) {
+    const wikiFrame = document.getElementById('mapWikiIframe');
+    if (wikiFrame) wikiFrame.srcdoc = '';
+    wikiOverlay.classList.add('hidden');
+  }
+  if (streetViewOverlay) {
+    const svFrame = document.getElementById('mapStreetViewIframe');
+    if (svFrame) svFrame.src = 'about:blank';
+    streetViewOverlay.classList.add('hidden');
+  }
+
+  const curEntity = window.getCurrentEntity ? window.getCurrentEntity() : null;
+  const currentCityKey = curEntity?.id || currentActiveVideoCityId || '';
+  const currentCityName = cityName || curEntity?.name || currentCityKey;
+  const lang = detectEntityLanguage(currentCityKey, currentCityName, curEntity);
+
+  let searchQuery = '';
+  if (lang === 'el') {
+    searchQuery = `${titleText} ${currentCityName}`.trim();
+  } else {
+    const nativeCity = getNativeNameForEntity(currentCityName, curEntity) || currentCityName;
+    const nativeTitle = getNativeNameForEntity(titleText, null) || titleText;
+    searchQuery = `${nativeTitle} ${nativeCity}`.trim();
+  }
+  currentOverlayQuery = searchQuery;
+
+  if (searchInput) {
+    searchInput.value = searchQuery;
+    if (!searchInput.dataset.bound) {
+      searchInput.dataset.bound = 'true';
+      searchInput.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') submitOverlayVideoSearch();
+      });
+    }
+  }
+
+  if (explicitYoutubeId) {
+    const videoTitle = `🎓 ${titleText} (${currentCityName})`;
+    currentOverlayYoutubeId = explicitYoutubeId;
+    currentOverlayStartSec = 0;
+    currentOverlayTitle = videoTitle;
+    currentOverlayMode = 'player';
+
+    if (title) title.innerText = videoTitle;
+    if (directLink) {
+      directLink.setAttribute('data-youtube-id', explicitYoutubeId);
+      directLink.href = `https://www.youtube.com/watch?v=${explicitYoutubeId}`;
+    }
+    if (choicePills) choicePills.innerHTML = '';
+    setOverlayMediaMode('player');
+  } else {
+    currentOverlayYoutubeId = '';
+    currentOverlayStartSec = 0;
+    currentOverlayTitle = `🎓 Video Search: ${titleText}`;
+    currentOverlayMode = 'video_search';
+
+    if (title) title.innerText = `🎓 Video Search: ${titleText}`;
+    if (directLink) {
+      directLink.removeAttribute('data-youtube-id');
+      directLink.href = `https://www.bing.com/videos/search?q=${encodeURIComponent(searchQuery)}`;
+    }
+    if (choicePills) choicePills.innerHTML = '';
+    setOverlayMediaMode('video_search');
+  }
+
+  if (typeSelector) {
+    typeSelector.innerHTML = '';
+    typeSelector.classList.add('hidden');
+  }
+
+  overlay.classList.remove('hidden');
+  syncMapFloatingControlsVisibility();
+}
+window.openEducationVideo = openEducationVideo;
+
 export function switchCityVideoType(type) {
   if (currentActiveVideoCityId) {
     openCityVideo(currentActiveVideoCityId, type);
@@ -3326,85 +3422,647 @@ export function getCuratedGastroItems(entity) {
   ];
 }
 
+export function getCityEducationData(entity) {
+  if (!entity) return null;
+  const id = (entity.id || '').toLowerCase();
+  const name = entity.name || '';
+  const pop = parseInt(entity.pop || entity.population || 50000, 10);
+
+  // If entity has explicitly defined education block in data
+  if (entity.education && typeof entity.education === 'object') {
+    return entity.education;
+  }
+
+  // Curated datasets for key cities
+  // 1. Kozani
+  if (id === 'kozani' || name.includes('Κοζάν')) {
+    return {
+      overview: 'Η Κοζάνη αποτελεί το κορυφαίο ακαδημαϊκό, τεχνολογικό και ερευνητικό κέντρο της Δυτικής Μακεδονίας, φιλοξενώντας την έδρα και το σύγχρονο campus του Πανεπιστημίου Δυτικής Μακεδονίας, ερευνητικά ινστιτούτα ενεργειακής μετάβασης (ΕΚΕΤΑ) και αναπτυγμένο δίκτυο σχολικών και τεχνικών μονάδων.',
+      schools: {
+        total: 54,
+        summary: '54 ενεργές σχολικές μονάδες πρωτοβάθμιας και δευτεροβάθμιας εκπαίδευσης στον Δήμο Κοζάνης.',
+        breakdown: [
+          { label: 'Νηπιαγωγεία', count: 22, icon: 'fa-solid fa-shapes', desc: 'Δημόσια & ολοήμερα νηπιαγωγεία πόλης και κοινοτήτων' },
+          { label: 'Δημοτικά Σχολεία', count: 18, icon: 'fa-solid fa-book-open', desc: '18 πολυθέσια δημοτικά σχολεία με ευρωπαϊκά προγράμματα' },
+          { label: 'Γυμνάσια', count: 6, icon: 'fa-solid fa-graduation-cap', desc: '6 Γυμνάσια (συμπεριλαμβανομένου του ιστορικού Βαλταδωρείου)' },
+          { label: 'Λύκεια (ΓΕΛ & ΕΠΑΛ)', count: 6, icon: 'fa-solid fa-school', desc: '4 Γενικά Λύκεια και 2 Επαγγελματικά Λύκεια (1ο & 2ο ΕΠΑΛ)' },
+          { label: 'Ειδικά & Μουσικά', count: 2, icon: 'fa-solid fa-music', desc: 'Μουσικό Σχολείο Σιάτιστας/Κοζάνης & Ειδικό Σχολείο/ΕΕΕΕΚ' }
+        ],
+        wiki: 'Κοζάνη',
+        youtubeId: 'W1Yf4Tswx90'
+      },
+      universities: [
+        {
+          title: 'Πανεπιστήμιο Δυτικής Μακεδονίας (UoWM) - Νέο Campus ΖΕΠ',
+          tag: 'Πρυτανεία & Κεντρικό Campus',
+          desc: 'Υπερσύγχρονο βιοκλιματικό campus στην περιοχή ΖΕΠ Κοζάνης. Έδρα της Πρυτανείας, της Πολυτεχνικής Σχολής (Μηχανολόγοι, Ηλεκτρολόγοι, Χημικοί Μηχανικοί, Μηχανικοί Ορυκτών Πόρων) και της Σχολής Οικονομικών Επιστημών.',
+          wiki: 'Πανεπιστήμιο_Δυτικής_Μακεδονίας',
+          youtubeId: 'bB1i18_uE_A'
+        },
+        {
+          title: 'Πολυτεχνική Σχολή UoWM',
+          tag: 'Ανώτατη Πολυτεχνική Εκπαίδευση',
+          desc: '5ετή προγράμματα Integrated Master στη μηχανική, με πρωτοποριακά εργαστήρια ρομποτικής, ανανεώσιμων πηγών και έξυπνων δικτύων.',
+          wiki: 'Πανεπιστήμιο_Δυτικής_Μακεδονίας',
+          youtubeId: ''
+        }
+      ],
+      collegesVocational: [
+        {
+          title: 'Δημόσια ΣΑΕΚ Κοζάνης (πρώην Δ.ΙΕΚ)',
+          tag: 'Δημόσια Επαγγελματική Κατάρτιση',
+          desc: 'Σχολή Ανώτερης Επαγγελματικής Κατάρτισης με περιζήτητες ειδικότητες σε Ανανεώσιμες Πηγές Ενέργειας, Πληροφορική, Αυτοματισμούς, Διοίκηση & Νοσηλευτική.',
+          wiki: 'Σχολές_Ανώτερης_Επαγγελματικής_Κατάρτισης',
+          youtubeId: ''
+        },
+        {
+          title: 'ΕΠΑΣ Μαθητείας ΔΥΠΑ Κοζάνης',
+          tag: 'Επαγγελματική Μαθητεία',
+          desc: 'Τεχνική επαγγελματική εκπαίδευση με αμειβόμενη πρακτική άσκηση σε τεχνικές ειδικότητες ηλεκτρολογίας, μηχανολογίας και θερμοϋδραυλικών.',
+          wiki: 'Δημόσια_Υπηρεσία_Απασχόλησης',
+          youtubeId: ''
+        },
+        {
+          title: 'Δημοτικό Ωδείο Κοζάνης & Καλλιτεχνικές Σχολές',
+          tag: 'Μουσική & Πολιτιστική Εκπαίδευση',
+          desc: 'Αναγνωρισμένο μουσικό ίδρυμα με μακρά παράδοση στη συμφωνική, κλασική και παραδοσιακή μουσική παιδεία.',
+          wiki: 'Κοζάνη',
+          youtubeId: ''
+        }
+      ],
+      researchInnovation: [
+        {
+          title: 'ΕΚΕΤΑ / ΙΔΕΠ - Εθνικό Κέντρο Έρευνας & Τεχνολογικής Ανάπτυξης',
+          tag: 'Κορυφαίο Ερευνητικό Κέντρο',
+          desc: 'Παράρτημα του Ινστιτούτου Χημικών Διεργασιών & Ενεργειακών Πόρων. Επίκεντρο των ερευνών για πράσινο υδρογόνο, απολιγνιτοποίηση και καθαρή ενέργεια στη ΝΑ Ευρώπη.',
+          wiki: 'Εθνικό_Κέντρο_Έρευνας_και_Τεχνολογικής_Ανάπτυξης',
+          youtubeId: ''
+        },
+        {
+          title: 'Ζώνη Καινοτομίας & Επιχειρηματικότητας Δυτικής Μακεδονίας',
+          tag: 'Καινοτομία & Startups',
+          desc: 'Περιφερειακός κόμβος επιτάχυνσης νεοφυών επιχειρήσεων, τεχνοβλαστών (spin-offs) του Πανεπιστημίου και ψηφιακού μετασχηματισμού.',
+          wiki: 'Κοζάνη',
+          youtubeId: ''
+        },
+        {
+          title: 'Τηλεθέρμανση Κοζάνης (ΔΕΥΑΚ) - Καινοτόμο Ενεργειακό Μοντέλο',
+          tag: 'Ενεργειακή Καινοτομία',
+          desc: 'Το πρωτοπόρο αστικό σύστημα διανομής θερμικής ενέργειας της Ελλάδας, πρότυπο σε ευρωπαϊκό επίπεδο ενεργειακής αποδοτικότητας.',
+          wiki: 'Κοζάνη',
+          youtubeId: ''
+        }
+      ]
+    };
+  }
+
+  // 2. Athens
+  if (id === 'athens' || name.includes('Αθήν')) {
+    return {
+      overview: 'Η Αθήνα αποτελεί τον μεγαλύτερο μητροπολιτικό κόμβο ανώτατης εκπαίδευσης, επιστημονικής έρευνας και επιχειρηματικής καινοτομίας στην Ελλάδα, με παγκοσμίου κύρους δημόσια πανεπιστήμια, κορυφαία ερευνητικά ινστιτούτα και άνω των 950 σχολικών μονάδων.',
+      schools: {
+        total: 960,
+        summary: 'Άνω των 960 σχολικών μονάδων πρωτοβάθμιας και δευτεροβάθμιας εκπαίδευσης στο πολεοδομικό συγκρότημα.',
+        breakdown: [
+          { label: 'Νηπιαγωγεία', count: 390, icon: 'fa-solid fa-shapes', desc: 'Δημόσια, ιδιωτικά & πρότυπα νηπιαγωγεία' },
+          { label: 'Δημοτικά Σχολεία', count: 330, icon: 'fa-solid fa-book-open', desc: 'Πολυθέσια δημοτικά και πειραματικά σχολεία' },
+          { label: 'Γυμνάσια', count: 135, icon: 'fa-solid fa-graduation-cap', desc: 'Ημερήσια, εσπερινά, πρότυπα και μουσικά γυμνάσια' },
+          { label: 'Λύκεια (ΓΕΛ & ΕΠΑΛ)', count: 105, icon: 'fa-solid fa-school', desc: 'Γενικά Λύκεια, Επαγγελματικά Λύκεια και Πρότυπα ΓΕΛ' },
+          { label: 'Ειδικά & Καλλιτεχνικά', count: 25, icon: 'fa-solid fa-palette', desc: 'Ειδικά σχολεία, καλλιτεχνικά και μουσικά εκπαιδευτήρια' }
+        ],
+        wiki: 'Εκπαίδευση_στην_Ελλάδα',
+        youtubeId: ''
+      },
+      universities: [
+        {
+          title: 'Εθνικό & Καποδιστριακό Πανεπιστήμιο Αθηνών (ΕΚΠΑ)',
+          tag: 'Ιδρυθέν 1837 - Ιστορικό Πανεπιστήμιο',
+          desc: 'Το αρχαιότερο ανώτατο εκπαιδευτικό ίδρυμα της νεότερης Ελλάδας με σχολές Ιατρικής, Νομικής, Φιλοσοφικής, Θετικών και Οικονομικών Επιστημών και άνω των 60.000 φοιτητών.',
+          wiki: 'Εθνικό_και_Καποδιστριακό_Πανεπιστήμιο_Αθηνών',
+          youtubeId: ''
+        },
+        {
+          title: 'Εθνικό Μετσόβιο Πολυτεχνείο (ΕΜΠ)',
+          tag: 'Κορυφαίο Πολυτεχνικό Ίδρυμα',
+          desc: 'Πολυτεχνειούπολη Ζωγράφου & Ιστορικό Συγκρότημα Πατησίων. Σχολές Πολιτικών, Μηχανολόγων, Ηλεκτρολόγων Μηχανικών, Αρχιτεκτόνων και Χημικών Μηχανικών διεθνούς κύρους.',
+          wiki: 'Εθνικό_Μετσόβιο_Πολυτεχνείο',
+          youtubeId: ''
+        },
+        {
+          title: 'Οικονομικό Πανεπιστήμιο Αθηνών (ΟΠΑ / ΑΣΟΕΕ)',
+          tag: 'Οικονομία, Διοίκηση & Πληροφορική',
+          desc: 'Κορυφαίο πανεπιστήμιο στην Ελλάδα στις οικονομικές επιστήμες, τη διοίκηση επιχειρήσεων και την επιστήμη υπολογιστών.',
+          wiki: 'Οικονομικό_Πανεπιστήμιο_Αθηνών',
+          youtubeId: ''
+        },
+        {
+          title: 'Πάντειο Πανεπιστήμιο Κοινωνικών & Πολιτικών Επιστημών',
+          tag: 'Κοινωνικές & Πολιτικές Επιστήμες',
+          desc: 'Ιστορικό πανεπιστημιακό ίδρυμα εξειδικευμένο στις πολιτικές επιστήμες, τη δημόσια διοίκηση, την κοινωνιολογία και τα διεθνή μέσα.',
+          wiki: 'Πάντειο_Πανεπιστήμιο',
+          youtubeId: ''
+        },
+        {
+          title: 'Πανεπιστήμιο Δυτικής Αττικής (ΠΑΔΑ)',
+          tag: 'Σύγχρονο Μητροπολιτικό Πανεπιστήμιο',
+          desc: 'Ταχέως αναπτυσσόμενο πανεπιστήμιο με πανεπιστημιουπόλεις στο Αιγάλεω και την Αθήνα, καλύπτοντας μηχανική, υγεία και εφαρμοσμένες τέχνες.',
+          wiki: 'Πανεπιστήμιο_Δυτικής_Αττικής',
+          youtubeId: ''
+        }
+      ],
+      collegesVocational: [
+        {
+          title: 'Δημόσιες ΣΑΕΚ Αττικής (πρώην Δ.ΙΕΚ)',
+          tag: 'Δημόσια Επαγγελματική Κατάρτιση',
+          desc: 'Δεκάδες δημόσιες Σχολές Ανώτερης Επαγγελματικής Κατάρτισης σε όλους τους τομείς της σύγχρονης οικονομίας και τεχνολογίας.',
+          wiki: 'Σχολές_Ανώτερης_Επαγγελματικής_Κατάρτισης',
+          youtubeId: ''
+        },
+        {
+          title: 'Deree - The American College of Greece',
+          tag: 'Διεθνές Κολλέγιο',
+          desc: 'Αμερικανικό κολλέγιο στην Αγία Παρασκευή με διεθνή ακαδημαϊκά προγράμματα και παγκόσμιες πιστοποιήσεις.',
+          wiki: 'Αμερικανικό_Κολλέγιο_Ελλάδας',
+          youtubeId: ''
+        },
+        {
+          title: 'Ανώτατη Σχολή Καλών Τεχνών (ΑΣΚΤ) & Ωδεία Αθηνών',
+          tag: 'Τέχνες & Μουσική Παιδεία',
+          desc: 'Ιστορικά ιδρύματα εικαστικών τεχνών, θεάτρου και μουσικής (Ωδείο Αθηνών, Εθνικό Ωδείο).',
+          wiki: 'Ανωτάτη_Σχολή_Καλών_Τεχνών',
+          youtubeId: ''
+        }
+      ],
+      researchInnovation: [
+        {
+          title: 'ΕΚΕΦΕ Δημόκριτος',
+          tag: 'Εθνικό Κέντρο Έρευνας Φυσικών Επιστημών',
+          desc: 'Το μεγαλύτερο πολυκλαδικό ερευνητικό κέντρο της Ελλάδας σε νανοτεχνολογία, πυρηνική φυσική, βιοεπιστήμες και τεχνητή νοημοσύνη.',
+          wiki: 'Εθνικό_Κέντρο_Έρευνας_Φυσικών_Επιστημών_«Δημόκριτος»',
+          youtubeId: ''
+        },
+        {
+          title: 'Εθνικό Ίδρυμα Ερευνών (ΕΙΕ)',
+          tag: 'Έρευνα & Ανθρωπιστικές Επιστήμες',
+          desc: 'Κέντρο ιστορικών ερευνών, χημικής βιολογίας και θεωρητικής και φυσικής χημείας.',
+          wiki: 'Εθνικό_Ίδρυμα_Ερευνών',
+          youtubeId: ''
+        },
+        {
+          title: 'Ελληνικό Κέντρο Θαλασσίων Ερευνών (ΕΛΚΕΘΕ)',
+          tag: 'Θαλάσσιες & Περιβαλλοντικές Επιστήμες',
+          desc: 'Κορυφαίο ερευνητικό ινστιτούτο ωκεανογραφίας, θαλάσσιας βιολογίας και υδατοκαλλιεργειών στη Μεσόγειο.',
+          wiki: 'Ελληνικό_Κέντρο_Θαλασσίων_Ερευνών',
+          youtubeId: ''
+        },
+        {
+          title: 'Athens Innovation & Startup Ecosystem (Corallia, Elevate Greece)',
+          tag: 'Καινοτομία & Τεχνολογία',
+          desc: 'Δυναμικό οικοσύστημα νεοφυών τεχνολογικών επιχειρήσεων, θερμοκοιτίδων και ερευνητικών clusters.',
+          wiki: 'Αθήνα',
+          youtubeId: ''
+        }
+      ]
+    };
+  }
+
+  // 3. Thessaloniki
+  if (id === 'thessaloniki' || name.includes('Θεσσαλονίκ')) {
+    return {
+      overview: 'Η Θεσσαλονίκη είναι η μεγαλύτερη φοιτητούπολη της Ελλάδας και κορυφαίος πανεπιστημιακός και καινοτόμος κόμβος της Νοτιοανατολικής Ευρώπης, φιλοξενώντας το μεγαλύτερο πανεπιστήμιο της χώρας, διεθνή τεχνολογικά κέντρα και υπερσύγχρονα ερευνητικά πάρκα.',
+      schools: {
+        total: 485,
+        summary: 'Περίπου 485 σχολικές μονάδες πρωτοβάθμιας και δευτεροβάθμιας εκπαίδευσης στο πολεοδομικό συγκρότημα.',
+        breakdown: [
+          { label: 'Νηπιαγωγεία', count: 195, icon: 'fa-solid fa-shapes', desc: 'Δημόσια και ιδιωτικά νηπιαγωγεία όλων των δήμων' },
+          { label: 'Δημοτικά Σχολεία', count: 165, icon: 'fa-solid fa-book-open', desc: 'Πολυθέσια και ιστορικά δημοτικά σχολεία' },
+          { label: 'Γυμνάσια', count: 68, icon: 'fa-solid fa-graduation-cap', desc: 'Γυμνάσια, πρότυπα και πειραματικά σχολεία' },
+          { label: 'Λύκεια (ΓΕΛ & ΕΠΑΛ)', count: 45, icon: 'fa-solid fa-school', desc: 'Γενικά και Επαγγελματικά Λύκεια' },
+          { label: 'Ειδικά & Μουσικά', count: 12, icon: 'fa-solid fa-music', desc: 'Μουσικό Σχολείο Θεσσαλονίκης, Καλλιτεχνικά & ΕΕΕΕΚ' }
+        ],
+        wiki: 'Θεσσαλονίκη',
+        youtubeId: ''
+      },
+      universities: [
+        {
+          title: 'Αριστοτέλειο Πανεπιστήμιο Θεσσαλονίκης (ΑΠΘ)',
+          tag: 'Το Μεγαλύτερο Πανεπιστήμιο των Βαλκανίων',
+          desc: 'Ιδρυθέν το 1925, με 11 σχολές, 41 τμήματα και πάνω από 70.000 φοιτητές. Ενιαίο ιστορικό campus στο κέντρο της πόλης.',
+          wiki: 'Αριστοτέλειο_Πανεπιστήμιο_Θεσσαλονίκης',
+          youtubeId: ''
+        },
+        {
+          title: 'Πανεπιστήμιο Μακεδονίας (ΠΑΜΑΚ)',
+          tag: 'Οικονομικές & Κοινωνικές Επιστήμες',
+          desc: 'Κορυφαίο εξειδικευμένο ίδρυμα σε οικονομικά, πληροφορική, διεθνείς σπουδές και μουσική επιστήμη και τέχνη.',
+          wiki: 'Πανεπιστήμιο_Μακεδονίας',
+          youtubeId: ''
+        },
+        {
+          title: 'Διεθνές Πανεπιστήμιο της Ελλάδος (ΔΙΠΑΕ)',
+          tag: 'Διεθνής & Εφαρμοσμένη Εκπαίδευση',
+          desc: 'Πανεπιστημιακό ίδρυμα με έδρα τη Σίνδο και τη Θέρμη με αγγλόφωνα προγράμματα και πολυτεχνικές κατευθύνσεις.',
+          wiki: 'Διεθνές_Πανεπιστήμιο_της_Ελλάδος',
+          youtubeId: ''
+        }
+      ],
+      collegesVocational: [
+        {
+          title: 'Δημόσιες ΣΑΕΚ Θεσσαλονίκης',
+          tag: 'Επαγγελματική Κατάρτιση',
+          desc: '1η, 2η ΣΑΕΚ Θεσσαλονίκης, ΣΑΕΚ Τριανδρίας, Πυλαίας κ.ά., με ειδικότητες τεχνολογίας, τουρισμού και εφαρμοσμένων τεχνών.',
+          wiki: 'Σχολές_Ανώτερης_Επαγγελματικής_Κατάρτισης',
+          youtubeId: ''
+        },
+        {
+          title: 'Κολέγιο Ανατόλια (ACT) & City College',
+          tag: 'Διεθνή Κολλέγια',
+          desc: 'Ιστορικά διεθνή ιδρύματα τριτοβάθμιας εκπαίδευσης με ευρωπαϊκές και αμερικανικές ακαδημαϊκές πιστοποιήσεις.',
+          wiki: 'Κολλέγιο_Ανατόλια',
+          youtubeId: ''
+        },
+        {
+          title: 'Κρατικό Ωδείο Θεσσαλονίκης',
+          tag: 'Ανώτατη Μουσική Παιδεία',
+          desc: 'Το μοναδικό κρατικό ωδείο στην Ελλάδα, θεματοφύλακας της κλασικής και συμφωνικής μουσικής εκπαίδευσης.',
+          wiki: 'Κρατικό_Ωδείο_Θεσσαλονίκης',
+          youtubeId: ''
+        }
+      ],
+      researchInnovation: [
+        {
+          title: 'ΕΚΕΤΑ - Εθνικό Κέντρο Έρευνας & Τεχνολογικής Ανάπτυξης (Θέρμη)',
+          tag: 'Εθνικό Ερευνητικό Κέντρο',
+          desc: 'Από τα κορυφαία ερευνητικά ιδρύματα της Ευρώπης σε βιώσιμη κινητικότητα, τεχνητή νοημοσύνη, ενέργεια και βιοϊατρική.',
+          wiki: 'Εθνικό_Κέντρο_Έρευνας_και_Τεχνολογικής_Ανάπτυξης',
+          youtubeId: ''
+        },
+        {
+          title: 'Thess INTEC - Διεθνές Τεχνολογικό Πάρκο 4ης Γενιάς',
+          tag: 'Mega Innovation Park',
+          desc: 'Πάρκο καινοτομίας στην Περαία που ενώνει τη βιομηχανία, τα πανεπιστήμια και διεθνείς κολοσσούς τεχνολογίας.',
+          wiki: 'Θεσσαλονίκη',
+          youtubeId: ''
+        },
+        {
+          title: 'Pfizer Center for Digital Innovation & Cisco Co-Innovation Hub',
+          tag: 'Παγκόσμιοι Τεχνολογικοί Κόμβοι',
+          desc: 'Διεθνή κέντρα ψηφιακής καινοτομίας, ανάπτυξης λογισμικού και έξυπνων πόλεων με έδρα τη Θεσσαλονίκη.',
+          wiki: 'Θεσσαλονίκη',
+          youtubeId: ''
+        }
+      ]
+    };
+  }
+
+  // 4. Patras
+  if (id === 'patras' || name.includes('Πάτρα')) {
+    return {
+      overview: 'Η Πάτρα αποτελεί ιστορική μητρόπολη τεχνολογικής και ακαδημαϊκής αριστείας, φημισμένη για την Πολυτεχνική και Ιατρική της Σχολή, το Επιστημονικό Πάρκο και τη δυναμική κοινότητα τεχνολογικών startups.',
+      schools: {
+        total: 185,
+        summary: 'Περίπου 185 σχολικές μονάδες στον Δήμο Πατρέων.',
+        breakdown: [
+          { label: 'Νηπιαγωγεία', count: 75, icon: 'fa-solid fa-shapes', desc: 'Δημόσια και ολοήμερα νηπιαγωγεία' },
+          { label: 'Δημοτικά Σχολεία', count: 62, icon: 'fa-solid fa-book-open', desc: 'Πολυθέσια δημοτικά σχολεία' },
+          { label: 'Γυμνάσια', count: 26, icon: 'fa-solid fa-graduation-cap', desc: 'Ημερήσια και πρότυπα γυμνάσια' },
+          { label: 'Λύκεια (ΓΕΛ & ΕΠΑΛ)', count: 18, icon: 'fa-solid fa-school', desc: 'Γενικά Λύκεια και Επαγγελματικά Λύκεια' },
+          { label: 'Ειδικά & Μουσικά', count: 4, icon: 'fa-solid fa-music', desc: 'Μουσικό Σχολείο Πατρών και Ειδικά Σχολεία' }
+        ],
+        wiki: 'Πάτρα',
+        youtubeId: ''
+      },
+      universities: [
+        {
+          title: 'Πανεπιστήμιο Πατρών (Campus Ρίου)',
+          tag: 'Κορυφαίο Πανεπιστήμιο',
+          desc: 'Ένα από τα σημαντικότερα ακαδημαϊκά ιδρύματα της χώρας με κορυφαία Πολυτεχνική Σχολή, Σχολή Επιστημών Υγείας και Φυσικομαθηματική.',
+          wiki: 'Πανεπιστήμιο_Πατρών',
+          youtubeId: ''
+        },
+        {
+          title: 'Ελληνικό Ανοικτό Πανεπιστήμιο (ΕΑΠ)',
+          tag: 'Έδρα Εξ Αποστάσεως Εκπαίδευσης',
+          desc: 'Η έδρα του δημόσιου ελληνικού πανεπιστημίου εξ αποστάσεως εκπαίδευσης με δεκάδες χιλιάδες φοιτητές σε όλη την Ελλάδα.',
+          wiki: 'Ελληνικό_Ανοικτό_Πανεπιστήμιο',
+          youtubeId: ''
+        }
+      ],
+      collegesVocational: [
+        {
+          title: 'Δημόσια ΣΑΕΚ Πάτρας',
+          tag: 'Επαγγελματική Κατάρτιση',
+          desc: 'Προγράμματα ανώτερης τεχνικής και επαγγελματικής κατάρτισης σε σύγχρονες ειδικότητες.',
+          wiki: 'Σχολές_Ανώτερης_Επαγγελματικής_Κατάρτισης',
+          youtubeId: ''
+        },
+        {
+          title: 'Σχολές Μαθητείας ΔΥΠΑ & Δημοτικό Ωδείο Πατρών',
+          tag: 'Μαθητεία & Μουσική Παιδεία',
+          desc: 'Τεχνική εκπαίδευση νέων και το ιστορικό Δημοτικό Ωδείο Πατρών.',
+          wiki: 'Πάτρα',
+          youtubeId: ''
+        }
+      ],
+      researchInnovation: [
+        {
+          title: 'Επιστημονικό Πάρκο Πατρών (PSP)',
+          tag: 'Τεχνολογικό Πάρκο & Θερμοκοιτίδα',
+          desc: 'Εκκολαπτήριο τεχνολογικών επιχειρήσεων και διεθνώς αναγνωρισμένων startups στους τομείς της μικροηλεκτρονικής και βιοτεχνολογίας.',
+          wiki: 'Επιστημονικό_Πάρκο_Πατρών',
+          youtubeId: ''
+        },
+        {
+          title: 'ΙΕΧΜΗ / ΙΤΕ - Ινστιτούτο Επιστημών Χημικής Μηχανικής',
+          tag: 'Ερευνητικό Ινστιτούτο ΙΤΕ',
+          desc: 'Πρωτοποριακή βασική και εφαρμοσμένη έρευνα σε υλικά, νανοτεχνολογία, περιβάλλον και ενέργεια.',
+          wiki: 'Ίδρυμα_Τεχνολογίας_και_Έρευνας',
+          youtubeId: ''
+        }
+      ]
+    };
+  }
+
+  // 5. Heraklion
+  if (id === 'heraklion' || name.includes('Ηράκλει')) {
+    return {
+      overview: 'Το Ηράκλειο είναι διεθνές κέντρο επιστημονικής αριστείας και έρευνας στη Μεσόγειο, έδρα του παγκοσμίου φήμης Ιδρύματος Τεχνολογίας & Έρευνας (ΙΤΕ/FORTH) και της Σχολής Θετικών Επιστημών & Ιατρικής του Πανεπιστημίου Κρήτης.',
+      schools: {
+        total: 165,
+        summary: 'Περίπου 165 σχολικές μονάδες στον Δήμο Ηρακλείου.',
+        breakdown: [
+          { label: 'Νηπιαγωγεία', count: 68, icon: 'fa-solid fa-shapes', desc: 'Δημόσια νηπιαγωγεία' },
+          { label: 'Δημοτικά Σχολεία', count: 56, icon: 'fa-solid fa-book-open', desc: 'Πολυθέσια δημοτικά σχολεία' },
+          { label: 'Γυμνάσια', count: 23, icon: 'fa-solid fa-graduation-cap', desc: 'Ημερήσια και πειραματικά γυμνάσια' },
+          { label: 'Λύκεια (ΓΕΛ & ΕΠΑΛ)', count: 15, icon: 'fa-solid fa-school', desc: 'Γενικά και Επαγγελματικά Λύκεια' },
+          { label: 'Ειδικά & Μουσικά', count: 3, icon: 'fa-solid fa-music', desc: 'Μουσικό & Καλλιτεχνικό Σχολείο Ηρακλείου' }
+        ],
+        wiki: 'Ηράκλειο_Κρήτης',
+        youtubeId: ''
+      },
+      universities: [
+        {
+          title: 'Πανεπιστήμιο Κρήτης (Campus Βουτών)',
+          tag: 'Διεθνές Ερευνητικό Πανεπιστήμιο',
+          desc: 'Πανεπιστημιούπολη Βουτών με την Ιατρική Σχολή, το Τμήμα Επιστήμης Υπολογιστών και κορυφαία τμήματα θετικών επιστημών.',
+          wiki: 'Πανεπιστήμιο_Κρήτης',
+          youtubeId: ''
+        },
+        {
+          title: 'Ελληνικό Μεσογειακό Πανεπιστήμιο (ΕΛΜΕΠΑ)',
+          tag: 'Ανώτατη Τεχνολογική Εκπαίδευση',
+          desc: 'Έδρα στον Εσταυρωμένο με σχολές μηχανικών, γεωπονίας, επιστημών υγείας και διοίκησης.',
+          wiki: 'Ελληνικό_Μεσογειακό_Πανεπιστήμιο',
+          youtubeId: ''
+        }
+      ],
+      collegesVocational: [
+        {
+          title: 'Δημόσια ΣΑΕΚ Ηρακλείου',
+          tag: 'Επαγγελματική Κατάρτιση',
+          desc: 'Τμήματα εφαρμοσμένων ειδικοτήτων τεχνολογίας και πληροφορικής.',
+          wiki: 'Σχολές_Ανώτερης_Επαγγελματικής_Κατάρτισης',
+          youtubeId: ''
+        },
+        {
+          title: 'Ανώτερη Σχολή Τουριστικής Εκπαίδευσης Κρήτης (ΑΣΤΕΚ)',
+          tag: 'Τουριστική Εκπαίδευση',
+          desc: 'Δημόσια σχολή εξειδικευμένη στη φιλοξενία και τουριστική διοίκηση.',
+          wiki: 'Ηράκλειο_Κρήτης',
+          youtubeId: ''
+        }
+      ],
+      researchInnovation: [
+        {
+          title: 'Ίδρυμα Τεχνολογίας & Έρευνας (ΙΤΕ / FORTH)',
+          tag: 'Κορυφαίο Ερευνητικό Ίδρυμα Ελλάδας',
+          desc: 'Παγκόσμιο σημείο αναφοράς στην έρευνα με το Ινστιτούτο Μοριακής Βιολογίας & Βιοτεχνολογίας (ΙΜΒΒ), Ινστιτούτο Πληροφορικής (ΙΠ) και Ινστιτούτο Ηλεκτρονικής Δομής & Λέιζερ (ΙΗΔΛ).',
+          wiki: 'Ίδρυμα_Τεχνολογίας_και_Έρευνας',
+          youtubeId: ''
+        },
+        {
+          title: 'Επιστημονικό & Τεχνολογικό Πάρκο Κρήτης (ΕΤΕΠ-Κ)',
+          tag: 'Καινοτομία & Τεχνοβλαστοί',
+          desc: 'Θερμοκοιτίδα καινοτομίας που υποστηρίζει spin-offs του ΙΤΕ και του Πανεπιστημίου Κρήτης.',
+          wiki: 'Ηράκλειο_Κρήτης',
+          youtubeId: ''
+        }
+      ]
+    };
+  }
+
+  // 6. Boston
+  if (id === 'boston' || name.includes('Βοστών') || name.toLowerCase().includes('boston')) {
+    return {
+      overview: 'Η Βοστώνη και η ευρύτερη μητροπολιτική περιοχή (Greater Boston) αποτελούν την παγκόσμια πρωτεύουσα της ανώτατης εκπαίδευσης, της βιοτεχνολογίας και της ακαδημαϊκής έρευνας, φιλοξενώντας το Harvard, το MIT και δεκάδες κορυφαία εκπαιδευτικά ιδρύματα.',
+      schools: {
+        total: 125,
+        summary: '125 δημόσια σχολεία (Boston Public Schools - BPS) με πάνω από 50.000 μαθητές, συμπεριλαμβανομένου του ιστορικού Boston Latin School (ιδρυθέν το 1635).',
+        breakdown: [
+          { label: 'Early Education & Kindergartens', count: 35, icon: 'fa-solid fa-shapes', desc: 'Προσχολική εκπαίδευση και νηπιαγωγεία' },
+          { label: 'Elementary Schools', count: 45, icon: 'fa-solid fa-book-open', desc: 'Δημόσια δημοτικά σχολεία BPS' },
+          { label: 'Middle & K-8 Schools', count: 20, icon: 'fa-solid fa-graduation-cap', desc: 'Σχολεία μέσης βαθμίδας' },
+          { label: 'High Schools & Academies', count: 22, icon: 'fa-solid fa-school', desc: 'Boston Latin, Tech Boston Academy κ.ά.' },
+          { label: 'Special & Exam Schools', count: 3, icon: 'fa-solid fa-award', desc: 'Exam Schools υψηλού ανταγωνισμού & ειδικής αγωγής' }
+        ],
+        wiki: 'Boston_Public_Schools',
+        youtubeId: ''
+      },
+      universities: [
+        {
+          title: 'Harvard University (Cambridge / Boston)',
+          tag: 'Ivy League - Κορυφαίο Ίδρυμα Παγκοσμίως',
+          desc: 'Το αρχαιότερο ίδρυμα ανώτατης εκπαίδευσης στις ΗΠΑ (ιδρυθέν το 1636), παγκόσμιος ηγέτης στην ιατρική, τη νομική, τη διοίκηση επιχειρήσεων και τις επιστήμες.',
+          wiki: 'Πανεπιστήμιο_Χάρβαρντ',
+          youtubeId: ''
+        },
+        {
+          title: 'Massachusetts Institute of Technology (MIT)',
+          tag: 'Παγκόσμιος Ηγέτης Τεχνολογίας & Μηχανικής',
+          desc: 'Κορυφαίο τεχνολογικό ίδρυμα του πλανήτη με δεκάδες νομπελίστες και απαράμιλλη συνεισφορά στην πληροφορική, την τεχνητή νοημοσύνη και τη διαστημική εξερεύνηση.',
+          wiki: 'Τεχνολογικό_Ινστιτούτο_Μασαχουσέτης',
+          youtubeId: ''
+        },
+        {
+          title: 'Boston University (BU) & Northeastern University',
+          tag: 'Μείζονα Ερευνητικά Πανεπιστήμια',
+          desc: 'Κορυφαία μητροπολιτικά ερευνητικά ιδρύματα με διεθνή προγράμματα coop και τεχνολογική καινοτομία.',
+          wiki: 'Πανεπιστήμιο_της_Βοστώνης',
+          youtubeId: ''
+        }
+      ],
+      collegesVocational: [
+        {
+          title: 'Berklee College of Music',
+          tag: 'Παγκόσμια Μουσική Ακαδημία',
+          desc: 'Το διασημότερο κολλέγιο σύγχρονης μουσικής, τζαζ και μουσικής παραγωγής στον κόσμο.',
+          wiki: 'Berklee_College_of_Music',
+          youtubeId: ''
+        },
+        {
+          title: 'Bunker Hill & Roxbury Community Colleges',
+          tag: 'Κοινοτικά & Τεχνικά Κολλέγια',
+          desc: 'Δημόσια διετή ιδρύματα τριτοβάθμιας επαγγελματικής και τεχνικής κατάρτισης.',
+          wiki: 'Bunker_Hill_Community_College',
+          youtubeId: ''
+        }
+      ],
+      researchInnovation: [
+        {
+          title: 'Kendall Square (The Most Innovative Square Mile on Earth)',
+          tag: 'Παγκόσμιος Κόμβος Καινοτομίας & Biotech',
+          desc: 'Το επίκεντρο της παγκόσμιας βιοτεχνολογίας, φαρμακολογίας, τεχνητής νοημοσύνης και venture capital δίπλα στο MIT.',
+          wiki: 'Kendall_Square',
+          youtubeId: ''
+        },
+        {
+          title: 'Broad Institute of MIT and Harvard',
+          tag: 'Γονιδιωματική & Βιοϊατρική Έρευνα',
+          desc: 'Πρωτοπόρο κέντρο γονιδιωματικής ανάλυσης, τεχνολογίας CRISPR και ιατρικής ακριβείας.',
+          wiki: 'Broad_Institute',
+          youtubeId: ''
+        }
+      ]
+    };
+  }
+
+  // 7. Vienna
+  if (id === 'vienna' || name.includes('Βιένν') || name.toLowerCase().includes('vienna')) {
+    return {
+      overview: 'Η Βιέννη είναι κορυφαία ακαδημαϊκή και πολιτιστική πρωτεύουσα της Ευρώπης, συνδυάζοντας ιστορικά πανεπιστήμια αιώνων, διεθνή ινστιτούτα μοριακής βιολογίας και ένα υποδειγματικό σύστημα δημόσιας και επαγγελματικής εκπαίδευσης.',
+      schools: {
+        total: 720,
+        summary: 'Άνω των 720 δημόσιων και ιδιωτικών εκπαιδευτικών μονάδων σε όλη τη Βιέννη.',
+        breakdown: [
+          { label: 'Kindergärten (Προσχολική)', count: 320, icon: 'fa-solid fa-shapes', desc: 'Δημόσια και ιδιωτικά νηπιαγωγεία' },
+          { label: 'Volksschulen (Δημοτικά)', count: 220, icon: 'fa-solid fa-book-open', desc: 'Πρωτοβάθμια σχολεία της πόλης' },
+          { label: 'Mittelschulen (Μέση Βαθμίδα)', count: 90, icon: 'fa-solid fa-graduation-cap', desc: 'Σχολεία μέσης γενικής εκπαίδευσης' },
+          { label: 'Gymnasien & AHS (Λύκεια)', count: 65, icon: 'fa-solid fa-school', desc: 'Ακαδημαϊκά γυμνάσια/λύκεια προετοιμασίας πανεπιστημίου' },
+          { label: 'HTL & Επαγγελματικές Σχολές', count: 25, icon: 'fa-solid fa-screwdriver-wrench', desc: 'Ανώτερες τεχνικές σχολές (HTL) και επαγγελματικά ινστιτούτα' }
+        ],
+        wiki: 'Βιέννη',
+        youtubeId: ''
+      },
+      universities: [
+        {
+          title: 'University of Vienna (Universität Wien)',
+          tag: 'Ιδρυθέν 1365 - Ιστορικό Πανεπιστήμιο',
+          desc: 'Ένα από τα παλαιότερα και μεγαλύτερα πανεπιστήμια της Ευρώπης με 15 νομπελίστες και άνω των 90.000 φοιτητών.',
+          wiki: 'Πανεπιστήμιο_της_Βιέννης',
+          youtubeId: ''
+        },
+        {
+          title: 'TU Wien (Vienna University of Technology)',
+          tag: 'Πολυτεχνικό Πανεπιστήμιο',
+          desc: 'Κορυφαίο τεχνολογικό και πολυτεχνικό ίδρυμα της Αυστρίας σε μηχανική, φυσική και πληροφορική.',
+          wiki: 'Πολυτεχνείο_της_Βιέννης',
+          youtubeId: ''
+        },
+        {
+          title: 'Vienna University of Economics & Business (WU Wien)',
+          tag: 'Οικονομική Πανεπιστημιούπολη',
+          desc: 'Υπερσύγχρονο campus σχεδιασμένο από τη Zaha Hadid, από τις κορυφαίες σχολές business και οικονομικών στην Ευρώπη.',
+          wiki: 'Βιέννη',
+          youtubeId: ''
+        }
+      ],
+      collegesVocational: [
+        {
+          title: 'FH Campus Wien (University of Applied Sciences)',
+          tag: 'Εφαρμοσμένες Επιστήμες',
+          desc: 'Το μεγαλύτερο πανεπιστήμιο εφαρμοσμένων επιστημών στην Αυστρία με τεχνολογία, υγεία και κοινωνική διοίκηση.',
+          wiki: 'Βιέννη',
+          youtubeId: ''
+        },
+        {
+          title: 'MUK (Music & Arts University of the City of Vienna)',
+          tag: 'Μουσική & Παραστατικές Τέχνες',
+          desc: 'Διεθνούς φήμης πανεπιστήμιο μουσικής, όπερας και θεάτρου στην παγκόσμια πρωτεύουσα της κλασικής μουσικής.',
+          wiki: 'Βιέννη',
+          youtubeId: ''
+        }
+      ],
+      researchInnovation: [
+        {
+          title: 'Vienna BioCenter (VBC)',
+          tag: 'Κέντρο Βιοεπιστημών & Μοριακής Βιολογίας',
+          desc: 'Κορυφαίο ευρωπαϊκό hub βιοϊατρικής με ερευνητικά ινστιτούτα όπως το IMP, IMBA, GMI και CeMM.',
+          wiki: 'Βιέννη',
+          youtubeId: ''
+        },
+        {
+          title: 'AIT Austrian Institute of Technology & Vienna Innovation District',
+          tag: 'Έρευνα & Βιομηχανική Καινοτομία',
+          desc: 'Ο μεγαλύτερος μη πανεπιστημιακός ερευνητικός οργανισμός της Αυστρίας για τις υποδομές του μέλλοντος.',
+          wiki: 'Βιέννη',
+          youtubeId: ''
+        }
+      ]
+    };
+  }
+
+  // Generic Dynamic generator for ANY city worldwide
+  const estimatedUnits = Math.max(12, Math.round(pop / 850));
+  const nipCount = Math.max(4, Math.round(estimatedUnits * 0.38));
+  const dimCount = Math.max(4, Math.round(estimatedUnits * 0.32));
+  const gymCount = Math.max(2, Math.round(estimatedUnits * 0.15));
+  const lykCount = Math.max(2, Math.round(estimatedUnits * 0.12));
+  const specCount = Math.max(1, Math.round(estimatedUnits * 0.03));
+  const totalUnits = nipCount + dimCount + gymCount + lykCount + specCount;
+
+  return {
+    overview: `Εκπαιδευτικό σύστημα, ακαδημαϊκά ιδρύματα, τεχνικές σχολές και δομές έρευνας και καινοτομίας στην πόλη (${name}).`,
+    schools: {
+      total: totalUnits,
+      summary: `Περίπου ${totalUnits} ενεργές σχολικές μονάδες πρωτοβάθμιας και δευτεροβάθμιας εκπαίδευσης για την κάλυψη των αναγκών των μαθητών της περιοχής (${name}).`,
+      breakdown: [
+        { label: 'Νηπιαγωγεία / Early Education', count: nipCount, icon: 'fa-solid fa-shapes', desc: `Προσχολική αγωγή και δημόσια/κοινοτικά νηπιαγωγεία (${name})` },
+        { label: 'Δημοτικά Σχολεία / Elementary', count: dimCount, icon: 'fa-solid fa-book-open', desc: `Μονάδες πρωτοβάθμιας βασικής εκπαίδευσης (${name})` },
+        { label: 'Γυμνάσια / Middle Schools', count: gymCount, icon: 'fa-solid fa-graduation-cap', desc: `Μονάδες κατώτερης δευτεροβάθμιας εκπαίδευσης (${name})` },
+        { label: 'Λύκεια (ΓΕΛ & ΕΠΑΛ) / High Schools', count: lykCount, icon: 'fa-solid fa-school', desc: `Γενικά και επαγγελματικά λύκεια / τεχνικά εκπαιδευτήρια (${name})` },
+        { label: 'Ειδικά & Καλλιτεχνικά Σχολεία', count: specCount, icon: 'fa-solid fa-palette', desc: `Ειδική αγωγή, μουσικά και καλλιτεχνικά εργαστήρια (${name})` }
+      ],
+      wiki: name,
+      youtubeId: ''
+    },
+    universities: [
+      {
+        title: `Πανεπιστημιακά Ιδρύματα & Ανώτατη Εκπαίδευση (${name})`,
+        tag: 'Ανώτατη Εκπαίδευση',
+        desc: `Ακαδημαϊκές σχολές, πανεπιστημιακά τμήματα και προγράμματα σπουδών που εξυπηρετούν τη φοιτητική κοινότητα της πόλης (${name}).`,
+        wiki: name,
+        youtubeId: ''
+      }
+    ],
+    collegesVocational: [
+      {
+        title: `Σχολές Επαγγελματικής Κατάρτισης, ΙΕΚ & Κολέγια (${name})`,
+        tag: 'Επαγγελματική Κατάρτιση',
+        desc: `Ινστιτούτα ανώτερης επαγγελματικής κατάρτισης, τεχνικές σχολές μαθητείας και κολέγια εφαρμοσμένων σπουδών στην περιοχή (${name}).`,
+        wiki: name,
+        youtubeId: ''
+      }
+    ],
+    researchInnovation: [
+      {
+        title: `Κέντρα Έρευνας, Τεχνολογίας & Καινοτομίας (${name})`,
+        tag: 'Καινοτομία & Ανάπτυξη',
+        desc: `Ερευνητικά εργαστήρια, θερμοκοιτίδες νεοφυούς επιχειρηματικότητας και υποδομές καινοτομίας στην πόλη (${name}).`,
+        wiki: name,
+        youtubeId: ''
+      }
+    ]
+  };
+}
+
 export function getCuratedEcoItems(entity) {
-  if (entity.eco?.items && Array.isArray(entity.eco.items) && entity.eco.items.length > 0) {
-    return entity.eco.items;
-  }
-  if (entity.eco?.greenSpaces) {
-    return [{
-      title: 'Πράσινοι Χώροι & Περιβάλλον',
-      cat: 'nature',
-      catLabel: '🌿 Φύση',
-      desc: entity.eco.greenSpaces
-    }];
-  }
-  const id = entity.id || '';
-  if (id === 'kozani') {
-    return [
-      {
-        title: 'Πανεπιστήμιο Δυτικής Μακεδονίας (Νέο Campus)',
-        cat: 'university',
-        catLabel: '🎓 Πανεπιστήμιο',
-        desc: 'Υπερσύγχρονο βιοκλιματικό campus στην περιοχή ΖΕΠ με Πολυτεχνική Σχολή, Σχολή Οικονομικών και ερευνητικά εργαστήρια.',
-        wiki: 'Πανεπιστήμιο_Δυτικής_Μακεδονίας'
-      },
-      {
-        title: 'Δίκαιη Αναπτυξιακή Μετάβαση & Πράσινο Υδρογόνο',
-        cat: 'energy',
-        catLabel: '⚡ Πράσινη Ενέργεια',
-        desc: 'Μετασχηματισμός από λιγνιτικό σε ευρωπαϊκό κόμβο καθαρής ενέργειας, φωτοβολταϊκών πάρκων και τεχνολογιών υδρογόνου.',
-        wiki: 'Κοζάνη'
-      },
-      {
-        title: 'Πρωτοποριακό Δημοτικό Δίκτυο Τηλεθέρμανσης (ΔΕΥΑΚ)',
-        cat: 'energy',
-        catLabel: '⚡ Υποδομές',
-        desc: 'Το πρώτο και μεγαλύτερο σύστημα τηλεθέρμανσης στην Ελλάδα, παρέχοντας οικολογική θέρμανση σε όλη την πόλη.',
-        wiki: 'Κοζάνη'
-      },
-      {
-        title: 'Εξαγωγικός Κλάδος & Αγροδιατροφή',
-        cat: 'business',
-        catLabel: '💼 Επιχειρηματικότητα',
-        desc: 'Παγκόσμιο δίκτυο εξαγωγών Κρόκου, μαρμάρων, ροδάκινων και τοπικών αγροτικών προϊόντων υψηλής προστιθέμενης αξίας.',
-        wiki: 'Κοζάνη'
-      }
-    ];
-  }
-  if (id === 'athens') {
-    return [
-      {
-        title: 'Εθνικό & Καποδιστριακό Πανεπιστήμιο & ΕΜΠ',
-        cat: 'university',
-        catLabel: '🎓 Παιδεία & Έρευνα',
-        desc: 'Κορυφαία ακαδημαϊκά ιδρύματα της χώρας με παγκόσμια διάκριση στη μηχανική, την ιατρική και τις θεωρητικές επιστήμες.',
-        wiki: 'Εθνικό_και_Καποδιστριακό_Πανεπιστήμιο_Αθηνών'
-      },
-      {
-        title: 'Οικοσύστημα Startups & Τεχνολογίας',
-        cat: 'business',
-        catLabel: '💼 Καινοτομία',
-        desc: 'Ραγδαία αναπτυσσόμενος κόμβος τεχνολογίας, θερμοκοιτίδων και διεθνών επενδύσεων στη Νοτιοανατολική Ευρώπη.',
-        wiki: 'Αθήνα'
-      },
-      {
-        title: 'Παγκόσμια Ναυτιλιακή Έδρα',
-        cat: 'business',
-        catLabel: '💼 Ναυτιλία',
-        desc: 'Η μητρόπολη της μεγαλύτερης εμπορικής ναυτιλίας στον πλανήτη με κέντρο διοίκησης το ευρύτερο πολεοδομικό συγκρότημα.',
-        wiki: 'Ελληνική_εμπορική_ναυτιλία'
-      }
-    ];
-  }
-  return [
-    {
-      title: `Οικονομία & Αναπτυξιακή Ταυτότητα (${entity.name})`,
-      cat: 'business',
-      catLabel: '💼 Οικονομία',
-      desc: `Σύγχρονοι παραγωγικοί τομείς, εμπόριο, υποδομές και απασχόληση στην περιοχή.`,
-      wiki: entity.name
-    }
-  ];
+  const edu = getCityEducationData(entity);
+  if (!edu) return [];
+  const list = [];
+  if (edu.universities) list.push(...edu.universities);
+  if (edu.collegesVocational) list.push(...edu.collegesVocational);
+  if (edu.researchInnovation) list.push(...edu.researchInnovation);
+  return list;
 }
 
 export function renderTabContent(tabId, entity, activeYear = null, activeSpots = [], isPlaying = false) {
@@ -3752,41 +4410,230 @@ export function renderTabContent(tabId, entity, activeYear = null, activeSpots =
       </div>
     `;
   } else if (tabId === 'eco') {
-    const items = getCuratedEcoItems(entity);
+    const edu = getCityEducationData(entity);
+    const schools = edu?.schools;
+    const universities = edu?.universities || [];
+    const collegesVocational = edu?.collegesVocational || [];
+    const researchInnovation = edu?.researchInnovation || [];
+
     html = `
-      <div class="space-y-3">
-        <div class="p-3.5 bg-slate-800/50 rounded-xl border border-slate-700/60 text-slate-200">
-          <div class="flex items-center gap-2 text-emerald-400 font-semibold mb-1 text-sm">
-            <i class="fa-solid fa-lightbulb"></i> Καινοτομία, Οικονομία & Παιδεία
+      <div class="space-y-3.5">
+        <!-- 1. Master Header Card -->
+        <div class="p-4 bg-gradient-to-br from-indigo-950/40 via-slate-900/90 to-slate-950 rounded-2xl border border-indigo-600/40 shadow-lg text-slate-200">
+          <div class="flex items-center justify-between gap-2 mb-2">
+            <div class="flex items-center gap-2 text-indigo-400 font-bold text-sm">
+              <i class="fa-solid fa-graduation-cap text-indigo-300"></i>
+              <span>Εκπαίδευση & Καινοτομία (${entity.name})</span>
+            </div>
+            <span class="text-[10px] px-2 py-0.5 rounded-full bg-indigo-500/20 text-indigo-300 border border-indigo-500/30 font-bold shrink-0">
+              Παιδεία & Έρευνα
+            </span>
           </div>
-          <p class="leading-relaxed">Πανεπιστημιακή εκπαίδευση, σύγχρονες υποδομές, πράσινη ενέργεια και επιχειρηματικότητα (${entity.name}).</p>
+          <p class="text-xs text-slate-300 leading-relaxed mb-3">${edu?.overview || 'Εκπαιδευτικές δομές, ακαδημαϊκά ιδρύματα και ερευνητικά κέντρα.'}</p>
+          <div class="flex flex-wrap items-center gap-2 pt-2.5 border-t border-slate-800/80">
+            <button onclick="window.openDeepDive('Εκπαίδευση & Καινοτομία (${escapeStr(entity.name)})', '${escapeStr(edu?.overview || '')}', '${escapeStr(entity.name)}')" class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-amber-300 hover:text-white border border-slate-700 text-[11px] font-bold transition flex items-center gap-1.5 shadow cursor-pointer">
+              <i class="fa-solid fa-wand-magic-sparkles text-amber-400"></i>
+              <span>Ανάλυση AI</span>
+            </button>
+            <button onclick="window.openDeepDiveBingAiSearch('${escapeStr(entity.name)} σχολεία πανεπιστήμια έρευνα καινοτομία')" class="px-2.5 py-1 rounded-lg bg-gradient-to-r from-indigo-600 to-sky-600 hover:from-indigo-500 hover:to-sky-500 text-white text-[11px] font-bold transition flex items-center gap-1.5 shadow cursor-pointer" title="Bing AI Search για την εκπαίδευση και καινοτομία της πόλης">
+              <i class="fa-solid fa-magnifying-glass text-indigo-200"></i>
+              <span>Bing AI Search</span>
+            </button>
+            <button onclick="window.openMapWikiReader('${escapeStr(entity.name)}', 'el')" class="px-2.5 py-1 rounded-lg bg-sky-950/80 hover:bg-sky-900 text-sky-300 hover:text-white border border-sky-700/50 text-[11px] font-bold transition flex items-center gap-1.5 shadow cursor-pointer">
+              <i class="fa-brands fa-wikipedia-w text-sky-400"></i>
+              <span>Wikipedia</span>
+            </button>
+            <button onclick="window.openEducationVideo('Εκπαίδευση & Καινοτομία', '${escapeStr(entity.name)}'${schools?.youtubeId ? `, '${schools.youtubeId}'` : ''})" class="px-2.5 py-1 rounded-lg bg-indigo-950/80 hover:bg-indigo-900 text-indigo-300 hover:text-white border border-indigo-700/50 text-[11px] font-bold transition flex items-center gap-1.5 shadow cursor-pointer" title="Προβολή σχετικού εκπαιδευτικού βίντεο">
+              <i class="fa-solid fa-play text-indigo-400"></i>
+              <span>Βίντεο Περιήγηση 📹</span>
+            </button>
+          </div>
         </div>
 
-        <div class="space-y-2.5 mt-3">
-          ${items.map(item => `
-            <div class="p-3.5 bg-slate-800/30 hover:bg-slate-800/80 hover:border-emerald-500/50 transition border border-slate-700/40 rounded-xl">
-              <div class="flex items-start justify-between gap-2 mb-1.5">
-                <div>
-                  <span class="inline-block px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-950/80 text-emerald-300 border border-emerald-600/40 mb-1">
-                    ${item.catLabel}
-                  </span>
-                  <h5 class="font-bold text-slate-100 text-sm text-emerald-200">${item.title}</h5>
-                </div>
+        <!-- 2. School Units Breakdown Card -->
+        ${schools ? `
+          <div class="p-4 bg-slate-900/80 rounded-2xl border border-sky-800/40 shadow-lg text-slate-200">
+            <div class="flex items-center justify-between gap-2 mb-2">
+              <div class="flex items-center gap-2 text-sky-400 font-bold text-sm">
+                <i class="fa-solid fa-school text-sky-300"></i>
+                <span>Σχολικές Μονάδες (${entity.name})</span>
               </div>
-              <p class="text-xs text-slate-300 leading-relaxed mb-3">${item.desc}</p>
-              <div class="flex items-center gap-2 pt-2 border-t border-slate-800/70">
-                <button onclick="window.openDeepDive('${escapeStr(item.title)}', '${escapeStr(item.desc)}', '${escapeStr(entity.name)}')" class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-amber-300 hover:text-white border border-slate-700 text-[11px] font-bold transition flex items-center gap-1.5 shadow">
-                  <i class="fa-solid fa-wand-magic-sparkles text-amber-400"></i>
-                  <span>Ανάλυση AI</span>
-                </button>
-                <button onclick="window.openMapWikiReader('${escapeStr(item.wiki || item.title)}', 'el')" class="px-2.5 py-1 rounded-lg bg-sky-950/80 hover:bg-sky-900 text-sky-300 hover:text-white border border-sky-700/50 text-[11px] font-bold transition flex items-center gap-1.5 shadow">
-                  <i class="fa-brands fa-wikipedia-w"></i>
-                  <span>Wikipedia στον Χάρτη</span>
-                </button>
-              </div>
+              <span class="text-[10px] px-2.5 py-0.5 rounded-full bg-sky-500/20 text-sky-300 border border-sky-500/30 font-extrabold shrink-0">
+                ${schools.total} Μονάδες
+              </span>
             </div>
-          `).join('')}
-        </div>
+            <p class="text-xs text-slate-300 leading-relaxed mb-3">${schools.summary}</p>
+
+            <!-- Breakdown Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-3">
+              ${(schools.breakdown || []).map(b => `
+                <div class="p-2.5 bg-slate-800/50 border border-slate-700/60 rounded-xl flex items-start gap-2.5">
+                  <div class="w-7 h-7 rounded-lg bg-sky-950/80 border border-sky-600/40 text-sky-300 flex items-center justify-center shrink-0 text-xs">
+                    <i class="${b.icon || 'fa-solid fa-book'}"></i>
+                  </div>
+                  <div class="min-w-0 flex-1">
+                    <div class="flex items-center justify-between gap-1 mb-0.5">
+                      <span class="font-bold text-slate-200 text-xs truncate">${b.label}</span>
+                      <span class="text-xs font-black text-sky-300 px-1.5 py-0.2 bg-sky-950/90 rounded border border-sky-600/40 shrink-0">${b.count}</span>
+                    </div>
+                    <div class="text-[11px] text-slate-400 leading-tight">${b.desc}</div>
+                  </div>
+                </div>
+              `).join('')}
+            </div>
+
+            <div class="flex flex-wrap items-center gap-2 pt-2.5 border-t border-slate-800/80">
+              <button onclick="window.openDeepDive('Σχολικές Μονάδες (${escapeStr(entity.name)})', '${escapeStr(schools.summary)}', '${escapeStr(entity.name)}')" class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-amber-300 hover:text-white border border-slate-700 text-[11px] font-bold transition flex items-center gap-1.5 shadow cursor-pointer">
+                <i class="fa-solid fa-wand-magic-sparkles text-amber-400"></i>
+                <span>Ανάλυση AI</span>
+              </button>
+              <button onclick="window.openDeepDiveBingAiSearch('${escapeStr(entity.name)} σχολικές μονάδες δημοτικά γυμνάσια λύκεια')" class="px-2.5 py-1 rounded-lg bg-gradient-to-r from-sky-600 to-indigo-600 hover:from-sky-500 hover:to-indigo-500 text-white text-[11px] font-bold transition flex items-center gap-1.5 shadow cursor-pointer" title="Bing AI Search για τα σχολεία της πόλης">
+                <i class="fa-solid fa-magnifying-glass text-sky-200"></i>
+                <span>Bing AI</span>
+              </button>
+              <button onclick="window.openMapWikiReader('${escapeStr(schools.wiki || entity.name)}', 'el', '${escapeStr(entity.name)} education')" class="px-2.5 py-1 rounded-lg bg-sky-950/80 hover:bg-sky-900 text-sky-300 hover:text-white border border-sky-700/50 text-[11px] font-bold transition flex items-center gap-1.5 shadow cursor-pointer">
+                <i class="fa-brands fa-wikipedia-w text-sky-400"></i>
+                <span>Wikipedia</span>
+              </button>
+              <button onclick="window.openEducationVideo('Σχολικές Μονάδες Σχολεία', '${escapeStr(entity.name)}'${schools.youtubeId ? `, '${schools.youtubeId}'` : ''})" class="px-2.5 py-1 rounded-lg bg-sky-950/80 hover:bg-sky-900 text-sky-300 hover:text-white border border-sky-700/50 text-[11px] font-bold transition flex items-center gap-1.5 shadow cursor-pointer" title="Βίντεο σχολικών μονάδων">
+                <i class="fa-solid fa-play text-sky-400"></i>
+                <span>Βίντεο Σχολείων 📹</span>
+              </button>
+            </div>
+          </div>
+        ` : ''}
+
+        <!-- 3. Universities & Higher Education Section -->
+        ${universities && universities.length > 0 ? `
+          <div class="pt-1.5">
+            <div class="text-[11px] font-bold uppercase tracking-wider text-sky-400/90 flex items-center gap-1.5 mb-2 px-1">
+              <i class="fa-solid fa-university text-sky-400"></i>
+              <span>Πανεπιστήμια & Ανώτατη Εκπαίδευση (${universities.length})</span>
+            </div>
+
+            <div class="space-y-2.5">
+              ${universities.map(item => `
+                <div class="p-3.5 bg-slate-800/30 hover:bg-slate-800/80 hover:border-sky-500/50 transition border border-slate-700/40 rounded-xl">
+                  <div class="flex items-start justify-between gap-2 mb-1.5">
+                    <div>
+                      <span class="inline-block px-2 py-0.5 rounded text-[10px] font-bold bg-sky-950/80 text-sky-300 border border-sky-600/40 mb-1">
+                        ${item.tag || '🎓 Πανεπιστήμιο'}
+                      </span>
+                      <h5 class="font-bold text-slate-100 text-sm text-sky-200">${item.title}</h5>
+                    </div>
+                  </div>
+                  <p class="text-xs text-slate-300 leading-relaxed mb-3">${item.desc}</p>
+                  <div class="flex flex-wrap items-center gap-2 pt-2 border-t border-slate-800/70">
+                    <button onclick="window.openDeepDive('${escapeStr(item.title)}', '${escapeStr(item.desc)}', '${escapeStr(entity.name)}')" class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-amber-300 hover:text-white border border-slate-700 text-[11px] font-bold transition flex items-center gap-1.5 shadow cursor-pointer">
+                      <i class="fa-solid fa-wand-magic-sparkles text-amber-400"></i>
+                      <span>Ανάλυση AI</span>
+                    </button>
+                    <button onclick="window.openDeepDiveBingAiSearch('${escapeStr(item.title)} ${escapeStr(entity.name)}')" class="px-2.5 py-1 rounded-lg bg-gradient-to-r from-sky-600 to-indigo-600 hover:from-sky-500 hover:to-indigo-500 text-white text-[11px] font-bold transition flex items-center gap-1.5 shadow cursor-pointer" title="Bing AI αναζήτηση για το ίδρυμα">
+                      <i class="fa-solid fa-magnifying-glass text-sky-200"></i>
+                      <span>Bing AI</span>
+                    </button>
+                    <button onclick="window.openMapWikiReader('${escapeStr(item.wiki || item.title)}', 'el', '${escapeStr(item.title)}')" class="px-2.5 py-1 rounded-lg bg-sky-950/80 hover:bg-sky-900 text-sky-300 hover:text-white border border-sky-700/50 text-[11px] font-bold transition flex items-center gap-1.5 shadow cursor-pointer">
+                      <i class="fa-brands fa-wikipedia-w"></i>
+                      <span>Wikipedia</span>
+                    </button>
+                    <button onclick="window.openEducationVideo('${escapeStr(item.title)}', '${escapeStr(entity.name)}'${item.youtubeId ? `, '${item.youtubeId}'` : ''})" class="px-2.5 py-1 rounded-lg bg-sky-950/80 hover:bg-sky-900 text-sky-300 hover:text-white border border-sky-700/50 text-[11px] font-bold transition flex items-center gap-1.5 shadow cursor-pointer" title="Προβολή βίντεο ιδρύματος">
+                      <i class="fa-solid fa-play text-sky-400"></i>
+                      <span>Βίντεο 🎓</span>
+                    </button>
+                  </div>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+        ` : ''}
+
+        <!-- 4. Colleges, SAEK (IEK) & Vocational Education Section -->
+        ${collegesVocational && collegesVocational.length > 0 ? `
+          <div class="pt-1.5">
+            <div class="text-[11px] font-bold uppercase tracking-wider text-emerald-400/90 flex items-center gap-1.5 mb-2 px-1">
+              <i class="fa-solid fa-briefcase text-emerald-400"></i>
+              <span>Κολέγια, ΣΑΕΚ (ΙΕΚ) & Επαγγελματική Κατάρτιση (${collegesVocational.length})</span>
+            </div>
+
+            <div class="space-y-2.5">
+              ${collegesVocational.map(item => `
+                <div class="p-3.5 bg-slate-800/30 hover:bg-slate-800/80 hover:border-emerald-500/50 transition border border-slate-700/40 rounded-xl">
+                  <div class="flex items-start justify-between gap-2 mb-1.5">
+                    <div>
+                      <span class="inline-block px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-950/80 text-emerald-300 border border-emerald-600/40 mb-1">
+                        ${item.tag || '💼 Επαγγελματική Κατάρτιση'}
+                      </span>
+                      <h5 class="font-bold text-slate-100 text-sm text-emerald-200">${item.title}</h5>
+                    </div>
+                  </div>
+                  <p class="text-xs text-slate-300 leading-relaxed mb-3">${item.desc}</p>
+                  <div class="flex flex-wrap items-center gap-2 pt-2 border-t border-slate-800/70">
+                    <button onclick="window.openDeepDive('${escapeStr(item.title)}', '${escapeStr(item.desc)}', '${escapeStr(entity.name)}')" class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-amber-300 hover:text-white border border-slate-700 text-[11px] font-bold transition flex items-center gap-1.5 shadow cursor-pointer">
+                      <i class="fa-solid fa-wand-magic-sparkles text-amber-400"></i>
+                      <span>Ανάλυση AI</span>
+                    </button>
+                    <button onclick="window.openDeepDiveBingAiSearch('${escapeStr(item.title)} ${escapeStr(entity.name)}')" class="px-2.5 py-1 rounded-lg bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white text-[11px] font-bold transition flex items-center gap-1.5 shadow cursor-pointer" title="Bing AI αναζήτηση για τη σχολή">
+                      <i class="fa-solid fa-magnifying-glass text-emerald-200"></i>
+                      <span>Bing AI</span>
+                    </button>
+                    <button onclick="window.openMapWikiReader('${escapeStr(item.wiki || item.title)}', 'el', '${escapeStr(item.title)}')" class="px-2.5 py-1 rounded-lg bg-sky-950/80 hover:bg-sky-900 text-sky-300 hover:text-white border border-sky-700/50 text-[11px] font-bold transition flex items-center gap-1.5 shadow cursor-pointer">
+                      <i class="fa-brands fa-wikipedia-w"></i>
+                      <span>Wikipedia</span>
+                    </button>
+                    <button onclick="window.openEducationVideo('${escapeStr(item.title)}', '${escapeStr(entity.name)}'${item.youtubeId ? `, '${item.youtubeId}'` : ''})" class="px-2.5 py-1 rounded-lg bg-emerald-950/80 hover:bg-emerald-900 text-emerald-300 hover:text-white border border-emerald-700/50 text-[11px] font-bold transition flex items-center gap-1.5 shadow cursor-pointer" title="Προβολή βίντεο κατάρτισης">
+                      <i class="fa-solid fa-play text-emerald-400"></i>
+                      <span>Βίντεο 📚</span>
+                    </button>
+                  </div>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+        ` : ''}
+
+        <!-- 5. Research Centers & Innovation Section -->
+        ${researchInnovation && researchInnovation.length > 0 ? `
+          <div class="pt-1.5">
+            <div class="text-[11px] font-bold uppercase tracking-wider text-purple-400/90 flex items-center gap-1.5 mb-2 px-1">
+              <i class="fa-solid fa-flask text-purple-400"></i>
+              <span>Ερευνητικά Κέντρα & Καινοτομία (${researchInnovation.length})</span>
+            </div>
+
+            <div class="space-y-2.5">
+              ${researchInnovation.map(item => `
+                <div class="p-3.5 bg-slate-800/30 hover:bg-slate-800/80 hover:border-purple-500/50 transition border border-slate-700/40 rounded-xl">
+                  <div class="flex items-start justify-between gap-2 mb-1.5">
+                    <div>
+                      <span class="inline-block px-2 py-0.5 rounded text-[10px] font-bold bg-purple-950/80 text-purple-300 border border-purple-600/40 mb-1">
+                        ${item.tag || '💡 Έρευνα & Καινοτομία'}
+                      </span>
+                      <h5 class="font-bold text-slate-100 text-sm text-purple-200">${item.title}</h5>
+                    </div>
+                  </div>
+                  <p class="text-xs text-slate-300 leading-relaxed mb-3">${item.desc}</p>
+                  <div class="flex flex-wrap items-center gap-2 pt-2 border-t border-slate-800/70">
+                    <button onclick="window.openDeepDive('${escapeStr(item.title)}', '${escapeStr(item.desc)}', '${escapeStr(entity.name)}')" class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-amber-300 hover:text-white border border-slate-700 text-[11px] font-bold transition flex items-center gap-1.5 shadow cursor-pointer">
+                      <i class="fa-solid fa-wand-magic-sparkles text-amber-400"></i>
+                      <span>Ανάλυση AI</span>
+                    </button>
+                    <button onclick="window.openDeepDiveBingAiSearch('${escapeStr(item.title)} ${escapeStr(entity.name)}')" class="px-2.5 py-1 rounded-lg bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 text-white text-[11px] font-bold transition flex items-center gap-1.5 shadow cursor-pointer" title="Bing AI αναζήτηση για το ερευνητικό κέντρο">
+                      <i class="fa-solid fa-magnifying-glass text-purple-200"></i>
+                      <span>Bing AI</span>
+                    </button>
+                    <button onclick="window.openMapWikiReader('${escapeStr(item.wiki || item.title)}', 'el', '${escapeStr(item.title)}')" class="px-2.5 py-1 rounded-lg bg-sky-950/80 hover:bg-sky-900 text-sky-300 hover:text-white border border-sky-700/50 text-[11px] font-bold transition flex items-center gap-1.5 shadow cursor-pointer">
+                      <i class="fa-brands fa-wikipedia-w"></i>
+                      <span>Wikipedia</span>
+                    </button>
+                    <button onclick="window.openEducationVideo('${escapeStr(item.title)}', '${escapeStr(entity.name)}'${item.youtubeId ? `, '${item.youtubeId}'` : ''})" class="px-2.5 py-1 rounded-lg bg-purple-950/80 hover:bg-purple-900 text-purple-300 hover:text-white border border-purple-700/50 text-[11px] font-bold transition flex items-center gap-1.5 shadow cursor-pointer" title="Προβολή βίντεο καινοτομίας">
+                      <i class="fa-solid fa-play text-purple-400"></i>
+                      <span>Βίντεο 💡</span>
+                    </button>
+                  </div>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+        ` : ''}
       </div>
     `;
   } else if (tabId === 'timeline') {
