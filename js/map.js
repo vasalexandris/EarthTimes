@@ -362,17 +362,28 @@ export function renderTimeCapsulePins(spots, activeYear, onSpotClick) {
       : 'Ιστορία';
 
     const hasVideo = Boolean(activeChronicle?.youtubeId || (activeChronicle?.photos && activeChronicle.photos.some(p => p.isYouTube || p.youtubeId)));
+    const isPending = spot.status === 'pending';
+    const borderClass = isPending 
+      ? 'border-2 border-dashed border-amber-400 bg-amber-600 text-white shadow-amber-500/30' 
+      : 'border-2 border-amber-300 bg-amber-500 text-slate-950 shadow-2xl';
+    const iconHtml = isPending 
+      ? '<i class="fa-solid fa-hourglass-half text-[10px] animate-pulse text-amber-200"></i>' 
+      : '<i class="fa-solid fa-hourglass-start text-[10px]"></i>';
+    const pendingTag = isPending 
+      ? '<span class="text-[9px] bg-amber-950 text-amber-300 px-1 py-0.2 rounded font-bold uppercase tracking-wider">Υπό Έγκριση</span>' 
+      : '';
 
     const customIcon = L.divIcon({
       className: 'time-capsule-marker-wrapper',
       html: `
-        <div class="custom-poi-marker marker-pulse cursor-pointer group">
-          <div class="px-2.5 py-1 rounded-full text-xs font-black shadow-2xl border-2 border-amber-300 bg-amber-500 text-slate-950 flex items-center gap-1.5 transition transform group-hover:scale-110">
-            <i class="fa-solid fa-hourglass-start text-[10px]"></i>
+        <div class="custom-poi-marker marker-pulse cursor-pointer group" title="${isPending ? 'Σημείο σε αναμονή έγκρισης διαχειριστή (τοπική προεπισκόπηση)' : ''}">
+          <div class="px-2.5 py-1 rounded-full text-xs font-black ${borderClass} flex items-center gap-1.5 transition transform group-hover:scale-110">
+            ${iconHtml}
             <span class="text-[10px] font-mono bg-slate-900 text-amber-300 px-1.5 py-0.2 rounded-full flex items-center gap-1">
               ${hasVideo ? '<i class="fa-brands fa-youtube text-red-500 text-[10px]"></i>' : ''}
               <span>${eraText}</span>
             </span>
+            ${pendingTag}
             <span class="truncate max-w-[110px]">${activeChronicle ? activeChronicle.title : spot.name}</span>
           </div>
         </div>

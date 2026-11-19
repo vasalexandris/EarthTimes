@@ -5,6 +5,7 @@
  */
 
 import { loadTimeCapsules } from './data-service.js?v=20261117_video_iframe_fix';
+import { submitSpotForModeration, getPendingSubmissions, approveSpotSubmission, rejectSpotSubmission } from './db-service.js?v=20261119_moderation_v1';
 
 let timeCapsules = [];
 let selectedYear = 'all'; // 'all' or number like 1965
@@ -15,8 +16,8 @@ let activeSpotId = null;
 // User Identity & Profile State
 let currentUser = {
   name: 'Βασίλης Αλεξανδρής',
-  role: 'member',
-  title: 'Κάτοικος Κοζάνης'
+  role: 'admin',
+  title: 'Διαχειριστής & Επιμελητής Κοζάνης'
 };
 
 function escapeStr(str) {
@@ -352,6 +353,27 @@ export function renderTimeCapsuleModalContent(spot, activeChronicle) {
     <!-- Active Chronicle Body -->
     <div class="p-6 space-y-6 overflow-y-auto max-h-[60vh]">
       
+      ${spot.status === 'pending' ? `
+        <div class="p-3.5 rounded-2xl bg-amber-500/15 border border-amber-500/40 text-amber-300 text-xs flex items-center justify-between gap-3 shadow-lg">
+          <div class="flex items-center gap-2.5">
+            <span class="w-8 h-8 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center shrink-0">
+              <i class="fa-solid fa-hourglass-half text-sm"></i>
+            </span>
+            <div>
+              <div class="font-bold text-amber-200">Αίτημα σε Αναμονή Έγκρισης Διαχειριστή</div>
+              <div class="text-[11px] text-amber-300/80">
+                Το σημείο αυτό υποβλήθηκε και είναι προσωρινά ορατό μόνο σε αυτόν τον υπολογιστή. Μόλις εγκριθεί από τον διαχειριστή, θα δημοσιευτεί δημόσια.
+              </div>
+            </div>
+          </div>
+          ${(currentUser.role === 'admin' || (currentUser.name && currentUser.name.includes('Αλεξανδρής'))) ? `
+            <button onclick="window.handleApproveSpotDirectly('${spot.id}')" class="px-3 py-1.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs shadow transition flex items-center gap-1.5 shrink-0">
+              <i class="fa-solid fa-check"></i> Έγκριση Τώρα
+            </button>
+          ` : ''}
+        </div>
+      ` : ''}
+      
       <!-- Era Details Card -->
       <div class="p-5 rounded-2xl bg-slate-800/40 border border-slate-700/60 relative overflow-hidden">
         <div class="flex items-start justify-between gap-4 mb-3 flex-wrap">
@@ -634,15 +656,22 @@ export function submitNewSpot(event) {
   // Run normalization
   normalizeChronicleMedia(newSpot.chronicles[0]);
 
-  timeCapsules.push(newSpot);
-
-  // Save to localStorage
+  // Submit via Safety & Moderation Pipeline
   try {
-    const existing = JSON.parse(localStorage.getItem('earthtimes_custom_spots') || '[]');
-    existing.push(newSpot);
-    localStorage.setItem('earthtimes_custom_spots', JSON.stringify(existing));
-  } catch (e) {
-    console.warn('Error saving spot to localStorage', e);
+    const submission = submitSpotForModeration(newSpot, currentUser);
+    
+    // Add to in-memory timeCapsules for local preview
+    const memIdx = timeCapsules.findIndex(s => s.id === newSpot.id);
+    if (memIdx !== -1) {
+      timeCapsules[memIdx] = submission;
+    } else {
+      timeCapsules.push(submission);
+    }
+
+    alert('✅ Το αίτημα δημιουργίας σημείου υποβλήθηκε επιτυχώς!\n\n🛡️ Έλεγχος ασφαλείας: Η πηγή πολυμέσων και το κείμενο ελέγχθηκαν επιτυχώς.\n⏳ Το σημείο είναι προσωρινά ορατό μόνο σε αυτόν τον υπολογιστή (με ένδειξη «Υπό Έγκριση»).\nΜόλις εγκριθεί από τον διαχειριστή, θα δημοσιευτεί δημόσια σε όλους!');
+  } catch (err) {
+    alert('❌ Σφάλμα υποβολής: ' + err.message);
+    return;
   }
 
   closeCreateSpotModal();
@@ -1040,4 +1069,151 @@ export function closeSyncSpotsModal() {
   const modal = document.getElementById('syncSpotsModal');
   if (modal) modal.classList.add('hidden');
 }
+
+/**
+ * Admin Moderation Panel & Content Approval Workflow
+ */
+export function openModerationModal() {
+  const modal = document.getElementById('moderationModal');
+  if (!modal) return;
+  renderModerationList();
+  modal.classList.remove('hidden');
+}
+
+export function closeModerationModal() {
+  const modal = document.getElementById('moderationModal');
+  if (modal) modal.classList.add('hidden');
+}
+
+export function renderModerationList() {
+  const container = document.getElementById('moderationListContainer');
+  if (!container) return;
+
+  const pending = getPendingSubmissions();
+  const countBadge = document.getElementById('moderationPendingCount');
+  if (countBadge) {
+    countBadge.textContent = pending.length;
+  }
+
+  if (!pending || pending.length === 0) {
+    container.innerHTML = `
+      <div class="text-center py-12 text-slate-400">
+        <div class="w-14 h-14 rounded-2xl bg-emerald-950/80 text-emerald-400 border border-emerald-600/40 flex items-center justify-center mx-auto mb-3 shadow-lg">
+          <i class="fa-solid fa-circle-check text-2xl"></i>
+        </div>
+        <div class="font-bold text-white text-base">Κανένα αίτημα σε αναμονή!</div>
+        <div class="text-xs text-slate-400 mt-1 max-w-sm mx-auto">
+          Όλα τα υποβληθέντα σημεία έχουν ελεγχθεί και εγκριθεί. Τα νέα αιτήματα χρηστών εμφανίζονται αυτόματα εδώ.
+        </div>
+      </div>
+    `;
+    return;
+  }
+
+  container.innerHTML = pending.map(item => {
+    const ch = (item.chronicles && item.chronicles[0]) || {};
+    const hasYt = Boolean(ch.youtubeId);
+    const mod = item.moderation || {};
+    return `
+      <div class="p-4 rounded-2xl bg-slate-800/70 border border-slate-700/80 space-y-3 shadow-xl">
+        <div class="flex items-start justify-between gap-3 flex-wrap">
+          <div>
+            <div class="flex items-center gap-2 mb-1">
+              <span class="px-2 py-0.5 rounded text-[10px] font-black bg-amber-500/20 text-amber-300 border border-amber-500/30">
+                ⏳ Υπό Έγκριση
+              </span>
+              <span class="text-xs text-slate-400 font-mono">${ch.fromYear}${ch.toYear ? ` - ${ch.toYear}` : ''}</span>
+              <span class="text-xs text-slate-400">• ${escapeStr(item.name)}</span>
+            </div>
+            <h4 class="text-base font-bold text-white">${escapeStr(ch.title)}</h4>
+            <div class="text-xs text-slate-400 mt-0.5 flex items-center gap-2 flex-wrap">
+              <span>Συντάκτης: <strong class="text-slate-200">${escapeStr(mod.submittedBy || ch.authorName)}</strong></span>
+              <span>• Συντεταγμένες: <strong class="font-mono text-sky-400">${item.coords ? item.coords.join(', ') : ''}</strong></span>
+              <span>• Ημ/νία: <span class="font-mono text-slate-400">${mod.submittedAt ? new Date(mod.submittedAt).toLocaleDateString('el-GR') : 'Σήμερα'}</span></span>
+            </div>
+          </div>
+          <div class="flex items-center gap-2 shrink-0">
+            <button onclick="window.handleApproveSubmission('${item.id}')" class="px-3.5 py-1.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs shadow-lg transition flex items-center gap-1.5">
+              <i class="fa-solid fa-check"></i> Έγκριση
+            </button>
+            <button onclick="window.handleRejectSubmission('${item.id}')" class="px-3.5 py-1.5 rounded-xl bg-rose-600 hover:bg-rose-500 text-white font-bold text-xs shadow-lg transition flex items-center gap-1.5">
+              <i class="fa-solid fa-xmark"></i> Απόρριψη
+            </button>
+          </div>
+        </div>
+
+        <p class="text-xs text-slate-300 leading-relaxed bg-slate-900/80 p-3 rounded-xl border border-slate-800">${escapeStr(ch.story)}</p>
+
+        <!-- Media & Safety Verification Results -->
+        <div class="flex items-center justify-between text-[11px] pt-1.5 border-t border-slate-700/40 flex-wrap gap-2">
+          <div class="flex items-center gap-2 text-slate-400">
+            <span class="text-emerald-400 font-semibold flex items-center gap-1">
+              <i class="fa-solid fa-shield-halved"></i> Έλεγχος Ασφαλείας:
+            </span>
+            ${hasYt ? '<span class="text-red-400 flex items-center gap-1 font-bold"><i class="fa-brands fa-youtube"></i> Έγκυρο YouTube</span>' : ''}
+            <span>${mod.videoSafety?.message || 'Χωρίς βίντεο'}</span>
+          </div>
+          <button onclick="window.openSpotTimeCapsule('${item.id}')" class="text-sky-400 hover:text-sky-300 font-bold flex items-center gap-1 text-xs">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i> Άνοιγμα Κάρτας Σημείου
+          </button>
+        </div>
+      </div>
+    `;
+  }).join('');
+}
+
+export function handleApproveSubmission(spotId) {
+  const approved = approveSpotSubmission(spotId);
+  if (approved) {
+    const memIdx = timeCapsules.findIndex(s => s.id === spotId);
+    if (memIdx !== -1) {
+      timeCapsules[memIdx].status = 'approved';
+    }
+    if (window.renderCurrentTimeCapsules) {
+      window.renderCurrentTimeCapsules();
+    }
+    renderModerationList();
+    alert('✅ Το σημείο εγκρίθηκε επιτυχώς και είναι πλέον έγκυρο!');
+  }
+}
+
+export function handleRejectSubmission(spotId) {
+  const reason = prompt('Αιτιολογία απόρριψης (προαιρετικό):', 'Δεν πληροί τους όρους της κοινότητας');
+  if (reason === null) return;
+
+  rejectSpotSubmission(spotId, reason);
+  const memIdx = timeCapsules.findIndex(s => s.id === spotId);
+  if (memIdx !== -1) {
+    timeCapsules.splice(memIdx, 1);
+  }
+  if (window.renderCurrentTimeCapsules) {
+    window.renderCurrentTimeCapsules();
+  }
+  renderModerationList();
+  alert('❌ Το αίτημα απορρίφθηκε.');
+}
+
+export function handleApproveSpotDirectly(spotId) {
+  handleApproveSubmission(spotId);
+  closeSpotTimeCapsule();
+}
+
+export function exportApprovedForProduction() {
+  const custom = JSON.parse(localStorage.getItem('earthtimes_custom_spots') || '[]');
+  const approvedOnly = custom.filter(s => s.status === 'approved' || !s.status);
+
+  if (approvedOnly.length === 0) {
+    alert('Δεν υπάρχουν εγκεκριμένα νέα σημεία για εξαγωγή.');
+    return;
+  }
+
+  const dataStr = 'data:text/json;charset=utf-8,' + encodeURIComponent(JSON.stringify(approvedOnly, null, 2));
+  const downloadAnchor = document.createElement('a');
+  downloadAnchor.setAttribute('href', dataStr);
+  downloadAnchor.setAttribute('download', `approved_time_capsules_${new Date().toISOString().slice(0, 10)}.json`);
+  document.body.appendChild(downloadAnchor);
+  downloadAnchor.click();
+  downloadAnchor.remove();
+}
+
 

@@ -5,9 +5,9 @@
  */
 
 import { loadWorldData, loadCountryData, loadStateData } from './data-service.js?v=20261118_gastro_overhaul_v8';
-import * as MapModule from './map.js?v=20261119_video_timecapsule_v1';
-import * as UIModule from './ui.js?v=20261119_video_timecapsule_v1';
-import * as TimeMachine from './time-machine.js?v=20261119_kozani_1984_sync_v2';
+import * as MapModule from './map.js?v=20261119_video_timecapsule_v2';
+import * as UIModule from './ui.js?v=20261119_video_timecapsule_v2';
+import * as TimeMachine from './time-machine.js?v=20261119_moderation_v3';
 import * as NavigatorModule from './navigator.js?v=20261118_gastro_overhaul_v8';
 import * as GlobeModule from './globe-view.js?v=20261117_video_iframe_fix';
 import { US_STATES, CITY_TO_STATE } from './states-data.js?v=20261117_video_iframe_fix';
@@ -1076,6 +1076,12 @@ window.openSyncSpotsModal = TimeMachine.openSyncSpotsModal;
 window.closeSyncSpotsModal = TimeMachine.closeSyncSpotsModal;
 window.handleImportCustomSpotsFile = TimeMachine.handleImportCustomSpotsFile;
 window.handleImportCustomSpotsText = TimeMachine.handleImportCustomSpotsText;
+window.openModerationModal = TimeMachine.openModerationModal;
+window.closeModerationModal = TimeMachine.closeModerationModal;
+window.handleApproveSubmission = TimeMachine.handleApproveSubmission;
+window.handleRejectSubmission = TimeMachine.handleRejectSubmission;
+window.handleApproveSpotDirectly = TimeMachine.handleApproveSpotDirectly;
+window.exportApprovedForProduction = TimeMachine.exportApprovedForProduction;
 
 // App Initializer
 async function init() {
