@@ -10,6 +10,7 @@ import { fetchWikiArticle, fetchWikiArticleHtml, cleanWikiTitle } from './wiki-s
 import { calculateSubsolarPoint } from './solar-terminator.js?v=20261117_video_iframe_fix';
 import { CITY_TO_STATE } from './states-data.js?v=20261117_video_iframe_fix';
 import { CITY_TO_COUNTRY } from './navigator.js?v=20261118_gastro_overhaul_v8';
+import { renderGeographyTabHtml, mountLiveWeatherData } from './geo-service.js?v=20261119_geo_v1';
 
 let currentActiveVideoCityId = null;
 let currentActiveVideoType = 'drone';
@@ -4137,43 +4138,10 @@ export function renderTabContent(tabId, entity, activeYear = null, activeSpots =
   let html = '';
 
   if (tabId === 'geo') {
-    const summary = entity.geo?.summary || entity.geo?.description || entity.geo?.overview
-      || [entity.geo?.location, entity.geo?.topography, entity.geo?.climate].filter(Boolean).join(' ')
-      || entity.brief || '';
-    const rawHighlights = entity.geo?.highlights || (Array.isArray(entity.highlights) ? entity.highlights.map(h => typeof h === 'object' ? { title: h.title || 'Ορόσημο', desc: h.desc || '' } : { title: String(h), desc: '' }) : []);
-    const highlights = rawHighlights.map(item => ({
-      title: item.title || item.name || 'Ορόσημο',
-      desc: item.desc || item.description || ''
-    }));
-    html = `
-      <div class="space-y-3">
-        <div class="p-3.5 bg-slate-800/50 rounded-xl border border-slate-700/60 text-slate-200">
-          <div class="flex items-center gap-2 text-sky-400 font-semibold mb-1 text-sm">
-            <i class="fa-solid fa-map-location-dot"></i> Γεωγραφικό Ανάγλυφο & Φύση
-          </div>
-          <p class="leading-relaxed">${summary || 'Δεν υπάρχουν διαθέσιμες πληροφορίες.'}</p>
-        </div>
-
-        ${highlights.length ? `
-          <h4 class="text-xs uppercase tracking-wider font-bold text-slate-400 mt-4 mb-2 flex items-center gap-1.5">
-            <i class="fa-solid fa-compass text-sky-400"></i> Κυριότερα Γεωγραφικά Ορόσημα
-          </h4>
-          <div class="space-y-2.5">
-            ${highlights.map(item => `
-              <div onclick="window.openDeepDive('${escapeStr(item.title)}', '${escapeStr(item.desc)}', '${escapeStr(entity.name)}')" class="p-3 bg-slate-800/30 hover:bg-slate-800/80 hover:border-amber-500/50 transition border border-slate-700/40 rounded-xl cursor-pointer group">
-                <div class="flex items-center justify-between gap-2">
-                  <div class="font-bold text-slate-100 text-sm mb-0.5 text-sky-300 group-hover:text-amber-300 transition">${item.title}</div>
-                  <span class="text-[10px] text-amber-400 font-semibold opacity-0 group-hover:opacity-100 transition flex items-center gap-1 shrink-0">
-                    <i class="fa-solid fa-arrow-up-right-from-square"></i> Ανάλυση
-                  </span>
-                </div>
-                <div class="text-slate-300 text-xs leading-relaxed">${item.desc}</div>
-              </div>
-            `).join('')}
-          </div>
-        ` : ''}
-      </div>
-    `;
+    html = renderGeographyTabHtml(entity);
+    setTimeout(() => {
+      mountLiveWeatherData(entity.coords);
+    }, 40);
   } else if (tabId === 'hist') {
     const summary = entity.hist?.summary || entity.hist?.overview || entity.hist?.description
       || (typeof entity.history === 'string' ? entity.history : '')
@@ -5011,3 +4979,20 @@ export function narrateBrief(entity) {
     stopNarrate();
   }
 }
+
+// Global hook to refresh live geo weather and air quality
+window.refreshLiveGeoData = function() {
+  const curEntity = window.getCurrentEntity ? window.getCurrentEntity() : null;
+  if (curEntity && curEntity.coords) {
+    const content = document.getElementById('geoLiveWeatherContent');
+    if (content) {
+      content.innerHTML = `
+        <div class="py-3 flex items-center justify-center gap-3 text-slate-400 text-xs animate-pulse">
+          <i class="fa-solid fa-circle-notch fa-spin text-sky-400 text-base"></i>
+          <span>Ανανέωση live μετεωρολογικών & περιβαλλοντικών δεδομένων...</span>
+        </div>
+      `;
+    }
+    mountLiveWeatherData(curEntity.coords);
+  }
+};
