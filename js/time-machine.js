@@ -898,3 +898,146 @@ export function saveUserProfile(event) {
 
   closeUserProfileModal();
 }
+
+/**
+ * Backup / Sync Custom Spots (Export & Import)
+ * Allows users to transfer their custom spots across PCs (e.g. school lab to home)
+ */
+export function exportCustomSpots() {
+  try {
+    const raw = localStorage.getItem('earthtimes_custom_spots');
+    let spots = raw ? JSON.parse(raw) : [];
+
+    // Also include any custom spots in memory that may have been created in this session
+    timeCapsules.forEach(s => {
+      if (s.id && (s.id.startsWith('spot-') || s.id.startsWith('custom-')) && !spots.some(e => e.id === s.id)) {
+        spots.push(s);
+      }
+    });
+
+    if (!spots || spots.length === 0) {
+      alert('Δεν βρέθηκαν τοπικά αποθηκευμένα σημεία σε αυτόν τον περιηγητή για εξαγωγή.\n\nΌταν δημιουργείτε σημεία με δεξί κλικ στο χάρτη, αποθηκεύονται στη μνήμη του συγκεκριμένου υπολογιστή και μπορείτε να τα εξάγετε για να τα μεταφέρετε.');
+      return;
+    }
+
+    const dataStr = 'data:text/json;charset=utf-8,' + encodeURIComponent(JSON.stringify(spots, null, 2));
+    const downloadAnchor = document.createElement('a');
+    downloadAnchor.setAttribute('href', dataStr);
+    downloadAnchor.setAttribute('download', `earthtimes_custom_spots_${new Date().toISOString().slice(0, 10)}.json`);
+    document.body.appendChild(downloadAnchor);
+    downloadAnchor.click();
+    downloadAnchor.remove();
+  } catch (e) {
+    console.error('Error exporting custom spots:', e);
+    alert('Παρουσιάστηκε σφάλμα κατά την εξαγωγή των σημείων: ' + e.message);
+  }
+}
+
+export function importCustomSpotsData(spotsArray) {
+  if (!Array.isArray(spotsArray)) {
+    alert('Σφάλμα: Η μορφή των δεδομένων πρέπει να είναι λίστα (array) σημείων.');
+    return;
+  }
+
+  let importedCount = 0;
+  let updatedCount = 0;
+
+  let existing = [];
+  try {
+    existing = JSON.parse(localStorage.getItem('earthtimes_custom_spots') || '[]');
+  } catch (e) {
+    existing = [];
+  }
+
+  spotsArray.forEach(newSpot => {
+    if (!newSpot || !newSpot.id || !newSpot.coords) return;
+
+    // Normalize media and YouTube links
+    if (newSpot.chronicles && Array.isArray(newSpot.chronicles)) {
+      newSpot.chronicles.forEach(c => normalizeChronicleMedia(c));
+    }
+
+    // Check existing in localStorage
+    const exIdx = existing.findIndex(s => s.id === newSpot.id);
+    if (exIdx >= 0) {
+      existing[exIdx] = newSpot;
+      updatedCount++;
+    } else {
+      existing.push(newSpot);
+      importedCount++;
+    }
+
+    // Check in memory timeCapsules
+    const memIdx = timeCapsules.findIndex(s => s.id === newSpot.id);
+    if (memIdx >= 0) {
+      timeCapsules[memIdx] = newSpot;
+    } else {
+      timeCapsules.push(newSpot);
+    }
+  });
+
+  localStorage.setItem('earthtimes_custom_spots', JSON.stringify(existing));
+
+  if (window.renderCurrentTimeCapsules) {
+    window.renderCurrentTimeCapsules();
+  }
+
+  alert(`Επιτυχής συγχρονισμός!\nΠροστέθηκαν: ${importedCount} νέα σημεία.\nΕνημερώθηκαν: ${updatedCount} υπάρχοντα σημεία.`);
+  closeSyncSpotsModal();
+}
+
+export function handleImportCustomSpotsFile(event) {
+  const file = event.target.files && event.target.files[0];
+  if (!file) return;
+
+  const reader = new FileReader();
+  reader.onload = (e) => {
+    try {
+      const data = JSON.parse(e.target.result);
+      importCustomSpotsData(data);
+    } catch (err) {
+      alert('Σφάλμα ανάγνωσης αρχείου JSON: ' + err.message);
+    }
+  };
+  reader.readAsText(file);
+}
+
+export function handleImportCustomSpotsText() {
+  const textarea = document.getElementById('syncSpotsJsonText');
+  if (!textarea) return;
+  const text = textarea.value.trim();
+  if (!text) {
+    alert('Παρακαλώ επικολλήστε το περιεχόμενο JSON στο πεδίο κειμένου.');
+    return;
+  }
+
+  try {
+    const data = JSON.parse(text);
+    importCustomSpotsData(data);
+    textarea.value = '';
+  } catch (err) {
+    alert('Σφάλμα: Μη έγκυρη μορφή JSON: ' + err.message);
+  }
+}
+
+export function openSyncSpotsModal() {
+  const modal = document.getElementById('syncSpotsModal');
+  if (!modal) return;
+  const countEl = document.getElementById('syncCustomSpotsCount');
+  if (countEl) {
+    try {
+      const raw = localStorage.getItem('earthtimes_custom_spots');
+      const spots = raw ? JSON.parse(raw) : [];
+      countEl.textContent = spots.length;
+    } catch (e) {
+      countEl.textContent = '0';
+    }
+  }
+  modal.classList.remove('hidden');
+}
+
+export function closeSyncSpotsModal() {
+  const modal = document.getElementById('syncSpotsModal');
+  if (modal) modal.classList.add('hidden');
+}
+

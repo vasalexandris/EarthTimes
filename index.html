@@ -870,6 +870,12 @@
             <i class="fa-solid fa-clock-rotate-left"></i>
             <span class="hidden sm:inline">Χρονολόγιο</span>
           </button>
+
+          <!-- Sync / Backup Custom Spots Button -->
+          <button onclick="openSyncSpotsModal()" title="Εξαγωγή & Εισαγωγή Σημείων (Μεταφορά σε άλλο PC)" class="h-7 px-2.5 rounded-lg bg-slate-800 hover:bg-slate-750 text-emerald-300 border border-emerald-600/40 text-[11px] font-bold flex items-center gap-1.5 shrink-0 transition">
+            <i class="fa-solid fa-cloud-arrow-up"></i>
+            <span class="hidden sm:inline">Συγχρονισμός</span>
+          </button>
         </div>
       </div>
 
@@ -1164,7 +1170,12 @@
           <h3 class="text-lg font-bold text-white flex items-center gap-2">
             <i class="fa-solid fa-location-dot text-amber-400"></i> Δημιουργία Νέας Χρονοκάψουλας
           </h3>
-          <p class="text-xs text-slate-400">Προσθέστε το δικό σας σημείο, σπίτι ή κατάστημα στο παγκόσμιο χρονικό!</p>
+          <p class="text-xs text-slate-400">
+            Προσθέστε το δικό σας σημείο, σπίτι ή κατάστημα στο παγκόσμιο χρονικό!
+            <button type="button" onclick="openSyncSpotsModal()" class="text-emerald-400 hover:text-emerald-300 underline font-semibold ml-1">
+              <i class="fa-solid fa-cloud-arrow-up"></i> Μεταφορά σε άλλο PC
+            </button>
+          </p>
         </div>
         <button onclick="closeCreateSpotModal()" class="text-slate-400 hover:text-white">
           <i class="fa-solid fa-xmark text-lg"></i>
@@ -1353,8 +1364,85 @@
     </div>
   </div>
 
+  <!-- ================= 9. SYNC & BACKUP CUSTOM SPOTS MODAL ================= -->
+  <div id="syncSpotsModal" class="fixed inset-0 z-[2000] flex items-center justify-center bg-slate-950/85 backdrop-blur-md p-4 hidden">
+    <div class="w-full max-w-xl bg-slate-900 border border-emerald-500/50 rounded-3xl p-6 shadow-2xl max-h-[90vh] overflow-y-auto">
+      <div class="flex items-center justify-between mb-4 pb-3 border-b border-slate-800">
+        <div>
+          <h3 class="text-lg font-bold text-white flex items-center gap-2">
+            <i class="fa-solid fa-cloud-arrow-up text-emerald-400"></i> Συγχρονισμός & Μεταφορά Σημείων
+          </h3>
+          <p class="text-xs text-slate-400">Μεταφέρετε εύκολα τα σημεία που δημιουργήσατε μεταξύ σχολείου, σπιτιού και άλλων συσκευών!</p>
+        </div>
+        <button onclick="closeSyncSpotsModal()" class="text-slate-400 hover:text-white">
+          <i class="fa-solid fa-xmark text-lg"></i>
+        </button>
+      </div>
+
+      <div class="space-y-4 text-xs text-slate-300">
+        <div class="p-3.5 rounded-2xl bg-emerald-950/40 border border-emerald-600/40 text-emerald-200">
+          <div class="font-bold flex items-center gap-1.5 mb-1">
+            <i class="fa-solid fa-circle-info"></i> Πώς λειτουργεί η αποθήκευση:
+          </div>
+          Τα νέα σημεία που δημιουργείτε με δεξί κλικ στο χάρτη αποθηκεύονται στη μνήμη του εκάστοτε περιηγητή (Browser Local Storage). Για να εμφανίζονται και σε άλλον υπολογιστή (π.χ. από το εργαστήριο του σχολείου στο σπίτι), κάντε <strong>Εξαγωγή Αρχείου</strong> και κατόπιν <strong>Εισαγωγή</strong> στον άλλο υπολογιστή!
+          <div class="mt-2 text-[11px] text-emerald-400 font-semibold">
+            Αποθηκευμένα σημεία σε αυτόν τον περιηγητή: <span id="syncCustomSpotsCount" class="font-bold font-mono text-white bg-emerald-800/60 px-2 py-0.5 rounded">0</span>
+          </div>
+        </div>
+
+        <!-- Action 1: Export -->
+        <div class="p-4 rounded-2xl bg-slate-800/50 border border-slate-700/80 flex items-center justify-between gap-4">
+          <div>
+            <div class="font-bold text-white text-sm flex items-center gap-2">
+              <i class="fa-solid fa-file-export text-emerald-400"></i> 1. Εξαγωγή Σημείων (Download Backup)
+            </div>
+            <div class="text-[11px] text-slate-400 mt-0.5">
+              Κατεβάστε ένα αρχείο <code>earthtimes_custom_spots.json</code> για να το πάρετε μαζί σας σε USB ή email.
+            </div>
+          </div>
+          <button onclick="exportCustomSpots()" class="px-4 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs shadow-lg transition flex items-center gap-1.5 shrink-0">
+            <i class="fa-solid fa-download"></i> Εξαγωγή
+          </button>
+        </div>
+
+        <!-- Action 2: Import File -->
+        <div class="p-4 rounded-2xl bg-slate-800/50 border border-slate-700/80 space-y-2">
+          <div class="font-bold text-white text-sm flex items-center gap-2">
+            <i class="fa-solid fa-file-import text-sky-400"></i> 2. Εισαγωγή από Αρχείο JSON
+          </div>
+          <div class="text-[11px] text-slate-400">
+            Επιλέξτε το αρχείο JSON που εξάγατε από το άλλο PC. Τα σημεία θα ενσωματωθούν άμεσα στο χάρτη!
+          </div>
+          <label class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-sky-600 hover:bg-sky-500 text-white font-bold text-xs shadow-lg transition cursor-pointer">
+            <i class="fa-solid fa-upload"></i> Επιλογή Αρχείου JSON
+            <input type="file" accept=".json,application/json" onchange="handleImportCustomSpotsFile(event)" class="hidden">
+          </label>
+        </div>
+
+        <!-- Action 3: Paste JSON text directly -->
+        <div class="p-4 rounded-2xl bg-slate-800/50 border border-slate-700/80 space-y-2">
+          <div class="font-bold text-white text-sm flex items-center gap-2">
+            <i class="fa-solid fa-paste text-amber-400"></i> 3. Επικόλληση Κώδικα JSON (Εναλλακτικά)
+          </div>
+          <textarea id="syncSpotsJsonText" rows="2" placeholder='Επικολλήστε εδώ το περιεχόμενο JSON [ { "id": ... } ]' class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-xs font-mono text-slate-300 focus:ring-2 focus:ring-amber-500 outline-none"></textarea>
+          <div class="flex justify-end">
+            <button onclick="handleImportCustomSpotsText()" class="px-4 py-1.5 rounded-xl bg-amber-600 hover:bg-amber-500 text-slate-950 font-bold text-xs shadow transition flex items-center gap-1.5">
+              <i class="fa-solid fa-check"></i> Εισαγωγή Κειμένου
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex justify-end pt-4 mt-2 border-t border-slate-800">
+        <button onclick="closeSyncSpotsModal()" class="px-5 py-2 rounded-xl bg-slate-800 hover:bg-slate-750 text-slate-300 text-xs font-semibold transition">
+          Κλείσιμο
+        </button>
+      </div>
+    </div>
+  </div>
+
   <!-- Modular Application Scripts -->
-  <script type="module" src="js/app.js?v=20261119_video_timecapsule_v1"></script>
+  <script type="module" src="js/app.js?v=20261119_kozani_1984_sync_v2"></script>
   <!-- Fullscreen Toggle Script (Android, WebKit, Desktop) -->
   <script>
     window.toggleFullScreen = function() {

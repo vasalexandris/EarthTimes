@@ -352,6 +352,46 @@
     ]
   },
   {
+    "id": "kozani-spot-1984-drive",
+    "cityId": "kozani",
+    "name": "Κοζάνη 1984: Ιστορική Διαδρομή & Οδήγηση στην Πόλη",
+    "englishName": "Kozani 1984: Historic City Drive & Streets",
+    "coords": [40.3015, 21.7875],
+    "address": "Κεντρικές Οδοί & Πλατεία Νίκης, Κοζάνη",
+    "chronicles": [
+      {
+        "id": "kozani-1984-drive-chronicle",
+        "fromYear": 1984,
+        "toYear": 1984,
+        "title": "Αυθεντικά Πλάνα Οδήγησης στους Δρόμους της Κοζάνης (1984)",
+        "category": "culture",
+        "authorType": "citizen",
+        "authorName": "Θέμης Αργυρίου (Ιστορικό Αρχείο)",
+        "verified": true,
+        "story": "Μοναδικό ιστορικό ντοκουμέντο και διαδρομή με αυτοκίνητο στους δρόμους της Κοζάνης το 1984. Καταγράφονται οι παλιές προσόψεις των καταστημάτων, τα οχήματα της εποχής, οι πολίτες και η καθημερινότητα της δεκαετίας του '80 στο κέντρο και τις γειτονιές της πόλης.",
+        "youtubeId": "vFpoaMmjVg0",
+        "videoUrl": "https://www.youtube.com/watch?v=vFpoaMmjVg0",
+        "photos": [
+          {
+            "url": "https://img.youtube.com/vi/vFpoaMmjVg0/hqdefault.jpg",
+            "caption": "Στιγμιότυπο από την ιστορική οδήγηση στην Κοζάνη το 1984",
+            "year": 1984,
+            "credit": "Themis Argyriou / Kozani City 1984",
+            "isYouTube": true,
+            "youtubeId": "vFpoaMmjVg0"
+          }
+        ],
+        "memories": [
+          {
+            "author": "Βασίλης Αλεξανδρής",
+            "year": 1984,
+            "text": "Αυθεντική καταγραφή της Κοζάνης όπως ήταν το 1984, ένα ανεκτίμητο οπτικοακουστικό ταξίδι στο χρόνο."
+          }
+        ]
+      }
+    ]
+  },
+  {
     "id": "kozani-spot-koventario",
     "cityId": "kozani",
     "name": "Κοβεντάρειος Δημοτική Βιβλιοθήκη & Χάρτα Ρήγα Φεραίου",
