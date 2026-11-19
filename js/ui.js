@@ -12,6 +12,7 @@ import { CITY_TO_STATE } from './states-data.js?v=20261117_video_iframe_fix';
 import { CITY_TO_COUNTRY } from './navigator.js?v=20261118_gastro_overhaul_v8';
 import { renderGeographyTabHtml, mountLiveWeatherData } from './geo-service.js?v=20261119_geo_v1';
 import { renderHistoryTabHtml } from './history-service.js?v=20261119_hist_v1';
+import { renderCultureTabHtml } from './culture-service.js?v=20261119_cult_v1';
 
 let currentActiveVideoCityId = null;
 let currentActiveVideoType = 'drone';
@@ -689,7 +690,7 @@ export function setOverlayMediaMode(mode, specificId = null) {
     iframe.className = 'w-full h-full max-w-5xl rounded-xl shadow-2xl border border-amber-500/40 bg-white transition-all duration-300';
     const searchQuery = query || (currentActiveVideoCityId ? currentActiveVideoCityId.replace(/_/g, ' ') : 'Travel');
     if (title) title.innerText = `✨ AI Search: ${searchQuery}`;
-    const targetUrl = `https://www.bing.com/copilotsearch?q=${encodeURIComponent(searchQuery)}&FORM=CSSCOP`;
+    const targetUrl = `https://www.bing.com/search?q=${encodeURIComponent(searchQuery)}`;
     if (iframe.src !== targetUrl) {
       iframe.src = targetUrl;
     }
@@ -4178,49 +4179,7 @@ export function renderTabContent(tabId, entity, activeYear = null, activeSpots =
       </div>
     `;
   } else if (tabId === 'cult') {
-    const summary = entity.cult?.summary || entity.cult?.overview
-      || (typeof entity.culture === 'string' ? entity.culture : '')
-      || [entity.cult?.traditions, entity.cult?.cuisine].filter(Boolean).join(' ')
-      || '';
-    const items = entity.cult?.items || entity.cult?.highlights || [];
-    html = `
-      <div class="space-y-3">
-        <div class="p-3.5 bg-slate-800/50 rounded-xl border border-slate-700/60 text-slate-200">
-          <div class="flex items-center gap-2 text-violet-400 font-semibold mb-1 text-sm">
-            <i class="fa-solid fa-masks-theater"></i> Πολιτισμός, Γλώσσες & Παραδόσεις
-          </div>
-          <p class="leading-relaxed">${summary || 'Δεν υπάρχουν διαθέσιμες πληροφορίες.'}</p>
-        </div>
-
-        ${items.length ? `
-          <div class="space-y-2.5 mt-3">
-            ${items.map(item => `
-              <div onclick="window.openDeepDive('${escapeStr(item.title)}', '${escapeStr(item.desc)}', '${escapeStr(entity.name)}')" class="p-3 bg-slate-800/30 hover:bg-slate-800/80 hover:border-amber-500/50 transition border border-slate-700/40 rounded-xl cursor-pointer group">
-                <div class="flex items-center justify-between gap-2">
-                  <div class="font-bold text-slate-100 text-sm mb-0.5 text-violet-300 group-hover:text-amber-300 transition">${item.title}</div>
-                  <span class="text-[10px] text-amber-400 font-semibold opacity-0 group-hover:opacity-100 transition flex items-center gap-1 shrink-0">
-                    <i class="fa-solid fa-arrow-up-right-from-square"></i> Ανάλυση
-                  </span>
-                </div>
-                <div class="text-slate-300 text-xs leading-relaxed">${item.desc}</div>
-              </div>
-            `).join('')}
-          </div>
-        ` : ''}
-        </div>
-
-        ${entity.pois ? `
-          <div class="p-3 bg-sky-950/40 border border-sky-800/50 rounded-xl mt-4">
-            <div class="flex items-center gap-2 text-sky-300 font-bold text-xs mb-1">
-              <i class="fa-solid fa-map-pin"></i> Σημεία στον Χάρτη
-            </div>
-            <div class="text-xs text-slate-300">
-              Έχουν τοποθετηθεί ${entity.pois.length} διαδραστικά σημεία στον χάρτη. Κάντε κλικ στα εικονίδια για να δείτε λεπτομέρειες.
-            </div>
-          </div>
-        ` : ''}
-      </div>
-    `;
+    html = renderCultureTabHtml(entity);
   } else if (tabId === 'guide') {
     const items = getCuratedGuideItems(entity);
     html = `
