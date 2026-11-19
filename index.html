@@ -635,9 +635,9 @@
 
           <!-- FLOATING "+ Νέο Σημείο" IN TOP-RIGHT CORNER OF MAP -->
           <div id="addSpotFloatingContainer" class="absolute top-3 right-3 z-20">
-            <button id="toggleAddSpotBtn" onclick="toggleAddSpotMode()" title="Προσθήκη Νέου Σημείου (Κάντε κλικ ή δεξί κλικ στο χάρτη)" class="h-9 px-3.5 bg-gradient-to-r from-amber-500 to-amber-400 hover:from-amber-400 hover:to-amber-300 text-slate-950 rounded-xl font-bold text-xs flex items-center gap-2 shadow-xl hover:scale-105 transition border border-amber-300/60">
-              <i class="fa-solid fa-plus text-sm"></i>
-              <span>Νέο Σημείο</span>
+            <button id="toggleAddSpotBtn" onclick="toggleAddSpotMode()" title="Απαιτείται σύνδεση με λογαριασμό Google για προσθήκη σημείου" class="h-9 px-3.5 bg-slate-900/90 hover:bg-slate-800 text-amber-300 border border-amber-500/30 rounded-xl font-medium text-xs flex items-center gap-2 shadow-xl hover:scale-105 transition cursor-pointer">
+              <i class="fa-solid fa-lock text-amber-400"></i>
+              <span>+ Σημείο</span>
             </button>
           </div>
 
@@ -1614,7 +1614,7 @@
   </div>
 
   <!-- Modular Application Scripts -->
-  <script type="module" src="js/app.js?v=20261119_landing_auth_v7"></script>
+  <script type="module" src="js/app.js?v=20261119_auth_guards_v8"></script>
   <!-- Fullscreen Toggle Script (Android, WebKit, Desktop) -->
   <script>
     window.toggleFullScreen = function() {

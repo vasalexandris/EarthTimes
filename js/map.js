@@ -163,9 +163,13 @@ export function setAddSpotMode(enabled) {
   const btn = document.getElementById('toggleAddSpotBtn');
   if (btn) {
     if (addSpotMode) {
-      btn.className = 'h-8 px-2.5 bg-amber-500 text-slate-950 font-bold border border-amber-300 rounded-lg flex items-center gap-1.5 text-xs shadow-lg transition animate-pulse';
+      btn.className = 'h-9 px-3.5 bg-amber-500 text-slate-950 font-bold border border-amber-300 rounded-xl flex items-center gap-1.5 text-xs shadow-lg transition animate-pulse cursor-pointer';
     } else {
-      btn.className = 'h-8 px-2.5 bg-slate-900/90 hover:bg-slate-800 text-amber-400 border border-slate-700 rounded-lg flex items-center gap-1.5 text-xs font-medium shadow-lg transition';
+      if (window.updateUserBadgeUI) {
+        window.updateUserBadgeUI();
+      } else {
+        btn.className = 'h-9 px-3.5 bg-slate-900/90 hover:bg-slate-800 text-amber-400 border border-slate-700 rounded-xl flex items-center gap-1.5 text-xs font-medium shadow-lg transition cursor-pointer';
+      }
     }
   }
   return addSpotMode;

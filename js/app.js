@@ -875,6 +875,12 @@ export function narrateBrief() {
 }
 
 export function toggleAddSpotMode() {
+  if (!TimeMachine.isUserLoggedIn()) {
+    if (confirm('🔒 Απαιτείται Σύνδεση με Google\n\nΓια να προσθέσετε νέα ιστορικά σημεία στο χάρτη, παρακαλούμε συνδεθείτε πρώτα με το λογαριασμό σας Google.\n\nΘέλετε να πραγματοποιήσετε σύνδεση τώρα;')) {
+      TimeMachine.handleGoogleLogin();
+    }
+    return;
+  }
   const active = MapModule.setAddSpotMode(!MapModule.isAddSpotMode());
   if (active) {
     UIModule.updateStatusBadge("Κάντε κλικ ή δεξί κλικ στο χάρτη για να βάλετε νέα Χρονοκάψουλα!");
@@ -1087,6 +1093,8 @@ window.closeCloudDbSettingsModal = TimeMachine.closeCloudDbSettingsModal;
 window.saveCloudDbSettings = TimeMachine.saveCloudDbSettings;
 window.loginWithGoogle = TimeMachine.handleGoogleLogin;
 window.logoutUser = TimeMachine.handleGoogleLogout;
+window.isUserLoggedIn = TimeMachine.isUserLoggedIn;
+window.updateUserBadgeUI = TimeMachine.updateUserBadgeUI;
 
 // App Initializer
 async function init() {
@@ -1216,6 +1224,12 @@ async function init() {
 
     // Register Map Click / Right Click Handler to add Time Capsule Spots!
     MapModule.setOnMapRightClickHandler((lat, lng) => {
+      if (!TimeMachine.isUserLoggedIn()) {
+        if (confirm('🔒 Απαιτείται Σύνδεση με Google\n\nΓια να προσθέσετε νέο ιστορικό σημείο σε αυτές τις συντεταγμένες, παρακαλούμε συνδεθείτε πρώτα με το λογαριασμό σας Google.\n\nΘέλετε να πραγματοποιήσετε σύνδεση τώρα;')) {
+          TimeMachine.handleGoogleLogin();
+        }
+        return;
+      }
       TimeMachine.openCreateSpotModal(lat, lng);
     });
 

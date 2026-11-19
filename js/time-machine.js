@@ -205,6 +205,10 @@ export function setCurrentUser(userData) {
   updateUserBadgeUI();
 }
 
+export function isUserLoggedIn() {
+  return Boolean(currentUser && currentUser.uid && currentUser.email);
+}
+
 export function updateUserBadgeUI() {
   const nameEl = document.getElementById('userDisplayName');
   const roleEl = document.getElementById('userRoleBadge');
@@ -221,7 +225,21 @@ export function updateUserBadgeUI() {
   const landingOnlineDot = document.getElementById('landingUserOnlineDot');
   const landingAuthBanner = document.getElementById('landingAuthBanner');
 
-  const isGoogleLoggedIn = Boolean(currentUser && currentUser.uid && currentUser.email);
+  const isGoogleLoggedIn = isUserLoggedIn();
+
+  // Floating + Spot button
+  const addSpotBtn = document.getElementById('toggleAddSpotBtn');
+  if (addSpotBtn) {
+    if (isGoogleLoggedIn) {
+      addSpotBtn.innerHTML = '<i class="fa-solid fa-location-dot"></i><span>+ Σημείο</span>';
+      addSpotBtn.title = 'Προσθήκη Νέου Σημείου (Κάντε κλικ ή δεξί κλικ στο χάρτη)';
+      addSpotBtn.className = 'h-9 px-3.5 bg-gradient-to-r from-amber-500 to-amber-400 hover:from-amber-400 hover:to-amber-300 text-slate-950 rounded-xl font-bold text-xs flex items-center gap-2 shadow-xl hover:scale-105 transition border border-amber-300/60 cursor-pointer';
+    } else {
+      addSpotBtn.innerHTML = '<i class="fa-solid fa-lock text-amber-400"></i><span>+ Σημείο</span>';
+      addSpotBtn.title = 'Απαιτείται σύνδεση με λογαριασμό Google για προσθήκη σημείου';
+      addSpotBtn.className = 'h-9 px-3.5 bg-slate-900/90 hover:bg-slate-800 text-amber-300 border border-amber-500/30 rounded-xl font-medium text-xs flex items-center gap-2 shadow-xl hover:scale-105 transition cursor-pointer';
+    }
+  }
 
   if (isGoogleLoggedIn) {
     const displayName = currentUser.name || currentUser.email.split('@')[0];
@@ -700,12 +718,19 @@ export function selectSpotEra(chronicleId) {
  * Creating a New Time Capsule Spot directly from the map (Right-Click or Map Click)
  */
 export function openCreateSpotModal(lat, lng) {
+  if (!isUserLoggedIn()) {
+    if (confirm('🔒 Απαιτείται Σύνδεση με Google\n\nΓια να δημιουργήσετε νέο ιστορικό σημείο στο χάρτη, παρακαλούμε συνδεθείτε πρώτα με το λογαριασμό σας Google.\n\nΘέλετε να πραγματοποιήσετε σύνδεση τώρα;')) {
+      handleGoogleLogin();
+    }
+    return;
+  }
+
   const modal = document.getElementById('createSpotModal');
   if (!modal) return;
 
   document.getElementById('newSpotLat').value = lat.toFixed(6);
   document.getElementById('newSpotLng').value = lng.toFixed(6);
-  document.getElementById('newSpotAuthorName').value = currentUser.name;
+  document.getElementById('newSpotAuthorName').value = currentUser.name || currentUser.email;
   document.getElementById('newSpotAuthorType').value = currentUser.role === 'official' ? 'official' : 'citizen';
 
   modal.classList.remove('hidden');
@@ -718,6 +743,11 @@ export function closeCreateSpotModal() {
 
 export function submitNewSpot(event) {
   event.preventDefault();
+
+  if (!isUserLoggedIn()) {
+    alert('🔒 Απαιτείται Σύνδεση: Πρέπει να είστε συνδεδεμένοι με λογαριασμό Google για να καταχωρίσετε νέο σημείο.');
+    return;
+  }
 
   const lat = parseFloat(document.getElementById('newSpotLat').value);
   const lng = parseFloat(document.getElementById('newSpotLng').value);
@@ -842,12 +872,19 @@ export function submitNewSpot(event) {
  * Community Story Submission for Existing Spot
  */
 export function openAddMemoryForm(spotId, chronicleId) {
+  if (!isUserLoggedIn()) {
+    if (confirm('🔒 Απαιτείται Σύνδεση με Google\n\nΓια να καταχωρίσετε τη δική σας προσωπική ανάμνηση, παρακαλούμε συνδεθείτε πρώτα με το λογαριασμό σας Google.\n\nΘέλετε να πραγματοποιήσετε σύνδεση τώρα;')) {
+      handleGoogleLogin();
+    }
+    return;
+  }
+
   const modal = document.getElementById('addMemoryModal');
   if (!modal) return;
 
   document.getElementById('formSpotId').value = spotId;
   document.getElementById('formChronicleId').value = chronicleId;
-  document.getElementById('memoryAuthor').value = currentUser.name;
+  document.getElementById('memoryAuthor').value = currentUser.name || currentUser.email;
   modal.classList.remove('hidden');
 }
 
@@ -857,10 +894,17 @@ export function closeAddMemoryModal() {
 }
 
 export function openAddEraForm(spotId) {
+  if (!isUserLoggedIn()) {
+    if (confirm('🔒 Απαιτείται Σύνδεση με Google\n\nΓια να προσθέσετε νέα χρονική περίοδο σε αυτό το σημείο, παρακαλούμε συνδεθείτε πρώτα με το λογαριασμό σας Google.\n\nΘέλετε να πραγματοποιήσετε σύνδεση τώρα;')) {
+      handleGoogleLogin();
+    }
+    return;
+  }
+
   const modal = document.getElementById('addEraModal');
   if (!modal) return;
   document.getElementById('formNewEraSpotId').value = spotId;
-  document.getElementById('eraAuthorName').value = currentUser.name;
+  document.getElementById('eraAuthorName').value = currentUser.name || currentUser.email;
   document.getElementById('eraAuthorType').value = currentUser.role === 'official' ? 'official' : 'citizen';
   modal.classList.remove('hidden');
 }
@@ -872,9 +916,15 @@ export function closeAddEraModal() {
 
 export function submitMemory(event) {
   event.preventDefault();
+
+  if (!isUserLoggedIn()) {
+    alert('🔒 Απαιτείται Σύνδεση: Πρέπει να είστε συνδεδεμένοι με λογαριασμό Google για να προσθέσετε ανάμνηση.');
+    return;
+  }
+
   const spotId = document.getElementById('formSpotId').value;
   const chronicleId = document.getElementById('formChronicleId').value;
-  const author = document.getElementById('memoryAuthor').value.trim();
+  const author = document.getElementById('memoryAuthor').value.trim() || currentUser.name || currentUser.email;
   const year = document.getElementById('memoryYear').value.trim();
   const text = document.getElementById('memoryText').value.trim();
 
@@ -901,6 +951,12 @@ export function submitMemory(event) {
 
 export function submitNewEra(event) {
   event.preventDefault();
+
+  if (!isUserLoggedIn()) {
+    alert('🔒 Απαιτείται Σύνδεση: Πρέπει να είστε συνδεδεμένοι με λογαριασμό Google για να προσθέσετε περίοδο.');
+    return;
+  }
+
   const spotId = document.getElementById('formNewEraSpotId').value;
   const title = document.getElementById('eraTitle').value.trim();
   const fromYear = parseInt(document.getElementById('eraFromYear').value, 10);
