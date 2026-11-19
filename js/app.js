@@ -1082,6 +1082,9 @@ window.handleApproveSubmission = TimeMachine.handleApproveSubmission;
 window.handleRejectSubmission = TimeMachine.handleRejectSubmission;
 window.handleApproveSpotDirectly = TimeMachine.handleApproveSpotDirectly;
 window.exportApprovedForProduction = TimeMachine.exportApprovedForProduction;
+window.openCloudDbSettingsModal = TimeMachine.openCloudDbSettingsModal;
+window.closeCloudDbSettingsModal = TimeMachine.closeCloudDbSettingsModal;
+window.saveCloudDbSettings = TimeMachine.saveCloudDbSettings;
 
 // App Initializer
 async function init() {

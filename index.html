@@ -1472,6 +1472,9 @@
           <span class="text-slate-300">Αιτήματα σε αναμονή ελέγχου: <strong id="moderationPendingCount" class="text-white font-mono bg-slate-700 px-2 py-0.5 rounded">0</strong></span>
         </div>
         <div class="flex items-center gap-2">
+          <button onclick="openCloudDbSettingsModal()" class="px-3 py-1.5 rounded-xl bg-sky-700/80 hover:bg-sky-600 text-sky-200 hover:text-white font-bold text-xs shadow transition flex items-center gap-1.5">
+            <i class="fa-solid fa-gear"></i> Σύνδεση Firebase
+          </button>
           <button onclick="exportApprovedForProduction()" class="px-3 py-1.5 rounded-xl bg-emerald-600/90 hover:bg-emerald-500 text-white font-bold text-xs shadow transition flex items-center gap-1.5">
             <i class="fa-solid fa-download"></i> Εξαγωγή Εγκεκριμένων (JSON)
           </button>
@@ -1481,9 +1484,9 @@
       <!-- Cloud DB Integration Architecture Guide -->
       <div class="mb-5 p-3 rounded-xl bg-sky-950/40 border border-sky-600/30 text-[11px] text-sky-200 leading-relaxed">
         <div class="font-bold flex items-center gap-1.5 text-sky-300 mb-1">
-          <i class="fa-solid fa-database"></i> Αρχιτεκτονική Cloud Database (Firebase / Supabase):
+          <i class="fa-solid fa-database"></i> Αρχιτεκτονική Cloud Database (Google Firebase):
         </div>
-        Κάθε αίτημα χρήστη περνά πρώτα από αυτόματο έλεγχο ασφαλείας πηγής (μόνο πλατφόρμες με ελεγμένο περιεχόμενο όπως YouTube / Wikimedia / Unsplash). Με τη σύνδεση Cloud DB (π.χ. Firebase Firestore), τα αιτήματα συγχρονίζονται σε πραγματικό χρόνο και μόλις πατήσετε <strong>«Έγκριση»</strong>, δημοσιεύονται ακαριαία σε όλους τους χρήστες παγκοσμίως.
+        Κάθε αίτημα χρήστη περνά πρώτα από αυτόματο έλεγχο ασφαλείας πηγής (μόνο πλατφόρμες με ελεγμένο περιεχόμενο όπως YouTube / Wikimedia / Unsplash). Με τη σύνδεση Firebase Firestore, τα αιτήματα συγχρονίζονται σε πραγματικό χρόνο και μόλις πατήσετε <strong>«Έγκριση»</strong>, δημοσιεύονται ακαριαία σε όλους τους χρήστες παγκοσμίως.
       </div>
 
       <!-- Dynamic Submissions List Container -->
@@ -1499,8 +1502,55 @@
     </div>
   </div>
 
+  <!-- ================= 11. FIREBASE CLOUD DB SETTINGS MODAL ================= -->
+  <div id="cloudDbModal" class="fixed inset-0 z-[2100] flex items-center justify-center bg-slate-950/85 backdrop-blur-md p-4 hidden">
+    <div class="w-full max-w-lg bg-slate-900 border border-amber-500/50 rounded-3xl p-6 shadow-2xl">
+      <div class="flex items-center justify-between mb-4 pb-3 border-b border-slate-800">
+        <h3 class="text-base font-bold text-white flex items-center gap-2">
+          <i class="fa-solid fa-fire text-amber-500"></i> Ρυθμίσεις Google Firebase
+        </h3>
+        <button onclick="closeCloudDbSettingsModal()" class="text-slate-400 hover:text-white">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <form onsubmit="saveCloudDbSettings(event)" class="space-y-3 text-xs">
+        <p class="text-slate-300 text-xs">
+          Εισάγετε τα στοιχεία από το Firebase Console (Project Settings -> General -> Your apps -> Web app) για άμεσο συγχρονισμό:
+        </p>
+
+        <div>
+          <label class="block font-semibold text-slate-300 mb-1">API Key (apiKey)</label>
+          <input type="text" id="fbApiKeyInput" required placeholder="AIzaSy..." class="w-full bg-slate-800 border border-slate-700 rounded-xl px-3 py-2 text-xs text-white font-mono focus:ring-2 focus:ring-amber-500 outline-none">
+        </div>
+
+        <div>
+          <label class="block font-semibold text-slate-300 mb-1">Project ID (projectId)</label>
+          <input type="text" id="fbProjectIdInput" required placeholder="earthtimes-xxxx" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-3 py-2 text-xs text-white font-mono focus:ring-2 focus:ring-amber-500 outline-none">
+        </div>
+
+        <div>
+          <label class="block font-semibold text-slate-300 mb-1">Auth Domain (authDomain)</label>
+          <input type="text" id="fbAuthDomainInput" placeholder="earthtimes-xxxx.firebaseapp.com" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-3 py-2 text-xs text-white font-mono focus:ring-2 focus:ring-amber-500 outline-none">
+        </div>
+
+        <div>
+          <label class="block font-semibold text-slate-300 mb-1">App ID (appId)</label>
+          <input type="text" id="fbAppIdInput" placeholder="1:xxxx:web:xxxx" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-3 py-2 text-xs text-white font-mono focus:ring-2 focus:ring-amber-500 outline-none">
+        </div>
+
+        <div class="flex items-center justify-end gap-2 pt-3 border-t border-slate-800">
+          <button type="button" onclick="closeCloudDbSettingsModal()" class="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-750 text-slate-300 font-semibold transition">Ακύρωση</button>
+          <button type="submit" class="px-5 py-2 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold shadow transition flex items-center gap-1.5">
+            <i class="fa-solid fa-check"></i> Αποθήκευση & Σύνδεση
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
   <!-- Modular Application Scripts -->
-  <script type="module" src="js/app.js?v=20261119_moderation_v3"></script>
+  <script type="module" src="js/app.js?v=20261119_firebase_ready_v4"></script>
   <!-- Fullscreen Toggle Script (Android, WebKit, Desktop) -->
   <script>
     window.toggleFullScreen = function() {

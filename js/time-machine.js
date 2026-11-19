@@ -5,7 +5,16 @@
  */
 
 import { loadTimeCapsules } from './data-service.js?v=20261117_video_iframe_fix';
-import { submitSpotForModeration, getPendingSubmissions, approveSpotSubmission, rejectSpotSubmission } from './db-service.js?v=20261119_moderation_v1';
+import { 
+  submitSpotForModeration, 
+  getPendingSubmissions, 
+  getPendingSubmissionsAsync, 
+  approveSpotSubmission, 
+  rejectSpotSubmission,
+  loadCloudApprovedSpots,
+  getCloudDbConfig,
+  saveCloudDbConfig
+} from './db-service.js?v=20261119_moderation_v1';
 
 let timeCapsules = [];
 let selectedYear = 'all'; // 'all' or number like 1965
@@ -124,6 +133,26 @@ export async function initTimeMachine() {
     }
   } catch (e) {
     console.warn('Error reading custom spots', e);
+  }
+
+  // Merge any approved spots from Firebase Cloud Firestore
+  try {
+    const cloudApproved = await loadCloudApprovedSpots();
+    if (Array.isArray(cloudApproved) && cloudApproved.length > 0) {
+      cloudApproved.forEach(p => {
+        if (p.chronicles && Array.isArray(p.chronicles)) {
+          p.chronicles.forEach(c => normalizeChronicleMedia(c));
+        }
+        const existingIdx = timeCapsules.findIndex(s => s.id === p.id);
+        if (existingIdx !== -1) {
+          timeCapsules[existingIdx] = p;
+        } else {
+          timeCapsules.push(p);
+        }
+      });
+    }
+  } catch (e) {
+    console.warn('Error reading cloud approved spots', e);
   }
 
   // Normalize all loaded timeCapsules chronicles
@@ -1215,5 +1244,49 @@ export function exportApprovedForProduction() {
   downloadAnchor.click();
   downloadAnchor.remove();
 }
+
+/**
+ * Cloud DB Settings Modal
+ */
+export function openCloudDbSettingsModal() {
+  const modal = document.getElementById('cloudDbModal');
+  if (!modal) return;
+  const cfg = getCloudDbConfig();
+  const apiKeyEl = document.getElementById('fbApiKeyInput');
+  const projEl = document.getElementById('fbProjectIdInput');
+  const authEl = document.getElementById('fbAuthDomainInput');
+  const appIdEl = document.getElementById('fbAppIdInput');
+
+  if (apiKeyEl) apiKeyEl.value = cfg.apiKey || '';
+  if (projEl) projEl.value = cfg.projectId || '';
+  if (authEl) authEl.value = cfg.authDomain || '';
+  if (appIdEl) appIdEl.value = cfg.appId || '';
+
+  modal.classList.remove('hidden');
+}
+
+export function closeCloudDbSettingsModal() {
+  const modal = document.getElementById('cloudDbModal');
+  if (modal) modal.classList.add('hidden');
+}
+
+export function saveCloudDbSettings(event) {
+  event.preventDefault();
+  const apiKey = document.getElementById('fbApiKeyInput').value.trim();
+  const projectId = document.getElementById('fbProjectIdInput').value.trim();
+  const authDomain = document.getElementById('fbAuthDomainInput').value.trim();
+  const appId = document.getElementById('fbAppIdInput').value.trim();
+
+  saveCloudDbConfig({
+    apiKey,
+    projectId,
+    authDomain: authDomain || (projectId ? `${projectId}.firebaseapp.com` : ''),
+    appId
+  });
+
+  alert('✅ Οι ρυθμίσεις Firebase αποθηκεύτηκαν επιτυχώς! Η σύνδεση Cloud είναι ενεργή.');
+  closeCloudDbSettingsModal();
+}
+
 
 

@@ -1,8 +1,10 @@
 /**
  * Database & Moderation Service Module (EarthTimes)
  * Handles User Submissions, Safe-Platform Content Verification,
- * Pending Moderation Workflow, and Cloud DB (Firebase / Supabase) integration.
+ * Pending Moderation Workflow, and Google Firebase Firestore integration.
  */
+
+import { firebaseConfig, isFirebaseConfigured } from './firebase-config.js?v=20261119_fb_v1';
 
 // Trusted platforms with existing automated and community content moderation
 const TRUSTED_VIDEO_DOMAINS = [
@@ -21,6 +23,42 @@ const TRUSTED_IMAGE_DOMAINS = [
   'img.youtube.com',
   'i.ytimg.com'
 ];
+
+let firebaseApp = null;
+let firestoreDb = null;
+
+/**
+ * Initializes Firebase Firestore dynamically if configured
+ */
+export async function getFirestoreInstance() {
+  if (firestoreDb) return firestoreDb;
+  
+  // Also check if user stored config in localStorage
+  let activeConfig = firebaseConfig;
+  try {
+    const customCfg = JSON.parse(localStorage.getItem('earthtimes_cloud_db_config') || '{}');
+    if (customCfg.apiKey && customCfg.projectId) {
+      activeConfig = customCfg;
+    }
+  } catch (e) {}
+
+  if (!activeConfig.apiKey || !activeConfig.projectId) {
+    return null;
+  }
+
+  try {
+    const { initializeApp, getApps } = await import('https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js');
+    const { getFirestore } = await import('https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js');
+
+    firebaseApp = getApps().length ? getApps()[0] : initializeApp(activeConfig);
+    firestoreDb = getFirestore(firebaseApp);
+    console.log('[Firebase] Connected to Cloud Firestore successfully for project:', activeConfig.projectId);
+    return firestoreDb;
+  } catch (err) {
+    console.warn('[Firebase] Initialization error:', err);
+    return null;
+  }
+}
 
 /**
  * Validates whether a media URL comes from a safe, pre-moderated platform
@@ -123,8 +161,28 @@ const STORAGE_CUSTOM_KEY = 'earthtimes_custom_spots';
 const STORAGE_CONFIG_KEY = 'earthtimes_cloud_db_config';
 
 /**
- * Retrieve all pending moderation submissions (Local or Cloud)
+ * Retrieve all pending moderation submissions (Local or Cloud Firestore)
  */
+export async function getPendingSubmissionsAsync() {
+  const db = await getFirestoreInstance();
+  if (db) {
+    try {
+      const { collection, getDocs, query, where } = await import('https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js');
+      const q = query(collection(db, 'submissions'), where('status', '==', 'pending'));
+      const snapshot = await getDocs(q);
+      const list = [];
+      snapshot.forEach(docSnap => {
+        list.push({ ...docSnap.data(), _firestoreDocId: docSnap.id });
+      });
+      return list;
+    } catch (err) {
+      console.warn('[Firebase] Falling back to local pending submissions:', err);
+    }
+  }
+
+  return getPendingSubmissions();
+}
+
 export function getPendingSubmissions() {
   try {
     const raw = localStorage.getItem(STORAGE_PENDING_KEY);
@@ -136,9 +194,9 @@ export function getPendingSubmissions() {
 }
 
 /**
- * Submit a new spot request for moderation
+ * Submit a new spot request for moderation (writes to Firebase Firestore + LocalStorage)
  */
-export function submitSpotForModeration(spotData, author) {
+export async function submitSpotForModeration(spotData, author) {
   const chronicle = (spotData.chronicles && spotData.chronicles[0]) || {};
 
   // 1. Text safety check
@@ -163,7 +221,7 @@ export function submitSpotForModeration(spotData, author) {
 
   const submission = {
     ...spotData,
-    status: 'pending', // 'pending' | 'approved' | 'rejected'
+    status: 'pending',
     moderation: {
       submittedAt: new Date().toISOString(),
       submittedBy: author.name || 'Ανώνυμος',
@@ -175,20 +233,31 @@ export function submitSpotForModeration(spotData, author) {
     }
   };
 
-  // Save to pending submissions queue
+  // 1. Save to local storage for local preview
   try {
     const pendingList = getPendingSubmissions();
     pendingList.unshift(submission);
     localStorage.setItem(STORAGE_PENDING_KEY, JSON.stringify(pendingList));
 
-    // Also save in local custom spots so the user can preview it locally on their computer!
     const customList = JSON.parse(localStorage.getItem(STORAGE_CUSTOM_KEY) || '[]');
     if (!customList.some(s => s.id === submission.id)) {
       customList.push(submission);
       localStorage.setItem(STORAGE_CUSTOM_KEY, JSON.stringify(customList));
     }
   } catch (e) {
-    console.error('Error saving submission', e);
+    console.error('Error saving local submission', e);
+  }
+
+  // 2. Sync to Firebase Cloud Firestore if configured
+  try {
+    const db = await getFirestoreInstance();
+    if (db) {
+      const { collection, doc, setDoc } = await import('https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js');
+      await setDoc(doc(db, 'submissions', submission.id), submission);
+      console.log('[Firebase] Successfully sent spot submission to Firestore cloud!');
+    }
+  } catch (err) {
+    console.warn('[Firebase] Cloud submission warning (saved locally):', err);
   }
 
   return submission;
@@ -197,35 +266,56 @@ export function submitSpotForModeration(spotData, author) {
 /**
  * Approve a pending spot (Admin action)
  */
-export function approveSpotSubmission(spotId, reviewerNotes = '') {
+export async function approveSpotSubmission(spotId, reviewerNotes = '') {
   const pending = getPendingSubmissions();
   const spotIndex = pending.findIndex(s => s.id === spotId);
-  if (spotIndex === -1) return null;
+  let approvedSpot = spotIndex !== -1 ? { ...pending[spotIndex] } : null;
 
-  const approvedSpot = { ...pending[spotIndex] };
-  approvedSpot.status = 'approved';
-  approvedSpot.moderation = {
-    ...approvedSpot.moderation,
-    status: 'approved',
-    reviewedAt: new Date().toISOString(),
-    reviewerNotes
-  };
+  if (approvedSpot) {
+    approvedSpot.status = 'approved';
+    approvedSpot.moderation = {
+      ...approvedSpot.moderation,
+      status: 'approved',
+      reviewedAt: new Date().toISOString(),
+      reviewerNotes
+    };
 
-  // Remove from pending
-  pending.splice(spotIndex, 1);
-  localStorage.setItem(STORAGE_PENDING_KEY, JSON.stringify(pending));
+    pending.splice(spotIndex, 1);
+    localStorage.setItem(STORAGE_PENDING_KEY, JSON.stringify(pending));
 
-  // Update in local custom spots
+    try {
+      const customList = JSON.parse(localStorage.getItem(STORAGE_CUSTOM_KEY) || '[]');
+      const cIdx = customList.findIndex(s => s.id === spotId);
+      if (cIdx !== -1) {
+        customList[cIdx] = approvedSpot;
+      } else {
+        customList.push(approvedSpot);
+      }
+      localStorage.setItem(STORAGE_CUSTOM_KEY, JSON.stringify(customList));
+    } catch (e) {}
+  }
+
+  // Update in Firebase Cloud Firestore
   try {
-    const customList = JSON.parse(localStorage.getItem(STORAGE_CUSTOM_KEY) || '[]');
-    const cIdx = customList.findIndex(s => s.id === spotId);
-    if (cIdx !== -1) {
-      customList[cIdx] = approvedSpot;
-    } else {
-      customList.push(approvedSpot);
+    const db = await getFirestoreInstance();
+    if (db) {
+      const { doc, setDoc, updateDoc } = await import('https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js');
+      // Update status in submissions
+      await updateDoc(doc(db, 'submissions', spotId), {
+        status: 'approved',
+        'moderation.status': 'approved',
+        'moderation.reviewedAt': new Date().toISOString(),
+        'moderation.reviewerNotes': reviewerNotes
+      });
+      // Also publish to global approved_spots collection
+      if (approvedSpot) {
+        await setDoc(doc(db, 'approved_spots', spotId), approvedSpot);
+      }
+      console.log('[Firebase] Spot approved and published to Firestore!');
     }
-    localStorage.setItem(STORAGE_CUSTOM_KEY, JSON.stringify(customList));
-  } catch (e) {}
+  } catch (err) {
+    console.warn('[Firebase] Could not update approval in Cloud DB:', err);
+  }
 
   return approvedSpot;
 }
@@ -233,49 +323,87 @@ export function approveSpotSubmission(spotId, reviewerNotes = '') {
 /**
  * Reject a pending spot (Admin action)
  */
-export function rejectSpotSubmission(spotId, reason = '') {
+export async function rejectSpotSubmission(spotId, reason = '') {
   const pending = getPendingSubmissions();
   const spotIndex = pending.findIndex(s => s.id === spotId);
-  if (spotIndex === -1) return null;
+  let rejectedSpot = spotIndex !== -1 ? { ...pending[spotIndex] } : null;
 
-  const rejectedSpot = { ...pending[spotIndex] };
-  rejectedSpot.status = 'rejected';
-  rejectedSpot.moderation = {
-    ...rejectedSpot.moderation,
-    status: 'rejected',
-    reviewedAt: new Date().toISOString(),
-    reviewerNotes: reason || 'Δεν πληροί τους όρους κοινότητας'
-  };
+  if (rejectedSpot) {
+    rejectedSpot.status = 'rejected';
+    rejectedSpot.moderation = {
+      ...rejectedSpot.moderation,
+      status: 'rejected',
+      reviewedAt: new Date().toISOString(),
+      reviewerNotes: reason || 'Δεν πληροί τους όρους κοινότητας'
+    };
 
-  // Remove from pending
-  pending.splice(spotIndex, 1);
-  localStorage.setItem(STORAGE_PENDING_KEY, JSON.stringify(pending));
+    pending.splice(spotIndex, 1);
+    localStorage.setItem(STORAGE_PENDING_KEY, JSON.stringify(pending));
 
-  // Update status in custom spots
+    try {
+      const customList = JSON.parse(localStorage.getItem(STORAGE_CUSTOM_KEY) || '[]');
+      const cIdx = customList.findIndex(s => s.id === spotId);
+      if (cIdx !== -1) {
+        customList[cIdx] = rejectedSpot;
+        localStorage.setItem(STORAGE_CUSTOM_KEY, JSON.stringify(customList));
+      }
+    } catch (e) {}
+  }
+
+  // Update in Firebase Cloud Firestore
   try {
-    const customList = JSON.parse(localStorage.getItem(STORAGE_CUSTOM_KEY) || '[]');
-    const cIdx = customList.findIndex(s => s.id === spotId);
-    if (cIdx !== -1) {
-      customList[cIdx] = rejectedSpot;
-      localStorage.setItem(STORAGE_CUSTOM_KEY, JSON.stringify(customList));
+    const db = await getFirestoreInstance();
+    if (db) {
+      const { doc, updateDoc } = await import('https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js');
+      await updateDoc(doc(db, 'submissions', spotId), {
+        status: 'rejected',
+        'moderation.status': 'rejected',
+        'moderation.reviewedAt': new Date().toISOString(),
+        'moderation.reviewerNotes': reason
+      });
+      console.log('[Firebase] Spot rejected in Firestore.');
     }
-  } catch (e) {}
+  } catch (err) {
+    console.warn('[Firebase] Could not update rejection in Cloud DB:', err);
+  }
 
   return rejectedSpot;
 }
 
 /**
- * Cloud Database Config & Connector (Firebase Firestore / Supabase)
- * This enables seamless switching from LocalStorage to live Cloud DB!
+ * Load all approved spots from Firebase Cloud Firestore (accessible to everyone)
+ */
+export async function loadCloudApprovedSpots() {
+  const db = await getFirestoreInstance();
+  if (!db) return [];
+
+  try {
+    const { collection, getDocs } = await import('https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js');
+    const snapshot = await getDocs(collection(db, 'approved_spots'));
+    const list = [];
+    snapshot.forEach(docSnap => {
+      list.push(docSnap.data());
+    });
+    console.log(`[Firebase] Loaded ${list.length} cloud-approved spots from Firestore.`);
+    return list;
+  } catch (err) {
+    console.warn('[Firebase] Could not load cloud-approved spots:', err);
+    return [];
+  }
+}
+
+/**
+ * Cloud Database Config & Connector Settings
  */
 export function getCloudDbConfig() {
   try {
-    return JSON.parse(localStorage.getItem(STORAGE_CONFIG_KEY) || '{}');
-  } catch (e) {
-    return {};
-  }
+    const custom = localStorage.getItem(STORAGE_CONFIG_KEY);
+    if (custom) return JSON.parse(custom);
+  } catch (e) {}
+  return firebaseConfig;
 }
 
 export function saveCloudDbConfig(config) {
   localStorage.setItem(STORAGE_CONFIG_KEY, JSON.stringify(config));
+  firestoreDb = null; // Reset instance to trigger reconnect
 }
