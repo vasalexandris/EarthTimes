@@ -25,11 +25,14 @@ let isPlaying = false;
 let playInterval = null;
 let activeSpotId = null;
 
-// User Identity & Profile State
+// User Identity & Profile State (Default to Guest / Visitor until signed in)
 let currentUser = {
-  name: 'Βασίλης Αλεξανδρής',
-  role: 'admin',
-  title: 'Διαχειριστής & Επιμελητής Κοζάνης'
+  uid: null,
+  email: null,
+  name: 'Επισκέπτης',
+  role: 'guest',
+  title: 'Επισκέπτης',
+  photoURL: null
 };
 
 function escapeStr(str) {
@@ -171,10 +174,14 @@ export async function initTimeMachine() {
       if (googleUser) {
         currentUser = { ...currentUser, ...googleUser };
       } else {
-        try {
-          const saved = JSON.parse(localStorage.getItem('earthtimes_user') || '{}');
-          if (saved.name) currentUser = { ...currentUser, ...saved };
-        } catch (e) {}
+        currentUser = {
+          uid: null,
+          email: null,
+          name: 'Επισκέπτης',
+          role: 'guest',
+          title: 'Επισκέπτης',
+          photoURL: null
+        };
       }
       updateUserBadgeUI();
     });
@@ -206,32 +213,64 @@ export function updateUserBadgeUI() {
   const loginBtn = document.getElementById('googleLoginBtn');
   const profileBadge = document.getElementById('userProfileBadge');
 
-  if (nameEl) nameEl.innerText = currentUser.name || 'Βασίλης Αλεξανδρής';
-  if (roleEl) roleEl.classList.add('hidden');
+  // Landing page elements
+  const landingLoginBtn = document.getElementById('landingGoogleLoginBtn');
+  const landingProfileBadge = document.getElementById('landingUserProfileBadge');
+  const landingNameEl = document.getElementById('landingUserDisplayName');
+  const landingAvatarEl = document.getElementById('landingUserAvatarImg');
+  const landingOnlineDot = document.getElementById('landingUserOnlineDot');
+  const landingAuthBanner = document.getElementById('landingAuthBanner');
 
-  const isGoogleLoggedIn = Boolean(currentUser.email && currentUser.uid);
+  const isGoogleLoggedIn = Boolean(currentUser && currentUser.uid && currentUser.email);
 
-  if (avatarEl) {
-    if (currentUser.photoURL) {
-      avatarEl.src = currentUser.photoURL;
-      avatarEl.classList.remove('hidden');
-      if (onlineDot) onlineDot.classList.add('hidden');
-    } else {
-      avatarEl.classList.add('hidden');
-      if (onlineDot) onlineDot.classList.remove('hidden');
+  if (isGoogleLoggedIn) {
+    const displayName = currentUser.name || currentUser.email.split('@')[0];
+    if (nameEl) nameEl.innerText = displayName;
+    if (landingNameEl) landingNameEl.innerText = displayName;
+    if (roleEl) roleEl.classList.add('hidden');
+
+    if (avatarEl) {
+      if (currentUser.photoURL) {
+        avatarEl.src = currentUser.photoURL;
+        avatarEl.classList.remove('hidden');
+        if (onlineDot) onlineDot.classList.add('hidden');
+      } else {
+        avatarEl.classList.add('hidden');
+        if (onlineDot) onlineDot.classList.remove('hidden');
+      }
     }
-  }
 
-  if (loginBtn) {
-    if (isGoogleLoggedIn) {
-      loginBtn.classList.add('hidden');
-    } else {
-      loginBtn.classList.remove('hidden');
+    if (landingAvatarEl) {
+      if (currentUser.photoURL) {
+        landingAvatarEl.src = currentUser.photoURL;
+        landingAvatarEl.classList.remove('hidden');
+        if (landingOnlineDot) landingOnlineDot.classList.add('hidden');
+      } else {
+        landingAvatarEl.classList.add('hidden');
+        if (landingOnlineDot) landingOnlineDot.classList.remove('hidden');
+      }
     }
-  }
 
-  if (profileBadge) {
-    profileBadge.classList.remove('hidden');
+    // Toggle header badges
+    if (loginBtn) loginBtn.classList.add('hidden');
+    if (profileBadge) profileBadge.classList.remove('hidden');
+
+    // Toggle landing page badges
+    if (landingLoginBtn) landingLoginBtn.classList.add('hidden');
+    if (landingProfileBadge) landingProfileBadge.classList.remove('hidden');
+    if (landingAuthBanner) landingAuthBanner.classList.add('hidden');
+  } else {
+    // Guest mode
+    if (nameEl) nameEl.innerText = 'Επισκέπτης';
+    if (landingNameEl) landingNameEl.innerText = 'Επισκέπτης';
+
+    // Show login buttons, hide user profile badges
+    if (loginBtn) loginBtn.classList.remove('hidden');
+    if (profileBadge) profileBadge.classList.add('hidden');
+
+    if (landingLoginBtn) landingLoginBtn.classList.remove('hidden');
+    if (landingProfileBadge) landingProfileBadge.classList.add('hidden');
+    if (landingAuthBanner) landingAuthBanner.classList.remove('hidden');
   }
 }
 
@@ -253,9 +292,12 @@ export async function handleGoogleLogin() {
 export async function handleGoogleLogout() {
   await logoutUser();
   currentUser = {
-    name: 'Βασίλης Αλεξανδρής',
-    role: 'admin',
-    title: 'Διαχειριστής & Επιμελητής'
+    uid: null,
+    email: null,
+    name: 'Επισκέπτης',
+    role: 'guest',
+    title: 'Επισκέπτης',
+    photoURL: null
   };
   updateUserBadgeUI();
   alert('Αποσυνδεθήκατε επιτυχώς.');
