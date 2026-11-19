@@ -28712,6 +28712,158 @@ export const GASTRO_RECIPE_VIDEOS = {
     options: [
       { youtubeId: "kIBWuUfWbCA", title: "Crispy British Fish & Chips", label: "Fish & Chips", icon: "fa-solid fa-fish" }
     ]
+  },
+
+  // Dedicated Street Food Guides & City Tours
+  "αθήνα street food": {
+    youtubeId: "3hB6f7ETeFs",
+    title: "Athens Greek Street Food Tour: Souvlaki, Gyros, Pies & Loukoumades",
+    dish: "Street Food Αθήνας",
+    region: "Αθήνα",
+    searchQuery: "Αθήνα street food",
+    options: [
+      { youtubeId: "3hB6f7ETeFs", title: "Athens Street Food Tour", label: "Street Food Tour", icon: "fa-solid fa-store" },
+      { youtubeId: "3vhdWmDJYXg", title: "Αυθεντικό Σουβλάκι Μοναστηρακίου • Μπαϊρακτάρης", label: "Σουβλάκι Μοναστηράκι", icon: "fa-solid fa-fire-burner" },
+      { youtubeId: "Wz_pK1Zb-X8", title: "Κουλούρι Αθηνών", label: "Κουλούρι", icon: "fa-solid fa-circle-notch" }
+    ]
+  },
+  "athens street food": {
+    youtubeId: "3hB6f7ETeFs",
+    title: "Athens Greek Street Food Tour: Souvlaki, Gyros, Pies & Loukoumades",
+    dish: "Street Food Αθήνας",
+    region: "Αθήνα",
+    searchQuery: "Αθήνα street food",
+    options: [
+      { youtubeId: "3hB6f7ETeFs", title: "Athens Street Food Tour", label: "Street Food Tour", icon: "fa-solid fa-store" },
+      { youtubeId: "3vhdWmDJYXg", title: "Αυθεντικό Σουβλάκι Μοναστηρακίου", label: "Σουβλάκι Μοναστηράκι", icon: "fa-solid fa-fire-burner" }
+    ]
+  },
+  "θεσσαλονίκη street food": {
+    youtubeId: "e6BEkT6E-nY",
+    title: "Θεσσαλονίκη Street Food & Παραδοσιακές Γεύσεις: Μπουγάτσα & Κουλούρι",
+    dish: "Street Food Θεσσαλονίκης",
+    region: "Θεσσαλονίκη",
+    searchQuery: "Θεσσαλονίκη street food",
+    options: [
+      { youtubeId: "e6BEkT6E-nY", title: "Μπουγάτσα Θεσσαλονίκης", label: "Μπουγάτσα", icon: "fa-solid fa-cookie-bite" },
+      { youtubeId: "Wz_pK1Zb-X8", title: "Παραδοσιακό Κουλούρι Θεσσαλονίκης", label: "Κουλούρι Θεσσαλονίκης", icon: "fa-solid fa-circle-notch" },
+      { youtubeId: "espUGr283VM", title: "Τρίγωνα Πανοράματος", label: "Τρίγωνα", icon: "fa-solid fa-stroopwafel" }
+    ]
+  },
+  "thessaloniki street food": {
+    youtubeId: "e6BEkT6E-nY",
+    title: "Thessaloniki Street Food & Traditional Flavors",
+    dish: "Street Food Θεσσαλονίκης",
+    region: "Θεσσαλονίκη",
+    searchQuery: "Thessaloniki street food",
+    options: [
+      { youtubeId: "e6BEkT6E-nY", title: "Μπουγάτσα Θεσσαλονίκης", label: "Μπουγάτσα", icon: "fa-solid fa-cookie-bite" },
+      { youtubeId: "Wz_pK1Zb-X8", title: "Κουλούρι Θεσσαλονίκης", label: "Κουλούρι", icon: "fa-solid fa-circle-notch" }
+    ]
+  },
+  "κοζάνη street food": {
+    youtubeId: "Fms6e4KkY5w",
+    title: "Κοζάνη Street Food & Παραδοσιακό Κιχί • Πλατεία Νίκης",
+    dish: "Street Food Κοζάνης",
+    region: "Κοζάνη",
+    searchQuery: "Κοζάνη street food",
+    options: [
+      { youtubeId: "Fms6e4KkY5w", title: "Παραδοσιακό Κοζανίτικο Κιχί", label: "Κιχί Κοζάνης", icon: "fa-solid fa-bread-slice" },
+      { youtubeId: "davgbeLTQlk", title: "Γεύσεις & Στέκια Κοζάνης", label: "Στέκια Κοζάνης", icon: "fa-solid fa-store" }
+    ]
+  },
+  "kozani street food": {
+    youtubeId: "Fms6e4KkY5w",
+    title: "Kozani Street Food & Traditional Kihi Pastry",
+    dish: "Street Food Κοζάνης",
+    region: "Κοζάνη",
+    searchQuery: "Kozani street food",
+    options: [
+      { youtubeId: "Fms6e4KkY5w", title: "Παραδοσιακό Κοζανίτικο Κιχί", label: "Κιχί Κοζάνης", icon: "fa-solid fa-bread-slice" }
+    ]
+  },
+  "boston street food": {
+    youtubeId: "w_i2rV7Zz5s",
+    title: "Boston & New England Street Food Tour • Quincy Market & Lobster Rolls",
+    dish: "Boston Street Food",
+    region: "Βοστώνη, Μασαχουσέτη",
+    searchQuery: "Boston street food",
+    options: [
+      { youtubeId: "w_i2rV7Zz5s", title: "Quincy Market Lobster Roll", label: "Lobster Roll", icon: "fa-solid fa-utensils" },
+      { youtubeId: "J2zQ4Vv6Z6k", title: "New England Clam Chowder", label: "Clam Chowder", icon: "fa-solid fa-bowl-food" }
+    ]
+  },
+  "βοστώνη street food": {
+    youtubeId: "w_i2rV7Zz5s",
+    title: "Boston & New England Street Food Tour • Quincy Market & Lobster Rolls",
+    dish: "Boston Street Food",
+    region: "Βοστώνη, Μασαχουσέτη",
+    searchQuery: "Boston street food",
+    options: [
+      { youtubeId: "w_i2rV7Zz5s", title: "Quincy Market Lobster Roll", label: "Lobster Roll", icon: "fa-solid fa-utensils" },
+      { youtubeId: "J2zQ4Vv6Z6k", title: "New England Clam Chowder", label: "Clam Chowder", icon: "fa-solid fa-bowl-food" }
+    ]
+  },
+  "rome street food": {
+    youtubeId: "CMP8SF6FwdM",
+    title: "Rome Street Food: Pizza al Taglio, Supplì & Trapizzino",
+    dish: "Rome Street Food",
+    region: "Ρώμη, Ιταλία",
+    searchQuery: "Rome street food",
+    options: [
+      { youtubeId: "CMP8SF6FwdM", title: "Pizza al Taglio & Supplì", label: "Pizza al Taglio", icon: "fa-solid fa-pizza-slice" },
+      { youtubeId: "3AAdKl1UYZs", title: "Authentic Carbonara", label: "Carbonara", icon: "fa-solid fa-bowl-food" }
+    ]
+  },
+  "ρώμη street food": {
+    youtubeId: "CMP8SF6FwdM",
+    title: "Rome Street Food: Pizza al Taglio, Supplì & Trapizzino",
+    dish: "Rome Street Food",
+    region: "Ρώμη, Ιταλία",
+    searchQuery: "Rome street food",
+    options: [
+      { youtubeId: "CMP8SF6FwdM", title: "Pizza al Taglio & Supplì", label: "Pizza al Taglio", icon: "fa-solid fa-pizza-slice" }
+    ]
+  },
+  "paris street food": {
+    youtubeId: "2OAUM0MRgQw",
+    title: "Paris Street Food: Crêpes, Baguettes & Croissants",
+    dish: "Paris Street Food",
+    region: "Παρίσι, Γαλλία",
+    searchQuery: "Paris street food",
+    options: [
+      { youtubeId: "2OAUM0MRgQw", title: "Parisian Croissants & Crêpes", label: "Croissants & Crêpes", icon: "fa-solid fa-bread-slice" }
+    ]
+  },
+  "παρίσι street food": {
+    youtubeId: "2OAUM0MRgQw",
+    title: "Paris Street Food: Crêpes, Baguettes & Croissants",
+    dish: "Paris Street Food",
+    region: "Παρίσι, Γαλλία",
+    searchQuery: "Paris street food",
+    options: [
+      { youtubeId: "2OAUM0MRgQw", title: "Parisian Croissants & Crêpes", label: "Croissants & Crêpes", icon: "fa-solid fa-bread-slice" }
+    ]
+  },
+  "london street food": {
+    youtubeId: "kIBWuUfWbCA",
+    title: "London Street Food: Borough Market & Traditional Fish and Chips",
+    dish: "London Street Food",
+    region: "Λονδίνο, Ηνωμένο Βασίλειο",
+    searchQuery: "London street food",
+    options: [
+      { youtubeId: "kIBWuUfWbCA", title: "Borough Market & Fish & Chips", label: "Fish & Chips", icon: "fa-solid fa-fish" }
+    ]
+  },
+  "λονδίνο street food": {
+    youtubeId: "kIBWuUfWbCA",
+    title: "London Street Food: Borough Market & Traditional Fish and Chips",
+    dish: "London Street Food",
+    region: "Λονδίνο, Ηνωμένο Βασίλειο",
+    searchQuery: "London street food",
+    options: [
+      { youtubeId: "kIBWuUfWbCA", title: "Borough Market & Fish & Chips", label: "Fish & Chips", icon: "fa-solid fa-fish" }
+    ]
   }
 };
 
@@ -28722,10 +28874,34 @@ export const GASTRO_RECIPE_VIDEOS = {
 export function getGastroRecipeVideo(dishTitle = '', cityName = '') {
   const normTitle = (dishTitle || '').trim().toLowerCase();
   const normCity = (cityName || '').trim().toLowerCase();
+  const isStreetFood = normTitle.includes('street food') || normTitle.includes('street_food') || normTitle.includes('υπαίθριες γεύσεις');
 
   // Sort keys by descending length so specific terms ("αυθεντικό σουβλάκι μοναστηρακίου")
   // are tested BEFORE generic terms ("σουβλάκι")
   const sortedKeys = Object.keys(GASTRO_RECIPE_VIDEOS).sort((a, b) => b.length - a.length);
+
+  // If looking specifically for street food, match city + street food keys first
+  if (isStreetFood) {
+    for (const key of sortedKeys) {
+      if (key.includes('street food')) {
+        const keyWithoutStreetFood = key.replace('street food', '').trim();
+        if (
+          (normCity && (key.includes(normCity) || (keyWithoutStreetFood && normCity.includes(keyWithoutStreetFood)))) ||
+          (normTitle && keyWithoutStreetFood.length > 2 && normTitle.includes(keyWithoutStreetFood))
+        ) {
+          const val = GASTRO_RECIPE_VIDEOS[key];
+          const isGreek = val.region && (val.region.toLowerCase().includes('ελλάδ') || val.region.toLowerCase().includes('greece') || val.region.toLowerCase().includes('αθήν') || val.region.toLowerCase().includes('θεσσαλον') || val.region.toLowerCase().includes('κοζάν'));
+          return {
+            ...val,
+            options: val.options || [{ youtubeId: val.youtubeId, title: val.title, label: val.dish || 'Street Food', icon: 'fa-solid fa-store' }],
+            searchQuery: val.searchQuery || `${cityName || val.region} street food`
+          };
+        }
+      }
+    }
+    // If no curated street food video exists, return null so it cleanly falls back to Bing Video Search
+    return null;
+  }
 
   for (const key of sortedKeys) {
     if (normTitle === key || normTitle.includes(key)) {

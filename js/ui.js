@@ -4,7 +4,7 @@
  * Base Map Layer selector, Date display, Video Overlay, and Deep Dive views.
  */
 
-import { getCityVideo, getAvailableVideoTypes, getAvailableCityTours, CITY_VIDEOS, findPoiLiveCam, getPoiVideoInfo, getGastroRecipeVideo, getSocialMediaVideos, SOCIAL_MEDIA_REGISTRY, GASTRO_RECIPE_VIDEOS } from './video-service.js?v=20261118_gastro_overhaul_v8';
+import { getCityVideo, getAvailableVideoTypes, getAvailableCityTours, CITY_VIDEOS, findPoiLiveCam, getPoiVideoInfo, getGastroRecipeVideo, getSocialMediaVideos, SOCIAL_MEDIA_REGISTRY, GASTRO_RECIPE_VIDEOS } from './video-service.js?v=20261119_street_food_v1';
 import { getDeepDiveData } from './deep-dive.js?v=20261117_video_iframe_fix';
 import { fetchWikiArticle, fetchWikiArticleHtml, cleanWikiTitle } from './wiki-service.js?v=20261118_gastro_overhaul_v8';
 import { calculateSubsolarPoint } from './solar-terminator.js?v=20261117_video_iframe_fix';
@@ -403,6 +403,16 @@ export function buildLocalizedGastroQuery(dishTitle = '', cityName = '', entity 
 
   const cleanDish = (dishTitle || '').replace(/\s*\([^)]*\)/g, '').trim();
   const normDish = cleanDish.toLowerCase();
+
+  // Street food detection:
+  const isStreetFood = normDish.includes('street food') || normDish.includes('street_food') || normDish.includes('υπαίθριες γεύσεις');
+  if (isStreetFood) {
+    if (lang === 'el') {
+      return `${effCityName} street food`.trim();
+    }
+    const nativeCity = getNativeNameForEntity(effCityName, curEntity) || getNativeNameForEntity(cityKey, curEntity) || effCityName;
+    return `${nativeCity} street food`.trim();
+  }
 
   // Check if generic recipe / gastro header in Greek
   const isGenericGastro = /^(παραδοσιακ|κουζίνα|γεύσεις|συνταγ|φαγητ|τοπικ)/i.test(normDish) ||
@@ -1334,9 +1344,12 @@ export function openGastroVideo(dishTitle, cityName = '') {
     }
   }
 
+  const isStreetFood = (dishTitle || '').toLowerCase().includes('street food') || (dishTitle || '').toLowerCase().includes('υπαίθριες γεύσεις');
+  const iconPrefix = isStreetFood ? '🌯' : '👨‍🍳';
+
   if (recipe && recipe.youtubeId) {
-    // 1-Click Play curated recipe video!
-    const videoTitle = `👨‍🍳 ${recipe.dish || dishTitle} (${recipe.region || currentCityName})`;
+    // 1-Click Play curated recipe or street food video!
+    const videoTitle = `${iconPrefix} ${recipe.dish || dishTitle} (${recipe.region || currentCityName})`;
     currentOverlayYoutubeId = recipe.youtubeId;
     currentOverlayStartSec = 0;
     currentOverlayTitle = videoTitle;
@@ -1351,13 +1364,13 @@ export function openGastroVideo(dishTitle, cityName = '') {
     // Render multiple choice options in the options bar
     if (choicePills) {
       const options = recipe.options && recipe.options.length ? recipe.options : [
-        { youtubeId: recipe.youtubeId, title: videoTitle, label: dishTitle, icon: 'fa-solid fa-utensils' }
+        { youtubeId: recipe.youtubeId, title: videoTitle, label: dishTitle, icon: isStreetFood ? 'fa-solid fa-store' : 'fa-solid fa-utensils' }
       ];
       choicePills.innerHTML = options.map((opt, idx) => {
         const isAct = idx === 0;
         return `
-          <button onclick="window.switchOverlayVideo('${opt.youtubeId}', 0, '${escapeStr(opt.title)}')" data-youtube-id="${opt.youtubeId}" class="px-2.5 py-1 rounded-lg text-xs font-bold transition flex items-center gap-1.5 ${isAct ? 'bg-rose-600 text-white shadow-md' : 'bg-slate-800 text-slate-300 hover:text-white border border-slate-700'} cursor-pointer shrink-0">
-            <i class="${opt.icon || 'fa-solid fa-utensils'}"></i>
+          <button onclick="window.switchOverlayVideo('${opt.youtubeId}', 0, '${escapeStr(opt.title)}')" data-youtube-id="${opt.youtubeId}" class="px-2.5 py-1 rounded-lg text-xs font-bold transition flex items-center gap-1.5 ${isAct ? (isStreetFood ? 'bg-orange-600 text-white shadow-md' : 'bg-rose-600 text-white shadow-md') : 'bg-slate-800 text-slate-300 hover:text-white border border-slate-700'} cursor-pointer shrink-0">
+            <i class="${opt.icon || (isStreetFood ? 'fa-solid fa-store' : 'fa-solid fa-utensils')}"></i>
             <span>${opt.label || opt.title}</span>
           </button>
         `;
@@ -1369,10 +1382,10 @@ export function openGastroVideo(dishTitle, cityName = '') {
     // Fallback: No curated recipe in registry, open localized Bing Video Search directly!
     currentOverlayYoutubeId = '';
     currentOverlayStartSec = 0;
-    currentOverlayTitle = `👨‍🍳 Video Search: ${dishTitle}`;
+    currentOverlayTitle = `${iconPrefix} Video Search: ${dishTitle}`;
     currentOverlayMode = 'video_search';
 
-    if (title) title.innerText = `👨‍🍳 Video Search: ${dishTitle}`;
+    if (title) title.innerText = `${iconPrefix} Video Search: ${dishTitle}`;
     if (directLink) {
       directLink.removeAttribute('data-youtube-id');
       directLink.href = `https://www.bing.com/videos/search?q=${encodeURIComponent(searchQuery)}`;
@@ -3644,7 +3657,39 @@ export function renderTabContent(tabId, entity, activeYear = null, activeSpots =
           </div>
         </div>
 
-        <!-- 2. Dedicated Cards for Famous Dishes & Specialties -->
+        <!-- 2. Dedicated Street Food & Outdoor Flavors Overview Card -->
+        <div class="p-4 bg-gradient-to-br from-orange-950/40 via-slate-900/90 to-slate-950 rounded-2xl border border-orange-600/40 shadow-lg text-slate-200">
+          <div class="flex items-center justify-between gap-2 mb-2">
+            <div class="flex items-center gap-2 text-orange-400 font-bold text-sm">
+              <i class="fa-solid fa-store text-orange-300"></i>
+              <span>Street Food & Υπαίθριες Γεύσεις (${entity.name})</span>
+            </div>
+            <span class="text-[10px] px-2 py-0.5 rounded-full bg-orange-500/20 text-orange-300 border border-orange-500/30 font-bold shrink-0">
+              🌯 Street Food
+            </span>
+          </div>
+          <p class="text-xs text-slate-300 leading-relaxed mb-3">Δημοφιλές φαγητό του δρόμου, αυθεντικά τοπικά στέκια, υπαίθριες λιχουδιές και γρήγορες παραδοσιακές γεύσεις (${entity.name}).</p>
+          <div class="flex flex-wrap items-center gap-2 pt-2.5 border-t border-slate-800/80">
+            <button onclick="window.openDeepDive('Street Food (${escapeStr(entity.name)})', 'Δημοφιλές φαγητό του δρόμου, τοπικά στέκια και υπαίθριες γεύσεις (${escapeStr(entity.name)}).', '${escapeStr(entity.name)}')" class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-amber-300 hover:text-white border border-slate-700 text-[11px] font-bold transition flex items-center gap-1.5 shadow cursor-pointer">
+              <i class="fa-solid fa-wand-magic-sparkles text-amber-400"></i>
+              <span>Ανάλυση AI</span>
+            </button>
+            <button onclick="window.openDeepDiveBingAiSearch('${escapeStr(entity.name)} street food travel guide spots')" class="px-2.5 py-1 rounded-lg bg-gradient-to-r from-orange-600 to-amber-600 hover:from-orange-500 hover:to-amber-500 text-white text-[11px] font-bold transition flex items-center gap-1.5 shadow cursor-pointer" title="Bing AI Search για το street food της πόλης">
+              <i class="fa-solid fa-magnifying-glass text-orange-200"></i>
+              <span>Bing AI Search</span>
+            </button>
+            <button onclick="window.openMapWikiReader('${escapeStr(entity.name)} street food', 'el', '${escapeStr(entity.name)} street food')" class="px-2.5 py-1 rounded-lg bg-sky-950/80 hover:bg-sky-900 text-sky-300 hover:text-white border border-sky-700/50 text-[11px] font-bold transition flex items-center gap-1.5 shadow cursor-pointer">
+              <i class="fa-brands fa-wikipedia-w text-sky-400"></i>
+              <span>Wikipedia</span>
+            </button>
+            <button onclick="window.openGastroVideo('Street Food & Υπαίθριες Γεύσεις', '${escapeStr(entity.name)}')" class="px-2.5 py-1 rounded-lg bg-orange-950/80 hover:bg-orange-900 text-orange-300 hover:text-white border border-orange-700/50 text-[11px] font-bold transition flex items-center gap-1.5 shadow cursor-pointer" title="Προβολή βίντεο Street Food">
+              <i class="fa-solid fa-store text-orange-400"></i>
+              <span>Βίντεο Street Food 🌯</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- 3. Dedicated Cards for Famous Dishes & Specialties -->
         ${items && items.length > 0 ? `
           <div class="pt-1.5">
             <div class="text-[11px] font-bold uppercase tracking-wider text-amber-400/90 flex items-center gap-1.5 mb-2 px-1">
@@ -3653,14 +3698,25 @@ export function renderTabContent(tabId, entity, activeYear = null, activeSpots =
             </div>
 
             <div class="space-y-2.5">
-              ${items.map(item => `
+              ${items.map(item => {
+                const isItemStreetFood = item.cat === 'street_food' || (item.title && item.title.toLowerCase().includes('street food'));
+                const badgeClass = isItemStreetFood
+                  ? 'bg-orange-950/80 text-orange-300 border-orange-600/40'
+                  : 'bg-amber-950/80 text-amber-300 border-amber-600/40';
+                const btnColor = isItemStreetFood
+                  ? 'bg-orange-950/80 hover:bg-orange-900 text-orange-300 border-orange-700/50'
+                  : 'bg-rose-950/80 hover:bg-rose-900 text-rose-300 hover:text-white border border-rose-700/50';
+                const btnIcon = isItemStreetFood ? 'fa-solid fa-store text-orange-400' : 'fa-solid fa-play text-rose-400';
+                const btnLabel = isItemStreetFood ? 'Βίντεο Street Food 🌯' : 'Βίντεο Συνταγής 👨‍🍳';
+
+                return `
                 <div class="p-3.5 bg-slate-800/30 hover:bg-slate-800/80 hover:border-amber-500/50 transition border border-slate-700/40 rounded-xl">
                   <div class="flex items-start justify-between gap-2 mb-1.5">
                     <div>
-                      <span class="inline-block px-2 py-0.5 rounded text-[10px] font-bold bg-amber-950/80 text-amber-300 border border-amber-600/40 mb-1">
-                        ${item.catLabel || '🍽️ Σπεσιαλιτέ'}
+                      <span class="inline-block px-2 py-0.5 rounded text-[10px] font-bold ${badgeClass} mb-1">
+                        ${item.catLabel || (isItemStreetFood ? '🌯 Street Food' : '🍽️ Σπεσιαλιτέ')}
                       </span>
-                      <h5 class="font-bold text-slate-100 text-sm text-amber-200">${item.title}</h5>
+                      <h5 class="font-bold text-slate-100 text-sm ${isItemStreetFood ? 'text-orange-200' : 'text-amber-200'}">${item.title}</h5>
                     </div>
                     ${item.tag ? `
                       <span class="text-[9px] px-1.5 py-0.5 rounded bg-slate-800 text-slate-400 border border-slate-700 font-medium shrink-0">
@@ -3682,13 +3738,14 @@ export function renderTabContent(tabId, entity, activeYear = null, activeSpots =
                       <i class="fa-brands fa-wikipedia-w"></i>
                       <span>Wikipedia</span>
                     </button>
-                    <button onclick="window.openGastroVideo('${escapeStr(item.title)}', '${escapeStr(entity.name)}')" class="px-2.5 py-1 rounded-lg bg-rose-950/80 hover:bg-rose-900 text-rose-300 hover:text-white border border-rose-700/50 text-[11px] font-bold transition flex items-center gap-1.5 shadow cursor-pointer" title="Προβολή βίντεο συνταγής">
-                      <i class="fa-solid fa-play text-rose-400"></i>
-                      <span>Βίντεο Συνταγής 👨‍🍳</span>
+                    <button onclick="window.openGastroVideo('${escapeStr(item.title)}', '${escapeStr(entity.name)}')" class="px-2.5 py-1 rounded-lg ${btnColor} hover:text-white border text-[11px] font-bold transition flex items-center gap-1.5 shadow cursor-pointer" title="${isItemStreetFood ? 'Προβολή βίντεο Street Food' : 'Προβολή βίντεο συνταγής'}">
+                      <i class="${btnIcon}"></i>
+                      <span>${btnLabel}</span>
                     </button>
                   </div>
                 </div>
-              `).join('')}
+              `;
+              }).join('')}
             </div>
           </div>
         ` : ''}
