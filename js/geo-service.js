@@ -873,7 +873,7 @@ export function renderGeographyTabHtml(entity) {
         </div>
 
         <!-- 4 Grid Metric Cards -->
-        <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
+        <div class="grid grid-cols-2 gap-2.5">
           <div class="p-3 rounded-xl bg-slate-800/40 border border-slate-700/50 flex flex-col justify-between">
             <div class="text-[11px] text-slate-400 flex items-center gap-1.5 mb-1">
               <i class="fa-solid fa-sun text-amber-400"></i> Ηλιοφάνεια
@@ -1002,7 +1002,7 @@ export async function mountLiveWeatherData(coords) {
 
   container.innerHTML = `
     <div class="w-full flex flex-col gap-3 py-1">
-      <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 items-center">
+      <div class="grid grid-cols-2 gap-3 items-center">
         
         <!-- Current Weather & Temp -->
         <div class="flex items-center gap-3">

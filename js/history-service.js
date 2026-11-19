@@ -1182,29 +1182,35 @@ export function renderHistoryTabHtml(entity) {
           <span class="text-[11px] text-slate-400">Πότε Αναγέρθηκαν & Σημασία</span>
         </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
+        <div class="grid grid-cols-1 gap-3 pt-1">
           ${monuments.map(m => {
             const bingQueryEsc = escapeStr(m.bingQuery || `${m.title} ${name} μνημείο ιστορία`);
             const titleEsc = escapeStr(m.title);
             return `
-              <div class="p-3.5 rounded-xl bg-slate-850/80 border border-slate-700/50 hover:border-emerald-500/40 transition flex flex-col justify-between gap-2.5">
-                <div>
-                  <div class="flex items-center justify-between gap-2 mb-1">
-                    <div class="flex items-center gap-2 font-bold text-white text-xs sm:text-sm">
-                      <i class="${m.icon || 'fa-solid fa-landmark'} text-emerald-400"></i>
-                      <span>${m.title}</span>
+              <div class="p-3.5 rounded-xl bg-slate-850/80 border border-slate-700/50 hover:border-emerald-500/40 transition flex flex-col gap-2 group shadow">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1.5">
+                  <div class="flex items-center gap-2.5">
+                    <div class="w-8 h-8 rounded-xl bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 flex items-center justify-center shrink-0 font-bold text-sm shadow">
+                      <i class="${m.icon || 'fa-solid fa-landmark'}"></i>
                     </div>
-                    <span class="text-[10px] text-amber-400 font-mono font-semibold shrink-0">${m.date}</span>
+                    <div>
+                      <div class="text-xs sm:text-sm font-bold text-white group-hover:text-emerald-300 transition flex items-center gap-2 flex-wrap">
+                        <span>${m.title}</span>
+                      </div>
+                      <span class="text-[10px] text-amber-400 font-mono font-semibold">${m.date}</span>
+                    </div>
                   </div>
-                  <p class="text-xs text-slate-300 leading-relaxed">${m.description}</p>
-                </div>
 
-                <div class="pt-2 border-t border-slate-800 flex items-center justify-end">
-                  <button onclick="window.openInAppBingSearch('${bingQueryEsc}', '${titleEsc}')" class="px-2.5 py-1 rounded-lg bg-sky-950/80 hover:bg-sky-900 border border-sky-500/40 text-sky-300 hover:text-white text-[10px] font-semibold transition flex items-center gap-1.5 cursor-pointer">
+                  <!-- IN-APP BING SEARCH BUTTON -->
+                  <button onclick="window.openInAppBingSearch('${bingQueryEsc}', '${titleEsc}')" class="px-2.5 py-1 rounded-lg bg-sky-950/80 hover:bg-sky-900 border border-sky-500/40 text-sky-300 hover:text-white text-[11px] font-semibold transition shrink-0 flex items-center gap-1.5 self-start sm:self-auto cursor-pointer" title="Άνοιγμα Έρευνας στο πλαίσιο χάρτη">
                     <i class="fa-brands fa-microsoft text-[10px]"></i>
                     <span>🔍 AI Έρευνα στο Bing</span>
                     <i class="fa-solid fa-expand text-[9px] opacity-75"></i>
                   </button>
+                </div>
+
+                <div class="pl-10 text-xs text-slate-300 leading-relaxed">
+                  ${m.description}
                 </div>
               </div>
             `;
@@ -1269,7 +1275,7 @@ export function renderHistoryTabHtml(entity) {
             <span class="text-[10px] text-amber-400 font-mono font-bold">100 ΧΡΟΝΙΑ</span>
           </div>
 
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
+          <div class="grid grid-cols-1 gap-3 pt-1">
             ${pastVsPresent.map((p, idx) => `
               <div class="p-3.5 rounded-xl ${idx === 0 ? 'bg-amber-950/20 border-amber-500/30' : 'bg-indigo-950/20 border-indigo-500/30'} border">
                 <div class="text-xs font-bold ${idx === 0 ? 'text-amber-400' : 'text-indigo-300'} mb-1 flex items-center gap-1.5">
