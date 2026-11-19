@@ -1102,11 +1102,11 @@ export function closeSyncSpotsModal() {
 /**
  * Admin Moderation Panel & Content Approval Workflow
  */
-export function openModerationModal() {
+export async function openModerationModal() {
   const modal = document.getElementById('moderationModal');
   if (!modal) return;
-  renderModerationList();
   modal.classList.remove('hidden');
+  await renderModerationList();
 }
 
 export function closeModerationModal() {
@@ -1114,11 +1114,24 @@ export function closeModerationModal() {
   if (modal) modal.classList.add('hidden');
 }
 
-export function renderModerationList() {
+export async function renderModerationList() {
   const container = document.getElementById('moderationListContainer');
   if (!container) return;
 
-  const pending = getPendingSubmissions();
+  container.innerHTML = `
+    <div class="text-center py-8 text-sky-400">
+      <i class="fa-solid fa-spinner fa-spin text-2xl mb-2"></i>
+      <div class="text-xs">Φόρτωση αιτημάτων από το Cloud Firestore...</div>
+    </div>
+  `;
+
+  let pending = [];
+  try {
+    pending = await getPendingSubmissionsAsync();
+  } catch (e) {
+    pending = getPendingSubmissions();
+  }
+
   const countBadge = document.getElementById('moderationPendingCount');
   if (countBadge) {
     countBadge.textContent = pending.length;
@@ -1191,26 +1204,28 @@ export function renderModerationList() {
   }).join('');
 }
 
-export function handleApproveSubmission(spotId) {
-  const approved = approveSpotSubmission(spotId);
+export async function handleApproveSubmission(spotId) {
+  const approved = await approveSpotSubmission(spotId);
   if (approved) {
     const memIdx = timeCapsules.findIndex(s => s.id === spotId);
     if (memIdx !== -1) {
       timeCapsules[memIdx].status = 'approved';
+    } else {
+      timeCapsules.push(approved);
     }
     if (window.renderCurrentTimeCapsules) {
       window.renderCurrentTimeCapsules();
     }
-    renderModerationList();
-    alert('✅ Το σημείο εγκρίθηκε επιτυχώς και είναι πλέον έγκυρο!');
+    await renderModerationList();
+    alert('✅ Το σημείο εγκρίθηκε επιτυχώς και δημοσιεύτηκε στο Cloud!');
   }
 }
 
-export function handleRejectSubmission(spotId) {
+export async function handleRejectSubmission(spotId) {
   const reason = prompt('Αιτιολογία απόρριψης (προαιρετικό):', 'Δεν πληροί τους όρους της κοινότητας');
   if (reason === null) return;
 
-  rejectSpotSubmission(spotId, reason);
+  await rejectSpotSubmission(spotId, reason);
   const memIdx = timeCapsules.findIndex(s => s.id === spotId);
   if (memIdx !== -1) {
     timeCapsules.splice(memIdx, 1);
@@ -1218,12 +1233,12 @@ export function handleRejectSubmission(spotId) {
   if (window.renderCurrentTimeCapsules) {
     window.renderCurrentTimeCapsules();
   }
-  renderModerationList();
+  await renderModerationList();
   alert('❌ Το αίτημα απορρίφθηκε.');
 }
 
-export function handleApproveSpotDirectly(spotId) {
-  handleApproveSubmission(spotId);
+export async function handleApproveSpotDirectly(spotId) {
+  await handleApproveSubmission(spotId);
   closeSpotTimeCapsule();
 }
 
