@@ -838,7 +838,8 @@ export function renderGeographyTabHtml(entity) {
         </div>
       </div>
 
-      <!-- LIVE WEATHER & AIR QUALITY API WIDGET (Open-Meteo) -->
+      <!-- LIVE WEATHER & AIR QUALITY API WIDGET (Open-Meteo - Only for Cities) -->
+      ${isCity ? `
       <div id="geoLiveWeatherWidget" class="p-4 rounded-2xl bg-gradient-to-br from-slate-900/90 to-sky-950/40 border border-sky-500/30 shadow-xl text-left relative">
         <div class="flex items-center justify-between mb-3 border-b border-slate-800 pb-2">
           <div class="flex items-center gap-2">
@@ -846,7 +847,7 @@ export function renderGeographyTabHtml(entity) {
               <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
               <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
             </span>
-            <span class="text-xs font-bold text-white tracking-wide uppercase">Live Δεδομένα Καιρού & Ατμόσφαιρας</span>
+            <span class="text-xs font-bold text-white tracking-wide uppercase">Live Δεδομένα Καιρού & Ατμόσφαιρας Πόλης</span>
           </div>
           <span class="text-[10px] text-sky-400/90 font-mono flex items-center gap-1">
             <i class="fa-solid fa-satellite-dish"></i> Open-Meteo API
@@ -856,9 +857,10 @@ export function renderGeographyTabHtml(entity) {
         <!-- Placeholder / Loading indicator -->
         <div id="geoLiveWeatherContent" class="py-3 flex items-center justify-center gap-3 text-slate-400 text-xs animate-pulse">
           <i class="fa-solid fa-circle-notch fa-spin text-sky-400 text-base"></i>
-          <span>Φόρτωση πραγματικών μετεωρολογικών & περιβαλλοντικών δεδομένων...</span>
+          <span>Φόρτωση πραγματικών μετεωρολογικών & περιβαλλοντικών δεδομένων πόλης...</span>
         </div>
       </div>
+      ` : ''}
 
       <!-- CLIMATE & MICROCLIMATE DASHBOARD -->
       <div class="p-4 rounded-2xl bg-slate-900/80 border border-slate-800 shadow-xl space-y-3">
@@ -899,7 +901,7 @@ export function renderGeographyTabHtml(entity) {
         </div>
 
         <!-- Microclimate Note -->
-        <div class="p-3 rounded-xl bg-slate-850/70 border border-slate-750 text-xs text-slate-300 leading-relaxed">
+        <div class="p-3 rounded-xl bg-slate-855/70 border border-slate-750 text-xs text-slate-300 leading-relaxed">
           <div class="font-bold text-slate-200 mb-1 flex items-center gap-1.5 text-amber-300">
             <i class="fa-solid fa-circle-info"></i> ${isCity ? 'Μικροκλιματική Ανάλυση Πόλης:' : 'Εποχική Συμπεριφορά & Τοπογραφία:'}
           </div>
@@ -919,7 +921,8 @@ export function renderGeographyTabHtml(entity) {
 
         <div class="space-y-3 pt-1">
           ${phenomena.map(ev => {
-            const bingSearchUrl = `https://www.bing.com/search?q=${encodeURIComponent(ev.bingQuery || (ev.title + ' ' + name))}`;
+            const bingQueryEsc = (ev.bingQuery || (ev.title + ' ' + name)).replace(/\\/g, '\\\\').replace(/'/g, "\\'");
+            const titleEsc = ev.title.replace(/\\/g, '\\\\').replace(/'/g, "\\'");
             return `
               <div class="p-3.5 rounded-xl bg-slate-850/80 border border-slate-700/50 hover:border-slate-600 transition flex flex-col gap-2.5">
                 <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1.5">
@@ -933,12 +936,12 @@ export function renderGeographyTabHtml(entity) {
                     </div>
                   </div>
                   
-                  <!-- BING SEARCH LINK BUTTON -->
-                  <a href="${bingSearchUrl}" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 rounded-lg bg-sky-950/80 hover:bg-sky-900 border border-sky-500/40 text-sky-300 hover:text-white text-[11px] font-semibold transition shrink-0 flex items-center gap-1.5 self-start sm:self-auto cursor-pointer">
+                  <!-- IN-APP BING SEARCH BUTTON (Opens in Map Frame) -->
+                  <button onclick="window.openInAppBingSearch('${bingQueryEsc}', '${titleEsc}')" class="px-2.5 py-1 rounded-lg bg-sky-950/80 hover:bg-sky-900 border border-sky-500/40 text-sky-300 hover:text-white text-[11px] font-semibold transition shrink-0 flex items-center gap-1.5 self-start sm:self-auto cursor-pointer" title="Άνοιγμα Έρευνας στο πλαίσιο χάρτη">
                     <i class="fa-brands fa-microsoft text-[10px]"></i>
                     <span>Έρευνα στο Bing</span>
-                    <i class="fa-solid fa-arrow-up-right-from-square text-[9px] opacity-75"></i>
-                  </a>
+                    <i class="fa-solid fa-expand text-[9px] opacity-75"></i>
+                  </button>
                 </div>
 
                 <p class="text-xs text-slate-300 leading-relaxed pl-9">${ev.impact}</p>

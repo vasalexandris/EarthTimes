@@ -11,6 +11,7 @@ import { calculateSubsolarPoint } from './solar-terminator.js?v=20261117_video_i
 import { CITY_TO_STATE } from './states-data.js?v=20261117_video_iframe_fix';
 import { CITY_TO_COUNTRY } from './navigator.js?v=20261118_gastro_overhaul_v8';
 import { renderGeographyTabHtml, mountLiveWeatherData } from './geo-service.js?v=20261119_geo_v1';
+import { renderHistoryTabHtml } from './history-service.js?v=20261119_hist_v1';
 
 let currentActiveVideoCityId = null;
 let currentActiveVideoType = 'drone';
@@ -4139,51 +4140,13 @@ export function renderTabContent(tabId, entity, activeYear = null, activeSpots =
 
   if (tabId === 'geo') {
     html = renderGeographyTabHtml(entity);
-    setTimeout(() => {
-      mountLiveWeatherData(entity.coords);
-    }, 40);
+    if (entity.type === 'city') {
+      setTimeout(() => {
+        mountLiveWeatherData(entity.coords);
+      }, 40);
+    }
   } else if (tabId === 'hist') {
-    const summary = entity.hist?.summary || entity.hist?.overview || entity.hist?.description
-      || (typeof entity.history === 'string' ? entity.history : '')
-      || [entity.hist?.founded, entity.hist?.keyEvent].filter(Boolean).join(' · ')
-      || '';
-    const rawHighlights = entity.hist?.highlights || entity.hist?.keyEvents || entity.hist?.timeline || (Array.isArray(entity.history) ? entity.history : []);
-    const highlights = rawHighlights.map(h => ({
-      year: String(h.year || ''),
-      event: h.event || h.title || '',
-      desc: h.desc || h.description || ''
-    }));
-    html = `
-      <div class="space-y-3">
-        <div class="p-3.5 bg-slate-800/50 rounded-xl border border-slate-700/60 text-slate-200">
-          <div class="flex items-center gap-2 text-amber-400 font-semibold mb-1 text-sm">
-            <i class="fa-solid fa-landmark-dome"></i> Ιστορικό Υπόβαθρο & Εξέλιξη
-          </div>
-          <p class="leading-relaxed">${summary || 'Δεν υπάρχουν διαθέσιμες πληροφορίες.'}</p>
-        </div>
-
-        ${highlights.length ? `
-          <h4 class="text-xs uppercase tracking-wider font-bold text-slate-400 mt-4 mb-2 flex items-center gap-1.5">
-            <i class="fa-solid fa-hourglass-half text-amber-400"></i> Σημαντικοί Σταθμοί στο Χρόνο
-          </h4>
-          <div class="relative pl-5 border-l-2 border-slate-700 space-y-4 my-3">
-            ${highlights.map(h => `
-              <div onclick="window.openDeepDive('${escapeStr(h.event)}', '${escapeStr(h.desc)}', '${escapeStr(entity.name)}')" class="relative group cursor-pointer p-2 rounded-xl hover:bg-slate-800/60 transition">
-                <div class="absolute -left-[27px] top-3 w-3.5 h-3.5 rounded-full bg-amber-500 border-2 border-slate-900 group-hover:scale-125 transition"></div>
-                <div class="flex items-center justify-between gap-2">
-                  <div class="text-xs font-black text-amber-400 tracking-wide">${h.year}</div>
-                  <span class="text-[10px] text-amber-400 opacity-0 group-hover:opacity-100 transition font-semibold flex items-center gap-1">
-                    <i class="fa-solid fa-arrow-up-right-from-square"></i> Λεπτομέρειες
-                  </span>
-                </div>
-                <div class="font-bold text-slate-100 text-sm group-hover:text-amber-200 transition">${h.event}</div>
-                <div class="text-xs text-slate-300 mt-0.5 leading-relaxed">${h.desc}</div>
-              </div>
-            `).join('')}
-          </div>
-        ` : ''}
-      </div>
-    `;
+    html = renderHistoryTabHtml(entity);
   } else if (tabId === 'demo') {
     const summary = entity.demo?.summary || entity.demo?.overview || entity.demo?.demographics || (entity.population ? `Πληθυσμός: ${entity.population}` : '');
     const rawDetails = entity.demo?.details
@@ -4996,3 +4959,35 @@ window.refreshLiveGeoData = function() {
     mountLiveWeatherData(curEntity.coords);
   }
 };
+
+/**
+ * Open Bing Search directly inside the in-app map overlay (NO external tabs/windows)
+ */
+export function openInAppBingSearch(query = '', customTitle = '') {
+  closeDeepDiveOverlay();
+  closeMapWikiOverlay();
+  closeMapStreetViewOverlay();
+
+  const overlay = document.getElementById('mapVideoOverlay');
+  const iframe = document.getElementById('mapVideoIframe');
+  const title = document.getElementById('videoOverlayTitle');
+  const icon = document.getElementById('videoOverlayIcon');
+  const searchInput = document.getElementById('videoSearchInput');
+
+  if (!overlay || !iframe) return;
+
+  currentOverlayQuery = query;
+  if (searchInput) searchInput.value = query;
+  if (title) title.innerText = customTitle ? `🔍 ${customTitle}` : `🔍 Bing Search: ${query}`;
+  if (icon) icon.className = 'fa-brands fa-microsoft text-sky-400 text-xs shrink-0';
+
+  iframe.classList.remove('hidden');
+  iframe.className = 'w-full h-full max-w-5xl rounded-xl shadow-2xl border border-sky-500/40 bg-white transition-all duration-300';
+  iframe.src = `https://www.bing.com/search?q=${encodeURIComponent(query)}`;
+
+  setOverlayMediaMode('ai_search');
+  overlay.classList.remove('hidden');
+  syncMapFloatingControlsVisibility();
+}
+window.openInAppBingSearch = openInAppBingSearch;
+

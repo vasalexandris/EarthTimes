@@ -1095,6 +1095,7 @@ window.loginWithGoogle = TimeMachine.handleGoogleLogin;
 window.logoutUser = TimeMachine.handleGoogleLogout;
 window.isUserLoggedIn = TimeMachine.isUserLoggedIn;
 window.updateUserBadgeUI = TimeMachine.updateUserBadgeUI;
+window.openInAppBingSearch = UIModule.openInAppBingSearch;
 
 // App Initializer
 async function init() {
