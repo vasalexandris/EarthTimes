@@ -1,10 +1,11 @@
 /**
  * History Service
  * Provides rich historical data and rendering for the History tab:
+ * - Chronological Historical Events & Foundation/Erection Milestones (Placed prominently at top)
  * - Prominent & Famous Historical Figures (Name, Period, Specialty, Major Work & Legacy)
  * - Decisive Battles, Conflicts & Political Developments (Date, Forces, Outcome, Historic Impact)
- * - Historical Monuments, Archaeology & Cultural Relics (Century, Relics, Significance)
- * - 100-Year Comparative Perspective (1926 vs 2026)
+ * - Historical Monuments, Castles, Archaeology & Cultural Relics (Century, Relics, Significance)
+ * - 100-Year Comparative Perspective (1926 vs 2026: Then & Now)
  * - In-App Bing Search integration for deep exploration inside the map frame
  */
 
@@ -18,9 +19,366 @@ function escapeStr(str) {
 }
 
 /**
+ * Normalizes entity identifier to ensure matches for alternate spellings and names
+ */
+export function normalizeEntityId(entity) {
+  if (!entity) return '';
+  const id = (entity.id || '').toLowerCase();
+  const name = (entity.name || '').toLowerCase();
+  const eng = (entity.englishName || '').toLowerCase();
+
+  if (id === 'larissa' || id === 'larisa' || name.includes('λάρισ') || eng.includes('laris')) return 'larisa';
+  if (id === 'kozani' || name.includes('κοζάν') || eng.includes('kozan')) return 'kozani';
+  if (id === 'athens' || name.includes('αθήν') || eng.includes('athen')) return 'athens';
+  if (id === 'thessaloniki' || name.includes('θεσσαλονίκ') || eng.includes('thessalon')) return 'thessaloniki';
+  if (id === 'patras' || id === 'patra' || name.includes('πάτρ') || eng.includes('patra')) return 'patras';
+  if (id === 'heraklion' || name.includes('ηράκλει') || eng.includes('heraklion')) return 'heraklion';
+  if (id === 'ioannina' || name.includes('ιωάννιν') || eng.includes('ioannina') || eng.includes('yannena')) return 'ioannina';
+  if (id === 'chania' || name.includes('χανι') || eng.includes('chania')) return 'chania';
+  if (id === 'volos' || name.includes('βόλ') || eng.includes('volos')) return 'volos';
+  if (id === 'boston' || name.includes('βοστών') || eng.includes('boston')) return 'boston';
+  if (id.includes('greece') || name.includes('ελλάδ') || eng.includes('greece')) return 'greece';
+  return id;
+}
+
+/**
+ * Registry of Curated Historical Events & Foundation/Erection Milestones
+ */
+export const HISTORIC_EVENTS_DATABASE = {
+  // Kozani
+  'kozani': [
+    {
+      year: '1855',
+      title: 'Ανέγερση Ιστορικού Καμπαναριού (Μαμάτσιος)',
+      category: 'Ανέγερση / Ορόσημο',
+      icon: 'fa-solid fa-bell text-amber-400',
+      badgeColor: 'border-amber-500/40 text-amber-300 bg-amber-500/10',
+      description: 'Ανεγέρθηκε στην κεντρική πλατεία Νίκης με δωρεές των Κοζανιτών της Βιέννης και του ευεργέτη γιατρού Κωνσταντίνου Μαμάτσιου. Το εξαγωνικό πέτρινο καμπαναριό με το μηχανικό ρολόι ύψους 26 μέτρων αποτελεί το διαχρονικό τοπόσημο και σύμβολο ελευθερίας της πόλης.',
+      bingQuery: 'Καμπαναριό Μαμάτσιος Κοζάνη ανέγερση 1855 ιστορικό ρολόι'
+    },
+    {
+      year: '1664',
+      title: 'Ανέγερση Ιερού Μητροπολιτικού Ναού Αγίου Νικολάου',
+      category: 'Ανέγερση / Ορόσημο',
+      icon: 'fa-solid fa-church text-sky-400',
+      badgeColor: 'border-sky-500/40 text-sky-300 bg-sky-500/10',
+      description: 'Χτίστηκε με ειδικό σουλτανικό φιρμάνι σε περίοδο οθωμανικής απαγόρευσης ανέγερσης νέων χριστιανικών ναών. Διαθέτει περίτεχνο ξυλόγλυπτο επιχρυσωμένο τέμπλο (18ου αι.) και ιστορικές αγιογραφίες των αδελφών Χατζημιχαήλ, αποτελώντας την πνευματική κιβωτό της Κοζάνης.',
+      bingQuery: 'Ιερός Ναός Αγίου Νικολάου Κοζάνη 1664 σουλτανικό φιρμάνι ιστορία'
+    },
+    {
+      year: '1664',
+      title: 'Παραχώρηση Σουλτανικών Προνομίων από τη Βαλιδέ Σουλτάνα',
+      category: 'Πολιτικός Σταθμός',
+      icon: 'fa-solid fa-scroll text-emerald-400',
+      badgeColor: 'border-emerald-500/40 text-emerald-300 bg-emerald-500/10',
+      description: 'Η μητέρα του Σουλτάνου Τουρχάν Χατιτζέ εξέδωσε αυτοκρατορικό φιρμάνι ειδικής προστασίας (Χάσι/Μαλικιανές). Απαγορεύτηκε η μόνιμη εγκατάσταση Τούρκων στην Κοζάνη και κατοχυρώθηκε πλήρης τοπική αυτοδιοίκηση και φορολογική προστασία.',
+      bingQuery: 'Σουλτανικά προνόμια Κοζάνη 1664 Βαλιδέ Σουλτάνα αυτοδιοίκηση'
+    },
+    {
+      year: '1668',
+      title: 'Ίδρυση της Ιστορικής Σχολής Κοζάνης & Βιβλιοθήκης',
+      category: 'Πνευματικός Σταθμός',
+      icon: 'fa-solid fa-book-bookmark text-indigo-400',
+      badgeColor: 'border-indigo-500/40 text-indigo-300 bg-indigo-500/10',
+      description: 'Ίδρυση ενός από τα σπουδαιότερα ανώτερα εκπαιδευτήρια του υπόδουλου ελληνισμού. Εδώ δίδαξαν ο Ευγένιος Βούλγαρης και ο Νεόφυτος Χρηστόπουλος, δημιουργώντας τη μαγιά για τη μετέπειτα Κοβεντάρειο Δημοτική Βιβλιοθήκη.',
+      bingQuery: 'Σχολή Κοζάνης 1668 Ευγένιος Βούλγαρης Κοβεντάρειος ίδρυση'
+    },
+    {
+      year: '1912 (11 Οκτωβρίου)',
+      title: 'Απελευθέρωση της Κοζάνης από τον Ελληνικό Στρατό',
+      category: 'Εθνικός Σταθμός',
+      icon: 'fa-solid fa-flag text-rose-400',
+      badgeColor: 'border-rose-500/40 text-rose-300 bg-rose-500/10',
+      description: 'Μετά την περιφανή νίκη του Ελληνικού Στρατού στη Μάχη του Σαρανταπόρου, ο Διάδοχος Κωνσταντίνος εισήλθε θριαμβευτής στην Κοζάνη, τερματίζοντας σχεδόν πέντε αιώνες οθωμανικού ζυγού και ανοίγοντας τον δρόμο για τη Θεσσαλονίκη.',
+      bingQuery: 'Απελευθέρωση Κοζάνης 11 Οκτωβρίου 1912 Μάχη Σαρανταπόρου'
+    },
+    {
+      year: '1956',
+      title: 'Έναρξη της Βιομηχανικής & Ενεργειακής Περιόδου',
+      category: 'Βιομηχανικός Σταθμός',
+      icon: 'fa-solid fa-bolt text-amber-400',
+      badgeColor: 'border-amber-500/40 text-amber-300 bg-amber-500/10',
+      description: 'Θεμελίωση των πρώτων θερμοηλεκτρικών σταθμών της ΔΕΗ και εξόρυξη λιγνίτη, μετατρέποντας την περιοχή στην «Ενεργειακή Καρδιά της Ελλάδας».',
+      bingQuery: 'Κοζάνη λιγνίτης ΔΕΗ ιστορία ενεργειακή καρδιά'
+    }
+  ],
+
+  // Larisa
+  'larisa': [
+    {
+      year: '~370 π.Χ.',
+      title: 'Διαμονή, Διδασκαλία & Θάνατος του Ιπποκράτη στη Λάρισα',
+      category: 'Παγκόσμιος Ιατρικός Σταθμός',
+      icon: 'fa-solid fa-notes-medical text-amber-400',
+      badgeColor: 'border-amber-500/40 text-amber-300 bg-amber-500/10',
+      description: 'Ο Ιπποκράτης ο Κώος, ο Πατέρας της Σύγχρονης Ιατρικής, επέλεξε τη Λάρισα για να ζήσει τα ώριμα χρόνια του, θεραπεύοντας και καταγράφοντας τις ιατρικές παρατηρήσεις του. Πέθανε και τάφηκε στη Λάρισα γύρω στο 370 π.Χ. Ο αρχαίος τάφος του αποκαλύφθηκε το 1826 μετά από πλημμύρα του Πηνειού και σήμερα τιμάται με επιβλητικό κενοτάφιο/μνημείο στο πάρκο Αλκαζάρ.',
+      bingQuery: 'Ιπποκράτης Λάρισα τάφος μνημείο Αλκαζάρ ιστορία 370 πΧ'
+    },
+    {
+      year: '15ος Αιώνας (Οθωμανική Εποχή)',
+      title: 'Ανέγερση του Κάστρου & του Μπεζεστενίου (Λόφος Φρουρίου)',
+      category: 'Ανέγερση / Ορόσημο',
+      icon: 'fa-solid fa-chess-rook text-orange-400',
+      badgeColor: 'border-orange-500/40 text-orange-300 bg-orange-500/10',
+      description: 'Στον ιστορικό λόφο του Φρουρίου (την αρχαία Ακρόπολη της Λάρισας) ανεγέρθηκε στα τέλη του 15ου αιώνα το ισχυρό οχυρωματικό συγκρότημα και το επιβλητικό Μπεζεστένι (κλειστή αγορά πολύτιμων αγαθών) από τον Οθωμανό στρατηλάτη Τουραχάν Μπέη. Οι πανύψηλοι πέτρινοι τοίχοι πάχους 1,60 μέτρων και οι έξι τρούλοι του δέσποζαν στην πόλη για αιώνες.',
+      bingQuery: 'Μπεζεστένι Λάρισα Κάστρο Λόφος Φρουρίου 15ος αιώνας ιστορία'
+    },
+    {
+      year: '3ος Αιώνας π.Χ.',
+      title: 'Ανέγερση του Α΄ Αρχαίου Θεάτρου Λάρισας',
+      category: 'Ανέγερση / Ορόσημο',
+      icon: 'fa-solid fa-masks-theater text-emerald-400',
+      badgeColor: 'border-emerald-500/40 text-emerald-300 bg-emerald-500/10',
+      description: 'Κατασκευάστηκε στο νότιο τμήμα του λόφου του Φρουρίου κατά τη βασιλεία του Φιλίππου Ε΄ της Μακεδονίας. Με χωρητικότητα άνω των 10.000 θεατών, φιλοξενούσε θεατρικές παραστάσεις, μουσικούς αγώνες και τις συνελεύσεις του «Κοινού των Θεσσαλών». Σήμερα αποτελεί ένα από τα ελάχιστα αρχαία θέατρα που σώζονται ενσωματωμένα μέσα στην καρδιά μιας σύγχρονης ευρωπαϊκής πόλης.',
+      bingQuery: 'Αρχαίο Θέατρο Λάρισας ιστορία ανέγερση 3ος αιώνας πΧ'
+    },
+    {
+      year: '4ος Αιώνας μ.Χ.',
+      title: 'Ανέγερση Βυζαντινής Βασιλικής Αγίου Αχιλλίου',
+      category: 'Ανέγερση / Ορόσημο',
+      icon: 'fa-solid fa-church text-sky-400',
+      badgeColor: 'border-sky-500/40 text-sky-300 bg-sky-500/10',
+      description: 'Ανεγέρθηκε προς τιμήν του πρώτου επισκόπου και πολιούχου της Λάρισας Αγίου Αχιλλίου στον λόφο του Φρουρίου. Τα παλαιοχριστιανικά και βυζαντινά της ίχνη αποκαλύφθηκαν κατά τις αρχαιολογικές ανασκαφές, επιβεβαιώνοντας τη μακραίωνη θρησκευτική ιστορία της πόλης.',
+      bingQuery: 'Βυζαντινή Βασιλική Αγίου Αχιλλίου Λάρισα Λόφος Φρουρίου'
+    },
+    {
+      year: '1881 (31 Αυγούστου)',
+      title: 'Απελευθέρωση & Ενσωμάτωση της Λάρισας στην Ελλάδα',
+      category: 'Εθνικός Σταθμός',
+      icon: 'fa-solid fa-flag text-rose-400',
+      badgeColor: 'border-rose-500/40 text-rose-300 bg-rose-500/10',
+      description: 'Με τη Σύμβαση της Κωνσταντινούπολης (1881), η Θεσσαλία ενώθηκε με την ελεύθερη Ελλάδα. Ο Ελληνικός Στρατός υπό τον στρατηγό Σκαρλάτο Σούτσο εισήλθε στη Λάρισα μέσα σε πανηγυρικό κλίμα, τερματίζοντας 488 χρόνια οθωμανικής κατοχής (1393-1881).',
+      bingQuery: 'Απελευθέρωση Λάρισας 31 Αυγούστου 1881 ενσωμάτωση Θεσσαλίας'
+    },
+    {
+      year: '1910 (6 Μαρτίου)',
+      title: 'Η Αγροτική Εξέγερση του Κιλελέρ',
+      category: 'Κοινωνικός Σταθμός',
+      icon: 'fa-solid fa-tractor text-lime-400',
+      badgeColor: 'border-lime-500/40 text-lime-300 bg-lime-500/10',
+      description: 'Οι ακτήμονες κολίγοι της Θεσσαλίας ξεσηκώθηκαν απαιτώντας την απαλλοτρίωση των τσιφλικιών και τη διανομή της γης στους καλλιεργητές. Η αιματηρή εξέγερση στο Κιλελέρ αποτέλεσε το έναυσμα για την ιστορική αγροτική μεταρρύθμιση στην Ελλάδα.',
+      bingQuery: 'Εξέγερση Κιλελέρ 6 Μαρτίου 1910 κολίγοι αγροτική μεταρρύθμιση'
+    }
+  ],
+
+  // Athens
+  'athens': [
+    {
+      year: '447 - 432 π.Χ.',
+      title: 'Ανέγερση του Παρθενώνα στην Ακρόπολη',
+      category: 'Ανέγερση / Ορόσημο',
+      icon: 'fa-solid fa-landmark text-amber-400',
+      badgeColor: 'border-amber-500/40 text-amber-300 bg-amber-500/10',
+      description: 'Οικοδόμηση του αριστουργήματος του Ικτίνου και του Καλλικράτη υπό την καλλιτεχνική εποπτεία του Φειδία, κατ’ εντολή του Περικλή.',
+      bingQuery: 'Παρθενώνας Ακρόπολη ανέγερση 447 πΧ Ικτίνος Φειδίας'
+    },
+    {
+      year: '508 π.Χ.',
+      title: 'Μεταρρυθμίσεις Κλεισθένη & Γέννηση της Δημοκρατίας',
+      category: 'Πολιτικός Σταθμός',
+      icon: 'fa-solid fa-scale-balanced text-emerald-400',
+      badgeColor: 'border-emerald-500/40 text-emerald-300 bg-emerald-500/10',
+      description: 'Θεσμοθέτηση της ισονομίας και της άμεσης συμμετοχής όλων των πολιτών στην Εκκλησία του Δήμου.',
+      bingQuery: 'Κλεισθένης μεταρρυθμίσεις 508 πΧ δημοκρατία Αθήνα'
+    },
+    {
+      year: '1834',
+      title: 'Ανακήρυξη της Αθήνας ως Πρωτεύουσας της Ελλάδας',
+      category: 'Εθνικός Σταθμός',
+      icon: 'fa-solid fa-crown text-purple-400',
+      badgeColor: 'border-purple-500/40 text-purple-300 bg-purple-500/10',
+      description: 'Μεταφορά της πρωτεύουσας από το Ναύπλιο στην ιστορική πόλη της Αθήνας από τον Βασιλιά Όθωνα και νέο σχέδιο πόλεως.',
+      bingQuery: 'Ανακήρυξη Αθήνας πρωτεύουσας 1834 Όθων'
+    },
+    {
+      year: '1896',
+      title: 'Αναβίωση των Σύγχρονων Ολυμπιακών Αγώνων',
+      category: 'Παγκόσμιος Σταθμός',
+      icon: 'fa-solid fa-medal text-amber-400',
+      badgeColor: 'border-amber-500/40 text-amber-300 bg-amber-500/10',
+      description: 'Διεξαγωγή των 1ων Σύγχρονων Ολυμπιακών Αγώνων στο Παναθηναϊκό Στάδιο με πρωτεργάτες τον Coubertin και τον Δημήτριο Βικέλα.',
+      bingQuery: 'Ολυμπιακοί Αγώνες 1896 Παναθηναϊκό Στάδιο Αθήνα'
+    }
+  ],
+
+  // Thessaloniki
+  'thessaloniki': [
+    {
+      year: '315 π.Χ.',
+      title: 'Ίδρυση της Θεσσαλονίκης από τον Κάσσανδρο',
+      category: 'Ανέγερση / Ορόσημο',
+      icon: 'fa-solid fa-city text-amber-400',
+      badgeColor: 'border-amber-500/40 text-amber-300 bg-amber-500/10',
+      description: 'Ίδρυση της πόλης με συνένωση 26 οικισμών από τον Μακεδόνα Βασιλιά Κάσσανδρο, ο οποίος της έδωσε το όνομα της συζύγου του (ετεροθαλούς αδελφής του Μεγάλου Αλεξάνδρου).',
+      bingQuery: 'Ίδρυση Θεσσαλονίκης 315 πΧ Κάσσανδρος ιστορία'
+    },
+    {
+      year: '15ος Αιώνας',
+      title: 'Ανέγερση του Λευκού Πύργου στα παραθαλάσσια τείχη',
+      category: 'Ανέγερση / Ορόσημο',
+      icon: 'fa-solid fa-chess-rook text-orange-400',
+      badgeColor: 'border-orange-500/40 text-orange-300 bg-orange-500/10',
+      description: 'Κατασκευή του εμβληματικού κυλινδρικού πύργου ύψους 34 μέτρων από τους Οθωμανούς ως οχυρό και φυλακή.',
+      bingQuery: 'Λευκός Πύργος Θεσσαλονίκη ανέγερση 15ος αιώνας ιστορία'
+    },
+    {
+      year: '1912 (26 Οκτωβρίου)',
+      title: 'Απελευθέρωση της Θεσσαλονίκης',
+      category: 'Εθνικός Σταθμός',
+      icon: 'fa-solid fa-flag text-rose-400',
+      badgeColor: 'border-rose-500/40 text-rose-300 bg-rose-500/10',
+      description: 'Υπογραφή του πρωτοκόλλου παράδοσης της πόλης από τον Χασάν Ταχσίν Πασά στον Ελληνικό Στρατό ανήμερα της εορτής του πολιούχου Αγίου Δημητρίου.',
+      bingQuery: 'Απελευθέρωση Θεσσαλονίκης 26 Οκτωβρίου 1912 πρωτόκολλο παράδοσης'
+    },
+    {
+      year: '1917 (5 Αυγούστου)',
+      title: 'Η Μεγάλη Πυρκαγιά & Σχέδιο Εμπράρ',
+      category: 'Ιστορικός Σταθμός',
+      icon: 'fa-solid fa-fire text-red-400',
+      badgeColor: 'border-red-500/40 text-red-300 bg-red-500/10',
+      description: 'Καταστροφή του ιστορικού κέντρου και ανασχεδιασμός της πόλης σε σύγχρονα ευρωπαϊκά πρότυπα από τη διεθνή επιτροπή του Ερνέστ Εμπράρ.',
+      bingQuery: 'Μεγάλη Πυρκαγιά Θεσσαλονίκης 1917 Σχέδιο Εμπράρ'
+    }
+  ],
+
+  // Patras
+  'patras': [
+    {
+      year: '6ος Αιώνας μ.Χ.',
+      title: 'Ανέγερση του Κάστρου της Πάτρας',
+      category: 'Ανέγερση / Ορόσημο',
+      icon: 'fa-solid fa-chess-rook text-amber-400',
+      badgeColor: 'border-amber-500/40 text-amber-300 bg-amber-500/10',
+      description: 'Χτίστηκε από τον Βυζαντινό Αυτοκράτορα Ιουστινιανό Α΄ πάνω στα ερείπια της αρχαίας ακρόπολης για την προστασία από βαρβαρικές επιδρομές.',
+      bingQuery: 'Κάστρο Πάτρας ανέγερση Ιουστινιανός 6ος αιώνας ιστορία'
+    },
+    {
+      year: '1821 (25 Μαρτίου)',
+      title: 'Έναρξη της Επανάστασης στην Πάτρα',
+      category: 'Εθνικός Σταθμός',
+      icon: 'fa-solid fa-flag text-rose-400',
+      badgeColor: 'border-rose-500/40 text-rose-300 bg-rose-500/10',
+      description: 'Ο Παλαιών Πατρών Γερμανός και οι οπλαρχηγοί κήρυξαν την Επανάσταση στην Πλατεία Αγίου Γεωργίου υψώνοντας το λάβαρο του αγώνα.',
+      bingQuery: 'Παλαιών Πατρών Γερμανός Πλατεία Αγίου Γεωργίου Πάτρα 1821'
+    },
+    {
+      year: '2004',
+      title: 'Εγκαίνια Γέφυρας Ρίου - Αντιρρίου («Χαρίλαος Τρικούπης»)',
+      category: 'Σύγχρονο Ορόσημο',
+      icon: 'fa-solid fa-bridge text-sky-400',
+      badgeColor: 'border-sky-500/40 text-sky-300 bg-sky-500/10',
+      description: 'Ολοκλήρωση της μακρύτερης καλωδιωτής γέφυρας πολλαπλών ανοιγμάτων στον κόσμο (2.252 μέτρα), ενώνοντας την Πελοπόννησο με τη Στερεά Ελλάδα.',
+      bingQuery: 'Γέφυρα Ρίου Αντιρρίου εγκαίνια 2004 Χαρίλαος Τρικούπης'
+    }
+  ],
+
+  // Heraklion
+  'heraklion': [
+    {
+      year: '1900 - 1450 π.Χ.',
+      title: 'Ανέγερση του Μινωικού Ανακτόρου της Κνωσού',
+      category: 'Ανέγερση / Ορόσημο',
+      icon: 'fa-solid fa-monument text-amber-400',
+      badgeColor: 'border-amber-500/40 text-amber-300 bg-amber-500/10',
+      description: 'Η έδρα του Βασιλιά Μίνωα και το κέντρο του πρώτου λαμπρού ευρωπαϊκού πολιτισμού, με πολυώροφη αρχιτεκτονική, τοιχογραφίες και αποθήκες.',
+      bingQuery: 'Κνωσός Μινωικό Ανάκτορο Ηράκλειο ανέγερση ιστορία'
+    },
+    {
+      year: '1523 - 1540',
+      title: 'Ανέγερση του Ενετικού Φρουρίου Κούλες (Castello a Mare)',
+      category: 'Ανέγερση / Ορόσημο',
+      icon: 'fa-solid fa-chess-rook text-orange-400',
+      badgeColor: 'border-orange-500/40 text-orange-300 bg-orange-500/10',
+      description: 'Κατασκευή του θαλάσσιου φρουρίου από τους Ενετούς στην είσοδο του παλιού λιμανιού για την προστασία του Χάνδακα.',
+      bingQuery: 'Φρούριο Κούλες Ηράκλειο Ενετικά τείχη ανέγερση ιστορία'
+    },
+    {
+      year: '1648 - 1669',
+      title: 'Η Μεγάλη Πολιορκία του Χάνδακα',
+      category: 'Ιστορικός Σταθμός',
+      icon: 'fa-solid fa-shield-halved text-rose-400',
+      badgeColor: 'border-rose-500/40 text-rose-300 bg-rose-500/10',
+      description: 'Η 21χρονη πολιορκία της πόλης από τους Οθωμανούς, η μακροβιότερη πολιορκία στην παγκόσμια ιστορία, πριν την τελική παράδοση από τον Μοροζίνι.',
+      bingQuery: 'Πολιορκία Χάνδακα 1648 1669 Ηράκλειο Ενετοί Οθωμανοί'
+    },
+    {
+      year: '1941 (Μάιος)',
+      title: 'Η Μάχη της Κρήτης',
+      category: 'Εθνικός Σταθμός',
+      icon: 'fa-solid fa-crosshairs text-sky-400',
+      badgeColor: 'border-sky-500/40 text-sky-300 bg-sky-500/10',
+      description: 'Πρωτοφανής αεραποβατική επιχείρηση των Γερμανών και ηρωική καθολική αντίσταση του κρητικού λαού και των συμμαχικών δυνάμεων.',
+      bingQuery: 'Μάχη της Κρήτης Μάιος 1941 Ηράκλειο αντίσταση'
+    }
+  ],
+
+  // Ioannina
+  'ioannina': [
+    {
+      year: '528 μ.Χ.',
+      title: 'Ίδρυση & Ανέγερση του Κάστρου Ιωαννίνων',
+      category: 'Ανέγερση / Ορόσημο',
+      icon: 'fa-solid fa-chess-rook text-amber-400',
+      badgeColor: 'border-amber-500/40 text-amber-300 bg-amber-500/10',
+      description: 'Χτίστηκε από τον Βυζαντινό Αυτοκράτορα Ιουστινιανό και εξελίχθηκε στη σημαντικότερη καστροπολιτεία της Ηπείρου και έδρα του Δεσποτάτου της Ηπείρου.',
+      bingQuery: 'Κάστρο Ιωαννίνων ανέγερση Ιουστινιανός Ιτς Καλέ ιστορία'
+    },
+    {
+      year: '1788 - 1822',
+      title: 'Η Εποχή του Αλή Πασά των Ιωαννίνων',
+      category: 'Ιστορικός Σταθμός',
+      icon: 'fa-solid fa-crown text-purple-400',
+      badgeColor: 'border-purple-500/40 text-purple-300 bg-purple-500/10',
+      description: 'Περίοδος μεγάλης οικονομικής και πνευματικής ακμής («Τα Γιάννενα είναι πρώτα στα άρματα, στα γρόσια και στα γράμματα») και ίδρυσης φημισμένων σχολών.',
+      bingQuery: 'Αλή Πασάς Ιωάννινα ιστορία ακμή πασαλίκι'
+    },
+    {
+      year: '1913 (21 Φεβρουαρίου)',
+      title: 'Απελευθέρωση των Ιωαννίνων (Μάχη του Μπιζανίου)',
+      category: 'Εθνικός Σταθμός',
+      icon: 'fa-solid fa-flag text-rose-400',
+      badgeColor: 'border-rose-500/40 text-rose-300 bg-rose-500/10',
+      description: 'Κατάληψη των απόρθητων οχυρών του Μπιζανίου από τον Ελληνικό Στρατό και παράδοση της πόλης από τον Εσάτ Πασά στον Διάδοχο Κωνσταντίνο.',
+      bingQuery: 'Μάχη Μπιζανίου Απελευθέρωση Ιωαννίνων 21 Φεβρουαρίου 1913'
+    }
+  ],
+
+  // Boston
+  'boston': [
+    {
+      year: '1630',
+      title: 'Ίδρυση της Βοστώνης από τους Πουριτανούς',
+      category: 'Ίδρυση / Ορόσημο',
+      icon: 'fa-solid fa-city text-amber-400',
+      badgeColor: 'border-amber-500/40 text-amber-300 bg-amber-500/10',
+      description: 'Ίδρυση της πόλης στη χερσόνησο Shawmut από τον John Winthrop και άποικους της Εταιρείας του Κόλπου της Μασαχουσέτης.',
+      bingQuery: 'Boston foundation 1630 John Winthrop puritans history'
+    },
+    {
+      year: '1636',
+      title: 'Ίδρυση του Πανεπιστημίου Harvard',
+      category: 'Ανώτατη Παιδεία',
+      icon: 'fa-solid fa-graduation-cap text-rose-400',
+      badgeColor: 'border-rose-500/40 text-rose-300 bg-rose-500/10',
+      description: 'Το αρχαιότερο ανώτατο εκπαιδευτικό ίδρυμα στις Ηνωμένες Πολιτείες και ένα από τα κορυφαία ακαδημαϊκά ιδρύματα παγκοσμίως.',
+      bingQuery: 'Harvard University foundation 1636 Boston Cambridge history'
+    },
+    {
+      year: '1773 (16 Δεκεμβρίου)',
+      title: 'Boston Tea Party (Το Κίνημα του Τσαγιού)',
+      category: 'Ιστορικός Σταθμός',
+      icon: 'fa-solid fa-mug-hot text-amber-400',
+      badgeColor: 'border-amber-500/40 text-amber-300 bg-amber-500/10',
+      description: 'Πολιτική διαμαρτυρία των Αποίκων (Sons of Liberty) κατά των βρετανικών φόρων, ρίχνοντας φορτία τσαγιού στο λιμάνι, γεγονός που πυροδότησε την Αμερικανική Επανάσταση.',
+      bingQuery: 'Boston Tea Party 1773 American Revolution history'
+    }
+  ]
+};
+
+/**
  * Registry of Famous People & Historical Figures
  */
-const FAMOUS_PEOPLE_DATABASE = {
+export const FAMOUS_PEOPLE_DATABASE = {
   // Kozani
   'kozani': [
     {
@@ -70,6 +428,50 @@ const FAMOUS_PEOPLE_DATABASE = {
       work: 'Αφιέρωσε δεκαετίες στη συλλογή, καταλογογράφηση και διάσωση των σπάνιων χειρογράφων της Κοβενταρείου Δημοτικής Βιβλιοθήκης.',
       legacy: 'Χάρη στην επιμονή του διασώθηκε η 2η σημαντικότερη ιστορική βιβλιοθήκη της χώρας και ανεκτίμητα αρχαία κειμήλια.',
       bingQuery: 'Νικόλαος Δελιαλής Κοβεντάρειος Βιβλιοθήκη Κοζάνη'
+    }
+  ],
+
+  // Larisa
+  'larisa': [
+    {
+      name: 'Ιπποκράτης ο Κώος',
+      years: '~460 - ~370 π.Χ.',
+      role: 'Ο Πατέρας της Σύγχρονης Ιατρικής (Έζησε & Ετάφη στη Λάρισα)',
+      work: 'Θεμελίωσε την ορθολογική ιατρική επιστήμη, διαχωρίζοντάς την από τη μαγεία («Ιπποκρατική Συλλογή», Όρκος του Ιπποκράτη). Πέρασε τα ώριμα χρόνια του στη Λάρισα, όπου θεράπευε, δίδαξε και άφησε την τελευταία του πνοή.',
+      legacy: 'Το όνομά του αποτελεί παγκόσμιο συνώνυμο της ιατρικής δεοντολογίας και του ανθρωπισμού. Ο τάφος του στο πάρκο Αλκαζάρ της Λάρισας αποτελεί ιερό παγκόσμιο προσκύνημα για την ιατρική κοινότητα.',
+      bingQuery: 'Ιπποκράτης Λάρισα τάφος πατέρας ιατρικής βιογραφία έργο'
+    },
+    {
+      name: 'Κωνσταντίνος Κούμας',
+      years: '1777 - 1836',
+      role: 'Μεγάλος Διδάσκαλος του Γένους, Φιλόσοφος & Ιστορικός',
+      work: 'Γεννήθηκε στη Λάρισα. Συγγραφέας της μνημειώδους 12τομης «Ιστορίας των ανθρωπίνων πράξεων» και θεμελιωδών συγγραμμάτων φυσικής, χημείας και φιλοσοφίας, διευθυντής του Φιλολογικού Γυμνασίου Σμύρνης.',
+      legacy: 'Κορυφαίος πρωτεργάτης του Νεοελληνικού Διαφωτισμού που μόχθησε για την πνευματική αναγέννηση και την αφύπνιση των Ελλήνων πριν το 1821.',
+      bingQuery: 'Κωνσταντίνος Κούμας Λάρισα Διδάσκαλος του Γένους Διαφωτισμός'
+    },
+    {
+      name: 'Άγιος Αχίλλιος',
+      years: '~270 - 330 μ.Χ.',
+      role: 'Μητροπολίτης & Πολιούχος της Λάρισας',
+      work: 'Συμμετείχε στην Α΄ Οικουμενική Σύνοδο της Νίκαιας (325 μ.Χ.), επιτέλεσε τεράστιο φιλανθρωπικό, κοινωνικό και πνευματικό έργο, ανακουφίζοντας τους φτωχούς και θεμελιώνοντας τη χριστιανική κοινότητα της Θεσσαλίας.',
+      legacy: 'Ο αιώνιος προστάτης και σύμβολο της Λάρισας. Ο επιβλητικός μητροπολιτικός ναός και ο λόφος του Φρουρίου είναι αφιερωμένοι στη μνήμη του.',
+      bingQuery: 'Άγιος Αχίλλιος Λάρισα πολιούχος ιστορία βίος'
+    },
+    {
+      name: 'Αχιλλέας',
+      years: 'Μυκηναϊκή / Ομηρική Εποχή',
+      role: 'Βασιλιάς των Μυρμιδόνων & Μέγιστος Ήρωας της Ιλιάδας',
+      work: 'Ηγεμόνας της Φθίας και των Μυρμιδόνων της Θεσσαλικής γης, κεντρικό πρόσωπο του Τρωικού Πολέμου και της ομηρικής Ιλιάδας.',
+      legacy: 'Αιώνιο παγκόσμιο σύμβολο ανδρείας, τιμής, λεβεντιάς και τραγικής ανθρώπινης μοίρας στην παγκόσμια γραμματεία.',
+      bingQuery: 'Αχιλλέας Μυρμιδόνες Θεσσαλία μυθολογία Ιλιάδα'
+    },
+    {
+      name: 'Αχιλλέας Τζάρτζανος',
+      years: '1873 - 1946',
+      role: 'Κορυφαίος Γλωσσολόγος & Φιλόλογος',
+      work: 'Γεννήθηκε στον Τύρναβο/Λάρισα. Συνέγραψε τη μνημειώδη «Νεοελληνική Σύνταξιν» και τα βασικά αναγνωστικά και γραμματικές του ελληνικού σχολείου.',
+      legacy: 'Θεμελίωσε την επιστημονική διδασκαλία της δημοτικής γλώσσας στη σύγχρονη ελληνική εκπαίδευση.',
+      bingQuery: 'Αχιλλέας Τζάρτζανος γραμματική φιλόλογος Λάρισα'
     }
   ],
 
@@ -181,7 +583,7 @@ const FAMOUS_PEOPLE_DATABASE = {
 /**
  * Registry of Decisive Battles, Conflicts & Political Developments
  */
-const HISTORIC_BATTLES_DATABASE = {
+export const HISTORIC_BATTLES_DATABASE = {
   // Kozani
   'kozani': [
     {
@@ -203,7 +605,7 @@ const HISTORIC_BATTLES_DATABASE = {
       badgeColor: 'border-emerald-500/40 text-emerald-300 bg-emerald-500/10',
       forces: 'Κοζανίτες Πρόκριτοι & Βαλιδέ Σουλτάνα (Μητέρα του Σουλτάνου)',
       outcome: 'Έκδοση αυτοκρατορικών φιρμανίων ειδικής προστασίας (Χάσι/Μαλικιανές).',
-      impact: 'Απαγορεύτηκε η μόνιμη εγκατάσταση Τούρκων στην πόλη, κατοχυρώθηκε πλήρης τοπική αυτοδιοίκηση και φορολογικά προνόμια, επιτρέποντας την ίδρυση της περίφημης Σχολής και τη δημιουργία ακμαίων εμπορικών οίκων στη Βιέννη και τη Βουδαπέστη.',
+      impact: 'Απαγορεύτηκε η μόνιμη εγκατάσταση Τούρκων στην πόλη, κατοχυρώθηκε πλήρης τοπική αυτοδιοίκηση και φορολογικά προνόμια, επιτρέποντας την άνθηση των γραμμάτων και του ευρωπαϊκού εμπορίου.',
       bingQuery: 'Σουλτανικά προνόμια Κοζάνη 1664 Βαλιδέ Σουλτάνα αυτοδιοίκηση'
     },
     {
@@ -227,6 +629,43 @@ const HISTORIC_BATTLES_DATABASE = {
       outcome: 'Ηρωική επιβραδυντική μάχη στα στενά του Αλιάκμονα.',
       impact: 'Καθυστέρησε τη γερμανική προέλαση προς τη νότια Ελλάδα, επιτρέποντας την ασφαλή εκκένωση των συμμαχικών στρατευμάτων.',
       bingQuery: 'Μάχη Σερβίων 1941 ANZAC Αλιάκμονας γερμανική εισβολή'
+    }
+  ],
+
+  // Larisa
+  'larisa': [
+    {
+      title: 'Απελευθέρωση της Λάρισας & Ενσωμάτωση Θεσσαλίας 1881',
+      date: '31 Αυγούστου 1881',
+      type: 'battle',
+      icon: 'fa-solid fa-flag text-rose-400',
+      badgeColor: 'border-rose-500/40 text-rose-300 bg-rose-500/10',
+      forces: 'Ελληνικός Στρατός (Στρατηγός Σκαρλάτος Σούτσος) & Οθωμανική Διοίκηση',
+      outcome: 'Ειρηνική παράδοση της πόλης και θριαμβευτική είσοδος του ελληνικού στρατού.',
+      impact: 'Τερματισμός 488 ετών οθωμανικού ζυγού (από το 1393) και οριστική ενσωμάτωση της πρωτεύουσας της Θεσσαλίας στο ανεξάρτητο Ελληνικό Βασίλειο.',
+      bingQuery: 'Απελευθέρωση Λάρισας 31 Αυγούστου 1881 ιστορία παράδοση'
+    },
+    {
+      title: 'Η Αγροτική Εξέγερση του Κιλελέρ 1910',
+      date: '6 Μαρτίου 1910',
+      type: 'politics',
+      icon: 'fa-solid fa-tractor text-lime-400',
+      badgeColor: 'border-lime-500/40 text-lime-300 bg-lime-500/10',
+      forces: 'Θεσσαλοί Κολίγοι & Αγρότες εναντίον Στρατού και Τσιφλικάδων',
+      outcome: 'Αιματηρά επεισόδια στον σιδηροδρομικό σταθμό Κιλελέρ και μαζικό συλλαλητήριο στη Λάρισα.',
+      impact: 'Ιστορικό σημείο καμπής που ανάγκασε την κυβέρνηση Ελευθερίου Βενιζέλου να προχωρήσει στην ψήφιση του νόμου για την αναγκαστική απαλλοτρίωση των τσιφλικιών και τη διανομή της γης στους καλλιεργητές.',
+      bingQuery: 'Εξέγερση Κιλελέρ 1910 Λάρισα αγροτική μεταρρύθμιση Βενιζέλος'
+    },
+    {
+      title: 'Μάχη της Μελούνας & Ελληνοτουρκικός Πόλεμος του 1897',
+      date: 'Απρίλιος 1897',
+      type: 'battle',
+      icon: 'fa-solid fa-shield-halved text-amber-400',
+      badgeColor: 'border-amber-500/40 text-amber-300 bg-amber-500/10',
+      forces: 'Ελληνικές Δυνάμεις εναντίον Οθωμανικής Στρατιάς (Εντέμ Πασάς)',
+      outcome: 'Υποχώρηση των ελληνικών στρατευμάτων και προσωρινή κατάληψη της Λάρισας.',
+      impact: 'Υπήρξε η σκληρή δοκιμασία του «Μαύρου \'97», που οδήγησε στη ριζική αναδιοργάνωση των Ενόπλων Δυνάμεων πριν τους νικηφόρους Βαλκανικούς Πολέμους του 1912.',
+      bingQuery: 'Ελληνοτουρκικός Πόλεμος 1897 Μάχη Μελούνας Λάρισα υποχώρηση'
     }
   ],
 
@@ -295,9 +734,9 @@ const HISTORIC_BATTLES_DATABASE = {
 };
 
 /**
- * Registry of Historic Heritage Monuments & Archaeological Treasures
+ * Registry of Historic Heritage Monuments, Castles & Archaeological Treasures
  */
-const HISTORIC_MONUMENTS_DATABASE = {
+export const HISTORIC_MONUMENTS_DATABASE = {
   // Kozani
   'kozani': [
     {
@@ -306,7 +745,15 @@ const HISTORIC_MONUMENTS_DATABASE = {
       type: 'monument',
       icon: 'fa-solid fa-bell text-amber-400',
       description: 'Το εξαγωνικό πέτρινο ρολόι-σύμβολο της Κοζάνης στην κεντρική Πλατεία Νίκης. Χτίστηκε με δωρεές Κοζανιτών της διασποράς και του γιατρού Κωνσταντίνου Μαμάτσιου.',
-      bingQuery: 'Καμπαναριό Μαμάτσιος Κοζάνη ιστορία ρολόι'
+      bingQuery: 'Καμπαναριό Μαμάτσιος Κοζάνη ιστορία ρολόι ανέγερση 1855'
+    },
+    {
+      title: 'Ιερός Μητροπολιτικός Ναός Αγίου Νικολάου',
+      date: '1664 (17ος Αιώνας)',
+      type: 'church',
+      icon: 'fa-solid fa-church text-sky-400',
+      description: 'Χτίστηκε χάρη στα σουλτανικά προνόμια της Βαλιδέ Σουλτάνας. Φιλοξενεί εξαιρετικό ξυλόγλυπτο επιχρυσωμένο τέμπλο, ιστορικές εικόνες και αγιογραφίες των αδελφών Χατζημιχαήλ.',
+      bingQuery: 'Ναός Αγίου Νικολάου Κοζάνη 1664 τέμπλο σουλτανικό φιρμάνι'
     },
     {
       title: 'Κοβεντάρειος Δημοτική Βιβλιοθήκη Κοζάνης',
@@ -315,14 +762,6 @@ const HISTORIC_MONUMENTS_DATABASE = {
       icon: 'fa-solid fa-book-bookmark text-emerald-400',
       description: 'Η 2η μεγαλύτερη ιστορική βιβλιοθήκη στην Ελλάδα. Θεματοφύλακας 380 σπάνιων χειρογράφων (11ος-19ος αι.), 70.000 παλαιτύπων και ενός εκ των ελαχίστων σωζόμενων πρωτοτύπων της Χάρτας του Ρήγα Φεραίου (1797).',
       bingQuery: 'Κοβεντάρειος Δημοτική Βιβλιοθήκη Κοζάνης Χάρτα Ρήγα χειρόγραφα'
-    },
-    {
-      title: 'Ιερός Μητροπολιτικός Ναός Αγίου Νικολάου',
-      date: '1664 (17ος Αιώνας)',
-      type: 'church',
-      icon: 'fa-solid fa-church text-sky-400',
-      description: 'Χτίστηκε χάρη στα σουλτανικά προνόμια. Φιλοξενεί εξαιρετικό ξυλόγλυπτο επιχρυσωμένο τέμπλο, ιστορικές εικόνες και τοιχογραφίες των αδελφών Χατζημιχαήλ.',
-      bingQuery: 'Ναός Αγίου Νικολάου Κοζάνη 1664 τέμπλο'
     },
     {
       title: 'Αρχοντικό Γεωργίου Λασσάνη',
@@ -339,6 +778,50 @@ const HISTORIC_MONUMENTS_DATABASE = {
       icon: 'fa-solid fa-monument text-amber-300',
       description: 'Η μητρόπολη του αρχαίου βασιλείου της Ελιμιώτιδας. Οι ανασκαφές έφεραν στο φως εντυπωσιακούς βασιλικούς τάφους, αρχαϊκές επιγραφές και χρυσά κτερίσματα.',
       bingQuery: 'Αρχαία Αιανή Κοζάνη Ελίμεια Αρχαιολογικό Μουσείο ευρήματα'
+    }
+  ],
+
+  // Larisa
+  'larisa': [
+    {
+      title: 'Το Κάστρο & Μπεζεστένι Λάρισας (Λόφος Φρουρίου)',
+      date: '15ος Αιώνας (Τέλη 15ου αι. επί Τουραχάν Μπέη)',
+      type: 'castle',
+      icon: 'fa-solid fa-chess-rook text-amber-400',
+      description: 'Το οχυρωματικό κάστρο και η μνημειακή κλειστή αγορά (Μπεζεστένι) στην αρχαία Ακρόπολη της Λάρισας στον λόφο του Φρουρίου. Με πανίσχυρους τοίχους πάχους 1,60 μ. και 6 μολυβδοσκέπαστους τρούλους, υπήρξε το διοικητικό, στρατιωτικό και οικονομικό κέντρο της οθωμανικής Θεσσαλίας.',
+      bingQuery: 'Μπεζεστένι Λάρισα Κάστρο Λόφος Φρουρίου 15ος αιώνας ιστορία'
+    },
+    {
+      title: 'Α΄ Αρχαίο Θέατρο Λάρισας',
+      date: '3ος Αιώνας π.Χ. (Ελληνιστική Εποχή)',
+      type: 'archaeology',
+      icon: 'fa-solid fa-masks-theater text-emerald-400',
+      description: 'Εμβληματικό θέατρο χωρητικότητας άνω των 10.000 θεατών λαξευμένο στη νότια πλαγιά του λόφου του Φρουρίου. Χρησιμοποιούνταν για θεατρικές παραστάσεις και τις γενικές συνελεύσεις του «Κοινού των Θεσσαλών». Αναστηλωμένο υποδειγματικά, δεσπόζει εντός του ιστού της σύγχρονης πόλης.',
+      bingQuery: 'Αρχαίο Θέατρο Λάρισας ανασκαφές ιστορία Κοινό Θεσσαλών'
+    },
+    {
+      title: 'Μνημείο & Τάφος Ιπποκράτη (Πάρκο Αλκαζάρ)',
+      date: 'Κενοτάφιο 1986 / Ιστορικός Τάφος ~370 π.Χ.',
+      type: 'monument',
+      icon: 'fa-solid fa-notes-medical text-sky-400',
+      description: 'Στο πάρκο Αλκαζάρ δίπλα στον Πηνειό ποταμό δεσπόζει το μαρμάρινο κενοτάφιο και το άγαλμα του Πατέρα της Ιατρικής Ιπποκράτη. Εκεί αποκαλύφθηκε το 1826 ο αρχαίος τάφος του μετά από μεγάλη υπερχείλιση του ποταμού. Στεγάζει και Ιατρικό Μουσείο.',
+      bingQuery: 'Μνημείο Ιπποκράτη Λάρισα Πάρκο Αλκαζάρ Ιατρικό Μουσείο'
+    },
+    {
+      title: 'Μύλος του Παππά',
+      date: '1883 (Βιομηχανική Κληρονομιά)',
+      type: 'heritage',
+      icon: 'fa-solid fa-industry text-purple-400',
+      description: 'Ιστορικό βιομηχανικό κτίριο αλευροποιίας 5 ορόφων κατασκευασμένο από ξύλο και πέτρα. Σήμερα αποτελεί ζωντανό πολυχώρο πολιτισμού, στεγάζοντας το Θεσσαλικό Θέατρο, τη Φιλαρμονική και το Μουσείο Σιτηρών.',
+      bingQuery: 'Μύλος του Παππά Λάρισα βιομηχανική κληρονομιά ιστορία'
+    },
+    {
+      title: 'Β΄ Αρχαίο Θέατρο Λάρισας',
+      date: '1ος Αιώνας π.Χ. (Ρωμαϊκή Εποχή)',
+      type: 'archaeology',
+      icon: 'fa-solid fa-landmark text-amber-300',
+      description: 'Μικρότερο αρχαίο θέατρο στα νοτιοδυτικά του λόφου του Φρουρίου, κατασκευασμένο όταν το Α΄ θέατρο μετατράπηκε σε ρωμαϊκή αρένα μονομαχιών.',
+      bingQuery: 'Β Αρχαίο Θέατρο Λάρισας ρωμαϊκή εποχή'
     }
   ],
 
@@ -386,6 +869,43 @@ const HISTORIC_MONUMENTS_DATABASE = {
 /**
  * Generic Fallback Generators for any other location
  */
+function getGenericEvents(entity) {
+  const name = entity.name || 'Περιοχή';
+  const englishName = entity.englishName || name;
+  const rawHighlights = entity.hist?.highlights || entity.hist?.keyEvents || entity.hist?.timeline || (Array.isArray(entity.history) ? entity.history : []);
+  if (rawHighlights && rawHighlights.length > 0) {
+    return rawHighlights.map(h => ({
+      year: String(h.year || 'Ορόσημο'),
+      title: h.event || h.title || `Ιστορικός Σταθμός ${name}`,
+      category: 'Ιστορικός Σταθμός',
+      icon: 'fa-solid fa-landmark text-amber-400',
+      badgeColor: 'border-amber-500/40 text-amber-300 bg-amber-500/10',
+      description: h.desc || h.description || `Σημαντικό ιστορικό γεγονός στην πορεία και εξέλιξη της περιοχής ${name}.`,
+      bingQuery: `${h.event || h.title || name} ${englishName} ιστορία γεγονός σταθμός`
+    }));
+  }
+  return [
+    {
+      year: entity.stats?.founded || 'Ίδρυση',
+      title: `Ίδρυση & Πρώτη Ιστορική Αναφορά (${name})`,
+      category: 'Ίδρυση / Ορόσημο',
+      icon: 'fa-solid fa-flag text-amber-400',
+      badgeColor: 'border-amber-500/40 text-amber-300 bg-amber-500/10',
+      description: `Πρώτες ιστορικές καταγραφές κατοίκησης, ίδρυση της κοινότητας και ανάπτυξη των αρχικών οικιστικών και αμυντικών πυρήνων.`,
+      bingQuery: `${englishName} history foundation historic events timeline`
+    },
+    {
+      year: 'Ιστορική Διαδρομή',
+      title: `Κοινωνικοί & Διοικητικοί Σταθμοί (${name})`,
+      category: 'Ιστορικό Γεγονός',
+      icon: 'fa-solid fa-scroll text-emerald-400',
+      badgeColor: 'border-emerald-500/40 text-emerald-300 bg-emerald-500/10',
+      description: `Κομβικές εξελίξεις στην αυτοδιοίκηση, το εμπόριο και την πολιτιστική ταυτότητα της περιοχής κατά τους νεότερους χρόνους.`,
+      bingQuery: `${englishName} modern history historical milestones`
+    }
+  ];
+}
+
 function getGenericFamousPeople(entity) {
   const name = entity.name || 'Περιοχή';
   const englishName = entity.englishName || name;
@@ -437,19 +957,24 @@ function getGenericMonuments(entity) {
 /**
  * Public getters
  */
+export function getHistoricEvents(entity) {
+  const normId = normalizeEntityId(entity);
+  return HISTORIC_EVENTS_DATABASE[normId] || getGenericEvents(entity);
+}
+
 export function getFamousPeople(entity) {
-  const id = (entity.id || '').toLowerCase();
-  return FAMOUS_PEOPLE_DATABASE[id] || getGenericFamousPeople(entity);
+  const normId = normalizeEntityId(entity);
+  return FAMOUS_PEOPLE_DATABASE[normId] || getGenericFamousPeople(entity);
 }
 
 export function getHistoricBattles(entity) {
-  const id = (entity.id || '').toLowerCase();
-  return HISTORIC_BATTLES_DATABASE[id] || getGenericBattles(entity);
+  const normId = normalizeEntityId(entity);
+  return HISTORIC_BATTLES_DATABASE[normId] || getGenericBattles(entity);
 }
 
 export function getHistoricMonuments(entity) {
-  const id = (entity.id || '').toLowerCase();
-  return HISTORIC_MONUMENTS_DATABASE[id] || getGenericMonuments(entity);
+  const normId = normalizeEntityId(entity);
+  return HISTORIC_MONUMENTS_DATABASE[normId] || getGenericMonuments(entity);
 }
 
 /**
@@ -461,6 +986,7 @@ export function renderHistoryTabHtml(entity) {
   const isCity = entity.type === 'city';
   const name = entity.name || 'Περιοχή';
   const englishName = entity.englishName || name;
+  const normId = normalizeEntityId(entity);
 
   // 1. Summary Narrative
   const summary = entity.hist?.summary || entity.hist?.overview || entity.hist?.description
@@ -468,22 +994,17 @@ export function renderHistoryTabHtml(entity) {
     || [entity.hist?.founded, entity.hist?.keyEvent].filter(Boolean).join(' · ')
     || entity.brief || '';
 
-  // 2. Timeline Highlights
-  const rawHighlights = entity.hist?.highlights || entity.hist?.keyEvents || entity.hist?.timeline || (Array.isArray(entity.history) ? entity.history : []);
-  const highlights = rawHighlights.map(h => ({
-    year: String(h.year || ''),
-    event: h.event || h.title || '',
-    desc: h.desc || h.description || ''
-  }));
+  // 2. Curated Events & Foundation/Erection Milestones (First class, prominently displayed)
+  const events = getHistoricEvents(entity);
 
-  // 3. Famous People
+  // 3. Famous People (Work & Legacy)
   const people = getFamousPeople(entity);
 
-  // 4. Decisive Battles & Politics
-  const battles = getHistoricBattles(entity);
-
-  // 5. Monuments & Heritage
+  // 4. Monuments & Architectural Heritage (Castles, Bell Towers, Temples, Dates)
   const monuments = getHistoricMonuments(entity);
+
+  // 5. Decisive Battles & Politics
+  const battles = getHistoricBattles(entity);
 
   // 6. Past vs Present (100 Years: 1926 vs 2026)
   const pastVsPresent = entity.pastVsPresent || (entity.historyComparison ? [
@@ -493,6 +1014,44 @@ export function renderHistoryTabHtml(entity) {
     { epoch: 'Πριν 100 Χρόνια (~1926)', content: `Μια εποχή βαθιών ανακατατάξεων, με την ενσωμάτωση προσφύγων, έντονη παραδοσιακή ζωή και θεμελίωση των πρώτων σύγχρονων θεσμών.` },
     { epoch: 'Σήμερα (2026)', content: `Δυναμική εξέλιξη σε σύγχρονο ευρωπαϊκό κόμβο, με σεβασμό στην πολιτιστική κληρονομιά και προσανατολισμό στην καινοτομία και την πράσινη ανάπτυξη.` }
   ]);
+
+  // Special Spotlight banners for key cities requested by user
+  let spotlightBanner = '';
+  if (normId === 'larisa') {
+    spotlightBanner = `
+      <div class="p-3.5 rounded-2xl bg-gradient-to-r from-amber-950/40 via-amber-900/20 to-slate-900 border border-amber-500/40 shadow-xl flex items-start gap-3">
+        <div class="w-10 h-10 rounded-xl bg-amber-500/20 border border-amber-500/40 text-amber-300 flex items-center justify-center shrink-0 text-lg shadow">
+          <i class="fa-solid fa-staff-snake"></i>
+        </div>
+        <div class="space-y-1">
+          <div class="text-xs sm:text-sm font-bold text-amber-300 flex items-center gap-2">
+            <span>Η Πόλη του Ιπποκράτη & του Αρχαίου Θεάτρου</span>
+            <span class="text-[10px] px-2 py-0.5 rounded-full bg-amber-500/20 border border-amber-500/40 text-amber-200 font-mono">Ιστορική Κληρονομιά</span>
+          </div>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            Εδώ έζησε τα ώριμα χρόνια του, θεράπευσε και ετάφη ο <strong>Πατέρας της Σύγχρονης Ιατρικής Ιπποκράτης (~370 π.Χ.)</strong>, ενώ στον ιστορικό Λόφο του Φρουρίου δεσπόζουν το <strong>Κάστρο & Μπεζεστένι (15ος αι.)</strong> και το <strong>Α΄ Αρχαίο Θέατρο (3ος αι. π.Χ.)</strong>.
+          </p>
+        </div>
+      </div>
+    `;
+  } else if (normId === 'kozani') {
+    spotlightBanner = `
+      <div class="p-3.5 rounded-2xl bg-gradient-to-r from-amber-950/40 via-orange-950/20 to-slate-900 border border-amber-500/40 shadow-xl flex items-start gap-3">
+        <div class="w-10 h-10 rounded-xl bg-amber-500/20 border border-amber-500/40 text-amber-300 flex items-center justify-center shrink-0 text-lg shadow">
+          <i class="fa-solid fa-bell"></i>
+        </div>
+        <div class="space-y-1">
+          <div class="text-xs sm:text-sm font-bold text-amber-300 flex items-center gap-2">
+            <span>Η Πόλη του Μαμάτσιου & των Γραμμάτων</span>
+            <span class="text-[10px] px-2 py-0.5 rounded-full bg-amber-500/20 border border-amber-500/40 text-amber-200 font-mono">1664 - 1855</span>
+          </div>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            Σημαδεύτηκε από το <strong>ιστορικό Καμπαναριό του 1855 (Μαμάτσιος)</strong>, την <strong>ανέγερση του Μητροπολιτικού Ναού Αγίου Νικολάου το 1664</strong> με σουλτανικό φιρμάνι και προνόμια, και την <strong>ίδρυση της ιστορικής Σχολής Κοζάνης το 1668</strong>.
+          </p>
+        </div>
+      </div>
+    `;
+  }
 
   return `
     <div class="space-y-4">
@@ -511,7 +1070,60 @@ export function renderHistoryTabHtml(entity) {
         <p class="leading-relaxed text-xs sm:text-sm text-slate-300">${summary || 'Δεν υπάρχουν διαθέσιμες πληροφορίες.'}</p>
       </div>
 
-      <!-- PROMINENT & FAMOUS HISTORICAL FIGURES -->
+      <!-- Spotlight Banner for Kozani / Larisa -->
+      ${spotlightBanner}
+
+      <!-- 1. HISTORIC EVENTS & FOUNDATION / ERECTION MILESTONES (PLACED PROMINENTLY AT TOP) -->
+      <div class="p-4 rounded-2xl bg-slate-900/90 border border-slate-800 shadow-xl space-y-3">
+        <div class="flex items-center justify-between border-b border-slate-800 pb-2">
+          <h4 class="text-xs uppercase tracking-wider font-bold text-amber-400 flex items-center gap-2">
+            <i class="fa-solid fa-timeline"></i>
+            <span>Ιστορικά Γεγονότα & Σταθμοί Ίδρυσης / Ανέγερσης</span>
+          </h4>
+          <span class="text-[11px] text-slate-400">Χρονολόγιο & Ορόσημα</span>
+        </div>
+
+        <div class="space-y-3 pt-1">
+          ${events.map(ev => {
+            const bingQueryEsc = escapeStr(ev.bingQuery || `${ev.title} ${name} ιστορία`);
+            const titleEsc = escapeStr(ev.title);
+            return `
+              <div class="p-3.5 rounded-xl bg-slate-850/80 border border-slate-700/50 hover:border-amber-500/40 transition flex flex-col gap-2 group">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1.5">
+                  <div class="flex items-center gap-2.5">
+                    <div class="w-8 h-8 rounded-xl bg-gradient-to-tr from-amber-500/20 to-orange-500/20 border border-amber-500/30 text-amber-400 flex items-center justify-center shrink-0 font-bold text-sm shadow">
+                      <i class="${ev.icon || 'fa-solid fa-landmark'}"></i>
+                    </div>
+                    <div>
+                      <div class="text-xs sm:text-sm font-bold text-white group-hover:text-amber-300 transition flex items-center gap-2 flex-wrap">
+                        <span>${ev.title}</span>
+                      </div>
+                      <div class="flex items-center gap-2 mt-0.5">
+                        <span class="text-[11px] font-mono font-bold text-amber-400 px-1.5 py-0.2 rounded bg-amber-500/10 border border-amber-500/20">${ev.year}</span>
+                        ${ev.category ? `<span class="text-[10px] text-slate-400 font-medium">${ev.category}</span>` : ''}
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- IN-APP BING SEARCH BUTTON -->
+                  <button onclick="window.openInAppBingSearch('${bingQueryEsc}', '${titleEsc}')" class="px-2.5 py-1 rounded-lg bg-sky-950/80 hover:bg-sky-900 border border-sky-500/40 text-sky-300 hover:text-white text-[11px] font-semibold transition shrink-0 flex items-center gap-1.5 self-start sm:self-auto cursor-pointer" title="Άνοιγμα Έρευνας στο πλαίσιο χάρτη">
+                    <i class="fa-brands fa-microsoft text-[10px]"></i>
+                    <span>🔍 AI Έρευνα στο Bing</span>
+                    <i class="fa-solid fa-expand text-[9px] opacity-75"></i>
+                  </button>
+                </div>
+
+                <!-- Event Details & Construction Milestones -->
+                <div class="pl-10 text-xs text-slate-300 leading-relaxed">
+                  ${ev.description}
+                </div>
+              </div>
+            `;
+          }).join('')}
+        </div>
+      </div>
+
+      <!-- 2. PROMINENT & FAMOUS HISTORICAL FIGURES -->
       <div class="p-4 rounded-2xl bg-slate-900/90 border border-slate-800 shadow-xl space-y-3">
         <div class="flex items-center justify-between border-b border-slate-800 pb-2">
           <h4 class="text-xs uppercase tracking-wider font-bold text-amber-400 flex items-center gap-2">
@@ -526,7 +1138,7 @@ export function renderHistoryTabHtml(entity) {
             const bingQueryEsc = escapeStr(p.bingQuery || `${p.name} ${name} βιογραφία έργο`);
             const titleEsc = escapeStr(p.name);
             return `
-              <div class="p-3.5 rounded-xl bg-slate-850/80 border border-slate-700/50 hover:border-amber-500/40 transition flex flex-col gap-2 group">
+              <div class="p-3.5 rounded-xl bg-slate-855/80 border border-slate-700/50 hover:border-amber-500/40 transition flex flex-col gap-2 group">
                 <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1.5">
                   <div class="flex items-center gap-2.5">
                     <div class="w-8 h-8 rounded-xl bg-gradient-to-tr from-amber-500/20 to-orange-500/20 border border-amber-500/30 text-amber-400 flex items-center justify-center shrink-0 font-bold text-sm shadow">
@@ -544,14 +1156,14 @@ export function renderHistoryTabHtml(entity) {
                   <!-- IN-APP BING SEARCH BUTTON -->
                   <button onclick="window.openInAppBingSearch('${bingQueryEsc}', '${titleEsc}')" class="px-2.5 py-1 rounded-lg bg-sky-950/80 hover:bg-sky-900 border border-sky-500/40 text-sky-300 hover:text-white text-[11px] font-semibold transition shrink-0 flex items-center gap-1.5 self-start sm:self-auto cursor-pointer" title="Άνοιγμα Έρευνας στο πλαίσιο χάρτη">
                     <i class="fa-brands fa-microsoft text-[10px]"></i>
-                    <span>Έρευνα στο Bing</span>
+                    <span>🔍 AI Έρευνα στο Bing</span>
                     <i class="fa-solid fa-expand text-[9px] opacity-75"></i>
                   </button>
                 </div>
 
                 <!-- Work & Impact Description -->
                 <div class="pl-10 space-y-1 text-xs leading-relaxed">
-                  <div class="text-slate-200"><strong class="text-slate-400">Έργο:</strong> ${p.work}</div>
+                  <div class="text-slate-200"><strong class="text-amber-400/90">Έργο:</strong> ${p.work}</div>
                   <div class="text-slate-300 italic"><strong class="text-slate-400 not-italic">Κληρονομιά:</strong> «${p.legacy}»</div>
                 </div>
               </div>
@@ -560,7 +1172,47 @@ export function renderHistoryTabHtml(entity) {
         </div>
       </div>
 
-      <!-- DECISIVE BATTLES, CONFLICTS & POLITICAL DEVELOPMENTS -->
+      <!-- 3. HISTORICAL MONUMENTS, CASTLES & ARCHAEOLOGICAL TREASURES -->
+      <div class="p-4 rounded-2xl bg-slate-900/90 border border-slate-800 shadow-xl space-y-3">
+        <div class="flex items-center justify-between border-b border-slate-800 pb-2">
+          <h4 class="text-xs uppercase tracking-wider font-bold text-emerald-400 flex items-center gap-2">
+            <i class="fa-solid fa-landmark"></i>
+            <span>Ιστορικά Μνημεία, Κάστρα & Αρχιτεκτονική Κληρονομιά</span>
+          </h4>
+          <span class="text-[11px] text-slate-400">Πότε Αναγέρθηκαν & Σημασία</span>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
+          ${monuments.map(m => {
+            const bingQueryEsc = escapeStr(m.bingQuery || `${m.title} ${name} μνημείο ιστορία`);
+            const titleEsc = escapeStr(m.title);
+            return `
+              <div class="p-3.5 rounded-xl bg-slate-850/80 border border-slate-700/50 hover:border-emerald-500/40 transition flex flex-col justify-between gap-2.5">
+                <div>
+                  <div class="flex items-center justify-between gap-2 mb-1">
+                    <div class="flex items-center gap-2 font-bold text-white text-xs sm:text-sm">
+                      <i class="${m.icon || 'fa-solid fa-landmark'} text-emerald-400"></i>
+                      <span>${m.title}</span>
+                    </div>
+                    <span class="text-[10px] text-amber-400 font-mono font-semibold shrink-0">${m.date}</span>
+                  </div>
+                  <p class="text-xs text-slate-300 leading-relaxed">${m.description}</p>
+                </div>
+
+                <div class="pt-2 border-t border-slate-800 flex items-center justify-end">
+                  <button onclick="window.openInAppBingSearch('${bingQueryEsc}', '${titleEsc}')" class="px-2.5 py-1 rounded-lg bg-sky-950/80 hover:bg-sky-900 border border-sky-500/40 text-sky-300 hover:text-white text-[10px] font-semibold transition flex items-center gap-1.5 cursor-pointer">
+                    <i class="fa-brands fa-microsoft text-[10px]"></i>
+                    <span>🔍 AI Έρευνα στο Bing</span>
+                    <i class="fa-solid fa-expand text-[9px] opacity-75"></i>
+                  </button>
+                </div>
+              </div>
+            `;
+          }).join('')}
+        </div>
+      </div>
+
+      <!-- 4. DECISIVE BATTLES, CONFLICTS & POLITICAL DEVELOPMENTS -->
       <div class="p-4 rounded-2xl bg-slate-900/90 border border-slate-800 shadow-xl space-y-3">
         <div class="flex items-center justify-between border-b border-slate-800 pb-2">
           <h4 class="text-xs uppercase tracking-wider font-bold text-rose-400 flex items-center gap-2">
@@ -590,7 +1242,7 @@ export function renderHistoryTabHtml(entity) {
                   <!-- IN-APP BING SEARCH BUTTON -->
                   <button onclick="window.openInAppBingSearch('${bingQueryEsc}', '${titleEsc}')" class="px-2.5 py-1 rounded-lg bg-sky-950/80 hover:bg-sky-900 border border-sky-500/40 text-sky-300 hover:text-white text-[11px] font-semibold transition shrink-0 flex items-center gap-1.5 self-start sm:self-auto cursor-pointer" title="Άνοιγμα Έρευνας στο πλαίσιο χάρτη">
                     <i class="fa-brands fa-microsoft text-[10px]"></i>
-                    <span>Έρευνα στο Bing</span>
+                    <span>🔍 AI Έρευνα στο Bing</span>
                     <i class="fa-solid fa-expand text-[9px] opacity-75"></i>
                   </button>
                 </div>
@@ -606,47 +1258,7 @@ export function renderHistoryTabHtml(entity) {
         </div>
       </div>
 
-      <!-- HISTORICAL HERITAGE & MONUMENTS (Great Idea: Relics, Archives & Architecture) -->
-      <div class="p-4 rounded-2xl bg-slate-900/90 border border-slate-800 shadow-xl space-y-3">
-        <div class="flex items-center justify-between border-b border-slate-800 pb-2">
-          <h4 class="text-xs uppercase tracking-wider font-bold text-emerald-400 flex items-center gap-2">
-            <i class="fa-solid fa-landmark"></i>
-            <span>Ιστορικά Μνημεία, Αρχαιολογία & Κειμήλια</span>
-          </h4>
-          <span class="text-[11px] text-slate-400">Πολιτιστικοί Θησαυροί</span>
-        </div>
-
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
-          ${monuments.map(m => {
-            const bingQueryEsc = escapeStr(m.bingQuery || `${m.title} ${name} μνημείο ιστορία`);
-            const titleEsc = escapeStr(m.title);
-            return `
-              <div class="p-3.5 rounded-xl bg-slate-850/80 border border-slate-700/50 hover:border-emerald-500/40 transition flex flex-col justify-between gap-2.5">
-                <div>
-                  <div class="flex items-center justify-between gap-2 mb-1">
-                    <div class="flex items-center gap-2 font-bold text-white text-xs sm:text-sm">
-                      <i class="${m.icon || 'fa-solid fa-landmark'} text-emerald-400"></i>
-                      <span>${m.title}</span>
-                    </div>
-                    <span class="text-[10px] text-amber-400 font-mono font-semibold shrink-0">${m.date}</span>
-                  </div>
-                  <p class="text-xs text-slate-300 leading-relaxed">${m.description}</p>
-                </div>
-
-                <div class="pt-2 border-t border-slate-800 flex items-center justify-end">
-                  <button onclick="window.openInAppBingSearch('${bingQueryEsc}', '${titleEsc}')" class="px-2.5 py-1 rounded-lg bg-sky-950/80 hover:bg-sky-900 border border-sky-500/40 text-sky-300 hover:text-white text-[10px] font-semibold transition flex items-center gap-1.5 cursor-pointer">
-                    <i class="fa-brands fa-microsoft text-[10px]"></i>
-                    <span>Έρευνα στο Bing</span>
-                    <i class="fa-solid fa-expand text-[9px] opacity-75"></i>
-                  </button>
-                </div>
-              </div>
-            `;
-          }).join('')}
-        </div>
-      </div>
-
-      <!-- 100 YEARS COMPARISON (1926 vs 2026: Then & Now) -->
+      <!-- 5. 100 YEARS COMPARISON (1926 vs 2026: Then & Now) -->
       ${pastVsPresent && pastVsPresent.length ? `
         <div class="p-4 rounded-2xl bg-gradient-to-r from-slate-900 via-indigo-950/30 to-slate-900 border border-indigo-500/30 shadow-xl space-y-3">
           <div class="flex items-center justify-between border-b border-slate-800 pb-2">
@@ -665,29 +1277,6 @@ export function renderHistoryTabHtml(entity) {
                   <span>${p.epoch}</span>
                 </div>
                 <p class="text-xs text-slate-300 leading-relaxed">${p.content}</p>
-              </div>
-            `).join('')}
-          </div>
-        </div>
-      ` : ''}
-
-      <!-- CHRONOLOGICAL TIMELINE MILESTONES -->
-      ${highlights.length ? `
-        <div class="mt-4">
-          <h4 class="text-xs uppercase tracking-wider font-bold text-slate-400 mb-2 flex items-center gap-1.5">
-            <i class="fa-solid fa-timeline text-amber-400"></i> Χρονολόγιο Ιστορικών Σταθμών
-          </h4>
-          <div class="space-y-2.5">
-            ${highlights.map(h => `
-              <div onclick="window.openDeepDive('${escapeStr(h.event)}', '${escapeStr(h.desc)}', '${escapeStr(name)}')" class="p-3 bg-slate-800/30 hover:bg-slate-800/80 hover:border-amber-500/50 transition border border-slate-700/40 rounded-xl cursor-pointer group">
-                <div class="flex items-center justify-between gap-2 mb-0.5">
-                  <span class="text-[11px] font-mono font-bold text-amber-400">${h.year}</span>
-                  <span class="text-[10px] text-amber-400 opacity-0 group-hover:opacity-100 transition font-semibold flex items-center gap-1">
-                    <i class="fa-solid fa-arrow-up-right-from-square"></i> Λεπτομέρειες
-                  </span>
-                </div>
-                <div class="font-bold text-slate-100 text-xs sm:text-sm group-hover:text-amber-200 transition">${h.event}</div>
-                <div class="text-xs text-slate-300 mt-0.5 leading-relaxed">${h.desc}</div>
               </div>
             `).join('')}
           </div>

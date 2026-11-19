@@ -11,7 +11,7 @@ import { calculateSubsolarPoint } from './solar-terminator.js?v=20261117_video_i
 import { CITY_TO_STATE } from './states-data.js?v=20261117_video_iframe_fix';
 import { CITY_TO_COUNTRY } from './navigator.js?v=20261118_gastro_overhaul_v8';
 import { renderGeographyTabHtml, mountLiveWeatherData } from './geo-service.js?v=20261119_geo_v1';
-import { renderHistoryTabHtml } from './history-service.js?v=20261119_hist_v1';
+import { renderHistoryTabHtml } from './history-service.js?v=20261119_hist_v2';
 import { renderCultureTabHtml } from './culture-service.js?v=20261119_cult_v1';
 
 let currentActiveVideoCityId = null;
