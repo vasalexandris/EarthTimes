@@ -13,7 +13,10 @@ import {
   rejectSpotSubmission,
   loadCloudApprovedSpots,
   getCloudDbConfig,
-  saveCloudDbConfig
+  saveCloudDbConfig,
+  loginWithGoogle,
+  logoutUser,
+  initAuthListener
 } from './db-service.js?v=20261119_moderation_v1';
 
 let timeCapsules = [];
@@ -162,6 +165,23 @@ export async function initTimeMachine() {
     }
   });
 
+  // Initialize Google Auth Listener
+  try {
+    initAuthListener((googleUser) => {
+      if (googleUser) {
+        currentUser = { ...currentUser, ...googleUser };
+      } else {
+        try {
+          const saved = JSON.parse(localStorage.getItem('earthtimes_user') || '{}');
+          if (saved.name) currentUser = { ...currentUser, ...saved };
+        } catch (e) {}
+      }
+      updateUserBadgeUI();
+    });
+  } catch (e) {
+    console.warn('Auth listener init error:', e);
+  }
+
   updateUserBadgeUI();
   return timeCapsules;
 }
@@ -181,8 +201,64 @@ export function setCurrentUser(userData) {
 export function updateUserBadgeUI() {
   const nameEl = document.getElementById('userDisplayName');
   const roleEl = document.getElementById('userRoleBadge');
-  if (nameEl) nameEl.innerText = currentUser.name;
+  const avatarEl = document.getElementById('userAvatarImg');
+  const onlineDot = document.getElementById('userOnlineDot');
+  const loginBtn = document.getElementById('googleLoginBtn');
+  const profileBadge = document.getElementById('userProfileBadge');
+
+  if (nameEl) nameEl.innerText = currentUser.name || 'Βασίλης Αλεξανδρής';
   if (roleEl) roleEl.classList.add('hidden');
+
+  const isGoogleLoggedIn = Boolean(currentUser.email && currentUser.uid);
+
+  if (avatarEl) {
+    if (currentUser.photoURL) {
+      avatarEl.src = currentUser.photoURL;
+      avatarEl.classList.remove('hidden');
+      if (onlineDot) onlineDot.classList.add('hidden');
+    } else {
+      avatarEl.classList.add('hidden');
+      if (onlineDot) onlineDot.classList.remove('hidden');
+    }
+  }
+
+  if (loginBtn) {
+    if (isGoogleLoggedIn) {
+      loginBtn.classList.add('hidden');
+    } else {
+      loginBtn.classList.remove('hidden');
+    }
+  }
+
+  if (profileBadge) {
+    profileBadge.classList.remove('hidden');
+  }
+}
+
+export async function handleGoogleLogin() {
+  const user = await loginWithGoogle();
+  if (user) {
+    currentUser = {
+      uid: user.uid,
+      name: user.displayName || user.email.split('@')[0],
+      email: user.email,
+      photoURL: user.photoURL,
+      role: (user.email && (user.email.includes('alexandris') || user.email.includes('vas') || user.email.includes('admin'))) ? 'admin' : 'member'
+    };
+    updateUserBadgeUI();
+    alert(`🎉 Καλώς ήρθατε, ${currentUser.name}!\nΣυνδεθήκατε επιτυχώς με το Google account σας (${currentUser.email}).`);
+  }
+}
+
+export async function handleGoogleLogout() {
+  await logoutUser();
+  currentUser = {
+    name: 'Βασίλης Αλεξανδρής',
+    role: 'admin',
+    title: 'Διαχειριστής & Επιμελητής'
+  };
+  updateUserBadgeUI();
+  alert('Αποσυνδεθήκατε επιτυχώς.');
 }
 
 export function getTimeCapsules() {

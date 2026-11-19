@@ -26,6 +26,87 @@ const TRUSTED_IMAGE_DOMAINS = [
 
 let firebaseApp = null;
 let firestoreDb = null;
+let firebaseAuth = null;
+
+/**
+ * Initializes Firebase Authentication dynamically
+ */
+export async function getAuthInstance() {
+  if (firebaseAuth) return firebaseAuth;
+  await getFirestoreInstance();
+  if (!firebaseApp) return null;
+
+  try {
+    const { getAuth } = await import('https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js');
+    firebaseAuth = getAuth(firebaseApp);
+    return firebaseAuth;
+  } catch (err) {
+    console.warn('[Firebase Auth] Initialization error:', err);
+    return null;
+  }
+}
+
+export async function loginWithGoogle() {
+  const auth = await getAuthInstance();
+  if (!auth) {
+    alert('Το Firebase δεν έχει ενεργοποιηθεί.');
+    return null;
+  }
+
+  try {
+    const { signInWithPopup, GoogleAuthProvider } = await import('https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js');
+    const provider = new GoogleAuthProvider();
+    provider.setCustomParameters({ prompt: 'select_account' });
+    const result = await signInWithPopup(auth, provider);
+    const user = result.user;
+    console.log('[Firebase Auth] Logged in successfully:', user.displayName, user.email);
+    return user;
+  } catch (err) {
+    console.error('[Firebase Auth] Login error:', err);
+    if (err.code === 'auth/configuration-not-found' || err.code === 'auth/operation-not-allowed') {
+      alert('⚠️ Απαιτείται ενεργοποίηση του Google Provider στο Firebase Console:\n\n1. Στο αριστερό μενού πατήστε "Authentication"\n2. Πατήστε "Get started" και επιλέξτε "Google"\n3. Ενεργοποιήστε το διακόπτη (Enable), επιλέξτε το email υποστήριξης και πατήστε "Save"!');
+    } else if (err.code !== 'auth/popup-closed-by-user') {
+      alert('Σφάλμα σύνδεσης Google: ' + err.message);
+    }
+    return null;
+  }
+}
+
+export async function logoutUser() {
+  const auth = await getAuthInstance();
+  if (auth) {
+    const { signOut } = await import('https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js');
+    await signOut(auth);
+  }
+  localStorage.removeItem('earthtimes_firebase_user');
+}
+
+export async function initAuthListener(onUserChanged) {
+  const auth = await getAuthInstance();
+  if (!auth) return;
+
+  try {
+    const { onAuthStateChanged } = await import('https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js');
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        const userData = {
+          uid: user.uid,
+          name: user.displayName || user.email.split('@')[0],
+          email: user.email,
+          photoURL: user.photoURL,
+          role: (user.email && (user.email.includes('alexandris') || user.email.includes('vas') || user.email.includes('admin'))) ? 'admin' : 'member'
+        };
+        localStorage.setItem('earthtimes_firebase_user', JSON.stringify(userData));
+        if (onUserChanged) onUserChanged(userData);
+      } else {
+        localStorage.removeItem('earthtimes_firebase_user');
+        if (onUserChanged) onUserChanged(null);
+      }
+    });
+  } catch (e) {
+    console.warn('[Firebase Auth] Listener error:', e);
+  }
+}
 
 /**
  * Initializes Firebase Firestore dynamically if configured

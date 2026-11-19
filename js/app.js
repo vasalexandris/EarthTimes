@@ -1085,6 +1085,8 @@ window.exportApprovedForProduction = TimeMachine.exportApprovedForProduction;
 window.openCloudDbSettingsModal = TimeMachine.openCloudDbSettingsModal;
 window.closeCloudDbSettingsModal = TimeMachine.closeCloudDbSettingsModal;
 window.saveCloudDbSettings = TimeMachine.saveCloudDbSettings;
+window.loginWithGoogle = TimeMachine.handleGoogleLogin;
+window.logoutUser = TimeMachine.handleGoogleLogout;
 
 // App Initializer
 async function init() {
