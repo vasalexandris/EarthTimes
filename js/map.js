@@ -459,8 +459,15 @@ export function renderTimeCapsulePins(spots, activeYear, onSpotClick) {
             </button>
           ` : ''}
 
-          <div class="text-[9px] text-amber-400/90 hover:text-amber-300 text-center pt-1 font-semibold cursor-pointer" onclick="event.stopPropagation(); window.showSpotInTimeline('${spot.id}', '${activeYear}')">
-            <i class="fa-solid fa-clock-rotate-left mr-1"></i>Προβολή στο Χρονολόγιο ⏱️
+          <div class="flex items-center gap-1.5 pt-1">
+            <button onclick="event.stopPropagation(); window.openEditSpotModal('${spot.id}', '${activeChronicle.id}')" class="flex-1 py-1 px-2 rounded-lg bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 border border-amber-500/40 font-semibold text-[10px] flex items-center justify-center gap-1 transition cursor-pointer" title="Επεξεργασία Σημείου">
+              <i class="fa-solid fa-pen-to-square"></i>
+              <span>Επεξεργασία ✏️</span>
+            </button>
+            <button onclick="event.stopPropagation(); window.showSpotInTimeline('${spot.id}', '${activeYear}')" class="flex-1 py-1 px-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 font-semibold text-[10px] flex items-center justify-center gap-1 transition cursor-pointer" title="Προβολή στο Χρονολόγιο">
+              <i class="fa-solid fa-clock-rotate-left text-amber-400"></i>
+              <span>Χρονολόγιο ⏱️</span>
+            </button>
           </div>
         </div>
       </div>

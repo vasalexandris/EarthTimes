@@ -129,7 +129,10 @@ export async function initTimeMachine() {
           if (p.chronicles && Array.isArray(p.chronicles)) {
             p.chronicles.forEach(c => normalizeChronicleMedia(c));
           }
-          if (!timeCapsules.some(s => s.id === p.id)) {
+          const existingIdx = timeCapsules.findIndex(s => s.id === p.id);
+          if (existingIdx !== -1) {
+            timeCapsules[existingIdx] = p;
+          } else {
             timeCapsules.push(p);
           }
         });
@@ -715,9 +718,15 @@ export function renderTimeCapsuleModalContent(spot, activeChronicle) {
           <h2 class="text-2xl font-black text-white tracking-tight">${spot.name}</h2>
           <p class="text-xs sm:text-sm text-slate-400 mt-0.5 italic font-serif">${spot.englishName || ''}</p>
         </div>
-        <button onclick="closeSpotTimeCapsule()" class="h-9 w-9 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white flex items-center justify-center transition border border-slate-700">
-          <i class="fa-solid fa-xmark text-sm"></i>
-        </button>
+        <div class="flex items-center gap-2">
+          <button onclick="openEditSpotModal('${spot.id}', '${activeChronicle.id}')" title="Επεξεργασία Σημείου" class="px-3 py-1.5 rounded-xl bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 border border-amber-500/40 text-xs font-semibold flex items-center gap-1.5 transition cursor-pointer">
+            <i class="fa-solid fa-pen-to-square"></i>
+            <span class="hidden sm:inline">Επεξεργασία</span>
+          </button>
+          <button onclick="closeSpotTimeCapsule()" class="h-9 w-9 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white flex items-center justify-center transition border border-slate-700 cursor-pointer">
+            <i class="fa-solid fa-xmark text-sm"></i>
+          </button>
+        </div>
       </div>
 
       <!-- Chronological Stepper (Eras at this Spot) -->
@@ -1097,6 +1106,208 @@ export function submitNewSpot(event) {
 
   // Open the newly created spot immediately!
   openSpotTimeCapsule(newSpot.id);
+}
+
+/**
+ * Edit Existing Spot and Chronicles
+ */
+export function openEditSpotModal(spotId, chronicleId) {
+  const modal = document.getElementById('editSpotModal');
+  if (!modal) return;
+
+  const spot = timeCapsules.find(s => s.id === spotId);
+  if (!spot) {
+    alert('Το σημείο δεν βρέθηκε.');
+    return;
+  }
+
+  let chronicle = null;
+  if (chronicleId && spot.chronicles && spot.chronicles.length) {
+    chronicle = spot.chronicles.find(c => c.id === chronicleId);
+  }
+  if (!chronicle && spot.chronicles && spot.chronicles.length) {
+    chronicle = spot.chronicles[0];
+  }
+
+  const spotIdEl = document.getElementById('editSpotId');
+  const chronicleIdEl = document.getElementById('editChronicleId');
+  const spotNameEl = document.getElementById('editSpotName');
+  const spotAddressEl = document.getElementById('editSpotAddress');
+  const spotCategoryEl = document.getElementById('editSpotCategory');
+
+  const chronicleTitleEl = document.getElementById('editChronicleTitle');
+  const fromYearEl = document.getElementById('editFromYear');
+  const toYearEl = document.getElementById('editToYear');
+  const dateEl = document.getElementById('editDate');
+  const timeEl = document.getElementById('editTime');
+  const storyEl = document.getElementById('editStory');
+  const videoUrlEl = document.getElementById('editVideoUrl');
+  const photoUrlEl = document.getElementById('editPhotoUrl');
+  const photoCaptionEl = document.getElementById('editPhotoCaption');
+  const authorNameEl = document.getElementById('editAuthorName');
+
+  if (spotIdEl) spotIdEl.value = spot.id;
+  if (chronicleIdEl) chronicleIdEl.value = chronicle ? chronicle.id : '';
+  if (spotNameEl) spotNameEl.value = spot.name || '';
+  if (spotAddressEl) spotAddressEl.value = spot.address || '';
+  if (spotCategoryEl) spotCategoryEl.value = spot.category || 'culture';
+
+  if (chronicleTitleEl) chronicleTitleEl.value = chronicle ? chronicle.title : '';
+  if (fromYearEl) fromYearEl.value = (chronicle && chronicle.fromYear) ? chronicle.fromYear : '';
+  if (toYearEl) toYearEl.value = (chronicle && chronicle.toYear) ? chronicle.toYear : '';
+  if (dateEl) dateEl.value = (chronicle && chronicle.date && chronicle.date !== 'unknown') ? chronicle.date : '';
+  if (timeEl) timeEl.value = (chronicle && chronicle.time) ? chronicle.time : '';
+  if (storyEl) storyEl.value = (chronicle && chronicle.story) ? chronicle.story : '';
+
+  let videoUrl = '';
+  if (chronicle) {
+    if (chronicle.videoUrl) {
+      videoUrl = chronicle.videoUrl;
+    } else if (chronicle.youtubeId) {
+      videoUrl = `https://www.youtube.com/watch?v=${chronicle.youtubeId}`;
+    }
+  }
+  if (videoUrlEl) videoUrlEl.value = videoUrl;
+
+  let photoUrl = '';
+  let photoCaption = '';
+  if (chronicle && chronicle.photos && chronicle.photos.length) {
+    const regularPhoto = chronicle.photos.find(p => !p.isYouTube) || chronicle.photos[0];
+    if (regularPhoto) {
+      photoUrl = regularPhoto.url || '';
+      photoCaption = regularPhoto.caption || '';
+    }
+  }
+  if (photoUrlEl) photoUrlEl.value = photoUrl;
+  if (photoCaptionEl) photoCaptionEl.value = photoCaption;
+
+  if (authorNameEl) {
+    authorNameEl.value = (chronicle && chronicle.authorName) ? chronicle.authorName : ((chronicle && chronicle.author) ? chronicle.author.name : '');
+  }
+
+  modal.classList.remove('hidden');
+}
+
+export function closeEditSpotModal() {
+  const modal = document.getElementById('editSpotModal');
+  if (modal) modal.classList.add('hidden');
+}
+
+export function saveEditedSpot(event) {
+  event.preventDefault();
+
+  const spotId = document.getElementById('editSpotId').value;
+  const chronicleId = document.getElementById('editChronicleId').value;
+
+  const spot = timeCapsules.find(s => s.id === spotId);
+  if (!spot) {
+    alert('Το σημείο δεν βρέθηκε.');
+    return;
+  }
+
+  const name = document.getElementById('editSpotName').value.trim();
+  const address = document.getElementById('editSpotAddress').value.trim();
+  const category = document.getElementById('editSpotCategory').value;
+
+  const title = document.getElementById('editChronicleTitle').value.trim();
+  const fromYearInput = document.getElementById('editFromYear').value.trim();
+  const toYearInput = document.getElementById('editToYear').value.trim();
+  const fromYear = fromYearInput ? parseInt(fromYearInput, 10) : null;
+  const toYear = toYearInput ? parseInt(toYearInput, 10) : null;
+  const date = document.getElementById('editDate').value.trim();
+  const time = document.getElementById('editTime').value.trim();
+  const story = document.getElementById('editStory').value.trim();
+  const videoUrl = document.getElementById('editVideoUrl').value.trim();
+  const photoUrl = document.getElementById('editPhotoUrl').value.trim();
+  const photoCaption = document.getElementById('editPhotoCaption').value.trim();
+  const authorName = document.getElementById('editAuthorName').value.trim();
+
+  // Update spot info
+  spot.name = name;
+  spot.address = address;
+  spot.category = category;
+
+  // Find or create chronicle
+  if (!spot.chronicles) spot.chronicles = [];
+  let chronicle = spot.chronicles.find(c => c.id === chronicleId);
+  if (!chronicle && spot.chronicles.length > 0) {
+    chronicle = spot.chronicles[0];
+  } else if (!chronicle) {
+    chronicle = { id: `chronicle-${Date.now()}` };
+    spot.chronicles.push(chronicle);
+  }
+
+  chronicle.title = title;
+  chronicle.fromYear = fromYear;
+  chronicle.toYear = toYear;
+  chronicle.date = date || (fromYear ? String(fromYear) : null);
+  chronicle.time = time || null;
+  chronicle.story = story;
+  chronicle.authorName = authorName || (chronicle.authorName || 'Τοπικό Αρχείο');
+  if (!chronicle.author) chronicle.author = {};
+  chronicle.author.name = authorName || (chronicle.author.name || 'Τοπικό Αρχείο');
+
+  // Video / YouTube ID
+  if (videoUrl) {
+    chronicle.videoUrl = videoUrl;
+    const ytid = extractYouTubeId(videoUrl);
+    chronicle.youtubeId = ytid;
+  } else {
+    chronicle.videoUrl = '';
+    chronicle.youtubeId = null;
+  }
+
+  // Photos
+  if (!chronicle.photos) chronicle.photos = [];
+  if (photoUrl) {
+    const existingPhoto = chronicle.photos.find(p => !p.isYouTube);
+    if (existingPhoto) {
+      existingPhoto.url = photoUrl;
+      existingPhoto.caption = photoCaption || title;
+      existingPhoto.year = fromYear;
+    } else {
+      chronicle.photos.push({
+        url: photoUrl,
+        caption: photoCaption || title,
+        year: fromYear
+      });
+    }
+  }
+
+  normalizeChronicleMedia(chronicle);
+
+  // Save to localStorage 'earthtimes_custom_spots' so that edits persist across reloads
+  try {
+    const existing = JSON.parse(localStorage.getItem('earthtimes_custom_spots') || '[]');
+    const idx = existing.findIndex(s => s.id === spotId);
+    if (idx !== -1) {
+      existing[idx] = spot;
+    } else {
+      existing.push(spot);
+    }
+    localStorage.setItem('earthtimes_custom_spots', JSON.stringify(existing));
+  } catch (e) {
+    console.warn('Error saving edited spot to localStorage', e);
+  }
+
+  // Update UI components
+  const capsuleModal = document.getElementById('timeCapsuleModal');
+  if (capsuleModal && !capsuleModal.classList.contains('hidden')) {
+    renderTimeCapsuleModalContent(spot, chronicle);
+  }
+
+  if (window.renderCurrentTimeCapsules) {
+    window.renderCurrentTimeCapsules();
+  }
+
+  updateTimelineRuler();
+
+  if (window.renderTimelineTabInPlace) {
+    window.renderTimelineTabInPlace();
+  }
+
+  closeEditSpotModal();
+  alert('✅ Οι αλλαγές στο σημείο αποθηκεύτηκαν επιτυχώς!');
 }
 
 /**

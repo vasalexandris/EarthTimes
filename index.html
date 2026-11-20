@@ -1388,6 +1388,116 @@
     </div>
   </div>
 
+  <!-- ================= 6B. EDIT SPOT MODAL ================= -->
+  <div id="editSpotModal" class="fixed inset-0 z-[2050] flex items-center justify-center bg-slate-950/85 backdrop-blur-md p-4 hidden">
+    <div class="w-full max-w-xl bg-slate-900 border border-amber-500/70 rounded-3xl p-6 shadow-2xl max-h-[90vh] overflow-y-auto">
+      <div class="flex items-center justify-between mb-4 pb-3 border-b border-slate-800">
+        <div>
+          <h3 class="text-lg font-bold text-white flex items-center gap-2">
+            <i class="fa-solid fa-pen-to-square text-amber-400"></i> Επεξεργασία Σημείου & Χρονοκάψουλας
+          </h3>
+          <p class="text-xs text-slate-400">
+            Διορθώστε περιγραφές, ημερομηνίες, τίτλους ή προσθέστε νέο υλικό (βίντεο/εικόνες).
+          </p>
+        </div>
+        <button onclick="closeEditSpotModal()" class="text-slate-400 hover:text-white cursor-pointer">
+          <i class="fa-solid fa-xmark text-lg"></i>
+        </button>
+      </div>
+
+      <form id="editSpotForm" onsubmit="saveEditedSpot(event)" class="space-y-4">
+        <input type="hidden" id="editSpotId">
+        <input type="hidden" id="editChronicleId">
+
+        <div>
+          <label class="block text-xs font-semibold text-slate-300 mb-1">Όνομα Σημείου / Τοπωνύμιο *</label>
+          <input type="text" id="editSpotName" required class="w-full bg-slate-800 border border-slate-700 rounded-xl px-3 py-2 text-sm text-white focus:ring-2 focus:ring-amber-500 outline-none">
+        </div>
+
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block text-xs font-semibold text-slate-300 mb-1">Οδός / Διεύθυνση</label>
+            <input type="text" id="editSpotAddress" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-3 py-2 text-sm text-white focus:ring-2 focus:ring-amber-500 outline-none">
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-slate-300 mb-1">Κατηγορία</label>
+            <select id="editSpotCategory" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-3 py-2 text-sm text-white focus:ring-2 focus:ring-amber-500 outline-none">
+              <option value="culture">Πολιτισμός / Τέχνες / Διαδρομές</option>
+              <option value="landmark">Ιστορικό Ορόσημο</option>
+              <option value="business">Εμπορικό / Κατάστημα / Χάνι</option>
+              <option value="architecture">Αρχιτεκτονική / Αρχοντικό</option>
+              <option value="residence">Κατοικία</option>
+              <option value="nature">Φύση / Τοπίο</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-slate-300 mb-1">Τίτλος Αναφοράς / Χρονικού *</label>
+          <input type="text" id="editChronicleTitle" required class="w-full bg-slate-800 border border-slate-700 rounded-xl px-3 py-2 text-sm text-white focus:ring-2 focus:ring-amber-500 outline-none">
+        </div>
+
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
+          <div>
+            <label class="block text-[11px] font-semibold text-slate-300 mb-1">Από Έτος</label>
+            <input type="number" id="editFromYear" min="1800" max="2026" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-2.5 py-1.5 text-xs text-white focus:ring-2 focus:ring-amber-500 outline-none">
+          </div>
+          <div>
+            <label class="block text-[11px] font-semibold text-slate-300 mb-1">Έως Έτος</label>
+            <input type="number" id="editToYear" min="1800" max="2026" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-2.5 py-1.5 text-xs text-white focus:ring-2 focus:ring-amber-500 outline-none">
+          </div>
+          <div>
+            <label class="block text-[11px] font-semibold text-slate-300 mb-1">Ημερομηνία</label>
+            <input type="text" id="editDate" placeholder="YYYY-MM-DD" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-2.5 py-1.5 text-xs text-white focus:ring-2 focus:ring-amber-500 outline-none">
+          </div>
+          <div>
+            <label class="block text-[11px] font-semibold text-slate-300 mb-1">Ώρα</label>
+            <input type="text" id="editTime" placeholder="12:00" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-2.5 py-1.5 text-xs text-white focus:ring-2 focus:ring-amber-500 outline-none">
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-slate-300 mb-1">Ιστορική Περιγραφή / Αφήγηση *</label>
+          <textarea id="editStory" rows="4" required class="w-full bg-slate-800 border border-slate-700 rounded-xl px-3 py-2 text-xs text-white focus:ring-2 focus:ring-amber-500 outline-none leading-relaxed"></textarea>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div>
+            <label class="block text-xs font-semibold text-slate-300 mb-1">
+              <i class="fa-brands fa-youtube text-red-500 mr-1"></i> Σύνδεσμος Βίντεο YouTube
+            </label>
+            <input type="url" id="editVideoUrl" placeholder="https://www.youtube.com/watch?v=..." class="w-full bg-slate-800 border border-slate-700 rounded-xl px-3 py-2 text-xs text-white focus:ring-2 focus:ring-amber-500 outline-none">
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-slate-300 mb-1">
+              <i class="fa-regular fa-image text-sky-400 mr-1"></i> URL Εικόνας / Φωτογραφίας
+            </label>
+            <input type="url" id="editPhotoUrl" placeholder="https://..." class="w-full bg-slate-800 border border-slate-700 rounded-xl px-3 py-2 text-xs text-white focus:ring-2 focus:ring-amber-500 outline-none">
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block text-xs font-semibold text-slate-300 mb-1">Όνομα Συντάκτη / Πηγή</label>
+            <input type="text" id="editAuthorName" placeholder="π.χ. Τοπικό Αρχείο ή Πολίτης" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-3 py-2 text-xs text-white focus:ring-2 focus:ring-amber-500 outline-none">
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-slate-300 mb-1">Λεζάντα Φωτογραφίας</label>
+            <input type="text" id="editPhotoCaption" placeholder="Σύντομη περιγραφή εικόνας" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-3 py-2 text-xs text-white focus:ring-2 focus:ring-amber-500 outline-none">
+          </div>
+        </div>
+
+        <div class="flex items-center justify-end gap-2 pt-3 border-t border-slate-800">
+          <button type="button" onclick="closeEditSpotModal()" class="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-750 text-slate-300 text-xs font-semibold transition cursor-pointer">Ακύρωση</button>
+          <button type="submit" class="px-5 py-2 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-black text-xs shadow-xl transition flex items-center gap-1.5 cursor-pointer">
+            <i class="fa-solid fa-check"></i>
+            <span>Αποθήκευση Αλλαγών</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
   <!-- ================= 7. USER PROFILE & AUTHENTICATION MODAL ================= -->
   <div id="userProfileModal" class="fixed inset-0 z-[2000] flex items-center justify-center bg-slate-950/85 backdrop-blur-md p-4 hidden">
     <div class="w-full max-w-md bg-slate-900 border border-sky-500/50 rounded-2xl p-6 shadow-2xl">
@@ -1636,7 +1746,7 @@
   </div>
 
   <!-- Modular Application Scripts -->
-  <script type="module" src="js/app.js?v=20261120_admin_timeline_markers_v17"></script>
+  <script type="module" src="js/app.js?v=20261120_spot_editing_clean_timeline_v18"></script>
   <!-- Fullscreen Toggle Script (Android, WebKit, Desktop) -->
   <script>
     window.toggleFullScreen = function() {

@@ -4646,7 +4646,14 @@ export function renderTabContent(tabId, entity, activeYear = null, activeSpots =
       } else if (yr === 'unknown') {
         matched = spot.chronicles.find(c => c.fromYear === null || c.isUnknownDate || c.date === 'unknown') || (spot.isUnknownDate ? spot.chronicles[0] : null);
       } else {
-        matched = spot.chronicles.find(c => c.fromYear !== null && c.fromYear <= yr && (c.toYear === null || c.toYear >= yr));
+        matched = spot.chronicles.find(c => 
+          c.fromYear === yr || 
+          (c.date && typeof c.date === 'string' && c.date.startsWith(String(yr))) || 
+          (c.photos && c.photos.some(p => p.year === yr))
+        );
+        if (!matched && openTimelineEntryId && spot.chronicles.some(c => c.id === openTimelineEntryId)) {
+          matched = spot.chronicles.find(c => c.id === openTimelineEntryId);
+        }
       }
 
       if (matched) {
@@ -4693,30 +4700,26 @@ export function renderTabContent(tabId, entity, activeYear = null, activeSpots =
     const monthMap = new Map();
 
     activeChronicleCards.forEach(({ spot, chronicle }) => {
-      let mNum = 1;
-      let dNum = 15;
-      let timeStr = '10:30';
+      let mNum = 'unknown';
+      let dNum = 'unknown';
+      let timeStr = '—';
 
       if (chronicle.isUnknownDate || chronicle.date === 'unknown' || chronicle.fromYear === null) {
         mNum = 'unknown';
         dNum = 'unknown';
       } else if (chronicle.date && typeof chronicle.date === 'string' && chronicle.date.length >= 10) {
-        mNum = parseInt(chronicle.date.slice(5, 7), 10) || 1;
-        dNum = parseInt(chronicle.date.slice(8, 10), 10) || 15;
+        mNum = parseInt(chronicle.date.slice(5, 7), 10) || 'unknown';
+        dNum = parseInt(chronicle.date.slice(8, 10), 10) || 'unknown';
+      } else if (chronicle.date && typeof chronicle.date === 'string' && chronicle.date.length >= 7) {
+        mNum = parseInt(chronicle.date.slice(5, 7), 10) || 'unknown';
+        dNum = 'unknown';
       } else {
-        const str = spot.name + (chronicle.title || '');
-        let hash = 0;
-        for (let i = 0; i < str.length; i++) hash = ((hash << 5) - hash) + str.charCodeAt(i);
-        mNum = (Math.abs(hash) % 12) + 1;
-        const maxD = (MONTHS_DEF[mNum - 1] || {}).days || 28;
-        dNum = (Math.abs(hash >> 3) % maxD) + 1;
+        mNum = 'unknown';
+        dNum = 'unknown';
       }
 
-      if (chronicle.time && typeof chronicle.time === 'string') {
-        timeStr = chronicle.time;
-      } else {
-        const hour = 9 + ((spot.name.charCodeAt(0) || 0) % 12);
-        timeStr = `${String(hour).padStart(2, '0')}:00`;
+      if (chronicle.time && typeof chronicle.time === 'string' && chronicle.time.trim()) {
+        timeStr = chronicle.time.trim();
       }
 
       let ytId = chronicle.youtubeId || null;
@@ -4929,6 +4932,9 @@ export function renderTabContent(tabId, entity, activeYear = null, activeSpots =
                               <i class="fa-brands fa-youtube text-red-500"></i> Video
                             </span>
                           ` : ''}
+                          <button onclick="event.stopPropagation(); window.openEditSpotModal('${entry.spot.id}', '${entry.chronicle.id}')" title="Επεξεργασία Σημείου" class="w-6 h-6 rounded-lg bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 border border-amber-500/40 flex items-center justify-center text-xs transition cursor-pointer">
+                            <i class="fa-solid fa-pen text-[10px]"></i>
+                          </button>
                           <button class="w-6 h-6 rounded-lg bg-slate-800 text-slate-300 flex items-center justify-center text-xs">
                             <i class="fa-solid fa-chevron-down transition-transform duration-200 ${isUnfolded ? 'rotate-180 text-amber-400' : ''}"></i>
                           </button>
@@ -4976,6 +4982,11 @@ export function renderTabContent(tabId, entity, activeYear = null, activeSpots =
                             <button onclick="window.focusSpotOnMap('${entry.spot.id}')" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-amber-300 border border-slate-700 font-bold text-xs flex items-center gap-1.5 shadow transition cursor-pointer" title="Εστίαση του χάρτη στο σημείο αυτό">
                               <i class="fa-solid fa-location-dot"></i>
                               <span>Εστίαση στον Χάρτη 📍</span>
+                            </button>
+
+                            <button onclick="window.openEditSpotModal('${entry.spot.id}', '${entry.chronicle.id}')" class="px-3 py-1.5 rounded-lg bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 border border-amber-500/40 font-bold text-xs flex items-center gap-1.5 shadow transition cursor-pointer" title="Επεξεργασία Σημείου">
+                              <i class="fa-solid fa-pen-to-square"></i>
+                              <span>Επεξεργασία ✏️</span>
                             </button>
                           </div>
                         </div>
@@ -5055,78 +5066,6 @@ export function renderTabContent(tabId, entity, activeYear = null, activeSpots =
             </div>
           </div>
         ` : ''}
-
-        <!-- Active Time Capsules / Spots in this Era -->
-        <div>
-          <div class="flex items-center justify-between mb-2">
-            <h4 class="text-xs uppercase tracking-wider font-bold text-slate-400 flex items-center gap-1.5">
-              <i class="fa-solid fa-hourglass-start text-sky-400"></i> Ενεργές Χρονοκάψουλες στο Χάρτη (${activeChronicleCards.length})
-            </h4>
-          </div>
-
-          <div class="space-y-2.5">
-            ${activeChronicleCards.map(({ spot, chronicle }) => {
-              const isOfficial = chronicle.authorType === 'official';
-              const memory = chronicle.memories && chronicle.memories[0];
-              let chronicleYtId = chronicle.youtubeId || null;
-              if (!chronicleYtId && chronicle.videoUrl) {
-                const m = chronicle.videoUrl.match(/(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|shorts\/|watch\?v=|watch\?.+&v=))([\w-]{11})/);
-                if (m && m[1]) chronicleYtId = m[1];
-              }
-              if (!chronicleYtId && chronicle.photos) {
-                const foundYt = chronicle.photos.find(p => p.youtubeId || p.isYouTube);
-                if (foundYt) chronicleYtId = foundYt.youtubeId;
-              }
-              return `
-                <div class="p-3.5 bg-slate-800/40 hover:bg-slate-800/70 border ${chronicleYtId ? 'border-amber-500/40' : 'border-slate-700/60'} rounded-xl transition shadow">
-                  <div class="flex items-start justify-between gap-2 mb-1.5">
-                    <div>
-                      <div class="flex items-center gap-1.5 flex-wrap">
-                        <span class="px-2 py-0.5 rounded text-[10px] font-bold ${
-                          isOfficial 
-                            ? 'bg-sky-900/80 text-sky-300 border border-sky-600/50' 
-                            : 'bg-emerald-900/80 text-emerald-300 border border-emerald-600/50'
-                        }">
-                          ${isOfficial ? '🏛️ Επίσημο Αρχείο' : '👤 Μαρτυρία Πολίτη'}
-                        </span>
-                        ${chronicleYtId ? `
-                          <span class="px-1.5 py-0.5 rounded text-[10px] font-bold bg-rose-950/90 text-rose-300 border border-rose-600/50 flex items-center gap-1">
-                            <i class="fa-brands fa-youtube text-red-500"></i> Βίντεο
-                          </span>
-                        ` : ''}
-                      </div>
-                      <h5 class="font-bold text-slate-100 text-sm mt-1">${spot.name}</h5>
-                      <span class="text-[11px] text-amber-400 font-semibold">${chronicle.title}</span>
-                    </div>
-                    <div class="flex items-center gap-1.5 shrink-0">
-                      ${chronicleYtId ? `
-                        <button onclick="window.openTimeCapsuleVideo('${chronicleYtId}', '${escapeStr(chronicle.title)}', '${escapeStr(spot.name)}')" class="px-2.5 py-1 rounded-lg bg-red-950/80 hover:bg-red-900 text-red-300 border border-red-700/50 text-xs font-bold transition flex items-center gap-1 shadow cursor-pointer" title="Αναπαραγωγή Βίντεο">
-                          <i class="fa-solid fa-play text-red-400 text-[10px]"></i>
-                          <span>Βίντεο 📹</span>
-                        </button>
-                      ` : ''}
-                      <button onclick="openSpotTimeCapsule('${spot.id}', ${yr === 'all' ? chronicle.fromYear : yr})" class="px-2.5 py-1 rounded-lg bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 border border-amber-500/50 text-xs font-bold transition flex items-center gap-1 shadow cursor-pointer">
-                        <i class="fa-solid fa-eye text-[10px]"></i>
-                        <span>Προβολή</span>
-                      </button>
-                    </div>
-                  </div>
-                  <p class="text-xs text-slate-300 leading-relaxed mb-2 line-clamp-3">${chronicle.story}</p>
-                  
-                  ${memory ? `
-                    <div class="p-2.5 rounded-lg bg-slate-900/80 border border-slate-700/40 text-[11px] text-slate-300 italic flex items-start gap-2">
-                      <i class="fa-solid fa-quote-left text-amber-400 text-xs mt-0.5 shrink-0"></i>
-                      <div>
-                        <span>«${memory.text}»</span>
-                        <div class="not-italic text-slate-400 text-[10px] mt-0.5 font-bold">— ${memory.author} (${memory.year})</div>
-                      </div>
-                    </div>
-                  ` : ''}
-                </div>
-              `;
-            }).join('')}
-          </div>
-        </div>
 
         <!-- Past vs Present Historical Milestones -->
         <div class="pt-2 border-t border-slate-800">
