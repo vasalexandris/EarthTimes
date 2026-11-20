@@ -29,7 +29,7 @@ export async function loadCountryData(countryId = 'greece') {
     return dataCache.get(cacheKey);
   }
   try {
-    const response = await fetch(`./data/countries/${countryId}.json?v=20261118_gastro_overhaul_v8`);
+    const response = await fetch(`./data/countries/${countryId}.json?v=20261120_new_cities_25_v23`);
     if (!response.ok) {
       throw new Error(`HTTP error ${response.status} loading data/countries/${countryId}.json`);
     }

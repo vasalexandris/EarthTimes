@@ -2268,6 +2268,2136 @@
           "wiki": "Thackray_Museum"
         }
       ]
+    },
+    {
+      "id": "belfast",
+      "name": "Μπέλφαστ",
+      "englishName": "Belfast",
+      "nickname": "Πρωτεύουσα της Βόρειας Ιρλανδίας & Πόλη του Τιτανικού",
+      "badge": "Ναυπηγεία & Μουρλοτόιχοι",
+      "type": "port",
+      "coords": [
+        54.5973,
+        -5.9301
+      ],
+      "zoom": 12.5,
+      "stats": {
+        "population": "343.000 (671.000 Μητροπολιτική)",
+        "elevation": "5 μ.",
+        "founded": "1613 (βασιλικός χάρτης)"
+      },
+      "quote": "«Από το Μπέλφαστ βγήκε ο Τιτανικός· από τους τοίχους του η ιστορία μιλάει.»",
+      "geo": {
+        "climate": "Ωκεάνιο: ήπιους υγρούς χειμώνες, δροσερά καλοκαίρια, άφθονες βροχές και ισχυροί δυτικοί άνεμοι από τον Ατλαντικό.",
+        "terrain": "Στις εκβολές του ποταμού Lagan, στην ανατολική ακτή της Βόρειας Ιρλανδίας, με τον κόλπο Belfast Lough να ανοίγεται στον ιρλανδικό στενό.",
+        "significance": "Πρωτεύουσα και μεγαλύτερη πόλη της Βόρειας Ιρλανδίας — ιστορικό ναυπηγικό κέντρο και σύγχρονη μητρόπολη του Good Friday Agreement."
+      },
+      "hist": {
+        "ancient": "Μεσαιωικό φρούριο και οικισμός στους ποταμούς Lagan και Farset· βασιλικός χάρτης το 1613 από τον James I.",
+        "modern": "Από την 19αιωική βιομηχανική-ναυπηγική ακμή (Harland & Wolff, Titanic 1912), στους Troubles (1969-1998) και στη σημερινή ειρηνική μεταπολίτευση.",
+        "highlights": [
+          {
+            "year": "1613",
+            "event": "Βασιλικός Χάρτης",
+            "desc": "Ο James I παραχωρεί χάρτη πόλης και οργανώνει την πρώτη βασιλική πόλη."
+          },
+          {
+            "year": "1912",
+            "event": "Καθελκυσμός του Τιτανικού",
+            "desc": "Το θρυλικό πλοίο ναυπηγείται στα Harland & Wolff shipyards."
+          },
+          {
+            "year": "1969-1998",
+            "event": "The Troubles",
+            "desc": "Τρεις δεκαετίες βίας μεταξύ unionists και nationalists, με πάνω από 3.500 θανάτους."
+          },
+          {
+            "year": "1998",
+            "event": "Good Friday Agreement",
+            "desc": "Η ιστορική ειρηνευτική συμφωνία δημιουργεί διακοινοβουλευτική αυτοδιοίκηση."
+          }
+        ]
+      },
+      "cult": {
+        "traditions": "Πολιτικές τοιχογραφίες ( murals) στη Falls Road και Shankill, πορεία Orangemen της 12ης Ιουλίου, μουσική παράδοση (Van Morrison, Snow Patrol) και τηλεοπτική παραγωγή Game of Thrones.",
+        "landmarks": "Titanic Belfast, City Hall, Belfast Castle, Crumlin Road Gaol, St George's Market, Falls & Shankill murals, Queen's University.",
+        "localLife": "Οι belfastians συχνάζουν στα Cathedral Quarter pubs, κάνουν βόλτες στην πλατεία City Hall και ψωνίζουν στο St George's Market."
+      },
+      "gastro": {
+        "specialties": [
+          "Ulster Fry: τηγανητό πρωινό με bacon, sausage, eggs, soda bread, potato bread και mushroom",
+          "Champ: πουρέ πατάτας με scallions (φρέσκα κρεμμυδάκια) και βούτυρο",
+          "Soda farls: ψωμί σόδας σε τετράγωνα σχήματα, τηγανητό",
+          "Yellowman: κίτρινο γλυκό fudge από honeycomb",
+          "Seafood chowder με seafood του Belfast Lough"
+        ],
+        "culture": "Η belfast κουζίνα είναι comfort food — Irish stew, soda bread, champ και αγνά dairy προϊόντα, με revival στις μοντέρνες ψαροταβέρνες."
+      },
+      "demo": {
+        "languages": "Αγγλικά· Ιρλανδικά (Gaeilge) και Ulster Scots ως περιφερειακές γλώσσες.",
+        "demographics": "343.000 κάτοικοι, με διχασμένη κοινότητα unionist/nationalist, αλλά νέα πολυπολιτισμική μετανάστευση τελευταία."
+      },
+      "pois": [
+        {
+          "id": "po-bf1",
+          "name": "Titanic Belfast",
+          "category": "culture",
+          "coords": [
+            54.6078,
+            -5.9157
+          ],
+          "year": "2012",
+          "desc": "Μουσείο-ορόσημο σχήματος πλοίου στο ίδιο ναυπηγείο που ναυπηγήθηκε ο Titanic."
+        },
+        {
+          "id": "po-bf2",
+          "name": "Belfast City Hall",
+          "category": "monument",
+          "coords": [
+            54.5969,
+            -5.9291
+          ],
+          "year": "1906",
+          "desc": "Μπαρόκ μπαρόκ δημαρχείο από Portland stone, στην Donegall Square."
+        },
+        {
+          "id": "po-bf3",
+          "name": "Crumlin Road Gaol",
+          "category": "history",
+          "coords": [
+            54.6094,
+            -5.9296
+          ],
+          "year": "1846",
+          "desc": "Βικτωριανή φυλακή 19ου-20ού αι., σήμερα μουσείο του ιστορικού των Troubles."
+        },
+        {
+          "id": "po-bf4",
+          "name": "St George's Market",
+          "category": "leisure",
+          "coords": [
+            54.5972,
+            -5.9273
+          ],
+          "year": "1890",
+          "desc": "Το αρχαιότερο σκεπαστό market του Belfast, με τρόφιμα, μουσική και antiques."
+        },
+        {
+          "id": "po-bf5",
+          "name": "Falls Road Murals",
+          "category": "history",
+          "coords": [
+            54.595,
+            -5.953
+          ],
+          "year": "1981",
+          "desc": "Πολιτικές τοιχογραφίες republican στη West Belfast, με Bobby Sands memorial."
+        },
+        {
+          "id": "po-bf6",
+          "name": "Queen's University Belfast",
+          "category": "culture",
+          "coords": [
+            54.5833,
+            -5.9333
+          ],
+          "year": "1849",
+          "desc": "Ιστορικό πανεπιστήμιο σε γοτθικό κτίριο Lanyon, στην ανάπτυξη Russell Group."
+        }
+      ],
+      "pastVsPresent": {
+        "era1": "Belfast 1912: Ναυπηγεία του Τιτανικού — βιομηχανική ακμή με χιλιάδες εργάτες στα Harland & Wolff.",
+        "era2": "Belfast 2026: Post-Conflict Creative Capital — Titanic Quarter, Game of Thrones tourism και τεχνολογία.",
+        "synthesis": "Από τη ναυπηγική μητρόπολη που ναυπήγησε τον Τιτανικό και την πόλη-σύμβολο των Troubles, στη σύγχρονη αναγεννημένη μητρόπολη του Good Friday Agreement."
+      }
+    },
+    {
+      "id": "cardiff",
+      "name": "Κάρντιφ",
+      "englishName": "Cardiff",
+      "nickname": "Πρωτεύουσα της Ουαλίας & Cardiff Bay",
+      "badge": "Κάστρο & Αναγεννημένος Κόλπος",
+      "type": "port",
+      "coords": [
+        51.4816,
+        -3.1791
+      ],
+      "zoom": 12.5,
+      "stats": {
+        "population": "372.000 (1.100.000 Μητροπολιτική)",
+        "elevation": "10 μ.",
+        "founded": "75 μ.Χ. (Ρωμαϊκό φρούριο)"
+      },
+      "quote": "«Το Cardiff ξύπνησε από την κάπνα των ανθρακωρυχείων και σήμερα λάμπει στον κόλπο του.»",
+      "geo": {
+        "climate": "Ωκεάνιο: ήπιους χειμώνες, δροσερά καλοκαίρια, ισχυρές βροχές και δυτικοί άνεμοι.",
+        "terrain": "Παραλιακή πόλη στον ποταμό Taff και στον Ely, στη νότια ακτή της Ουαλίας, με τον κόλπο Cardiff Bay που δημιουργήθηκε από φράγμα το 1999.",
+        "significance": "Πρωτεύουσα και μεγαλύτερη πόλη της Ουαλίας — εμπορικό, πολιτικό και πολιτιστικό κέντρο, με το Welsh Parliament."
+      },
+      "hist": {
+        "ancient": "Ρωμαϊκό φρούριο Isca Augusta (75 μ.Χ.)· Νορμανδικό κάστρο (1093)· μικρό χωριό μέχρι τον 19ο αιώνα.",
+        "modern": "Από την εκτόξευση με την εξόρυξη άνθρακα στο Cardiff Coal Exchange (1888), στην αναγέννηση του Cardiff Bay (1999) και στη σημερινή μητρόπολη και Σενέντ.",
+        "highlights": [
+          {
+            "year": "75 μ.Χ.",
+            "event": "Ρωμαϊκό Φρούριο",
+            "desc": "Ίδρυση ρωμαϊκού φρουρίου Isca Augusta στο σημερινό Cardiff Castle."
+          },
+          {
+            "year": "1093",
+            "event": "Νορμανδικό Κάστρο",
+            "desc": "Ο Robert Fitzhamon κτίζει τον πύργο του Cardiff Castle."
+          },
+          {
+            "year": "1905",
+            "event": "Καθεστώς Πόλης",
+            "desc": "Ο Edward VII παραχωρεί καθεστώς πόλης στο Cardiff."
+          },
+          {
+            "year": "1999",
+            "event": "Cardiff Bay & Σενέντ",
+            "desc": "Το Cardiff Bay Barrage μετατρέπει τον κόλπο σε λίμνη· ιδρύεται το National Assembly for Wales."
+          }
+        ]
+      },
+      "cult": {
+        "traditions": "Παραδοσιακό Eisteddfod (φεστιβál ουαλικής ποίησης και μουσικής), rugby στο Principality Stadium, ουαλική γλώσσα (Cymraeg), Male Voice Choirs.",
+        "landmarks": "Cardiff Castle, Cardiff Bay, Wales Millennium Centre, Principality Stadium, National Museum Cardiff, Llandaff Cathedral, Castell Coch.",
+        "localLife": "Οι cardiffians συχνάζουν στα Arcades (βικτωριανά shopping arcades), Cardiff Bay pubs και Riverside Market."
+      },
+      "gastro": {
+        "specialties": [
+          "Welsh rarebit: τοστ με τυρί Cheddar, μπύρα, μουστάρδα και cayenne pepper",
+          "Cawl: παραδοσιακή ουαλική σούπα με αρνί, λαχανικά και leek",
+          "Welsh cakes: σχηματίζονται griddle cakes με σταφίδες και μπαχαρικά",
+          "Laverbread: εδώδιμα φύκια του Swansea Bay, σερβιρισμένα με bacon",
+          "Glamorgan sausage: vegetarian sausage με τυρί, leek και breadcrumbs"
+        ],
+        "culture": "Η ουαλική κουζίνα είναι comfort food — cawl, laverbread, Welsh cakes — με revival σύγχρονης καλής κουζίνας από Welsh υλικά."
+      },
+      "demo": {
+        "languages": "Αγγλικά και Ουαλικά (Cymraeg) — συνεπίσημες.",
+        "demographics": "372.000 κάτοικοι, με αυξανόμενη πολυπολιτισμική κοινότητα (Somali, Polish, Portuguese)."
+      },
+      "pois": [
+        {
+          "id": "po-cd1",
+          "name": "Cardiff Castle",
+          "category": "monument",
+          "coords": [
+            51.4821,
+            -3.1813
+          ],
+          "year": "1093",
+          "desc": "Νορμανδικό κάστρο με ρωμαϊκά τείχη και βικτωριανό παλάτι."
+        },
+        {
+          "id": "po-cd2",
+          "name": "Cardiff Bay & Senedd",
+          "category": "landmark",
+          "coords": [
+            51.4633,
+            -3.164
+          ],
+          "year": "2006",
+          "desc": "Αναγεννημένος κόλπος με το Senedd (Ουαλικό Κοινοβούλιο) του Richard Rogers."
+        },
+        {
+          "id": "po-cd3",
+          "name": "Wales Millennium Centre",
+          "category": "culture",
+          "coords": [
+            51.4648,
+            -3.1657
+          ],
+          "year": "2004",
+          "desc": "Εθνικό κέντρο τεχνών της Ουαλίας, με όπερα, ballet και μουσική."
+        },
+        {
+          "id": "po-cd4",
+          "name": "Principality Stadium",
+          "category": "sport",
+          "coords": [
+            51.4787,
+            -3.1822
+          ],
+          "year": "1999",
+          "desc": "Εθνικό γήπεδο rugby 74.500 θέσεων με αναστελλόμενη στέγη."
+        },
+        {
+          "id": "po-cd5",
+          "name": "National Museum Cardiff",
+          "category": "culture",
+          "coords": [
+            51.4858,
+            -3.1745
+          ],
+          "year": "1927",
+          "desc": "Εθνικό μουσείο με συλλογήimpressionist ζωγραφικής και Welsh artefacts."
+        },
+        {
+          "id": "po-cd6",
+          "name": "Castell Coch",
+          "category": "monument",
+          "coords": [
+            51.524,
+            -3.254
+          ],
+          "year": "1875",
+          "desc": "Παραμυθένιο νεογοτθικό κάστρο του 3rd Marquess of Bute."
+        }
+      ],
+      "pastVsPresent": {
+        "era1": "Cardiff 1888: World Coal Port — μεγαλύτερο λιμάνι εξαγωγής άνθρακα στον κόσμο.",
+        "era2": "Cardiff 2026: Welsh Capital & Creative Hub — Cardiff Bay, Σενέντ και BBC drama hub.",
+        "synthesis": "Από τον «βασιλιά του άνθρακα» του 19ου αιώνα στη σύγχρονη μητρόπολη που συνδυάζει ουαλική ταυτότητα, αναγεννημένο water-front και σύγχρονη πολιτική αυτονομία."
+      }
+    },
+    {
+      "id": "bath",
+      "name": "Μπαθ",
+      "englishName": "Bath",
+      "nickname": "Πόλη Ρωμαϊκών Λουτρών & Γεωργιανής Αρχιτεκτονικής",
+      "badge": "Royal Crescent & Roman Baths",
+      "type": "historic",
+      "coords": [
+        51.3802,
+        -2.3583
+      ],
+      "zoom": 12.5,
+      "stats": {
+        "population": "95.000",
+        "elevation": "60 μ.",
+        "founded": "60 μ.Χ. (Ρωμαϊκή Aquae Sulis)"
+      },
+      "quote": "«Στο Bath ο γεωργιανός λίθος σμίλεψε την αγγλική κομψότητα και ο ρωμαϊκός ατμός ξεχύθηκε από κάτω.»",
+      "geo": {
+        "climate": "Ωκεάνιο της νότιας Αγγλίας: ήπιους χειμώνες, δροσερά καλοκαίρια, μέτριες βροχές.",
+        "terrain": "Πόλη στον ποταμό Avon, σε κοιλάδα του Somerset, με θερμές φυσικές πηγές 46°C.",
+        "significance": "Η μόνη πόλη του Ηνωμένου Βασιλείου που ολόκληρη είναι Μνημείο UNESCO — Παγκόσμια Κληρονομιά."
+      },
+      "hist": {
+        "ancient": "Ρωμαϊκό λουτρό Aquae Sulis (60 μ.Χ.) — ιερό της θεάς Sulis Minerva· αγγλοσαξονική και μεσαιωνική πόλη.",
+        "modern": "Από τη γεωργιανή αναγέννηση (18ος αι.) ως spa resort της αριστοκρατίας· Jane Austen εδώ· UNESCO το 1987.",
+        "highlights": [
+          {
+            "year": "60 μ.Χ.",
+            "event": "Ρωμαϊκά Λουτρά",
+            "desc": "Ίδρυση των Aquae Sulis από τους Ρωμαίους."
+          },
+          {
+            "year": "1727-1767",
+            "event": "Γεωργιανή Ανάπτυξη",
+            "desc": "Ο John Wood父子 κτίζουν Royal Crescent, Circus και Pump Room."
+          },
+          {
+            "year": "1801-1806",
+            "event": "Jane Austen στο Bath",
+            "desc": "Η Austen έζησε στο Bath και εμπνεύστηκε Northanger Abbey και Persuasion."
+          },
+          {
+            "year": "1987",
+            "event": "UNESCO Μνημείο",
+            "desc": "Ολόκληρη η πόλη του Bath γίνεται Μνημείο Παγκόσμιας Κληρονομιάς."
+          }
+        ]
+      },
+      "cult": {
+        "traditions": "Bath Festival (Philip Glass, Itsvo Pek) και χορωδίες, Jane Austen Festival (Σεπτέμβριος), Bath International Music Festival και μουσική παράδοση.",
+        "landmarks": "Ρωμαϊκά Λουτρά, Royal Crescent, The Circus, Bath Abbey, Pump Room, Pulteney Bridge και Thermae Bath Spa.",
+        "localLife": "Οι bathonians απολαμβάνουν afternoon tea στην Pump Room, βόλτες στο Royal Victoria Park και κολύμπι στις θερμές πηγές."
+      },
+      "gastro": {
+        "specialties": [
+          "Bath Bun: γλυκό ψωμάκι με σταφίδες και ζάχαρη, ειδικότητα Sally Lunn's",
+          "Sally Lunn's Bunn: ιστορικό bun (1680) σε σπίτι-μουσείο",
+          "Bath Oliver biscuits: τραγανά biscuits εφεύρεση του Dr. William Oliver",
+          "Bath Chaps: αλλαντικό από pork cheek και bread",
+          "Somerset Cider Brandy και τα τοπικά τυριά Bath Soft Cheese"
+        ],
+        "culture": "Η κουζίνα του Bath είναι αστική-αγγλική — κέικ, biscuits και dairy προϊόντα — με revival σύγχρονης fine dining."
+      },
+      "demo": {
+        "languages": "Αγγλικά· ελάχιστη ουαλική επιρροή από Bristol Channel.",
+        "demographics": "95.000 κάτοικοι, με μεγάλο τουριστικό στοιχείο και ακαδημαϊκό community (University of Bath, Bath Spa University)."
+      },
+      "pois": [
+        {
+          "id": "po-ba1",
+          "name": "Ρωμαϊκά Λουτρά (Roman Baths)",
+          "category": "history",
+          "coords": [
+            51.3811,
+            -2.3596
+          ],
+          "year": "60 μ.Χ.",
+          "desc": "Ρωμαϊκό ιερό και θερμά λουτρά της Sulis Minerva, εξαιρετικά διατηρημένα."
+        },
+        {
+          "id": "po-ba2",
+          "name": "Royal Crescent",
+          "category": "monument",
+          "coords": [
+            51.3836,
+            -2.3647
+          ],
+          "year": "1774",
+          "desc": "Ημικυκλική γεωργιανή στοά 30 σπιτιών — αριστούργημα του John Wood."
+        },
+        {
+          "id": "po-ba3",
+          "name": "Bath Abbey",
+          "category": "monument",
+          "coords": [
+            51.3812,
+            -2.3585
+          ],
+          "year": "1499",
+          "desc": "Καθεδρικός νεογοτθικού ρυθμού, τόπος στέψης Edgar του Wessex (973)."
+        },
+        {
+          "id": "po-ba4",
+          "name": "Pulteney Bridge",
+          "category": "landmark",
+          "coords": [
+            51.3833,
+            -2.3566
+          ],
+          "year": "1773",
+          "desc": "Γέφυρα με shops πάνω, εμπνευσμένη από το Ponte Vecchio."
+        },
+        {
+          "id": "po-ba5",
+          "name": "The Circus",
+          "category": "monument",
+          "coords": [
+            51.3842,
+            -2.3625
+          ],
+          "year": "1768",
+          "desc": "Κυκλική γεωργιανή στοά με ιωνικούς ρυθμούς."
+        },
+        {
+          "id": "po-ba6",
+          "name": "Thermae Bath Spa",
+          "category": "leisure",
+          "coords": [
+            51.3802,
+            -2.36
+          ],
+          "year": "2006",
+          "desc": "Σύγχρονο θερμό spa που χρησιμοποιεί τις φυσικές θερμές πηγές."
+        }
+      ],
+      "pastVsPresent": {
+        "era1": "Bath 1770: Γεωργιανή Spa Capital — πόλη της αριστοκρατίας με Royal Crescent, Pump Room και Jane Austen.",
+        "era2": "Bath 2026: UNESCO Living Heritage & Spa Renaissance — Thermae Bath Spa και διατήρηση γεωργιανού ιστού.",
+        "synthesis": "Από τη ρωμαϊκή πόλη των θερμών πηγών και τη γεωργιανή αριστοκρατική μητρόπολη, στη σύγχρονη πόλη-Μνημείο UNESCO που διατηρεί και αναβιώνει τη spa κληρονομιά της."
+      }
+    },
+    {
+      "id": "birmingham",
+      "name": "Μπέρμιγχαμ",
+      "englishName": "Birmingham",
+      "nickname": "Η Δεύτερη Πόλη του ΗΒ & Καρδιά της Βιομηχανικής Επανάστασης",
+      "badge": "Κανάλια & Currys",
+      "type": "metropolis",
+      "coords": [
+        52.4862,
+        -1.8904
+      ],
+      "zoom": 12.5,
+      "stats": {
+        "population": "1.145.000 (2.920.000 Μητροπολιτική)",
+        "elevation": "130 μ.",
+        "founded": "6ος αι. (αγγλοσαξονικός οικισμός) / 1166 (market)"
+      },
+      "quote": "«Στο Birmingham ο ατμός και το μέταλλο άλλαξαν τον κόσμο· σήμερα η δημιουργία είναι το νέο τους μέταλλο.»",
+      "geo": {
+        "climate": "Ωκεάνιο: ήπιους χειμώνες, δροσερά καλοκαίρια και μέτριες βροχές.",
+        "terrain": "Πεδινή πόλη στο Birmingham Plateau, στην καρδιά της Αγγλίας, με τους ποταμούς Rea και Tame και ένα τεράστιο δίκτυο καναλιών (πίσω από το Venice).",
+        "significance": "Δεύτερη μεγαλύτερη πόλη του Ηνωμένου Βασιλείου και πυρήνας της Βιομηχανικής Επανάστασης, σήμερα κόμβος τεχνολογίας και finance."
+      },
+      "hist": {
+        "ancient": "Αγγλοσαξονικός οικισμός Beormingaham· βασιλικός χάρτης market (1166)· από 16ος αι. κέντρο металλουργίας.",
+        "modern": "Από την πυρηνική βιομηχανική ακμή (James Watt,steam engine, Lunar Society) στη μεταβιομηχανική στροφή στις υπηρεσίες, finance και creative industries.",
+        "highlights": [
+          {
+            "year": "1166",
+            "event": "Βασιλικός Χάρτης Market",
+            "desc": "Ο Peter de Bermingham παραχωρεί δικαίωμα market."
+          },
+          {
+            "year": "1776",
+            "event": "Lunar Society & Watt",
+            "desc": "James Watt βελτιώνει τον ατμομηχανή και η Lunar Society (Wedgwood, Boulton) επαναστατεί."
+          },
+          {
+            "year": "1838",
+            "event": "Καθεστώς Πόλης & Σιδηρόδρομος",
+            "desc": "Σύνδεση με London και ανάπτυξη βιομηχανίας."
+          },
+          {
+            "year": "1998",
+            "event": "Bullring & Regeneration",
+            "desc": "Μεταβιομηχανική αναγέννηση με Bullring, Mailbox και Bullring Selfridges."
+          }
+        ]
+      },
+      "cult": {
+        "traditions": "Balti Triangle (Pakistani curry cuisine), Brummie dialect, Birmingham Museum & Art Gallery (Pre-Raphaelite), CBSO (City of Birmingham Symphony Orchestra), Fiesta η PowkeHub.",
+        "landmarks": "Birmingham Museum & Art Gallery, Library of Birmingham (largest public library in Europe), Cadbury World, Jewellery Quarter, Symphony Hall, Bullring.",
+        "localLife": "Οι brummies απολαμβάνουν balti στα curry houses της Ladypool Road, pub crawl στην Broad Street και jazz σε Digbeth."
+      },
+      "gastro": {
+        "specialties": [
+          "Balti: Pakistani-Brummie curry σε σιδερένιο balti bowl, με naan",
+          "Pork scratching: τηγανητά pork rind ως snack σε pubs",
+          "Birmingham Pork Pie και sausage rolls από Jewellery Quarter bakeries",
+          "Cadbury Dairy Milk: σοκολάτα από Bournville, εργοστάσιο από 1879",
+          "Gammon steak with egg & pineapple (pub classic)"
+        ],
+        "culture": "Η κουζίνα του Birmingham είναι fusion — Balti triangle (largest Pakistani community του UK), Cadbury chocolate και traditional pub fare."
+      },
+      "demo": {
+        "languages": "Αγγλικά (Brummie διάλεκτος)· Urdu, Punjabi, Somali, Polish.",
+        "demographics": "1.145.000 κάτοικοι, η νεότερη και πιο πολυπολιτισμική πόλη του ΗΒ, με πάνω από 187 εθνικότητες."
+      },
+      "pois": [
+        {
+          "id": "po-bm1",
+          "name": "Birmingham Museum & Art Gallery",
+          "category": "culture",
+          "coords": [
+            52.4796,
+            -1.9069
+          ],
+          "year": "1885",
+          "desc": "Μουσείο με Pre-Raphaelite ζωγραφική, Industrial Gallery και Staffordshire Hoard."
+        },
+        {
+          "id": "po-bm2",
+          "name": "Library of Birmingham",
+          "category": "culture",
+          "coords": [
+            52.4797,
+            -1.9064
+          ],
+          "year": "2013",
+          "desc": "Η μεγαλύτερη δημόσια βιβλιοθήκη της Ευρώπης, σχεδιασμένη από την Francine Houben."
+        },
+        {
+          "id": "po-bm3",
+          "name": "Cadbury World",
+          "category": "leisure",
+          "coords": [
+            52.434,
+            -1.932
+          ],
+          "year": "1879",
+          "desc": "Εργοστάσιο σοκολάτας Cadbury στο Bournville, με interactive tour."
+        },
+        {
+          "id": "po-bm4",
+          "name": "Bullring & Selfridges",
+          "category": "leisure",
+          "coords": [
+            52.478,
+            -1.895
+          ],
+          "year": "2003",
+          "desc": "Σύγχρονο εμπορικό κέντρο με το iconic Selfridges blue disc building."
+        },
+        {
+          "id": "po-bm5",
+          "name": "Jewellery Quarter",
+          "category": "history",
+          "coords": [
+            52.486,
+            -1.916
+          ],
+          "year": "18ος αι.",
+          "desc": "Ιστορική συνοικία κοσμηματοποιίας με πάνω από 200 jewelry workshops."
+        },
+        {
+          "id": "po-bm6",
+          "name": "Gas Street Basin & Canals",
+          "category": "landmark",
+          "coords": [
+            52.479,
+            -1.9067
+          ],
+          "year": "19ος αι.",
+          "desc": "Κόμβος καναλιών του Birmingham — περισσότερα canals από τη Venice."
+        }
+      ],
+      "pastVsPresent": {
+        "era1": "Birmingham 1776: Lunar Society & Industrial Revolution — James Watt και ατμομηχανή.",
+        "era2": "Birmingham 2026: Tech & Creative Hub — HS2, Bullring, ΕΣΠΑ½ startups και diverse economy.",
+        "synthesis": "Από την πόλη-κοιτίδα της Βιομηχανικής Επανάστασης με την Lunar Society, στη σύγχρονη δεύτερη πόλη του ΗΒ που είναι πλέον κέντρο creative, τεχνολογίας και diversity."
+      }
+    },
+    {
+      "id": "newcastle",
+      "name": "Νιούκαστλ",
+      "englishName": "Newcastle upon Tyne",
+      "nickname": "Πόλη των Γεφυρών του Tyne & Το Πύλη του Βορρά",
+      "badge": "River Tyne Bridges & Geordie",
+      "type": "metropolis",
+      "coords": [
+        54.9783,
+        -1.6178
+      ],
+      "zoom": 12.5,
+      "stats": {
+        "population": "310.000 (1.650.000 Μητροπολιτική)",
+        "elevation": "20 μ.",
+        "founded": "122 μ.Χ. (Ρωμαϊκό Pons Aelius)"
+      },
+      "quote": "«Στο Newcastle οι γέφυρες δεν ενώνουν μόνο τις όχθες· ενώνουν αιώνες ιστορίας πάνω από τον Tyne.»",
+      "geo": {
+        "climate": "Ωκεάνιο ψυχρό: κρύοι χειμώνες, δροσερά καλοκαίρια και ισχυροί βόρειοι άνεμοι.",
+        "terrain": "Στις βόρειες όχθες του ποταμού Tyne, κοντά στις εκβολές του στη Βόρεια Θάλασσα, στους πρόποδες της North Pennines.",
+        "significance": "Πρωτεύουσα του North East England και κύρια πύλη προς τη Σκωτία, ιστορικό κέντρο ανθρακορυχεία, ναυπηγικής και heavy industry."
+      },
+      "hist": {
+        "ancient": "Ρωμαϊκό Pons Aelius (122 μ.Χ.) — πέρασμα Hadrian's Wall· Νορμανδικό New Castle (1080)· μεσαιωνικό wool trade.",
+        "modern": "Από τη βιομηχανική έκρηξη (coal, shipbuilding, locomotives, Stephenson) στη μεταβιομηχανική service economy και cultural revival.",
+        "highlights": [
+          {
+            "year": "122 μ.Χ.",
+            "event": "Pons Aelius & Hadrian's Wall",
+            "desc": "Ίδρυση ρωμαϊκού φρουρίου στη γέφυρα του Αδριανού."
+          },
+          {
+            "year": "1080",
+            "event": "New Castle",
+            "desc": "Ο Robert Curthose κτίζει το «New Castle» πάνω στον Tyne."
+          },
+          {
+            "year": "1825",
+            "event": "Stockton & Darlington Railway",
+            "desc": "Στην περιοχή ξεκινά η σιδηροδρομική επανάσταση με Stephenson's Rocket."
+          },
+          {
+            "year": "2000",
+            "event": "Baltic & Sage",
+            "desc": "Μεταβιομηχανική αναγέννηση με Baltic Centre και Sage Gateshead."
+          }
+        ]
+      },
+      "cult": {
+        "traditions": "Geordie dialect, Stottie cake, Newcastle Brown Ale, football Newcastle United, Hadrian's Wall heritage και Great North Run.",
+        "landmarks": "Tyne Bridge, Millennium Bridge, Newcastle Castle, Grainger Town, Grey's Monument, Theatre Royal, St Nicholas Cathedral.",
+        "localLife": "Οι geordies συχνάζουν στο Bigg Market, Quayside και Grey Street — «η πιο όμορφη γεωργιανή οδός της Αγγλίας» (John Betjeman)."
+      },
+      "gastro": {
+        "specialties": [
+          "Stottie cake: στρογγυλό flatbread με sâu δίπλωμα — ένα Geordie staple",
+          "Newcastle Brown Ale: η παγκοσμίως γνωστή ale (1927)",
+          "Singing Hinnies: griddle cakes με butter και lard",
+          "Pan Haggerty: ψητή πίτα με πατάτες, κρεμμύδι και τυρί",
+          "Pease Pudding: πουρές μπιζελιού παραδοσιακός σε μεσημεριανά"
+        ],
+        "culture": "Η κουζίνα είναι comfort food του Βορρά — stottie, pease pudding και Newcastle Brown Ale, με revival στις Quayside fine dining."
+      },
+      "demo": {
+        "languages": "Αγγλικά (Geordie διάλεκτος, ιδιαίτερη φωνηεντική και λεξιλόγιο).",
+        "demographics": "310.000 κάτοικοι, με μεγάλο φοιτητικό πληθυσμό (Newcastle & Northumbria Universities), 2 universities."
+      },
+      "pois": [
+        {
+          "id": "po-nw1",
+          "name": "Tyne Bridge",
+          "category": "landmark",
+          "coords": [
+            54.9696,
+            -1.613
+          ],
+          "year": "1928",
+          "desc": "Η εμβληματική αψιδωτή γέφυρα-σύμβολο της πόλης, μοντέλο του Sydney Harbour Bridge."
+        },
+        {
+          "id": "po-nw2",
+          "name": "Newcastle Castle",
+          "category": "history",
+          "coords": [
+            54.9687,
+            -1.6095
+          ],
+          "year": "1080",
+          "desc": "Νορμανδικό κάστρο στο επώνυμο της πόλης."
+        },
+        {
+          "id": "po-nw3",
+          "name": "Grey's Monument & Grainger Town",
+          "category": "monument",
+          "coords": [
+            54.9755,
+            -1.6137
+          ],
+          "year": "1838",
+          "desc": "Στήλη του Earl Grey και η γειτονική Grainger Town, γεωργιανό αριστούργημα."
+        },
+        {
+          "id": "po-nw4",
+          "name": "Baltic Centre for Contemporary Art",
+          "category": "culture",
+          "coords": [
+            54.968,
+            -1.601
+          ],
+          "year": "2002",
+          "desc": "Σύγχρονη τέχνη σε παλιό flour mill στις όχθες του Tyne."
+        },
+        {
+          "id": "po-nw5",
+          "name": "Sage Gateshead",
+          "category": "culture",
+          "coords": [
+            54.967,
+            -1.599
+          ],
+          "year": "2004",
+          "desc": "Σύγχρονο κέντρο μουσικής του Norman Foster με curving glass."
+        },
+        {
+          "id": "po-nw6",
+          "name": "Millennium Bridge",
+          "category": "landmark",
+          "coords": [
+            54.969,
+            -1.602
+          ],
+          "year": "2001",
+          "desc": "Πεζογέφυρα-tilting για τη διέλευση πλοίων, «Blinking Eye»."
+        }
+      ],
+      "pastVsPresent": {
+        "era1": "Newcastle 1825: Coal, Railways & Stephenson — βιομηχανική μητρόπολη του Βορρά.",
+        "era2": "Newcastle 2026: Quayside Cultural Renaissance — Baltic, Sage Gateshead και digital economy.",
+        "synthesis": "Από την πόλη του coal και των σιδηροδρόμων που γέννησε τον Stephenson, στη σύγχρονη πολιτιστική μητρόπολη του Tyne με Baltic, Sage και παγκόσμιας κλάσης universities."
+      }
+    },
+    {
+      "id": "aberdeen",
+      "name": "Αμπερντίν",
+      "englishName": "Aberdeen",
+      "nickname": "Η Γρανιτένια Πόλη & Πρωτεύουσα της Βορειοανατολικής Σκωτίας",
+      "badge": "Γρανίτης & Βόρεια Θάλασσα",
+      "type": "port",
+      "coords": [
+        57.1497,
+        -2.0941
+      ],
+      "zoom": 12.5,
+      "stats": {
+        "population": "227.000",
+        "elevation": "20 μ.",
+        "founded": "6ος-8ος αι. (Άγιος Machar)"
+      },
+      "quote": "«Στο Aberdeen ο γρανίτης λάμπει σαν ασήμι και η Βόρεια Θάλασσα φέρνει πετρέλαιο και ναυτικές ιστορίες.»",
+      "geo": {
+        "climate": "Ωκεάνιο ψυχρό: κρύοι χειμώνες, δροσερά καλοκαίρια (17°C avg), ισχυροί άνεμοι και βροχές.",
+        "terrain": "Παραλιακή πόλη στις εκβολές των ποταμών Dee και Don, στη βορειοανατολική Σκωτία, ανοιχτή στη Βόρεια Θάλασσα.",
+        "significance": "Πρωτεύουσα της Aberdeenshire και πύλη του North Sea oil & gas industry — historically «oil capital of Europe»."
+      },
+      "hist": {
+        "ancient": "Αγγλοσαξονικός και pictish οικισμός· χριστιανική ίδρυση από τον Άγιο Machar (6ος αι.)· βασιλικός χάρτης (1136)· πανεπιστήμιο King's College (1495).",
+        "modern": "Από fishing και granite quarrying (19ος αι.) στο oil boom της Βόρειας Θάλασσας (1970s), στη σημερινή μετα-πετρελαϊκή στροφή σε renewable energy.",
+        "highlights": [
+          {
+            "year": "1136",
+            "event": "Βασιλικός Χάρτης",
+            "desc": "Ο David I της Σκωτίας παραχωρεί χάρτη Royal Burgh στο Aberdeen."
+          },
+          {
+            "year": "1495",
+            "event": "Ίδρυση King's College",
+            "desc": "Ο Bishop Elphinstone ιδρύει το τρίτο αρχαιότερο πανεπιστήμιο της Σκωτίας."
+          },
+          {
+            "year": "1970s",
+            "event": "North Sea Oil Boom",
+            "desc": "Ανακαλύψεις πετρελαίου στη Βόρεια Θάλασσα μετατρέπουν το Aberdeen σε «oil capital of Europe»."
+          },
+          {
+            "year": "2018",
+            "event": "Energy Transition",
+            "desc": "Στροφή σε offshore wind και hydrogen ως συνέχεια της energy παράδοσης."
+          }
+        ]
+      },
+      "cult": {
+        "traditions": "Doric Scots dialect (Aberdeen crafter), Highland Games σε Aberdeenshire, παραδοσιακή Σκωτσέζικη ceilidh, και granite-built architecture.",
+        "landmarks": "Marischal College (δεύτερο μεγαλύτερο granite κτίριο στον κόσμο), Aberdeen Beach, St Machar's Cathedral, Aberdeen Harbour, Duthie Park, Aberdeen Art Gallery.",
+        "localLife": "Οι aberdonians απολαμβάνουν walks στην Aberdeen Beach Boulevard, pub crawl στη Union Street και visits στο Duthie Park Winter Gardens."
+      },
+      "gastro": {
+        "specialties": [
+          "Aberdeen Angus beef: η φημισμένη μοσχαρίσια φυλή Aberdeen-Angus",
+          "Buttery/Rowie: στρόγγυλο flaky pastry με butter και lard",
+          "Cullen Skink: καπνιστή ψαρόσουπα haddock (ασφαλής στο Aberdeen)",
+          "Smoked haddock Arbroath-style",
+          "Black bun: παραδοσιακό Scots fruitcake"
+        ],
+        "culture": "Η κουζίνα του Aberdeen τιμά το Aberdeen Angus beef, τα θαλασσινά της Βόρειας Θάλασσας και τα Doric pastries."
+      },
+      "demo": {
+        "languages": "Αγγλικά· Scots Doric dialect· Σκωτσέζικη γαελική μικρή κοινότητα.",
+        "demographics": "227.000 κάτοικοι, με μεγάλο διεθνές στοιχείο από oil industry (Norwegian, American, Scottish communities)."
+      },
+      "pois": [
+        {
+          "id": "po-ab1",
+          "name": "Marischal College",
+          "category": "monument",
+          "coords": [
+            57.149,
+            -2.099
+          ],
+          "year": "1835",
+          "desc": "Το δεύτερο μεγαλύτερο granite κτίριο στον κόσμο· σήμερα Aberdeen City Council headquarters."
+        },
+        {
+          "id": "po-ab2",
+          "name": "Aberdeen Beach",
+          "category": "leisure",
+          "coords": [
+            57.153,
+            -2.072
+          ],
+          "year": "παραδοσιακή",
+          "desc": "Αμμώδης παραλία της Βόρειας Θάλασσας με promenade και amusement park."
+        },
+        {
+          "id": "po-ab3",
+          "name": "St Machar's Cathedral",
+          "category": "monument",
+          "coords": [
+            57.164,
+            -2.114
+          ],
+          "year": "12ος αι.",
+          "desc": "Γοτθικός ναός στη θέα όπου ο Άγιος Machar έχτισε εκκλησία τον 6ο αιώνα."
+        },
+        {
+          "id": "po-ab4",
+          "name": "Aberdeen Harbour",
+          "category": "landmark",
+          "coords": [
+            57.145,
+            -2.07
+          ],
+          "year": "1136",
+          "desc": "Ένα από τα παλαιότερα εμπορικά λιμάνια της Βρετανίας, σήμερα oil & fishing."
+        },
+        {
+          "id": "po-ab5",
+          "name": "Duthie Park & Winter Gardens",
+          "category": "nature",
+          "coords": [
+            57.137,
+            -2.114
+          ],
+          "year": "1883",
+          "desc": "Πάρκο 44 στρεμμάτων με tropical house και τη μεγαλύτερη συλλογή cacti της Ευρώπης."
+        },
+        {
+          "id": "po-ab6",
+          "name": "Aberdeen Art Gallery",
+          "category": "culture",
+          "coords": [
+            57.145,
+            -2.103
+          ],
+          "year": "1885",
+          "desc": "Μουσείο με Βρετανική και Γαλλική ζωγραφική και γρανιτένια αρχιτεκτονική."
+        }
+      ],
+      "pastVsPresent": {
+        "era1": "Aberdeen 1970: Oil Capital of Europe — North Sea oil discoveries.",
+        "era2": "Aberdeen 2026: Energy Transition Capital — offshore wind, hydrogen, marine tech.",
+        "synthesis": "Από το «oil capital of Europe» του 20ού αιώνα στη σύγχρονη energy transition hub που συνεχίζει τη ναυτική και energy κληρονομιά της σε renewables."
+      }
+    },
+    {
+      "id": "canterbury",
+      "name": "Καντέρμπερι",
+      "englishName": "Canterbury",
+      "nickname": "Πνευματική Έδρα της Αγγλικανικής Εκκλησίας",
+      "badge": "Καθεδρικός UNESCO & Chaucer",
+      "type": "cultural",
+      "coords": [
+        51.279,
+        1.0792
+      ],
+      "zoom": 12.5,
+      "stats": {
+        "population": "55.000",
+        "elevation": "15 μ.",
+        "founded": "Ρωμαϊκό Durovernum Cantiacorum / 597 (Augustine)"
+      },
+      "quote": "«Στο Canterbury κάθε πέτρα μιλάει για 1.400 χρόνια χριστιανικής και λογοτεχνικής ιστορίας.»",
+      "geo": {
+        "climate": "Ωκεάνιο: ήπιους χειμώνες, δροσερά καλοκαίρια, ισχυρές βροχές.",
+        "terrain": "Πόλη στον ποταμό Stour, στην κοιλάδα του Kent («ο κήπος της Αγγλίας»), κοντά στη Manche.",
+        "significance": "Πνευματική πρωτεύουσα της Αγγλικανικής Κοινωνίας και ένα από τα πιο επισκέψιμα ιστορικά κέντρα της Βρετανίας."
+      },
+      "hist": {
+        "ancient": "Ρωμαϊκό Durovernum Cantiacorum· Σαξονική και χριστιανική ίδρυση από τον Augustine of Canterbury (597 μ.Χ.).",
+        "modern": "Από τον αρχιεπίσκοπο Thomas Becket (1170 murder) και τους Canterbury Tales του Chaucer (1387) στη σύγχρονη πόλη UNESCO και pilgrimage destination.",
+        "highlights": [
+          {
+            "year": "597",
+            "event": "Augustine of Canterbury",
+            "desc": "Ο Πάπας Gregory στέλνει τον Augustine να ευαγγελίσει τους Σάξονες — ίδρυση της Αγγλικανικής κληρονομιάς."
+          },
+          {
+            "year": "1170",
+            "event": "Δολοφονία Thomas Becket",
+            "desc": "Οι ιππότες του Henry II δολοφονούν τον αρχιεπίσκοπο στον καθεδρικό — όλο η Ευρώπη σοκάρεται."
+          },
+          {
+            "year": "1387",
+            "event": "Canterbury Tales",
+            "desc": "Ο Geoffrey Chaucer δημοσιεύει τις ιστορίες προσκυνητών προς τον τάφο του Becket."
+          },
+          {
+            "year": "1988",
+            "event": "UNESCO Μνημείο",
+            "desc": "Ο καθεδρικός, το αβαείο St Augustine και η παλιά πόλη αναγνωρίζονται ως Μνημείο Παγκόσμιας Κληρονομιάς."
+          }
+        ]
+      },
+      "cult": {
+        "traditions": "Annual Canterbury Festival, αναβίωση των Canterbury Tales (at Canterbury Tales Experience), pilgrimage tradition, Marlowe Theatre.",
+        "landmarks": "Canterbury Cathedral (UNESCO), St Augustine's Abbey, St Martin's Church (παλαιότερη εκκλησία της Αγγλίας), Canterbury Roman Museum, Westgate Towers.",
+        "localLife": "Οι cantuarians απολαμβάνουν punting στον Stour, tea rooms στη Mercery Lane και βόλτες στην πόρτια King's Mile."
+      },
+      "gastro": {
+        "specialties": [
+          "Canterbury Tart: τάρτα με μήλα και Canterbury honey",
+          "Kentish Huffkin: flatbread με apple and honey",
+          "Rombout / Canterbury Pudding: παραδοσιακό Christmas sweet",
+          "Goudhurst Cheese και Canterbury Blue Cheese",
+          "Whitstable Oysters ( близо στην πόλη, φημισμένο Kentish delicacy)"
+        ],
+        "culture": "Η κουζίνα του Canterbury είναι Kentish, με apples, hops, οysters από Whitstable και local cheese."
+      },
+      "demo": {
+        "languages": "Αγγλικά· μικρή διεθνής κοινότητα λόγω Universities of Canterbury Christ Church και Kent.",
+        "demographics": "55.000 κάτοικοι, με μεγάλο φοιτητικό πληθυσμό (~30.000) και 1+ εκατομμύριο επισκέπτες ετησίως."
+      },
+      "pois": [
+        {
+          "id": "po-ct1",
+          "name": "Canterbury Cathedral",
+          "category": "monument",
+          "coords": [
+            51.2793,
+            1.087
+          ],
+          "year": "1070",
+          "desc": "Έδρα του Αρχιεπισκόπου του Canterbury — Μητέρα Εκκλησία της Αγγλικανικής Κοινωνίας."
+        },
+        {
+          "id": "po-ct2",
+          "name": "St Augustine's Abbey",
+          "category": "monument",
+          "coords": [
+            51.277,
+            1.094
+          ],
+          "year": "598",
+          "desc": "Ιδρυθέν από τον Augustine of Canterbury — UNESCO μνημείο."
+        },
+        {
+          "id": "po-ct3",
+          "name": "St Martin's Church",
+          "category": "monument",
+          "coords": [
+            51.276,
+            1.098
+          ],
+          "year": "597",
+          "desc": "Η παλαιότερη εν λειτουργία εκκλησία του αγγλόφωνου κόσμου."
+        },
+        {
+          "id": "po-ct4",
+          "name": "Canterbury Roman Museum",
+          "category": "history",
+          "coords": [
+            51.278,
+            1.082
+          ],
+          "year": "1ος αι.",
+          "desc": "Ρωμαϊκά λουτρά και mosaic pavements του Durovernum."
+        },
+        {
+          "id": "po-ct5",
+          "name": "Westgate Towers",
+          "category": "monument",
+          "coords": [
+            51.279,
+            1.076
+          ],
+          "year": "1380",
+          "desc": "Μεσαιωνική πύλη-φρούριο της πόλης."
+        },
+        {
+          "id": "po-ct6",
+          "name": "The Canterbury Tales Experience",
+          "category": "culture",
+          "coords": [
+            51.2793,
+            1.081
+          ],
+          "year": "1987",
+          "desc": "Διαδραστικό μουσείο για τις ιστορίες του Chaucer."
+        }
+      ],
+      "pastVsPresent": {
+        "era1": "Canterbury 1170-1387: Becket Martyrdom & Chaucer — pilgrimage μητρόπολη και λογοτεχνική έμπνευση.",
+        "era2": "Canterbury 2026: Anglican Capital & UNESCO — σύγχρονη πόλη-μοντέλο διατήρησης θρησκευτικής κληρονομιάς.",
+        "synthesis": "Από την πόλη-σύμβολο του χριστιανικού μαρτυρίου (Becket) και της αγγλικής λογοτεχνίας (Chaucer), στη σύγχρονη πόλη-Μνημείο UNESCO που συνεχίζει να είναι πνευματική μητέρα της Αγγλικανικής Κοινωνίας."
+      }
+    },
+    {
+      "id": "chester",
+      "name": "Τσέστερ",
+      "englishName": "Chester",
+      "nickname": "Πόλη με Ρωμαϊκά Τείχη & Ξύλινες Διώροφες Στοές The Rows",
+      "badge": "Roman & Medieval Walls",
+      "type": "historic",
+      "coords": [
+        53.1906,
+        -2.8918
+      ],
+      "zoom": 12.5,
+      "stats": {
+        "population": "90.000",
+        "elevation": "20 μ.",
+        "founded": "70 μ.Χ. (Ρωμαϊκό Deva Victrix)"
+      },
+      "quote": "«Στο Chester τα ρωμαϊκά τείχη δεν είναι ερείπια — είναι η πιο ολοκληρωμένη βρετανική περίβαλλή σου.»",
+      "geo": {
+        "climate": "Ωκεάνιο: ήπιους χειμώνες, δροσερά καλοκαίρια, μέτριες βροχές.",
+        "terrain": "Πόλη στον ποταμό Dee, κοντά στα σύνορα Αγγλίας-Ουαλίας, στη Cheshire Plain.",
+        "significance": "Ιστορική κομητειακή πόλη του Cheshire και σύμβολο border history μεταξύ Anglo-Saxon England και Wales."
+      },
+      "hist": {
+        "ancient": "Ρωμαϊκό Deva Victrix (70 μ.Χ.) — έδρα Legio XX Valeria Victrix· Σαξονική και Νορμανδική πόλη· βασιλικός χάρτης.",
+        "modern": "Από τη μεσαιωνική εμπορική ακμή (1ος-15ος αι.) και τη γεωργιανή-βικτωριανή εξέλιξη στη σημερινή τουριστική πόλη.",
+        "highlights": [
+          {
+            "year": "70 μ.Χ.",
+            "event": "Ρωμαϊκή Deva Victrix",
+            "desc": "Ίδρυση ρωμαϊκού φρουρίου από τη Legio II Adiutrix."
+          },
+          {
+            "year": "907",
+            "event": "Ανοικοδόμηση Τειχών",
+            "desc": "Η Αethelflaed of Mercia επανοικοδομεί τα ρωμαϊκά τείχη."
+          },
+          {
+            "year": "14ος αι.",
+            "event": "The Rows",
+            "desc": "Ξεκινά η ανέγερση των ξύλινων διώροφων στοών — μοναδικό χαρακτηριστικό του Chester."
+          },
+          {
+            "year": "1974",
+            "event": "Conservation Area",
+            "desc": "Ολόκληρη η κεντρική πόλη γίνεται conservation area."
+          }
+        ]
+      },
+      "cult": {
+        "traditions": "Chester Races (the oldest horse races in the UK, 1539), Chester Mystery Plays (medieval drama revival), гуссерные βόλτες στα τείχη και παραδοσιακή architectural heritage.",
+        "landmarks": "Τείχη του Chester (μόνο ολοκληρωμένα ρωμαϊκά-μεσαιωικά τείχη του UK), The Rows (ξύλινες διώροφες στοές), Chester Cathedral, Eastgate Clock, Roman Amphitheatre.",
+        "localLife": "Οι chesterians απολαμβάνουν walks στα τείχη, shopping στα Rows, και pubs και tea rooms στο city centre."
+      },
+      "gastro": {
+        "specialties": [
+          "Cheshire Cheese: ηλικιωμένο crumbly cheese της περιοχής",
+          "Chester Pudding: σπογγώδες steamed pudding με λευκό ψωμί και μαρμελάδα",
+          "Cheshire Pork Pie: πίτα με pork, apple και sugar",
+          "Lavender Bread από Cheshire lavender",
+          "Salt of Cheshire (Nantwich salt) σε τοπικά dishes"
+        ],
+        "culture": "Η Cheshire cuisine είναι γαλακτοκομική (Cheshire cheese, PGI) και meat & apple-based, με revival στις historic inns."
+      },
+      "demo": {
+        "languages": "Αγγλικά· μικρή ουαλική επιρροή από τα σύνορα.",
+        "demographics": "90.000 κάτοικοι, με μεγάλο τουριστικό στοιχείο και University of Chester student population."
+      },
+      "pois": [
+        {
+          "id": "po-ch1",
+          "name": "Chester City Walls",
+          "category": "monument",
+          "coords": [
+            53.19,
+            -2.891
+          ],
+          "year": "70 μ.Χ.",
+          "desc": "Η πιο ολοκληρωμένη σειρά ρωμαϊκών και μεσαιωνικών τειχών του ΗΒ (3,2 χλμ.)."
+        },
+        {
+          "id": "po-ch2",
+          "name": "The Rows",
+          "category": "landmark",
+          "coords": [
+            53.1906,
+            -2.893
+          ],
+          "year": "14ος αι.",
+          "desc": "Διώροφες ξύλινες στοές με shops σε δύο επίπεδα — μοναδικό architectural feature."
+        },
+        {
+          "id": "po-ch3",
+          "name": "Chester Cathedral",
+          "category": "monument",
+          "coords": [
+            53.1912,
+            -2.8935
+          ],
+          "year": "1092",
+          "desc": "Γοτθικός-νεογοτθικός καθεδρικός, πρώην βενεδικτίνικό αβαείο."
+        },
+        {
+          "id": "po-ch4",
+          "name": "Roman Amphitheatre",
+          "category": "history",
+          "coords": [
+            53.191,
+            -2.889
+          ],
+          "year": "1ος αι.",
+          "desc": "Το μεγαλύτερο ρωμαϊκό αμφιθέατρο της Βρετανίας (8.000 θέσεων)."
+        },
+        {
+          "id": "po-ch5",
+          "name": "Eastgate Clock",
+          "category": "landmark",
+          "coords": [
+            53.1912,
+            -2.8915
+          ],
+          "year": "1897",
+          "desc": "Βικτωριανό ρολόι-πύλη επάνω στα τείχη — το δεύτερο πιο φωτογραφημένο clock του UK μετά το Big Ben."
+        },
+        {
+          "id": "po-ch6",
+          "name": "Chester Racecourse",
+          "category": "sport",
+          "coords": [
+            53.187,
+            -2.895
+          ],
+          "year": "1539",
+          "desc": "Το αρχαιότερο εν λειτουργία ιπποδρόμιο του Ηνωμένου Βασιλείου."
+        }
+      ],
+      "pastVsPresent": {
+        "era1": "Chester 1ος-2ος αι.: Deva Victrix & Roman Frontier — κεντρική βάση της Legio XX.",
+        "era2": "Chester 2026: Heritage Tourism & Conservation — αναστηλωμένη μεσαιωνική πόλη.",
+        "synthesis": "Από τη ρωμαϊκή στρατιωτική βάση στα σύνορα με την Ουαλία και τη μεσαιωνική εμπορική πόλη των Rows, στη σύγχρονη τουριστική πόλη που διατηρεί τον ολοκληρωμένο ιστορικό ιστό."
+      }
+    },
+    {
+      "id": "durham",
+      "name": "Ντάραμ",
+      "englishName": "Durham",
+      "nickname": "Νορμανδικός Καθεδρικός & Κάστρο UNESCO",
+      "badge": "Peninsula & Cathedral UNESCO",
+      "type": "historic",
+      "coords": [
+        54.7767,
+        -1.5744
+      ],
+      "zoom": 12.5,
+      "stats": {
+        "population": "48.000",
+        "elevation": "60 μ.",
+        "founded": "995 (κούτα St Cuthbert)"
+      },
+      "quote": "«Το Durham είναι μια χερσόνησος απόλισμένη από τον Wear, στέκει ανάμεσα στον καθεδρικό και το κάστρο σαν αρχαίο βασιλικό σύμβολο.»",
+      "geo": {
+        "climate": "Ωκεάνιο ψυχρό: κρύοι χειμώνες, δροσερά καλοκαίρια, μέτριες βροχές.",
+        "terrain": "Πόλη-χερσόνησος που περιβάλλεται από τον μαίανδρο του ποταμού Wear, στο County Durham της βορειοανατολικής Αγγλίας.",
+        "significance": "Ιστορική κομητσιακή πόλη του County Durham, έδρα του διάσημου Durham University (1832)."
+      },
+      "hist": {
+        "ancient": "Αγγλοσαξονικός οικισμός· 995 μ.Χ. — μοναχοί από το Lindisfarne φέρνουν τα λείψανα του St Cuthbert στο Durham.",
+        "modern": "Από την κατασκευή του Νορμανδικού Καθεδρικού (1093-1133) και Κάστρου (1072) στη σύγχρονη πόλη-UNESCO και Durham University.",
+        "highlights": [
+          {
+            "year": "995",
+            "event": "Μεταφορά λειψάνων St Cuthbert",
+            "desc": "Μοναχοί φέρνουν τα λείψανα του St Cuthbert και ιδρύουν τοchevron-shaped Durham."
+          },
+          {
+            "year": "1093",
+            "event": "Νορμανδικός Καθεδρικός",
+            "desc": "Ξεκινά η ανέγερση του Romanesque Durham Cathedral — το «πιο όμορφο Norman κτίριο στη χριστιανοσύνη»."
+          },
+          {
+            "year": "1072",
+            "event": "Durham Castle",
+            "desc": "Ο William the Conqueror κτίζει το κάστρο στη χερσόνησο."
+          },
+          {
+            "year": "1986",
+            "event": "UNESCO Μνημείο",
+            "desc": "Καθεδρικός και κάστρο αναγνωρίζονται ως Μνημείο Παγκόσμιας Κληρονομίας."
+          }
+        ]
+      },
+      "cult": {
+        "traditions": "Durham Miners' Gala (δεύτερο Σάββατο Ιουλίου — ένα από τα μεγαλύτερα working-class celebrations του UK), Durham Lumiere light festival (διετές), Durham Cathedral Choir.",
+        "landmarks": "Durham Cathedral (UNESCO), Durham Castle (UNESCO, parte του University), Durham Marketplace, River Wear banks, Botanic Garden.",
+        "localLife": "Οι durhamites απολαμβάνουν walks στον Wear, real ale pubs στο Elvet και Bailey, και φοιτητική ζωή στην Newman, Hatfield και Grey Colleges."
+      },
+      "gastro": {
+        "specialties": [
+          "Durham Lamb και Northumbrian beef",
+          "Stottie cake (north-eastern traditional bread)",
+          "Singing Hinnies (griddle cakes)",
+          "Nettle Pudding και Craster Kippers",
+          "Durham Distillery (ΘΣΔ locally-distilled gin)"
+        ],
+        "culture": "Η Durham cuisine είναι Northumbrian — lamb, beef, seafood, comfort food, με revival στις gastropubs."
+      },
+      "demo": {
+        "languages": "Αγγλικά (Northumbrian dialect).",
+        "demographics": "48.000 κάτοικοι, με μεγάλο φοιτητικό στοιχείο (~20.000) από Durham University."
+      },
+      "pois": [
+        {
+          "id": "po-dm1",
+          "name": "Durham Cathedral",
+          "category": "monument",
+          "coords": [
+            54.7744,
+            -1.5753
+          ],
+          "year": "1093",
+          "desc": "Norman Romanesque καθεδρικός UNESCO — «το πιο όμορφο Norman κτίριο στη χριστιανοσύνη»."
+        },
+        {
+          "id": "po-dm2",
+          "name": "Durham Castle",
+          "category": "monument",
+          "coords": [
+            54.7754,
+            -1.5758
+          ],
+          "year": "1072",
+          "desc": "Νορμανδικό κάστρο UNESCO — σήμερα μέρος του Durham University."
+        },
+        {
+          "id": "po-dm3",
+          "name": "River Wear & Peninsula Walk",
+          "category": "nature",
+          "coords": [
+            54.774,
+            -1.574
+          ],
+          "year": "παραδοσιακό",
+          "desc": "Περιπατητικό μονοπάτι γύρω από τον μαίανδρο του Wear με πανοραμική θέα."
+        },
+        {
+          "id": "po-dm4",
+          "name": "Durham Market Place",
+          "category": "leisure",
+          "coords": [
+            54.7757,
+            -1.5753
+          ],
+          "year": "19ος αι.",
+          "desc": "Κεντρική πλατεία με το statue του Marquess of Londonderry."
+        },
+        {
+          "id": "po-dm5",
+          "name": "Durham University Botanic Garden",
+          "category": "nature",
+          "coords": [
+            54.7625,
+            -1.569
+          ],
+          "year": "1970",
+          "desc": "Βοτανικός κήπος 10 hectares με tropical glasshouses."
+        },
+        {
+          "id": "po-dm6",
+          "name": "Oriental Museum",
+          "category": "culture",
+          "coords": [
+            54.77,
+            -1.562
+          ],
+          "year": "1960",
+          "desc": "Μουσείο με Asiatic artefacts, ιδιαίτερα Chinese και Egyptian."
+        }
+      ],
+      "pastVsPresent": {
+        "era1": "Durham 1093: Norman Cathedral & Cuthbert — ιερή χερσόνησος και σύμβολο Christian North.",
+        "era2": "Durham 2026: UNESCO World Heritage & University Town — Lumiere Festival και global research.",
+        "synthesis": "Από τη χερσόνησο του St Cuthbert και τον Norman καθεδρικό που γέννησε το Christian North, στη σύγχρονη πόλη-UNESCO που συνδυάζει θρησκευτική κληρονομιά και Durham University."
+      }
+    },
+    {
+      "id": "st-andrews",
+      "name": "Σεντ Άντριους",
+      "englishName": "St Andrews",
+      "nickname": "Παγκόσμια Πατρίδα του Γκολφ & Πανεπιστήμιο",
+      "badge": "Old Course & Scottish Reformation",
+      "type": "cultural",
+      "coords": [
+        56.3398,
+        -2.7967
+      ],
+      "zoom": 12.5,
+      "stats": {
+        "population": "17.000",
+        "elevation": "10 μ.",
+        "founded": "1140 (burgh) / 1410 (university)"
+      },
+      "quote": "«Στο St Andrews κάθε γολφ παίζεται πάνω σε 600 χρόνια ιστορίας και κάθε σπουδαστής περπατά στα ίχνη του Knox.»",
+      "geo": {
+        "climate": "Ωκεάνιο: κρύοι χειμώνες (3°C avg), δροσερά καλοκαίρια (15°C avg), ισχυροί άνεμοι.",
+        "terrain": "Παραλιακή πόλη στη βόρεια ακτή του Firth of Forth, στη βορειοανατολική Σκωτία.",
+        "significance": "Ιστορική θρησκευτική πρωτεύουσα της Σκωτίας (pre-Reformation) και οικουμενική μητρόπολη του golf."
+      },
+      "hist": {
+        "ancient": "Πρώιμος pictish-κελτικός οικισμός· 1140 burgh· ανέγερση καθεδρικού (1160-1318)· 1410 ίδρυση University of St Andrews.",
+        "modern": "Από τη Σκωτσέζικη Μεταρρύθμιση (1559, John Knox) και την ανάπτυξη του golf (Old Course από 15ος αι.) στη σύγχρονη διεθνή μητρόπολη golf και elite education.",
+        "highlights": [
+          {
+            "year": "1140",
+            "event": "Royal Burgh",
+            "desc": "Ο Robert bishop του St Andrews παραχωρεί burgh status."
+          },
+          {
+            "year": "1410",
+            "event": "Ίδρυση Πανεπιστημίου",
+            "desc": "Ιδρύεται το αρχαιότερο πανεπιστήμιο της Σκωτίας και το τρίτο αγγλόφωνο."
+          },
+          {
+            "year": "1559",
+            "event": "Σκωτσέζικη Μεταρρύθμιση",
+            "desc": "Ο John Knox κηρύσσει στο St Andrews — έκλεισε ο καθεδρικός."
+          },
+          {
+            "year": "1764",
+            "event": "Old Course 18 Holes",
+            "desc": "Ο Old Course σταθεροποιείται σε 18 holes — μοντέλο για κάθε γκολφ."
+          }
+        ]
+      },
+      "cult": {
+        "traditions": "Academic families, Raisin Monday foam fight, May dip at dawn, Red Gowns of students (16ος αι. tradition), golf championships Alfred Dunhill Links.",
+        "landmarks": "St Andrews Cathedral (ruins), St Andrews Castle, Old Course, University of St Andrews, West Sands Beach.",
+        "localLife": "Οι st-andrewans απολαμβάνουν golf στο Old Course, walks στις ακτές και pub crawl στην North Street και Market Street."
+      },
+      "gastro": {
+        "specialties": [
+          "Fife Butter (Anster cheese) από St Andrews dairy",
+          "Fife Applecakes",
+          "St Andrews Bay Seafood — langoustines, crab, lobster",
+          "Fife Gin (Eden Mill και DUP unay)",
+          "Pinkie MacGregor's shortbread"
+        ],
+        "culture": "Η Fife κουζίνα είναι θαλασσινή (North Sea langoustines, crabs) και dairy — Fife butter και cheese, με revival σε gastropubs."
+      },
+      "demo": {
+        "languages": "Αγγλικά· Σκωτσέζικη Scots dialect.",
+        "demographics": "17.000 κάτοικοι, με μεγάλο φοιτητικό πληθυσμό (~10.000) — φοιτητές comprise ~60% of population."
+      },
+      "pois": [
+        {
+          "id": "po-sa1",
+          "name": "St Andrews Cathedral (ruins)",
+          "category": "monument",
+          "coords": [
+            56.3404,
+            -2.7895
+          ],
+          "year": "1160",
+          "desc": "Ερείπια του αρχαιότερου και μεγαλύτερου καθεδρικού της Σκωτίας."
+        },
+        {
+          "id": "po-sa2",
+          "name": "St Andrews Castle",
+          "category": "monument",
+          "coords": [
+            56.3398,
+            -2.788
+          ],
+          "year": "13ος αι.",
+          "desc": "Ερείπια του επισκοπικού κάστρου-φρουρίου με bottle dungeon και mine counter-mine."
+        },
+        {
+          "id": "po-sa3",
+          "name": "Old Course",
+          "category": "sport",
+          "coords": [
+            56.3403,
+            -2.801
+          ],
+          "year": "1764",
+          "desc": "Το αρχαιότερο γκολφ course του κόσμου — Home of Golf."
+        },
+        {
+          "id": "po-sa4",
+          "name": "University of St Andrews",
+          "category": "culture",
+          "coords": [
+            56.3402,
+            -2.794
+          ],
+          "year": "1410",
+          "desc": "Το αρχαιότερο πανεπιστήμιο της Σκωτίας, όπου σπούδασε ο Prince William."
+        },
+        {
+          "id": "po-sa5",
+          "name": "West Sands Beach",
+          "category": "leisure",
+          "coords": [
+            56.343,
+            -2.81
+          ],
+          "year": "παραδοσιακή",
+          "desc": "Διάσημη παραλία 3,2 χλμ. — σκηνικό opening του Chariots of Fire."
+        },
+        {
+          "id": "po-sa6",
+          "name": "British Golf Museum",
+          "category": "culture",
+          "coords": [
+            56.3398,
+            -2.799
+          ],
+          "year": "1990",
+          "desc": "Μουσείο 500 ετών ιστορίας του γκολφ δίπλα στο Old Course."
+        }
+      ],
+      "pastVsPresent": {
+        "era1": "St Andrews 1410-1559: Ecclesiastical Capital & Reformation — καθεδρικός και πανεπιστήμιο.",
+        "era2": "St Andrews 2026: Home of Golf & Top UK University — Old Course και St Andrews University.",
+        "synthesis": "Από την πόλη-μητρόπολη της Σκωτσέζικης εκκλησίας που γέννησε τη Μεταρρύθμιση του Knox, στη σύγχρονη μητρόπολη του golf και elite πανεπιστήμιο."
+      }
+    },
+    {
+      "id": "brighton",
+      "name": "Μπράιτον",
+      "englishName": "Brighton",
+      "nickname": "Πολιτιστική Πρωτεύουσα της Νότιας Αγγλίας & Πόλη της Ελευθερίας",
+      "badge": "Royal Pavilion & Beach Pier",
+      "type": "cultural",
+      "coords": [
+        50.8225,
+        -0.1372
+      ],
+      "zoom": 12.5,
+      "stats": {
+        "population": "277.000 (474.000 Μητροπολιτική)",
+        "elevation": "10 μ.",
+        "founded": "1514 (Brightling) / 1840s (Railway boom)"
+      },
+      "quote": "«Στο Brighton η θάλασσα είναι ελευθερία· το Royal Pavilion είναι φαντασία και η παραλία είναι πολιτική.»",
+      "geo": {
+        "climate": "Ωκεάνιο: ήπιους χειμώνες, δροσερά καλοκαίρια, λιγότερες βροχές από τον βορρά.",
+        "terrain": "Παραλιακή πόλη στη νότια ακτή της Αγγλίας, ανοιχτή στη Manche, στους πρόποδες των South Downs.",
+        "significance": "Η μεγαλύτερη πόλη της νότιας ακτής της Αγγλίας και το πιο γνωστό seaside resort της Βρετανίας."
+      },
+      "hist": {
+        "ancient": "Αγγλοσαξονικός Brighthelmstone· αλιευτικό χωριό μέχρι τον 18ο αιώνα.",
+        "modern": "Από την ανάπτυξη ως seaside resort από τον Dr Richard Russell (1750s) και την κατασκευή του Royal Pavilion (1815-1823) για τον George IV, στο boom του σιδηροδρόμου (1841) και στη σημερινή ανοιχτή LGBTQ+ μητρόπολη.",
+        "highlights": [
+          {
+            "year": "1750s",
+            "event": "Seawater Cure",
+            "desc": "Ο Dr Richard Russell προωθεί τη θεραπεία seawater και Brighton γίνεται spa town."
+          },
+          {
+            "year": "1815-1823",
+            "event": "Royal Pavilion",
+            "desc": "Ο John Nash χτίζει το indo-saracenic Royal Pavilion για τον George IV."
+          },
+          {
+            "year": "1841",
+            "event": "Σιδηρόδρομος Brighton",
+            "desc": "Σύνδεση με London — «London-by-the-Sea» και μαζικός τουρισμός."
+          },
+          {
+            "year": "2004",
+            "event": "Pride Movement & Status",
+            "desc": "Brighton καθίσταται παγκόσμια hub LGBTQ+ — Brighton Pride."
+          }
+        ]
+      },
+      "cult": {
+        "traditions": "Brighton Pride (Αύγουστος — ένα από τα μεγαλύτερα pride parades της Ευρώπης), Brighton Festival (Μάιος), Burning the Clocks (χειμερινό solstice), παραδοσιακή ανοιχτή alternative και bohemian culture.",
+        "landmarks": "Royal Pavilion, Brighton Palace Pier, Brighton Beach & Promenade, The Lanes, Brighton Marina, Brighton i360.",
+        "localLife": "Οι brightonians απολαμβάνουν beach walks, pub crawl στα Lanes, vintage shopping στην North Laine και LGBTQ+ nightlife."
+      },
+      "gastro": {
+        "specialties": [
+          "Brighton Rock candy (seaside classic)",
+          "Cockles, whelks, jellied eels από beach stalls",
+          "Fish & Chips από seafront chippies",
+          "Brighton Gin (local distillate)",
+          "Sussex Pond Pudding (lemon-suet pudding)"
+        ],
+        "culture": "Η Brighton cuisine είναι seaside classic — fish & chips, rock candy — και vegetarian/vegan hub, με Sussex cheese και local gin."
+      },
+      "demo": {
+        "languages": "Αγγλικά.",
+        "demographics": "277.000 κάτοικοι, η μεγαλύτερη LGBTQ+ κοινότητα του UK εκτός Λονδίνου και μεγάλο φοιτητικό στοιχείο (Brighton & Sussex Universities)."
+      },
+      "pois": [
+        {
+          "id": "po-br1",
+          "name": "Royal Pavilion",
+          "category": "monument",
+          "coords": [
+            50.8224,
+            -0.1404
+          ],
+          "year": "1815",
+          "desc": "Indo-Saracenic παλάτι του John Nash για τον George IV."
+        },
+        {
+          "id": "po-br2",
+          "name": "Brighton Palace Pier",
+          "category": "leisure",
+          "coords": [
+            50.8193,
+            -0.138
+          ],
+          "year": "1899",
+          "desc": "Ιστορική προβλήτα-αναψυκτήριο με funfair και λιθουργικές αψίδες."
+        },
+        {
+          "id": "po-br3",
+          "name": "The Lanes",
+          "category": "leisure",
+          "coords": [
+            50.8218,
+            -0.143
+          ],
+          "year": "16ος αι.",
+          "desc": "Ιστορικοί στενοί δρόμοι του fishing village με vintage shops και cafes."
+        },
+        {
+          "id": "po-br4",
+          "name": "Brighton i360",
+          "category": "landmark",
+          "coords": [
+            50.821,
+            -0.149
+          ],
+          "year": "2016",
+          "desc": "Πύργος παρατήρησης 162 μ. με moving observation pod."
+        },
+        {
+          "id": "po-br5",
+          "name": "Brighton Beach & Promenade",
+          "category": "leisure",
+          "coords": [
+            50.819,
+            -0.137
+          ],
+          "year": "παραδοσιακή",
+          "desc": "Πεζο_PROMenade 8 km από Hove μέχρι Brighton Marina."
+        },
+        {
+          "id": "po-br6",
+          "name": "Brighton Museum & Art Gallery",
+          "category": "culture",
+          "coords": [
+            50.8228,
+            -0.1387
+          ],
+          "year": "1861",
+          "desc": "Μουσείο με decorative arts, 20th century design και LGBTQ+ exhibitions."
+        }
+      ],
+      "pastVsPresent": {
+        "era1": "Brighton 1823: Royal Pavilion & Seaside Spa — κουρτό της αριστοκρατίας.",
+        "era2": "Brighton 2026: LGBTQ+ Capital & Cultural South — Pride, Festival και digital economy.",
+        "synthesis": "Από το seaside resort της αριστοκρατίας και το παλάτι-φαντασία του George IV, στη σύγχρονη πόλη της ελευθερίας και του alternative culture."
+      }
+    },
+    {
+      "id": "inverness",
+      "name": "Ινβερνές",
+      "englishName": "Inverness",
+      "nickname": "Πρωτεύουσα των Highlands της Σκωτίας",
+      "badge": "Loch Ness & River Ness",
+      "type": "historic",
+      "coords": [
+        57.4778,
+        -4.2247
+      ],
+      "zoom": 12.5,
+      "stats": {
+        "population": "48.000",
+        "elevation": "10 μ.",
+        "founded": "6ος αι. (Άγιος Columba) / 1230s (burgh)"
+      },
+      "quote": "«Στο Inverness αρχίζει ο Βορράς· ο ήλιος δύει στον Loch Ness και ο μύθος γίνεται πραγματικότητα.»",
+      "geo": {
+        "climate": "Ωκεάνιο ψυχρό: κρύοι χειμώνες (1°C avg), ήπια καλοκαίρια (15°C avg), ισχυρές βροχές και ισχυροί άνεμοι.",
+        "terrain": "Στις εκβολές του ποταμού Ness στον Moray Firth (Βόρεια Θάλασσα), στο βόρειο άκρο του Loch Ness.",
+        "significance": "Η βορειότερη city του Ηνωμένου Βασιλείου και πύλη για τα Highlands και το Loch Ness."
+      },
+      "hist": {
+        "ancient": "Πικτική πρωτεύουσα των Picts (5ος αι.)· 565 μ.Χ. — επίσκεψη του Αγίου Columba για τη βάπτιση του βασιλιά Brude· 1230s burgh.",
+        "modern": "Από τη μάχη του Culloden (1746, κοντά) που έληξε τον Jacobite risings, στη σύγχρονη fast-growing μητρόπολη και πύλη του Highlands.",
+        "highlights": [
+          {
+            "year": "565",
+            "event": "Άγιος Columba & Picts",
+            "desc": "Ο Columba επισκέπτεται τον Brude, βασιλιά των Picts — έναρξη χριστιανισμού."
+          },
+          {
+            "year": "11ος-12ος αι.",
+            "event": "Καθιέρωση Castle",
+            "desc": "Κατασκευή του Inverness Castle — αργότερα Mackenzie stronghold."
+          },
+          {
+            "year": "1746",
+            "event": "Battle of Culloden",
+            "desc": "Final Jacobite defeat κοντά στην πόλη — τέλος Highlander clan system."
+          },
+          {
+            "year": "2000",
+            "event": "City Status",
+            "desc": "Το Inverness παραχωρείται επίσημα καθεστώς city."
+          }
+        ]
+      },
+      "cult": {
+        "traditions": "Highland Games (ετήσια), Blas Festival (Σκωτσέζικη παραδοσιακή μουσική), Burns Night (25 Ιανουαρίου), Highland dancing και ceilidh.",
+        "landmarks": "Inverness Castle, Inverness Cathedral, River Ness, Eden Court Theatre, Culloden Battlefield, Loch Ness (κοντά).",
+        "localLife": "Οι invernessians απολαμβάνουν walks στον River Ness, pub crawl στην Church Street και trips στον Loch Ness."
+      },
+      "gastro": {
+        "specialties": [
+          "Highland beef (Aberdeen Angus της περιοχής)",
+          "Cullen Skink (smoked haddock soup)",
+          "Venison των Highlands",
+          "Cairngorm Beer και local gin από Black Isle",
+          "Scottish Salmon από Loch Fyne και Moray Firth"
+        ],
+        "culture": "Η κουζίνα του Highlands είναι wild — venison, salmon, beef, Heather Honey και single malt whisky."
+      },
+      "demo": {
+        "languages": "Αγγλικά· Σκωτσέζικη Scots· Σκωτσέζικη γαελική (Scottish Gaelic, ιδιαίτερη υποστήριξη).",
+        "demographics": "48.000 κάτοικοι, μία από τις ταχύτερα αναπτυσσόμενες cities του UK, με διεθνή κοινότητα Highland."
+      },
+      "pois": [
+        {
+          "id": "po-iv1",
+          "name": "Inverness Castle",
+          "category": "monument",
+          "coords": [
+            57.4778,
+            -4.2234
+          ],
+          "year": "1836",
+          "desc": "Νεογοτθικό κάστρο-πύργος σε λόφο με θέα στον Moray Firth."
+        },
+        {
+          "id": "po-iv2",
+          "name": "River Ness & Inverness Cathedral",
+          "category": "monument",
+          "coords": [
+            57.4759,
+            -4.2255
+          ],
+          "year": "1869",
+          "desc": "Ιερός ναός Scottish Episcopal στη δυτική όχθη του Ness."
+        },
+        {
+          "id": "po-iv3",
+          "name": "Culloden Battlefield",
+          "category": "history",
+          "coords": [
+            57.479,
+            -4.144
+          ],
+          "year": "1746",
+          "desc": "Τόπος της τελικής μάχης Jacobite — visitor centre με clan gravestones."
+        },
+        {
+          "id": "po-iv4",
+          "name": "Loch Ness (south end)",
+          "category": "nature",
+          "coords": [
+            57.327,
+            -4.45
+          ],
+          "year": "παραδοσιακό",
+          "desc": "Ο θρυλικός λοχ Nessie — μεγαλύτερο εσωτερικό νερό του UK (56 km²)."
+        },
+        {
+          "id": "po-iv5",
+          "name": "Eden Court Theatre",
+          "category": "culture",
+          "coords": [
+            57.4772,
+            -4.2285
+          ],
+          "year": "1976",
+          "desc": "Το μεγαλύτερο θέατρο και cinema των Highlands."
+        },
+        {
+          "id": "po-iv6",
+          "name": "Urquhart Castle (Loch Ness)",
+          "category": "monument",
+          "coords": [
+            57.324,
+            -4.473
+          ],
+          "year": "13ος αι.",
+          "desc": "Ερείπια μεσαιωνικού κάστρου στις ακτές του Loch Ness."
+        }
+      ],
+      "pastVsPresent": {
+        "era1": "Inverness 1746: Battle of Culloden — τέλος Jacobite risings και clan system.",
+        "era2": "Inverness 2026: Highland Capital & Tourism Hub — fast-growing city και πύλη του Loch Ness.",
+        "synthesis": "Από την πρωτεύουσα των Picts και το ιστορικό σύμβολο του Jacobite-End στο Culloden, στη σύγχρονη πύλη του Highlands και του Loch Ness."
+      }
+    },
+    {
+      "id": "salisbury",
+      "name": "Σάλσμπερι",
+      "englishName": "Salisbury",
+      "nickname": "Η Πόλη του Πρώιμου Γοτθικού Καθεδρικού & της Magna Carta",
+      "badge": "Cathedral Spire & Stonehenge",
+      "type": "historic",
+      "coords": [
+        51.0689,
+        -1.7949
+      ],
+      "zoom": 12.5,
+      "stats": {
+        "population": "41.000",
+        "elevation": "50 μ.",
+        "founded": "1220 (new Sarum)"
+      },
+      "quote": "«Στο Salisbury ο ψηλότερος καθεδρικός της Βρετανίας στέκει πάνω από λιβάδια που αχνοφαίνεται ο Stonehenge.»",
+      "geo": {
+        "climate": "Ωκεάνιο: ήπιους χειμώνες, δροσερά καλοκαίρια, μέτριες βροχές.",
+        "terrain": "Πόλη στη συμβολή των ποταμών Avon, Nadder και Bourne, στη Wiltshire plain κοντά στο Salisbury Plain.",
+        "significance": "Πύλη του Stonehenge και τοποθεσία του αρχαιότερου σωζόμενου αυθεντικού αντίγραφου της Magna Carta."
+      },
+      "hist": {
+        "ancient": "Αγγλοσαξονική Old Sarum iron-age hillfort· 1220 — Bishop Poore μεταφέρει την πόλη στο α Vale of Avon και ιδρύει new Sarum.",
+        "modern": "Από την ανέγερση του Salisbury Cathedral (1220-1258) και την αποθήκευση της Magna Carta (1215 αντίγραφο), στη σημερινή UNESCO Heritage city.",
+        "highlights": [
+          {
+            "year": "1220",
+            "event": "Ιδρυση New Sarum",
+            "desc": "Ο Bishop Richard Poore μεταφέρει την πόλη στο Vale of Avon."
+          },
+          {
+            "year": "1220-1258",
+            "event": "Salisbury Cathedral",
+            "desc": "Ανέγερση του πρώιμου αγγλικού γοτθικού καθεδρικού με τον ψηλότερο spire (123 μ.) της Βρετανίας."
+          },
+          {
+            "year": "1215",
+            "event": "Magna Carta (best copy)",
+            "desc": "Το καλύτερα διατηρημένο αντίγραφο της Magna Carta αποθηκεύεται στον καθεδρικό."
+          },
+          {
+            "year": "1986",
+            "event": "Stonehenge UNESCO",
+            "desc": "Το κοντινό Stonehenge και Avebury αναγνωρίζονται ως UNESCO μνημεία."
+          }
+        ]
+      },
+      "cult": {
+        "traditions": "Salisbury International Arts Festival (Μάιος-Ιούνιος), Magna Carta commemorations (15 June), Salisbury Museum exhibitions.",
+        "landmarks": "Salisbury Cathedral (με ψηλότερο spire και καλύτερο αντίγραφο Magna Carta), Mompesson House, Old Sarum, Salisbury Plain.",
+        "localLife": "Οι sarumites απολαμβάνουν walks στο Cathedral Close και από pubs στην High Street."
+      },
+      "gastro": {
+        "specialties": [
+          "Wiltshire Lardy Cake: γλυκό ψωμί με lard, σταφίδες και ζάχαρη",
+          "Wiltshire Cure Bacon: παραδοσιακή ωρίμανση bacon",
+          "Salisbury Lamb",
+          "Wiltshire Loaf Cheese",
+          "Hobbs House Bakery bread και local ale"
+        ],
+        "culture": "Η κουζίνα του Salisbury είναι Wiltshire — bacon, lardy cake, lamb, dairy."
+      },
+      "demo": {
+        "languages": "Αγγλικά.",
+        "demographics": "41.000 κάτοικοι, με μεγάλο τουριστικό στοιχείο — πάνω από 600.000 επισκέπτες Stonenehenge ετησίως."
+      },
+      "pois": [
+        {
+          "id": "po-sl1",
+          "name": "Salisbury Cathedral",
+          "category": "monument",
+          "coords": [
+            51.0643,
+            -1.795
+          ],
+          "year": "1220",
+          "desc": "Πρώιμος αγγλικός γοτθικός καθεδρικός με τον ψηλότερο spire της Βρετανίας (123 μ.)."
+        },
+        {
+          "id": "po-sl2",
+          "name": "Magna Carta (Chapter House)",
+          "category": "history",
+          "coords": [
+            51.064,
+            -1.795
+          ],
+          "year": "1215",
+          "desc": "Το καλύτερα διατηρημένο αντίγραφο της Magna Carta του 1215 — σύμβολο κράτους δικαίου."
+        },
+        {
+          "id": "po-sl3",
+          "name": "Old Sarum",
+          "category": "history",
+          "coords": [
+            51.073,
+            -1.793
+          ],
+          "year": "400 π.Χ.",
+          "desc": "Iron age hillfort και αρχική πόλη Sarum, ερείπια Norman castle."
+        },
+        {
+          "id": "po-sl4",
+          "name": "Salisbury Museum",
+          "category": "culture",
+          "coords": [
+            51.065,
+            -1.793
+          ],
+          "year": "1864",
+          "desc": "Μουσείο με finds από Stonehenge και Iron Age Greece."
+        },
+        {
+          "id": "po-sl5",
+          "name": "Stonehenge (nearby)",
+          "category": "history",
+          "coords": [
+            51.1789,
+            -1.8262
+          ],
+          "year": "3000 π.Χ.",
+          "desc": "Προϊστορικό μνημείο UNESCO — 13 χλμ. βόρεια του Salisbury."
+        },
+        {
+          "id": "po-sl6",
+          "name": "Mompesson House",
+          "category": "monument",
+          "coords": [
+            51.0633,
+            -1.7933
+          ],
+          "year": "1701",
+          "desc": "Γεωργιανό townhouse του National Trust στο Cathedral Close."
+        }
+      ],
+      "pastVsPresent": {
+        "era1": "Salisbury 1220-1258: Cathedral & Magna Carta — πρώιμη γοτθική μητρόπολη.",
+        "era2": "Salisbury 2026: Heritage Tourism & Cathedral Conservation — πόλη-Μνημείο UNESCO.",
+        "synthesis": "Από την πρώιμη γοτθική πόλη που φύλαξε τη Magna Carta και έγινε πνευματική μητρόπολη της Wiltshire plain, στη σύγχρονη πόλη που είναι πύλη του Stonehenge."
+      }
+    },
+    {
+      "id": "sheffield",
+      "name": "Σέφιλντ",
+      "englishName": "Sheffield",
+      "nickname": "Η Πόλη του Χάλυβα & Πύλη του Peak District",
+      "badge": "Steel & Peak District",
+      "type": "metropolis",
+      "coords": [
+        53.3811,
+        -1.4701
+      ],
+      "zoom": 12.5,
+      "stats": {
+        "population": "556.000 (1.4 εκατ. Μητροπολιτική)",
+        "elevation": "100 μ.",
+        "founded": "1296 (market charter)"
+      },
+      "quote": "«Στο Sheffield ο χάλυβας γέννησε εργοστάσια· τα εργοστάσια δώσανε χώρο σε δάση και ο χάλυβας είναι ακόμα μέσα στις φλέβες της πόλης.»",
+      "geo": {
+        "climate": "Ωκεάνιο: κρύοι χειμώνες, δροσερά καλοκαίρια, ισχυρές βροχές.",
+        "terrain": "Πόλη στους ποταμούς Don, Sheaf και Rivelin, στους πρόποδες των Pennines και του Peak District National Park — το «πράσινο city» με 4 δέντρα ανά κάτοικο.",
+        "significance": "Ιστορική μητρόπολη του χάλυβα και μόνο National Park within a city boundary (Peak District)."
+      },
+      "hist": {
+        "ancient": "Αγγλοσαξονικός οικισμός Scafeld· 1296 — market charter· 14ος αι. — έναρξη metalworking.",
+        "modern": "Από τον 18ο-19ο αι. Bessemer process και stainless steel (Brearley 1913) και Cutlery capital, στη μεταβιομηχανική στροφή σε advanced manufacturing, digital και universities.",
+        "highlights": [
+          {
+            "year": "1296",
+            "event": "Market Charter",
+            "desc": "Ο Edward I παραχωρεί market charter στο Sheffield."
+          },
+          {
+            "year": "1742",
+            "event": "Sheffield Plate",
+            "desc": "Ο Thomas Boulsover εφευρίσκει Sheffield plate — fusing copper and silver."
+          },
+          {
+            "year": "1913",
+            "event": "Stainless Steel",
+            "desc": "Ο Harry Brearley εφευρίσκει το stainless steel για cutlery."
+          },
+          {
+            "year": "1951",
+            "event": "Peak District National Park",
+            "desc": "Ιδρύεται το πρώτο national park της Βρετανίας — partly μέσα στο Sheffield."
+          }
+        ]
+      },
+      "cult": {
+        "traditions": "Steel city folklore, Sheffield Christmas Market,snooker World Championship (Crucible Theatre), Arctic Monkeys, Pulp, Def Leppard και Cabaret Club — 「the steel city's music».",
+        "landmarks": "Sheffield Cathedral, Crucible Theatre, Millennium Gallery, Sheffield Winter Garden, Cutlers' Hall, Sheffield Botanical Gardens.",
+        "localLife": "Οι sheffielders απολαμβάνουν walks στο Peak District, pub crawls στο Devonshire Quarter και το snooker world championship."
+      },
+      "gastro": {
+        "specialties": [
+          "Sheffield Yorkshire Pudding (blood-pudding)",
+          "Henderson's Relish: Sheffield's iconic spice sauce",
+          "Yorkshire Curd Tart",
+          "Parkin (ginger cake)",
+          "Sheffield steel-cut oatcakes"
+        ],
+        "culture": "Η Sheffield cuisine είναι Yorkshire comfort — Yorkshire pudding, Henderson's Relish και pub classics."
+      },
+      "demo": {
+        "languages": "Αγγλικά (Yorkshire dialect).",
+        "demographics": "556.000 κάτοικοι, με μεγάλο φοιτητικό στοιχείο (Sheffield, Sheffield Hallam Universities, ~70.000)."
+      },
+      "pois": [
+        {
+          "id": "po-sh1",
+          "name": "Sheffield Cathedral",
+          "category": "monument",
+          "coords": [
+            53.3812,
+            -1.4655
+          ],
+          "year": "1430",
+          "desc": "Μεσαιωικός ναός που έγινε cathedral το 1914 — Yorkshire heritage."
+        },
+        {
+          "id": "po-sh2",
+          "name": "Crucible Theatre",
+          "category": "culture",
+          "coords": [
+            53.376,
+            -1.466
+          ],
+          "year": "1971",
+          "desc": "Home of World Snooker Championship και Sheffield Theatres."
+        },
+        {
+          "id": "po-sh3",
+          "name": "Millennium Gallery & Winter Garden",
+          "category": "culture",
+          "coords": [
+            53.38,
+            -1.465
+          ],
+          "year": "2001",
+          "desc": "Μουσείο metalwork και art και τεράστιο greenhouse (largest city-centre glasshouse in Europe)."
+        },
+        {
+          "id": "po-sh4",
+          "name": "Cutlers' Hall",
+          "category": "monument",
+          "coords": [
+            53.3815,
+            -1.4638
+          ],
+          "year": "1832",
+          "desc": "Έδρα της Company of Cutlers in Hallamshire — symbol of Sheffield steel heritage."
+        },
+        {
+          "id": "po-sh5",
+          "name": "Sheffield Botanical Gardens",
+          "category": "nature",
+          "coords": [
+            53.371,
+            -1.488
+          ],
+          "year": "1836",
+          "desc": "19 acres botanical gardens με Victorian glass pavilions."
+        },
+        {
+          "id": "po-sh6",
+          "name": "Peak District National Park",
+          "category": "nature",
+          "coords": [
+            53.35,
+            -1.5
+          ],
+          "year": "1951",
+          "desc": "Το πρώτο national park της Βρετανίας — partly μέσα στο city boundary."
+        }
+      ],
+      "pastVsPresent": {
+        "era1": "Sheffield 1913: Stainless Steel City — Harry Brearley και cutlery μητρόπολη.",
+        "era2": "Sheffield 2026: Green City & Advanced Manufacturing — Peak District, universities και digital.",
+        "synthesis": "Από την πόλη-κοιτίδα του stainless steel και της cutlery του 19ου-20ού αιώνα, στη σύγχρονη πράσινη μητρόπολη με Peak District, advanced manufacturing και music scene."
+      }
+    },
+    {
+      "id": "nottingham",
+      "name": "Νότιγχαμ",
+      "englishName": "Nottingham",
+      "nickname": "Πόλη του Robin Hood & των Underground Caves",
+      "badge": "Castle & Lace Market",
+      "type": "historic",
+      "coords": [
+        52.9548,
+        -1.1581
+      ],
+      "zoom": 12.5,
+      "stats": {
+        "population": "331.000 (872.000 Μητροπολιτική)",
+        "elevation": "60 μ.",
+        "founded": "9ος αι. (Snotingham)"
+      },
+      "quote": "«Στο Nottingham ο Robin Hood ζει ακόμα, στα caves και στις φωλιές κάτω από το κάστρο.»",
+      "geo": {
+        "climate": "Ωκεάνιο: ήπιους χειμώνες, δροσερά καλοκαίρια, μέτριες βροχές.",
+        "terrain": "Πόλη στους ποταμούς Trent και Leen, στη Nottinghamshire, στους πρόποδες των Pennines — πάνω σε sandstone ridge με hundreds of caves.",
+        "significance": "Ιστορική πρωτεύουσα του Nottinghamshire και κόμβος East Midlands — home of Robin Hood legend."
+      },
+      "hist": {
+        "ancient": "Αγγλοσαξονικός οικισμός Snotingham· 1068 Norman castle· 1155 Royal Charter.",
+        "modern": "Από τη μεσαιωνική lace industry (19ος αι.) και bicycle manufacturing (Raleigh, 1887) στη σύγχρονη μετα-βιομηχανική μητρόπολη με bio-city status.",
+        "highlights": [
+          {
+            "year": "1068",
+            "event": "Nottingham Castle",
+            "desc": "Ο William the Conqueror κτίζει το Norman castle."
+          },
+          {
+            "year": "13ος-14ος αι.",
+            "event": "Robin Hood Legend",
+            "desc": "Λαϊκοί θρύλοι του Robin Hood και Sherwood Forest αναπτύσσονται."
+          },
+          {
+            "year": "1887",
+            "event": "Raleigh Bicycle",
+            "desc": "Ίδρυση της Raleigh Bicycle Company — Nottingham γίνεται world cycle manufacturing hub."
+          },
+          {
+            "year": "19ος αι.",
+            "event": "Lace Market",
+            "desc": "Η Nottingham lace industry είναι η μεγαλύτερη του κόσμου."
+          }
+        ]
+      },
+      "cult": {
+        "traditions": "Goose Fair (3-5 Οκτωβρίου — ένα από τα παλαιότερα fairs της Ευρώπης από 1284), Robin Hood Festival (Creswell Crags), Nottingham Theatre Royal και Nottingham Contemporary.",
+        "landmarks": "Nottingham Castle, City of Caves, Lace Market, Old Market Square, Wollaton Hall, Nottingham Council House.",
+        "localLife": "Οι nottinghamians απολαμβάνουν pub crawl στο Lace Market, walks στο Arboretum και Nottingham Forest football."
+      },
+      "gastro": {
+        "specialties": [
+          "Notshire Bramley Apple Pie (Bramley apple originate στο Nottinghamshire)",
+          "Stilton Cheese (Melton Mowbray nearby)",
+          "Pork Pie από Melton Mowbray (PDO)",
+          "Nottinghamshire Oatcakes",
+          "Mushy Peas και local ale"
+        ],
+        "culture": "Η Nottingham cuisine είναι Midlands classic — Bramley apple, Stilton cheese και Melton Mowbray pork pies."
+      },
+      "demo": {
+        "languages": "Αγγλικά (East Midlands dialect).",
+        "demographics": "331.000 κάτοικοι, με μεγάλο φοιτητικό στοιχείο (Nottingham, Nottingham Trent Universities, ~60.000)."
+      },
+      "pois": [
+        {
+          "id": "po-nh1",
+          "name": "Nottingham Castle & Museum",
+          "category": "history",
+          "coords": [
+            52.9456,
+            -1.153
+          ],
+          "year": "1068",
+          "desc": "Σύγχρονο museum και gallery στη θέση Norman castle — τοποθεσία Robin Hood."
+        },
+        {
+          "id": "po-nh2",
+          "name": "City of Caves",
+          "category": "history",
+          "coords": [
+            52.9534,
+            -1.1535
+          ],
+          "year": "Anglo-Saxon",
+          "desc": "Δίκτυο 500+ sandstone caves κάτω από την πόλη — μεγαλύτερο στο UK."
+        },
+        {
+          "id": "po-nh3",
+          "name": "Lace Market",
+          "category": "history",
+          "coords": [
+            52.955,
+            -1.148
+          ],
+          "year": "19ος αι.",
+          "desc": "Ιστορική συνοικία lace factories — σήμερα εστιατόρια και startups."
+        },
+        {
+          "id": "po-nh4",
+          "name": "Wollaton Hall",
+          "category": "monument",
+          "coords": [
+            52.946,
+            -1.22
+          ],
+          "year": "1588",
+          "desc": "Ελισαβετιανό mansion με deer park — used as Wayne Manor στο Batman Dark Knight Rises."
+        },
+        {
+          "id": "po-nh5",
+          "name": "Old Market Square",
+          "category": "leisure",
+          "coords": [
+            52.9531,
+            -1.1542
+          ],
+          "year": "1928",
+          "desc": "Η μεγαλύτερη πλατεία του ΗΒ μετά Trafalgar."
+        },
+        {
+          "id": "po-nh6",
+          "name": "Sherwood Forest (nearby)",
+          "category": "nature",
+          "coords": [
+            53.2,
+            -1.08
+          ],
+          "year": "παραδοσιακή",
+          "desc": "Ιστορικό δάσος του Robin Hood — home του Major Oak (1.000 ετών)."
+        }
+      ],
+      "pastVsPresent": {
+        "era1": "Nottingham 13ος αι.: Robin Hood & Medieval Castle — λαϊκός θρύλος και Norman stronghold.",
+        "era2": "Nottingham 2026: Bio-City & Cultural Hub — μετα-βιομηχανική μητρόπολη και university city.",
+        "synthesis": "Από τη μεσαιωνική πόλη του Robin Hood και τη βιομηχανική μητρόπολη της lace και των Raleigh bicycles, στη σύγχρονη πόλη bioscience, universities και αναγεννημένη βιομηχανική κληρονομιά."
+      }
     }
   ]
 }

@@ -10,7 +10,7 @@
  */
 
 import { getEntityLocalTime, getCuratedGuideItems, getCuratedGastroItems } from './ui.js?v=20261118_gastro_overhaul_v8';
-import { CITY_VIDEOS, getPoiVideoInfo } from './video-service.js?v=20261118_gastro_overhaul_v8';
+import { CITY_VIDEOS, getPoiVideoInfo } from './video-service.js?v=20261120_new_cities_25_v23';
 
 let currentEntity = null;
 let currentEntityType = 'city';

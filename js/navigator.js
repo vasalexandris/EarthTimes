@@ -1,5 +1,5 @@
 import { US_STATES, CITY_TO_STATE } from './states-data.js?v=20261117_video_iframe_fix';
-import { CITY_VIDEOS } from './video-service.js?v=20261117_video_iframe_fix';
+import { CITY_VIDEOS } from './video-service.js?v=20261120_new_cities_25_v23';
 /**
  * Navigator Module
  * Hierarchical Cascading Navigation: Continents -> Countries -> Cities
@@ -139,7 +139,22 @@ export const CONTINENTS_DATA = [
           { id: 'oxford', name: 'Οξφόρδη' },
           { id: 'cambridge-uk', name: 'Κέιμπριτζ' },
           { id: 'york', name: 'Γιορκ' },
-          { id: 'leeds', name: 'Λιντς' }
+          { id: 'leeds', name: 'Λιντς' },
+          { id: 'belfast', name: 'Μπέλφαστ' },
+          { id: 'cardiff', name: 'Κάρντιφ' },
+          { id: 'bath', name: 'Μπαθ' },
+          { id: 'birmingham', name: 'Μπέρμιγχαμ' },
+          { id: 'newcastle', name: 'Νιούκαστλ' },
+          { id: 'aberdeen', name: 'Αμπερντίν' },
+          { id: 'canterbury', name: 'Καντέρμπερι' },
+          { id: 'chester', name: 'Τσέστερ' },
+          { id: 'durham', name: 'Ντάραμ' },
+          { id: 'st-andrews', name: 'Σεντ Άντριους' },
+          { id: 'brighton', name: 'Μπράιτον' },
+          { id: 'inverness', name: 'Ινβερνές' },
+          { id: 'salisbury', name: 'Σάλσμπερι' },
+          { id: 'sheffield', name: 'Σέφιλντ' },
+          { id: 'nottingham', name: 'Νότιγχαμ' }
         ]
       },
       {
@@ -156,7 +171,22 @@ export const CONTINENTS_DATA = [
           { id: 'granada-es', name: 'Γρανάδα' },
           { id: 'toledo-es', name: 'Τολέδο' },
           { id: 'salamanca', name: 'Σαλαμάνκα' },
-          { id: 'zaragoza', name: 'Σαραγόσα' }
+          { id: 'zaragoza', name: 'Σαραγόσα' },
+          { id: 'cordoba', name: 'Κόρδοβα' },
+          { id: 'santiago-de-compostela', name: 'Σαντιάγο ντε Κομποστέλα' },
+          { id: 'san-sebastian', name: 'Σαν Σεμπαστιάν' },
+          { id: 'segovia', name: 'Σεγκόβια' },
+          { id: 'palma-de-mallorca', name: 'Πάλμα ντε Μαγιόρκα' },
+          { id: 'cadiz', name: 'Κάδιθ' },
+          { id: 'alicante', name: 'Αλικάντε' },
+          { id: 'burgos', name: 'Μπούργος' },
+          { id: 'caceres', name: 'Κάθερες' },
+          { id: 'avila', name: 'Άβιλα' },
+          { id: 'santander', name: 'Σανταντέρ' },
+          { id: 'valladolid', name: 'Βαγιαδολίδ' },
+          { id: 'merida-es', name: 'Μέριδα' },
+          { id: 'a-coruna', name: 'Α Κορούνια' },
+          { id: 'girona', name: 'Ζιρόνα' }
         ]
       },
       {
@@ -275,7 +305,22 @@ export const CONTINENTS_DATA = [
           { id: 'lublin', name: 'Λούμπλιν' },
           { id: 'szczecin', name: 'Στσέτσιν' },
           { id: 'torun', name: 'Τόρουν' },
-          { id: 'katowice', name: 'Κατοβίτσε' }
+          { id: 'katowice', name: 'Κατοβίτσε' },
+          { id: 'zakopane', name: 'Ζακοπάνε' },
+          { id: 'bialystok', name: 'Μπιαουίστοκ' },
+          { id: 'czestochowa', name: 'Τσεστοχόβα' },
+          { id: 'zamosc', name: 'Ζάμοστς' },
+          { id: 'olsztyn', name: 'Όλστιν' },
+          { id: 'rzeszow', name: 'Ζέσουφ' },
+          { id: 'kielce', name: 'Κιέλτσε' },
+          { id: 'bydgoszcz', name: 'Μπίντγκοστς' },
+          { id: 'zielona-gora', name: 'Ζιελόνα Γκούρα' },
+          { id: 'sandomierz', name: 'Σαντόμιες' },
+          { id: 'gniezno', name: 'Γκνιέζνο' },
+          { id: 'swinoujscie', name: 'Σβινούιστσιε' },
+          { id: 'walbrzych', name: 'Βάλμπζιχ' },
+          { id: 'przemysl', name: 'Πσέμισλ' },
+          { id: 'malbork', name: 'Μάλμπορκ' }
         ]
       },
       {

@@ -4,12 +4,12 @@
  * Base Map Layer selector, Date display, Video Overlay, and Deep Dive views.
  */
 
-import { getCityVideo, getAvailableVideoTypes, getAvailableCityTours, CITY_VIDEOS, findPoiLiveCam, getPoiVideoInfo, getGastroRecipeVideo, getSocialMediaVideos, SOCIAL_MEDIA_REGISTRY, GASTRO_RECIPE_VIDEOS } from './video-service.js?v=20261119_street_food_v1';
+import { getCityVideo, getAvailableVideoTypes, getAvailableCityTours, CITY_VIDEOS, findPoiLiveCam, getPoiVideoInfo, getGastroRecipeVideo, getSocialMediaVideos, SOCIAL_MEDIA_REGISTRY, GASTRO_RECIPE_VIDEOS } from './video-service.js?v=20261120_new_cities_25_v23';
 import { getDeepDiveData } from './deep-dive.js?v=20261117_video_iframe_fix';
 import { fetchWikiArticle, fetchWikiArticleHtml, cleanWikiTitle } from './wiki-service.js?v=20261118_gastro_overhaul_v8';
 import { calculateSubsolarPoint } from './solar-terminator.js?v=20261117_video_iframe_fix';
 import { CITY_TO_STATE } from './states-data.js?v=20261117_video_iframe_fix';
-import { CITY_TO_COUNTRY } from './navigator.js?v=20261118_gastro_overhaul_v8';
+import { CITY_TO_COUNTRY } from './navigator.js?v=20261120_new_cities_25_v23';
 import { renderGeographyTabHtml, mountLiveWeatherData } from './geo-service.js?v=20261119_geo_v2';
 import { renderHistoryTabHtml } from './history-service.js?v=20261119_hist_v3';
 import { renderCultureTabHtml } from './culture-service.js?v=20261119_cult_v1';
