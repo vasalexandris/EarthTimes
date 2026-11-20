@@ -78,6 +78,10 @@ export function renderTraditionalDiningBoxHtml(entity) {
             <i class="fa-solid fa-landmark text-[10px] text-purple-400"></i>
             <span>Ιστορικά Στέκια & Αυθεντικότητα</span>
           </button>
+          <button onclick="window.openInAppBingSearch('site:tripadvisor.com.gr ${escapeStr(name)} ${escapeStr(engName)} εστιατόρια ταβέρνες κριτικές', 'TripAdvisor Εστιατόρια: ${escapeStr(name)}')" class="px-2.5 py-1 rounded-lg bg-emerald-950/80 hover:bg-emerald-900 border border-emerald-500/50 hover:border-emerald-400 text-[11px] text-emerald-300 transition flex items-center gap-1 cursor-pointer" title="Εστιατόρια & κριτικές TripAdvisor μέσω Bing">
+            <i class="fa-solid fa-ranking-star text-[10px] text-emerald-400"></i>
+            <span>TripAdvisor (Εστιατόρια)</span>
+          </button>
         </div>
       </div>
     </div>
@@ -144,6 +148,10 @@ export function renderStreetFoodSpotsBoxHtml(entity) {
           <button onclick="window.openInAppBingSearch('${escapeStr(name)}${escapeStr(engName)} υπαίθριες αγορές φαγητού street food markets food halls stalls', 'Αγορές Street Food: ${escapeStr(name)}')" class="px-2.5 py-1 rounded-lg bg-slate-800/80 hover:bg-slate-750 border border-slate-700/60 hover:border-yellow-500/40 text-[11px] text-yellow-300 transition flex items-center gap-1 cursor-pointer">
             <i class="fa-solid fa-store text-[10px] text-yellow-400"></i>
             <span>Αγορές & Στέκια Street Food</span>
+          </button>
+          <button onclick="window.openInAppBingSearch('site:tripadvisor.com.gr ${escapeStr(name)} ${escapeStr(engName)} street food γρήγορο φαγητό', 'TripAdvisor Street Food: ${escapeStr(name)}')" class="px-2.5 py-1 rounded-lg bg-emerald-950/80 hover:bg-emerald-900 border border-emerald-500/50 hover:border-emerald-400 text-[11px] text-emerald-300 transition flex items-center gap-1 cursor-pointer" title="Street Food στο TripAdvisor μέσω Bing">
+            <i class="fa-solid fa-ranking-star text-[10px] text-emerald-400"></i>
+            <span>TripAdvisor (Street Food)</span>
           </button>
         </div>
       </div>
@@ -212,6 +220,10 @@ export function renderFamousDessertsBoxHtml(entity) {
             <i class="fa-solid fa-ice-cream text-[10px] text-cyan-400"></i>
             <span>Χειροποίητο Παγωτό & Gelato</span>
           </button>
+          <button onclick="window.openInAppBingSearch('site:tripadvisor.com.gr ${escapeStr(name)} ${escapeStr(engName)} ζαχαροπλαστεία επιδόρπια bakeries desserts', 'TripAdvisor Ζαχαροπλαστεία: ${escapeStr(name)}')" class="px-2.5 py-1 rounded-lg bg-emerald-950/80 hover:bg-emerald-900 border border-emerald-500/50 hover:border-emerald-400 text-[11px] text-emerald-300 transition flex items-center gap-1 cursor-pointer" title="Ζαχαροπλαστεία & γλυκά στο TripAdvisor μέσω Bing">
+            <i class="fa-solid fa-ranking-star text-[10px] text-emerald-400"></i>
+            <span>TripAdvisor (Γλυκά)</span>
+          </button>
         </div>
       </div>
     </div>
@@ -270,6 +282,10 @@ export function renderGastronomyTabHtml(entity, items = []) {
           <button onclick="window.openInAppBingSearch('${escapeStr(name)} παραδοσιακή κουζίνα γαστρονομία travel guide', 'Παραδοσιακή Κουζίνα: ${escapeStr(name)}')" class="px-2.5 py-1 rounded-lg bg-gradient-to-r from-amber-600 to-orange-600 hover:from-amber-500 hover:to-orange-500 text-white text-[11px] font-bold transition flex items-center gap-1.5 shadow cursor-pointer" title="Bing AI Search για την κουζίνα της πόλης">
             <i class="fa-brands fa-microsoft text-amber-200 text-xs"></i>
             <span>🔍 AI Έρευνα στο Bing</span>
+          </button>
+          <button onclick="window.openInAppBingSearch('site:tripadvisor.com.gr ${escapeStr(name)} ${escapeStr(entity.englishName || '')} εστιατόρια φαγητό κριτικές', 'TripAdvisor: ${escapeStr(name)}')" class="px-2.5 py-1 rounded-lg bg-emerald-950/90 hover:bg-emerald-900 text-emerald-300 hover:text-white border border-emerald-600/60 text-[11px] font-bold transition flex items-center gap-1.5 shadow cursor-pointer" title="TripAdvisor εστιατόρια & κριτικές μέσω Bing">
+            <i class="fa-solid fa-award text-emerald-400"></i>
+            <span>TripAdvisor (Bing)</span>
           </button>
           <button onclick="window.openMapWikiReader('${escapeStr(name)} Γαστρονομία', 'el', '${escapeStr(name)} cuisine')" class="px-2.5 py-1 rounded-lg bg-sky-950/80 hover:bg-sky-900 text-sky-300 hover:text-white border border-sky-700/50 text-[11px] font-bold transition flex items-center gap-1.5 shadow cursor-pointer">
             <i class="fa-brands fa-wikipedia-w text-sky-400"></i>

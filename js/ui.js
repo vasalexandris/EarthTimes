@@ -13,7 +13,7 @@ import { CITY_TO_COUNTRY } from './navigator.js?v=20261118_gastro_overhaul_v8';
 import { renderGeographyTabHtml, mountLiveWeatherData } from './geo-service.js?v=20261119_geo_v2';
 import { renderHistoryTabHtml } from './history-service.js?v=20261119_hist_v3';
 import { renderCultureTabHtml } from './culture-service.js?v=20261119_cult_v1';
-import { renderGastronomyTabHtml } from './gastro-service.js?v=20261120_gastro_v3';
+import { renderGastronomyTabHtml } from './gastro-service.js?v=20261120_gastro_tripadvisor_v4';
 
 let currentActiveVideoCityId = null;
 let currentActiveVideoType = 'drone';
@@ -5397,8 +5397,20 @@ export function openInAppBingSearch(query = '', customTitle = '') {
 
   currentOverlayQuery = query;
   if (searchInput) searchInput.value = query;
-  if (title) title.innerText = customTitle ? `🔍 ${customTitle}` : `🔍 Bing Search: ${query}`;
-  if (icon) icon.className = 'fa-brands fa-microsoft text-sky-400 text-xs shrink-0';
+
+  const isTripAdvisor = query.toLowerCase().includes('tripadvisor') || (customTitle && customTitle.toLowerCase().includes('tripadvisor'));
+  if (title) {
+    if (customTitle) {
+      title.innerText = isTripAdvisor ? `🦉 ${customTitle}` : `🔍 ${customTitle}`;
+    } else {
+      title.innerText = isTripAdvisor ? `🦉 TripAdvisor via Bing: ${query}` : `🔍 Bing Search: ${query}`;
+    }
+  }
+  if (icon) {
+    icon.className = isTripAdvisor
+      ? 'fa-solid fa-ranking-star text-emerald-400 text-xs shrink-0'
+      : 'fa-brands fa-microsoft text-sky-400 text-xs shrink-0';
+  }
 
   iframe.classList.remove('hidden');
   iframe.className = 'w-full h-full max-w-5xl rounded-xl shadow-2xl border border-sky-500/40 bg-white transition-all duration-300';
