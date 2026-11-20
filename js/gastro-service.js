@@ -18,13 +18,13 @@ function escapeStr(str) {
 }
 
 /**
- * Render Box 1: Where to Eat Traditionally (Dedicated Bing Search Hub)
+ * Render Box 1: Where to Eat Traditionally (Dedicated Bing Search Hub - Top 10 Local Choices)
  */
 export function renderTraditionalDiningBoxHtml(entity) {
   const name = entity.name || 'Περιοχή';
   const engName = entity.englishName && entity.englishName !== entity.name ? ` ${entity.englishName}` : '';
-  const mainBingQuery = `${name}${engName} παραδοσιακά εστιατόρια τοπική κουζίνα traditional dining restaurants reviews ranking`;
-  const mainTitle = `Παραδοσιακά Εστιατόρια: ${name}`;
+  const mainBingQuery = `${name}${engName} 10 καλύτερα παραδοσιακά εστιατόρια ταβέρνες τι τρώνε οι ντόπιοι best authentic local dining guide`;
+  const mainTitle = `Top 10 Παραδοσιακά: ${name}`;
 
   return `
     <div class="p-4 rounded-2xl bg-gradient-to-br from-amber-950/35 via-slate-900/95 to-slate-950 border border-amber-500/40 shadow-xl space-y-3">
@@ -37,65 +37,35 @@ export function renderTraditionalDiningBoxHtml(entity) {
           <h4 class="text-xs sm:text-sm font-bold text-white flex items-center gap-2">
             <span>Πού θα Φάτε Παραδοσιακά (${name})</span>
           </h4>
-          <p class="text-[11px] text-amber-300/80 font-medium">Παραδοσιακά Εστιατόρια, Αυθεντικές Γεύσεις & Τοπικές Σπεσιαλιτέ με Κόστος & Ranking</p>
+          <p class="text-[11px] text-amber-300/80 font-medium">Αυθεντικές Τοπικές Γεύσεις & Τι Τρώνε οι Locals</p>
         </div>
       </div>
 
       <!-- Description Guide -->
       <p class="text-xs text-slate-300 leading-relaxed">
-        Ανακαλύψτε τα αυθεντικά παραδοσιακά εστιατόρια, τα ιστορικά στέκια και τα οινομαγειρεία της πόλης <strong>${name}</strong>. Δείτε αναλυτικές κριτικές επισκεπτών, αξιολογήσεις (ranking), εκτιμώμενο κόστος και τις πιο φημισμένες τοπικές σπεσιαλιτέ.
+        Ανακαλύψτε τις αυθεντικές παραδοσιακές γεύσεις, τι συνηθίζουν να τρώνε οι ντόπιοι στην πόλη <strong>${name}</strong> και πού αξίζει να δοκιμάσετε γνήσια τοπική κουζίνα.
       </p>
 
-      <!-- Main Action Button (In-App Bing Search) -->
-      <div class="pt-1">
-        <button onclick="window.openInAppBingSearch('${escapeStr(mainBingQuery)}', '${escapeStr(mainTitle)}')" class="w-full py-2.5 px-3 rounded-xl bg-gradient-to-r from-amber-600 to-orange-600 hover:from-amber-500 hover:to-orange-500 text-white font-bold text-xs transition flex items-center justify-center gap-2 shadow-lg shadow-amber-950/60 cursor-pointer group">
+      <!-- Compact Action Button (In-App Bing Search) -->
+      <div class="pt-0.5">
+        <button onclick="window.openInAppBingSearch('${escapeStr(mainBingQuery)}', '${escapeStr(mainTitle)}')" class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-gradient-to-r from-amber-600 to-orange-600 hover:from-amber-500 hover:to-orange-500 text-white font-bold text-xs transition shadow-md hover:shadow-amber-950/60 cursor-pointer group">
           <i class="fa-brands fa-microsoft text-amber-200 text-xs"></i>
-          <span>🔍 AI Έρευνα στο Bing: Παραδοσιακά Εστιατόρια & Τοπικές Γεύσεις (${name})</span>
+          <span>🔍 AI Έρευνα Bing: Top 10 Επιλογές Locals</span>
           <i class="fa-solid fa-arrow-up-right-from-square text-[10px] opacity-75 group-hover:translate-x-0.5 transition"></i>
         </button>
-      </div>
-
-      <!-- Quick Search Categories (All opening in-app Bing) -->
-      <div class="pt-1 border-t border-slate-800/80">
-        <div class="text-[10px] font-bold uppercase tracking-wider text-slate-400 mb-1.5 flex items-center gap-1.5">
-          <i class="fa-solid fa-tags text-amber-400"></i>
-          <span>Άμεσες Αναζητήσεις ανά Κατηγορία:</span>
-        </div>
-        <div class="flex flex-wrap gap-1.5">
-          <button onclick="window.openInAppBingSearch('${escapeStr(name)}${escapeStr(engName)} καλύτερα παραδοσιακά εστιατόρια best traditional dining reviews ranking', 'Κορυφαίο Ranking: ${escapeStr(name)}')" class="px-2.5 py-1 rounded-lg bg-slate-800/80 hover:bg-slate-750 border border-slate-700/60 hover:border-amber-500/40 text-[11px] text-amber-300 transition flex items-center gap-1 cursor-pointer">
-            <i class="fa-solid fa-star text-[10px] text-amber-400"></i>
-            <span>Κορυφαίο Ranking (4.7+)</span>
-          </button>
-          <button onclick="window.openInAppBingSearch('οικονομικά παραδοσιακά εστιατόρια ${escapeStr(name)}${escapeStr(engName)} budget authentic dining τιμές μενού', 'Οικονομικές Επιλογές: ${escapeStr(name)}')" class="px-2.5 py-1 rounded-lg bg-slate-800/80 hover:bg-slate-750 border border-slate-700/60 hover:border-emerald-500/40 text-[11px] text-emerald-300 transition flex items-center gap-1 cursor-pointer">
-            <i class="fa-solid fa-wallet text-[10px] text-emerald-400"></i>
-            <span>Προσιτές Επιλογές (€)</span>
-          </button>
-          <button onclick="window.openInAppBingSearch('παραδοσιακά μαγειρευτά τοπικές σπεσιαλιτέ ${escapeStr(name)}${escapeStr(engName)} local authentic food specialties κριτικές', 'Τοπικές Σπεσιαλιτέ: ${escapeStr(name)}')" class="px-2.5 py-1 rounded-lg bg-slate-800/80 hover:bg-slate-750 border border-slate-700/60 hover:border-sky-500/40 text-[11px] text-sky-300 transition flex items-center gap-1 cursor-pointer">
-            <i class="fa-solid fa-bowl-food text-[10px] text-sky-400"></i>
-            <span>Τοπικές Σπεσιαλιτέ & Μαγειρευτά</span>
-          </button>
-          <button onclick="window.openInAppBingSearch('ιστορικά παραδοσιακά εστιατόρια ${escapeStr(name)}${escapeStr(engName)} historic authentic dining places κριτικές τιμές', 'Ιστορικά Εστιατόρια: ${escapeStr(name)}')" class="px-2.5 py-1 rounded-lg bg-slate-800/80 hover:bg-slate-750 border border-slate-700/60 hover:border-purple-500/40 text-[11px] text-purple-300 transition flex items-center gap-1 cursor-pointer">
-            <i class="fa-solid fa-landmark text-[10px] text-purple-400"></i>
-            <span>Ιστορικά Στέκια & Αυθεντικότητα</span>
-          </button>
-          <button onclick="window.openInAppBingSearch('site:tripadvisor.com.gr ${escapeStr(name)} ${escapeStr(engName)} εστιατόρια ταβέρνες κριτικές', 'TripAdvisor Εστιατόρια: ${escapeStr(name)}')" class="px-2.5 py-1 rounded-lg bg-emerald-950/80 hover:bg-emerald-900 border border-emerald-500/50 hover:border-emerald-400 text-[11px] text-emerald-300 transition flex items-center gap-1 cursor-pointer" title="Εστιατόρια & κριτικές TripAdvisor μέσω Bing">
-            <i class="fa-solid fa-ranking-star text-[10px] text-emerald-400"></i>
-            <span>TripAdvisor (Εστιατόρια)</span>
-          </button>
-        </div>
       </div>
     </div>
   `;
 }
 
 /**
- * Render Box 2: Where to Eat Street Food (Dedicated Bing Search Hub - Universal & Globally Relevant)
+ * Render Box 2: Where to Eat Street Food (Dedicated Bing Search Hub - Top 10 Street Food)
  */
 export function renderStreetFoodSpotsBoxHtml(entity) {
   const name = entity.name || 'Περιοχή';
   const engName = entity.englishName && entity.englishName !== entity.name ? ` ${entity.englishName}` : '';
-  const mainBingQuery = `${name}${engName} street food γρήγορο φαγητό φαγητό δρόμου top spots ranking reviews`;
-  const mainTitle = `Street Food & Φαγητό του Δρόμου: ${name}`;
+  const mainBingQuery = `${name}${engName} 10 καλύτερα street food τι αξίζει να δοκιμάσεις τι τρώνε οι locals best local street bites`;
+  const mainTitle = `Top 10 Street Food: ${name}`;
 
   return `
     <div class="p-4 rounded-2xl bg-gradient-to-br from-orange-950/35 via-slate-900/95 to-slate-950 border border-orange-500/40 shadow-xl space-y-3">
@@ -108,65 +78,35 @@ export function renderStreetFoodSpotsBoxHtml(entity) {
           <h4 class="text-xs sm:text-sm font-bold text-white flex items-center gap-2">
             <span>Πού θα Φάτε Street Food (${name})</span>
           </h4>
-          <p class="text-[11px] text-orange-300/80 font-medium">Κορυφαίες Επιλογές, Ιδιαίτερες Γεύσεις & Νυχτερινό Φαγητό με Κόστος & Ranking</p>
+          <p class="text-[11px] text-orange-300/80 font-medium">Δημοφιλείς Υπαίθριες Λιχουδιές & Γρήγορες Γεύσεις</p>
         </div>
       </div>
 
       <!-- Description Guide -->
       <p class="text-xs text-slate-300 leading-relaxed">
-        Βρείτε τις κορυφαίες επιλογές για γρήγορο φαγητό του δρόμου, αυθεντικά τοπικά στέκια, ιδιαίτερες γεύσεις και νυχτερινό φαγητό στην πόλη <strong>${name}</strong> με τιμές, ωράρια και αξιολογήσεις.
+        Βρείτε τις πιο φημισμένες επιλογές φαγητού του δρόμου, τι απολαμβάνουν οι ντόπιοι και τι αξίζει να δοκιμάσετε στο χέρι στην πόλη <strong>${name}</strong>.
       </p>
 
-      <!-- Main Action Button (In-App Bing Search) -->
-      <div class="pt-1">
-        <button onclick="window.openInAppBingSearch('${escapeStr(mainBingQuery)}', '${escapeStr(mainTitle)}')" class="w-full py-2.5 px-3 rounded-xl bg-gradient-to-r from-orange-600 to-amber-600 hover:from-orange-500 hover:to-amber-500 text-white font-bold text-xs transition flex items-center justify-center gap-2 shadow-lg shadow-orange-950/60 cursor-pointer group">
+      <!-- Compact Action Button (In-App Bing Search) -->
+      <div class="pt-0.5">
+        <button onclick="window.openInAppBingSearch('${escapeStr(mainBingQuery)}', '${escapeStr(mainTitle)}')" class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-gradient-to-r from-orange-600 to-amber-600 hover:from-orange-500 hover:to-amber-500 text-white font-bold text-xs transition shadow-md hover:shadow-orange-950/60 cursor-pointer group">
           <i class="fa-brands fa-microsoft text-orange-200 text-xs"></i>
-          <span>🔍 AI Έρευνα στο Bing: Street Food & Φαγητό του Δρόμου (${name})</span>
+          <span>🔍 AI Έρευνα Bing: Top 10 Street Food</span>
           <i class="fa-solid fa-arrow-up-right-from-square text-[10px] opacity-75 group-hover:translate-x-0.5 transition"></i>
         </button>
-      </div>
-
-      <!-- Quick Search Categories (All opening in-app Bing) -->
-      <div class="pt-1 border-t border-slate-800/80">
-        <div class="text-[10px] font-bold uppercase tracking-wider text-slate-400 mb-1.5 flex items-center gap-1.5">
-          <i class="fa-solid fa-tags text-orange-400"></i>
-          <span>Άμεσες Αναζητήσεις ανά Κατηγορία:</span>
-        </div>
-        <div class="flex flex-wrap gap-1.5">
-          <button onclick="window.openInAppBingSearch('${escapeStr(name)}${escapeStr(engName)} καλύτερο street food κορυφαίες επιλογές best top street food reviews ranking', 'Κορυφαίες Επιλογές: ${escapeStr(name)}')" class="px-2.5 py-1 rounded-lg bg-slate-800/80 hover:bg-slate-750 border border-slate-700/60 hover:border-amber-500/40 text-[11px] text-amber-300 transition flex items-center gap-1 cursor-pointer">
-            <i class="fa-solid fa-star text-[10px] text-amber-400"></i>
-            <span>Κορυφαίες Επιλογές</span>
-          </button>
-          <button onclick="window.openInAppBingSearch('${escapeStr(name)}${escapeStr(engName)} ιδιαίτερες επιλογές street food unique special local bites hidden gems', 'Ιδιαίτερες Επιλογές: ${escapeStr(name)}')" class="px-2.5 py-1 rounded-lg bg-slate-800/80 hover:bg-slate-750 border border-slate-700/60 hover:border-orange-500/40 text-[11px] text-orange-300 transition flex items-center gap-1 cursor-pointer">
-            <i class="fa-solid fa-wand-magic-sparkles text-[10px] text-orange-400"></i>
-            <span>Ιδιαίτερες Επιλογές</span>
-          </button>
-          <button onclick="window.openInAppBingSearch('${escapeStr(name)}${escapeStr(engName)} νυχτερινό φαγητό late night street food spots night bites', 'Νυχτερινό Φαγητό: ${escapeStr(name)}')" class="px-2.5 py-1 rounded-lg bg-slate-800/80 hover:bg-slate-750 border border-slate-700/60 hover:border-rose-500/40 text-[11px] text-rose-300 transition flex items-center gap-1 cursor-pointer">
-            <i class="fa-solid fa-moon text-[10px] text-rose-400"></i>
-            <span>Επιλογές Νυχτερινού Φαγητού</span>
-          </button>
-          <button onclick="window.openInAppBingSearch('${escapeStr(name)}${escapeStr(engName)} υπαίθριες αγορές φαγητού street food markets food halls stalls', 'Αγορές Street Food: ${escapeStr(name)}')" class="px-2.5 py-1 rounded-lg bg-slate-800/80 hover:bg-slate-750 border border-slate-700/60 hover:border-yellow-500/40 text-[11px] text-yellow-300 transition flex items-center gap-1 cursor-pointer">
-            <i class="fa-solid fa-store text-[10px] text-yellow-400"></i>
-            <span>Αγορές & Στέκια Street Food</span>
-          </button>
-          <button onclick="window.openInAppBingSearch('site:tripadvisor.com.gr ${escapeStr(name)} ${escapeStr(engName)} street food γρήγορο φαγητό', 'TripAdvisor Street Food: ${escapeStr(name)}')" class="px-2.5 py-1 rounded-lg bg-emerald-950/80 hover:bg-emerald-900 border border-emerald-500/50 hover:border-emerald-400 text-[11px] text-emerald-300 transition flex items-center gap-1 cursor-pointer" title="Street Food στο TripAdvisor μέσω Bing">
-            <i class="fa-solid fa-ranking-star text-[10px] text-emerald-400"></i>
-            <span>TripAdvisor (Street Food)</span>
-          </button>
-        </div>
       </div>
     </div>
   `;
 }
 
 /**
- * Render Box 3: Famous Desserts & Bakeries (Dedicated Bing Search Hub for Sweets, Bakeries & Pastries)
+ * Render Box 3: Famous Desserts & Bakeries (Dedicated Bing Search Hub - Top 10 Sweets & Bakeries)
  */
 export function renderFamousDessertsBoxHtml(entity) {
   const name = entity.name || 'Περιοχή';
   const engName = entity.englishName && entity.englishName !== entity.name ? ` ${entity.englishName}` : '';
-  const mainBingQuery = `${name}${engName} διάσημα παραδοσιακά γλυκά ζαχαροπλαστεία επιδόρπια famous local desserts pastry bakeries ranking reviews`;
-  const mainTitle = `Διάσημα Γλυκά & Ζαχαροπλαστεία: ${name}`;
+  const mainBingQuery = `${name}${engName} 10 διάσημα παραδοσιακά γλυκά ζαχαροπλαστεία τι αξίζει να δοκιμάσεις best local sweets pastry guide`;
+  const mainTitle = `Top 10 Γλυκά: ${name}`;
 
   return `
     <div class="p-4 rounded-2xl bg-gradient-to-br from-pink-950/35 via-slate-900/95 to-slate-950 border border-pink-500/40 shadow-xl space-y-3">
@@ -177,54 +117,24 @@ export function renderFamousDessertsBoxHtml(entity) {
         </span>
         <div>
           <h4 class="text-xs sm:text-sm font-bold text-white flex items-center gap-2">
-            <span>Πού θα Δοκιμάσετε Διάσημα Γλυκά & Επιδόρπια (${name})</span>
+            <span>Διάσημα Γλυκά & Ζαχαροπλαστεία (${name})</span>
           </h4>
-          <p class="text-[11px] text-pink-300/80 font-medium">Ξακουστά Τοπικά Επιδόρπια, Ιστορικά Ζαχαροπλαστεία, Bakeries & Patisseries</p>
+          <p class="text-[11px] text-pink-300/80 font-medium">Ξακουστά Τοπικά Επιδόρπια & Παραδοσιακά Ζαχαροπλαστεία</p>
         </div>
       </div>
 
       <!-- Description Guide -->
       <p class="text-xs text-slate-300 leading-relaxed">
-        Ανακαλύψτε τα πιο διάσημα παραδοσιακά γλυκά, τα ξακουστά επιδόρπια που αξίζει οπωσδήποτε να δοκιμάσει κανείς και τα κορυφαία ζαχαροπλαστεία στην πόλη <strong>${name}</strong> με κριτικές, τιμές και προτάσεις.
+        Ανακαλύψτε τα πιο φημισμένα παραδοσιακά γλυκά και τα επιδόρπια που αξίζει οπωσδήποτε να δοκιμάσετε κατά την επίσκεψή σας στην πόλη <strong>${name}</strong>.
       </p>
 
-      <!-- Main Action Button (In-App Bing Search) -->
-      <div class="pt-1">
-        <button onclick="window.openInAppBingSearch('${escapeStr(mainBingQuery)}', '${escapeStr(mainTitle)}')" class="w-full py-2.5 px-3 rounded-xl bg-gradient-to-r from-pink-600 via-rose-600 to-amber-600 hover:from-pink-500 hover:via-rose-500 hover:to-amber-500 text-white font-bold text-xs transition flex items-center justify-center gap-2 shadow-lg shadow-pink-950/60 cursor-pointer group">
+      <!-- Compact Action Button (In-App Bing Search) -->
+      <div class="pt-0.5">
+        <button onclick="window.openInAppBingSearch('${escapeStr(mainBingQuery)}', '${escapeStr(mainTitle)}')" class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-gradient-to-r from-pink-600 via-rose-600 to-amber-600 hover:from-pink-500 hover:via-rose-500 hover:to-amber-500 text-white font-bold text-xs transition shadow-md hover:shadow-pink-950/60 cursor-pointer group">
           <i class="fa-brands fa-microsoft text-pink-200 text-xs"></i>
-          <span>🔍 AI Έρευνα στο Bing: Διάσημα Γλυκά & Ζαχαροπλαστεία (${name})</span>
+          <span>🔍 AI Έρευνα Bing: Top 10 Γλυκά & Επιδόρπια</span>
           <i class="fa-solid fa-arrow-up-right-from-square text-[10px] opacity-75 group-hover:translate-x-0.5 transition"></i>
         </button>
-      </div>
-
-      <!-- Quick Search Categories (All opening in-app Bing) -->
-      <div class="pt-1 border-t border-slate-800/80">
-        <div class="text-[10px] font-bold uppercase tracking-wider text-slate-400 mb-1.5 flex items-center gap-1.5">
-          <i class="fa-solid fa-tags text-pink-400"></i>
-          <span>Άμεσες Αναζητήσεις ανά Κατηγορία:</span>
-        </div>
-        <div class="flex flex-wrap gap-1.5">
-          <button onclick="window.openInAppBingSearch('${escapeStr(name)}${escapeStr(engName)} καλύτερα ζαχαροπλαστεία top bakeries pastry shops ranking reviews', 'Κορυφαία Ζαχαροπλαστεία: ${escapeStr(name)}')" class="px-2.5 py-1 rounded-lg bg-slate-800/80 hover:bg-slate-750 border border-slate-700/60 hover:border-pink-500/40 text-[11px] text-pink-300 transition flex items-center gap-1 cursor-pointer">
-            <i class="fa-solid fa-cake-candles text-[10px] text-pink-400"></i>
-            <span>Κορυφαία Ζαχαροπλαστεία</span>
-          </button>
-          <button onclick="window.openInAppBingSearch('${escapeStr(name)}${escapeStr(engName)} διάσημα παραδοσιακά γλυκά τοπικά επιδόρπια must try traditional sweets', 'Παραδοσιακά Γλυκά: ${escapeStr(name)}')" class="px-2.5 py-1 rounded-lg bg-slate-800/80 hover:bg-slate-750 border border-slate-700/60 hover:border-amber-500/40 text-[11px] text-amber-300 transition flex items-center gap-1 cursor-pointer">
-            <i class="fa-solid fa-cookie text-[10px] text-amber-400"></i>
-            <span>Ξακουστά Τοπικά Γλυκά</span>
-          </button>
-          <button onclick="window.openInAppBingSearch('${escapeStr(name)}${escapeStr(engName)} ιστορικά cafe ζαχαροπλαστεία historic cafes patisseries coffee and pastries', 'Ιστορικά Café: ${escapeStr(name)}')" class="px-2.5 py-1 rounded-lg bg-slate-800/80 hover:bg-slate-750 border border-slate-700/60 hover:border-purple-500/40 text-[11px] text-purple-300 transition flex items-center gap-1 cursor-pointer">
-            <i class="fa-solid fa-mug-saucer text-[10px] text-purple-400"></i>
-            <span>Ιστορικά Café & Patisseries</span>
-          </button>
-          <button onclick="window.openInAppBingSearch('${escapeStr(name)}${escapeStr(engName)} χειροποίητο παγωτό artisanal gelato παγωτατζίδικα reviews', 'Παγωτό & Gelato: ${escapeStr(name)}')" class="px-2.5 py-1 rounded-lg bg-slate-800/80 hover:bg-slate-750 border border-slate-700/60 hover:border-cyan-500/40 text-[11px] text-cyan-300 transition flex items-center gap-1 cursor-pointer">
-            <i class="fa-solid fa-ice-cream text-[10px] text-cyan-400"></i>
-            <span>Χειροποίητο Παγωτό & Gelato</span>
-          </button>
-          <button onclick="window.openInAppBingSearch('site:tripadvisor.com.gr ${escapeStr(name)} ${escapeStr(engName)} ζαχαροπλαστεία επιδόρπια bakeries desserts', 'TripAdvisor Ζαχαροπλαστεία: ${escapeStr(name)}')" class="px-2.5 py-1 rounded-lg bg-emerald-950/80 hover:bg-emerald-900 border border-emerald-500/50 hover:border-emerald-400 text-[11px] text-emerald-300 transition flex items-center gap-1 cursor-pointer" title="Ζαχαροπλαστεία & γλυκά στο TripAdvisor μέσω Bing">
-            <i class="fa-solid fa-ranking-star text-[10px] text-emerald-400"></i>
-            <span>TripAdvisor (Γλυκά)</span>
-          </button>
-        </div>
       </div>
     </div>
   `;
@@ -282,10 +192,6 @@ export function renderGastronomyTabHtml(entity, items = []) {
           <button onclick="window.openInAppBingSearch('${escapeStr(name)} παραδοσιακή κουζίνα γαστρονομία travel guide', 'Παραδοσιακή Κουζίνα: ${escapeStr(name)}')" class="px-2.5 py-1 rounded-lg bg-gradient-to-r from-amber-600 to-orange-600 hover:from-amber-500 hover:to-orange-500 text-white text-[11px] font-bold transition flex items-center gap-1.5 shadow cursor-pointer" title="Bing AI Search για την κουζίνα της πόλης">
             <i class="fa-brands fa-microsoft text-amber-200 text-xs"></i>
             <span>🔍 AI Έρευνα στο Bing</span>
-          </button>
-          <button onclick="window.openInAppBingSearch('site:tripadvisor.com.gr ${escapeStr(name)} ${escapeStr(entity.englishName || '')} εστιατόρια φαγητό κριτικές', 'TripAdvisor: ${escapeStr(name)}')" class="px-2.5 py-1 rounded-lg bg-emerald-950/90 hover:bg-emerald-900 text-emerald-300 hover:text-white border border-emerald-600/60 text-[11px] font-bold transition flex items-center gap-1.5 shadow cursor-pointer" title="TripAdvisor εστιατόρια & κριτικές μέσω Bing">
-            <i class="fa-solid fa-award text-emerald-400"></i>
-            <span>TripAdvisor (Bing)</span>
           </button>
           <button onclick="window.openMapWikiReader('${escapeStr(name)} Γαστρονομία', 'el', '${escapeStr(name)} cuisine')" class="px-2.5 py-1 rounded-lg bg-sky-950/80 hover:bg-sky-900 text-sky-300 hover:text-white border border-sky-700/50 text-[11px] font-bold transition flex items-center gap-1.5 shadow cursor-pointer">
             <i class="fa-brands fa-wikipedia-w text-sky-400"></i>
