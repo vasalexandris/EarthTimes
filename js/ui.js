@@ -13,7 +13,7 @@ import { CITY_TO_COUNTRY } from './navigator.js?v=20261120_new_cities_25_v23';
 import { renderGeographyTabHtml, mountLiveWeatherData } from './geo-service.js?v=20261119_geo_v2';
 import { renderHistoryTabHtml } from './history-service.js?v=20261119_hist_v3';
 import { renderCultureTabHtml } from './culture-service.js?v=20261119_cult_v1';
-import { renderGastronomyTabHtml } from './gastro-service.js?v=20261120_gastro_clean_v5';
+import { renderGastronomyTabHtml } from './gastro-service.js?v=20261120_bing_city_precision_v24';
 
 let currentActiveVideoCityId = null;
 let currentActiveVideoType = 'drone';

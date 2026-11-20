@@ -22,8 +22,11 @@ function escapeStr(str) {
  */
 export function renderTraditionalDiningBoxHtml(entity) {
   const name = entity.name || 'Περιοχή';
-  const engName = entity.englishName && entity.englishName !== entity.name ? ` ${entity.englishName}` : '';
-  const mainBingQuery = `${name}${engName} 10 καλύτερα παραδοσιακά εστιατόρια ταβέρνες τι τρώνε οι ντόπιοι best authentic local dining guide`;
+  const isCountry = entity && entity.type === 'country';
+  const engName = entity.englishName || entity.name || '';
+  const prefixEl = isCountry ? 'Χώρα' : 'Πόλη';
+  const inCityEn = isCountry ? `in ${engName}` : `in city of ${engName}`;
+  const mainBingQuery = `${prefixEl} ${name} 10 καλύτερα παραδοσιακά εστιατόρια ταβέρνες τι τρώνε οι locals, 10 best local traditional restaurants ${inCityEn}`;
   const mainTitle = `Top 10 Παραδοσιακά: ${name}`;
 
   return `
@@ -63,8 +66,11 @@ export function renderTraditionalDiningBoxHtml(entity) {
  */
 export function renderStreetFoodSpotsBoxHtml(entity) {
   const name = entity.name || 'Περιοχή';
-  const engName = entity.englishName && entity.englishName !== entity.name ? ` ${entity.englishName}` : '';
-  const mainBingQuery = `${name}${engName} 10 καλύτερα street food τι αξίζει να δοκιμάσεις τι τρώνε οι locals best local street bites`;
+  const isCountry = entity && entity.type === 'country';
+  const engName = entity.englishName || entity.name || '';
+  const prefixEl = isCountry ? 'Χώρα' : 'Πόλη';
+  const inCityEn = isCountry ? `in ${engName}` : `in city of ${engName}`;
+  const mainBingQuery = `${prefixEl} ${name} 10 καλύτερα street food τι αξίζει να δοκιμάσεις τι τρώνε οι locals, 10 best local street bites ${inCityEn}`;
   const mainTitle = `Top 10 Street Food: ${name}`;
 
   return `
@@ -104,8 +110,11 @@ export function renderStreetFoodSpotsBoxHtml(entity) {
  */
 export function renderFamousDessertsBoxHtml(entity) {
   const name = entity.name || 'Περιοχή';
-  const engName = entity.englishName && entity.englishName !== entity.name ? ` ${entity.englishName}` : '';
-  const mainBingQuery = `${name}${engName} 10 διάσημα παραδοσιακά γλυκά ζαχαροπλαστεία τι αξίζει να δοκιμάσεις best local sweets pastry guide`;
+  const isCountry = entity && entity.type === 'country';
+  const engName = entity.englishName || entity.name || '';
+  const prefixEl = isCountry ? 'Χώρα' : 'Πόλη';
+  const inCityEn = isCountry ? `in ${engName}` : `in city of ${engName}`;
+  const mainBingQuery = `${prefixEl} ${name} 10 διάσημα παραδοσιακά γλυκά ζαχαροπλαστεία τι αξίζει να δοκιμάσεις, 10 best local pastry shops sweets ${inCityEn}`;
   const mainTitle = `Top 10 Γλυκά: ${name}`;
 
   return `
@@ -153,6 +162,10 @@ export function renderGastronomyTabHtml(entity, items = []) {
   if (!entity) return '';
 
   const name = entity.name || 'Περιοχή';
+  const isCountry = entity && entity.type === 'country';
+  const engName = entity.englishName || entity.name || '';
+  const prefixEl = isCountry ? 'Χώρα' : 'Πόλη';
+  const inCityEn = isCountry ? `in ${engName}` : `in city of ${engName}`;
   const gastroSummary = entity.gastro?.summary || entity.gastro?.culture || 
     `Η παραδοσιακή κουζίνα και οι γεύσεις (${name}) διαμορφώθηκαν μέσα από ιστορικές και πολυπολιτισμικές επιρροές, συνδυάζοντας εκλεκτά τοπικά υλικά, παραδοσιακές συνταγές και αυθεντική τοπική γαστρονομική ταυτότητα.`;
 
@@ -189,7 +202,7 @@ export function renderGastronomyTabHtml(entity, items = []) {
             <i class="fa-solid fa-wand-magic-sparkles text-amber-400"></i>
             <span>Ανάλυση AI</span>
           </button>
-          <button onclick="window.openInAppBingSearch('${escapeStr(name)} παραδοσιακή κουζίνα γαστρονομία travel guide', 'Παραδοσιακή Κουζίνα: ${escapeStr(name)}')" class="px-2.5 py-1 rounded-lg bg-gradient-to-r from-amber-600 to-orange-600 hover:from-amber-500 hover:to-orange-500 text-white text-[11px] font-bold transition flex items-center gap-1.5 shadow cursor-pointer" title="Bing AI Search για την κουζίνα της πόλης">
+          <button onclick="window.openInAppBingSearch('${prefixEl} ${escapeStr(name)} παραδοσιακή κουζίνα γαστρονομία ${inCityEn} travel guide', 'Παραδοσιακή Κουζίνα: ${escapeStr(name)}')" class="px-2.5 py-1 rounded-lg bg-gradient-to-r from-amber-600 to-orange-600 hover:from-amber-500 hover:to-orange-500 text-white text-[11px] font-bold transition flex items-center gap-1.5 shadow cursor-pointer" title="Bing AI Search για την κουζίνα της πόλης">
             <i class="fa-brands fa-microsoft text-amber-200 text-xs"></i>
             <span>🔍 AI Έρευνα στο Bing</span>
           </button>
@@ -221,7 +234,7 @@ export function renderGastronomyTabHtml(entity, items = []) {
             <i class="fa-solid fa-wand-magic-sparkles text-amber-400"></i>
             <span>Ανάλυση AI</span>
           </button>
-          <button onclick="window.openInAppBingSearch('${escapeStr(name)} street food travel guide spots', 'Street Food: ${escapeStr(name)}')" class="px-2.5 py-1 rounded-lg bg-gradient-to-r from-orange-600 to-amber-600 hover:from-orange-500 hover:to-amber-500 text-white text-[11px] font-bold transition flex items-center gap-1.5 shadow cursor-pointer" title="Bing AI Search για το street food της πόλης">
+          <button onclick="window.openInAppBingSearch('${prefixEl} ${escapeStr(name)} street food travel guide spots ${inCityEn}', 'Street Food: ${escapeStr(name)}')" class="px-2.5 py-1 rounded-lg bg-gradient-to-r from-orange-600 to-amber-600 hover:from-orange-500 hover:to-amber-500 text-white text-[11px] font-bold transition flex items-center gap-1.5 shadow cursor-pointer" title="Bing AI Search για το street food της πόλης">
             <i class="fa-brands fa-microsoft text-orange-200 text-xs"></i>
             <span>🔍 AI Έρευνα στο Bing</span>
           </button>
@@ -300,7 +313,7 @@ export function renderGastronomyTabHtml(entity, items = []) {
                     <i class="fa-solid fa-wand-magic-sparkles text-amber-400"></i>
                     <span>Ανάλυση AI</span>
                   </button>
-                  <button onclick="window.openInAppBingSearch('${escapeStr(item.title)} ${escapeStr(name)} συνταγή παραδοσιακό πιάτο', '${escapeStr(item.title)}: ${escapeStr(name)}')" class="px-2.5 py-1 rounded-lg bg-gradient-to-r from-amber-600 to-orange-600 hover:from-amber-500 hover:to-orange-500 text-white text-[11px] font-bold transition flex items-center gap-1.5 shadow cursor-pointer" title="Απευθείας Bing AI αναζήτηση για το πιάτο">
+                  <button onclick="window.openInAppBingSearch('${escapeStr(item.title)} ${prefixEl.toLowerCase()} ${escapeStr(name)} συνταγή παραδοσιακό πιάτο ${inCityEn}', '${escapeStr(item.title)}: ${escapeStr(name)}')" class="px-2.5 py-1 rounded-lg bg-gradient-to-r from-amber-600 to-orange-600 hover:from-amber-500 hover:to-orange-500 text-white text-[11px] font-bold transition flex items-center gap-1.5 shadow cursor-pointer" title="Απευθείας Bing AI αναζήτηση για το πιάτο">
                     <i class="fa-brands fa-microsoft text-amber-200 text-xs"></i>
                     <span>🔍 AI Έρευνα στο Bing</span>
                   </button>

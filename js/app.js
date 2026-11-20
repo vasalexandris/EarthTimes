@@ -6,7 +6,7 @@
 
 import { loadWorldData, loadCountryData, loadStateData } from './data-service.js?v=20261120_new_cities_25_v23';
 import * as MapModule from './map.js?v=20261120_timeline_ruler_v16';
-import * as UIModule from './ui.js?v=20261120_new_cities_25_v23';
+import * as UIModule from './ui.js?v=20261120_bing_city_precision_v24';
 import * as TimeMachine from './time-machine.js?v=20261120_timeline_ruler_v16';
 import * as NavigatorModule from './navigator.js?v=20261120_new_cities_25_v23';
 import * as GlobeModule from './globe-view.js?v=20261117_video_iframe_fix';
