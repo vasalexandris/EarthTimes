@@ -20,7 +20,7 @@ import {
 } from './db-service.js?v=20261119_moderation_v1';
 
 let timeCapsules = [];
-let selectedYear = 'all'; // 'all' or number like 1965
+let selectedYear = 2026; // Default to contemporary year (2026) so map starts clean and focused
 let isPlaying = false;
 let playInterval = null;
 let activeSpotId = null;
@@ -190,6 +190,7 @@ export async function initTimeMachine() {
   }
 
   updateUserBadgeUI();
+  updateTimeSliderUI();
   return timeCapsules;
 }
 
@@ -345,7 +346,9 @@ export function getFilteredSpots(cityId = null) {
     return spots;
   }
 
-  const y = selectedYear;
+  const y = (typeof selectedYear === 'number') ? selectedYear : parseInt(selectedYear, 10);
+  if (isNaN(y)) return spots;
+
   return spots.filter(spot => {
     return spot.chronicles && spot.chronicles.some(c => c.fromYear <= y && (c.toYear === null || c.toYear >= y));
   });

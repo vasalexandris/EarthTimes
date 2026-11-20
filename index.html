@@ -894,17 +894,18 @@
 
           <!-- Current Year Display Badge (Clean year number, no long labels) -->
           <span id="currentYearDisplay" class="px-2 py-0.5 rounded font-black text-amber-400 bg-amber-950/80 border border-amber-600/50 font-mono text-xs whitespace-nowrap min-w-[50px] text-center shrink-0">
-            Όλα
+            2026
           </span>
 
           <!-- Decade Quick Jumps -->
           <div class="hidden sm:flex items-center gap-1 shrink-0">
-            <button onclick="onTimeDecadeClick('all')" data-year="all" class="decade-btn px-2 py-0.5 rounded bg-amber-500 text-slate-950 font-bold text-[11px] shadow transition">Όλα</button>
+            <button onclick="onTimeDecadeClick(1910)" data-year="1910" class="decade-btn px-1.5 py-0.5 rounded bg-slate-800 text-slate-300 hover:bg-slate-700 text-[11px] transition">1910</button>
             <button onclick="onTimeDecadeClick(1920)" data-year="1920" class="decade-btn px-1.5 py-0.5 rounded bg-slate-800 text-slate-300 hover:bg-slate-700 text-[11px] transition">1920</button>
             <button onclick="onTimeDecadeClick(1950)" data-year="1950" class="decade-btn px-1.5 py-0.5 rounded bg-slate-800 text-slate-300 hover:bg-slate-700 text-[11px] transition">1950</button>
             <button onclick="onTimeDecadeClick(1975)" data-year="1975" class="decade-btn px-1.5 py-0.5 rounded bg-slate-800 text-slate-300 hover:bg-slate-700 text-[11px] transition">1975</button>
             <button onclick="onTimeDecadeClick(2000)" data-year="2000" class="decade-btn px-1.5 py-0.5 rounded bg-slate-800 text-slate-300 hover:bg-slate-700 text-[11px] transition">2000</button>
-            <button onclick="onTimeDecadeClick(2026)" data-year="2026" class="decade-btn px-1.5 py-0.5 rounded bg-slate-800 text-slate-300 hover:bg-slate-700 text-[11px] transition">2026</button>
+            <button onclick="onTimeDecadeClick(2026)" data-year="2026" class="decade-btn px-2 py-0.5 rounded bg-amber-500 text-slate-950 font-bold text-[11px] shadow transition">2026</button>
+            <button onclick="onTimeDecadeClick('all')" data-year="all" class="decade-btn px-1.5 py-0.5 rounded bg-slate-800 text-slate-300 hover:bg-slate-700 text-[11px] transition" title="Όλες οι εποχές">Όλα</button>
           </div>
 
           <!-- Range Slider -->
@@ -1614,7 +1615,7 @@
   </div>
 
   <!-- Modular Application Scripts -->
-  <script type="module" src="js/app.js?v=20261119_gastro_and_layout_v14"></script>
+  <script type="module" src="js/app.js?v=20261120_timeline_filter_v15"></script>
   <!-- Fullscreen Toggle Script (Android, WebKit, Desktop) -->
   <script>
     window.toggleFullScreen = function() {

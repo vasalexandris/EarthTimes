@@ -361,42 +361,63 @@ export function renderTimeCapsulePins(spots, activeYear, onSpotClick) {
       activeChronicle = spot.chronicles.find(c => c.fromYear <= y && (c.toYear === null || c.toYear >= y));
     }
 
-    const eraText = activeChronicle 
-      ? (activeChronicle.toYear ? `${activeChronicle.fromYear}-${activeChronicle.toYear}` : `${activeChronicle.fromYear}+`)
-      : 'Ιστορία';
+    // STRICT TEMPORAL FILTER:
+    // If a specific year is active and this spot did NOT exist or has no memory in this year, do NOT place it on the map!
+    if (activeYear !== 'all' && !activeChronicle) {
+      return;
+    }
+    if (!activeChronicle) return;
+
+    const eraText = activeChronicle.toYear 
+      ? `${activeChronicle.fromYear}-${activeChronicle.toYear}` 
+      : `${activeChronicle.fromYear}+`;
 
     const hasVideo = Boolean(activeChronicle?.youtubeId || (activeChronicle?.photos && activeChronicle.photos.some(p => p.isYouTube || p.youtubeId)));
     const isPending = spot.status === 'pending';
-    const borderClass = isPending 
-      ? 'border-2 border-dashed border-amber-400 bg-amber-600 text-white shadow-amber-500/30' 
-      : 'border-2 border-amber-300 bg-amber-500 text-slate-950 shadow-2xl';
+    
+    // Clean, modern glassmorphic styling without eye-straining continuous pulse waves
+    const containerClass = isPending 
+      ? 'border border-dashed border-amber-400 bg-amber-950/90 text-amber-200' 
+      : 'border border-amber-400/80 bg-slate-950/90 text-slate-100 hover:border-amber-300';
+    
     const iconHtml = isPending 
-      ? '<i class="fa-solid fa-hourglass-half text-[10px] animate-pulse text-amber-200"></i>' 
-      : '<i class="fa-solid fa-hourglass-start text-[10px]"></i>';
+      ? '<i class="fa-solid fa-hourglass-half text-[10px] text-amber-300 animate-pulse"></i>' 
+      : '<i class="fa-solid fa-clock-rotate-left text-[10px] text-amber-400"></i>';
+    
     const pendingTag = isPending 
-      ? '<span class="text-[9px] bg-amber-950 text-amber-300 px-1 py-0.2 rounded font-bold uppercase tracking-wider">Υπό Έγκριση</span>' 
+      ? '<span class="text-[9px] bg-amber-900/80 text-amber-300 px-1 py-0.2 rounded font-bold uppercase tracking-wider">Υπό Έγκριση</span>' 
       : '';
 
     const customIcon = L.divIcon({
       className: 'time-capsule-marker-wrapper',
       html: `
-        <div class="custom-poi-marker marker-pulse cursor-pointer group" title="${isPending ? 'Σημείο σε αναμονή έγκρισης διαχειριστή (τοπική προεπισκόπηση)' : ''}">
-          <div class="px-2.5 py-1 rounded-full text-xs font-black ${borderClass} flex items-center gap-1.5 transition transform group-hover:scale-110">
+        <div class="custom-poi-marker cursor-pointer group" title="${isPending ? 'Σημείο σε αναμονή έγκρισης διαχειριστή (τοπική προεπισκόπηση)' : ''}">
+          <div class="px-2.5 py-1 rounded-full text-xs font-semibold ${containerClass} flex items-center gap-1.5 shadow-lg shadow-black/50 backdrop-blur-md transition-all duration-200 group-hover:scale-105">
             ${iconHtml}
-            <span class="text-[10px] font-mono bg-slate-900 text-amber-300 px-1.5 py-0.2 rounded-full flex items-center gap-1">
-              ${hasVideo ? '<i class="fa-brands fa-youtube text-red-500 text-[10px]"></i>' : ''}
+            <span class="text-[10px] font-mono font-black bg-amber-400 text-slate-950 px-1.5 py-0.2 rounded flex items-center gap-1 shadow-sm">
+              ${hasVideo ? '<i class="fa-brands fa-youtube text-red-600 text-[9px]"></i>' : ''}
               <span>${eraText}</span>
             </span>
             ${pendingTag}
-            <span class="truncate max-w-[110px]">${activeChronicle ? activeChronicle.title : spot.name}</span>
+            <span class="truncate max-w-[115px] text-[11px]">${activeChronicle.title || spot.name}</span>
           </div>
         </div>
       `,
-      iconSize: [180, 36],
-      iconAnchor: [90, 18]
+      iconSize: [180, 32],
+      iconAnchor: [90, 16]
     });
 
     const marker = L.marker(spot.coords, { icon: customIcon });
+    
+    // Sleek informative tooltip on hover
+    marker.bindTooltip(`
+      <div class="text-xs p-0.5">
+        <div class="font-bold text-amber-400">${activeChronicle.title || spot.name}</div>
+        <div class="text-[11px] text-slate-300">${spot.name} (${eraText})</div>
+        ${spot.address ? `<div class="text-[10px] text-slate-400 mt-0.5">${spot.address}</div>` : ''}
+      </div>
+    `, { direction: 'top', offset: [0, -12], opacity: 0.95 });
+
     marker.on('click', () => {
       if (onSpotClick) onSpotClick(spot.id, activeYear);
     });

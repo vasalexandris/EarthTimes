@@ -5,9 +5,9 @@
  */
 
 import { loadWorldData, loadCountryData, loadStateData } from './data-service.js?v=20261118_gastro_overhaul_v8';
-import * as MapModule from './map.js?v=20261119_video_timecapsule_v2';
+import * as MapModule from './map.js?v=20261120_timeline_filter_v15';
 import * as UIModule from './ui.js?v=20261119_video_timecapsule_v2';
-import * as TimeMachine from './time-machine.js?v=20261119_moderation_v3';
+import * as TimeMachine from './time-machine.js?v=20261120_timeline_filter_v15';
 import * as NavigatorModule from './navigator.js?v=20261118_gastro_overhaul_v8';
 import * as GlobeModule from './globe-view.js?v=20261117_video_iframe_fix';
 import { US_STATES, CITY_TO_STATE } from './states-data.js?v=20261117_video_iframe_fix';
@@ -138,8 +138,13 @@ export function setMapLayer(layerKey) {
 }
 
 export function renderCurrentTimeCapsules() {
-  // Always render all temporal spots and user-created spots across every map and scope!
-  const spots = TimeMachine.getFilteredSpots(null);
+  // Only render street-level historical time capsules when visiting a specific city
+  if (currentScope !== 'city' || !currentCityId) {
+    MapModule.clearTimeCapsules();
+    return;
+  }
+
+  const spots = TimeMachine.getFilteredSpots(currentCityId);
   const activeYear = TimeMachine.getSelectedYear();
   MapModule.renderTimeCapsulePins(spots, activeYear, (spotId, year) => {
     TimeMachine.openSpotTimeCapsule(spotId, year);
