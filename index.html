@@ -1143,6 +1143,30 @@
           <textarea id="memoryText" rows="3" required placeholder="Περιγράψτε τι θυμάστε από αυτό το σημείο..." class="w-full bg-slate-800 border border-slate-700 rounded-xl px-3 py-2 text-sm text-white focus:ring-2 focus:ring-emerald-500 outline-none"></textarea>
         </div>
 
+        <div>
+          <label class="block text-xs font-semibold text-slate-300 mb-1">Ορατότητα Ανάμνησης</label>
+          <div class="grid grid-cols-2 gap-2">
+            <label class="flex items-center gap-2 p-2.5 rounded-xl bg-slate-850 border border-slate-700 cursor-pointer hover:border-emerald-500/60 transition">
+              <input type="radio" name="memoryVisibility" value="public" checked class="text-emerald-500 focus:ring-0">
+              <div class="text-xs">
+                <div class="font-bold text-white flex items-center gap-1">
+                  <i class="fa-solid fa-earth-americas text-emerald-400"></i> Δημόσια
+                </div>
+                <div class="text-[10px] text-slate-400">Ορατή σε όλη την κοινότητα</div>
+              </div>
+            </label>
+            <label class="flex items-center gap-2 p-2.5 rounded-xl bg-slate-850 border border-slate-700 cursor-pointer hover:border-emerald-500/60 transition">
+              <input type="radio" name="memoryVisibility" value="private" class="text-emerald-500 focus:ring-0">
+              <div class="text-xs">
+                <div class="font-bold text-white flex items-center gap-1">
+                  <i class="fa-solid fa-lock text-purple-400"></i> Ιδιωτική
+                </div>
+                <div class="text-[10px] text-slate-400">Μόνο για εσάς (Προσωπική)</div>
+              </div>
+            </label>
+          </div>
+        </div>
+
         <div class="flex items-center justify-end gap-2 pt-2">
           <button type="button" onclick="closeAddMemoryModal()" class="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-750 text-slate-300 text-xs font-semibold transition">Ακύρωση</button>
           <button type="submit" class="px-5 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold shadow transition flex items-center gap-1.5">
@@ -1371,9 +1395,33 @@
             <p class="text-[10px] text-slate-400 mt-0.5">Αν βάλετε YouTube link σε οποιοδήποτε πεδίο, αναγνωρίζεται αυτόματα ως βίντεο και εξάγεται η εικόνα του!</p>
           </div>
 
-          <div>
+          <div class="mb-3">
             <label class="block text-xs font-semibold text-slate-300 mb-1">Προσωπική Ανάμνηση (Προαιρετικό)</label>
             <input type="text" id="newSpotMemoryText" placeholder="π.χ. Θυμάμαι να παίζουμε ποδόσφαιρο στον χωματόδρομο μπροστά..." class="w-full bg-slate-800 border border-slate-700 rounded-xl px-3 py-2 text-sm text-white focus:ring-2 focus:ring-amber-500 outline-none">
+          </div>
+
+          <div>
+            <label class="block text-xs font-semibold text-slate-300 mb-1">Ορατότητα Σημείου</label>
+            <div class="grid grid-cols-2 gap-2">
+              <label class="flex items-center gap-2 p-2.5 rounded-xl bg-slate-850 border border-slate-700 cursor-pointer hover:border-amber-400/60 transition">
+                <input type="radio" name="newSpotVisibility" value="public" checked class="text-amber-500 focus:ring-0">
+                <div class="text-xs">
+                  <div class="font-bold text-white flex items-center gap-1">
+                    <i class="fa-solid fa-earth-americas text-emerald-400"></i> Δημόσιο Σημείο
+                  </div>
+                  <div class="text-[10px] text-slate-400">Ορατό σε όλους στο χάρτη</div>
+                </div>
+              </label>
+              <label class="flex items-center gap-2 p-2.5 rounded-xl bg-slate-850 border border-slate-700 cursor-pointer hover:border-amber-400/60 transition">
+                <input type="radio" name="newSpotVisibility" value="private" class="text-amber-500 focus:ring-0">
+                <div class="text-xs">
+                  <div class="font-bold text-white flex items-center gap-1">
+                    <i class="fa-solid fa-lock text-purple-400"></i> Ιδιωτικό Σημείο
+                  </div>
+                  <div class="text-[10px] text-slate-400">Μόνο για εσάς (Προσωπικό)</div>
+                </div>
+              </label>
+            </div>
           </div>
         </div>
 
@@ -1414,7 +1462,7 @@
           <input type="text" id="editSpotName" required class="w-full bg-slate-800 border border-slate-700 rounded-xl px-3 py-2 text-sm text-white focus:ring-2 focus:ring-amber-500 outline-none">
         </div>
 
-        <div class="grid grid-cols-2 gap-3">
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
           <div>
             <label class="block text-xs font-semibold text-slate-300 mb-1">Οδός / Διεύθυνση</label>
             <input type="text" id="editSpotAddress" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-3 py-2 text-sm text-white focus:ring-2 focus:ring-amber-500 outline-none">
@@ -1428,6 +1476,13 @@
               <option value="architecture">Αρχιτεκτονική / Αρχοντικό</option>
               <option value="residence">Κατοικία</option>
               <option value="nature">Φύση / Τοπίο</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-slate-300 mb-1">Ορατότητα Σημείου</label>
+            <select id="editSpotVisibility" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-3 py-2 text-sm text-white focus:ring-2 focus:ring-amber-500 outline-none">
+              <option value="public">🌍 Δημόσιο (Σε όλους)</option>
+              <option value="private">🔒 Ιδιωτικό (Μόνο για μένα)</option>
             </select>
           </div>
         </div>
@@ -1746,7 +1801,7 @@
   </div>
 
   <!-- Modular Application Scripts -->
-  <script type="module" src="js/app.js?v=20261120_spot_editing_clean_timeline_v18"></script>
+  <script type="module" src="js/app.js?v=20261120_comments_memories_visibility_v19"></script>
   <!-- Fullscreen Toggle Script (Android, WebKit, Desktop) -->
   <script>
     window.toggleFullScreen = function() {

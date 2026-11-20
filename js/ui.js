@@ -4628,6 +4628,12 @@ export function renderTabContent(tabId, entity, activeYear = null, activeSpots =
 
     // Filter spots relevant to current entity
     const spotsForEntity = (activeSpots || []).filter(spot => {
+      const isPrivate = Boolean(spot.visibility === 'private' || spot.isPrivate);
+      if (isPrivate) {
+        const curUser = window.getCurrentUser ? window.getCurrentUser() : null;
+        const isAllowed = curUser && (curUser.role === 'admin' || (curUser.email && curUser.email === spot.authorEmail) || (curUser.uid && curUser.uid === spot.authorUid));
+        if (!isAllowed) return false;
+      }
       if (entity.id && spot.cityId && spot.cityId !== entity.id) {
         return false;
       }

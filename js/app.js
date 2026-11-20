@@ -1120,6 +1120,11 @@ window.saveCloudDbSettings = TimeMachine.saveCloudDbSettings;
 window.loginWithGoogle = TimeMachine.handleGoogleLogin;
 window.logoutUser = TimeMachine.handleGoogleLogout;
 window.isUserLoggedIn = TimeMachine.isUserLoggedIn;
+window.getCurrentUser = TimeMachine.getCurrentUser;
+window.submitSpotComment = TimeMachine.submitSpotComment;
+window.deleteSpotComment = TimeMachine.deleteSpotComment;
+window.deleteSpotMemory = TimeMachine.deleteSpotMemory;
+window.saveSpotToLocalStorage = TimeMachine.saveSpotToLocalStorage;
 window.updateUserBadgeUI = TimeMachine.updateUserBadgeUI;
 window.openInAppBingSearch = UIModule.openInAppBingSearch;
 

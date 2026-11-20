@@ -24,6 +24,7 @@ let selectedYear = 2026; // Default to contemporary year (2026) so map starts cl
 let isPlaying = false;
 let playInterval = null;
 let activeSpotId = null;
+let activeChronicleId = null;
 
 // User Identity & Profile State (Default to Guest / Visitor until signed in)
 let currentUser = {
@@ -211,7 +212,7 @@ export function setCurrentUser(userData) {
 }
 
 export function isUserLoggedIn() {
-  return Boolean(currentUser && currentUser.uid && currentUser.email);
+  return Boolean(currentUser && (currentUser.uid || currentUser.email) && currentUser.role !== 'guest');
 }
 
 export function updateUserBadgeUI() {
@@ -684,6 +685,7 @@ export function openSpotTimeCapsule(spotId, preferredYear = null) {
     activeChronicle = spot.chronicles[0];
   }
 
+  activeChronicleId = activeChronicle ? activeChronicle.id : null;
   renderTimeCapsuleModalContent(spot, activeChronicle);
   modal.classList.remove('hidden');
 }
@@ -692,6 +694,7 @@ export function closeSpotTimeCapsule() {
   const modal = document.getElementById('timeCapsuleModal');
   if (modal) modal.classList.add('hidden');
   activeSpotId = null;
+  activeChronicleId = null;
 }
 
 export function renderTimeCapsuleModalContent(spot, activeChronicle) {
@@ -701,6 +704,17 @@ export function renderTimeCapsuleModalContent(spot, activeChronicle) {
   normalizeChronicleMedia(activeChronicle);
   const ytId = activeChronicle.youtubeId || extractYouTubeId(activeChronicle.videoUrl);
   const isOfficial = activeChronicle.authorType === 'official';
+  const isSpotPrivate = Boolean(spot.visibility === 'private' || spot.isPrivate);
+
+  const visibleMemories = (activeChronicle.memories || []).filter(m => {
+    if (!m.isPrivate) return true;
+    return Boolean(currentUser && (currentUser.role === 'admin' || (currentUser.email && currentUser.email === m.authorEmail) || (currentUser.uid && currentUser.uid === m.authorUid)));
+  });
+
+  const visibleComments = (spot.comments || []).filter(c => {
+    if (!c.isPrivate) return true;
+    return Boolean(currentUser && (currentUser.role === 'admin' || (currentUser.email && currentUser.email === c.authorEmail) || (currentUser.uid && currentUser.uid === c.authorUid)));
+  });
 
   container.innerHTML = `
     <!-- Spot Header -->
@@ -708,9 +722,15 @@ export function renderTimeCapsuleModalContent(spot, activeChronicle) {
       <div class="flex items-start justify-between gap-4">
         <div>
           <div class="flex items-center gap-2 mb-1.5 flex-wrap">
-            <span class="px-2.5 py-0.5 rounded-full text-xs font-bold uppercase tracking-wider bg-amber-500/20 text-amber-300 border border-amber-500/30 flex items-center gap-1.5">
-              <i class="fa-solid fa-hourglass-start text-[10px]"></i> Χρονοκάψουλα Σημείου
-            </span>
+            ${isSpotPrivate ? `
+              <span class="px-2.5 py-0.5 rounded-full text-xs font-bold uppercase tracking-wider bg-purple-500/20 text-purple-300 border border-purple-500/40 flex items-center gap-1.5 shadow">
+                <i class="fa-solid fa-lock text-[10px]"></i> Ιδιωτικό Σημείο (Μόνο για εσάς)
+              </span>
+            ` : `
+              <span class="px-2.5 py-0.5 rounded-full text-xs font-bold uppercase tracking-wider bg-amber-500/20 text-amber-300 border border-amber-500/30 flex items-center gap-1.5">
+                <i class="fa-solid fa-hourglass-start text-[10px]"></i> Χρονοκάψουλα Σημείου
+              </span>
+            `}
             <span class="text-xs text-slate-400">
               <i class="fa-solid fa-location-dot text-rose-400"></i> ${spot.address || spot.name}
             </span>
@@ -898,32 +918,155 @@ export function renderTimeCapsuleModalContent(spot, activeChronicle) {
         </div>
       ` : ''}
 
-      <!-- Memories / Community Comments -->
+      <!-- Memories / Community Testimonials -->
       <div>
         <div class="flex items-center justify-between mb-3">
           <h4 class="text-xs uppercase tracking-wider font-bold text-slate-400 flex items-center gap-1.5">
-            <i class="fa-solid fa-comments text-emerald-400"></i> Μαρτυρίες & Αναμνήσεις Πολιτών (${(activeChronicle.memories || []).length})
+            <i class="fa-solid fa-book-open-reader text-emerald-400"></i> Μαρτυρίες & Αναμνήσεις Πολιτών (${visibleMemories.length})
           </h4>
-          <button onclick="openAddMemoryForm('${spot.id}', '${activeChronicle.id}')" class="text-xs text-sky-400 hover:text-sky-300 font-bold flex items-center gap-1">
+          <button onclick="openAddMemoryForm('${spot.id}', '${activeChronicle.id}')" class="text-xs text-sky-400 hover:text-sky-300 font-bold flex items-center gap-1 cursor-pointer">
             <i class="fa-solid fa-plus text-[10px]"></i> Προσθήκη Ανάμνησης
           </button>
         </div>
 
         <div class="space-y-2.5">
-          ${(activeChronicle.memories && activeChronicle.memories.length) ? activeChronicle.memories.map(m => `
-            <div class="p-3.5 rounded-xl bg-slate-800/30 border border-slate-700/40">
-              <div class="flex items-center justify-between mb-1">
-                <span class="text-xs font-bold text-slate-200">${m.author}</span>
-                <span class="text-[11px] text-amber-400 font-mono">${m.year || ''}</span>
+          ${visibleMemories.length ? visibleMemories.map(m => {
+            const isMyMem = currentUser && (currentUser.role === 'admin' || (currentUser.email && currentUser.email === m.authorEmail) || (currentUser.uid && currentUser.uid === m.authorUid));
+            return `
+              <div class="p-3.5 rounded-xl ${m.isPrivate ? 'bg-purple-950/30 border border-purple-500/40' : 'bg-slate-800/30 border border-slate-700/40'}">
+                <div class="flex items-center justify-between mb-1 gap-2">
+                  <div class="flex items-center gap-1.5 flex-wrap">
+                    <span class="text-xs font-bold text-slate-200">${escapeStr(m.author)}</span>
+                    ${m.isPrivate ? `
+                      <span class="px-1.5 py-0.2 rounded text-[9px] font-bold bg-purple-900/80 text-purple-300 border border-purple-600/40 flex items-center gap-1">
+                        <i class="fa-solid fa-lock text-[8px]"></i> Ιδιωτική (Μόνο για εσάς)
+                      </span>
+                    ` : `
+                      <span class="px-1.5 py-0.2 rounded text-[9px] font-bold bg-emerald-950/80 text-emerald-300 border border-emerald-700/40 flex items-center gap-1">
+                        <i class="fa-solid fa-earth-americas text-[8px]"></i> Δημόσια
+                      </span>
+                    `}
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <span class="text-[11px] text-amber-400 font-mono">${m.year || ''}</span>
+                    ${isMyMem ? `
+                      <button onclick="window.deleteSpotMemory('${spot.id}', '${activeChronicle.id}', '${m.id || escapeStr(m.text)}')" title="Διαγραφή ανάμνησης" class="text-slate-500 hover:text-red-400 text-xs transition cursor-pointer">
+                        <i class="fa-solid fa-trash-can text-[11px]"></i>
+                      </button>
+                    ` : ''}
+                  </div>
+                </div>
+                <p class="text-xs text-slate-300 leading-relaxed italic font-serif">«${escapeStr(m.text)}»</p>
               </div>
-              <p class="text-xs text-slate-300 leading-relaxed italic font-serif">«${m.text}»</p>
-            </div>
-          `).join('') : `
+            `;
+          }).join('') : `
             <div class="p-4 rounded-xl bg-slate-800/20 border border-slate-800 text-center text-xs text-slate-400">
               Δεν υπάρχουν ακόμη καταγεγραμμένες προσωπικές μαρτυρίες για αυτή την περίοδο. Γίνετε ο πρώτος που θα συνεισφέρει!
             </div>
           `}
         </div>
+      </div>
+
+      <!-- Comments & Discussion / Personal Notes -->
+      <div class="pt-4 border-t border-slate-800/80">
+        <div class="flex items-center justify-between mb-3">
+          <h4 class="text-xs uppercase tracking-wider font-bold text-slate-400 flex items-center gap-1.5">
+            <i class="fa-solid fa-comments text-sky-400"></i> Σχόλια & Προσωπικές Σημειώσεις (${visibleComments.length})
+          </h4>
+          <span class="text-[10px] text-slate-400 flex items-center gap-1">
+            <i class="fa-solid fa-shield-halved text-emerald-400"></i> Δημόσια & Ιδιωτικά
+          </span>
+        </div>
+
+        <!-- List of existing comments -->
+        <div class="space-y-2.5 mb-4">
+          ${visibleComments.length ? visibleComments.map(c => {
+            const isMyComment = currentUser && (currentUser.role === 'admin' || (currentUser.email && currentUser.email === c.authorEmail) || (currentUser.uid && currentUser.uid === c.authorUid));
+            const timeAgo = c.createdAt ? new Date(c.createdAt).toLocaleDateString('el-GR', { day: 'numeric', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit' }) : '';
+            return `
+              <div class="p-3 rounded-xl ${c.isPrivate ? 'bg-purple-950/30 border border-purple-500/50 shadow-inner' : 'bg-slate-800/40 border border-slate-700/60'}">
+                <div class="flex items-center justify-between mb-1.5 gap-2">
+                  <div class="flex items-center gap-2">
+                    <div class="w-6 h-6 rounded-full ${c.isPrivate ? 'bg-purple-800 text-purple-200' : 'bg-sky-800 text-sky-200'} flex items-center justify-center text-[10px] font-bold">
+                      ${c.avatar ? `<img src="${c.avatar}" class="w-full h-full rounded-full object-cover">` : (c.author ? c.author.slice(0, 1).toUpperCase() : 'U')}
+                    </div>
+                    <div>
+                      <span class="text-xs font-bold text-white">${escapeStr(c.author)}</span>
+                      <span class="text-[10px] text-slate-400 ml-1 font-mono">${timeAgo}</span>
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-1.5">
+                    ${c.isPrivate ? `
+                      <span class="px-1.5 py-0.5 rounded text-[9px] font-bold bg-purple-900/80 text-purple-300 border border-purple-600/50 flex items-center gap-1">
+                        <i class="fa-solid fa-lock text-[8px]"></i> Ιδιωτική Σημείωση (Μόνο για εσάς)
+                      </span>
+                    ` : `
+                      <span class="px-1.5 py-0.5 rounded text-[9px] font-bold bg-sky-950/80 text-sky-300 border border-sky-700/50 flex items-center gap-1">
+                        <i class="fa-solid fa-earth-americas text-[8px]"></i> Δημόσιο
+                      </span>
+                    `}
+                    ${isMyComment ? `
+                      <button onclick="window.deleteSpotComment('${spot.id}', '${c.id}')" title="Διαγραφή σχολίου" class="text-slate-500 hover:text-red-400 text-xs ml-1 transition cursor-pointer">
+                        <i class="fa-solid fa-trash-can text-[11px]"></i>
+                      </button>
+                    ` : ''}
+                  </div>
+                </div>
+                <p class="text-xs text-slate-200 leading-relaxed pl-8">${escapeStr(c.text)}</p>
+              </div>
+            `;
+          }).join('') : `
+            <div class="p-3.5 rounded-xl bg-slate-800/20 border border-slate-800/80 text-center text-xs text-slate-400">
+              Δεν υπάρχουν σχόλια ή σημειώσεις για αυτό το σημείο ακόμα.
+            </div>
+          `}
+        </div>
+
+        <!-- Add Comment Form -->
+        ${isUserLoggedIn() ? `
+          <div class="p-3 rounded-2xl bg-slate-850 border border-slate-700/80 space-y-2.5">
+            <div class="text-[11px] font-bold text-slate-300 flex items-center justify-between">
+              <span class="flex items-center gap-1.5">
+                <i class="fa-solid fa-pen text-amber-400"></i> Προσθήκη Σχολίου ή Προσωπικής Σημείωσης:
+              </span>
+              <span class="text-[10px] text-slate-400">Ως: <strong class="text-sky-300">${escapeStr(currentUser.name || currentUser.email)}</strong></span>
+            </div>
+
+            <textarea id="spotNewCommentText" rows="2" placeholder="Γράψτε ένα σχόλιο για την κοινότητα ή μια προσωπική σημείωση (π.χ. private note)..." class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-xs text-white focus:ring-2 focus:ring-sky-500 outline-none leading-relaxed"></textarea>
+
+            <div class="flex items-center justify-between gap-2 pt-1 flex-wrap">
+              <div class="flex items-center gap-2">
+                <label class="flex items-center gap-1.5 text-xs text-slate-300 cursor-pointer bg-slate-900 px-2.5 py-1.5 rounded-lg border border-slate-700 hover:border-slate-600 transition">
+                  <input type="radio" name="newCommentVisibility" value="public" checked class="text-sky-500 focus:ring-0">
+                  <span class="flex items-center gap-1 text-[11px]">
+                    <i class="fa-solid fa-earth-americas text-emerald-400"></i> Δημόσιο
+                  </span>
+                </label>
+                <label class="flex items-center gap-1.5 text-xs text-slate-300 cursor-pointer bg-slate-900 px-2.5 py-1.5 rounded-lg border border-slate-700 hover:border-slate-600 transition">
+                  <input type="radio" name="newCommentVisibility" value="private" class="text-purple-500 focus:ring-0">
+                  <span class="flex items-center gap-1 text-[11px]">
+                    <i class="fa-solid fa-lock text-purple-400"></i> Ιδιωτικό (Μόνο για μένα)
+                  </span>
+                </label>
+              </div>
+
+              <button onclick="window.submitSpotComment('${spot.id}')" class="px-4 py-1.5 rounded-xl bg-sky-600 hover:bg-sky-500 text-white font-bold text-xs flex items-center gap-1.5 shadow transition cursor-pointer">
+                <i class="fa-solid fa-paper-plane text-[10px]"></i>
+                <span>Αποστολή</span>
+              </button>
+            </div>
+          </div>
+        ` : `
+          <div class="p-3.5 rounded-2xl bg-slate-850/80 border border-slate-800 flex items-center justify-between gap-3 flex-wrap">
+            <div class="flex items-center gap-2">
+              <i class="fa-solid fa-lock text-amber-400 text-sm"></i>
+              <span class="text-xs text-slate-300">Συνδεθείτε για να αφήσετε δημόσιο σχόλιο ή ιδιωτική σημείωση.</span>
+            </div>
+            <button onclick="loginWithGoogle()" class="px-3 py-1.5 rounded-xl bg-slate-700 hover:bg-slate-600 text-white text-xs font-bold transition flex items-center gap-1.5 cursor-pointer shadow">
+              <i class="fa-brands fa-google text-rose-400"></i> Σύνδεση με Google
+            </button>
+          </div>
+        `}
       </div>
 
       <!-- Actions: Add Era + AI Reconstruction button -->
@@ -951,6 +1094,7 @@ export function selectSpotEra(chronicleId) {
   const chronicle = spot.chronicles.find(c => c.id === chronicleId);
   if (!chronicle) return;
 
+  activeChronicleId = chronicleId;
   renderTimeCapsuleModalContent(spot, chronicle);
 }
 
@@ -1012,6 +1156,9 @@ export function submitNewSpot(event) {
     return;
   }
 
+  const visibilityRadio = document.querySelector('input[name="newSpotVisibility"]:checked');
+  const isPrivate = visibilityRadio ? (visibilityRadio.value === 'private') : false;
+
   // Detect YouTube video from video input, photo input, or story
   const detectedYtId = extractYouTubeId(videoUrl) || extractYouTubeId(photoUrl);
   let finalVideoUrl = videoUrl || (extractYouTubeId(photoUrl) ? photoUrl : '');
@@ -1033,6 +1180,12 @@ export function submitNewSpot(event) {
     englishName: name,
     coords: [lat, lng],
     address: address || name,
+    visibility: isPrivate ? 'private' : 'public',
+    isPrivate: isPrivate,
+    authorEmail: currentUser.email,
+    authorUid: currentUser.uid,
+    status: isPrivate ? 'approved' : 'pending',
+    comments: [],
     chronicles: [
       {
         id: `chronicle-${Date.now()}`,
@@ -1062,9 +1215,14 @@ export function submitNewSpot(event) {
           }
         ],
         memories: memoryText ? [{
+          id: `mem-${Date.now()}`,
           author: authorName,
+          authorEmail: currentUser.email,
+          authorUid: currentUser.uid,
           year: fromYear,
-          text: memoryText
+          text: memoryText,
+          isPrivate: isPrivate,
+          createdAt: new Date().toISOString()
         }] : []
       }
     ]
@@ -1075,7 +1233,7 @@ export function submitNewSpot(event) {
 
   // Submit via Safety & Moderation Pipeline
   try {
-    const submission = submitSpotForModeration(newSpot, currentUser);
+    const submission = isPrivate ? newSpot : submitSpotForModeration(newSpot, currentUser);
     
     // Add to in-memory timeCapsules for local preview
     const memIdx = timeCapsules.findIndex(s => s.id === newSpot.id);
@@ -1085,7 +1243,13 @@ export function submitNewSpot(event) {
       timeCapsules.push(submission);
     }
 
-    alert('✅ Το αίτημα δημιουργίας σημείου υποβλήθηκε επιτυχώς!\n\n🛡️ Έλεγχος ασφαλείας: Η πηγή πολυμέσων και το κείμενο ελέγχθηκαν επιτυχώς.\n⏳ Το σημείο είναι προσωρινά ορατό μόνο σε αυτόν τον υπολογιστή (με ένδειξη «Υπό Έγκριση»).\nΜόλις εγκριθεί από τον διαχειριστή, θα δημοσιευτεί δημόσια σε όλους!');
+    saveSpotToLocalStorage(submission);
+
+    if (isPrivate) {
+      alert('🔒 Το ιδιωτικό σας σημείο αποθηκεύτηκε επιτυχώς!\n\nΕίναι ορατό μόνο σε εσάς στον χάρτη.');
+    } else {
+      alert('✅ Το αίτημα δημιουργίας σημείου υποβλήθηκε επιτυχώς!\n\n🛡️ Έλεγχος ασφαλείας: Η πηγή πολυμέσων και το κείμενο ελέγχθηκαν επιτυχώς.\n⏳ Το σημείο είναι προσωρινά ορατό μόνο σε αυτόν τον υπολογιστή (με ένδειξη «Υπό Έγκριση»).\nΜόλις εγκριθεί από τον διαχειριστή, θα δημοσιευτεί δημόσια σε όλους!');
+    }
   } catch (err) {
     alert('❌ Σφάλμα υποβολής: ' + err.message);
     return;
@@ -1151,6 +1315,10 @@ export function openEditSpotModal(spotId, chronicleId) {
   if (spotNameEl) spotNameEl.value = spot.name || '';
   if (spotAddressEl) spotAddressEl.value = spot.address || '';
   if (spotCategoryEl) spotCategoryEl.value = spot.category || 'culture';
+  const visibilitySelect = document.getElementById('editSpotVisibility');
+  if (visibilitySelect) {
+    visibilitySelect.value = (spot.visibility === 'private' || spot.isPrivate) ? 'private' : 'public';
+  }
 
   if (chronicleTitleEl) chronicleTitleEl.value = chronicle ? chronicle.title : '';
   if (fromYearEl) fromYearEl.value = (chronicle && chronicle.fromYear) ? chronicle.fromYear : '';
@@ -1193,6 +1361,22 @@ export function closeEditSpotModal() {
   if (modal) modal.classList.add('hidden');
 }
 
+export function saveSpotToLocalStorage(spot) {
+  if (!spot || !spot.id) return;
+  try {
+    const existing = JSON.parse(localStorage.getItem('earthtimes_custom_spots') || '[]');
+    const idx = existing.findIndex(s => s.id === spot.id);
+    if (idx !== -1) {
+      existing[idx] = spot;
+    } else {
+      existing.push(spot);
+    }
+    localStorage.setItem('earthtimes_custom_spots', JSON.stringify(existing));
+  } catch (e) {
+    console.warn('Error saving spot to localStorage', e);
+  }
+}
+
 export function saveEditedSpot(event) {
   event.preventDefault();
 
@@ -1208,6 +1392,8 @@ export function saveEditedSpot(event) {
   const name = document.getElementById('editSpotName').value.trim();
   const address = document.getElementById('editSpotAddress').value.trim();
   const category = document.getElementById('editSpotCategory').value;
+  const visibilitySelect = document.getElementById('editSpotVisibility');
+  const isPrivate = visibilitySelect ? (visibilitySelect.value === 'private') : false;
 
   const title = document.getElementById('editChronicleTitle').value.trim();
   const fromYearInput = document.getElementById('editFromYear').value.trim();
@@ -1226,6 +1412,12 @@ export function saveEditedSpot(event) {
   spot.name = name;
   spot.address = address;
   spot.category = category;
+  spot.visibility = isPrivate ? 'private' : 'public';
+  spot.isPrivate = isPrivate;
+  if (!spot.authorEmail && currentUser && currentUser.email) {
+    spot.authorEmail = currentUser.email;
+    spot.authorUid = currentUser.uid;
+  }
 
   // Find or create chronicle
   if (!spot.chronicles) spot.chronicles = [];
@@ -1276,19 +1468,8 @@ export function saveEditedSpot(event) {
 
   normalizeChronicleMedia(chronicle);
 
-  // Save to localStorage 'earthtimes_custom_spots' so that edits persist across reloads
-  try {
-    const existing = JSON.parse(localStorage.getItem('earthtimes_custom_spots') || '[]');
-    const idx = existing.findIndex(s => s.id === spotId);
-    if (idx !== -1) {
-      existing[idx] = spot;
-    } else {
-      existing.push(spot);
-    }
-    localStorage.setItem('earthtimes_custom_spots', JSON.stringify(existing));
-  } catch (e) {
-    console.warn('Error saving edited spot to localStorage', e);
-  }
+  // Save to localStorage 'earthtimes_custom_spots'
+  saveSpotToLocalStorage(spot);
 
   // Update UI components
   const capsuleModal = document.getElementById('timeCapsuleModal');
@@ -1315,7 +1496,7 @@ export function saveEditedSpot(event) {
  */
 export function openAddMemoryForm(spotId, chronicleId) {
   if (!isUserLoggedIn()) {
-    if (confirm('🔒 Απαιτείται Σύνδεση με Google\n\nΓια να καταχωρίσετε τη δική σας προσωπική ανάμνηση, παρακαλούμε συνδεθείτε πρώτα με το λογαριασμό σας Google.\n\nΘέλετε να πραγματοποιήσετε σύνδεση τώρα;')) {
+    if (confirm('🔒 Απαιτείται Σύνδεση με Google\n\nΓια να καταχωρίσετε τη δική σας προσωπική ανάμνηση, παρακαλούμε συνδεθείτε πρώτα με το λογαριασμό σας Google ή ρυθμίστε το προφίλ σας.\n\nΘέλετε να πραγματοποιήσετε σύνδεση τώρα;')) {
       handleGoogleLogin();
     }
     return;
@@ -1327,6 +1508,10 @@ export function openAddMemoryForm(spotId, chronicleId) {
   document.getElementById('formSpotId').value = spotId;
   document.getElementById('formChronicleId').value = chronicleId;
   document.getElementById('memoryAuthor').value = currentUser.name || currentUser.email;
+
+  const pubRadio = document.querySelector('input[name="memoryVisibility"][value="public"]');
+  if (pubRadio) pubRadio.checked = true;
+
   modal.classList.remove('hidden');
 }
 
@@ -1360,7 +1545,7 @@ export function submitMemory(event) {
   event.preventDefault();
 
   if (!isUserLoggedIn()) {
-    alert('🔒 Απαιτείται Σύνδεση: Πρέπει να είστε συνδεδεμένοι με λογαριασμό Google για να προσθέσετε ανάμνηση.');
+    alert('🔒 Απαιτείται Σύνδεση: Πρέπει να είστε συνδεδεμένοι με λογαριασμό Google ή προφίλ για να προσθέσετε ανάμνηση.');
     return;
   }
 
@@ -1370,6 +1555,9 @@ export function submitMemory(event) {
   const year = document.getElementById('memoryYear').value.trim();
   const text = document.getElementById('memoryText').value.trim();
 
+  const visibilityRadio = document.querySelector('input[name="memoryVisibility"]:checked');
+  const isPrivate = visibilityRadio ? (visibilityRadio.value === 'private') : false;
+
   if (!author || !text) return;
 
   const spot = timeCapsules.find(s => s.id === spotId);
@@ -1377,18 +1565,114 @@ export function submitMemory(event) {
     const chronicle = spot.chronicles.find(c => c.id === chronicleId);
     if (chronicle) {
       if (!chronicle.memories) chronicle.memories = [];
-      chronicle.memories.push({
+      const memoryObj = {
+        id: `mem-${Date.now()}-${Math.random().toString(36).substr(2, 5)}`,
         author,
+        authorEmail: currentUser.email,
+        authorUid: currentUser.uid,
         year: year ? parseInt(year, 10) : new Date().getFullYear(),
-        text
-      });
-      // Refresh active view
+        text,
+        isPrivate: isPrivate,
+        createdAt: new Date().toISOString()
+      };
+      chronicle.memories.push(memoryObj);
+      saveSpotToLocalStorage(spot);
       renderTimeCapsuleModalContent(spot, chronicle);
     }
   }
 
   closeAddMemoryModal();
   document.getElementById('memoryForm').reset();
+}
+
+export function submitSpotComment(spotId) {
+  if (!isUserLoggedIn()) {
+    if (confirm('🔒 Απαιτείται Σύνδεση\n\nΓια να προσθέσετε σχόλιο ή προσωπική σημείωση, παρακαλούμε συνδεθείτε πρώτα με το λογαριασμό σας Google.\n\nΘέλετε να πραγματοποιήσετε σύνδεση τώρα;')) {
+      handleGoogleLogin();
+    }
+    return;
+  }
+
+  const inputEl = document.getElementById('spotNewCommentText');
+  if (!inputEl) return;
+  const text = inputEl.value.trim();
+  if (!text) {
+    alert('Παρακαλούμε πληκτρολογήστε ένα σχόλιο ή προσωπική σημείωση.');
+    return;
+  }
+
+  const visibilityRadio = document.querySelector('input[name="newCommentVisibility"]:checked');
+  const isPrivate = visibilityRadio ? (visibilityRadio.value === 'private') : false;
+
+  const spot = timeCapsules.find(s => s.id === spotId);
+  if (!spot) return;
+
+  if (!spot.comments) spot.comments = [];
+
+  const newComment = {
+    id: `cmt-${Date.now()}-${Math.random().toString(36).substr(2, 5)}`,
+    author: currentUser.name || currentUser.email || 'Χρήστης',
+    authorEmail: currentUser.email,
+    authorUid: currentUser.uid,
+    authorRole: currentUser.role,
+    avatar: currentUser.photoURL || null,
+    text: text,
+    isPrivate: isPrivate,
+    createdAt: new Date().toISOString()
+  };
+
+  spot.comments.push(newComment);
+  saveSpotToLocalStorage(spot);
+
+  inputEl.value = '';
+
+  const activeChronicle = spot.chronicles && (spot.chronicles.find(c => c.id === activeChronicleId) || spot.chronicles[0]);
+  renderTimeCapsuleModalContent(spot, activeChronicle);
+}
+
+export function deleteSpotComment(spotId, commentId) {
+  const spot = timeCapsules.find(s => s.id === spotId);
+  if (!spot || !spot.comments) return;
+
+  const idx = spot.comments.findIndex(c => c.id === commentId);
+  if (idx === -1) return;
+
+  const cmt = spot.comments[idx];
+  const canDelete = (currentUser && currentUser.role === 'admin') || (currentUser && currentUser.email && currentUser.email === cmt.authorEmail);
+  if (!canDelete) {
+    alert('Δεν έχετε δικαίωμα διαγραφής αυτού του σχολίου.');
+    return;
+  }
+
+  if (confirm('Είστε βέβαιοι ότι θέλετε να διαγράψετε αυτό το σχόλιο;')) {
+    spot.comments.splice(idx, 1);
+    saveSpotToLocalStorage(spot);
+    const activeChronicle = spot.chronicles && (spot.chronicles.find(c => c.id === activeChronicleId) || spot.chronicles[0]);
+    renderTimeCapsuleModalContent(spot, activeChronicle);
+  }
+}
+
+export function deleteSpotMemory(spotId, chronicleId, memoryId) {
+  const spot = timeCapsules.find(s => s.id === spotId);
+  if (!spot) return;
+  const chronicle = spot.chronicles && spot.chronicles.find(c => c.id === chronicleId);
+  if (!chronicle || !chronicle.memories) return;
+
+  const idx = chronicle.memories.findIndex(m => m.id === memoryId || m.text === memoryId);
+  if (idx === -1) return;
+
+  const mem = chronicle.memories[idx];
+  const canDelete = (currentUser && currentUser.role === 'admin') || (currentUser && currentUser.email && currentUser.email === mem.authorEmail);
+  if (!canDelete) {
+    alert('Δεν έχετε δικαίωμα διαγραφής αυτής της ανάμνησης.');
+    return;
+  }
+
+  if (confirm('Είστε βέβαιοι ότι θέλετε να διαγράψετε αυτή την ανάμνηση;')) {
+    chronicle.memories.splice(idx, 1);
+    saveSpotToLocalStorage(spot);
+    renderTimeCapsuleModalContent(spot, chronicle);
+  }
 }
 
 export function submitNewEra(event) {
@@ -1563,7 +1847,12 @@ export function saveUserProfile(event) {
 
   if (!name) return;
 
+  const uid = currentUser.uid || `usr_${Date.now()}`;
+  const email = currentUser.email || `${name.toLowerCase().replace(/[^a-z0-9]/g, '') || 'user'}@earthtimes.local`;
+
   setCurrentUser({
+    uid,
+    email,
     name,
     role,
     title: title || (role === 'official' ? 'Εκπρόσωπος Δήμου / Φορέα' : 'Πιστοποιημένος Δημότης'),

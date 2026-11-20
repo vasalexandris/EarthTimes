@@ -134,6 +134,10 @@ input[type="range"]::-moz-range-thumb {
   border-style: dashed;
   border-color: #fbbf24;
 }
+.temporal-dot-marker.is-private {
+  border-color: #c084fc;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7), 0 0 10px rgba(192, 132, 252, 0.5);
+}
 
 /* Interactive Hover Card Tooltip for Temporal Spots */
 .leaflet-tooltip.temporal-hover-tooltip {

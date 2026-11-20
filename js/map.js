@@ -356,7 +356,14 @@ export function renderTimeCapsulePins(spots, activeYear, onSpotClick) {
   if (!spots || !spots.length) return;
 
   spots.forEach(spot => {
-    // Find active chronicle for this year
+    // Check if spot is private
+    const isPrivate = Boolean(spot.visibility === 'private' || spot.isPrivate);
+    if (isPrivate) {
+      const curUser = window.getCurrentUser ? window.getCurrentUser() : null;
+      const isAllowed = curUser && (curUser.role === 'admin' || (curUser.email && curUser.email === spot.authorEmail) || (curUser.uid && curUser.uid === spot.authorUid));
+      if (!isAllowed) return; // Do not render private spots for other users/guests!
+    }
+
     // Find active chronicle for this year or unknown date
     let activeChronicle = null;
     if (activeYear === 'unknown') {
@@ -405,14 +412,16 @@ export function renderTimeCapsulePins(spots, activeYear, onSpotClick) {
     // Circular Jewel Pin Marker (No text letters, clean 24x24 px circle, doesn't hide map streets)
     const pinIconHtml = isPending 
       ? '<i class="fa-solid fa-hourglass-half text-[10px] text-amber-300"></i>'
-      : (hasVideo 
-          ? '<i class="fa-brands fa-youtube text-[11px] text-red-500"></i>'
-          : '<i class="fa-solid fa-camera-retro text-[10px] text-amber-400"></i>');
+      : (isPrivate
+          ? '<i class="fa-solid fa-lock text-[10px] text-purple-300"></i>'
+          : (hasVideo 
+              ? '<i class="fa-brands fa-youtube text-[11px] text-red-500"></i>'
+              : '<i class="fa-solid fa-camera-retro text-[10px] text-amber-400"></i>'));
 
     const customIcon = L.divIcon({
       className: 'time-capsule-marker-wrapper',
       html: `
-        <div class="temporal-dot-marker ${isPending ? 'is-pending' : ''}" title="${isPending ? 'Σημείο υπό έγκριση' : ''}">
+        <div class="temporal-dot-marker ${isPending ? 'is-pending' : ''} ${isPrivate ? 'is-private' : ''}" title="${isPrivate ? 'Ιδιωτικό Σημείο (Μόνο για εσάς)' : (isPending ? 'Σημείο υπό έγκριση' : '')}">
           ${pinIconHtml}
         </div>
       `,
@@ -430,9 +439,16 @@ export function renderTimeCapsulePins(spots, activeYear, onSpotClick) {
     const tooltipHtml = `
       <div class="text-xs p-1 select-none">
         <div class="flex items-center justify-between gap-1.5 mb-1">
-          <span class="px-1.5 py-0.2 rounded text-[9px] font-mono font-black ${isPending ? 'bg-amber-900/90 text-amber-300' : 'bg-amber-400 text-slate-950'} shadow-sm">
-            ${eraText}
-          </span>
+          <div class="flex items-center gap-1">
+            <span class="px-1.5 py-0.2 rounded text-[9px] font-mono font-black ${isPending ? 'bg-amber-900/90 text-amber-300' : 'bg-amber-400 text-slate-950'} shadow-sm">
+              ${eraText}
+            </span>
+            ${isPrivate ? `
+              <span class="px-1.5 py-0.2 rounded text-[9px] font-bold bg-purple-900/90 text-purple-300 border border-purple-500/50 flex items-center gap-0.5">
+                <i class="fa-solid fa-lock text-[8px]"></i> Ιδιωτικό
+              </span>
+            ` : ''}
+          </div>
           <span class="text-[9px] text-slate-400 italic truncate max-w-[120px]">${cardAuthor}</span>
         </div>
         <div class="font-bold text-amber-300 text-xs leading-snug">${cardTitle}</div>
