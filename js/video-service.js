@@ -2920,20 +2920,20 @@ export const CITY_VIDEOS = {
   "cordoba": {
     "cityName": "Κόρδοβα",
     "drone": {
-      "youtubeId": "ZzhAb_YFTt0",
-      "title": "Κόρδοβα 4K: Αργεντινή 4K: Εναέρια Περιήγηση Drone στο Μπουένος Άιρες",
-      "label": "Κόρδοβα με Drone (4K)",
-      "icon": "fa-solid fa-helicopter",
-      "type": "drone"
+        "youtubeId": "IgCock-KQ4c",
+        "title": "Κόρδοβα 4K: Εναέρια Περιήγηση στη Mezquita-Cathedral, τη Ρωμαϊκή Γέφυρα & το Guadalquivir",
+        "label": "Κόρδοβα με Drone (4K)",
+        "icon": "fa-solid fa-helicopter",
+        "type": "drone"
     },
     "walking": {
-      "youtubeId": "ZzhAb_YFTt0",
-      "title": "Κόρδοβα 4K: Αργεντινή 4K: Εναέρια Περιήγηση Drone στο Μπουένος Άιρες",
-      "label": "Κόρδοβα Walking Tour (4K)",
-      "icon": "fa-solid fa-person-walking",
-      "type": "walking"
+        "youtubeId": "mcqtvSt_Wwg",
+        "title": "Κόρδοβα 4K: Περιήγηση στην Εβραϊκή Συνοικία Judería, την Calleja de las Flores & το Alcázar",
+        "label": "Κόρδοβα Walking Tour (4K)",
+        "icon": "fa-solid fa-person-walking",
+        "type": "walking"
     }
-  },
+},
   "rosario": {
     "cityName": "Ροσάριο",
     "drone": {
@@ -6285,34 +6285,50 @@ export const CITY_VIDEOS = {
   "bilbao": {
     "cityName": "Μπιλμπάο",
     "drone": {
-      "youtubeId": "9wk_GoCxdJk",
-      "title": "Μπιλμπάο 4K — Bilbao, Spain 🇪🇸 4K HDR Drone | Nervión River, Old Town & City Views"
+        "youtubeId": "9wk_GoCxdJk",
+        "title": "Μπιλμπάο 4K — Bilbao, Spain 🇪🇸 4K HDR Drone | Nervión River, Old Town & City Views"
+    },
+    "walking": {
+        "youtubeId": "lf1U6N7juuI",
+        "title": "Μπιλμπάο 4K: Περιήγηση στο Μουσείο Guggenheim, τον Ποταμό Nervión & το Casco Viejo",
+        "label": "Μπιλμπάο Walking Tour (4K)",
+        "icon": "fa-solid fa-person-walking",
+        "type": "walking"
     }
-  },
+},
   "malaga": {
     "cityName": "Μάλαγα",
     "drone": {
-      "youtubeId": "lq_uAyvyakw",
-      "title": "Μάλαγα 4K — Malaga 4K - Droneview over Malaga in Spain | Relaxation Music"
+        "youtubeId": "lq_uAyvyakw",
+        "title": "Μάλαγα 4K — Malaga 4K - Droneview over Malaga in Spain | Relaxation Music"
     },
     "live": {
-      "youtubeId": "wa1fa5-EnlI",
-      "label": "Μάλαγα Live Cam",
-      "title": "LIVE MÁLAGA - Alameda Principal & Calle Marques de Larios - Andalucía - España"
+        "youtubeId": "wa1fa5-EnlI",
+        "label": "Μάλαγα Live Cam",
+        "title": "LIVE MÁLAGA - Alameda Principal & Calle Marques de Larios - Andalucía - España"
+    },
+    "walking": {
+        "youtubeId": "1bpuNFzKWX4",
+        "title": "Μάλαγα 4K: Περιήγηση στην Calle Larios, την Alcazaba, το Ρωμαϊκό Θέατρο & το Λιμάνι",
+        "label": "Μάλαγα Walking Tour (4K)",
+        "icon": "fa-solid fa-person-walking",
+        "type": "walking"
     }
-  },
+},
   "valencia-es": {
     "cityName": "Βαλένθια",
     "drone": {
-      "youtubeId": "mWTDKXzOyg0",
-      "title": "Βαλένθια 4K — Valencia , Spain 🇪🇸 | 4K Drone Footage (With Subtitles)"
+        "youtubeId": "mWTDKXzOyg0",
+        "title": "Βαλένθια 4K — Valencia , Spain 🇪🇸 | 4K Drone Footage (With Subtitles)"
     },
     "walking": {
-      "youtubeId": "bJb9hT2mJpY",
-      "label": "Βαλένθια Walking 4K",
-      "title": "Valencia Walking Tour 4K — Spain"
+        "youtubeId": "BNNejdRcpYo",
+        "title": "Βαλένθια 4K: Περιήγηση στους Πύργους Serranos, τον Καθεδρικό & το Ιστορικό Κέντρο",
+        "label": "Βαλένθια Walking Tour (4K)",
+        "icon": "fa-solid fa-person-walking",
+        "type": "walking"
     }
-  },
+},
   "granada-es": {
     "cityName": "Γρανάδα",
     "drone": {
@@ -8666,12 +8682,22 @@ export const CITY_VIDEOS = {
     }
   },
   "durham": {
-    "cityName": "Ντέραμ",
+    "cityName": "Ντάραμ",
     "drone": {
-      "youtubeId": "GnGZyPjOKSg",
-      "title": "Ντέραμ 4K — 4K Drone Footage of Durham, NC | Cinematic Aerial Tour of Bull City"
+        "youtubeId": "vOjO-imdiwc",
+        "title": "Ντάραμ 4K: Εναέρια Περιήγηση στον Νορμανδικό Καθεδρικό UNESCO, το Κάστρο & τον Ποταμό Wear",
+        "label": "Ντάραμ με Drone (4K)",
+        "icon": "fa-solid fa-helicopter",
+        "type": "drone"
+    },
+    "walking": {
+        "youtubeId": "5nPsT8QANho",
+        "title": "Ντάραμ 4K: Περιήγηση στη Γέφυρα Framwellgate, την Παλιά Αγορά & τα Κολλέγια του Πανεπιστημίου",
+        "label": "Ντάραμ Walking Tour (4K)",
+        "icon": "fa-solid fa-person-walking",
+        "type": "walking"
     }
-  },
+},
   "greensboro": {
     "cityName": "Γκρίνσμπορο",
     "drone": {
@@ -10367,16 +10393,29 @@ export const CITY_VIDEOS = {
     }
   },
   "birmingham": {
+    "cityName": "Μπέρμιγχαμ",
     "drone": {
-      "youtubeId": "Gy2pe01lHj8",
-      "title": "Μπέρμιγχαμ 4K — Birmingham Alabama 4K Drone Footage | Downtown Skyline, Vulcan Park & Railroad Park Aerial Views"
+        "youtubeId": "Gy2pe01lHj8",
+        "title": "Μπέρμιγχαμ 4K: Εναέρια Περιήγηση στο Bullring, τους Ουρανοξύστες & τα Ιστορικά Κανάλια",
+        "label": "Μπέρμιγχαμ με Drone (4K)",
+        "icon": "fa-solid fa-helicopter",
+        "type": "drone"
+    },
+    "walking": {
+        "youtubeId": "YSlaTa8HL8w",
+        "title": "Μπέρμιγχαμ 4K: Περιήγηση στη New Street, την Centenary Square & τη Βιβλιοθήκη",
+        "label": "Μπέρμιγχαμ Walking Tour (4K)",
+        "icon": "fa-solid fa-person-walking",
+        "type": "walking"
     },
     "live": {
-      "youtubeId": "KUM6HBnv_fw",
-      "label": "Μπέρμιγχαμ Live Cam",
-      "title": "Birmingham, Alabama Live Railcam (CSX/NS Diamond)"
+        "youtubeId": "KUM6HBnv_fw",
+        "title": "Μπέρμιγχαμ 24/7: Ζωντανή Πανοραμική Θέα από το Κέντρο της Πόλης",
+        "label": "Live Camera (24/7)",
+        "icon": "fa-solid fa-video",
+        "type": "live"
     }
-  },
+},
   "huntsville": {
     "drone": {
       "youtubeId": "743YZCE75Yk",
@@ -27057,294 +27096,308 @@ export const CITY_VIDEOS = {
       }
   },
   "santiago-de-compostela": {
-      "cityName": "Σαντιάγο ντε Κομποστέλα",
-      "drone": {
-          "youtubeId": "W5yHkG8F54o",
-          "title": "Σαντιάγο ντε Κομποστέλα 4K: Εναέρια Περιήγηση στον Καθεδρικό Ναό & το Camino de Santiago",
-          "label": "Σαντιάγο με Drone (4K)",
-          "icon": "fa-solid fa-helicopter",
-          "type": "drone"
-      },
-      "walking": {
-          "youtubeId": "o_oQ66M4Hkw",
-          "title": "Σαντιάγο ντε Κομποστέλα 4K: Περιήγηση στην Παλιά Πόλη & την Praza do Obradoiro",
-          "label": "Σαντιάγο Walking Tour (4K)",
-          "icon": "fa-solid fa-person-walking",
-          "type": "walking"
-      }
-  },
+    "cityName": "Σαντιάγο ντε Κομποστέλα",
+    "drone": {
+        "youtubeId": "axxlnpKVtzg",
+        "title": "Σαντιάγο ντε Κομποστέλα 4K: Εναέρια Περιήγηση στον Εμβληματικό Καθεδρικό & το Ιστορικό Κέντρο",
+        "label": "Σαντιάγο με Drone (4K)",
+        "icon": "fa-solid fa-helicopter",
+        "type": "drone"
+    },
+    "walking": {
+        "youtubeId": "5FPwW50C1jo",
+        "title": "Σαντιάγο ντε Κομποστέλα 4K: Περιήγηση στην Plaza del Obradoiro & τα Μεσαιωνικά Σοκάκια του Camino",
+        "label": "Σαντιάγο Walking Tour (4K)",
+        "icon": "fa-solid fa-person-walking",
+        "type": "walking"
+    },
+    "live": {
+        "youtubeId": "bwB4LS9Mnm4",
+        "title": "Σαντιάγο ντε Κομποστέλα 24/7: Ζωντανή Μετάδοση από τον Καθεδρικό Ναό (Plaza del Obradoiro)",
+        "label": "Live Camera (24/7)",
+        "icon": "fa-solid fa-video",
+        "type": "live"
+    }
+},
   "san-sebastian": {
-      "cityName": "Σαν Σεμπαστιάν",
-      "drone": {
-          "youtubeId": "0qU74aE0b_c",
-          "title": "Σαν Σεμπαστιάν 4K: Εναέρια Περιήγηση στον Κόλπο La Concha & το Monte Igueldo",
-          "label": "Σαν Σεμπαστιάν με Drone (4K)",
-          "icon": "fa-solid fa-helicopter",
-          "type": "drone"
-      },
-      "walking": {
-          "youtubeId": "QkX5oO2R9oA",
-          "title": "Σαν Σεμπαστιάν 4K: Περιήγηση στην Parte Vieja & τη Χρυσή Αμμουδιά",
-          "label": "Σαν Σεμπαστιάν Walking Tour (4K)",
-          "icon": "fa-solid fa-person-walking",
-          "type": "walking"
-      }
-  },
+    "cityName": "Σαν Σεμπαστιάν",
+    "drone": {
+        "youtubeId": "DWFLA9ZhUoM",
+        "title": "Σαν Σεμπαστιάν 4K: Εναέρια Περιήγηση στην Παραλία La Concha, το Όρος Urgull & τον Κόλπο",
+        "label": "Σαν Σεμπαστιάν με Drone (4K)",
+        "icon": "fa-solid fa-helicopter",
+        "type": "drone"
+    },
+    "walking": {
+        "youtubeId": "C306sVbZPto",
+        "title": "Σαν Σεμπαστιάν 4K: Περιήγηση στην Παλιά Πόλη Parte Vieja, τα Pintxo Bars & τον Παραλιακό Πεζόδρομο",
+        "label": "Σαν Σεμπαστιάν Walking Tour (4K)",
+        "icon": "fa-solid fa-person-walking",
+        "type": "walking"
+    }
+},
   "segovia": {
-      "cityName": "Σεγκόβια",
-      "drone": {
-          "youtubeId": "3bF3Qyq3G3g",
-          "title": "Σεγκόβια 4K: Εναέρια Περιήγηση στο Ρωμαϊκό Υδραγωγείο & το Παραμυθένιο Alcázar",
-          "label": "Σεγκόβια με Drone (4K)",
-          "icon": "fa-solid fa-helicopter",
-          "type": "drone"
-      },
-      "walking": {
-          "youtubeId": "2fV8XwWj-H8",
-          "title": "Σεγκόβια 4K: Περιήγηση στα Μεσαιωνικά Σοκάκια & την Plaza Mayor",
-          "label": "Σεγκόβια Walking Tour (4K)",
-          "icon": "fa-solid fa-person-walking",
-          "type": "walking"
-      }
-  },
+    "cityName": "Σεγκόβια",
+    "drone": {
+        "youtubeId": "hMSHOHoYpbs",
+        "title": "Σεγκόβια 4K: Εναέρια Περιήγηση στο Ρωμαϊκό Υδραγωγείο, το Παραμυθένιο Alcázar & τον Καθεδρικό",
+        "label": "Σεγκόβια με Drone (4K)",
+        "icon": "fa-solid fa-helicopter",
+        "type": "drone"
+    },
+    "walking": {
+        "youtubeId": "CmPdc3C_u4o",
+        "title": "Σεγκόβια 4K: Περιήγηση στα Μεσαιωνικά Τείχη, την Plaza Mayor & τα Ιστορικά Σοκάκια",
+        "label": "Σεγκόβια Walking Tour (4K)",
+        "icon": "fa-solid fa-person-walking",
+        "type": "walking"
+    }
+},
   "palma-de-mallorca": {
-      "cityName": "Πάλμα ντε Μαγιόρκα",
-      "drone": {
-          "youtubeId": "n8K3zW9Y3p0",
-          "title": "Πάλμα ντε Μαγιόρκα 4K: Εναέρια Περιήγηση στον Γοτθικό Καθεδρικό La Seu & το Κάστρο Bellver",
-          "label": "Πάλμα με Drone (4K)",
-          "icon": "fa-solid fa-helicopter",
-          "type": "drone"
-      },
-      "walking": {
-          "youtubeId": "X4bL6g5M1pY",
-          "title": "Πάλμα ντε Μαγιόρκα 4K: Περιήγηση στο Ιστορικό Κέντρο & την Παραλιακή Εσπλανάδα",
-          "label": "Πάλμα Walking Tour (4K)",
-          "icon": "fa-solid fa-person-walking",
-          "type": "walking"
-      }
-  },
+    "cityName": "Πάλμα ντε Μαγιόρκα",
+    "drone": {
+        "youtubeId": "0ZQGa458Zmw",
+        "title": "Πάλμα ντε Μαγιόρκα 4K: Εναέρια Περιήγηση στον Καθεδρικό La Seu, το Κάστρο Bellver & το Λιμάνι",
+        "label": "Πάλμα με Drone (4K)",
+        "icon": "fa-solid fa-helicopter",
+        "type": "drone"
+    },
+    "walking": {
+        "youtubeId": "M9FKuxuKvg0",
+        "title": "Πάλμα ντε Μαγιόρκα 4K: Περιήγηση στο Paseo Marítimo, την Παλιά Πόλη & τις Βαλεαρίδες Ακτές",
+        "label": "Πάλμα Walking Tour (4K)",
+        "icon": "fa-solid fa-person-walking",
+        "type": "walking"
+    },
+    "live": {
+        "youtubeId": "SCXirfESCck",
+        "title": "Πάλμα ντε Μαγιόρκα 24/7: Ζωντανή Μετάδοση από την Παραλία & τον Κόλπο (Palmanova Live)",
+        "label": "Live Camera (24/7)",
+        "icon": "fa-solid fa-video",
+        "type": "live"
+    }
+},
   "cadiz": {
-      "cityName": "Κάδιθ",
-      "drone": {
-          "youtubeId": "v8M6Z3L5w10",
-          "title": "Κάδιθ 4K: Εναέρια Περιήγηση στην Αρχαιότερη Πόλη της Ευρώπης & τον Ατλαντικό",
-          "label": "Κάδιθ με Drone (4K)",
-          "icon": "fa-solid fa-helicopter",
-          "type": "drone"
-      },
-      "walking": {
-          "youtubeId": "fL2kM7xY8oA",
-          "title": "Κάδιθ 4K: Περιήγηση στην Παραλία La Caleta, τον Χρυσό Τρούλο & τα Τείχη",
-          "label": "Κάδιθ Walking Tour (4K)",
-          "icon": "fa-solid fa-person-walking",
-          "type": "walking"
-      }
-  },
+    "cityName": "Κάδιθ",
+    "drone": {
+        "youtubeId": "iAhwrDLPJok",
+        "title": "Κάδιθ 4K: Εναέρια Περιήγηση στην Αρχαιότερη Πόλη της Δυτικής Ευρώπης, τον Ατλαντικό & τον Καθεδρικό",
+        "label": "Κάδιθ με Drone (4K)",
+        "icon": "fa-solid fa-helicopter",
+        "type": "drone"
+    },
+    "walking": {
+        "youtubeId": "xU59kHtBng4",
+        "title": "Κάδιθ 4K: Περιήγηση στην Παραλία La Caleta, το Κάστρο San Sebastián & τα Ανδαλουσιανά Σοκάκια",
+        "label": "Κάδιθ Walking Tour (4K)",
+        "icon": "fa-solid fa-person-walking",
+        "type": "walking"
+    }
+},
   "alicante": {
-      "cityName": "Αλικάντε",
-      "drone": {
-          "youtubeId": "t3Q5bL7n0oE",
-          "title": "Αλικάντε 4K: Εναέρια Περιήγηση στο Κάστρο Santa Bárbara & την Costa Blanca",
-          "label": "Αλικάντε με Drone (4K)",
-          "icon": "fa-solid fa-helicopter",
-          "type": "drone"
-      },
-      "walking": {
-          "youtubeId": "y8R4qP6m1uY",
-          "title": "Αλικάντε 4K: Περιήγηση στην Explanada de España & τη Γραφική Barrio Santa Cruz",
-          "label": "Αλικάντε Walking Tour (4K)",
-          "icon": "fa-solid fa-person-walking",
-          "type": "walking"
-      }
-  },
+    "cityName": "Αλικάντε",
+    "drone": {
+        "youtubeId": "Zrp0cK0hXpA",
+        "title": "Αλικάντε 4K: Εναέρια Περιήγηση στο Κάστρο Santa Bárbara, την Explanada & την Costa Blanca",
+        "label": "Αλικάντε με Drone (4K)",
+        "icon": "fa-solid fa-helicopter",
+        "type": "drone"
+    },
+    "walking": {
+        "youtubeId": "QXJiwwQxMi0",
+        "title": "Αλικάντε 4K: Περιήγηση στη Γειτονιά Santa Cruz, την Παραλία Postiguet & τη Μαρίνα",
+        "label": "Αλικάντε Walking Tour (4K)",
+        "icon": "fa-solid fa-person-walking",
+        "type": "walking"
+    }
+},
   "burgos": {
-      "cityName": "Μπούργος",
-      "drone": {
-          "youtubeId": "kL5w2R7p0yM",
-          "title": "Μπούργος 4K: Εναέρια Περιήγηση στον Γοτθικό Καθεδρικό UNESCO & το Κάστρο της Καστίλης",
-          "label": "Μπούργος με Drone (4K)",
-          "icon": "fa-solid fa-helicopter",
-          "type": "drone"
-      },
-      "walking": {
-          "youtubeId": "b6W8qT4z0pI",
-          "title": "Μπούργος 4K: Περιήγηση στο Paseo del Espolón & την Πύλη Arco de Santa María",
-          "label": "Μπούργος Walking Tour (4K)",
-          "icon": "fa-solid fa-person-walking",
-          "type": "walking"
-      }
-  },
+    "cityName": "Μπούργος",
+    "drone": {
+        "youtubeId": "jwSh9egSYGM",
+        "title": "Μπούργος 4K: Εναέρια Περιήγηση στον Γοτθικό Καθεδρικό UNESCO & την Καστίλη",
+        "label": "Μπούργος με Drone (4K)",
+        "icon": "fa-solid fa-helicopter",
+        "type": "drone"
+    },
+    "walking": {
+        "youtubeId": "NyHJ8vDvH5M",
+        "title": "Μπούργος 4K: Περιήγηση στο Paseo del Espolón, την Arco de Santa María & την Παλιά Πόλη",
+        "label": "Μπούργος Walking Tour (4K)",
+        "icon": "fa-solid fa-person-walking",
+        "type": "walking"
+    }
+},
   "caceres": {
-      "cityName": "Κάθερες",
-      "drone": {
-          "youtubeId": "m5Q8vR3p2wK",
-          "title": "Κάθερες 4K: Εναέρια Περιήγηση στη Μεσαιωνική & Αναγεννησιακή Παλιά Πόλη UNESCO",
-          "label": "Κάθερες με Drone (4K)",
-          "icon": "fa-solid fa-helicopter",
-          "type": "drone"
-      },
-      "walking": {
-          "youtubeId": "w3K8vR7p0yM",
-          "title": "Κάθερες 4K: Περιήγηση στην Plaza Mayor, τους Πύργους & τα Πέτρινα Παλάτια",
-          "label": "Κάθερες Walking Tour (4K)",
-          "icon": "fa-solid fa-person-walking",
-          "type": "walking"
-      }
-  },
+    "cityName": "Κάθερες",
+    "drone": {
+        "youtubeId": "bPAyzfZoLQs",
+        "title": "Κάθερες 4K: Εναέρια Περιήγηση στη Μεσαιωνική Πόλη UNESCO & τα Πέτρινα Παλάτια",
+        "label": "Κάθερες με Drone (4K)",
+        "icon": "fa-solid fa-helicopter",
+        "type": "drone"
+    },
+    "walking": {
+        "youtubeId": "8a1mOq0Ycos",
+        "title": "Κάθερες 4K: Περιήγηση στην Plaza Mayor, τα Τείχη & τα Σκηνικά του Game of Thrones",
+        "label": "Κάθερες Walking Tour (4K)",
+        "icon": "fa-solid fa-person-walking",
+        "type": "walking"
+    }
+},
   "avila": {
-      "cityName": "Άβιλα",
-      "drone": {
-          "youtubeId": "p6W2qR8m0vI",
-          "title": "Άβιλα 4K: Εναέρια Περιήγηση στα Άθικτα Ρωμανικά Μεσαιωνικά Τείχη UNESCO",
-          "label": "Άβιλα με Drone (4K)",
-          "icon": "fa-solid fa-helicopter",
-          "type": "drone"
-      },
-      "walking": {
-          "youtubeId": "c8W4qP3m2uI",
-          "title": "Άβιλα 4K: Περιήγηση στην Πόλη της Αγίας Τερέζας & τον Φρουριακό Καθεδρικό",
-          "label": "Άβιλα Walking Tour (4K)",
-          "icon": "fa-solid fa-person-walking",
-          "type": "walking"
-      }
-  },
+    "cityName": "Άβιλα",
+    "drone": {
+        "youtubeId": "d4FIUDtVq2A",
+        "title": "Άβιλα 4K: Εναέρια Περιήγηση στα Εντυπωσιακά Μεσαιωνικά Τείχη Muralla de Ávila",
+        "label": "Άβιλα με Drone (4K)",
+        "icon": "fa-solid fa-helicopter",
+        "type": "drone"
+    },
+    "walking": {
+        "youtubeId": "xxQ_KireppA",
+        "title": "Άβιλα 4K: Περιήγηση στα Λιθόστρωτα Σοκάκια, τον Καθεδρικό & τη Μονή Santa Teresa",
+        "label": "Άβιλα Walking Tour (4K)",
+        "icon": "fa-solid fa-person-walking",
+        "type": "walking"
+    }
+},
   "santander": {
-      "cityName": "Σανταντέρ",
-      "drone": {
-          "youtubeId": "q8L2pM6w0yK",
-          "title": "Σανταντέρ 4K: Εναέρια Περιήγηση στη Χερσόνησο Magdalena & τον Κόλπο της Κανταβρίας",
-          "label": "Σανταντέρ με Drone (4K)",
-          "icon": "fa-solid fa-helicopter",
-          "type": "drone"
-      },
-      "walking": {
-          "youtubeId": "v4M7wP2q0yK",
-          "title": "Σανταντέρ 4K: Περιήγηση στην Παραλία El Sardinero & το Paseo de Pereda",
-          "label": "Σανταντέρ Walking Tour (4K)",
-          "icon": "fa-solid fa-person-walking",
-          "type": "walking"
-      }
-  },
+    "cityName": "Σανταντέρ",
+    "drone": {
+        "youtubeId": "mDgXEjYrTxA",
+        "title": "Σανταντέρ 4K: Εναέρια Περιήγηση στη Χερσόνησο Magdalena, τον Κόλπο & την Κανταβρία",
+        "label": "Σανταντέρ με Drone (4K)",
+        "icon": "fa-solid fa-helicopter",
+        "type": "drone"
+    },
+    "walking": {
+        "youtubeId": "OWfXMFEmREE",
+        "title": "Σανταντέρ 4K: Περιήγηση στο Paseo de Pereda, την Παραλία El Sardinero & το Centro Botín",
+        "label": "Σανταντέρ Walking Tour (4K)",
+        "icon": "fa-solid fa-person-walking",
+        "type": "walking"
+    }
+},
   "valladolid": {
-      "cityName": "Βαγιαδολίδ",
-      "drone": {
-          "youtubeId": "x7W2qP5m0vK",
-          "title": "Βαγιαδολίδ 4K: Εναέρια Περιήγηση στην Ιστορική Αυτοκρατορική Πρωτεύουσα της Ισπανίας",
-          "label": "Βαγιαδολίδ με Drone (4K)",
-          "icon": "fa-solid fa-helicopter",
-          "type": "drone"
-      },
-      "walking": {
-          "youtubeId": "y5K8wP3q0vM",
-          "title": "Βαγιαδολίδ 4K: Περιήγηση στην Plaza Mayor, το Σπίτι του Θερβάντες & τον Άγιο Παύλο",
-          "label": "Βαγιαδολίδ Walking Tour (4K)",
-          "icon": "fa-solid fa-person-walking",
-          "type": "walking"
-      }
-  },
+    "cityName": "Βαγιαδολίδ",
+    "drone": {
+        "youtubeId": "Na_SQfpqqhA",
+        "title": "Βαγιαδολίδ 4K: Εναέρια Περιήγηση στην Plaza Mayor, την Ακαδημία Ιππικού & την Ιστορική Πρωτεύουσα",
+        "label": "Βαγιαδολίδ με Drone (4K)",
+        "icon": "fa-solid fa-helicopter",
+        "type": "drone"
+    },
+    "walking": {
+        "youtubeId": "kiKWcAbe8EA",
+        "title": "Βαγιαδολίδ 4K: Περιήγηση στην Plaza de San Pablo, τον Καθεδρικό & το Πάρκο Campo Grande",
+        "label": "Βαγιαδολίδ Walking Tour (4K)",
+        "icon": "fa-solid fa-person-walking",
+        "type": "walking"
+    }
+},
   "merida-es": {
-      "cityName": "Μέριδα",
-      "drone": {
-          "youtubeId": "k3W7qP2m0vM",
-          "title": "Μέριδα 4K: Εναέρια Περιήγηση στο Ρωμαϊκό Θέατρο, το Αμφιθέατρο & το Ναό της Ντιάνας UNESCO",
-          "label": "Μέριδα με Drone (4K)",
-          "icon": "fa-solid fa-helicopter",
-          "type": "drone"
-      },
-      "walking": {
-          "youtubeId": "z8W2qP6m0vK",
-          "title": "Μέριδα 4K: Περιήγηση στην Augusta Emerita & τη Ρωμαϊκή Γέφυρα του Γουαδιάνα",
-          "label": "Μέριδα Walking Tour (4K)",
-          "icon": "fa-solid fa-person-walking",
-          "type": "walking"
-      }
-  },
+    "cityName": "Μέριδα",
+    "drone": {
+        "youtubeId": "qFUxBNcnMtI",
+        "title": "Μέριδα 4K: Εναέρια Περιήγηση στο Ρωμαϊκό Θέατρο, το Αμφιθέατρο & τη Ρωμαϊκή Γέφυρα UNESCO",
+        "label": "Μέριδα με Drone (4K)",
+        "icon": "fa-solid fa-helicopter",
+        "type": "drone"
+    },
+    "walking": {
+        "youtubeId": "4a088B_DKbU",
+        "title": "Μέριδα 4K: Περιήγηση στον Ναό της Diana, την Plaza de España & τις Αρχαιότητες της Εστρεμαδούρα",
+        "label": "Μέριδα Walking Tour (4K)",
+        "icon": "fa-solid fa-person-walking",
+        "type": "walking"
+    }
+},
   "a-coruna": {
-      "cityName": "Α Κορούνια",
-      "drone": {
-          "youtubeId": "w8K2qP7m0vM",
-          "title": "Α Κορούνια 4K: Εναέρια Περιήγηση στον Ρωμαϊκό Πύργο του Ηρακλή & την Ατλαντική Ακτή",
-          "label": "Α Κορούνια με Drone (4K)",
-          "icon": "fa-solid fa-helicopter",
-          "type": "drone"
-      },
-      "walking": {
-          "youtubeId": "b3W7qP5m0vK",
-          "title": "Α Κορούνια 4K: Περιήγηση στην Πόλη του Γυαλιού & την Plaza de María Pita",
-          "label": "Α Κορούνια Walking Tour (4K)",
-          "icon": "fa-solid fa-person-walking",
-          "type": "walking"
-      }
-  },
+    "cityName": "Α Κορούνια",
+    "drone": {
+        "youtubeId": "yWX6eWgUSII",
+        "title": "Α Κορούνια 4K: Εναέρια Περιήγηση στον Πύργο του Ηρακλή, τον Ατλαντικό & τη Γαλικία",
+        "label": "Α Κορούνια με Drone (4K)",
+        "icon": "fa-solid fa-helicopter",
+        "type": "drone"
+    },
+    "walking": {
+        "youtubeId": "7Cg401-XOQg",
+        "title": "Α Κορούνια 4K: Περιήγηση στην Plaza de María Pita, τα Γυάλινα Μπαλκόνια Galerías & τον Παραλιακό",
+        "label": "Α Κορούνια Walking Tour (4K)",
+        "icon": "fa-solid fa-person-walking",
+        "type": "walking"
+    }
+},
   "girona": {
-      "cityName": "Ζιρόνα",
-      "drone": {
-          "youtubeId": "n6W2qP8m0vM",
-          "title": "Ζιρόνα 4K: Εναέρια Περιήγηση στον Καθεδρικό, τα Πολύχρωμα Σπίτια Onyar & τα Τείχη",
-          "label": "Ζιρόνα με Drone (4K)",
-          "icon": "fa-solid fa-helicopter",
-          "type": "drone"
-      },
-      "walking": {
-          "youtubeId": "m8K2qP4m0vK",
-          "title": "Ζιρόνα 4K: Περιήγηση στην Εβραϊκή Συνοικία El Call & τη Γέφυρα Gustave Eiffel",
-          "label": "Ζιρόνα Walking Tour (4K)",
-          "icon": "fa-solid fa-person-walking",
-          "type": "walking"
-      }
-  },
+    "cityName": "Ζιρόνα",
+    "drone": {
+        "youtubeId": "FnNskA7AJds",
+        "title": "Ζιρόνα 4K: Εναέρια Περιήγηση στον Καθεδρικό, τα Πολύχρωμα Σπίτια Onyar & τα Μεσαιωνικά Τείχη",
+        "label": "Ζιρόνα με Drone (4K)",
+        "icon": "fa-solid fa-helicopter",
+        "type": "drone"
+    },
+    "walking": {
+        "youtubeId": "C9uQGGva4YA",
+        "title": "Ζιρόνα 4K: Περιήγηση στην Παλιά Πόλη, την Εβραϊκή Συνοικία El Call & τη Γέφυρα Eiffel",
+        "label": "Ζιρόνα Walking Tour (4K)",
+        "icon": "fa-solid fa-person-walking",
+        "type": "walking"
+    }
+},
   "belfast": {
-      "cityName": "Μπέλφαστ",
-      "drone": {
-          "youtubeId": "kP0bCq3Y8M4",
-          "title": "Μπέλφαστ 4K: Εναέρια Περιήγηση στο Titanic Belfast, το City Hall & τον Ποταμό Lagan",
-          "label": "Μπέλφαστ με Drone (4K)",
-          "icon": "fa-solid fa-helicopter",
-          "type": "drone"
-      },
-      "walking": {
-          "youtubeId": "gV8pM3zL4qE",
-          "title": "Μπέλφαστ 4K: Περιήγηση στο Cathedral Quarter & τις Ιστορικές Τοιχογραφίες",
-          "label": "Μπέλφαστ Walking Tour (4K)",
-          "icon": "fa-solid fa-person-walking",
-          "type": "walking"
-      }
-  },
+    "cityName": "Μπέλφαστ",
+    "drone": {
+        "youtubeId": "L9umKekLLrw",
+        "title": "Μπέλφαστ 4K: Εναέρια Περιήγηση στο Titanic Quarter, τα Ναυπηγεία Harland & Wolff & τον Ποταμό Lagan",
+        "label": "Μπέλφαστ με Drone (4K)",
+        "icon": "fa-solid fa-helicopter",
+        "type": "drone"
+    },
+    "walking": {
+        "youtubeId": "chb0suSrNxg",
+        "title": "Μπέλφαστ 4K: Περιήγηση στο Δημαρχείο City Hall, τη Συνοικία Cathedral Quarter & τα Victoria Square",
+        "label": "Μπέλφαστ Walking Tour (4K)",
+        "icon": "fa-solid fa-person-walking",
+        "type": "walking"
+    }
+},
   "cardiff": {
-      "cityName": "Κάρντιφ",
-      "drone": {
-          "youtubeId": "tP6mQ8vL2wK",
-          "title": "Κάρντιφ 4K: Εναέρια Περιήγηση στο Κάστρο του Κάρντιφ & τον Κόλπο Cardiff Bay",
-          "label": "Κάρντιφ με Drone (4K)",
-          "icon": "fa-solid fa-helicopter",
-          "type": "drone"
-      },
-      "walking": {
-          "youtubeId": "bL8pM2qZ5wI",
-          "title": "Κάρντιφ 4K: Περιήγηση στις Βικτωριανές Στοές & το Principality Stadium",
-          "label": "Κάρντιφ Walking Tour (4K)",
-          "icon": "fa-solid fa-person-walking",
-          "type": "walking"
-      }
-  },
+    "cityName": "Κάρντιφ",
+    "drone": {
+        "youtubeId": "yB16U9qtm3E",
+        "title": "Κάρντιφ 4K: Εναέρια Περιήγηση στο Κάστρο Cardiff, το Principality Stadium & τον Κόλπο Cardiff Bay",
+        "label": "Κάρντιφ με Drone (4K)",
+        "icon": "fa-solid fa-helicopter",
+        "type": "drone"
+    },
+    "walking": {
+        "youtubeId": "Ko49vHNHG6w",
+        "title": "Κάρντιφ 4K: Περιήγηση στο Κέντρο της Πόλης, τις Βικτωριανές Στοές & το Πάρκο Bute",
+        "label": "Κάρντιφ Walking Tour (4K)",
+        "icon": "fa-solid fa-person-walking",
+        "type": "walking"
+    }
+},
   "bath": {
-      "cityName": "Μπαθ",
-      "drone": {
-          "youtubeId": "pL3qZ8m0vI2",
-          "title": "Μπαθ 4K: Εναέρια Περιήγηση στα Ρωμαϊκά Λουτρά, το Royal Crescent & τη Γέφυρα Pulteney",
-          "label": "Μπαθ με Drone (4K)",
-          "icon": "fa-solid fa-helicopter",
-          "type": "drone"
-      },
-      "walking": {
-          "youtubeId": "wL7pM3qZ8vM",
-          "title": "Μπαθ 4K: Περιήγηση στη Γεωργιανή Αρχιτεκτονική UNESCO & το Αββαείο του Μπαθ",
-          "label": "Μπαθ Walking Tour (4K)",
-          "icon": "fa-solid fa-person-walking",
-          "type": "walking"
-      }
-  },
+    "cityName": "Μπαθ",
+    "drone": {
+        "youtubeId": "SHTretD4MLg",
+        "title": "Μπαθ 4K: Εναέρια Περιήγηση στο Royal Crescent, το Circus & τη Γεωργιανή Αρχιτεκτονική UNESCO",
+        "label": "Μπαθ με Drone (4K)",
+        "icon": "fa-solid fa-helicopter",
+        "type": "drone"
+    },
+    "walking": {
+        "youtubeId": "kl4z8U_QfBc",
+        "title": "Μπαθ 4K: Περιήγηση στα Ρωμαϊκά Λουτρά, το Αββαείο Bath Abbey & τη Γέφυρα Pulteney",
+        "label": "Μπαθ Walking Tour (4K)",
+        "icon": "fa-solid fa-person-walking",
+        "type": "walking"
+    }
+},
   "birmingham": {
       "cityName": "Μπέρμιγχαμ",
       "drone": {
@@ -27363,73 +27416,73 @@ export const CITY_VIDEOS = {
       }
   },
   "newcastle": {
-      "cityName": "Νιούκαστλ",
-      "drone": {
-          "youtubeId": "mL2qP8w0yK4",
-          "title": "Νιούκαστλ 4K: Εναέρια Περιήγηση στις 7 Γέφυρες του Ποταμού Tyne & το Quayside",
-          "label": "Νιούκαστλ με Drone (4K)",
-          "icon": "fa-solid fa-helicopter",
-          "type": "drone"
-      },
-      "walking": {
-          "youtubeId": "zK8wP3q0vM5",
-          "title": "Νιούκαστλ 4K: Περιήγηση στη Γεωργιανή Grainger Town & το Κάστρο Castle Keep",
-          "label": "Νιούκαστλ Walking Tour (4K)",
-          "icon": "fa-solid fa-person-walking",
-          "type": "walking"
-      }
-  },
+    "cityName": "Νιούκαστλ",
+    "drone": {
+        "youtubeId": "DavGVqI7dG8",
+        "title": "Νιούκαστλ 4K: Εναέρια Περιήγηση στη Γέφυρα Tyne Bridge, το Quayside & το Gateshead Millennium",
+        "label": "Νιούκαστλ με Drone (4K)",
+        "icon": "fa-solid fa-helicopter",
+        "type": "drone"
+    },
+    "walking": {
+        "youtubeId": "VfJpntmrIwI",
+        "title": "Νιούκαστλ 4K: Περιήγηση στην Grey Street, το Μνημείο Grey & το Ιστορικό Κάστρο",
+        "label": "Νιούκαστλ Walking Tour (4K)",
+        "icon": "fa-solid fa-person-walking",
+        "type": "walking"
+    }
+},
   "aberdeen": {
-      "cityName": "Αμπερντίν",
-      "drone": {
-          "youtubeId": "xL5wP8m0vI2",
-          "title": "Αμπερντίν 4K: Εναέρια Περιήγηση στη Γρανιτένια Πόλη της Σκωτίας & τη Βόρεια Θάλασσα",
-          "label": "Αμπερντίν με Drone (4K)",
-          "icon": "fa-solid fa-helicopter",
-          "type": "drone"
-      },
-      "walking": {
-          "youtubeId": "yL8pM2qZ5wM",
-          "title": "Αμπερντίν 4K: Περιήγηση στο Marischal College, το Παλιό Αμπερντίν & το Λιμάνι",
-          "label": "Αμπερντίν Walking Tour (4K)",
-          "icon": "fa-solid fa-person-walking",
-          "type": "walking"
-      }
-  },
+    "cityName": "Αμπερντίν",
+    "drone": {
+        "youtubeId": "SrfjMCrRYJE",
+        "title": "Αμπερντίν 4K: Εναέρια Περιήγηση στη Γρανιτένια Πόλη της Σκωτίας, το Marischal College & τη Βόρεια Θάλασσα",
+        "label": "Αμπερντίν με Drone (4K)",
+        "icon": "fa-solid fa-helicopter",
+        "type": "drone"
+    },
+    "walking": {
+        "youtubeId": "-tT0oBS7_BY",
+        "title": "Αμπερντίν 4K: Περιήγηση στην Union Street, το Παλιό Αμπερντίν & το King's College",
+        "label": "Αμπερντίν Walking Tour (4K)",
+        "icon": "fa-solid fa-person-walking",
+        "type": "walking"
+    }
+},
   "canterbury": {
-      "cityName": "Καντέρμπερι",
-      "drone": {
-          "youtubeId": "vL3qZ8m0pI2",
-          "title": "Καντέρμπερι 4K: Εναέρια Περιήγηση στον Καθεδρικό Ναό UNESCO & τον Ποταμό Stour",
-          "label": "Καντέρμπερι με Drone (4K)",
-          "icon": "fa-solid fa-helicopter",
-          "type": "drone"
-      },
-      "walking": {
-          "youtubeId": "kL8pM2qZ7wI",
-          "title": "Καντέρμπερι 4K: Περιήγηση στα Μεσαιωνικά Ξύλινα Σπίτια & την Πύλη Westgate",
-          "label": "Καντέρμπερι Walking Tour (4K)",
-          "icon": "fa-solid fa-person-walking",
-          "type": "walking"
-      }
-  },
+    "cityName": "Καντέρμπερι",
+    "drone": {
+        "youtubeId": "koGOfufbyRc",
+        "title": "Καντέρμπερι 4K: Εναέρια Περιήγηση στον Ιστορικό Καθεδρικό UNESCO & το Κεντ",
+        "label": "Καντέρμπερι με Drone (4K)",
+        "icon": "fa-solid fa-helicopter",
+        "type": "drone"
+    },
+    "walking": {
+        "youtubeId": "dTEv1hf6D2I",
+        "title": "Καντέρμπερι 4K: Περιήγηση στα Μεσαιωνικά Σοκάκια, τον Ποταμό Stour & την Πύλη Westgate",
+        "label": "Καντέρμπερι Walking Tour (4K)",
+        "icon": "fa-solid fa-person-walking",
+        "type": "walking"
+    }
+},
   "chester": {
-      "cityName": "Τσέστερ",
-      "drone": {
-          "youtubeId": "qL5wP2m0vI3",
-          "title": "Τσέστερ 4K: Εναέρια Περιήγηση στα Ρωμαϊκά & Μεσαιωνικά Τείχη & τον Ποταμό Dee",
-          "label": "Τσέστερ με Drone (4K)",
-          "icon": "fa-solid fa-helicopter",
-          "type": "drone"
-      },
-      "walking": {
-          "youtubeId": "bL2qP8w0yK5",
-          "title": "Τσέστερ 4K: Περιήγηση στις Διώροφες Μεσαιωνικές Στοές The Rows & το Ρολόι Eastgate",
-          "label": "Τσέστερ Walking Tour (4K)",
-          "icon": "fa-solid fa-person-walking",
-          "type": "walking"
-      }
-  },
+    "cityName": "Τσέστερ",
+    "drone": {
+        "youtubeId": "ftLPCPsln_o",
+        "title": "Τσέστερ 4K: Εναέρια Περιήγηση στα Ρωμαϊκά Τείχη, τον Καθεδρικό & τον Ποταμό Dee",
+        "label": "Τσέστερ με Drone (4K)",
+        "icon": "fa-solid fa-helicopter",
+        "type": "drone"
+    },
+    "walking": {
+        "youtubeId": "XILCfzMVPys",
+        "title": "Τσέστερ 4K: Περιήγηση στις Μοναδικές Στοές The Rows, το Ρολόι Eastgate & το Ρωμαϊκό Αμφιθέατρο",
+        "label": "Τσέστερ Walking Tour (4K)",
+        "icon": "fa-solid fa-person-walking",
+        "type": "walking"
+    }
+},
   "durham": {
       "cityName": "Ντάραμ",
       "drone": {
@@ -27448,362 +27501,362 @@ export const CITY_VIDEOS = {
       }
   },
   "st-andrews": {
-      "cityName": "Σεντ Άντριους",
-      "drone": {
-          "youtubeId": "wL5qZ8m0vI4",
-          "title": "Σεντ Άντριους 4K: Εναέρια Περιήγηση στο Old Course, τον Καθεδρικό & τη Βόρεια Θάλασσα",
-          "label": "Σεντ Άντριους με Drone (4K)",
-          "icon": "fa-solid fa-helicopter",
-          "type": "drone"
-      },
-      "walking": {
-          "youtubeId": "mL8pM2qZ0wM",
-          "title": "Σεντ Άντριους 4K: Περιήγηση στην Ιστορική Πατρίδα του Γκολφ & το Αρχαίο Πανεπιστήμιο",
-          "label": "Σεντ Άντριους Walking Tour (4K)",
-          "icon": "fa-solid fa-person-walking",
-          "type": "walking"
-      }
-  },
+    "cityName": "Σεντ Άντριους",
+    "drone": {
+        "youtubeId": "FVlK1I3iJ4w",
+        "title": "Σεντ Άντριους 4K: Εναέρια Περιήγηση στο Ιστορικό Λιμάνι, τα Ερείπια του Καθεδρικού & την Ακτή του Φάιφ",
+        "label": "Σεντ Άντριους με Drone (4K)",
+        "icon": "fa-solid fa-helicopter",
+        "type": "drone"
+    },
+    "walking": {
+        "youtubeId": "PNZvlPXTEdw",
+        "title": "Σεντ Άντριους 4K: Περιήγηση στο Ιστορικό Πανεπιστήμιο, το Κάστρο & την Παραλία West Sands",
+        "label": "Σεντ Άντριους Walking Tour (4K)",
+        "icon": "fa-solid fa-person-walking",
+        "type": "walking"
+    }
+},
   "brighton": {
-      "cityName": "Μπράιτον",
-      "drone": {
-          "youtubeId": "tL2qP8w0yM6",
-          "title": "Μπράιτον 4K: Εναέρια Περιήγηση στο Royal Pavilion, το Brighton Pier & τη Μάγχη",
-          "label": "Μπράιτον με Drone (4K)",
-          "icon": "fa-solid fa-helicopter",
-          "type": "drone"
-      },
-      "walking": {
-          "youtubeId": "fL8pM2qZ5wK",
-          "title": "Μπράιτον 4K: Περιήγηση στα Στενά The Lanes & τον Παραλιακό Πεζόδρομο",
-          "label": "Μπράιτον Walking Tour (4K)",
-          "icon": "fa-solid fa-person-walking",
-          "type": "walking"
-      }
-  },
+    "cityName": "Μπράιτον",
+    "drone": {
+        "youtubeId": "h86CxL1mV-Y",
+        "title": "Μπράιτον 4K: Εναέρια Περιήγηση στην Αποβάθρα Palace Pier, την Παραλία & τη Μάγχη",
+        "label": "Μπράιτον με Drone (4K)",
+        "icon": "fa-solid fa-helicopter",
+        "type": "drone"
+    },
+    "walking": {
+        "youtubeId": "ncelvwh7-Xk",
+        "title": "Μπράιτον 4K: Περιήγηση στο Royal Pavilion, τις Μποέμ Στοές The Lanes & τον Παραλιακό Πεζόδρομο",
+        "label": "Μπράιτον Walking Tour (4K)",
+        "icon": "fa-solid fa-person-walking",
+        "type": "walking"
+    }
+},
   "inverness": {
-      "cityName": "Ινβερνές",
-      "drone": {
-          "youtubeId": "pL8wP2m0vI5",
-          "title": "Ινβερνές 4K: Εναέρια Περιήγηση στην Πρωτεύουσα των Highlands & τον Ποταμό Ness",
-          "label": "Ινβερνές με Drone (4K)",
-          "icon": "fa-solid fa-helicopter",
-          "type": "drone"
-      },
-      "walking": {
-          "youtubeId": "zL2qP8w0yK7",
-          "title": "Ινβερνές 4K: Περιήγηση στο Κάστρο Inverness Castle, τα Νησιά Ness & την Παλιά Πόλη",
-          "label": "Ινβερνές Walking Tour (4K)",
-          "icon": "fa-solid fa-person-walking",
-          "type": "walking"
-      }
-  },
+    "cityName": "Ινβερνές",
+    "drone": {
+        "youtubeId": "shLXrVOwFZI",
+        "title": "Ινβερνές 4K: Εναέρια Περιήγηση στην Πρωτεύουσα των Highlands, τον Ποταμό Ness & το Κάστρο",
+        "label": "Ινβερνές με Drone (4K)",
+        "icon": "fa-solid fa-helicopter",
+        "type": "drone"
+    },
+    "walking": {
+        "youtubeId": "SKO25r_JCV4",
+        "title": "Ινβερνές 4K: Περιήγηση στα Νησιά Ness Islands, την High Street & τη Βικτωριανή Αγορά",
+        "label": "Ινβερνές Walking Tour (4K)",
+        "icon": "fa-solid fa-person-walking",
+        "type": "walking"
+    }
+},
   "salisbury": {
-      "cityName": "Σάλσμπερι",
-      "drone": {
-          "youtubeId": "yL8wP2m0vI6",
-          "title": "Σάλσμπερι 4K: Εναέρια Περιήγηση στον Γοτθικό Καθεδρικό Ναό & το Ψηλότερο Καμπαναριό του Η.Β.",
-          "label": "Σάλσμπερι με Drone (4K)",
-          "icon": "fa-solid fa-helicopter",
-          "type": "drone"
-      },
-      "walking": {
-          "youtubeId": "bL8pM2qZ9wM",
-          "title": "Σάλσμπερι 4K: Περιήγηση στη Magna Carta, το Cathedral Close & τα Μεσαιωνικά Σοκάκια",
-          "label": "Σάλσμπερι Walking Tour (4K)",
-          "icon": "fa-solid fa-person-walking",
-          "type": "walking"
-      }
-  },
+    "cityName": "Σάλσμπερι",
+    "drone": {
+        "youtubeId": "0kAY59wMGII",
+        "title": "Σάλσμπερι 4K: Εναέρια Περιήγηση στον Καθεδρικό με το Ψηλότερο Καμπαναριό του ΗΒ & το Wiltshire",
+        "label": "Σάλσμπερι με Drone (4K)",
+        "icon": "fa-solid fa-helicopter",
+        "type": "drone"
+    },
+    "walking": {
+        "youtubeId": "6u-UCuc1T04",
+        "title": "Σάλσμπερι 4K: Περιήγηση στην Παλιά Πόλη, την Πλατεία Αγοράς & τον Περίβολο του Καθεδρικού",
+        "label": "Σάλσμπερι Walking Tour (4K)",
+        "icon": "fa-solid fa-person-walking",
+        "type": "walking"
+    }
+},
   "sheffield": {
-      "cityName": "Σέφιλντ",
-      "drone": {
-          "youtubeId": "cL2qP8w0yK8",
-          "title": "Σέφιλντ 4K: Εναέρια Περιήγηση στην Πόλη του Χάλυβα & την Πύλη του Peak District",
-          "label": "Σέφιλντ με Drone (4K)",
-          "icon": "fa-solid fa-helicopter",
-          "type": "drone"
-      },
-      "walking": {
-          "youtubeId": "xL8pM2qZ3wM",
-          "title": "Σέφιλντ 4K: Περιήγηση στο Winter Garden, Peace Gardens & το Millennium Gallery",
-          "label": "Σέφιλντ Walking Tour (4K)",
-          "icon": "fa-solid fa-person-walking",
-          "type": "walking"
-      }
-  },
+    "cityName": "Σέφιλντ",
+    "drone": {
+        "youtubeId": "VoJ-srwgJfQ",
+        "title": "Σέφιλντ 4K: Εναέρια Περιήγηση στη Steel City, τους Κήπους Peace Gardens & το Yorkshire",
+        "label": "Σέφιλντ με Drone (4K)",
+        "icon": "fa-solid fa-helicopter",
+        "type": "drone"
+    },
+    "walking": {
+        "youtubeId": "N0ntRbPVY_o",
+        "title": "Σέφιλντ 4K: Περιήγηση στο Δημαρχείο Town Hall, τη Fargate & το Millennium Gallery",
+        "label": "Σέφιλντ Walking Tour (4K)",
+        "icon": "fa-solid fa-person-walking",
+        "type": "walking"
+    }
+},
   "nottingham": {
-      "cityName": "Νότιγχαμ",
-      "drone": {
-          "youtubeId": "wL8pM2qZ7wK",
-          "title": "Νότιγχαμ 4K: Εναέρια Περιήγηση στο Κάστρο του Νότιγχαμ, το Wollaton Hall & το Sherwood Forest",
-          "label": "Νότιγχαμ με Drone (4K)",
-          "icon": "fa-solid fa-helicopter",
-          "type": "drone"
-      },
-      "walking": {
-          "youtubeId": "mL8wP2qZ5wM",
-          "title": "Νότιγχαμ 4K: Περιήγηση στην Παλιά Πλατεία Old Market Square & τα Υπόγεια Σπήλαια",
-          "label": "Νότιγχαμ Walking Tour (4K)",
-          "icon": "fa-solid fa-person-walking",
-          "type": "walking"
-      }
-  },
+    "cityName": "Νότιγχαμ",
+    "drone": {
+        "youtubeId": "zGA12pQxBIM",
+        "title": "Νότιγχαμ 4K: Εναέρια Περιήγηση στο Κάστρο του Νότιγχαμ, την Old Market Square & το Wollaton Hall",
+        "label": "Νότιγχαμ με Drone (4K)",
+        "icon": "fa-solid fa-helicopter",
+        "type": "drone"
+    },
+    "walking": {
+        "youtubeId": "Y8juamBhTYI",
+        "title": "Νότιγχαμ 4K: Περιήγηση στην Ιστορική Συνοικία Lace Market, τα Σπήλαια & το Robin Hood Statue",
+        "label": "Νότιγχαμ Walking Tour (4K)",
+        "icon": "fa-solid fa-person-walking",
+        "type": "walking"
+    }
+},
   "zakopane": {
-      "cityName": "Ζακοπάνε",
-      "drone": {
-          "youtubeId": "kL8pM2qZ6wK",
-          "title": "Ζακοπάνε 4K: Εναέρια Περιήγηση στα Όρη Τάτρα, το Kasprowy Wierch & τη Λίμνη Morskie Oko",
-          "label": "Ζακοπάνε με Drone (4K)",
-          "icon": "fa-solid fa-helicopter",
-          "type": "drone"
-      },
-      "walking": {
-          "youtubeId": "pL8wP2qZ7wM",
-          "title": "Ζακοπάνε 4K: Περιήγηση στον Πεζόδρομο Krupówki & τα Παραδοσιακά Ξύλινα Σαλέ",
-          "label": "Ζακοπάνε Walking Tour (4K)",
-          "icon": "fa-solid fa-person-walking",
-          "type": "walking"
-      }
-  },
+    "cityName": "Ζακοπάνε",
+    "drone": {
+        "youtubeId": "xI09gddBv_I",
+        "title": "Ζακοπάνε 4K: Εναέρια Περιήγηση στη Χειμερινή Πρωτεύουσα της Πολωνίας & τα Όρη Τάτρα",
+        "label": "Ζακοπάνε με Drone (4K)",
+        "icon": "fa-solid fa-helicopter",
+        "type": "drone"
+    },
+    "walking": {
+        "youtubeId": "SK0-daMPkWo",
+        "title": "Ζακοπάνε 4K: Περιήγηση στον Διάσημο Πεζόδρομο Krupówki & την Παραδοσιακή Ξύλινη Αρχιτεκτονική",
+        "label": "Ζακοπάνε Walking Tour (4K)",
+        "icon": "fa-solid fa-person-walking",
+        "type": "walking"
+    }
+},
   "bialystok": {
-      "cityName": "Μπιαουίστοκ",
-      "drone": {
-          "youtubeId": "zL8pM2qZ4wK",
-          "title": "Μπιαουίστοκ 4K: Εναέρια Περιήγηση στο Παλάτι Branicki «Βερσαλλίες της Πολωνίας» & το Ποντλάσιε",
-          "label": "Μπιαουίστοκ με Drone (4K)",
-          "icon": "fa-solid fa-helicopter",
-          "type": "drone"
-      },
-      "walking": {
-          "youtubeId": "bL8wP2qZ6wM",
-          "title": "Μπιαουίστοκ 4K: Περιήγηση στους Γαλλικούς Κήπους Branicki & την Rynek Kościuszki",
-          "label": "Μπιαουίστοκ Walking Tour (4K)",
-          "icon": "fa-solid fa-person-walking",
-          "type": "walking"
-      }
-  },
+    "cityName": "Μπιαουίστοκ",
+    "drone": {
+        "youtubeId": "zu_G3AHtHvM",
+        "title": "Μπιαουίστοκ 4K: Εναέρια Περιήγηση στο Ανάκτορο Branicki, τους Κήπους & το Ποντλάσιε",
+        "label": "Μπιαουίστοκ με Drone (4K)",
+        "icon": "fa-solid fa-helicopter",
+        "type": "drone"
+    },
+    "walking": {
+        "youtubeId": "jk8LY8szlF0",
+        "title": "Μπιαουίστοκ 4K: Περιήγηση στην Πλατεία Kosciuszko, την Παλιά Πόλη & την Ορθόδοξη Εκκλησία του Αγίου Νικολάου",
+        "label": "Μπιαουίστοκ Walking Tour (4K)",
+        "icon": "fa-solid fa-person-walking",
+        "type": "walking"
+    }
+},
   "czestochowa": {
-      "cityName": "Τσεστοχόβα",
-      "drone": {
-          "youtubeId": "xL8pM2qZ9wK",
-          "title": "Τσεστοχόβα 4K: Εναέρια Περιήγηση στο Μοναστήρι Jasna Góra & τη Μαύρη Παναγία",
-          "label": "Τσεστοχόβα με Drone (4K)",
-          "icon": "fa-solid fa-helicopter",
-          "type": "drone"
-      },
-      "walking": {
-          "youtubeId": "cL8wP2qZ3wM",
-          "title": "Τσεστοχόβα 4K: Περιήγηση στο Πνευματικό Προπύργιο της Πολωνίας & τη Λεωφόρο Najświętszej Maryi Panny",
-          "label": "Τσεστοχόβα Walking Tour (4K)",
-          "icon": "fa-solid fa-person-walking",
-          "type": "walking"
-      }
-  },
+    "cityName": "Τσεστοχόβα",
+    "drone": {
+        "youtubeId": "jIlKF4CH45E",
+        "title": "Τσεστοχόβα 4K: Εναέρια Περιήγηση στο Ιστορικό Μοναστήρι Jasna Góra & τη Μαύρη Μαντόνα",
+        "label": "Τσεστοχόβα με Drone (4K)",
+        "icon": "fa-solid fa-helicopter",
+        "type": "drone"
+    },
+    "walking": {
+        "youtubeId": "rvrbLUDEFBk",
+        "title": "Τσεστοχόβα 4K: Περιήγηση στη Λεωφόρο Najświętszej Maryi Panny & το Πάρκο Stanisława Staszica",
+        "label": "Τσεστοχόβα Walking Tour (4K)",
+        "icon": "fa-solid fa-person-walking",
+        "type": "walking"
+    }
+},
   "zamosc": {
-      "cityName": "Ζάμοστς",
-      "drone": {
-          "youtubeId": "yL8pM2qZ8wK",
-          "title": "Ζάμοστς 4K: Εναέρια Περιήγηση στην «Περλ της Αναγέννησης» & την Ιδανική Πόλη UNESCO",
-          "label": "Ζάμοστς με Drone (4K)",
-          "icon": "fa-solid fa-helicopter",
-          "type": "drone"
-      },
-      "walking": {
-          "youtubeId": "mL8wP2qZ1wM",
-          "title": "Ζάμοστς 4K: Περιήγηση στη Μεγάλη Πλατεία Rynek Wielki & το Δημαρχείο με τις Αρμένικες Οικίες",
-          "label": "Ζάμοστς Walking Tour (4K)",
-          "icon": "fa-solid fa-person-walking",
-          "type": "walking"
-      }
-  },
+    "cityName": "Ζάμοστς",
+    "drone": {
+        "youtubeId": "iS6G09LIjqU",
+        "title": "Ζάμοστς 4K: Εναέρια Περιήγηση στην Αναγεννησιακή Πόλη UNESCO & τα Οχυρωματικά Τείχη",
+        "label": "Ζάμοστς με Drone (4K)",
+        "icon": "fa-solid fa-helicopter",
+        "type": "drone"
+    },
+    "walking": {
+        "youtubeId": "m6RvivxuowE",
+        "title": "Ζάμοστς 4K: Περιήγηση στη Μεγάλη Πλατεία Rynek Wielki & το Εμβληματικό Δημαρχείο",
+        "label": "Ζάμοστς Walking Tour (4K)",
+        "icon": "fa-solid fa-person-walking",
+        "type": "walking"
+    }
+},
   "olsztyn": {
-      "cityName": "Όλστιν",
-      "drone": {
-          "youtubeId": "wL8pM2qZ5wN",
-          "title": "Όλστιν 4K: Εναέρια Περιήγηση στο Κάστρο των Τευτόνων, τη Χώρα των Λιμνών Μαζουρία & το Κέντρο Κοπέρνικου",
-          "label": "Όλστιν με Drone (4K)",
-          "icon": "fa-solid fa-helicopter",
-          "type": "drone"
-      },
-      "walking": {
-          "youtubeId": "fL8wP2qZ4wM",
-          "title": "Όλστιν 4K: Περιήγηση στην Παλιά Πόλη, την Υψηλή Πύλη Wysoka Brama & τη Λίμνη Ukiel",
-          "label": "Όλστιν Walking Tour (4K)",
-          "icon": "fa-solid fa-person-walking",
-          "type": "walking"
-      }
-  },
+    "cityName": "Όλστιν",
+    "drone": {
+        "youtubeId": "CBl9o9ULLNw",
+        "title": "Όλστιν 4K: Εναέρια Περιήγηση στο Κάστρο της Βαρμίας, τη Λίμνη Ukiel & το Ιστορικό Κέντρο",
+        "label": "Όλστιν με Drone (4K)",
+        "icon": "fa-solid fa-helicopter",
+        "type": "drone"
+    },
+    "walking": {
+        "youtubeId": "alZIjWvXPAw",
+        "title": "Όλστιν 4K: Περιήγηση στην Παλιά Πόλη, την Υψηλή Πύλη Wysoka Brama & τον Ποταμό Łyna",
+        "label": "Όλστιν Walking Tour (4K)",
+        "icon": "fa-solid fa-person-walking",
+        "type": "walking"
+    }
+},
   "rzeszow": {
-      "cityName": "Ζέσουφ",
-      "drone": {
-          "youtubeId": "tL8pM2qZ3wN",
-          "title": "Ζέσουφ 4K: Εναέρια Περιήγηση στον Σύγχρονο Κόμβο Καινοτομίας & το Κάστρο Lubomirski",
-          "label": "Ζέσουφ με Drone (4K)",
-          "icon": "fa-solid fa-helicopter",
-          "type": "drone"
-      },
-      "walking": {
-          "youtubeId": "qL8wP2qZ7wM",
-          "title": "Ζέσουφ 4K: Περιήγηση στην Κεντρική Πλατεία Rynek & την Υπόγεια Τουριστική Διαδρομή",
-          "label": "Ζέσουφ Walking Tour (4K)",
-          "icon": "fa-solid fa-person-walking",
-          "type": "walking"
-      }
-  },
+    "cityName": "Ζέσουφ",
+    "drone": {
+        "youtubeId": "yIJPsnJAjqY",
+        "title": "Ζέσουφ 4K: Εναέρια Περιήγηση στους Σύγχρονους Ουρανοξύστες, το Κάστρο Lubomirski & τον Ποταμό Wisłok",
+        "label": "Ζέσουφ με Drone (4K)",
+        "icon": "fa-solid fa-helicopter",
+        "type": "drone"
+    },
+    "walking": {
+        "youtubeId": "v2Hai6nrl_k",
+        "title": "Ζέσουφ 4K: Περιήγηση στην Κεντρική Πλατεία Rynek, το Δημαρχείο & την Οδό 3 Maja",
+        "label": "Ζέσουφ Walking Tour (4K)",
+        "icon": "fa-solid fa-person-walking",
+        "type": "walking"
+    }
+},
   "kielce": {
-      "cityName": "Κιέλτσε",
-      "drone": {
-          "youtubeId": "pL8pM2qZ2wN",
-          "title": "Κιέλτσε 4K: Εναέρια Περιήγηση στο Παλάτι των Επισκόπων της Κρακοβίας & τα Όρη Świętokrzyskie",
-          "label": "Κιέλτσε με Drone (4K)",
-          "icon": "fa-solid fa-helicopter",
-          "type": "drone"
-      },
-      "walking": {
-          "youtubeId": "vL8wP2qZ6wM",
-          "title": "Κιέλτσε 4K: Περιήγηση στον Πεζόδρομο Sienkiewicza & το Γεωλογικό Πάρκο Kadzielnia",
-          "label": "Κιέλτσε Walking Tour (4K)",
-          "icon": "fa-solid fa-person-walking",
-          "type": "walking"
-      }
-  },
+    "cityName": "Κιέλτσε",
+    "drone": {
+        "youtubeId": "FINe4Dyy1kk",
+        "title": "Κιέλτσε 4K: Εναέρια Περιήγηση στο Παλάτι των Επισκόπων της Κρακοβίας & τα Όρη Świętokrzyskie",
+        "label": "Κιέλτσε με Drone (4K)",
+        "icon": "fa-solid fa-helicopter",
+        "type": "drone"
+    },
+    "walking": {
+        "youtubeId": "bzMkCAenxM8",
+        "title": "Κιέλτσε 4K: Περιήγηση στον Πεζόδρομο Sienkiewicza, την Πλατεία Αγοράς & τον Καθεδρικό",
+        "label": "Κιέλτσε Walking Tour (4K)",
+        "icon": "fa-solid fa-person-walking",
+        "type": "walking"
+    }
+},
   "bydgoszcz": {
-      "cityName": "Μπίντγκοστς",
-      "drone": {
-          "youtubeId": "mL8pM2qZ1wN",
-          "title": "Μπίντγκοστς 4K: Εναέρια Περιήγηση στη Βενετία της Πολωνίας, τη Νήσο των Μύλων & τον Ποταμό Brda",
-          "label": "Μπίντγκοστς με Drone (4K)",
-          "icon": "fa-solid fa-helicopter",
-          "type": "drone"
-      },
-      "walking": {
-          "youtubeId": "kL8wP2qZ5wM",
-          "title": "Μπίντγκοστς 4K: Περιήγηση στην Wyspa Młyńska, την Opera Nova & τις Ιστορικές Σιταποθήκες",
-          "label": "Μπίντγκοστς Walking Tour (4K)",
-          "icon": "fa-solid fa-person-walking",
-          "type": "walking"
-      }
-  },
+    "cityName": "Μπίντγκοστς",
+    "drone": {
+        "youtubeId": "z-ZTbiu4zuc",
+        "title": "Μπίντγκοστς 4K: Εναέρια Περιήγηση στη Βενετία της Πολωνίας, τον Ποταμό Brda & το Νησί των Μύλων",
+        "label": "Μπίντγκοστς με Drone (4K)",
+        "icon": "fa-solid fa-helicopter",
+        "type": "drone"
+    },
+    "walking": {
+        "youtubeId": "P0fyRt5unbw",
+        "title": "Μπίντγκοστς 4K: Περιήγηση στο Wyspa Młyńska, την Παλιά Αγορά Stary Rynek & τις Αποθήκες Σιτηρών",
+        "label": "Μπίντγκοστς Walking Tour (4K)",
+        "icon": "fa-solid fa-person-walking",
+        "type": "walking"
+    }
+},
   "zielona-gora": {
-      "cityName": "Ζιελόνα Γκούρα",
-      "drone": {
-          "youtubeId": "zL8pM2qZ0wN",
-          "title": "Ζιελόνα Γκούρα 4K: Εναέρια Περιήγηση στην Πρωτεύουσα του Πολωνικού Κρασιού & τους Αμπελώνες",
-          "label": "Ζιελόνα Γκούρα με Drone (4K)",
-          "icon": "fa-solid fa-helicopter",
-          "type": "drone"
-      },
-      "walking": {
-          "youtubeId": "bL8wP2qZ4wN",
-          "title": "Ζιελόνα Γκούρα 4K: Περιήγηση στο Πάρκο των Αμπελιών Park Winny, το Φοινικόδασος Palmiarnia & την Παλιά Πόλη",
-          "label": "Ζιελόνα Γκούρα Walking Tour (4K)",
-          "icon": "fa-solid fa-person-walking",
-          "type": "walking"
-      }
-  },
+    "cityName": "Ζιελόνα Γκούρα",
+    "drone": {
+        "youtubeId": "PwnwU2vI35o",
+        "title": "Ζιελόνα Γκούρα 4K: Εναέρια Περιήγηση στους Αμπελώνες, το Palm House & το Ιστορικό Κέντρο",
+        "label": "Ζιελόνα Γκούρα με Drone (4K)",
+        "icon": "fa-solid fa-helicopter",
+        "type": "drone"
+    },
+    "walking": {
+        "youtubeId": "PQZf_yDtDDs",
+        "title": "Ζιελόνα Γκούρα 4K: Περιήγηση στην Παλιά Αγορά Stary Rynek, το Δημαρχείο & την Οδό Żeromskiego",
+        "label": "Ζιελόνα Γκούρα Walking Tour (4K)",
+        "icon": "fa-solid fa-person-walking",
+        "type": "walking"
+    }
+},
   "sandomierz": {
-      "cityName": "Σαντόμιες",
-      "drone": {
-          "youtubeId": "xL8pM2qZ7wN",
-          "title": "Σαντόμιες 4K: Εναέρια Περιήγηση στη «Μικρή Ρώμη της Πολωνίας» στους 7 Λόφους πάνω από τον Βιστούλα",
-          "label": "Σαντόμιες με Drone (4K)",
-          "icon": "fa-solid fa-helicopter",
-          "type": "drone"
-      },
-      "walking": {
-          "youtubeId": "cL8wP2qZ3wN",
-          "title": "Σαντόμιες 4K: Περιήγηση στη Μεσαιωνική Πλατεία Rynek, την Πύλη Opatowska & το Βασιλικό Κάστρο",
-          "label": "Σαντόμιες Walking Tour (4K)",
-          "icon": "fa-solid fa-person-walking",
-          "type": "walking"
-      }
-  },
+    "cityName": "Σαντόμιες",
+    "drone": {
+        "youtubeId": "2QIAlQWC8Vw",
+        "title": "Σαντόμιες 4K: Εναέρια Περιήγηση στη Μεσαιωνική Πόλη πάνω στον Βιστούλα & τα Ιστορικά Μοναστήρια",
+        "label": "Σαντόμιες με Drone (4K)",
+        "icon": "fa-solid fa-helicopter",
+        "type": "drone"
+    },
+    "walking": {
+        "youtubeId": "j6WKiyiF5P4",
+        "title": "Σαντόμιες 4K: Περιήγηση στην Πλατεία Αγοράς, την Πύλη Opatowska & το Βασιλικό Κάστρο",
+        "label": "Σαντόμιες Walking Tour (4K)",
+        "icon": "fa-solid fa-person-walking",
+        "type": "walking"
+    }
+},
   "gniezno": {
-      "cityName": "Γκνιέζνο",
-      "drone": {
-          "youtubeId": "yL8pM2qZ6wN",
-          "title": "Γκνιέζνο 4K: Εναέρια Περιήγηση στην Πρώτη Ιστορική Πρωτεύουσα της Πολωνίας & το Λίκνο των Πιάστ",
-          "label": "Γκνιέζνο με Drone (4K)",
-          "icon": "fa-solid fa-helicopter",
-          "type": "drone"
-      },
-      "walking": {
-          "youtubeId": "mL8wP2qZ2wN",
-          "title": "Γκνιέζνο 4K: Περιήγηση στον Βασιλικό Καθεδρικό των Στέψεων & τις Διάσημες Χάλκινες Πύλες Drzwi Gnieźnieńskie",
-          "label": "Γκνιέζνο Walking Tour (4K)",
-          "icon": "fa-solid fa-person-walking",
-          "type": "walking"
-      }
-  },
+    "cityName": "Γκνιέζνο",
+    "drone": {
+        "youtubeId": "QsNL5W-yW-E",
+        "title": "Γκνιέζνο 4K: Εναέρια Περιήγηση στην Πρώτη Ιστορική Πρωτεύουσα της Πολωνίας & τον Λόφο Lech",
+        "label": "Γκνιέζνο με Drone (4K)",
+        "icon": "fa-solid fa-helicopter",
+        "type": "drone"
+    },
+    "walking": {
+        "youtubeId": "FmYNDrDJI0E",
+        "title": "Γκνιέζνο 4K: Περιήγηση στον Καθεδρικό Ναό με τις Χάλκινες Πύλες & την Παλιά Αγορά",
+        "label": "Γκνιέζνο Walking Tour (4K)",
+        "icon": "fa-solid fa-person-walking",
+        "type": "walking"
+    }
+},
   "swinoujscie": {
-      "cityName": "Σβινούιστσιε",
-      "drone": {
-          "youtubeId": "wL8pM2qZ4wP",
-          "title": "Σβινούιστσιε 4K: Εναέρια Περιήγηση στο Νησιωτικό Λιμάνι της Βαλτικής & τον Υψηλότερο Φάρο της Πολωνίας",
-          "label": "Σβινούιστσιε με Drone (4K)",
-          "icon": "fa-solid fa-helicopter",
-          "type": "drone"
-      },
-      "walking": {
-          "youtubeId": "fL8wP2qZ1wN",
-          "title": "Σβινούιστσιε 4K: Περιήγηση στο Πρωσικό Φρούριο Fort Gerharda, τον Μόλο & τις Αμμώδεις Παραλίες",
-          "label": "Σβινούιστσιε Walking Tour (4K)",
-          "icon": "fa-solid fa-person-walking",
-          "type": "walking"
-      }
-  },
+    "cityName": "Σβινούιστσιε",
+    "drone": {
+        "youtubeId": "y0J7np_S_VI",
+        "title": "Σβινούιστσιε 4K: Εναέρια Περιήγηση στο Νησιωτικό Λιμάνι της Βαλτικής, τον Φάρο & τα Φέρι",
+        "label": "Σβινούιστσιε με Drone (4K)",
+        "icon": "fa-solid fa-helicopter",
+        "type": "drone"
+    },
+    "walking": {
+        "youtubeId": "ylKHIEtzeUk",
+        "title": "Σβινούιστσιε 4K: Περιήγηση στον Παραλιακό Πεζόδρομο, τις Αμμώδεις Παραλίες & το Πάρκο Zdrojowy",
+        "label": "Σβινούιστσιε Walking Tour (4K)",
+        "icon": "fa-solid fa-person-walking",
+        "type": "walking"
+    }
+},
   "walbrzych": {
-      "cityName": "Βάλμπζιχ",
-      "drone": {
-          "youtubeId": "tL8pM2qZ2wP",
-          "title": "Βάλμπζιχ 4K: Εναέρια Περιήγηση στο Μνημειώδες Κάστρο Książ & την Κάτω Σιλεσία",
-          "label": "Βάλμπζιχ με Drone (4K)",
-          "icon": "fa-solid fa-helicopter",
-          "type": "drone"
-      },
-      "walking": {
-          "youtubeId": "qL8wP2qZ0wN",
-          "title": "Βάλμπζιχ 4K: Περιήγηση στα Μυστήρια του Υπόγειου Συμπλέγματος Riese & τους Κήπους Książ",
-          "label": "Βάλμπζιχ Walking Tour (4K)",
-          "icon": "fa-solid fa-person-walking",
-          "type": "walking"
-      }
-  },
+    "cityName": "Βάλμπζιχ",
+    "drone": {
+        "youtubeId": "5HuXZ4euUYw",
+        "title": "Βάλμπζιχ 4K: Εναέρια Περιήγηση στην Κάτω Σιλεσία, το Κάστρο Książ & τα Καταπράσινα Βουνά",
+        "label": "Βάλμπζιχ με Drone (4K)",
+        "icon": "fa-solid fa-helicopter",
+        "type": "drone"
+    },
+    "walking": {
+        "youtubeId": "lW5mRu0ZXvk",
+        "title": "Βάλμπζιχ 4K: Περιήγηση στο Μνημειώδες Κάστρο Książ, τους Κήπους & το Ιστορικό Κέντρο",
+        "label": "Βάλμπζιχ Walking Tour (4K)",
+        "icon": "fa-solid fa-person-walking",
+        "type": "walking"
+    }
+},
   "przemysl": {
-      "cityName": "Πσέμισλ",
-      "drone": {
-          "youtubeId": "pL8pM2qZ1wP",
-          "title": "Πσέμισλ 4K: Εναέρια Περιήγηση στο Ιστορικό Προπύργιο των Αψβούργων, τον Ποταμό San & το Κάστρο Kazimierz",
-          "label": "Πσέμισλ με Drone (4K)",
-          "icon": "fa-solid fa-helicopter",
-          "type": "drone"
-      },
-      "walking": {
-          "youtubeId": "vL8wP2qZ9wP",
-          "title": "Πσέμισλ 4K: Περιήγηση στην Επικλινή Αναγεννησιακή Πλατεία Rynek & το Φρούριο Festung Przemyśl",
-          "label": "Πσέμισλ Walking Tour (4K)",
-          "icon": "fa-solid fa-person-walking",
-          "type": "walking"
-      }
-  },
+    "cityName": "Πσέμισλ",
+    "drone": {
+        "youtubeId": "j-e5Bzs8Gu4",
+        "title": "Πσέμισλ 4K: Εναέρια Περιήγηση στην Ιστορική Πόλη του Ποταμού San, τα Κάστρα & τα Οχυρά",
+        "label": "Πσέμισλ με Drone (4K)",
+        "icon": "fa-solid fa-helicopter",
+        "type": "drone"
+    },
+    "walking": {
+        "youtubeId": "x8wlhB1udY0",
+        "title": "Πσέμισλ 4K: Περιήγηση στην Παλιά Πόλη, την Πλατεία Rynek & τον Καθεδρικό Ναό",
+        "label": "Πσέμισλ Walking Tour (4K)",
+        "icon": "fa-solid fa-person-walking",
+        "type": "walking"
+    }
+},
   "malbork": {
-      "cityName": "Μάλμπορκ",
-      "drone": {
-          "youtubeId": "mL8pM2qZ0wP",
-          "title": "Μάλμπορκ 4K: Εναέρια Περιήγηση στο Μεγαλύτερο Πλίνθινο Κάστρο στον Κόσμο UNESCO των Τευτόνων Ιπποτών",
-          "label": "Μάλμπορκ με Drone (4K)",
-          "icon": "fa-solid fa-helicopter",
-          "type": "drone"
-      },
-      "walking": {
-          "youtubeId": "kL8wP2qZ8wP",
-          "title": "Μάλμπορκ 4K: Περιήγηση στο Κάστρο του Μεγάλου Μαγίστρου & τον Ποταμό Nogat",
-          "label": "Μάλμπορκ Walking Tour (4K)",
-          "icon": "fa-solid fa-person-walking",
-          "type": "walking"
-      }
-  }
+    "cityName": "Μάλμπορκ",
+    "drone": {
+        "youtubeId": "hXURrOgSUmE",
+        "title": "Μάλμπορκ 4K: Εναέρια Περιήγηση στο Μεγαλύτερο Κάστρο από Τούβλα στον Κόσμο (Τευτονικό Κάστρο UNESCO)",
+        "label": "Μάλμπορκ με Drone (4K)",
+        "icon": "fa-solid fa-helicopter",
+        "type": "drone"
+    },
+    "walking": {
+        "youtubeId": "0bl7_ICANbI",
+        "title": "Μάλμπορκ 4K: Περιήγηση στις Αυλές του Κάστρου Malbork, τα Μεσαιωνικά Τείχη & τον Ποταμό Nogat",
+        "label": "Μάλμπορκ Walking Tour (4K)",
+        "icon": "fa-solid fa-person-walking",
+        "type": "walking"
+    }
+}
 };
 
 export function getCityVideo(cityId, preferredType = 'drone') {
