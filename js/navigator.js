@@ -1,5 +1,5 @@
-import { US_STATES, CITY_TO_STATE } from './states-data.js?v=20261117_video_iframe_fix';
-import { CITY_VIDEOS } from './video-service.js?v=20261120_new_cities_25_v23';
+import { US_STATES, CITY_TO_STATE } from './states-data.js?v=20261121_nordic_cities_v26';
+import { CITY_VIDEOS } from './video-service.js?v=20261121_nordic_cities_v26';
 /**
  * Navigator Module
  * Hierarchical Cascading Navigation: Continents -> Countries -> Cities
@@ -335,9 +335,23 @@ export const CONTINENTS_DATA = [
           { id: 'visby', name: 'Βίσμπι' },
           { id: 'kiruna', name: 'Κιρούνα' },
           { id: 'linkoping', name: 'Λινσέπινγκ' },
-          { id: 'orebro', name: 'Ερεμπρού' },
-          { id: 'helsingborg', name: 'Χέλσινγκμποργκ' },
-          { id: 'lund', name: 'Λουντ' }
+          { id: 'orebro', name: 'Ερεμπρού' },          { id: 'helsingborg', name: 'Χέλσινγκμποργκ' },
+          { id: 'lund', name: 'Λουντ' },
+          { id: 'vasteras', name: 'Βέστερος' },
+          { id: 'norrkoping', name: 'Νόρσεπινγκ' },
+          { id: 'jonkoping', name: 'Γιένσεπινγκ' },
+          { id: 'umea', name: 'Ούμεο' },
+          { id: 'gavle', name: 'Γιέβλε' },
+          { id: 'boras', name: 'Μπουρός' },
+          { id: 'eskilstuna', name: 'Έσκιλστουνα' },
+          { id: 'halmstad', name: 'Χάλμσταντ' },
+          { id: 'vaxjo', name: 'Βέξιε' },
+          { id: 'karlstad', name: 'Κάρλσταντ' },
+          { id: 'sundsvall', name: 'Σούντσβαλ' },
+          { id: 'ostersund', name: 'Έστερσουντ' },
+          { id: 'falun', name: 'Φάλουν' },
+          { id: 'kalmar', name: 'Κάλμαρ' },
+          { id: 'ystad', name: 'Ύσταντ' }
         ]
       },
       {
@@ -352,9 +366,23 @@ export const CONTINENTS_DATA = [
           { id: 'stavanger', name: 'Σταβάνγκερ' },
           { id: 'alesund', name: 'Όλεσουντ' },
           { id: 'kristiansand', name: 'Κρίστιανσαντ' },
-          { id: 'drammen', name: 'Ντράμεν' },
-          { id: 'bodo', name: 'Μπόντε' },
-          { id: 'lillehammer', name: 'Λιλεχάμερ' }
+          { id: 'drammen', name: 'Ντράμεν' },          { id: 'bodo', name: 'Μπόντε' },
+          { id: 'lillehammer', name: 'Λιλεχάμερ' },
+          { id: 'haugesund', name: 'Χάουγκεσουντ' },
+          { id: 'fredrikstad', name: 'Φρέντρικσταντ' },
+          { id: 'tonsberg', name: 'Τένσμπεργκ' },
+          { id: 'skien', name: 'Σίεν' },
+          { id: 'sarpsborg', name: 'Σάρπσμποργκ' },
+          { id: 'arendal', name: 'Άρενταλ' },
+          { id: 'roros', name: 'Ρέρος' },
+          { id: 'molde', name: 'Μόλντε' },
+          { id: 'kongsberg', name: 'Κόνγκσμπεργκ' },
+          { id: 'narvik', name: 'Νάρβικ' },
+          { id: 'hamar', name: 'Χάμαρ' },
+          { id: 'halden', name: 'Χάλντεν' },
+          { id: 'harstad', name: 'Χάρσταντ' },
+          { id: 'mo-i-rana', name: 'Μο ι Ράνα' },
+          { id: 'alta', name: 'Άλτα' }
         ]
       },
       {
@@ -386,9 +414,23 @@ export const CONTINENTS_DATA = [
           { id: 'oulu', name: 'Όουλου' },
           { id: 'jyvaskyla', name: 'Γιουβάσκουλα' },
           { id: 'kuopio', name: 'Κουόπιο' },
-          { id: 'lahti', name: 'Λάχτι' },
-          { id: 'vaasa', name: 'Βάασα' },
-          { id: 'porvoo', name: 'Πόρβοο' }
+          { id: 'lahti', name: 'Λάχτι' },          { id: 'vaasa', name: 'Βάασα' },
+          { id: 'porvoo', name: 'Πόρβοο' },
+          { id: 'espoo', name: 'Έσποο' },
+          { id: 'vantaa', name: 'Βάνταα' },
+          { id: 'lappeenranta', name: 'Λαππεενράντα' },
+          { id: 'savonlinna', name: 'Σαβονλίννα' },
+          { id: 'hameenlinna', name: 'Χαμεενλίννα' },
+          { id: 'pori', name: 'Πόρι' },
+          { id: 'kotka', name: 'Κότκα' },
+          { id: 'joensuu', name: 'Γιόενσουου' },
+          { id: 'mikkeli', name: 'Μίκελι' },
+          { id: 'kajaani', name: 'Καγιαάνι' },
+          { id: 'rauma', name: 'Ράουμα' },
+          { id: 'naantali', name: 'Νάανταλι' },
+          { id: 'tornio', name: 'Τόρνιο' },
+          { id: 'kemi', name: 'Κέμι' },
+          { id: 'mariehamn', name: 'Μάριεχαμν' }
         ]
       },
       {

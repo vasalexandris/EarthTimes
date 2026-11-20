@@ -2418,6 +2418,2980 @@
           "wiki": "Johan_Ludvig_Runeberg"
         }
       ]
+    },
+    {
+      "id": "espoo",
+      "name": "Έσποο",
+      "englishName": "Espoo",
+      "nickname": "Η Πόλη της Καινοτομίας & του Εθνικού Πάρκου Nuuksio",
+      "type": "city",
+      "coords": [
+        60.2055,
+        24.6559
+      ],
+      "zoom": 12,
+      "stats": {
+        "population": "320.000",
+        "founded": "1458 (ενορία) / 1972 (πόλη)",
+        "area": "528 km²",
+        "famousFor": "Πανεπιστήμιο Aalto, Nuuksio, Tapiola, Aalto"
+      },
+      "quote": "«Το Έσποο είναι η δεύτερη μεγαλύτερη πόλη της Φινλανδίας, όπου η τεχνολογία συναντά το δάσος Nuuksio.»",
+      "geo": {
+        "summary": "Στα δυτικά προάστια του Ελσίνκι, κατά μήκος της ακτής του Κόλπου της Φινλανδίας, το Έσποο συνδυάζει αστική ανάπτυξη με φυσικά δάση.",
+        "highlights": [
+          {
+            "title": "Εθνικό Πάρκο Nuuksio",
+            "desc": "Μεγάλο πάρκο με λίμνες και δάση."
+          },
+          {
+            "title": "Ακτή Κόλπου Φινλανδίας",
+            "desc": "Παραλιακή περιοχή με νησιά."
+          },
+          {
+            "title": "Λίμνη Pitkäjärvi",
+            "desc": "Αστική λίμνη."
+          }
+        ]
+      },
+      "hist": {
+        "summary": "Ιδρύθηκε ως ενορία τον 15ο αιώνα, αναπτύχθηκε ραγδαία τον 20ό αιώνα και έγινε πόλη το 1972. Σήμερα στεγάζει το Πανεπιστήμιο Aalto.",
+        "highlights": [
+          {
+            "title": "1458 - Ενορία",
+            "desc": "Ιδρύεται η πρώτη ενορία."
+          },
+          {
+            "title": "1949 - Aalto University",
+            "desc": "Ιδρύεται ως Technical University."
+          },
+          {
+            "title": "1960s - Tapiola",
+            "desc": "Αναπτύσσεται ο κήπος-πόλη."
+          },
+          {
+            "title": "1972 - Πόλη",
+            "desc": "Αναγνωρίζεται ως πόλη."
+          },
+          {
+            "title": "2010 - Aalto University",
+            "desc": "Συγχώνευση σε Aalto University."
+          }
+        ]
+      },
+      "demo": {
+        "summary": "Η δεύτερη μεγαλύτερη πόλη της Φινλανδίας με ισχυρή τεχνολογική οικονομία.",
+        "details": [
+          {
+            "label": "Πανεπιστημιακή Πόλη",
+            "val": "Έδρα του Aalto University."
+          },
+          {
+            "label": "Τεχνολογικός Κόμβος",
+            "val": "Έδρα Nokia, KONE, Fortum."
+          },
+          {
+            "label": "Δίγλωσση Πόλη",
+            "val": "Φινλανδικά και σουηδικά."
+          }
+        ]
+      },
+      "cult": {
+        "summary": "Πόλη καινοτομίας και design.",
+        "items": [
+          {
+            "title": "Tapiola Garden City",
+            "desc": "Ιστορικός κήπος-πόλη."
+          },
+          {
+            "title": "WeeGee Exhibition Centre",
+            "desc": "Σύγχρονο μουσείο."
+          },
+          {
+            "title": "Espoo Cultural Centre",
+            "desc": "Κέντρο τέχνης."
+          }
+        ]
+      },
+      "guide": {
+        "summary": "Από το Aalto στο Nuuksio.",
+        "items": [
+          {
+            "title": "Εθνικό Πάρκο Nuuksio",
+            "desc": "Μεγάλο φυσικό πάρκο."
+          },
+          {
+            "title": "Πανεπιστήμιο Aalto",
+            "desc": "Σύγχρονο πανεπιστήμιο."
+          },
+          {
+            "title": "Tapiola",
+            "desc": "Ιστορικός κήπος-πόλη."
+          },
+          {
+            "title": "WeeGee Exhibition Centre",
+            "desc": "Σύγχρονο μουσείο."
+          }
+        ]
+      },
+      "gastro": {
+        "summary": "Σύγχρονη φινλανδική κουζίνα.",
+        "items": [
+          {
+            "title": "Lohikeitto",
+            "desc": "Σούπα σολομού."
+          },
+          {
+            "title": "Korvapuusti",
+            "desc": "Ρολά κανέλας."
+          },
+          {
+            "title": "Karjalanpiirakka",
+            "desc": "Πίτα Καρελίας."
+          },
+          {
+            "title": "Espoo Beer",
+            "desc": "Τοπική μπύρα."
+          }
+        ]
+      },
+      "eco": {
+        "summary": "Τεχνολογία και εκπαίδευση.",
+        "items": [
+          {
+            "title": "Aalto University",
+            "desc": "Πανεπιστήμιο."
+          },
+          {
+            "title": "Nokia",
+            "desc": "Έδρα Nokia."
+          },
+          {
+            "title": "KONE",
+            "desc": "Έδρα KONE."
+          }
+        ]
+      },
+      "pastVsPresent": [
+        {
+          "epoch": "Το Παρελθόν",
+          "content": "Τον 19ο αιώνα το Έσποο ήταν μικρή αγροτική ενορία."
+        },
+        {
+          "epoch": "Το Παρόν",
+          "content": "Σήμερα είναι η δεύτερη μεγαλύτερη πόλη Φινλανδίας με σύγχρονη τεχνολογική οικονομία."
+        }
+      ],
+      "pois": [
+        {
+          "name": "Εθνικό Πάρκο Nuuksio",
+          "category": "nature",
+          "coords": [
+            60.29,
+            24.51
+          ],
+          "desc": "Μεγάλο φυσικό πάρκο."
+        },
+        {
+          "name": "Πανεπιστήμιο Aalto",
+          "category": "culture",
+          "coords": [
+            60.187,
+            24.828
+          ],
+          "desc": "Σύγχρονο πανεπιστήμιο."
+        },
+        {
+          "name": "Tapiola",
+          "category": "culture",
+          "coords": [
+            60.177,
+            24.807
+          ],
+          "desc": "Ιστορικός κήπος-πόλη."
+        },
+        {
+          "name": "WeeGee",
+          "category": "culture",
+          "coords": [
+            60.176,
+            24.756
+          ],
+          "desc": "Σύγχρονο μουσείο."
+        }
+      ]
+    },
+    {
+      "id": "vantaa",
+      "name": "Βάνταα",
+      "englishName": "Vantaa",
+      "nickname": "Η Πόλη του Διεθνούς Αεροδρομίου & του Heureka",
+      "type": "city",
+      "coords": [
+        60.2934,
+        25.0376
+      ],
+      "zoom": 12,
+      "stats": {
+        "population": "240.000",
+        "founded": "1351 (ενορία) / 1974 (πόλη)",
+        "area": "240 km²",
+        "famousFor": "Aεροδρόμιο, Heureka, St. Lauri, Jumbo"
+      },
+      "quote": "«Η Βάνταα είναι η πύλη της Φινλανδίας προς τον κόσμο – και το σπίτι του Heureka, του κέντρου επιστήμης.»",
+      "geo": {
+        "summary": "Βόρεια του Ελσίνκι, η Βάνταα φιλοξενεί το μεγαλύτερο αεροδρόμιο της Φινλανδίας.",
+        "highlights": [
+          {
+            "title": "Ποταμός Vantaa",
+            "desc": "Ο μεγαλύτερος ποταμός της περιοχής."
+          },
+          {
+            "title": "Λίμνη Kuusijärvi",
+            "desc": "Ιστορική λίμνη."
+          },
+          {
+            "title": "Kivistö",
+            "desc": "Νέα αστική ζώνη."
+          }
+        ]
+      },
+      "hist": {
+        "summary": "Ιδρύθηκε ως ενορία το 1351, έγινε πόλη το 1974. Το Διεθνές Αεροδρόμιο Χέλσινκι-Βάνταα άνοιξε το 1952.",
+        "highlights": [
+          {
+            "title": "1351 - Ενορία",
+            "desc": "Ιδρύεται η πρώτη ενορία."
+          },
+          {
+            "title": "1952 - Αεροδρόμιο",
+            "desc": "Άνοιξε για τους Ολυμπιακούς."
+          },
+          {
+            "title": "1974 - Πόλη",
+            "desc": "Αναγνωρίζεται ως πόλη."
+          },
+          {
+            "title": "1989 - Heureka",
+            "desc": "Ανοίγει το κέντρο επιστήμης."
+          }
+        ]
+      },
+      "demo": {
+        "summary": "Η τέταρτη μεγαλύτερη πόλη της Φινλανδίας με ισχυρό logistics τομέα.",
+        "details": [
+          {
+            "label": "Aεροδρόμιο",
+            "val": "Το μεγαλύτερο αεροδρόμιο Φινλανδίας."
+          },
+          {
+            "label": "Logistics Hub",
+            "val": "Κέντρο logistics."
+          },
+          {
+            "label": "Πολιτισμός",
+            "val": "Heureka Science Centre."
+          }
+        ]
+      },
+      "cult": {
+        "summary": "Πόλη με επιστημονικό και πολιτιστικό χαρακτήρα.",
+        "items": [
+          {
+            "title": "Heureka Science Centre",
+            "desc": "Διεθνές κέντρο επιστήμης."
+          },
+          {
+            "title": "Καθεδρικός St. Henry",
+            "desc": "Ιστορική εκκλησία."
+          },
+          {
+            "title": "Vantaa Art Museum",
+            "desc": "Μουσείο τέχνης."
+          }
+        ]
+      },
+      "guide": {
+        "summary": "Από το Heureka μέχρι τον καθεδρικό St. Henry.",
+        "items": [
+          {
+            "title": "Heureka Science Centre",
+            "desc": "Διεθνές κέντρο επιστήμης."
+          },
+          {
+            "title": "Καθεδρικός St. Henry",
+            "desc": "Ιστορική εκκλησία."
+          },
+          {
+            "title": "Flamingo Spa",
+            "desc": "Μεγάλο κέντρο αναψυχής."
+          },
+          {
+            "title": "Jumbo Shopping",
+            "desc": "Μεγάλο εμπορικό κέντρο."
+          }
+        ]
+      },
+      "gastro": {
+        "summary": "Φινλανδική κουζίνα με διεθνείς επιρροές.",
+        "items": [
+          {
+            "title": "Lihapullat",
+            "desc": "Φινλανδικά κεφτεδάκια."
+          },
+          {
+            "title": "Karjalanpiirakka",
+            "desc": "Πίτα Καρελίας."
+          },
+          {
+            "title": "Vantaa Beer",
+            "desc": "Τοπική μπύρα."
+          },
+          {
+            "title": "Hermanniviini",
+            "desc": "Τοπικό κρασί μούρων."
+          }
+        ]
+      },
+      "eco": {
+        "summary": "Αεροδρόμιο, logistics και τουρισμός.",
+        "items": [
+          {
+            "title": "Διεθνές Αεροδρόμιο",
+            "desc": "Το μεγαλύτερο αεροδρόμιο."
+          },
+          {
+            "title": "Logistics Center",
+            "desc": "Σημαντικό κέντρο logistics."
+          },
+          {
+            "title": "Tourism",
+            "desc": "Heureka και Flamingo."
+          }
+        ]
+      },
+      "pastVsPresent": [
+        {
+          "epoch": "Το Παρελθόν",
+          "content": "Τον 19ο αιώνα η Βάνταα ήταν μικρή αγροτική ενορία."
+        },
+        {
+          "epoch": "Το Παρόν",
+          "content": "Σήμερα είναι η μεγαλύτερη πύλη αεροδρομίου της Φινλανδίας με 240.000 κατοίκους."
+        }
+      ],
+      "pois": [
+        {
+          "name": "Heureka Science Centre",
+          "category": "culture",
+          "coords": [
+            60.297,
+            25.037
+          ],
+          "desc": "Διεθνές κέντρο επιστήμης."
+        },
+        {
+          "name": "Καθεδρικός St. Henry",
+          "category": "monument",
+          "coords": [
+            60.302,
+            25.037
+          ],
+          "desc": "Ιστορική εκκλησία."
+        },
+        {
+          "name": "Flamingo Spa",
+          "category": "culture",
+          "coords": [
+            60.268,
+            25.015
+          ],
+          "desc": "Κέντρο αναψυχής."
+        },
+        {
+          "name": "Jumbo Shopping",
+          "category": "culture",
+          "coords": [
+            60.268,
+            25.014
+          ],
+          "desc": "Εμπορικό κέντρο."
+        }
+      ]
+    },
+    {
+      "id": "lappeenranta",
+      "name": "Λαππεενράντα",
+      "englishName": "Lappeenranta",
+      "nickname": "Η Πόλη της Λίμνης Saimaa & του Οχυρού",
+      "type": "city",
+      "coords": [
+        61.0587,
+        28.1887
+      ],
+      "zoom": 12.5,
+      "stats": {
+        "population": "73.000",
+        "founded": "1649 (Βασίλισσα Χριστίνα)",
+        "area": "1.733 km²",
+        "famousFor": "Saimaa, Linnoitus, Saimaa Canal, Kimpinen"
+      },
+      "quote": "«Στη Λαππεενράντα η λίμνη Saimaa συναντά ένα μεσαιωνικό οχυρό και το κανάλι προς τη Ρωσία.»",
+      "geo": {
+        "summary": "Στις νότιες όχθες της λίμνης Saimaa, η Λαππεενράντα είναι κτισμένη σε στρατηγική θέση κοντά στα ρωσικά σύνορα.",
+        "highlights": [
+          {
+            "title": "Λίμνη Saimaa",
+            "desc": "Η μεγαλύτερη λίμνη της Φινλανδίας."
+          },
+          {
+            "title": "Κανάλι Saimaa",
+            "desc": "Ιστορικό κανάλι προς Βαλτική."
+          },
+          {
+            "title": "Linnoitus",
+            "desc": "Ιστορικό οχυρό."
+          }
+        ]
+      },
+      "hist": {
+        "summary": "Ιδρύθηκε το 1649 από τη Βασίλισσα Χριστίνα της Σουηδίας. Ανέπτυξε στρατηγική σημασία ως συνοριακή πόλη.",
+        "highlights": [
+          {
+            "title": "1649 - Ίδρυση",
+            "desc": "Ιδρύεται από τη Βασίλισσα Χριστίνα."
+          },
+          {
+            "title": "1721 - Linnoitus",
+            "desc": "Κατασκευάζεται το οχυρό."
+          },
+          {
+            "title": "1856 - Κανάλι Saimaa",
+            "desc": "Ανοίγει το κανάλι."
+          },
+          {
+            "title": "1944 - Σοβιετική κατοχή",
+            "desc": "Μέρος της περιοχής παραχωρείται."
+          }
+        ]
+      },
+      "demo": {
+        "summary": "Σύγχρονη πόλη με ισχυρό τουρισμό κληρονομιάς.",
+        "details": [
+          {
+            "label": "Πανεπιστημιακή Παρουσία",
+            "val": "LUT University."
+          },
+          {
+            "label": "Τουρισμός",
+            "val": "Σημαντικός καλοκαιρινός τουρισμός."
+          },
+          {
+            "label": "Συνοριακή Οικονομία",
+            "val": "Σημαντικές ρωσικές ανταλλαγές."
+          }
+        ]
+      },
+      "cult": {
+        "summary": "Πόλη με μεσαιωνικό οχυρό και ζωντανή πολιτιστική ζωή.",
+        "items": [
+          {
+            "title": "Linnoitus (Φρούριο)",
+            "desc": "Ιστορικό οχυρό."
+          },
+          {
+            "title": "Lappeenranta Art Museum",
+            "desc": "Μουσείο τέχνης."
+          },
+          {
+            "title": "South Karelia Museum",
+            "desc": "Περιφερειακό μουσείο."
+          }
+        ]
+      },
+      "guide": {
+        "summary": "Από το οχυρό μέχρι το κανάλι Saimaa.",
+        "items": [
+          {
+            "title": "Linnoitus",
+            "desc": "Ιστορικό οχυρό."
+          },
+          {
+            "title": "Λίμνη Saimaa",
+            "desc": "Μεγάλη λίμνη."
+          },
+          {
+            "title": "Κανάλι Saimaa",
+            "desc": "Ιστορικό κανάλι."
+          },
+          {
+            "title": "Lappeenranta Καθεδρικός",
+            "desc": "Ιστορική εκκλησία."
+          }
+        ]
+      },
+      "gastro": {
+        "summary": "Φινλανδική κουζίνα με ρωσικές επιρροές.",
+        "items": [
+          {
+            "title": "Saimaa Muikku",
+            "desc": "Ψάρι Saimaa."
+          },
+          {
+            "title": "Lihapullat",
+            "desc": "Κεφτεδάκια."
+          },
+          {
+            "title": "Sultsinat",
+            "desc": "Τοπικό γλυκό."
+          },
+          {
+            "title": "Lappeenranta Beer",
+            "desc": "Τοπική μπύρα."
+          }
+        ]
+      },
+      "eco": {
+        "summary": "Πανεπιστήμιο, τουρισμός και logistics.",
+        "items": [
+          {
+            "title": "LUT University",
+            "desc": "Σύγχρονο πανεπιστήμιο."
+          },
+          {
+            "title": "Λιμάνι",
+            "desc": "Σημαντικό λιμάνι."
+          },
+          {
+            "title": "Cross-border Trade",
+            "desc": "Ισχυρές ρωσικές ανταλλαγές."
+          }
+        ]
+      },
+      "pastVsPresent": [
+        {
+          "epoch": "Το Παρελθόν",
+          "content": "Τον 18ο αιώνα η Λαππεενράντα ήταν οχυρωμένη συνοριακή πόλη."
+        },
+        {
+          "epoch": "Το Παρόν",
+          "content": "Σήμερα είναι σύγχρονη πόλη με LUT University και τουρισμό Saimaa."
+        }
+      ],
+      "pois": [
+        {
+          "name": "Linnoitus",
+          "category": "monument",
+          "coords": [
+            61.058,
+            28.19
+          ],
+          "desc": "Ιστορικό οχυρό."
+        },
+        {
+          "name": "Λίμνη Saimaa",
+          "category": "nature",
+          "coords": [
+            61.05,
+            28.2
+          ],
+          "desc": "Μεγάλη λίμνη."
+        },
+        {
+          "name": "Κανάλι Saimaa",
+          "category": "nature",
+          "coords": [
+            60.97,
+            28
+          ],
+          "desc": "Ιστορικό κανάλι."
+        },
+        {
+          "name": "Lappeenranta Καθεδρικός",
+          "category": "monument",
+          "coords": [
+            61.06,
+            28.188
+          ],
+          "desc": "Ιστορική εκκλησία."
+        }
+      ]
+    },
+    {
+      "id": "savonlinna",
+      "name": "Σαβονλίννα",
+      "englishName": "Savonlinna",
+      "nickname": "Η Πόλη της Όπερας & του Κάστρου Olavinlinna",
+      "type": "city",
+      "coords": [
+        61.8667,
+        28.8833
+      ],
+      "zoom": 12.5,
+      "stats": {
+        "population": "32.000",
+        "founded": "1639 (χάρτα πόλης)",
+        "area": "1.079 km²",
+        "famousFor": "Olavinlinna, Saimaa, Φεστιβάλ Όπερας, Punkaharju"
+      },
+      "quote": "«Η Σαβονλίννα χτίστηκε πάνω σε νησιά της λίμνης, με ένα μεσαιωνικό κάστρο να φρουρεί την όπερα.»",
+      "geo": {
+        "summary": "Μέσα στα νερά της λίμνης Saimaa, η Σαβονλίννα είναι κτισμένη σε ομάδα νησιών και αποτελεί πόλο έλξης για φυσικό και πολιτιστικό τουρισμό.",
+        "highlights": [
+          {
+            "title": "Λίμνη Saimaa",
+            "desc": "Η μεγαλύτερη λίμνη Φινλανδίας."
+          },
+          {
+            "title": "Κάστρο Olavinlinna",
+            "desc": "Μεσαιωνικό κάστρο σε νησί."
+          },
+          {
+            "title": "Punkaharju",
+            "desc": "Ιστορικός κόλπος με δάσος."
+          }
+        ]
+      },
+      "hist": {
+        "summary": "Ιδρύθηκε το 1639 γύρω από το μεσαιωνικό κάστρο Olavinlinna (1475). Έγινε φημισμένη για το ετήσιο διεθνές φεστιβάλ όπερας.",
+        "highlights": [
+          {
+            "title": "1475 - Olavinlinna",
+            "desc": "Ιδρύεται το κάστρο."
+          },
+          {
+            "title": "1639 - Πόλη",
+            "desc": "Αποκτά χάρτα πόλης."
+          },
+          {
+            "title": "1912 - Φεστιβάλ Όπερας",
+            "desc": "Ξεκινά το φεστιβάλ."
+          },
+          {
+            "title": "1967 - Διεθνές Φεστιβάλ",
+            "desc": "Γίνεται διεθνές."
+          }
+        ]
+      },
+      "demo": {
+        "summary": "Μικρή τουριστική πόλη με ισχυρό καλοκαιρινό χαρακτήρα.",
+        "details": [
+          {
+            "label": "Καλοκαιρινός Τουρισμός",
+            "val": "Διεθνές φεστιβάλ όπερας."
+          },
+          {
+            "label": "Σαβο Κουλτούρα",
+            "val": "Φινλανδική κουλτούρα Σάβο."
+          },
+          {
+            "label": "Συντήρηση Κάστρου",
+            "val": "Εθνικό μνημείο."
+          }
+        ]
+      },
+      "cult": {
+        "summary": "Πόλη του φεστιβάλ όπερας.",
+        "items": [
+          {
+            "title": "Olavinlinna",
+            "desc": "Μεσαιωνικό κάστρο."
+          },
+          {
+            "title": "Φεστιβάλ Όπερας",
+            "desc": "Διεθνές φεστιβάλ."
+          },
+          {
+            "title": "Savonlinna Museum",
+            "desc": "Περιφερειακό μουσείο."
+          }
+        ]
+      },
+      "guide": {
+        "summary": "Από το κάστρο μέχρι το Punkaharju.",
+        "items": [
+          {
+            "title": "Olavinlinna",
+            "desc": "Μεσαιωνικό κάστρο."
+          },
+          {
+            "title": "Punkaharju Ridge",
+            "desc": "Εθνικό τοπίο."
+          },
+          {
+            "title": "Λίμνη Saimaa",
+            "desc": "Μεγάλη λίμνη."
+          },
+          {
+            "title": "Savonlinna Καθεδρικός",
+            "desc": "Ιστορική εκκλησία."
+          }
+        ]
+      },
+      "gastro": {
+        "summary": "Κουζίνα Σάβο με ψάρια.",
+        "items": [
+          {
+            "title": "Kalakukko",
+            "desc": "Πίτα ψαριού."
+          },
+          {
+            "title": "Muikku",
+            "desc": "Ψαράκια."
+          },
+          {
+            "title": "Lohikeitto",
+            "desc": "Σούπα σολομού."
+          },
+          {
+            "title": "Savonlinna Beer",
+            "desc": "Τοπική μπύρα."
+          }
+        ]
+      },
+      "eco": {
+        "summary": "Τουρισμός και καλλιτεχνίες.",
+        "items": [
+          {
+            "title": "Διεθνές Φεστιβάλ",
+            "desc": "Όπερα."
+          },
+          {
+            "title": "Λιμάνι",
+            "desc": "Εμπορικό λιμάνι."
+          },
+          {
+            "title": "Punkaharju",
+            "desc": "Τουριστικός κόμβος."
+          }
+        ]
+      },
+      "pastVsPresent": [
+        {
+          "epoch": "Το Παρελθόν",
+          "content": "Τον Μεσαίωνα η Σαβονλίννα ήταν συνοριακή σουηδική πόλη."
+        },
+        {
+          "epoch": "Το Παρόν",
+          "content": "Σήμερα είναι πόλη διεθνούς φεστιβάλ όπερας με Olavinlinna."
+        }
+      ],
+      "pois": [
+        {
+          "name": "Olavinlinna",
+          "category": "monument",
+          "coords": [
+            61.864,
+            28.89
+          ],
+          "desc": "Μεσαιωνικό κάστρο."
+        },
+        {
+          "name": "Punkaharju",
+          "category": "nature",
+          "coords": [
+            61.745,
+            29.075
+          ],
+          "desc": "Εθνικό τοπίο."
+        },
+        {
+          "name": "Λίμνη Saimaa",
+          "category": "nature",
+          "coords": [
+            61.86,
+            28.89
+          ],
+          "desc": "Μεγάλη λίμνη."
+        },
+        {
+          "name": "Σαβονλίννα Καθεδρικός",
+          "category": "monument",
+          "coords": [
+            61.87,
+            28.88
+          ],
+          "desc": "Ιστορική εκκλησία."
+        }
+      ]
+    },
+    {
+      "id": "hameenlinna",
+      "name": "Χαμεενλίννα",
+      "englishName": "Hämeenlinna",
+      "nickname": "Η Γενέτειρα του Sibelius",
+      "type": "city",
+      "coords": [
+        60.9958,
+        24.4643
+      ],
+      "zoom": 12.5,
+      "stats": {
+        "population": "68.000",
+        "founded": "1639",
+        "area": "2.070 km²",
+        "famousFor": "Κάστρο Häme, Sibelius, Aulanko, Vanaja"
+      },
+      "quote": "«Στη Χαμεενλίννα γεννήθηκε ο Sibelius, και το μεσαιωνικό κάστρο Häme φρουρεί ακόμα τη λίμνη Vanaja.»",
+      "geo": {
+        "summary": "Στις όχθες της λίμνης Vanajavesi, η Χαμεενλínna είναι η παλαιότερη ενδοχώρα πόλη της Φινλανδίας.",
+        "highlights": [
+          {
+            "title": "Λίμνη Vanajavesi",
+            "desc": "Ιστορική λίμνη."
+          },
+          {
+            "title": "Κάστρο Häme",
+            "desc": "Μεσαιωνικό κάστρο."
+          },
+          {
+            "title": "Aulanko",
+            "desc": "Ιστορικό πάρκο."
+          }
+        ]
+      },
+      "hist": {
+        "summary": "Ιδρύθηκε το 1639, είναι η παλαιότερη ενδοχώρα πόλη Φινλανδίας. Γενέτειρα του συνθέτη Jean Sibelius.",
+        "highlights": [
+          {
+            "title": "13ος αιώνας - Κάστρο Häme",
+            "desc": "Ανεγείρεται το κάστρο."
+          },
+          {
+            "title": "1639 - Πόλη",
+            "desc": "Ιδρύεται η πόλη."
+          },
+          {
+            "title": "1865 - Sibelius Γέννηση",
+            "desc": "Γεννιέται ο Jean Sibelius."
+          },
+          {
+            "title": "20ός αιώνας - Εθνικό Πάρκο",
+            "desc": "Δημιουργείται το Aulanko."
+          }
+        ]
+      },
+      "demo": {
+        "summary": "Σύγχρονη πόλη με ισχυρό πανεπιστημιακό χαρακτήρα.",
+        "details": [
+          {
+            "label": "Πανεπιστημιακή Παρουσία",
+            "val": "Πανεπιστήμιο HAMK."
+          },
+          {
+            "label": "Στρατιωτική Παρουσία",
+            "val": "Ιστορική στρατιωτική πόλη."
+          },
+          {
+            "label": "Πολιτιστική Ταυτότητα",
+            "val": "Γενέτειρα Sibelius."
+          }
+        ]
+      },
+      "cult": {
+        "summary": "Πόλη με μεσαιωνική και μουσική κληρονομιά.",
+        "items": [
+          {
+            "title": "Κάστρο Häme",
+            "desc": "Μεσαιωνικό κάστρο."
+          },
+          {
+            "title": "Sibelius Birthplace",
+            "desc": "Σπίτι Sibelius."
+          },
+          {
+            "title": "Hämeenlinna Art Museum",
+            "desc": "Μουσείο τέχνης."
+          }
+        ]
+      },
+      "guide": {
+        "summary": "Από το κάστρο Häme μέχρι το Aulanko.",
+        "items": [
+          {
+            "title": "Κάστρο Häme",
+            "desc": "Μεσαιωνικό κάστρο."
+          },
+          {
+            "title": "Sibelius Birthplace",
+            "desc": "Σπίτι Sibelius."
+          },
+          {
+            "title": "Aulanko Nature Reserve",
+            "desc": "Ιστορικό πάρκο."
+          },
+          {
+            "title": "Hämeenlinna Church",
+            "desc": "Ιστορική εκκλησία."
+          }
+        ]
+      },
+      "gastro": {
+        "summary": "Φινλανδική κουζίνα ενδοχώρας.",
+        "items": [
+          {
+            "title": "Lihapullat",
+            "desc": "Κεφτεδάκια."
+          },
+          {
+            "title": "Lohikeitto",
+            "desc": "Σούπα σολομού."
+          },
+          {
+            "title": "Häme Beer",
+            "desc": "Τοπική μπύρα."
+          },
+          {
+            "title": "Multikrem",
+            "desc": "Κρέμα μούρων."
+          }
+        ]
+      },
+      "eco": {
+        "summary": "Πανεπιστήμιο, βιομηχανία και τουρισμός.",
+        "items": [
+          {
+            "title": "Πανεπιστήμιο HAMK",
+            "desc": "Σύγχρονο ίδρυμα."
+          },
+          {
+            "title": "Huhtamäki",
+            "desc": "Σημαντική βιομηχανική παρουσία."
+          },
+          {
+            "title": "Στρατιωτική Βάση",
+            "desc": "Ιστορική στρατιωτική πόλη."
+          }
+        ]
+      },
+      "pastVsPresent": [
+        {
+          "epoch": "Το Παρελθόν",
+          "content": "Τον 17ο αιώνα η Χαμεενλίννα ήταν μικρή συνοριακή πόλη."
+        },
+        {
+          "epoch": "Το Παρόν",
+          "content": "Σήμερα είναι σύγχρονη πανεπιστημιακή πόλη και γενέτειρα του Sibelius."
+        }
+      ],
+      "pois": [
+        {
+          "name": "Κάστρο Häme",
+          "category": "monument",
+          "coords": [
+            60.992,
+            24.463
+          ],
+          "desc": "Μεσαιωνικό κάστρο."
+        },
+        {
+          "name": "Sibelius Birthplace",
+          "category": "culture",
+          "coords": [
+            60.999,
+            24.461
+          ],
+          "desc": "Σπίτι Sibelius."
+        },
+        {
+          "name": "Aulanko Nature Reserve",
+          "category": "nature",
+          "coords": [
+            61.02,
+            24.48
+          ],
+          "desc": "Ιστορικό πάρκο."
+        },
+        {
+          "name": "Hämeenlinna Church",
+          "category": "monument",
+          "coords": [
+            60.999,
+            24.463
+          ],
+          "desc": "Ιστορική εκκλησία."
+        }
+      ]
+    },
+    {
+      "id": "pori",
+      "name": "Πόρι",
+      "englishName": "Pori",
+      "nickname": "Η Πόλη του Pori Jazz & των Παραλιών Yyteri",
+      "type": "city",
+      "coords": [
+        61.4848,
+        21.7933
+      ],
+      "zoom": 12.5,
+      "stats": {
+        "population": "84.000",
+        "founded": "1558",
+        "area": "1.726 km²",
+        "famousFor": "Pori Jazz, Yyteri, Reposaari, Kirjurinluoto"
+      },
+      "quote": "«Στο Πόρι η jazz γεμίζει τον αέρα κάθε καλοκαίρι, και οι αμμουδερές παραλίες Yyteri συναγωνίζονται τροπικούς προορισμούς.»",
+      "geo": {
+        "summary": "Στις εκβολές του ποταμού Kokemäenjoki στη δυτική ακτή Φινλανδίας, ο Πόρι είναι κτισμένος κοντά στο Bottria.",
+        "highlights": [
+          {
+            "title": "Ποταμός Kokemäenjoki",
+            "desc": "Ιστορικός ποταμός."
+          },
+          {
+            "title": "Παραλία Yyteri",
+            "desc": "Μεγάλη παραλία με άμμο."
+          },
+          {
+            "title": "Reposaari",
+            "desc": "Ιστορικό νησάκι."
+          }
+        ]
+      },
+      "hist": {
+        "summary": "Ιδρύθηκε το 1558 από τον Δούκα John. Αναπτύχθηκε ως λιμάνι και βιομηχανικό κέντρο.",
+        "highlights": [
+          {
+            "title": "1558 - Ίδρυση",
+            "desc": "Ο Δούκας John ιδρύει την πόλη."
+          },
+          {
+            "title": "19ος αιώνας - Βιομηχανία",
+            "desc": "Ακμή βιομηχανίας ξυλείας."
+          },
+          {
+            "title": "1966 - Pori Jazz",
+            "desc": "Αρχίζει το φεστιβάλ jazz."
+          },
+          {
+            "title": "20ός αιώνας - Aalto",
+            "desc": "Ανακαίνιση κέντρου από Alvar Aalto."
+          }
+        ]
+      },
+      "demo": {
+        "summary": "Σύγχρονη πόλη με ισχυρό καλοκαιρινό τουρισμό.",
+        "details": [
+          {
+            "label": "Pori Jazz Festival",
+            "val": "Διεθνές φεστιβάλ."
+          },
+          {
+            "label": "Πανεπιστημιακή Παρουσία",
+            "val": "Πανεπιστήμιο Satakunta."
+          },
+          {
+            "label": "Λιμάνι",
+            "val": "Σημαντικό εμπορικό λιμάνι."
+          }
+        ]
+      },
+      "cult": {
+        "summary": "Πόλη του Pori Jazz.",
+        "items": [
+          {
+            "title": "Pori Jazz Festival",
+            "desc": "Διεθνές φεστιβάλ."
+          },
+          {
+            "title": "Satakunta Museum",
+            "desc": "Περιφερειακό μουσείο."
+          },
+          {
+            "title": "Pori Art Museum",
+            "desc": "Μουσείο τέχνης."
+          }
+        ]
+      },
+      "guide": {
+        "summary": "Από το Yyteri μέχρι το Kirjurinluoto.",
+        "items": [
+          {
+            "title": "Παραλία Yyteri",
+            "desc": "Μεγάλη παραλία."
+          },
+          {
+            "title": "Kirjurinluoto",
+            "desc": "Πάρκο φεστιβάλ."
+          },
+          {
+            "title": "Reposaari",
+            "desc": "Ιστορικό νησάκι."
+          },
+          {
+            "title": "Pori Καθεδρικός",
+            "desc": "Ιστορική εκκλησία."
+          }
+        ]
+      },
+      "gastro": {
+        "summary": "Δυτική φινλανδική κουζίνα.",
+        "items": [
+          {
+            "title": "Satakunta Lihapullat",
+            "desc": "Κεφτεδάκια."
+          },
+          {
+            "title": "Yyteri Σταφύλια",
+            "desc": "Τοπικά φρούτα."
+          },
+          {
+            "title": "Pori Beer",
+            "desc": "Τοπική μπύρα."
+          },
+          {
+            "title": "Pori Kalakukko",
+            "desc": "Τοπική παραλλαγή πίτας."
+          }
+        ]
+      },
+      "eco": {
+        "summary": "Λιμάνι, βιομηχανία και τουρισμός.",
+        "items": [
+          {
+            "title": "Λιμάνι Pori",
+            "desc": "Σημαντικό λιμάνι."
+          },
+          {
+            "title": "Metsä Group",
+            "desc": "Βιομηχανία ξυλείας."
+          },
+          {
+            "title": "Pori Jazz Economy",
+            "desc": "Σημαντική οικονομική συνεισφορά."
+          }
+        ]
+      },
+      "pastVsPresent": [
+        {
+          "epoch": "Το Παρελθόν",
+          "content": "Τον 19ο αιώνα ο Πόρι ήταν βιομηχανικό λιμάνι."
+        },
+        {
+          "epoch": "Το Παρόν",
+          "content": "Σήμερα είναι πόλη jazz και τουρισμού με Yyteri."
+        }
+      ],
+      "pois": [
+        {
+          "name": "Παραλία Yyteri",
+          "category": "nature",
+          "coords": [
+            61.57,
+            21.57
+          ],
+          "desc": "Μεγάλη παραλία."
+        },
+        {
+          "name": "Kirjurinluoto",
+          "category": "culture",
+          "coords": [
+            61.488,
+            21.79
+          ],
+          "desc": "Πάρκο φεστιβάλ."
+        },
+        {
+          "name": "Reposaari",
+          "category": "nature",
+          "coords": [
+            61.61,
+            21.65
+          ],
+          "desc": "Ιστορικό νησάκι."
+        },
+        {
+          "name": "Pori Καθεδρικός",
+          "category": "monument",
+          "coords": [
+            61.485,
+            21.794
+          ],
+          "desc": "Ιστορική εκκλησία."
+        }
+      ]
+    },
+    {
+      "id": "kotka",
+      "name": "Κότκα",
+      "englishName": "Kotka",
+      "nickname": "Η Πόλη του Ναυτικού Μουσείου & του Αυτοκρατορικού Ψαροχώριου",
+      "type": "city",
+      "coords": [
+        60.4664,
+        26.9458
+      ],
+      "zoom": 12.5,
+      "stats": {
+        "population": "51.000",
+        "founded": "1878",
+        "area": "272 km²",
+        "famousFor": "Vellamo, Langinkoski, Sapokka, Kymenlaakso"
+      },
+      "quote": "«Στο Κότκα ο Τσάρος Αλέξανδρος Γ' ψάρευε στους καταρράκτες Langinkoski – και σήμερα η πόλη τιμά τη ναυτική της κληρονομιά.»",
+      "geo": {
+        "summary": "Στις εκβολές του ποταμού Kymijoki στο Φινλανδικό Κόλπο, ο Κότκα είναι κτισμένος σε αρχιπέλαγος.",
+        "highlights": [
+          {
+            "title": "Ποταμός Kymijoki",
+            "desc": "Ιστορικός ποταμός."
+          },
+          {
+            "title": "Φινλανδικός Κόλπος",
+            "desc": "Παραλιακή περιοχή."
+          },
+          {
+            "title": "Καταρράκτες Langinkoski",
+            "desc": "Ιστορικοί καταρράκτες."
+          }
+        ]
+      },
+      "hist": {
+        "summary": "Ιδρύθηκε το 1878 ως λιμάνι και βιομηχανικό κέντρο. Φημισμένη για το αυτοκρατορικό ψαροχώρι Langinkoski των Τσάρων.",
+        "highlights": [
+          {
+            "title": "1878 - Ίδρυση",
+            "desc": "Ιδρύεται η πόλη."
+          },
+          {
+            "title": "1889 - Langinkoski",
+            "desc": "Ο Τσάρος Αλέξανδρος Γ' κτίζει ψαροκαλύβα."
+          },
+          {
+            "title": "20ός αιώνας - Λιμάνι",
+            "desc": "Ανάπτυξη λιμανιού."
+          },
+          {
+            "title": "2008 - Vellamo",
+            "desc": "Ανοίγει το ναυτικό μουσείο."
+          }
+        ]
+      },
+      "demo": {
+        "summary": "Σύγχρονη πόλη με ισχυρό ναυτικό χαρακτήρα.",
+        "details": [
+          {
+            "label": "Λιμάνι",
+            "val": "Σημαντικό λιμάνι."
+          },
+          {
+            "label": "Πολιτιστικό Κέντρο",
+            "val": "Vellamo."
+          },
+          {
+            "label": "Συντήρηση Φύσης",
+            "val": "Σημαντικά πάρκα."
+          }
+        ]
+      },
+      "cult": {
+        "summary": "Πόλη με ναυτική και αυτοκρατορική κληρονομιά.",
+        "items": [
+          {
+            "title": "Vellamo Ναυτικό Μουσείο",
+            "desc": "Σύγχρονο μουσείο."
+          },
+          {
+            "title": "Langinkoski Αυτοκρατορικό Ψαροχώρι",
+            "desc": "Ιστορικό καταφύγιο τσάρων."
+          },
+          {
+            "title": "Sapokka Water Garden",
+            "desc": "Αστικό πάρκο νερού."
+          }
+        ]
+      },
+      "guide": {
+        "summary": "Από το Vellamo μέχρι το Langinkoski.",
+        "items": [
+          {
+            "title": "Vellamo Ναυτικό Μουσείο",
+            "desc": "Σύγχρονο μουσείο."
+          },
+          {
+            "title": "Langinkoski",
+            "desc": "Αυτοκρατορικό ψαροχώρι."
+          },
+          {
+            "title": "Sapokka Water Garden",
+            "desc": "Αστικό πάρκο."
+          },
+          {
+            "title": "Kotka Καθεδρικός",
+            "desc": "Ιστορική εκκλησία."
+          }
+        ]
+      },
+      "gastro": {
+        "summary": "Ναυτική φινλανδική κουζίνα.",
+        "items": [
+          {
+            "title": "Φινλανδικός Κόλπος Ψάρι",
+            "desc": "Φρέσκο ψάρι."
+          },
+          {
+            "title": "Silakka",
+            "desc": "Ρέγγα Βαλτικής."
+          },
+          {
+            "title": "Kotka Beer",
+            "desc": "Τοπική μπύρα."
+          },
+          {
+            "title": "Mustamakkara",
+            "desc": "Μαύρο λουκάνικο."
+          }
+        ]
+      },
+      "eco": {
+        "summary": "Λιμάνι, βιομηχανία και τουρισμός.",
+        "items": [
+          {
+            "title": "Λιμάνι Kotka",
+            "desc": "Σημαντικό λιμάνι."
+          },
+          {
+            "title": "Mussalo",
+            "desc": "Βιομηχανική ζώνη."
+          },
+          {
+            "title": "Τουρισμός",
+            "desc": "Αναπτυσσόμενος."
+          }
+        ]
+      },
+      "pastVsPresent": [
+        {
+          "epoch": "Το Παρελθόν",
+          "content": "Τον 19ο αιώνα ο Κότκα ήταν ψαροχώρι τσάρων."
+        },
+        {
+          "epoch": "Το Παρόν",
+          "content": "Σήμερα είναι σύγχρονο λιμάνι και ναυτικό μουσείο."
+        }
+      ],
+      "pois": [
+        {
+          "name": "Vellamo Ναυτικό Μουσείο",
+          "category": "culture",
+          "coords": [
+            60.467,
+            26.945
+          ],
+          "desc": "Σύγχρονο μουσείο."
+        },
+        {
+          "name": "Langinkoski",
+          "category": "history",
+          "coords": [
+            60.495,
+            26.94
+          ],
+          "desc": "Αυτοκρατορικό ψαροχώρι."
+        },
+        {
+          "name": "Sapokka Water Garden",
+          "category": "nature",
+          "coords": [
+            60.464,
+            26.956
+          ],
+          "desc": "Αστικό πάρκο."
+        },
+        {
+          "name": "Kotka Καθεδρικός",
+          "category": "monument",
+          "coords": [
+            60.466,
+            26.946
+          ],
+          "desc": "Ιστορική εκκλησία."
+        }
+      ]
+    },
+    {
+      "id": "joensuu",
+      "name": "Γιόενσουου",
+      "englishName": "Joensuu",
+      "nickname": "Η Πρωτεύουσα της Βόρειας Καρελίας & των Δασών",
+      "type": "city",
+      "coords": [
+        62.601,
+        29.7636
+      ],
+      "zoom": 12.5,
+      "stats": {
+        "population": "77.000",
+        "founded": "1848",
+        "area": "2.750 km²",
+        "famousFor": "Πανεπιστήμιο, Ποταμός Pielisjoki, Forestry, Ilosaarirock"
+      },
+      "quote": "«Στη Γιόενσουου ο ποταμός Pielisjoki κουβαλά τις ρίζες της φινλανδικής δασικής κληρονομιάς.»",
+      "geo": {
+        "summary": "Στις όχθες του ποταμού Pielisjoki, η Γιόενσουου είναι η πρωτεύουσα της Βόρειας Καρελίας.",
+        "highlights": [
+          {
+            "title": "Ποταμός Pielisjoki",
+            "desc": "Ιστορικός ποταμός."
+          },
+          {
+            "title": "Λίμνη Pyhäselkä",
+            "desc": "Κοντινή λίμνη."
+          },
+          {
+            "title": "Carelian Δάση",
+            "desc": "Πλούσια δάση."
+          }
+        ]
+      },
+      "hist": {
+        "summary": "Ιδρύθηκε το 1848 από τον Τσάρο Νικολάο Α'. Αναπτύχθηκε ως κέντρο δασικής βιομηχανίας.",
+        "highlights": [
+          {
+            "title": "1848 - Ίδρυση",
+            "desc": "Ιδρύεται από τον Τσάρο."
+          },
+          {
+            "title": "19ος αιώνας - Σαβάνα Εμπόριο",
+            "desc": "Ανάπτυξη εμπορίου ξυλείας."
+          },
+          {
+            "title": "1969 - Πανεπιστήμιο",
+            "desc": "Ιδρύεται το Πανεπιστήμιο."
+          },
+          {
+            "title": "1970 - Ilosaarirock",
+            "desc": "Ξεκινά το φεστιβάλ."
+          }
+        ]
+      },
+      "demo": {
+        "summary": "Σύγχρονη πανεπιστημιακή πόλη με ισχυρή δασική κληρονομιά.",
+        "details": [
+          {
+            "label": "Πανεπιστημιακή Πόλη",
+            "val": "Πανεπιστήμιο Ανατολικής Φινλανδίας."
+          },
+          {
+            "label": "Forestry Center",
+            "val": "Κέντρο δασικής έρευνας."
+          },
+          {
+            "label": "Αγροτική Παράδοση",
+            "val": "Ισχυρή αγροτική κουλτούρα."
+          }
+        ]
+      },
+      "cult": {
+        "summary": "Πόλη με καρελιανή κουλτούρα και ζωντανή μουσική.",
+        "items": [
+          {
+            "title": "Carelian Museum",
+            "desc": "Περιφερειακό μουσείο."
+          },
+          {
+            "title": "Ilosaarirock Festival",
+            "desc": "Διεθνές μουσικό φεστιβάλ."
+          },
+          {
+            "title": "Joensuu Art Museum",
+            "desc": "Μουσείο τέχνης."
+          }
+        ]
+      },
+      "guide": {
+        "summary": "Από το μουσείο Καρελίας μέχρι τον ποταμό.",
+        "items": [
+          {
+            "title": "Carelian Museum",
+            "desc": "Περιφερειακό μουσείο."
+          },
+          {
+            "title": "Ποταμός Pielisjoki",
+            "desc": "Ιστορικός ποταμός."
+          },
+          {
+            "title": "Joensuu Church",
+            "desc": "Ιστορική εκκλησία."
+          },
+          {
+            "title": "Botania Βοτανικός Κήπος",
+            "desc": "Ιστορικός κήπος."
+          }
+        ]
+      },
+      "gastro": {
+        "summary": "Καρελιανή κουζίνα.",
+        "items": [
+          {
+            "title": "Karjalanpiirakka",
+            "desc": "Πίτα Καρελίας."
+          },
+          {
+            "title": "Kalakukko",
+            "desc": "Πίτα ψαριού."
+          },
+          {
+            "title": "Joensuu Beer",
+            "desc": "Τοπική μπύρα."
+          },
+          {
+            "title": "Karjalanpaisti",
+            "desc": "Καρελιανό κρέας."
+          }
+        ]
+      },
+      "eco": {
+        "summary": "Πανεπιστήμιο, δασική βιομηχανία και logistics.",
+        "items": [
+          {
+            "title": "Πανεπιστήμιο Ανατολικής Φινλανδίας",
+            "desc": "Μεγάλο πανεπιστήμιο."
+          },
+          {
+            "title": "Forestry Industry",
+            "desc": "Δασική βιομηχανία."
+          },
+          {
+            "title": "Λιμάνι",
+            "desc": "Εμπορικό λιμάνι."
+          }
+        ]
+      },
+      "pastVsPresent": [
+        {
+          "epoch": "Το Παρελθόν",
+          "content": "Τον 19ο αιώνα η Γιόενσουου ήταν μικρή εμπορική πόλη."
+        },
+        {
+          "epoch": "Το Παρόν",
+          "content": "Σήμερα είναι σύγχρονη πανεπιστημιακή πόλη και κέντρο δασικής έρευνας."
+        }
+      ],
+      "pois": [
+        {
+          "name": "Carelian Museum",
+          "category": "culture",
+          "coords": [
+            62.601,
+            29.7636
+          ],
+          "desc": "Περιφερειακό μουσείο."
+        },
+        {
+          "name": "Ποταμός Pielisjoki",
+          "category": "nature",
+          "coords": [
+            62.6,
+            29.765
+          ],
+          "desc": "Ιστορικός ποταμός."
+        },
+        {
+          "name": "Joensuu Church",
+          "category": "monument",
+          "coords": [
+            62.602,
+            29.762
+          ],
+          "desc": "Ιστορική εκκλησία."
+        },
+        {
+          "name": "Botania Βοτανικός Κήπος",
+          "category": "nature",
+          "coords": [
+            62.596,
+            29.769
+          ],
+          "desc": "Ιστορικός κήπος."
+        }
+      ]
+    },
+    {
+      "id": "mikkeli",
+      "name": "Μίκελι",
+      "englishName": "Mikkeli",
+      "nickname": "Η Στρατιωτική Πρωτεύουσα του Mannerheim",
+      "type": "city",
+      "coords": [
+        61.6886,
+        27.2721
+      ],
+      "zoom": 12.5,
+      "stats": {
+        "population": "54.000",
+        "founded": "1838",
+        "area": "1.628 km²",
+        "famousFor": "Mannerheim HQ, Saimaa, Naisvuori, Kenraalien Mikkeli"
+      },
+      "quote": "«Στο Μίκελι ο Στρατάρχης Mannerheim διηύθυνε τον πόλεμο – και σήμερα η πόλη τιμά τη στρατιωτική της κληρονομιά.»",
+      "geo": {
+        "summary": "Στις όχθες του κόλπου Saimaa, το Μίκελι είναι κτισμένο σε στρατηγική θέση κοντά στη λίμνη.",
+        "highlights": [
+          {
+            "title": "Λίμνη Saimaa",
+            "desc": "Η μεγαλύτερη λίμνη Φινλανδίας."
+          },
+          {
+            "title": "Λόφος Naisvuori",
+            "desc": "Ιστορικός λόφος."
+          },
+          {
+            "title": "Saimaa Κόλπος",
+            "desc": "Παραλιακός κόλπος."
+          }
+        ]
+      },
+      "hist": {
+        "summary": "Ιδρύθηκε το 1838. Κατά τον Β' Π.Π. ήταν το αρχηγείο του φινλανδικού στρατού υπό τον Mannerheim.",
+        "highlights": [
+          {
+            "title": "1838 - Ίδρυση",
+            "desc": "Ιδρύεται η πόλη."
+          },
+          {
+            "title": "1939-1944 - Mannerheim HQ",
+            "desc": "Αρχηγείο στρατού."
+          },
+          {
+            "title": "1960s - Στρατιωτική Κληρονομιά",
+            "desc": "Μουσεία στρατιωτικής ιστορίας."
+          },
+          {
+            "title": "2001 - Kenraalien Mikkeli",
+            "desc": "Ιδρύεται το στρατιωτικό μουσείο."
+          }
+        ]
+      },
+      "demo": {
+        "summary": "Μικρή πόλη με ισχυρή στρατιωτική κληρονομιά.",
+        "details": [
+          {
+            "label": "Πολιτιστική Παρουσία",
+            "val": "Στρατιωτικά μουσεία."
+          },
+          {
+            "label": "Λιμάνι",
+            "val": "Σημαντικό λιμάνι Saimaa."
+          },
+          {
+            "label": "Στρατιωτική Ταυτότητα",
+            "val": "Ιστορική στρατιωτική πόλη."
+          }
+        ]
+      },
+      "cult": {
+        "summary": "Πόλη με στρατιωτική ιστορία και καρελιανή κουλτούρα.",
+        "items": [
+          {
+            "title": "Mannerheim HQ",
+            "desc": "Ιστορικό αρχηγείο."
+          },
+          {
+            "title": "Infantry Museum",
+            "desc": "Στρατιωτικό μουσείο."
+          },
+          {
+            "title": "Mikkeli Art Museum",
+            "desc": "Μουσείο τέχνης."
+          }
+        ]
+      },
+      "guide": {
+        "summary": "Από το αρχηγείο Mannerheim μέχρι τη λίμνη.",
+        "items": [
+          {
+            "title": "Mannerheim HQ",
+            "desc": "Ιστορικό αρχηγείο."
+          },
+          {
+            "title": "Naisvuori Λόφος",
+            "desc": "Θέα."
+          },
+          {
+            "title": "Λίμνη Saimaa",
+            "desc": "Μεγάλη λίμνη."
+          },
+          {
+            "title": "Mikkeli Καθεδρικός",
+            "desc": "Ιστορική εκκλησία."
+          }
+        ]
+      },
+      "gastro": {
+        "summary": "Σαβο-καρελιανή κουζίνα.",
+        "items": [
+          {
+            "title": "Lihapullat",
+            "desc": "Κεφτεδάκια."
+          },
+          {
+            "title": "Kalakukko",
+            "desc": "Πίτα ψαριού."
+          },
+          {
+            "title": "Mikkeli Beer",
+            "desc": "Τοπική μπύρα."
+          },
+          {
+            "title": "Mustamakkara",
+            "desc": "Μαύρο λουκάνικο."
+          }
+        ]
+      },
+      "eco": {
+        "summary": "Λιμάνι, τουρισμός και στρατιωτική παρουσία.",
+        "items": [
+          {
+            "title": "Λιμάνι Mikkeli",
+            "desc": "Εμπορικό λιμάνι Saimaa."
+          },
+          {
+            "title": "Στρατιωτική Παρουσία",
+            "desc": "Ιστορική."
+          },
+          {
+            "title": "Τουρισμός",
+            "desc": "Στρατιωτικός και φυσικός."
+          }
+        ]
+      },
+      "pastVsPresent": [
+        {
+          "epoch": "Το Παρελθόν",
+          "content": "Τον Β' Π.Π. το Μίκελι ήταν αρχηγείο στρατού."
+        },
+        {
+          "epoch": "Το Παρόν",
+          "content": "Σήμερα είναι σύγχρονη πόλη με ζωντανό τουρισμό κληρονομιάς."
+        }
+      ],
+      "pois": [
+        {
+          "name": "Mannerheim HQ",
+          "category": "history",
+          "coords": [
+            61.6886,
+            27.2721
+          ],
+          "desc": "Ιστορικό αρχηγείο."
+        },
+        {
+          "name": "Naisvuori",
+          "category": "nature",
+          "coords": [
+            61.69,
+            27.27
+          ],
+          "desc": "Λόφος θέας."
+        },
+        {
+          "name": "Λίμνη Saimaa",
+          "category": "nature",
+          "coords": [
+            61.67,
+            27.3
+          ],
+          "desc": "Μεγάλη λίμνη."
+        },
+        {
+          "name": "Mikkeli Καθεδρικός",
+          "category": "monument",
+          "coords": [
+            61.688,
+            27.273
+          ],
+          "desc": "Ιστορική εκκλησία."
+        }
+      ]
+    },
+    {
+      "id": "kajaani",
+      "name": "Καγιαάνι",
+      "englishName": "Kajaani",
+      "nickname": "Η Πόλη του Εθνικού Έπους Kalevala",
+      "type": "city",
+      "coords": [
+        64.2273,
+        27.7294
+      ],
+      "zoom": 12.5,
+      "stats": {
+        "population": "37.000",
+        "founded": "1651",
+        "area": "1.583 km²",
+        "famousFor": "Kajaani Κάστρο, Kalevala, Lönnrot, Kainuu"
+      },
+      "quote": "«Στο Καγιαάνι ο Elias Lönnrot συγκέντρωσε τα άσματα του Kalevala – και η φινλανδική ψυχή βρήκε τη φωνή της.»",
+      "geo": {
+        "summary": "Στις όχθες του ποταμού Kajaaninjoki, ο Καγιαάνι είναι η πρωτεύουσα της περιοχής Kainuu.",
+        "highlights": [
+          {
+            "title": "Ποταμός Kajaaninjoki",
+            "desc": "Ιστορικός ποταμός."
+          },
+          {
+            "title": "Λίμνη Oulujärvi",
+            "desc": "Κοντινή μεγάλη λίμνη."
+          },
+          {
+            "title": "Kainuu Δάση",
+            "desc": "Πλούσια δάση."
+          }
+        ]
+      },
+      "hist": {
+        "summary": "Ιδρύθηκε το 1651. Το 1828-1834 ο Elias Lönnrot συγκέντρωσε εδώ τα άσματα του εθνικού έπους Kalevala.",
+        "highlights": [
+          {
+            "title": "1651 - Ίδρυση",
+            "desc": "Ιδρύεται η πόλη."
+          },
+          {
+            "title": "1604-1716 - Κάστρο Kajaani",
+            "desc": "Μεσαιωνικό κάστρο."
+          },
+          {
+            "title": "1828-1849 - Kalevala",
+            "desc": "Ο Lönnrot συγγράφει το έπος."
+          },
+          {
+            "title": "1906 - Πρώτη Σιδηροδρομική Γραμμή",
+            "desc": "Σύνδεση."
+          }
+        ]
+      },
+      "demo": {
+        "summary": "Μικρή βόρεια πόλη με ισχυρή φινλανδική ταυτότητα.",
+        "details": [
+          {
+            "label": "Πολιτιστική Ταυτότητα",
+            "val": "Παγκόσμια φήμη για Kalevala."
+          },
+          {
+            "label": "Λιμάνι",
+            "val": "Ιστορικό εμπορικό λιμάνι."
+          },
+          {
+            "label": "Δασική Παράδοση",
+            "val": "Ισχυρή δασική οικονομία."
+          }
+        ]
+      },
+      "cult": {
+        "summary": "Πόλη του εθνικού έπους.",
+        "items": [
+          {
+            "title": "Kajaani Κάστρο Ερείπια",
+            "desc": "Μεσαιωνικό κάστρο."
+          },
+          {
+            "title": "Kalevala Κληρονομιά",
+            "desc": "Συγγραφή έπους."
+          },
+          {
+            "title": "Kainuu Museum",
+            "desc": "Περιφερειακό μουσείο."
+          }
+        ]
+      },
+      "guide": {
+        "summary": "Από τα ερείπια του κάστρου μέχρι το μουσείο Kalevala.",
+        "items": [
+          {
+            "title": "Kajaani Κάστρο Ερείπια",
+            "desc": "Μεσαιωνικό κάστρο."
+          },
+          {
+            "title": "Kainuu Museum",
+            "desc": "Περιφερειακό μουσείο."
+          },
+          {
+            "title": "Λίμνη Oulujärvi",
+            "desc": "Μεγάλη λίμνη."
+          },
+          {
+            "title": "Καγιαάνι Church",
+            "desc": "Ιστορική εκκλησία."
+          }
+        ]
+      },
+      "gastro": {
+        "summary": "Βόρεια φινλανδική κουζίνα.",
+        "items": [
+          {
+            "title": "Rieska",
+            "desc": "Παραδοσιακό ψωμί."
+          },
+          {
+            "title": "Lihapullat",
+            "desc": "Κεφτεδάκια."
+          },
+          {
+            "title": "Kajaani Beer",
+            "desc": "Τοπική μπύρα."
+          },
+          {
+            "title": "Karjalanpaisti",
+            "desc": "Καρελιανό κρέας."
+          }
+        ]
+      },
+      "eco": {
+        "summary": "Δασική βιομηχανία και τουρισμός κληρονομιάς.",
+        "items": [
+          {
+            "title": "Metsä Group",
+            "desc": "Δασική βιομηχανία."
+          },
+          {
+            "title": "Τουρισμός",
+            "desc": "Kalevala κληρονομιά."
+          },
+          {
+            "title": "Λιμάνι",
+            "desc": "Εμπορικό λιμάνι."
+          }
+        ]
+      },
+      "pastVsPresent": [
+        {
+          "epoch": "Το Παρελθόν",
+          "content": "Τον 17ο αιώνα ο Καγιαάνι ήταν οχυρωμένη πόλη-κάστρο."
+        },
+        {
+          "epoch": "Το Παρόν",
+          "content": "Σήμερα είναι η πόλη του εθνικού έπους Kalevala με σύγχρονη δασική οικονομία."
+        }
+      ],
+      "pois": [
+        {
+          "name": "Kajaani Κάστρο Ερείπια",
+          "category": "history",
+          "coords": [
+            64.24,
+            27.728
+          ],
+          "desc": "Μεσαιωνικό κάστρο."
+        },
+        {
+          "name": "Kainuu Museum",
+          "category": "culture",
+          "coords": [
+            64.227,
+            27.728
+          ],
+          "desc": "Περιφερειακό μουσείο."
+        },
+        {
+          "name": "Λίμνη Oulujärvi",
+          "category": "nature",
+          "coords": [
+            64.2,
+            27.6
+          ],
+          "desc": "Μεγάλη λίμνη."
+        },
+        {
+          "name": "Καγιαάνι Church",
+          "category": "monument",
+          "coords": [
+            64.227,
+            27.73
+          ],
+          "desc": "Ιστορική εκκλησία."
+        }
+      ]
+    },
+    {
+      "id": "rauma",
+      "name": "Ράουμα",
+      "englishName": "Rauma",
+      "nickname": "Η Πόλη της UNESCO Ξύλινης Παλιάς Πόλης",
+      "type": "city",
+      "coords": [
+        61.1308,
+        21.5067
+      ],
+      "zoom": 12.5,
+      "stats": {
+        "population": "39.000",
+        "founded": "1442",
+        "area": "1.100 km²",
+        "famousFor": "UNESCO Old Rauma, Lace, Κόκκινα σπίτια, Maritime"
+      },
+      "quote": "«Στη Ράουμα ο χρόνος σταμάτησε μέσα σε 600 αυθεντικά ξύλινα σπίτια – ένα ζωντανό μεσαιωνικό παραμύθι.»",
+      "geo": {
+        "summary": "Στις ακτές του Bottria, η Ράουμα είναι κτισμένη σε παραλιακή πεδιάδα.",
+        "highlights": [
+          {
+            "title": "Ακτή Bottria",
+            "desc": "Παραλιακή περιοχή."
+          },
+          {
+            "title": "Ποταμός Raumanjoki",
+            "desc": "Ιστορικός ποταμός."
+          },
+          {
+            "title": "Archipelago",
+            "desc": "Παραλιακό αρχιπέλαγος."
+          }
+        ]
+      },
+      "hist": {
+        "summary": "Ιδρύθηκε το 1442, η Παλιά Πόλη Rauma είναι η μεγαλύτερη ενιαία ξύλινη παλιά πόλη των Σκανδιναβικών χωρών και Μνημείο UNESCO.",
+        "highlights": [
+          {
+            "title": "1442 - Ίδρυση",
+            "desc": "Ιδρύεται η πόλη."
+          },
+          {
+            "title": "1640 - Πυρκαγιά",
+            "desc": "Καταστρέφεται μεγαλύτερο μέρος."
+          },
+          {
+            "title": "1682 - Ξύλινη Αναστήλωση",
+            "desc": "Ξαναχτίζεται με ξύλινα σπίτια."
+          },
+          {
+            "title": "1991 - UNESCO",
+            "desc": "Γίνεται Μνημείο Παγκόσμιας Κληρονομιάς."
+          }
+        ]
+      },
+      "demo": {
+        "summary": "Μικρή τουριστική πόλη με ισχυρή διεθνή αναγνώριση.",
+        "details": [
+          {
+            "label": "UNESCO Πόλη",
+            "val": "Παγκόσμια κληρονομιά."
+          },
+          {
+            "label": "Lace Παράδοση",
+            "val": "Φημισμένα δαντέλα."
+          },
+          {
+            "label": "Δίγλωσση Πόλη",
+            "val": "Φινλανδικά και σουηδικά."
+          }
+        ]
+      },
+      "cult": {
+        "summary": "Πόλη με μεσαιωνική και lace παράδοση.",
+        "items": [
+          {
+            "title": "Old Rauma (UNESCO)",
+            "desc": "Ξύλινη παλιά πόλη."
+          },
+          {
+            "title": "Rauma Museum",
+            "desc": "Περιφερειακό μουσείο."
+          },
+          {
+            "title": "Lace Week",
+            "desc": "Διεθνές φεστιβάλ δαντέλας."
+          }
+        ]
+      },
+      "guide": {
+        "summary": "Περπάτημα στην παλιά πόλη UNESCO.",
+        "items": [
+          {
+            "title": "Old Rauma",
+            "desc": "UNESCO ξύλινη πόλη."
+          },
+          {
+            "title": "Holy Cross Church",
+            "desc": "Μοναστηριακός ναός 15ου αιώνα."
+          },
+          {
+            "title": "Marela Museum",
+            "desc": "Ιστορικό σπίτι καπετάνιου."
+          },
+          {
+            "title": "Rauma Καθεδρικός",
+            "desc": "Ιστορική εκκλησία."
+          }
+        ]
+      },
+      "gastro": {
+        "summary": "Παράκτια κουζίνα.",
+        "items": [
+          {
+            "title": "Silakka",
+            "desc": "Ρέγγα Βαλτικής."
+          },
+          {
+            "title": "Rauma Mustamakkara",
+            "desc": "Μαύρο λουκάνικο."
+          },
+          {
+            "title": "Lace Pinni",
+            "desc": "Τοπικό γλυκό."
+          },
+          {
+            "title": "Rauma Beer",
+            "desc": "Τοπική μπύρα."
+          }
+        ]
+      },
+      "eco": {
+        "summary": "Τουρισμός UNESCO και λιμάνι.",
+        "items": [
+          {
+            "title": "Λιμάνι Rauma",
+            "desc": "Σημαντικό λιμάνι."
+          },
+          {
+            "title": "UNESCO Tourism",
+            "desc": "Διεθνής τουρισμός."
+          },
+          {
+            "title": "Nuclear Industry",
+            "desc": "Εργοστάσιο πυρηνικής ενέργειας."
+          }
+        ]
+      },
+      "pastVsPresent": [
+        {
+          "epoch": "Το Παρελθόν",
+          "content": "Τον Μεσαίωνα η Ράουμα ήταν σημαντική ναυτική πόλη."
+        },
+        {
+          "epoch": "Το Παρόν",
+          "content": "Σήμερα είναι UNESCO πόλη με τουρισμό και βιομηχανία."
+        }
+      ],
+      "pois": [
+        {
+          "name": "Old Rauma",
+          "category": "monument",
+          "coords": [
+            61.1308,
+            21.5067
+          ],
+          "desc": "UNESCO ξύλινη πόλη."
+        },
+        {
+          "name": "Holy Cross Church",
+          "category": "monument",
+          "coords": [
+            61.132,
+            21.504
+          ],
+          "desc": "Μοναστηριακός ναός."
+        },
+        {
+          "name": "Marela Museum",
+          "category": "culture",
+          "coords": [
+            61.13,
+            21.508
+          ],
+          "desc": "Ιστορικό σπίτι."
+        },
+        {
+          "name": "Rauma Καθεδρικός",
+          "category": "monument",
+          "coords": [
+            61.131,
+            21.505
+          ],
+          "desc": "Ιστορική εκκλησία."
+        }
+      ]
+    },
+    {
+      "id": "naantali",
+      "name": "Νάανταλι",
+      "englishName": "Naantali",
+      "nickname": "Η Πόλη του Moomin World & της Προεδρικής Θερινής Κατοικίας",
+      "type": "city",
+      "coords": [
+        60.4664,
+        22.0208
+      ],
+      "zoom": 12.5,
+      "stats": {
+        "population": "20.000",
+        "founded": "1443",
+        "area": "688 km²",
+        "famousFor": "Moomin World, Kultaranta, Old Town, Naantali Spa"
+      },
+      "quote": "«Στο Νάανταλι ο Πρόεδρος της Φινλανδίας περνά το καλοκαίρι δίπλα στον κόσμο των Moomins.»",
+      "geo": {
+        "summary": "Σε αρχιπέλαγος κοντά στο Τούρκου, το Νάανταλι είναι γραφική παραθαλάσσια πόλη.",
+        "highlights": [
+          {
+            "title": "Αρχιπέλαγος",
+            "desc": "Παραλιακό αρχιπέλαγος."
+          },
+          {
+            "title": "Κόλπος Airisto",
+            "desc": "Ιστορικός κόλπος."
+          },
+          {
+            "title": "Kultaranta",
+            "desc": "Προεδρική κατοικία."
+          }
+        ]
+      },
+      "hist": {
+        "summary": "Ιδρύθηκε το 1443 γύρω από μοναστήρι Brigittine. Σήμερα είναι φημισμένο καλοκαιρινό θέρετρο.",
+        "highlights": [
+          {
+            "title": "1443 - Ίδρυση",
+            "desc": "Ιδρύεται μοναστήρι."
+          },
+          {
+            "title": "1860s - Spa",
+            "desc": "Αρχίζει spa τουρισμός."
+          },
+          {
+            "title": "1922 - Kultaranta",
+            "desc": "Δωρίζεται στο κράτος."
+          },
+          {
+            "title": "1993 - Moomin World",
+            "desc": "Ανοίγει το θεματικό πάρκο."
+          }
+        ]
+      },
+      "demo": {
+        "summary": "Μικρή τουριστική πόλη με ισχυρό καλοκαιρινό χαρακτήρα.",
+        "details": [
+          {
+            "label": "Παραθεριστικός Τουρισμός",
+            "val": "Διεθνής."
+          },
+          {
+            "label": "Προεδρική Θερινή Κατοικία",
+            "val": "Kultaranta."
+          },
+          {
+            "label": "Moomin Heritage",
+            "val": "Σημαντική οικονομία."
+          }
+        ]
+      },
+      "cult": {
+        "summary": "Πόλη με μοναστηριακή κληρονομιά και σύγχρονο τουρισμό.",
+        "items": [
+          {
+            "title": "Moomin World",
+            "desc": "Διεθνές θεματικό πάρκο."
+          },
+          {
+            "title": "Old Naantali",
+            "desc": "Ιστορική ξύλινη πόλη."
+          },
+          {
+            "title": "Naantali Museum",
+            "desc": "Περιφερειακό μουσείο."
+          }
+        ]
+      },
+      "guide": {
+        "summary": "Από το Moomin World μέχρι την προεδρική κατοικία.",
+        "items": [
+          {
+            "title": "Moomin World",
+            "desc": "Θεματικό πάρκο Moomin."
+          },
+          {
+            "title": "Kultaranta",
+            "desc": "Προεδρική κατοικία."
+          },
+          {
+            "title": "Old Naantali",
+            "desc": "Ιστορική ξύλινη πόλη."
+          },
+          {
+            "title": "Naantali Church",
+            "desc": "Μεσαιωνική μοναστηριακή εκκλησία."
+          }
+        ]
+      },
+      "gastro": {
+        "summary": "Παράκτια σουηδόφωνη κουζίνα.",
+        "items": [
+          {
+            "title": "Airisto Ψάρι",
+            "desc": "Φρέσκο ψάρι."
+          },
+          {
+            "title": "Moomin Cookies",
+            "desc": "Τοπικά μπισκότα."
+          },
+          {
+            "title": "Naantali Beer",
+            "desc": "Τοπική μπύρα."
+          },
+          {
+            "title": "Spa Dessert",
+            "desc": "Τοπικό γλυκό."
+          }
+        ]
+      },
+      "eco": {
+        "summary": "Τουρισμός και spa.",
+        "items": [
+          {
+            "title": "Moomin World",
+            "desc": "Σημαντικό θεματικό πάρκο."
+          },
+          {
+            "title": "Naantali Spa",
+            "desc": "Μεγάλο spa."
+          },
+          {
+            "title": "Λιμάνι",
+            "desc": "Εμπορικό λιμάνι."
+          }
+        ]
+      },
+      "pastVsPresent": [
+        {
+          "epoch": "Το Παρελθόν",
+          "content": "Τον Μεσαίωνα το Νάανταλι ήταν μοναστηριακή πόλη."
+        },
+        {
+          "epoch": "Το Παρόν",
+          "content": "Σήμερα είναι καλοκαιρινό θέρετρο με Moomin World και προεδρική κατοικία."
+        }
+      ],
+      "pois": [
+        {
+          "name": "Moomin World",
+          "category": "culture",
+          "coords": [
+            60.4664,
+            22.0208
+          ],
+          "desc": "Θεματικό πάρκο."
+        },
+        {
+          "name": "Kultaranta",
+          "category": "monument",
+          "coords": [
+            60.46,
+            22.03
+          ],
+          "desc": "Προεδρική κατοικία."
+        },
+        {
+          "name": "Old Naantali",
+          "category": "monument",
+          "coords": [
+            60.466,
+            22.015
+          ],
+          "desc": "Ιστορική ξύλινη πόλη."
+        },
+        {
+          "name": "Naantali Church",
+          "category": "monument",
+          "coords": [
+            60.4665,
+            22.021
+          ],
+          "desc": "Μεσαιωνική μοναστηριακή εκκλησία."
+        }
+      ]
+    },
+    {
+      "id": "tornio",
+      "name": "Τόρνιο",
+      "englishName": "Tornio",
+      "nickname": "Η Διεθνής Συνοριακή Πόλη του Ποταμού Torne",
+      "type": "city",
+      "coords": [
+        65.8433,
+        24.1461
+      ],
+      "zoom": 12.5,
+      "stats": {
+        "population": "22.000",
+        "founded": "1621",
+        "area": "1.226 km²",
+        "famousFor": "Σουηδικά Σύνορα, Tornio-Haparanda, Ξύλινη Εκκλησία 1686, Areena"
+      },
+      "quote": "«Στο Τόρνιο η φινλανδική-σουηδική φιλία κυλάει σαν νερό μέσα από τον ποταμό Torne.»",
+      "geo": {
+        "summary": "Στις εκβολές του ποταμού Torne, ο Τόρνιο αποτελεί τη φινλανδική πλευρά μιας διεθνούς πόλης με τη σουηδική Haparanda.",
+        "highlights": [
+          {
+            "title": "Ποταμός Torne",
+            "desc": "Συνοριακός ποταμός."
+          },
+          {
+            "title": "Bottria Κόλπος",
+            "desc": "Παραλιακή περιοχή."
+          },
+          {
+            "title": "Διεθνής Γέφυρα",
+            "desc": "Γέφυρα προς Haparanda."
+          }
+        ]
+      },
+      "hist": {
+        "summary": "Ιδρύθηκε το 1621 από τον Βασιλιά Gustav II Adolf. Χωρίστηκε μεταξύ Φινλανδίας και Σουηδίας το 1809.",
+        "highlights": [
+          {
+            "title": "1621 - Ίδρυση",
+            "desc": "Ιδρύεται η πόλη."
+          },
+          {
+            "title": "1686 - Ξύλινη Εκκλησία",
+            "desc": "Ανεγείρεται η ιστορική εκκλησία."
+          },
+          {
+            "title": "1809 - Σουηδικά Σύνορα",
+            "desc": "Η πόλη χωρίζεται."
+          },
+          {
+            "title": "1917 - Φινλανδική Πόλη",
+            "desc": "Γίνεται φινλανδική."
+          }
+        ]
+      },
+      "demo": {
+        "summary": "Συνοριακή πόλη με ισχυρή διεθνή κοινότητα.",
+        "details": [
+          {
+            "label": "Διεθνής Πόλη",
+            "val": "Tornio-Haparanda."
+          },
+          {
+            "label": "Δίγλωσση Πόλη",
+            "val": "Φινλανδικά και σουηδικά."
+          },
+          {
+            "label": "Beer Industry",
+            "val": "Σημαντική ζυθοποιία."
+          }
+        ]
+      },
+      "cult": {
+        "summary": "Πόλη με αρκτική κουλτούρα και σύγχρονη διεθνή ταυτότητα.",
+        "items": [
+          {
+            "title": "Tornio Ξύλινη Εκκλησία",
+            "desc": "Ιστορική εκκλησία 1686."
+          },
+          {
+            "title": "Aine Art Museum",
+            "desc": "Μουσείο τέχνης."
+          },
+          {
+            "title": "Tornio Valley Museum",
+            "desc": "Περιφερειακό μουσείο."
+          }
+        ]
+      },
+      "guide": {
+        "summary": "Από τη γέφυρα μέχρι την εκκλησία.",
+        "items": [
+          {
+            "title": "Tornio Ξύλινη Εκκλησία",
+            "desc": "Ιστορική εκκλησία."
+          },
+          {
+            "title": "Διεθνής Γέφυρα",
+            "desc": "Γέφυρα προς Σουηδία."
+          },
+          {
+            "title": "Ποταμός Torne",
+            "desc": "Συνοριακός ποταμός."
+          },
+          {
+            "title": "Aine Art Museum",
+            "desc": "Μουσείο τέχνης."
+          }
+        ]
+      },
+      "gastro": {
+        "summary": "Αρκτική φινλανδική κουζίνα.",
+        "items": [
+          {
+            "title": "Torne Salmon",
+            "desc": "Σολομός ποταμού."
+          },
+          {
+            "title": "Tornio Beer",
+            "desc": "Διάσημη τοπική μπύρα."
+          },
+          {
+            "title": "Rieska",
+            "desc": "Παραδοσιακό ψωμί."
+          },
+          {
+            "title": "Cloudberries",
+            "desc": "Αρκτικά μούρα."
+          }
+        ]
+      },
+      "eco": {
+        "summary": "Ζυθοποιία, logistics και συνοριακό εμπόριο.",
+        "items": [
+          {
+            "title": "Oy Tornio Breweries",
+            "desc": "Ιστορική ζυθοποιία."
+          },
+          {
+            "title": "Λιμάνι",
+            "desc": "Εμπορικό λιμάνι."
+          },
+          {
+            "title": "Border Trade",
+            "desc": "Σημαντικό εμπόριο."
+          }
+        ]
+      },
+      "pastVsPresent": [
+        {
+          "epoch": "Το Παρελθόν",
+          "content": "Τον 17ο αιώνα ο Τόρνιο ήταν σουηδική πόλη."
+        },
+        {
+          "epoch": "Το Παρόν",
+          "content": "Σήμερα είναι φινλανδική συνοριακή πόλη με Haparanda."
+        }
+      ],
+      "pois": [
+        {
+          "name": "Tornio Ξύλινη Εκκλησία",
+          "category": "monument",
+          "coords": [
+            65.843,
+            24.146
+          ],
+          "desc": "Ιστορική εκκλησία 1686."
+        },
+        {
+          "name": "Διεθνής Γέφυρα",
+          "category": "monument",
+          "coords": [
+            65.84,
+            24.15
+          ],
+          "desc": "Γέφυρα προς Σουηδία."
+        },
+        {
+          "name": "Ποταμός Torne",
+          "category": "nature",
+          "coords": [
+            65.842,
+            24.146
+          ],
+          "desc": "Συνοριακός ποταμός."
+        },
+        {
+          "name": "Aine Art Museum",
+          "category": "culture",
+          "coords": [
+            65.843,
+            24.144
+          ],
+          "desc": "Μουσείο τέχνης."
+        }
+      ]
+    },
+    {
+      "id": "kemi",
+      "name": "Κέμι",
+      "englishName": "Kemi",
+      "nickname": "Η Πόλη του SnowCastle & του Παγοθραυστικού Sampo",
+      "type": "city",
+      "coords": [
+        65.7333,
+        24.55
+      ],
+      "zoom": 12.5,
+      "stats": {
+        "population": "21.000",
+        "founded": "1869",
+        "area": "747 km²",
+        "famousFor": "SnowCastle, Sampo, Bothnian Bay, Γέφυρα"
+      },
+      "quote": "«Στο Κέμι κάθε χειμώνας γεννιέται ένα κάστρο από χιόνι, και το ιστορικό παγοθραυστικό Sampo ανοίγει πλώρα στον Βοθνικό.»",
+      "geo": {
+        "summary": "Στις ακτές του Βοθνικού Κόλπου, ο Κέμι είναι κτισμένος σε στρατηγική θέση κοντά στα σουηδικά σύνορα.",
+        "highlights": [
+          {
+            "title": "Βοθνικός Κόλπος",
+            "desc": "Παραλιακή αρκτική περιοχή."
+          },
+          {
+            "title": "Ποταμός Kemijoki",
+            "desc": "Ιστορικός ποταμός."
+          },
+          {
+            "title": "Kemi Αρχιπέλαγος",
+            "desc": "Παράκτια νησιά."
+          }
+        ]
+      },
+      "hist": {
+        "summary": "Ιδρύθηκε το 1869 ως λιμάνι. Φημίζεται για το SnowCastle και το παγοθραυστικό Sampo.",
+        "highlights": [
+          {
+            "title": "1869 - Ίδρυση",
+            "desc": "Ιδρύεται η πόλη."
+          },
+          {
+            "title": "1893 - Sampo",
+            "desc": "Ξεκινά η λειτουργία παγοθραυστικού."
+          },
+          {
+            "title": "1996 - SnowCastle",
+            "desc": "Χτίζεται το πρώτο SnowCastle."
+          },
+          {
+            "title": "20ός αιώνας - Βιομηχανία",
+            "desc": "Ανάπτυξη βιομηχανίας χάρτου."
+          }
+        ]
+      },
+      "demo": {
+        "summary": "Μικρή αρκτική πόλη με ισχυρό χειμερινό τουρισμό.",
+        "details": [
+          {
+            "label": "Χειμερινός Τουρισμός",
+            "val": "SnowCastle."
+          },
+          {
+            "label": "Λιμάνι",
+            "val": "Σημαντικό λιμάνι."
+          },
+          {
+            "label": "Βιομηχανία",
+            "val": "Χαρτοβιομηχανία."
+          }
+        ]
+      },
+      "cult": {
+        "summary": "Πόλη του χιονιού και του πάγου.",
+        "items": [
+          {
+            "title": "SnowCastle",
+            "desc": "Κάστρο χιονιού."
+          },
+          {
+            "title": "Sampo Icebreaker",
+            "desc": "Ιστορικό παγοθραυστικό."
+          },
+          {
+            "title": "Kemi Historical Museum",
+            "desc": "Περιφερειακό μουσείο."
+          }
+        ]
+      },
+      "guide": {
+        "summary": "Από το SnowCastle μέχρι το Sampo.",
+        "items": [
+          {
+            "title": "SnowCastle",
+            "desc": "Κάστρο χιονιού."
+          },
+          {
+            "title": "Sampo Icebreaker",
+            "desc": "Ιστορικό παγοθραυστικό."
+          },
+          {
+            "title": "Bottria Beach",
+            "desc": "Αρκτική παραλία."
+          },
+          {
+            "title": "Kemi Church",
+            "desc": "Ιστορική εκκλησία."
+          }
+        ]
+      },
+      "gastro": {
+        "summary": "Αρκτική κουζίνα.",
+        "items": [
+          {
+            "title": "Bottria Ψάρι",
+            "desc": "Φρέσκο ψάρι."
+          },
+          {
+            "title": "Reindeer Suovas",
+            "desc": "Κρέας ταράνδου."
+          },
+          {
+            "title": "Kemi Beer",
+            "desc": "Τοπική μπύρα."
+          },
+          {
+            "title": "Cloudberries",
+            "desc": "Αρκτικά μούρα."
+          }
+        ]
+      },
+      "eco": {
+        "summary": "Λιμάνι, βιομηχανία και τουρισμός.",
+        "items": [
+          {
+            "title": "Λιμάνι Kemi",
+            "desc": "Σημαντικό λιμάνι."
+          },
+          {
+            "title": "Metsä Group",
+            "desc": "Χαρτοβιομηχανία."
+          },
+          {
+            "title": "SnowCastle Tourism",
+            "desc": "Σημαντική οικονομία."
+          }
+        ]
+      },
+      "pastVsPresent": [
+        {
+          "epoch": "Το Παρελθόν",
+          "content": "Τον 19ο αιώνα ο Κέμι ήταν βιομηχανικό λιμάνι."
+        },
+        {
+          "epoch": "Το Παρόν",
+          "content": "Σήμερα είναι πόλη του χιονιού και του πάγου."
+        }
+      ],
+      "pois": [
+        {
+          "name": "SnowCastle",
+          "category": "culture",
+          "coords": [
+            65.733,
+            24.55
+          ],
+          "desc": "Κάστρο χιονιού."
+        },
+        {
+          "name": "Sampo Icebreaker",
+          "category": "culture",
+          "coords": [
+            65.69,
+            24.52
+          ],
+          "desc": "Ιστορικό παγοθραυστικό."
+        },
+        {
+          "name": "Bottria Beach",
+          "category": "nature",
+          "coords": [
+            65.735,
+            24.54
+          ],
+          "desc": "Αρκτική παραλία."
+        },
+        {
+          "name": "Kemi Church",
+          "category": "monument",
+          "coords": [
+            65.734,
+            24.551
+          ],
+          "desc": "Ιστορική εκκλησία."
+        }
+      ]
+    },
+    {
+      "id": "mariehamn",
+      "name": "Μάριεχαμν",
+      "englishName": "Mariehamn",
+      "nickname": "Η Πρωτεύουσα των Νήσων Åland & του Ιστιοφόρου Pommern",
+      "type": "city",
+      "coords": [
+        60.0983,
+        19.9358
+      ],
+      "zoom": 12.5,
+      "stats": {
+        "population": "12.000",
+        "founded": "1861",
+        "area": "2.111 km²",
+        "famousFor": "Pommern, Åland, Maritime, Självstyrelse"
+      },
+      "quote": "«Στο Μάριεχαμν η ναυτική ιστορία των Åland πλέει πάνω από ένα αυτόνομο φινλανδικό αρχιπέλαγος.»",
+      "geo": {
+        "summary": "Στο νησί Åland στη Βαλτική, το Μάριεχαμν είναι η πρωτεύουσα του αυτόνομου αρχιπελάγους.",
+        "highlights": [
+          {
+            "title": "Νησί Åland",
+            "desc": "Αυτόνομο νησί."
+          },
+          {
+            "title": "Βαλτική Θάλασσα",
+            "desc": "Παραλία."
+          },
+          {
+            "title": "Åland Αρχιπέλαγος",
+            "desc": "Χιλιάδες νησάκια."
+          }
+        ]
+      },
+      "hist": {
+        "summary": "Ιδρύθηκε το 1861 από τον Τσάρο Αλέξανδρο Β' και πήρε το όνομα από τη Μαρία Αλεξανδρόβνα. Η περιοχή είναι αυτόνομη από το 1921.",
+        "highlights": [
+          {
+            "title": "1861 - Ίδρυση",
+            "desc": "Ιδρύεται η πόλη."
+          },
+          {
+            "title": "1921 - Αυτονομία",
+            "desc": "Αυτόνομα νησιά."
+          },
+          {
+            "title": "1937 - Självstyrelsedagen",
+            "desc": "Ημέρα αυτονομίας."
+          },
+          {
+            "title": "1949 - Pommern Museum",
+            "desc": "Ιστορικό ιστιοφόρο."
+          }
+        ]
+      },
+      "demo": {
+        "summary": "Μικρή πρωτεύουσα αυτόνομου αρχιπελάγους.",
+        "details": [
+          {
+            "label": "Δίγλωσση Πόλη",
+            "val": "Σουηδικά και φινλανδικά."
+          },
+          {
+            "label": "Αυτόνομη Κυβέρνηση",
+            "val": "Τοπική κυβέρνηση."
+          },
+          {
+            "label": "Νησιωτική Οικονομία",
+            "val": "Ναυτική."
+          }
+        ]
+      },
+      "cult": {
+        "summary": "Πόλη με ναυτική κληρονομιά και αυτόνομη ταυτότητα.",
+        "items": [
+          {
+            "title": "Pommern Ιστιοφόρο",
+            "desc": "Ιστορικό ιστιοφόρο 1903."
+          },
+          {
+            "title": "Åland Maritime Museum",
+            "desc": "Ναυτικό μουσείο."
+          },
+          {
+            "title": "Åland Museum",
+            "desc": "Περιφερειακό μουσείο."
+          }
+        ]
+      },
+      "guide": {
+        "summary": "Από το Pommern μέχρι την πλατεία.",
+        "items": [
+          {
+            "title": "Pommern",
+            "desc": "Ιστορικό ιστιοφόρο."
+          },
+          {
+            "title": "Åland Maritime Museum",
+            "desc": "Ναυτικό μουσείο."
+          },
+          {
+            "title": "Mariehamn Church",
+            "desc": "Ιστορική εκκλησία."
+          },
+          {
+            "title": "Torggården",
+            "desc": "Ιστορικό δημαρχείο."
+          }
+        ]
+      },
+      "gastro": {
+        "summary": "Σουηδική ναυτική κουζίνα.",
+        "items": [
+          {
+            "title": "Åland Pancake",
+            "desc": "Τοπικό γλυκό πανκέικ."
+          },
+          {
+            "title": "Baltic Herring",
+            "desc": "Ρέγγα Βαλτικής."
+          },
+          {
+            "title": "Mariehamn Beer",
+            "desc": "Τοπική μπύρα."
+          },
+          {
+            "title": "Black Bread",
+            "desc": "Σκούρο ψωμί σίκαλης."
+          }
+        ]
+      },
+      "eco": {
+        "summary": "Ναυτιλία, τουρισμός και αυτόνομη οικονομία.",
+        "items": [
+          {
+            "title": "Åland Shipping",
+            "desc": "Ισχυρή ναυτιλιακή βιομηχανία."
+          },
+          {
+            "title": "Λιμάνι",
+            "desc": "Σημαντικό λιμάνι."
+          },
+          {
+            "title": "Τουρισμός",
+            "desc": "Αναπτυσσόμενος."
+          }
+        ]
+      },
+      "pastVsPresent": [
+        {
+          "epoch": "Το Παρελθόν",
+          "content": "Τον 19ο αιώνα το Μάριεχαμν ήταν μικρή ρωσική πόλη."
+        },
+        {
+          "epoch": "Το Παρόν",
+          "content": "Σήμερα είναι η πρωτεύουσα αυτόνομων νήσων Åland με ναυτική κληρονομιά."
+        }
+      ],
+      "pois": [
+        {
+          "name": "Pommern",
+          "category": "monument",
+          "coords": [
+            60.095,
+            19.946
+          ],
+          "desc": "Ιστορικό ιστιοφόρο."
+        },
+        {
+          "name": "Åland Maritime Museum",
+          "category": "culture",
+          "coords": [
+            60.096,
+            19.945
+          ],
+          "desc": "Ναυτικό μουσείο."
+        },
+        {
+          "name": "Mariehamn Church",
+          "category": "monument",
+          "coords": [
+            60.0983,
+            19.9358
+          ],
+          "desc": "Ιστορική εκκλησία."
+        },
+        {
+          "name": "Torggården",
+          "category": "monument",
+          "coords": [
+            60.099,
+            19.936
+          ],
+          "desc": "Ιστορικό δημαρχείο."
+        }
+      ]
     }
   ]
 }

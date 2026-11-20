@@ -1,4 +1,4 @@
-import { CITY_TO_STATE } from './states-data.js?v=20261117_video_iframe_fix';
+import { CITY_TO_STATE } from './states-data.js?v=20261121_nordic_cities_v26';
 /**
  * Video Service Module
  * Registry of verified high-definition YouTube video tours for all cities
@@ -27857,6 +27857,590 @@ export const CITY_VIDEOS = {
         "type": "walking"
     }
 }
+,
+  "haugesund": {
+    "cityName": "Χάουγκεσουντ",
+    "drone": {
+      "youtubeId": "ZLQUeXOjsE8",
+      "title": "Χάουγκεσουντ 4K: Εναέρια Περιήγηση Drone στο Λιμάνι και την Παλιά Πόλη",
+      "label": "Χάουγκεσουντ με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "nnuoaLr1Axw",
+      "title": "Χάουγκεσουντ 4K: Περιήγηση στην Αποβάθρα Smedasundet & το Κέντρο",
+      "label": "Χάουγκεσουντ Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "fredrikstad": {
+    "cityName": "Φρέντρικσταντ",
+    "drone": {
+      "youtubeId": "DSioj1dS5Mc",
+      "title": "Φρέντρικσταντ 4K: Εναέρια Πανοραμική Περιήγηση Drone",
+      "label": "Φρέντρικσταντ με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "F8XqbQsY3cI",
+      "title": "Φρέντρικσταντ 4K: Περιήγηση στην Ιστορική Οχυρωμένη Παλιά Πόλη (Gamlebyen)",
+      "label": "Φρέντρικσταντ Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "tonsberg": {
+    "cityName": "Τένσμπεργκ",
+    "walking": {
+      "youtubeId": "FeR2Grs4WJI",
+      "title": "Τένσμπεργκ 4K: Περιήγηση στην Αρχαιότερη Πόλη της Νορβηγίας & τον Πύργο Slottsfjellet",
+      "label": "Τένσμπεργκ Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "skien": {
+    "cityName": "Σίεν",
+    "walking": {
+      "youtubeId": "11ImYralV68",
+      "title": "Σίεν 4K: Περιήγηση στην Ιστορική Γενέτειρα του Ερρίκου Ίψεν",
+      "label": "Σίεν Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "sarpsborg": {
+    "cityName": "Σάρπσμποργκ",
+    "drone": {
+      "youtubeId": "NcC3JcyiHDU",
+      "title": "Σάρπσμποργκ 4K: Εναέρια Περιήγηση Drone στον Καταρράκτη Sarpefossen & την Πόλη",
+      "label": "Σάρπσμποργκ με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "bX5iU6y9hK8",
+      "title": "Σάρπσμποργκ 4K: Περιήγηση στο Κέντρο & τα Πάρκα της Πόλης",
+      "label": "Σάρπσμποργκ Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "arendal": {
+    "cityName": "Άρενταλ",
+    "drone": {
+      "youtubeId": "bK72SdoSoFg",
+      "title": "Άρενταλ 4K: Εναέρια Περιήγηση Drone στο Γραφικό Λιμάνι Pollen & το Αρχιπέλαγος",
+      "label": "Άρενταλ με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "CCL8RjyuTTE",
+      "title": "Άρενταλ 4K: Περιήγηση στην Παλιά Συνοικία Tyholmen & την Προκυμαία",
+      "label": "Άρενταλ Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "roros": {
+    "cityName": "Ρέρος",
+    "walking": {
+      "youtubeId": "YsJewUFdNW8",
+      "title": "Ρέρος 4K: Περιήγηση στην Παραμυθένια Ξύλινη Μεταλλευτική Πόλη της UNESCO",
+      "label": "Ρέρος Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "molde": {
+    "cityName": "Μόλντε",
+    "walking": {
+      "youtubeId": "v3JC9R8PuKs",
+      "title": "Μόλντε 4K: Περιήγηση στην «Πόλη των Ρόδων» & το Φιόρδ Romsdal",
+      "label": "Μόλντε Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "kongsberg": {
+    "cityName": "Κόνγκσμπεργκ",
+    "drone": {
+      "youtubeId": "PF56ONAjYzk",
+      "title": "Κόνγκσμπεργκ 4K: Εναέρια Περιήγηση Drone στην Ιστορική Μεταλλευτική Πόλη του Αργύρου",
+      "label": "Κόνγκσμπεργκ με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "Oio35u9AVP4",
+      "title": "Κόνγκσμπεργκ 4K: Περιήγηση στο Κέντρο, το Ποτάμι Numedalslågen & την Εκκλησία",
+      "label": "Κόνγκσμπεργκ Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "narvik": {
+    "cityName": "Νάρβικ",
+    "drone": {
+      "youtubeId": "9nyY7VjKhZA",
+      "title": "Νάρβικ 4K: Εναέρια Περιήγηση Drone στο Αρκτικό Φιόρδ Ofotfjord & τα Βουνά",
+      "label": "Νάρβικ με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "nH0ELx7EZbw",
+      "title": "Νάρβικ 4K: Περιήγηση στην Αρκτική Πόλη & το Ιστορικό Λιμάνι Μεταλλευμάτων",
+      "label": "Νάρβικ Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "hamar": {
+    "cityName": "Χάμαρ",
+    "walking": {
+      "youtubeId": "sRdZ0eKTSLY",
+      "title": "Χάμαρ 4K: Περιήγηση στις Όχθες της Λίμνης Mjøsa & τα Μεσαιωνικά Ερείπια",
+      "label": "Χάμαρ Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "halden": {
+    "cityName": "Χάλντεν",
+    "drone": {
+      "youtubeId": "ofUDVl7-c88",
+      "title": "Χάλντεν 4K: Εναέρια Περιήγηση Drone στο Φρούριο Fredriksten & το Κέντρο",
+      "label": "Χάλντεν με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "4NZKtIwbdEM",
+      "title": "Χάλντεν 4K: Περιήγηση στο Λιμάνι & τα Γραφικά Σοκάκια",
+      "label": "Χάλντεν Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "harstad": {
+    "cityName": "Χάρσταντ",
+    "drone": {
+      "youtubeId": "nTjzaXIydck",
+      "title": "Χάρσταντ 4K: Εναέρια Περιήγηση Drone στην Πύλη των Νήσων Vesterålen",
+      "label": "Χάρσταντ με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "t8qipHpk63c",
+      "title": "Χάρσταντ 4K: Περιήγηση στο Αρκτικό Λιμάνι & το Ιστορικό Trondenes",
+      "label": "Χάρσταντ Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "mo-i-rana": {
+    "cityName": "Μο ι Ράνα",
+    "drone": {
+      "youtubeId": "xYV1x2_i9-Y",
+      "title": "Μο ι Ράνα 4K: Εναέρια Περιήγηση Drone στο Ranfjorden & το Άγαλμα Havmannen",
+      "label": "Μο ι Ράνα με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    }
+  },
+  "alta": {
+    "cityName": "Άλτα",
+    "walking": {
+      "youtubeId": "yhquts5mVGk",
+      "title": "Άλτα 4K: Περιήγηση στην Πόλη του Βορείου Σέλαος & τον Καθεδρικό Ναό Nordlyskatedralen",
+      "label": "Άλτα Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    },
+    "guide": {
+      "youtubeId": "ZS5xHE30HoE",
+      "title": "Άλτα 4K: Πανόραμα της Αρκτικής Πρωτεύουσας του Finnmark",
+      "label": "Άλτα Αρκτικός Οδηγός (4K)",
+      "icon": "fa-solid fa-landmark",
+      "type": "guide"
+    }
+  },
+  "vasteras": {
+    "cityName": "Βέστερος",
+    "drone": {
+      "youtubeId": "1UtdyJH7s1I",
+      "title": "Βέστερος 4K: Εναέρια Περιήγηση Drone στη Λίμνη Mälaren & τον Καθεδρικό Ναό",
+      "label": "Βέστερος με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "0g-eJW8yASk",
+      "title": "Βέστερος 4K: Περιήγηση στο Ιστορικό Κέντρο Kyrkbacken & τους Πεζοδρόμους",
+      "label": "Βέστερος Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "norrkoping": {
+    "cityName": "Νόρσεπινγκ",
+    "walking": {
+      "youtubeId": "kupIjDsnpIw",
+      "title": "Νόρσεπινγκ 4K: Περιήγηση στο Βιομηχανικό Τοπίο Industrilandskapet & τον Ποταμό Motala",
+      "label": "Νόρσεπινγκ Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "jonkoping": {
+    "cityName": "Γιένσεπινγκ",
+    "walking": {
+      "youtubeId": "9TI6g7yRvqc",
+      "title": "Γιένσεπινγκ 4K: Περιήγηση στις Όχθες της Λίμνης Vättern & το Κέντρο",
+      "label": "Γιένσεπινγκ Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "umea": {
+    "cityName": "Ούμεο",
+    "walking": {
+      "youtubeId": "YVhu9TFaJTk",
+      "title": "Ούμεο 4K: Περιήγηση στην «Πόλη των Σημύδων» & τον Ποταμό Ume",
+      "label": "Ούμεο Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "gavle": {
+    "cityName": "Γιέβλε",
+    "walking": {
+      "youtubeId": "X2lYaZrigU4",
+      "title": "Γιέβλε 4K: Περιήγηση στην Παλιά Πόλη Gamla Gefle & τους Πεζοδρόμους",
+      "label": "Γιέβλε Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "boras": {
+    "cityName": "Μπουρός",
+    "walking": {
+      "youtubeId": "VZ2CRTF-Q9M",
+      "title": "Μπουρός 4K: Περιήγηση στην Πόλη της Υφαντουργίας & της Δημόσιας Τέχνης",
+      "label": "Μπουρός Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "eskilstuna": {
+    "cityName": "Έσκιλστουνα",
+    "walking": {
+      "youtubeId": "vst8ZfvxP_0",
+      "title": "Έσκιλστουνα 4K: Περιήγηση στα Ιστορικά Σιδηρουργεία Rademachersmedjorna & τον Ποταμό",
+      "label": "Έσκιλστουνα Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "halmstad": {
+    "cityName": "Χάλμσταντ",
+    "drone": {
+      "youtubeId": "--vEOHIw6XY",
+      "title": "Χάλμσταντ 4K: Εναέρια Περιήγηση Drone στο Κάστρο & τις Παραλίες του Kattegat",
+      "label": "Χάλμσταντ με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    }
+  },
+  "vaxjo": {
+    "cityName": "Βέξιε",
+    "walking": {
+      "youtubeId": "75XQU0bIpuw",
+      "title": "Βέξιε 4K: Περιήγηση στην «Πιο Πράσινη Πόλη της Ευρώπης» & τον Καθεδρικό Ναό",
+      "label": "Βέξιε Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "karlstad": {
+    "cityName": "Κάρλσταντ",
+    "walking": {
+      "youtubeId": "-ixJHvMf3S0",
+      "title": "Κάρλσταντ 4K: Περιήγηση στο Δέλτα του Ποταμού Klarälven & τη Λίμνη Vänern",
+      "label": "Κάρλσταντ Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "sundsvall": {
+    "cityName": "Σούντσβαλ",
+    "drone": {
+      "youtubeId": "xJnfjO4hEmI",
+      "title": "Σούντσβαλ 4K: Εναέρια Περιήγηση Drone στην «Πέτρινη Πόλη» Stenstaden",
+      "label": "Σούντσβαλ με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "qm3l40hi6aU",
+      "title": "Σούντσβαλ 4K: Περιήγηση στην Κεντρική Πλατεία Stora Torget & τα Αρχοντικά",
+      "label": "Σούντσβαλ Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "ostersund": {
+    "cityName": "Έστερσουντ",
+    "drone": {
+      "youtubeId": "cJr5xtv5E34",
+      "title": "Έστερσουντ 4K: Εναέρια Περιήγηση Drone στη Λίμνη Storsjön & το Χειμερινό Τοπίο",
+      "label": "Έστερσουντ με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    }
+  },
+  "falun": {
+    "cityName": "Φάλουν",
+    "walking": {
+      "youtubeId": "_tuAG6xqErs",
+      "title": "Φάλουν 4K: Περιήγηση στο Ιστορικό Κέντρο, την Εκκλησία Kristine & τον Ποταμό",
+      "label": "Φάλουν Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    },
+    "guide": {
+      "youtubeId": "MfDSUYvegyA",
+      "title": "Φάλουν 4K: Περιήγηση στο Ιστορικό Ορυχείο Χαλκού Falu Gruva (UNESCO)",
+      "label": "Ορυχείο Falu Gruva (4K)",
+      "icon": "fa-solid fa-landmark",
+      "type": "guide"
+    }
+  },
+  "kalmar": {
+    "cityName": "Κάλμαρ",
+    "drone": {
+      "youtubeId": "biHhgbH9qDo",
+      "title": "Κάλμαρ 4K: Εναέρια Περιήγηση Drone στο Αναγεννησιακό Κάστρο Kalmar Slott & τα Στενά",
+      "label": "Κάλμαρ με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    }
+  },
+  "ystad": {
+    "cityName": "Ύσταντ",
+    "walking": {
+      "youtubeId": "t7TgsyRGRoI",
+      "title": "Ύσταντ 4K: Περιήγηση στα Μεσαιωνικά Ξύλινα Σπίτια & την Πόλη του Wallander",
+      "label": "Ύσταντ Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "espoo": {
+    "cityName": "Έσποο",
+    "drone": {
+      "youtubeId": "dqsNCN5RssM",
+      "title": "Έσποο 4K: Εναέρια Περιήγηση Drone στο Μοντέρνο Tapiola, το Keilaniemi & τις Ακτές",
+      "label": "Έσποο με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "xucAkPEhwIc",
+      "title": "Έσποο 4K: Περιήγηση στην Αρχιτεκτονική Πόλη-Κήπο Tapiola",
+      "label": "Έσποο Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "vantaa": {
+    "cityName": "Βάνταα",
+    "walking": {
+      "youtubeId": "wShc4y-aOkU",
+      "title": "Βάνταα 4K: Περιήγηση στο Κέντρο Tikkurila & τον Ποταμό Keravanjoki",
+      "label": "Βάνταα Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "lappeenranta": {
+    "cityName": "Λαππεενράντα",
+    "walking": {
+      "youtubeId": "lj3D3mP10F8",
+      "title": "Λαππεενράντα 4K: Περιήγηση στο Ιστορικό Φρούριο & τη Λίμνη Saimaa",
+      "label": "Λαππεενράντα Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "savonlinna": {
+    "cityName": "Σαβονλίννα",
+    "drone": {
+      "youtubeId": "m9BfAo_8ZVc",
+      "title": "Σαβονλίννα 4K: Εναέρια Περιήγηση Drone στο Μεσαιωνικό Κάστρο Olavinlinna & τη Λίμνη Saimaa",
+      "label": "Σαβονλίννα με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    }
+  },
+  "hameenlinna": {
+    "cityName": "Χαμεενλίννα",
+    "drone": {
+      "youtubeId": "47G0TPXjPGk",
+      "title": "Χαμεενλίννα 4K: Εναέρια Περιήγηση Drone στο Μεσαιωνικό Κάστρο Hämeen linna",
+      "label": "Χαμεενλίννα με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    }
+  },
+  "pori": {
+    "cityName": "Πόρι",
+    "walking": {
+      "youtubeId": "d0va0ZgwInU",
+      "title": "Πόρι 4K: Περιήγηση στην Κεντρική Πλατεία, τον Ποταμό Kokemäenjoki & τα Ιστορικά Κτίρια",
+      "label": "Πόρι Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "kotka": {
+    "cityName": "Κότκα",
+    "walking": {
+      "youtubeId": "NpkFEbzReEM",
+      "title": "Κότκα 4K: Περιήγηση στο Ναυτικό Λιμάνι, το Πάρκο Sapokka & τα Νησιά του Κόλπου",
+      "label": "Κότκα Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "joensuu": {
+    "cityName": "Γιόενσουου",
+    "drone": {
+      "youtubeId": "vlRtvHfpoq4",
+      "title": "Γιόενσουου 4K: Εναέρια Περιήγηση Drone στην Πρωτεύουσα της Βόρειας Καρελίας & τον Ποταμό Pielisjoki",
+      "label": "Γιόενσουου με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    }
+  },
+  "mikkeli": {
+    "cityName": "Μίκελι",
+    "walking": {
+      "youtubeId": "VdO8VRAV49o",
+      "title": "Μίκελι 4K: Περιήγηση στην Καρδιά των Φινλανδικών Λιμνών & την Κεντρική Αγορά",
+      "label": "Μίκελι Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    },
+    "guide": {
+      "youtubeId": "lfudYCwHjNs",
+      "title": "Μίκελι 4K: Περιήγηση στο Ιστορικό Κέντρο & τον Καθεδρικό Ναό",
+      "label": "Αξιοθέατα Μίκελι (4K)",
+      "icon": "fa-solid fa-landmark",
+      "type": "guide"
+    }
+  },
+  "kajaani": {
+    "cityName": "Καγιαάνι",
+    "walking": {
+      "youtubeId": "siAint9vsfA",
+      "title": "Καγιαάνι 4K: Περιήγηση στην Πλατεία Αγοράς Kauppatori, τον Ποταμό & τα Ερείπια του Κάστρου",
+      "label": "Καγιαάνι Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    },
+    "guide": {
+      "youtubeId": "mw0KpVSND4E",
+      "title": "Καγιαάνι 4K: Περιήγηση στην Πόλη & τη Γέφυρα Koivukoski",
+      "label": "Καγιαάνι Ιστορικός Περίπατος (4K)",
+      "icon": "fa-solid fa-landmark",
+      "type": "guide"
+    }
+  },
+  "rauma": {
+    "cityName": "Ράουμα",
+    "walking": {
+      "youtubeId": "kjKjVNVBhLQ",
+      "title": "Ράουμα 4K: Περιήγηση στην Παλιά Ξύλινη Πόλη Vanha Rauma (UNESCO)",
+      "label": "Ράουμα Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "naantali": {
+    "cityName": "Νάανταλι",
+    "walking": {
+      "youtubeId": "8uXCKq9chlI",
+      "title": "Νάανταλι 4K: Περιήγηση στη Γραφική Παραθαλάσσια Παλιά Πόλη & το Λιμάνι",
+      "label": "Νάανταλι Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    },
+    "guide": {
+      "youtubeId": "hIcsZ_Vhrdw",
+      "title": "Νάανταλι 4K: Περιήγηση στην Παλιά Πόλη Vanha Kaupunki & τα Αξιοθέατα",
+      "label": "Νάανταλι Οδηγός Πόλης (4K)",
+      "icon": "fa-solid fa-landmark",
+      "type": "guide"
+    }
+  },
+  "tornio": {
+    "cityName": "Τόρνιο",
+    "walking": {
+      "youtubeId": "8NUgzh13sVQ",
+      "title": "Τόρνιο 4K: Περιήγηση στη Συνοριακή Πόλη της Λαπωνίας & την Ιστορική Εκκλησία",
+      "label": "Τόρνιο Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    },
+    "guide": {
+      "youtubeId": "j5l0DCigKhY",
+      "title": "Τόρνιο & Χαπαράντα 4K: Περιήγηση στις Δίδυμες Συνοριακές Πόλεις Φινλανδίας & Σουηδίας",
+      "label": "Τόρνιο & Haparanda Tour (4K)",
+      "icon": "fa-solid fa-landmark",
+      "type": "guide"
+    }
+  },
+  "kemi": {
+    "cityName": "Κέμι",
+    "walking": {
+      "youtubeId": "RRRz7MOvEDE",
+      "title": "Κέμι 4K: Περιήγηση στην Παραθαλάσσια Πόλη της Λαπωνίας & το Κέντρο",
+      "label": "Κέμι Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    },
+    "guide": {
+      "youtubeId": "sI6nbKPJS4c",
+      "title": "Κέμι 4K: Περιήγηση στο Κάστρο Χιονιού SnowCastle & την Παραλία",
+      "label": "Κάστρο Χιονιού SnowCastle (4K)",
+      "icon": "fa-solid fa-landmark",
+      "type": "guide"
+    }
+  },
+  "mariehamn": {
+    "cityName": "Μάριεχαμν",
+    "walking": {
+      "youtubeId": "1-2GYHCJJTw",
+      "title": "Μάριεχαμν 4K: Περιήγηση στην Πρωτεύουσα των Νήσων Ώλαντ & το Λιμάνι",
+      "label": "Μάριεχαμν Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    },
+    "guide": {
+      "youtubeId": "tRTtq_zvyuc",
+      "title": "Ώλαντ 4K: Περιήγηση στα Νησιά Åland & τη Ναυτική Ιστορία",
+      "label": "Ώλαντ Ναυτικός Οδηγός (4K)",
+      "icon": "fa-solid fa-landmark",
+      "type": "guide"
+    }
+  }
 };
 
 export function getCityVideo(cityId, preferredType = 'drone') {
