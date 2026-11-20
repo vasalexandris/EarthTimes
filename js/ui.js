@@ -1564,10 +1564,61 @@ export function openTimeCapsuleVideo(youtubeId, titleText = 'Ιστορικό Β
   }
 
   setOverlayMediaMode('player');
+  const photoContainer = document.getElementById('mapMediaPhotoContainer');
+  if (photoContainer) photoContainer.classList.add('hidden');
+  if (iframe) iframe.classList.remove('hidden');
   overlay.classList.remove('hidden');
   syncMapFloatingControlsVisibility();
 }
 window.openTimeCapsuleVideo = openTimeCapsuleVideo;
+
+export function openTimeCapsuleMedia(photoUrl, titleText = 'Ιστορική Εικόνα', cityName = '') {
+  if (!photoUrl) return;
+
+  const overlay = document.getElementById('mapVideoOverlay');
+  const iframe = document.getElementById('mapVideoIframe');
+  const photoContainer = document.getElementById('mapMediaPhotoContainer');
+  const photoImg = document.getElementById('mapMediaPhotoImg');
+  const photoCaption = document.getElementById('mapMediaPhotoCaption');
+  const photoCredit = document.getElementById('mapMediaPhotoCredit');
+  const title = document.getElementById('videoOverlayTitle');
+  const deepDiveOverlay = document.getElementById('mapDeepDiveOverlay');
+  const wikiOverlay = document.getElementById('mapWikiOverlay');
+  const streetViewOverlay = document.getElementById('mapStreetViewOverlay');
+  const directLink = document.getElementById('videoDirectLink');
+
+  if (!overlay) return;
+
+  if (window.closeCityPresentation) window.closeCityPresentation();
+  if (deepDiveOverlay) deepDiveOverlay.classList.add('hidden');
+  if (wikiOverlay) wikiOverlay.classList.add('hidden');
+  if (streetViewOverlay) streetViewOverlay.classList.add('hidden');
+
+  const curEntity = window.getCurrentEntity ? window.getCurrentEntity() : null;
+  const currentCityName = cityName || curEntity?.name || '';
+  const fullTitle = `🖼️ ${titleText}${currentCityName ? ` (${currentCityName})` : ''}`;
+
+  if (title) title.innerText = fullTitle;
+  if (iframe) {
+    iframe.src = '';
+    iframe.classList.add('hidden');
+  }
+  if (photoContainer && photoImg) {
+    photoImg.src = photoUrl;
+    photoImg.alt = titleText;
+    if (photoCaption) photoCaption.innerText = titleText;
+    if (photoCredit) photoCredit.innerText = currentCityName ? `Τοποθεσία: ${currentCityName}` : '';
+    photoContainer.classList.remove('hidden');
+  }
+  if (directLink) {
+    directLink.href = photoUrl;
+    directLink.title = 'Άνοιγμα εικόνας σε πλήρη ανάλυση';
+  }
+
+  overlay.classList.remove('hidden');
+  syncMapFloatingControlsVisibility();
+}
+window.openTimeCapsuleMedia = openTimeCapsuleMedia;
 
 export function switchCityVideoType(type) {
   if (currentActiveVideoCityId) {
@@ -1579,6 +1630,8 @@ export function closeMapVideoOverlay() {
   const overlay = document.getElementById('mapVideoOverlay');
   const iframe = document.getElementById('mapVideoIframe');
   const gallery = document.getElementById('allVideosGalleryView');
+  const photoContainer = document.getElementById('mapMediaPhotoContainer');
+  if (photoContainer) photoContainer.classList.add('hidden');
   if (iframe) {
     iframe.src = '';
     iframe.className = 'w-full h-full max-w-5xl rounded-xl shadow-2xl border border-slate-800 transition-all duration-300';
@@ -2250,6 +2303,52 @@ export function updateTabButtons(activeTab) {
     }
   });
 }
+
+// Timeline Tab Interactive Month/Day/Entry Hierarchy State
+let selectedTimelineMonth = null;
+let selectedTimelineDay = null;
+let openTimelineEntryId = null;
+
+window.selectTimelineMonth = function(monthNum) {
+  selectedTimelineMonth = (selectedTimelineMonth === monthNum) ? null : monthNum;
+  selectedTimelineDay = null;
+  openTimelineEntryId = null;
+  if (window.renderTimelineTabInPlace) window.renderTimelineTabInPlace();
+};
+
+window.closeTimelineMonth = function() {
+  selectedTimelineMonth = null;
+  selectedTimelineDay = null;
+  openTimelineEntryId = null;
+  if (window.renderTimelineTabInPlace) window.renderTimelineTabInPlace();
+};
+
+window.selectTimelineDay = function(dayNum) {
+  selectedTimelineDay = (selectedTimelineDay === dayNum) ? null : dayNum;
+  openTimelineEntryId = null;
+  if (window.renderTimelineTabInPlace) window.renderTimelineTabInPlace();
+};
+
+window.closeTimelineDay = function() {
+  selectedTimelineDay = null;
+  openTimelineEntryId = null;
+  if (window.renderTimelineTabInPlace) window.renderTimelineTabInPlace();
+};
+
+window.toggleTimelineEntry = function(entryId) {
+  openTimelineEntryId = (openTimelineEntryId === entryId) ? null : entryId;
+  if (window.renderTimelineTabInPlace) window.renderTimelineTabInPlace();
+};
+
+window.renderTimelineTabInPlace = function() {
+  const curEntity = window.getCurrentEntity ? window.getCurrentEntity() : null;
+  const yr = window.getSelectedTimeYear ? window.getSelectedTimeYear() : 2026;
+  const spots = window.getTimeCapsules ? window.getTimeCapsules() : [];
+  const isPlay = window.isTimePlaybackRunning ? window.isTimePlaybackRunning() : false;
+  if (curEntity) {
+    renderTabContent('timeline', curEntity, yr, spots, isPlay);
+  }
+};
 
 let activeDossierClockTimer = null;
 
@@ -4464,6 +4563,7 @@ export function renderTabContent(tabId, entity, activeYear = null, activeSpots =
     `;
   } else if (tabId === 'timeline') {
     const yr = (activeYear === 'all' || !activeYear) ? 'all' : parseInt(activeYear, 10);
+    const yrNum = (yr === 'all' || !yr) ? 2026 : (typeof yr === 'number' ? yr : parseInt(yr, 10) || 2026);
     const context = getHistoricalContextForEra(entity, yr);
 
     // Filter spots relevant to current entity
@@ -4510,8 +4610,286 @@ export function renderTabContent(tabId, entity, activeYear = null, activeSpots =
       }
     });
 
+    // Calendar Definitions for the Annual Horizontal Timeline
+    const isLeap = (yrNum % 4 === 0 && yrNum % 100 !== 0) || (yrNum % 400 === 0);
+    const MONTHS_DEF = [
+      { num: 1, short: 'Ιαν', name: 'Ιανουάριος', days: 31 },
+      { num: 2, short: 'Φεβ', name: 'Φεβρουάριος', days: isLeap ? 29 : 28 },
+      { num: 3, short: 'Μαρ', name: 'Μάρτιος', days: 31 },
+      { num: 4, short: 'Απρ', name: 'Απρίλιος', days: 30 },
+      { num: 5, short: 'Μαϊ', name: 'Μάιος', days: 31 },
+      { num: 6, short: 'Ιουν', name: 'Ιούνιος', days: 30 },
+      { num: 7, short: 'Ιουλ', name: 'Ιούλιος', days: 31 },
+      { num: 8, short: 'Αυγ', name: 'Αύγουστος', days: 31 },
+      { num: 9, short: 'Σεπ', name: 'Σεπτέμβριος', days: 30 },
+      { num: 10, short: 'Οκτ', name: 'Οκτώβριος', days: 31 },
+      { num: 11, short: 'Νοε', name: 'Νοέμβριος', days: 30 },
+      { num: 12, short: 'Δεκ', name: 'Δεκέμβριος', days: 31 }
+    ];
+
+    // Build hierarchical monthMap: monthNum => Map(dayNum => Array<entry>)
+    const monthMap = new Map();
+
+    activeChronicleCards.forEach(({ spot, chronicle }) => {
+      let mNum = 1;
+      let dNum = 15;
+      let timeStr = '10:30';
+
+      if (chronicle.date && typeof chronicle.date === 'string' && chronicle.date.length >= 10) {
+        mNum = parseInt(chronicle.date.slice(5, 7), 10) || 1;
+        dNum = parseInt(chronicle.date.slice(8, 10), 10) || 15;
+      } else {
+        const str = spot.name + (chronicle.title || '');
+        let hash = 0;
+        for (let i = 0; i < str.length; i++) hash = ((hash << 5) - hash) + str.charCodeAt(i);
+        mNum = (Math.abs(hash) % 12) + 1;
+        const maxD = (MONTHS_DEF[mNum - 1] || {}).days || 28;
+        dNum = (Math.abs(hash >> 3) % maxD) + 1;
+      }
+
+      if (chronicle.time && typeof chronicle.time === 'string') {
+        timeStr = chronicle.time;
+      } else {
+        const hour = 9 + ((spot.name.charCodeAt(0) || 0) % 12);
+        timeStr = `${String(hour).padStart(2, '0')}:00`;
+      }
+
+      let ytId = chronicle.youtubeId || null;
+      if (!ytId && chronicle.videoUrl) {
+        const m = chronicle.videoUrl.match(/(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|shorts\/|watch\?v=|watch\?.+&v=))([\w-]{11})/);
+        if (m && m[1]) ytId = m[1];
+      }
+      if (!ytId && chronicle.photos) {
+        const found = chronicle.photos.find(p => p.youtubeId || p.isYouTube);
+        if (found) ytId = found.youtubeId;
+      }
+
+      let photoUrl = null;
+      if (chronicle.photos && chronicle.photos.length) {
+        photoUrl = chronicle.photos[0].url;
+      }
+
+      const entry = {
+        id: chronicle.id || `${spot.id}-${yrNum}-${mNum}-${dNum}`,
+        spot,
+        chronicle,
+        year: yrNum,
+        month: mNum,
+        day: dNum,
+        time: timeStr,
+        youtubeId: ytId,
+        photoUrl: photoUrl
+      };
+
+      if (!monthMap.has(mNum)) {
+        monthMap.set(mNum, new Map());
+      }
+      const dayMap = monthMap.get(mNum);
+      if (!dayMap.has(dNum)) {
+        dayMap.set(dNum, []);
+      }
+      dayMap.get(dNum).push(entry);
+    });
+
+    // Auto-select first month with entries if none selected or if selected month has no entries
+    if (selectedTimelineMonth && !monthMap.has(selectedTimelineMonth)) {
+      selectedTimelineMonth = null;
+      selectedTimelineDay = null;
+    }
+    if (!selectedTimelineMonth && monthMap.size > 0) {
+      selectedTimelineMonth = monthMap.keys().next().value;
+    }
+
+    const selectedMonthObj = selectedTimelineMonth ? MONTHS_DEF[selectedTimelineMonth - 1] : null;
+    const selectedDayMap = (selectedTimelineMonth && monthMap.has(selectedTimelineMonth)) ? monthMap.get(selectedTimelineMonth) : null;
+
+    if (selectedTimelineDay && selectedDayMap && !selectedDayMap.has(selectedTimelineDay)) {
+      selectedTimelineDay = null;
+    }
+    if (!selectedTimelineDay && selectedDayMap && selectedDayMap.size > 0) {
+      selectedTimelineDay = selectedDayMap.keys().next().value;
+    }
+
+    const dayEntries = (selectedDayMap && selectedTimelineDay && selectedDayMap.has(selectedTimelineDay)) 
+      ? selectedDayMap.get(selectedTimelineDay) 
+      : [];
+
     html = `
       <div class="space-y-4">
+        <!-- 1. ANNUAL HORIZONTAL TIMELINE (ΟΡΙΖΟΝΤΙΑ TIMELINE ΜΗΝΩΝ ΣΤΟ ΠΑΝΩ ΜΕΡΟΣ) -->
+        <div class="p-3.5 bg-gradient-to-r from-slate-900 via-slate-850 to-slate-900 rounded-2xl border border-amber-500/40 shadow-xl space-y-3">
+          <!-- Timeline Limits Row: 1st of Jan to Today / End of Year -->
+          <div class="flex items-center justify-between gap-2 text-xs border-b border-slate-700/60 pb-2">
+            <span class="font-bold text-amber-300 flex items-center gap-1.5">
+              <i class="fa-solid fa-flag-checkered text-[11px] text-amber-400"></i>
+              <span>1 Ιανουαρίου ${yrNum}</span>
+            </span>
+            <span class="font-black text-white uppercase tracking-wider text-[11px] flex items-center gap-1">
+              <i class="fa-solid fa-timeline text-amber-400"></i>
+              <span>Ετήσιο Χρονολόγιο ${yrNum}</span>
+            </span>
+            <span class="font-bold ${yrNum === 2026 ? 'text-emerald-400' : 'text-slate-300'} flex items-center gap-1.5">
+              <i class="fa-regular fa-calendar-check text-[11px]"></i>
+              <span>${yrNum === 2026 ? '20 Νοεμβρίου 2026 (Σήμερα)' : `31 Δεκεμβρίου ${yrNum}`}</span>
+            </span>
+          </div>
+
+          <!-- 12-Month Segmented Horizontal Bar with Vertical Dividers -->
+          <div class="grid grid-cols-12 bg-slate-950/90 border border-slate-700/80 rounded-xl overflow-hidden shadow-inner">
+            ${MONTHS_DEF.map((m, idx) => {
+              const hasEntries = monthMap.has(m.num);
+              const isSelected = selectedTimelineMonth === m.num;
+              const count = hasEntries ? Array.from(monthMap.get(m.num).values()).reduce((sum, arr) => sum + arr.length, 0) : 0;
+              const borderRight = (idx < 11) ? 'border-r border-slate-800' : '';
+              return `
+                <div class="flex flex-col items-center justify-between py-2 px-1 text-center ${borderRight} ${isSelected ? 'bg-amber-500/10' : 'hover:bg-slate-900/50'} transition">
+                  <span class="text-[10px] font-bold ${isSelected ? 'text-amber-400 font-black' : (hasEntries ? 'text-slate-200' : 'text-slate-500')}">${m.short}</span>
+                  <div class="h-6 flex items-center justify-center mt-1">
+                    ${hasEntries ? `
+                      <button onclick="window.selectTimelineMonth(${m.num})" class="w-5 h-5 rounded-full ${isSelected ? 'bg-amber-400 text-slate-950 ring-2 ring-amber-300 scale-110' : 'bg-amber-500/20 text-amber-400 border border-amber-500/60 hover:bg-amber-500 hover:text-slate-950'} flex items-center justify-center text-[9px] font-black transition cursor-pointer shadow" title="${m.name}: ${count} ${count === 1 ? 'εγγραφή' : 'εγγραφές'}">
+                        <i class="fa-solid fa-calendar-check"></i>
+                      </button>
+                    ` : `
+                      <span class="text-[9px] text-slate-700 select-none">-</span>
+                    `}
+                  </div>
+                </div>
+              `;
+            }).join('')}
+          </div>
+
+          <!-- 2. SUB-TIMELINE: HORIZONTAL DAYS STRIP (ΕΜΦΑΝΙΖΕΤΑΙ ΟΤΑΝ ΕΠΙΛΕΓΕΙ ΜΗΝΑΣ) -->
+          ${selectedMonthObj ? `
+            <div class="pt-2 border-t border-slate-800/80 space-y-2">
+              <div class="flex items-center justify-between text-xs px-1">
+                <span class="font-bold text-amber-300 flex items-center gap-1.5">
+                  <i class="fa-regular fa-calendar-days text-amber-400"></i>
+                  <span>Ημέρες Μήνα: <strong class="text-white">${selectedMonthObj.name}</strong> (${selectedMonthObj.days} ημέρες)</span>
+                </span>
+                <span class="text-[10px] text-slate-400">Επιλέξτε ημέρα με σύμβολο <i class="fa-solid fa-clock text-amber-400 ml-0.5"></i></span>
+              </div>
+
+              <!-- Horizontal Scrolling Days Container -->
+              <div class="flex items-center gap-1.5 overflow-x-auto py-2 px-1 bg-slate-950/80 border border-slate-800 rounded-xl scrollbar-thin">
+                ${Array.from({ length: selectedMonthObj.days }, (_, i) => i + 1).map(d => {
+                  const dayHasEntries = selectedDayMap && selectedDayMap.has(d);
+                  const isDaySelected = selectedTimelineDay === d;
+                  const dayCount = dayHasEntries ? selectedDayMap.get(d).length : 0;
+                  return dayHasEntries ? `
+                    <button onclick="window.selectTimelineDay(${d})" class="shrink-0 w-8 h-10 rounded-lg ${isDaySelected ? 'bg-amber-400 text-slate-950 font-black ring-2 ring-amber-300 shadow-md' : 'bg-slate-800 hover:bg-slate-750 text-amber-300 border border-amber-500/50'} flex flex-col items-center justify-center p-1 transition cursor-pointer" title="${d} ${selectedMonthObj.name}: ${dayCount} εγγραφές">
+                      <span class="text-[10px] font-mono leading-none font-bold">${d}</span>
+                      <i class="fa-solid fa-clock text-[9px] mt-1 ${isDaySelected ? 'text-slate-950' : 'text-amber-400 animate-pulse'}"></i>
+                    </button>
+                  ` : `
+                    <div class="shrink-0 w-6 h-10 rounded-lg bg-slate-900/30 text-slate-600 flex items-center justify-center text-[9px] font-mono opacity-30 select-none">
+                      ${d}
+                    </div>
+                  `;
+                }).join('')}
+              </div>
+            </div>
+          ` : ''}
+
+          <!-- 3. DAY ENTRIES LIST (ΛΙΣΤΑ ΣΗΜΕΙΩΝ ΗΜΕΡΑΣ ΜΕ ΚΛΙΚ ΓΙΑ ΞΕΔΙΠΛΩΜΑ & ΠΡΟΒΟΛΗ) -->
+          ${(selectedMonthObj && selectedTimelineDay && dayEntries.length) ? `
+            <div class="pt-2 border-t border-slate-800/80 space-y-2.5">
+              <div class="flex items-center justify-between px-1">
+                <span class="text-xs font-bold text-amber-300 flex items-center gap-1.5">
+                  <i class="fa-solid fa-list-check text-amber-400"></i>
+                  <span>Σημεία & Εγγραφές: <strong class="text-white">${selectedTimelineDay} ${selectedMonthObj.name} ${yrNum}</strong></span>
+                </span>
+                <span class="text-[10px] font-mono bg-amber-950/80 text-amber-300 px-2 py-0.5 rounded border border-amber-600/40">
+                  ${dayEntries.length} ${dayEntries.length === 1 ? 'εγγραφή' : 'εγγραφές'}
+                </span>
+              </div>
+
+              <!-- List of Entries ordered by Time of Day -->
+              <div class="space-y-2">
+                ${dayEntries.map(entry => {
+                  const isUnfolded = openTimelineEntryId === entry.id;
+                  const isOfficial = entry.chronicle.authorType === 'official';
+                  const memory = entry.chronicle.memories && entry.chronicle.memories[0];
+
+                  return `
+                    <div class="bg-slate-850/90 border ${isUnfolded ? 'border-amber-400/80 shadow-lg shadow-amber-500/10' : 'border-slate-700/70 hover:border-slate-600'} rounded-xl p-3 transition">
+                      <!-- Collapsible Header -->
+                      <div class="flex items-center justify-between gap-2 cursor-pointer" onclick="window.toggleTimelineEntry('${entry.id}')">
+                        <div class="flex items-center gap-2 min-w-0">
+                          <span class="px-1.5 py-0.5 rounded bg-slate-900 text-amber-400 border border-slate-700 font-mono text-[10px] font-black shrink-0 flex items-center gap-1">
+                            <i class="fa-regular fa-clock text-[9px]"></i>
+                            <span>${entry.time}</span>
+                          </span>
+                          <div class="truncate">
+                            <h5 class="text-xs font-bold text-slate-100 truncate">${entry.chronicle.title || entry.spot.name}</h5>
+                            <span class="text-[10px] text-slate-400 truncate block">${entry.spot.name}</span>
+                          </div>
+                        </div>
+
+                        <div class="flex items-center gap-1.5 shrink-0">
+                          ${entry.youtubeId ? `
+                            <span class="px-1.5 py-0.5 rounded text-[9px] font-bold bg-rose-950/80 text-rose-300 border border-rose-700/50 flex items-center gap-1">
+                              <i class="fa-brands fa-youtube text-red-500"></i> Video
+                            </span>
+                          ` : ''}
+                          <button class="w-6 h-6 rounded-lg bg-slate-800 text-slate-300 flex items-center justify-center text-xs">
+                            <i class="fa-solid fa-chevron-down transition-transform duration-200 ${isUnfolded ? 'rotate-180 text-amber-400' : ''}"></i>
+                          </button>
+                        </div>
+                      </div>
+
+                      <!-- Unfolded Body with Details and Map Projector Links -->
+                      ${isUnfolded ? `
+                        <div class="mt-3 pt-3 border-t border-slate-700/70 space-y-2.5 text-xs text-slate-200 animate-fadeIn">
+                          <div class="flex items-center gap-1.5 flex-wrap">
+                            <span class="px-2 py-0.5 rounded text-[10px] font-bold ${isOfficial ? 'bg-sky-900/80 text-sky-300 border border-sky-600/50' : 'bg-emerald-900/80 text-emerald-300 border border-emerald-600/50'}">
+                              ${isOfficial ? '🏛️ Επίσημο Ιστορικό Αρχείο' : '👤 Μαρτυρία Πολίτη'}
+                            </span>
+                            <span class="text-[10px] text-slate-400 italic">Πηγή: ${entry.chronicle.authorName || 'Αρχείο'}</span>
+                          </div>
+
+                          <p class="text-xs text-slate-300 leading-relaxed">${entry.chronicle.story}</p>
+
+                          ${memory ? `
+                            <div class="p-2.5 rounded-lg bg-slate-900/90 border border-slate-700/50 text-[11px] text-slate-300 italic flex items-start gap-2">
+                              <i class="fa-solid fa-quote-left text-amber-400 text-xs mt-0.5 shrink-0"></i>
+                              <div>
+                                <span>«${memory.text}»</span>
+                                <div class="not-italic text-slate-400 text-[10px] mt-0.5 font-bold">— ${memory.author} (${memory.year})</div>
+                              </div>
+                            </div>
+                          ` : ''}
+
+                          <!-- ACTION BUTTONS: PROJECT ON MAP (VIDEO OR PHOTO) -->
+                          <div class="flex items-center gap-2 pt-1 flex-wrap">
+                            ${entry.youtubeId ? `
+                              <button onclick="window.openTimeCapsuleVideo('${entry.youtubeId}', '${escapeStr(entry.chronicle.title)}', '${escapeStr(entry.spot.name)}')" class="px-3 py-1.5 rounded-lg bg-rose-600 hover:bg-rose-500 text-white font-bold text-xs flex items-center gap-1.5 shadow transition cursor-pointer" title="Αναπαραγωγή βίντεο στο πλαίσιο του χάρτη">
+                                <i class="fa-solid fa-play"></i>
+                                <span>Προβολή Βίντεο στο Χάρτη 📹</span>
+                              </button>
+                            ` : ''}
+
+                            ${entry.photoUrl ? `
+                              <button onclick="window.openTimeCapsuleMedia('${entry.photoUrl}', '${escapeStr(entry.chronicle.title)}', '${escapeStr(entry.spot.name)}')" class="px-3 py-1.5 rounded-lg bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs flex items-center gap-1.5 shadow transition cursor-pointer" title="Προβολή εικόνας στο πλαίσιο του χάρτη">
+                                <i class="fa-solid fa-image"></i>
+                                <span>Προβολή Εικόνας στο Χάρτη 🖼️</span>
+                              </button>
+                            ` : ''}
+
+                            <button onclick="window.focusSpotOnMap('${entry.spot.id}')" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-amber-300 border border-slate-700 font-bold text-xs flex items-center gap-1.5 shadow transition cursor-pointer" title="Εστίαση του χάρτη στο σημείο αυτό">
+                              <i class="fa-solid fa-location-dot"></i>
+                              <span>Εστίαση στον Χάρτη 📍</span>
+                            </button>
+                          </div>
+                        </div>
+                      ` : ''}
+                    </div>
+                  `;
+                }).join('')}
+              </div>
+            </div>
+          ` : ''}
+        </div>
+
         <!-- Live Chrono Header -->
         <div class="p-4 bg-gradient-to-r from-amber-950/40 via-slate-850 to-slate-900 rounded-2xl border border-amber-500/40 shadow-xl">
           <div class="flex items-center justify-between gap-2 mb-2 flex-wrap">

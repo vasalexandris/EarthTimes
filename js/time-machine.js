@@ -191,6 +191,7 @@ export async function initTimeMachine() {
 
   updateUserBadgeUI();
   updateTimeSliderUI();
+  updateTimelineRuler();
   return timeCapsules;
 }
 
@@ -394,17 +395,156 @@ export function stopPlayback() {
   if (playBtn) playBtn.innerHTML = '<i class="fa-solid fa-play text-xs"></i>';
 }
 
+export function getDistinctRecordedYears(cityId = null) {
+  let spots = timeCapsules;
+  if (cityId) {
+    spots = spots.filter(s => s.cityId === cityId);
+  }
+
+  const yearCounts = new Map();
+
+  spots.forEach(spot => {
+    if (!spot.chronicles || !Array.isArray(spot.chronicles)) return;
+    spot.chronicles.forEach(c => {
+      // Explicit fromYear
+      if (typeof c.fromYear === 'number' && !isNaN(c.fromYear)) {
+        yearCounts.set(c.fromYear, (yearCounts.get(c.fromYear) || 0) + 1);
+      }
+      // If chronicle has date "YYYY-MM-DD"
+      if (c.date && typeof c.date === 'string' && c.date.length >= 4) {
+        const parsedY = parseInt(c.date.slice(0, 4), 10);
+        if (!isNaN(parsedY)) {
+          yearCounts.set(parsedY, (yearCounts.get(parsedY) || 0) + 1);
+        }
+      }
+      // Photos years
+      if (c.photos && Array.isArray(c.photos)) {
+        c.photos.forEach(p => {
+          if (typeof p.year === 'number' && !isNaN(p.year)) {
+            yearCounts.set(p.year, (yearCounts.get(p.year) || 0) + 1);
+          }
+        });
+      }
+      // Memories years
+      if (c.memories && Array.isArray(c.memories)) {
+        c.memories.forEach(m => {
+          if (typeof m.year === 'number' && !isNaN(m.year)) {
+            yearCounts.set(m.year, (yearCounts.get(m.year) || 0) + 1);
+          }
+        });
+      }
+    });
+  });
+
+  return yearCounts;
+}
+
+export function updateTimelineRuler(cityId = null) {
+  const ticksContainer = document.getElementById('timelineRulerTicks');
+  const labelsContainer = document.getElementById('timelineRulerLabels');
+  const needle = document.getElementById('timelineSliderNeedle');
+  const slider = document.getElementById('timeYearRange');
+
+  if (!ticksContainer || !labelsContainer) return;
+
+  const minYear = 1900;
+  const maxYear = 2026;
+  const totalSpan = maxYear - minYear;
+
+  const currentVal = (typeof selectedYear === 'number') ? selectedYear : 2026;
+  const currentPct = Math.max(0, Math.min(100, ((currentVal - minYear) / totalSpan) * 100));
+
+  if (needle) {
+    needle.style.left = `${currentPct}%`;
+  }
+  if (slider) {
+    slider.value = currentVal;
+  }
+
+  // Clear previous ticks and labels
+  ticksContainer.innerHTML = '';
+  labelsContainer.innerHTML = '';
+
+  const yearCounts = getDistinctRecordedYears(cityId);
+
+  // Milestone years reference (every 50 years / bookends)
+  const milestones = [1900, 1950, 2000, 2026];
+  milestones.forEach(m => {
+    const mPct = ((m - minYear) / totalSpan) * 100;
+    
+    // Subtle milestone tick
+    const tick = document.createElement('div');
+    tick.className = 'absolute top-0 bottom-0 w-[1px] bg-slate-600/70 pointer-events-none';
+    tick.style.left = `${mPct}%`;
+    ticksContainer.appendChild(tick);
+
+    // Milestone label
+    const lbl = document.createElement('span');
+    lbl.className = 'absolute text-[9px] font-mono font-bold text-slate-500 -translate-x-1/2 select-none';
+    lbl.style.left = `${mPct}%`;
+    lbl.innerText = m;
+    labelsContainer.appendChild(lbl);
+  });
+
+  // Recorded year vertical tick marks (Ruler / Χάρακας)
+  // If year has records, a crisp amber line appears. If no records exist, NO line appears!
+  const sortedYears = Array.from(yearCounts.keys()).sort((a, b) => a - b);
+  sortedYears.forEach(yr => {
+    if (yr < minYear || yr > maxYear) return;
+    const pct = ((yr - minYear) / totalSpan) * 100;
+    const count = yearCounts.get(yr) || 1;
+
+    const tick = document.createElement('div');
+    tick.className = 'absolute top-0 bottom-0 w-[2px] bg-amber-400 rounded-full shadow-sm shadow-amber-500/50 hover:bg-amber-300 hover:w-[3px] transition cursor-pointer pointer-events-auto';
+    tick.style.left = `${pct}%`;
+    tick.title = `Έτος ${yr}: ${count} ${count === 1 ? 'καταγεγραμμένο σημείο / εγγραφή' : 'καταγεγραμμένα σημεία / εγγραφές'}`;
+    tick.onclick = (e) => {
+      e.stopPropagation();
+      if (window.onTimeSliderChange) {
+        window.onTimeSliderChange(yr);
+      }
+    };
+    ticksContainer.appendChild(tick);
+  });
+
+  // If up to 3 user recorded years exist, show their year numbers on the top label row
+  if (sortedYears.length > 0 && sortedYears.length <= 3) {
+    sortedYears.forEach(yr => {
+      if (yr < minYear || yr > maxYear) return;
+      const pct = ((yr - minYear) / totalSpan) * 100;
+
+      const userLbl = document.createElement('span');
+      userLbl.className = 'absolute text-[9px] font-mono font-black text-amber-300 -translate-x-1/2 drop-shadow select-none';
+      userLbl.style.left = `${pct}%`;
+      userLbl.innerText = yr;
+      labelsContainer.appendChild(userLbl);
+    });
+  }
+}
+
 export function updateTimeSliderUI() {
   const display = document.getElementById('currentYearDisplay');
   const slider = document.getElementById('timeYearRange');
   const badge = document.getElementById('activeEraBadge');
+  const needle = document.getElementById('timelineSliderNeedle');
+
+  const minYear = 1900;
+  const maxYear = 2026;
+  const totalSpan = maxYear - minYear;
+
+  const val = (selectedYear === 'all') ? 2026 : selectedYear;
 
   if (slider) {
-    slider.value = (selectedYear === 'all') ? 2026 : selectedYear;
+    slider.value = val;
+  }
+
+  if (needle) {
+    const pct = Math.max(0, Math.min(100, ((val - minYear) / totalSpan) * 100));
+    needle.style.left = `${pct}%`;
   }
 
   if (display) {
-    display.innerText = (selectedYear === 'all') ? 'Όλα' : selectedYear;
+    display.innerText = (selectedYear === 'all') ? '2026' : selectedYear;
   }
 
   if (badge) {
@@ -423,17 +563,6 @@ export function updateTimeSliderUI() {
       badge.className = 'text-[11px] font-semibold text-amber-300 bg-amber-950/60 px-2 py-0.5 rounded border border-amber-700/50';
     }
   }
-
-  // Update decade quick buttons
-  const decadeButtons = document.querySelectorAll('.decade-btn');
-  decadeButtons.forEach(btn => {
-    const val = btn.getAttribute('data-year');
-    if ((val === 'all' && selectedYear === 'all') || (val !== 'all' && parseInt(val, 10) === selectedYear)) {
-      btn.className = 'decade-btn px-2 py-1 rounded bg-amber-500 text-slate-950 font-bold text-xs shadow transition';
-    } else {
-      btn.className = 'decade-btn px-2 py-1 rounded bg-slate-800 text-slate-300 hover:bg-slate-700 text-xs transition';
-    }
-  });
 }
 
 /**

@@ -5,9 +5,9 @@
  */
 
 import { loadWorldData, loadCountryData, loadStateData } from './data-service.js?v=20261118_gastro_overhaul_v8';
-import * as MapModule from './map.js?v=20261120_timeline_filter_v15';
-import * as UIModule from './ui.js?v=20261119_video_timecapsule_v2';
-import * as TimeMachine from './time-machine.js?v=20261120_timeline_filter_v15';
+import * as MapModule from './map.js?v=20261120_timeline_ruler_v16';
+import * as UIModule from './ui.js?v=20261120_timeline_ruler_v16';
+import * as TimeMachine from './time-machine.js?v=20261120_timeline_ruler_v16';
 import * as NavigatorModule from './navigator.js?v=20261118_gastro_overhaul_v8';
 import * as GlobeModule from './globe-view.js?v=20261117_video_iframe_fix';
 import { US_STATES, CITY_TO_STATE } from './states-data.js?v=20261117_video_iframe_fix';
@@ -211,6 +211,7 @@ export function flyToWorld() {
   MapModule.clearCityPins();
   MapModule.clearPois();
   MapModule.clearTimeCapsules();
+  TimeMachine.updateTimelineRuler(null);
 
   if (worldData) {
     UIModule.renderDossier(
@@ -284,6 +285,7 @@ export async function flyToCountry(countryId = 'greece') {
     TimeMachine.isPlaybackRunning()
   );
   renderCurrentTimeCapsules();
+  TimeMachine.updateTimelineRuler(null);
 
   if (UIModule.isMapWikiOverlayOpen()) {
     UIModule.openMapWikiReader(country.name, 'el', country.englishName);
@@ -339,6 +341,7 @@ export async function flyToState(stateId = 'massachusetts') {
     TimeMachine.isPlaybackRunning()
   );
   renderCurrentTimeCapsules();
+  TimeMachine.updateTimelineRuler(null);
 
   if (UIModule.isMapWikiOverlayOpen()) {
     UIModule.openMapWikiReader(state.name, 'el', state.englishName);
@@ -792,6 +795,7 @@ export async function flyToCity(cityId) {
     TimeMachine.isPlaybackRunning()
   );
   renderCurrentTimeCapsules();
+  TimeMachine.updateTimelineRuler(city.id);
 
   // Stop any active TTS audio from previous city/scope
   UIModule.stopNarrate();
@@ -1025,6 +1029,12 @@ window.openPoiVideo = UIModule.openPoiVideo;
 window.openGastroVideo = UIModule.openGastroVideo;
 window.openEducationVideo = UIModule.openEducationVideo;
 window.openTimeCapsuleVideo = UIModule.openTimeCapsuleVideo;
+window.openTimeCapsuleMedia = UIModule.openTimeCapsuleMedia;
+window.focusSpotOnMap = MapModule.focusSpotOnMap;
+window.getSelectedTimeYear = TimeMachine.getSelectedYear;
+window.getTimeCapsules = TimeMachine.getTimeCapsules;
+window.isTimePlaybackRunning = TimeMachine.isPlaybackRunning;
+window.updateTimelineRuler = TimeMachine.updateTimelineRuler;
 window.getCityEducationData = UIModule.getCityEducationData;
 window.switchOverlayVideo = UIModule.switchOverlayVideo;
 window.submitOverlayVideoSearch = UIModule.submitOverlayVideoSearch;
@@ -1244,6 +1254,7 @@ async function init() {
 
     // 6. Initial Time Slider setup
     TimeMachine.updateTimeSliderUI();
+    TimeMachine.updateTimelineRuler();
 
     // 7. Initial Dossier display: Planet Earth
     flyToWorld();

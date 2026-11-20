@@ -407,7 +407,7 @@ export function renderTimeCapsulePins(spots, activeYear, onSpotClick) {
       iconAnchor: [90, 16]
     });
 
-    const marker = L.marker(spot.coords, { icon: customIcon });
+    const marker = L.marker(spot.coords, { icon: customIcon, spotId: spot.id });
     
     // Sleek informative tooltip on hover
     marker.bindTooltip(`
@@ -423,6 +423,34 @@ export function renderTimeCapsulePins(spots, activeYear, onSpotClick) {
     });
     timeCapsuleMarkersGroup.addLayer(marker);
   });
+}
+
+export function focusSpotOnMap(coordsOrSpotId) {
+  if (!map) return;
+  if (Array.isArray(coordsOrSpotId) && coordsOrSpotId.length === 2) {
+    flyToCoords(coordsOrSpotId, 16, 1.2);
+    return;
+  }
+  if (typeof coordsOrSpotId === 'string' && timeCapsuleMarkersGroup) {
+    let found = false;
+    timeCapsuleMarkersGroup.eachLayer(layer => {
+      if (layer.options && layer.options.spotId === coordsOrSpotId) {
+        const ll = layer.getLatLng();
+        flyToCoords([ll.lat, ll.lng], 16, 1.2);
+        if (layer.openTooltip) {
+          setTimeout(() => layer.openTooltip(), 600);
+        }
+        found = true;
+      }
+    });
+    if (!found && window.getTimeCapsules) {
+      const spots = window.getTimeCapsules();
+      const s = spots.find(x => x.id === coordsOrSpotId);
+      if (s && s.coords) {
+        flyToCoords(s.coords, 16, 1.2);
+      }
+    }
+  }
 }
 
 export function clearTimeCapsules() {
