@@ -156,6 +156,8 @@ export function onTimeSliderChange(year) {
   renderCurrentTimeCapsules();
   if (currentTab === 'timeline') {
     UIModule.renderTabContent('timeline', getCurrentEntity(), year, TimeMachine.getTimeCapsules(), TimeMachine.isPlaybackRunning());
+  } else if (currentTab === 'admin') {
+    UIModule.renderTabContent('admin', getCurrentEntity(), year, TimeMachine.getTimeCapsules(), TimeMachine.isPlaybackRunning());
   }
 }
 
@@ -1073,6 +1075,12 @@ window.isPresentationOpen = PresentationModule.isPresentationOpen;
 // Time Machine & Spot Creation window bindings
 window.toggleTimePlayback = toggleTimePlayback;
 window.onTimeSliderChange = onTimeSliderChange;
+window.onTimeStepYear = TimeMachine.onTimeStepYear;
+window.onTimeDirectYearSubmit = TimeMachine.onTimeDirectYearSubmit;
+window.onTimeUnknownClick = TimeMachine.onTimeUnknownClick;
+window.getSelectedTimeYear = TimeMachine.getSelectedYear;
+window.getTimeCapsules = TimeMachine.getTimeCapsules;
+window.isTimePlaybackRunning = TimeMachine.isPlaybackRunning;
 window.onTimeDecadeClick = onTimeDecadeClick;
 window.toggleAddSpotMode = toggleAddSpotMode;
 window.openSpotTimeCapsule = TimeMachine.openSpotTimeCapsule;

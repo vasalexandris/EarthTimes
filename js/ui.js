@@ -2292,7 +2292,7 @@ export function updatePoiFilterButtons(activeCategory) {
 }
 
 export function updateTabButtons(activeTab) {
-  const tabs = ['geo', 'hist', 'cult', 'guide', 'gastro', 'eco', 'demo', 'timeline'];
+  const tabs = ['geo', 'hist', 'cult', 'guide', 'gastro', 'eco', 'demo', 'timeline', 'admin'];
   tabs.forEach(t => {
     const btn = document.getElementById(`tab-${t}`);
     if (!btn) return;
@@ -2347,6 +2347,54 @@ window.renderTimelineTabInPlace = function() {
   const isPlay = window.isTimePlaybackRunning ? window.isTimePlaybackRunning() : false;
   if (curEntity) {
     renderTabContent('timeline', curEntity, yr, spots, isPlay);
+  }
+};
+
+window.showSpotInTimeline = function(spotId, year = null) {
+  if (window.switchTab) {
+    window.switchTab('timeline');
+  }
+  const allSpots = window.getTimeCapsules ? window.getTimeCapsules() : [];
+  const spot = allSpots.find(s => s.id === spotId);
+  if (spot && spot.chronicles && spot.chronicles.length) {
+    let targetYear = (year && year !== 'all') ? year : (window.getSelectedTimeYear ? window.getSelectedTimeYear() : 2026);
+    if (spot.isUnknownDate || spot.chronicles.some(c => c.fromYear === null || c.isUnknownDate || c.date === 'unknown')) {
+      targetYear = 'unknown';
+    }
+
+    if (window.onTimeSliderChange && targetYear) {
+      window.onTimeSliderChange(targetYear);
+    }
+
+    let chronicle = null;
+    if (targetYear === 'unknown') {
+      chronicle = spot.chronicles.find(c => c.fromYear === null || c.isUnknownDate || c.date === 'unknown') || spot.chronicles[0];
+    } else if (targetYear === 'all') {
+      chronicle = spot.chronicles[spot.chronicles.length - 1];
+    } else {
+      const y = parseInt(targetYear, 10);
+      chronicle = spot.chronicles.find(c => c.fromYear <= y && (c.toYear === null || c.toYear >= y)) || spot.chronicles[0];
+    }
+
+    if (chronicle) {
+      let mNum = 'unknown';
+      let dNum = 'unknown';
+      if (chronicle.date && chronicle.date !== 'unknown' && chronicle.date.length >= 10) {
+        mNum = parseInt(chronicle.date.slice(5, 7), 10) || 'unknown';
+        dNum = parseInt(chronicle.date.slice(8, 10), 10) || 'unknown';
+      }
+      selectedTimelineMonth = mNum;
+      selectedTimelineDay = dNum;
+      openTimelineEntryId = chronicle.id || `${spot.id}-${targetYear}-${mNum}-${dNum}`;
+    }
+  }
+
+  if (window.renderTimelineTabInPlace) {
+    window.renderTimelineTabInPlace();
+  }
+  const container = document.getElementById('tabContent');
+  if (container) {
+    container.scrollTo({ top: 0, behavior: 'smooth' });
   }
 };
 
@@ -2993,6 +3041,17 @@ export function updateTimelineLiveIndicator(isPlaying) {
 }
 
 export function getHistoricalContextForEra(entity, year) {
+  if (year === 'unknown') {
+    return {
+      era: 'Αρχειακό Υλικό & Τεκμήρια Άγνωστης Χρονολογίας',
+      summary: 'Ιστορικές μαρτυρίες, παλιές φωτογραφίες και σημεία της πόλης για τα οποία δεν έχει διασταυρωθεί η ακριβής χρονολογία λήψης ή κατασκευής. Η κοινότητα και οι τοπικοί ερευνητές μπορούν να συνεισφέρουν πληροφορίες για την ταυτοποίησή τους.',
+      keyFacts: [
+        'Συνεργατική τεκμηρίωση και ταυτοποίηση από τους πολίτες',
+        'Διασταύρωση αρχιτεκτονικών και ιστορικών στοιχείων',
+        'Δυνατότητα υποβολής διευκρινίσεων μέσω της φόρμας σημείου'
+      ]
+    };
+  }
   const y = (year === 'all' || !year) ? 2026 : parseInt(year, 10);
   const id = entity.id || '';
 
@@ -4562,8 +4621,9 @@ export function renderTabContent(tabId, entity, activeYear = null, activeSpots =
       </div>
     `;
   } else if (tabId === 'timeline') {
-    const yr = (activeYear === 'all' || !activeYear) ? 'all' : parseInt(activeYear, 10);
-    const yrNum = (yr === 'all' || !yr) ? 2026 : (typeof yr === 'number' ? yr : parseInt(yr, 10) || 2026);
+    const isUnknownYear = (activeYear === 'unknown');
+    const yr = isUnknownYear ? 'unknown' : ((activeYear === 'all' || !activeYear) ? 'all' : parseInt(activeYear, 10));
+    const yrNum = isUnknownYear ? 'Άγνωστο' : ((yr === 'all' || !yr) ? 2026 : (typeof yr === 'number' ? yr : parseInt(yr, 10) || 2026));
     const context = getHistoricalContextForEra(entity, yr);
 
     // Filter spots relevant to current entity
@@ -4583,8 +4643,10 @@ export function renderTabContent(tabId, entity, activeYear = null, activeSpots =
       let matched = null;
       if (yr === 'all') {
         matched = spot.chronicles[spot.chronicles.length - 1];
+      } else if (yr === 'unknown') {
+        matched = spot.chronicles.find(c => c.fromYear === null || c.isUnknownDate || c.date === 'unknown') || (spot.isUnknownDate ? spot.chronicles[0] : null);
       } else {
-        matched = spot.chronicles.find(c => c.fromYear <= yr && (c.toYear === null || c.toYear >= yr));
+        matched = spot.chronicles.find(c => c.fromYear !== null && c.fromYear <= yr && (c.toYear === null || c.toYear >= yr));
       }
 
       if (matched) {
@@ -4611,7 +4673,7 @@ export function renderTabContent(tabId, entity, activeYear = null, activeSpots =
     });
 
     // Calendar Definitions for the Annual Horizontal Timeline
-    const isLeap = (yrNum % 4 === 0 && yrNum % 100 !== 0) || (yrNum % 400 === 0);
+    const isLeap = (typeof yrNum === 'number') ? ((yrNum % 4 === 0 && yrNum % 100 !== 0) || (yrNum % 400 === 0)) : false;
     const MONTHS_DEF = [
       { num: 1, short: 'Ιαν', name: 'Ιανουάριος', days: 31 },
       { num: 2, short: 'Φεβ', name: 'Φεβρουάριος', days: isLeap ? 29 : 28 },
@@ -4635,7 +4697,10 @@ export function renderTabContent(tabId, entity, activeYear = null, activeSpots =
       let dNum = 15;
       let timeStr = '10:30';
 
-      if (chronicle.date && typeof chronicle.date === 'string' && chronicle.date.length >= 10) {
+      if (chronicle.isUnknownDate || chronicle.date === 'unknown' || chronicle.fromYear === null) {
+        mNum = 'unknown';
+        dNum = 'unknown';
+      } else if (chronicle.date && typeof chronicle.date === 'string' && chronicle.date.length >= 10) {
         mNum = parseInt(chronicle.date.slice(5, 7), 10) || 1;
         dNum = parseInt(chronicle.date.slice(8, 10), 10) || 15;
       } else {
@@ -4691,6 +4756,9 @@ export function renderTabContent(tabId, entity, activeYear = null, activeSpots =
       dayMap.get(dNum).push(entry);
     });
 
+    const hasUnknownMonths = monthMap.has('unknown');
+    const unknownMonthCount = hasUnknownMonths ? Array.from(monthMap.get('unknown').values()).reduce((sum, arr) => sum + arr.length, 0) : 0;
+
     // Auto-select first month with entries if none selected or if selected month has no entries
     if (selectedTimelineMonth && !monthMap.has(selectedTimelineMonth)) {
       selectedTimelineMonth = null;
@@ -4700,7 +4768,13 @@ export function renderTabContent(tabId, entity, activeYear = null, activeSpots =
       selectedTimelineMonth = monthMap.keys().next().value;
     }
 
-    const selectedMonthObj = selectedTimelineMonth ? MONTHS_DEF[selectedTimelineMonth - 1] : null;
+    let selectedMonthObj = null;
+    if (selectedTimelineMonth === 'unknown') {
+      selectedMonthObj = { num: 'unknown', short: '?', name: 'Άγνωστος / Απροσδιόριστος Μήνας', days: 0, isUnknown: true };
+    } else if (typeof selectedTimelineMonth === 'number') {
+      selectedMonthObj = MONTHS_DEF[selectedTimelineMonth - 1] || null;
+    }
+
     const selectedDayMap = (selectedTimelineMonth && monthMap.has(selectedTimelineMonth)) ? monthMap.get(selectedTimelineMonth) : null;
 
     if (selectedTimelineDay && selectedDayMap && !selectedDayMap.has(selectedTimelineDay)) {
@@ -4712,7 +4786,7 @@ export function renderTabContent(tabId, entity, activeYear = null, activeSpots =
 
     const dayEntries = (selectedDayMap && selectedTimelineDay && selectedDayMap.has(selectedTimelineDay)) 
       ? selectedDayMap.get(selectedTimelineDay) 
-      : [];
+      : ((selectedDayMap && selectedMonthObj && selectedMonthObj.isUnknown) ? Array.from(selectedDayMap.values()).flat() : []);
 
     html = `
       <div class="space-y-4">
@@ -4722,20 +4796,35 @@ export function renderTabContent(tabId, entity, activeYear = null, activeSpots =
           <div class="flex items-center justify-between gap-2 text-xs border-b border-slate-700/60 pb-2">
             <span class="font-bold text-amber-300 flex items-center gap-1.5">
               <i class="fa-solid fa-flag-checkered text-[11px] text-amber-400"></i>
-              <span>1 Ιανουαρίου ${yrNum}</span>
+              <span>${isUnknownYear ? 'Αρχείο Χωρίς Χρονολογία' : `1 Ιανουαρίου ${yrNum}`}</span>
             </span>
             <span class="font-black text-white uppercase tracking-wider text-[11px] flex items-center gap-1">
               <i class="fa-solid fa-timeline text-amber-400"></i>
-              <span>Ετήσιο Χρονολόγιο ${yrNum}</span>
+              <span>${isUnknownYear ? 'Χρονολόγιο Αταυτοποίητου Υλικού' : `Ετήσιο Χρονολόγιο ${yrNum}`}</span>
             </span>
             <span class="font-bold ${yrNum === 2026 ? 'text-emerald-400' : 'text-slate-300'} flex items-center gap-1.5">
               <i class="fa-regular fa-calendar-check text-[11px]"></i>
-              <span>${yrNum === 2026 ? '20 Νοεμβρίου 2026 (Σήμερα)' : `31 Δεκεμβρίου ${yrNum}`}</span>
+              <span>${isUnknownYear ? 'Συνεισφορά Κοινότητας' : (yrNum === 2026 ? '20 Νοεμβρίου 2026 (Σήμερα)' : `31 Δεκεμβρίου ${yrNum}`)}</span>
             </span>
           </div>
 
-          <!-- 12-Month Segmented Horizontal Bar with Vertical Dividers -->
-          <div class="grid grid-cols-12 bg-slate-950/90 border border-slate-700/80 rounded-xl overflow-hidden shadow-inner">
+          <!-- Segmented Horizontal Bar: '?' (Unknown) Slot + 12 Months -->
+          <div class="grid grid-cols-[38px_repeat(12,minmax(0,1fr))] bg-slate-950/90 border border-slate-700/80 rounded-xl overflow-hidden shadow-inner">
+            <!-- Unknown Month Slot -->
+            <div class="flex flex-col items-center justify-between py-2 px-1 text-center border-r border-slate-800 ${selectedTimelineMonth === 'unknown' ? 'bg-amber-500/15' : 'hover:bg-slate-900/50'} transition">
+              <span class="text-[10px] font-bold ${selectedTimelineMonth === 'unknown' ? 'text-amber-400 font-black' : (hasUnknownMonths ? 'text-amber-300' : 'text-slate-500')}">?</span>
+              <div class="h-6 flex items-center justify-center mt-1">
+                ${hasUnknownMonths ? `
+                  <button onclick="window.selectTimelineMonth('unknown')" class="w-5 h-5 rounded-full ${selectedTimelineMonth === 'unknown' ? 'bg-amber-400 text-slate-950 ring-2 ring-amber-300 scale-110' : 'bg-amber-500/20 text-amber-400 border border-amber-500/60 hover:bg-amber-500 hover:text-slate-950'} flex items-center justify-center text-[9px] font-black transition cursor-pointer shadow" title="Άγνωστος / Απροσδιόριστος Μήνας: ${unknownMonthCount} εγγραφές">
+                    <i class="fa-solid fa-question text-[8px]"></i>
+                  </button>
+                ` : `
+                  <span class="text-[9px] text-slate-700 select-none">-</span>
+                `}
+              </div>
+            </div>
+
+            <!-- 12 Calendar Months -->
             ${MONTHS_DEF.map((m, idx) => {
               const hasEntries = monthMap.has(m.num);
               const isSelected = selectedTimelineMonth === m.num;
@@ -4764,14 +4853,23 @@ export function renderTabContent(tabId, entity, activeYear = null, activeSpots =
               <div class="flex items-center justify-between text-xs px-1">
                 <span class="font-bold text-amber-300 flex items-center gap-1.5">
                   <i class="fa-regular fa-calendar-days text-amber-400"></i>
-                  <span>Ημέρες Μήνα: <strong class="text-white">${selectedMonthObj.name}</strong> (${selectedMonthObj.days} ημέρες)</span>
+                  <span>${selectedMonthObj.isUnknown ? 'Αρχειακές Εγγραφές:' : 'Ημέρες Μήνα:'} <strong class="text-white">${selectedMonthObj.name}</strong></span>
                 </span>
                 <span class="text-[10px] text-slate-400">Επιλέξτε ημέρα με σύμβολο <i class="fa-solid fa-clock text-amber-400 ml-0.5"></i></span>
               </div>
 
               <!-- Horizontal Scrolling Days Container -->
               <div class="flex items-center gap-1.5 overflow-x-auto py-2 px-1 bg-slate-950/80 border border-slate-800 rounded-xl scrollbar-thin">
-                ${Array.from({ length: selectedMonthObj.days }, (_, i) => i + 1).map(d => {
+                <!-- Slot: Άγνωστη / Απροσδιόριστη Ημέρα (?) -->
+                ${(selectedDayMap && selectedDayMap.has('unknown')) ? `
+                  <button onclick="window.selectTimelineDay('unknown')" class="shrink-0 w-8 h-10 rounded-lg ${selectedTimelineDay === 'unknown' ? 'bg-amber-400 text-slate-950 font-black ring-2 ring-amber-300 shadow-md' : 'bg-slate-800 hover:bg-slate-750 text-amber-300 border border-amber-500/50'} flex flex-col items-center justify-center p-1 transition cursor-pointer" title="Άγνωστη / Απροσδιόριστη Ημέρα">
+                    <span class="text-[10px] font-mono leading-none font-bold">?</span>
+                    <i class="fa-solid fa-question text-[9px] mt-1 ${selectedTimelineDay === 'unknown' ? 'text-slate-950' : 'text-amber-400'}"></i>
+                  </button>
+                ` : ''}
+
+                <!-- Days 1 to N -->
+                ${selectedMonthObj.days > 0 ? Array.from({ length: selectedMonthObj.days }, (_, i) => i + 1).map(d => {
                   const dayHasEntries = selectedDayMap && selectedDayMap.has(d);
                   const isDaySelected = selectedTimelineDay === d;
                   const dayCount = dayHasEntries ? selectedDayMap.get(d).length : 0;
@@ -4785,7 +4883,7 @@ export function renderTabContent(tabId, entity, activeYear = null, activeSpots =
                       ${d}
                     </div>
                   `;
-                }).join('')}
+                }).join('') : ''}
               </div>
             </div>
           ` : ''}
@@ -4796,7 +4894,7 @@ export function renderTabContent(tabId, entity, activeYear = null, activeSpots =
               <div class="flex items-center justify-between px-1">
                 <span class="text-xs font-bold text-amber-300 flex items-center gap-1.5">
                   <i class="fa-solid fa-list-check text-amber-400"></i>
-                  <span>Σημεία & Εγγραφές: <strong class="text-white">${selectedTimelineDay} ${selectedMonthObj.name} ${yrNum}</strong></span>
+                  <span>Σημεία & Εγγραφές: <strong class="text-white">${selectedTimelineDay === 'unknown' ? 'Άγνωστη Ημέρα' : selectedTimelineDay} ${selectedMonthObj.name} ${yrNum}</strong></span>
                 </span>
                 <span class="text-[10px] font-mono bg-amber-950/80 text-amber-300 px-2 py-0.5 rounded border border-amber-600/40">
                   ${dayEntries.length} ${dayEntries.length === 1 ? 'εγγραφή' : 'εγγραφές'}
@@ -5064,6 +5162,174 @@ export function renderTabContent(tabId, entity, activeYear = null, activeSpots =
             `;
               }).join('');
             })()}
+          </div>
+        </div>
+      </div>
+    `;
+  } else if (tabId === 'admin') {
+    const isLogged = window.isUserLoggedIn ? window.isUserLoggedIn() : false;
+    const allSpots = window.getTimeCapsules ? window.getTimeCapsules() : [];
+    const pendingSpots = allSpots.filter(s => s.status === 'pending');
+    const customSpotsCount = (() => {
+      try {
+        const c = localStorage.getItem('earthtimes_custom_spots');
+        return c ? JSON.parse(c).length : 0;
+      } catch (e) { return 0; }
+    })();
+
+    let currentUser = null;
+    try {
+      const u = localStorage.getItem('earthtimes_user');
+      if (u) currentUser = JSON.parse(u);
+    } catch (e) {}
+
+    const userName = currentUser?.name || 'Επισκέπτης';
+    const userEmail = currentUser?.email || 'Μη συνδεδεμένος';
+    const userRole = currentUser?.role || 'guest';
+    const isAdmin = (userRole === 'admin' || (userEmail && (userEmail.includes('alexandris') || userEmail.includes('vas') || userEmail.includes('admin'))));
+
+    html = `
+      <div class="space-y-4">
+        <!-- 1. Master Admin Header -->
+        <div class="p-4 bg-gradient-to-r from-sky-950/60 via-slate-900 to-slate-950 rounded-2xl border border-sky-500/50 shadow-xl text-slate-200">
+          <div class="flex items-center justify-between gap-3 flex-wrap">
+            <div class="flex items-center gap-2.5">
+              <div class="w-10 h-10 rounded-xl bg-sky-500/20 border border-sky-400/40 text-sky-400 flex items-center justify-center text-lg shadow-inner">
+                <i class="fa-solid fa-shield-halved"></i>
+              </div>
+              <div>
+                <h3 class="font-black text-white text-base">Κέντρο Διαχείρισης & Ελέγχου</h3>
+                <p class="text-[11px] text-sky-300 font-medium">Πίνακας Συντονισμού Αρχείων, Υποβολών & Συγχρονισμού</p>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-2">
+              <span class="px-2.5 py-1 rounded-lg text-xs font-bold font-mono ${isAdmin ? 'bg-amber-500/20 text-amber-300 border border-amber-500/50' : 'bg-slate-800 text-slate-400 border border-slate-700'} flex items-center gap-1.5">
+                <i class="fa-solid ${isAdmin ? 'fa-crown text-amber-400' : 'fa-user'} text-[10px]"></i>
+                <span>${isAdmin ? 'Διαχειριστής (Admin)' : (isLogged ? 'Μέλος (Member)' : 'Επισκέπτης')}</span>
+              </span>
+            </div>
+          </div>
+
+          <!-- User Info Banner -->
+          <div class="mt-3.5 pt-3 border-t border-slate-800 flex items-center justify-between text-xs flex-wrap gap-2">
+            <div class="flex items-center gap-2">
+              <div class="w-2 h-2 rounded-full ${isLogged ? 'bg-emerald-400 animate-pulse' : 'bg-slate-600'}"></div>
+              <span class="text-slate-300">Συνδεδεμένος ως: <strong class="text-white">${userName}</strong> <span class="text-slate-400 text-[11px]">(${userEmail})</span></span>
+            </div>
+            <div>
+              ${isLogged ? `
+                <button onclick="window.logoutUser()" class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-rose-300 border border-slate-700 text-[11px] font-bold transition flex items-center gap-1.5 cursor-pointer">
+                  <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                  <span>Αποσύνδεση</span>
+                </button>
+              ` : `
+                <button onclick="window.loginWithGoogle()" class="px-3 py-1 rounded-lg bg-sky-600 hover:bg-sky-500 text-white font-bold text-xs transition flex items-center gap-1.5 cursor-pointer shadow">
+                  <i class="fa-brands fa-google"></i>
+                  <span>Σύνδεση με Google</span>
+                </button>
+              `}
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Admin Operational Actions (Συγχρονισμός & Έλεγχος) -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          
+          <!-- Card A: Moderation Queue -->
+          <div class="p-3.5 bg-slate-850/90 rounded-xl border border-sky-600/40 hover:border-sky-500 transition shadow space-y-2.5 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between gap-2 mb-1.5">
+                <span class="text-xs font-black text-sky-400 flex items-center gap-1.5">
+                  <i class="fa-solid fa-list-check"></i>
+                  <span>Έλεγχος & Έγκριση</span>
+                </span>
+                <span class="px-2 py-0.5 rounded text-[10px] font-mono font-black ${pendingSpots.length > 0 ? 'bg-amber-500 text-slate-950 animate-pulse' : 'bg-slate-800 text-slate-400'} shadow-sm">
+                  ${pendingSpots.length} ${pendingSpots.length === 1 ? 'εκκρεμές' : 'εκκρεμή'}
+                </span>
+              </div>
+              <p class="text-xs text-slate-300 leading-relaxed">
+                Πίνακας ελέγχου προτάσεων και νέων ιστορικών σημείων που υποβλήθηκαν από τους χρήστες. Έγκριση για δημοσίευση ή απόρριψη.
+              </p>
+            </div>
+            <button onclick="window.openModerationModal()" class="w-full py-2 px-3 rounded-lg bg-sky-600 hover:bg-sky-500 text-white font-bold text-xs flex items-center justify-center gap-2 shadow transition cursor-pointer">
+              <i class="fa-solid fa-shield-halved"></i>
+              <span>Άνοιγμα Πίνακα Ελέγχου (${pendingSpots.length})</span>
+            </button>
+          </div>
+
+          <!-- Card B: Cloud / Local Sync & Backup -->
+          <div class="p-3.5 bg-slate-850/90 rounded-xl border border-emerald-600/40 hover:border-emerald-500 transition shadow space-y-2.5 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between gap-2 mb-1.5">
+                <span class="text-xs font-black text-emerald-400 flex items-center gap-1.5">
+                  <i class="fa-solid fa-cloud-arrow-up"></i>
+                  <span>Συγχρονισμός & Backup</span>
+                </span>
+                <span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-slate-800 text-emerald-300 border border-emerald-700/50">
+                  ${customSpotsCount} τοπικά
+                </span>
+              </div>
+              <p class="text-xs text-slate-300 leading-relaxed">
+                Εξαγωγή όλων των σημείων και χρονοκαψουλών σε αρχείο JSON, ή εισαγωγή δεδομένων για μεταφορά σε άλλο PC / Browser.
+              </p>
+            </div>
+            <button onclick="window.openSyncSpotsModal()" class="w-full py-2 px-3 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs flex items-center justify-center gap-2 shadow transition cursor-pointer">
+              <i class="fa-solid fa-arrow-right-arrow-left"></i>
+              <span>Εξαγωγή & Εισαγωγή Δεδομένων</span>
+            </button>
+          </div>
+
+          <!-- Card C: Cloud Firestore / Firebase Integration -->
+          <div class="p-3.5 bg-slate-850/90 rounded-xl border border-amber-600/40 hover:border-amber-500 transition shadow space-y-2.5 flex flex-col justify-between sm:col-span-2">
+            <div>
+              <div class="flex items-center justify-between gap-2 mb-1.5">
+                <span class="text-xs font-black text-amber-400 flex items-center gap-1.5">
+                  <i class="fa-solid fa-database"></i>
+                  <span>Ρυθμίσεις Cloud Firestore / Firebase & AI Backend</span>
+                </span>
+                <span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-amber-950/80 text-amber-300 border border-amber-600/40">
+                  Firebase Cloud
+                </span>
+              </div>
+              <p class="text-xs text-slate-300 leading-relaxed">
+                Παραμετροποίηση του Cloud Database config, του API Key και των Cloud Functions για ασφαλή επικοινωνία backend (Google Gemini AI Search, YouTube Data, έλεγχος πρόσβασης).
+              </p>
+            </div>
+            <button onclick="window.openCloudDbSettingsModal()" class="w-full py-2 px-3 rounded-lg bg-slate-800 hover:bg-slate-700 text-amber-300 border border-amber-500/50 font-bold text-xs flex items-center justify-center gap-2 shadow transition cursor-pointer">
+              <i class="fa-solid fa-sliders"></i>
+              <span>Διαμόρφωση Παραμέτρων Cloud Database</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- 3. Database Statistics Card -->
+        <div class="p-4 bg-slate-900/90 rounded-xl border border-slate-700/60 shadow space-y-3">
+          <div class="flex items-center justify-between text-xs border-b border-slate-800 pb-2">
+            <span class="font-bold text-slate-300 flex items-center gap-1.5">
+              <i class="fa-solid fa-chart-column text-sky-400"></i>
+              <span>Στατιστικά Βάσης & Αρχείου (${entity.name})</span>
+            </span>
+            <span class="text-[10px] text-slate-500">Live Status</span>
+          </div>
+
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 text-center">
+            <div class="p-2.5 bg-slate-950/80 rounded-lg border border-slate-800">
+              <div class="text-[10px] text-slate-400">Συνολικά Σημεία</div>
+              <div class="text-base font-black text-amber-400 font-mono mt-0.5">${allSpots.length}</div>
+            </div>
+            <div class="p-2.5 bg-slate-950/80 rounded-lg border border-slate-800">
+              <div class="text-[10px] text-slate-400">Υπό Έγκριση</div>
+              <div class="text-base font-black text-sky-400 font-mono mt-0.5">${pendingSpots.length}</div>
+            </div>
+            <div class="p-2.5 bg-slate-950/80 rounded-lg border border-slate-800">
+              <div class="text-[10px] text-slate-400">Τοπικά Custom</div>
+              <div class="text-base font-black text-emerald-400 font-mono mt-0.5">${customSpotsCount}</div>
+            </div>
+            <div class="p-2.5 bg-slate-950/80 rounded-lg border border-slate-800">
+              <div class="text-[10px] text-slate-400">Τρέχον Έτος</div>
+              <div class="text-base font-black text-indigo-400 font-mono mt-0.5">${activeYear === 'all' ? 'Όλα' : (activeYear === 'unknown' ? 'Άγνωστο' : activeYear)}</div>
+            </div>
           </div>
         </div>
       </div>

@@ -238,6 +238,46 @@
     ]
   },
   {
+    "id": "kozani-spot-unknown-date",
+    "cityId": "kozani",
+    "name": "Ανώνυμο Πέτρινο Αρχοντικό & Εργαστήριο (Άγνωστη Χρονολογία)",
+    "englishName": "Unidentified Historic Mansion & Workshop (Unknown Date)",
+    "coords": [40.3032, 21.7865],
+    "address": "Παλιά Πόλη, Κοζάνη",
+    "isUnknownDate": true,
+    "chronicles": [
+      {
+        "id": "kozani-chronicle-unknown-1",
+        "fromYear": null,
+        "toYear": null,
+        "date": "unknown",
+        "time": "12:00",
+        "isUnknownDate": true,
+        "title": "Αρχειακή Φωτογραφία & Μαρτυρία Προς Ταυτοποίηση",
+        "category": "architecture",
+        "authorType": "citizen",
+        "authorName": "Ανώνυμος Συλλέκτης (Τοπικό Αρχείο)",
+        "verified": false,
+        "story": "Σπάνια παλιά φωτογραφία από μακεδονικό αρχοντικό με περίτεχνο ξυλόγλυπτο ταβάνι και παλιό εργαστήριο υφαντικής στην παλιά πόλη της Κοζάνης. Η ακριβής χρονολογία λήψης δεν έχει διασταυρωθεί ακόμα. Αν αναγνωρίζετε το οίκημα ή τους εικονιζόμενους, συνεισφέρετε στην τεκμηρίωσή του!",
+        "photos": [
+          {
+            "url": "https://images.unsplash.com/photo-1513694203232-719a280e022f?w=800&auto=format&fit=crop&q=80",
+            "caption": "Αρχειακό υλικό άγνωστης χρονολογίας προς ταυτοποίηση από τους πολίτες",
+            "year": null,
+            "credit": "Συλλογή Τοπικών Αρχείων Κοζάνης"
+          }
+        ],
+        "memories": [
+          {
+            "author": "Πολίτης Κοζάνης",
+            "year": null,
+            "text": "Μοιάζει με τα παλιά σπίτια κοντά στον Άγιο Νικόλαο ή στη Σκ'ρκα, ίσως από τη δεκαετία του '20 ή του '30."
+          }
+        ]
+      }
+    ]
+  },
+  {
     "id": "kozani-spot-plateia-nikis",
     "cityId": "kozani",
     "name": "Πλατεία Νίκης & Ιστορικό Ρολόι Κοζάνης (Μαμάτσιος)",

@@ -17,6 +17,10 @@ let timeCapsuleMarkersGroup = null;
 let addSpotMode = false;
 let onMapRightClickCallback = null;
 
+function escapeStr(str) {
+  return String(str || '').replace(/'/g, "\\'").replace(/"/g, '&quot;');
+}
+
 // Tile Layer Providers Configuration
 export const BASE_LAYERS = {
   dark: {
@@ -353,8 +357,11 @@ export function renderTimeCapsulePins(spots, activeYear, onSpotClick) {
 
   spots.forEach(spot => {
     // Find active chronicle for this year
+    // Find active chronicle for this year or unknown date
     let activeChronicle = null;
-    if (activeYear === 'all') {
+    if (activeYear === 'unknown') {
+      activeChronicle = spot.chronicles.find(c => c.fromYear === null || c.isUnknownDate || c.date === 'unknown') || (spot.isUnknownDate ? spot.chronicles[0] : null);
+    } else if (activeYear === 'all') {
       activeChronicle = spot.chronicles[spot.chronicles.length - 1];
     } else {
       const y = parseInt(activeYear, 10);
@@ -368,59 +375,113 @@ export function renderTimeCapsulePins(spots, activeYear, onSpotClick) {
     }
     if (!activeChronicle) return;
 
-    const eraText = activeChronicle.toYear 
-      ? `${activeChronicle.fromYear}-${activeChronicle.toYear}` 
-      : `${activeChronicle.fromYear}+`;
+    let eraText = 'Άγνωστο';
+    if (activeChronicle.fromYear !== null && activeChronicle.fromYear !== undefined) {
+      eraText = activeChronicle.toYear 
+        ? `${activeChronicle.fromYear}-${activeChronicle.toYear}` 
+        : `${activeChronicle.fromYear}+`;
+    }
 
-    const hasVideo = Boolean(activeChronicle?.youtubeId || (activeChronicle?.photos && activeChronicle.photos.some(p => p.isYouTube || p.youtubeId)));
+    let ytId = activeChronicle.youtubeId || null;
+    if (!ytId && activeChronicle.videoUrl) {
+      const m = activeChronicle.videoUrl.match(/(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|shorts\/|watch\?v=|watch\?.+&v=))([\w-]{11})/);
+      if (m && m[1]) ytId = m[1];
+    }
+    if (!ytId && activeChronicle.photos) {
+      const f = activeChronicle.photos.find(p => p.youtubeId || p.isYouTube);
+      if (f) ytId = f.youtubeId;
+    }
+
+    let photoUrl = null;
+    if (activeChronicle.photos && activeChronicle.photos.length) {
+      const firstValidPhoto = activeChronicle.photos.find(p => p.url && !p.isYouTube);
+      if (firstValidPhoto) photoUrl = firstValidPhoto.url;
+      else if (activeChronicle.photos[0] && activeChronicle.photos[0].url) photoUrl = activeChronicle.photos[0].url;
+    }
+
+    const hasVideo = Boolean(ytId);
     const isPending = spot.status === 'pending';
-    
-    // Clean, modern glassmorphic styling without eye-straining continuous pulse waves
-    const containerClass = isPending 
-      ? 'border border-dashed border-amber-400 bg-amber-950/90 text-amber-200' 
-      : 'border border-amber-400/80 bg-slate-950/90 text-slate-100 hover:border-amber-300';
-    
-    const iconHtml = isPending 
-      ? '<i class="fa-solid fa-hourglass-half text-[10px] text-amber-300 animate-pulse"></i>' 
-      : '<i class="fa-solid fa-clock-rotate-left text-[10px] text-amber-400"></i>';
-    
-    const pendingTag = isPending 
-      ? '<span class="text-[9px] bg-amber-900/80 text-amber-300 px-1 py-0.2 rounded font-bold uppercase tracking-wider">Υπό Έγκριση</span>' 
-      : '';
+
+    // Circular Jewel Pin Marker (No text letters, clean 24x24 px circle, doesn't hide map streets)
+    const pinIconHtml = isPending 
+      ? '<i class="fa-solid fa-hourglass-half text-[10px] text-amber-300"></i>'
+      : (hasVideo 
+          ? '<i class="fa-brands fa-youtube text-[11px] text-red-500"></i>'
+          : '<i class="fa-solid fa-camera-retro text-[10px] text-amber-400"></i>');
 
     const customIcon = L.divIcon({
       className: 'time-capsule-marker-wrapper',
       html: `
-        <div class="custom-poi-marker cursor-pointer group" title="${isPending ? 'Σημείο σε αναμονή έγκρισης διαχειριστή (τοπική προεπισκόπηση)' : ''}">
-          <div class="px-2.5 py-1 rounded-full text-xs font-semibold ${containerClass} flex items-center gap-1.5 shadow-lg shadow-black/50 backdrop-blur-md transition-all duration-200 group-hover:scale-105">
-            ${iconHtml}
-            <span class="text-[10px] font-mono font-black bg-amber-400 text-slate-950 px-1.5 py-0.2 rounded flex items-center gap-1 shadow-sm">
-              ${hasVideo ? '<i class="fa-brands fa-youtube text-red-600 text-[9px]"></i>' : ''}
-              <span>${eraText}</span>
-            </span>
-            ${pendingTag}
-            <span class="truncate max-w-[115px] text-[11px]">${activeChronicle.title || spot.name}</span>
-          </div>
+        <div class="temporal-dot-marker ${isPending ? 'is-pending' : ''}" title="${isPending ? 'Σημείο υπό έγκριση' : ''}">
+          ${pinIconHtml}
         </div>
       `,
-      iconSize: [180, 32],
-      iconAnchor: [90, 16]
+      iconSize: [24, 24],
+      iconAnchor: [12, 12]
     });
 
     const marker = L.marker(spot.coords, { icon: customIcon, spotId: spot.id });
-    
-    // Sleek informative tooltip on hover
-    marker.bindTooltip(`
-      <div class="text-xs p-0.5">
-        <div class="font-bold text-amber-400">${activeChronicle.title || spot.name}</div>
-        <div class="text-[11px] text-slate-300">${spot.name} (${eraText})</div>
-        ${spot.address ? `<div class="text-[10px] text-slate-400 mt-0.5">${spot.address}</div>` : ''}
+
+    // Interactive Hover Card Tooltip (Expands on hover, includes direct projector buttons)
+    const cardTitle = activeChronicle.title || spot.name;
+    const cardStory = activeChronicle.story || 'Ιστορικό τεκμήριο και αρχειακή μαρτυρία.';
+    const cardAuthor = activeChronicle.authorName || 'Τοπικό Αρχείο';
+
+    const tooltipHtml = `
+      <div class="text-xs p-1 select-none">
+        <div class="flex items-center justify-between gap-1.5 mb-1">
+          <span class="px-1.5 py-0.2 rounded text-[9px] font-mono font-black ${isPending ? 'bg-amber-900/90 text-amber-300' : 'bg-amber-400 text-slate-950'} shadow-sm">
+            ${eraText}
+          </span>
+          <span class="text-[9px] text-slate-400 italic truncate max-w-[120px]">${cardAuthor}</span>
+        </div>
+        <div class="font-bold text-amber-300 text-xs leading-snug">${cardTitle}</div>
+        <div class="text-[10px] text-slate-400 mt-0.5 truncate">${spot.name}${spot.address ? ` • ${spot.address}` : ''}</div>
+        
+        <!-- Story preview: 2 lines initially, expands smoothly if mouse stays on card -->
+        <div class="hover-story-preview mt-1.5 border-t border-slate-700/60 pt-1">
+          ${cardStory}
+        </div>
+
+        <!-- Direct Material Projection Link / Button -->
+        <div class="hover-action-reveal mt-2 space-y-1">
+          ${hasVideo ? `
+            <button onclick="event.stopPropagation(); window.openTimeCapsuleVideo('${ytId}', '${escapeStr(cardTitle)}', '${escapeStr(spot.name)}')" class="w-full py-1 px-2 rounded-lg bg-rose-600 hover:bg-rose-500 text-white font-bold text-[11px] flex items-center justify-center gap-1.5 shadow transition cursor-pointer" title="Αναπαραγωγή βίντεο στο πλαίσιο του χάρτη">
+              <i class="fa-brands fa-youtube text-xs"></i>
+              <span>Προβολή Βίντεο στο Πλαίσιο 📹</span>
+            </button>
+          ` : ''}
+
+          ${(!hasVideo && photoUrl) ? `
+            <button onclick="event.stopPropagation(); window.openTimeCapsuleMedia('${photoUrl}', '${escapeStr(cardTitle)}', '${escapeStr(spot.name)}')" class="w-full py-1 px-2 rounded-lg bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-[11px] flex items-center justify-center gap-1.5 shadow transition cursor-pointer" title="Προβολή εικόνας στο πλαίσιο του χάρτη">
+              <i class="fa-solid fa-image text-xs"></i>
+              <span>Προβολή Εικόνας στο Πλαίσιο 🖼️</span>
+            </button>
+          ` : ''}
+
+          <div class="text-[9px] text-amber-400/90 hover:text-amber-300 text-center pt-1 font-semibold cursor-pointer" onclick="event.stopPropagation(); window.showSpotInTimeline('${spot.id}', '${activeYear}')">
+            <i class="fa-solid fa-clock-rotate-left mr-1"></i>Προβολή στο Χρονολόγιο ⏱️
+          </div>
+        </div>
       </div>
-    `, { direction: 'top', offset: [0, -12], opacity: 0.95 });
+    `;
+
+    marker.bindTooltip(tooltipHtml, {
+      direction: 'top',
+      offset: [0, -14],
+      opacity: 1,
+      interactive: true,
+      className: 'temporal-hover-tooltip'
+    });
 
     marker.on('click', () => {
-      if (onSpotClick) onSpotClick(spot.id, activeYear);
+      if (window.showSpotInTimeline) {
+        window.showSpotInTimeline(spot.id, activeYear);
+      } else if (onSpotClick) {
+        onSpotClick(spot.id, activeYear);
+      }
     });
+
     timeCapsuleMarkersGroup.addLayer(marker);
   });
 }

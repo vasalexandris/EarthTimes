@@ -332,7 +332,13 @@ export function getSelectedYear() {
 }
 
 export function setSelectedYear(year) {
-  selectedYear = (year === 'all') ? 'all' : parseInt(year, 10);
+  if (year === 'unknown') {
+    selectedYear = 'unknown';
+  } else if (year === 'all') {
+    selectedYear = 'all';
+  } else {
+    selectedYear = parseInt(year, 10);
+  }
   updateTimeSliderUI();
   return selectedYear;
 }
@@ -347,11 +353,17 @@ export function getFilteredSpots(cityId = null) {
     return spots;
   }
 
+  if (selectedYear === 'unknown') {
+    return spots.filter(spot => {
+      return spot.isUnknownDate === true || (spot.chronicles && spot.chronicles.some(c => c.fromYear === null || c.isUnknownDate || c.date === 'unknown'));
+    });
+  }
+
   const y = (typeof selectedYear === 'number') ? selectedYear : parseInt(selectedYear, 10);
   if (isNaN(y)) return spots;
 
   return spots.filter(spot => {
-    return spot.chronicles && spot.chronicles.some(c => c.fromYear <= y && (c.toYear === null || c.toYear >= y));
+    return spot.chronicles && spot.chronicles.some(c => c.fromYear !== null && c.fromYear <= y && (c.toYear === null || c.toYear >= y));
   });
 }
 
@@ -527,10 +539,36 @@ export function updateTimeSliderUI() {
   const slider = document.getElementById('timeYearRange');
   const badge = document.getElementById('activeEraBadge');
   const needle = document.getElementById('timelineSliderNeedle');
+  const unknownBtn = document.getElementById('timeUnknownBtn');
 
   const minYear = 1900;
   const maxYear = 2026;
   const totalSpan = maxYear - minYear;
+
+  if (selectedYear === 'unknown') {
+    if (slider) slider.value = 1900;
+    if (needle) {
+      needle.style.opacity = '0.35';
+      needle.style.left = '0%';
+    }
+    if (display) {
+      if ('value' in display) display.value = 'Άγνωστο';
+      else display.innerText = 'Άγνωστο';
+    }
+    if (unknownBtn) {
+      unknownBtn.className = 'h-7 px-2 rounded-lg bg-amber-400 text-slate-950 font-black border border-amber-300 text-[11px] flex items-center gap-1 shrink-0 transition cursor-pointer shadow-md';
+    }
+    if (badge) {
+      badge.innerText = 'Άγνωστη Χρονολογία (Προς Ταυτοποίηση)';
+      badge.className = 'text-[11px] font-semibold text-amber-300 bg-amber-950/90 px-2 py-0.5 rounded border border-amber-600/70';
+    }
+    return;
+  }
+
+  // Normal year or 'all'
+  if (unknownBtn) {
+    unknownBtn.className = 'h-7 px-2 rounded-lg bg-slate-800 hover:bg-slate-750 text-slate-300 hover:text-amber-300 border border-slate-700 text-[11px] font-bold flex items-center gap-1 shrink-0 transition cursor-pointer';
+  }
 
   const val = (selectedYear === 'all') ? 2026 : selectedYear;
 
@@ -539,12 +577,14 @@ export function updateTimeSliderUI() {
   }
 
   if (needle) {
+    needle.style.opacity = '1';
     const pct = Math.max(0, Math.min(100, ((val - minYear) / totalSpan) * 100));
     needle.style.left = `${pct}%`;
   }
 
   if (display) {
-    display.innerText = (selectedYear === 'all') ? '2026' : selectedYear;
+    if ('value' in display) display.value = (selectedYear === 'all') ? '2026' : selectedYear;
+    else display.innerText = (selectedYear === 'all') ? '2026' : selectedYear;
   }
 
   if (badge) {
@@ -562,6 +602,65 @@ export function updateTimeSliderUI() {
       badge.innerText = `${selectedYear}: ${eraText}`;
       badge.className = 'text-[11px] font-semibold text-amber-300 bg-amber-950/60 px-2 py-0.5 rounded border border-amber-700/50';
     }
+  }
+}
+
+export function onTimeStepYear(delta) {
+  const currentCity = window.getCurrentEntity ? window.getCurrentEntity() : null;
+  const cityId = (currentCity && currentCity.type === 'city') ? currentCity.id : null;
+  const recordedYears = Array.from(getDistinctRecordedYears(cityId).keys()).sort((a, b) => a - b);
+
+  if (!recordedYears.length) {
+    const cur = (typeof selectedYear === 'number') ? selectedYear : 2026;
+    let next = cur + (delta * 5);
+    next = Math.max(1900, Math.min(2026, next));
+    if (window.onTimeSliderChange) window.onTimeSliderChange(next);
+    return;
+  }
+
+  if (selectedYear === 'unknown' || typeof selectedYear !== 'number') {
+    const target = (delta > 0) ? recordedYears[0] : recordedYears[recordedYears.length - 1];
+    if (window.onTimeSliderChange) window.onTimeSliderChange(target);
+    return;
+  }
+
+  const curYear = selectedYear;
+  if (delta > 0) {
+    const nextYears = recordedYears.filter(y => y > curYear);
+    const target = nextYears.length ? nextYears[0] : Math.min(2026, curYear + 1);
+    if (window.onTimeSliderChange) window.onTimeSliderChange(target);
+  } else {
+    const prevYears = recordedYears.filter(y => y < curYear);
+    const target = prevYears.length ? prevYears[prevYears.length - 1] : Math.max(1900, curYear - 1);
+    if (window.onTimeSliderChange) window.onTimeSliderChange(target);
+  }
+}
+
+export function onTimeDirectYearSubmit(inputVal) {
+  if (!inputVal) return;
+  const cleaned = String(inputVal).trim().toLowerCase();
+  if (cleaned === 'αγνωστο' || cleaned === 'άγνωστο' || cleaned === 'unknown' || cleaned === '?') {
+    onTimeUnknownClick();
+    return;
+  }
+
+  const parsed = parseInt(cleaned, 10);
+  if (!isNaN(parsed)) {
+    const clamped = Math.max(1900, Math.min(2026, parsed));
+    if (window.onTimeSliderChange) window.onTimeSliderChange(clamped);
+  } else {
+    updateTimeSliderUI();
+  }
+}
+
+export function onTimeUnknownClick() {
+  if (selectedYear === 'unknown') {
+    if (window.onTimeSliderChange) window.onTimeSliderChange(2026);
+    return;
+  }
+  setSelectedYear('unknown');
+  if (window.onTimeSliderChange) {
+    window.onTimeSliderChange('unknown');
   }
 }
 
