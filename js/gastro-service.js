@@ -208,7 +208,7 @@ export function renderGastronomyTabHtml(entity, items = []) {
             <i class="fa-brands fa-microsoft text-amber-200 text-xs"></i>
             <span>🔍 AI Έρευνα στο Bing</span>
           </button>
-          <button onclick="window.openMapWikiReader('${escapeStr(name)} Γαστρονομία', 'el', '${escapeStr(name)} cuisine')" class="px-2.5 py-1 rounded-lg bg-sky-950/80 hover:bg-sky-900 text-sky-300 hover:text-white border border-sky-700/50 text-[11px] font-bold transition flex items-center gap-1.5 shadow cursor-pointer">
+          <button onclick="window.openMapWikiReader('${escapeStr(engName || name)} cuisine', 'en', '${escapeStr(name)} Γαστρονομία')" class="px-2.5 py-1 rounded-lg bg-sky-950/80 hover:bg-sky-900 text-sky-300 hover:text-white border border-sky-700/50 text-[11px] font-bold transition flex items-center gap-1.5 shadow cursor-pointer">
             <i class="fa-brands fa-wikipedia-w text-sky-400"></i>
             <span>Wikipedia</span>
           </button>
@@ -240,7 +240,7 @@ export function renderGastronomyTabHtml(entity, items = []) {
             <i class="fa-brands fa-microsoft text-orange-200 text-xs"></i>
             <span>🔍 AI Έρευνα στο Bing</span>
           </button>
-          <button onclick="window.openMapWikiReader('${escapeStr(name)} street food', 'el', '${escapeStr(name)} street food')" class="px-2.5 py-1 rounded-lg bg-sky-950/80 hover:bg-sky-900 text-sky-300 hover:text-white border border-sky-700/50 text-[11px] font-bold transition flex items-center gap-1.5 shadow cursor-pointer">
+          <button onclick="window.openMapWikiReader('${escapeStr(engName || name)} street food', 'en', '${escapeStr(name)} street food')" class="px-2.5 py-1 rounded-lg bg-sky-950/80 hover:bg-sky-900 text-sky-300 hover:text-white border border-sky-700/50 text-[11px] font-bold transition flex items-center gap-1.5 shadow cursor-pointer">
             <i class="fa-brands fa-wikipedia-w text-sky-400"></i>
             <span>Wikipedia</span>
           </button>
@@ -327,7 +327,7 @@ export function renderGastronomyTabHtml(entity, items = []) {
                     <i class="fa-brands fa-microsoft text-amber-200 text-xs"></i>
                     <span>🔍 AI Έρευνα στο Bing</span>
                   </button>
-                  <button onclick="window.openMapWikiReader('${escapeStr(item.wiki || item.title)}', 'el', '${escapeStr(item.title)}')" class="px-2.5 py-1 rounded-lg bg-sky-950/80 hover:bg-sky-900 text-sky-300 hover:text-white border border-sky-700/50 text-[11px] font-bold transition flex items-center gap-1.5 shadow cursor-pointer">
+                  <button onclick="window.openMapWikiReader('${escapeStr(item.wiki || item.title)}', 'en', '${escapeStr(item.title)}')" class="px-2.5 py-1 rounded-lg bg-sky-950/80 hover:bg-sky-900 text-sky-300 hover:text-white border border-sky-700/50 text-[11px] font-bold transition flex items-center gap-1.5 shadow cursor-pointer">
                     <i class="fa-brands fa-wikipedia-w"></i>
                     <span>Wikipedia</span>
                   </button>

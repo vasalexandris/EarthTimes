@@ -6,7 +6,7 @@
 
 import { getCityVideo, getAvailableVideoTypes, getAvailableCityTours, CITY_VIDEOS, findPoiLiveCam, getPoiVideoInfo, getGastroRecipeVideo, getSocialMediaVideos, SOCIAL_MEDIA_REGISTRY, GASTRO_RECIPE_VIDEOS } from './video-service.js?v=20261121_nordic_cities_v26';
 import { getDeepDiveData } from './deep-dive.js?v=20261121_nordic_cities_v26';
-import { fetchWikiArticle, fetchWikiArticleHtml, cleanWikiTitle } from './wiki-service.js?v=20261121_nordic_cities_v26';
+import { fetchWikiArticle, fetchWikiArticleHtml, cleanWikiTitle, buildWikiSearchDocumentHtml } from './wiki-service.js?v=20261123_wiki_en_search_v28';
 import { calculateSubsolarPoint } from './solar-terminator.js?v=20261121_nordic_cities_v26';
 import { CITY_TO_STATE } from './states-data.js?v=20261121_nordic_cities_v26';
 import { CITY_TO_COUNTRY } from './navigator.js?v=20261121_nordic_cities_v26';
@@ -28,8 +28,10 @@ let currentOverlayStartSec = 0;
 let currentOverlayShortsId = '';
 
 let currentWikiTitle = '';
-let currentWikiLang = 'el';
+let currentWikiLang = 'en';
 let currentWikiFallbackEn = '';
+let currentWikiAlternateTitle = '';
+let currentWikiHasAlternate = false;
 let activeDeepDiveData = null;
 
 function escapeStr(str) {
@@ -1725,7 +1727,7 @@ export function renderCityVideoDropdownMenu(cityId) {
  * In-Map Embedded Wikipedia Reader
  * Opens full Wikipedia article inside the map container overlay without external tabs
  */
-export async function openMapWikiReader(queryOrTitle, lang = 'el', fallbackEnQuery = '') {
+export async function openMapWikiReader(queryOrTitle, lang = 'en', fallbackEnQuery = '') {
   currentWikiTitle = queryOrTitle;
   currentWikiLang = lang;
   currentWikiFallbackEn = fallbackEnQuery;
@@ -1746,13 +1748,12 @@ export async function openMapWikiReader(queryOrTitle, lang = 'el', fallbackEnQue
 
   overlay.classList.remove('hidden');
   syncMapFloatingControlsVisibility();
-  syncMapFloatingControlsVisibility();
   if (loading) loading.classList.remove('hidden');
   iframe.classList.add('hidden');
 
   if (titleEl) titleEl.innerText = queryOrTitle;
   if (langBadge) langBadge.innerText = lang.toUpperCase();
-  if (langLabel) langLabel.innerText = lang === 'el' ? 'English' : 'Ελληνικά';
+  if (langLabel) langLabel.innerText = lang === 'en' ? '🇬🇷 Ελληνικά' : '🇬🇧 English';
 
   const res = await fetchWikiArticleHtml(queryOrTitle, lang, fallbackEnQuery);
 
@@ -1769,67 +1770,64 @@ export async function openMapWikiReader(queryOrTitle, lang = 'el', fallbackEnQue
 
   if (res && res.docHtml) {
     currentWikiLang = res.lang;
+    currentWikiAlternateTitle = res.alternateTitle || '';
+    currentWikiHasAlternate = Boolean(res.hasAlternate);
     if (titleEl) titleEl.innerText = res.title;
     if (langBadge) langBadge.innerText = res.lang.toUpperCase();
-    if (langLabel) langLabel.innerText = res.lang === 'el' ? 'English' : 'Ελληνικά';
+    if (langLabel) {
+      if (res.hasAlternate) {
+        langLabel.innerText = res.lang === 'en' ? '🇬🇷 Ελληνικά' : '🇬🇧 English';
+      } else {
+        langLabel.innerText = res.lang === 'en' ? '🇬🇷 (Μη διαθέσιμο)' : '🇬🇧 English';
+      }
+    }
 
     iframe.srcdoc = res.docHtml;
     if (loading) loading.classList.add('hidden');
     iframe.classList.remove('hidden');
   } else {
-    // Article not found via REST API: Try Wikipedia Search or offer Bing AI Search fallback
+    // If exact article not found, render the interactive dark-mode Wikipedia Search Hub
     if (loading) loading.classList.add('hidden');
     iframe.classList.remove('hidden');
     const cleanQ = queryOrTitle.trim();
-    const wikiSearchUrl = `https://${lang}.wikipedia.org/w/index.php?search=${encodeURIComponent(cleanQ)}`;
-
-    iframe.srcdoc = `
-      <!DOCTYPE html>
-      <html>
-      <head>
-        <meta charset="utf-8">
-        <style>
-          body { margin: 0; background: #0b0f19; color: #cbd5e1; font-family: system-ui, -apple-system, sans-serif; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; padding: 24px; box-sizing: border-box; text-align: center; }
-          .card { background: #111827; border: 1px solid #1f2937; border-radius: 20px; padding: 32px 24px; max-width: 520px; width: 100%; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5); }
-          .icon { width: 56px; height: 56px; border-radius: 16px; background: rgba(245, 158, 11, 0.15); color: #fbbf24; display: inline-flex; align-items: center; justify-content: center; font-size: 26px; margin-bottom: 20px; }
-          h2 { color: #f8fafc; font-size: 19px; margin: 0 0 10px 0; font-weight: 800; }
-          p { color: #94a3b8; font-size: 13px; line-height: 1.6; margin: 0 0 24px 0; }
-          .btn-group { display: flex; flex-direction: column; gap: 10px; width: 100%; }
-          .btn { padding: 12px 18px; border-radius: 12px; font-size: 13px; font-weight: 700; cursor: pointer; border: none; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 8px; transition: all 0.2s; }
-          .btn-bing { background: linear-gradient(135deg, #d97706, #ea580c); color: white; box-shadow: 0 4px 14px rgba(217,119,6,0.35); }
-          .btn-bing:hover { opacity: 0.95; transform: scale(1.02); }
-          .btn-wiki { background: #0284c7; color: white; }
-          .btn-wiki:hover { background: #0369a1; }
-          .btn-back { background: #1f2937; color: #94a3b8; border: 1px solid #374151; }
-          .btn-back:hover { color: white; background: #374151; }
-        </style>
-      </head>
-      <body>
-        <div class="card">
-          <div class="icon">🔍</div>
-          <h2>Αναζήτηση Λήμματος Wikipedia</h2>
-          <p>
-            Δεν βρέθηκε ακριβές λήμμα για το θέμα "<strong>${escapeStr(cleanQ)}</strong>". Επιλέξτε τρόπο προβολής εντός της εφαρμογής:
-          </p>
-          <div class="btn-group">
-            <button class="btn btn-bing" onclick="window.parent.switchWikiToBingSearch('${escapeStr(cleanQ)}')">
-              ✨ Αναζήτηση Bing AI για Wikipedia
-            </button>
-            <button class="btn btn-wiki" onclick="window.location.href='${wikiSearchUrl}'">
-              📖 Αναζήτηση στην ίδια τη Wikipedia
-            </button>
-            <button class="btn btn-back" onclick="window.parent.postMessage({ type: 'EARTH_TIMES_CLOSE_WIKI' }, '*')">
-              ✕ Επιστροφή στον Χάρτη
-            </button>
-          </div>
-        </div>
-      </body>
-      </html>
-    `;
-    if (loading) loading.classList.add('hidden');
-    iframe.classList.remove('hidden');
+    if (titleEl) titleEl.innerText = cleanQ ? `🔍 Wikipedia: ${cleanQ}` : '🔍 Wikipedia Search';
+    if (langBadge) langBadge.innerText = 'EN SEARCH';
+    if (translateBtn) translateBtn.classList.add('hidden');
+    iframe.srcdoc = buildWikiSearchDocumentHtml(cleanQ);
   }
 }
+
+/**
+ * Opens Wikipedia Search Hub directly inside the in-map overlay in dark theme
+ */
+export function openWikiSearchPage(query = '') {
+  const q = (query || currentWikiTitle || '').trim();
+  const overlay = document.getElementById('mapWikiOverlay');
+  const iframe = document.getElementById('mapWikiIframe');
+  const titleEl = document.getElementById('wikiOverlayTitle');
+  const langBadge = document.getElementById('wikiOverlayLangBadge');
+  const loading = document.getElementById('wikiOverlayLoading');
+  const translateBtn = document.getElementById('wikiTranslateBtn');
+
+  if (!overlay || !iframe) return;
+
+  closeMapVideoOverlay();
+  closeMapStreetViewOverlay();
+  if (window.closeCityPresentation) window.closeCityPresentation();
+
+  overlay.classList.remove('hidden');
+  syncMapFloatingControlsVisibility();
+  if (loading) loading.classList.remove('hidden');
+  iframe.classList.remove('hidden');
+
+  if (titleEl) titleEl.innerText = q ? `🔍 Wikipedia Search: ${q}` : '🔍 Wikipedia Search (English)';
+  if (langBadge) langBadge.innerText = 'EN SEARCH';
+  if (translateBtn) translateBtn.classList.add('hidden');
+
+  iframe.srcdoc = buildWikiSearchDocumentHtml(q);
+  if (loading) loading.classList.add('hidden');
+}
+window.openWikiSearchPage = openWikiSearchPage;
 
 export function switchWikiToBingSearch(term = '') {
   const query = (term || currentWikiTitle || '').trim();
@@ -1862,8 +1860,11 @@ export function openDeepDiveBingAiSearch(topic = '') {
 window.openDeepDiveBingAiSearch = openDeepDiveBingAiSearch;
 
 export function toggleWikiReaderLanguage() {
-  const nextLang = currentWikiLang === 'el' ? 'en' : 'el';
-  openMapWikiReader(currentWikiTitle, nextLang, currentWikiFallbackEn);
+  const nextLang = currentWikiLang === 'en' ? 'el' : 'en';
+  const targetTitle = (currentWikiHasAlternate && currentWikiAlternateTitle)
+    ? currentWikiAlternateTitle
+    : (currentWikiFallbackEn || currentWikiTitle);
+  openMapWikiReader(targetTitle, nextLang, currentWikiTitle);
 }
 
 export function translateWikiReaderInPlace() {
@@ -1954,9 +1955,9 @@ export function closeMapStreetViewOverlay() {
 
 export function openDeepDiveWikiReader() {
   if (activeDeepDiveData) {
-    const title = activeDeepDiveData.wikiQuery || activeDeepDiveData.title;
-    const fallbackEn = activeDeepDiveData.wikiEnQuery || '';
-    openMapWikiReader(title, 'el', fallbackEn);
+    const title = activeDeepDiveData.wikiEnQuery || activeDeepDiveData.wikiQuery || activeDeepDiveData.title;
+    const fallbackEl = activeDeepDiveData.wikiQuery || activeDeepDiveData.title;
+    openMapWikiReader(title, 'en', fallbackEl);
   }
 }
 
@@ -4380,7 +4381,7 @@ export function renderTabContent(tabId, entity, activeYear = null, activeSpots =
                   <i class="fa-solid fa-wand-magic-sparkles text-amber-400"></i>
                   <span>Ανάλυση AI</span>
                 </button>
-                <button onclick="window.openMapWikiReader('${escapeStr(item.wiki || item.title)}', 'el')" class="px-2.5 py-1 rounded-lg bg-sky-950/80 hover:bg-sky-900 text-sky-300 hover:text-white border border-sky-700/50 text-[11px] font-bold transition flex items-center gap-1.5 shadow">
+                <button onclick="window.openMapWikiReader('${escapeStr(item.wiki || item.title)}', 'en', '${escapeStr(item.title)}')" class="px-2.5 py-1 rounded-lg bg-sky-950/80 hover:bg-sky-900 text-sky-300 hover:text-white border border-sky-700/50 text-[11px] font-bold transition flex items-center gap-1.5 shadow">
                   <i class="fa-brands fa-wikipedia-w"></i>
                   <span>Wikipedia</span>
                 </button>
@@ -4432,7 +4433,7 @@ export function renderTabContent(tabId, entity, activeYear = null, activeSpots =
               <i class="fa-solid fa-magnifying-glass text-indigo-200"></i>
               <span>Bing AI Search</span>
             </button>
-            <button onclick="window.openMapWikiReader('${escapeStr(entity.name)}', 'el')" class="px-2.5 py-1 rounded-lg bg-sky-950/80 hover:bg-sky-900 text-sky-300 hover:text-white border border-sky-700/50 text-[11px] font-bold transition flex items-center gap-1.5 shadow cursor-pointer">
+            <button onclick="window.openMapWikiReader('${escapeStr(entity.englishName || entity.name)}', 'en', '${escapeStr(entity.name)}')" class="px-2.5 py-1 rounded-lg bg-sky-950/80 hover:bg-sky-900 text-sky-300 hover:text-white border border-sky-700/50 text-[11px] font-bold transition flex items-center gap-1.5 shadow cursor-pointer">
               <i class="fa-brands fa-wikipedia-w text-sky-400"></i>
               <span>Wikipedia</span>
             </button>
@@ -4484,7 +4485,7 @@ export function renderTabContent(tabId, entity, activeYear = null, activeSpots =
                 <i class="fa-solid fa-magnifying-glass text-sky-200"></i>
                 <span>Bing AI</span>
               </button>
-              <button onclick="window.openMapWikiReader('${escapeStr(schools.wiki || entity.name)}', 'el', '${escapeStr(entity.name)} education')" class="px-2.5 py-1 rounded-lg bg-sky-950/80 hover:bg-sky-900 text-sky-300 hover:text-white border border-sky-700/50 text-[11px] font-bold transition flex items-center gap-1.5 shadow cursor-pointer">
+              <button onclick="window.openMapWikiReader('${escapeStr(schools.wiki || entity.englishName || entity.name)}', 'en', '${escapeStr(entity.name)} education')" class="px-2.5 py-1 rounded-lg bg-sky-950/80 hover:bg-sky-900 text-sky-300 hover:text-white border border-sky-700/50 text-[11px] font-bold transition flex items-center gap-1.5 shadow cursor-pointer">
                 <i class="fa-brands fa-wikipedia-w text-sky-400"></i>
                 <span>Wikipedia</span>
               </button>
@@ -4525,7 +4526,7 @@ export function renderTabContent(tabId, entity, activeYear = null, activeSpots =
                       <i class="fa-solid fa-magnifying-glass text-sky-200"></i>
                       <span>Bing AI</span>
                     </button>
-                    <button onclick="window.openMapWikiReader('${escapeStr(item.wiki || item.title)}', 'el', '${escapeStr(item.title)}')" class="px-2.5 py-1 rounded-lg bg-sky-950/80 hover:bg-sky-900 text-sky-300 hover:text-white border border-sky-700/50 text-[11px] font-bold transition flex items-center gap-1.5 shadow cursor-pointer">
+                    <button onclick="window.openMapWikiReader('${escapeStr(item.wiki || item.title)}', 'en', '${escapeStr(item.title)}')" class="px-2.5 py-1 rounded-lg bg-sky-950/80 hover:bg-sky-900 text-sky-300 hover:text-white border border-sky-700/50 text-[11px] font-bold transition flex items-center gap-1.5 shadow cursor-pointer">
                       <i class="fa-brands fa-wikipedia-w"></i>
                       <span>Wikipedia</span>
                     </button>
@@ -4569,7 +4570,7 @@ export function renderTabContent(tabId, entity, activeYear = null, activeSpots =
                       <i class="fa-solid fa-magnifying-glass text-emerald-200"></i>
                       <span>Bing AI</span>
                     </button>
-                    <button onclick="window.openMapWikiReader('${escapeStr(item.wiki || item.title)}', 'el', '${escapeStr(item.title)}')" class="px-2.5 py-1 rounded-lg bg-sky-950/80 hover:bg-sky-900 text-sky-300 hover:text-white border border-sky-700/50 text-[11px] font-bold transition flex items-center gap-1.5 shadow cursor-pointer">
+                    <button onclick="window.openMapWikiReader('${escapeStr(item.wiki || item.title)}', 'en', '${escapeStr(item.title)}')" class="px-2.5 py-1 rounded-lg bg-sky-950/80 hover:bg-sky-900 text-sky-300 hover:text-white border border-sky-700/50 text-[11px] font-bold transition flex items-center gap-1.5 shadow cursor-pointer">
                       <i class="fa-brands fa-wikipedia-w"></i>
                       <span>Wikipedia</span>
                     </button>
@@ -4613,7 +4614,7 @@ export function renderTabContent(tabId, entity, activeYear = null, activeSpots =
                       <i class="fa-solid fa-magnifying-glass text-purple-200"></i>
                       <span>Bing AI</span>
                     </button>
-                    <button onclick="window.openMapWikiReader('${escapeStr(item.wiki || item.title)}', 'el', '${escapeStr(item.title)}')" class="px-2.5 py-1 rounded-lg bg-sky-950/80 hover:bg-sky-900 text-sky-300 hover:text-white border border-sky-700/50 text-[11px] font-bold transition flex items-center gap-1.5 shadow cursor-pointer">
+                    <button onclick="window.openMapWikiReader('${escapeStr(item.wiki || item.title)}', 'en', '${escapeStr(item.title)}')" class="px-2.5 py-1 rounded-lg bg-sky-950/80 hover:bg-sky-900 text-sky-300 hover:text-white border border-sky-700/50 text-[11px] font-bold transition flex items-center gap-1.5 shadow cursor-pointer">
                       <i class="fa-brands fa-wikipedia-w"></i>
                       <span>Wikipedia</span>
                     </button>

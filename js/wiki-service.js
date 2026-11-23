@@ -1,8 +1,8 @@
 /**
  * Wikipedia Service Module
  * Handles retrieval of official encyclopedia summaries and full standalone articles
- * with Greek priority (el.wikipedia.org) and automatic English fallback (en.wikipedia.org).
- * Powers the embedded In-Map Wikipedia Reader without external tabs.
+ * with English priority (en.wikipedia.org) and automatic Greek counterpart resolution (el.wikipedia.org).
+ * Powers the embedded In-Map Wikipedia Reader with dark mode and in-app search hub.
  */
 
 const wikiSummaryCache = new Map();
@@ -17,7 +17,34 @@ export function cleanWikiTitle(str) {
 }
 
 /**
- * Fetches Wikipedia article summary (for cards and previews)
+ * Resolves counterpart article title in another language via Wikipedia langlinks API
+ */
+export async function fetchLangLinks(title, fromLang = 'en', targetLang = 'el') {
+  if (!title) return null;
+  const cleanTitle = title.replace(/\s+/g, '_').trim();
+  try {
+    const endpoint = `https://${fromLang}.wikipedia.org/w/api.php?action=query&prop=langlinks&lllang=${targetLang}&titles=${encodeURIComponent(cleanTitle)}&format=json&origin=*`;
+    const res = await fetch(endpoint);
+    if (res.ok) {
+      const data = await res.json();
+      const pages = data.query?.pages;
+      if (pages) {
+        for (const k in pages) {
+          const llinks = pages[k].langlinks;
+          if (llinks && llinks.length > 0) {
+            return llinks[0]['*'] || llinks[0].title;
+          }
+        }
+      }
+    }
+  } catch (e) {
+    console.warn(`[WikiService] LangLinks error (${fromLang} -> ${targetLang}):`, e);
+  }
+  return null;
+}
+
+/**
+ * Fetches Wikipedia article summary (for cards and previews) - Defaults to English first
  */
 export async function fetchWikiArticle(queryOrTitle, fallbackEnQuery = '') {
   if (!queryOrTitle) return null;
@@ -39,7 +66,7 @@ export async function fetchWikiArticle(queryOrTitle, fallbackEnQuery = '') {
         if (data && data.type !== 'disambiguation' && data.extract) {
           return {
             lang,
-            langLabel: lang === 'el' ? 'Ελληνική Βικιπαίδεια' : 'English Wikipedia',
+            langLabel: lang === 'en' ? 'English Wikipedia' : 'Ελληνική Βικιπαίδεια',
             title: data.title,
             displayTitle: data.displaytitle || data.title,
             extract: data.extract,
@@ -56,20 +83,19 @@ export async function fetchWikiArticle(queryOrTitle, fallbackEnQuery = '') {
     return null;
   }
 
-  // 1. Try Greek first (user's preferred language)
-  let result = await fetchFromLang('el', queryOrTitle);
+  // 1. Try English first (user's preferred primary edition)
+  const enQuery = fallbackEnQuery || queryOrTitle;
+  let result = await fetchFromLang('en', enQuery);
 
-  // If title has parentheses e.g. "Σχολή Bauhaus (1919)", try stripped
-  if (!result && (queryOrTitle.includes('(') || queryOrTitle.includes('–') || queryOrTitle.includes('-'))) {
-    result = await fetchFromLang('el', cleanWikiTitle(queryOrTitle));
+  if (!result && (enQuery.includes('(') || enQuery.includes('–') || enQuery.includes('-'))) {
+    result = await fetchFromLang('en', cleanWikiTitle(enQuery));
   }
 
-  // 2. Fallback to English if Greek article doesn't exist
+  // 2. Fallback to Greek if English article doesn't exist
   if (!result) {
-    const enQuery = fallbackEnQuery || queryOrTitle;
-    result = await fetchFromLang('en', enQuery);
-    if (!result && (enQuery.includes('(') || enQuery.includes('–') || enQuery.includes('-'))) {
-      result = await fetchFromLang('en', cleanWikiTitle(enQuery));
+    result = await fetchFromLang('el', queryOrTitle);
+    if (!result && (queryOrTitle.includes('(') || queryOrTitle.includes('–') || queryOrTitle.includes('-'))) {
+      result = await fetchFromLang('el', cleanWikiTitle(queryOrTitle));
     }
   }
 
@@ -80,9 +106,9 @@ export async function fetchWikiArticle(queryOrTitle, fallbackEnQuery = '') {
 }
 
 /**
- * Fetches full article HTML for the in-map embedded reader
+ * Fetches full article HTML for the in-map embedded reader - Defaults to English ('en')
  */
-export async function fetchWikiArticleHtml(queryOrTitle, lang = 'el', fallbackEnQuery = '') {
+export async function fetchWikiArticleHtml(queryOrTitle, lang = 'en', fallbackQuery = '') {
   if (!queryOrTitle) return null;
 
   async function tryFetchHtml(targetLang, title) {
@@ -101,13 +127,20 @@ export async function fetchWikiArticleHtml(queryOrTitle, lang = 'el', fallbackEn
       if (res.ok) {
         const rawHtml = await res.text();
         if (rawHtml && rawHtml.length > 200) {
-          const processed = buildReaderDocument(rawHtml, targetLang, cleanTitle);
+          // Check for counterpart in opposite language
+          const oppositeLang = targetLang === 'en' ? 'el' : 'en';
+          const alternateTitle = await fetchLangLinks(cleanTitle, targetLang, oppositeLang);
+
+          const processed = buildReaderDocument(rawHtml, targetLang, cleanTitle, alternateTitle, Boolean(alternateTitle));
           const out = {
             lang: targetLang,
-            langLabel: targetLang === 'el' ? 'Ελληνικά (Βικιπαίδεια)' : 'English (Wikipedia)',
+            langLabel: targetLang === 'en' ? 'English (Wikipedia)' : 'Ελληνικά (Βικιπαίδεια)',
             title: title.replace(/_/g, ' '),
             rawTitle: cleanTitle,
-            docHtml: processed
+            docHtml: processed,
+            alternateTitle: alternateTitle || null,
+            alternateLang: oppositeLang,
+            hasAlternate: Boolean(alternateTitle)
           };
           wikiHtmlCache.set(cacheKey, out);
           return out;
@@ -119,7 +152,7 @@ export async function fetchWikiArticleHtml(queryOrTitle, lang = 'el', fallbackEn
     return null;
   }
 
-  // 1. Try requested language with exact title
+  // 1. Try requested language (default 'en')
   let res = await tryFetchHtml(lang, queryOrTitle);
 
   // If failed and title has parentheses or special symbols, try stripped title
@@ -130,19 +163,18 @@ export async function fetchWikiArticleHtml(queryOrTitle, lang = 'el', fallbackEn
     }
   }
 
-  // 2. If requested lang was 'el' and failed, fallback to English
-  if (!res && lang === 'el') {
-    const enTitle = fallbackEnQuery || queryOrTitle;
-    res = await tryFetchHtml('en', enTitle);
+  // 2. If requested lang was 'en' and fallbackQuery provided, try fallback in English
+  if (!res && lang === 'en' && fallbackQuery && fallbackQuery !== queryOrTitle) {
+    res = await tryFetchHtml('en', fallbackQuery);
     if (!res) {
-      const strippedEn = cleanWikiTitle(enTitle);
-      if (strippedEn && strippedEn !== enTitle) {
-        res = await tryFetchHtml('en', strippedEn);
+      const strippedFb = cleanWikiTitle(fallbackQuery);
+      if (strippedFb && strippedFb !== fallbackQuery) {
+        res = await tryFetchHtml('en', strippedFb);
       }
     }
   }
 
-  // 3. Smart OpenSearch API fallback to resolve close titles (e.g., foods, landmarks, cultural items)
+  // 3. OpenSearch API fallback to resolve closest titles in requested language
   if (!res) {
     async function tryOpenSearch(targetLang, query) {
       if (!query) return null;
@@ -164,18 +196,24 @@ export async function fetchWikiArticleHtml(queryOrTitle, lang = 'el', fallbackEn
     }
 
     res = await tryOpenSearch(lang, queryOrTitle);
-    if (!res && lang === 'el') {
-      res = await tryOpenSearch('en', fallbackEnQuery || queryOrTitle);
+    if (!res && lang === 'en' && fallbackQuery) {
+      res = await tryOpenSearch('en', fallbackQuery);
     }
+  }
+
+  // 4. If requested was 'en' and still not found, try Greek as secondary fallback
+  if (!res && lang === 'en') {
+    const greekSearchTitle = fallbackQuery || queryOrTitle;
+    res = await tryFetchHtml('el', greekSearchTitle);
   }
 
   return res;
 }
 
 /**
- * Injects base href, dark mode styling, and link interception script into Wikipedia HTML
+ * Injects base href, dark mode styling, language navigation banners, and translation script
  */
-function buildReaderDocument(rawHtml, lang, currentTitle) {
+function buildReaderDocument(rawHtml, lang, currentTitle, alternateTitle = '', hasAlternate = false) {
   const baseTag = `<base href="https://${lang}.wikipedia.org/">`;
   const darkStyles = `
     <style>
@@ -254,6 +292,53 @@ function buildReaderDocument(rawHtml, lang, currentTitle) {
     </style>
   `;
 
+  // Top Action Banners (Language Switch Link & In-place Translation Button)
+  let topBannersHtml = '<div style="margin-bottom: 24px; display: flex; flex-direction: column; gap: 10px;">';
+
+  // If in English and Greek version exists, display prominent link to Greek Wikipedia
+  if (lang === 'en' && hasAlternate && alternateTitle) {
+    topBannersHtml += `
+      <div style="background: rgba(14, 165, 233, 0.15); border: 1px solid rgba(14, 165, 233, 0.4); border-radius: 14px; padding: 12px 16px; display: flex; align-items: center; justify-content: space-between; gap: 12px; font-size: 13px; box-shadow: 0 4px 12px rgba(0,0,0,0.25);">
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <span style="font-size: 20px;">🇬🇷</span>
+          <span style="color: #e2e8f0;">Διατίθεται και στην <strong>Ελληνική Βικιπαίδεια</strong>: <em style="color: #38bdf8; font-style: normal; font-weight: 700;">${alternateTitle}</em></span>
+        </div>
+        <button onclick="window.parent.postMessage({ type: 'EARTH_TIMES_WIKI_NAV', title: '${alternateTitle.replace(/'/g, "\\'")}', lang: 'el' }, '*')" style="background: #0284c7; hover: background: #0369a1; color: white; border: none; padding: 7px 16px; border-radius: 9px; font-weight: 700; cursor: pointer; font-size: 12px; display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; transition: background 0.2s;">
+          <span>Διαβάστε στα Ελληνικά</span> &rarr;
+        </button>
+      </div>
+    `;
+  } else if (lang === 'el' && hasAlternate && alternateTitle) {
+    topBannersHtml += `
+      <div style="background: rgba(14, 165, 233, 0.15); border: 1px solid rgba(14, 165, 233, 0.4); border-radius: 14px; padding: 12px 16px; display: flex; align-items: center; justify-content: space-between; gap: 12px; font-size: 13px; box-shadow: 0 4px 12px rgba(0,0,0,0.25);">
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <span style="font-size: 20px;">🇬🇧</span>
+          <span style="color: #e2e8f0;">Available in <strong>English Wikipedia</strong>: <em style="color: #38bdf8; font-style: normal; font-weight: 700;">${alternateTitle}</em></span>
+        </div>
+        <button onclick="window.parent.postMessage({ type: 'EARTH_TIMES_WIKI_NAV', title: '${alternateTitle.replace(/'/g, "\\'")}', lang: 'en' }, '*')" style="background: #0284c7; color: white; border: none; padding: 7px 16px; border-radius: 9px; font-weight: 700; cursor: pointer; font-size: 12px; display: inline-flex; align-items: center; gap: 6px; white-space: nowrap;">
+          <span>Read in English</span> &rarr;
+        </button>
+      </div>
+    `;
+  }
+
+  // Prominent in-article translation bar (Always present on English articles)
+  if (lang === 'en') {
+    topBannersHtml += `
+      <div style="background: rgba(16, 185, 129, 0.12); border: 1px solid rgba(16, 185, 129, 0.35); border-radius: 14px; padding: 10px 16px; display: flex; align-items: center; justify-content: space-between; gap: 12px; font-size: 13px;">
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <span style="font-size: 18px;">🌐</span>
+          <span style="color: #cbd5e1;">Αυτόματη μετάφραση άρθρου στα Ελληνικά</span>
+        </div>
+        <button id="et-btn-translate-auto" onclick="window.translateInPlace()" style="background: #059669; color: white; border: none; padding: 7px 15px; border-radius: 9px; font-weight: 700; cursor: pointer; font-size: 12px; display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; transition: background 0.2s;">
+          <span>🌐 Μετάφραση στα Ελληνικά</span>
+        </button>
+      </div>
+    `;
+  }
+
+  topBannersHtml += '</div>';
+
   // Script to intercept in-article link clicks and handle in-place Greek translation
   const linkInterceptor = `
     <script>
@@ -327,7 +412,6 @@ function buildReaderDocument(rawHtml, lang, currentTitle) {
         window.parent.postMessage({ type: 'EARTH_TIMES_TRANSLATE_STATUS', isTranslating: true }, '*');
 
         var elements = Array.from(document.querySelectorAll('h1, h2, h3, h4, p, li'));
-        // Process in sequential chunks
         for (var i = 0; i < elements.length; i++) {
           var el = elements[i];
           var raw = el.innerText ? el.innerText.trim() : '';
@@ -343,7 +427,7 @@ function buildReaderDocument(rawHtml, lang, currentTitle) {
         }
 
         isTranslated = true;
-        if (bannerBtn) bannerBtn.innerHTML = '✓ Μεταφράστηκε (Επαναφορά)';
+        if (bannerBtn) bannerBtn.innerHTML = '✓ Επαναφορά στα Αγγλικά';
         window.parent.postMessage({ type: 'EARTH_TIMES_TRANSLATE_STATUS', isTranslated: true }, '*');
       };
 
@@ -356,9 +440,309 @@ function buildReaderDocument(rawHtml, lang, currentTitle) {
     </script>
   `;
 
-  // Inject inside <head> if present, or prepend
-  if (rawHtml.includes('<head')) {
-    return rawHtml.replace(/<head[^>]*>/i, `$&${baseTag}${darkStyles}${linkInterceptor}`);
+  // Inject top action banner after body tag
+  let htmlWithBanner = rawHtml;
+  if (htmlWithBanner.includes('<body')) {
+    htmlWithBanner = htmlWithBanner.replace(/<body[^>]*>/i, `$&${topBannersHtml}`);
+  } else {
+    htmlWithBanner = topBannersHtml + htmlWithBanner;
   }
-  return `<!DOCTYPE html><html><head>${baseTag}${darkStyles}${linkInterceptor}</head><body>${rawHtml}</body></html>`;
+
+  // Inject inside <head> if present, or prepend
+  if (htmlWithBanner.includes('<head')) {
+    return htmlWithBanner.replace(/<head[^>]*>/i, `$&${baseTag}${darkStyles}${linkInterceptor}`);
+  }
+  return `<!DOCTYPE html><html><head>${baseTag}${darkStyles}${linkInterceptor}</head><body>${htmlWithBanner}</body></html>`;
+}
+
+/**
+ * Builds the interactive English Wikipedia Search Page in dark mode
+ * Allows user to view live search results, see what exists, or type new searches directly
+ */
+export function buildWikiSearchDocumentHtml(initialQuery = '') {
+  const cleanQ = (initialQuery || '').replace(/"/g, '&quot;');
+  return `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wikipedia Search - EarthTimes</title>
+  <style>
+    :root { color-scheme: dark; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background-color: #0b0f19;
+      color: #cbd5e1;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      padding: 24px 20px 80px 20px;
+      max-width: 960px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+    .search-header {
+      background: #111827;
+      border: 1px solid #1f293d;
+      border-radius: 20px;
+      padding: 24px;
+      margin-bottom: 24px;
+      box-shadow: 0 10px 25px -5px rgba(0,0,0,0.5);
+    }
+    .header-top {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    .wiki-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(14, 165, 233, 0.15);
+      border: 1px solid rgba(14, 165, 233, 0.35);
+      color: #38bdf8;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 9999px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    h2 {
+      color: #f8fafc;
+      font-size: 20px;
+      font-weight: 800;
+    }
+    .search-form {
+      display: flex;
+      gap: 10px;
+      width: 100%;
+    }
+    .search-input-wrap {
+      flex: 1;
+      position: relative;
+    }
+    .search-input {
+      width: 100%;
+      background: #0b0f19;
+      border: 1px solid #334155;
+      color: #f8fafc;
+      padding: 12px 16px 12px 42px;
+      border-radius: 14px;
+      font-size: 14px;
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .search-input:focus {
+      border-color: #38bdf8;
+      box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.2);
+    }
+    .search-icon {
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #64748b;
+      font-size: 15px;
+    }
+    .search-btn {
+      background: linear-gradient(135deg, #0284c7, #2563eb);
+      color: white;
+      border: none;
+      padding: 12px 22px;
+      border-radius: 14px;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: transform 0.15s, opacity 0.15s;
+      white-space: nowrap;
+    }
+    .search-btn:hover {
+      opacity: 0.95;
+      transform: translateY(-1px);
+    }
+    .results-info {
+      font-size: 12px;
+      color: #94a3b8;
+      margin-top: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .results-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .result-card {
+      background: #111827;
+      border: 1px solid #1f293d;
+      border-radius: 16px;
+      padding: 18px 20px;
+      transition: border-color 0.2s, transform 0.15s, background 0.2s;
+    }
+    .result-card:hover {
+      border-color: rgba(56, 189, 248, 0.45);
+      background: #131d31;
+      transform: translateY(-1px);
+    }
+    .result-title {
+      font-size: 17px;
+      font-weight: 700;
+      color: #38bdf8;
+      cursor: pointer;
+      margin-bottom: 8px;
+      display: inline-block;
+      text-decoration: none;
+    }
+    .result-title:hover {
+      color: #7dd3fc;
+      text-decoration: underline;
+    }
+    .result-snippet {
+      font-size: 13px;
+      color: #94a3b8;
+      line-height: 1.6;
+      margin-bottom: 12px;
+    }
+    .result-snippet .searchmatch {
+      color: #f59e0b;
+      font-weight: 700;
+      background: rgba(245, 158, 11, 0.12);
+      padding: 1px 3px;
+      border-radius: 4px;
+    }
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid #1e293b;
+      padding-top: 12px;
+      font-size: 11px;
+      color: #64748b;
+    }
+    .action-btn {
+      background: #1e293b;
+      color: #38bdf8;
+      border: 1px solid #334155;
+      padding: 6px 14px;
+      border-radius: 8px;
+      font-size: 11px;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      transition: all 0.15s;
+    }
+    .action-btn:hover {
+      background: #0284c7;
+      color: white;
+      border-color: #0284c7;
+    }
+    .loading-state {
+      text-align: center;
+      padding: 40px 20px;
+      color: #94a3b8;
+      font-size: 14px;
+    }
+    .spinner {
+      width: 32px;
+      height: 32px;
+      border: 3px solid rgba(56, 189, 248, 0.2);
+      border-top-color: #38bdf8;
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+      margin: 0 auto 12px auto;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+  </style>
+</head>
+<body>
+  <div class="search-header">
+    <div class="header-top">
+      <span class="wiki-badge">Wikipedia Search (EN)</span>
+      <h2>Αναζήτηση στην Αγγλική Wikipedia</h2>
+    </div>
+    <form class="search-form" onsubmit="event.preventDefault(); doSearch();">
+      <div class="search-input-wrap">
+        <span class="search-icon">🔍</span>
+        <input id="searchInput" type="text" class="search-input" value="${cleanQ}" placeholder="Αναζητήστε οποιοδήποτε θέμα, πόλη, ιστορικό γεγονός..." autofocus>
+      </div>
+      <button type="submit" class="search-btn">Αναζήτηση</button>
+    </form>
+    <div class="results-info">
+      <span id="resultsCount">Αναζήτηση άρθρων...</span>
+      <span>Σε μαύρο φόντο (Dark Theme)</span>
+    </div>
+  </div>
+
+  <div id="resultsList" class="results-list">
+    <div class="loading-state">
+      <div class="spinner"></div>
+      <div>Φόρτωση αποτελεσμάτων από την English Wikipedia...</div>
+    </div>
+  </div>
+
+  <script>
+    async function doSearch() {
+      const q = document.getElementById('searchInput').value.trim();
+      const listEl = document.getElementById('resultsList');
+      const countEl = document.getElementById('resultsCount');
+      if (!q) {
+        listEl.innerHTML = '<div class="loading-state">Εισαγάγετε έναν όρο αναζήτησης παραπάνω.</div>';
+        countEl.innerText = '';
+        return;
+      }
+      listEl.innerHTML = '<div class="loading-state"><div class="spinner"></div><div>Αναζήτηση στην Wikipedia για "' + q + '"...</div></div>';
+      countEl.innerText = 'Αναζήτηση...';
+
+      try {
+        const endpoint = 'https://en.wikipedia.org/w/api.php?action=query&list=search&srsearch=' + encodeURIComponent(q) + '&utf8=&format=json&origin=*&srlimit=20';
+        const res = await fetch(endpoint);
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        const data = await res.json();
+        const results = data.query?.search || [];
+        const total = data.query?.searchinfo?.totalhits || results.length;
+
+        countEl.innerText = total + ' αποτελέσματα για "' + q + '"';
+
+        if (results.length === 0) {
+          listEl.innerHTML = '<div class="loading-state">Δεν βρέθηκαν αποτελέσματα για "' + q + '". Δοκιμάστε με άλλη λέξη-κλειδί.</div>';
+          return;
+        }
+
+        listEl.innerHTML = results.map(function(item) {
+          return '<div class="result-card">' +
+            '<a class="result-title" href="#" onclick="openArticle(' + JSON.stringify(item.title) + '); return false;">' + item.title + '</a>' +
+            '<div class="result-snippet">' + item.snippet + '...</div>' +
+            '<div class="card-footer">' +
+              '<span>' + (item.wordcount ? item.wordcount + ' λέξεις' : '') + '</span>' +
+              '<button class="action-btn" onclick="openArticle(' + JSON.stringify(item.title) + ')">📖 Ανάγνωση Άρθρου (English) &rarr;</button>' +
+            '</div>' +
+          '</div>';
+        }).join('');
+      } catch (err) {
+        console.error('Search error:', err);
+        listEl.innerHTML = '<div class="loading-state" style="color: #f87171;">Σφάλμα κατά την επικοινωνία με την Wikipedia. Παρακαλώ δοκιμάστε ξανά.</div>';
+      }
+    }
+
+    function openArticle(title) {
+      window.parent.postMessage({
+        type: 'EARTH_TIMES_WIKI_NAV',
+        title: title,
+        lang: 'en'
+      }, '*');
+    }
+
+    // Auto-search on load
+    window.addEventListener('DOMContentLoaded', function() {
+      doSearch();
+    });
+  </script>
+</body>
+</html>`;
 }

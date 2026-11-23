@@ -298,7 +298,7 @@ export async function flyToCountry(countryId = 'greece') {
   TimeMachine.updateTimelineRuler(null);
 
   if (UIModule.isMapWikiOverlayOpen()) {
-    UIModule.openMapWikiReader(country.name, 'el', country.englishName);
+    UIModule.openMapWikiReader(country.englishName || country.name, 'en', country.name);
   }
 }
 
@@ -354,7 +354,7 @@ export async function flyToState(stateId = 'massachusetts') {
   TimeMachine.updateTimelineRuler(null);
 
   if (UIModule.isMapWikiOverlayOpen()) {
-    UIModule.openMapWikiReader(state.name, 'el', state.englishName);
+    UIModule.openMapWikiReader(state.englishName || state.name, 'en', state.name);
   }
 }
 
@@ -817,7 +817,7 @@ export async function flyToCity(cityId) {
     UIModule.openCityVideo(city.id, UIModule.getCurrentActiveVideoType());
   } else if (UIModule.isMapWikiOverlayOpen()) {
     // If wiki overlay reader is active, update to new city's Wikipedia article
-    UIModule.openMapWikiReader(city.name, 'el', city.englishName);
+    UIModule.openMapWikiReader(city.englishName || city.name, 'en', city.name);
   } else {
     UIModule.closeMapStreetViewOverlay();
     UIModule.closeDeepDiveOverlay();
@@ -963,13 +963,14 @@ document.addEventListener('click', (e) => {
 // In-Map Wikipedia Reader Navigation Listener (Keeps reading in-app)
 window.addEventListener('message', (e) => {
   if (e.data?.type === 'EARTH_TIMES_WIKI_NAV') {
-    UIModule.openMapWikiReader(e.data.title, e.data.lang || 'el');
+    UIModule.openMapWikiReader(e.data.title, e.data.lang || 'en');
   } else if (e.data?.type === 'EARTH_TIMES_CLOSE_WIKI') {
     UIModule.closeMapWikiOverlay();
   }
 });
 
 // Global Window Bindings for UI & HTML event attributes
+window.openWikiSearchPage = UIModule.openWikiSearchPage;
 window.openExplorer = openExplorer;
 window.openLandingPage = openLandingPage;
 window.onExplorerOpened = () => {

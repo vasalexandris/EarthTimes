@@ -1264,7 +1264,7 @@ function renderSlide8Finale(e, videoTour) {
             <span>Street View 360°</span>
           </button>
 
-          <button onclick="window.closeCityPresentation(); window.openMapWikiReader('${e.name}', 'el', '${e.englishName || ''}')" class="px-3.5 py-1.5 rounded-xl bg-sky-600/20 hover:bg-sky-600/30 text-sky-300 hover:text-white border border-sky-500/40 font-bold text-xs transition flex items-center gap-1.5 shadow-lg cursor-pointer">
+          <button onclick="window.closeCityPresentation(); window.openMapWikiReader('${e.englishName || e.name}', 'en', '${e.name}')" class="px-3.5 py-1.5 rounded-xl bg-sky-600/20 hover:bg-sky-600/30 text-sky-300 hover:text-white border border-sky-500/40 font-bold text-xs transition flex items-center gap-1.5 shadow-lg cursor-pointer">
             <i class="fa-brands fa-wikipedia-w text-sky-400 text-sm"></i>
             <span>Wikipedia Reader</span>
           </button>

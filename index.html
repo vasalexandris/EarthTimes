@@ -837,9 +837,13 @@
                   <i class="fa-brands fa-wikipedia-w"></i> Wikipedia Reader
                 </span>
                 <h3 id="wikiOverlayTitle" class="text-xs sm:text-sm font-bold text-white truncate max-w-[140px] sm:max-w-xs md:max-w-md">Άρθρο Wikipedia</h3>
-                <span id="wikiOverlayLangBadge" class="hidden sm:inline-block px-1.5 py-0.5 rounded text-[10px] font-mono bg-slate-800 text-sky-300 border border-slate-700">EL</span>
+                <span id="wikiOverlayLangBadge" class="hidden sm:inline-block px-1.5 py-0.5 rounded text-[10px] font-mono bg-slate-800 text-sky-300 border border-slate-700">EN</span>
               </div>
               <div class="flex items-center gap-2 shrink-0">
+                <button id="wikiSearchHubBtn" onclick="window.openWikiSearchPage()" class="px-2.5 py-1 rounded-lg bg-sky-950/90 hover:bg-sky-900 border border-sky-500/40 text-sky-300 hover:text-white text-xs font-bold transition flex items-center gap-1.5 shadow cursor-pointer" title="Αναζήτηση στην Wikipedia (Dark Theme)">
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                  <span class="hidden sm:inline">Αναζήτηση</span>
+                </button>
                 <button id="wikiBingAiBtn" onclick="window.switchWikiToBingSearch()" class="px-2.5 py-1 rounded-lg bg-gradient-to-r from-amber-600 to-orange-600 hover:from-amber-500 hover:to-orange-500 text-white text-xs font-bold transition flex items-center gap-1.5 shadow cursor-pointer" title="Αναζήτηση στο Bing με AI">
                   <i class="fa-solid fa-wand-magic-sparkles text-amber-200"></i>
                   <span class="hidden sm:inline">Bing AI Search</span>
@@ -850,7 +854,7 @@
                 </button>
                 <button id="wikiOverlayLangToggle" onclick="toggleWikiReaderLanguage()" class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-sky-300 hover:text-white text-xs font-medium border border-slate-700 transition flex items-center gap-1.5">
                   <i class="fa-solid fa-repeat text-[10px]"></i>
-                  <span id="wikiOverlayLangLabel">English</span>
+                  <span id="wikiOverlayLangLabel">🇬🇷 Ελληνικά</span>
                 </button>
                 <button onclick="closeMapWikiOverlay()" class="px-3 py-1 rounded-lg bg-sky-600 hover:bg-sky-500 text-white text-xs font-bold transition flex items-center gap-1.5 shadow">
                   <i class="fa-solid fa-arrow-left"></i>
@@ -1879,7 +1883,7 @@
   </div>
 
   <!-- Modular Application Scripts -->
-  <script type="module" src="js/app.js?v=20261123_favorites_v27"></script>
+  <script type="module" src="js/app.js?v=20261123_wiki_en_search_v28"></script>
   <!-- Fullscreen Toggle Script (Android, WebKit, Desktop) -->
   <script>
     window.toggleFullScreen = function() {
