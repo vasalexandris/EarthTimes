@@ -6,7 +6,7 @@
 
 import { getCityVideo, getAvailableVideoTypes, getAvailableCityTours, CITY_VIDEOS, findPoiLiveCam, getPoiVideoInfo, getGastroRecipeVideo, getSocialMediaVideos, SOCIAL_MEDIA_REGISTRY, GASTRO_RECIPE_VIDEOS } from './video-service.js?v=20261121_nordic_cities_v26';
 import { getDeepDiveData } from './deep-dive.js?v=20261121_nordic_cities_v26';
-import { fetchWikiArticle, fetchWikiArticleHtml, cleanWikiTitle, buildWikiSearchDocumentHtml } from './wiki-service.js?v=20261123_viewport_lock_v30';
+import { fetchWikiArticle, fetchWikiArticleHtml, cleanWikiTitle, buildWikiSearchDocumentHtml, containsGreek, translateQueryToEnglish } from './wiki-service.js?v=20261123_wiki_en_translate_v31';
 import { calculateSubsolarPoint } from './solar-terminator.js?v=20261121_nordic_cities_v26';
 import { CITY_TO_STATE } from './states-data.js?v=20261121_nordic_cities_v26';
 import { CITY_TO_COUNTRY } from './navigator.js?v=20261121_nordic_cities_v26';
@@ -1789,7 +1789,10 @@ export async function openMapWikiReader(queryOrTitle, lang = 'en', fallbackEnQue
     // If exact article not found, render the interactive dark-mode Wikipedia Search Hub
     if (loading) loading.classList.add('hidden');
     iframe.classList.remove('hidden');
-    const cleanQ = queryOrTitle.trim();
+    let cleanQ = queryOrTitle.trim();
+    if (lang === 'en' && containsGreek(cleanQ)) {
+      cleanQ = (await translateQueryToEnglish(cleanQ)) || cleanQ;
+    }
     if (titleEl) titleEl.innerText = cleanQ ? `🔍 Wikipedia: ${cleanQ}` : '🔍 Wikipedia Search';
     if (langBadge) langBadge.innerText = 'EN SEARCH';
     if (translateBtn) translateBtn.classList.add('hidden');
@@ -1801,8 +1804,11 @@ window.openMapWikiReader = openMapWikiReader;
 /**
  * Opens Wikipedia Search Hub directly inside the in-map overlay in dark theme
  */
-export function openWikiSearchPage(query = '') {
-  const q = (query || currentWikiTitle || '').trim();
+export async function openWikiSearchPage(query = '') {
+  let q = (query || currentWikiTitle || '').trim();
+  if (containsGreek(q)) {
+    q = (await translateQueryToEnglish(q)) || q;
+  }
   const overlay = document.getElementById('mapWikiOverlay');
   const iframe = document.getElementById('mapWikiIframe');
   const titleEl = document.getElementById('wikiOverlayTitle');

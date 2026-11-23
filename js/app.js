@@ -5,10 +5,10 @@
  */
 
 import { loadWorldData, loadCountryData, loadStateData } from './data-service.js?v=20261121_nordic_cities_v26';
-import * as MapModule from './map.js?v=20261123_viewport_lock_v30';
-import * as UIModule from './ui.js?v=20261123_viewport_lock_v30';
+import * as MapModule from './map.js?v=20261123_wiki_en_translate_v31';
+import * as UIModule from './ui.js?v=20261123_wiki_en_translate_v31';
 import * as TimeMachine from './time-machine.js?v=20261121_nordic_cities_v26';
-import * as NavigatorModule from './navigator.js?v=20261123_viewport_lock_v30';
+import * as NavigatorModule from './navigator.js?v=20261123_wiki_en_translate_v31';
 import * as GlobeModule from './globe-view.js?v=20261121_nordic_cities_v26';
 import { US_STATES, CITY_TO_STATE } from './states-data.js?v=20261121_nordic_cities_v26';
 import * as PresentationModule from './presentation.js?v=20261121_nordic_cities_v26';
