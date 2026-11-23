@@ -681,7 +681,7 @@ export function buildWikiSearchDocumentHtml(initialQuery = '') {
     <form class="search-form" onsubmit="event.preventDefault(); doSearch();">
       <div class="search-input-wrap">
         <span class="search-icon">🔍</span>
-        <input id="searchInput" type="text" class="search-input" value="${cleanQ}" placeholder="Αναζητήστε οποιοδήποτε θέμα, πόλη, ιστορικό γεγονός..." autofocus>
+        <input id="searchInput" type="text" class="search-input" value="${cleanQ}" placeholder="Αναζητήστε οποιοδήποτε θέμα, πόλη, ιστορικό γεγονός...">
       </div>
       <button type="submit" class="search-btn">Αναζήτηση</button>
     </form>

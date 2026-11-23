@@ -5,10 +5,10 @@
  */
 
 import { loadWorldData, loadCountryData, loadStateData } from './data-service.js?v=20261121_nordic_cities_v26';
-import * as MapModule from './map.js?v=20261123_wiki_en_search_v29';
-import * as UIModule from './ui.js?v=20261123_wiki_en_search_v29';
+import * as MapModule from './map.js?v=20261123_viewport_lock_v30';
+import * as UIModule from './ui.js?v=20261123_viewport_lock_v30';
 import * as TimeMachine from './time-machine.js?v=20261121_nordic_cities_v26';
-import * as NavigatorModule from './navigator.js?v=20261121_nordic_cities_v26';
+import * as NavigatorModule from './navigator.js?v=20261123_viewport_lock_v30';
 import * as GlobeModule from './globe-view.js?v=20261121_nordic_cities_v26';
 import { US_STATES, CITY_TO_STATE } from './states-data.js?v=20261121_nordic_cities_v26';
 import * as PresentationModule from './presentation.js?v=20261121_nordic_cities_v26';
@@ -1303,6 +1303,23 @@ async function init() {
     }
   }
 }
+
+// Ensure mobile viewport stays locked at (0, 0) and top header is never hidden
+function resetViewportScroll() {
+  if (window.scrollY !== 0 || window.scrollX !== 0) {
+    window.scrollTo(0, 0);
+  }
+  if (document.documentElement && document.documentElement.scrollTop !== 0) {
+    document.documentElement.scrollTop = 0;
+  }
+  if (document.body && document.body.scrollTop !== 0) {
+    document.body.scrollTop = 0;
+  }
+}
+window.addEventListener('scroll', resetViewportScroll, { passive: true });
+window.addEventListener('resize', resetViewportScroll);
+window.addEventListener('orientationchange', resetViewportScroll);
+resetViewportScroll();
 
 if (document.readyState === 'loading') {
   window.addEventListener('DOMContentLoaded', init);

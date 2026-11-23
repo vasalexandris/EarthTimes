@@ -3497,13 +3497,15 @@ let showAllStates = false;
 export function initContinentNavigator() {
   renderContinentNav();
 
-  // Close dropdown on outside click
-  document.addEventListener('click', (e) => {
+  // Close dropdown on outside click or touch
+  const handleOutsideClose = (e) => {
     const container = document.getElementById('continentNavContainer');
     if (container && !container.contains(e.target) && isNavDropdownOpen) {
       closeContinentNavDropdown();
     }
-  });
+  };
+  document.addEventListener('click', handleOutsideClose);
+  document.addEventListener('touchstart', handleOutsideClose, { passive: true });
 }
 
 export function toggleContinentNavDropdown(event) {
@@ -3519,7 +3521,12 @@ export function toggleContinentNavDropdown(event) {
     renderContinentNav();
     const searchInput = document.getElementById('continentNavSearch');
     if (searchInput) {
-      setTimeout(() => searchInput.focus(), 50);
+      const isTouch = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
+      if (!isTouch) {
+        setTimeout(() => {
+          try { searchInput.focus({ preventScroll: true }); } catch (e) { searchInput.focus(); }
+        }, 50);
+      }
     }
   } else {
     dropdown.classList.add('hidden');
