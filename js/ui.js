@@ -13,7 +13,8 @@ import { CITY_TO_COUNTRY } from './navigator.js?v=20261121_nordic_cities_v26';
 import { renderGeographyTabHtml, mountLiveWeatherData } from './geo-service.js?v=20261119_geo_v2';
 import { renderHistoryTabHtml } from './history-service.js?v=20261119_hist_v3';
 import { renderCultureTabHtml } from './culture-service.js?v=20261119_cult_v1';
-import { renderGastronomyTabHtml } from './gastro-service.js?v=20261121_nordic_cities_v26';
+import { renderGastronomyTabHtml } from './gastro-service.js?v=20261123_favorites_v27';
+import { updateCityFavoriteBtn, updateAllFavoriteButtons, isFavorite } from './favorites-service.js?v=20261123_favorites_v27';
 
 let currentActiveVideoCityId = null;
 let currentActiveVideoType = 'drone';
@@ -3023,8 +3024,11 @@ export function renderDossier(entity, entityType = 'state', currentTab = 'geo', 
   if (cityActionsContainer) {
     if (entityType === 'city') {
       cityActionsContainer.classList.remove('hidden');
+      updateCityFavoriteBtn(entity);
     } else {
       cityActionsContainer.classList.add('hidden');
+      const cityFavoriteBtn = document.getElementById('cityFavoriteBtn');
+      if (cityFavoriteBtn) cityFavoriteBtn.classList.add('hidden');
     }
   }
 
@@ -4355,15 +4359,20 @@ export function renderTabContent(tabId, entity, activeYear = null, activeSpots =
             const matchedPoi = (entity.pois || []).find(p => p.name === item.title || (item.title && p.name && (item.title.toLowerCase().includes(p.name.toLowerCase()) || p.name.toLowerCase().includes(item.title.toLowerCase()))));
             const itemCoords = matchedPoi?.coords || entity.coords || [37.9715, 23.7257];
             const searchPlace = `${item.title}, ${entity.name}`;
+            const favPoiId = `poi:${entity.id || ''}-${item.title}`;
+            const isFavPoi = isFavorite(favPoiId);
             return `
             <div class="p-3.5 bg-slate-800/30 hover:bg-slate-800/80 hover:border-sky-500/50 transition border border-slate-700/40 rounded-xl">
               <div class="flex items-start justify-between gap-2 mb-1.5">
-                <div>
+                <div class="min-w-0 flex-1">
                   <span class="inline-block px-2 py-0.5 rounded text-[10px] font-bold bg-sky-950/80 text-sky-300 border border-sky-600/40 mb-1">
                     ${item.catLabel}
                   </span>
                   <h5 class="font-bold text-slate-100 text-sm text-sky-200">${item.title}</h5>
                 </div>
+                <button onclick="window.toggleFavoritePoi('${escapeStr(item.title)}', '${escapeStr(entity.id || '')}', '${escapeStr(entity.name || '')}', '${escapeStr(item.desc || '')}', [${itemCoords[0]}, ${itemCoords[1]}], '${escapeStr(item.catLabel)}', '${escapeStr(entity._countryId || '')}')" class="p-1.5 rounded-lg border text-xs transition cursor-pointer shrink-0 ${isFavPoi ? 'bg-amber-500/20 text-amber-400 border-amber-500/60' : 'bg-slate-800/80 text-slate-400 hover:text-amber-400 border-slate-700'}" data-fav-id="${favPoiId}" title="Προσθήκη / Αφαίρεση από Αγαπημένα Αξιοθέατα">
+                  <i class="fa-${isFavPoi ? 'solid text-amber-400' : 'regular'} fa-star"></i>
+                </button>
               </div>
               <p class="text-xs text-slate-300 leading-relaxed mb-3">${item.desc}</p>
               <div class="flex flex-wrap items-center gap-2 pt-2 border-t border-slate-800/70">
@@ -5282,6 +5291,7 @@ export function renderTabContent(tabId, entity, activeYear = null, activeSpots =
   }
 
   container.innerHTML = html;
+  updateAllFavoriteButtons();
 }
 
 

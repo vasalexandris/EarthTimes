@@ -6,6 +6,7 @@
 
 import { findPoiLiveCam } from './video-service.js?v=20261120_new_cities_25_v23';
 import { initDayNight } from './solar-terminator.js?v=20261117_video_iframe_fix';
+import { isFavorite } from './favorites-service.js?v=20261123_favorites_v27';
 
 let map = null;
 let activeBaseLayer = null;
@@ -309,11 +310,19 @@ export function renderCityPois(city, currentPoiFilter = 'all', onPoiMoreClick) {
 
     const poiLiveCam = poi.liveCam ? { youtubeId: poi.liveCam, title: poi.name } : findPoiLiveCam(poi.name);
 
+    const favPoiId = `poi:${city.id}-${poi.name}`;
+    const isFavPoi = isFavorite(favPoiId);
+
     const popupEl = document.createElement('div');
     popupEl.className = 'p-3 text-slate-900 font-sans max-w-xs';
     popupEl.innerHTML = `
-      <div class="text-[10px] font-bold uppercase tracking-wider text-sky-700 mb-0.5">
-        ${poi.category === 'history' ? 'Ιστορικό Σημείο' : poi.category === 'culture' ? 'Πολιτισμός & Τέχνες' : 'Φυσικό Αξιοθέατο'}
+      <div class="flex items-center justify-between gap-1 mb-0.5">
+        <div class="text-[10px] font-bold uppercase tracking-wider text-sky-700">
+          ${poi.category === 'history' ? 'Ιστορικό Σημείο' : poi.category === 'culture' ? 'Πολιτισμός & Τέχνες' : 'Φυσικό Αξιοθέατο'}
+        </div>
+        <button onclick="window.toggleFavoritePoi('${poi.name.replace(/'/g, "\\'")}', '${city.id}', '${city.name.replace(/'/g, "\\'")}', '${(poi.desc || '').replace(/'/g, "\\'")}', [${poi.coords[0]}, ${poi.coords[1]}], '${poi.category}', '${city._countryId || ''}')" class="p-1 rounded text-amber-500 hover:text-amber-600 transition cursor-pointer" data-fav-id="${favPoiId}" title="Προσθήκη / Αφαίρεση από Αγαπημένα">
+          <i class="fa-${isFavPoi ? 'solid' : 'regular'} fa-star"></i>
+        </button>
       </div>
       <div class="font-bold text-sm text-slate-900 mb-1 leading-tight">${poi.name}</div>
       <div class="text-xs text-slate-600 mb-2 leading-relaxed">${poi.desc}</div>

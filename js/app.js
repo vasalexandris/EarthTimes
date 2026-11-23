@@ -5,13 +5,14 @@
  */
 
 import { loadWorldData, loadCountryData, loadStateData } from './data-service.js?v=20261121_nordic_cities_v26';
-import * as MapModule from './map.js?v=20261121_nordic_cities_v26';
-import * as UIModule from './ui.js?v=20261121_nordic_cities_v26';
+import * as MapModule from './map.js?v=20261123_favorites_v27';
+import * as UIModule from './ui.js?v=20261123_favorites_v27';
 import * as TimeMachine from './time-machine.js?v=20261121_nordic_cities_v26';
 import * as NavigatorModule from './navigator.js?v=20261121_nordic_cities_v26';
 import * as GlobeModule from './globe-view.js?v=20261121_nordic_cities_v26';
 import { US_STATES, CITY_TO_STATE } from './states-data.js?v=20261121_nordic_cities_v26';
 import * as PresentationModule from './presentation.js?v=20261121_nordic_cities_v26';
+import * as FavoritesModule from './favorites-service.js?v=20261123_favorites_v27';
 
 // Application State
 let worldData = null;
@@ -111,6 +112,13 @@ function getCurrentEntity() {
     return findCityById(currentCityId);
   }
   return worldData ? worldData.entity : null;
+}
+
+export function getCurrentCity() {
+  if (currentCityId) {
+    return findCityById(currentCityId);
+  }
+  return null;
 }
 
 export function openExplorer() {
@@ -986,6 +994,8 @@ window.stopNarrate = UIModule.stopNarrate;
 window.isMapVideoOverlayOpen = UIModule.isMapVideoOverlayOpen;
 window.isMapWikiOverlayOpen = UIModule.isMapWikiOverlayOpen;
 window.flyToCoordinates = MapModule.flyToCoordinates;
+window.getCurrentCity = getCurrentCity;
+window.CITY_TO_COUNTRY = NavigatorModule.CITY_TO_COUNTRY;
 
 // Video & In-Map Wikipedia window bindings
 window.openCityVideo = UIModule.openCityVideo;
@@ -1136,6 +1146,9 @@ async function init() {
 
     // Initialize Hierarchical Continent Navigator
     NavigatorModule.initContinentNavigator();
+
+    // Initialize Favorites Badge and sync state
+    FavoritesModule.updateFavoritesBadge();
 
     // 2. Load World, Massachusetts, and Time Machine core data
     const [wData, maData, _tm] = await Promise.all([

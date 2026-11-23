@@ -8,6 +8,8 @@
  * - Famous Dishes, Recipes & Specialties
  */
 
+import { isFavorite } from './favorites-service.js?v=20261123_favorites_v27';
+
 function escapeStr(str) {
   if (!str) return '';
   return String(str)
@@ -292,20 +294,28 @@ export function renderGastronomyTabHtml(entity, items = []) {
                 titleColor = 'text-orange-200';
               }
 
+              const favRecipeId = `recipe:${entity.id || ''}-${item.title}`;
+              const isFavRecipe = isFavorite(favRecipeId);
+
               return `
               <div class="p-3.5 bg-slate-800/30 hover:bg-slate-800/80 hover:border-amber-500/50 transition border border-slate-700/40 rounded-xl">
                 <div class="flex items-start justify-between gap-2 mb-1.5">
-                  <div>
+                  <div class="min-w-0 flex-1">
                     <span class="inline-block px-2 py-0.5 rounded text-[10px] font-bold ${badgeClass} mb-1">
                       ${badgeLabel}
                     </span>
                     <h5 class="font-bold text-slate-100 text-sm ${titleColor}">${item.title}</h5>
                   </div>
-                  ${item.tag ? `
-                    <span class="text-[9px] px-1.5 py-0.5 rounded bg-slate-800 text-slate-400 border border-slate-700 font-medium shrink-0">
-                      ${item.tag}
-                    </span>
-                  ` : ''}
+                  <div class="flex items-center gap-1.5 shrink-0">
+                    ${item.tag ? `
+                      <span class="text-[9px] px-1.5 py-0.5 rounded bg-slate-800 text-slate-400 border border-slate-700 font-medium shrink-0">
+                        ${item.tag}
+                      </span>
+                    ` : ''}
+                    <button onclick="window.toggleFavoriteRecipe('${escapeStr(item.title)}', '${escapeStr(entity.id || '')}', '${escapeStr(name)}', '${escapeStr(item.desc || '')}', '${escapeStr(badgeLabel)}', '${escapeStr(entity._countryId || '')}')" class="p-1.5 rounded-lg border text-xs transition cursor-pointer ${isFavRecipe ? 'bg-amber-500/20 text-amber-400 border-amber-500/60' : 'bg-slate-800/80 text-slate-400 hover:text-amber-400 border-slate-700'}" data-fav-id="${favRecipeId}" title="Προσθήκη / Αφαίρεση από Αγαπημένες Συνταγές">
+                      <i class="fa-${isFavRecipe ? 'solid text-amber-400' : 'regular'} fa-star"></i>
+                    </button>
+                  </div>
                 </div>
                 <p class="text-xs text-slate-300 leading-relaxed mb-3">${item.desc}</p>
                 <div class="flex flex-wrap items-center gap-2 pt-2 border-t border-slate-800/70">
