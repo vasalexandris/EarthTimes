@@ -6,7 +6,7 @@
 
 import { getCityVideo, getAvailableVideoTypes, getAvailableCityTours, CITY_VIDEOS, findPoiLiveCam, getPoiVideoInfo, getGastroRecipeVideo, getSocialMediaVideos, SOCIAL_MEDIA_REGISTRY, GASTRO_RECIPE_VIDEOS } from './video-service.js?v=20261121_nordic_cities_v26';
 import { getDeepDiveData } from './deep-dive.js?v=20261121_nordic_cities_v26';
-import { fetchWikiArticle, fetchWikiArticleHtml, cleanWikiTitle, buildWikiSearchDocumentHtml } from './wiki-service.js?v=20261123_wiki_en_search_v28';
+import { fetchWikiArticle, fetchWikiArticleHtml, cleanWikiTitle, buildWikiSearchDocumentHtml } from './wiki-service.js?v=20261123_wiki_en_search_v29';
 import { calculateSubsolarPoint } from './solar-terminator.js?v=20261121_nordic_cities_v26';
 import { CITY_TO_STATE } from './states-data.js?v=20261121_nordic_cities_v26';
 import { CITY_TO_COUNTRY } from './navigator.js?v=20261121_nordic_cities_v26';
@@ -1796,6 +1796,7 @@ export async function openMapWikiReader(queryOrTitle, lang = 'en', fallbackEnQue
     iframe.srcdoc = buildWikiSearchDocumentHtml(cleanQ);
   }
 }
+window.openMapWikiReader = openMapWikiReader;
 
 /**
  * Opens Wikipedia Search Hub directly inside the in-map overlay in dark theme

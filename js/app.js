@@ -5,8 +5,8 @@
  */
 
 import { loadWorldData, loadCountryData, loadStateData } from './data-service.js?v=20261121_nordic_cities_v26';
-import * as MapModule from './map.js?v=20261123_favorites_v27';
-import * as UIModule from './ui.js?v=20261123_favorites_v27';
+import * as MapModule from './map.js?v=20261123_wiki_en_search_v29';
+import * as UIModule from './ui.js?v=20261123_wiki_en_search_v29';
 import * as TimeMachine from './time-machine.js?v=20261121_nordic_cities_v26';
 import * as NavigatorModule from './navigator.js?v=20261121_nordic_cities_v26';
 import * as GlobeModule from './globe-view.js?v=20261121_nordic_cities_v26';

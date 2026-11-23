@@ -303,7 +303,7 @@ function buildReaderDocument(rawHtml, lang, currentTitle, alternateTitle = '', h
           <span style="font-size: 20px;">🇬🇷</span>
           <span style="color: #e2e8f0;">Διατίθεται και στην <strong>Ελληνική Βικιπαίδεια</strong>: <em style="color: #38bdf8; font-style: normal; font-weight: 700;">${alternateTitle}</em></span>
         </div>
-        <button onclick="window.parent.postMessage({ type: 'EARTH_TIMES_WIKI_NAV', title: '${alternateTitle.replace(/'/g, "\\'")}', lang: 'el' }, '*')" style="background: #0284c7; hover: background: #0369a1; color: white; border: none; padding: 7px 16px; border-radius: 9px; font-weight: 700; cursor: pointer; font-size: 12px; display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; transition: background 0.2s;">
+        <button onclick="try { if (window.parent && typeof window.parent.openMapWikiReader === 'function') { window.parent.openMapWikiReader('${alternateTitle.replace(/'/g, "\\'")}', 'el'); return; } } catch(e){}; window.parent.postMessage({ type: 'EARTH_TIMES_WIKI_NAV', title: '${alternateTitle.replace(/'/g, "\\'")}', lang: 'el' }, '*')" style="background: #0284c7; hover: background: #0369a1; color: white; border: none; padding: 7px 16px; border-radius: 9px; font-weight: 700; cursor: pointer; font-size: 12px; display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; transition: background 0.2s;">
           <span>Διαβάστε στα Ελληνικά</span> &rarr;
         </button>
       </div>
@@ -315,7 +315,7 @@ function buildReaderDocument(rawHtml, lang, currentTitle, alternateTitle = '', h
           <span style="font-size: 20px;">🇬🇧</span>
           <span style="color: #e2e8f0;">Available in <strong>English Wikipedia</strong>: <em style="color: #38bdf8; font-style: normal; font-weight: 700;">${alternateTitle}</em></span>
         </div>
-        <button onclick="window.parent.postMessage({ type: 'EARTH_TIMES_WIKI_NAV', title: '${alternateTitle.replace(/'/g, "\\'")}', lang: 'en' }, '*')" style="background: #0284c7; color: white; border: none; padding: 7px 16px; border-radius: 9px; font-weight: 700; cursor: pointer; font-size: 12px; display: inline-flex; align-items: center; gap: 6px; white-space: nowrap;">
+        <button onclick="try { if (window.parent && typeof window.parent.openMapWikiReader === 'function') { window.parent.openMapWikiReader('${alternateTitle.replace(/'/g, "\\'")}', 'en'); return; } } catch(e){}; window.parent.postMessage({ type: 'EARTH_TIMES_WIKI_NAV', title: '${alternateTitle.replace(/'/g, "\\'")}', lang: 'en' }, '*')" style="background: #0284c7; color: white; border: none; padding: 7px 16px; border-radius: 9px; font-weight: 700; cursor: pointer; font-size: 12px; display: inline-flex; align-items: center; gap: 6px; white-space: nowrap;">
           <span>Read in English</span> &rarr;
         </button>
       </div>
@@ -360,6 +360,12 @@ function buildReaderDocument(rawHtml, lang, currentTitle, alternateTitle = '', h
           var parts = href.split('/wiki/');
           var targetTitle = parts.length > 1 ? decodeURIComponent(parts[1].split('#')[0]) : '';
           if (targetTitle) {
+            try {
+              if (window.parent && typeof window.parent.openMapWikiReader === 'function') {
+                window.parent.openMapWikiReader(targetTitle, '${lang}');
+                return false;
+              }
+            } catch (err) {}
             window.parent.postMessage({
               type: 'EARTH_TIMES_WIKI_NAV',
               title: targetTitle,
@@ -466,6 +472,7 @@ export function buildWikiSearchDocumentHtml(initialQuery = '') {
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <base href="https://en.wikipedia.org/">
   <title>Wikipedia Search - EarthTimes</title>
   <style>
     :root { color-scheme: dark; }
@@ -596,6 +603,11 @@ export function buildWikiSearchDocumentHtml(initialQuery = '') {
       margin-bottom: 8px;
       display: inline-block;
       text-decoration: none;
+      background: none;
+      border: none;
+      padding: 0;
+      font-family: inherit;
+      text-align: left;
     }
     .result-title:hover {
       color: #7dd3fc;
@@ -716,11 +728,11 @@ export function buildWikiSearchDocumentHtml(initialQuery = '') {
 
         listEl.innerHTML = results.map(function(item) {
           return '<div class="result-card">' +
-            '<a class="result-title" href="#" onclick="openArticle(' + JSON.stringify(item.title) + '); return false;">' + item.title + '</a>' +
+            '<button type="button" class="result-title" onclick="openArticle(' + JSON.stringify(item.title) + ')">' + item.title + '</button>' +
             '<div class="result-snippet">' + item.snippet + '...</div>' +
             '<div class="card-footer">' +
               '<span>' + (item.wordcount ? item.wordcount + ' λέξεις' : '') + '</span>' +
-              '<button class="action-btn" onclick="openArticle(' + JSON.stringify(item.title) + ')">📖 Ανάγνωση Άρθρου (English) &rarr;</button>' +
+              '<button type="button" class="action-btn" onclick="openArticle(' + JSON.stringify(item.title) + ')">📖 Ανάγνωση Άρθρου (English) &rarr;</button>' +
             '</div>' +
           '</div>';
         }).join('');
@@ -731,12 +743,43 @@ export function buildWikiSearchDocumentHtml(initialQuery = '') {
     }
 
     function openArticle(title) {
-      window.parent.postMessage({
-        type: 'EARTH_TIMES_WIKI_NAV',
-        title: title,
-        lang: 'en'
-      }, '*');
+      if (!title) return;
+      try {
+        if (window.parent && typeof window.parent.openMapWikiReader === 'function') {
+          window.parent.openMapWikiReader(title, 'en');
+          return;
+        }
+      } catch (err) {
+        console.warn('Direct parent openMapWikiReader call failed:', err);
+      }
+      try {
+        window.parent.postMessage({
+          type: 'EARTH_TIMES_WIKI_NAV',
+          title: title,
+          lang: 'en'
+        }, '*');
+      } catch (err) {
+        console.error('postMessage failed:', err);
+      }
     }
+
+    // Intercept clicks on links inside snippets to prevent iframe reloading EarthTimes
+    document.addEventListener('click', function(e) {
+      var anchor = e.target.closest('a');
+      if (anchor) {
+        e.preventDefault();
+        e.stopPropagation();
+        var href = anchor.getAttribute('href') || '';
+        if (href.includes('/wiki/')) {
+          var parts = href.split('/wiki/');
+          var targetTitle = parts.length > 1 ? decodeURIComponent(parts[1].split('#')[0]) : '';
+          if (targetTitle) {
+            openArticle(targetTitle);
+          }
+        }
+        return false;
+      }
+    }, true);
 
     // Auto-search on load
     window.addEventListener('DOMContentLoaded', function() {
