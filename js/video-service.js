@@ -1,4 +1,4 @@
-import { CITY_TO_STATE } from './states-data.js?v=20261121_nordic_cities_v26';
+import { CITY_TO_STATE } from './states-data.js?v=20261124_benelux_austria_v27';
 /**
  * Video Service Module
  * Registry of verified high-definition YouTube video tours for all cities
@@ -28439,6 +28439,485 @@ export const CITY_VIDEOS = {
       "label": "Ώλαντ Ναυτικός Οδηγός (4K)",
       "icon": "fa-solid fa-landmark",
       "type": "guide"
+    }
+  }
+,
+  "oostende": {
+    "cityName": "Οστένδη",
+    "walking": {
+      "youtubeId": "bDZ1oP5GgzI",
+      "title": "Οστένδη 4K: Περιήγηση στην Παραλιακή Προκυμαία & το Ιστορικό Κέντρο",
+      "label": "Οστένδη Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "kortrijk": {
+    "cityName": "Κορτράικ",
+    "walking": {
+      "youtubeId": "OPEzMLRXbwk",
+      "title": "Κορτράικ 4K: Περιήγηση στους Μεσαιωνικούς Πύργους Broeltorens & την Παλιά Πόλη",
+      "label": "Κορτράικ Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "tournai": {
+    "cityName": "Τουρνέ",
+    "walking": {
+      "youtubeId": "mNfv8vIM4B4",
+      "title": "Τουρνέ 4K: Περιήγηση στον Καθεδρικό Ναό Notre-Dame (UNESCO) & τη Grand-Place",
+      "label": "Τουρνέ Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "aalst": {
+    "cityName": "Άαλστ",
+    "walking": {
+      "youtubeId": "ZY7B_GVd2fE",
+      "title": "Άαλστ 4K: Περιήγηση στην Κεντρική Πλατεία Grote Markt & το Ιστορικό Belfry",
+      "label": "Άαλστ Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "hasselt": {
+    "cityName": "Χάσελτ",
+    "walking": {
+      "youtubeId": "fCKWMmnP5Dc",
+      "title": "Χάσελτ 4K: Περιήγηση στην Πρωτεύουσα της Λιμβουργίας & τα Γραφικά Σοκάκια",
+      "label": "Χάσελτ Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "sint-niklaas": {
+    "cityName": "Σιντ-Νικλάας",
+    "walking": {
+      "youtubeId": "kD_1RRiCA1U",
+      "title": "Σιντ-Νικλάας 4K: Περιήγηση στη Μεγαλύτερη Πλατεία Αγοράς του Βελγίου",
+      "label": "Σιντ-Νικλάας Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "ypres": {
+    "cityName": "Υπρ",
+    "walking": {
+      "youtubeId": "75hjEc8dagk",
+      "title": "Υπρ 4K: Περιήγηση στο Ιστορικό Cloth Hall, τα Μεσαιωνικά Τείχη & την Πύλη Menin Gate",
+      "label": "Υπρ Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "dinant": {
+    "cityName": "Ντινάν",
+    "drone": {
+      "youtubeId": "8k9AG3oqLtg",
+      "title": "Ντινάν 4K: Εναέρια Περιήγηση Drone στην Ακρόπολη, τον Ποταμό Meuse & τους Βράχους",
+      "label": "Ντινάν με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "EiB1_My88OQ",
+      "title": "Ντινάν 4K: Περιήγηση στην Παραποτάμια Πόλη του Σαξοφώνου & την Παναγία της Ντινάν",
+      "label": "Ντινάν Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "verviers": {
+    "cityName": "Βερβιέ",
+    "walking": {
+      "youtubeId": "iS5OwOP7rVM",
+      "title": "Βερβιέ 4K: Περιήγηση στην Ιστορική Πρωτεύουσα του Μαλλιού & τα Αρχοντικά της Βαλλωνίας",
+      "label": "Βερβιέ Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "wavre": {
+    "cityName": "Βαβρ",
+    "walking": {
+      "youtubeId": "Zb1aRmiwL3k",
+      "title": "Βαβρ 4K: Περιήγηση στο Ιστορικό Κέντρο της Βαλλωνικής Βραβάντης",
+      "label": "Βαβρ Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "spa": {
+    "cityName": "Σπα",
+    "walking": {
+      "youtubeId": "t845Qe4BURQ",
+      "title": "Σπα 4K: Περιήγηση στην Ιστορική Λουτρόπολη των Αρδεννών (UNESCO)",
+      "label": "Σπα Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "bastogne": {
+    "cityName": "Μπαστόν",
+    "walking": {
+      "youtubeId": "JnJBnkfrCKA",
+      "title": "Μπαστόν 4K: Περιήγηση στην Πλατεία McAuliffe & τα Ιστορικά Μνημεία των Αρδεννών",
+      "label": "Μπαστόν Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "louvain-la-neuve": {
+    "cityName": "Λουβέν-λα-Νεβ",
+    "walking": {
+      "youtubeId": "OOPMChVmyDc",
+      "title": "Λουβέν-λα-Νεβ 4K: Περιήγηση στη Μοντέρνα Πανεπιστημιακή Πόλη Χωρίς Αυτοκίνητα",
+      "label": "Λουβέν-λα-Νεβ Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "roeselare": {
+    "cityName": "Ρούσελαρε",
+    "walking": {
+      "youtubeId": "Gn0Ri6Qq_rA",
+      "title": "Ρούσελαρε 4K: Περιήγηση στο Ιστορικό Κέντρο & την Πλατεία Grote Markt",
+      "label": "Ρούσελαρε Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "lier": {
+    "cityName": "Λιρ",
+    "walking": {
+      "youtubeId": "wVirIFt7we4",
+      "title": "Λιρ 4K: Περιήγηση στον Αστρονομικό Πύργο Zimmer, το Beguinage & τα Κανάλια",
+      "label": "Λιρ Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "nijmegen": {
+    "cityName": "Ναϊμέχεν",
+    "walking": {
+      "youtubeId": "IwZgNHnMEXU",
+      "title": "Ναϊμέχεν 4K: Περιήγηση στην Αρχαιότερη Πόλη της Ολλανδίας, το Πάρκο Kronenburgerpark & τον Ποταμό Waal",
+      "label": "Ναϊμέχεν Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "tilburg": {
+    "cityName": "Τίλμπουργκ",
+    "walking": {
+      "youtubeId": "K6b03fnAWec",
+      "title": "Τίλμπουργκ 4K: Περιήγηση στη Σύγχρονη Πόλη, το Spoorpark & τα Πολιτιστικά Κέντρα",
+      "label": "Τίλμπουργκ Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "breda": {
+    "cityName": "Μπρέντα",
+    "walking": {
+      "youtubeId": "SV_QTGmDflo",
+      "title": "Μπρέντα 4K: Περιήγηση στο Κάστρο της Μπρέντα, το Πάρκο Valkenberg & την Πλατεία Grote Markt",
+      "label": "Μπρέντα Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "arnhem": {
+    "cityName": "Άρνεμ",
+    "walking": {
+      "youtubeId": "pzkEzraVstw",
+      "title": "Άρνεμ 4K: Περιήγηση στην Ιστορική Γέφυρα John Frost, το Πάρκο Sonsbeek & το Κέντρο",
+      "label": "Άρνεμ Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "amersfoort": {
+    "cityName": "Άμερσφοορτ",
+    "walking": {
+      "youtubeId": "pIdI3EfA1pg",
+      "title": "Άμερσφοορτ 4K: Περιήγηση στη Μεσαιωνική Πύλη Koppelpoort & τα Γραφικά Κανάλια",
+      "label": "Άμερσφοορτ Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "enschede": {
+    "cityName": "Ένσχεντε",
+    "walking": {
+      "youtubeId": "bwSf8yb7ZKQ",
+      "title": "Ένσχεντε 4K: Περιήγηση στην Κεντρική Πλατεία Oude Markt & το Πανεπιστημιακό Κέντρο",
+      "label": "Ένσχεντε Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "apeldoorn": {
+    "cityName": "Άπελντοορν",
+    "walking": {
+      "youtubeId": "846vZHgzIgw",
+      "title": "Άπελντοορν 4K: Περιήγηση στην Καταπράσινη Βασιλική Πόλη & το Παλάτι Paleis Het Loo",
+      "label": "Άπελντοορν Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "s-hertogenbosch": {
+    "cityName": "'ς-Χερτόχενμπος (Ντεν Μπος)",
+    "walking": {
+      "youtubeId": "ZAmfRYx9y7o",
+      "title": "Ντεν Μπος 4K: Περιήγηση στον Καθεδρικό Ναό Sint-Jan & τη Γενέτειρα του Ιερώνυμου Μπος",
+      "label": "Ντεν Μπος Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "zwolle": {
+    "cityName": "Ζβόλε",
+    "walking": {
+      "youtubeId": "hb4XENiMce0",
+      "title": "Ζβόλε 4K: Περιήγηση στη Χανσεατική Πόλη, την Πύλη Sassenpoort & τα Αστεροειδή Κανάλια",
+      "label": "Ζβόλε Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "dordrecht": {
+    "cityName": "Ντόρντρεχτ",
+    "walking": {
+      "youtubeId": "QmhjeR_n-Ls",
+      "title": "Ντόρντρεχτ 4K: Περιήγηση στην Αρχαιότερη Πόλη της Ολλανδίας & τα Ιστορικά Λιμάνια",
+      "label": "Ντόρντρεχτ Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "alkmaar": {
+    "cityName": "Άλκμααρ",
+    "drone": {
+      "youtubeId": "1-JRJ4XK5z0",
+      "title": "Άλκμααρ 4K: Εναέρια Περιήγηση Drone στην Ιστορική Πόλη του Τυριού & τα Κανάλια",
+      "label": "Άλκμααρ με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "03diqXck594",
+      "title": "Άλκμααρ 4K: Περιήγηση στην Παραδοσιακή Αγορά Τυριού Waag & την Παλιά Πόλη",
+      "label": "Άλκμααρ Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "gouda": {
+    "cityName": "Χάουντα",
+    "walking": {
+      "youtubeId": "kl8U-bcbBSY",
+      "title": "Χάουντα 4K: Περιήγηση στο Γοτθικό Δημαρχείο, την Εκκλησία Sint-Jan & την Αγορά Stroopwafel",
+      "label": "Χάουντα Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "deventer": {
+    "cityName": "Ντέβεντερ",
+    "walking": {
+      "youtubeId": "eUX76_tdyxw",
+      "title": "Ντέβεντερ 4K: Περιήγηση στη Μεσαιωνική Χανσεατική Πόλη στον Ποταμό IJssel & την Πλατεία Brink",
+      "label": "Ντέβεντερ Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "leeuwarden": {
+    "cityName": "Λέουβαρντεν",
+    "walking": {
+      "youtubeId": "phVaq7scbzw",
+      "title": "Λέουβαρντεν 4K: Περιήγηση στην Πρωτεύουσα της Φρισίας, τον Κεκλιμένο Πύργο Oldehove & τα Κανάλια",
+      "label": "Λέουβαρντεν Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "middelburg": {
+    "cityName": "Μίντελμπουργκ",
+    "walking": {
+      "youtubeId": "QBgneSuzP1c",
+      "title": "Μίντελμπουργκ 4K: Περιήγηση στην Ιστορική Πρωτεύουσα της Ζηλανδίας & το Μεσαιωνικό Αβαείο",
+      "label": "Μίντελμπουργκ Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "steyr": {
+    "cityName": "Στάγιερ",
+    "walking": {
+      "youtubeId": "YwehGhmzWOU",
+      "title": "Στάγιερ 4K: Περιήγηση στην Παραμυθένια Πόλη στη Συμβολή των Ποταμών Enns & Steyr",
+      "label": "Στάγιερ Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "wels": {
+    "cityName": "Βελς",
+    "walking": {
+      "youtubeId": "nq2jxmmgg6w",
+      "title": "Βελς 4K: Περιήγηση στην Ιστορική Ρωμαϊκή & Μεσαιωνική Πόλη της Άνω Αυστρίας",
+      "label": "Βελς Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "baden-bei-wien": {
+    "cityName": "Μπάντεν μπαι Βιν",
+    "walking": {
+      "youtubeId": "o-GMnJvC_pk",
+      "title": "Μπάντεν 4K: Περιήγηση στην Αυτοκρατορική Λουτρόπολη (UNESCO), το Kurpark & το Καζίνο",
+      "label": "Μπάντεν Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "wiener-neustadt": {
+    "cityName": "Βίνερ Νόιστατ",
+    "walking": {
+      "youtubeId": "yy5RoxoTzJk",
+      "title": "Βίνερ Νόιστατ 4K: Περιήγηση στα Μεσαιωνικά Τείχη Kasematten, τον Καθεδρικό Ναό & το Ιστορικό Κέντρο",
+      "label": "Βίνερ Νόιστατ Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "dornbirn": {
+    "cityName": "Ντόρνμπιρν",
+    "walking": {
+      "youtubeId": "uI7mx8Yqm9g",
+      "title": "Ντόρνμπιρν 4K: Περιήγηση στη Μεγαλύτερη Πόλη του Φόραρλμπεργκ & την Αλπική Αγορά Marktplatz",
+      "label": "Ντόρνμπιρν Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "feldkirch": {
+    "cityName": "Φέλντκιρχ",
+    "walking": {
+      "youtubeId": "IBOTq1s7vPw",
+      "title": "Φέλντκιρχ 4K: Περιήγηση στο Μεσαιωνικό Κάστρο Schattenburg & τα Γραφικά Στενά του Φόραρλμπεργκ",
+      "label": "Φέλντκιρχ Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "hallstatt": {
+    "cityName": "Χάλστατ",
+    "drone": {
+      "youtubeId": "q367YMqJ9Nw",
+      "title": "Χάλστατ 4K: Εναέρια Περιήγηση Drone στο Εμβληματικό Αλπικό Χωριό & τη Λίμνη Hallstätter See",
+      "label": "Χάλστατ με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "jlySirVFFxo",
+      "title": "Χάλστατ 4K: Περιήγηση στον Παγκόσμιο Παραδοσιακό Οικισμό (UNESCO) & τον Παραλίμνιο Περίπατο",
+      "label": "Χάλστατ Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "kufstein": {
+    "cityName": "Κούφσταϊν",
+    "walking": {
+      "youtubeId": "4A-7AsCS_3I",
+      "title": "Κούφσταϊν 4K: Περιήγηση στο Επιβλητικό Φρούριο Festung Kufstein & τα Τυρολέζικα Σοκάκια",
+      "label": "Κούφσταϊν Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "lienz": {
+    "cityName": "Λίεντς",
+    "walking": {
+      "youtubeId": "zzfNFXq_GI0",
+      "title": "Λίεντς 4K: Περιήγηση στην Ηλιόλουστη Πόλη των Δολομιτών του Ανατολικού Τιρόλου & το Κάστρο Bruck",
+      "label": "Λίεντς Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "leoben": {
+    "cityName": "Λέομπεν",
+    "walking": {
+      "youtubeId": "qXXsZYHDsUg",
+      "title": "Λέομπεν 4K: Περιήγηση στην Ιστορική Μεταλλευτική Πόλη της Στυρίας & την Κεντρική Πλατεία Hauptplatz",
+      "label": "Λέομπεν Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "eisenstadt": {
+    "cityName": "Άιζενστατ",
+    "walking": {
+      "youtubeId": "75qQ0_J8r68",
+      "title": "Άιζενστατ 4K: Περιήγηση στο Παλάτι Esterházy & την Πρωτεύουσα του Μπούργκενλαντ",
+      "label": "Άιζενστατ Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "zell-am-see": {
+    "cityName": "Τσελ αμ Ζέε",
+    "walking": {
+      "youtubeId": "jB3xFuHOfss",
+      "title": "Τσελ αμ Ζέε 4K: Περιήγηση στο Αλπικό Θέρετρο & τις Όχθες της Λίμνης Zeller See",
+      "label": "Τσελ αμ Ζέε Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "kitzbuhel": {
+    "cityName": "Κίτσμπυελ",
+    "walking": {
+      "youtubeId": "X6pO25wSx-4",
+      "title": "Κίτσμπυελ 4K: Περιήγηση στη Διάσημη Αλπική Μεσαιωνική Πόλη & το Παγκόσμιο Κέντρο Σκι",
+      "label": "Κίτσμπυελ Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "gmunden": {
+    "cityName": "Γκμούντεν",
+    "walking": {
+      "youtubeId": "MzOMFL8D_7c",
+      "title": "Γκμούντεν 4K: Περιήγηση στην Πόλη των Κεραμικών, τη Λίμνη Traunsee & το Κάστρο Schloss Ort",
+      "label": "Γκμούντεν Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
+    }
+  },
+  "melk": {
+    "cityName": "Μελκ",
+    "drone": {
+      "youtubeId": "1vsrg1_Bh7Y",
+      "title": "Μελκ 4K: Εναέρια Περιήγηση Drone στο Μνημειώδες Μπαρόκ Αβαείο Stift Melk & τον Δούναβη",
+      "label": "Μελκ με Drone (4K)",
+      "icon": "fa-solid fa-helicopter",
+      "type": "drone"
+    },
+    "walking": {
+      "youtubeId": "lEiO-3NFhoI",
+      "title": "Μελκ 4K: Περιήγηση στην Πύλη της Κοιλάδας Wachau (UNESCO) & την Ιστορική Παλιά Πόλη",
+      "label": "Μελκ Walking Tour (4K)",
+      "icon": "fa-solid fa-person-walking",
+      "type": "walking"
     }
   }
 };

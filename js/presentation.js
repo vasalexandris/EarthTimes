@@ -9,8 +9,8 @@
  * - Fullscreen, Keyboard navigation (Arrow keys, Space, Esc, F), and Mobile Touch Swipe
  */
 
-import { getEntityLocalTime, getCuratedGuideItems, getCuratedGastroItems } from './ui.js?v=20261121_nordic_cities_v26';
-import { CITY_VIDEOS, getPoiVideoInfo } from './video-service.js?v=20261121_nordic_cities_v26';
+import { getEntityLocalTime, getCuratedGuideItems, getCuratedGastroItems } from './ui.js?v=20261124_benelux_austria_v27';
+import { CITY_VIDEOS, getPoiVideoInfo } from './video-service.js?v=20261124_benelux_austria_v27';
 
 let currentEntity = null;
 let currentEntityType = 'city';

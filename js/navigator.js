@@ -1,5 +1,5 @@
-import { US_STATES, CITY_TO_STATE } from './states-data.js?v=20261121_nordic_cities_v26';
-import { CITY_VIDEOS } from './video-service.js?v=20261121_nordic_cities_v26';
+import { US_STATES, CITY_TO_STATE } from './states-data.js?v=20261124_benelux_austria_v27';
+import { CITY_VIDEOS } from './video-service.js?v=20261124_benelux_austria_v27';
 /**
  * Navigator Module
  * Hierarchical Cascading Navigation: Continents -> Countries -> Cities
@@ -203,7 +203,22 @@ export const CONTINENTS_DATA = [
           { id: 'villach', name: 'Φίλαχ' },
           { id: 'st-polten', name: 'Ζανκτ Πέλτεν' },
           { id: 'bregenz', name: 'Μπρέγκεντς' },
-          { id: 'krems', name: 'Κρεμς' }
+          { id: 'krems', name: 'Κρεμς' },
+          { id: 'steyr', name: 'Στάγιερ' },
+          { id: 'wels', name: 'Βελς' },
+          { id: 'baden-bei-wien', name: 'Μπάντεν μπαι Βιν' },
+          { id: 'wiener-neustadt', name: 'Βίνερ Νόιστατ' },
+          { id: 'dornbirn', name: 'Ντόρνμπιρν' },
+          { id: 'feldkirch', name: 'Φέλντκιρχ' },
+          { id: 'hallstatt', name: 'Χάλστατ' },
+          { id: 'kufstein', name: 'Κούφσταϊν' },
+          { id: 'lienz', name: 'Λίεντς' },
+          { id: 'leoben', name: 'Λέομπεν' },
+          { id: 'eisenstadt', name: 'Άιζενστατ' },
+          { id: 'zell-am-see', name: 'Τσελ αμ Ζέε' },
+          { id: 'kitzbuhel', name: 'Κίτσμπυελ' },
+          { id: 'gmunden', name: 'Γκμούντεν' },
+          { id: 'melk', name: 'Μελκ' }
         ]
       },
       {
@@ -237,7 +252,22 @@ export const CONTINENTS_DATA = [
           { id: 'maastricht', name: 'Μάαστριχτ' },
           { id: 'delft', name: 'Ντελφτ' },
           { id: 'haarlem', name: 'Χάρλεμ' },
-          { id: 'leiden', name: 'Λάιντεν' }
+          { id: 'leiden', name: 'Λάιντεν' },
+          { id: 'nijmegen', name: 'Ναϊμέχεν' },
+          { id: 'tilburg', name: 'Τίλμπουργκ' },
+          { id: 'breda', name: 'Μπρέντα' },
+          { id: 'arnhem', name: 'Άρνεμ' },
+          { id: 'amersfoort', name: 'Άμερσφοορτ' },
+          { id: 'enschede', name: 'Ένσχεντε' },
+          { id: 'apeldoorn', name: 'Άπελντοορν' },
+          { id: 's-hertogenbosch', name: "'ς-Χερτόχενμπος (Ντεν Μπος)" },
+          { id: 'zwolle', name: 'Ζβόλε' },
+          { id: 'dordrecht', name: 'Ντόρντρεχτ' },
+          { id: 'alkmaar', name: 'Άλκμααρ' },
+          { id: 'gouda', name: 'Χάουντα' },
+          { id: 'deventer', name: 'Ντέβεντερ' },
+          { id: 'leeuwarden', name: 'Λέουβαρντεν' },
+          { id: 'middelburg', name: 'Μίντελμπουργκ' }
         ]
       },
       {
@@ -254,7 +284,22 @@ export const CONTINENTS_DATA = [
           { id: 'charleroi', name: 'Σαρλερουά' },
           { id: 'leuven', name: 'Λέουβεν' },
           { id: 'mechelen', name: 'Μέχελεν' },
-          { id: 'mons', name: 'Μονς' }
+          { id: 'mons', name: 'Μονς' },
+          { id: 'oostende', name: 'Οστένδη' },
+          { id: 'kortrijk', name: 'Κορτράικ' },
+          { id: 'tournai', name: 'Τουρνέ' },
+          { id: 'aalst', name: 'Άαλστ' },
+          { id: 'hasselt', name: 'Χάσελτ' },
+          { id: 'sint-niklaas', name: 'Σιντ-Νικλάας' },
+          { id: 'ypres', name: 'Υπρ' },
+          { id: 'dinant', name: 'Ντινάν' },
+          { id: 'verviers', name: 'Βερβιέ' },
+          { id: 'wavre', name: 'Βαβρ' },
+          { id: 'spa', name: 'Σπα' },
+          { id: 'bastogne', name: 'Μπαστόν' },
+          { id: 'louvain-la-neuve', name: 'Λουβέν-λα-Νεβ' },
+          { id: 'roeselare', name: 'Ρούσελαρε' },
+          { id: 'lier', name: 'Λιρ' }
         ]
       },
       {
