@@ -160,6 +160,86 @@ export function renderFamousDessertsBoxHtml(entity) {
  * 4. General Street Food Overview Card
  * 5. Famous Dishes, Recipes & Specialties List
  */
+
+/**
+ * Render Box 4: Must / Famous Cafes & Bistros (Dedicated Bing Search Hub - Top 10 Cafes)
+ */
+export function renderCafesBoxHtml(entity) {
+  const name = entity.name || 'Περιοχή';
+  const isCountry = entity && entity.type === 'country';
+  const engName = entity.englishName || entity.name || '';
+  const prefixEl = isCountry ? 'Χώρα' : 'Πόλη';
+  const inCityEn = isCountry ? 'in ' + engName : 'in city of ' + engName;
+  const mainBingQuery = prefixEl + ' ' + name + ' 10 καλύτερα καφέ bistros specialty coffee τι προτείνουν οι locals, 10 best local cafes bistros ' + inCityEn;
+  const mainTitle = 'Top 10 Καφέ & Bistros: ' + name;
+
+  return `
+    <div class="p-4 rounded-2xl bg-gradient-to-br from-amber-950/35 via-slate-900/95 to-slate-950 border border-amber-600/40 shadow-xl space-y-3">
+      <div class="flex items-center gap-2.5 border-b border-amber-500/20 pb-2.5">
+        <span class="w-8 h-8 rounded-xl bg-amber-600/20 border border-amber-500/40 text-amber-400 flex items-center justify-center shrink-0 shadow text-sm">
+          <i class="fa-solid fa-mug-saucer"></i>
+        </span>
+        <div>
+          <h4 class="text-xs sm:text-sm font-bold text-white flex items-center gap-2">
+            <span>Must / Famous Καφέ & Bistros (${name})</span>
+          </h4>
+          <p class="text-[11px] text-amber-300/80 font-medium">Specialty Coffee, Ιστορικά Καφενεία & Ατμοσφαιρικά Στέκια</p>
+        </div>
+      </div>
+      <p class="text-xs text-slate-300 leading-relaxed">
+        Ανακαλύψτε τα καλύτερα καφέ, παραδοσιακά στέκια και specialty coffee bars που προτιμούν οι ντόπιοι στην πόλη <strong>${name}</strong>.
+      </p>
+      <div class="pt-0.5">
+        <button onclick="window.openInAppBingSearch('${escapeStr(mainBingQuery)}', '${escapeStr(mainTitle)}')" class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-gradient-to-r from-amber-600 to-yellow-600 hover:from-amber-500 hover:to-yellow-500 text-white font-bold text-xs transition shadow-md hover:shadow-amber-950/60 cursor-pointer group">
+          <i class="fa-brands fa-microsoft text-amber-200 text-xs"></i>
+          <span>🔍 AI Έρευνα Bing: Top 10 Καφέ & Bistros</span>
+          <i class="fa-solid fa-arrow-up-right-from-square text-[10px] opacity-75 group-hover:translate-x-0.5 transition"></i>
+        </button>
+      </div>
+    </div>
+  `;
+}
+
+/**
+ * Render Box 5: Must / Famous Bars for Drinks & Nightlife (Dedicated Bing Search Hub - Top 10 Bars)
+ */
+export function renderBarsBoxHtml(entity) {
+  const name = entity.name || 'Περιοχή';
+  const isCountry = entity && entity.type === 'country';
+  const engName = entity.englishName || entity.name || '';
+  const prefixEl = isCountry ? 'Χώρα' : 'Πόλη';
+  const inCityEn = isCountry ? 'in ' + engName : 'in city of ' + engName;
+  const mainBingQuery = prefixEl + ' ' + name + ' 10 καλύτερα bars για ποτό cocktail bars νυχτερινή ζωή τι προτείνουν οι locals, 10 best cocktail bars nightlife spots ' + inCityEn;
+  const mainTitle = 'Top 10 Bars for Drinks: ' + name;
+
+  return `
+    <div class="p-4 rounded-2xl bg-gradient-to-br from-indigo-950/35 via-slate-900/95 to-slate-950 border border-indigo-500/40 shadow-xl space-y-3">
+      <div class="flex items-center gap-2.5 border-b border-indigo-500/20 pb-2.5">
+        <span class="w-8 h-8 rounded-xl bg-indigo-500/20 border border-indigo-500/40 text-indigo-400 flex items-center justify-center shrink-0 shadow text-sm">
+          <i class="fa-solid fa-martini-glass-citrus"></i>
+        </span>
+        <div>
+          <h4 class="text-xs sm:text-sm font-bold text-white flex items-center gap-2">
+            <span>Must / Famous Bars for Drinks & Νυχτερινή Ζωή (${name})</span>
+          </h4>
+          <p class="text-[11px] text-indigo-300/80 font-medium">Cocktail Bars, Pubs, Wine Bars & Βραδινές Εξόδους</p>
+        </div>
+      </div>
+      <p class="text-xs text-slate-300 leading-relaxed">
+        Βρείτε τα πιο φημισμένα bars για ποτό, signature cocktails, wine bars και σημεία νυχτερινής διασκέδασης στην πόλη <strong>${name}</strong>.
+      </p>
+      <div class="pt-0.5">
+        <button onclick="window.openInAppBingSearch('${escapeStr(mainBingQuery)}', '${escapeStr(mainTitle)}')" class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 hover:from-indigo-500 hover:via-purple-500 hover:to-pink-500 text-white font-bold text-xs transition shadow-md hover:shadow-indigo-950/60 cursor-pointer group">
+          <i class="fa-brands fa-microsoft text-indigo-200 text-xs"></i>
+          <span>🔍 AI Έρευνα Bing: Top 10 Bars & Nightlife</span>
+          <i class="fa-solid fa-arrow-up-right-from-square text-[10px] opacity-75 group-hover:translate-x-0.5 transition"></i>
+        </button>
+      </div>
+    </div>
+  `;
+}
+
+
 export function renderGastronomyTabHtml(entity, items = []) {
   if (!entity) return '';
 
@@ -180,16 +260,7 @@ export function renderGastronomyTabHtml(entity, items = []) {
   return `
     <div class="space-y-4">
 
-      <!-- 1. WHERE TO EAT TRADITIONALLY (DEDICATED SEARCH HUB TO BING) -->
-      ${traditionalDiningBox}
-
-      <!-- 2. WHERE TO EAT STREET FOOD (DEDICATED SEARCH HUB TO BING) -->
-      ${streetFoodSpotsBox}
-
-      <!-- 3. WHERE TO TASTE FAMOUS DESSERTS & PASTRY (DEDICATED SEARCH HUB TO BING) -->
-      ${famousDessertsBox}
-
-      <!-- 4. General Local Cuisine Overview Card -->
+      <!-- 1. General Local Cuisine Overview Card -->
       <div class="p-4 bg-gradient-to-br from-amber-950/40 via-slate-900/90 to-slate-950 rounded-2xl border border-amber-600/40 shadow-lg text-slate-200">
         <div class="flex items-center justify-between gap-2 mb-2">
           <div class="flex items-center gap-2 text-amber-400 font-bold text-sm">
@@ -221,7 +292,7 @@ export function renderGastronomyTabHtml(entity, items = []) {
         </div>
       </div>
 
-      <!-- 5. Dedicated Street Food & Outdoor Flavors Overview Card -->
+      <!-- 2. Dedicated Street Food & Outdoor Flavors Overview Card -->
       <div class="p-4 bg-gradient-to-br from-orange-950/40 via-slate-900/90 to-slate-950 rounded-2xl border border-orange-600/40 shadow-lg text-slate-200">
         <div class="flex items-center justify-between gap-2 mb-2">
           <div class="flex items-center gap-2 text-orange-400 font-bold text-sm">
@@ -253,7 +324,7 @@ export function renderGastronomyTabHtml(entity, items = []) {
         </div>
       </div>
 
-      <!-- 6. Dedicated Cards for Famous Dishes, Recipes, Sweets & Specialties -->
+      <!-- 3. Dedicated Cards for Famous Dishes, Recipes, Sweets & Specialties -->
       ${items && items.length > 0 ? `
         <div class="pt-1.5">
           <div class="text-[11px] font-bold uppercase tracking-wider text-amber-400/90 flex items-center gap-1.5 mb-2 px-1">
@@ -297,7 +368,7 @@ export function renderGastronomyTabHtml(entity, items = []) {
               }
 
               const favRecipeId = `recipe:${entity.id || ''}-${item.title}`;
-              const isFavRecipe = isFavorite(favRecipeId);
+              const isFavRecipe = (typeof window !== 'undefined' && typeof window.isFavorite === 'function') ? window.isFavorite(favRecipeId) : false;
 
               return `
               <div class="p-3.5 bg-slate-800/30 hover:bg-slate-800/80 hover:border-amber-500/50 transition border border-slate-700/40 rounded-xl">
@@ -344,6 +415,29 @@ export function renderGastronomyTabHtml(entity, items = []) {
           </div>
         </div>
       ` : ''}
+
+      <!-- 4. SEARCH HUBS (AT THE BOTTOM OF GASTRONOMY): MUST / FAMOUS PLACES TO EAT & DRINK -->
+      <div class="pt-4 border-t border-slate-800 space-y-3.5">
+        <div class="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-amber-400 px-1">
+          <i class="fa-solid fa-compass"></i>
+          <span>Must / Famous Οδηγοί Αναζήτησης Γαστρονομίας & Διασκέδασης (${name})</span>
+        </div>
+
+        <!-- Box 1: Traditional Dining -->
+        ${traditionalDiningBox}
+
+        <!-- Box 2: Street Food Spots -->
+        ${streetFoodSpotsBox}
+
+        <!-- Box 3: Famous Desserts & Bakeries -->
+        ${famousDessertsBox}
+
+        <!-- Box 4: Famous Cafes & Bistros -->
+        ${cafesBox}
+
+        <!-- Box 5: Famous Bars & Nightlife -->
+        ${barsBox}
+      </div>
 
     </div>
   `;

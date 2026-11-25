@@ -2892,6 +2892,27 @@ export function updateDossierClock(entity, entityType) {
       stat4.className = 'text-xs sm:text-sm font-bold text-indigo-200 truncate flex items-center justify-center gap-0.5';
     }
   }
+
+  // Update Sunrise, Sunset, Day Length & Night Length
+  const solarRow = document.getElementById('citySolarRow');
+  if (solarRow) {
+    if (entityType === 'world' || !entity || !entity.coords) {
+      solarRow.classList.add('hidden');
+    } else {
+      solarRow.classList.remove('hidden');
+      const lat = entity.coords[0];
+      const lng = entity.coords[1];
+      const sun = calculateSunTimes(lat, lng, new Date());
+      const srEl = document.getElementById('solarSunriseVal');
+      const ssEl = document.getElementById('solarSunsetVal');
+      const dlEl = document.getElementById('solarDayLenVal');
+      const nlEl = document.getElementById('solarNightLenVal');
+      if (srEl) srEl.innerText = sun.sunrise;
+      if (ssEl) ssEl.innerText = sun.sunset;
+      if (dlEl) dlEl.innerText = sun.dayLength;
+      if (nlEl) nlEl.innerText = sun.nightLength;
+    }
+  }
 }
 
 export function renderDossier(entity, entityType = 'state', currentTab = 'geo', activeYear = null, activeSpots = [], isPlaying = false) {
@@ -3050,6 +3071,14 @@ export function renderDossier(entity, entityType = 'state', currentTab = 'geo', 
 
   updateTabButtons(currentTab);
   renderTabContent(currentTab, entity, activeYear, activeSpots, isPlaying);
+
+  // If a city is active, ensure solar row is updated and live weather is mounted immediately
+  if (isCityEntity(entity) && entity.coords) {
+    updateDossierClock(entity, entityType);
+    if (currentTab === 'geo') {
+      mountLiveWeatherData(entity.coords);
+    }
+  }
 }
 
 export function updateTimelineLiveIndicator(isPlaying) {
@@ -4320,11 +4349,6 @@ export function renderTabContent(tabId, entity, activeYear = null, activeSpots =
 
   if (tabId === 'geo') {
     html = renderGeographyTabHtml(entity);
-    if (entity.type === 'city') {
-      setTimeout(() => {
-        mountLiveWeatherData(entity.coords);
-      }, 40);
-    }
   } else if (tabId === 'hist') {
     html = renderHistoryTabHtml(entity);
   } else if (tabId === 'demo') {
@@ -4392,9 +4416,13 @@ export function renderTabContent(tabId, entity, activeYear = null, activeSpots =
               </div>
               <p class="text-xs text-slate-300 leading-relaxed mb-3">${item.desc}</p>
               <div class="flex flex-wrap items-center gap-2 pt-2 border-t border-slate-800/70">
-                <button onclick="window.openDeepDive('${escapeStr(item.title)}', '${escapeStr(item.desc)}', '${escapeStr(entity.name)}')" class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-amber-300 hover:text-white border border-slate-700 text-[11px] font-bold transition flex items-center gap-1.5 shadow">
+                <button onclick="window.openDeepDive('${escapeStr(item.title)}', '${escapeStr(item.desc)}', '${escapeStr(entity.name)}')" class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-750 text-amber-300 hover:text-white border border-slate-700 text-[11px] font-bold transition flex items-center gap-1.5 shadow cursor-pointer">
                   <i class="fa-solid fa-wand-magic-sparkles text-amber-400"></i>
                   <span>Ανάλυση AI</span>
+                </button>
+                <button onclick="window.openInAppBingSearch('${escapeStr(item.title)} ${escapeStr(entity.name)} αξιοθέατο μνημείο πληροφορίες travel guide', '${escapeStr(item.title)}: ${escapeStr(entity.name)}')" class="px-2.5 py-1 rounded-lg bg-gradient-to-r from-sky-600 to-indigo-600 hover:from-sky-500 hover:to-indigo-500 text-white text-[11px] font-bold transition flex items-center gap-1.5 shadow cursor-pointer" title="Bing AI Search για το αξιοθέατο">
+                  <i class="fa-brands fa-microsoft text-sky-200 text-xs"></i>
+                  <span>🔍 AI Έρευνα στο Bing</span>
                 </button>
                 <button onclick="window.openMapWikiReader('${escapeStr(item.wiki || item.title)}', 'en', '${escapeStr(item.title)}')" class="px-2.5 py-1 rounded-lg bg-sky-950/80 hover:bg-sky-900 text-sky-300 hover:text-white border border-sky-700/50 text-[11px] font-bold transition flex items-center gap-1.5 shadow">
                   <i class="fa-brands fa-wikipedia-w"></i>
@@ -4412,6 +4440,31 @@ export function renderTabContent(tabId, entity, activeYear = null, activeSpots =
             </div>
           `;
           }).join('')}
+        </div>
+
+        <!-- MUST / FAMOUS ATTRACTIONS (SEARCH HUB) -->
+        <div class="p-4 rounded-2xl bg-gradient-to-br from-sky-950/35 via-slate-900/95 to-slate-950 border border-sky-500/40 shadow-xl space-y-3 mt-4">
+          <div class="flex items-center gap-2.5 border-b border-sky-500/20 pb-2.5">
+            <span class="w-8 h-8 rounded-xl bg-sky-500/20 border border-sky-500/40 text-sky-400 flex items-center justify-center shrink-0 shadow text-sm">
+              <i class="fa-solid fa-landmark"></i>
+            </span>
+            <div>
+              <h4 class="text-xs sm:text-sm font-bold text-white flex items-center gap-2">
+                <span>Must / Famous Αξιοθέατα (${entity.name})</span>
+              </h4>
+              <p class="text-[11px] text-sky-300/80 font-medium">Κορυφαία Μνημεία, Θέατρα, Πάρκα, Ναοί & Εμβληματικά Σημεία</p>
+            </div>
+          </div>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            Ανακαλύψτε όλα τα κορυφαία ιστορικά μνημεία, θέατρα, πάρκα, ναούς και τα πιο φημισμένα ορόσημα που πρέπει οπωσδήποτε να επισκεφθείτε στην πόλη <strong>${entity.name}</strong>.
+          </p>
+          <div class="pt-0.5 flex flex-wrap items-center gap-2">
+            <button onclick="window.openInAppBingSearch('${entity.type === 'country' ? 'Χώρα' : 'Πόλη'} ${escapeStr(entity.name)} 10 καλύτερα αξιοθέατα μνημεία πάρκα θέατρα ναοί τι να δεις, 10 best top attractions monuments ${escapeStr(entity.englishName || entity.name)} travel guide', 'Top Αξιοθέατα: ${escapeStr(entity.name)}')" class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-gradient-to-r from-sky-600 via-indigo-600 to-purple-600 hover:from-sky-500 hover:via-indigo-500 hover:to-purple-500 text-white font-bold text-xs transition shadow-md hover:shadow-sky-950/60 cursor-pointer group">
+              <i class="fa-brands fa-microsoft text-sky-200 text-xs"></i>
+              <span>🔍 AI Έρευνα Bing: Top 10 Αξιοθέατα & Μνημεία</span>
+              <i class="fa-solid fa-arrow-up-right-from-square text-[10px] opacity-75 group-hover:translate-x-0.5 transition"></i>
+            </button>
+          </div>
         </div>
       </div>
     `;
@@ -5308,6 +5361,11 @@ export function renderTabContent(tabId, entity, activeYear = null, activeSpots =
 
   container.innerHTML = html;
   updateAllFavoriteButtons();
+
+  // Automatically mount live weather if on the geo tab for a city
+  if (tabId === 'geo' && isCityEntity(entity) && entity.coords) {
+    mountLiveWeatherData(entity.coords);
+  }
 }
 
 
