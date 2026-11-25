@@ -8,7 +8,7 @@
  * - Famous Dishes, Recipes & Specialties
  */
 
-import { isFavorite } from './favorites-service.js?v=20261123_favorites_v27';
+import { isFavorite } from './favorites-service.js?v=20261125_must_search_v33';
 
 function escapeStr(str) {
   if (!str) return '';
@@ -174,6 +174,8 @@ export function renderGastronomyTabHtml(entity, items = []) {
   const traditionalDiningBox = renderTraditionalDiningBoxHtml(entity);
   const streetFoodSpotsBox = renderStreetFoodSpotsBoxHtml(entity);
   const famousDessertsBox = renderFamousDessertsBoxHtml(entity);
+  const cafesBox = renderCafesBoxHtml(entity);
+  const barsBox = renderBarsBoxHtml(entity);
 
   return `
     <div class="space-y-4">

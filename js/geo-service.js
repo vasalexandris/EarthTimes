@@ -102,6 +102,13 @@ export async function fetchLiveGeoData(lat, lng) {
     };
 
     liveGeoCache.set(cacheKey, { timestamp: Date.now(), data: result });
+  if (live.elevation != null) {
+    const elevEl = document.getElementById('geoElevationVal');
+    if (elevEl && (elevEl.innerText === '45' || elevEl.innerText === '—')) {
+      elevEl.innerText = live.elevation.toLocaleString();
+    }
+  }
+
     return result;
   } catch (err) {
     console.warn('GeoService: Failed to fetch Open-Meteo live data:', err);
@@ -112,6 +119,20 @@ export async function fetchLiveGeoData(lat, lng) {
 /**
  * Registry of Highest Points & Altitude for Countries & Major Cities
  */
+
+/**
+ * Detects whether an entity is a city or a country/state
+ */
+export function isCityEntity(entity) {
+  if (!entity) return false;
+  if (entity.cities && Array.isArray(entity.cities)) return false;
+  const t = (entity.type || '').toLowerCase();
+  if (['country', 'self-governing-state', 'overseas-territory', 'sui-generis-collectivity'].includes(t)) return false;
+  if (entity._countryId || entity.countryId || entity.stateId || entity.cityName) return true;
+  if (entity.capital && entity.stats && (entity.stats.area || entity.stats.coastline || entity.stats.gdp)) return false;
+  return true;
+}
+
 const ELEVATION_DATABASE = {
   // Countries
   'greece': {
@@ -191,6 +212,212 @@ const ELEVATION_DATABASE = {
     altitudeMeters: 8848,
     details: 'Η στέγη του κόσμου στα σύνορα Κίνας και Νεπάλ, το απόλυτο υψομετρικό όριο του πλανήτη.',
     meanElevation: '1840 μ.'
+  },
+
+    // Additional Countries with accurate highest points & elevations
+  'netherlands': {
+    highestPoint: 'Vaalserberg (Limburg)',
+    altitudeMeters: 322,
+    details: 'Το ψηλότερο σημείο της ευρωπαϊκής Ολλανδίας, στο τριεθνές σημείο συνάντησης με το Βέλγιο και τη Γερμανία.',
+    meanElevation: '30 μ. (Το 26% της χώρας βρίσκεται κάτω από την επιφάνεια της θάλασσας)'
+  },
+  'belgium': {
+    highestPoint: 'Signal de Botrange (Hautes Fagnes)',
+    altitudeMeters: 694,
+    details: 'Στην επαρχία της Λιέγης, το ψηλότερο σημείο του Βελγίου και ολόκληρου του οροπεδίου των Αρδεννών.',
+    meanElevation: '182 μ.'
+  },
+  'austria': {
+    highestPoint: 'Großglockner (Hohe Tauern, Ανατολικές Άλπεις)',
+    altitudeMeters: 3798,
+    details: 'Η επιβλητική πυραμιδοειδής κορυφή της Αυστρίας με τον παγετώνα Pasterze, το μακρύτερο της ανατολικής αλπικής ζώνης.',
+    meanElevation: '910 μ. (Τα 2/3 της χώρας καλύπτονται από τις Άλπεις)'
+  },
+  'norway': {
+    highestPoint: 'Galdhøpiggen (Οροσειρά Jotunheimen)',
+    altitudeMeters: 2469,
+    details: 'Η ψηλότερη κορυφή της Σκανδιναβίας και της Βόρειας Ευρώπης, περιτριγυρισμένη από παγετώνες.',
+    meanElevation: '460 μ.'
+  },
+  'sweden': {
+    highestPoint: 'Kebnekaise (Σκανδιναβικές Άλπεις / Λαπωνία)',
+    altitudeMeters: 2097,
+    details: 'Στο βόρειο τμήμα της Λαπωνίας με δύο κορυφές, η νότια εκ των οποίων καλύπτεται από μόνιμο παγετώνα.',
+    meanElevation: '320 μ.'
+  },
+  'finland': {
+    highestPoint: 'Halti / Haltitunturi (Σκανδιναβική Οροσειρά)',
+    altitudeMeters: 1324,
+    details: 'Στα βορειοδυτικά σύνορα με τη Νορβηγία στη Λαπωνία, περιβάλλεται από αρκτική τούνδρα.',
+    meanElevation: '164 μ. (Χώρα με πάνω από 187.000 λίμνες)'
+  },
+  'denmark': {
+    highestPoint: 'Møllehøj (Γιουτλάνδη)',
+    altitudeMeters: 171,
+    details: 'Ο χαμηλότερος μέγιστος γεωγραφικός λόφος ευρωπαϊκού κράτους, τμήμα ήπιας λοφώδους παγετωνικής μορφολογίας.',
+    meanElevation: '34 μ.'
+  },
+  'poland': {
+    highestPoint: 'Rysy (Όρη Τάτρα / Καρπάθια)',
+    altitudeMeters: 2499,
+    details: 'Η βορειοδυτική κορυφή στα πολωνο-σλοβακικά σύνορα δεσπόζει πάνω από την αλπική λίμνη Morskie Oko.',
+    meanElevation: '173 μ. (Κυρίως απέραντες πεδιάδες)'
+  },
+  'ireland': {
+    highestPoint: "Carrauntoohil (MacGillycuddy's Reeks, Kerry)",
+    altitudeMeters: 1038,
+    details: 'Η ψηλότερη κορυφή της νήσου Ιρλανδίας, με απόκρημνες ράχες και χαρακτηριστικό μεταλλικό σταυρό 5 μέτρων στην κορυφή.',
+    meanElevation: '118 μ.'
+  },
+  'portugal': {
+    highestPoint: 'Ponta do Pico (Αζόρες, 2.351 μ.) / Torre (Serra da Estrela, 1.993 μ.)',
+    altitudeMeters: 2351,
+    details: 'Το στρατοηφαίστειο Pico στις Αζόρες είναι το ψηλότερο σημείο της επικράτειας, ενώ στην ηπειρωτική χώρα δεσπόζει η Serra da Estrela.',
+    meanElevation: '372 μ.'
+  },
+  'iceland': {
+    highestPoint: 'Hvannadalshnúkur (Παγετώνας Vatnajökull)',
+    altitudeMeters: 2110,
+    details: 'Ηφαιστειακή κορυφή στο βορειοδυτικό χείλος του κρατήρα του ηφαιστείου Öræfajökull, καλυμμένη από πάγους.',
+    meanElevation: '557 μ.'
+  },
+  'czechia': {
+    highestPoint: 'Sněžka (Όρη Krkonoše / Γιγάντια Όρη)',
+    altitudeMeters: 1603,
+    details: 'Στα σύνορα Τσεχίας και Πολωνίας, με μετεωρολογικό παρατηρητήριο και πανοραμική θέα στη Σιλεσία.',
+    meanElevation: '430 μ.'
+  },
+  'czech-republic': {
+    highestPoint: 'Sněžka (Όρη Krkonoše / Γιγάντια Όρη)',
+    altitudeMeters: 1603,
+    details: 'Στα σύνορα Τσεχίας και Πολωνίας, με μετεωρολογικό παρατηρητήριο και πανοραμική θέα στη Σιλεσία.',
+    meanElevation: '430 μ.'
+  },
+  'slovakia': {
+    highestPoint: 'Gerlachovský štít (Υψηλά Τάτρα / Καρπάθια)',
+    altitudeMeters: 2655,
+    details: 'Η ψηλότερη κορυφή των Καρπαθίων και ολόκληρης της Σλοβακίας, με πυραμιδοειδείς γρανιτένιους όγκους.',
+    meanElevation: '458 μ.'
+  },
+  'hungary': {
+    highestPoint: 'Kékes (Οροσειρά Mátra)',
+    altitudeMeters: 1014,
+    details: 'Το μοναδικό σημείο της Ουγγαρίας που ξεπερνά τα 1.000 μέτρα, με πύργο τηλεπικοινωνιών και χιονοδρομικές πίστες.',
+    meanElevation: '143 μ. (Κυριαρχεί η Μεγάλη Ουγγρική Πεδιάδα Puszta)'
+  },
+  'romania': {
+    highestPoint: 'Moldoveanu (Όρη Făgăraș / Νότια Καρπάθια)',
+    altitudeMeters: 2544,
+    details: 'Η καρδιά των Τρανσυλβανικών Άλπεων, ένα από τα πιο άγρια και θεαματικά ορεινά ανάγλυφα της Ανατολικής Ευρώπης.',
+    meanElevation: '414 μ.'
+  },
+  'bulgaria': {
+    highestPoint: 'Musala (Οροσειρά Rila)',
+    altitudeMeters: 2925,
+    details: 'Η ψηλότερη κορυφή της Βαλκανικής Χερσονήσου (7 μέτρα ψηλότερη από τον Όλυμπο), με αλπικές λίμνες και παγετωνική προέλευση.',
+    meanElevation: '470 μ.'
+  },
+  'croatia': {
+    highestPoint: 'Dinara / Sinjal (Δειναρικές Άλπεις)',
+    altitudeMeters: 1831,
+    details: 'Επιβλητικός ασβεστολιθικός ορεινός όγκος στα σύνορα με τη Βοσνία, με εντυπωσιακά καρστικά φαινόμενα.',
+    meanElevation: '331 μ.'
+  },
+  'serbia': {
+    highestPoint: 'Midžor (Οροσειρά Stara Planina / Αίμος)',
+    altitudeMeters: 2169,
+    details: 'Στα σύνορα Σερβίας και Βουλγαρίας, με γρανιτένιες κορυφογραμμές και παρθένα υποαλπικά λιβάδια.',
+    meanElevation: '442 μ.'
+  },
+  'albania': {
+    highestPoint: 'Όρος Korab (Maja e Korabit)',
+    altitudeMeters: 2764,
+    details: 'Στα σύνορα Αλβανίας και Βόρειας Μακεδονίας, μια από τις πιο απομονωμένες και επιβλητικές κορυφές των Βαλκανίων.',
+    meanElevation: '708 μ.'
+  },
+  'north-macedonia': {
+    highestPoint: 'Όρος Korab (Golem Korab)',
+    altitudeMeters: 2764,
+    details: 'Κοινό ψηλότερο σημείο με την Αλβανία, πλαισιωμένο από το Εθνικό Πάρκο Mavrovo και βαθιά φαράγγια.',
+    meanElevation: '741 μ.'
+  },
+  'montenegro': {
+    highestPoint: 'Zla Kolata (Προκλέτιγε / Καταραμένα Όρη)',
+    altitudeMeters: 2534,
+    details: 'Άγριες καρστικές κορυφές με κατακόρυφες ορθοπλαγιές στα σύνορα με την Αλβανία.',
+    meanElevation: '1086 μ. (Εξαιρετικά ορεινή επικράτεια)'
+  },
+  'bosnia-and-herzegovina': {
+    highestPoint: 'Maglić (Εθνικό Πάρκο Sutjeska)',
+    altitudeMeters: 2386,
+    details: 'Στα σύνορα με το Μαυροβούνιο, περιβάλλεται από το παρθένο αρχέγονο δάσος Perućica, ένα από τα τελευταία της Ευρώπης.',
+    meanElevation: '500 μ.'
+  },
+  'slovenia': {
+    highestPoint: 'Triglav (Ιουλιανές Άλπεις)',
+    altitudeMeters: 2864,
+    details: 'Το τρικέφαλο εθνικό σύμβολο της Σλοβενίας, αποτυπωμένο στη σημαία και το εθνόσημο της χώρας.',
+    meanElevation: '492 μ.'
+  },
+  'estonia': {
+    highestPoint: 'Suur Munamägi (Λόφος Haanja)',
+    altitudeMeters: 318,
+    details: 'Το ψηλότερο σημείο των Βαλτικών Χωρών, με πύργο παρατήρησης που βλέπει προς τη Λετονία και τη Ρωσία.',
+    meanElevation: '61 μ.'
+  },
+  'latvia': {
+    highestPoint: 'Gaiziņkalns (Κεντρικό Υψίπεδο Vidzeme)',
+    altitudeMeters: 312,
+    details: 'Ήπιος δασωμένος λόφος που αποτελεί το ψηλότερο γεωγραφικό σημείο της Λετονίας.',
+    meanElevation: '87 μ.'
+  },
+  'lithuania': {
+    highestPoint: 'Aukštojas Hill (Υψίπεδο Medininkai)',
+    altitudeMeters: 294,
+    details: 'Το ψηλότερο σημείο της Λιθουανίας κοντά στα σύνορα με τη Λευκορωσία.',
+    meanElevation: '110 μ.'
+  },
+  'luxembourg': {
+    highestPoint: 'Kneiff (Αρδέννες / Oesling)',
+    altitudeMeters: 560,
+    details: 'Λοφώδες σημείο στο βόρειο τμήμα του Μεγάλου Δουκάτου, κοντά στα σύνορα με το Βέλγιο.',
+    meanElevation: '325 μ.'
+  },
+  'malta': {
+    highestPoint: "Ta' Dmejrek (Dingli Cliffs)",
+    altitudeMeters: 253,
+    details: 'Ασβεστολιθικός βράχος στα επιβλητικά Dingli Cliffs, με κατακόρυφη θέα στη Μεσόγειο Θάλασσα.',
+    meanElevation: '120 μ.'
+  },
+  'ukraine': {
+    highestPoint: 'Hoverla (Καρπάθια / Οροσειρά Chornohora)',
+    altitudeMeters: 2061,
+    details: 'Η ψηλότερη κορυφή της Ουκρανίας, εθνικό σύμβολο με αλπικές πλαγιές και πανοραμική θέα.',
+    meanElevation: '175 μ.'
+  },
+  'canada': {
+    highestPoint: 'Mount Logan (Saint Elias Mountains, Yukon)',
+    altitudeMeters: 5959,
+    details: 'Η δεύτερη ψηλότερη κορυφή της Βόρειας Αμερικής, καλυμμένη από τεράστιους παγετώνες.',
+    meanElevation: '487 μ.'
+  },
+  'australia': {
+    highestPoint: 'Mount Kosciuszko (Snowy Mountains, New South Wales)',
+    altitudeMeters: 2228,
+    details: 'Η ψηλότερη κορυφή της ηπειρωτικής Αυστραλίας, τμήμα του Μεγάλου Διαχωριστικού Όρους.',
+    meanElevation: '330 μ.'
+  },
+  'brazil': {
+    highestPoint: 'Pico da Neblina (Serra do Imeri, Αμαζονία)',
+    altitudeMeters: 2995,
+    details: 'Η Κορυφή της Ομίχλης στα σύνορα Βραζιλίας και Βενεζουέλας, μέσα στην παρθένα ζούγκλα του Αμαζονίου.',
+    meanElevation: '320 μ.'
+  },
+  'argentina': {
+    highestPoint: 'Aconcagua (Άνδεις, Mendoza)',
+    altitudeMeters: 6961,
+    details: 'Η ψηλότερη κορυφή της Αμερικής, του Δυτικού και του Νότιου Ημισφαιρίου και η ψηλότερη εκτός Ασίας.',
+    meanElevation: '595 μ.'
   },
 
   // Cities
@@ -657,24 +884,30 @@ const HISTORICAL_PHENOMENA_DATABASE = {
  */
 function getGenericElevation(entity) {
   const name = entity.name || 'Τοποθεσία';
-  const coords = entity.coords || [38.0, 23.0];
-  const isCity = entity.type === 'city';
+  const isCity = isCityEntity(entity);
 
   if (isCity) {
-    const alt = entity.stats?.altitude || '150 μ.';
+    const rawAlt = entity.stats?.altitude || entity.stats?.elevation;
+    let altNum = rawAlt ? parseInt(rawAlt, 10) : null;
+    if (!altNum || isNaN(altNum)) {
+      altNum = 45; // Reasonable default for urban areas
+    }
     return {
       highestPoint: `Περιβάλλοντες λόφοι & ορεινό ανάγλυφο ${name}`,
-      altitudeMeters: parseInt(alt, 10) || 150,
-      details: `Το αστικό κέντρο βρίσκεται σε μέσο υψόμετρο ${alt}, με άμεση πρόσβαση στους γύρω ορεινούς όγκους.`,
-      cityAltitude: alt
+      altitudeMeters: altNum,
+      details: `Το αστικό κέντρο βρίσκεται σε μέσο υψόμετρο περίπου ${altNum} μ., με άμεση σύνδεση με το γύρω γεωμορφολογικό ανάγλυφο.`,
+      cityAltitude: `${altNum} μ.`
     };
   }
 
+  // Country fallback: avoid hardcoded 2000
+  const highest = entity.stats?.highestPoint || `Κυριότερη οροσειρά & κορυφή (${name})`;
+  const altNum = entity.stats?.maxElevation || 1150;
   return {
-    highestPoint: `Κυριότερη οροσειρά & κορυφή (${name})`,
-    altitudeMeters: 2000,
-    details: `Το γεωγραφικό ανάγλυφο της περιοχής διαθέτει ποικιλία από πεδιάδες έως ψηλές ορεινές κορυφές.`,
-    meanElevation: '450 μ.'
+    highestPoint: highest,
+    altitudeMeters: altNum,
+    details: `Το γεωγραφικό ανάγλυφο της επικράτειας διαθέτει ποικιλία από πεδινές ζώνες έως ορεινούς όγκους.`,
+    meanElevation: '350 μ.'
   };
 }
 
@@ -770,7 +1003,7 @@ export function getHistoricalPhenomena(entity) {
 export function renderGeographyTabHtml(entity) {
   if (!entity) return '';
 
-  const isCity = entity.type === 'city';
+  const isCity = isCityEntity(entity);
   const name = entity.name || 'Περιοχή';
   const englishName = entity.englishName || name;
   const coords = entity.coords || [39.0742, 21.8243];
@@ -831,7 +1064,7 @@ export function renderGeographyTabHtml(entity) {
           <div class="shrink-0 flex sm:flex-col items-center sm:items-end justify-between sm:justify-center border-t sm:border-t-0 sm:border-l border-slate-700/60 pt-2 sm:pt-0 sm:pl-4">
             <div class="text-[11px] text-slate-400 font-medium">${isCity ? 'Μέσο Υψόμετρο' : 'Μέγιστο Υψόμετρο'}</div>
             <div class="text-xl sm:text-2xl font-black text-amber-400 font-mono tracking-tight flex items-baseline gap-1">
-              <span>${elev.altitudeMeters ? elev.altitudeMeters.toLocaleString() : (elev.cityAltitude || '—')}</span>
+              <span id="geoElevationVal">${elev.altitudeMeters ? elev.altitudeMeters.toLocaleString() : (elev.cityAltitude || '—')}</span>
               <span class="text-xs font-bold text-slate-300">μέτρα</span>
             </div>
           </div>

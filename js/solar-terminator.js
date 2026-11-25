@@ -434,3 +434,85 @@ if (typeof window !== 'undefined') {
   window.resetToLive = resetToLive;
   window.updateWidgetButtonUI = updateWidgetButtonUI;
 }
+
+
+/**
+ * Astronomical calculation of sunrise, sunset, day length, and night length
+ * using NOAA solar calculation algorithm.
+ */
+export function calculateSunTimes(lat, lng, date = new Date(), tzOffsetHours = null) {
+  if (typeof lat !== 'number' || typeof lng !== 'number') {
+    return { sunrise: '—', sunset: '—', dayLength: '—', nightLength: '—' };
+  }
+
+  const rad = Math.PI / 180;
+  const deg = 180 / Math.PI;
+
+  const startOfYear = new Date(Date.UTC(date.getUTCFullYear(), 0, 1));
+  const dayOfYear = Math.floor((date.getTime() - startOfYear.getTime()) / (24 * 60 * 60 * 1000)) + 1;
+
+  // Fractional year in radians
+  const gamma = 2 * Math.PI / 365 * (dayOfYear - 1 + (date.getUTCHours() - 12) / 24);
+
+  // Equation of time in minutes
+  const eqtime = 229.18 * (0.000075 + 0.001868 * Math.cos(gamma) - 0.032077 * Math.sin(gamma)
+    - 0.014615 * Math.cos(2 * gamma) - 0.040849 * Math.sin(2 * gamma));
+
+  // Solar declination in radians
+  const decl = 0.006918 - 0.399912 * Math.cos(gamma) + 0.070257 * Math.sin(gamma)
+    - 0.006758 * Math.cos(2 * gamma) + 0.000907 * Math.sin(2 * gamma)
+    - 0.002697 * Math.cos(3 * gamma) + 0.00148 * Math.sin(3 * gamma);
+
+  // Zenith: 90.833° for atmospheric refraction
+  const zenith = 90.833 * rad;
+  const latRad = lat * rad;
+  const cosH = (Math.cos(zenith) - Math.sin(latRad) * Math.sin(decl)) / (Math.cos(latRad) * Math.cos(decl));
+
+  let dayLengthHours, sunriseUTC, sunsetUTC, isPolarDay = false, isPolarNight = false;
+
+  if (cosH > 1) {
+    isPolarNight = true;
+    dayLengthHours = 0;
+  } else if (cosH < -1) {
+    isPolarDay = true;
+    dayLengthHours = 24;
+  } else {
+    const H = Math.acos(cosH) * deg;
+    dayLengthHours = (2 * H) / 15;
+    sunriseUTC = 720 - 4 * (lng + H) - eqtime;
+    sunsetUTC = 720 - 4 * (lng - H) - eqtime;
+  }
+
+  // Calculate local timezone offset if not provided
+  const effTzOffset = (tzOffsetHours != null) ? tzOffsetHours : Math.round(lng / 15);
+
+  function minToTimeStr(min) {
+    if (min == null) return '—';
+    let localMin = Math.round(min + effTzOffset * 60) % 1440;
+    if (localMin < 0) localMin += 1440;
+    const h = Math.floor(localMin / 60);
+    const m = Math.floor(localMin % 60);
+    return String(h).padStart(2, '0') + ':' + String(m).padStart(2, '0');
+  }
+
+  function formatDuration(hours) {
+    const totalMinutes = Math.round(hours * 60);
+    const h = Math.floor(totalMinutes / 60);
+    const m = totalMinutes % 60;
+    return h + ' ώρ. ' + m + ' λ.';
+  }
+
+  const sunriseStr = isPolarNight ? 'Πολική Νύχτα' : (isPolarDay ? 'Πολική Ημέρα' : minToTimeStr(sunriseUTC));
+  const sunsetStr = isPolarNight ? 'Πολική Νύχτα' : (isPolarDay ? 'Πολική Ημέρα' : minToTimeStr(sunsetUTC));
+
+  return {
+    sunrise: sunriseStr,
+    sunset: sunsetStr,
+    dayLength: formatDuration(dayLengthHours),
+    nightLength: formatDuration(24 - dayLengthHours),
+    isPolarDay,
+    isPolarNight
+  };
+}
+
+if (typeof window !== 'undefined') { window.calculateSunTimes = calculateSunTimes; }

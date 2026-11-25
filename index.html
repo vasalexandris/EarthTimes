@@ -47,7 +47,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <!-- Custom Styles -->
-<link rel="stylesheet" href="css/style.css?v=20261124_benelux_austria_v32">
+<link rel="stylesheet" href="css/style.css?v=20261125_must_search_v33">
 
   <!-- Immediate Fast-Action Script for Landing Navigation -->
   <script>
@@ -1065,6 +1065,37 @@
               <div id="stat4-date" class="text-[9px] text-slate-400 truncate mt-0.5">--</div>
             </div>
           </div>
+          <!-- City Solar Cycle & Day/Night Info Bar -->
+          <div id="citySolarRow" class="grid grid-cols-2 sm:grid-cols-4 gap-2 mt-2 pt-2 border-t border-slate-800/60 text-center text-xs">
+            <div class="bg-slate-800/30 border border-amber-500/20 rounded-lg p-1.5 flex flex-col justify-center min-w-0">
+              <div class="text-[10px] text-amber-300/80 uppercase font-medium flex items-center justify-center gap-1">
+                <i class="fa-solid fa-sun-plant-wilt text-amber-400 text-[10px]"></i>
+                <span>Ανατολή Ηλίου</span>
+              </div>
+              <div id="solarSunriseVal" class="text-xs sm:text-sm font-bold text-amber-300 font-mono mt-0.5 truncate">--:--</div>
+            </div>
+            <div class="bg-slate-800/30 border border-orange-500/20 rounded-lg p-1.5 flex flex-col justify-center min-w-0">
+              <div class="text-[10px] text-orange-300/80 uppercase font-medium flex items-center justify-center gap-1">
+                <i class="fa-solid fa-mountain-sun text-orange-400 text-[10px]"></i>
+                <span>Δύση Ηλίου</span>
+              </div>
+              <div id="solarSunsetVal" class="text-xs sm:text-sm font-bold text-orange-300 font-mono mt-0.5 truncate">--:--</div>
+            </div>
+            <div class="bg-slate-800/30 border border-sky-500/20 rounded-lg p-1.5 flex flex-col justify-center min-w-0">
+              <div class="text-[10px] text-sky-300/80 uppercase font-medium flex items-center justify-center gap-1">
+                <i class="fa-solid fa-sun text-sky-300 text-[10px]"></i>
+                <span>Διάρκεια Ημέρας</span>
+              </div>
+              <div id="solarDayLenVal" class="text-xs sm:text-sm font-bold text-sky-200 font-mono mt-0.5 truncate">-- ώρ. -- λ.</div>
+            </div>
+            <div class="bg-slate-800/30 border border-indigo-500/20 rounded-lg p-1.5 flex flex-col justify-center min-w-0">
+              <div class="text-[10px] text-indigo-300/80 uppercase font-medium flex items-center justify-center gap-1">
+                <i class="fa-solid fa-moon text-indigo-300 text-[10px]"></i>
+                <span>Διάρκεια Νύχτας</span>
+              </div>
+              <div id="solarNightLenVal" class="text-xs sm:text-sm font-bold text-indigo-200 font-mono mt-0.5 truncate">-- ώρ. -- λ.</div>
+            </div>
+          </div>
         </div>
 
         <!-- Categories Navigation Tabs -->
@@ -1883,7 +1914,7 @@
   </div>
 
   <!-- Modular Application Scripts -->
-<script type="module" src="js/app.js?v=20261124_benelux_austria_v32"></script>
+<script type="module" src="js/app.js?v=20261125_must_search_v33"></script>
   <!-- Fullscreen Toggle Script (Android, WebKit, Desktop) -->
   <script>
     window.toggleFullScreen = function() {

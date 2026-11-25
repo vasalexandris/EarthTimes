@@ -4,17 +4,17 @@
  * Base Map Layer selector, Date display, Video Overlay, and Deep Dive views.
  */
 
-import { getCityVideo, getAvailableVideoTypes, getAvailableCityTours, CITY_VIDEOS, findPoiLiveCam, getPoiVideoInfo, getGastroRecipeVideo, getSocialMediaVideos, SOCIAL_MEDIA_REGISTRY, GASTRO_RECIPE_VIDEOS } from './video-service.js?v=20261124_benelux_austria_v32';
-import { getDeepDiveData } from './deep-dive.js?v=20261124_benelux_austria_v32';
-import { fetchWikiArticle, fetchWikiArticleHtml, cleanWikiTitle, buildWikiSearchDocumentHtml, containsGreek, translateQueryToEnglish } from './wiki-service.js?v=20261124_benelux_austria_v32';
-import { calculateSubsolarPoint } from './solar-terminator.js?v=20261124_benelux_austria_v32';
-import { CITY_TO_STATE } from './states-data.js?v=20261124_benelux_austria_v32';
-import { CITY_TO_COUNTRY } from './navigator.js?v=20261124_benelux_austria_v32';
-import { renderGeographyTabHtml, mountLiveWeatherData } from './geo-service.js?v=20261119_geo_v2';
-import { renderHistoryTabHtml } from './history-service.js?v=20261119_hist_v3';
-import { renderCultureTabHtml } from './culture-service.js?v=20261119_cult_v1';
-import { renderGastronomyTabHtml } from './gastro-service.js?v=20261124_benelux_austria_v32';
-import { updateCityFavoriteBtn, updateAllFavoriteButtons, isFavorite } from './favorites-service.js?v=20261124_benelux_austria_v32';
+import { getCityVideo, getAvailableVideoTypes, getAvailableCityTours, CITY_VIDEOS, findPoiLiveCam, getPoiVideoInfo, getGastroRecipeVideo, getSocialMediaVideos, SOCIAL_MEDIA_REGISTRY, GASTRO_RECIPE_VIDEOS } from './video-service.js?v=20261125_must_search_v33';
+import { getDeepDiveData } from './deep-dive.js?v=20261125_must_search_v33';
+import { fetchWikiArticle, fetchWikiArticleHtml, cleanWikiTitle, buildWikiSearchDocumentHtml, containsGreek, translateQueryToEnglish } from './wiki-service.js?v=20261125_must_search_v33';
+import { calculateSubsolarPoint, calculateSunTimes } from './solar-terminator.js?v=20261125_must_search_v33';
+import { CITY_TO_STATE } from './states-data.js?v=20261125_must_search_v33';
+import { CITY_TO_COUNTRY } from './navigator.js?v=20261125_must_search_v33';
+import { renderGeographyTabHtml, mountLiveWeatherData, isCityEntity } from './geo-service.js?v=20261125_must_search_v33';
+import { renderHistoryTabHtml } from './history-service.js?v=20261125_must_search_v33';
+import { renderCultureTabHtml } from './culture-service.js?v=20261125_must_search_v33';
+import { renderGastronomyTabHtml } from './gastro-service.js?v=20261125_must_search_v33';
+import { updateCityFavoriteBtn, updateAllFavoriteButtons, isFavorite } from './favorites-service.js?v=20261125_must_search_v33';
 
 let currentActiveVideoCityId = null;
 let currentActiveVideoType = 'drone';
@@ -1755,7 +1755,9 @@ export async function openMapWikiReader(queryOrTitle, lang = 'en', fallbackEnQue
   if (langBadge) langBadge.innerText = lang.toUpperCase();
   if (langLabel) langLabel.innerText = lang === 'en' ? '🇬🇷 Ελληνικά' : '🇬🇧 English';
 
-  const res = await fetchWikiArticleHtml(queryOrTitle, lang, fallbackEnQuery);
+  const curEntity = (typeof window !== 'undefined' && window.getCurrentEntity) ? window.getCurrentEntity() : null;
+  const curCountryId = curEntity?._countryId || curEntity?.countryId || (curEntity?.type === 'country' ? curEntity?.id : '') || '';
+  const res = await fetchWikiArticleHtml(queryOrTitle, lang, fallbackEnQuery, curCountryId);
 
   const translateBtn = document.getElementById('wikiTranslateBtn');
   const translateLabel = document.getElementById('wikiTranslateBtnLabel');
@@ -1831,7 +1833,13 @@ export async function openWikiSearchPage(query = '') {
   if (langBadge) langBadge.innerText = 'EN SEARCH';
   if (translateBtn) translateBtn.classList.add('hidden');
 
-  iframe.srcdoc = buildWikiSearchDocumentHtml(q);
+  const curEntity = (typeof window !== 'undefined' && window.getCurrentEntity) ? window.getCurrentEntity() : null;
+  const curCountryId = curEntity?._countryId || curEntity?.countryId || (curEntity?.type === 'country' ? curEntity?.id : '') || '';
+  iframe.srcdoc = buildWikiSearchDocumentHtml({
+    enQuery: q,
+    localQuery: query || currentWikiTitle || '',
+    countryId: curCountryId
+  });
   if (loading) loading.classList.add('hidden');
 }
 window.openWikiSearchPage = openWikiSearchPage;
@@ -5421,7 +5429,7 @@ export function openInAppBingSearch(query = '', customTitle = '') {
 
   iframe.classList.remove('hidden');
   iframe.className = 'w-full h-full max-w-5xl rounded-xl shadow-2xl border border-sky-500/40 bg-white transition-all duration-300';
-  iframe.src = `https://www.bing.com/search?q=${encodeURIComponent(query)}`;
+  iframe.src = `https://www.bing.com/search?q=${encodeURIComponent(query)}&showconv=1`;
 
   setOverlayMediaMode('ai_search');
   overlay.classList.remove('hidden');

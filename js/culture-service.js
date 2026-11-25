@@ -449,6 +449,31 @@ export function renderCultureTabHtml(entity) {
         </div>
       </div>
 
+      <!-- 5. MUST / FAMOUS CULTURAL EVENTS & PERFORMANCES (SEARCH HUB) -->
+      <div class="p-4 rounded-2xl bg-gradient-to-br from-purple-950/35 via-slate-900/95 to-slate-950 border border-purple-500/40 shadow-xl space-y-3 mt-4">
+        <div class="flex items-center gap-2.5 border-b border-purple-500/20 pb-2.5">
+          <span class="w-8 h-8 rounded-xl bg-purple-500/20 border border-purple-500/40 text-purple-400 flex items-center justify-center shrink-0 shadow text-sm">
+            <i class="fa-solid fa-calendar-days"></i>
+          </span>
+          <div>
+            <h4 class="text-xs sm:text-sm font-bold text-white flex items-center gap-2">
+              <span>Must / Famous Πολιτιστικές Εκδηλώσεις (${name})</span>
+            </h4>
+            <p class="text-[11px] text-purple-300/80 font-medium">Θεατρικές Παραστάσεις, Μουσικές Σκηνές, Συναυλίες & Αθλητικοί Αγώνες</p>
+          </div>
+        </div>
+        <p class="text-xs text-slate-300 leading-relaxed">
+          Αναζητήστε και προγραμματίστε την έξοδό σας για τις κορυφαίες θεατρικές παραστάσεις, ζωντανές μουσικές σκηνές, μεγάλες συναυλίες και σημαντικούς αθλητικούς αγώνες στην πόλη <strong>${name}</strong> για το υπόλοιπο της χρονιάς.
+        </p>
+        <div class="pt-0.5 flex flex-wrap items-center gap-2">
+          <button onclick="window.openInAppBingSearch('${escapeStr(name)} θεατρικές παραστάσεις μουσικές σκηνές συναυλίες αθλητικοί αγώνες εκδηλώσεις calendar 2026 events tickets', 'Εκδηλώσεις: ${escapeStr(name)}')" class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-gradient-to-r from-purple-600 via-pink-600 to-indigo-600 hover:from-purple-500 hover:via-pink-500 hover:to-indigo-500 text-white font-bold text-xs transition shadow-md hover:shadow-purple-950/60 cursor-pointer group">
+            <i class="fa-brands fa-microsoft text-purple-200 text-xs"></i>
+            <span>🔍 AI Έρευνα Bing: Πολιτιστικό & Αθλητικό Ημερολόγιο</span>
+            <i class="fa-solid fa-arrow-up-right-from-square text-[10px] opacity-75 group-hover:translate-x-0.5 transition"></i>
+          </button>
+        </div>
+      </div>
+
     </div>
   `;
 }

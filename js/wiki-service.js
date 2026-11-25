@@ -589,15 +589,43 @@ function buildReaderDocument(rawHtml, lang, currentTitle, alternateTitle = '', h
  * Builds the interactive English Wikipedia Search Page in dark mode
  * Allows user to view live search results, see what exists, or type new searches directly
  */
-export function buildWikiSearchDocumentHtml(initialQuery = '') {
-  const cleanQ = (initialQuery || '').replace(/"/g, '&quot;');
+
+/**
+ * Builds the interactive Dual Wikipedia Search Page in dark mode
+ * Renders TWO editable search inputs:
+ * 1. English Wikipedia (en.wikipedia.org)
+ * 2. Local Language Wikipedia ([localLang].wikipedia.org, based on city/country)
+ * Allows user to modify search terms and browse live results in either Wikipedia directly.
+ */
+export function buildWikiSearchDocumentHtml(enQueryOrParams = '', fallbackLocalQuery = '', countryId = '') {
+  let enQ = '';
+  let localQ = '';
+  let cId = countryId;
+
+  if (typeof enQueryOrParams === 'object' && enQueryOrParams !== null) {
+    enQ = enQueryOrParams.enQuery || enQueryOrParams.query || '';
+    localQ = enQueryOrParams.localQuery || '';
+    cId = enQueryOrParams.countryId || cId;
+  } else {
+    enQ = String(enQueryOrParams || '');
+    localQ = String(fallbackLocalQuery || enQ);
+  }
+
+  const localInfo = getCountryLocalWikiLang(cId);
+  const localCode = localInfo.code || 'el';
+  const localLabel = localInfo.label || 'Ελληνική Βικιπαίδεια';
+  const localFlag = localInfo.flag || '🏛️';
+
+  const cleanEnQ = (enQ || '').replace(/"/g, '&quot;');
+  const cleanLocalQ = (localQ || '').replace(/"/g, '&quot;');
+
   return `<!DOCTYPE html>
-<html lang="en">
+<html lang="el">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <base href="https://en.wikipedia.org/">
-  <title>Wikipedia Search - EarthTimes</title>
+  <title>Wikipedia Multi-Search - EarthTimes</title>
   <style>
     :root { color-scheme: dark; }
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -605,7 +633,7 @@ export function buildWikiSearchDocumentHtml(initialQuery = '') {
       background-color: #0b0f19;
       color: #cbd5e1;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      padding: 24px 20px 80px 20px;
+      padding: 20px 16px 80px 16px;
       max-width: 960px;
       margin: 0 auto;
       line-height: 1.6;
@@ -613,16 +641,19 @@ export function buildWikiSearchDocumentHtml(initialQuery = '') {
     .search-header {
       background: #111827;
       border: 1px solid #1f293d;
-      border-radius: 20px;
-      padding: 24px;
-      margin-bottom: 24px;
+      border-radius: 18px;
+      padding: 20px;
+      margin-bottom: 20px;
       box-shadow: 0 10px 25px -5px rgba(0,0,0,0.5);
     }
     .header-top {
       display: flex;
       align-items: center;
+      justify-content: space-between;
       gap: 12px;
-      margin-bottom: 16px;
+      margin-bottom: 14px;
+      border-bottom: 1px solid #1f293d;
+      padding-bottom: 12px;
     }
     .wiki-badge {
       display: inline-flex;
@@ -633,137 +664,201 @@ export function buildWikiSearchDocumentHtml(initialQuery = '') {
       color: #38bdf8;
       font-size: 11px;
       font-weight: 700;
-      padding: 4px 10px;
+      padding: 3px 10px;
       border-radius: 9999px;
       text-transform: uppercase;
       letter-spacing: 0.5px;
     }
     h2 {
       color: #f8fafc;
-      font-size: 20px;
+      font-size: 17px;
       font-weight: 800;
+    }
+    .dual-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+    @media (min-width: 640px) {
+      .dual-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    .field-card {
+      background: rgba(15, 23, 42, 0.65);
+      border-radius: 14px;
+      padding: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .field-card-en {
+      border: 1px solid rgba(56, 189, 248, 0.3);
+    }
+    .field-card-local {
+      border: 1px solid rgba(245, 158, 11, 0.3);
+    }
+    .field-title-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 6px;
+    }
+    .field-title {
+      font-size: 12px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .field-domain {
+      font-size: 10px;
+      color: #94a3b8;
+      font-family: monospace;
     }
     .search-form {
       display: flex;
-      gap: 10px;
+      gap: 6px;
       width: 100%;
-    }
-    .search-input-wrap {
-      flex: 1;
-      position: relative;
     }
     .search-input {
-      width: 100%;
+      flex: 1;
       background: #0b0f19;
       border: 1px solid #334155;
       color: #f8fafc;
-      padding: 12px 16px 12px 42px;
-      border-radius: 14px;
-      font-size: 14px;
+      padding: 9px 12px;
+      border-radius: 10px;
+      font-size: 13px;
       outline: none;
-      transition: border-color 0.2s, box-shadow 0.2s;
+      transition: border-color 0.2s;
     }
     .search-input:focus {
       border-color: #38bdf8;
-      box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.2);
-    }
-    .search-icon {
-      position: absolute;
-      left: 14px;
-      top: 50%;
-      transform: translateY(-50%);
-      color: #64748b;
-      font-size: 15px;
+      box-shadow: 0 0 0 2px rgba(56, 189, 248, 0.2);
     }
     .search-btn {
-      background: linear-gradient(135deg, #0284c7, #2563eb);
       color: white;
       border: none;
-      padding: 12px 22px;
-      border-radius: 14px;
-      font-size: 13px;
+      padding: 9px 14px;
+      border-radius: 10px;
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      white-space: nowrap;
+      transition: opacity 0.15s;
+    }
+    .btn-en {
+      background: linear-gradient(135deg, #0284c7, #2563eb);
+    }
+    .btn-local {
+      background: linear-gradient(135deg, #d97706, #ea580c);
+    }
+    .search-btn:hover {
+      opacity: 0.9;
+    }
+    .tabs-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 14px;
+      padding-top: 12px;
+      border-top: 1px solid #1f293d;
+    }
+    .tab-btn {
+      padding: 6px 12px;
+      border-radius: 8px;
+      font-size: 12px;
       font-weight: 700;
       cursor: pointer;
       display: flex;
       align-items: center;
       gap: 6px;
-      transition: transform 0.15s, opacity 0.15s;
-      white-space: nowrap;
+      transition: all 0.2s;
+      border: 1px solid transparent;
     }
-    .search-btn:hover {
-      opacity: 0.95;
-      transform: translateY(-1px);
+    .tab-btn.active {
+      background: #0284c7;
+      color: white;
+      border-color: #38bdf8;
     }
-    .results-info {
-      font-size: 12px;
+    .tab-btn.inactive {
+      background: #1e293b;
       color: #94a3b8;
-      margin-top: 14px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+      border-color: #334155;
+    }
+    .tab-btn.inactive:hover {
+      color: #f8fafc;
+      border-color: #475569;
+    }
+    .results-count {
+      font-size: 11px;
+      color: #94a3b8;
+      font-family: monospace;
     }
     .results-list {
       display: flex;
       flex-direction: column;
-      gap: 14px;
+      gap: 12px;
     }
     .result-card {
       background: #111827;
       border: 1px solid #1f293d;
-      border-radius: 16px;
-      padding: 18px 20px;
-      transition: border-color 0.2s, transform 0.15s, background 0.2s;
+      border-radius: 14px;
+      padding: 16px 18px;
+      transition: border-color 0.2s, background 0.2s;
     }
     .result-card:hover {
       border-color: rgba(56, 189, 248, 0.45);
       background: #131d31;
-      transform: translateY(-1px);
     }
     .result-title {
-      font-size: 17px;
+      font-size: 16px;
       font-weight: 700;
       color: #38bdf8;
       cursor: pointer;
-      margin-bottom: 8px;
+      margin-bottom: 6px;
       display: inline-block;
       text-decoration: none;
       background: none;
       border: none;
-      padding: 0;
-      font-family: inherit;
       text-align: left;
     }
     .result-title:hover {
-      color: #7dd3fc;
       text-decoration: underline;
+      color: #7dd3fc;
     }
     .result-snippet {
       font-size: 13px;
       color: #94a3b8;
       line-height: 1.6;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
     .result-snippet .searchmatch {
-      color: #f59e0b;
+      color: #f8fafc;
       font-weight: 700;
-      background: rgba(245, 158, 11, 0.12);
+      background: rgba(56, 189, 248, 0.15);
       padding: 1px 3px;
-      border-radius: 4px;
+      border-radius: 3px;
     }
     .card-footer {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      border-top: 1px solid #1e293b;
-      padding-top: 12px;
+      border-top: 1px solid #1f293d;
+      padding-top: 8px;
       font-size: 11px;
       color: #64748b;
     }
     .action-btn {
-      background: #1e293b;
+      background: rgba(14, 165, 233, 0.15);
+      border: 1px solid rgba(14, 165, 233, 0.35);
       color: #38bdf8;
-      border: 1px solid #334155;
-      padding: 6px 14px;
+      padding: 5px 12px;
       border-radius: 8px;
       font-size: 11px;
       font-weight: 700;
@@ -780,18 +875,18 @@ export function buildWikiSearchDocumentHtml(initialQuery = '') {
     }
     .loading-state {
       text-align: center;
-      padding: 40px 20px;
+      padding: 36px 16px;
       color: #94a3b8;
-      font-size: 14px;
+      font-size: 13px;
     }
     .spinner {
-      width: 32px;
-      height: 32px;
+      width: 28px;
+      height: 28px;
       border: 3px solid rgba(56, 189, 248, 0.2);
       border-top-color: #38bdf8;
       border-radius: 50%;
       animation: spin 0.8s linear infinite;
-      margin: 0 auto 12px auto;
+      margin: 0 auto 10px auto;
     }
     @keyframes spin { to { transform: rotate(360deg); } }
   </style>
@@ -799,80 +894,117 @@ export function buildWikiSearchDocumentHtml(initialQuery = '') {
 <body>
   <div class="search-header">
     <div class="header-top">
-      <span class="wiki-badge">Wikipedia Search (EN)</span>
-      <h2>Αναζήτηση στην Αγγλική Wikipedia</h2>
+      <h2>Αναζήτηση στη Wikipedia (Αγγλική & Τοπική Γλώσσα)</h2>
+      <span class="wiki-badge">Dual Reader Hub</span>
     </div>
-    <form class="search-form" onsubmit="event.preventDefault(); doSearch();">
-      <div class="search-input-wrap">
-        <span class="search-icon">🔍</span>
-        <input id="searchInput" type="text" class="search-input" value="${cleanQ}" placeholder="Αναζητήστε στα Αγγλικά ή Ελληνικά (αυτόματη μετάφραση σε EN)...">
+
+    <!-- DUAL SEARCH INPUT FIELDS -->
+    <div class="dual-grid">
+      
+      <!-- Field 1: English Wikipedia -->
+      <div class="field-card field-card-en">
+        <div class="field-title-row">
+          <span class="field-title" style="color: #38bdf8;">🇬🇧 English Wikipedia (en)</span>
+          <span class="field-domain">en.wikipedia.org</span>
+        </div>
+        <form class="search-form" onsubmit="event.preventDefault(); doSearch('en');">
+          <input id="enSearchInput" type="text" class="search-input" value="${cleanEnQ}" placeholder="Όρος στα Αγγλικά...">
+          <button type="submit" class="search-btn btn-en">🔍 Αναζήτηση EN</button>
+        </form>
       </div>
-      <button type="submit" class="search-btn">Αναζήτηση</button>
-    </form>
-    <div class="results-info">
-      <span id="resultsCount">Αναζήτηση άρθρων...</span>
-      <span>Σε μαύρο φόντο (Dark Theme)</span>
+
+      <!-- Field 2: Local Language Wikipedia -->
+      <div class="field-card field-card-local">
+        <div class="field-title-row">
+          <span class="field-title" style="color: #fbbf24;">${localFlag} ${localLabel} (${localCode})</span>
+          <span class="field-domain">${localCode}.wikipedia.org</span>
+        </div>
+        <form class="search-form" onsubmit="event.preventDefault(); doSearch('${localCode}');">
+          <input id="localSearchInput" type="text" class="search-input" value="${cleanLocalQ}" placeholder="Όρος στην τοπική γλώσσα / Ελληνικά...">
+          <button type="submit" class="search-btn btn-local">🔍 Αναζήτηση ${localCode.toUpperCase()}</button>
+        </form>
+      </div>
+
+    </div>
+
+    <!-- Results Switching Tabs & Count -->
+    <div class="tabs-row">
+      <div style="display: flex; gap: 8px;">
+        <button id="tabBtnEn" class="tab-btn active" onclick="switchTab('en')">
+          <span>🇬🇧 Αποτελέσματα EN</span>
+        </button>
+        <button id="tabBtnLocal" class="tab-btn inactive" onclick="switchTab('${localCode}')">
+          <span>${localFlag} Αποτελέσματα ${localCode.toUpperCase()}</span>
+        </button>
+      </div>
+      <span id="resultsCount" class="results-count">Αναμονή αναζήτησης...</span>
     </div>
   </div>
 
   <div id="resultsList" class="results-list">
     <div class="loading-state">
       <div class="spinner"></div>
-      <div>Φόρτωση αποτελεσμάτων από την English Wikipedia...</div>
+      <div>Εκτέλεση αναζήτησης άρθρων...</div>
     </div>
   </div>
 
   <script>
-    async function doSearch() {
-      const inputEl = document.getElementById('searchInput');
-      const q = (inputEl ? inputEl.value : '').trim();
-      const listEl = document.getElementById('resultsList');
-      const countEl = document.getElementById('resultsCount');
+    var currentActiveLang = 'en';
+    var localLangCode = '${localCode}';
+
+    function switchTab(lang) {
+      currentActiveLang = lang;
+      var btnEn = document.getElementById('tabBtnEn');
+      var btnLocal = document.getElementById('tabBtnLocal');
+      if (btnEn && btnLocal) {
+        if (lang === 'en') {
+          btnEn.className = 'tab-btn active';
+          btnLocal.className = 'tab-btn inactive';
+        } else {
+          btnEn.className = 'tab-btn inactive';
+          btnLocal.className = 'tab-btn active';
+        }
+      }
+      doSearch(lang);
+    }
+
+    async function doSearch(targetLang) {
+      if (!targetLang) targetLang = currentActiveLang;
+      currentActiveLang = targetLang;
+
+      var btnEn = document.getElementById('tabBtnEn');
+      var btnLocal = document.getElementById('tabBtnLocal');
+      if (btnEn && btnLocal) {
+        btnEn.className = (targetLang === 'en') ? 'tab-btn active' : 'tab-btn inactive';
+        btnLocal.className = (targetLang !== 'en') ? 'tab-btn active' : 'tab-btn inactive';
+      }
+
+      var inputEl = (targetLang === 'en') ? document.getElementById('enSearchInput') : document.getElementById('localSearchInput');
+      var q = (inputEl ? inputEl.value : '').trim();
+      var listEl = document.getElementById('resultsList');
+      var countEl = document.getElementById('resultsCount');
+
       if (!q) {
-        listEl.innerHTML = '<div class="loading-state">Εισαγάγετε έναν όρο αναζήτησης παραπάνω.</div>';
-        countEl.innerText = '';
+        listEl.innerHTML = '<div class="loading-state">Εισαγάγετε όρο αναζήτησης στο αντίστοιχο πεδίο παραπάνω.</div>';
+        if (countEl) countEl.innerText = '';
         return;
       }
 
-      let searchQ = q;
-      let isTranslated = false;
-      if (/[\u0370-\u03FF]/.test(q)) {
-        listEl.innerHTML = '<div class="loading-state"><div class="spinner"></div><div>Μετάφραση όρου στα Αγγλικά...</div></div>';
-        countEl.innerText = 'Μετάφραση στα Αγγλικά...';
-        try {
-          const cleanGreek = q.replace(/\\(.*?\\)/g, '').replace(/[&,]/g, ' ').replace(/\\s+/g, ' ').trim();
-          const trUrl = 'https://translate.googleapis.com/translate_a/single?client=gtx&sl=el&tl=en&dt=t&q=' + encodeURIComponent(cleanGreek);
-          const trRes = await fetch(trUrl);
-          if (trRes.ok) {
-            const trData = await trRes.json();
-            if (trData && Array.isArray(trData[0])) {
-              const trText = trData[0].map(function(s) { return s[0]; }).join('').trim();
-              if (trText) {
-                searchQ = trText;
-                isTranslated = true;
-              }
-            }
-          }
-        } catch(e) {
-          console.warn('In-page translation error:', e);
-        }
-      }
-
-      listEl.innerHTML = '<div class="loading-state"><div class="spinner"></div><div>Αναζήτηση στην English Wikipedia για "' + searchQ + '"...</div></div>';
-      countEl.innerText = isTranslated ? ('Αναζήτηση στα Αγγλικά για "' + searchQ + '"...') : 'Αναζήτηση...';
+      listEl.innerHTML = '<div class="loading-state"><div class="spinner"></div><div>Αναζήτηση στην ' + targetLang.toUpperCase() + ' Wikipedia για "' + q + '"...</div></div>';
+      if (countEl) countEl.innerText = 'Αναζήτηση...';
 
       try {
-        const endpoint = 'https://en.wikipedia.org/w/api.php?action=query&list=search&srsearch=' + encodeURIComponent(searchQ) + '&utf8=&format=json&origin=*&srlimit=20';
-        const res = await fetch(endpoint);
+        var endpoint = 'https://' + targetLang + '.wikipedia.org/w/api.php?action=query&list=search&srsearch=' + encodeURIComponent(q) + '&utf8=&format=json&origin=*&srlimit=20';
+        var res = await fetch(endpoint);
         if (!res.ok) throw new Error('HTTP ' + res.status);
-        const data = await res.json();
-        const results = data.query?.search || [];
-        const total = data.query?.searchinfo?.totalhits || results.length;
+        var data = await res.json();
+        var results = data.query?.search || [];
+        var total = data.query?.searchinfo?.totalhits || results.length;
 
-        countEl.innerText = total + ' αποτελέσματα για "' + searchQ + '"' + (isTranslated ? ' (μετάφραση από: ' + q + ')' : '');
+        if (countEl) countEl.innerText = total + ' αποτελέσματα (' + targetLang.toUpperCase() + ') για "' + q + '"';
 
         if (results.length === 0) {
-          listEl.innerHTML = '<div class="loading-state">Δεν βρέθηκαν αποτελέσματα για "' + searchQ + '". Δοκιμάστε με άλλη λέξη-κλειδί.</div>';
+          listEl.innerHTML = '<div class="loading-state">Δεν βρέθηκαν αποτελέσματα στην ' + targetLang.toUpperCase() + ' Wikipedia. Δοκιμάστε με διαφορετικό όρο ή αλλάξτε γλώσσα αναζήτησης παραπάνω.</div>';
           return;
         }
 
@@ -880,25 +1012,26 @@ export function buildWikiSearchDocumentHtml(initialQuery = '') {
           var escTitle = (item.title || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
           var encTitle = encodeURIComponent(item.title || '');
           return '<div class="result-card">' +
-            '<button type="button" class="result-title action-open-article" data-title="' + encTitle + '">' + escTitle + '</button>' +
+            '<button type="button" class="result-title action-open-article" data-title="' + encTitle + '" data-lang="' + targetLang + '">' + escTitle + '</button>' +
             '<div class="result-snippet">' + (item.snippet || '') + '...</div>' +
             '<div class="card-footer">' +
               '<span>' + (item.wordcount ? item.wordcount + ' λέξεις' : '') + '</span>' +
-              '<button type="button" class="action-btn action-open-article" data-title="' + encTitle + '">📖 Ανάγνωση Άρθρου (English) &rarr;</button>' +
+              '<button type="button" class="action-btn action-open-article" data-title="' + encTitle + '" data-lang="' + targetLang + '">📖 Ανάγνωση Άρθρου (' + targetLang.toUpperCase() + ') &rarr;</button>' +
             '</div>' +
           '</div>';
         }).join('');
       } catch (err) {
         console.error('Search error:', err);
-        listEl.innerHTML = '<div class="loading-state" style="color: #f87171;">Σφάλμα κατά την επικοινωνία με την Wikipedia. Παρακαλώ δοκιμάστε ξανά.</div>';
+        listEl.innerHTML = '<div class="loading-state" style="color: #f87171;">Σφάλμα κατά την επικοινωνία με τη Wikipedia (' + targetLang + '). Παρακαλώ δοκιμάστε ξανά.</div>';
       }
     }
 
-    function openArticle(title) {
+    function openArticle(title, lang) {
       if (!title) return;
+      var targetLang = lang || currentActiveLang || 'en';
       try {
         if (window.parent && typeof window.parent.openMapWikiReader === 'function') {
-          window.parent.openMapWikiReader(title, 'en');
+          window.parent.openMapWikiReader(title, targetLang);
           return;
         }
       } catch (err) {
@@ -908,45 +1041,30 @@ export function buildWikiSearchDocumentHtml(initialQuery = '') {
         window.parent.postMessage({
           type: 'EARTH_TIMES_WIKI_NAV',
           title: title,
-          lang: 'en'
+          lang: targetLang
         }, '*');
       } catch (err) {
         console.error('postMessage failed:', err);
       }
     }
 
-    // Intercept clicks on action buttons and links inside snippets
     document.addEventListener('click', function(e) {
       var btn = e.target.closest('.action-open-article');
       if (btn) {
         e.preventDefault();
         e.stopPropagation();
         var raw = btn.getAttribute('data-title');
+        var lang = btn.getAttribute('data-lang') || currentActiveLang;
         if (raw) {
-          openArticle(decodeURIComponent(raw));
-        }
-        return false;
-      }
-
-      var anchor = e.target.closest('a');
-      if (anchor) {
-        e.preventDefault();
-        e.stopPropagation();
-        var href = anchor.getAttribute('href') || '';
-        if (href.includes('/wiki/')) {
-          var parts = href.split('/wiki/');
-          var targetTitle = parts.length > 1 ? decodeURIComponent(parts[1].split('#')[0]) : '';
-          if (targetTitle) {
-            openArticle(targetTitle);
-          }
+          openArticle(decodeURIComponent(raw), lang);
         }
         return false;
       }
     }, true);
 
-    // Auto-search on load
+    // Initial search on load
     window.addEventListener('DOMContentLoaded', function() {
-      doSearch();
+      doSearch('en');
     });
   </script>
 </body>
