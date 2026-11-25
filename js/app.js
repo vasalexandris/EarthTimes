@@ -4,15 +4,15 @@
  * USA, Leaflet Map, Base Layers, UI Dossier, and Time Machine.
  */
 
-import { loadWorldData, loadCountryData, loadStateData } from './data-service.js?v=20261125_must_search_v33';
-import * as MapModule from './map.js?v=20261125_must_search_v33';
-import * as UIModule from './ui.js?v=20261125_must_search_v33';
-import * as TimeMachine from './time-machine.js?v=20261125_must_search_v33';
-import * as NavigatorModule from './navigator.js?v=20261125_must_search_v33';
-import * as GlobeModule from './globe-view.js?v=20261125_must_search_v33';
-import { US_STATES, CITY_TO_STATE } from './states-data.js?v=20261125_must_search_v33';
-import * as PresentationModule from './presentation.js?v=20261125_must_search_v33';
-import * as FavoritesModule from './favorites-service.js?v=20261125_must_search_v33';
+import { loadWorldData, loadCountryData, loadStateData } from './data-service.js?v=20261125_weather_fix_v37';
+import * as MapModule from './map.js?v=20261125_weather_fix_v37';
+import * as UIModule from './ui.js?v=20261125_weather_fix_v37';
+import * as TimeMachine from './time-machine.js?v=20261125_weather_fix_v37';
+import * as NavigatorModule from './navigator.js?v=20261125_weather_fix_v37';
+import * as GlobeModule from './globe-view.js?v=20261125_weather_fix_v37';
+import { US_STATES, CITY_TO_STATE } from './states-data.js?v=20261125_weather_fix_v37';
+import * as PresentationModule from './presentation.js?v=20261125_weather_fix_v37';
+import * as FavoritesModule from './favorites-service.js?v=20261125_weather_fix_v37';
 
 // Application State
 let worldData = null;

@@ -102,10 +102,10 @@ export async function fetchLiveGeoData(lat, lng) {
     };
 
     liveGeoCache.set(cacheKey, { timestamp: Date.now(), data: result });
-  if (live.elevation != null) {
-    const elevEl = document.getElementById('geoElevationVal');
+  if (result.elevation != null) {
+    const elevEl = typeof document !== 'undefined' ? document.getElementById('geoElevationVal') : null;
     if (elevEl && (elevEl.innerText === '45' || elevEl.innerText === '—')) {
-      elevEl.innerText = live.elevation.toLocaleString();
+      elevEl.innerText = result.elevation.toLocaleString();
     }
   }
 

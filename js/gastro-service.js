@@ -8,7 +8,7 @@
  * - Famous Dishes, Recipes & Specialties
  */
 
-import { isFavorite } from './favorites-service.js?v=20261125_must_search_v33';
+import { isFavorite } from './favorites-service.js?v=20261125_weather_fix_v37';
 
 function escapeStr(str) {
   if (!str) return '';
