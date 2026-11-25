@@ -51,12 +51,17 @@ export function renderTraditionalDiningBoxHtml(entity) {
         Ανακαλύψτε τις αυθεντικές παραδοσιακές γεύσεις, τι συνηθίζουν να τρώνε οι ντόπιοι στην πόλη <strong>${name}</strong> και πού αξίζει να δοκιμάσετε γνήσια τοπική κουζίνα.
       </p>
 
-      <!-- Compact Action Button (In-App Bing Search) -->
-      <div class="pt-0.5">
+      <!-- Action Buttons: Bing AI & Google Maps Satellite -->
+      <div class="pt-0.5 flex flex-wrap items-center gap-2">
         <button onclick="window.openInAppBingSearch('${escapeStr(mainBingQuery)}', '${escapeStr(mainTitle)}')" class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-gradient-to-r from-amber-600 to-orange-600 hover:from-amber-500 hover:to-orange-500 text-white font-bold text-xs transition shadow-md hover:shadow-amber-950/60 cursor-pointer group">
           <i class="fa-brands fa-microsoft text-amber-200 text-xs"></i>
           <span>🔍 AI Έρευνα Bing: Top 10 Επιλογές Locals</span>
           <i class="fa-solid fa-arrow-up-right-from-square text-[10px] opacity-75 group-hover:translate-x-0.5 transition"></i>
+        </button>
+        <button onclick="window.openMapGooglePlaces('${escapeStr(name)} παραδοσιακά εστιατόρια ταβέρνες traditional restaurants', 'Must / Famous Παραδοσιακά Εστιατόρια: ${escapeStr(name)}', 'k')" class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-bold text-xs transition shadow-md hover:shadow-emerald-950/60 cursor-pointer group" title="Προβολή παραδοσιακών εστιατορίων στο Google Maps (Δορυφόρος)">
+          <i class="fa-solid fa-satellite text-emerald-200 text-xs"></i>
+          <span>🗺️ Google Maps Δορυφόρος: Εστιατόρια</span>
+          <i class="fa-solid fa-location-dot text-[10px] opacity-75 group-hover:scale-110 transition"></i>
         </button>
       </div>
     </div>
@@ -95,12 +100,17 @@ export function renderStreetFoodSpotsBoxHtml(entity) {
         Βρείτε τις πιο φημισμένες επιλογές φαγητού του δρόμου, τι απολαμβάνουν οι ντόπιοι και τι αξίζει να δοκιμάσετε στο χέρι στην πόλη <strong>${name}</strong>.
       </p>
 
-      <!-- Compact Action Button (In-App Bing Search) -->
-      <div class="pt-0.5">
+      <!-- Action Buttons: Bing AI & Google Maps Satellite -->
+      <div class="pt-0.5 flex flex-wrap items-center gap-2">
         <button onclick="window.openInAppBingSearch('${escapeStr(mainBingQuery)}', '${escapeStr(mainTitle)}')" class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-gradient-to-r from-orange-600 to-amber-600 hover:from-orange-500 hover:to-amber-500 text-white font-bold text-xs transition shadow-md hover:shadow-orange-950/60 cursor-pointer group">
           <i class="fa-brands fa-microsoft text-orange-200 text-xs"></i>
           <span>🔍 AI Έρευνα Bing: Top 10 Street Food</span>
           <i class="fa-solid fa-arrow-up-right-from-square text-[10px] opacity-75 group-hover:translate-x-0.5 transition"></i>
+        </button>
+        <button onclick="window.openMapGooglePlaces('${escapeStr(name)} street food fast food spots', 'Must / Famous Street Food: ${escapeStr(name)}', 'k')" class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-bold text-xs transition shadow-md hover:shadow-emerald-950/60 cursor-pointer group" title="Προβολή σημείων street food στο Google Maps (Δορυφόρος)">
+          <i class="fa-solid fa-satellite text-emerald-200 text-xs"></i>
+          <span>🗺️ Google Maps Δορυφόρος: Street Food</span>
+          <i class="fa-solid fa-location-dot text-[10px] opacity-75 group-hover:scale-110 transition"></i>
         </button>
       </div>
     </div>
@@ -139,12 +149,17 @@ export function renderFamousDessertsBoxHtml(entity) {
         Ανακαλύψτε τα πιο φημισμένα παραδοσιακά γλυκά και τα επιδόρπια που αξίζει οπωσδήποτε να δοκιμάσετε κατά την επίσκεψή σας στην πόλη <strong>${name}</strong>.
       </p>
 
-      <!-- Compact Action Button (In-App Bing Search) -->
-      <div class="pt-0.5">
+      <!-- Action Buttons: Bing AI & Google Maps Satellite -->
+      <div class="pt-0.5 flex flex-wrap items-center gap-2">
         <button onclick="window.openInAppBingSearch('${escapeStr(mainBingQuery)}', '${escapeStr(mainTitle)}')" class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-gradient-to-r from-pink-600 via-rose-600 to-amber-600 hover:from-pink-500 hover:via-rose-500 hover:to-amber-500 text-white font-bold text-xs transition shadow-md hover:shadow-pink-950/60 cursor-pointer group">
           <i class="fa-brands fa-microsoft text-pink-200 text-xs"></i>
           <span>🔍 AI Έρευνα Bing: Top 10 Γλυκά & Επιδόρπια</span>
           <i class="fa-solid fa-arrow-up-right-from-square text-[10px] opacity-75 group-hover:translate-x-0.5 transition"></i>
+        </button>
+        <button onclick="window.openMapGooglePlaces('${escapeStr(name)} ζαχαροπλαστεία bakeries pastry shops', 'Must / Famous Ζαχαροπλαστεία: ${escapeStr(name)}', 'k')" class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-bold text-xs transition shadow-md hover:shadow-emerald-950/60 cursor-pointer group" title="Προβολή ζαχαροπλαστείων στο Google Maps (Δορυφόρος)">
+          <i class="fa-solid fa-satellite text-emerald-200 text-xs"></i>
+          <span>🗺️ Google Maps Δορυφόρος: Ζαχαροπλαστεία</span>
+          <i class="fa-solid fa-location-dot text-[10px] opacity-75 group-hover:scale-110 transition"></i>
         </button>
       </div>
     </div>
@@ -189,11 +204,16 @@ export function renderCafesBoxHtml(entity) {
       <p class="text-xs text-slate-300 leading-relaxed">
         Ανακαλύψτε τα καλύτερα καφέ, παραδοσιακά στέκια και specialty coffee bars που προτιμούν οι ντόπιοι στην πόλη <strong>${name}</strong>.
       </p>
-      <div class="pt-0.5">
+      <div class="pt-0.5 flex flex-wrap items-center gap-2">
         <button onclick="window.openInAppBingSearch('${escapeStr(mainBingQuery)}', '${escapeStr(mainTitle)}')" class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-gradient-to-r from-amber-600 to-yellow-600 hover:from-amber-500 hover:to-yellow-500 text-white font-bold text-xs transition shadow-md hover:shadow-amber-950/60 cursor-pointer group">
           <i class="fa-brands fa-microsoft text-amber-200 text-xs"></i>
           <span>🔍 AI Έρευνα Bing: Top 10 Καφέ & Bistros</span>
           <i class="fa-solid fa-arrow-up-right-from-square text-[10px] opacity-75 group-hover:translate-x-0.5 transition"></i>
+        </button>
+        <button onclick="window.openMapGooglePlaces('${escapeStr(name)} cafes bistros specialty coffee', 'Must / Famous Καφέ & Bistros: ${escapeStr(name)}', 'k')" class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-bold text-xs transition shadow-md hover:shadow-emerald-950/60 cursor-pointer group" title="Προβολή καφέ & bistros στο Google Maps (Δορυφόρος)">
+          <i class="fa-solid fa-satellite text-emerald-200 text-xs"></i>
+          <span>🗺️ Google Maps Δορυφόρος: Καφέ & Bistros</span>
+          <i class="fa-solid fa-location-dot text-[10px] opacity-75 group-hover:scale-110 transition"></i>
         </button>
       </div>
     </div>
@@ -228,11 +248,16 @@ export function renderBarsBoxHtml(entity) {
       <p class="text-xs text-slate-300 leading-relaxed">
         Βρείτε τα πιο φημισμένα bars για ποτό, signature cocktails, wine bars και σημεία νυχτερινής διασκέδασης στην πόλη <strong>${name}</strong>.
       </p>
-      <div class="pt-0.5">
+      <div class="pt-0.5 flex flex-wrap items-center gap-2">
         <button onclick="window.openInAppBingSearch('${escapeStr(mainBingQuery)}', '${escapeStr(mainTitle)}')" class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 hover:from-indigo-500 hover:via-purple-500 hover:to-pink-500 text-white font-bold text-xs transition shadow-md hover:shadow-indigo-950/60 cursor-pointer group">
           <i class="fa-brands fa-microsoft text-indigo-200 text-xs"></i>
           <span>🔍 AI Έρευνα Bing: Top 10 Bars & Nightlife</span>
           <i class="fa-solid fa-arrow-up-right-from-square text-[10px] opacity-75 group-hover:translate-x-0.5 transition"></i>
+        </button>
+        <button onclick="window.openMapGooglePlaces('${escapeStr(name)} cocktail bars pubs nightlife', 'Must / Famous Bars & Nightlife: ${escapeStr(name)}', 'k')" class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-bold text-xs transition shadow-md hover:shadow-emerald-950/60 cursor-pointer group" title="Προβολή bars & nightlife στο Google Maps (Δορυφόρος)">
+          <i class="fa-solid fa-satellite text-emerald-200 text-xs"></i>
+          <span>🗺️ Google Maps Δορυφόρος: Bars & Nightlife</span>
+          <i class="fa-solid fa-location-dot text-[10px] opacity-75 group-hover:scale-110 transition"></i>
         </button>
       </div>
     </div>
@@ -285,6 +310,10 @@ export function renderGastronomyTabHtml(entity, items = []) {
             <i class="fa-brands fa-wikipedia-w text-sky-400"></i>
             <span>Wikipedia</span>
           </button>
+          <button onclick="window.openMapGooglePlaces('${escapeStr(name)} restaurants φαγητό παραδοσιακή κουζίνα', 'Σημεία Εστίασης: ${escapeStr(name)}', 'k')" class="px-2.5 py-1 rounded-lg bg-emerald-950/80 hover:bg-emerald-900 text-emerald-300 hover:text-white border border-emerald-700/50 text-[11px] font-bold transition flex items-center gap-1.5 shadow cursor-pointer" title="Σημεία εστίασης στον δορυφόρο">
+            <i class="fa-solid fa-satellite text-emerald-400 text-[10px]"></i>
+            <span>Google Maps</span>
+          </button>
           <button onclick="window.openGastroVideo('Παραδοσιακή Κουζίνα & Γεύσεις', '${escapeStr(name)}')" class="px-2.5 py-1 rounded-lg bg-rose-950/80 hover:bg-rose-900 text-rose-300 hover:text-white border border-rose-700/50 text-[11px] font-bold transition flex items-center gap-1.5 shadow cursor-pointer" title="Βίντεο τοπικής κουζίνας">
             <i class="fa-solid fa-play text-rose-400"></i>
             <span>Βίντεο Κουζίνας 📹</span>
@@ -316,6 +345,10 @@ export function renderGastronomyTabHtml(entity, items = []) {
           <button onclick="window.openMapWikiReader('${escapeStr(engName || name)} street food', 'en', '${escapeStr(name)} street food')" class="px-2.5 py-1 rounded-lg bg-sky-950/80 hover:bg-sky-900 text-sky-300 hover:text-white border border-sky-700/50 text-[11px] font-bold transition flex items-center gap-1.5 shadow cursor-pointer">
             <i class="fa-brands fa-wikipedia-w text-sky-400"></i>
             <span>Wikipedia</span>
+          </button>
+          <button onclick="window.openMapGooglePlaces('${escapeStr(name)} street food fast food', 'Σημεία Street Food: ${escapeStr(name)}', 'k')" class="px-2.5 py-1 rounded-lg bg-emerald-950/80 hover:bg-emerald-900 text-emerald-300 hover:text-white border border-emerald-700/50 text-[11px] font-bold transition flex items-center gap-1.5 shadow cursor-pointer" title="Σημεία street food στον δορυφόρο">
+            <i class="fa-solid fa-satellite text-emerald-400 text-[10px]"></i>
+            <span>Google Maps</span>
           </button>
           <button onclick="window.openGastroVideo('Street Food & Υπαίθριες Γεύσεις', '${escapeStr(name)}')" class="px-2.5 py-1 rounded-lg bg-orange-950/80 hover:bg-orange-900 text-orange-300 hover:text-white border border-orange-700/50 text-[11px] font-bold transition flex items-center gap-1.5 shadow cursor-pointer" title="Προβολή βίντεο Street Food">
             <i class="fa-solid fa-store text-orange-400"></i>
@@ -403,6 +436,10 @@ export function renderGastronomyTabHtml(entity, items = []) {
                   <button onclick="window.openMapWikiReader('${escapeStr(item.wiki || item.title)}', 'en', '${escapeStr(item.title)}')" class="px-2.5 py-1 rounded-lg bg-sky-950/80 hover:bg-sky-900 text-sky-300 hover:text-white border border-sky-700/50 text-[11px] font-bold transition flex items-center gap-1.5 shadow cursor-pointer">
                     <i class="fa-brands fa-wikipedia-w"></i>
                     <span>Wikipedia</span>
+                  </button>
+                  <button onclick="window.openMapGooglePlaces('${escapeStr(item.title)} ${escapeStr(name)}', '${escapeStr(item.title)}: ${escapeStr(name)}', 'k')" class="px-2.5 py-1 rounded-lg bg-emerald-950/80 hover:bg-emerald-900 text-emerald-300 hover:text-white border border-emerald-700/50 text-[11px] font-bold transition flex items-center gap-1.5 shadow cursor-pointer" title="Αναζήτηση σημείων για ${escapeStr(item.title)} στον δορυφορικό χάρτη Google Maps">
+                    <i class="fa-solid fa-satellite text-[10px]"></i>
+                    <span>Google Maps</span>
                   </button>
                   <button onclick="window.openGastroVideo('${escapeStr(item.title)}', '${escapeStr(name)}')" class="px-2.5 py-1 rounded-lg ${btnColor} hover:text-white border text-[11px] font-bold transition flex items-center gap-1.5 shadow cursor-pointer" title="${btnLabel}">
                     <i class="${btnIcon}"></i>

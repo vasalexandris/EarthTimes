@@ -203,6 +203,7 @@ export function flyToWorld() {
   UIModule.closeMapVideoOverlay();
   UIModule.closeMapWikiOverlay();
   UIModule.closeMapStreetViewOverlay();
+  if (UIModule.closeMapGoogleMapsOverlay) UIModule.closeMapGoogleMapsOverlay();
   UIModule.closeDeepDiveOverlay();
 
   currentScope = 'world';
@@ -240,6 +241,7 @@ export async function flyToCountry(countryId = 'greece') {
   PresentationModule.closeCityPresentation();
   UIModule.closeMapVideoOverlay();
   UIModule.closeMapStreetViewOverlay();
+  if (UIModule.closeMapGoogleMapsOverlay) UIModule.closeMapGoogleMapsOverlay();
   UIModule.closeDeepDiveOverlay();
 
   currentScope = 'country';
@@ -307,6 +309,7 @@ export async function flyToState(stateId = 'massachusetts') {
   PresentationModule.closeCityPresentation();
   UIModule.closeMapVideoOverlay();
   UIModule.closeMapStreetViewOverlay();
+  if (UIModule.closeMapGoogleMapsOverlay) UIModule.closeMapGoogleMapsOverlay();
   UIModule.closeDeepDiveOverlay();
 
   currentScope = 'state';
@@ -820,6 +823,7 @@ export async function flyToCity(cityId) {
     UIModule.openMapWikiReader(city.englishName || city.name, 'en', city.name);
   } else {
     UIModule.closeMapStreetViewOverlay();
+  if (UIModule.closeMapGoogleMapsOverlay) UIModule.closeMapGoogleMapsOverlay();
     UIModule.closeDeepDiveOverlay();
   }
 }
@@ -1016,6 +1020,9 @@ window.switchWikiToBingSearch = UIModule.switchWikiToBingSearch;
 window.openDeepDiveBingAiSearch = UIModule.openDeepDiveBingAiSearch;
 window.openMapStreetView = UIModule.openMapStreetView;
 window.closeMapStreetViewOverlay = UIModule.closeMapStreetViewOverlay;
+window.openMapGooglePlaces = UIModule.openMapGooglePlaces;
+window.closeMapGoogleMapsOverlay = UIModule.closeMapGoogleMapsOverlay;
+window.switchGoogleMapsOverlayMode = UIModule.switchGoogleMapsOverlayMode;
 
 // Google Street View Integration (In-Map Overlay)
 export function openCurrentStreetView() {

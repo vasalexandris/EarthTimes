@@ -895,9 +895,59 @@
               </div>
             </div>
 
-            <!-- Sandboxed Street View frame inside the map container -->
+                        <!-- Sandboxed Street View frame inside the map container -->
             <div class="flex-1 relative w-full h-full bg-slate-950">
               <iframe id="mapStreetViewIframe" class="w-full h-full border-0 bg-slate-950" loading="lazy" allowfullscreen referrerpolicy="strict-origin-when-cross-origin" title="Google Street View"></iframe>
+            </div>
+          </div>
+
+          <!-- IN-MAP GOOGLE MAPS SATELLITE POI SEARCH OVERLAY (Takes exact map canvas dimensions) -->
+          <div id="mapGoogleMapsOverlay" class="absolute inset-0 z-30 bg-slate-950 flex flex-col hidden">
+            <div class="bg-slate-900 border-b border-slate-800 px-3 sm:px-4 py-2 flex items-center justify-between gap-2 shrink-0 shadow-lg">
+              <div class="flex items-center gap-2 min-w-0">
+                <span class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 text-xs font-bold flex items-center gap-1.5 shrink-0">
+                  <i class="fa-solid fa-satellite"></i> Google Maps
+                </span>
+                <h3 id="googleMapsOverlayTitle" class="text-xs sm:text-sm font-bold text-white truncate max-w-[140px] sm:max-w-xs md:max-w-md">Σημεία στο Χάρτη</h3>
+                <span id="googleMapsOverlayBadge" class="hidden sm:inline-block px-1.5 py-0.5 rounded text-[10px] font-mono bg-emerald-950 text-emerald-300 border border-emerald-700/50">Δορυφόρος</span>
+              </div>
+              <div class="flex items-center gap-1.5 sm:gap-2 shrink-0">
+                <!-- Layer View Toggle Buttons: Satellite (k), Hybrid (h), Road (m) -->
+                <div class="hidden xs:flex items-center bg-slate-800 rounded-lg p-0.5 border border-slate-700 text-xs">
+                  <button id="gmapsModeSatellite" onclick="window.switchGoogleMapsOverlayMode('k')" class="px-2 py-1 rounded bg-emerald-600 text-white font-bold text-[11px] transition cursor-pointer" title="Δορυφορική προβολή">
+                    <i class="fa-solid fa-satellite"></i>
+                    <span class="hidden md:inline ml-1">Δορυφόρος</span>
+                  </button>
+                  <button id="gmapsModeHybrid" onclick="window.switchGoogleMapsOverlayMode('h')" class="px-2 py-1 rounded text-slate-300 hover:text-white font-bold text-[11px] transition cursor-pointer" title="Υβριδική προβολή (Δορυφόρος με δρόμους & ονόματα)">
+                    <i class="fa-solid fa-earth-americas"></i>
+                    <span class="hidden md:inline ml-1">Hybrid</span>
+                  </button>
+                  <button id="gmapsModeRoad" onclick="window.switchGoogleMapsOverlayMode('m')" class="px-2 py-1 rounded text-slate-300 hover:text-white font-bold text-[11px] transition cursor-pointer" title="Οδική προβολή">
+                    <i class="fa-solid fa-map"></i>
+                    <span class="hidden md:inline ml-1">Οδικός</span>
+                  </button>
+                </div>
+
+                <a id="googleMapsDirectLink" href="#" target="_blank" rel="noopener noreferrer" class="px-2.5 sm:px-3 py-1 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs transition flex items-center gap-1.5 shadow" title="Άνοιγμα πλήρους Google Maps σε νέα καρτέλα">
+                  <i class="fa-solid fa-arrow-up-right-from-square text-[11px]"></i>
+                  <span class="hidden sm:inline">Google Maps ↗</span>
+                </a>
+                <button onclick="window.closeMapGoogleMapsOverlay()" class="px-3 py-1 rounded-lg bg-sky-600 hover:bg-sky-500 text-white text-xs font-bold transition flex items-center gap-1.5 shadow cursor-pointer">
+                  <i class="fa-solid fa-arrow-left"></i>
+                  <span>✕ Επιστροφή στον Χάρτη</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Loading Spinner (shown while iframe loads) -->
+            <div id="googleMapsOverlayLoading" class="absolute inset-0 top-[49px] flex flex-col items-center justify-center gap-3 bg-slate-950/80 z-10 text-slate-300 hidden">
+              <div class="animate-spin rounded-full h-10 w-10 border-2 border-emerald-500 border-t-transparent"></div>
+              <p class="text-xs sm:text-sm font-medium">Φόρτωση Google Maps Δορυφόρου με τα επιλεγμένα σημεία...</p>
+            </div>
+
+            <!-- Sandboxed Google Maps frame inside the map container -->
+            <div class="flex-1 relative w-full h-full bg-slate-950">
+              <iframe id="mapGoogleMapsIframe" class="w-full h-full border-0 bg-slate-950" loading="lazy" allowfullscreen referrerpolicy="strict-origin-when-cross-origin" title="Google Maps Places Satellite View"></iframe>
             </div>
           </div>
         </div>
@@ -1914,7 +1964,7 @@
   </div>
 
   <!-- Modular Application Scripts -->
-<script type="module" src="js/app.js?v=20261125_must_search_v35"></script>
+<script type="module" src="js/app.js?v=20261125_gmaps_satellite_v36"></script>
   <!-- Fullscreen Toggle Script (Android, WebKit, Desktop) -->
   <script>
     window.toggleFullScreen = function() {

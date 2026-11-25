@@ -56,8 +56,10 @@ export function syncMapFloatingControlsVisibility() {
   const isDeepDiveOpen = deepDiveOverlay && !deepDiveOverlay.classList.contains('hidden');
   const isWikiOpen = wikiOverlay && !wikiOverlay.classList.contains('hidden');
   const isStreetViewOpen = streetViewOverlay && !streetViewOverlay.classList.contains('hidden');
+  const googleMapsOverlay = document.getElementById('mapGoogleMapsOverlay');
+  const isGoogleMapsOpen = googleMapsOverlay && !googleMapsOverlay.classList.contains('hidden');
 
-  if (isVideoOpen || isDeepDiveOpen || isWikiOpen || isStreetViewOpen) {
+  if (isVideoOpen || isDeepDiveOpen || isWikiOpen || isStreetViewOpen || isGoogleMapsOpen) {
     container.classList.add('hidden');
   } else {
     container.classList.remove('hidden');
@@ -1662,6 +1664,7 @@ export function openLiveCamModal(youtubeId, titleText = 'Ζωντανή Μετά
 
   closeMapWikiOverlay();
   closeMapStreetViewOverlay();
+  closeMapGoogleMapsOverlay();
   closeDeepDiveOverlay();
 
   if (title) title.innerText = `🔴 Live Cam: ${titleText}`;
@@ -1744,6 +1747,7 @@ export async function openMapWikiReader(queryOrTitle, lang = 'en', fallbackEnQue
   // Close video overlay and street view overlay if open
   closeMapVideoOverlay();
   closeMapStreetViewOverlay();
+  closeMapGoogleMapsOverlay();
   if (window.closeCityPresentation) window.closeCityPresentation();
 
   overlay.classList.remove('hidden');
@@ -1967,6 +1971,119 @@ export function closeMapStreetViewOverlay() {
     window.MapModule.invalidateMapSize();
   }
 }
+
+let currentGoogleMapsQuery = '';
+let currentGoogleMapsTitle = '';
+let currentGoogleMapsMode = 'k';
+
+/**
+ * In-Map Embedded Google Maps Satellite POI Search Overlay
+ * Opens Google Maps inside the map frame centered on query/city in Satellite view
+ * showing only the search results pins (e.g. cafes, restaurants, sights).
+ */
+export function openMapGooglePlaces(query, title = '', mode = 'k') {
+  const overlay = document.getElementById('mapGoogleMapsOverlay');
+  const iframe = document.getElementById('mapGoogleMapsIframe');
+  const titleEl = document.getElementById('googleMapsOverlayTitle');
+  const badgeEl = document.getElementById('googleMapsOverlayBadge');
+  const directLink = document.getElementById('googleMapsDirectLink');
+  const loadingEl = document.getElementById('googleMapsOverlayLoading');
+
+  if (!overlay || !iframe) return;
+
+  // Close other overlays
+  closeMapVideoOverlay();
+  closeMapWikiOverlay();
+  closeMapStreetViewOverlay();
+  closeDeepDiveOverlay();
+  if (window.closeCityPresentation) window.closeCityPresentation();
+
+  currentGoogleMapsQuery = query || '';
+  currentGoogleMapsTitle = title || query || 'Σημεία στο Χάρτη';
+  currentGoogleMapsMode = mode || 'k';
+
+  if (titleEl) {
+    titleEl.innerText = currentGoogleMapsTitle;
+  }
+  if (badgeEl) {
+    badgeEl.innerText = currentGoogleMapsMode === 'm' ? 'Οδικός' : (currentGoogleMapsMode === 'h' ? 'Hybrid' : 'Δορυφόρος');
+  }
+  if (directLink) {
+    directLink.href = 'https://www.google.com/maps/search/' + encodeURIComponent(currentGoogleMapsQuery);
+  }
+
+  updateGoogleMapsToolbarButtons(currentGoogleMapsMode);
+
+  if (loadingEl) loadingEl.classList.remove('hidden');
+
+  iframe.onload = () => {
+    if (loadingEl) loadingEl.classList.add('hidden');
+  };
+
+  iframe.src = 'https://maps.google.com/maps?q=' + encodeURIComponent(currentGoogleMapsQuery) + '&t=' + currentGoogleMapsMode + '&z=15&output=embed';
+
+  overlay.classList.remove('hidden');
+  syncMapFloatingControlsVisibility();
+}
+
+export function closeMapGoogleMapsOverlay() {
+  const overlay = document.getElementById('mapGoogleMapsOverlay');
+  const iframe = document.getElementById('mapGoogleMapsIframe');
+  const loadingEl = document.getElementById('googleMapsOverlayLoading');
+  if (iframe) iframe.src = 'about:blank';
+  if (loadingEl) loadingEl.classList.add('hidden');
+  if (overlay) overlay.classList.add('hidden');
+  syncMapFloatingControlsVisibility();
+  if (window.MapModule && typeof window.MapModule.invalidateMapSize === 'function') {
+    window.MapModule.invalidateMapSize();
+  }
+}
+
+export function switchGoogleMapsOverlayMode(mode) {
+  currentGoogleMapsMode = mode || 'k';
+  const iframe = document.getElementById('mapGoogleMapsIframe');
+  const badgeEl = document.getElementById('googleMapsOverlayBadge');
+  const loadingEl = document.getElementById('googleMapsOverlayLoading');
+
+  if (badgeEl) {
+    badgeEl.innerText = mode === 'm' ? 'Οδικός' : (mode === 'h' ? 'Hybrid' : 'Δορυφόρος');
+  }
+  updateGoogleMapsToolbarButtons(mode);
+
+  if (loadingEl) loadingEl.classList.remove('hidden');
+  if (iframe && currentGoogleMapsQuery) {
+    iframe.src = 'https://maps.google.com/maps?q=' + encodeURIComponent(currentGoogleMapsQuery) + '&t=' + mode + '&z=15&output=embed';
+  }
+}
+
+function updateGoogleMapsToolbarButtons(mode) {
+  const satBtn = document.getElementById('gmapsModeSatellite');
+  const hybBtn = document.getElementById('gmapsModeHybrid');
+  const roadBtn = document.getElementById('gmapsModeRoad');
+
+  [satBtn, hybBtn, roadBtn].forEach(b => {
+    if (!b) return;
+    b.classList.remove('bg-emerald-600', 'text-white', 'text-slate-300', 'hover:text-white');
+  });
+
+  if (mode === 'k' && satBtn) {
+    satBtn.classList.add('bg-emerald-600', 'text-white');
+    if (hybBtn) hybBtn.classList.add('text-slate-300', 'hover:text-white');
+    if (roadBtn) roadBtn.classList.add('text-slate-300', 'hover:text-white');
+  } else if (mode === 'h' && hybBtn) {
+    hybBtn.classList.add('bg-emerald-600', 'text-white');
+    if (satBtn) satBtn.classList.add('text-slate-300', 'hover:text-white');
+    if (roadBtn) roadBtn.classList.add('text-slate-300', 'hover:text-white');
+  } else if (roadBtn) {
+    roadBtn.classList.add('bg-emerald-600', 'text-white');
+    if (satBtn) satBtn.classList.add('text-slate-300', 'hover:text-white');
+    if (hybBtn) hybBtn.classList.add('text-slate-300', 'hover:text-white');
+  }
+}
+
+window.openMapGooglePlaces = openMapGooglePlaces;
+window.closeMapGoogleMapsOverlay = closeMapGoogleMapsOverlay;
+window.switchGoogleMapsOverlayMode = switchGoogleMapsOverlayMode;
 
 export function openDeepDiveWikiReader() {
   if (activeDeepDiveData) {
@@ -4428,6 +4545,10 @@ export function renderTabContent(tabId, entity, activeYear = null, activeSpots =
                   <i class="fa-brands fa-wikipedia-w"></i>
                   <span>Wikipedia</span>
                 </button>
+                <button onclick="window.openMapGooglePlaces('${escapeStr(item.title)} ${escapeStr(entity.name)}', '${escapeStr(item.title)}: ${escapeStr(entity.name)}', 'k')" class="px-2.5 py-1 rounded-lg bg-emerald-950/80 hover:bg-emerald-900 text-emerald-300 hover:text-white border border-emerald-700/50 text-[11px] font-bold transition flex items-center gap-1.5 shadow cursor-pointer" title="Εμφάνιση ${escapeStr(item.title)} στον δορυφορικό χάρτη Google Maps">
+                  <i class="fa-solid fa-satellite text-[10px]"></i>
+                  <span>Google Maps</span>
+                </button>
                 <button onclick="window.openMapStreetView(${itemCoords[0]}, ${itemCoords[1]}, '${escapeStr(searchPlace)}')" class="px-2.5 py-1 rounded-lg bg-amber-500/15 hover:bg-amber-500/25 text-amber-300 hover:text-white border border-amber-500/30 text-[11px] font-bold transition flex items-center gap-1.5 shadow" title="Περιήγηση Street View στον Χάρτη">
                   <i class="fa-solid fa-street-view text-amber-400"></i>
                   <span>Street View</span>
@@ -4463,6 +4584,11 @@ export function renderTabContent(tabId, entity, activeYear = null, activeSpots =
               <i class="fa-brands fa-microsoft text-sky-200 text-xs"></i>
               <span>🔍 AI Έρευνα Bing: Top 10 Αξιοθέατα & Μνημεία</span>
               <i class="fa-solid fa-arrow-up-right-from-square text-[10px] opacity-75 group-hover:translate-x-0.5 transition"></i>
+            </button>
+            <button onclick="window.openMapGooglePlaces('${escapeStr(entity.name)} top attractions monuments sights', 'Must / Famous Αξιοθέατα: ${escapeStr(entity.name)}', 'k')" class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-gradient-to-r from-emerald-600 via-teal-600 to-cyan-600 hover:from-emerald-500 hover:via-teal-500 hover:to-cyan-500 text-white font-bold text-xs transition shadow-md hover:shadow-emerald-950/60 cursor-pointer group" title="Προβολή αξιοθεάτων στο Google Maps (Δορυφόρος)">
+              <i class="fa-solid fa-satellite text-emerald-200 text-xs"></i>
+              <span>🗺️ Google Maps Δορυφόρος: Σημεία Αξιοθεάτων</span>
+              <i class="fa-solid fa-location-dot text-[10px] opacity-75 group-hover:scale-110 transition"></i>
             </button>
           </div>
         </div>

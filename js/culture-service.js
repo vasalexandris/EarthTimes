@@ -471,6 +471,11 @@ export function renderCultureTabHtml(entity) {
             <span>🔍 AI Έρευνα Bing: Πολιτιστικό & Αθλητικό Ημερολόγιο</span>
             <i class="fa-solid fa-arrow-up-right-from-square text-[10px] opacity-75 group-hover:translate-x-0.5 transition"></i>
           </button>
+          <button onclick="window.openMapGooglePlaces('${escapeStr(name)} theatres concert halls music venues θέατρα μουσικές σκηνές', 'Χώροι Πολιτισμού & Θεάτρου: ${escapeStr(name)}', 'k')" class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-gradient-to-r from-emerald-600 via-teal-600 to-cyan-600 hover:from-emerald-500 hover:via-teal-500 hover:to-cyan-500 text-white font-bold text-xs transition shadow-md hover:shadow-emerald-950/60 cursor-pointer group" title="Προβολή θεάτρων & μουσικών σκηνών στο Google Maps (Δορυφόρος)">
+            <i class="fa-solid fa-satellite text-emerald-200 text-xs"></i>
+            <span>🗺️ Google Maps Δορυφόρος: Θέατρα & Σκηνές</span>
+            <i class="fa-solid fa-location-dot text-[10px] opacity-75 group-hover:scale-110 transition"></i>
+          </button>
         </div>
       </div>
 
