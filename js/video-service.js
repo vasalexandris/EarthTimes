@@ -11,6 +11,790 @@ import { CITY_TO_STATE } from './states-data.js?v=20261125_must_search_v33';
  */
 
 export const CITY_VIDEOS = {
+  "kavala": {
+    "cityName": "Καβάλα",
+    "drone": {
+        "youtubeId": "u2WoO2zIzTo",
+        "title": "Καβάλα 4K: Εναέρια Περιήγηση Drone στο Κάστρο, τις Καμάρες & το Λιμάνι",
+        "label": "Καβάλα με Drone (4K)",
+        "icon": "fa-solid fa-helicopter",
+        "type": "drone"
+    },
+    "walking": {
+        "youtubeId": "UCQRpSaD_zI",
+        "title": "Καβάλα 4K: Περιήγηση στην Παλιά Πόλη (Παναγία) & το Παραλιακό Μέτωπο",
+        "label": "Καβάλα Walking Tour (4K)",
+        "icon": "fa-solid fa-person-walking",
+        "type": "walking"
+    },
+    "live": {
+        "youtubeId": "_m7Yp9G8EOs",
+        "title": "Καβάλα: Ζωντανή Μετάδοση από το Λιμάνι & την Πόλη",
+        "label": "Καβάλα Live Cam",
+        "icon": "fa-solid fa-tower-broadcast",
+        "type": "live"
+    }
+},
+  "rhodes": {
+    "cityName": "Ρόδος",
+    "drone": {
+        "youtubeId": "rVDFVD1oq0k",
+        "title": "Ρόδος 4K: Εναέρια Πανοραμική Περιήγηση στη Μεσαιωνική Πόλη & το Μανδράκι",
+        "label": "Ρόδος με Drone (4K)",
+        "icon": "fa-solid fa-helicopter",
+        "type": "drone"
+    },
+    "walking": {
+        "youtubeId": "bYGu4T3xVZo",
+        "title": "Ρόδος 4K: Περιήγηση στο Παλάτι των Ιπποτών & τα Μεσαιωνικά Σοκάκια",
+        "label": "Ρόδος Walking Tour (4K)",
+        "icon": "fa-solid fa-person-walking",
+        "type": "walking"
+    },
+    "live": {
+        "youtubeId": "k8ZgLw6kBCA",
+        "title": "Ρόδος: Ζωντανή Μετάδοση από το Λιμάνι Μανδράκι",
+        "label": "Ρόδος Live Cam",
+        "icon": "fa-solid fa-tower-broadcast",
+        "type": "live"
+    }
+},
+  "kalamata": {
+    "cityName": "Καλαμάτα",
+    "drone": {
+        "youtubeId": "ZSPw6vdYlxc",
+        "title": "Καλαμάτα 4K: Εναέρια Περιήγηση στον Μεσσηνιακό Κόλπο & το Κάστρο",
+        "label": "Καλαμάτα με Drone (4K)",
+        "icon": "fa-solid fa-helicopter",
+        "type": "drone"
+    },
+    "walking": {
+        "youtubeId": "PpxwhWKGsYk",
+        "title": "Καλαμάτα 4K: Περιήγηση στο Ιστορικό Κέντρο & την Παραλιακή Οδό Ναυαρίνου",
+        "label": "Καλαμάτα Walking Tour (4K)",
+        "icon": "fa-solid fa-person-walking",
+        "type": "walking"
+    },
+    "live": {
+        "youtubeId": "xuulMAwR_Tk",
+        "title": "Καλαμάτα Live: Ζωντανή Μετάδοση από την Πόλη",
+        "label": "Καλαμάτα Live Cam",
+        "icon": "fa-solid fa-tower-broadcast",
+        "type": "live"
+    }
+},
+  "corfu": {
+    "cityName": "Κέρκυρα",
+    "drone": {
+        "youtubeId": "1tuHH9sEUuk",
+        "title": "Κέρκυρα 4K: Εναέρια Πανοραμική Περιήγηση στην Παλιά Πόλη & το Παλαιό Φρούριο",
+        "label": "Κέρκυρα με Drone (4K)",
+        "icon": "fa-solid fa-helicopter",
+        "type": "drone"
+    },
+    "walking": {
+        "youtubeId": "8GaxByhp-WI",
+        "title": "Κέρκυρα 4K: Περιήγηση στη Σπιανάδα, το Λιστόν & τα Καντούνια",
+        "label": "Κέρκυρα Walking Tour (4K)",
+        "icon": "fa-solid fa-person-walking",
+        "type": "walking"
+    },
+    "live": {
+        "youtubeId": "CcnlJI_UXyM",
+        "title": "Κέρκυρα Live Cam: Ζωντανή Πανοραμική Θέα",
+        "label": "Κέρκυρα Live Cam",
+        "icon": "fa-solid fa-tower-broadcast",
+        "type": "live"
+    }
+},
+  "alexandroupoli": {
+    "cityName": "Αλεξανδρούπολη",
+    "drone": {
+        "youtubeId": "ecFWH3oedqw",
+        "title": "Alexandroupolis 4K Drone",
+        "label": "Αλεξανδρούπολη με Drone (4K)",
+        "icon": "fa-solid fa-helicopter",
+        "type": "drone"
+    },
+    "walking": {
+        "youtubeId": "0FOvLfoetPE",
+        "title": "Alexandroupoli City Center Walking Tour  🇬🇷 GREECE | Afternoon Walk - AUGUST 4K -60FPS (Part 1)",
+        "label": "Αλεξανδρούπολη Walking Tour (4K)",
+        "icon": "fa-solid fa-person-walking",
+        "type": "walking"
+    }
+},
+  "serres": {
+    "cityName": "Σέρρες",
+    "drone": {
+        "youtubeId": "nJKTfYju_lc",
+        "title": "Σέρρες από Drone - Serres Greece",
+        "label": "Σέρρες με Drone (4K)",
+        "icon": "fa-solid fa-helicopter",
+        "type": "drone"
+    },
+    "walking": {
+        "youtubeId": "tTWixtJfRLQ",
+        "title": "Σέρρες-Serres Greece",
+        "label": "Σέρρες Walking Tour (4K)",
+        "icon": "fa-solid fa-person-walking",
+        "type": "walking"
+    }
+},
+  "kastoria": {
+    "cityName": "Καστοριά",
+    "drone": {
+        "youtubeId": "_g5peRfARvU",
+        "title": "Kastoria, Greece | Cinematic Drone Tour",
+        "label": "Καστοριά με Drone (4K)",
+        "icon": "fa-solid fa-helicopter",
+        "type": "drone"
+    },
+    "walking": {
+        "youtubeId": "UgAdxifDJIU",
+        "title": "Kastoria, Greece walking tour 4K 60 FPS. AUTUMN vibes near a picturesque lake!",
+        "label": "Καστοριά Walking Tour (4K)",
+        "icon": "fa-solid fa-person-walking",
+        "type": "walking"
+    }
+},
+  "nafplio": {
+    "cityName": "Ναύπλιο",
+    "drone": {
+        "youtubeId": "8lk3C1pgN1I",
+        "title": "Ναύπλιο 4K: Εναέρια Περιήγηση στο Παλαμήδι, το Μπούρτζι & την Παλιά Πόλη",
+        "label": "Ναύπλιο με Drone (4K)",
+        "icon": "fa-solid fa-helicopter",
+        "type": "drone"
+    },
+    "walking": {
+        "youtubeId": "F0HyuwGJBks",
+        "title": "Ναύπλιο 4K: Περιήγηση στην Πλατεία Συντάγματος & τα Ιστορικά Σοκάκια",
+        "label": "Ναύπλιο Walking Tour (4K)",
+        "icon": "fa-solid fa-person-walking",
+        "type": "walking"
+    }
+},
+  "xanthi": {
+    "cityName": "Ξάνθη",
+    "drone": {
+        "youtubeId": "6TSOgqb6oRc",
+        "title": "Xanthi, Greece - by drone [4K] #thrace",
+        "label": "Ξάνθη με Drone (4K)",
+        "icon": "fa-solid fa-helicopter",
+        "type": "drone"
+    },
+    "walking": {
+        "youtubeId": "4e6T4oXG24g",
+        "title": "Xanthi Old Town Walking Tour, Greece (May 2026)",
+        "label": "Ξάνθη Walking Tour (4K)",
+        "icon": "fa-solid fa-person-walking",
+        "type": "walking"
+    }
+},
+  "veroia": {
+    "cityName": "Βέροια",
+    "drone": {
+        "youtubeId": "en3-RYpIxNM",
+        "title": "Βέροια, ο λόγος που θα την ερωτευτείς! Φανταστικό βίντεο με drone!!",
+        "label": "Βέροια με Drone (4K)",
+        "icon": "fa-solid fa-helicopter",
+        "type": "drone"
+    },
+    "walking": {
+        "youtubeId": "iCk-c8pNbWA",
+        "title": "Discovering the Charm of This Secret European Town! Veria, Greece walking tour 4K 60 FPS",
+        "label": "Βέροια Walking Tour (4K)",
+        "icon": "fa-solid fa-person-walking",
+        "type": "walking"
+    }
+},
+  "lamia": {
+    "cityName": "Λαμία",
+    "drone": {
+        "youtubeId": "j5hvh31VHFE",
+        "title": "LAMIA 🇬🇷 Λαμία Drone Aerial 4K | Greece Φθιώτιδα Ελλάδα",
+        "label": "Λαμία με Drone (4K)",
+        "icon": "fa-solid fa-helicopter",
+        "type": "drone"
+    },
+    "walking": {
+        "youtubeId": "hxfSseqhWVw",
+        "title": "Lamia Walk in 4K / no music or filters / Greece 🇬🇷",
+        "label": "Λαμία Walking Tour (4K)",
+        "icon": "fa-solid fa-person-walking",
+        "type": "walking"
+    }
+},
+  "katerini": {
+    "cityName": "Κατερίνη",
+    "drone": {
+        "youtubeId": "EIf1RkK8D0c",
+        "title": "Paralia Katerini Greece 🌅 Drone Mini 4 Pro | Olympic Riviera",
+        "label": "Κατερίνη με Drone (4K)",
+        "icon": "fa-solid fa-helicopter",
+        "type": "drone"
+    },
+    "walking": {
+        "youtubeId": "JLjSQo-PTes",
+        "title": "Paralia Katerini Walking Tour 🇬🇷 | Beautiful Greek Summer | 4K",
+        "label": "Κατερίνη Walking Tour (4K)",
+        "icon": "fa-solid fa-person-walking",
+        "type": "walking"
+    }
+},
+  "corinth": {
+    "cityName": "Κόρινθος",
+    "drone": {
+        "youtubeId": "59Anh02Ra1I",
+        "title": "Κόρινθος 4K: Εναέρια Περιήγηση στη Διώρυγα Κορίνθου & την Ακροκόρινθο",
+        "label": "Κόρινθος με Drone (4K)",
+        "icon": "fa-solid fa-helicopter",
+        "type": "drone"
+    },
+    "walking": {
+        "youtubeId": "iG6sv9f9Rhs",
+        "title": "Κόρινθος 4K: Περιήγηση στο Κέντρο & την Παραλία",
+        "label": "Κόρινθος Walking Tour (4K)",
+        "icon": "fa-solid fa-person-walking",
+        "type": "walking"
+    }
+},
+  "rethymno": {
+    "cityName": "Ρέθυμνο",
+    "drone": {
+        "youtubeId": "Qngf32IzV3E",
+        "title": "Ρέθυμνο 4K: Εναέρια Περιήγηση στη Φορτέτζα & το Ενετικό Λιμάνι",
+        "label": "Ρέθυμνο με Drone (4K)",
+        "icon": "fa-solid fa-helicopter",
+        "type": "drone"
+    },
+    "walking": {
+        "youtubeId": "Y2gGevYZV9w",
+        "title": "Ρέθυμνο 4K: Περιήγηση στην Παλιά Ενετική Πόλη",
+        "label": "Ρέθυμνο Walking Tour (4K)",
+        "icon": "fa-solid fa-person-walking",
+        "type": "walking"
+    }
+},
+  "sintra": {
+    "cityName": "Σίντρα",
+    "drone": {
+        "youtubeId": "AfeflupHmFA",
+        "title": "Pena Palace - Sintra Portugal | 4K Aerial View",
+        "label": "Σίντρα με Drone (4K)",
+        "icon": "fa-solid fa-helicopter",
+        "type": "drone"
+    },
+    "walking": {
+        "youtubeId": "lThq-olIub8",
+        "title": "Sintra Portugal 🇵🇹 Walking tour 4K: 🏰 A Magical City Near Lisbon (4K Ultra HD)",
+        "label": "Σίντρα Walking Tour (4K)",
+        "icon": "fa-solid fa-person-walking",
+        "type": "walking"
+    }
+},
+  "cascais": {
+    "cityName": "Κασκάις",
+    "drone": {
+        "youtubeId": "F2Xalcs-oSI",
+        "title": "Cascais from Above – Stunning Drone Views in 4K | Portugal",
+        "label": "Κασκάις με Drone (4K)",
+        "icon": "fa-solid fa-helicopter",
+        "type": "drone"
+    },
+    "walking": {
+        "youtubeId": "zDHFYjET1pE",
+        "title": "Cascais, Portugal ☀️ Portugal's Prettiest Seaside Town? | 4K Walking Tour",
+        "label": "Κασκάις Walking Tour (4K)",
+        "icon": "fa-solid fa-person-walking",
+        "type": "walking"
+    }
+},
+  "viana-do-castelo": {
+    "cityName": "Βιάνα ντο Καστέλο",
+    "drone": {
+        "youtubeId": "NkkzTMYpEwI",
+        "title": "SANTA LUZIA 🇵🇹 Drone Aerial 4K | Viana do Castelo | Pousada & Citânia PORTUGAL",
+        "label": "Βιάνα ντο Καστέλο με Drone (4K)",
+        "icon": "fa-solid fa-helicopter",
+        "type": "drone"
+    },
+    "walking": {
+        "youtubeId": "AXPpte7rKa8",
+        "title": "[4K] VIANA DO CASTELO 🇵🇹 1 Hour Drone Aerial Relaxation Film | Portugal Porto Oporto",
+        "label": "Βιάνα ντο Καστέλο Walking Tour (4K)",
+        "icon": "fa-solid fa-person-walking",
+        "type": "walking"
+    }
+},
+  "tomar": {
+    "cityName": "Τομάρ",
+    "drone": {
+        "youtubeId": "y_pqD7RcQjY",
+        "title": "🕌Tomar, Portugal 🇵🇹 4k drone footage",
+        "label": "Τομάρ με Drone (4K)",
+        "icon": "fa-solid fa-helicopter",
+        "type": "drone"
+    },
+    "walking": {
+        "youtubeId": "I5STyG1WQ_U",
+        "title": "🇵🇹 Explore Tomar , Portugal | 4K Walking Tour of a Historic City of Knights & Templars",
+        "label": "Τομάρ Walking Tour (4K)",
+        "icon": "fa-solid fa-person-walking",
+        "type": "walking"
+    }
+},
+  "ponta-delgada": {
+    "cityName": "Πόντα Ντελγκάντα",
+    "drone": {
+        "youtubeId": "aBXvsSnfeCQ",
+        "title": "Πόντα Ντελγκάντα & Αζόρες 4K: Εναέρια Περιήγηση Drone στο Ηφαιστειακό Τοπίο",
+        "label": "Πόντα Ντελγκάντα με Drone (4K)",
+        "icon": "fa-solid fa-helicopter",
+        "type": "drone"
+    },
+    "walking": {
+        "youtubeId": "pAgbgw9lpIM",
+        "title": "Ponta Delgada Walking Tour | Discover the Real Azores 🇵🇹 | São Miguel 4K",
+        "label": "Πόντα Ντελγκάντα Walking Tour (4K)",
+        "icon": "fa-solid fa-person-walking",
+        "type": "walking"
+    }
+},
+  "leiria": {
+    "cityName": "Λεϊρία",
+    "drone": {
+        "youtubeId": "fgaZWc3xYh4",
+        "title": "Leiria best place to be | Portugal from Above 4K",
+        "label": "Λεϊρία με Drone (4K)",
+        "icon": "fa-solid fa-helicopter",
+        "type": "drone"
+    },
+    "walking": {
+        "youtubeId": "76Rn1GWog6g",
+        "title": "🇵🇹 Explore Leiria , Portugal | 4K Walking Tour Through a Historic Portuguese Gem",
+        "label": "Λεϊρία Walking Tour (4K)",
+        "icon": "fa-solid fa-person-walking",
+        "type": "walking"
+    }
+},
+  "viseu": {
+    "cityName": "Βιζέου",
+    "drone": {
+        "youtubeId": "h7wIvRCnen0",
+        "title": "Viseu, Portugal - Drone [4K]",
+        "label": "Βιζέου με Drone (4K)",
+        "icon": "fa-solid fa-helicopter",
+        "type": "drone"
+    },
+    "walking": {
+        "youtubeId": "M1nS-HwseOY",
+        "title": "Viseu Portugal 🇵🇹: A 4K Walking Tour Through the Center of Viseu, Visiting its Monuments",
+        "label": "Βιζέου Walking Tour (4K)",
+        "icon": "fa-solid fa-person-walking",
+        "type": "walking"
+    }
+},
+  "nazare": {
+    "cityName": "Ναζαρέ",
+    "drone": {
+        "youtubeId": "eDtkXFqOLBE",
+        "title": "Nazare, Portugal 🇵🇹 in 4K HDR 60fps by Drone",
+        "label": "Ναζαρέ με Drone (4K)",
+        "icon": "fa-solid fa-helicopter",
+        "type": "drone"
+    },
+    "walking": {
+        "youtubeId": "bZZPmZ8lgfw",
+        "title": "Big Waves in Nazaré 🇵🇹 & Walking Tour 4K: Witness Portugal’s Giant Waves in Ultra HD",
+        "label": "Ναζαρέ Walking Tour (4K)",
+        "icon": "fa-solid fa-person-walking",
+        "type": "walking"
+    }
+},
+  "lagos-pt": {
+    "cityName": "Λάγος",
+    "drone": {
+        "youtubeId": "IYdHnF_7eBo",
+        "title": "Lagos, Portugal 🇵🇹 - by drone [4K]",
+        "label": "Λάγος με Drone (4K)",
+        "icon": "fa-solid fa-helicopter",
+        "type": "drone"
+    },
+    "walking": {
+        "youtubeId": "mVcbHLo9WZc",
+        "title": "Lagos, Portugal 🇵🇹 | Is This the Algarve's Most Beautiful Town? | 4K HDR Walking Tour",
+        "label": "Λάγος Walking Tour (4K)",
+        "icon": "fa-solid fa-person-walking",
+        "type": "walking"
+    }
+},
+  "tavira": {
+    "cityName": "Ταβίρα",
+    "drone": {
+        "youtubeId": "Hm6wpSQ0Zt8",
+        "title": "Tavira 4K Aerial Views (Algarve, Portugal)",
+        "label": "Ταβίρα με Drone (4K)",
+        "icon": "fa-solid fa-helicopter",
+        "type": "drone"
+    },
+    "walking": {
+        "youtubeId": "1-a82e5_HCc",
+        "title": "TAVIRA, PORTUGAL 🇵🇹 | The Venice of the Algarve | Relaxing 4K Walking Tour",
+        "label": "Ταβίρα Walking Tour (4K)",
+        "icon": "fa-solid fa-person-walking",
+        "type": "walking"
+    }
+},
+  "peniche": {
+    "cityName": "Πενίσε",
+    "drone": {
+        "youtubeId": "finbjtyanwo",
+        "title": "Peniche, Portugal - 4K Aerial Drone Footage | Travel Video",
+        "label": "Πενίσε με Drone (4K)",
+        "icon": "fa-solid fa-helicopter",
+        "type": "drone"
+    },
+    "walking": {
+        "youtubeId": "HS8KmUH4DMc",
+        "title": "Baleal Island, Peniche | Portugal | Aerial Footage | 4K",
+        "label": "Πενίσε Walking Tour (4K)",
+        "icon": "fa-solid fa-person-walking",
+        "type": "walking"
+    }
+},
+  "figueira-da-foz": {
+    "cityName": "Φιγκεϊρα ντα Φοζ",
+    "drone": {
+        "youtubeId": "LJWaN7ci2vI",
+        "title": "FIGUEIRA DA FOZ 4K | Imagens Drone 4K sobre o Rio Mondego, Praia, Abadias, Figueira a Noite",
+        "label": "Φιγκεϊρα ντα Φοζ με Drone (4K)",
+        "icon": "fa-solid fa-helicopter",
+        "type": "drone"
+    },
+    "walking": {
+        "youtubeId": "2rBzHK0dykU",
+        "title": "A MAIOR PRAIA URBANA DA EUROPA | FIGUEIRA DA FOZ WALKING TOUR | AMBIENT SOUND | PORTUGAL 4K",
+        "label": "Φιγκεϊρα ντα Φοζ Walking Tour (4K)",
+        "icon": "fa-solid fa-person-walking",
+        "type": "walking"
+    }
+},
+  "braganca": {
+    "cityName": "Μπραγάνσα",
+    "drone": {
+        "youtubeId": "ClOG5ROgnzs",
+        "title": "BRAGANÇA 🇵🇹 | Descubre la Capital Histórica de Trás-os-Montes desde el Aire | Cinematic Drone 4K",
+        "label": "Μπραγάνσα με Drone (4K)",
+        "icon": "fa-solid fa-helicopter",
+        "type": "drone"
+    },
+    "walking": {
+        "youtubeId": "0xapzdOW-Uk",
+        "title": "A Fascinating Journey Through Medieval Portugal: Bragança",
+        "label": "Μπραγάνσα Walking Tour (4K)",
+        "icon": "fa-solid fa-person-walking",
+        "type": "walking"
+    }
+},
+  "castelo-branco": {
+    "cityName": "Καστέλο Μπράνκο",
+    "drone": {
+        "youtubeId": "e4T4NLtUVlE",
+        "title": "Castelo Branco, Portugal - 4K Aerial Drone Footage | Travel Video",
+        "label": "Καστέλο Μπράνκο με Drone (4K)",
+        "icon": "fa-solid fa-helicopter",
+        "type": "drone"
+    },
+    "walking": {
+        "youtubeId": "yl7qfHu_dqg",
+        "title": "Castelo Branco Portugal 4K 🇵🇹 : It's a Very Beautiful City, Episcopal Palace Garden",
+        "label": "Καστέλο Μπράνκο Walking Tour (4K)",
+        "icon": "fa-solid fa-person-walking",
+        "type": "walking"
+    }
+},
+  "santarem": {
+    "cityName": "Σανταρέμ",
+    "drone": {
+        "youtubeId": "9FfWhQDFBEk",
+        "title": "Santarém, Portugal - 4K Aerial Drone Footage | Travel Video",
+        "label": "Σανταρέμ με Drone (4K)",
+        "icon": "fa-solid fa-helicopter",
+        "type": "drone"
+    },
+    "walking": {
+        "youtubeId": "Cs_bp0WrPWQ",
+        "title": "Santarém Portugal 🇵🇹: A Modern City With a Gothic History. Walking Tour in 4K",
+        "label": "Σανταρέμ Walking Tour (4K)",
+        "icon": "fa-solid fa-person-walking",
+        "type": "walking"
+    }
+},
+  "biel-bienne": {
+    "cityName": "Μπιλ / Μπιέν",
+    "drone": {
+        "youtubeId": "SonmtyscIIo",
+        "title": "Biel (Bienne), Switzerland 4K | Aerial Tour of Historic and Modern Biel",
+        "label": "Μπιλ / Μπιέν με Drone (4K)",
+        "icon": "fa-solid fa-helicopter",
+        "type": "drone"
+    },
+    "walking": {
+        "youtubeId": "SdYv6ECR_VM",
+        "title": "Switzerland's Watch Capital Is Also Its Most Underrated City 🇨🇭 Biel/Bienne 4K Walking Tour",
+        "label": "Μπιλ / Μπιέν Walking Tour (4K)",
+        "icon": "fa-solid fa-person-walking",
+        "type": "walking"
+    }
+},
+  "thun": {
+    "cityName": "Τουν",
+    "drone": {
+        "youtubeId": "MQ5G7x17ZYU",
+        "title": "Aerial Tour of Thun, Switzerland in 4K UltraHD  2024 🇨🇭(including Alps)",
+        "label": "Τουν με Drone (4K)",
+        "icon": "fa-solid fa-helicopter",
+        "type": "drone"
+    },
+    "walking": {
+        "youtubeId": "PZAzKFhBlM8",
+        "title": "Thun, Switzerland walking tour 4K - A beautiful Swiss city",
+        "label": "Τουν Walking Tour (4K)",
+        "icon": "fa-solid fa-person-walking",
+        "type": "walking"
+    }
+},
+  "bellinzona": {
+    "cityName": "Μπελιντσόνα",
+    "drone": {
+        "youtubeId": "Ic2VwDwTmss",
+        "title": "Bellinzona, Switzerland 🇨🇭 | Stunning Drone Tour in 4K 60FPS | Relaxing Chill Music",
+        "label": "Μπελιντσόνα με Drone (4K)",
+        "icon": "fa-solid fa-helicopter",
+        "type": "drone"
+    },
+    "walking": {
+        "youtubeId": "ku9ZvIYQLqI",
+        "title": "Bellinzona, Switzerland 🇨🇭 4K 60fps Walking Tour – Castles, Culture & Charm",
+        "label": "Μπελιντσόνα Walking Tour (4K)",
+        "icon": "fa-solid fa-person-walking",
+        "type": "walking"
+    }
+},
+  "schaffhausen": {
+    "cityName": "Σαφχάουζεν",
+    "drone": {
+        "youtubeId": "LmxwcSyA_Vc",
+        "title": "Canton of Schaffhausen 4K - Aerial Drone Video",
+        "label": "Σαφχάουζεν με Drone (4K)",
+        "icon": "fa-solid fa-helicopter",
+        "type": "drone"
+    },
+    "walking": {
+        "youtubeId": "cLVSDQV_R0w",
+        "title": "Walking in Schaffhausen | Hidden Gem of Switzerland’s North | 4K City Sounds | No Music, No Talk",
+        "label": "Σαφχάουζεν Walking Tour (4K)",
+        "icon": "fa-solid fa-person-walking",
+        "type": "walking"
+    }
+},
+  "fribourg": {
+    "cityName": "Φριμπούργκ",
+    "drone": {
+        "youtubeId": "52ws2sbjopc",
+        "title": "Fribourg Switzerland 4K - Drone",
+        "label": "Φριμπούργκ με Drone (4K)",
+        "icon": "fa-solid fa-helicopter",
+        "type": "drone"
+    },
+    "walking": {
+        "youtubeId": "0IoyNRcmhjc",
+        "title": "Швейцария с высоты #2. Швейцария, Фрибург. Switzerland, Fribourg. Dji Mavic Pro. 4K Video",
+        "label": "Φριμπούργκ Walking Tour (4K)",
+        "icon": "fa-solid fa-person-walking",
+        "type": "walking"
+    }
+},
+  "chur": {
+    "cityName": "Κουρ",
+    "drone": {
+        "youtubeId": "psJhCY-6eZE",
+        "title": "Chur- Switzerland (4K drone footage)",
+        "label": "Κουρ με Drone (4K)",
+        "icon": "fa-solid fa-helicopter",
+        "type": "drone"
+    },
+    "walking": {
+        "youtubeId": "y9VoteeU45I",
+        "title": "5000-Year-Old Town in Switzerland 🇨🇭 | Chur Walking Tour in the Alps | 4K",
+        "label": "Κουρ Walking Tour (4K)",
+        "icon": "fa-solid fa-person-walking",
+        "type": "walking"
+    }
+},
+  "neuchatel": {
+    "cityName": "Νεσατέλ",
+    "drone": {
+        "youtubeId": "Zj60gK1v4H0",
+        "title": "NEUCHÂTEL, SWITZERLAND 🇨🇭 | 4K DRONE | Europe’s Hidden Lake Paradise",
+        "label": "Νεσατέλ με Drone (4K)",
+        "icon": "fa-solid fa-helicopter",
+        "type": "drone"
+    },
+    "walking": {
+        "youtubeId": "We5N9BflmWI",
+        "title": "Neuchâtel 4K - Lakeside Old Town Walk in French Switzerland | Neuenburg",
+        "label": "Νεσατέλ Walking Tour (4K)",
+        "icon": "fa-solid fa-person-walking",
+        "type": "walking"
+    }
+},
+  "sion": {
+    "cityName": "Σιόν",
+    "drone": {
+        "youtubeId": "jgTpCAIRnxo",
+        "title": "Sion | Switzerland Drone Cinematic",
+        "label": "Σιόν με Drone (4K)",
+        "icon": "fa-solid fa-helicopter",
+        "type": "drone"
+    },
+    "walking": {
+        "youtubeId": "yhL_YtAom3I",
+        "title": "Sion Switzerland in 4K | Walk Through History and Breathtaking Views",
+        "label": "Σιόν Walking Tour (4K)",
+        "icon": "fa-solid fa-person-walking",
+        "type": "walking"
+    }
+},
+  "montreux": {
+    "cityName": "Μοντρέ",
+    "drone": {
+        "youtubeId": "ULRQIZviwLU",
+        "title": "Beautiful Montreux From the Sky 🇨🇭 | Cinematic Switzerland Drone Video",
+        "label": "Μοντρέ με Drone (4K)",
+        "icon": "fa-solid fa-helicopter",
+        "type": "drone"
+    },
+    "walking": {
+        "youtubeId": "s_ZxsBc1qPE",
+        "title": "Montreux Switzerland Walking Tour | 4K",
+        "label": "Μοντρέ Walking Tour (4K)",
+        "icon": "fa-solid fa-person-walking",
+        "type": "walking"
+    }
+},
+  "zermatt": {
+    "cityName": "Τσερμάτ",
+    "drone": {
+        "youtubeId": "J_U4YZdlYoE",
+        "title": "Zermatt & the Matterhorn | Cinematic Drone 4K 🎶🚁🏔️💙",
+        "label": "Τσερμάτ με Drone (4K)",
+        "icon": "fa-solid fa-helicopter",
+        "type": "drone"
+    },
+    "walking": {
+        "youtubeId": "QNXeyDXdwuY",
+        "title": "Zermatt Switzerland Walking Tour 4K | Matterhorn Views (سويسرا)",
+        "label": "Τσερμάτ Walking Tour (4K)",
+        "icon": "fa-solid fa-person-walking",
+        "type": "walking"
+    },
+    "live": {
+        "youtubeId": "lwu4UwbZR8M",
+        "title": "Τσερμάτ: Ζωντανή Πανοραμική Θέα Matterhorn",
+        "label": "Τσερμάτ Live Cam",
+        "icon": "fa-solid fa-tower-broadcast",
+        "type": "live"
+    }
+},
+  "st-moritz": {
+    "cityName": "Σανκτ Μόριτς",
+    "drone": {
+        "youtubeId": "ssnH681x4gk",
+        "title": "ENGADIN - ST. MORITZ || Switzerland Cinematic Drone 4K",
+        "label": "Σανκτ Μόριτς με Drone (4K)",
+        "icon": "fa-solid fa-helicopter",
+        "type": "drone"
+    },
+    "walking": {
+        "youtubeId": "bDRumc_NAOM",
+        "title": "St. Moritz Summer Walk ☀️ 4K Walking Tour 🇨🇭 Switzerland",
+        "label": "Σανκτ Μόριτς Walking Tour (4K)",
+        "icon": "fa-solid fa-person-walking",
+        "type": "walking"
+    }
+},
+  "vevey": {
+    "cityName": "Βεβέ",
+    "drone": {
+        "youtubeId": "agzaaETuWTk",
+        "title": "Switzerland by Drone 🇨🇭 | Vevey - La Tour-de-Peilz 4K DJI MINI 2 Scenic Drone Flight",
+        "label": "Βεβέ με Drone (4K)",
+        "icon": "fa-solid fa-helicopter",
+        "type": "drone"
+    },
+    "walking": {
+        "youtubeId": "nnsh4HMRDCo",
+        "title": "Luxury Lakeside Walk in Vevey Switzerland 🇨🇭 Relaxing 4K Swiss Alps Tour",
+        "label": "Βεβέ Walking Tour (4K)",
+        "icon": "fa-solid fa-person-walking",
+        "type": "walking"
+    }
+},
+  "locarno": {
+    "cityName": "Λοκάρνο",
+    "drone": {
+        "youtubeId": "d1Wq0rZBJu8",
+        "title": "Locarno | Switzerland Drone Cinematic",
+        "label": "Λοκάρνο με Drone (4K)",
+        "icon": "fa-solid fa-helicopter",
+        "type": "drone"
+    },
+    "walking": {
+        "youtubeId": "jIoKDAlNDI8",
+        "title": "Walking in Locarno in Spring 🇨🇭 Switzerland 4K",
+        "label": "Λοκάρνο Walking Tour (4K)",
+        "icon": "fa-solid fa-person-walking",
+        "type": "walking"
+    }
+},
+  "solothurn": {
+    "cityName": "Ζόλοτουρν",
+    "drone": {
+        "youtubeId": "PmYlrKZzkbQ",
+        "title": "Solothurn | Switzerland Drone Cinematic",
+        "label": "Ζόλοτουρν με Drone (4K)",
+        "icon": "fa-solid fa-helicopter",
+        "type": "drone"
+    },
+    "walking": {
+        "youtubeId": "Ll1qYXy33es",
+        "title": "Solothurn, Switzerland 🇨🇭 Walking Tour 4K in the Most Beautiful Baroque Town | with Captions",
+        "label": "Ζόλοτουρν Walking Tour (4K)",
+        "icon": "fa-solid fa-person-walking",
+        "type": "walking"
+    }
+},
+  "aarau": {
+    "cityName": "Άαραου",
+    "drone": {
+        "youtubeId": "Plu0S-d3jDI",
+        "title": "Drone Views of Switzerland in 4k: Aarau - Canton of Aargau",
+        "label": "Άαραου με Drone (4K)",
+        "icon": "fa-solid fa-helicopter",
+        "type": "drone"
+    },
+    "walking": {
+        "youtubeId": "4-h0HGP5Jb4",
+        "title": "Aarau, Switzerland 🇨🇭Most Beautiful Swiss Towns - Walking Tour [4K HDR]",
+        "label": "Άαραου Walking Tour (4K)",
+        "icon": "fa-solid fa-person-walking",
+        "type": "walking"
+    }
+},
+
   "brasov": {
     "cityName": "Μπρασόφ",
     "drone": {

@@ -26,7 +26,21 @@ export const CONTINENTS_DATA = [
           { id: 'ioannina', name: 'Ιωάννινα' },
           { id: 'trikala', name: 'Τρίκαλα' },
           { id: 'chania', name: 'Χανιά' },
-          { id: 'chalkida', name: 'Χαλκίδα' }
+          { id: 'chalkida', name: 'Χαλκίδα' },
+          { id: 'kavala', name: 'Καβάλα' },
+          { id: 'rhodes', name: 'Ρόδος' },
+          { id: 'kalamata', name: 'Καλαμάτα' },
+          { id: 'corfu', name: 'Κέρκυρα' },
+          { id: 'alexandroupoli', name: 'Αλεξανδρούπολη' },
+          { id: 'serres', name: 'Σέρρες' },
+          { id: 'kastoria', name: 'Καστοριά' },
+          { id: 'nafplio', name: 'Ναύπλιο' },
+          { id: 'xanthi', name: 'Ξάνθη' },
+          { id: 'veroia', name: 'Βέροια' },
+          { id: 'lamia', name: 'Λαμία' },
+          { id: 'katerini', name: 'Κατερίνη' },
+          { id: 'corinth', name: 'Κόρινθος' },
+          { id: 'rethymno', name: 'Ρέθυμνο' }
         ]
       },
       {
@@ -235,7 +249,22 @@ export const CONTINENTS_DATA = [
           { id: 'lugano', name: 'Λουγκάνο' },
           { id: 'winterthur', name: 'Βίντερτουρ' },
           { id: 'st-gallen', name: 'Σεντ Γκάλεν' },
-          { id: 'interlaken', name: 'Ιντερλάκεν' }
+          { id: 'interlaken', name: 'Ιντερλάκεν' },
+          { id: 'biel-bienne', name: 'Μπιλ / Μπιέν' },
+          { id: 'thun', name: 'Τουν' },
+          { id: 'bellinzona', name: 'Μπελιντσόνα' },
+          { id: 'schaffhausen', name: 'Σαφχάουζεν' },
+          { id: 'fribourg', name: 'Φρίμπουργκ' },
+          { id: 'chur', name: 'Κουρ' },
+          { id: 'neuchatel', name: 'Νεσατέλ' },
+          { id: 'sion', name: 'Σιόν' },
+          { id: 'montreux', name: 'Μοντρέ' },
+          { id: 'zermatt', name: 'Τσερμάτ' },
+          { id: 'st-moritz', name: 'Σανκτ Μόριτς' },
+          { id: 'vevey', name: 'Βεβέ' },
+          { id: 'locarno', name: 'Λοκάρνο' },
+          { id: 'solothurn', name: 'Ζόλοτουρν' },
+          { id: 'aarau', name: 'Άαραου' }
         ]
       },
       {
@@ -316,7 +345,22 @@ export const CONTINENTS_DATA = [
           { id: 'aveiro', name: 'Αβέιρο' },
           { id: 'evora', name: 'Έβορα' },
           { id: 'guimaraes', name: 'Γκιμαράες' },
-          { id: 'setubal', name: 'Σετούμπαλ' }
+          { id: 'setubal', name: 'Σετούμπαλ' },
+          { id: 'sintra', name: 'Σίντρα' },
+          { id: 'cascais', name: 'Κασκάις' },
+          { id: 'viana-do-castelo', name: 'Βιάνα ντο Καστέλο' },
+          { id: 'tomar', name: 'Τομάρ' },
+          { id: 'ponta-delgada', name: 'Πόντα Ντελγκάντα (Αζόρες)' },
+          { id: 'leiria', name: 'Λεϊρία' },
+          { id: 'viseu', name: 'Βιζέου' },
+          { id: 'nazare', name: 'Ναζαρέ' },
+          { id: 'lagos-pt', name: 'Λάγκος' },
+          { id: 'tavira', name: 'Ταβίρα' },
+          { id: 'peniche', name: 'Πενίσε' },
+          { id: 'figueira-da-foz', name: 'Φιγκέιρα ντα Φος' },
+          { id: 'braganca', name: 'Μπραγκάνσα' },
+          { id: 'castelo-branco', name: 'Καστέλο Μπράνκο' },
+          { id: 'santarem', name: 'Σανταρέμ' }
         ]
       },
       {
